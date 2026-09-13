@@ -22,6 +22,15 @@
       ],
     },
     {
+      id: "discovery-sources",
+      styles: ["./features/discovery/sources/source-review.css"],
+      scripts: [
+        "./features/discovery/sources/source-registry.js",
+        "./features/discovery/sources/source-model.js",
+        "./features/discovery/sources/source-review.js",
+      ],
+    },
+    {
       id: "viral-finder",
       scripts: ["./viral-model.js", "./viral-review.js"],
     },
