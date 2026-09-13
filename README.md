@@ -25,9 +25,16 @@ AI를 이용해 **화제 탐지 → 조사 → 자체 해설/재구성 → 멀�
 
 지금은 구현보다 **2026년 최신 플랫폼 정책과 실제 운영 방식 조사 + 안전한 소스 정책 + 초기 수익화 전략**을 먼저 고정하는 단계입니다.
 
+### 조사/정책
 - [`docs/RESEARCH_2026-09.md`](docs/RESEARCH_2026-09.md) — 2026-09 기준 시장/플랫폼 조사
-- [`docs/CONTENT_PIPELINE.md`](docs/CONTENT_PIPELINE.md) — 실제 제작·자동화 파이프라인 설계
+- [`docs/PLATFORM_MATRIX.md`](docs/PLATFORM_MATRIX.md) — 플랫폼별 역할·수익·자동화·정책 차이
 - [`docs/SOURCE_POLICY.md`](docs/SOURCE_POLICY.md) — 커뮤니티/뉴스/영상 등 소스 사용 기준
+- [`docs/SOURCE_REGISTRY.md`](docs/SOURCE_REGISTRY.md) — 실제 수집 후보와 GREEN/YELLOW/RED 초기 레지스트리
+
+### 실행/구현
+- [`docs/CONTENT_PIPELINE.md`](docs/CONTENT_PIPELINE.md) — 실제 제작·자동화 파이프라인 설계
+- [`docs/EXECUTION_PLAN_30D.md`](docs/EXECUTION_PLAN_30D.md) — 30일 검증 계획 + 첫 MVP 화면/자동화 단계
+- [`AGENTS.md`](AGENTS.md) — 이후 AI/Codex가 이어서 작업할 때 지켜야 할 프로젝트 규칙
 
 ## 1차 실행 목표
 
@@ -41,6 +48,14 @@ AI를 이용해 **화제 탐지 → 조사 → 자체 해설/재구성 → 멀�
 6. 공식 API/허용된 게시 방식으로 발행
 7. 조회·댓글·저장·클릭·팔로우·수익/전환 기록
 8. 2~4주 데이터로 잘 되는 콘텐츠 축만 확대
+
+## 추천 초기 콘텐츠 축
+
+- **Hot / Issue** — 오늘의 화제, AI/신제품/인터넷 이슈, 왜 뜨는지 설명
+- **Internet Story / Culture** — 커뮤니티·인터넷 사연을 원문 복제가 아니라 익명화·검증·재구성
+- **Useful / Product / Money** — 앱/서비스/AI 도구/가격·기능 비교처럼 제휴·검색 수익으로 이어지기 쉬운 콘텐츠
+
+수집 엔진은 공유하되 서로 너무 다른 주제를 한 계정에 전부 섞지 않습니다.
 
 ## 중요한 전제
 
