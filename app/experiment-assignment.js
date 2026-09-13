@@ -65,11 +65,6 @@
   });
 
   sync();
-  loadCompanion("./content-strategy.js");
-  loadCompanion("./experiment-metadata.js");
-  loadCompanion("./viral-model.js", () => loadCompanion("./viral-review.js"));
-  loadCompanion("./card-story-model.js", () => loadCompanion("./card-factory.js"));
-  loadCompanion("./warehouse-model.js", () => loadCompanion("./content-warehouse.js"));
 
   function currentItem() {
     return (state.items || []).find((item) => item.id === selectedId) || null;
@@ -137,24 +132,5 @@
     link.rel = "stylesheet";
     link.href = "./experiment-assignment.css";
     document.head.appendChild(link);
-  }
-
-  function loadCompanion(src, onload) {
-    const existing = document.querySelector(`script[src="${src}"]`);
-    if (existing) {
-      if (typeof onload === "function") {
-        if (existing.dataset.loaded === "true") onload();
-        else existing.addEventListener("load", onload, { once: true });
-      }
-      return;
-    }
-    const script = document.createElement("script");
-    script.src = src;
-    script.async = false;
-    script.addEventListener("load", () => {
-      script.dataset.loaded = "true";
-      if (typeof onload === "function") onload();
-    }, { once: true });
-    document.body.appendChild(script);
   }
 })();
