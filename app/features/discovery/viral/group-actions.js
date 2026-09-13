@@ -45,7 +45,8 @@
         summary.className = "viral-group-status-summary";
         review.prepend(summary);
       }
-      summary.textContent = statusSummary(group);
+      const nextSummary = statusSummary(group);
+      if (summary.textContent !== nextSummary) summary.textContent = nextSummary;
 
       ensureAction(review, key, "research", "그룹 → 조사");
       ensureAction(review, key, "hold", "그룹 보류");
