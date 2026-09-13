@@ -17,9 +17,10 @@
       <div>
         <p class="eyebrow">VIRAL FINDER / BATCH REVIEW</p>
         <h2>바이럴 후보 선별</h2>
-        <p>이미 Inbox에 들어온 실제 신호를 조회·반응·신선도·카드화 가능성으로 재정렬하고, 불쾌감 필터를 통과한 것만 여러 개 골라 제작 단계로 넘깁니다.</p>
+        <p>실제 공개 신호를 조회·반응·신선도·카드화 가능성으로 재정렬하고, 불쾌감 필터를 통과한 것만 여러 개 골라 제작 단계로 넘깁니다.</p>
       </div>
       <div class="viral-head-actions">
+        <button id="viralDiscoveryImportBtn" class="button primary" type="button">최신 실제 발견 묶음 가져오기</button>
         <button id="viralRescoreBtn" class="button ghost" type="button">전체 다시 점수</button>
         <button id="viralSelectBtn" class="button ghost" type="button">추천 전부 선택</button>
       </div>
@@ -47,7 +48,9 @@
   const list = section.querySelector("#viralList");
   const summary = section.querySelector("#viralSummary");
   const selectedCount = section.querySelector("#viralSelectedCount");
+  const importButton = section.querySelector("#viralDiscoveryImportBtn");
 
+  importButton.addEventListener("click", importLatestDiscovery);
   section.querySelector("#viralRescoreBtn").addEventListener("click", () => { scoreAndPersist(); renderPanel(); });
   section.querySelector("#viralSelectBtn").addEventListener("click", selectRecommended);
   section.querySelector("#viralResearchBtn").addEventListener("click", () => applySelected("research"));
@@ -81,6 +84,83 @@
 
   scoreAndPersist();
   renderPanel();
+
+  async function importLatestDiscovery() {
+    const previous = importButton.textContent;
+    importButton.disabled = true;
+    importButton.textContent = "가져오는 중…";
+    try {
+      const response = await fetch(`/data/viral-discovery-latest.json?t=${Date.now()}`, { cache: "no-store" });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || !Array.isArray(payload.items)) throw new Error(`HTTP ${response.status}`);
+      const existingKeys = new Set((state.items || []).map((item) => item.sourceKey).filter(Boolean));
+      const existingUrls = new Set((state.items || []).map((item) => String(item.url || "").trim()).filter(Boolean));
+      const additions = [];
+      for (const source of payload.items) {
+        if (!source?.title) continue;
+        if ((source.sourceKey && existingKeys.has(source.sourceKey)) || (source.url && existingUrls.has(source.url))) continue;
+        additions.push(discoveryToCandidate(source, payload));
+      }
+      if (additions.length) {
+        state.items = [...additions, ...state.items];
+        selectedId = additions[0].id;
+        persist();
+        render();
+        scoreAndPersist();
+        renderPanel();
+      }
+      showSystemMessage(`실제 공개 발견 묶음 ${payload.items.length}건 확인 · 신규 ${additions.length}건 추가 · 중복 ${payload.items.length - additions.length}건 제외`, "success");
+    } catch (error) {
+      showSystemMessage(`실제 발견 묶음을 가져오지 못했습니다. (${error.message})`, "error");
+    } finally {
+      importButton.disabled = false;
+      importButton.textContent = previous;
+    }
+  }
+
+  function discoveryToCandidate(source, payload) {
+    const publishedAt = source.sourceMeta?.publishedAt || "";
+    const risk = source.sourceRisk || "yellow";
+    return {
+      id: makeId(),
+      sourceKey: source.sourceKey || `discovery:${String(source.url || source.title).toLowerCase()}`,
+      title: String(source.title || "").trim(),
+      url: String(source.url || "").trim(),
+      kind: source.kind || "story",
+      sourceType: source.sourceType || "public-indexed-community",
+      sourceRisk: risk,
+      sourceReason: source.sourceReason || "공개 검색/인덱스에서 발견한 메타데이터 후보입니다. 원문·이미지·영상의 재사용 권리를 의미하지 않습니다.",
+      collectionAllowed: Boolean(source.collectionAllowed),
+      manualCaptureOnly: source.manualCaptureOnly !== false,
+      note: String(source.note || ""),
+      signals: {
+        freshness: typeof freshnessFromDate === "function" ? freshnessFromDate(publishedAt) : null,
+        velocity: null,
+        audience: null,
+        originalityRoom: null,
+        revenueFit: null,
+      },
+      score: null,
+      scoreBasis: "needs_human_review",
+      platforms: suggestedPlatforms(source.kind),
+      status: risk === "red" ? "skip" : "inbox",
+      relatedSources: source.url ? [{ title: source.title, url: source.url, source: source.sourceMeta?.community || source.sourceMeta?.provider || "public index", sourceType: "community" }] : [],
+      sourceMeta: { ...(source.sourceMeta || {}), discoveryGeneratedAt: payload.generatedAt || "", discoveryMode: payload.sourceMode || "public-indexed-discovery" },
+      discoveryMeta: {
+        importedAt: new Date().toISOString(),
+        feedGeneratedAt: payload.generatedAt || null,
+        manualCaptureOnly: source.manualCaptureOnly !== false,
+      },
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
+  function suggestedPlatforms(kind) {
+    if (kind === "humor" || kind === "story") return ["Threads", "Instagram Carousel", "Instagram Reels", "YouTube Shorts"];
+    if (kind === "useful" || kind === "product") return ["Threads", "Instagram Carousel", "Naver Blog", "YouTube Shorts"];
+    return ["Threads", "Instagram Carousel", "YouTube Shorts"];
+  }
 
   function queuePatch() {
     if (patchQueued) return;
@@ -138,7 +218,7 @@
     const visible = rows.filter((row) => matchesFilter(row));
     list.innerHTML = "";
     if (!visible.length) {
-      list.innerHTML = '<div class="empty-state compact"><strong>조건에 맞는 바이럴 후보가 없습니다.</strong><span>Google Trends/YouTube/API 수집이나 수동 URL 반입 후 다시 확인하세요.</span></div>';
+      list.innerHTML = '<div class="empty-state compact"><strong>조건에 맞는 바이럴 후보가 없습니다.</strong><span>최신 실제 발견 묶음, Google Trends, YouTube 또는 수동 URL을 먼저 반입하세요.</span></div>';
       updateSelectedCount();
       return;
     }
@@ -167,7 +247,7 @@
       metrics.shares ? `공유 ${format(metrics.shares)}` : "",
       metrics.rank ? `순위 #${metrics.rank}` : "",
     ].filter(Boolean).join(" · ") || "정량 반응값 없음";
-    const source = item.sourceMeta?.provider || item.sourceType || "manual";
+    const source = item.sourceMeta?.community || item.sourceMeta?.provider || item.sourceType || "manual";
     const disabled = blocked || duplicate;
     article.innerHTML = `
       <label class="viral-check" title="${disabled ? (blocked ? "불쾌감 필터 차단" : "중복 후보") : "제작 후보로 선택"}">
@@ -179,6 +259,7 @@
           <span class="pill ${tone(result.decision)}">${escapeHtml(label(result.decision))}</span>
           <span class="viral-comfort">Comfort ${result.comfort.score}</span>
           <span class="viral-source">${escapeHtml(source)}</span>
+          ${item.manualCaptureOnly ? '<span class="pill neutral">원문은 수동 확인</span>' : ""}
           ${duplicate ? '<span class="pill neutral">중복</span>' : ""}
         </div>
         <h3>${escapeHtml(item.title || "제목 없음")}</h3>
