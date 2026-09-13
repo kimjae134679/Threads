@@ -4,6 +4,8 @@
 
 02에서 승인된 Content Brief를 각 플랫폼에 맞는 **실제 콘텐츠 초안/제작 패키지**로 바꾸는 역할이다.
 
+실제 제작 형식은 [`FORMAT_PLAYBOOK.md`](FORMAT_PLAYBOOK.md)를 우선 참고한다. 2026 벤치마크 근거는 [`../docs/BENCHMARK_2026-09.md`](../docs/BENCHMARK_2026-09.md)에 있다.
+
 ## 입력
 
 `02_EDITORIAL_SCORING`의 Approved Content Brief.
@@ -17,6 +19,7 @@
 - YouTube Long 제목·썸네일 문구·오프닝·구성 작성
 - 필요 시 자체 제작 이미지/영상/그래픽 계획 작성
 - 계정별 톤과 포맷에 맞게 표현을 변형
+- `F01~F20` 콘텐츠 포맷, `H01~H10` 훅, CTA, 자산 출처, Reply 운영 모드를 실험 변수로 기록
 
 ## 하지 않는 일
 
@@ -43,18 +46,30 @@ CTA
 시각 구성
 ```
 
+스크린샷은 별도 포맷으로 관리한다.
+
+- `F05`: 우리 own 자료/허가 자료 screenshot + commentary
+- `F06`: 공식/필요한 증거 일부 + analysis
+- 남의 viral post 전체를 조금 꾸며 재업로드하는 방식은 기본 포맷으로 쓰지 않는다.
+
+`A10 Unknown rights` 자산은 앱에서도 실제 게시가 차단되며, 권리를 확인한 뒤 올바른 자산 분류와 Safety Gate 재검토가 필요하다.
+
 ## 출력 — Draft Package
 
 ```text
 candidate_id
 account_id
 platform
-format
+content_format
 variant_id
 hypothesis_id
+hook_type
+cta_type
+source_asset_type
+reply_mode
+has_topic_tag
 hook
 body_or_script
-cta
 asset_plan
 source_boundaries       사용 가능한 사실/자산 범위
 fact_warnings[]
