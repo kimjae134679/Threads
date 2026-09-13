@@ -6,6 +6,10 @@
 
 계정 여러 개를 만드는 이유는 같은 글을 반복 노출하기 위해서가 아니라, **서로 다른 가설을 동시에 검증하기 위해서**다.
 
+현재 계획된 계정 실험군: [`ACCOUNT_REGISTRY.md`](ACCOUNT_REGISTRY.md)
+
+새 계정 등록 양식: [`ACCOUNT_REGISTRY_TEMPLATE.md`](ACCOUNT_REGISTRY_TEMPLATE.md)
+
 ## 입력
 
 `04_REVIEW_PUBLISH`의 Publication Record + 플랫폼 Insights + 실제 클릭/전환/수익.
@@ -55,7 +59,7 @@ status
 
 처음부터 계정을 지나치게 많이 만들지 않는다. 플랫폼별 2~3개 전략군 정도로 시작하고, 각 계정의 차이를 명확하게 둔다.
 
-예시:
+현재 초기 Threads 실험군은 다음 세 축으로 `planned` 등록했다.
 
 ```text
 TH-A  Hot / Issue
@@ -109,5 +113,3 @@ KEEP  → 유지하면서 한 변수만 바꿔 재시험
 KILL  → 계정 자체를 무조건 폐기하지 말고 실패한 가설을 기록 후 다른 가설로 전환
 LEARN → 표본을 더 모음
 ```
-
-계정 등록 템플릿: [`ACCOUNT_REGISTRY_TEMPLATE.md`](ACCOUNT_REGISTRY_TEMPLATE.md)
