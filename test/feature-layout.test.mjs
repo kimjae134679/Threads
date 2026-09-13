@@ -15,6 +15,7 @@ const requiredFiles = [
   "app/features/discovery/sources/source-normalization-sync.js",
   "app/features/discovery/sources/source-review.js",
   "app/features/discovery/sources/source-review.css",
+  "app/features/discovery/viral/group-actions.js",
   "app/ARCHITECTURE.md",
 ];
 
@@ -32,6 +33,8 @@ for (const expected of [
   "features/discovery/sources/source-normalization-sync.js",
   "features/discovery/sources/source-review.js",
   "viral-model.js",
+  "viral-review.js",
+  "features/discovery/viral/group-actions.js",
   "card-story-model.js",
   "warehouse-model.js",
   "content-warehouse.js",
@@ -71,6 +74,20 @@ for (const expected of [
   "duplicateResolution",
 ]) {
   assert.ok(viralReview.includes(expected), `Viral Finder bulk-review wiring missing ${expected}`);
+}
+
+const groupActions = fs.readFileSync(new URL("../app/features/discovery/viral/group-actions.js", import.meta.url), "utf8");
+for (const expected of [
+  "groupDisposition",
+  "data-group-bulk-status",
+  "hold-alternatives",
+  "same-story-alternative-hold",
+  "그룹 → 조사",
+  "그룹 보류",
+  "그룹 패스",
+  "최고점 유지 · 대안 보류",
+]) {
+  assert.ok(groupActions.includes(expected), `Viral group-action feature missing ${expected}`);
 }
 
 console.log("Feature layout regression tests passed.");
