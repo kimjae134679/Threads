@@ -42,10 +42,19 @@ jobs:
           if (connectors.connectors?.openai?.configured !== false) throw new Error('OpenAI must be unconfigured in CI without secret');
           if (connectors.connectors?.youtubeMostPopularKr?.configured !== false) throw new Error('YouTube must be unconfigured in CI without secret');
           if (connectors.connectors?.threads?.configured !== false) throw new Error('Threads must be unconfigured in CI without secret');
+          if (connectors.connectors?.naverApiHub?.configured !== false) throw new Error('NAVER API HUB must be unconfigured in CI without secret');
 
           const app = await fetch('http://127.0.0.1:4173/app/');
           const html = await app.text();
-          if (!app.ok || !html.includes('Trend Inbox') || !html.includes('threads-publisher.js')) throw new Error('static app check failed');
+          const requiredScripts = ['ai-studio.js', 'source-enrichment.js', 'threads-publisher.js', 'experiment-lab.js'];
+          if (!app.ok || !html.includes('Trend Inbox') || requiredScripts.some((name) => !html.includes(name))) {
+            throw new Error('static app feature loading check failed');
+          }
+
+          for (const asset of ['ai-studio.js', 'source-enrichment.js', 'experiment-lab.js']) {
+            const response = await fetch(`http://127.0.0.1:4173/app/${asset}`);
+            if (!response.ok) throw new Error(`missing static asset ${asset}`);
+          }
 
           const research = await fetch('http://127.0.0.1:4173/api/ai/research', {
             method: 'POST',
@@ -55,6 +64,12 @@ jobs:
           const researchBody = await research.json();
           if (research.status !== 503 || researchBody.error !== 'openai_api_key_missing') {
             throw new Error(`expected OpenAI missing-key 503, got ${research.status} ${JSON.stringify(researchBody)}`);
+          }
+
+          const naver = await fetch('http://127.0.0.1:4173/api/naver/search?type=news&query=AI');
+          const naverBody = await naver.json();
+          if (naver.status !== 503 || naverBody.error !== 'naver_api_hub_credentials_missing') {
+            throw new Error(`expected NAVER missing-key 503, got ${naver.status} ${JSON.stringify(naverBody)}`);
           }
 
           const threadsProfile = await fetch('http://127.0.0.1:4173/api/threads/profile');
