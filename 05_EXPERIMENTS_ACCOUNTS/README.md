@@ -8,7 +8,11 @@
 
 현재 계획된 계정 실험군: [`ACCOUNT_REGISTRY.md`](ACCOUNT_REGISTRY.md)
 
+초기 포맷/훅/Reply 실험표: [`EXPERIMENT_MATRIX.md`](EXPERIMENT_MATRIX.md)
+
 새 계정 등록 양식: [`ACCOUNT_REGISTRY_TEMPLATE.md`](ACCOUNT_REGISTRY_TEMPLATE.md)
+
+벤치마크 근거: [`../docs/BENCHMARK_2026-09.md`](../docs/BENCHMARK_2026-09.md)
 
 ## 입력
 
@@ -19,6 +23,7 @@
 - 계정별 포지셔닝 정의
 - 계정마다 실험 가설 설정
 - 플랫폼/포맷/훅/콘텐츠 축별 성과 비교
+- `F01~F20`, `H01~H10`, CTA, 자산 출처, Reply mode를 publication 단위로 추적
 - views / engagement / clicks / conversions / revenue 기록
 - LEARN / KEEP / KILL / SCALE 판정
 - 잘 되는 계정/포맷에 실험량 확대
@@ -74,6 +79,24 @@ TH-C  Internet Story / Culture
 
 같은 주제를 A/B로 시험할 경우에도 `훅/각도/대상/포맷` 중 최소 하나를 의도적으로 다르게 하고 `hypothesis_id`를 붙인다.
 
+## 실제 앱에 저장되는 제작 실험값
+
+후보 단계:
+
+```text
+contentStrategy.contentFormat
+contentStrategy.hookType
+contentStrategy.ctaType
+contentStrategy.sourceAssetType
+contentStrategy.replyMode
+contentStrategy.hasTopicTag
+contentStrategy.note
+```
+
+새 publication이 생기면 해당 값은 `publication.strategy`에 스냅샷으로 고정한다. 이후 후보 전략을 바꾸더라도 과거 게시 결과의 포맷 귀속은 바뀌지 않는다.
+
+Experiment Lab에서는 포맷/훅 필터와 별도 메타 CSV로 비교할 수 있다.
+
 ## 성과 판정
 
 현재 Experiment Lab의 기본 원칙:
@@ -96,6 +119,11 @@ candidate_id
 variant_id
 platform
 hypothesis
+content_format
+hook_type
+cta_type
+source_asset_type
+reply_mode
 metrics
 business_metrics
 auto_decision
