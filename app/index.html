@@ -16,11 +16,14 @@
         <p class="sub">소재를 모으고, 위험도를 확인하고, Research Bundle로 넘기는 1차 작업대</p>
       </div>
       <div class="top-actions">
+        <button id="googleTrendsBtn" class="button primary">Google Trends KR 가져오기</button>
         <button id="exportBtn" class="button ghost">JSON 내보내기</button>
         <label class="button ghost file-button">JSON 불러오기<input id="importInput" type="file" accept="application/json" /></label>
         <button id="resetBtn" class="button danger ghost">전체 비우기</button>
       </div>
     </header>
+
+    <div id="systemMessage" class="system-message" hidden></div>
 
     <section class="stats" aria-label="요약">
       <article><span id="statTotal">0</span><small>전체 후보</small></article>
@@ -69,7 +72,7 @@
           <label>메모<textarea id="noteInput" rows="4" placeholder="왜 뜨는지, 확인할 점, 추가 출처 등을 적어두세요."></textarea></label>
 
           <div class="score-box">
-            <div class="score-heading"><strong>초기 점수 입력</strong><span>실제 자동 수집기가 붙기 전에는 운영자가 직접 평가</span></div>
+            <div class="score-heading"><strong>초기 점수 입력</strong><span>자동 신호가 없는 항목은 운영자가 직접 평가</span></div>
             <label class="range-row">신선도 <input id="freshnessInput" type="range" min="0" max="100" value="70" /><output id="freshnessOut">70</output></label>
             <label class="range-row">상승 속도 <input id="velocityInput" type="range" min="0" max="100" value="50" /><output id="velocityOut">50</output></label>
             <label class="range-row">독자 적합도 <input id="audienceInput" type="range" min="0" max="100" value="60" /><output id="audienceOut">60</output></label>
@@ -82,8 +85,9 @@
 
         <div class="connector-box">
           <div class="connector-head"><strong>수집 연결 상태</strong><span class="pill green">MVP</span></div>
-          <p><b>직접 URL / 메모</b><span>사용 가능</span></p>
-          <p><b>공식 RSS / API</b><span>다음 단계</span></p>
+          <p><b>Google Trends KR RSS</b><span class="ready-text">연결됨</span></p>
+          <p><b>직접 URL / 메모</b><span class="ready-text">사용 가능</span></p>
+          <p><b>뉴스/RSS 추가 소스</b><span>다음 단계</span></p>
           <p><b>Threads API 게시/Insights</b><span>토큰 연결 전</span></p>
           <p><b>DCInside / Blind 크롤링</b><span class="blocked-text">정책상 차단</span></p>
         </div>
@@ -115,7 +119,7 @@
         <div id="candidateList" class="candidate-list"></div>
         <div id="emptyState" class="empty-state">
           <strong>아직 후보가 없습니다.</strong>
-          <span>왼쪽에서 URL이나 소재를 추가하면 여기에 쌓입니다. 샘플/가짜 트렌드는 자동으로 넣지 않습니다.</span>
+          <span>Google Trends KR을 가져오거나 왼쪽에서 실제 URL/소재를 추가하세요. 가짜 샘플 트렌드는 넣지 않습니다.</span>
         </div>
       </section>
 
@@ -171,7 +175,7 @@
     </main>
 
     <footer>
-      <span>데이터는 현재 브라우저 localStorage에만 저장됩니다.</span>
+      <span>Inbox 데이터는 현재 브라우저 localStorage에 저장됩니다. Google Trends 수집은 로컬 Node 서버를 통해 실행됩니다.</span>
       <span><a href="../docs/SOURCE_POLICY.md">Source Policy</a> · <a href="../docs/CONTENT_PIPELINE.md">Content Pipeline</a> · <a href="../docs/EXECUTION_PLAN_30D.md">30일 실행안</a></span>
     </footer>
   </div>
