@@ -6,11 +6,12 @@ Updated: 2026-09-14 KST
 
 This file is the execution handoff for recurring development. Do not stop at planning. Inspect current `main`, continue implementation, test it, fix failures, and leave the next handoff after meaningful changes.
 
-Current repository tip observed during the latest run:
+Current repository state from the latest completed run:
 
-- `2a520b5821a273ca76a5a0d349a8cb10ff2fa124` — `Harden same-story title normalization`
-- baseline at start of that run was `ce603fad61bb632b7e65bbac9312e664f848ad5c`.
-- operations-hub history through `019-sol.md` should be read after this file.
+- implementation tip before final handoff update: `88828d87ab44a79a1b0a788852d7021eab5b192f`
+- latest verified CI: GitHub Actions run `34770599699` on `88828d8...` = **SUCCESS**
+- preceding repaired implementation run `34770550263` on `2a520b5...` = **SUCCESS**
+- read operations-hub `019-sol.md` after this file for exact implementation history.
 - repository tip always wins over stale handoff text.
 
 ## What the latest run added
@@ -18,13 +19,13 @@ Current repository tip observed during the latest run:
 P1 Viral Finder/discovery normalization advanced materially:
 
 - `app/features/discovery/sources/source-model.js`
-  - canonical URL normalization removes common tracking parameters without throwing away meaningful query parameters
+  - canonical URL normalization removes common tracking parameters while preserving meaningful query parameters
   - `engagementEvidence()` explicitly separates **observed** engagement (`manual-observed` or `source-metadata`) from **inferred-only** interest scores
   - `normalizeCandidate()` creates a common cross-platform discovery envelope: source/lane/adapter/collection policy/evidence/risk/dedupe keys
   - exact duplicate grouping and same-story grouping were added
   - same-story title normalization strips common noise tokens such as 속보/단독/영상/짤/breaking/update before grouping
 - `app/features/discovery/sources/source-review.js`
-  - Viral Finder rows now expose evidence state: observed metric / inferred-only / unverified
+  - Viral Finder rows expose evidence state: observed metric / inferred-only / unverified
   - rows expose exact-duplicate or same-story group counts
   - normalized source/lane/evidence/group information is attached as row dataset metadata for later bulk review work
 - `app/features/discovery/sources/source-review.css`
@@ -32,34 +33,40 @@ P1 Viral Finder/discovery normalization advanced materially:
 - `test/discovery-source-model.test.mjs`
   - canonical URL, observed-vs-inferred evidence, normalization, duplicate grouping, manual-only source behavior are regression tested
 
-Commits from that run:
+Implementation commits:
 
-- `0207a5c13fc79ca4f5832683fece88a7c269acbe`
-- `e8fe52bb3f95bf4d338419bcef4bf946a7061815`
-- `f8683c25ea938e47a827de7ec7ed82456e74c19f`
-- `45a4a5ab210c6e934c6a81f742e5ea4baff82418`
-- `2a520b5821a273ca76a5a0d349a8cb10ff2fa124`
+```text
+0207a5c13fc79ca4f5832683fece88a7c269acbe
+e8fe52bb3f95bf4d338419bcef4bf946a7061815
+f8683c25ea938e47a827de7ec7ed82456e74c19f
+45a4a5ab210c6e934c6a81f742e5ea4baff82418
+2a520b5821a273ca76a5a0d349a8cb10ff2fa124
+88828d87ab44a79a1b0a788852d7021eab5b192f
+```
 
 ## Validation state
 
-Important: do not claim green until observed.
+Confirmed green after fixing an intermediate same-story regression:
 
-- an intermediate GitHub Actions run failed in regression checks after the first same-story implementation.
-- likely cause was intentionally tested title variants not grouping because generic `영상/속보` noise remained in the title fingerprint.
-- `2a520b5...` hardened normalization to remove those tokens and triggered a new Actions run `34770550263`.
-- at the end of the run that Actions run was still **queued**, so SUCCESS is **not yet confirmed**.
-- local container verification could not clone GitHub because outbound DNS was unavailable; use GitHub Actions result as the authoritative executable check.
+```text
+Actions 34770550263 — SUCCESS — head 2a520b5821a273ca76a5a0d349a8cb10ff2fa124
+Actions 34770599699 — SUCCESS — head 88828d87ab44a79a1b0a788852d7021eab5b192f
+```
 
-Next run MUST inspect run `34770550263` or the newer tip Actions result first. If it failed, fix CI before expanding P1.
+The first intermediate duplicate-group version had a failing regression because generic title words such as `영상/속보` were not removed consistently. That is fixed. Do not reintroduce a stricter raw-title equality requirement.
+
+Local container cloning could not access github.com because outbound DNS was unavailable; GitHub Actions is the authoritative executable check in that environment.
 
 ## Real discovery test note
 
-A fresh public-web discovery probe was attempted. Search results did not yield a sufficiently strong, current, verifiable multi-source batch with reliable engagement metrics; therefore no weak/old candidate was falsely inserted as a new viral success. Existing real feed examples remain the stronger verified fixtures. Continue looking on useful runs, but only record actually visible metrics and dates.
+A fresh public-web discovery probe was attempted across Reddit/YouTube/news-style search surfaces. It did **not** yield a sufficiently strong new batch that was simultaneously current, multi-source, and backed by verifiable engagement metrics. NAVER direct article access was blocked by robots in the web environment, and several returned results were old/promotional or lacked reliable visible engagement counts.
+
+No weak/old candidate was falsely inserted as a strong viral example. Existing verified discovery fixtures remain the stronger test set. Continue current discovery probes when useful, but only record metrics that are actually visible/verifiable.
 
 ## Mandatory execution loop
 
-1. Read current `main`, recent commits, this file, and the latest operations-hub sequential note.
-2. Check the latest CI result first; fix failures before new expansion when feasible.
+1. Read current `main`, recent commits, this file, and latest operations-hub sequential note.
+2. Check current CI before editing; if the tip is red, repair before expanding when feasible.
 3. Implement the next substantive backlog item. Do not only report plans.
 4. Run repository syntax/regression/server smoke tests through available CI and targeted tests.
 5. Never fake API success, live publishing, metrics, credentials, moderation, OCR, or image masking.
@@ -82,16 +89,15 @@ A fresh public-web discovery probe was attempted. Search results did not yield a
 
 ### P1. Viral Finder / multi-platform discovery — ACTIVE
 
-Already added: Source Registry, theme lanes, source/lane filters, normalized evidence/grouping layer.
+Already added: Source Registry, theme lanes, source/lane filters, normalized observed-vs-inferred evidence layer, canonical URLs, exact-duplicate groups, same-story groups, evidence/group chips.
 
 Next high-value P1 work:
 
-1. confirm/fix CI for the normalization/grouping change.
-2. make bulk import pass every candidate through `normalizeCandidate()` and persist normalized discovery metadata rather than calculating it only at render time.
-3. add a batch duplicate/same-story review surface that lets the user collapse or select a whole group.
-4. add source-risk and observed-vs-inferred filtering to the Viral Finder toolbar.
-5. keep actual adapter states explicit: `connected / connected-when-credentialed / manual-only / planned`.
-6. keep expanding realistic public discovery fixtures only when dates/metrics are genuinely verifiable.
+1. make bulk candidate import pass every candidate through `normalizeCandidate()` and persist normalized discovery metadata rather than calculating it only at render time.
+2. add a batch duplicate/same-story review surface that can collapse/select a whole group and later support keep-strongest/move-group actions.
+3. add source-risk and observed-vs-inferred filtering to the Viral Finder toolbar.
+4. keep actual adapter states explicit: `connected / connected-when-credentialed / manual-only / planned`.
+5. keep expanding realistic public discovery fixtures only when dates/metrics are genuinely verifiable.
 
 Do not manufacture engagement counts. Blind/DCInside remain public-index/user-URL/screenshot/manual Capture paths, not bulk crawlers.
 
