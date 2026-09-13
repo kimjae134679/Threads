@@ -1,0 +1,45 @@
+.cluster-summary {
+  margin: 0 0 12px;
+  border: 1px solid #d8def6;
+  border-radius: 10px;
+  padding: 9px 11px;
+  background: #f6f7ff;
+  color: #4653a3;
+  font-size: 11px;
+}
+.cluster-meta {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.cluster-detail {
+  display: grid;
+  gap: 6px;
+}
+.cluster-member {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  padding: 8px 9px;
+  text-align: left;
+  cursor: pointer;
+}
+.cluster-member:hover {
+  border-color: #aeb7c2;
+  background: #fafbfc;
+}
+.cluster-member.current {
+  border-color: #8f9bd9;
+  background: #f3f5ff;
+}
+.cluster-member span {
+  font-size: 12px;
+  font-weight: 800;
+}
+.cluster-member small {
+  color: var(--muted);
+  font-size: 10px;
+}
