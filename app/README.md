@@ -1,239 +1,280 @@
 # Trend Inbox MVP
 
-`Threads` 프로젝트의 첫 실행형 화면입니다.
+`Threads` 프로젝트의 실행형 콘텐츠 운영 화면입니다.
 
-## 지금 되는 것
+## 현재 되는 것
 
-- Google Trends KR `Trending Now` RSS 실시간 후보 가져오기
-- YouTube Data API `mostPopular` KR 메타데이터 가져오기(선택적 API 키)
-- 직접 URL / 메모 소재 추가
-- DCInside / Blind 자동수집 차단 판정
-- GREEN / YELLOW / RED 소스 위험도 표시
-- 콘텐츠 유형별 추천 플랫폼 표시
-- 운영자 입력 기반 초기 점수
-- 자동수집 항목은 임의 점수 대신 `검토 필요`로 표시
-- 후보별 5개 신호를 사람 평가 후 점수 계산
-- 제목/URL/관련 출처 기반 **유사 토픽 묶기**
-- 수동 Research Bundle 저장
-- 선택적 **OpenAI 웹 검색 기반 AI 조사**
-- AI 조사 결과를 자동 승인하지 않고 `조사 중`으로 저장
-- 사람 검토 완료 전 `제작 후보` 승격 차단
-- 선택적 **Draft Studio**: Threads / Shorts·Reels·TikTok / Instagram Carousel / Blog / YouTube Long 초안 생성
-- Draft Studio 편집 저장 / 복사 / 사람 승인 상태
-- 자동 게시 없음
-- 브라우저 localStorage 저장
-- JSON 내보내기 / 불러오기
+```text
+Google Trends / YouTube / 직접 URL
+→ 후보 Inbox
+→ 유사 토픽 묶기
+→ NAVER 뉴스·블로그·카페·검색트렌드 보강(선택)
+→ 사람 점수 평가
+→ 수동 또는 OpenAI 웹 검색 조사
+→ Research Bundle
+→ 사람 검토 완료
+→ 플랫폼별 Draft Studio
+→ Rights / Safety Gate
+→ 게시 승인 Queue
+→ Threads 공식 API 실제 게시(선택)
+→ Threads Insights 회수
+→ Experiment Lab KEEP / KILL / SCALE
+```
+
+세부 기능:
+
+- Google Trends KR `Trending Now` RSS
+- YouTube Data API `mostPopular` KR 메타데이터
+- NAVER API HUB 뉴스 / 블로그 / 카페글 검색 결과
+- NAVER Search Trend 30일 상대지수
+- 수동 URL / 메모
+- DCInside / Blind 자동수집 차단
+- GREEN / YELLOW / RED 소스 위험도
+- 후보 5개 신호 사람 평가
+- 제목/URL/관련 출처 기반 유사 토픽 묶기
+- 구조화 Research Bundle 저장
+- 선택적 OpenAI Responses API + web search 조사
+- 플랫폼별 Draft Studio
+- 사실 / 권리 / 개인정보 / 명예훼손 / 플랫폼 정책 Safety Gate
+- 사람 게시 승인
+- 승인 이후 내용 변경 시 승인 무효화
+- Threads 텍스트 게시
+- Threads Insights
+- 클릭 / 전환 / 실수익 수동 기록
+- 같은 플랫폼 내부 상대 비교 기반 `LEARN / SCALE / KEEP / KILL`
+- Experiment CSV 내보내기
+- localStorage 저장 + 전체 JSON 백업/복원
 
 ## 실행
 
-Node.js 18 이상에서 저장소 루트 기준:
+Node.js 18 이상에서 저장소 루트:
 
 ```bash
 npm start
 ```
 
-브라우저에서:
+브라우저:
 
 ```text
 http://127.0.0.1:4173/app/
 ```
 
-별도 `npm install`은 필요하지 않습니다. 현재 서버는 Node 기본 모듈과 내장 `fetch`만 사용합니다.
+별도 `npm install`은 필요하지 않습니다.
 
-## 검사
+검사:
 
 ```bash
 npm run check
 ```
 
-GitHub Actions는 다음을 확인합니다.
+GitHub Actions는 JavaScript 문법뿐 아니라 로컬 서버를 실제로 켜서 `/api/health`, `/api/connectors`, 정적 앱과 주요 UI script를 확인합니다. 외부 키가 없는 CI에서는 OpenAI / NAVER / Threads가 성공한 것처럼 보이지 않고 명확한 503을 반환하는지도 검사합니다.
 
-- 모든 JavaScript 문법 검사
-- 로컬 서버 실제 기동
-- `/api/health`
-- `/api/connectors`
-- 정적 앱 `/app/`
-- API 키가 없는 환경에서 AI endpoint가 성공한 것처럼 동작하지 않고 `openai_api_key_missing` 503을 반환하는지
+## 선택적 연결
 
-외부 서비스의 실제 성공 여부는 해당 서비스 키가 없는 CI에서 fake success로 처리하지 않습니다.
-
-## Google Trends 연결
-
-서버가 다음 Trending Now RSS를 서버측에서 읽어 브라우저에 JSON으로 전달합니다.
-
-```text
-https://trends.google.com/trending/rss?geo=KR
-```
-
-브라우저에서 HTML 파일만 직접 더블클릭하면 `/api/...`가 없으므로 가져오기는 동작하지 않습니다. `npm start`로 실행해야 합니다.
-
-Google Trends 항목은 검색 관심도 신호입니다. 사건의 사실 여부를 증명하는 출처가 아니므로 자동으로 `제작 후보`로 승격하거나 게시하지 않습니다.
-
-## YouTube 연결
-
-YouTube는 API 키를 GitHub에 저장하지 않습니다. 실행 전에 `YOUTUBE_API_KEY` 환경변수로 넣습니다.
-
-PowerShell:
+### YouTube Data API
 
 ```powershell
 $env:YOUTUBE_API_KEY="YOUR_KEY"
-npm start
 ```
 
-CMD:
+현재 `videos.list + chart=mostPopular + regionCode=KR`을 사용합니다. 이 값은 2025-07-21 이후 과거 전체 YouTube Trending과 같은 의미가 아니므로 음악·영화·게임 중심의 별도 인기 신호로 취급합니다.
 
-```cmd
-set YOUTUBE_API_KEY=YOUR_KEY
-npm start
+영상 파일을 내려받지 않고 제목, 채널, 게시시각, 조회/좋아요/댓글 등 메타데이터만 저장합니다.
+
+### NAVER API HUB
+
+2026-07-31 이후 신규 구현은 구 네이버 개발자센터 키가 아니라 NAVER API HUB 기준입니다.
+
+```powershell
+$env:NAVER_API_HUB_CLIENT_ID="YOUR_CLIENT_ID"
+$env:NAVER_API_HUB_CLIENT_SECRET="YOUR_CLIENT_SECRET"
 ```
 
-키가 없으면 UI에 `API 키 필요`가 표시되고 버튼이 비활성화됩니다.
+현재 사용:
 
-현재 사용하는 API는 `videos.list` + `chart=mostPopular` + `regionCode=KR`입니다. 이 결과는 2025-07-21 이후 예전 YouTube 전체 Trending 페이지와 같은 의미가 아니며, 인기 음악·영화·게임 차트 성격이 강한 별도 신호로 취급합니다.
+```text
+/search/v1/news
+/search/v1/blog
+/search/v1/cafearticle
+/search-trend/v1/search
+```
 
-수집하는 것은 제목, 채널, 게시시각, 조회/좋아요/댓글 수 등 메타데이터입니다. 영상/썸네일/음원을 다운로드하거나 재사용 권리가 생긴 것으로 취급하지 않습니다.
+검색 결과는 제목/링크/짧은 검색 패시지만 저장하며 본문 재게시 권리가 생겼다고 취급하지 않습니다. Search Trend는 최대값=100 상대지수이므로 자동 점수로 덮어쓰지 않습니다.
 
-## OpenAI AI 조사 / Draft Studio
-
-OpenAI 연결은 선택 사항입니다. 키가 없으면 기존 수동 Research Bundle 기능을 그대로 사용할 수 있습니다.
-
-PowerShell:
+### OpenAI AI 조사 / Draft Studio
 
 ```powershell
 $env:OPENAI_API_KEY="YOUR_KEY"
-npm start
 ```
 
-CMD:
+기본 모델:
 
-```cmd
-set OPENAI_API_KEY=YOUR_KEY
-npm start
+```text
+gpt-5.6-luna
 ```
 
-기본 모델은 비용을 낮추기 위해 `gpt-5.6-luna`입니다. 필요하면 실행 환경에서 변경할 수 있습니다.
+필요하면:
 
 ```powershell
-$env:OPENAI_MODEL="gpt-5.6-terra"
-# 또는 조사/초안을 각각 다르게
-$env:OPENAI_RESEARCH_MODEL="gpt-5.6-terra"
-$env:OPENAI_DRAFT_MODEL="gpt-5.6-luna"
+$env:OPENAI_MODEL="..."
+$env:OPENAI_RESEARCH_MODEL="..."
+$env:OPENAI_DRAFT_MODEL="..."
 ```
 
-키/토큰은 GitHub에 커밋하지 않습니다.
+AI 조사 결과는 항상 `조사 중`에서 시작합니다. AI가 준비됐다고 판단해도 사람 검토 완료로 자동 변경하지 않습니다.
 
-### AI 조사 흐름
+Draft Studio도 사람 검토 완료 Research Bundle에서만 생성되며, 생성본은 자동 게시되지 않습니다.
+
+### Threads 공식 API
+
+```powershell
+$env:THREADS_ACCESS_TOKEN="YOUR_THREADS_USER_ACCESS_TOKEN"
+```
+
+필수 권한:
 
 ```text
-후보 선택
-→ AI로 최신 조사
-→ Responses API + web search
-→ 구조화 Research Bundle 생성
-→ 상태는 무조건 `조사 중`
-→ 사람이 출처/사실/권리 확인
-→ `사람 검토 완료`로 저장
+threads_basic
+threads_content_publish
 ```
 
-AI가 `ready`를 추천하더라도 자동으로 사람 검토 완료가 되지 않습니다.
-
-RED 소스는 AI 요청에 원문 URL을 직접 넘기지 않고, 같은 주제를 **독립된 공개 출처에서만 조사**하도록 처리합니다.
-
-### Draft Studio 흐름
-
-Draft Studio는 `사람 검토 완료` Research Bundle에서만 실행됩니다.
+Insights:
 
 ```text
-사람 검토 완료 Research Bundle
-→ 플랫폼별 AI 초안 생성
-→ Threads
-→ Shorts / Reels / TikTok
-→ Instagram Carousel
-→ Blog
-→ YouTube Long
-→ 편집 저장
-→ 검토 중
-→ 사람 승인
+threads_manage_insights
 ```
 
-`사람 승인`은 초안 검토 상태일 뿐 현재 버전에서는 **자동 게시를 실행하지 않습니다.**
+흐름:
 
-AI 초안은 새 사실을 추가하지 않고 검토 완료 Bundle만 factual ground truth로 사용하도록 서버 지침을 걸어 두었습니다.
+```text
+Draft 사람 승인
+→ Safety Gate 완료
+→ 게시 대기 사람 승인
+→ 대상 @username + 최종 문안 미리보기
+→ 실제 공개 게시 확인 체크
+→ 마지막 확인
+→ /me/threads 컨테이너 생성
+→ /me/threads_publish 게시
+```
 
-## 평가 규칙
+승인 후 문안이나 검토 상태가 바뀌면 게시 승인은 무효화됩니다.
 
-자동으로 들어온 후보는 `freshness`처럼 데이터로 계산 가능한 값만 일부 채우고 나머지는 비워 둡니다.
+상세: [`../docs/THREADS_API_SETUP.md`](../docs/THREADS_API_SETUP.md)
 
-다음 5개가 모두 채워진 뒤에만 초기 점수를 계산합니다.
+## NAVER 한국 자료 보강
 
-- freshness
-- velocity
-- audience fit
-- originality room
-- revenue fit
+후보를 선택하면 검색어를 직접 수정해 다음을 조회할 수 있습니다.
 
-RED 소스 또는 평가가 끝나지 않은 자동수집 후보는 바로 제작 후보로 올리지 않습니다.
+- 뉴스
+- 블로그
+- 카페글
+- 검색 트렌드 30일
 
-## 유사 토픽 묶기
+검색 결과는 후보의 `sourceEnrichment`에 저장됩니다. 개별 검색 결과의 `출처 후보로 추가`를 누르면 `relatedSources`에 들어갑니다.
 
-`유사 토픽 묶기`는 여러 수집 경로에서 같은 이슈가 중복으로 들어오는 문제를 줄이기 위한 **검토 보조 기능**입니다.
+이 동작은 `검증 완료`가 아닙니다. 뉴스/블로그/카페 결과는 Research에서 독립적으로 확인해야 합니다.
 
-판정에 쓰는 신호:
-
-- canonical URL 동일 여부
-- related source URL 겹침
-- 제목 단어 Jaccard 유사도
-- 한국어/영문 제목의 2-gram / 3-gram 문자열 유사도
-- 길이가 짧은 제목에는 더 높은 묶기 기준 적용
-
-결과는 `clusterId`, `clusterSize`, `clusterConfidence`로 Inbox 데이터에 기록합니다.
-
-중요: 이 기능은 후보를 자동 삭제하거나 하나로 합치지 않습니다. 서로 다른 사건이 잘못 묶일 수 있으므로 사람 검토용으로만 사용합니다.
-
-## Research Bundle 저장
-
-후보별로 다음 조사 결과를 저장합니다.
+## Research Bundle
 
 ```text
 reviewStatus       unresearched / researching / reviewed
-whyNow             왜 지금 뜨는가
-verifiedFacts[]    확인된 사실
-claimsToVerify[]   아직 확인할 주장
-angles[]           콘텐츠 각도
-riskNotes          권리/개인정보/명예훼손 메모
-sources[]          추가 출처 URL + 메모
+whyNow
+verifiedFacts[]
+claimsToVerify[]
+angles[]
+riskNotes
+sources[]
 updatedAt
 ```
 
-`사람 검토 완료(reviewed)`로 저장하려면 최소한:
+`reviewed`가 되려면 최소:
 
-- `whyNow` 작성
+- `whyNow`
 - 확인된 사실 1개 이상
 - 추가 출처 1개 이상
 
 이 필요합니다.
 
-후보를 `제작 후보`로 올리려면 기존 점수 평가뿐 아니라 Research Bundle도 `사람 검토 완료` 상태여야 합니다.
+## Rights / Safety Gate
 
-## 데이터
+사람이 각각 판정합니다.
 
-현재 Inbox 자체 데이터는 브라우저의 다음 localStorage key에 저장됩니다.
+```text
+fact
+rights
+privacy
+defamation
+platform
+```
+
+값:
+
+```text
+PASS / WARN / BLOCK / UNKNOWN
+```
+
+- BLOCK이 있으면 게시 승인 불가
+- UNKNOWN이 있으면 게시 승인 불가
+- WARN은 대응 메모가 있어야 다음 단계 진행 가능
+
+## Experiment Lab
+
+실제 게시된 `publications[]`만 실험 대상으로 사용합니다.
+
+Threads에서 현재 보는 값:
+
+```text
+views
+likes
+replies
+reposts
+quotes
+shares
+```
+
+파생:
+
+```text
+engagements = likes + replies + reposts + quotes + shares
+engagement_rate = engagements / views
+```
+
+같은 플랫폼에서 `views > 0`인 게시물이 5개 미만이면 `LEARN`입니다.
+
+5개 이상이면:
+
+```text
+performance_index = 조회수 백분위 * 0.55 + 참여율 백분위 * 0.45
+
+>= 0.75   SCALE
+<= 0.25   KILL
+그 사이   KEEP
+```
+
+클릭/전환/실수익은 실제 값이 있을 때 사람이 입력합니다. 자동 판정은 수동 override 가능합니다.
+
+상세: [`../docs/EXPERIMENT_LAB.md`](../docs/EXPERIMENT_LAB.md)
+
+## 저장 데이터
+
+브라우저 localStorage:
 
 ```text
 threads_trend_inbox_v1
 ```
 
-AI 조사 결과와 Draft Studio도 같은 후보 객체에 저장되어 JSON 내보내기에 포함됩니다.
+후보 객체 안에 Research, Draft, Safety Gate, publications, Insights, business metrics까지 함께 저장됩니다.
 
-계정 동기화/서버 DB는 아직 없습니다. 중요한 Inbox는 `JSON 내보내기`로 백업할 수 있습니다.
+중요한 데이터는 `JSON 내보내기`로 백업합니다. Experiment Lab은 별도로 CSV 내보내기도 지원합니다.
 
 ## 다음 구현 순서
 
-1. 허용된 뉴스/RSS/API 소스 추가
-2. Rights/Safety Gate를 독립 상태로 구조화
-3. Draft 승인 Queue를 목록 화면으로 분리
-4. Threads 공식 API 발행 — 사람 승인된 항목만
-5. 게시 후 Insights 회수
-6. 성과/수익 기록
-7. 실제 데이터 기반 `KEEP / KILL / SCALE`
+1. 실제 Threads 계정으로 텍스트 게시 E2E 1~3건 검증
+2. Insights가 실제 계정 응답 형태와 맞는지 검증
+3. 실제 5건 이상 게시 후 Experiment Lab 초기 기준 보정
+4. 허용된 추가 공식/공개 소스 connector 확장
+5. 이미지/영상 자체 제작 파이프라인
+6. Reels/Shorts/Blog 등 다른 플랫폼 발행/성과 adapter
+7. 계정별 DB/동기화
 
 소스 사용 기준은 [`../docs/SOURCE_POLICY.md`](../docs/SOURCE_POLICY.md)를 우선합니다.
