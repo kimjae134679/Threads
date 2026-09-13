@@ -72,9 +72,10 @@
       const button = document.createElement("button");
       button.type = "button";
       button.dataset.threadsControl = "prepare";
-      button.className = connector.configured ? "button primary" : "button ghost";
-      button.textContent = connector.configured ? "Threads 게시 준비" : "Threads 토큰 필요";
-      button.disabled = !connector.configured;
+      const assigned = Boolean(item.experimentAssignment?.accountId);
+      button.className = connector.configured && assigned ? "button primary" : "button ghost";
+      button.textContent = !connector.configured ? "Threads 토큰 필요" : !assigned ? "계정/실험 배정 필요" : "Threads 게시 준비";
+      button.disabled = !connector.configured || !assigned;
       button.addEventListener("click", () => openPublisher(card, item));
       actions.appendChild(button);
     }
@@ -87,6 +88,10 @@
       showSystemMessage("승인된 Threads 초안을 찾지 못했습니다.", "error");
       return;
     }
+    if (!item.experimentAssignment?.accountId) {
+      showSystemMessage("실제 게시 전에 후보 상세에서 계정/실험 배정을 먼저 저장하세요.", "error");
+      return;
+    }
 
     const box = document.createElement("div");
     box.className = "threads-publish-box";
@@ -95,7 +100,8 @@
     top.className = "threads-publish-top";
     const account = document.createElement("span");
     account.className = "threads-publish-account";
-    account.textContent = profile?.username ? `게시 대상: @${profile.username}` : "게시 대상: 연결된 Threads 계정";
+    const platformAccount = profile?.username ? `@${profile.username}` : "연결된 Threads 계정";
+    account.textContent = `게시 대상: ${platformAccount} · 실험: ${assignmentText(item.experimentAssignment)}`;
     const chars = document.createElement("span");
     chars.className = "threads-char-count";
     chars.textContent = `${[...text].length.toLocaleString()}자`;
@@ -103,7 +109,7 @@
 
     const note = document.createElement("p");
     note.className = "threads-publish-note";
-    note.textContent = "아래 내용은 승인된 Draft Studio Threads 편집본이며 여기서는 수정할 수 없습니다. 수정하려면 Draft Studio로 돌아가 편집 저장 후 다시 승인하세요.";
+    note.textContent = "아래 내용은 승인된 Draft Studio Threads 편집본이며 여기서는 수정할 수 없습니다. 수정하려면 Draft Studio로 돌아가 편집 저장 후 다시 승인하세요. 계정/가설/버전은 게시 기록에 고정됩니다.";
 
     const preview = document.createElement("textarea");
     preview.readOnly = true;
@@ -133,7 +139,7 @@
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     const confirmText = document.createElement("span");
-    confirmText.textContent = "이 버튼을 누르면 연결된 Threads 계정에 위 내용이 실제로 공개 게시된다는 것을 확인했습니다.";
+    confirmText.textContent = "이 버튼을 누르면 연결된 Threads 계정에 위 내용이 실제로 공개 게시되고 현재 실험 배정값이 성과 추적 기준으로 고정된다는 것을 확인했습니다.";
     confirmRow.append(checkbox, confirmText);
 
     const actionRow = document.createElement("div");
@@ -160,7 +166,7 @@
   async function publishNow(item, replyControl, button, box) {
     if (posting.has(item.id)) return;
     const account = profile?.username ? `@${profile.username}` : "연결된 Threads 계정";
-    if (!confirm(`${account}에 실제 공개 게시합니다. 계속할까요?`)) return;
+    if (!confirm(`${account}에 실제 공개 게시합니다. 실험 ${assignmentText(item.experimentAssignment)}로 기록됩니다. 계속할까요?`)) return;
 
     posting.add(item.id);
     button.disabled = true;
@@ -180,6 +186,10 @@
         replyControl: result.replyControl || replyControl,
         publishedAt: result.publishedAt || new Date().toISOString(),
         approvalBasis: item.publishApproval?.basisUpdatedAt || null,
+        experiment: snapshotAssignment(item.experimentAssignment),
+        platformAccount: {
+          username: profile?.username || "",
+        },
         insights: null,
       };
       if (!Array.isArray(item.publications)) item.publications = [];
@@ -188,7 +198,7 @@
       box.remove();
       patchQueue();
       refreshConnector();
-      showSystemMessage(`Threads 게시 성공 · 게시물 ID ${record.id}`, "success");
+      showSystemMessage(`Threads 게시 성공 · ${record.experiment.accountId} · 게시물 ID ${record.id}`, "success");
     } catch (error) {
       button.disabled = false;
       button.textContent = "실제 Threads에 게시";
@@ -205,7 +215,8 @@
 
     const label = document.createElement("span");
     label.className = "threads-posted";
-    label.textContent = `Threads 게시됨 · ${publication.id}`;
+    const experiment = publication.experiment?.accountId ? ` · ${assignmentText(publication.experiment)}` : "";
+    label.textContent = `Threads 게시됨 · ${publication.id}${experiment}`;
 
     const controls = document.createElement("span");
     const insightButton = document.createElement("button");
@@ -264,6 +275,21 @@
       .map((value) => String(value || "").trim())
       .filter(Boolean)
       .join("\n\n");
+  }
+
+  function snapshotAssignment(assignment) {
+    return {
+      accountId: String(assignment?.accountId || ""),
+      hypothesisId: String(assignment?.hypothesisId || ""),
+      variantId: String(assignment?.variantId || ""),
+      goal: String(assignment?.goal || ""),
+      assignmentUpdatedAt: assignment?.updatedAt || null,
+    };
+  }
+
+  function assignmentText(assignment) {
+    const parts = [assignment?.accountId, assignment?.hypothesisId, assignment?.variantId].filter(Boolean);
+    return parts.join(" / ") || "미배정";
   }
 
   function insightText(metrics) {
