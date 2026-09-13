@@ -94,7 +94,6 @@
           <p><b>직접 URL / 메모</b><span class="ready-text">사용 가능</span></p>
           <p><b>유사 토픽 로컬 묶기</b><span class="ready-text">사용 가능</span></p>
           <p><b>Research Bundle 저장</b><span class="ready-text">사용 가능</span></p>
-          <p><b>뉴스/RSS 추가 소스</b><span>다음 단계</span></p>
           <p><b>DCInside / Blind 크롤링</b><span class="blocked-text">정책상 차단</span></p>
         </div>
       </aside>
@@ -223,7 +222,7 @@
     </main>
 
     <footer>
-      <span>Inbox 데이터는 현재 브라우저 localStorage에 저장됩니다. Google Trends/YouTube 수집은 로컬 Node 서버를 통해 실행됩니다.</span>
+      <span>Inbox 데이터는 현재 브라우저 localStorage에 저장됩니다. 외부 수집은 허용된 공식 API/RSS만 사용합니다.</span>
       <span><a href="../docs/SOURCE_POLICY.md">Source Policy</a> · <a href="../docs/CONTENT_PIPELINE.md">Content Pipeline</a> · <a href="../docs/EXECUTION_PLAN_30D.md">30일 실행안</a></span>
     </footer>
   </div>
@@ -231,6 +230,7 @@
   <script src="./youtube.js"></script>
   <script src="./clustering.js"></script>
   <script src="./research-bundle.js"></script>
+  <script src="./source-enrichment.js"></script>
   <script src="./ai-studio.js"></script>
   <script src="./safety-gate.js"></script>
   <script src="./approval-integrity.js"></script>
