@@ -35,11 +35,19 @@
     },
   ];
 
-  bootstrap().catch((error) => {
-    console.error("Feature bootstrap failed", error);
-    root.dataset.featureBootstrap = "error";
-    root.dataset.featureBootstrapError = String(error?.message || error);
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start, { once: true });
+  } else {
+    start();
+  }
+
+  function start() {
+    bootstrap().catch((error) => {
+      console.error("Feature bootstrap failed", error);
+      root.dataset.featureBootstrap = "error";
+      root.dataset.featureBootstrapError = String(error?.message || error);
+    });
+  }
 
   async function bootstrap() {
     root.dataset.featureBootstrap = "loading";
