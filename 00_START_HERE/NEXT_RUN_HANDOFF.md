@@ -8,37 +8,77 @@ This file is the execution handoff for recurring development. Do not stop at pla
 
 Current repository state from the latest completed run:
 
-- implementation tip: `1586905fe363417e8db2468418017f8bc90863fe`
-- latest verified CI: GitHub Actions run `34773565936` on `1586905...` = **SUCCESS**
-- read operations-hub `020-sol.md` after this file for exact implementation history.
+- implementation tip: `db95cf7c649786bedb1f40076412c155b9207d16`
+- latest verified CI: GitHub Actions run `34776451461` on `db95cf7...` = **SUCCESS**
+- read operations-hub `021-sol.md` after this file for exact implementation history.
 - repository tip always wins over stale handoff text.
 
 ## What the latest run added
 
-P1 Viral Finder bulk workflow advanced materially:
+P1 Viral Finder consistency and group review advanced materially.
 
-- `app/viral-review.js`
-  - Viral discovery import now runs each imported candidate through `ThreadsDiscoverySourceModel.normalizeCandidate()` and persists the normalized envelope as `item.discoveryNormalized` instead of relying only on render-time recomputation.
-  - persisted metadata includes canonical URL/source/lane/adapter/collection policy/evidence/risk/dedupe keys plus `normalizedAt` and `normalizedBy`.
-  - existing items missing normalized metadata are backfilled during Viral scoring/rescore.
-  - import duplicate detection now uses canonical URLs, so tracking-parameter variants are rejected as the same imported candidate.
-  - added independent filters for evidence quality (`observed / inferred-only / none`) and source risk (`green / yellow / red / unknown`).
-  - duplicate/same-story groups now have actual review controls:
-    - group select
-    - collapse/expand group (collapsed groups keep the strongest visible)
-    - keep strongest, which moves lower-score group members to `skip` and records a `viralReview.duplicateResolution` audit trail.
-  - rows expose evidence and source-risk chips in the Viral Finder itself.
-- `app/viral-review.css`
-  - added secondary filter and group-review control styling.
-- `test/feature-layout.test.mjs`
-  - guards discovery normalization persistence/filter/group-action wiring against accidental removal.
+### Cross-path discovery normalization
 
-Implementation commits:
+New:
+
+`app/features/discovery/sources/source-normalization-sync.js`
+
+The same `ThreadsDiscoverySourceModel.normalizeCandidate()` envelope is now persisted for candidates entering through:
 
 ```text
-0cc75c4d8276321f3333d62406c434b430448510  Add persisted discovery metadata and group review controls
-13c1bc38c5ad491b5d4ea8341170ff78012f7170  Style Viral Finder evidence and group controls
-1586905fe363417e8db2468418017f8bc90863fe  Guard Viral Finder normalization and group review wiring
+manual candidate form
+Google Trends import
+JSON Inbox import
+existing candidate state at feature bootstrap
+other candidate-list renders that introduce un-normalized items
+```
+
+The synchronization layer uses a stable signature and only persists when normalized content actually changes. It stores `normalizedAt` / `normalizedBy` without continuously rewriting unchanged items.
+
+It is registered centrally in `app/bootstrap/feature-loader.js`.
+
+### Group-wide Viral Finder dispositions
+
+New:
+
+`app/features/discovery/viral/group-actions.js`
+
+Duplicate/same-story group UI now gains:
+
+```text
+그룹 → 조사
+그룹 보류
+그룹 패스
+status summary
+```
+
+BLOCK candidates are not promoted by group actions. Audit metadata is written under `viralReview.groupDisposition*`.
+
+Same-story handling is now explicitly different from exact duplicate handling:
+
+```text
+exact duplicate keep strongest
+→ lower duplicates may go to skip
+
+same story 최고점 유지 · 대안 보류
+→ lower non-blocked variants return to Inbox as held editorial alternatives
+→ duplicateResolution = same-story-alternative-hold
+```
+
+A potential MutationObserver self-loop in status-summary patching was found and fixed before handoff.
+
+## Implementation commits
+
+```text
+2f0fd02da52c6188f16381a2d2f989a5de453ba9  Persist discovery normalization across all candidate paths
+be745512cd1c057fe00be7dcc94847be10e73fd1  Load discovery normalization sync
+2204479ffdf936d3360037bc92110a1575934a76  Guard cross-path discovery normalization sync
+ee150dd3c5a867bceeacb6313907a9c3e22a4c39  Check discovery normalization sync in CI
+04182cb3943cfdc6e199f6229ec694bb9d6fd74e  Add group-wide Viral Finder dispositions
+f5d808285a7e8f8c89287b1efe53a127c9f1b77d  Load Viral Finder group action feature
+49c75862039d91392ddba53f594dced74729d913  Guard Viral Finder group-wide actions
+c1f7c18e50fbc5ec1353c56be1a6fa5795cb4187  Check Viral Finder group actions in CI
+db95cf7c649786bedb1f40076412c155b9207d16  Avoid group status patch observer loop
 ```
 
 ## Validation state
@@ -46,22 +86,32 @@ Implementation commits:
 Confirmed GitHub Actions success:
 
 ```text
-34773559194  head 13c1bc38c5ad491b5d4ea8341170ff78012f7170  SUCCESS
-34773565936  head 1586905fe363417e8db2468418017f8bc90863fe  SUCCESS
+34776351603  head ee150dd3c5a867bceeacb6313907a9c3e22a4c39  SUCCESS
+34776428360  head c1f7c18e50fbc5ec1353c56be1a6fa5795cb4187  SUCCESS
+34776451461  head db95cf7c649786bedb1f40076412c155b9207d16  SUCCESS
 ```
 
-The workflow includes repository JavaScript syntax/regression checks and server smoke configured by `.github/workflows/check.yml`.
+The workflow includes repository JavaScript syntax/regression checks and configured server smoke.
 
-## Real discovery test note
+CI is not a full interactive-browser E2E. If a browser-capable path is available, quickly verify manual/Google/JSON normalization persistence and group buttons before deeper work; fix browser-only issues if found.
 
-A fresh public-web probe was attempted again. It found an indexed Reddit AI digest dated 2026-09-12 that reported high-scoring r/technology topics (for example an AI data-center town-hall controversy around ~4.1K score and 246 comments), but this is a **secondary digest/index record**, not a direct verified source post in the current probe. It was therefore not promoted into the production viral feed and its counts were not treated as canonical observed metrics.
+## Discovery note
 
-Other meme/YouTube-style search results were old, removed, low-signal, or lacked directly verifiable current engagement. Rule remains: `no direct/verifiable metric → do not invent/promote it`.
+No new production candidate was promoted in this run because the work focused on state consistency/review controls.
+
+Rule remains:
+
+```text
+direct/verifiable public metric → may be observed evidence
+secondary digest / unclear metric → do not promote as canonical observed engagement
+```
+
+Blind/DCInside remain public-index/user-URL/screenshot/manual Capture paths only; no bulk crawler.
 
 ## Mandatory execution loop
 
 1. Read current `main`, recent commits, this file, and latest operations-hub sequential note.
-2. Check current CI before editing; if the tip is red, repair before expanding when feasible.
+2. Check current CI before editing; if tip is red, repair before expanding when feasible.
 3. Implement the next substantive backlog item. Do not only report plans.
 4. Run repository syntax/regression/server smoke tests through available CI and targeted tests.
 5. Never fake API success, live publishing, metrics, credentials, moderation, OCR, or image masking.
@@ -82,25 +132,41 @@ Other meme/YouTube-style search results were old, removed, low-signal, or lacked
 
 ## Remaining backlog — execute in order, skipping completed work
 
-### P1. Viral Finder / multi-platform discovery — ACTIVE, close to handoff to P2
+### P1. Viral Finder / multi-platform discovery — MOSTLY COMPLETE
 
-Already added: Source Registry, theme lanes, source/lane filters, normalized observed-vs-inferred evidence layer, canonical URLs, exact-duplicate/same-story groups, persisted normalized discovery metadata for Viral discovery import/backfill, evidence/risk filters, group select/collapse/keep-strongest controls.
+Already added:
 
-Next high-value P1 work:
+- Source Registry and theme lanes
+- source/lane filters
+- adapter states and collection policies
+- canonical URLs
+- observed-vs-inferred engagement evidence
+- exact duplicate / same-story grouping
+- persisted discovery normalization on Viral import and now manual/Google/JSON/base candidate paths
+- evidence/risk filters
+- group select/collapse/keep strongest
+- group-wide research/hold/skip
+- same-story editorial-alternative hold behavior
 
-1. normalize the base JSON import path and Google Trends/manual candidate creation path too, so every candidate source stores the same discovery envelope, not only the Viral discovery import/backfill path.
-2. improve group review with explicit group status summary and `move whole group to research/hold/skip` without selecting members one-by-one.
-3. make `keep strongest` behavior explicit for exact duplicate vs same-story groups; same-story may need `hold alternatives` instead of always skipping depending on editorial use.
-4. preserve adapter states: `connected / connected-when-credentialed / manual-only / planned`.
-5. continue realistic public discovery fixtures only when dates/metrics are genuinely verifiable.
+Short remaining P1 regression task, only if interactive browser testing is available:
 
-Do not manufacture engagement counts. Blind/DCInside remain public-index/user-URL/screenshot/manual Capture paths, not bulk crawlers.
+1. confirm manual form, Google Trends and JSON import persist `discoveryNormalized` after render/reload
+2. click exact-duplicate/same-story group actions and confirm summary + audit behavior
+3. repair any browser-only issue found
 
-### P2. Audience Comfort — NEXT MAJOR PHASE
+Do not delay P2 indefinitely just because full live browser E2E is unavailable.
 
-Existing hard BLOCK: graphic gore/violence, animal abuse, sexual violence/exploitation, graphic self-harm, doxxing, strongly gross/unpleasant material. Appropriate non-graphic sensitive cases may route to REVIEW.
+### P2. Audience Comfort — ACTIVE NEXT PHASE
 
-Next: visible BLOCK/REVIEW reason chips, human-review audit trail, batch filter, Korean/English mixed-text tests. Image review must not pretend masking/OCR succeeded.
+Existing hard BLOCK includes graphic gore/violence, animal abuse, sexual violence/exploitation, graphic self-harm, doxxing, strongly gross/unpleasant material. Appropriate non-graphic sensitive cases may route to REVIEW.
+
+Next implementation targets:
+
+1. show explicit BLOCK/REVIEW category chips and human-readable reason chips in Viral Finder instead of only generic warning text
+2. add a human-review audit trail for REVIEW decisions (who/when/outcome/note where available; no fake reviewer identity)
+3. add batch filters/actions by comfort category/reason while preserving BLOCK fail-closed behavior
+4. expand regression tests with Korean, English, and mixed/obfuscated text variants where reasonable
+5. keep image privacy separate: do not claim OCR/image masking succeeded
 
 ### P3. Bulk candidate review
 
