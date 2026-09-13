@@ -1,4 +1,6 @@
 (() => {
+  const BUCKETS = new Set(["ready", "hot", "evergreen"]);
+
   function currentApproval(item = {}) {
     const approval = item.publishApproval || {};
     return approval.status === "approved"
@@ -51,17 +53,123 @@
     return "ready";
   }
 
+  function normalizeTags(values = []) {
+    const source = Array.isArray(values) ? values : String(values || "").split(",");
+    const out = [];
+    const seen = new Set();
+    for (const value of source) {
+      const tag = String(value || "").normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
+      if (!tag || seen.has(tag)) continue;
+      seen.add(tag);
+      out.push(tag);
+      if (out.length >= 20) break;
+    }
+    return out;
+  }
+
+  function normalizeHistory(values = []) {
+    if (!Array.isArray(values)) return [];
+    return values.slice(-50).map((entry) => ({
+      at: validDate(entry?.at) || null,
+      action: String(entry?.action || "update"),
+      from: entry?.from ? String(entry.from) : null,
+      to: entry?.to ? String(entry.to) : null,
+      note: String(entry?.note || ""),
+    }));
+  }
+
   function normalizeWarehouse(item = {}) {
     const value = item.warehouse || {};
+    const bucket = BUCKETS.has(value.bucket) ? value.bucket : "ready";
     return {
-      bucket: value.bucket === "hot" ? "hot" : "evergreen",
+      schemaVersion: Math.max(2, Number(value.schemaVersion) || 2),
+      bucket,
       priority: clampInt(value.priority, 1, 5, 3),
       status: value.status === "hold" ? "hold" : "active",
       notBefore: validDate(value.notBefore),
       expiresAt: validDate(value.expiresAt),
+      themeTags: normalizeTags(value.themeTags),
+      formatTags: normalizeTags(value.formatTags),
       note: String(value.note || ""),
+      provenance: value.provenance && typeof value.provenance === "object" ? value.provenance : null,
+      history: normalizeHistory(value.history),
       updatedAt: value.updatedAt || null,
     };
+  }
+
+  function freshnessState(item = {}, now = Date.now()) {
+    const warehouse = normalizeWarehouse(item);
+    const expiresAt = Date.parse(warehouse.expiresAt || "");
+    if (Number.isFinite(expiresAt) && expiresAt <= now) return "expired";
+    const notBefore = Date.parse(warehouse.notBefore || "");
+    if (Number.isFinite(notBefore) && notBefore > now) return "scheduled";
+    if (!Number.isFinite(expiresAt)) return warehouse.bucket === "hot" ? "hot-no-expiry" : "open";
+    const hours = Math.max(0, (expiresAt - now) / 3_600_000);
+    if (hours <= 6) return "expiring-soon";
+    if (hours <= 24) return "fresh-today";
+    return "fresh";
+  }
+
+  function assetSummary(item = {}) {
+    const text = hasTextDraft(item);
+    const cards = hasCardAsset(item);
+    const captureCount = (item.cardFactory?.storyboard?.cards || []).filter((card) => card?.type === "capture-image").length;
+    return {
+      text,
+      cards,
+      captureCount,
+      cardCount: Array.isArray(item.cardFactory?.storyboard?.cards) ? item.cardFactory.storyboard.cards.length : 0,
+      imagePrivacyReviewed: captureCount ? cardPrivacyPass(item) : null,
+    };
+  }
+
+  function reviewSummary(item = {}) {
+    const gate = item.safetyGate || {};
+    return {
+      research: item.researchBundle?.reviewStatus || "unreviewed",
+      draft: item.draftStudio?.reviewStatus || "unreviewed",
+      safety: safetyPass(item) ? "pass" : "pending",
+      rights: gate.rights || "unknown",
+      privacy: gate.privacy || "unknown",
+      comfort: comfortBlocked(item) ? "blocked" : (item.viralReview?.decision || "unknown"),
+      publishApprovalCurrent: currentApproval(item),
+    };
+  }
+
+  function provenanceSnapshot(item = {}) {
+    const normalized = item.discoveryNormalized || {};
+    return {
+      candidateId: item.id || null,
+      sourceUrl: item.url || null,
+      canonicalUrl: normalized.canonicalUrl || item.url || null,
+      source: normalized.source || normalized.sourceId || item.sourceType || null,
+      discoveryLane: normalized.lane || normalized.discoveryLane || null,
+      sourceRisk: normalized.sourceRisk || item.sourceRisk || null,
+      sourceAdapterStatus: normalized.adapterStatus || null,
+      observedEngagement: normalized.engagementEvidence?.mode === "observed"
+        ? normalized.engagementEvidence
+        : null,
+      capturedAt: new Date().toISOString(),
+    };
+  }
+
+  function appendHistory(previous = {}, next = {}, at = new Date().toISOString()) {
+    const history = normalizeHistory(previous.history);
+    const fields = ["bucket", "priority", "status", "notBefore", "expiresAt", "note"];
+    for (const field of fields) {
+      const before = String(previous[field] ?? "");
+      const after = String(next[field] ?? "");
+      if (before === after) continue;
+      history.push({ at, action: `set-${field}`, from: before || null, to: after || null, note: "" });
+    }
+    const tagFields = ["themeTags", "formatTags"];
+    for (const field of tagFields) {
+      const before = normalizeTags(previous[field]).join("|");
+      const after = normalizeTags(next[field]).join("|");
+      if (before === after) continue;
+      history.push({ at, action: `set-${field}`, from: before || null, to: after || null, note: "" });
+    }
+    return normalizeHistory(history);
   }
 
   function queueEligibility(item = {}, now = Date.now()) {
@@ -82,6 +190,7 @@
     if (!eligibility.eligible) return Number.NEGATIVE_INFINITY;
     let score = warehouse.priority * 20;
     if (warehouse.bucket === "hot") score += 60;
+    if (warehouse.bucket === "ready") score += 15;
     const expiresAt = Date.parse(warehouse.expiresAt || "");
     if (Number.isFinite(expiresAt)) {
       const hours = Math.max(0, (expiresAt - now) / 3_600_000);
@@ -125,7 +234,14 @@
     cardPrivacyPass,
     comfortBlocked,
     deriveStage,
+    normalizeTags,
+    normalizeHistory,
     normalizeWarehouse,
+    freshnessState,
+    assetSummary,
+    reviewSummary,
+    provenanceSnapshot,
+    appendHistory,
     queueEligibility,
     queueScore,
     sortForQueue,
