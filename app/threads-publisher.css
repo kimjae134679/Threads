@@ -1,0 +1,61 @@
+.threads-publish-box {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #c7d7fe;
+  border-radius: 12px;
+  background: #f8fbff;
+}
+
+.threads-publish-box textarea {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.55;
+  background: #fff;
+}
+
+.threads-publish-top,
+.threads-publish-actions,
+.threads-publication-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.threads-publish-account {
+  font-weight: 700;
+}
+
+.threads-publish-note,
+.threads-char-count,
+.threads-insights {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted, #667085);
+}
+
+.threads-confirm-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 10px 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.threads-confirm-row input { margin-top: 3px; }
+
+.threads-publication-row {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+}
+
+.threads-posted { color: #087443; font-weight: 700; }
+.threads-token-missing { color: #9a3412; font-weight: 700; }
