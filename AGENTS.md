@@ -18,17 +18,24 @@
 ## 현재 실행형 MVP
 
 - UI: `app/index.html`
-- 브라우저 로직: `app/app.js`
+- 브라우저 핵심 로직: `app/app.js`
 - YouTube adapter: `app/youtube.js`
+- 유사 토픽 묶기: `app/clustering.js`
 - 로컬 API/static server: `server.mjs`
 - 실행: `npm start`
 - 검사: `npm run check`
 - 주소: `http://127.0.0.1:4173/app/`
 - 브라우저 저장: localStorage `threads_trend_inbox_v1`
 
-현재 live connector:
+현재 입력/정리 기능:
 - Google Trends KR Trending Now RSS — 기본 사용 가능
 - YouTube Data API `videos.list?chart=mostPopular&regionCode=KR` — `YOUTUBE_API_KEY`가 있을 때만 사용
+- 수동 URL / 메모
+- 소스 위험도 판정
+- 사람 5개 신호 평가 후 점수 계산
+- canonical URL / related URL / title similarity 기반 유사 토픽 묶기
+- Research Bundle용 프롬프트
+- Inbox / 조사 대기 / 제작 후보 / 패스 상태
 
 YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 같은 의미가 아니며 인기 음악·영화·게임 차트 성격이 강한 신호로 표시한다.
 
@@ -45,6 +52,7 @@ YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 �
 - Google Trends 급상승이나 YouTube 인기 메타데이터를 사실 확인 완료로 취급하지 않는다.
 - 자동수집 항목에 근거 없는 점수를 임의 생성하지 않는다. 데이터가 없는 신호는 `UNKNOWN`으로 남기고 사람 평가 후 점수를 계산한다.
 - RED 소스와 미평가 자동수집 항목은 바로 제작 후보로 올리지 않는다.
+- 유사 토픽 알고리즘 결과를 자동 merge/delete 근거로 사용하지 않는다. 교차출처 조사 보조 신호로만 사용한다.
 
 ## 플랫폼별 주의
 
@@ -53,17 +61,17 @@ YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 �
 - **Instagram/Facebook:** 원본 콘텐츠 우선 정책을 전제로 한다. 테두리·자막·속도 변경 정도의 저가치 편집을 원본으로 취급하지 않는다.
 - **Blog:** 대량 AI 페이지 생성·스크래핑 재작성으로 검색 순위를 노리는 구조를 만들지 않는다.
 
-## 구현 우선순위
+## 다음 구현 우선순위
 
 1. 허용된 Source Registry connector 확대
-2. Topic normalization + duplicate clustering
-3. Trend scoring 보정
-4. Research Bundle 실제 실행
-5. Rights/Safety Gate
-6. Platform-specific Draft Studio
-7. Human approval UI
-8. 공식 게시 API 연결
-9. Analytics ingestion
+2. Research Bundle 실제 조사 결과 저장 구조
+3. Rights/Safety Gate 구조화
+4. Topic clustering을 실제 데이터로 보정
+5. Platform-specific Draft Studio
+6. Human Approval Queue
+7. 공식 게시 API 연결
+8. Analytics ingestion
+9. 성과 기반 KEEP / KILL / SCALE
 10. 성과 기반 점수/프롬프트 개선
 
 게시 자동화보다 **출처 추적·권리 판정·승인·분석**을 먼저 완성한다.
