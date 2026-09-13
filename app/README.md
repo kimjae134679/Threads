@@ -14,6 +14,7 @@
 - 자동수집 항목은 임의 점수 대신 `검토 필요`로 표시
 - 후보별 5개 신호를 사람 평가 후 점수 계산
 - 미평가 자동수집 항목은 바로 `제작 후보`로 승격 불가
+- 제목/URL/관련 출처 기반 **유사 토픽 묶기**
 - Research Bundle용 프롬프트 생성/복사
 - 조사 대기 / 제작 후보 / 패스 상태 관리
 - 브라우저 localStorage 저장
@@ -41,7 +42,9 @@ http://127.0.0.1:4173/app/
 npm run check
 ```
 
-`server.mjs`, `app/app.js`, `app/youtube.js`의 JavaScript 문법을 검사합니다.
+`server.mjs`, `app/app.js`, `app/youtube.js`, `app/clustering.js`의 JavaScript 문법을 검사합니다.
+
+GitHub Actions에도 같은 check가 연결되어 있습니다.
 
 ## Google Trends 연결
 
@@ -93,6 +96,22 @@ npm start
 
 RED 소스 또는 평가가 끝나지 않은 자동수집 후보는 바로 제작 후보로 올리지 않습니다.
 
+## 유사 토픽 묶기
+
+`유사 토픽 묶기`는 여러 수집 경로에서 같은 이슈가 중복으로 들어오는 문제를 줄이기 위한 **검토 보조 기능**입니다.
+
+판정에 쓰는 신호:
+
+- canonical URL 동일 여부
+- related source URL 겹침
+- 제목 단어 Jaccard 유사도
+- 한국어/영문 제목의 2-gram / 3-gram 문자열 유사도
+- 길이가 짧은 제목에는 더 높은 묶기 기준 적용
+
+결과는 `clusterId`, `clusterSize`, `clusterConfidence`로 Inbox 데이터에 기록합니다.
+
+중요: 이 기능은 후보를 자동 삭제하거나 하나로 합치지 않습니다. 서로 다른 사건이 잘못 묶일 수 있으므로 사람 검토용으로만 사용합니다.
+
 ## 데이터
 
 현재 Inbox 자체 데이터는 브라우저의 다음 localStorage key에 저장됩니다.
@@ -106,8 +125,8 @@ threads_trend_inbox_v1
 ## 다음 구현 순서
 
 1. 허용된 뉴스/RSS/API 소스 추가
-2. 여러 출처를 하나의 Topic으로 묶는 중복/클러스터링
-3. Research Bundle을 실제 AI 조사 작업으로 넘기는 연결
+2. Research Bundle을 실제 AI 조사 작업으로 넘기는 연결
+3. Rights/Safety Gate 결과 구조화
 4. Draft Studio
 5. 승인 Queue
 6. Threads 공식 API 발행/Insights 회수
