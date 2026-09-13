@@ -8,28 +8,47 @@
 
 | 소스 | 방식 | 무엇을 얻나 | 저장 기본값 | 메모 |
 |---|---|---|---|---|
-| 정부/공공기관 공식 발표 | RSS/API/웹 공개자료 | 사건·정책 1차 사실 | URL + 제목 + 날짜 + 핵심 사실 | 보도자료 자산의 개별 저작권/공공누리 조건은 확인 |
+| 정부/공공기관 공식 발표 | 공식 API/웹 공개자료 | 사건·정책 1차 사실 | URL + 제목 + 날짜 + 핵심 사실 | 보도자료 자산의 개별 저작권/공공누리 조건은 확인 |
 | 기업 공식 Newsroom/IR | RSS/공개 페이지/API | 신제품·실적·발표 | URL + 발표 사실 | 마케팅 문구는 사실과 분리 |
 | YouTube Data API | 공식 API | 영상/채널 메타데이터, 후보 탐색 | ID/URL/메타데이터 | 타인 영상 파일 자체를 수집 자산으로 보지 않음 |
 | Meta/Threads 공식 API | 공식 API | 우리 게시/Insights 중심 | 게시 ID/성과 | 승인된 우리 콘텐츠 발행에 사용 |
-| Naver Search Trend | **NAVER API HUB** | 한국 검색 관심도 변화 | 키워드 + 상대지수 | 2026-07-31 이후 신규 신청은 API HUB 사용 |
+| NAVER Search Trend | **NAVER API HUB** | 한국 검색 관심도 변화 | 키워드 + 상대지수 | 상대값 신호이며 사실 확인 자료가 아님 |
 | Google Trends | 공식 서비스/허용 인터페이스 | 검색 관심 변화 | 키워드/트렌드 신호 | 비공식 대량 스크래핑에 의존하지 않음 |
 | 공개 RSS/Atom | 제공 피드 | 새 글/기사 후보 | URL + 제목 + 발행시각 | 본문 복제 라이선스가 아님 |
 | 직접 제작 자산 | 로컬/클라우드 | 원본 이미지·영상·음성 | 원본 파일/권리정보 | 가장 우선 |
 | Public Domain / 상업 이용 허용 CC | 라이선스 소스 | 시각/음원 소재 | 파일 + 라이선스 증빙 | CC-BY 등 표시 조건 기록 |
 
-### Naver Search Trend 현재 주의
+### NAVER API HUB 현재 구현
 
-네이버는 2026-06-25 `NAVER API HUB`를 출시했고, 2026-07-31부터 Search API / Search Trend / Shopping Insight의 **신규 신청은 API HUB에서만** 받는다. 구 개발자센터에서 2026-07-31 이전 발급받은 키는 2027-06-30까지 유예된다.
+네이버는 2026-06-25 `NAVER API HUB`를 출시했고, 2026-07-31부터 Search API / Search Trend / Shopping Insight의 **신규 신청은 API HUB에서만** 받는다. 구 개발자센터에서 2026-07-31 이전 발급받은 키는 2027-06-30까지 유예되지만 이 저장소의 신규 구현은 API HUB만 사용한다.
 
-새 구현은 구 개발자센터 API를 새로 붙이지 말고 API HUB 기준으로 잡는다.
+현재 구현 endpoint:
+
+```text
+뉴스 검색        GET  /search/v1/news
+블로그 검색      GET  /search/v1/blog
+카페글 검색      GET  /search/v1/cafearticle
+검색어 트렌드    POST /search-trend/v1/search
+```
+
+서버 환경변수:
+
+```text
+NAVER_API_HUB_CLIENT_ID
+NAVER_API_HUB_CLIENT_SECRET
+```
+
+뉴스/블로그/카페 검색 결과에서는 제목, 원문 URL, 네이버 URL, 검색 API가 반환한 짧은 패시지, 발행시각만 저장한다. 이 메타데이터 수집이 기사/블로그/카페 원문의 재게시 권리를 주는 것은 아니다.
+
+검색어 트렌드는 조회 구간의 최대 검색량을 100으로 둔 상대값이다. 최근/이전 평균과 변화율을 보조 신호로 표시하지만 자동으로 `velocity` 점수를 덮어쓰지 않는다.
 
 ## YELLOW — 탐색/참고 가능, 게시 전 검토
 
 | 소스 | 방식 | 허용 기본선 | 금지 기본선 |
 |---|---|---|---|
-| 일반 뉴스 기사 | RSS/검색/수동 링크 | 사실 확인, 제목/URL, 최소 인용, 복수 보도 종합 | 기사 전체 저장·재게시 |
-| 공개 블로그 | 수동/검색 | 아이디어·사실 검증, 링크 | 문단 구조/표현 베끼기 |
+| 일반 뉴스 기사 | NAVER 공식 Search API/RSS/검색/수동 링크 | 사실 확인, 제목/URL, 최소 인용, 복수 보도 종합 | 기사 전체 저장·재게시 |
+| 공개 블로그 | NAVER 공식 Search API/수동/검색 | 아이디어·사실 검증, 링크 | 문단 구조/표현 베끼기 |
+| 네이버 카페 공개 검색 결과 | NAVER 공식 Search API | 소재 발견, 공개 링크, 독립 검증 | 카페 본문 대량 저장·복제, 공식 API 밖 우회 크롤링 |
 | 공개 SNS 포스트 | 공식 embed/수동 링크 | 화제 발견, 반응 맥락 파악 | 이미지/영상 다운로드 후 재업로드 |
 | 일반 공개 커뮤니티 | 수동 링크 + 약관 확인 | 주제 후보, 익명화 후 쟁점 요약 | 약관 미확인 대량 크롤링 |
 | Reddit | 승인된 API 계약이 있을 때만 자동화 검토 | 비상업/승인 범위 내 활용 | 승인 없는 scraping, 상업 파이프라인 자동수집 |
@@ -48,6 +67,10 @@
 | 유료 뉴스레터/유료 기사 본문 | 접근권/저작권 | 제목/공개 요약/공식 1차 자료 탐색 |
 | 방송·영화·드라마·스포츠 중계 완성 영상 | 저작권/수익화 재사용 위험 | 자체 그래픽/해설/허가 클립/공식 리믹스 |
 | 출처 불명 밈/짤 모음 | 권리·초상·맥락 불명 | 웃음 포인트만 새로 제작 |
+
+## 정책브리핑 RSS 주의
+
+대한민국 정책브리핑은 **2026-07-01 RSS 서비스를 중단**했다. 따라서 과거 RSS 주소를 새 자동수집 connector로 사용하지 않는다. 정책 자료가 필요하면 현재 웹 공개 자료나 별도 공식 API가 실제로 허용되는지 확인한 뒤 연결한다.
 
 ## 링크 인박스
 
@@ -71,10 +94,10 @@ claims_to_verify
 한 소스만 뜬다고 트렌드로 보지 않는다.
 
 ```text
-검색 증가     Naver Search Trend / Google Trends
+검색 증가     NAVER Search Trend / Google Trends
 + 공식 발표   기업/기관 Newsroom
-+ 보도량 증가 RSS/news discovery
-+ 소셜 반응   공개 SNS 수동/허용 API 신호
++ 보도량 증가 NAVER News Search / 허용 RSS
++ 커뮤니티 힌트 NAVER Cafe Search / 수동 링크
 + 영상 반응   YouTube 메타데이터/우리 채널 성과
 = topic candidate
 ```
@@ -94,7 +117,7 @@ legal_risk         0~-30
 misinfo_risk       0~-30
 ```
 
-## 실제 구현에 필요한 데이터 모델
+## 실제 구현 데이터 모델
 
 ```text
 Source
@@ -132,8 +155,12 @@ SourceItem
 
 ## 참고
 
-- NAVER Search Trend: https://developers.naver.com/docs/serviceapi/datalab/search/search.md
+- NAVER API HUB Search Trend: https://api.ncloud-docs.com/docs/naver-api-hub-search-trend
+- NAVER API HUB News Search: https://api.ncloud-docs.com/docs/naver-api-hub-search-news
+- NAVER API HUB Blog Search: https://api.ncloud-docs.com/docs/naver-api-hub-search-blog
+- NAVER API HUB Cafe Search: https://api.ncloud-docs.com/docs/naver-api-hub-search-cafearticle
 - NAVER API HUB migration notice: https://developers.naver.com/notice/article/32530
+- 정책브리핑 RSS 중단 공지: https://www.korea.kr/etc/noticeView.do?newsId=132038885
 - Reddit Data API Terms: https://redditinc.com/policies/data-api-terms
 - Reddit Responsible Builder Policy: https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy
 - DCInside terms: https://sign.dcinside.com/join/agree
