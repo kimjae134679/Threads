@@ -33,6 +33,7 @@ document.addEventListener("click", (event) => {
 }, true);
 
 renderResearchBundle();
+loadOptionalAiStudio();
 
 function renderResearchBundle() {
   const item = state.items.find((candidate) => candidate.id === selectedId);
@@ -52,8 +53,10 @@ function saveResearchBundle() {
   const item = state.items.find((candidate) => candidate.id === selectedId);
   if (!item) return;
 
+  const previous = item.researchBundle || {};
   const bundle = {
-    schemaVersion: 1,
+    ...previous,
+    schemaVersion: Math.max(Number(previous.schemaVersion || 1), 1),
     reviewStatus: researchEls.status.value,
     whyNow: researchEls.whyNow.value.trim(),
     verifiedFacts: splitLines(researchEls.facts.value),
@@ -105,6 +108,7 @@ async function copyResearchBundleJson() {
       relatedSources: item.relatedSources || [],
     },
     researchBundle: item.researchBundle || collectUnsavedBundle(),
+    aiResearch: item.aiResearch || null,
   };
 
   const text = JSON.stringify(payload, null, 2);
@@ -124,8 +128,11 @@ async function copyResearchBundleJson() {
 }
 
 function collectUnsavedBundle() {
+  const item = state.items.find((candidate) => candidate.id === selectedId);
+  const previous = item?.researchBundle || {};
   return {
-    schemaVersion: 1,
+    ...previous,
+    schemaVersion: Math.max(Number(previous.schemaVersion || 1), 1),
     reviewStatus: researchEls.status.value,
     whyNow: researchEls.whyNow.value.trim(),
     verifiedFacts: splitLines(researchEls.facts.value),
@@ -182,4 +189,13 @@ function setResearchBadge(status) {
   const [label, tone] = labels[status] || labels.unresearched;
   researchEls.badge.textContent = label;
   researchEls.badge.className = `pill research-${tone}`;
+}
+
+function loadOptionalAiStudio() {
+  if (document.querySelector('script[data-ai-studio="true"]')) return;
+  const script = document.createElement("script");
+  script.src = "./ai-studio.js";
+  script.dataset.aiStudio = "true";
+  script.addEventListener("error", () => console.warn("AI Studio script failed to load."));
+  document.body.appendChild(script);
 }
