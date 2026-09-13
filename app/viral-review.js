@@ -1,5 +1,6 @@
 (() => {
   const model = window.ThreadsViralModel;
+  const discoveryModel = window.ThreadsDiscoverySourceModel;
   const statsAnchor = document.querySelector(".stats");
   const candidateList = document.querySelector("#candidateList");
   if (!model || !statsAnchor || !candidateList) return;
@@ -7,7 +8,10 @@
   loadStyles();
 
   const selected = new Set();
+  const collapsedGroups = new Set();
   let filter = "recommended";
+  let evidenceFilter = "all";
+  let sourceRiskFilter = "all";
   let patchQueued = false;
 
   const section = document.createElement("section");
@@ -27,11 +31,32 @@
     </div>
     <div class="viral-summary" id="viralSummary"></div>
     <div class="viral-toolbar">
-      <div class="viral-filters" id="viralFilters">
-        <button type="button" class="viral-filter active" data-filter="recommended">추천만</button>
-        <button type="button" class="viral-filter" data-filter="all">전체</button>
-        <button type="button" class="viral-filter" data-filter="review">주의 검토</button>
-        <button type="button" class="viral-filter" data-filter="blocked">불쾌감 차단</button>
+      <div class="viral-filter-stack">
+        <div class="viral-filters" id="viralFilters">
+          <button type="button" class="viral-filter active" data-filter="recommended">추천만</button>
+          <button type="button" class="viral-filter" data-filter="all">전체</button>
+          <button type="button" class="viral-filter" data-filter="review">주의 검토</button>
+          <button type="button" class="viral-filter" data-filter="blocked">불쾌감 차단</button>
+        </div>
+        <div class="viral-secondary-filters">
+          <label>반응 근거
+            <select id="viralEvidenceFilter">
+              <option value="all">전체</option>
+              <option value="observed">실측 반응 있음</option>
+              <option value="inferred-only">추정 관심도만</option>
+              <option value="none">반응값 미확인</option>
+            </select>
+          </label>
+          <label>출처 위험
+            <select id="viralSourceRiskFilter">
+              <option value="all">전체</option>
+              <option value="green">GREEN</option>
+              <option value="yellow">YELLOW</option>
+              <option value="red">RED</option>
+              <option value="unknown">미분류</option>
+            </select>
+          </label>
+        </div>
       </div>
       <div class="viral-batch-actions">
         <span id="viralSelectedCount">0개 선택</span>
@@ -49,6 +74,8 @@
   const summary = section.querySelector("#viralSummary");
   const selectedCount = section.querySelector("#viralSelectedCount");
   const importButton = section.querySelector("#viralDiscoveryImportBtn");
+  const evidenceSelect = section.querySelector("#viralEvidenceFilter");
+  const riskSelect = section.querySelector("#viralSourceRiskFilter");
 
   importButton.addEventListener("click", importLatestDiscovery);
   section.querySelector("#viralRescoreBtn").addEventListener("click", () => { scoreAndPersist(); renderPanel(); });
@@ -64,6 +91,8 @@
     section.querySelectorAll("[data-filter]").forEach((el) => el.classList.toggle("active", el === button));
     renderPanel();
   });
+  evidenceSelect.addEventListener("change", () => { evidenceFilter = evidenceSelect.value; renderPanel(); });
+  riskSelect.addEventListener("change", () => { sourceRiskFilter = riskSelect.value; renderPanel(); });
   list.addEventListener("change", (event) => {
     const checkbox = event.target.closest?.("input[data-viral-id]");
     if (!checkbox) return;
@@ -72,6 +101,11 @@
     updateSelectedCount();
   });
   list.addEventListener("click", (event) => {
+    const groupButton = event.target.closest?.("button[data-group-action]");
+    if (groupButton) {
+      handleGroupAction(groupButton.dataset.groupAction, groupButton.dataset.groupKey);
+      return;
+    }
     const open = event.target.closest?.("button[data-open-id]");
     if (!open) return;
     selectedId = open.dataset.openId;
@@ -94,12 +128,16 @@
       const payload = await response.json().catch(() => ({}));
       if (!response.ok || !Array.isArray(payload.items)) throw new Error(`HTTP ${response.status}`);
       const existingKeys = new Set((state.items || []).map((item) => item.sourceKey).filter(Boolean));
-      const existingUrls = new Set((state.items || []).map((item) => String(item.url || "").trim()).filter(Boolean));
+      const existingCanonicalUrls = new Set((state.items || []).map((item) => persistedOrComputedNormalization(item)?.canonicalUrl).filter(Boolean));
       const additions = [];
       for (const source of payload.items) {
         if (!source?.title) continue;
-        if ((source.sourceKey && existingKeys.has(source.sourceKey)) || (source.url && existingUrls.has(source.url))) continue;
-        additions.push(discoveryToCandidate(source, payload));
+        const candidate = discoveryToCandidate(source, payload);
+        const normalized = persistNormalizedDiscovery(candidate, "viral-discovery-import");
+        if ((source.sourceKey && existingKeys.has(source.sourceKey)) || (normalized?.canonicalUrl && existingCanonicalUrls.has(normalized.canonicalUrl))) continue;
+        additions.push(candidate);
+        if (source.sourceKey) existingKeys.add(source.sourceKey);
+        if (normalized?.canonicalUrl) existingCanonicalUrls.add(normalized.canonicalUrl);
       }
       if (additions.length) {
         state.items = [...additions, ...state.items];
@@ -156,6 +194,23 @@
     };
   }
 
+  function persistNormalizedDiscovery(item, reason = "backfill") {
+    if (!discoveryModel?.normalizeCandidate || !item) return null;
+    const normalized = discoveryModel.normalizeCandidate(item);
+    item.discoveryNormalized = {
+      ...normalized,
+      normalizedAt: new Date().toISOString(),
+      normalizedBy: reason,
+    };
+    return item.discoveryNormalized;
+  }
+
+  function persistedOrComputedNormalization(item) {
+    if (item?.discoveryNormalized?.schemaVersion === 1) return item.discoveryNormalized;
+    if (discoveryModel?.normalizeCandidate) return discoveryModel.normalizeCandidate(item);
+    return null;
+  }
+
   function suggestedPlatforms(kind) {
     if (kind === "humor" || kind === "story") return ["Threads", "Instagram Carousel", "Instagram Reels", "YouTube Shorts"];
     if (kind === "useful" || kind === "product") return ["Threads", "Instagram Carousel", "Naver Blog", "YouTube Shorts"];
@@ -174,17 +229,47 @@
 
   function scoredRows() {
     const seen = new Set();
-    return (state.items || []).map((item) => {
+    const rows = (state.items || []).map((item) => {
       const result = model.score(item);
       const key = model.dedupeKey(item);
       const duplicate = seen.has(key);
       seen.add(key);
-      return { item, result, duplicate };
+      const normalized = persistedOrComputedNormalization(item);
+      return { item, result, duplicate, normalized };
     }).sort((a, b) => b.result.viralScore - a.result.viralScore || new Date(b.item.createdAt || 0) - new Date(a.item.createdAt || 0));
+    attachGroupInfo(rows);
+    return rows;
+  }
+
+  function attachGroupInfo(rows) {
+    if (!discoveryModel?.groupCandidates) return;
+    const byId = new Map(rows.map((row) => [row.item.id, row]));
+    const grouped = discoveryModel.groupCandidates(rows.map((row) => row.item));
+    const assign = (groups, type) => {
+      for (const group of groups) {
+        const members = group.members.map((member) => byId.get(member.item?.id)).filter(Boolean);
+        if (members.length < 2) continue;
+        const strongest = [...members].sort((a, b) => b.result.viralScore - a.result.viralScore)[0];
+        for (const row of members) {
+          if (row.groupInfo && row.groupInfo.type === "exact") continue;
+          row.groupInfo = {
+            type,
+            key: `${type}:${group.key}`,
+            rawKey: group.key,
+            count: members.length,
+            memberIds: members.map((entry) => entry.item.id),
+            strongestId: strongest.item.id,
+          };
+        }
+      }
+    };
+    assign(grouped.exactDuplicates, "exact");
+    assign(grouped.sameStories, "story");
   }
 
   function scoreAndPersist() {
     for (const { item, result } of scoredRows()) {
+      if (!item.discoveryNormalized?.schemaVersion) persistNormalizedDiscovery(item, "score-backfill");
       item.viralReview = {
         viralScore: result.viralScore,
         comfortScore: result.comfort.score,
@@ -215,7 +300,7 @@
       ${summaryBox(counts.blocked, "불쾌감 차단")}
     `;
 
-    const visible = rows.filter((row) => matchesFilter(row));
+    const visible = rows.filter((row) => matchesFilter(row) && !hiddenByCollapsedGroup(row));
     list.innerHTML = "";
     if (!visible.length) {
       list.innerHTML = '<div class="empty-state compact"><strong>조건에 맞는 바이럴 후보가 없습니다.</strong><span>최신 실제 발견 묶음, Google Trends, YouTube 또는 수동 URL을 먼저 반입하세요.</span></div>';
@@ -228,13 +313,22 @@
   }
 
   function matchesFilter(row) {
+    if (evidenceFilter !== "all" && (row.normalized?.engagementEvidence?.level || "none") !== evidenceFilter) return false;
+    const risk = row.normalized?.sourceRisk || row.item.sourceRisk || "unknown";
+    if (sourceRiskFilter !== "all" && risk !== sourceRiskFilter) return false;
     if (filter === "all") return true;
     if (filter === "blocked") return row.result.decision === "BLOCK";
     if (filter === "review") return row.result.decision === "REVIEW";
     return ["STRONG", "CANDIDATE"].includes(row.result.decision) && !row.duplicate;
   }
 
-  function rowElement({ item, result, duplicate }) {
+  function hiddenByCollapsedGroup(row) {
+    const info = row.groupInfo;
+    if (!info || !collapsedGroups.has(info.key)) return false;
+    return row.item.id !== info.strongestId;
+  }
+
+  function rowElement({ item, result, duplicate, normalized, groupInfo }) {
     const article = document.createElement("article");
     const blocked = result.decision === "BLOCK";
     const review = result.decision === "REVIEW";
@@ -249,6 +343,8 @@
     ].filter(Boolean).join(" · ") || "정량 반응값 없음";
     const source = item.sourceMeta?.community || item.sourceMeta?.provider || item.sourceType || "manual";
     const disabled = blocked || duplicate;
+    const groupLabel = groupInfo?.type === "exact" ? "완전중복" : "같은소재";
+    const collapsed = groupInfo ? collapsedGroups.has(groupInfo.key) : false;
     article.innerHTML = `
       <label class="viral-check" title="${disabled ? (blocked ? "불쾌감 필터 차단" : "중복 후보") : "제작 후보로 선택"}">
         <input type="checkbox" data-viral-id="${escapeHtml(item.id)}" ${selected.has(item.id) ? "checked" : ""} ${disabled ? "disabled" : ""} />
@@ -259,17 +355,83 @@
           <span class="pill ${tone(result.decision)}">${escapeHtml(label(result.decision))}</span>
           <span class="viral-comfort">Comfort ${result.comfort.score}</span>
           <span class="viral-source">${escapeHtml(source)}</span>
+          ${normalized?.engagementEvidence?.level === "observed" ? '<span class="pill green">실측 근거</span>' : normalized?.engagementEvidence?.level === "inferred-only" ? '<span class="pill neutral">추정 근거</span>' : '<span class="pill neutral">반응 미확인</span>'}
+          ${normalized?.sourceRisk ? `<span class="pill ${normalized.sourceRisk === "red" ? "red" : normalized.sourceRisk === "yellow" ? "yellow" : "green"}">${escapeHtml(normalized.sourceRisk.toUpperCase())}</span>` : ""}
           ${item.manualCaptureOnly ? '<span class="pill neutral">원문은 수동 확인</span>' : ""}
           ${duplicate ? '<span class="pill neutral">중복</span>' : ""}
         </div>
         <h3>${escapeHtml(item.title || "제목 없음")}</h3>
         <p>${escapeHtml(metricText)}</p>
         <small>인기도 ${result.components.popularity} · 대화 ${result.components.discussion} · 신선도 ${result.components.freshness} · 카드화 ${result.components.cardability}</small>
+        ${groupInfo ? `
+          <div class="viral-group-review">
+            <span>${escapeHtml(groupLabel)} ${groupInfo.count}건 · ${item.id === groupInfo.strongestId ? "현재 그룹 최고점" : "그룹 후보"}</span>
+            <button type="button" class="button ghost" data-group-action="select" data-group-key="${escapeHtml(groupInfo.key)}">그룹 선택</button>
+            <button type="button" class="button ghost" data-group-action="collapse" data-group-key="${escapeHtml(groupInfo.key)}">${collapsed ? "펼치기" : "접기"}</button>
+            <button type="button" class="button ghost" data-group-action="keep-strongest" data-group-key="${escapeHtml(groupInfo.key)}">최고점만 유지</button>
+          </div>
+        ` : ""}
         ${blocked ? `<div class="viral-warning">불쾌감 자동 차단: ${escapeHtml(blockReason(result))}</div>` : review ? '<div class="viral-warning mild">주의 소재가 감지되어 사람 확인 후 사용합니다.</div>' : ""}
       </div>
       <button type="button" class="button ghost" data-open-id="${escapeHtml(item.id)}">열기</button>
     `;
     return article;
+  }
+
+  function currentGroups() {
+    const rows = scoredRows();
+    const groups = new Map();
+    for (const row of rows) {
+      if (!row.groupInfo || groups.has(row.groupInfo.key)) continue;
+      groups.set(row.groupInfo.key, row.groupInfo);
+    }
+    return { rows, groups };
+  }
+
+  function handleGroupAction(action, key) {
+    if (!key) return;
+    const { rows, groups } = currentGroups();
+    const group = groups.get(key);
+    if (!group) return;
+    if (action === "collapse") {
+      if (collapsedGroups.has(key)) collapsedGroups.delete(key);
+      else collapsedGroups.add(key);
+      renderPanel();
+      return;
+    }
+    if (action === "select") {
+      let changed = 0;
+      for (const row of rows) {
+        if (!group.memberIds.includes(row.item.id)) continue;
+        if (row.result.comfort.blocked || row.duplicate) continue;
+        if (!selected.has(row.item.id)) changed += 1;
+        selected.add(row.item.id);
+      }
+      renderPanel();
+      showSystemMessage(`${changed}개 그룹 후보를 선택했습니다. 차단/완전중복 비주력 항목은 제외했습니다.`, changed ? "success" : "info");
+      return;
+    }
+    if (action === "keep-strongest") {
+      let changed = 0;
+      for (const row of rows) {
+        if (!group.memberIds.includes(row.item.id) || row.item.id === group.strongestId) continue;
+        row.item.status = "skip";
+        row.item.viralReview = {
+          ...(row.item.viralReview || {}),
+          duplicateResolution: group.type === "exact" ? "exact-duplicate-skip" : "same-story-lower-score-skip",
+          duplicateGroupKey: group.rawKey,
+          keptStrongestId: group.strongestId,
+          resolvedAt: new Date().toISOString(),
+        };
+        row.item.updatedAt = new Date().toISOString();
+        selected.delete(row.item.id);
+        changed += 1;
+      }
+      persist();
+      render();
+      renderPanel();
+      showSystemMessage(`${changed}개를 그룹 내 낮은 점수 후보로 패스하고 최고점 1건을 유지했습니다.`, changed ? "success" : "info");
+    }
   }
 
   function selectRecommended() {
