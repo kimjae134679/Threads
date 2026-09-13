@@ -5,6 +5,7 @@
   const byId = new Map(registry.sources.map((source) => [source.id, source]));
   const lanesById = new Map(registry.lanes.map((lane) => [lane.id, lane]));
   const TRACKING_PARAMS = new Set(["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid", "gclid", "igshid", "ref", "ref_src", "share"]);
+  const TITLE_NOISE = new Set(["속보", "단독", "공식", "영상", "짤", "펌", "근황", "화제", "논란", "breaking", "official", "update", "updated", "video", "clip"]);
   const METRICS = [
     ["views", ["viewCount", "views"]],
     ["likes", ["likeCount", "likes", "upvotes"]],
@@ -123,14 +124,14 @@
   }
 
   function normalizedTitle(value) {
-    return String(value || "")
+    const compact = String(value || "")
       .toLowerCase()
       .replace(/https?:\/\/\S+/g, " ")
       .replace(/\[[^\]]{1,24}\]|\([^)]{1,24}\)/g, " ")
-      .replace(/\b(속보|단독|official|breaking|update|영상|짤|펌)\b/gi, " ")
       .replace(/[^0-9a-z가-힣]+/gi, " ")
       .replace(/\s+/g, " ")
       .trim();
+    return compact.split(" ").filter((token) => token && !TITLE_NOISE.has(token)).join(" ");
   }
 
   function sameStoryKey(item = {}) {
