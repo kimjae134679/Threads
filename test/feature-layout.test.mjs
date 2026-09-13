@@ -16,6 +16,9 @@ const requiredFiles = [
   "app/features/discovery/sources/source-review.js",
   "app/features/discovery/sources/source-review.css",
   "app/features/discovery/viral/group-actions.js",
+  "app/features/discovery/comfort/comfort-model.js",
+  "app/features/discovery/comfort/comfort-review.js",
+  "app/features/discovery/comfort/comfort-review.css",
   "app/ARCHITECTURE.md",
 ];
 
@@ -35,6 +38,9 @@ for (const expected of [
   "viral-model.js",
   "viral-review.js",
   "features/discovery/viral/group-actions.js",
+  "features/discovery/comfort/comfort-model.js",
+  "features/discovery/comfort/comfort-review.js",
+  "features/discovery/comfort/comfort-review.css",
   "card-story-model.js",
   "warehouse-model.js",
   "content-warehouse.js",
@@ -88,6 +94,29 @@ for (const expected of [
   "최고점 유지 · 대안 보류",
 ]) {
   assert.ok(groupActions.includes(expected), `Viral group-action feature missing ${expected}`);
+}
+
+const comfortModel = fs.readFileSync(new URL("../app/features/discovery/comfort/comfort-model.js", import.meta.url), "utf8");
+for (const expected of [
+  "blocked_comfort_cannot_be_human_approved",
+  "reviewSource",
+  "categoriesAtReview",
+  "safeBatchDisposition",
+  "skip-blocked",
+]) {
+  assert.ok(comfortModel.includes(expected), `Audience Comfort model missing ${expected}`);
+}
+
+const comfortReview = fs.readFileSync(new URL("../app/features/discovery/comfort/comfort-review.js", import.meta.url), "utf8");
+for (const expected of [
+  "AUDIENCE COMFORT / HUMAN REVIEW",
+  "comfortCategoryFilter",
+  "사람 검토 승인",
+  "자동 BLOCK · 승인 불가",
+  "comfortBatchSkipBlocked",
+  "scanSignature",
+]) {
+  assert.ok(comfortReview.includes(expected), `Audience Comfort UI missing ${expected}`);
 }
 
 console.log("Feature layout regression tests passed.");
