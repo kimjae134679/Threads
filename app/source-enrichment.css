@@ -1,0 +1,21 @@
+.source-enrichment { display: grid; gap: 12px; }
+.source-enrichment-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.source-enrichment-head h3 { margin: 0 0 4px; }
+.source-enrichment-help { color: var(--muted, #667085); font-size: .86rem; line-height: 1.45; }
+.source-enrichment-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.naver-trend-summary { border: 1px solid var(--line, #e4e7ec); border-radius: 12px; padding: 12px; background: var(--soft, #f8fafc); }
+.naver-trend-summary strong,
+.naver-trend-summary span,
+.naver-trend-summary small { display: block; }
+.naver-trend-summary span { margin-top: 4px; }
+.naver-trend-summary small { margin-top: 5px; color: var(--muted, #667085); }
+.naver-search-results { display: grid; gap: 8px; }
+.naver-source-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: start; border: 1px solid var(--line, #e4e7ec); border-radius: 12px; padding: 12px; }
+.naver-source-row strong { display: block; margin: 5px 0; }
+.naver-source-row p { margin: 0 0 6px; color: var(--muted, #667085); font-size: .86rem; line-height: 1.45; }
+.naver-source-row a { font-size: .84rem; }
+.naver-source-meta { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; color: var(--muted, #667085); font-size: .78rem; }
+@media (max-width: 680px) {
+  .naver-source-row { grid-template-columns: 1fr; }
+  .naver-source-row .button { width: 100%; }
+}
