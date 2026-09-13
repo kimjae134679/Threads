@@ -18,6 +18,7 @@
       <div class="top-actions">
         <button id="googleTrendsBtn" class="button primary">Google Trends KR 가져오기</button>
         <button id="youtubeBtn" class="button">YouTube 인기 KR 가져오기</button>
+        <button id="clusterBtn" class="button">유사 토픽 묶기</button>
         <button id="exportBtn" class="button ghost">JSON 내보내기</button>
         <label class="button ghost file-button">JSON 불러오기<input id="importInput" type="file" accept="application/json" /></label>
         <button id="resetBtn" class="button danger ghost">전체 비우기</button>
@@ -89,6 +90,7 @@
           <p><b>Google Trends KR RSS</b><span class="ready-text">연결됨</span></p>
           <p><b>YouTube Data API</b><span id="youtubeConnectorStatus">확인 중</span></p>
           <p><b>직접 URL / 메모</b><span class="ready-text">사용 가능</span></p>
+          <p><b>유사 토픽 로컬 묶기</b><span class="ready-text">사용 가능</span></p>
           <p><b>뉴스/RSS 추가 소스</b><span>다음 단계</span></p>
           <p><b>Threads API 게시/Insights</b><span>토큰 연결 전</span></p>
           <p><b>DCInside / Blind 크롤링</b><span class="blocked-text">정책상 차단</span></p>
@@ -118,6 +120,7 @@
             </select>
           </div>
         </div>
+        <div id="clusterSummary" class="cluster-summary" hidden></div>
         <div id="candidateList" class="candidate-list"></div>
         <div id="emptyState" class="empty-state">
           <strong>아직 후보가 없습니다.</strong>
@@ -142,6 +145,11 @@
           <div class="detail-section">
             <h3>판정</h3>
             <dl id="decisionGrid" class="decision-grid"></dl>
+          </div>
+
+          <div id="clusterDetailSection" class="detail-section" hidden>
+            <h3>유사 토픽 묶음 <small class="muted-inline">자동 병합 아님 · 검토용</small></h3>
+            <div id="clusterDetail" class="cluster-detail"></div>
           </div>
 
           <div class="detail-section">
@@ -195,5 +203,6 @@
   </div>
   <script src="./app.js"></script>
   <script src="./youtube.js"></script>
+  <script src="./clustering.js"></script>
 </body>
 </html>
