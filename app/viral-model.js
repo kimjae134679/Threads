@@ -1,10 +1,65 @@
 (() => {
-  const severePatterns = [
-    /동물\s*학대/i, /고어/i, /참수/i, /토막/i, /시체/i, /유혈/i, /잔혹\s*영상/i,
-    /강간/i, /아동\s*성/i, /성착취/i, /자살\s*(영상|사진)/i, /신상\s*털/i, /도xx/i,
-  ];
-  const cautionPatterns = [
-    /폭행/i, /학대/i, /사망/i, /살인/i, /피투성이/i, /혐오/i, /성적/i, /노출/i, /괴롭힘/i,
+  const comfortRules = [
+    {
+      id: "graphic_violence",
+      label: "고어/잔혹 폭력",
+      severity: "block",
+      patterns: [/고어/i, /참수/i, /토막/i, /시체\s*(사진|영상)?/i, /유혈\s*(사진|영상)/i, /잔혹\s*(사진|영상|장면)/i, /gore/i, /behead/i, /dismember/i, /graphic\s+violence/i],
+    },
+    {
+      id: "animal_abuse",
+      label: "동물 학대",
+      severity: "block",
+      patterns: [/동물\s*학대/i, /동물\s*고문/i, /동물을?\s*(때리|죽이|괴롭히)/i, /animal\s+abuse/i, /animal\s+torture/i],
+    },
+    {
+      id: "sexual_violence",
+      label: "성폭력/성착취",
+      severity: "block",
+      patterns: [/강간/i, /성폭행/i, /성착취/i, /아동\s*성/i, /미성년.*성착취/i, /rape/i, /sexual\s+assault/i, /sexual\s+exploitation/i, /csam/i],
+    },
+    {
+      id: "self_harm_graphic",
+      label: "자해/자살 장면",
+      severity: "block",
+      patterns: [/자살\s*(영상|사진|장면)/i, /자해\s*(영상|사진|장면)/i, /suicide\s*(video|photo|footage)/i, /self[- ]harm\s*(video|photo|footage)/i],
+    },
+    {
+      id: "doxxing",
+      label: "신상털기/도싱",
+      severity: "block",
+      patterns: [/신상\s*털/i, /신상\s*공개.*(주소|전화|직장|학교)/i, /도xx/i, /doxx/i, /home\s+address.*leak/i],
+    },
+    {
+      id: "gross_unpleasant",
+      label: "과도하게 불쾌한 소재",
+      severity: "block",
+      patterns: [/구더기\s*(떼|가득|영상|사진)?/i, /토사물\s*(사진|영상)/i, /배설물\s*(사진|영상)/i, /썩은\s*시체/i, /maggot\s*(infestation|video|photo)/i, /vomit\s*(video|photo)/i, /feces\s*(video|photo)/i],
+    },
+    {
+      id: "physical_violence",
+      label: "폭행/살인/학대 언급",
+      severity: "review",
+      patterns: [/폭행/i, /학대/i, /살인/i, /피투성이/i, /폭력\s*사건/i, /assault/i, /murder/i],
+    },
+    {
+      id: "death_distress",
+      label: "사망/참사",
+      severity: "review",
+      patterns: [/사망/i, /참사/i, /사고\s*현장/i, /fatal/i, /killed/i],
+    },
+    {
+      id: "sexual_distress",
+      label: "성적/노출 주의",
+      severity: "review",
+      patterns: [/성적\s*(논란|묘사|내용)/i, /노출\s*(논란|사진|영상)/i, /sexual\s+content/i, /nudity/i],
+    },
+    {
+      id: "harassment_hate",
+      label: "괴롭힘/혐오",
+      severity: "review",
+      patterns: [/괴롭힘/i, /혐오\s*(발언|표현|논란)/i, /harassment/i, /hate\s+speech/i],
+    },
   ];
 
   function clamp(value, min = 0, max = 100) {
@@ -36,17 +91,46 @@
     };
   }
 
+  function comfortText(input) {
+    if (typeof input === "string") return input;
+    const research = input?.researchBundle || {};
+    return [
+      input?.title,
+      input?.note,
+      research.whyNow,
+      ...(research.claims || research.claimsToVerify || []),
+      ...(research.verifiedFacts || []),
+      ...(research.angles || []),
+    ].filter(Boolean).join("\n");
+  }
+
   function comfortScan(input) {
-    const text = typeof input === "string"
-      ? input
-      : [input?.title, input?.note, input?.researchBundle?.whyNow, ...(input?.researchBundle?.claims || [])].filter(Boolean).join("\n");
-    const severeHits = severePatterns.filter((pattern) => pattern.test(text)).map((pattern) => pattern.source);
-    const cautionHits = cautionPatterns.filter((pattern) => pattern.test(text)).map((pattern) => pattern.source);
-    let score = 100 - severeHits.length * 55 - cautionHits.length * 14;
+    const text = comfortText(input);
+    const categories = [];
+    for (const rule of comfortRules) {
+      const hits = rule.patterns.filter((pattern) => pattern.test(text)).map((pattern) => pattern.source);
+      if (!hits.length) continue;
+      categories.push({ id: rule.id, label: rule.label, severity: rule.severity, hits });
+    }
+
+    const blockCategories = categories.filter((entry) => entry.severity === "block");
+    const reviewCategories = categories.filter((entry) => entry.severity === "review");
+    let score = 100 - blockCategories.length * 60 - reviewCategories.length * 16;
     score = clamp(score);
-    const blocked = severeHits.length > 0 || score < 60;
-    const level = blocked ? "blocked" : score < 80 ? "review" : "comfortable";
-    return { score, blocked, level, severeHits, cautionHits };
+    const blocked = blockCategories.length > 0 || score < 60;
+    const level = blocked ? "blocked" : reviewCategories.length > 0 || score < 82 ? "review" : "comfortable";
+    const severeHits = blockCategories.flatMap((entry) => entry.hits);
+    const cautionHits = reviewCategories.flatMap((entry) => entry.hits);
+    return {
+      score,
+      blocked,
+      level,
+      categories,
+      blockReasons: blockCategories.map((entry) => entry.id),
+      reviewReasons: reviewCategories.map((entry) => entry.id),
+      severeHits,
+      cautionHits,
+    };
   }
 
   function freshnessScore(item = {}) {
@@ -110,10 +194,20 @@
   }
 
   function dedupeKey(item = {}) {
-    const url = String(item.url || "").trim().toLowerCase().replace(/[?#].*$/, "");
+    const url = String(item.url || "").trim().toLowerCase().replace(/[?#].*$/, "").replace(/\/$/, "");
     if (url) return `url:${url}`;
     return `title:${String(item.title || "").toLowerCase().replace(/[^0-9a-z가-힣]+/gi, " ").trim()}`;
   }
 
-  window.ThreadsViralModel = { clamp, extractMetrics, comfortScan, freshnessScore, cardabilityScore, score, dedupeKey };
+  window.ThreadsViralModel = {
+    comfortRules,
+    clamp,
+    extractMetrics,
+    comfortText,
+    comfortScan,
+    freshnessScore,
+    cardabilityScore,
+    score,
+    dedupeKey,
+  };
 })();
