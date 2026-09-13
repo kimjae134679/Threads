@@ -4,119 +4,140 @@ Updated: 2026-09-14 KST
 
 ## Read this first
 
-This file is the execution handoff for recurring development. Do not stop at planning. Inspect current `main`, continue implementation, test it, fix failures, and leave the next handoff after meaningful changes.
+This is the execution handoff for recurring development. Do not stop at planning. Inspect current `main`, continue implementation, test it, fix failures, and leave the next handoff after meaningful changes.
 
-Current repository state from the latest completed run:
+Current completed implementation checkpoint:
 
-- implementation tip: `db95cf7c649786bedb1f40076412c155b9207d16`
-- latest verified CI: GitHub Actions run `34776451461` on `db95cf7...` = **SUCCESS**
-- read operations-hub `021-sol.md` after this file for exact implementation history.
+- implementation tip: `3ef258ec679ac3c1d05913a7e9a9511ba5b65760`
+- GitHub Actions run `34779668883`: syntax/regression checks **SUCCESS**, local server smoke **SUCCESS** (job `103784236352`)
+- read operations-hub `022-sol.md` after this file for exact implementation history.
 - repository tip always wins over stale handoff text.
 
-## What the latest run added
+## Latest run — P2 Audience Comfort materially implemented
 
-P1 Viral Finder consistency and group review advanced materially.
+New feature domain:
 
-### Cross-path discovery normalization
+```text
+app/features/discovery/comfort/
+├─ comfort-model.js
+├─ comfort-review.js
+└─ comfort-review.css
+```
+
+It is loaded centrally from `app/bootstrap/feature-loader.js` after Viral Finder. No cross-feature companion chain was introduced.
+
+### Visible category/reason review UI
+
+A new `AUDIENCE COMFORT / HUMAN REVIEW` panel shows:
+
+- BLOCK / REVIEW / comfortable counts
+- level filter
+- comfort-category filter
+- explicit human-readable reason chips
+- recent human-review audit result/note where present
+- REVIEW-only approve / hold / reject controls
+- BLOCK rows explicitly show `자동 BLOCK · 승인 불가`
+
+The UI persists the latest scan envelope in `item.comfortReview.latestScan` with a stable `scanSignature`, avoiding needless repeated writes.
+
+### Human review audit
+
+`ThreadsComfortReviewModel.appendAudit()` records:
+
+```text
+outcome
+note
+reviewedAt
+reviewer                 null unless a real identity is supplied
+reviewSource             human-ui
+comfortLevelAtReview
+comfortScoreAtReview
+categoriesAtReview[]
+blockReasonsAtReview[]
+reviewReasonsAtReview[]
+```
+
+No reviewer identity is fabricated.
+
+Hard safety rule:
+
+```text
+BLOCK + approve
+→ throws blocked_comfort_cannot_be_human_approved
+```
+
+A human review may clear only a REVIEW candidate, not a hard BLOCK candidate.
+
+### Batch comfort actions
+
+Current filtered set can perform:
+
+```text
+현재 REVIEW 보류
+현재 BLOCK 패스
+```
+
+`safeBatchDisposition()` refuses to use review-hold as a way to promote BLOCK candidates. BLOCK batch handling is only fail-closed skip.
+
+### Mixed/obfuscated text regression
+
+`app/viral-model.js` now also catches reasonable separator-obfuscation variants for high-risk terms, including examples such as:
+
+```text
+동 물 학 대
+g o r e
+d.o.x.x
+self_harm footage
+```
+
+This is intentionally narrow; it is not claimed to be a semantic moderation model.
+
+### Tests / package
 
 New:
 
-`app/features/discovery/sources/source-normalization-sync.js`
+`test/comfort-model.test.mjs`
 
-The same `ThreadsDiscoverySourceModel.normalizeCandidate()` envelope is now persisted for candidates entering through:
+It verifies:
 
-```text
-manual candidate form
-Google Trends import
-JSON Inbox import
-existing candidate state at feature bootstrap
-other candidate-list renders that introduce un-normalized items
-```
+- Korean/English mixed obfuscated hard-BLOCK detection
+- doxxing variant detection
+- REVIEW can receive a human audit decision
+- reviewer remains null unless actually supplied
+- BLOCK cannot be human-approved
+- batch skip affects BLOCK only
+- REVIEW category hold remains separate
 
-The synchronization layer uses a stable signature and only persists when normalized content actually changes. It stores `normalizedAt` / `normalizedBy` without continuously rewriting unchanged items.
+`test/feature-layout.test.mjs` now requires the Comfort feature files and central-loader registration.
 
-It is registered centrally in `app/bootstrap/feature-loader.js`.
+`package.json` is now `0.14.0`; syntax/test commands include the new model/UI/test files.
 
-### Group-wide Viral Finder dispositions
+## P1 status
 
-New:
+P1 Viral Finder remains mostly complete from prior runs:
 
-`app/features/discovery/viral/group-actions.js`
+- Source Registry/theme lanes
+- adapter states and collection policies
+- canonical URLs
+- observed-vs-inferred engagement evidence
+- cross-path persisted discovery normalization
+- exact duplicate / same-story grouping
+- evidence/risk filters
+- group select/collapse/keep strongest
+- group-wide research/hold/skip
+- same-story alternatives held instead of treated as useless exact duplicates
 
-Duplicate/same-story group UI now gains:
-
-```text
-그룹 → 조사
-그룹 보류
-그룹 패스
-status summary
-```
-
-BLOCK candidates are not promoted by group actions. Audit metadata is written under `viralReview.groupDisposition*`.
-
-Same-story handling is now explicitly different from exact duplicate handling:
-
-```text
-exact duplicate keep strongest
-→ lower duplicates may go to skip
-
-same story 최고점 유지 · 대안 보류
-→ lower non-blocked variants return to Inbox as held editorial alternatives
-→ duplicateResolution = same-story-alternative-hold
-```
-
-A potential MutationObserver self-loop in status-summary patching was found and fixed before handoff.
-
-## Implementation commits
-
-```text
-2f0fd02da52c6188f16381a2d2f989a5de453ba9  Persist discovery normalization across all candidate paths
-be745512cd1c057fe00be7dcc94847be10e73fd1  Load discovery normalization sync
-2204479ffdf936d3360037bc92110a1575934a76  Guard cross-path discovery normalization sync
-ee150dd3c5a867bceeacb6313907a9c3e22a4c39  Check discovery normalization sync in CI
-04182cb3943cfdc6e199f6229ec694bb9d6fd74e  Add group-wide Viral Finder dispositions
-f5d808285a7e8f8c89287b1efe53a127c9f1b77d  Load Viral Finder group action feature
-49c75862039d91392ddba53f594dced74729d913  Guard Viral Finder group-wide actions
-c1f7c18e50fbc5ec1353c56be1a6fa5795cb4187  Check Viral Finder group actions in CI
-db95cf7c649786bedb1f40076412c155b9207d16  Avoid group status patch observer loop
-```
-
-## Validation state
-
-Confirmed GitHub Actions success:
-
-```text
-34776351603  head ee150dd3c5a867bceeacb6313907a9c3e22a4c39  SUCCESS
-34776428360  head c1f7c18e50fbc5ec1353c56be1a6fa5795cb4187  SUCCESS
-34776451461  head db95cf7c649786bedb1f40076412c155b9207d16  SUCCESS
-```
-
-The workflow includes repository JavaScript syntax/regression checks and configured server smoke.
-
-CI is not a full interactive-browser E2E. If a browser-capable path is available, quickly verify manual/Google/JSON normalization persistence and group buttons before deeper work; fix browser-only issues if found.
-
-## Discovery note
-
-No new production candidate was promoted in this run because the work focused on state consistency/review controls.
-
-Rule remains:
-
-```text
-direct/verifiable public metric → may be observed evidence
-secondary digest / unclear metric → do not promote as canonical observed engagement
-```
-
-Blind/DCInside remain public-index/user-URL/screenshot/manual Capture paths only; no bulk crawler.
+Browser interaction E2E remains useful if a browser-capable run is available, but do not delay P2/P3 indefinitely for it.
 
 ## Mandatory execution loop
 
 1. Read current `main`, recent commits, this file, and latest operations-hub sequential note.
-2. Check current CI before editing; if tip is red, repair before expanding when feasible.
-3. Implement the next substantive backlog item. Do not only report plans.
-4. Run repository syntax/regression/server smoke tests through available CI and targeted tests.
+2. If current tip CI is red, repair before expanding when feasible.
+3. Implement the next substantive backlog item, not only plans.
+4. Run syntax/regression/server smoke plus targeted tests.
 5. Never fake API success, live publishing, metrics, credentials, moderation, OCR, or image masking.
 6. Preserve approval, rights, safety, and human-review gates.
-7. Commit/push meaningful changes and update operations-hub handoff.
+7. Commit meaningful changes and update operations-hub handoff.
 8. Remove temporary junk.
 
 ## Role boundaries
@@ -130,51 +151,35 @@ Blind/DCInside remain public-index/user-URL/screenshot/manual Capture paths only
 - 05 owns experiment/account strategy and performance interpretation.
 - `A10 Unknown rights` remains non-publishable until resolved and re-reviewed.
 
-## Remaining backlog — execute in order, skipping completed work
+## Remaining backlog — execute in order
 
-### P1. Viral Finder / multi-platform discovery — MOSTLY COMPLETE
+### P2. Audience Comfort — ACTIVE / PARTIALLY COMPLETE
 
-Already added:
+Completed this run:
 
-- Source Registry and theme lanes
-- source/lane filters
-- adapter states and collection policies
-- canonical URLs
-- observed-vs-inferred engagement evidence
-- exact duplicate / same-story grouping
-- persisted discovery normalization on Viral import and now manual/Google/JSON/base candidate paths
-- evidence/risk filters
-- group select/collapse/keep strongest
-- group-wide research/hold/skip
-- same-story editorial-alternative hold behavior
+- explicit BLOCK/REVIEW category/reason UI
+- persisted latest Comfort scan metadata
+- human-review audit trail with no fake identity
+- hard prohibition against human-approving BLOCK
+- category/level filters
+- safe batch REVIEW hold and BLOCK skip
+- mixed/obfuscated Korean/English regression cases
 
-Short remaining P1 regression task, only if interactive browser testing is available:
+Next P2 targets:
 
-1. confirm manual form, Google Trends and JSON import persist `discoveryNormalized` after render/reload
-2. click exact-duplicate/same-story group actions and confirm summary + audit behavior
-3. repair any browser-only issue found
-
-Do not delay P2 indefinitely just because full live browser E2E is unavailable.
-
-### P2. Audience Comfort — ACTIVE NEXT PHASE
-
-Existing hard BLOCK includes graphic gore/violence, animal abuse, sexual violence/exploitation, graphic self-harm, doxxing, strongly gross/unpleasant material. Appropriate non-graphic sensitive cases may route to REVIEW.
-
-Next implementation targets:
-
-1. show explicit BLOCK/REVIEW category chips and human-readable reason chips in Viral Finder instead of only generic warning text
-2. add a human-review audit trail for REVIEW decisions (who/when/outcome/note where available; no fake reviewer identity)
-3. add batch filters/actions by comfort category/reason while preserving BLOCK fail-closed behavior
-4. expand regression tests with Korean, English, and mixed/obfuscated text variants where reasonable
-5. keep image privacy separate: do not claim OCR/image masking succeeded
+1. integrate Comfort result chips directly into existing Viral Finder candidate rows as well as the dedicated panel
+2. ensure downstream `ready` / editorial handoff respects `comfortReview.humanClearedReview` for REVIEW candidates, without allowing BLOCK override
+3. add audit/history visibility in candidate detail view and exportable metadata where appropriate
+4. add more false-positive/false-negative regressions around words such as news reporting, quoted terms, and mixed punctuation without weakening hard BLOCK
+5. if browser interaction is available, test category filters, review buttons, batch actions, reload persistence, and mobile width
 
 ### P3. Bulk candidate review
 
-Need select all/visible/group, approve/reject/hold/tag, duplicate-group actions, bulk editorial handoff, blocked reason visibility, keyboard/large-list usability.
+Need select all/visible/group, approve/reject/hold/tag, duplicate-group actions, bulk editorial handoff, blocked reason visibility, keyboard/large-list usability. Existing group actions can be reused rather than reimplemented.
 
 ### P4. Community Card Factory
 
-1080x1350 hook/excerpt/reaction/ending packages. Preserve text PII masking. Next privacy item remains real manual drag-rectangle image masks before final PNG export.
+1080x1350 hook/excerpt/reaction/ending packages. Preserve text PII masking. Next privacy item remains **real manual drag-rectangle image masks before final PNG export**. Do not claim OCR/image masking succeeded.
 
 ### P5. Content Warehouse
 
