@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: JavaScript syntax and regression checks
         run: npm run check
       - name: Local server smoke test
@@ -51,23 +51,52 @@ jobs:
             throw new Error('static app feature loading check failed');
           }
 
-          const dynamicScripts = ['content-strategy.js', 'publication-strategy-snapshot.js', 'experiment-metadata.js'];
-          const assets = [...htmlScripts, ...dynamicScripts];
-          for (const asset of assets) {
+          const baseAssets = [
+            ...htmlScripts,
+            'content-strategy.js',
+            'publication-strategy-snapshot.js',
+            'experiment-metadata.js',
+            'viral-model.js',
+            'viral-review.js',
+            'card-story-model.js',
+            'card-factory.js',
+            'warehouse-model.js',
+            'content-warehouse.js',
+            'bootstrap/feature-loader.js',
+            'features/themes/theme-taxonomy.js',
+            'features/themes/theme-model.js',
+            'features/themes/theme-review.js',
+            'features/themes/theme-review.css',
+          ];
+          for (const asset of baseAssets) {
             const response = await fetch(`http://127.0.0.1:4173/app/${asset}`);
             if (!response.ok) throw new Error(`missing static asset ${asset}`);
           }
 
           const assignmentBootstrap = await fetch('http://127.0.0.1:4173/app/experiment-assignment.js').then(r => r.text());
-          if (!assignmentBootstrap.includes('content-strategy.js') || !assignmentBootstrap.includes('experiment-metadata.js')) {
-            throw new Error('experiment assignment companion bootstrap missing');
+          if (!assignmentBootstrap.includes('bootstrap/feature-loader.js') || assignmentBootstrap.includes('loadCompanion')) {
+            throw new Error('experiment assignment must delegate feature loading to central bootstrap');
           }
+
+          const featureBootstrap = await fetch('http://127.0.0.1:4173/app/bootstrap/feature-loader.js').then(r => r.text());
+          for (const required of [
+            'features/themes/theme-taxonomy.js',
+            'features/themes/theme-model.js',
+            'features/themes/theme-review.js',
+            'viral-model.js',
+            'card-story-model.js',
+            'warehouse-model.js',
+            'content-warehouse.js',
+          ]) {
+            if (!featureBootstrap.includes(required)) throw new Error(`feature bootstrap missing ${required}`);
+          }
+
           const contentStrategy = await fetch('http://127.0.0.1:4173/app/content-strategy.js').then(r => r.text());
           if (!contentStrategy.includes('publication-strategy-snapshot.js') || !contentStrategy.includes('A10')) {
             throw new Error('content strategy publication snapshot or rights guard missing');
           }
 
-          for (const stylesheet of ['experiment-assignment.css', 'content-strategy.css', 'experiment-metadata.css']) {
+          for (const stylesheet of ['experiment-assignment.css', 'content-strategy.css', 'experiment-metadata.css', 'viral-review.css', 'card-factory.css', 'content-warehouse.css']) {
             const response = await fetch(`http://127.0.0.1:4173/app/${stylesheet}`);
             if (!response.ok) throw new Error(`missing stylesheet ${stylesheet}`);
           }
@@ -94,7 +123,7 @@ jobs:
           }
 
           const unapproved = await fetch('http://127.0.0.1:4173/api/threads/publish', {
-            method: 'POST', headers: {'content-type': 'application/json'},
+            method: 'POST', headers: {'content-type':'application/json'},
             body: JSON.stringify({candidate: {title: 'CI publish guard'}}),
           });
           const unapprovedBody = await unapproved.json();
