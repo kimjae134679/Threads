@@ -65,6 +65,7 @@
   });
 
   sync();
+  loadFeatureBootstrap();
 
   function currentItem() {
     return (state.items || []).find((item) => item.id === selectedId) || null;
@@ -132,5 +133,16 @@
     link.rel = "stylesheet";
     link.href = "./experiment-assignment.css";
     document.head.appendChild(link);
+  }
+
+  function loadFeatureBootstrap() {
+    const src = "./bootstrap/feature-loader.js";
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = false;
+    script.dataset.bootstrap = "features";
+    script.addEventListener("error", () => console.error("Feature bootstrap failed to load."), { once: true });
+    document.body.appendChild(script);
   }
 })();
