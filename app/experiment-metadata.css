@@ -1,0 +1,25 @@
+.experiment-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin: 8px 0 10px;
+}
+
+.experiment-meta-row .pill {
+  font-size: 0.76rem;
+}
+
+.experiment-meta-filters {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.experiment-meta-filters select {
+  min-width: 130px;
+}
+
+.experiment-card[data-meta-hidden="true"] {
+  display: none;
+}
