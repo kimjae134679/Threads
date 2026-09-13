@@ -6,9 +6,10 @@ Updated: 2026-09-14 KST
 
 This is the execution handoff for recurring development. Do not stop at planning. Inspect current `main`, continue implementation, test it, fix failures, and leave the next handoff after meaningful changes.
 
-Current implementation checkpoint:
+Current verified implementation checkpoint:
 
-- implementation tip: `4c3e724bec79395658c2c88df2797728f24d7783`
+- implementation tip: `29a9b996e3513e4c8d9d1b8e6cc5ebeffc789c81`
+- GitHub Actions run `34785739288`, job `103800763036`: JavaScript syntax/regression **SUCCESS**, local server smoke **SUCCESS**
 - package: `0.16.0`
 - latest sequential operations note to read next: `024-sol.md`
 - repository tip always wins over stale handoff text.
