@@ -21,6 +21,7 @@
 - 브라우저 핵심 로직: `app/app.js`
 - YouTube adapter: `app/youtube.js`
 - 유사 토픽 묶기: `app/clustering.js`
+- Research Bundle 저장/검토 gate: `app/research-bundle.js`
 - 로컬 API/static server: `server.mjs`
 - 실행: `npm start`
 - 검사: `npm run check`
@@ -28,16 +29,16 @@
 - 브라우저 저장: localStorage `threads_trend_inbox_v1`
 
 현재 입력/정리 기능:
-- Google Trends KR Trending Now RSS — 기본 사용 가능
-- YouTube Data API `videos.list?chart=mostPopular&regionCode=KR` — `YOUTUBE_API_KEY`가 있을 때만 사용
+- Google Trends KR Trending Now RSS
+- YouTube Data API `videos.list?chart=mostPopular&regionCode=KR` (`YOUTUBE_API_KEY` 있을 때)
 - 수동 URL / 메모
 - 소스 위험도 판정
 - 사람 5개 신호 평가 후 점수 계산
 - canonical URL / related URL / title similarity 기반 유사 토픽 묶기
-- Research Bundle용 프롬프트
+- AI 조사용 프롬프트
+- 구조화된 Research Bundle 저장: whyNow / verifiedFacts / claimsToVerify / angles / riskNotes / sources
+- Research Bundle 사람 검토 완료 gate
 - Inbox / 조사 대기 / 제작 후보 / 패스 상태
-
-YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 같은 의미가 아니며 인기 음악·영화·게임 차트 성격이 강한 신호로 표시한다.
 
 ## 고정 원칙
 
@@ -50,13 +51,15 @@ YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 �
 - 식별 가능한 일반인의 개인정보와 익명 커뮤니티 이용자 추적 정보는 게시물에서 제거한다.
 - 비밀키/API key/token/cookie/session은 GitHub에 기록하지 않는다.
 - Google Trends 급상승이나 YouTube 인기 메타데이터를 사실 확인 완료로 취급하지 않는다.
-- 자동수집 항목에 근거 없는 점수를 임의 생성하지 않는다. 데이터가 없는 신호는 `UNKNOWN`으로 남기고 사람 평가 후 점수를 계산한다.
-- RED 소스와 미평가 자동수집 항목은 바로 제작 후보로 올리지 않는다.
-- 유사 토픽 알고리즘 결과를 자동 merge/delete 근거로 사용하지 않는다. 교차출처 조사 보조 신호로만 사용한다.
+- 자동수집 항목에 근거 없는 점수를 임의 생성하지 않는다. 데이터가 없는 신호는 `UNKNOWN`으로 남긴다.
+- RED 소스와 미평가 후보는 바로 제작 후보로 올리지 않는다.
+- 유사 토픽 결과를 자동 merge/delete 근거로 사용하지 않는다.
+- `reviewed` Research Bundle은 최소 whyNow + verified fact 1개 + source 1개를 요구한다.
+- 제작 후보 승격에는 사람 신호 평가와 Research Bundle 사람 검토 완료가 모두 필요하다.
 
 ## 플랫폼별 주의
 
-- **YouTube:** AI 사용 자체는 금지되지 않지만 양산형/반복형/재사용 콘텐츠는 수익화에 불리하다. 영상별 독자적 서사·해설·편집 기여를 남긴다. 현실적으로 보이는 AI 합성은 필요한 경우 표시한다.
+- **YouTube:** AI 사용 자체는 금지되지 않지만 양산형/반복형/재사용 콘텐츠는 수익화에 불리하다. 영상별 독자적 서사·해설·편집 기여를 남긴다.
 - **X:** 2026-09 Original Content Rewards에서는 자동 수단으로 생성되거나 게시된 콘텐츠가 수익 대상에서 제외될 수 있으므로 수익 목적 계정은 사람 승인/직접 게시를 기본값으로 둔다.
 - **Instagram/Facebook:** 원본 콘텐츠 우선 정책을 전제로 한다. 테두리·자막·속도 변경 정도의 저가치 편집을 원본으로 취급하지 않는다.
 - **Blog:** 대량 AI 페이지 생성·스크래핑 재작성으로 검색 순위를 노리는 구조를 만들지 않는다.
@@ -64,8 +67,8 @@ YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 �
 ## 다음 구현 우선순위
 
 1. 허용된 Source Registry connector 확대
-2. Research Bundle 실제 조사 결과 저장 구조
-3. Rights/Safety Gate 구조화
+2. Research Bundle 실제 AI 조사 자동 연결
+3. Rights/Safety Gate를 별도 판정 상태로 구조화
 4. Topic clustering을 실제 데이터로 보정
 5. Platform-specific Draft Studio
 6. Human Approval Queue
@@ -85,4 +88,4 @@ YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 �
 
 ## 완료 기준
 
-문서 조사 작업은 출처와 기준일을 남긴다. 구현 작업은 fake success 없이 실제 입력→초안→검사→승인→출력 흐름이 재현되어야 완료로 본다. 외부 API 키가 없으면 해당 connector를 명확히 `미설정` 상태로 두고 성공한 것처럼 표시하지 않는다.
+문서 조사 작업은 출처와 기준일을 남긴다. 구현 작업은 fake success 없이 실제 입력→조사→검사→승인→출력 흐름이 재현되어야 완료로 본다. 외부 API 키가 없으면 해당 connector를 명확히 `미설정` 상태로 두고 성공한 것처럼 표시하지 않는다.
