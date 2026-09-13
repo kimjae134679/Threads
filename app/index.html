@@ -7,6 +7,7 @@
   <meta name="description" content="AI Content Monetization Lab - Trend Inbox MVP" />
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./clustering.css" />
+  <link rel="stylesheet" href="./research.css" />
 </head>
 <body>
   <div class="app-shell">
@@ -92,6 +93,7 @@
           <p><b>YouTube Data API</b><span id="youtubeConnectorStatus">확인 중</span></p>
           <p><b>직접 URL / 메모</b><span class="ready-text">사용 가능</span></p>
           <p><b>유사 토픽 로컬 묶기</b><span class="ready-text">사용 가능</span></p>
+          <p><b>Research Bundle 저장</b><span class="ready-text">사용 가능</span></p>
           <p><b>뉴스/RSS 추가 소스</b><span>다음 단계</span></p>
           <p><b>Threads API 게시/Insights</b><span>토큰 연결 전</span></p>
           <p><b>DCInside / Blind 크롤링</b><span class="blocked-text">정책상 차단</span></p>
@@ -132,7 +134,7 @@
       <aside class="panel detail-panel">
         <div id="detailEmpty" class="empty-state compact">
           <strong>후보를 선택하세요.</strong>
-          <span>소스 위험도, 플랫폼 추천, Research Bundle 초안을 볼 수 있습니다.</span>
+          <span>소스 위험도, 플랫폼 추천, Research Bundle을 볼 수 있습니다.</span>
         </div>
         <div id="detailContent" hidden>
           <div class="panel-title-row">
@@ -151,6 +153,30 @@
           <div id="clusterDetailSection" class="detail-section" hidden>
             <h3>유사 토픽 묶음 <small class="muted-inline">자동 병합 아님 · 검토용</small></h3>
             <div id="clusterDetail" class="cluster-detail"></div>
+          </div>
+
+          <div class="detail-section research-workspace">
+            <div class="research-heading">
+              <h3>조사 결과 저장</h3>
+              <span id="researchStatusBadge" class="pill neutral">미조사</span>
+            </div>
+            <label>검토 상태
+              <select id="researchReviewStatus">
+                <option value="unresearched">미조사</option>
+                <option value="researching">조사 중</option>
+                <option value="reviewed">사람 검토 완료</option>
+              </select>
+            </label>
+            <label>왜 지금 뜨는가<textarea id="researchWhyNow" rows="3" placeholder="급상승 배경과 현재 시점에서의 의미"></textarea></label>
+            <label>확인된 사실 <small class="muted-inline">한 줄에 하나</small><textarea id="researchVerifiedFacts" rows="5" placeholder="공식 자료/복수 출처로 확인된 사실만"></textarea></label>
+            <label>아직 확인할 주장 <small class="muted-inline">한 줄에 하나</small><textarea id="researchClaims" rows="4" placeholder="단일 보도, 익명 주장, 추정 등"></textarea></label>
+            <label>콘텐츠 각도 <small class="muted-inline">한 줄에 하나</small><textarea id="researchAngles" rows="4" placeholder="왜 뜨나 / 비교 / 쟁점 / 영향 등"></textarea></label>
+            <label>권리·개인정보·명예훼손 메모<textarea id="researchRiskNotes" rows="4" placeholder="사용 가능한 자산, 금지 자산, 익명화, 단정 금지 사항"></textarea></label>
+            <label>추가 출처 <small class="muted-inline">URL | 메모 형식, 한 줄에 하나</small><textarea id="researchSources" rows="5" placeholder="https://... | 공식 발표"></textarea></label>
+            <div class="research-actions">
+              <button id="saveResearchBtn" class="button primary">Research Bundle 저장</button>
+              <button id="copyResearchJsonBtn" class="button ghost">Bundle JSON 복사</button>
+            </div>
           </div>
 
           <div class="detail-section">
@@ -182,7 +208,7 @@
           </div>
 
           <div class="detail-section">
-            <h3>AI 작업용 프롬프트</h3>
+            <h3>AI 조사용 프롬프트</h3>
             <textarea id="promptOutput" rows="13" readonly></textarea>
             <button id="copyPromptBtn" class="button primary full">프롬프트 복사</button>
           </div>
@@ -205,5 +231,6 @@
   <script src="./app.js"></script>
   <script src="./youtube.js"></script>
   <script src="./clustering.js"></script>
+  <script src="./research-bundle.js"></script>
 </body>
 </html>
