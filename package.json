@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check openai.mjs && node --check app/app.js && node --check app/youtube.js && node --check app/clustering.js && node --check app/research-bundle.js && node --check app/ai-studio.js"
+    "check": "node --check server.mjs && node --check openai.mjs && node --check app/app.js && node --check app/youtube.js && node --check app/clustering.js && node --check app/research-bundle.js && node --check app/ai-studio.js && node --check app/safety-gate.js"
   },
   "engines": {
     "node": ">=18"
