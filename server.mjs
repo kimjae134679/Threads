@@ -10,6 +10,7 @@ import {
   publishTextToThreads,
   getThreadsPostInsights,
 } from "./threads.mjs";
+import { getNaverStatus, searchNaver, getNaverSearchTrend } from "./naver.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -54,6 +55,7 @@ const server = http.createServer(async (req, res) => {
             requiredEnv: "YOUTUBE_API_KEY",
             note: "2025-07-21 이후 mostPopular은 과거 전체 Trending과 동일하지 않으며 인기 음악·영화·게임 신호 중심입니다.",
           },
+          naverApiHub: getNaverStatus(),
           openai: getOpenAiStatus(),
           threads: getThreadsStatus(),
         },
@@ -66,6 +68,28 @@ const server = http.createServer(async (req, res) => {
 
     if (url.pathname === "/api/trends/youtube") {
       return handleYouTubeMostPopular(url, res);
+    }
+
+    if (url.pathname === "/api/naver/search") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const result = await searchNaver(
+        url.searchParams.get("query") || "",
+        url.searchParams.get("type") || "news",
+        {
+          display: url.searchParams.get("display") || 10,
+          sort: url.searchParams.get("sort") || "date",
+        }
+      );
+      return json(res, 200, { ok: true, result });
+    }
+
+    if (url.pathname === "/api/naver/trend") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const result = await getNaverSearchTrend(
+        url.searchParams.get("query") || "",
+        { days: url.searchParams.get("days") || 30 }
+      );
+      return json(res, 200, { ok: true, result });
     }
 
     if (url.pathname === "/api/ai/research") {
@@ -151,7 +175,7 @@ async function handleGoogleTrends(url, res) {
   try {
     const response = await fetch(feedUrl, {
       headers: {
-        "user-agent": "Threads-AI-Content-Lab/0.2 (+local research tool)",
+        "user-agent": "Threads-AI-Content-Lab/0.4 (+local research tool)",
         accept: "application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
       },
       signal: controller.signal,
