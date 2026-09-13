@@ -10,7 +10,7 @@
 | Instagram Reels | 발견 + 팔로워 확대 | Gifts/협찬/제휴/브랜드 연계 | 짧은 영상 | 반자동 | 오리지널 우대, 경쟁 과밀 |
 | Instagram Carousel | 저장/공유/정보형 | 간접수익/브랜드 가치 | 5~10장 카드 | 자동 생성 + 승인 | 단일 이미지보다 저장형 정보 구조에 집중 |
 | Facebook | 영상 재활용 + 직접수익 실험 | Content Monetization 계열 가치 큼 | 원본 영상/리엘/게시물 | 반자동 | Meta가 비원본·저가치 편집을 강하게 낮춤 |
-| TikTok | 강한 신규 도달 | 지역별 Creator Rewards 제공 여부 확인 필요 | 1분+ 원본 영상, 짧은 발견형 | 반자동 | 직접수익 자격을 한국 계정에서 실제 확인 |
+| TikTok | 강한 신규 도달 + 직접수익 | 한국 Creator Rewards 가능 | **1분+ 원본 영상** + 짧은 발견형 | 반자동 | 한국 19세+, 개인계정, 1만 팔로워, 최근 30일 10만 조회 조건 |
 | X | 실시간 이슈/논평 + 직접수익 실험 | Original Content Rewards | 의견, 분석, 이미지, 영상 | **수익계정은 수동 게시** | 자동 생성/자동 게시 콘텐츠는 보상 제외 가능 |
 | Naver Blog | 한국 검색 자산 | 애드포스트 + 제휴/협찬 | 정보형/후기/정리 | 초안 자동, 게시 승인 | 복붙/저작권/저가치 대량생성 금지 |
 | 독립 Blog | 검색 + 자산 소유 | AdSense/제휴/상품 | 깊이 있는 검색형 글 | 반자동 | Google scaled content abuse 주의 |
@@ -30,6 +30,20 @@ YouTube는 AI 자체를 금지하지 않는다. 그러나 2025-07 이후 `inauth
 2026년 Meta는 Facebook에서 원본 제작자 노출/수익을 강화하고 비원본 콘텐츠를 낮추는 정책을 명시했다. Instagram도 추천 콘텐츠에서 원본 비중을 높이는 방향이 확인된다.
 
 실무 기준은 `남의 영상 + 자막/테두리/속도변경`을 원본으로 보지 않는 것이다. 자체 설명, 분석, 스토리, 그래픽, 촬영, 내레이션 등 최종 가치의 중심이 우리 쪽에 있어야 한다.
+
+### TikTok
+
+대한민국은 Creator Rewards Program 대상 지역이다. 2026-09 현재 공식 약관/지원 문서상 대표 요건은:
+
+- 한국 거주자는 19세 이상
+- 정상 상태의 개인 계정
+- 팔로워 10,000명 이상
+- 신청 전 최근 30일 실제 동영상 조회 100,000회 이상
+- 수익 대상은 1분 이상의 고품질 오리지널 영상
+
+TikTok의 2024년 한국 출시 Newsroom에는 당시 한국 팔로워 기준 50,000명이 안내됐지만, 현재 JP/KR Creator Rewards 법적 약관과 최신 지원 문서는 10,000명을 명시한다. 최신 문서를 우선한다.
+
+프로그램의 오리지널 콘텐츠 기준에서는 Duet, Stitch, 스폰서 콘텐츠 등이 수익 대상 오리지널 콘텐츠로 인정되지 않을 수 있다. 즉, 짧은 바이럴 영상만 만들기보다 **1분+ 자체 설명/스토리/비교 콘텐츠**를 병행하는 편이 직접수익 전략에 맞다.
 
 ### X
 
@@ -57,7 +71,7 @@ Metricool 2026 자료 기준:
 
 ```text
 Threads        = 훅/주제 검증
-TikTok         = 빠른 발견
+TikTok         = 빠른 발견 + 1분+ 원본 영상 직접수익
 Instagram Reel = 상호작용
 Instagram Card = 저장형 정보
 YouTube Shorts = 신규 유입 + Long-form 연결
@@ -86,6 +100,8 @@ X              = 실시간 관점 + 수동 수익 실험
 - YouTube 2027 changes: https://support.google.com/youtube/answer/12843009
 - YouTube monetization/reused content: https://support.google.com/youtube/answer/1311392
 - YouTube GenAI disclosure: https://support.google.com/youtube/answer/14328491
+- TikTok Creator Rewards JP/KR terms: https://www.tiktok.com/legal/page/global/tiktok-creator-rewards-program-jp-kr/ko
+- TikTok Creator Rewards support: https://support.tiktok.com/ko/business-and-creator/tiktok-creator-fund-us/tiktok-creator-fund-update-us
 - X Original Content Rewards: https://help.x.com/en/using-x/original-content-rewards
 - Meta original creators: https://about.fb.com/news/2026/03/rewarding-original-creators-on-facebook/
 - Meta 2026 AI/performance: https://about.fb.com/news/2026/01/2026-ai-drives-performance/
