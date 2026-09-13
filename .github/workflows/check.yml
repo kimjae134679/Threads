@@ -46,7 +46,7 @@ jobs:
 
           const app = await fetch('http://127.0.0.1:4173/app/');
           const html = await app.text();
-          const requiredScripts = ['ai-studio.js', 'source-enrichment.js', 'threads-publisher.js', 'experiment-model.js', 'experiment-lab.js'];
+          const requiredScripts = ['ai-studio.js', 'source-enrichment.js', 'account-registry.js', 'experiment-assignment.js', 'threads-publisher.js', 'experiment-model.js', 'experiment-lab.js'];
           if (!app.ok || !html.includes('Trend Inbox') || requiredScripts.some((name) => !html.includes(name))) {
             throw new Error('static app feature loading check failed');
           }
@@ -55,6 +55,9 @@ jobs:
             const response = await fetch(`http://127.0.0.1:4173/app/${asset}`);
             if (!response.ok) throw new Error(`missing static asset ${asset}`);
           }
+
+          const assignmentCss = await fetch('http://127.0.0.1:4173/app/experiment-assignment.css');
+          if (!assignmentCss.ok) throw new Error('missing experiment assignment stylesheet');
 
           const research = await fetch('http://127.0.0.1:4173/api/ai/research', {
             method: 'POST', headers: {'content-type': 'application/json'},
