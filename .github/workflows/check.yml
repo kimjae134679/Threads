@@ -41,10 +41,11 @@ jobs:
           if (!connectors.ok) throw new Error('connectors check failed');
           if (connectors.connectors?.openai?.configured !== false) throw new Error('OpenAI must be unconfigured in CI without secret');
           if (connectors.connectors?.youtubeMostPopularKr?.configured !== false) throw new Error('YouTube must be unconfigured in CI without secret');
+          if (connectors.connectors?.threads?.configured !== false) throw new Error('Threads must be unconfigured in CI without secret');
 
           const app = await fetch('http://127.0.0.1:4173/app/');
           const html = await app.text();
-          if (!app.ok || !html.includes('Trend Inbox')) throw new Error('static app check failed');
+          if (!app.ok || !html.includes('Trend Inbox') || !html.includes('threads-publisher.js')) throw new Error('static app check failed');
 
           const research = await fetch('http://127.0.0.1:4173/api/ai/research', {
             method: 'POST',
@@ -54,5 +55,21 @@ jobs:
           const researchBody = await research.json();
           if (research.status !== 503 || researchBody.error !== 'openai_api_key_missing') {
             throw new Error(`expected OpenAI missing-key 503, got ${research.status} ${JSON.stringify(researchBody)}`);
+          }
+
+          const threadsProfile = await fetch('http://127.0.0.1:4173/api/threads/profile');
+          const threadsProfileBody = await threadsProfile.json();
+          if (threadsProfile.status !== 503 || threadsProfileBody.error !== 'threads_access_token_missing') {
+            throw new Error(`expected Threads missing-token 503, got ${threadsProfile.status} ${JSON.stringify(threadsProfileBody)}`);
+          }
+
+          const unapproved = await fetch('http://127.0.0.1:4173/api/threads/publish', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({candidate: {title: 'CI publish guard'}}),
+          });
+          const unapprovedBody = await unapproved.json();
+          if (unapproved.status !== 409 || unapprovedBody.error !== 'candidate_not_ready') {
+            throw new Error(`expected publish guard 409, got ${unapproved.status} ${JSON.stringify(unapprovedBody)}`);
           }
           NODE
