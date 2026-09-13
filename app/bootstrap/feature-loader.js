@@ -33,7 +33,11 @@
     },
     {
       id: "viral-finder",
-      scripts: ["./viral-model.js", "./viral-review.js"],
+      scripts: [
+        "./viral-model.js",
+        "./viral-review.js",
+        "./features/discovery/viral/group-actions.js",
+      ],
     },
     {
       id: "community-cards",
