@@ -8,113 +8,60 @@ This is the execution handoff for recurring development. Do not stop at planning
 
 Current completed implementation checkpoint:
 
-- implementation tip: `3ef258ec679ac3c1d05913a7e9a9511ba5b65760`
-- GitHub Actions run `34779668883`: syntax/regression checks **SUCCESS**, local server smoke **SUCCESS** (job `103784236352`)
-- read operations-hub `022-sol.md` after this file for exact implementation history.
+- implementation tip: `ebc0236abab6880d18c43ef63b8d9f9e20776ccb`
+- GitHub Actions run `34784015681`: syntax/regression checks **SUCCESS**, local server smoke **SUCCESS** (job `103796086829`)
+- read operations-hub `023-sol.md` after this file for exact implementation history.
 - repository tip always wins over stale handoff text.
 
-## Latest run — P2 Audience Comfort materially implemented
+## P2 Audience Comfort — materially complete for current workflow
 
-New feature domain:
+Current safety/gate behavior:
 
-```text
-app/features/discovery/comfort/
-├─ comfort-model.js
-├─ comfort-review.js
-└─ comfort-review.css
-```
+- explicit BLOCK/REVIEW reason/category UI
+- human-review audit with no fabricated reviewer identity
+- hard BLOCK cannot be human-approved
+- REVIEW approval is bound to the exact current Comfort scan signature
+- content/scan changes invalidate old approval as `stale-human-review`
+- Viral Finder rows display current Comfort gate + reason chips
+- existing `선택 → 제작 후보` is intercepted fail-closed
+- comfortable candidates may proceed
+- REVIEW requires matching current human approval
+- BLOCK / uncleared REVIEW / stale REVIEW are removed from ready selection
+- selected candidate detail shows current gate + recent audit history
+- Comfort audit metadata can be exported as JSON
+- batch REVIEW hold / BLOCK skip remain fail-closed
 
-It is loaded centrally from `app/bootstrap/feature-loader.js` after Viral Finder. No cross-feature companion chain was introduced.
+Do not weaken these gates while adding later workflow features.
 
-### Visible category/reason review UI
+## P3 Bulk candidate review — ACTIVE
 
-A new `AUDIENCE COMFORT / HUMAN REVIEW` panel shows:
-
-- BLOCK / REVIEW / comfortable counts
-- level filter
-- comfort-category filter
-- explicit human-readable reason chips
-- recent human-review audit result/note where present
-- REVIEW-only approve / hold / reject controls
-- BLOCK rows explicitly show `자동 BLOCK · 승인 불가`
-
-The UI persists the latest scan envelope in `item.comfortReview.latestScan` with a stable `scanSignature`, avoiding needless repeated writes.
-
-### Human review audit
-
-`ThreadsComfortReviewModel.appendAudit()` records:
+New feature files:
 
 ```text
-outcome
-note
-reviewedAt
-reviewer                 null unless a real identity is supplied
-reviewSource             human-ui
-comfortLevelAtReview
-comfortScoreAtReview
-categoriesAtReview[]
-blockReasonsAtReview[]
-reviewReasonsAtReview[]
+app/features/discovery/viral/bulk-review-model.js
+app/features/discovery/viral/bulk-review.js
+test/bulk-review-model.test.mjs
 ```
 
-No reviewer identity is fabricated.
+Central bootstrap loads `bulk-candidate-review` after Audience Comfort.
 
-Hard safety rule:
+Current controls:
 
-```text
-BLOCK + approve
-→ throws blocked_comfort_cannot_be_human_approved
-```
+- 보이는 항목 선택
+- 선택 해제
+- 선택 보류
+- 태그 적용
+- 선택 → 편집 검토
+- existing selected research / ready / skip
+- existing exact-duplicate / same-story group actions
 
-A human review may clear only a REVIEW candidate, not a hard BLOCK candidate.
+Bulk editorial handoff creates `item.editorialHandoff` with source metadata, Viral snapshot, Comfort export envelope, tags, and timestamp. It uses `ThreadsComfortReviewModel.mayAdvance(item, "editorial")`; BLOCK, uncleared REVIEW, and stale REVIEW are skipped. Safe/current-human-cleared items move to `research` with `item.bulkReview.audit`.
 
-### Batch comfort actions
-
-Current filtered set can perform:
-
-```text
-현재 REVIEW 보류
-현재 BLOCK 패스
-```
-
-`safeBatchDisposition()` refuses to use review-hold as a way to promote BLOCK candidates. BLOCK batch handling is only fail-closed skip.
-
-### Mixed/obfuscated text regression
-
-`app/viral-model.js` now also catches reasonable separator-obfuscation variants for high-risk terms, including examples such as:
-
-```text
-동 물 학 대
-g o r e
-d.o.x.x
-self_harm footage
-```
-
-This is intentionally narrow; it is not claimed to be a semantic moderation model.
-
-### Tests / package
-
-New:
-
-`test/comfort-model.test.mjs`
-
-It verifies:
-
-- Korean/English mixed obfuscated hard-BLOCK detection
-- doxxing variant detection
-- REVIEW can receive a human audit decision
-- reviewer remains null unless actually supplied
-- BLOCK cannot be human-approved
-- batch skip affects BLOCK only
-- REVIEW category hold remains separate
-
-`test/feature-layout.test.mjs` now requires the Comfort feature files and central-loader registration.
-
-`package.json` is now `0.14.0`; syntax/test commands include the new model/UI/test files.
+Package is now `0.15.0`.
 
 ## P1 status
 
-P1 Viral Finder remains mostly complete from prior runs:
+P1 Viral Finder remains mostly complete:
 
 - Source Registry/theme lanes
 - adapter states and collection policies
@@ -127,7 +74,7 @@ P1 Viral Finder remains mostly complete from prior runs:
 - group-wide research/hold/skip
 - same-story alternatives held instead of treated as useless exact duplicates
 
-Browser interaction E2E remains useful if a browser-capable run is available, but do not delay P2/P3 indefinitely for it.
+Browser interaction E2E remains useful if a browser-capable run is available, but do not block forward implementation on it indefinitely.
 
 ## Mandatory execution loop
 
@@ -153,29 +100,15 @@ Browser interaction E2E remains useful if a browser-capable run is available, bu
 
 ## Remaining backlog — execute in order
 
-### P2. Audience Comfort — ACTIVE / PARTIALLY COMPLETE
+### P3. Bulk candidate review — ACTIVE / PARTIALLY COMPLETE
 
-Completed this run:
+Next targets:
 
-- explicit BLOCK/REVIEW category/reason UI
-- persisted latest Comfort scan metadata
-- human-review audit trail with no fake identity
-- hard prohibition against human-approving BLOCK
-- category/level filters
-- safe batch REVIEW hold and BLOCK skip
-- mixed/obfuscated Korean/English regression cases
-
-Next P2 targets:
-
-1. integrate Comfort result chips directly into existing Viral Finder candidate rows as well as the dedicated panel
-2. ensure downstream `ready` / editorial handoff respects `comfortReview.humanClearedReview` for REVIEW candidates, without allowing BLOCK override
-3. add audit/history visibility in candidate detail view and exportable metadata where appropriate
-4. add more false-positive/false-negative regressions around words such as news reporting, quoted terms, and mixed punctuation without weakening hard BLOCK
-5. if browser interaction is available, test category filters, review buttons, batch actions, reload persistence, and mobile width
-
-### P3. Bulk candidate review
-
-Need select all/visible/group, approve/reject/hold/tag, duplicate-group actions, bulk editorial handoff, blocked reason visibility, keyboard/large-list usability. Existing group actions can be reused rather than reimplemented.
+1. add clearer selected-item status/result summary for hold/tag/editorial handoff and large-list feedback
+2. make group-level editorial handoff use the same `ThreadsBulkReviewModel` Comfort gate/audit path
+3. add normalized review-tag filters plus bulk tag removal
+4. add safe keyboard/accessibility helpers only when text inputs are not focused
+5. browser-test selection sync, ready-gate interception, reload persistence, and mobile width when possible
 
 ### P4. Community Card Factory
 
@@ -196,6 +129,10 @@ HOT priority, theme/source/format spacing, pause/stop/post-now/reorder controls,
 ### P8. Persistence / multi-account
 
 Only after earlier workflow is substantially complete: DB/server persistence, migration/versioning, multi-account experiment/profile state, no plaintext secrets.
+
+## Discovery policy
+
+Keep discovery balanced across theme lanes and sources. Record only actually visible/verifiable public engagement as observed evidence. Secondary digest or unclear metrics remain non-canonical. Do not bulk crawl Blind/DCInside or other sources without a permitted collection path; use public index metadata, user URLs, screenshots, or manual Capture instead.
 
 ## Handoff target
 
