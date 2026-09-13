@@ -18,7 +18,7 @@ assert.ok(model, "Theme model must register on window");
 }
 
 {
-  const result = model.suggest({ title: "소개팅 첫날 계산 문제로 댓글이 갈린 사연", kind: "story" });
+  const result = model.suggest({ title: "소개팅 상대와 결혼 얘기로 댓글이 갈린 사연", kind: "story" });
   assert.equal(result.primaryTheme, "dating_relationships");
   assert.ok(result.secondaryThemes.includes("internet_humor") || result.secondaryThemes.includes("life_debate"));
 }
