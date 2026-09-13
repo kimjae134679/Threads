@@ -4,130 +4,132 @@ Updated: 2026-09-14 KST
 
 ## Read this first
 
-This is the execution handoff for recurring development. Do not stop at planning. Inspect current `main`, continue implementation, test it, fix failures, and leave the next handoff after meaningful changes.
+Do not stop at planning. Inspect current `main`, recent commits, then read the latest sequential operations-hub note. Repository tip always wins over stale handoff text.
 
 Current verified implementation checkpoint:
 
-- implementation tip: `29a9b996e3513e4c8d9d1b8e6cc5ebeffc789c81`
-- GitHub Actions run `34785739288`, job `103800763036`: JavaScript syntax/regression **SUCCESS**, local server smoke **SUCCESS**
-- package: `0.16.0`
-- latest sequential operations note to read next: `024-sol.md`
-- repository tip always wins over stale handoff text.
+- implementation tip: `3f747a4695c5d7be09ea6e728c3708f38801139c`
+- GitHub Actions run `34789810832`: **SUCCESS**
+- workflow covers JavaScript syntax/regression plus local server smoke
+- package: `0.17.0`
+- latest operations note: `025-sol.md`
 
-## P2 Audience Comfort — materially complete for current workflow
-
-Keep these gates intact:
-
-- explicit BLOCK/REVIEW reason/category UI
-- human review audit without fabricated reviewer identity
-- hard BLOCK cannot be human-approved
-- REVIEW approval is bound to the exact current Comfort scan signature
-- stale human review is blocked downstream
-- ready/editorial paths fail closed
-- Comfort audit export exists
-
-Do not weaken these gates while expanding later workflow features.
-
-## P3 Bulk candidate review — materially complete for current workflow
-
-Current capabilities now include:
-
-- visible selection / clear selection
-- selected count + visible count + selected status summary
-- hold/reject/editorial handoff with result summaries
-- normalized review tags (NFKC, trim, whitespace collapse, case normalization)
-- bulk tag add and remove
-- exact normalized tag filtering in the Viral Finder list
-- keyboard helpers only when focus is not in an input: `Esc` clears selection, `Ctrl/Cmd+Shift+A` selects visible rows
-- group-level editorial handoff now routes through `ThreadsBulkReviewModel` and the same Audience Comfort gate/audit path
-- exact duplicate / same-story group actions remain available
-- editorial packet carries normalized tags + source/Viral/Comfort snapshot
-
-Browser interaction E2E remains useful when a browser-capable run is available, but do not block forward implementation indefinitely.
-
-## P4 Community Card Factory — ACTIVE
-
-New feature files:
-
-```text
-app/features/production/cards/privacy-mask-model.js
-app/features/production/cards/privacy-mask.js
-test/card-privacy-mask-model.test.mjs
-```
-
-Current manual image privacy workflow:
-
-- Community Card Factory still creates 1080x1350 cards and preserves text PII masking.
-- For capture-image cards, turn on `마스킹 모드` and drag on the preview canvas.
-- Dragging writes a real black rectangle directly into the canvas that will be used for PNG export.
-- Each capture card has an explicit `개인정보 검토 완료` control.
-- Single capture-image PNG export is blocked until that capture is marked reviewed.
-- `PNG 전체 저장` is blocked while any capture image remains unreviewed.
-- Adding a mask automatically invalidates that card's reviewed state until re-reviewed.
-- Image change or preview rebuild resets the session privacy review state.
-- `Privacy JSON` exports rectangle metadata and explicitly records that OCR/automatic face detection was NOT claimed.
-- no OCR/image privacy success is fabricated.
-
-This privacy-mask state is intentionally session-scoped because original screenshots are also session-only. A later persistence step may store normalized mask metadata only after deciding how it binds safely to exact image identity.
-
-## Mandatory execution loop
-
-1. Read current `main`, recent commits, this file, and latest operations-hub sequential note.
-2. If current tip CI is red, repair before expanding when feasible.
-3. Implement the next substantive backlog item, not only plans.
-4. Run syntax/regression/server smoke plus targeted tests.
-5. Never fake API success, live publishing, metrics, credentials, moderation, OCR, or image masking.
-6. Preserve approval, rights, safety, and human-review gates.
-7. Commit meaningful changes and update operations-hub handoff.
-8. Remove temporary junk.
-
-## Role boundaries
+## Role chain / non-negotiable gates
 
 `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`
 
-- 01 discovers/packages candidates; does not publish.
-- 02 owns fact/source validation, scoring, and content angle approval.
+- 01 discovers/packages; does not publish.
+- 02 owns fact/source verification and content angle approval.
 - 03 transforms approved briefs without inventing facts.
-- 04 owns final safety/rights/human approval and actual publication.
+- 04 owns rights/safety/final human approval and actual publication.
 - 05 owns experiment/account strategy and performance interpretation.
-- `A10 Unknown rights` remains non-publishable until resolved and re-reviewed.
+- hard Audience Comfort BLOCK cannot be human-approved.
+- REVIEW approval is bound to the current Comfort scan signature; stale review fails closed.
+- `A10 Unknown rights` remains non-publishable.
+- never fake API success, metrics, moderation, OCR, face detection, privacy masking, credentials, or live publishing.
+
+## P1–P3 — materially complete for current workflow
+
+Keep intact:
+
+- multi-platform/source registry with explicit adapter state
+- normalized observed-vs-inferred engagement evidence
+- exact duplicate / same-story grouping
+- source risk + lane/source filters
+- Audience Comfort BLOCK/REVIEW categories and audit
+- visible/group bulk selection, hold/reject/tag/editorial handoff
+- group editorial handoff uses the same Comfort gate
+- no Blind/DCInside prohibited bulk crawling; public index/user URL/screenshot/manual Capture only
+
+## P4 Community Card Factory — materially complete for current browser/session architecture
+
+Current behavior:
+
+- 1080×1350 card/carousel storyboards
+- text PII masking
+- manual drag rectangles draw real black masks onto export canvas
+- undo-last-mask and per-card mask count/status
+- each capture requires explicit privacy review before PNG export
+- privacy review is bound to exact image identity `(name, size, lastModified, type)`
+- replacing/rebuilding image state makes old review stale/fail-closed
+- saved Card Factory metadata/manifest includes privacy envelope, not original image bytes
+- privacy envelope explicitly says automated OCR/face detection were not claimed
+- `04` approval queue displays Card privacy PASS/PENDING/STALE and blocks approval when capture privacy gate is not allowed
+
+Browser pointer E2E is still useful when a browser-capable environment is available, but do not block later implementation on it.
+
+## P5 Content Warehouse — ACTIVE / substantially expanded
+
+Current model/UI now supports:
+
+- **READY / HOT / EVERGREEN** warehouse buckets
+- separate actual queue eligibility vs warehouse bucket classification
+- HOT > READY > EVERGREEN priority at equal manual priority
+- priority 1–5, ACTIVE/HOLD, not-before, expiry
+- freshness states: scheduled / expired / expiring-soon / fresh-today / fresh / hot-no-expiry / open
+- normalized theme tags and format tags
+- bounded warehouse change history (latest 50)
+- source/canonical URL/discovery source/lane/source risk/adapter provenance snapshot
+- observed engagement copied into provenance only when explicitly marked `mode === "observed"`
+- asset summary: text/cards/capture count/image privacy state
+- review summary: Research/Draft/Safety/rights/privacy/Comfort/current human approval
+- queue eligibility continues to fail closed on Comfort, production assets, image privacy, Safety Gate, current approval, HOLD/not-before/expiry
+- warehouse metadata/taxonomy changes do not stale publish approval because they do not change content itself
+
+Regression coverage includes READY/HOT/EVERGREEN ordering, freshness, image privacy, NFKC tag normalization, history, provenance and review summary.
+
+## Mandatory execution loop
+
+1. Read current `main`, recent commits, this file, and latest operations note.
+2. If tip CI is red, repair before expansion when feasible.
+3. Implement substantive work, not only plans.
+4. Run syntax/regression/server smoke plus targeted tests; confirm green only when actually observed.
+5. Commit meaningful changes and update the operations-hub handoff.
+6. Remove temporary/cache/probe junk.
 
 ## Remaining backlog — execute in order
 
-### P4. Community Card Factory — ACTIVE
+### P5. Content Warehouse — finish useful refinements, then move on
 
-Next targets:
+Useful remaining work if it materially improves operation:
 
-1. browser-test actual drag coordinates on desktop/mobile widths, individual export block, whole-package export block, and rebuild/reset behavior when possible
-2. add undo-last-mask per capture and clearer per-image mask count/status
-3. bind privacy metadata to an exact session image fingerprint/name/size tuple so stale review cannot accidentally carry to a newly selected image
-4. integrate privacy envelope into the card manifest/storyboard save metadata without persisting original image bytes
-5. ensure final 04 review can see whether image privacy review was completed
+1. warehouse detail/export for provenance/history
+2. optionally auto-suggest theme/format tags from existing classification/production metadata without overwriting human tags
+3. ensure legacy warehouse records migrate safely to schema v2 defaults
 
-### P5. Content Warehouse
+Do not spend many runs polishing minor Warehouse UI after these basics are sound.
 
-READY/HOT/EVERGREEN with provenance, status history, expiry/freshness, theme/format tags, rights/review state, assets, queue eligibility.
+### P6. Official image/carousel publishing — NEXT MAJOR PRIORITY
 
-### P6. Official image/carousel publishing
+Build official-provider capability and validation layers only.
 
-Official APIs only; capability states; dry-run validation; fail closed without credentials/scopes/human approval; real request/response/error audit only.
+Requirements:
+
+- distinguish provider/media capability and states such as unsupported / credential-required / ready-to-validate / live-disabled
+- image/carousel only where official platform APIs actually support it
+- dry-run request validation before any live call
+- final `04` human approval + rights/safety/privacy gates required
+- absent credentials/scopes/approval => fail closed and continue other work
+- never ask for passwords/secrets; document needed environment variables/scopes only
+- never fabricate request IDs, platform responses, publish URLs, success, or metrics
+- real external responses/errors must be auditable separately from local dry-run results
 
 ### P7. Scheduler / queue
 
-HOT priority, theme/source/format spacing, pause/stop/post-now/reorder controls, visible scheduling reasons, final 04 gates preserved.
+HOT priority, theme/source/format spacing, pause/stop/post-now/reorder controls, visible scheduling reasons, and final 04 gates preserved.
 
 ### P8. Persistence / multi-account
 
-Only after earlier workflow is substantially complete: DB/server persistence, migration/versioning, multi-account experiment/profile state, no plaintext secrets.
+Only after earlier workflow is substantially complete: DB/server persistence, schema migrations/versioning, multi-account experiment/profile state, no plaintext secrets.
 
 ## Discovery policy
 
-Keep discovery balanced across theme lanes and sources. Record only actually visible/verifiable public engagement as observed evidence. Secondary digest or unclear metrics remain non-canonical. Do not bulk crawl Blind/DCInside or other sources without a permitted collection path; use public index metadata, user URLs, screenshots, or manual Capture instead.
+On useful runs, perform real public/indexed discovery across multiple lanes/sources. Record only visible/verifiable engagement as observed evidence; secondary digest or ambiguous values remain non-canonical. Do not bulk crawl Blind/DCInside or other sources without a permitted collection path.
 
 ## Handoff target
 
-After meaningful changes, create the next sequential note under:
+After meaningful changes create the next sequential note under:
 
 `kimjae134679/project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`
 
-Include baseline, files/features changed, exact behavior, tests/results, discovery examples if any, blockers, next priority, and new Threads SHA(s).
+Include baseline, exact files/features changed, tests/results, discovery examples if any, blockers, next priority and new Threads SHA(s).
