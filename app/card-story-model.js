@@ -12,6 +12,24 @@
     return `${text.slice(0, Math.max(0, max - 1)).trim()}…`;
   }
 
+  function redactPII(value) {
+    let text = String(value || "");
+    const rules = [
+      [/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, "[이메일 가림]"],
+      [/(?<!\d)(?:01[016789])[-.\s]?\d{3,4}[-.\s]?\d{4}(?!\d)/g, "[전화번호 가림]"],
+      [/(?<!\d)\d{2,3}[-.\s]?\d{3,4}[-.\s]?\d{4}(?!\d)/g, "[전화번호 가림]"],
+      [/(?<!\d)\d{6}[-\s]?[1-4]\d{6}(?!\d)/g, "[주민번호 가림]"],
+      [/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, "[IP 가림]"],
+      [/(^|\s)@[A-Za-z0-9_.]{2,32}\b/g, "$1[@핸들 가림]"],
+    ];
+    for (const [pattern, replacement] of rules) text = text.replace(pattern, replacement);
+    return text;
+  }
+
+  function safeCardText(value, max = MAX_CARD_TEXT) {
+    return cleanText(redactPII(value), max);
+  }
+
   function defaultEnding(item = {}) {
     const kind = String(item.kind || "");
     if (kind === "story") return "너라면 이 상황에서 어떻게 했을 것 같음?";
@@ -21,7 +39,7 @@
   }
 
   function sourceLabel(item = {}) {
-    return cleanText(
+    return safeCardText(
       item.sourceMeta?.community
       || item.sourceMeta?.provider
       || item.sourceType
@@ -46,11 +64,11 @@
       || angles.slice(0, 2).join("\n");
 
     return {
-      hook: cleanText(item.title || "제목 없음", 110),
-      excerpt: cleanText(excerpt, 650),
-      followup: cleanText(followup, 520),
+      hook: safeCardText(item.title || "제목 없음", 110),
+      excerpt: safeCardText(excerpt, 650),
+      followup: safeCardText(followup, 520),
       reactions: [],
-      ending: defaultEnding(item),
+      ending: safeCardText(defaultEnding(item), 180),
       source: sourceLabel(item),
     };
   }
@@ -58,12 +76,12 @@
   function buildStoryboard(item = {}, capture = {}, imageCount = 0) {
     const base = deriveCapture(item);
     const merged = {
-      hook: cleanText(capture.hook || base.hook, 110),
-      excerpt: cleanText(capture.excerpt || base.excerpt, 650),
-      followup: cleanText(capture.followup || base.followup, 520),
-      reactions: lines(capture.reactions || base.reactions).slice(0, 6).map((entry) => cleanText(entry, 180)),
-      ending: cleanText(capture.ending || base.ending, 180),
-      source: cleanText(capture.source || base.source, 70),
+      hook: safeCardText(capture.hook || base.hook, 110),
+      excerpt: safeCardText(capture.excerpt || base.excerpt, 650),
+      followup: safeCardText(capture.followup || base.followup, 520),
+      reactions: lines(capture.reactions || base.reactions).slice(0, 6).map((entry) => safeCardText(entry, 180)),
+      ending: safeCardText(capture.ending || base.ending, 180),
+      source: safeCardText(capture.source || base.source, 70),
     };
 
     const cards = [{ type: "hook", title: merged.hook, body: "", source: merged.source }];
@@ -79,9 +97,13 @@
     if (merged.ending) cards.push({ type: "ending", title: merged.ending, body: "", source: merged.source });
 
     return {
-      schemaVersion: 1,
+      schemaVersion: 2,
       width: 1080,
       height: 1350,
+      privacy: {
+        textPiiMasked: true,
+        imageMaskingRequired: count > 0,
+      },
       capture: merged,
       cards,
     };
@@ -100,6 +122,8 @@
   window.ThreadsCardStoryModel = {
     lines,
     cleanText,
+    redactPII,
+    safeCardText,
     defaultEnding,
     sourceLabel,
     deriveCapture,
