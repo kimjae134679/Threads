@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-14T00:24:00+09:00",
+  "sourceMode": "public-indexed-discovery",
+  "notes": "This feed stores discovery metadata and short editorial summaries only. It does not bulk-copy third-party post bodies or media. Rights and source review remain required before production.",
+  "items": [
+    {
+      "sourceKey": "reddit:r-memes:1w6mgy4",
+      "title": "Reddit 예전/지금 모습을 비교한 밈이 큰 반응을 얻은 사례",
+      "url": "https://www.reddit.com/r/memes/comments/1w6mgy4/it_was_like_that/",
+      "kind": "humor",
+      "sourceType": "public-indexed-community",
+      "sourceRisk": "yellow",
+      "collectionAllowed": false,
+      "manualCaptureOnly": true,
+      "note": "공개 검색 결과에서 2026-09-03 게시물 약 14.6K votes가 확인됨. 댓글에서는 Reddit의 봇/광고/과거 문화 변화로 대화가 크게 확장됨. 원본 밈 이미지 재사용 권리는 별도 확인하고, 주제/반응 구조만 우선 후보로 사용.",
+      "sourceMeta": {
+        "provider": "Reddit public indexed result",
+        "community": "r/memes",
+        "likeCount": 14647,
+        "commentCount": 0,
+        "publishedAt": "2026-09-03T00:00:00Z",
+        "collectedAt": "2026-09-13T15:24:00Z"
+      }
+    },
+    {
+      "sourceKey": "reddit:r-newtoreddit:1wb31r4",
+      "title": "9년 된 Reddit 계정인데 아직 초보라는 자조형 사연",
+      "url": "https://www.reddit.com/r/NewToReddit/comments/1wb31r4/9_years_on_reddit_and_still_basically_new/",
+      "kind": "story",
+      "sourceType": "public-indexed-community",
+      "sourceRisk": "yellow",
+      "collectionAllowed": false,
+      "manualCaptureOnly": true,
+      "note": "공개 검색 결과에서 2026-09-08 게시물 48 votes가 확인됨. 계정은 오래됐지만 karma가 거의 없다는 자조가 핵심. 공감형 카드 소재 가능성은 있으나 반응 규모가 작아 강추천이 아니라 비교용 저반응 샘플.",
+      "sourceMeta": {
+        "provider": "Reddit public indexed result",
+        "community": "r/NewToReddit",
+        "likeCount": 48,
+        "commentCount": 0,
+        "publishedAt": "2026-09-08T00:00:00Z",
+        "collectedAt": "2026-09-13T15:24:00Z"
+      }
+    },
+    {
+      "sourceKey": "reddit:r-help:1wcp38q",
+      "title": "Reddit 새 기능 변경에 사용자들이 바로 반응한 사례",
+      "url": "https://www.reddit.com/r/help/comments/1wcp38q/new_changelog_september_10_2026/",
+      "kind": "breaking",
+      "sourceType": "public-indexed-community",
+      "sourceRisk": "yellow",
+      "collectionAllowed": false,
+      "manualCaptureOnly": true,
+      "note": "2026-09-10 공식 changelog 안내 글. 공개 검색 결과에서는 본문 votes 자체는 낮지만 특정 기능 변경 댓글이 더 큰 반응을 얻음. 본문보다 댓글에서 소재가 터지는 유형을 시험하기 위한 샘플.",
+      "sourceMeta": {
+        "provider": "Reddit public indexed result",
+        "community": "r/help",
+        "likeCount": 10,
+        "commentCount": 0,
+        "publishedAt": "2026-09-10T00:00:00Z",
+        "collectedAt": "2026-09-13T15:24:00Z"
+      }
+    },
+    {
+      "sourceKey": "reddit:blocked-violence-sample:20260911",
+      "title": "암살 사건을 희화화하는 폭력적 밈 논쟁",
+      "url": "https://www.reddit.com/r/dankmemes/comments/1wdma2k/removed/",
+      "kind": "humor",
+      "sourceType": "public-indexed-community",
+      "sourceRisk": "red",
+      "collectionAllowed": false,
+      "manualCaptureOnly": true,
+      "note": "실제 공개 검색에서 발견된 제거 게시물. 암살/폭력 사건을 밈으로 다뤄 사용자가 원한 Audience Comfort 방향과 맞지 않으므로 제작 대상에서 자동 차단되어야 하는 회귀 샘플.",
+      "sourceMeta": {
+        "provider": "Reddit public indexed result",
+        "community": "r/dankmemes",
+        "likeCount": 0,
+        "commentCount": 0,
+        "publishedAt": "2026-09-11T00:00:00Z",
+        "collectedAt": "2026-09-13T15:24:00Z"
+      }
+    }
+  ]
+}
