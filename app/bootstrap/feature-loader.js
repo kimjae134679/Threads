@@ -48,6 +48,13 @@
       ],
     },
     {
+      id: "bulk-candidate-review",
+      scripts: [
+        "./features/discovery/viral/bulk-review-model.js",
+        "./features/discovery/viral/bulk-review.js",
+      ],
+    },
+    {
       id: "community-cards",
       scripts: ["./card-story-model.js", "./card-factory.js"],
     },
