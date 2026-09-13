@@ -128,14 +128,29 @@ X는 다음을 원본으로 인정하지 않습니다.
 참고:
 - https://help.x.com/en/using-x/original-content-rewards
 
-### TikTok — 발견력은 높지만 한국 계정 수익조건은 별도 확인
+### TikTok — 한국에서도 Creator Rewards 직접수익 가능
 
-Creator Rewards Program은 고품질·원본·1분 이상 영상을 중심으로 보상합니다. 지역/계정 제공 여부는 실제 한국 계정의 Monetization 메뉴에서 확인한 뒤 경제성을 계산해야 합니다.
+2026-09 현재 TikTok의 공식 한국/글로벌 약관·지원 문서 기준으로 **대한민국은 Creator Rewards Program 대상 지역**입니다.
 
-TikTok 자체 도달 실험은 가치가 있지만, 초기에 `Creator Rewards 수익이 반드시 나온다`고 가정하면 안 됩니다.
+현재 대표 참가 요건은:
+
+- 대한민국 거주자는 **19세 이상**
+- 정상 상태의 **개인 계정**
+- 팔로워 **10,000명 이상**
+- 신청 전 최근 30일 실제 동영상 조회 **100,000회 이상**
+- 리워드 대상은 **1분 이상의 고품질 오리지널 콘텐츠**
+
+TikTok의 2024년 한국 출시 Newsroom 글에는 당시 한국 기준 팔로워 5만 명이 안내됐지만, 현재 Creator Rewards Program 법적 약관과 지원 문서는 최소 1만 명으로 명시하고 있으므로 최신 문서를 우선합니다.
+
+또한 Creator Rewards에서 오리지널 콘텐츠는 단순 재업로드보다 엄격하게 평가되며, Duet·Stitch·스폰서 콘텐츠 등은 프로그램의 오리지널 콘텐츠 정의에서 제외될 수 있습니다.
+
+따라서 TikTok은 단순 도달 실험 채널이 아니라 **1분+ 원본 설명형/스토리형 영상으로 직접수익까지 노릴 수 있는 축**으로 봅니다. 다만 실제 가입 가능 여부와 계정 상태는 TikTok Studio의 Monetization 메뉴에서 최종 확인합니다.
 
 참고:
-- https://support.tiktok.com/en/business-and-creator/tiktok-creator-fund-us/who-is-eligible-us
+- https://www.tiktok.com/legal/page/global/tiktok-creator-rewards-program-jp-kr/ko
+- https://support.tiktok.com/ko/business-and-creator/tiktok-creator-fund-us/tiktok-creator-fund-update-us
+- https://support.tiktok.com/ko/business-and-creator/creator-rewards-program/how-is-the-creator-rewards-program-different-from-the-tiktok-creator-fund
+- https://newsroom.tiktok.com/introducing-the-new-creator-rewards-program-kr?lang=ko-KR
 
 ### 블로그 — 광고수익 + 검색 자산
 
@@ -293,7 +308,7 @@ Threads/Shorts에서 반응이 검증된 주제만 블로그 또는 5~10분 YouT
 가장 가능성이 높은 시작 구조는:
 
 **Threads = 빠른 주제 테스트**
-→ **Shorts/Reels = 발견력 확대**
+→ **Shorts/Reels/TikTok = 발견력 확대 + TikTok은 1분+ 원본 영상 직접수익 실험**
 → **YouTube/Blog = 장기 검색·광고수익 자산**
 → **제휴/협찬 = 실제 현금화 보강**
 
