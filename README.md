@@ -4,6 +4,59 @@ AI를 이용해 **화제 탐지 → 조사 → 자체 해설/재구성 → 멀�
 
 단순 복사·재업로드 공장이 아니라, 같은 조사 재료를 각 플랫폼에 맞는 **원본성 있는 콘텐츠**로 바꾸는 시스템을 목표로 합니다.
 
+## 현재 상태
+
+조사 문서 단계에서 끝나지 않고 첫 실행형 MVP인 **Trend Inbox**가 들어가 있습니다.
+
+현재 실제 동작:
+
+- Google Trends KR `Trending Now` RSS 후보 수집
+- 선택적 YouTube Data API `mostPopular` KR 메타데이터 수집
+- 직접 URL / 메모 입력
+- DCInside / Blind 자동수집 차단 판정
+- GREEN / YELLOW / RED 소스 위험도
+- 사람 평가 후 초기 점수 계산
+- 미평가 자동수집 후보의 제작 승격 차단
+- 플랫폼 추천
+- Research Bundle용 AI 프롬프트 생성
+- 조사 대기 / 제작 후보 / 패스 관리
+- localStorage 저장 + JSON 백업/복원
+
+실행 화면은 [`app/`](app/)에 있습니다.
+
+## 바로 실행
+
+Node.js 18 이상:
+
+```bash
+npm start
+```
+
+브라우저:
+
+```text
+http://127.0.0.1:4173/app/
+```
+
+별도 `npm install`은 필요하지 않습니다.
+
+문법 검사:
+
+```bash
+npm run check
+```
+
+YouTube 연결은 선택 사항입니다. API 키를 저장소에 기록하지 않고 실행 환경에서만 넣습니다.
+
+PowerShell:
+
+```powershell
+$env:YOUTUBE_API_KEY="YOUR_KEY"
+npm start
+```
+
+자세한 실행법은 [`app/README.md`](app/README.md)를 봅니다.
+
 ## 목표
 
 - Threads / Instagram / Reels / YouTube / Shorts / Blog / X 등 여러 채널을 하나의 콘텐츠 파이프라인으로 운영
@@ -21,33 +74,45 @@ AI를 이용해 **화제 탐지 → 조사 → 자체 해설/재구성 → 멀�
 5. **한 번 조사하고 여러 번 활용** — 한 주제를 Threads 글, 블로그, Shorts/Reels 스크립트, 장문 영상으로 변환합니다.
 6. **성과 기반 실험** — 주제/훅/길이/포맷/게시 시간별 성과를 저장해 다음 제작에 반영합니다.
 
-## 현재 단계
+## 조사/정책 문서
 
-지금은 구현보다 **2026년 최신 플랫폼 정책과 실제 운영 방식 조사 + 안전한 소스 정책 + 초기 수익화 전략**을 먼저 고정하는 단계입니다.
-
-### 조사/정책
 - [`docs/RESEARCH_2026-09.md`](docs/RESEARCH_2026-09.md) — 2026-09 기준 시장/플랫폼 조사
 - [`docs/PLATFORM_MATRIX.md`](docs/PLATFORM_MATRIX.md) — 플랫폼별 역할·수익·자동화·정책 차이
 - [`docs/SOURCE_POLICY.md`](docs/SOURCE_POLICY.md) — 커뮤니티/뉴스/영상 등 소스 사용 기준
 - [`docs/SOURCE_REGISTRY.md`](docs/SOURCE_REGISTRY.md) — 실제 수집 후보와 GREEN/YELLOW/RED 초기 레지스트리
+- [`docs/CONTENT_PIPELINE.md`](docs/CONTENT_PIPELINE.md) — 제작·자동화 파이프라인
+- [`docs/EXECUTION_PLAN_30D.md`](docs/EXECUTION_PLAN_30D.md) — 30일 검증 계획
+- [`AGENTS.md`](AGENTS.md) — AI/Codex 작업 규칙
 
-### 실행/구현
-- [`docs/CONTENT_PIPELINE.md`](docs/CONTENT_PIPELINE.md) — 실제 제작·자동화 파이프라인 설계
-- [`docs/EXECUTION_PLAN_30D.md`](docs/EXECUTION_PLAN_30D.md) — 30일 검증 계획 + 첫 MVP 화면/자동화 단계
-- [`AGENTS.md`](AGENTS.md) — 이후 AI/Codex가 이어서 작업할 때 지켜야 할 프로젝트 규칙
+## 현재 데이터 흐름
 
-## 1차 실행 목표
+```text
+Google Trends RSS ─┐
+YouTube API ───────┼─> Trend Inbox
+직접 URL / 메모 ──┘       ↓
+                      소스 위험 판정
+                           ↓
+                      사람 신호 평가
+                           ↓
+                      초기 점수 계산
+                           ↓
+                      Research Bundle
+                           ↓
+                      조사 대기 / 제작 후보 / 패스
+```
 
-처음부터 모든 플랫폼을 동시에 자동화하지 않습니다.
+Google Trends와 YouTube 인기 메타데이터는 **소재 발견 신호**이지 사실관계나 자산 사용권을 증명하는 자료가 아닙니다.
 
-1. 트렌드 후보 수집
-2. 후보 점수화/중복 제거
-3. 사실·권리·위험 검사
-4. 같은 주제로 Threads용 텍스트 + Shorts/Reels용 30~60초 스크립트 + 블로그 초안 생성
-5. 사람이 승인
-6. 공식 API/허용된 게시 방식으로 발행
-7. 조회·댓글·저장·클릭·팔로우·수익/전환 기록
-8. 2~4주 데이터로 잘 되는 콘텐츠 축만 확대
+## 다음 구현 우선순위
+
+1. 허용된 뉴스/RSS/API 소스 추가
+2. 여러 소스를 하나의 Topic으로 묶는 중복/클러스터링
+3. Research Bundle 실제 AI 조사 연결
+4. Draft Studio — Threads / Shorts / Reels / Blog 등 플랫폼별 서로 다른 초안
+5. Human Approval Queue
+6. Threads 공식 API 게시/Insights
+7. 성과/수익 회수
+8. 실제 데이터 기반 `KEEP / KILL / SCALE`
 
 ## 추천 초기 콘텐츠 축
 
