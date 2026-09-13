@@ -6,75 +6,68 @@ Updated: 2026-09-14 KST
 
 This is the execution handoff for recurring development. Do not stop at planning. Inspect current `main`, continue implementation, test it, fix failures, and leave the next handoff after meaningful changes.
 
-Current completed implementation checkpoint:
+Current implementation checkpoint:
 
-- implementation tip: `ebc0236abab6880d18c43ef63b8d9f9e20776ccb`
-- GitHub Actions run `34784015681`: syntax/regression checks **SUCCESS**, local server smoke **SUCCESS** (job `103796086829`)
-- read operations-hub `023-sol.md` after this file for exact implementation history.
+- implementation tip: `4c3e724bec79395658c2c88df2797728f24d7783`
+- package: `0.16.0`
+- latest sequential operations note to read next: `024-sol.md`
 - repository tip always wins over stale handoff text.
 
 ## P2 Audience Comfort — materially complete for current workflow
 
-Current safety/gate behavior:
+Keep these gates intact:
 
 - explicit BLOCK/REVIEW reason/category UI
-- human-review audit with no fabricated reviewer identity
+- human review audit without fabricated reviewer identity
 - hard BLOCK cannot be human-approved
 - REVIEW approval is bound to the exact current Comfort scan signature
-- content/scan changes invalidate old approval as `stale-human-review`
-- Viral Finder rows display current Comfort gate + reason chips
-- existing `선택 → 제작 후보` is intercepted fail-closed
-- comfortable candidates may proceed
-- REVIEW requires matching current human approval
-- BLOCK / uncleared REVIEW / stale REVIEW are removed from ready selection
-- selected candidate detail shows current gate + recent audit history
-- Comfort audit metadata can be exported as JSON
-- batch REVIEW hold / BLOCK skip remain fail-closed
+- stale human review is blocked downstream
+- ready/editorial paths fail closed
+- Comfort audit export exists
 
-Do not weaken these gates while adding later workflow features.
+Do not weaken these gates while expanding later workflow features.
 
-## P3 Bulk candidate review — ACTIVE
+## P3 Bulk candidate review — materially complete for current workflow
+
+Current capabilities now include:
+
+- visible selection / clear selection
+- selected count + visible count + selected status summary
+- hold/reject/editorial handoff with result summaries
+- normalized review tags (NFKC, trim, whitespace collapse, case normalization)
+- bulk tag add and remove
+- exact normalized tag filtering in the Viral Finder list
+- keyboard helpers only when focus is not in an input: `Esc` clears selection, `Ctrl/Cmd+Shift+A` selects visible rows
+- group-level editorial handoff now routes through `ThreadsBulkReviewModel` and the same Audience Comfort gate/audit path
+- exact duplicate / same-story group actions remain available
+- editorial packet carries normalized tags + source/Viral/Comfort snapshot
+
+Browser interaction E2E remains useful when a browser-capable run is available, but do not block forward implementation indefinitely.
+
+## P4 Community Card Factory — ACTIVE
 
 New feature files:
 
 ```text
-app/features/discovery/viral/bulk-review-model.js
-app/features/discovery/viral/bulk-review.js
-test/bulk-review-model.test.mjs
+app/features/production/cards/privacy-mask-model.js
+app/features/production/cards/privacy-mask.js
+test/card-privacy-mask-model.test.mjs
 ```
 
-Central bootstrap loads `bulk-candidate-review` after Audience Comfort.
+Current manual image privacy workflow:
 
-Current controls:
+- Community Card Factory still creates 1080x1350 cards and preserves text PII masking.
+- For capture-image cards, turn on `마스킹 모드` and drag on the preview canvas.
+- Dragging writes a real black rectangle directly into the canvas that will be used for PNG export.
+- Each capture card has an explicit `개인정보 검토 완료` control.
+- Single capture-image PNG export is blocked until that capture is marked reviewed.
+- `PNG 전체 저장` is blocked while any capture image remains unreviewed.
+- Adding a mask automatically invalidates that card's reviewed state until re-reviewed.
+- Image change or preview rebuild resets the session privacy review state.
+- `Privacy JSON` exports rectangle metadata and explicitly records that OCR/automatic face detection was NOT claimed.
+- no OCR/image privacy success is fabricated.
 
-- 보이는 항목 선택
-- 선택 해제
-- 선택 보류
-- 태그 적용
-- 선택 → 편집 검토
-- existing selected research / ready / skip
-- existing exact-duplicate / same-story group actions
-
-Bulk editorial handoff creates `item.editorialHandoff` with source metadata, Viral snapshot, Comfort export envelope, tags, and timestamp. It uses `ThreadsComfortReviewModel.mayAdvance(item, "editorial")`; BLOCK, uncleared REVIEW, and stale REVIEW are skipped. Safe/current-human-cleared items move to `research` with `item.bulkReview.audit`.
-
-Package is now `0.15.0`.
-
-## P1 status
-
-P1 Viral Finder remains mostly complete:
-
-- Source Registry/theme lanes
-- adapter states and collection policies
-- canonical URLs
-- observed-vs-inferred engagement evidence
-- cross-path persisted discovery normalization
-- exact duplicate / same-story grouping
-- evidence/risk filters
-- group select/collapse/keep strongest
-- group-wide research/hold/skip
-- same-story alternatives held instead of treated as useless exact duplicates
-
-Browser interaction E2E remains useful if a browser-capable run is available, but do not block forward implementation on it indefinitely.
+This privacy-mask state is intentionally session-scoped because original screenshots are also session-only. A later persistence step may store normalized mask metadata only after deciding how it binds safely to exact image identity.
 
 ## Mandatory execution loop
 
@@ -100,19 +93,15 @@ Browser interaction E2E remains useful if a browser-capable run is available, bu
 
 ## Remaining backlog — execute in order
 
-### P3. Bulk candidate review — ACTIVE / PARTIALLY COMPLETE
+### P4. Community Card Factory — ACTIVE
 
 Next targets:
 
-1. add clearer selected-item status/result summary for hold/tag/editorial handoff and large-list feedback
-2. make group-level editorial handoff use the same `ThreadsBulkReviewModel` Comfort gate/audit path
-3. add normalized review-tag filters plus bulk tag removal
-4. add safe keyboard/accessibility helpers only when text inputs are not focused
-5. browser-test selection sync, ready-gate interception, reload persistence, and mobile width when possible
-
-### P4. Community Card Factory
-
-1080x1350 hook/excerpt/reaction/ending packages. Preserve text PII masking. Next privacy item remains **real manual drag-rectangle image masks before final PNG export**. Do not claim OCR/image masking succeeded.
+1. browser-test actual drag coordinates on desktop/mobile widths, individual export block, whole-package export block, and rebuild/reset behavior when possible
+2. add undo-last-mask per capture and clearer per-image mask count/status
+3. bind privacy metadata to an exact session image fingerprint/name/size tuple so stale review cannot accidentally carry to a newly selected image
+4. integrate privacy envelope into the card manifest/storyboard save metadata without persisting original image bytes
+5. ensure final 04 review can see whether image privacy review was completed
 
 ### P5. Content Warehouse
 
