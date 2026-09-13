@@ -42,7 +42,7 @@
     hookFilter.addEventListener("change", applyFilters);
 
     const observer = new MutationObserver(() => queueMicrotask(patchCards));
-    observer.observe(list, { childList: true, subtree: true });
+    observer.observe(list, { childList: true });
     patchCards();
 
     function patchCards() {
@@ -63,7 +63,8 @@
           if (metricAnchor) metricAnchor.insertAdjacentElement("beforebegin", meta);
           else card.appendChild(meta);
         }
-        meta.innerHTML = metadataPills(row.strategy);
+        const html = metadataPills(row.strategy);
+        if (meta.innerHTML !== html) meta.innerHTML = html;
       }
       applyFilters();
     }
