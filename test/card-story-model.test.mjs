@@ -31,13 +31,27 @@ const item = {
 }
 
 {
+  const masked = model.redactPII("연락처 010-1234-5678 / test@example.com / @real_user / 127.0.0.1");
+  assert.ok(!masked.includes("010-1234-5678"));
+  assert.ok(!masked.includes("test@example.com"));
+  assert.ok(!masked.includes("@real_user"));
+  assert.ok(!masked.includes("127.0.0.1"));
+}
+
+{
   const storyboard = model.buildStoryboard(item, {
-    reactions: "나는 바로 뺌\n이게 왜 문제임",
+    reactions: "나는 바로 뺌\n문의 010-9999-1111",
+    excerpt: "작성자 이메일은 someone@example.com 이었다",
   }, 2);
   assert.equal(storyboard.width, 1080);
   assert.equal(storyboard.height, 1350);
+  assert.equal(storyboard.schemaVersion, 2);
+  assert.equal(storyboard.privacy.textPiiMasked, true);
+  assert.equal(storyboard.privacy.imageMaskingRequired, true);
   assert.equal(storyboard.cards[0].type, "hook");
   assert.equal(storyboard.cards.filter((card) => card.type === "capture-image").length, 2);
+  assert.ok(!JSON.stringify(storyboard).includes("someone@example.com"));
+  assert.ok(!JSON.stringify(storyboard).includes("010-9999-1111"));
   assert.equal(storyboard.cards.at(-1).type, "ending");
   assert.equal(model.validateStoryboard(storyboard).ok, true);
 }
