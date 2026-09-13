@@ -21,6 +21,8 @@ const requiredFiles = [
   "app/features/discovery/comfort/comfort-model.js",
   "app/features/discovery/comfort/comfort-review.js",
   "app/features/discovery/comfort/comfort-review.css",
+  "app/features/production/cards/privacy-mask-model.js",
+  "app/features/production/cards/privacy-mask.js",
   "app/ARCHITECTURE.md",
 ];
 
@@ -46,6 +48,8 @@ for (const expected of [
   "features/discovery/comfort/comfort-review.js",
   "features/discovery/comfort/comfort-review.css",
   "card-story-model.js",
+  "features/production/cards/privacy-mask-model.js",
+  "features/production/cards/privacy-mask.js",
   "warehouse-model.js",
   "content-warehouse.js",
 ]) {
@@ -67,13 +71,28 @@ for (const expected of ["viralReadyBtn","Comfort gate","comfort-inline-row","com
 }
 
 const bulkModel = fs.readFileSync(new URL("../app/features/discovery/viral/bulk-review-model.js", import.meta.url), "utf8");
-for (const expected of ["editorial-handoff","editorialPacket","mayAdvance","reviewTags","bulkReview"]) {
+for (const expected of ["editorial-handoff","editorialPacket","mayAdvance","reviewTags","bulkReview","normalizeTag","remove-tag","summarize"]) {
   assert.ok(bulkModel.includes(expected), `Bulk review model missing ${expected}`);
 }
 
 const bulkReview = fs.readFileSync(new URL("../app/features/discovery/viral/bulk-review.js", import.meta.url), "utf8");
-for (const expected of ["보이는 항목 선택","선택 보류","태그 적용","선택 → 편집 검토"]) {
+for (const expected of ["보이는 항목 선택","선택 보류","태그 적용","태그 제거","태그 필터","선택 → 편집 검토","viralBulkSelectionSummary"]) {
   assert.ok(bulkReview.includes(expected), `Bulk review UI missing ${expected}`);
+}
+
+const groupActions = fs.readFileSync(new URL("../app/features/discovery/viral/group-actions.js", import.meta.url), "utf8");
+for (const expected of ["그룹 → 편집 검토","ThreadsBulkReviewModel","applyGroupEditorialHandoff","editorial-handoff"]) {
+  assert.ok(groupActions.includes(expected), `Group review missing safe editorial handoff path: ${expected}`);
+}
+
+const privacyModel = fs.readFileSync(new URL("../app/features/production/cards/privacy-mask-model.js", import.meta.url), "utf8");
+for (const expected of ["manual-drag-rectangle","automatedOcrClaimed","automatedFaceDetectionClaimed","exportGate","exportEnvelope"]) {
+  assert.ok(privacyModel.includes(expected), `Card privacy model missing ${expected}`);
+}
+
+const privacyUi = fs.readFileSync(new URL("../app/features/production/cards/privacy-mask.js", import.meta.url), "utf8");
+for (const expected of ["마스킹 모드","개인정보 검토 완료","image-privacy-review-required","blockUnsafeDownloads","Privacy JSON"]) {
+  assert.ok(privacyUi.includes(expected), `Card privacy UI missing ${expected}`);
 }
 
 console.log("Feature layout regression tests passed.");
