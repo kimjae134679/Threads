@@ -11,8 +11,10 @@
   let quota = null;
   const posting = new Set();
 
+  // Queue 자체의 카드 교체만 감시한다. 카드 내부에 우리가 버튼/패널을 추가하는 변화는
+  // 다시 patchQueue를 호출하지 않아 재귀 렌더를 피한다.
   const observer = new MutationObserver(() => patchQueue());
-  observer.observe(queue, { childList: true, subtree: true });
+  observer.observe(queue, { childList: true });
 
   refreshConnector().finally(patchQueue);
 
