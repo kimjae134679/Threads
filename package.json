@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check app/app.js && node --check app/youtube.js && node --check app/clustering.js"
+    "check": "node --check server.mjs && node --check app/app.js && node --check app/youtube.js && node --check app/clustering.js && node --check app/research-bundle.js"
   },
   "engines": {
     "node": ">=18"
