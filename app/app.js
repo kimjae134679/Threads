@@ -58,6 +58,11 @@ const els = {
   statusFilter: $("#statusFilter"),
   riskFilter: $("#riskFilter"),
   systemMessage: $("#systemMessage"),
+  evalFreshness: $("#evalFreshness"),
+  evalVelocity: $("#evalVelocity"),
+  evalAudience: $("#evalAudience"),
+  evalOriginality: $("#evalOriginality"),
+  evalRevenue: $("#evalRevenue"),
 };
 
 bindRange("freshnessInput", "freshnessOut");
@@ -71,6 +76,7 @@ els.search.addEventListener("input", render);
 els.statusFilter.addEventListener("change", render);
 els.riskFilter.addEventListener("change", render);
 $("#googleTrendsBtn").addEventListener("click", importGoogleTrends);
+$("#saveEvaluationBtn").addEventListener("click", saveEvaluation);
 $("#saveNoteBtn").addEventListener("click", saveSelectedNote);
 $("#copyPromptBtn").addEventListener("click", copyPrompt);
 $("#deleteBtn").addEventListener("click", deleteSelected);
@@ -392,6 +398,7 @@ function renderDetail() {
   els.detailRisk.className = `pill risk-${item.sourceRisk}`;
   els.detailRisk.textContent = item.sourceRisk.toUpperCase();
   els.detailNote.value = item.note || "";
+  setEvaluationInputs(item.signals || {});
 
   const decisionRows = [
     ["초기 점수", item.score == null ? "검토 필요" : `${item.score}/100`],
@@ -421,6 +428,47 @@ function renderDetail() {
   });
 
   els.prompt.value = buildPrompt(item);
+}
+
+function setEvaluationInputs(signals) {
+  els.evalFreshness.value = nullableInputValue(signals.freshness);
+  els.evalVelocity.value = nullableInputValue(signals.velocity);
+  els.evalAudience.value = nullableInputValue(signals.audience);
+  els.evalOriginality.value = nullableInputValue(signals.originalityRoom);
+  els.evalRevenue.value = nullableInputValue(signals.revenueFit);
+}
+
+function nullableInputValue(value) {
+  return value == null || Number.isNaN(Number(value)) ? "" : String(value);
+}
+
+function parseEvaluationValue(input) {
+  const raw = input.value.trim();
+  if (raw === "") return null;
+  const value = Number(raw);
+  if (!Number.isFinite(value)) return null;
+  return Math.max(0, Math.min(100, value));
+}
+
+function saveEvaluation() {
+  const item = state.items.find((x) => x.id === selectedId);
+  if (!item) return;
+
+  const signals = {
+    freshness: parseEvaluationValue(els.evalFreshness),
+    velocity: parseEvaluationValue(els.evalVelocity),
+    audience: parseEvaluationValue(els.evalAudience),
+    originalityRoom: parseEvaluationValue(els.evalOriginality),
+    revenueFit: parseEvaluationValue(els.evalRevenue),
+  };
+  const complete = Object.values(signals).every((value) => value != null);
+  item.signals = signals;
+  item.score = complete ? calculateScore(signals, item.sourceRisk) : null;
+  item.scoreBasis = complete ? "human_reviewed" : "partial_human_review";
+  item.updatedAt = new Date().toISOString();
+  persist();
+  render();
+  showSystemMessage(complete ? `평가를 저장했습니다. 초기 점수는 ${item.score}점입니다.` : "평가를 저장했습니다. 빈 항목이 있어 점수는 아직 계산하지 않습니다.", complete ? "success" : "info");
 }
 
 function buildChecks(item) {
@@ -461,6 +509,10 @@ function setSelectedStatus(status) {
   if (!item) return;
   if (item.sourceRisk === "red" && status === "ready") {
     alert("RED 소스는 바로 제작 후보로 올리지 않습니다. 먼저 출처/권리/위험을 별도로 검토하세요.");
+    return;
+  }
+  if (status === "ready" && item.score == null) {
+    alert("제작 후보로 올리기 전에 5개 평가 항목을 모두 입력해 점수를 계산하세요.");
     return;
   }
   item.status = status;
