@@ -9,6 +9,11 @@ const requiredFiles = [
   "app/features/themes/theme-model.js",
   "app/features/themes/theme-review.js",
   "app/features/themes/theme-review.css",
+  "app/features/discovery/sources/README.md",
+  "app/features/discovery/sources/source-registry.js",
+  "app/features/discovery/sources/source-model.js",
+  "app/features/discovery/sources/source-review.js",
+  "app/features/discovery/sources/source-review.css",
   "app/ARCHITECTURE.md",
 ];
 
@@ -21,6 +26,9 @@ for (const expected of [
   "features/themes/theme-taxonomy.js",
   "features/themes/theme-model.js",
   "features/themes/theme-review.js",
+  "features/discovery/sources/source-registry.js",
+  "features/discovery/sources/source-model.js",
+  "features/discovery/sources/source-review.js",
   "viral-model.js",
   "card-story-model.js",
   "warehouse-model.js",
