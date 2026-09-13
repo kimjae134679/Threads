@@ -3,6 +3,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getOpenAiStatus, researchWithOpenAI, draftWithOpenAI } from "./openai.mjs";
+import {
+  getThreadsStatus,
+  getThreadsProfile,
+  getThreadsPublishingLimit,
+  publishTextToThreads,
+  getThreadsPostInsights,
+} from "./threads.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -48,6 +55,7 @@ const server = http.createServer(async (req, res) => {
             note: "2025-07-21 이후 mostPopular은 과거 전체 Trending과 동일하지 않으며 인기 음악·영화·게임 신호 중심입니다.",
           },
           openai: getOpenAiStatus(),
+          threads: getThreadsStatus(),
         },
       });
     }
@@ -74,6 +82,35 @@ const server = http.createServer(async (req, res) => {
       return json(res, 200, { ok: true, result });
     }
 
+    if (url.pathname === "/api/threads/profile") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const profile = await getThreadsProfile();
+      return json(res, 200, { ok: true, profile });
+    }
+
+    if (url.pathname === "/api/threads/quota") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const quota = await getThreadsPublishingLimit();
+      return json(res, 200, { ok: true, quota, collectedAt: new Date().toISOString() });
+    }
+
+    if (url.pathname === "/api/threads/publish") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req);
+      const candidate = body?.candidate || {};
+      validateApprovedCandidate(candidate);
+      const text = approvedThreadsText(candidate);
+      const result = await publishTextToThreads(text, { replyControl: body?.replyControl || "everyone" });
+      return json(res, 200, { ok: true, result });
+    }
+
+    if (url.pathname === "/api/threads/insights") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const id = url.searchParams.get("id") || "";
+      const result = await getThreadsPostInsights(id);
+      return json(res, 200, { ok: true, result });
+    }
+
     if (url.pathname === "/") {
       res.writeHead(302, { Location: "/app/" });
       return res.end();
@@ -89,6 +126,8 @@ const server = http.createServer(async (req, res) => {
         error: error.code || "request_failed",
         message: String(error?.message || error),
         upstreamStatus: error.upstreamStatus || undefined,
+        upstreamCode: error.upstreamCode || undefined,
+        upstreamSubcode: error.upstreamSubcode || undefined,
       });
     }
     return json(res, 500, { ok: false, error: "internal_server_error" });
@@ -112,7 +151,7 @@ async function handleGoogleTrends(url, res) {
   try {
     const response = await fetch(feedUrl, {
       headers: {
-        "user-agent": "Threads-AI-Content-Lab/0.1 (+local research tool)",
+        "user-agent": "Threads-AI-Content-Lab/0.2 (+local research tool)",
         accept: "application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
       },
       signal: controller.signal,
@@ -224,16 +263,48 @@ async function handleYouTubeMostPopular(url, res) {
   }
 }
 
+function validateApprovedCandidate(candidate) {
+  if (!candidate || typeof candidate !== "object") throw requestError(400, "candidate_required", "게시 후보 데이터가 필요합니다.");
+  if (candidate.status !== "ready") throw requestError(409, "candidate_not_ready", "후보 상태가 제작 후보(ready)가 아닙니다.");
+  if (!Number.isFinite(Number(candidate.score))) throw requestError(409, "candidate_score_missing", "후보 점수 평가가 완료되지 않았습니다.");
+  if (candidate.researchBundle?.reviewStatus !== "reviewed") throw requestError(409, "research_review_required", "Research Bundle 사람 검토 완료가 필요합니다.");
+  if (candidate.draftStudio?.reviewStatus !== "approved") throw requestError(409, "draft_approval_required", "Draft Studio 사람 승인이 필요합니다.");
+
+  const gate = candidate.safetyGate || {};
+  const gateStatuses = [gate.fact, gate.rights, gate.privacy, gate.defamation, gate.platform];
+  if (!gate.reviewedAt || gateStatuses.some((value) => !value || value === "unknown")) {
+    throw requestError(409, "safety_gate_incomplete", "Rights/Safety Gate 검토가 완료되지 않았습니다.");
+  }
+  if (gateStatuses.includes("block")) throw requestError(409, "safety_gate_blocked", "Rights/Safety Gate에 BLOCK 항목이 있습니다.");
+  if (gateStatuses.includes("warn") && !String(gate.notes || "").trim()) {
+    throw requestError(409, "safety_gate_warning_unresolved", "WARN 항목의 대응 메모가 필요합니다.");
+  }
+
+  const approval = candidate.publishApproval || {};
+  if (approval.status !== "approved" || !approval.approvedAt) {
+    throw requestError(409, "publish_approval_required", "게시 대기 사람 승인이 필요합니다.");
+  }
+  if (!approval.basisUpdatedAt || approval.basisUpdatedAt !== candidate.updatedAt) {
+    throw requestError(409, "publish_approval_stale", "게시 승인 이후 후보 내용이 변경되었습니다. 다시 승인하세요.");
+  }
+}
+
+function approvedThreadsText(candidate) {
+  const manual = String(candidate.draftStudio?.manualEdits?.threads || "").trim();
+  if (manual) return manual;
+  const generated = candidate.draftStudio?.generated?.threads || {};
+  const text = [generated.hook, generated.body, generated.cta].map((x) => String(x || "").trim()).filter(Boolean).join("\n\n");
+  if (!text) throw requestError(409, "threads_draft_missing", "승인된 Threads 초안이 없습니다.");
+  return text;
+}
+
 async function readJsonBody(req) {
   const chunks = [];
   let size = 0;
   for await (const chunk of req) {
     size += chunk.length;
     if (size > 256 * 1024) {
-      const error = new Error("요청 본문이 너무 큽니다.");
-      error.status = 413;
-      error.code = "payload_too_large";
-      throw error;
+      throw requestError(413, "payload_too_large", "요청 본문이 너무 큽니다.");
     }
     chunks.push(chunk);
   }
@@ -242,10 +313,7 @@ async function readJsonBody(req) {
   try {
     return JSON.parse(text);
   } catch (_) {
-    const error = new Error("JSON 요청 본문을 해석하지 못했습니다.");
-    error.status = 400;
-    error.code = "invalid_json";
-    throw error;
+    throw requestError(400, "invalid_json", "JSON 요청 본문을 해석하지 못했습니다.");
   }
 }
 
@@ -324,6 +392,13 @@ async function serveStatic(pathname, res, headOnly = false) {
     }
     throw error;
   }
+}
+
+function requestError(status, code, message) {
+  const error = new Error(message);
+  error.status = status;
+  error.code = code;
+  return error;
 }
 
 function methodNotAllowed(res, allowed) {
