@@ -46,18 +46,31 @@ jobs:
 
           const app = await fetch('http://127.0.0.1:4173/app/');
           const html = await app.text();
-          const requiredScripts = ['ai-studio.js', 'source-enrichment.js', 'account-registry.js', 'experiment-assignment.js', 'threads-publisher.js', 'experiment-model.js', 'experiment-lab.js'];
-          if (!app.ok || !html.includes('Trend Inbox') || requiredScripts.some((name) => !html.includes(name))) {
+          const htmlScripts = ['ai-studio.js', 'source-enrichment.js', 'account-registry.js', 'experiment-assignment.js', 'threads-publisher.js', 'experiment-model.js', 'experiment-lab.js'];
+          if (!app.ok || !html.includes('Trend Inbox') || htmlScripts.some((name) => !html.includes(name))) {
             throw new Error('static app feature loading check failed');
           }
 
-          for (const asset of requiredScripts) {
+          const dynamicScripts = ['content-strategy.js', 'publication-strategy-snapshot.js', 'experiment-metadata.js'];
+          const assets = [...htmlScripts, ...dynamicScripts];
+          for (const asset of assets) {
             const response = await fetch(`http://127.0.0.1:4173/app/${asset}`);
             if (!response.ok) throw new Error(`missing static asset ${asset}`);
           }
 
-          const assignmentCss = await fetch('http://127.0.0.1:4173/app/experiment-assignment.css');
-          if (!assignmentCss.ok) throw new Error('missing experiment assignment stylesheet');
+          const assignmentBootstrap = await fetch('http://127.0.0.1:4173/app/experiment-assignment.js').then(r => r.text());
+          if (!assignmentBootstrap.includes('content-strategy.js') || !assignmentBootstrap.includes('experiment-metadata.js')) {
+            throw new Error('experiment assignment companion bootstrap missing');
+          }
+          const contentStrategy = await fetch('http://127.0.0.1:4173/app/content-strategy.js').then(r => r.text());
+          if (!contentStrategy.includes('publication-strategy-snapshot.js') || !contentStrategy.includes('A10')) {
+            throw new Error('content strategy publication snapshot or rights guard missing');
+          }
+
+          for (const stylesheet of ['experiment-assignment.css', 'content-strategy.css', 'experiment-metadata.css']) {
+            const response = await fetch(`http://127.0.0.1:4173/app/${stylesheet}`);
+            if (!response.ok) throw new Error(`missing stylesheet ${stylesheet}`);
+          }
 
           const research = await fetch('http://127.0.0.1:4173/api/ai/research', {
             method: 'POST', headers: {'content-type': 'application/json'},
