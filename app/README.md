@@ -13,9 +13,10 @@
 - 운영자 입력 기반 초기 점수
 - 자동수집 항목은 임의 점수 대신 `검토 필요`로 표시
 - 후보별 5개 신호를 사람 평가 후 점수 계산
-- 미평가 자동수집 항목은 바로 `제작 후보`로 승격 불가
 - 제목/URL/관련 출처 기반 **유사 토픽 묶기**
-- Research Bundle용 프롬프트 생성/복사
+- AI 조사용 Research Bundle 프롬프트 생성/복사
+- **조사 결과를 구조화된 Research Bundle로 후보에 저장**
+- 사람 검토 완료 전 `제작 후보` 승격 차단
 - 조사 대기 / 제작 후보 / 패스 상태 관리
 - 브라우저 localStorage 저장
 - JSON 내보내기 / 불러오기
@@ -42,9 +43,7 @@ http://127.0.0.1:4173/app/
 npm run check
 ```
 
-`server.mjs`, `app/app.js`, `app/youtube.js`, `app/clustering.js`의 JavaScript 문법을 검사합니다.
-
-GitHub Actions에도 같은 check가 연결되어 있습니다.
+현재 `server.mjs`, `app/app.js`, `app/youtube.js`, `app/clustering.js`, `app/research-bundle.js` 문법을 검사하며 GitHub Actions에도 같은 check가 연결되어 있습니다.
 
 ## Google Trends 연결
 
@@ -112,6 +111,33 @@ RED 소스 또는 평가가 끝나지 않은 자동수집 후보는 바로 제�
 
 중요: 이 기능은 후보를 자동 삭제하거나 하나로 합치지 않습니다. 서로 다른 사건이 잘못 묶일 수 있으므로 사람 검토용으로만 사용합니다.
 
+## Research Bundle 저장
+
+후보별로 다음 조사 결과를 저장합니다.
+
+```text
+reviewStatus       unresearched / researching / reviewed
+whyNow             왜 지금 뜨는가
+verifiedFacts[]    확인된 사실
+claimsToVerify[]   아직 확인할 주장
+angles[]           콘텐츠 각도
+riskNotes          권리/개인정보/명예훼손 메모
+sources[]          추가 출처 URL + 메모
+updatedAt
+```
+
+`사람 검토 완료(reviewed)`로 저장하려면 최소한:
+
+- `whyNow` 작성
+- 확인된 사실 1개 이상
+- 추가 출처 1개 이상
+
+이 필요합니다.
+
+그리고 후보를 `제작 후보`로 올리려면 기존 점수 평가뿐 아니라 Research Bundle도 `사람 검토 완료` 상태여야 합니다.
+
+`Bundle JSON 복사`로 해당 후보의 source/signals/cluster/research 결과를 다음 AI 작업이나 다른 도구로 넘길 수 있습니다.
+
 ## 데이터
 
 현재 Inbox 자체 데이터는 브라우저의 다음 localStorage key에 저장됩니다.
@@ -125,8 +151,8 @@ threads_trend_inbox_v1
 ## 다음 구현 순서
 
 1. 허용된 뉴스/RSS/API 소스 추가
-2. Research Bundle을 실제 AI 조사 작업으로 넘기는 연결
-3. Rights/Safety Gate 결과 구조화
+2. Research Bundle을 실제 AI 조사 작업으로 자동 연결
+3. Rights/Safety Gate 결과를 별도 상태로 구조화
 4. Draft Studio
 5. 승인 Queue
 6. Threads 공식 API 발행/Insights 회수
