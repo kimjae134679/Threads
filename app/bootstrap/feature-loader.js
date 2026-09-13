@@ -40,6 +40,14 @@
       ],
     },
     {
+      id: "audience-comfort",
+      styles: ["./features/discovery/comfort/comfort-review.css"],
+      scripts: [
+        "./features/discovery/comfort/comfort-model.js",
+        "./features/discovery/comfort/comfort-review.js",
+      ],
+    },
+    {
       id: "community-cards",
       scripts: ["./card-story-model.js", "./card-factory.js"],
     },
