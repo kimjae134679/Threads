@@ -103,6 +103,11 @@ for (const expected of [
   "categoriesAtReview",
   "safeBatchDisposition",
   "skip-blocked",
+  "scanSignatureAtReview",
+  "clearanceStatus",
+  "mayAdvance",
+  "stale-human-review",
+  "exportEnvelope",
 ]) {
   assert.ok(comfortModel.includes(expected), `Audience Comfort model missing ${expected}`);
 }
@@ -115,6 +120,11 @@ for (const expected of [
   "자동 BLOCK · 승인 불가",
   "comfortBatchSkipBlocked",
   "scanSignature",
+  "viralReadyBtn",
+  "Comfort gate",
+  "comfort-inline-row",
+  "comfort-detail-audit",
+  "Comfort 감사 JSON",
 ]) {
   assert.ok(comfortReview.includes(expected), `Audience Comfort UI missing ${expected}`);
 }
