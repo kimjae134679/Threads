@@ -6,9 +6,9 @@ AI를 이용해 **화제 탐지 → 조사 → 자체 해설/재구성 → 멀�
 
 ## 현재 상태
 
-조사 문서 단계에서 끝나지 않고 첫 실행형 MVP인 **Trend Inbox**가 들어가 있습니다.
+조사 문서 단계에서 끝나지 않고 실행형 **Trend Inbox MVP**가 들어가 있습니다.
 
-현재 실제 동작:
+현재 구현:
 
 - Google Trends KR `Trending Now` RSS 후보 수집
 - 선택적 YouTube Data API `mostPopular` KR 메타데이터 수집
@@ -16,13 +16,14 @@ AI를 이용해 **화제 탐지 → 조사 → 자체 해설/재구성 → 멀�
 - DCInside / Blind 자동수집 차단 판정
 - GREEN / YELLOW / RED 소스 위험도
 - 사람 평가 후 초기 점수 계산
-- 미평가 자동수집 후보의 제작 승격 차단
-- 플랫폼 추천
-- Research Bundle용 AI 프롬프트 생성
+- canonical URL / 관련 출처 / 제목 유사도 기반 유사 토픽 묶기
+- AI 조사용 Research Bundle 프롬프트 생성
+- `whyNow / verifiedFacts / claimsToVerify / angles / riskNotes / sources` 조사 결과 저장
+- 사람 평가 + Research Bundle 사람 검토 완료 전 제작 후보 승격 차단
 - 조사 대기 / 제작 후보 / 패스 관리
 - localStorage 저장 + JSON 백업/복원
 
-실행 화면은 [`app/`](app/)에 있습니다.
+실행 화면과 상세 사용법은 [`app/`](app/) / [`app/README.md`](app/README.md)에 있습니다.
 
 ## 바로 실행
 
@@ -54,8 +55,6 @@ PowerShell:
 $env:YOUTUBE_API_KEY="YOUR_KEY"
 npm start
 ```
-
-자세한 실행법은 [`app/README.md`](app/README.md)를 봅니다.
 
 ## 목표
 
@@ -92,13 +91,16 @@ YouTube API ───────┼─> Trend Inbox
 직접 URL / 메모 ──┘       ↓
                       소스 위험 판정
                            ↓
+                 유사 후보 / 토픽 묶기
+                           ↓
                       사람 신호 평가
                            ↓
-                      초기 점수 계산
+                    Research Bundle
+              (조사 결과 + 출처 + 위험 메모)
                            ↓
-                      Research Bundle
+                    사람 검토 완료
                            ↓
-                      조사 대기 / 제작 후보 / 패스
+                 제작 후보 / 패스
 ```
 
 Google Trends와 YouTube 인기 메타데이터는 **소재 발견 신호**이지 사실관계나 자산 사용권을 증명하는 자료가 아닙니다.
@@ -106,8 +108,8 @@ Google Trends와 YouTube 인기 메타데이터는 **소재 발견 신호**이�
 ## 다음 구현 우선순위
 
 1. 허용된 뉴스/RSS/API 소스 추가
-2. 여러 소스를 하나의 Topic으로 묶는 중복/클러스터링
-3. Research Bundle 실제 AI 조사 연결
+2. Research Bundle 실제 AI 조사 자동 연결
+3. Rights/Safety Gate를 별도 판정 상태로 구조화
 4. Draft Studio — Threads / Shorts / Reels / Blog 등 플랫폼별 서로 다른 초안
 5. Human Approval Queue
 6. Threads 공식 API 게시/Insights
