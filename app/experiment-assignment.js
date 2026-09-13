@@ -68,6 +68,7 @@
   loadCompanion("./content-strategy.js");
   loadCompanion("./experiment-metadata.js");
   loadCompanion("./viral-model.js", () => loadCompanion("./viral-review.js"));
+  loadCompanion("./card-story-model.js", () => loadCompanion("./card-factory.js"));
 
   function currentItem() {
     return (state.items || []).find((item) => item.id === selectedId) || null;
