@@ -49,6 +49,7 @@
       if (summary.textContent !== nextSummary) summary.textContent = nextSummary;
 
       ensureAction(review, key, "research", "그룹 → 조사");
+      ensureAction(review, key, "editorial", "그룹 → 편집 검토");
       ensureAction(review, key, "hold", "그룹 보류");
       ensureAction(review, key, "skip", "그룹 패스");
 
@@ -77,7 +78,8 @@
   function onClick(event) {
     const bulk = event.target.closest?.("button[data-group-bulk-status]");
     if (bulk) {
-      applyGroupDisposition(bulk.dataset.groupKey, bulk.dataset.groupBulkStatus);
+      if (bulk.dataset.groupBulkStatus === "editorial") applyGroupEditorialHandoff(bulk.dataset.groupKey);
+      else applyGroupDisposition(bulk.dataset.groupKey, bulk.dataset.groupBulkStatus);
       return;
     }
 
@@ -131,6 +133,27 @@
     showSystemMessage(`그룹 ${changed}건을 ${label} 처리했습니다.${blockedCount ? ` 차단 후보 ${blockedCount}건은 승격하지 않았습니다.` : ""}`, changed ? "success" : "info");
   }
 
+  function applyGroupEditorialHandoff(key) {
+    const group = resolveGroup(key);
+    const bulkModel = window.ThreadsBulkReviewModel;
+    const comfortModel = window.ThreadsComfortReviewModel;
+    if (!group || !bulkModel?.apply || !comfortModel?.mayAdvance) {
+      showSystemMessage("편집 검토 안전 게이트가 아직 준비되지 않았습니다.", "info");
+      return;
+    }
+    const ids = memberItems(group).map((item) => item.id);
+    const result = bulkModel.apply(state.items || [], ids, "editorial-handoff", { comfortModel, viralModel });
+    for (const item of memberItems(group)) {
+      if (result.changed.includes(item.id)) audit(item, "editorial-handoff", key);
+    }
+    if (result.changed.length) persist();
+    render();
+    queuePatch();
+    const summary = bulkModel.summarize ? bulkModel.summarize(result) : { changedCount: result.changed.length, skippedCount: result.skipped.length, skippedReasons: {} };
+    const reasons = Object.entries(summary.skippedReasons || {}).map(([reason, count]) => `${reason} ${count}`).join(" · ");
+    showSystemMessage(`그룹 편집 검토 ${summary.changedCount}건 전달${summary.skippedCount ? ` · ${summary.skippedCount}건 제외${reasons ? ` (${reasons})` : ""}` : ""}`, summary.changedCount ? "success" : "info");
+  }
+
   function holdStoryAlternatives(key) {
     const group = resolveGroup(key);
     if (!group || group.type !== "story") return;
@@ -163,13 +186,15 @@
   }
 
   function statusSummary(group) {
-    const counts = { inbox: 0, research: 0, ready: 0, skip: 0, hold: 0, blocked: 0 };
+    const counts = { inbox: 0, research: 0, ready: 0, skip: 0, hold: 0, blocked: 0, editorial: 0 };
     for (const item of memberItems(group)) {
       if (blocked(item)) counts.blocked += 1;
+      if (item.editorialHandoff && item.status === "research") counts.editorial += 1;
       if (item.viralReview?.groupDisposition === "hold" && item.status === "inbox") counts.hold += 1;
       else if (Object.prototype.hasOwnProperty.call(counts, item.status)) counts[item.status] += 1;
     }
     const parts = [
+      counts.editorial ? `편집검토 ${counts.editorial}` : "",
       counts.research ? `조사 ${counts.research}` : "",
       counts.hold ? `보류 ${counts.hold}` : "",
       counts.ready ? `제작 ${counts.ready}` : "",
@@ -182,6 +207,7 @@
 
   window.ThreadsViralGroupActions = {
     applyGroupDisposition,
+    applyGroupEditorialHandoff,
     holdStoryAlternatives,
     statusSummary,
   };
