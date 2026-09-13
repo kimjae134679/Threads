@@ -182,16 +182,31 @@
   }
 
   function patchRows() {
+    const items = state.items || [];
+    const grouped = model.groupCandidates(items);
+    const exactCounts = memberCounts(grouped.exactDuplicates);
+    const storyCounts = memberCounts(grouped.sameStories);
     for (const row of document.querySelectorAll(".viral-row")) {
       const itemId = row.querySelector("[data-open-id]")?.dataset.openId;
       if (!itemId) continue;
-      patchRow(row, itemId);
+      patchRow(row, itemId, exactCounts, storyCounts);
     }
   }
 
-  function patchRow(row, itemId) {
+  function memberCounts(groups) {
+    const counts = new Map();
+    for (const group of groups) {
+      for (const member of group.members) {
+        if (member.item?.id) counts.set(member.item.id, group.count);
+      }
+    }
+    return counts;
+  }
+
+  function patchRow(row, itemId, exactCounts, storyCounts) {
     const item = (state.items || []).find((candidate) => candidate.id === itemId);
     if (!item) return;
+    const normalized = model.normalizeCandidate(item);
     const source = model.resolveSource(item);
     const lane = model.primaryLane(item);
     const laneMatches = model.matchesLane(item, selectedLane);
@@ -200,6 +215,8 @@
     row.dataset.discoverySourceHidden = sourceMatches ? "false" : "true";
     row.dataset.discoverySource = source.sourceId;
     row.dataset.discoveryLane = lane?.id || "";
+    row.dataset.discoveryEvidence = normalized.engagementEvidence.level;
+    row.dataset.sameStoryKey = normalized.sameStoryKey;
 
     let chips = row.querySelector(".discovery-source-chip-row");
     if (!chips) {
@@ -213,8 +230,31 @@
     chips.innerHTML = `
       <span class="discovery-source-chip">${escapeHtml(source.label)}</span>
       ${lane ? `<span class="discovery-lane-chip">${escapeHtml(lane.label)}</span>` : ""}
+      ${evidenceChip(normalized.engagementEvidence)}
+      ${exactCounts.get(itemId) > 1 ? `<span class="discovery-mode-chip">완전중복 ×${exactCounts.get(itemId)}</span>` : ""}
+      ${!exactCounts.get(itemId) && storyCounts.get(itemId) > 1 ? `<span class="discovery-mode-chip">같은소재 ×${storyCounts.get(itemId)}</span>` : ""}
       ${source.manualCapture ? '<span class="discovery-mode-chip">원문 수동확인</span>' : ""}
     `;
+  }
+
+  function evidenceChip(evidence) {
+    if (evidence.level === "observed") {
+      const metricOrder = ["views", "likes", "comments", "shares", "rank"];
+      const key = metricOrder.find((name) => evidence.observed[name]);
+      const entry = key ? evidence.observed[key] : null;
+      const labels = { views: "조회", likes: "반응", comments: "댓글", shares: "공유", rank: "순위" };
+      return entry ? `<span class="discovery-evidence-chip observed">실측 ${labels[key]} ${escapeHtml(compactNumber(entry.value))}</span>` : '<span class="discovery-evidence-chip observed">실측 반응값</span>';
+    }
+    if (evidence.level === "inferred-only") return '<span class="discovery-evidence-chip inferred">추정 관심도만</span>';
+    return '<span class="discovery-evidence-chip none">반응값 미확인</span>';
+  }
+
+  function compactNumber(value) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) return "-";
+    if (numeric >= 1_000_000) return `${(numeric / 1_000_000).toFixed(numeric >= 10_000_000 ? 0 : 1)}M`;
+    if (numeric >= 1_000) return `${(numeric / 1_000).toFixed(numeric >= 10_000 ? 0 : 1)}K`;
+    return String(numeric);
   }
 
   function adapterLabel(value) {
@@ -243,7 +283,6 @@
       "public-index-or-manual": "공개 인덱스 / 수동",
       "rss-or-public-index": "RSS / 공개 인덱스",
       "rss-search-index": "RSS / 검색 인덱스",
-      "public-index-or-manual": "공개 인덱스 / 수동",
     };
     return labels[value] || value;
   }
