@@ -31,6 +31,13 @@
     return hasTextDraft(item) || hasCardAsset(item);
   }
 
+  function cardPrivacyPass(item = {}) {
+    const cards = Array.isArray(item.cardFactory?.storyboard?.cards) ? item.cardFactory.storyboard.cards : [];
+    const captureCount = cards.filter((card) => card?.type === "capture-image").length;
+    if (!captureCount) return true;
+    return item.cardFactory?.privacy?.gate?.allowed === true;
+  }
+
   function comfortBlocked(item = {}) {
     return item.viralReview?.decision === "BLOCK" || Number(item.viralReview?.comfortScore) < 60;
   }
@@ -38,6 +45,7 @@
   function deriveStage(item = {}) {
     if (comfortBlocked(item)) return "blocked";
     if (!hasProductionAsset(item)) return "not-produced";
+    if (!cardPrivacyPass(item)) return "review";
     if (!safetyPass(item)) return "review";
     if (!currentApproval(item)) return "approval";
     return "ready";
@@ -114,6 +122,7 @@
     hasTextDraft,
     hasCardAsset,
     hasProductionAsset,
+    cardPrivacyPass,
     comfortBlocked,
     deriveStage,
     normalizeWarehouse,

@@ -128,7 +128,12 @@
     for (const file of files) {
       if (!file.type.startsWith("image/")) continue;
       const url = URL.createObjectURL(file);
-      localImages.push({ file, url, image: await loadImage(url) });
+      localImages.push({
+        file,
+        url,
+        image: await loadImage(url),
+        identity: { name: file.name, size: file.size, lastModified: file.lastModified, type: file.type },
+      });
     }
     imageStatus.textContent = localImages.length ? `원문 캡처 ${localImages.length}개 · 세션 전용` : "캡처 없음";
   }
@@ -182,6 +187,16 @@
       canvas.width = storyboard.width;
       canvas.height = storyboard.height;
       canvas.dataset.cardIndex = String(index);
+      if (card.type === "capture-image") {
+        const entry = localImages[card.imageIndex];
+        canvas.dataset.captureImageIndex = String(card.imageIndex ?? "");
+        if (entry?.identity) {
+          canvas.dataset.captureFileName = entry.identity.name || "";
+          canvas.dataset.captureFileSize = String(entry.identity.size || 0);
+          canvas.dataset.captureFileLastModified = String(entry.identity.lastModified || 0);
+          canvas.dataset.captureFileType = entry.identity.type || "";
+        }
+      }
       drawCard(canvas, card, index, storyboard.cards.length);
       const caption = document.createElement("figcaption");
       caption.innerHTML = `<span>${index + 1}/${storyboard.cards.length} · ${escapeHtml(card.type)}</span><button type="button" class="button ghost" data-download-card="${index}">PNG</button>`;
@@ -353,17 +368,20 @@
     if (!validation.ok) return showSystemMessage(`스토리보드를 저장할 수 없습니다: ${validation.issues.join(", ")}`, "error");
 
     const previous = item.cardFactory || {};
+    const privacy = window.ThreadsCardPrivacyMask?.exportEnvelope?.() || null;
     const next = {
-      schemaVersion: 1,
+      schemaVersion: 2,
       template: template.value,
       capture: currentStoryboard.capture,
       storyboard: currentStoryboard,
       captureImageNames: localImages.map((entry) => entry.file.name),
+      captureImageIdentities: localImages.map((entry) => ({ ...(entry.identity || {}) })),
+      privacy,
       imagePersistence: "session-only",
       updatedAt: new Date().toISOString(),
     };
-    const changed = JSON.stringify({ template: previous.template, capture: previous.capture, storyboard: previous.storyboard, captureImageNames: previous.captureImageNames })
-      !== JSON.stringify({ template: next.template, capture: next.capture, storyboard: next.storyboard, captureImageNames: next.captureImageNames });
+    const changed = JSON.stringify({ template: previous.template, capture: previous.capture, storyboard: previous.storyboard, captureImageNames: previous.captureImageNames, captureImageIdentities: previous.captureImageIdentities, privacy: previous.privacy })
+      !== JSON.stringify({ template: next.template, capture: next.capture, storyboard: next.storyboard, captureImageNames: next.captureImageNames, captureImageIdentities: next.captureImageIdentities, privacy: next.privacy });
     item.cardFactory = next;
     if (changed) item.updatedAt = new Date().toISOString();
     persist();
@@ -440,6 +458,8 @@
       template: template.value,
       storyboard: currentStoryboard,
       captureImageNames: localImages.map((entry) => entry.file.name),
+      captureImageIdentities: localImages.map((entry) => ({ ...(entry.identity || {}) })),
+      privacy: window.ThreadsCardPrivacyMask?.exportEnvelope?.() || item.cardFactory?.privacy || null,
       notice: "Source screenshots/media require separate rights/privacy review before publication.",
       generatedAt: new Date().toISOString(),
     };

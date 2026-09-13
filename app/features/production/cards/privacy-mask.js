@@ -8,6 +8,7 @@
   if (!model || !section || !preview) return;
 
   const reviews = {};
+  const baseLayers = {};
   let maskMode = false;
   let drag = null;
 
@@ -17,7 +18,7 @@
   tools.innerHTML = `
     <div class="card-privacy-copy">
       <strong>이미지 개인정보 가림</strong>
-      <span>마스킹 모드에서 캡처 카드 위를 드래그하면 검은 사각형이 최종 canvas에 직접 적용됩니다. OCR/얼굴 자동탐지를 했다고 간주하지 않습니다.</span>
+      <span>마스킹 모드에서 캡처 카드 위를 드래그하면 검은 사각형이 최종 canvas에 직접 적용됩니다. 검토 상태는 선택한 정확한 이미지 이름·크기·수정시각·형식에 결속됩니다. OCR/얼굴 자동탐지를 했다고 간주하지 않습니다.</span>
     </div>
     <div class="card-privacy-actions">
       <button id="cardPrivacyMaskModeBtn" type="button" class="button ghost" aria-pressed="false">마스킹 모드</button>
@@ -44,7 +45,7 @@
   preview.addEventListener("pointerdown", onPointerDown);
   preview.addEventListener("pointerup", onPointerUp);
   preview.addEventListener("pointercancel", () => { drag = null; });
-  preview.addEventListener("click", onReviewClick);
+  preview.addEventListener("click", onPrivacyActionClick);
   document.addEventListener("click", blockUnsafeDownloads, true);
 
   buildButton?.addEventListener("click", resetPrivacySession, true);
@@ -53,6 +54,12 @@
   const observer = new MutationObserver(() => queueMicrotask(decorateCaptureCards));
   observer.observe(preview, { childList: true, subtree: true });
   decorateCaptureCards();
+
+  window.ThreadsCardPrivacyMask = {
+    exportEnvelope: () => model.exportEnvelope(storyboardFromPreview(), reviews, identityMap()),
+    gate,
+    reset: resetPrivacySession,
+  };
 
   function currentItem() {
     if (typeof state === "undefined" || typeof selectedId === "undefined") return null;
@@ -77,18 +84,53 @@
     return { cards };
   }
 
+  function identityFromCanvas(canvas) {
+    if (!canvas) return model.normalizeIdentity({});
+    return model.normalizeIdentity({
+      name: canvas.dataset.captureFileName || "",
+      size: canvas.dataset.captureFileSize || 0,
+      lastModified: canvas.dataset.captureFileLastModified || 0,
+      type: canvas.dataset.captureFileType || "",
+    });
+  }
+
+  function identityMap() {
+    const identities = {};
+    for (const figure of captureFigures()) {
+      const canvas = figure.querySelector("canvas[data-card-index]");
+      const index = Number(canvas?.dataset.cardIndex);
+      if (Number.isInteger(index)) identities[index] = identityFromCanvas(canvas);
+    }
+    return identities;
+  }
+
   function decorateCaptureCards() {
     for (const figure of captureFigures()) {
       const index = cardIndex(figure);
       if (!Number.isInteger(index)) continue;
       const caption = figure.querySelector("figcaption");
-      if (!caption || caption.querySelector("[data-privacy-reviewed]")) continue;
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "button ghost";
-      button.dataset.privacyReviewed = String(index);
-      button.textContent = reviews[index]?.reviewed ? "개인정보 검토 완료 ✓" : "개인정보 검토 완료";
-      caption.appendChild(button);
+      if (!caption) continue;
+      if (!caption.querySelector("[data-privacy-card-status]")) {
+        const perCard = document.createElement("span");
+        perCard.dataset.privacyCardStatus = String(index);
+        perCard.className = "card-privacy-card-status";
+        caption.appendChild(perCard);
+      }
+      if (!caption.querySelector("[data-privacy-undo]")) {
+        const undo = document.createElement("button");
+        undo.type = "button";
+        undo.className = "button ghost";
+        undo.dataset.privacyUndo = String(index);
+        undo.textContent = "마지막 마스크 되돌리기";
+        caption.appendChild(undo);
+      }
+      if (!caption.querySelector("[data-privacy-reviewed]")) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "button ghost";
+        button.dataset.privacyReviewed = String(index);
+        caption.appendChild(button);
+      }
     }
     updateStatus();
   }
@@ -103,6 +145,18 @@
     };
   }
 
+  function ensureReviewIdentity(index, canvas) {
+    const identity = identityFromCanvas(canvas);
+    const existing = reviews[index] || { reviewed: false, rectangles: [], imageIdentity: identity };
+    if (existing.imageIdentity?.key && identity.key && !model.identityMatches(existing, identity)) {
+      reviews[index] = { reviewed: false, rectangles: [], imageIdentity: identity };
+      delete baseLayers[index];
+      return reviews[index];
+    }
+    reviews[index] = { ...existing, imageIdentity: identity };
+    return reviews[index];
+  }
+
   function onPointerDown(event) {
     if (!maskMode) return;
     const canvas = event.target.closest?.("canvas[data-card-index]");
@@ -110,7 +164,13 @@
     if (!canvas || !captureFigures().includes(figure)) return;
     event.preventDefault();
     canvas.setPointerCapture?.(event.pointerId);
-    drag = { canvas, index: Number(canvas.dataset.cardIndex), start: pointFor(event, canvas), pointerId: event.pointerId };
+    const index = Number(canvas.dataset.cardIndex);
+    ensureReviewIdentity(index, canvas);
+    if (!baseLayers[index]) {
+      const ctx = canvas.getContext("2d");
+      baseLayers[index] = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    }
+    drag = { canvas, index, start: pointFor(event, canvas), pointerId: event.pointerId };
   }
 
   function onPointerUp(event) {
@@ -127,26 +187,54 @@
     ctx.fillStyle = "#000000";
     ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
     ctx.restore();
-    const existing = reviews[index] || { reviewed: false, rectangles: [] };
-    reviews[index] = { reviewed: false, rectangles: [...existing.rectangles, rect] };
-    const button = preview.querySelector(`[data-privacy-reviewed="${index}"]`);
-    if (button) button.textContent = "개인정보 검토 완료";
+    const existing = ensureReviewIdentity(index, canvas);
+    reviews[index] = { ...existing, reviewed: false, rectangles: [...existing.rectangles, rect] };
     updateStatus();
     show(`캡처 카드 ${index + 1}에 마스크 1개를 적용했습니다. 검토 완료를 눌러야 PNG 저장이 열립니다.`, "success");
   }
 
-  function onReviewClick(event) {
+  function onPrivacyActionClick(event) {
+    const undo = event.target.closest?.("[data-privacy-undo]");
+    if (undo) return undoLastMask(Number(undo.dataset.privacyUndo));
     const button = event.target.closest?.("[data-privacy-reviewed]");
     if (!button) return;
     const index = Number(button.dataset.privacyReviewed);
-    const existing = reviews[index] || { reviewed: false, rectangles: [] };
-    reviews[index] = { ...existing, reviewed: !existing.reviewed };
-    button.textContent = reviews[index].reviewed ? "개인정보 검토 완료 ✓" : "개인정보 검토 완료";
+    const canvas = preview.querySelector(`canvas[data-card-index="${index}"]`);
+    const identity = identityFromCanvas(canvas);
+    if (!identity.key) {
+      show("검토할 실제 캡처 이미지 식별정보가 없습니다. 파일을 다시 선택하고 미리보기를 생성하세요.", "error");
+      return;
+    }
+    const existing = ensureReviewIdentity(index, canvas);
+    reviews[index] = { ...existing, reviewed: !existing.reviewed, imageIdentity: identity };
     updateStatus();
+  }
+
+  function undoLastMask(index) {
+    const review = reviews[index];
+    const canvas = preview.querySelector(`canvas[data-card-index="${index}"]`);
+    if (!review?.rectangles?.length || !canvas || !baseLayers[index]) return;
+    const rectangles = review.rectangles.slice(0, -1);
+    reviews[index] = { ...review, reviewed: false, rectangles };
+    redrawMasks(index, canvas, rectangles);
+    updateStatus();
+    show(`캡처 카드 ${index + 1}의 마지막 마스크를 되돌렸습니다. 개인정보 검토는 다시 완료해야 합니다.`, "info");
+  }
+
+  function redrawMasks(index, canvas, rectangles) {
+    const base = baseLayers[index];
+    if (!base) return;
+    const ctx = canvas.getContext("2d");
+    ctx.putImageData(base, 0, 0);
+    ctx.save();
+    ctx.fillStyle = "#000000";
+    for (const rect of rectangles) ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+    ctx.restore();
   }
 
   function clearMasks() {
     for (const key of Object.keys(reviews)) delete reviews[key];
+    for (const key of Object.keys(baseLayers)) delete baseLayers[key];
     const rebuild = section.querySelector("#cardBuildBtn");
     if (captureFigures().length && rebuild) {
       show("마스크 상태를 초기화했습니다. 원본 canvas 복원을 위해 미리보기를 다시 생성합니다.", "info");
@@ -158,12 +246,13 @@
 
   function resetPrivacySession() {
     for (const key of Object.keys(reviews)) delete reviews[key];
+    for (const key of Object.keys(baseLayers)) delete baseLayers[key];
     drag = null;
     queueMicrotask(updateStatus);
   }
 
   function gate() {
-    return model.exportGate(storyboardFromPreview(), reviews);
+    return model.exportGate(storyboardFromPreview(), reviews, identityMap());
   }
 
   function blockUnsafeDownloads(event) {
@@ -175,32 +264,47 @@
       const figure = preview.querySelector(`canvas[data-card-index="${index}"]`)?.closest(".card-preview-item");
       const isCapture = figure?.querySelector("figcaption span")?.textContent?.includes("capture-image");
       if (!isCapture) return;
-      if (reviews[index]?.reviewed === true) return;
+      const identity = identityMap()[index];
+      if (reviews[index]?.reviewed === true && model.identityMatches(reviews[index], identity)) return;
     } else if (currentGate.allowed) {
       return;
     }
     event.preventDefault();
     event.stopImmediatePropagation();
-    show(`이미지 개인정보 검토가 끝나지 않아 PNG 저장을 차단했습니다. 남은 캡처 카드 ${currentGate.pending.length}개.`, "error");
+    show(`이미지 개인정보 검토가 끝나지 않았거나 선택 이미지가 바뀌어 PNG 저장을 차단했습니다. 남은 캡처 카드 ${currentGate.pending.length}개.`, "error");
   }
 
   function updateStatus() {
     const currentGate = gate();
-    const maskCount = Object.values(reviews).reduce((sum, row) => sum + (row.rectangles?.length || 0), 0);
+    const identities = identityMap();
+    let maskCount = 0;
+    for (const figure of captureFigures()) {
+      const index = cardIndex(figure);
+      const review = reviews[index] || { reviewed: false, rectangles: [] };
+      const count = Array.isArray(review.rectangles) ? review.rectangles.length : 0;
+      maskCount += count;
+      const identityOk = review.reviewed === true && model.identityMatches(review, identities[index]);
+      const label = figure.querySelector(`[data-privacy-card-status="${index}"]`);
+      if (label) label.textContent = `마스크 ${count} · ${identityOk ? "검토완료" : "미검토"}`;
+      const reviewed = figure.querySelector(`[data-privacy-reviewed="${index}"]`);
+      if (reviewed) reviewed.textContent = identityOk ? "개인정보 검토 완료 ✓" : "개인정보 검토 완료";
+      const undo = figure.querySelector(`[data-privacy-undo="${index}"]`);
+      if (undo) undo.disabled = count === 0;
+    }
     status.textContent = currentGate.captureCount
-      ? `캡처 ${currentGate.captureCount} · 검토완료 ${currentGate.reviewedCount} · 마스크 ${maskCount}`
+      ? `캡처 ${currentGate.captureCount} · 검토완료 ${currentGate.reviewedCount} · 마스크 ${maskCount}${currentGate.staleIdentity.length ? ` · 이미지 변경 ${currentGate.staleIdentity.length}` : ""}`
       : "캡처 카드 없음";
     if (downloadAll) downloadAll.dataset.privacyGate = currentGate.code;
   }
 
   function downloadPrivacyManifest() {
     const item = currentItem();
-    const envelope = model.exportEnvelope(storyboardFromPreview(), reviews);
+    const envelope = model.exportEnvelope(storyboardFromPreview(), reviews, identityMap());
     const payload = {
       candidateId: item?.id || null,
       generatedAt: new Date().toISOString(),
       privacy: envelope,
-      notice: "Manual rectangles are session-scoped review metadata. No OCR or automatic face detection is claimed.",
+      notice: "Manual rectangles are session-scoped review metadata bound to exact local image identity. Original image bytes are not persisted. No OCR or automatic face detection is claimed.",
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
     const url = URL.createObjectURL(blob);

@@ -165,7 +165,7 @@
 
     const meta = document.createElement("div");
     meta.className = "approval-meta";
-    meta.textContent = `Research ${item.researchBundle?.reviewStatus || "없음"} · Draft ${item.draftStudio?.reviewStatus || "없음"} · Gate ${gateStateLabel(item.safetyGate)}`;
+    meta.textContent = `Research ${item.researchBundle?.reviewStatus || "없음"} · Draft ${item.draftStudio?.reviewStatus || "없음"} · Gate ${gateStateLabel(item.safetyGate)} ? Card privacy ${cardPrivacyLabel(item)}`;
 
     const reason = document.createElement("div");
     reason.className = "approval-reason";
@@ -230,7 +230,27 @@
     if (!gate.reviewedAt) reasons.push("Safety Gate 검토 미완료");
     if (statuses.includes("warn") && !String(gate.notes || "").trim()) reasons.push("WARN 대응 메모 없음");
 
+    const captureCount = (item.cardFactory?.storyboard?.cards || []).filter((card) => card?.type === "capture-image").length;
+    if (captureCount > 0) {
+      const privacy = item.cardFactory?.privacy;
+      if (!privacy?.gate?.allowed) {
+        reasons.push(privacy?.gate?.code === "image-privacy-review-stale"
+          ? "Card image changed: privacy re-review required"
+          : "Card image privacy review incomplete");
+      }
+    }
+
     return { ready: reasons.length === 0, blocked, reasons };
+  }
+
+
+  function cardPrivacyLabel(item) {
+    const captureCount = (item.cardFactory?.storyboard?.cards || []).filter((card) => card?.type === "capture-image").length;
+    if (!captureCount) return "N/A";
+    const privacy = item.cardFactory?.privacy;
+    if (privacy?.gate?.allowed) return `PASS ${privacy.gate.reviewedCount || captureCount}/${captureCount}`;
+    if (privacy?.gate?.code === "image-privacy-review-stale") return "STALE";
+    return `PENDING ${privacy?.gate?.reviewedCount || 0}/${captureCount}`;
   }
 
   function readinessRank(item) {

@@ -52,4 +52,28 @@ assert.equal(envelope.automatedFaceDetectionClaimed, false);
 assert.equal(envelope.masks[1].rectangles.length, 1);
 assert.equal(envelope.gate.allowed, true);
 
+const identityA = model.fileIdentity({ name: "capture.png", size: 12345, lastModified: 1700000000000, type: "image/png" });
+const identityB = model.fileIdentity({ name: "capture.png", size: 99999, lastModified: 1700000000000, type: "image/png" });
+assert.ok(identityA.key);
+assert.notEqual(identityA.key, identityB.key);
+assert.equal(model.identityMatches({ imageIdentity: identityA }, identityA), true);
+assert.equal(model.identityMatches({ imageIdentity: identityA }, identityB), false);
+
+const identityGate = model.exportGate(storyboard, {
+  1: { reviewed: true, rectangles: [rect], imageIdentity: identityA },
+  3: { reviewed: true, rectangles: [], imageIdentity: identityA },
+}, { 1: identityA, 3: identityB });
+assert.equal(identityGate.allowed, false);
+assert.deepEqual(Array.from(identityGate.staleIdentity), [3]);
+assert.equal(identityGate.code, "image-privacy-review-stale");
+
+const identityEnvelope = model.exportEnvelope(storyboard, {
+  1: { reviewed: true, rectangles: [rect], imageIdentity: identityA },
+  3: { reviewed: true, rectangles: [], imageIdentity: identityA },
+}, { 1: identityA, 3: identityA });
+assert.equal(identityEnvelope.schemaVersion, 2);
+assert.equal(identityEnvelope.originalImageBytesPersisted, false);
+assert.equal(identityEnvelope.masks[1].identityMatch, true);
+assert.equal(identityEnvelope.masks[1].rectangleCount, 1);
+
 console.log("Card privacy mask model regression tests passed.");

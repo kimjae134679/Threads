@@ -65,4 +65,17 @@ function approvedItem(overrides = {}) {
   assert.equal(model.queueEligibility(future, now).reason, "not-before");
 }
 
+{
+  const pendingCard = approvedItem({
+    cardFactory: { storyboard: { cards: [{ type: "hook" }, { type: "capture-image" }] }, privacy: { gate: { allowed: false } } },
+  });
+  assert.equal(model.cardPrivacyPass(pendingCard), false);
+  assert.equal(model.deriveStage(pendingCard), "review");
+
+  const reviewedCard = approvedItem({
+    cardFactory: { storyboard: { cards: [{ type: "hook" }, { type: "capture-image" }] }, privacy: { gate: { allowed: true } } },
+  });
+  assert.equal(model.cardPrivacyPass(reviewedCard), true);
+}
+
 console.log("Warehouse model regression tests passed.");
