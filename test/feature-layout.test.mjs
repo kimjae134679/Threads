@@ -86,12 +86,12 @@ for (const expected of ["그룹 → 편집 검토","ThreadsBulkReviewModel","app
 }
 
 const privacyModel = fs.readFileSync(new URL("../app/features/production/cards/privacy-mask-model.js", import.meta.url), "utf8");
-for (const expected of ["manual-drag-rectangle","automatedOcrClaimed","automatedFaceDetectionClaimed","exportGate","exportEnvelope"]) {
+for (const expected of ["manual-drag-rectangle","automatedOcrClaimed","automatedFaceDetectionClaimed","exportGate","exportEnvelope","image-privacy-review-required"]) {
   assert.ok(privacyModel.includes(expected), `Card privacy model missing ${expected}`);
 }
 
 const privacyUi = fs.readFileSync(new URL("../app/features/production/cards/privacy-mask.js", import.meta.url), "utf8");
-for (const expected of ["마스킹 모드","개인정보 검토 완료","image-privacy-review-required","blockUnsafeDownloads","Privacy JSON"]) {
+for (const expected of ["ThreadsCardPrivacyMaskModel","마스킹 모드","개인정보 검토 완료","blockUnsafeDownloads","Privacy JSON"]) {
   assert.ok(privacyUi.includes(expected), `Card privacy UI missing ${expected}`);
 }
 
