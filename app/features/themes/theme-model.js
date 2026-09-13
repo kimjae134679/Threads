@@ -47,11 +47,10 @@
     let score = hits.length * 2;
 
     const kind = String(item.kind || "");
-    if (theme.id === "internet_humor" && kind === "humor") score += 4;
-    if (theme.id === "weird_true_story" && kind === "story") score += 3;
-    if (theme.id === "tech_ai_games" && ["product", "explainer"].includes(kind)) score += 1;
-    if (theme.id === "society_news" && kind === "breaking") score += 1;
-    if (theme.id === "money_consumption" && kind === "product") score += 2;
+    if (theme.id === "internet_humor" && kind === "humor") score += 3;
+    if (hits.length && theme.id === "tech_ai_games" && ["product", "explainer"].includes(kind)) score += 1;
+    if (hits.length && theme.id === "society_news" && kind === "breaking") score += 1;
+    if (hits.length && theme.id === "money_consumption" && kind === "product") score += 1;
 
     const title = normalizeText(item.title);
     for (const hit of hits) {
