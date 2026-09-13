@@ -18,3 +18,41 @@ jobs:
           node-version: 20
       - name: JavaScript syntax check
         run: npm run check
+      - name: Local server smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          node server.mjs >/tmp/threads-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true; cat /tmp/threads-server.log || true' EXIT
+
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:4173/api/health >/tmp/health.json; then
+              break
+            fi
+            sleep 0.25
+          done
+
+          node --input-type=module - <<'NODE'
+          const health = await fetch('http://127.0.0.1:4173/api/health').then(r => r.json());
+          if (!health.ok || health.service !== 'threads-trend-inbox') throw new Error('health check failed');
+
+          const connectors = await fetch('http://127.0.0.1:4173/api/connectors').then(r => r.json());
+          if (!connectors.ok) throw new Error('connectors check failed');
+          if (connectors.connectors?.openai?.configured !== false) throw new Error('OpenAI must be unconfigured in CI without secret');
+          if (connectors.connectors?.youtubeMostPopularKr?.configured !== false) throw new Error('YouTube must be unconfigured in CI without secret');
+
+          const app = await fetch('http://127.0.0.1:4173/app/');
+          const html = await app.text();
+          if (!app.ok || !html.includes('Trend Inbox')) throw new Error('static app check failed');
+
+          const research = await fetch('http://127.0.0.1:4173/api/ai/research', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({candidate: {title: 'CI smoke test'}}),
+          });
+          const researchBody = await research.json();
+          if (research.status !== 503 || researchBody.error !== 'openai_api_key_missing') {
+            throw new Error(`expected OpenAI missing-key 503, got ${research.status} ${JSON.stringify(researchBody)}`);
+          }
+          NODE
