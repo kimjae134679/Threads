@@ -1,8 +1,11 @@
 (() => {
+  const model = window.ThreadsExperimentModel;
   const footer = document.querySelector("footer");
-  if (!footer) return;
+  if (!footer || !model) return;
 
+  const { normalizeMetrics, hasReach, autoDecision, contentAxis } = model;
   loadStyles();
+
   const section = document.createElement("section");
   section.className = "experiment-lab panel";
   section.innerHTML = `
@@ -34,7 +37,6 @@
 
   refresh.addEventListener("click", refreshAllThreadsInsights);
   exportBtn.addEventListener("click", exportCsv);
-  list.addEventListener("change", handleChange);
   list.addEventListener("click", handleClick);
 
   const queue = document.querySelector("#approvalQueueList");
@@ -47,6 +49,17 @@
 
   render();
 
+  function collectExperiments() {
+    const rows = [];
+    for (const item of state.items || []) {
+      for (const publication of item.publications || []) {
+        if (!publication?.platform || !publication?.id) continue;
+        rows.push({ id: `${publication.platform}:${publication.id}`, item, publication, platform: publication.platform, axis: contentAxis(item.kind) });
+      }
+    }
+    return rows;
+  }
+
   function render() {
     const experiments = collectExperiments();
     renderStats(experiments);
@@ -55,26 +68,9 @@
       list.innerHTML = '<div class="empty-state compact"><strong>아직 실제 게시 실험이 없습니다.</strong><span>승인 Queue에서 Threads에 게시하면 이곳에 자동으로 쌓입니다.</span></div>';
       return;
     }
-
-    const sorted = [...experiments].sort((a, b) => new Date(b.publication.publishedAt || 0) - new Date(a.publication.publishedAt || 0));
-    sorted.forEach((experiment) => list.appendChild(experimentCard(experiment, experiments)));
-  }
-
-  function collectExperiments() {
-    const rows = [];
-    for (const item of state.items || []) {
-      for (const publication of item.publications || []) {
-        if (!publication?.platform || !publication?.id) continue;
-        rows.push({
-          id: `${publication.platform}:${publication.id}`,
-          item,
-          publication,
-          platform: publication.platform,
-          axis: contentAxis(item.kind),
-        });
-      }
-    }
-    return rows;
+    [...experiments]
+      .sort((a, b) => new Date(b.publication.publishedAt || 0) - new Date(a.publication.publishedAt || 0))
+      .forEach((experiment) => list.appendChild(experimentCard(experiment, experiments)));
   }
 
   function experimentCard(experiment, all) {
@@ -118,14 +114,12 @@
         <label>클릭<input data-business="clicks" type="number" min="0" step="1" value="${numberValue(business.clicks)}" placeholder="미입력" /></label>
         <label>전환<input data-business="conversions" type="number" min="0" step="1" value="${numberValue(business.conversions)}" placeholder="미입력" /></label>
         <label>실수익(KRW)<input data-business="revenue" type="number" min="0" step="1" value="${numberValue(business.revenue)}" placeholder="미입력" /></label>
-        <label>판정
-          <select data-decision>
-            ${decisionOption("auto", "자동", manual)}
-            ${decisionOption("scale", "SCALE", manual)}
-            ${decisionOption("keep", "KEEP", manual)}
-            ${decisionOption("kill", "KILL", manual)}
-          </select>
-        </label>
+        <label>판정<select data-decision>
+          ${decisionOption("auto", "자동", manual)}
+          ${decisionOption("scale", "SCALE", manual)}
+          ${decisionOption("keep", "KEEP", manual)}
+          ${decisionOption("kill", "KILL", manual)}
+        </select></label>
         <button type="button" class="button ghost" data-action="save-business">실험값 저장</button>
       </div>
       ${businessSummary(business)}
@@ -134,31 +128,25 @@
   }
 
   function renderStats(experiments) {
-    const decisions = experiments.map((x) => {
-      const manual = String(x.publication.experimentDecision?.manual || "auto").toLowerCase();
+    const decisions = experiments.map((row) => {
+      const manual = String(row.publication.experimentDecision?.manual || "auto").toLowerCase();
       if (manual !== "auto") return manual.toUpperCase();
-      const cohort = experiments.filter((row) => row.platform === x.platform && hasReach(row.publication));
-      return autoDecision(x, cohort).label;
+      const cohort = experiments.filter((candidate) => candidate.platform === row.platform && hasReach(candidate.publication));
+      return autoDecision(row, cohort).label;
     });
-    const insightCount = experiments.filter((x) => hasReach(x.publication)).length;
-    const count = (name) => decisions.filter((x) => x === name).length;
-    stats.innerHTML = `
-      ${statBox(experiments.length, "실제 게시")}
-      ${statBox(insightCount, "성과 있음")}
-      ${statBox(count("SCALE"), "SCALE")}
-      ${statBox(count("KEEP"), "KEEP")}
-      ${statBox(count("KILL"), "KILL")}
-      ${statBox(count("LEARN"), "LEARN")}
-    `;
+    const count = (name) => decisions.filter((value) => value === name).length;
+    stats.innerHTML = [
+      [experiments.length, "실제 게시"],
+      [experiments.filter((row) => hasReach(row.publication)).length, "성과 있음"],
+      [count("SCALE"), "SCALE"], [count("KEEP"), "KEEP"], [count("KILL"), "KILL"], [count("LEARN"), "LEARN"],
+    ].map(([value, label]) => statBox(value, label)).join("");
   }
 
   async function refreshAllThreadsInsights() {
     if (refreshing) return;
-    const targets = collectExperiments().filter((x) => x.platform === "threads");
-    if (!targets.length) {
-      showSystemMessage("갱신할 Threads 게시물이 없습니다.", "info");
-      return;
-    }
+    const targets = collectExperiments().filter((row) => row.platform === "threads");
+    if (!targets.length) return showSystemMessage("갱신할 Threads 게시물이 없습니다.", "info");
+
     refreshing = true;
     refresh.disabled = true;
     const old = refresh.textContent;
@@ -187,43 +175,35 @@
     }
   }
 
-  function handleChange(event) {
-    if (!event.target.matches?.("select[data-decision]")) return;
-    // 저장 버튼을 눌렀을 때 함께 반영한다.
-  }
-
   function handleClick(event) {
     const card = event.target.closest?.(".experiment-card");
     if (!card) return;
     const item = state.items.find((candidate) => candidate.id === card.dataset.itemId);
     if (!item) return;
-    const publication = (item.publications || []).find((x) => String(x.id) === card.dataset.publicationId);
+    const publication = (item.publications || []).find((entry) => String(entry.id) === card.dataset.publicationId);
     if (!publication) return;
-
     const action = event.target.closest?.("[data-action]")?.dataset.action;
+
     if (action === "open") {
       selectedId = item.id;
       render();
       document.querySelector(".detail-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
+
     if (action === "save-business") {
       const readNumber = (name) => {
         const raw = card.querySelector(`[data-business="${name}"]`)?.value.trim();
         if (!raw) return null;
-        const n = Number(raw);
-        return Number.isFinite(n) && n >= 0 ? n : null;
+        const value = Number(raw);
+        return Number.isFinite(value) && value >= 0 ? value : null;
       };
       publication.business = {
-        clicks: readNumber("clicks"),
-        conversions: readNumber("conversions"),
-        revenue: readNumber("revenue"),
-        currency: "KRW",
-        updatedAt: new Date().toISOString(),
+        clicks: readNumber("clicks"), conversions: readNumber("conversions"), revenue: readNumber("revenue"),
+        currency: "KRW", updatedAt: new Date().toISOString(),
       };
       publication.experimentDecision = {
-        manual: card.querySelector("[data-decision]")?.value || "auto",
-        updatedAt: new Date().toISOString(),
+        manual: card.querySelector("[data-decision]")?.value || "auto", updatedAt: new Date().toISOString(),
       };
       persist();
       render();
@@ -231,65 +211,28 @@
     }
   }
 
-  function autoDecision(experiment, cohort) {
-    const metrics = normalizeMetrics(experiment.publication.insights?.metrics || {});
-    if (!metrics.views) return { label: "LEARN", score: null, reason: "조회 데이터가 아직 없습니다." };
-    if (cohort.length < 5) return { label: "LEARN", score: null, reason: `같은 플랫폼 비교군이 ${cohort.length}건입니다. 5건부터 상대 판정을 시작합니다.` };
-
-    const reachValues = cohort.map((row) => normalizeMetrics(row.publication.insights?.metrics || {}).views);
-    const rateValues = cohort.map((row) => {
-      const m = normalizeMetrics(row.publication.insights?.metrics || {});
-      return m.views > 0 ? m.engagements / m.views : 0;
+  function exportCsv() {
+    const experiments = collectExperiments();
+    const header = ["experiment_id","topic_id","title","axis","platform","publication_id","published_at","views","likes","replies","reposts","quotes","shares","engagement_rate","clicks","conversions","revenue_krw","decision"];
+    const rows = experiments.map((row) => {
+      const metrics = normalizeMetrics(row.publication.insights?.metrics || {});
+      const cohort = experiments.filter((candidate) => candidate.platform === row.platform && hasReach(candidate.publication));
+      const manual = String(row.publication.experimentDecision?.manual || "auto").toLowerCase();
+      const decision = manual !== "auto" ? manual.toUpperCase() : autoDecision(row, cohort).label;
+      const business = row.publication.business || {};
+      return [row.id, row.item.id, row.item.title, row.axis, row.platform, row.publication.id, row.publication.publishedAt || "",
+        metrics.views, metrics.likes, metrics.replies, metrics.reposts, metrics.quotes, metrics.shares,
+        metrics.views ? (metrics.engagements / metrics.views).toFixed(6) : "",
+        business.clicks ?? "", business.conversions ?? "", business.revenue ?? "", decision];
     });
-    const rate = metrics.views > 0 ? metrics.engagements / metrics.views : 0;
-    const reachPct = percentile(metrics.views, reachValues);
-    const ratePct = percentile(rate, rateValues);
-    const score = reachPct * 0.55 + ratePct * 0.45;
-    const label = score >= 0.75 ? "SCALE" : score <= 0.25 ? "KILL" : "KEEP";
-    return {
-      label,
-      score,
-      reason: `같은 ${experiment.platform} ${cohort.length}건 비교 · 조회 백분위 ${(reachPct * 100).toFixed(0)} · 참여율 백분위 ${(ratePct * 100).toFixed(0)} · 종합 ${(score * 100).toFixed(0)}`,
-    };
-  }
-
-  function percentile(value, values) {
-    const clean = values.filter(Number.isFinite).sort((a, b) => a - b);
-    if (clean.length <= 1) return 0.5;
-    let below = 0;
-    let equal = 0;
-    clean.forEach((x) => {
-      if (x < value) below += 1;
-      else if (x === value) equal += 1;
-    });
-    return (below + Math.max(0, equal - 1) / 2) / (clean.length - 1);
-  }
-
-  function normalizeMetrics(raw) {
-    const n = (key) => {
-      const value = Number(raw?.[key]);
-      return Number.isFinite(value) && value >= 0 ? value : 0;
-    };
-    const metrics = {
-      views: n("views"),
-      likes: n("likes"),
-      replies: n("replies"),
-      reposts: n("reposts"),
-      quotes: n("quotes"),
-      shares: n("shares"),
-    };
-    metrics.engagements = metrics.likes + metrics.replies + metrics.reposts + metrics.quotes + metrics.shares;
-    return metrics;
-  }
-
-  function hasReach(publication) {
-    return normalizeMetrics(publication.insights?.metrics || {}).views > 0;
-  }
-
-  function contentAxis(kind) {
-    if (kind === "story" || kind === "humor") return "Internet Story / Culture";
-    if (kind === "useful" || kind === "product") return "Useful / Product / Money";
-    return "Hot / Issue";
+    const csv = [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\n");
+    const blob = new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `threads-experiments-${new Date().toISOString().slice(0, 10)}.csv`;
+    anchor.click();
+    URL.revokeObjectURL(url);
   }
 
   function businessSummary(business) {
@@ -300,74 +243,13 @@
     return values.length ? `<div class="experiment-business-summary">${values.map(escapeHtml).join(" · ")}</div>` : "";
   }
 
-  function exportCsv() {
-    const experiments = collectExperiments();
-    const header = ["experiment_id","topic_id","title","axis","platform","publication_id","published_at","views","likes","replies","reposts","quotes","shares","engagement_rate","clicks","conversions","revenue_krw","decision"];
-    const rows = experiments.map((x) => {
-      const m = normalizeMetrics(x.publication.insights?.metrics || {});
-      const cohort = experiments.filter((row) => row.platform === x.platform && hasReach(row.publication));
-      const manual = String(x.publication.experimentDecision?.manual || "auto").toLowerCase();
-      const decision = manual !== "auto" ? manual.toUpperCase() : autoDecision(x, cohort).label;
-      const b = x.publication.business || {};
-      return [
-        x.id, x.item.id, x.item.title, x.axis, x.platform, x.publication.id, x.publication.publishedAt || "",
-        m.views, m.likes, m.replies, m.reposts, m.quotes, m.shares,
-        m.views ? (m.engagements / m.views).toFixed(6) : "",
-        b.clicks ?? "", b.conversions ?? "", b.revenue ?? "", decision,
-      ];
-    });
-    const csv = [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\n");
-    const blob = new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `threads-experiments-${new Date().toISOString().slice(0, 10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  function csvCell(value) {
-    const text = String(value ?? "");
-    return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
-  }
-
-  function statBox(value, label) {
-    return `<article><strong>${formatNumber(value)}</strong><span>${escapeHtml(label)}</span></article>`;
-  }
-
-  function metricBox(label, value) {
-    const rendered = value === null || value === undefined ? "—" : typeof value === "number" ? formatNumber(value) : escapeHtml(value);
-    return `<div><span>${escapeHtml(label)}</span><strong>${rendered}</strong></div>`;
-  }
-
-  function decisionOption(value, label, selected) {
-    return `<option value="${value}"${value === selected ? " selected" : ""}>${label}</option>`;
-  }
-
-  function numberValue(value) {
-    return value === null || value === undefined || value === "" ? "" : escapeHtml(String(value));
-  }
-
-  function formatNumber(value) {
-    const n = Number(value);
-    return Number.isFinite(n) ? n.toLocaleString() : String(value ?? "—");
-  }
-
-  function formatDate(value) {
-    if (!value) return "시각 없음";
-    const date = new Date(value);
-    return Number.isNaN(date.getTime()) ? String(value) : date.toLocaleString("ko-KR");
-  }
-
-  function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
-  }
-
-  function loadStyles() {
-    if (document.querySelector('link[href="./experiment-lab.css"]')) return;
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "./experiment-lab.css";
-    document.head.appendChild(link);
-  }
+  function csvCell(value) { const text = String(value ?? ""); return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text; }
+  function statBox(value, label) { return `<article><strong>${formatNumber(value)}</strong><span>${escapeHtml(label)}</span></article>`; }
+  function metricBox(label, value) { const rendered = value === null || value === undefined ? "—" : typeof value === "number" ? formatNumber(value) : escapeHtml(value); return `<div><span>${escapeHtml(label)}</span><strong>${rendered}</strong></div>`; }
+  function decisionOption(value, label, selected) { return `<option value="${value}"${value === selected ? " selected" : ""}>${label}</option>`; }
+  function numberValue(value) { return value === null || value === undefined || value === "" ? "" : escapeHtml(String(value)); }
+  function formatNumber(value) { const number = Number(value); return Number.isFinite(number) ? number.toLocaleString() : String(value ?? "—"); }
+  function formatDate(value) { if (!value) return "시각 없음"; const date = new Date(value); return Number.isNaN(date.getTime()) ? String(value) : date.toLocaleString("ko-KR"); }
+  function escapeHtml(value) { return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char])); }
+  function loadStyles() { if (document.querySelector('link[href="./experiment-lab.css"]')) return; const link = document.createElement("link"); link.rel = "stylesheet"; link.href = "./experiment-lab.css"; document.head.appendChild(link); }
 })();
