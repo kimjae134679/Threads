@@ -1,11 +1,11 @@
 {
   "name": "threads-ai-content-lab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check app/app.js && node --check app/youtube.js && node --check app/clustering.js && node --check app/research-bundle.js"
+    "check": "node --check server.mjs && node --check openai.mjs && node --check app/app.js && node --check app/youtube.js && node --check app/clustering.js && node --check app/research-bundle.js && node --check app/ai-studio.js"
   },
   "engines": {
     "node": ">=18"
