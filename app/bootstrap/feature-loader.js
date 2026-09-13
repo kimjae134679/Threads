@@ -27,6 +27,7 @@
       scripts: [
         "./features/discovery/sources/source-registry.js",
         "./features/discovery/sources/source-model.js",
+        "./features/discovery/sources/source-normalization-sync.js",
         "./features/discovery/sources/source-review.js",
       ],
     },
