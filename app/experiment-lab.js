@@ -1,5 +1,6 @@
 (() => {
   const model = window.ThreadsExperimentModel;
+  const registry = window.ThreadsAccountRegistry;
   const footer = document.querySelector("footer");
   if (!footer || !model) return;
 
@@ -13,9 +14,10 @@
       <div>
         <p class="eyebrow">EXPERIMENT LAB</p>
         <h2>성과 / KEEP · KILL · SCALE</h2>
-        <p class="experiment-sub">실제 게시 결과만 비교합니다. 같은 플랫폼에서 성과가 확인된 게시물이 5개 미만이면 자동 판정하지 않고 LEARN으로 둡니다.</p>
+        <p class="experiment-sub">실제 게시 결과만 비교합니다. 계정·가설·버전 배정은 게시 시점 값으로 고정해 과거 실험이 뒤섞이지 않게 합니다.</p>
       </div>
       <div class="experiment-actions">
+        <select id="experimentAccountFilter" aria-label="실험 계정 필터"><option value="all">모든 실험 계정</option></select>
         <button id="experimentRefreshBtn" type="button" class="button ghost">Threads 성과 모두 새로고침</button>
         <button id="experimentExportBtn" type="button" class="button ghost">실험 CSV 내보내기</button>
       </div>
@@ -33,16 +35,18 @@
   const stats = section.querySelector("#experimentStats");
   const refresh = section.querySelector("#experimentRefreshBtn");
   const exportBtn = section.querySelector("#experimentExportBtn");
+  const accountFilter = section.querySelector("#experimentAccountFilter");
   let refreshing = false;
 
   refresh.addEventListener("click", refreshAllThreadsInsights);
   exportBtn.addEventListener("click", exportCsv);
+  accountFilter.addEventListener("change", render);
   list.addEventListener("click", handleClick);
 
   const queue = document.querySelector("#approvalQueueList");
   if (queue) new MutationObserver(render).observe(queue, { childList: true });
   document.addEventListener("click", (event) => {
-    if (event.target.closest?.("#saveDraftsBtn, #saveGateBtn, #saveResearchBtn, [data-status], [data-threads-control]")) {
+    if (event.target.closest?.("#saveDraftsBtn, #saveGateBtn, #saveResearchBtn, #saveExperimentAssignmentBtn, [data-status], [data-threads-control]")) {
       setTimeout(render, 50);
     }
   });
@@ -54,7 +58,19 @@
     for (const item of state.items || []) {
       for (const publication of item.publications || []) {
         if (!publication?.platform || !publication?.id) continue;
-        rows.push({ id: `${publication.platform}:${publication.id}`, item, publication, platform: publication.platform, axis: contentAxis(item.kind) });
+        const assignment = publication.experiment || item.experimentAssignment || {};
+        rows.push({
+          id: `${publication.platform}:${publication.id}`,
+          item,
+          publication,
+          platform: publication.platform,
+          axis: contentAxis(item.kind),
+          accountId: String(assignment.accountId || ""),
+          hypothesisId: String(assignment.hypothesisId || ""),
+          variantId: String(assignment.variantId || ""),
+          goal: String(assignment.goal || ""),
+          platformUsername: String(publication.platformAccount?.username || ""),
+        });
       }
     }
     return rows;
@@ -62,15 +78,32 @@
 
   function render() {
     const experiments = collectExperiments();
-    renderStats(experiments);
+    syncAccountFilter(experiments);
+    const selectedAccount = accountFilter.value;
+    const visible = selectedAccount === "all" ? experiments : experiments.filter((row) => row.accountId === selectedAccount);
+    renderStats(visible, experiments);
     list.innerHTML = "";
-    if (!experiments.length) {
-      list.innerHTML = '<div class="empty-state compact"><strong>아직 실제 게시 실험이 없습니다.</strong><span>승인 Queue에서 Threads에 게시하면 이곳에 자동으로 쌓입니다.</span></div>';
+    if (!visible.length) {
+      list.innerHTML = '<div class="empty-state compact"><strong>표시할 실제 게시 실험이 없습니다.</strong><span>승인 Queue에서 계정/실험이 배정된 콘텐츠를 Threads에 게시하면 이곳에 자동으로 쌓입니다.</span></div>';
       return;
     }
-    [...experiments]
+    [...visible]
       .sort((a, b) => new Date(b.publication.publishedAt || 0) - new Date(a.publication.publishedAt || 0))
       .forEach((experiment) => list.appendChild(experimentCard(experiment, experiments)));
+  }
+
+  function syncAccountFilter(experiments) {
+    const current = accountFilter.value || "all";
+    const ids = [...new Set(experiments.map((row) => row.accountId).filter(Boolean))].sort();
+    accountFilter.innerHTML = '<option value="all">모든 실험 계정</option>';
+    for (const id of ids) {
+      const option = document.createElement("option");
+      option.value = id;
+      option.textContent = registry?.label ? registry.label(id) : id;
+      accountFilter.appendChild(option);
+    }
+    if (ids.includes(current)) accountFilter.value = current;
+    else accountFilter.value = "all";
   }
 
   function experimentCard(experiment, all) {
@@ -83,6 +116,11 @@
     const tone = decision.toLowerCase();
     const engagementRate = metrics.views > 0 ? metrics.engagements / metrics.views : null;
     const business = publication.business || {};
+    const experimentMeta = [
+      experiment.accountId || "미배정",
+      experiment.hypothesisId || "가설 미지정",
+      experiment.variantId || "버전 미지정",
+    ].join(" · ");
 
     const card = document.createElement("article");
     card.className = `experiment-card decision-${tone}`;
@@ -94,13 +132,15 @@
           <div class="experiment-title-row">
             <span class="pill neutral">${escapeHtml(experiment.platform)}</span>
             <span class="pill decision-pill decision-${tone}">${escapeHtml(decision)}</span>
+            <span class="pill neutral">${escapeHtml(experiment.accountId || "UNASSIGNED")}</span>
             <span class="experiment-axis">${escapeHtml(experiment.axis)}</span>
           </div>
           <h3>${escapeHtml(item.title || "제목 없음")}</h3>
-          <small>${formatDate(publication.publishedAt)} · 게시물 ${escapeHtml(publication.id)}</small>
+          <small>${formatDate(publication.publishedAt)} · ${escapeHtml(experimentMeta)} · 게시물 ${escapeHtml(publication.id)}${experiment.platformUsername ? ` · @${escapeHtml(experiment.platformUsername)}` : ""}</small>
         </div>
         <button type="button" class="button ghost" data-action="open">후보 열기</button>
       </div>
+      ${experiment.goal ? `<div class="experiment-auto-reason"><strong>실험 목표</strong> · ${escapeHtml(experiment.goal)}</div>` : ""}
       <div class="experiment-metrics">
         ${metricBox("조회", metrics.views)}
         ${metricBox("참여", metrics.engagements)}
@@ -127,16 +167,16 @@
     return card;
   }
 
-  function renderStats(experiments) {
+  function renderStats(experiments, allExperiments) {
     const decisions = experiments.map((row) => {
       const manual = String(row.publication.experimentDecision?.manual || "auto").toLowerCase();
       if (manual !== "auto") return manual.toUpperCase();
-      const cohort = experiments.filter((candidate) => candidate.platform === row.platform && hasReach(candidate.publication));
+      const cohort = allExperiments.filter((candidate) => candidate.platform === row.platform && hasReach(candidate.publication));
       return autoDecision(row, cohort).label;
     });
     const count = (name) => decisions.filter((value) => value === name).length;
     stats.innerHTML = [
-      [experiments.length, "실제 게시"],
+      [experiments.length, "표시 실험"],
       [experiments.filter((row) => hasReach(row.publication)).length, "성과 있음"],
       [count("SCALE"), "SCALE"], [count("KEEP"), "KEEP"], [count("KILL"), "KILL"], [count("LEARN"), "LEARN"],
     ].map(([value, label]) => statBox(value, label)).join("");
@@ -213,17 +253,17 @@
 
   function exportCsv() {
     const experiments = collectExperiments();
-    const header = ["experiment_id","topic_id","title","axis","platform","publication_id","published_at","views","likes","replies","reposts","quotes","shares","engagement_rate","clicks","conversions","revenue_krw","decision"];
+    const header = ["experiment_id","topic_id","account_id","hypothesis_id","variant_id","platform_username","title","axis","platform","publication_id","published_at","views","likes","replies","reposts","quotes","shares","engagement_rate","clicks","conversions","revenue_krw","decision","experiment_goal"];
     const rows = experiments.map((row) => {
       const metrics = normalizeMetrics(row.publication.insights?.metrics || {});
       const cohort = experiments.filter((candidate) => candidate.platform === row.platform && hasReach(candidate.publication));
       const manual = String(row.publication.experimentDecision?.manual || "auto").toLowerCase();
       const decision = manual !== "auto" ? manual.toUpperCase() : autoDecision(row, cohort).label;
       const business = row.publication.business || {};
-      return [row.id, row.item.id, row.item.title, row.axis, row.platform, row.publication.id, row.publication.publishedAt || "",
+      return [row.id, row.item.id, row.accountId, row.hypothesisId, row.variantId, row.platformUsername, row.item.title, row.axis, row.platform, row.publication.id, row.publication.publishedAt || "",
         metrics.views, metrics.likes, metrics.replies, metrics.reposts, metrics.quotes, metrics.shares,
         metrics.views ? (metrics.engagements / metrics.views).toFixed(6) : "",
-        business.clicks ?? "", business.conversions ?? "", business.revenue ?? "", decision];
+        business.clicks ?? "", business.conversions ?? "", business.revenue ?? "", decision, row.goal];
     });
     const csv = [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\n");
     const blob = new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" });
