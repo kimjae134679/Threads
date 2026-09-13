@@ -56,7 +56,12 @@
     },
     {
       id: "community-cards",
-      scripts: ["./card-story-model.js", "./card-factory.js"],
+      scripts: [
+        "./card-story-model.js",
+        "./card-factory.js",
+        "./features/production/cards/privacy-mask-model.js",
+        "./features/production/cards/privacy-mask.js",
+      ],
     },
     {
       id: "warehouse",
