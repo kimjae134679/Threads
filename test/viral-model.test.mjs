@@ -18,7 +18,27 @@ assert.ok(model, "Viral model must register on window");
 {
   const result = model.comfortScan("동물 학대 고어 영상 논란");
   assert.equal(result.blocked, true);
-  assert.ok(result.score < 60);
+  assert.ok(result.blockReasons.includes("animal_abuse"));
+  assert.ok(result.blockReasons.includes("graphic_violence"));
+}
+
+{
+  const result = model.comfortScan("구더기 가득한 음식 사진이 화제가 됨");
+  assert.equal(result.blocked, true);
+  assert.ok(result.blockReasons.includes("gross_unpleasant"));
+}
+
+{
+  const result = model.comfortScan("폭행 사건 판결을 설명하는 기사");
+  assert.equal(result.blocked, false);
+  assert.equal(result.level, "review");
+  assert.ok(result.reviewReasons.includes("physical_violence"));
+}
+
+{
+  const result = model.comfortScan("일반인 집 주소와 전화번호를 신상털이로 공개");
+  assert.equal(result.blocked, true);
+  assert.ok(result.blockReasons.includes("doxxing"));
 }
 
 {
@@ -41,7 +61,7 @@ assert.ok(model, "Viral model must register on window");
 }
 
 {
-  assert.equal(model.dedupeKey({ url: "https://example.com/post?id=1#x" }), "url:https://example.com/post");
+  assert.equal(model.dedupeKey({ url: "https://example.com/post/?id=1#x" }), "url:https://example.com/post");
   assert.equal(model.dedupeKey({ title: "회사 사원증 논쟁!" }), "title:회사 사원증 논쟁");
 }
 
