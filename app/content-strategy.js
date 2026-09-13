@@ -4,6 +4,8 @@
   if (!detail || !assignmentSection) return;
 
   loadStyles();
+  loadCompanion("./publication-strategy-snapshot.js");
+  document.addEventListener("click", blockUnknownRightsPublish, true);
 
   const formats = [
     ["", "미지정"],
@@ -163,7 +165,7 @@
   function renderWarning() {
     if (asset.value === "A10") {
       warning.hidden = false;
-      warning.textContent = "권리 미확인 자산(A10)은 제작 메모로는 저장할 수 있지만 게시 전 Safety Gate에서 해결해야 합니다.";
+      warning.textContent = "권리 미확인 자산(A10)은 실제 게시를 차단합니다. 권리를 확인한 뒤 A06/A07/A08/A09 등 올바른 분류로 바꾸고 Safety Gate를 다시 검토하세요.";
     } else if (["A06", "A09"].includes(asset.value)) {
       warning.hidden = false;
       warning.textContent = "외부/공식 자료 일부를 쓰는 경우 필요한 범위만 사용하고 source·권리·개인정보를 04 단계에서 다시 확인합니다.";
@@ -190,14 +192,54 @@
     const keys = ["contentFormat", "hookType", "ctaType", "sourceAssetType", "replyMode", "hasTopicTag", "note"];
     const changed = keys.some((key) => String(previous[key] ?? "") !== String(next[key] ?? ""));
     item.contentStrategy = next;
+
+    if (next.sourceAssetType === "A10") {
+      const gate = item.safetyGate || {
+        schemaVersion: 1,
+        fact: "unknown",
+        rights: "unknown",
+        privacy: "unknown",
+        defamation: "unknown",
+        platform: "unknown",
+        notes: "",
+        reviewedAt: null,
+      };
+      gate.rights = "block";
+      gate.reviewedAt = null;
+      gate.updatedAt = new Date().toISOString();
+      if (!String(gate.notes || "").includes("A10")) {
+        gate.notes = [String(gate.notes || "").trim(), "A10 권리 미확인 자산: 권리 확인 전 실제 게시 금지."].filter(Boolean).join("\n");
+      }
+      item.safetyGate = gate;
+    }
+
     if (changed) item.updatedAt = new Date().toISOString();
     persist();
     render();
     sync();
     showSystemMessage(
-      next.contentFormat ? `${next.contentFormat} / ${next.hookType || "훅 미지정"} 제작 실험값을 저장했습니다.${changed ? " 기존 게시 승인이 있었다면 재승인이 필요합니다." : ""}` : "제작 실험값을 미지정 상태로 저장했습니다.",
-      next.contentFormat ? "success" : "info"
+      next.sourceAssetType === "A10"
+        ? "A10 권리 미확인 자산으로 저장했습니다. Safety Gate 권리 항목을 BLOCK 처리했고 실제 게시도 차단합니다."
+        : next.contentFormat
+          ? `${next.contentFormat} / ${next.hookType || "훅 미지정"} 제작 실험값을 저장했습니다.${changed ? " 기존 게시 승인이 있었다면 재승인이 필요합니다." : ""}`
+          : "제작 실험값을 미지정 상태로 저장했습니다.",
+      next.sourceAssetType === "A10" ? "error" : next.contentFormat ? "success" : "info"
     );
+  }
+
+  function blockUnknownRightsPublish(event) {
+    const target = event.target.closest?.("button");
+    if (!target) return;
+    const card = target.closest?.(".approval-card[data-item-id]");
+    if (!card) return;
+    const item = (state.items || []).find((candidate) => candidate.id === card.dataset.itemId);
+    if (item?.contentStrategy?.sourceAssetType !== "A10") return;
+    const isPrepare = target.matches?.('[data-threads-control="prepare"]');
+    const isActualPublish = Boolean(target.closest?.(".threads-publish-box")) && /실제\s*Threads에\s*게시/.test(target.textContent || "");
+    if (!isPrepare && !isActualPublish) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    showSystemMessage("권리 미확인 자산(A10)은 게시할 수 없습니다. 자산 권리를 확인하고 제작 실험값과 Safety Gate를 다시 저장하세요.", "error");
   }
 
   function loadStyles() {
@@ -206,5 +248,13 @@
     link.rel = "stylesheet";
     link.href = "./content-strategy.css";
     document.head.appendChild(link);
+  }
+
+  function loadCompanion(src) {
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = false;
+    document.body.appendChild(script);
   }
 })();
