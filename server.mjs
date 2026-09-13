@@ -2,6 +2,7 @@ import http from "node:http";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { getOpenAiStatus, researchWithOpenAI, draftWithOpenAI } from "./openai.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -46,6 +47,7 @@ const server = http.createServer(async (req, res) => {
             requiredEnv: "YOUTUBE_API_KEY",
             note: "2025-07-21 이후 mostPopular은 과거 전체 Trending과 동일하지 않으며 인기 음악·영화·게임 신호 중심입니다.",
           },
+          openai: getOpenAiStatus(),
         },
       });
     }
@@ -58,14 +60,37 @@ const server = http.createServer(async (req, res) => {
       return handleYouTubeMostPopular(url, res);
     }
 
+    if (url.pathname === "/api/ai/research") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req);
+      const result = await researchWithOpenAI(body?.candidate || body || {});
+      return json(res, 200, { ok: true, result });
+    }
+
+    if (url.pathname === "/api/ai/drafts") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req);
+      const result = await draftWithOpenAI(body?.candidate || body || {});
+      return json(res, 200, { ok: true, result });
+    }
+
     if (url.pathname === "/") {
       res.writeHead(302, { Location: "/app/" });
       return res.end();
     }
 
-    return serveStatic(url.pathname, res);
+    if (req.method !== "GET" && req.method !== "HEAD") return methodNotAllowed(res, ["GET", "HEAD"]);
+    return serveStatic(url.pathname, res, req.method === "HEAD");
   } catch (error) {
     console.error(error);
+    if (Number.isInteger(error?.status)) {
+      return json(res, error.status, {
+        ok: false,
+        error: error.code || "request_failed",
+        message: String(error?.message || error),
+        upstreamStatus: error.upstreamStatus || undefined,
+      });
+    }
     return json(res, 500, { ok: false, error: "internal_server_error" });
   }
 });
@@ -199,6 +224,31 @@ async function handleYouTubeMostPopular(url, res) {
   }
 }
 
+async function readJsonBody(req) {
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > 256 * 1024) {
+      const error = new Error("요청 본문이 너무 큽니다.");
+      error.status = 413;
+      error.code = "payload_too_large";
+      throw error;
+    }
+    chunks.push(chunk);
+  }
+  const text = Buffer.concat(chunks).toString("utf8").trim();
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch (_) {
+    const error = new Error("JSON 요청 본문을 해석하지 못했습니다.");
+    error.status = 400;
+    error.code = "invalid_json";
+    throw error;
+  }
+}
+
 function pickThumbnail(thumbnails = {}) {
   return thumbnails.maxres?.url || thumbnails.standard?.url || thumbnails.high?.url || thumbnails.medium?.url || thumbnails.default?.url || "";
 }
@@ -250,7 +300,7 @@ function decodeXml(value) {
     .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)));
 }
 
-async function serveStatic(pathname, res) {
+async function serveStatic(pathname, res, headOnly = false) {
   let relative = decodeURIComponent(pathname).replace(/^\/+/, "");
   if (pathname.endsWith("/")) relative += "index.html";
 
@@ -267,13 +317,23 @@ async function serveStatic(pathname, res) {
       "cache-control": ext === ".html" || ext === ".js" || ext === ".css" ? "no-store" : "public, max-age=60",
       "x-content-type-options": "nosniff",
     });
-    return res.end(data);
+    return res.end(headOnly ? undefined : data);
   } catch (error) {
     if (error?.code === "ENOENT" || error?.code === "EISDIR") {
       return json(res, 404, { ok: false, error: "not_found" });
     }
     throw error;
   }
+}
+
+function methodNotAllowed(res, allowed) {
+  res.writeHead(405, {
+    allow: allowed.join(", "),
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "x-content-type-options": "nosniff",
+  });
+  res.end(JSON.stringify({ ok: false, error: "method_not_allowed", allowed }));
 }
 
 function json(res, status, payload) {
