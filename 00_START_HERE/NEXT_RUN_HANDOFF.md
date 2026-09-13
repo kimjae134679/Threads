@@ -8,60 +8,55 @@ This file is the execution handoff for recurring development. Do not stop at pla
 
 Current repository state from the latest completed run:
 
-- implementation tip before final handoff update: `88828d87ab44a79a1b0a788852d7021eab5b192f`
-- latest verified CI: GitHub Actions run `34770599699` on `88828d8...` = **SUCCESS**
-- preceding repaired implementation run `34770550263` on `2a520b5...` = **SUCCESS**
-- read operations-hub `019-sol.md` after this file for exact implementation history.
+- implementation tip: `1586905fe363417e8db2468418017f8bc90863fe`
+- latest verified CI: GitHub Actions run `34773565936` on `1586905...` = **SUCCESS**
+- read operations-hub `020-sol.md` after this file for exact implementation history.
 - repository tip always wins over stale handoff text.
 
 ## What the latest run added
 
-P1 Viral Finder/discovery normalization advanced materially:
+P1 Viral Finder bulk workflow advanced materially:
 
-- `app/features/discovery/sources/source-model.js`
-  - canonical URL normalization removes common tracking parameters while preserving meaningful query parameters
-  - `engagementEvidence()` explicitly separates **observed** engagement (`manual-observed` or `source-metadata`) from **inferred-only** interest scores
-  - `normalizeCandidate()` creates a common cross-platform discovery envelope: source/lane/adapter/collection policy/evidence/risk/dedupe keys
-  - exact duplicate grouping and same-story grouping were added
-  - same-story title normalization strips common noise tokens such as 속보/단독/영상/짤/breaking/update before grouping
-- `app/features/discovery/sources/source-review.js`
-  - Viral Finder rows expose evidence state: observed metric / inferred-only / unverified
-  - rows expose exact-duplicate or same-story group counts
-  - normalized source/lane/evidence/group information is attached as row dataset metadata for later bulk review work
-- `app/features/discovery/sources/source-review.css`
-  - distinct evidence chips were added
-- `test/discovery-source-model.test.mjs`
-  - canonical URL, observed-vs-inferred evidence, normalization, duplicate grouping, manual-only source behavior are regression tested
+- `app/viral-review.js`
+  - Viral discovery import now runs each imported candidate through `ThreadsDiscoverySourceModel.normalizeCandidate()` and persists the normalized envelope as `item.discoveryNormalized` instead of relying only on render-time recomputation.
+  - persisted metadata includes canonical URL/source/lane/adapter/collection policy/evidence/risk/dedupe keys plus `normalizedAt` and `normalizedBy`.
+  - existing items missing normalized metadata are backfilled during Viral scoring/rescore.
+  - import duplicate detection now uses canonical URLs, so tracking-parameter variants are rejected as the same imported candidate.
+  - added independent filters for evidence quality (`observed / inferred-only / none`) and source risk (`green / yellow / red / unknown`).
+  - duplicate/same-story groups now have actual review controls:
+    - group select
+    - collapse/expand group (collapsed groups keep the strongest visible)
+    - keep strongest, which moves lower-score group members to `skip` and records a `viralReview.duplicateResolution` audit trail.
+  - rows expose evidence and source-risk chips in the Viral Finder itself.
+- `app/viral-review.css`
+  - added secondary filter and group-review control styling.
+- `test/feature-layout.test.mjs`
+  - guards discovery normalization persistence/filter/group-action wiring against accidental removal.
 
 Implementation commits:
 
 ```text
-0207a5c13fc79ca4f5832683fece88a7c269acbe
-e8fe52bb3f95bf4d338419bcef4bf946a7061815
-f8683c25ea938e47a827de7ec7ed82456e74c19f
-45a4a5ab210c6e934c6a81f742e5ea4baff82418
-2a520b5821a273ca76a5a0d349a8cb10ff2fa124
-88828d87ab44a79a1b0a788852d7021eab5b192f
+0cc75c4d8276321f3333d62406c434b430448510  Add persisted discovery metadata and group review controls
+13c1bc38c5ad491b5d4ea8341170ff78012f7170  Style Viral Finder evidence and group controls
+1586905fe363417e8db2468418017f8bc90863fe  Guard Viral Finder normalization and group review wiring
 ```
 
 ## Validation state
 
-Confirmed green after fixing an intermediate same-story regression:
+Confirmed GitHub Actions success:
 
 ```text
-Actions 34770550263 — SUCCESS — head 2a520b5821a273ca76a5a0d349a8cb10ff2fa124
-Actions 34770599699 — SUCCESS — head 88828d87ab44a79a1b0a788852d7021eab5b192f
+34773559194  head 13c1bc38c5ad491b5d4ea8341170ff78012f7170  SUCCESS
+34773565936  head 1586905fe363417e8db2468418017f8bc90863fe  SUCCESS
 ```
 
-The first intermediate duplicate-group version had a failing regression because generic title words such as `영상/속보` were not removed consistently. That is fixed. Do not reintroduce a stricter raw-title equality requirement.
-
-Local container cloning could not access github.com because outbound DNS was unavailable; GitHub Actions is the authoritative executable check in that environment.
+The workflow includes repository JavaScript syntax/regression checks and server smoke configured by `.github/workflows/check.yml`.
 
 ## Real discovery test note
 
-A fresh public-web discovery probe was attempted across Reddit/YouTube/news-style search surfaces. It did **not** yield a sufficiently strong new batch that was simultaneously current, multi-source, and backed by verifiable engagement metrics. NAVER direct article access was blocked by robots in the web environment, and several returned results were old/promotional or lacked reliable visible engagement counts.
+A fresh public-web probe was attempted again. It found an indexed Reddit AI digest dated 2026-09-12 that reported high-scoring r/technology topics (for example an AI data-center town-hall controversy around ~4.1K score and 246 comments), but this is a **secondary digest/index record**, not a direct verified source post in the current probe. It was therefore not promoted into the production viral feed and its counts were not treated as canonical observed metrics.
 
-No weak/old candidate was falsely inserted as a strong viral example. Existing verified discovery fixtures remain the stronger test set. Continue current discovery probes when useful, but only record metrics that are actually visible/verifiable.
+Other meme/YouTube-style search results were old, removed, low-signal, or lacked directly verifiable current engagement. Rule remains: `no direct/verifiable metric → do not invent/promote it`.
 
 ## Mandatory execution loop
 
@@ -87,21 +82,21 @@ No weak/old candidate was falsely inserted as a strong viral example. Existing v
 
 ## Remaining backlog — execute in order, skipping completed work
 
-### P1. Viral Finder / multi-platform discovery — ACTIVE
+### P1. Viral Finder / multi-platform discovery — ACTIVE, close to handoff to P2
 
-Already added: Source Registry, theme lanes, source/lane filters, normalized observed-vs-inferred evidence layer, canonical URLs, exact-duplicate groups, same-story groups, evidence/group chips.
+Already added: Source Registry, theme lanes, source/lane filters, normalized observed-vs-inferred evidence layer, canonical URLs, exact-duplicate/same-story groups, persisted normalized discovery metadata for Viral discovery import/backfill, evidence/risk filters, group select/collapse/keep-strongest controls.
 
 Next high-value P1 work:
 
-1. make bulk candidate import pass every candidate through `normalizeCandidate()` and persist normalized discovery metadata rather than calculating it only at render time.
-2. add a batch duplicate/same-story review surface that can collapse/select a whole group and later support keep-strongest/move-group actions.
-3. add source-risk and observed-vs-inferred filtering to the Viral Finder toolbar.
-4. keep actual adapter states explicit: `connected / connected-when-credentialed / manual-only / planned`.
-5. keep expanding realistic public discovery fixtures only when dates/metrics are genuinely verifiable.
+1. normalize the base JSON import path and Google Trends/manual candidate creation path too, so every candidate source stores the same discovery envelope, not only the Viral discovery import/backfill path.
+2. improve group review with explicit group status summary and `move whole group to research/hold/skip` without selecting members one-by-one.
+3. make `keep strongest` behavior explicit for exact duplicate vs same-story groups; same-story may need `hold alternatives` instead of always skipping depending on editorial use.
+4. preserve adapter states: `connected / connected-when-credentialed / manual-only / planned`.
+5. continue realistic public discovery fixtures only when dates/metrics are genuinely verifiable.
 
 Do not manufacture engagement counts. Blind/DCInside remain public-index/user-URL/screenshot/manual Capture paths, not bulk crawlers.
 
-### P2. Audience Comfort
+### P2. Audience Comfort — NEXT MAJOR PHASE
 
 Existing hard BLOCK: graphic gore/violence, animal abuse, sexual violence/exploitation, graphic self-harm, doxxing, strongly gross/unpleasant material. Appropriate non-graphic sensitive cases may route to REVIEW.
 
