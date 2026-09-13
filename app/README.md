@@ -14,10 +14,13 @@
 - 자동수집 항목은 임의 점수 대신 `검토 필요`로 표시
 - 후보별 5개 신호를 사람 평가 후 점수 계산
 - 제목/URL/관련 출처 기반 **유사 토픽 묶기**
-- AI 조사용 Research Bundle 프롬프트 생성/복사
-- **조사 결과를 구조화된 Research Bundle로 후보에 저장**
+- 수동 Research Bundle 저장
+- 선택적 **OpenAI 웹 검색 기반 AI 조사**
+- AI 조사 결과를 자동 승인하지 않고 `조사 중`으로 저장
 - 사람 검토 완료 전 `제작 후보` 승격 차단
-- 조사 대기 / 제작 후보 / 패스 상태 관리
+- 선택적 **Draft Studio**: Threads / Shorts·Reels·TikTok / Instagram Carousel / Blog / YouTube Long 초안 생성
+- Draft Studio 편집 저장 / 복사 / 사람 승인 상태
+- 자동 게시 없음
 - 브라우저 localStorage 저장
 - JSON 내보내기 / 불러오기
 
@@ -43,7 +46,16 @@ http://127.0.0.1:4173/app/
 npm run check
 ```
 
-현재 `server.mjs`, `app/app.js`, `app/youtube.js`, `app/clustering.js`, `app/research-bundle.js` 문법을 검사하며 GitHub Actions에도 같은 check가 연결되어 있습니다.
+GitHub Actions는 다음을 확인합니다.
+
+- 모든 JavaScript 문법 검사
+- 로컬 서버 실제 기동
+- `/api/health`
+- `/api/connectors`
+- 정적 앱 `/app/`
+- API 키가 없는 환경에서 AI endpoint가 성공한 것처럼 동작하지 않고 `openai_api_key_missing` 503을 반환하는지
+
+외부 서비스의 실제 성공 여부는 해당 서비스 키가 없는 CI에서 fake success로 처리하지 않습니다.
 
 ## Google Trends 연결
 
@@ -61,14 +73,14 @@ Google Trends 항목은 검색 관심도 신호입니다. 사건의 사실 여�
 
 YouTube는 API 키를 GitHub에 저장하지 않습니다. 실행 전에 `YOUTUBE_API_KEY` 환경변수로 넣습니다.
 
-PowerShell 예:
+PowerShell:
 
 ```powershell
 $env:YOUTUBE_API_KEY="YOUR_KEY"
 npm start
 ```
 
-CMD 예:
+CMD:
 
 ```cmd
 set YOUTUBE_API_KEY=YOUR_KEY
@@ -80,6 +92,72 @@ npm start
 현재 사용하는 API는 `videos.list` + `chart=mostPopular` + `regionCode=KR`입니다. 이 결과는 2025-07-21 이후 예전 YouTube 전체 Trending 페이지와 같은 의미가 아니며, 인기 음악·영화·게임 차트 성격이 강한 별도 신호로 취급합니다.
 
 수집하는 것은 제목, 채널, 게시시각, 조회/좋아요/댓글 수 등 메타데이터입니다. 영상/썸네일/음원을 다운로드하거나 재사용 권리가 생긴 것으로 취급하지 않습니다.
+
+## OpenAI AI 조사 / Draft Studio
+
+OpenAI 연결은 선택 사항입니다. 키가 없으면 기존 수동 Research Bundle 기능을 그대로 사용할 수 있습니다.
+
+PowerShell:
+
+```powershell
+$env:OPENAI_API_KEY="YOUR_KEY"
+npm start
+```
+
+CMD:
+
+```cmd
+set OPENAI_API_KEY=YOUR_KEY
+npm start
+```
+
+기본 모델은 비용을 낮추기 위해 `gpt-5.6-luna`입니다. 필요하면 실행 환경에서 변경할 수 있습니다.
+
+```powershell
+$env:OPENAI_MODEL="gpt-5.6-terra"
+# 또는 조사/초안을 각각 다르게
+$env:OPENAI_RESEARCH_MODEL="gpt-5.6-terra"
+$env:OPENAI_DRAFT_MODEL="gpt-5.6-luna"
+```
+
+키/토큰은 GitHub에 커밋하지 않습니다.
+
+### AI 조사 흐름
+
+```text
+후보 선택
+→ AI로 최신 조사
+→ Responses API + web search
+→ 구조화 Research Bundle 생성
+→ 상태는 무조건 `조사 중`
+→ 사람이 출처/사실/권리 확인
+→ `사람 검토 완료`로 저장
+```
+
+AI가 `ready`를 추천하더라도 자동으로 사람 검토 완료가 되지 않습니다.
+
+RED 소스는 AI 요청에 원문 URL을 직접 넘기지 않고, 같은 주제를 **독립된 공개 출처에서만 조사**하도록 처리합니다.
+
+### Draft Studio 흐름
+
+Draft Studio는 `사람 검토 완료` Research Bundle에서만 실행됩니다.
+
+```text
+사람 검토 완료 Research Bundle
+→ 플랫폼별 AI 초안 생성
+→ Threads
+→ Shorts / Reels / TikTok
+→ Instagram Carousel
+→ Blog
+→ YouTube Long
+→ 편집 저장
+→ 검토 중
+→ 사람 승인
+```
+
+`사람 승인`은 초안 검토 상태일 뿐 현재 버전에서는 **자동 게시를 실행하지 않습니다.**
+
+AI 초안은 새 사실을 추가하지 않고 검토 완료 Bundle만 factual ground truth로 사용하도록 서버 지침을 걸어 두었습니다.
 
 ## 평가 규칙
 
@@ -134,9 +212,7 @@ updatedAt
 
 이 필요합니다.
 
-그리고 후보를 `제작 후보`로 올리려면 기존 점수 평가뿐 아니라 Research Bundle도 `사람 검토 완료` 상태여야 합니다.
-
-`Bundle JSON 복사`로 해당 후보의 source/signals/cluster/research 결과를 다음 AI 작업이나 다른 도구로 넘길 수 있습니다.
+후보를 `제작 후보`로 올리려면 기존 점수 평가뿐 아니라 Research Bundle도 `사람 검토 완료` 상태여야 합니다.
 
 ## 데이터
 
@@ -146,16 +222,18 @@ updatedAt
 threads_trend_inbox_v1
 ```
 
+AI 조사 결과와 Draft Studio도 같은 후보 객체에 저장되어 JSON 내보내기에 포함됩니다.
+
 계정 동기화/서버 DB는 아직 없습니다. 중요한 Inbox는 `JSON 내보내기`로 백업할 수 있습니다.
 
 ## 다음 구현 순서
 
 1. 허용된 뉴스/RSS/API 소스 추가
-2. Research Bundle을 실제 AI 조사 작업으로 자동 연결
-3. Rights/Safety Gate 결과를 별도 상태로 구조화
-4. Draft Studio
-5. 승인 Queue
-6. Threads 공식 API 발행/Insights 회수
-7. 성과 데이터 기반 `KEEP / KILL / SCALE`
+2. Rights/Safety Gate를 독립 상태로 구조화
+3. Draft 승인 Queue를 목록 화면으로 분리
+4. Threads 공식 API 발행 — 사람 승인된 항목만
+5. 게시 후 Insights 회수
+6. 성과/수익 기록
+7. 실제 데이터 기반 `KEEP / KILL / SCALE`
 
 소스 사용 기준은 [`../docs/SOURCE_POLICY.md`](../docs/SOURCE_POLICY.md)를 우선합니다.
