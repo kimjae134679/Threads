@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: JavaScript syntax check
+      - name: JavaScript syntax and regression checks
         run: npm run check
       - name: Local server smoke test
         shell: bash
@@ -46,19 +46,18 @@ jobs:
 
           const app = await fetch('http://127.0.0.1:4173/app/');
           const html = await app.text();
-          const requiredScripts = ['ai-studio.js', 'source-enrichment.js', 'threads-publisher.js', 'experiment-lab.js'];
+          const requiredScripts = ['ai-studio.js', 'source-enrichment.js', 'threads-publisher.js', 'experiment-model.js', 'experiment-lab.js'];
           if (!app.ok || !html.includes('Trend Inbox') || requiredScripts.some((name) => !html.includes(name))) {
             throw new Error('static app feature loading check failed');
           }
 
-          for (const asset of ['ai-studio.js', 'source-enrichment.js', 'experiment-lab.js']) {
+          for (const asset of requiredScripts) {
             const response = await fetch(`http://127.0.0.1:4173/app/${asset}`);
             if (!response.ok) throw new Error(`missing static asset ${asset}`);
           }
 
           const research = await fetch('http://127.0.0.1:4173/api/ai/research', {
-            method: 'POST',
-            headers: {'content-type': 'application/json'},
+            method: 'POST', headers: {'content-type': 'application/json'},
             body: JSON.stringify({candidate: {title: 'CI smoke test'}}),
           });
           const researchBody = await research.json();
@@ -79,8 +78,7 @@ jobs:
           }
 
           const unapproved = await fetch('http://127.0.0.1:4173/api/threads/publish', {
-            method: 'POST',
-            headers: {'content-type': 'application/json'},
+            method: 'POST', headers: {'content-type': 'application/json'},
             body: JSON.stringify({candidate: {title: 'CI publish guard'}}),
           });
           const unapprovedBody = await unapproved.json();
