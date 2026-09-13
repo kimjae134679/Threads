@@ -6,15 +6,69 @@
 
 입력은 두 종류다.
 
-- 자동/반자동 탐색: Google Trends, YouTube 메타데이터, NAVER 검색/트렌드, 허용된 RSS/API
+- 자동/반자동 탐색: Google Trends, YouTube 메타데이터, NAVER 검색/트렌드, 허용된 RSS/API, 공개 검색 인덱스
 - 사용자 직접 제보: URL, 캡처 요약, 직접 작성한 내용, "이거 소재로 봐줘" 같은 메모
+
+## 탐색은 테마별 레인으로 분리
+
+한 번에 전부 섞어 찾지 않고, 최소 다음 레인을 따로 본다.
+
+- 웃긴 짤 / 밈
+- 커뮤니티 논란 / 의견갈림
+- 소식 / 이슈 / 지금 뜨는 것
+- 직장 / 취업 / 회사썰
+- 연애 / 인간관계
+- 돈 / 소비 / 재테크
+- 군대 / 학교
+- 황당 / 실화 / 반전
+- AI / IT / 게임
+- 연예 / 방송 / 문화
+- 스포츠 / e스포츠
+- 음식 / 여행 / 장소
+- 동물 / 자연
+
+테마 자체의 분류 기준은 `app/features/themes/`가 소유하고, 어떤 플랫폼에서 그 테마를 우선 찾을지는 `app/features/discovery/sources/`가 소유한다.
+
+## 플랫폼도 분산
+
+특정 커뮤니티 하나에 의존하지 않는다.
+
+현재 Registry 범위:
+
+- Google Trends
+- NAVER 뉴스 / 블로그 / 카페
+- Daum 카페
+- YouTube
+- Reddit
+- X / Twitter
+- Threads
+- Instagram
+- DCInside
+- Blind
+- FMKorea
+- 더쿠
+- 인스티즈
+- 클리앙
+- 루리웹
+- 인벤
+- 뽐뿌
+- 아카라이브
+- Tistory / 공개 블로그
+- 기타 뉴스 / 공개 웹
+
+중요: Registry에 등록됐다고 자동 크롤러가 있다는 뜻은 아니다. 실제 adapter 상태를 `connected / connected-when-credentialed / manual-only / planned`로 따로 기록한다.
+
+DCInside/Blind처럼 자동 대량 수집을 쓰지 않는 출처는 **검색 인덱스 메타데이터, 사용자 제공 URL, 스크린샷 Capture**로만 반입한다.
 
 ## 이 파트가 하는 일
 
 - 주제 후보 발견
-- 원 출처/발견 경로 기록
+- 탐색 레인/테마 기록
+- 원 출처/발견 플랫폼 기록
 - 왜 눈에 띄었는지 1~3줄 메모
+- 공개 반응값이 있으면 조회/좋아요/댓글/순위 기록
 - 중복 후보/유사 토픽 표시
+- Audience Comfort 초벌 차단
 - RED/YELLOW/GREEN 소스 위험도 초벌 분류
 - 발견 시각 기록
 
@@ -25,6 +79,7 @@
 - 제목/대본/영상/게시물을 완성하지 않는다.
 - 실제 게시하지 않는다.
 - 커뮤니티 원문 전체를 자산처럼 저장하지 않는다.
+- 출처 이용조건을 확인하지 않은 사이트에 대량 본문 크롤러를 임의로 붙이지 않는다.
 
 ## 출력 — Candidate Packet
 
@@ -34,6 +89,8 @@
 candidate_id
 found_at
 found_by            auto / user / manual
+discovery_lane      funny_memes / community_debate / ...
+discovery_source    reddit / x / blind / dcinside / naver_cafe / ...
 source_type
 source_url
 source_risk         green / yellow / red
@@ -58,4 +115,4 @@ notes
 
 ## 완료 기준
 
-`02_EDITORIAL_SCORING`이 바로 조사할 수 있을 정도로 **무엇이 화제인지 + 어디서 발견했는지 + 왜 볼 가치가 있는지**가 정리되어 있으면 끝이다.
+`02_EDITORIAL_SCORING`이 바로 조사할 수 있을 정도로 **무엇이 화제인지 + 어떤 테마인지 + 어디서 발견했는지 + 왜 볼 가치가 있는지**가 정리되어 있으면 끝이다.
