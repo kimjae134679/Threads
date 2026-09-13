@@ -2,21 +2,78 @@
 
 이 저장소는 `많이 긁어서 많이 올리는 봇`이 아니라 **트렌드 탐지 → 검증 → 자체 콘텐츠 제작 → 사람 승인 → 공식 게시 → 실제 성과 학습** 시스템을 만든다.
 
-## 읽는 순서
+## 가장 먼저 읽을 것
 
 1. 현재 채팅의 사용자 최신 지시
-2. `README.md`
-3. `app/README.md`
-4. `docs/SOURCE_POLICY.md`
-5. `docs/SOURCE_REGISTRY.md`
-6. `docs/RESEARCH_2026-09.md`
-7. `docs/CONTENT_PIPELINE.md`
-8. `docs/PLATFORM_MATRIX.md`
-9. `docs/THREADS_API_SETUP.md`
-10. `docs/EXPERIMENT_LAB.md`
-11. `docs/EXECUTION_PLAN_30D.md`
+2. `00_START_HERE/README.md`
+3. 현재 맡은 역할 폴더의 README
+4. `docs/HANDOFF_CONTRACTS.md`
+5. 필요한 세부 문서
 
 운영 허브를 함께 쓸 때는 `kimjae134679/project-operations-hub`의 최신 Governance/User Policies도 따른다.
+
+## 역할 선택 규칙
+
+작업 시작 전 반드시 현재 일이 어느 파트인지 먼저 분류한다.
+
+```text
+01_DISCOVERY
+소재 검색 / 자동 신호 / 사용자 직접 제보 정리
+
+02_EDITORIAL_SCORING
+독립 조사 / 사실 검증 / 점수 / 콘텐츠 각도 / ready·research·skip
+
+03_PRODUCTION
+Threads 글 / 영상 스크립트 / Carousel / Blog / YouTube 제작
+
+04_REVIEW_PUBLISH
+Safety Gate / 사람 승인 / 실제 플랫폼 게시
+
+05_EXPERIMENTS_ACCOUNTS
+계정 전략 / Insights / 클릭·전환·수익 / KEEP·KILL·SCALE
+```
+
+한 작업에서 여러 파트를 거칠 수는 있지만 **각 파트의 산출물을 명시적으로 완성한 뒤 다음 파트로 넘어간다.**
+
+## 역할 소유권
+
+- `01`이 Candidate Packet을 소유한다.
+- `02`가 검증된 사실, 출처, 점수, editorial status를 소유한다.
+- `03`이 표현/포맷/variant를 소유한다. 사실이나 점수는 수정하지 않는다.
+- `04`가 Safety Gate와 실제 publish approval을 소유한다.
+- `05`가 account hypothesis와 게시 후 performance decision을 소유한다.
+
+뒤 단계에서 문제가 보이면 임의 수정하지 말고 `docs/HANDOFF_CONTRACTS.md`의 되돌림 규칙을 따른다.
+
+## 다계정 운영 규칙
+
+여러 계정을 병렬 실험하는 것은 허용/권장한다. 단 계정은 **복붙 배포 슬롯이 아니라 서로 다른 전략 가설 단위**다.
+
+각 계정은 최소 다음을 가진다.
+
+```text
+account_id
+platform
+content_axis
+positioning
+target_audience
+hypothesis
+primary_metric
+test_window
+minimum_sample
+scale_rule
+kill_rule
+status
+```
+
+- 동일 게시물을 여러 계정에 그대로 복붙하지 않는다.
+- 계정별 훅/각도/대상/포맷/톤 중 최소 하나 이상 의도적으로 다르게 한다.
+- 한 실험에서는 가능하면 한두 변수만 변경한다.
+- 계정 생성 시점/팔로워 규모가 크게 다르면 절대 조회수만 직접 비교하지 않는다.
+- 여러 계정을 플랫폼 정책/제재/제한 회피 수단으로 쓰지 않는다.
+- 계정 상태는 `planned / warming / active / paused / killed / scaled`로 관리한다.
+
+계정 템플릿: `05_EXPERIMENTS_ACCOUNTS/ACCOUNT_REGISTRY_TEMPLATE.md`
 
 ## 실행 / 검증
 
@@ -27,9 +84,9 @@ http://127.0.0.1:4173/app/
 npm run check
 ```
 
-`npm run check`는 JavaScript 문법 + Experiment scoring 회귀 테스트를 수행한다. GitHub Actions는 여기에 실제 로컬 서버 기동, 주요 브라우저 script 로드, keyless connector fail-closed까지 smoke test한다.
+`npm run check`는 JavaScript 문법 + Experiment scoring 회귀 테스트를 수행한다. GitHub Actions는 실제 로컬 서버 기동, 주요 브라우저 script 로드, keyless connector fail-closed까지 smoke test한다.
 
-## 현재 주요 파일
+## 현재 주요 코드
 
 ```text
 server.mjs                   로컬 API/static server
@@ -65,10 +122,10 @@ localStorage: threads_trend_inbox_v1
 - 수동 URL / 메모
 
 선택:
-- `YOUTUBE_API_KEY` → YouTube KR `mostPopular` 메타데이터
-- `NAVER_API_HUB_CLIENT_ID` + `NAVER_API_HUB_CLIENT_SECRET` → 뉴스/블로그/카페/검색트렌드 보강
-- `OPENAI_API_KEY` → Responses API + web search AI 조사 / Draft Studio
-- `THREADS_ACCESS_TOKEN` → Threads 공식 텍스트 게시 / Insights
+- `YOUTUBE_API_KEY`
+- `NAVER_API_HUB_CLIENT_ID` + `NAVER_API_HUB_CLIENT_SECRET`
+- `OPENAI_API_KEY`
+- `THREADS_ACCESS_TOKEN`
 
 비밀키/API key/token/cookie/app secret은 GitHub에 기록하지 않는다.
 
@@ -100,6 +157,7 @@ AI 조사 성공은 사람 검토 완료가 아니다. AI 초안 생성 성공�
 - 5건 이상이면 조회 백분위 55% + 참여율 백분위 45%로 초기 `SCALE / KEEP / KILL`을 계산한다.
 - 클릭/전환/실수익은 실제 값이 있을 때만 입력한다.
 - 자동 판정은 사람이 override할 수 있다.
+- 실제 계정이 여러 개면 `account_id` 기준 cohort 비교도 추가할 수 있도록 데이터를 보존한다.
 - 판정 로직 변경 시 `test/experiment-model.test.mjs`도 갱신하고 `npm run check`를 통과한다.
 
 ## 고정 원칙
@@ -108,6 +166,7 @@ AI 조사 성공은 사람 검토 완료가 아니다. AI 초안 생성 성공�
 - DCInside / Blind 및 약관 미확인 폐쇄형 커뮤니티는 자동 크롤링하지 않는다.
 - NAVER 뉴스/블로그/카페 검색은 공식 API가 반환한 메타데이터/짧은 패시지만 저장하며 본문 재사용 권리로 보지 않는다.
 - Search Trend/Google Trends/YouTube 인기 메타데이터는 발견 신호이지 사실 검증이 아니다.
+- 사용자 직접 제보도 검증 전에는 사실로 확정하지 않는다.
 - RED 소스 원문 URL은 AI 조사 입력에서 제거하고 독립 공개 출처로 조사한다.
 - 원문 전체/댓글 묶음/타인 완성 영상·짤을 말투만 바꿔 게시하지 않는다.
 - 자동수집 후보에 근거 없는 점수를 만들지 않는다.
@@ -115,18 +174,20 @@ AI 조사 성공은 사람 검토 완료가 아니다. AI 초안 생성 성공�
 - 일반인의 개인정보·초상·범죄/불륜/갑질 등 주장은 보수적으로 다룬다.
 - Safety Gate UNKNOWN/BLOCK이 있으면 게시 승인 불가.
 - 승인 이후 초안/검토 상태가 바뀌면 기존 게시 승인을 무효화한다.
+- 성과가 좋다는 이유로 검증/안전 기준을 낮추지 않는다.
 - 플랫폼 정책은 실제 연결/확장 전 최신 공식 문서를 다시 확인한다.
 
 ## 다음 구현 우선순위
 
-1. 실제 Threads 계정에서 1~3건 텍스트 게시 E2E 검증
-2. 실제 Insights 응답 형태와 저장 구조 검증
-3. 실제 5건 이상 결과로 Experiment Lab 초기 가중치/경계 보정
-4. 추가 허용 source connector 확장
-5. 이미지/영상 자체 제작 파이프라인
-6. Instagram/YouTube 등 공식 게시/성과 adapter
-7. localStorage → 서버 DB/계정 동기화
-8. 실제 성과를 trend score / angle / prompt 개선에 연결
+1. account_id / hypothesis_id / variant_id를 현재 앱 데이터 모델에 정식 추가
+2. 여러 실제 Threads 계정을 Account Registry에 등록
+3. 계정별 1~3건 소량 E2E 게시
+4. 실제 Insights를 account/variant 단위로 수집
+5. 최소 표본 후 계정/콘텐츠/포맷별 Experiment 비교
+6. 잘 되는 전략만 SCALE
+7. 이미지/영상 자체 제작 파이프라인
+8. Instagram/YouTube 공식 게시/성과 adapter
+9. localStorage → 서버 DB/다계정 동기화
 
 ## 완료 기준
 
