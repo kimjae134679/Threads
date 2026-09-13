@@ -143,6 +143,18 @@
           </div>
 
           <div class="detail-section">
+            <h3>사람 평가 <small class="muted-inline">0~100 · 빈칸은 미평가</small></h3>
+            <div class="evaluation-grid">
+              <label>신선도<input id="evalFreshness" type="number" min="0" max="100" placeholder="미평가" /></label>
+              <label>상승 속도<input id="evalVelocity" type="number" min="0" max="100" placeholder="미평가" /></label>
+              <label>독자 적합도<input id="evalAudience" type="number" min="0" max="100" placeholder="미평가" /></label>
+              <label>새 가치 여지<input id="evalOriginality" type="number" min="0" max="100" placeholder="미평가" /></label>
+              <label>수익 연결성<input id="evalRevenue" type="number" min="0" max="100" placeholder="미평가" /></label>
+            </div>
+            <button id="saveEvaluationBtn" class="button ghost full">평가 저장 / 점수 계산</button>
+          </div>
+
+          <div class="detail-section">
             <h3>추천 플랫폼</h3>
             <div id="platformChips" class="chip-row"></div>
           </div>
