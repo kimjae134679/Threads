@@ -11,8 +11,26 @@
 5. `docs/CONTENT_PIPELINE.md`
 6. `docs/PLATFORM_MATRIX.md`
 7. `docs/EXECUTION_PLAN_30D.md`
+8. `app/README.md`
 
 운영 허브를 함께 쓸 때는 `kimjae134679/project-operations-hub`의 최신 Governance/User Policies도 따른다.
+
+## 현재 실행형 MVP
+
+- UI: `app/index.html`
+- 브라우저 로직: `app/app.js`
+- YouTube adapter: `app/youtube.js`
+- 로컬 API/static server: `server.mjs`
+- 실행: `npm start`
+- 검사: `npm run check`
+- 주소: `http://127.0.0.1:4173/app/`
+- 브라우저 저장: localStorage `threads_trend_inbox_v1`
+
+현재 live connector:
+- Google Trends KR Trending Now RSS — 기본 사용 가능
+- YouTube Data API `videos.list?chart=mostPopular&regionCode=KR` — `YOUTUBE_API_KEY`가 있을 때만 사용
+
+YouTube `mostPopular`은 2025-07-21 이후 과거 전체 Trending 페이지와 같은 의미가 아니며 인기 음악·영화·게임 차트 성격이 강한 신호로 표시한다.
 
 ## 고정 원칙
 
@@ -24,6 +42,9 @@
 - 정치·사건사고·범죄 주장·개인 폭로·건강/금융 고위험 주제는 사람 승인 없이 자동 게시하지 않는다.
 - 식별 가능한 일반인의 개인정보와 익명 커뮤니티 이용자 추적 정보는 게시물에서 제거한다.
 - 비밀키/API key/token/cookie/session은 GitHub에 기록하지 않는다.
+- Google Trends 급상승이나 YouTube 인기 메타데이터를 사실 확인 완료로 취급하지 않는다.
+- 자동수집 항목에 근거 없는 점수를 임의 생성하지 않는다. 데이터가 없는 신호는 `UNKNOWN`으로 남기고 사람 평가 후 점수를 계산한다.
+- RED 소스와 미평가 자동수집 항목은 바로 제작 후보로 올리지 않는다.
 
 ## 플랫폼별 주의
 
@@ -34,12 +55,12 @@
 
 ## 구현 우선순위
 
-1. Source Registry / Link Inbox
+1. 허용된 Source Registry connector 확대
 2. Topic normalization + duplicate clustering
-3. Trend scoring
-4. Research Bundle
+3. Trend scoring 보정
+4. Research Bundle 실제 실행
 5. Rights/Safety Gate
-6. Platform-specific draft generation
+6. Platform-specific Draft Studio
 7. Human approval UI
 8. 공식 게시 API 연결
 9. Analytics ingestion
@@ -56,4 +77,4 @@
 
 ## 완료 기준
 
-문서 조사 작업은 출처와 기준일을 남긴다. 구현 작업은 fake success 없이 실제 입력→초안→검사→승인→출력 흐름이 재현되어야 완료로 본다.
+문서 조사 작업은 출처와 기준일을 남긴다. 구현 작업은 fake success 없이 실제 입력→초안→검사→승인→출력 흐름이 재현되어야 완료로 본다. 외부 API 키가 없으면 해당 connector를 명확히 `미설정` 상태로 두고 성공한 것처럼 표시하지 않는다.
