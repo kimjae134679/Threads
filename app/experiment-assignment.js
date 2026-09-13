@@ -65,6 +65,8 @@
   });
 
   sync();
+  loadCompanion("./content-strategy.js");
+  loadCompanion("./experiment-metadata.js");
 
   function currentItem() {
     return (state.items || []).find((item) => item.id === selectedId) || null;
@@ -132,5 +134,13 @@
     link.rel = "stylesheet";
     link.href = "./experiment-assignment.css";
     document.head.appendChild(link);
+  }
+
+  function loadCompanion(src) {
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = false;
+    document.body.appendChild(script);
   }
 })();
