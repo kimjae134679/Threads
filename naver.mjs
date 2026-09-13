@@ -26,17 +26,14 @@ export async function searchNaver(query, type = "news", options = {}) {
   url.searchParams.set("sort", sort);
   url.searchParams.set("format", "json");
 
-  const response = await fetchWithTimeout(url, {
-    method: "GET",
-    headers: authHeaders(),
-  });
+  const response = await fetchWithTimeout(url, { method: "GET", headers: authHeaders() });
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) throw upstreamError(response.status, payload, "naver_search_failed");
 
   const items = (payload.items || []).map((item) => ({
     title: stripHtml(item.title || ""),
-    url: item.originallink || item.link || "",
-    naverUrl: item.link || "",
+    url: safeHttpUrl(item.originallink || item.link || ""),
+    naverUrl: safeHttpUrl(item.link || ""),
     description: stripHtml(item.description || ""),
     publishedAt: item.pubDate || "",
     sourceType: type,
@@ -57,13 +54,14 @@ export async function getNaverSearchTrend(query, options = {}) {
   const cleanQuery = String(query || "").trim();
   if (!cleanQuery) throw appError(400, "naver_query_required", "검색어가 필요합니다.");
 
-  const end = new Date();
   const requestedDays = clamp(Number(options.days || 30), 7, 365);
-  const start = new Date(end);
-  start.setDate(start.getDate() - requestedDays + 1);
+  const endParts = seoulDateParts(new Date());
+  const endUtc = new Date(Date.UTC(endParts.year, endParts.month - 1, endParts.day));
+  const startUtc = new Date(endUtc);
+  startUtc.setUTCDate(startUtc.getUTCDate() - requestedDays + 1);
   const body = {
-    startDate: isoDate(start),
-    endDate: isoDate(end),
+    startDate: utcDateString(startUtc),
+    endDate: utcDateString(endUtc),
     timeUnit: requestedDays <= 90 ? "date" : "week",
     keywordGroups: [{ groupName: cleanQuery.slice(0, 100), keywords: [cleanQuery.slice(0, 100)] }],
   };
@@ -82,7 +80,6 @@ export async function getNaverSearchTrend(query, options = {}) {
     ratio: Number(point.ratio),
   })).filter((point) => point.period && Number.isFinite(point.ratio));
 
-  const momentum = summarizeMomentum(points);
   return {
     provider: "NAVER API HUB Search Trend",
     query: cleanQuery,
@@ -90,8 +87,9 @@ export async function getNaverSearchTrend(query, options = {}) {
     endDate: payload.endDate || body.endDate,
     timeUnit: payload.timeUnit || body.timeUnit,
     points,
-    momentum,
+    momentum: summarizeMomentum(points),
     collectedAt: new Date().toISOString(),
+    dateBasis: "Asia/Seoul",
     note: "ratio는 조회 기간 내 최대 검색량을 100으로 둔 상대값입니다.",
   };
 }
@@ -169,11 +167,31 @@ function stripHtml(value) {
     .trim();
 }
 
+function safeHttpUrl(value) {
+  try {
+    const url = new URL(String(value || "").trim());
+    return url.protocol === "http:" || url.protocol === "https:" ? url.toString() : "";
+  } catch (_) {
+    return "";
+  }
+}
+
 function clamp(value, min, max) {
   const n = Number.isFinite(value) ? Math.round(value) : min;
   return Math.min(max, Math.max(min, n));
 }
 
-function isoDate(date) {
-  return date.toISOString().slice(0, 10);
+function seoulDateParts(date) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const map = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return { year: Number(map.year), month: Number(map.month), day: Number(map.day) };
+}
+
+function utcDateString(date) {
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}-${String(date.getUTCDate()).padStart(2, "0")}`;
 }
