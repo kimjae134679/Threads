@@ -30,8 +30,32 @@ const server = http.createServer(async (req, res) => {
       return json(res, 200, { ok: true, service: "threads-trend-inbox", now: new Date().toISOString() });
     }
 
+    if (url.pathname === "/api/connectors") {
+      return json(res, 200, {
+        ok: true,
+        connectors: {
+          googleTrendsKr: {
+            configured: true,
+            kind: "official-rss",
+            label: "Google Trends KR Trending Now",
+          },
+          youtubeMostPopularKr: {
+            configured: Boolean(process.env.YOUTUBE_API_KEY?.trim()),
+            kind: "official-api",
+            label: "YouTube KR mostPopular",
+            requiredEnv: "YOUTUBE_API_KEY",
+            note: "2025-07-21 이후 mostPopular은 과거 전체 Trending과 동일하지 않으며 인기 음악·영화·게임 신호 중심입니다.",
+          },
+        },
+      });
+    }
+
     if (url.pathname === "/api/trends/google") {
       return handleGoogleTrends(url, res);
+    }
+
+    if (url.pathname === "/api/trends/youtube") {
+      return handleYouTubeMostPopular(url, res);
     }
 
     if (url.pathname === "/") {
@@ -94,6 +118,89 @@ async function handleGoogleTrends(url, res) {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+async function handleYouTubeMostPopular(url, res) {
+  const apiKey = process.env.YOUTUBE_API_KEY?.trim();
+  if (!apiKey) {
+    return json(res, 503, {
+      ok: false,
+      configured: false,
+      error: "youtube_api_key_missing",
+      message: "YOUTUBE_API_KEY 환경변수가 설정되지 않았습니다.",
+    });
+  }
+
+  const region = (url.searchParams.get("region") || "KR").toUpperCase();
+  if (!/^[A-Z]{2}$/.test(region)) {
+    return json(res, 400, { ok: false, error: "invalid_region" });
+  }
+
+  const requestedMax = Number(url.searchParams.get("max") || 20);
+  const maxResults = Math.max(1, Math.min(50, Number.isFinite(requestedMax) ? Math.round(requestedMax) : 20));
+  const upstream = new URL("https://www.googleapis.com/youtube/v3/videos");
+  upstream.searchParams.set("part", "snippet,statistics");
+  upstream.searchParams.set("chart", "mostPopular");
+  upstream.searchParams.set("regionCode", region);
+  upstream.searchParams.set("maxResults", String(maxResults));
+  upstream.searchParams.set("key", apiKey);
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10_000);
+
+  try {
+    const response = await fetch(upstream, {
+      headers: { accept: "application/json" },
+      signal: controller.signal,
+    });
+    const payload = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      return json(res, 502, {
+        ok: false,
+        error: "youtube_upstream_error",
+        status: response.status,
+        message: payload?.error?.message || "YouTube Data API request failed",
+      });
+    }
+
+    const items = Array.isArray(payload.items) ? payload.items.map((item, index) => ({
+      rank: index + 1,
+      id: item.id,
+      title: item.snippet?.title || "",
+      channelId: item.snippet?.channelId || "",
+      channelTitle: item.snippet?.channelTitle || "",
+      publishedAt: item.snippet?.publishedAt || "",
+      categoryId: item.snippet?.categoryId || "",
+      description: item.snippet?.description || "",
+      thumbnail: pickThumbnail(item.snippet?.thumbnails),
+      statistics: {
+        viewCount: item.statistics?.viewCount || "",
+        likeCount: item.statistics?.likeCount || "",
+        commentCount: item.statistics?.commentCount || "",
+      },
+      url: item.id ? `https://www.youtube.com/watch?v=${encodeURIComponent(item.id)}` : "",
+    })).filter((item) => item.id && item.title) : [];
+
+    return json(res, 200, {
+      ok: true,
+      source: "YouTube Data API videos.list chart=mostPopular",
+      region,
+      collectedAt: new Date().toISOString(),
+      count: items.length,
+      scopeNote: "Since 2025-07-21, mostPopular is not the old general Trending page and is oriented toward Trending Music, Movies, and Gaming charts.",
+      items,
+    });
+  } catch (error) {
+    const code = error?.name === "AbortError" ? "youtube_timeout" : "youtube_fetch_failed";
+    return json(res, 502, { ok: false, error: code, message: String(error?.message || error) });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function pickThumbnail(thumbnails = {}) {
+  return thumbnails.maxres?.url || thumbnails.standard?.url || thumbnails.high?.url || thumbnails.medium?.url || thumbnails.default?.url || "";
 }
 
 function parseGoogleTrendsRss(xml, geo) {
