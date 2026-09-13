@@ -41,4 +41,19 @@ const assignment = fs.readFileSync(new URL("../app/experiment-assignment.js", im
 assert.ok(assignment.includes("bootstrap/feature-loader.js"), "feature bootstrap entrypoint must be loaded from base app");
 assert.equal((assignment.match(/loadCompanion/g) || []).length, 0, "assignment module must not own cross-feature load chains");
 
+const viralReview = fs.readFileSync(new URL("../app/viral-review.js", import.meta.url), "utf8");
+for (const expected of [
+  "ThreadsDiscoverySourceModel",
+  "discoveryNormalized",
+  "normalizeCandidate",
+  "viralEvidenceFilter",
+  "viralSourceRiskFilter",
+  'data-group-action="select"',
+  'data-group-action="collapse"',
+  'data-group-action="keep-strongest"',
+  "duplicateResolution",
+]) {
+  assert.ok(viralReview.includes(expected), `Viral Finder bulk-review wiring missing ${expected}`);
+}
+
 console.log("Feature layout regression tests passed.");
