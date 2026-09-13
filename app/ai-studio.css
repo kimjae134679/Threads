@@ -1,0 +1,109 @@
+.ai-toolbar {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 2px;
+  padding: 12px;
+  border: 1px solid var(--line, #dfe3ea);
+  border-radius: 12px;
+  background: rgba(248, 250, 252, .72);
+}
+
+.ai-toolbar-row,
+.draft-studio-heading,
+.draft-actions,
+.ai-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ai-toolbar-row .button,
+.draft-actions .button {
+  flex: 0 0 auto;
+}
+
+.ai-help,
+.ai-meta,
+.draft-warning {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted, #667085);
+}
+
+.ai-meta-row {
+  justify-content: space-between;
+}
+
+.ai-connector-ok { color: #087443; font-weight: 700; }
+.ai-connector-off { color: #9a3412; font-weight: 700; }
+.ai-busy { opacity: .7; pointer-events: none; }
+
+.draft-studio {
+  border: 1px solid var(--line, #dfe3ea);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(255, 255, 255, .76);
+}
+
+.draft-studio-heading {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.draft-studio-heading h3 { margin: 0; }
+
+.draft-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.draft-card {
+  border: 1px solid var(--line, #dfe3ea);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+
+.draft-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.draft-card-head strong { font-size: 14px; }
+
+.draft-card textarea {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.55;
+}
+
+.draft-card[data-platform="shortVideo"] textarea { min-height: 220px; }
+.draft-card[data-platform="blog"] textarea,
+.draft-card[data-platform="youtubeLong"] textarea { min-height: 200px; }
+
+.draft-warning-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  background: #fff7ed;
+}
+
+.draft-warning-box strong { color: #9a3412; }
+.draft-warning-box ul { margin: 0; padding-left: 18px; }
+
+@media (min-width: 1100px) {
+  .draft-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .draft-card[data-platform="threads"] { grid-column: 1; }
+  .draft-card[data-platform="shortVideo"] { grid-column: 2; }
+  .draft-card[data-platform="blog"],
+  .draft-card[data-platform="youtubeLong"] { grid-column: span 2; }
+}
