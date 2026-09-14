@@ -11,6 +11,12 @@ import {
   getThreadsPostInsights,
 } from "./threads.mjs";
 import { getNaverStatus, searchNaver, getNaverSearchTrend } from "./naver.mjs";
+import {
+  getBufferStatus,
+  listBufferThreadsChannels,
+  saveBufferThreadsChannel,
+  publishThreadsViaBuffer,
+} from "./buffer.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -58,6 +64,7 @@ const server = http.createServer(async (req, res) => {
           naverApiHub: getNaverStatus(),
           openai: getOpenAiStatus(),
           threads: getThreadsStatus(),
+          buffer: getBufferStatus(),
         },
       });
     }
@@ -132,6 +139,33 @@ const server = http.createServer(async (req, res) => {
       if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
       const id = url.searchParams.get("id") || "";
       const result = await getThreadsPostInsights(id);
+      return json(res, 200, { ok: true, result });
+    }
+
+    if (url.pathname === "/api/buffer/channels") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const result = await listBufferThreadsChannels();
+      return json(res, 200, { ok: true, result });
+    }
+
+    if (url.pathname === "/api/buffer/channel") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req);
+      const result = await saveBufferThreadsChannel(body?.channelId || "");
+      return json(res, 200, { ok: true, result, connector: getBufferStatus() });
+    }
+
+    if (url.pathname === "/api/buffer/publish") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req);
+      const candidate = body?.candidate || {};
+      validateApprovedCandidate(candidate);
+      const text = approvedThreadsText(candidate);
+      const result = await publishThreadsViaBuffer({
+        text,
+        mode: body?.mode || "addToQueue",
+        dueAt: body?.dueAt || null,
+      });
       return json(res, 200, { ok: true, result });
     }
 
