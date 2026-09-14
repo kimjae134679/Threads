@@ -201,3 +201,28 @@ Fresh installed-Chrome E2E observed:
 Latest ops note: `033-sol.md`.
 
 Next priority: DB-backed persistence behind the same schema-v2 + namespace + optimistic-revision contract, with explicit migration/versioning and file-store fallback until DB parity is proven. Never persist credentials and never couple persistence to publication.
+
+## 2026-09-14 Run 034 update
+
+Current repo tip already contained optional SQLite persistence in `20a2986ad86ebf2d69a792b37ae73914cbaa8521`, package `0.26.0`.
+
+This run added explicit file→SQLite migration in `693248b` (`Add explicit file to SQLite persistence migration`), package `0.27.0`.
+
+Implemented:
+
+- `SqliteStateStoreRegistry.importRecord()` preserves exact source revision/updatedAt
+- imported snapshots still pass schema-v2 normalization/migration and recursive secret rejection
+- existing SQLite namespaces refuse import by default; overwrite requires explicit `overwrite: true`
+- `persistence-migrate.mjs` migrates only validated requested namespaces from JSON stores
+- empty namespaces are skipped rather than materialized
+- new regression covers revision preservation, namespace isolation, v1→v2 migration, experiment preservation, overwrite refusal/opt-in and invalid namespace rejection
+
+Actual SQLite-backed server smoke returned:
+
+`{"defaultBackend":"sqlite","defaultRevision":0,"profileBackend":"sqlite","profileRevision":1,"schema":2}`
+
+`npm run check` passed locally. This run changed server persistence only, so no new browser-E2E claim was made. No migration path can trigger publication.
+
+Latest ops note: `034-sol.md`.
+
+Next priority: add an explicit operator CLI around the migration primitive without exposing filesystem paths in HTTP, then add shared backend parity tests for file vs SQLite and safe backend diagnostics. Keep file fallback until parity is proven and continue to reject plaintext secrets.
