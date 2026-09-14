@@ -477,3 +477,40 @@ Package is now `0.39.0`.
 ### Blocker / next priority
 
 Real provider validation now needs actual operator Instagram credentials/scopes, an explicit current Graph API version, and externally reachable approved staged media. When those are available, set `INSTAGRAM_MEDIA_VALIDATION_ENABLED=1` and validate **container creation only** first; keep live publication disabled and do not call `media_publish`. Record only the provider behavior actually observed. Only after Feed/Carousel provider validation is materially complete should the separate 1080x1920 MP4 Reels/Shorts renderer become the next major implementation target.
+
+## 2026-09-15 Run 046 update
+
+Baseline was `f1a82da34a507aeba1cd2510f29604a2d7e19f3a` (package `0.39.0`). The Discovery Source Review bootstrap loop was already fixed on current main, so this run continued nonblocked work after the Instagram container-validation gate.
+
+New implementation line:
+
+- `411db62755689ad666c2d959712f49323c3e755d` ? add real FFmpeg vertical MP4 renderer.
+- `0211070a86f9261ffd30acad55720f927e9d1502` ? add actual FFmpeg/ffprobe runtime regression.
+- `a1744c8688d837db591efe7fa25959b8e2e4e651` ? clamp output to the declared duration after the first runtime test exposed concat tail leakage.
+- `0c76889154c0b181955173a3ac166a66fbf7b65a` ? distinguish vertical render implementation from still-unsupported live publishing.
+- `18d51206d5e7013bf2ccce8ab153c94d83f451ec` ? cover the separate render-vs-publish contract.
+- `38ea2aba391b24562c6fdd7ceea84942e214971d` ? run the renderer in project syntax/regression checks and bump package to `0.40.0`.
+
+### Exact behavior
+
+- New `vertical-video.mjs` renders source PNG/JPEG/WebP images into a real 1080x1920, 30 fps, H.264, yuv420p MP4 using local FFmpeg.
+- The renderer accepts at most 20 local image inputs, pads without stretching aspect ratio, produces no audio, writes `+faststart`, cleans its scratch concat manifest, and always returns `publishReady:false` + `reviewRequired:true`.
+- `probeVerticalVideo()` uses ffprobe so tests verify the actual encoded dimensions/codec/pixel format/duration instead of trusting the requested command line.
+- The first real runtime test caught a 1.4667 s output for a declared 1.0 s two-frame render. The renderer now applies an explicit output duration cap and the same test observes exactly 1.0 s.
+- `instagram-reel` and `youtube-short` target metadata now declare `renderImplementation: ffmpeg-local`, 1080x1920 MP4, while publication capability deliberately remains `unsupported`. A local renderer must not be confused with provider/API readiness.
+- No Reel/Short publication route, credentials, provider call, OCR/moderation claim, engagement claim, or live post was added.
+
+### Validation actually observed
+
+- Local Windows FFmpeg: `8.1.2-full_build-www.gyan.dev`.
+- Actual runtime regression rendered two generated PNG fixtures and ffprobe observed `1080x1920`, `h264`, `yuv420p`, `30/1`, duration `1.0` seconds.
+- `npm.cmd run check` passed completely on package `0.40.0`, including the new runtime renderer test and all existing safety/persistence/publish regressions.
+- Fresh server smoke used port `43173` because `4173` and `4183` were already occupied; `/api/health` returned `ok:true`.
+- No browser UI changed in this run, so no new Chrome E2E claim is made. Earlier browser E2E remains authoritative for the Discovery/04 paths.
+
+### Next priority
+
+1. Keep Instagram Feed/Carousel live/provider state blocked until real operator credentials/scopes, explicit current Graph version and provider-fetchable staged media exist.
+2. Integrate the new vertical renderer into 03 PRODUCTION as an explicit human-reviewable artifact workflow rather than adding a publish shortcut. Add source/provenance binding and privacy/rights revision binding before any 04 handoff.
+3. Only after that, add platform-specific Reel/Short validation adapters using official APIs and explicit capability states. Do not infer provider readiness from local MP4 success.
+4. Continue P7/P8 only for concrete workflow gaps; avoid persistence churn.
