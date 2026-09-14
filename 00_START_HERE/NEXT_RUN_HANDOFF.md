@@ -359,3 +359,21 @@ Live publishing is still intentionally blocked without current human approval an
 Latest ops note: `039-sol.md`.
 
 Next priority: implement a real, compliant source-asset acquisition/staging adapter for allowed public/official sources and manual screenshot handoff, then connect approved square artifacts to Instagram feed/carousel dry-run without weakening 04 ownership or approval gates. Do not add anti-bot bypasses or generated-image fallback.
+
+## 2026-09-15 Run 041 update
+
+Source-media acquisition is now implemented in `6243fbe` (`Add-explicit-source-media-acquisition-adapter`), package `0.36.0`.
+
+- Added `source-assets.mjs`: explicit direct-media HTTPS acquisition only, CDN allowlist, redirect revalidation, 10 MB cap, JPEG/PNG/WebP/GIF only, no page scraping or bulk crawling.
+- Added `/api/source-assets/capabilities` and `/api/source-assets/proxy`; the proxy does not persist bytes and returns `no-store` + `nosniff`.
+- Community Card Factory accepts explicit direct source-media URLs in addition to manual file/screenshot input. Remote bytes are session-only; source URLs are saved as provenance references only.
+- Loading a remote source asset does not clear rights/privacy gates or imply OCR/moderation success.
+- `test/source-assets.test.mjs` covers allowlist, HTTPS/userinfo rejection, valid image fetch, redirect escape blocking and SVG rejection.
+
+`npm run check` passed on package `0.36.0`; `/api/health` and source-asset capability smoke passed.
+
+Fresh installed-Chrome E2E observed with the source-proxy request fulfilled by a local PNG fixture: `bootstrap=ready`, one explicit source URL loaded, two 1080x1080 reference-square cards rendered, zero Threads/Buffer publish calls, zero page errors. This proves the browser acquisition/render path, not a live external-CDN fetch claim.
+
+The earlier Discovery Source Review main-thread loop is already fixed on current main and remains covered by the anti-loop regression; it did not recur in this browser run.
+
+Next priority: add a compliant public-media staging abstraction for approved rendered feed assets so Instagram Feed/Carousel can receive provider-fetchable URLs, but keep it `credential-required`/`live-disabled` until a real official provider configuration exists. Do not expose local filesystem paths or weaken 04 approval ownership.
