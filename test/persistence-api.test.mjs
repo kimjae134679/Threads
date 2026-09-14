@@ -12,7 +12,7 @@ const base = `http://127.0.0.1:${port}`;
 try {
   for (let i = 0; i < 50; i += 1) { try { if ((await fetch(`${base}/api/health`)).ok) break; } catch {} await new Promise(r => setTimeout(r, 50)); }
   let res = await fetch(`${base}/api/state`); let body = await res.json(); assert.equal(body.revision, 0); assert.equal(body.snapshot, null);
-  const snapshot = { schemaVersion: 1, app: { version: 1, items: [] }, scheduler: { control: {}, history: [] }, profiles: [], experiments: [] };
+  const snapshot = { schemaVersion: 2, app: { version: 1, items: [] }, scheduler: { control: {}, history: [] }, profiles: [], experiments: [] };
   res = await fetch(`${base}/api/state`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot, expectedRevision: 0 }) }); body = await res.json(); assert.equal(res.status, 200); assert.equal(body.revision, 1);
   res = await fetch(`${base}/api/state`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot, expectedRevision: 0 }) }); body = await res.json(); assert.equal(res.status, 409); assert.equal(body.error, "persistence_revision_conflict"); assert.equal(body.currentRevision, 1);
   res = await fetch(`${base}/api/state`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot: { ...snapshot, accessToken: "nope" }, expectedRevision: 1 }) }); body = await res.json(); assert.equal(res.status, 400); assert.equal(body.error, "persistence_secret_field");

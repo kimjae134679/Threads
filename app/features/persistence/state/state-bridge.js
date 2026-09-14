@@ -40,7 +40,9 @@
   function currentSnapshot() {
     const appState = readJson(APP_KEY, { version: 1, items: [] });
     const scheduler = readJson(SCHEDULER_KEY, {});
-    return model.makeSnapshot(appState, scheduler, { source: "browser-session" });
+    const profiles = window.ThreadsAccountRegistry?.list?.() || [];
+    const experiments = model.experimentsFromItems(appState.items || []);
+    return model.makeSnapshot(appState, scheduler, { source: "browser-session", profiles, experiments });
   }
 
   function setStatus(message, tone = "info") {
@@ -52,7 +54,7 @@
     preview = model.migrateSnapshot(input);
     previewSource = source;
     applyButton.disabled = false;
-    setStatus(`미리보기 준비: ${source} · 후보 ${preview.app.items.length}건 · Scheduler ${preview.scheduler.status}`, "success");
+    setStatus(`미리보기 준비: ${source} · 후보 ${preview.app.items.length}건 · 프로필 ${preview.profiles.length}개 · 실험 ${preview.experiments.length}개 · Scheduler ${preview.scheduler.status}`, "success");
   }
 
   function updateRevision(value) {

@@ -373,7 +373,7 @@ function candidateCard(item) {
       <div class="score-badge" title="${escapeHtml(scoreTitle)}">${escapeHtml(scoreText)}</div>
     </div>
     <div class="card-meta">
-      <span class="pill risk-${item.sourceRisk}">${item.sourceRisk.toUpperCase()}</span>
+      <span class="pill risk-${item.sourceRisk}">${(item.sourceRisk || "yellow").toUpperCase()}</span>
       <span>${kindLabels[item.kind] || item.kind}</span>
       <span>${statusLabels[item.status] || item.status}</span>
       <span>${item.sourceType}</span>
@@ -396,7 +396,7 @@ function renderDetail() {
 
   els.detailTitle.textContent = item.title;
   els.detailRisk.className = `pill risk-${item.sourceRisk}`;
-  els.detailRisk.textContent = item.sourceRisk.toUpperCase();
+  els.detailRisk.textContent = (item.sourceRisk || "yellow").toUpperCase();
   els.detailNote.value = item.note || "";
   setEvaluationInputs(item.signals || {});
 
@@ -488,7 +488,7 @@ function buildChecks(item) {
 function buildPrompt(item) {
   const platformLines = (item.platforms || []).map((x) => `- ${x}`).join("\n");
   const sourceLines = (item.relatedSources || []).slice(0, 8).map((x) => `- ${x.source ? `${x.source}: ` : ""}${x.title || ""}${x.url ? ` | ${x.url}` : ""}`).join("\n") || "- 추가 출처 없음";
-  return `당신은 AI Content Monetization Lab의 리서처 겸 편집자다.\n\n[소재]\n제목: ${item.title}\nURL: ${item.url || "없음 - 직접 입력"}\n유형: ${kindLabels[item.kind] || item.kind}\n소스 분류: ${item.sourceType}\n소스 위험도: ${item.sourceRisk.toUpperCase()}\n메모: ${item.note || "없음"}\n\n[초기 신호]\n- freshness: ${formatSignal(item.signals?.freshness)}\n- velocity: ${formatSignal(item.signals?.velocity)}\n- audience_fit: ${formatSignal(item.signals?.audience)}\n- originality_room: ${formatSignal(item.signals?.originalityRoom)}\n- revenue_fit: ${formatSignal(item.signals?.revenueFit)}\n- initial_score: ${item.score == null ? "HUMAN_REVIEW_REQUIRED" : item.score}\n\n[관련 출처 후보]\n${sourceLines}\n\n[추천 플랫폼]\n${platformLines}\n\n[해야 할 일]\n1. 현재 시점의 사실을 다시 조사하고 1차 자료를 우선한다.\n2. 확인된 사실 / 불확실한 주장 / 의견을 분리한다.\n3. 저작권, 개인정보, 명예훼손, 플랫폼 원본성 위험을 표시한다.\n4. 원문 표현을 바꾸는 수준이 아니라 우리가 새로 보탤 설명·비교·맥락·관점 3개 이상을 제안한다.\n5. 가장 좋은 콘텐츠 각도 3개를 제안하고 이유를 쓴다.\n6. 플랫폼별로 서로 다른 초안 구조를 만든다. 같은 결과물을 그대로 복붙하지 않는다.\n7. 수익 연결 가능성이 있으면 광고/affiliate/brand/traffic/audience_building 중 적절한 경로를 표시한다.\n8. 위험도가 높으면 자동 발행하지 말고 HUMAN REVIEW를 표시한다.\n9. Google Trends 항목이면 검색 급상승 이유를 추측으로 쓰지 말고 반드시 근거를 찾아 확인한다.\n\n출력은 Research Bundle 형태로 정리한다.`;
+  return `당신은 AI Content Monetization Lab의 리서처 겸 편집자다.\n\n[소재]\n제목: ${item.title}\nURL: ${item.url || "없음 - 직접 입력"}\n유형: ${kindLabels[item.kind] || item.kind}\n소스 분류: ${item.sourceType}\n소스 위험도: ${(item.sourceRisk || "yellow").toUpperCase()}\n메모: ${item.note || "없음"}\n\n[초기 신호]\n- freshness: ${formatSignal(item.signals?.freshness)}\n- velocity: ${formatSignal(item.signals?.velocity)}\n- audience_fit: ${formatSignal(item.signals?.audience)}\n- originality_room: ${formatSignal(item.signals?.originalityRoom)}\n- revenue_fit: ${formatSignal(item.signals?.revenueFit)}\n- initial_score: ${item.score == null ? "HUMAN_REVIEW_REQUIRED" : item.score}\n\n[관련 출처 후보]\n${sourceLines}\n\n[추천 플랫폼]\n${platformLines}\n\n[해야 할 일]\n1. 현재 시점의 사실을 다시 조사하고 1차 자료를 우선한다.\n2. 확인된 사실 / 불확실한 주장 / 의견을 분리한다.\n3. 저작권, 개인정보, 명예훼손, 플랫폼 원본성 위험을 표시한다.\n4. 원문 표현을 바꾸는 수준이 아니라 우리가 새로 보탤 설명·비교·맥락·관점 3개 이상을 제안한다.\n5. 가장 좋은 콘텐츠 각도 3개를 제안하고 이유를 쓴다.\n6. 플랫폼별로 서로 다른 초안 구조를 만든다. 같은 결과물을 그대로 복붙하지 않는다.\n7. 수익 연결 가능성이 있으면 광고/affiliate/brand/traffic/audience_building 중 적절한 경로를 표시한다.\n8. 위험도가 높으면 자동 발행하지 말고 HUMAN REVIEW를 표시한다.\n9. Google Trends 항목이면 검색 급상승 이유를 추측으로 쓰지 말고 반드시 근거를 찾아 확인한다.\n\n출력은 Research Bundle 형태로 정리한다.`;
 }
 
 function formatSignal(value) {

@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-export const STATE_SCHEMA_VERSION = 1;
+export const STATE_SCHEMA_VERSION = 2;
 const FORBIDDEN_KEY = /(password|passwd|secret|access[_-]?token|refresh[_-]?token|api[_-]?key|authorization|cookie)/i;
 
 export function assertNoSecrets(value, currentPath = "root") {
@@ -22,15 +22,25 @@ export function assertNoSecrets(value, currentPath = "root") {
 }
 
 export function normalizeEnvelope(input = {}) {
-  const schemaVersion = Number(input.schemaVersion || 0);
-  if (schemaVersion !== STATE_SCHEMA_VERSION) {
+  const envelope = JSON.parse(JSON.stringify(input || {}));
+  assertNoSecrets(envelope);
+  const schemaVersion = Number(envelope.schemaVersion || 0);
+  if (![1, STATE_SCHEMA_VERSION].includes(schemaVersion)) {
     const error = new Error(`unsupported_persistence_schema:${schemaVersion}`);
     error.code = "unsupported_persistence_schema";
     error.status = 400;
     throw error;
   }
-  const envelope = JSON.parse(JSON.stringify(input));
-  assertNoSecrets(envelope);
+  if (schemaVersion === 1) {
+    envelope.schemaVersion = STATE_SCHEMA_VERSION;
+    envelope.profiles = Array.isArray(envelope.profiles) ? envelope.profiles : [];
+    if (!Array.isArray(envelope.experiments) || envelope.experiments.length === 0) {
+      envelope.experiments = (envelope.app?.items || []).map((item) => ({
+        itemId: item?.id || "",
+        ...(item?.experimentAssignment || {}),
+      })).filter((entry) => entry.itemId && (entry.accountId || entry.hypothesisId || entry.variantId || entry.goal));
+    }
+  }
   return envelope;
 }
 
