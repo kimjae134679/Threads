@@ -250,3 +250,26 @@ No browser UI changed and no new browser-E2E claim is made. Persistence remains 
 Latest ops note: `035-sol.md`.
 
 Next priority: verify final CI; then focus only on concrete remaining P8 gaps, especially browser-level multi-account/profile isolation or future DB schema changes justified by actual requirements. Keep file backend as fallback and never persist provider credentials.
+
+## 2026-09-14 Run 036 update
+
+P8 browser multi-account isolation is now implemented in `6eb9101` (`Isolate account scoped persistence restore`), package `0.30.0`.
+
+Implemented:
+
+- persistence snapshots now carry an explicit optional `scope` (`workspace/default` or `account/<id>`) without changing schema v2
+- `default` keeps the existing full workspace snapshot/restore contract
+- account namespaces save only that account's credential-free profile metadata and experiment assignments
+- account snapshots do not duplicate shared candidate bodies or Scheduler control/history
+- restore of an account scope changes only that account's experiment assignments; other account assignments and shared candidate state remain untouched
+- Scheduler state is restored only for the `default` workspace scope
+- workspace snapshots cannot be applied into an account namespace, mismatched account scopes fail closed, and malformed/unknown scope kinds fail closed
+- persistence preview text now states when an account scope will not apply shared candidates/Scheduler
+
+Fresh installed-Chrome E2E observed PASS:
+
+`{"bootstrap":"ready","serverRevision":1,"serverScope":{"kind":"account","id":"TH-A"},"serverProfiles":["TH-A"],"serverExperiments":["a:TH-A"],"restoredA":"A-saved","preservedB":"B-local-preserve","preservedScheduler":"stopped","pageErrors":[]}`
+
+`npm run check` passed on package `0.30.0`; server `/api/health` smoke returned `ok:true`. Temporary Playwright/runtime state was removed after E2E.
+
+Next priority: only add further DB schema changes for a concrete requirement. Useful remaining P8 work is to decide whether account-scoped profile metadata needs editable runtime state beyond the static Account Registry; if so, add that state with explicit migration and the same no-secret rule. Otherwise keep SQLite optional/file fallback stable and avoid persistence churn.
