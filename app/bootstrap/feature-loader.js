@@ -68,6 +68,14 @@
       scripts: ["./warehouse-model.js", "./content-warehouse.js"],
     },
     {
+      id: "official-media-publish",
+      styles: ["./features/publish/official-media/official-media-publisher.css"],
+      scripts: [
+        "./features/publish/official-media/official-media-model.js",
+        "./features/publish/official-media/official-media-publisher.js",
+      ],
+    },
+    {
       id: "buffer-publisher",
       styles: ["./features/publish/buffer/buffer-publisher.css"],
       scripts: [

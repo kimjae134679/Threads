@@ -9,6 +9,8 @@ import {
   getThreadsPublishingLimit,
   publishTextToThreads,
   getThreadsPostInsights,
+  getThreadsMediaCapabilities,
+  buildThreadsMediaDryRun,
 } from "./threads.mjs";
 import { getNaverStatus, searchNaver, getNaverSearchTrend } from "./naver.mjs";
 import {
@@ -123,6 +125,21 @@ const server = http.createServer(async (req, res) => {
       if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
       const quota = await getThreadsPublishingLimit();
       return json(res, 200, { ok: true, quota, collectedAt: new Date().toISOString() });
+    }
+
+    if (url.pathname === "/api/threads/media/capabilities") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      return json(res, 200, { ok: true, capability: getThreadsMediaCapabilities() });
+    }
+
+    if (url.pathname === "/api/threads/media/dry-run") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req);
+      const candidate = body?.candidate || {};
+      validateApprovedCandidate(candidate);
+      const text = approvedThreadsText(candidate);
+      const plan = buildThreadsMediaDryRun({ text, mediaUrls: body?.mediaUrls || [] });
+      return json(res, 200, { ok: true, plan, auditedAt: new Date().toISOString() });
     }
 
     if (url.pathname === "/api/threads/publish") {

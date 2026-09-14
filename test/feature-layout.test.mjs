@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import fs from "node:fs";
 
 const requiredFiles = [
@@ -26,6 +26,10 @@ const requiredFiles = [
   "app/features/publish/buffer/buffer-publish-model.js",
   "app/features/publish/buffer/buffer-publisher.js",
   "app/features/publish/buffer/buffer-publisher.css",
+  "app/features/publish/official-media/README.md",
+  "app/features/publish/official-media/official-media-model.js",
+  "app/features/publish/official-media/official-media-publisher.js",
+  "app/features/publish/official-media/official-media-publisher.css",
   "app/ARCHITECTURE.md",
 ];
 
@@ -58,6 +62,9 @@ for (const expected of [
   "features/publish/buffer/buffer-publish-model.js",
   "features/publish/buffer/buffer-publisher.js",
   "features/publish/buffer/buffer-publisher.css",
+  "features/publish/official-media/official-media-model.js",
+  "features/publish/official-media/official-media-publisher.js",
+  "features/publish/official-media/official-media-publisher.css",
 ]) {
   assert.ok(loader.includes(expected), `feature loader missing ${expected}`);
 }
@@ -109,3 +116,4 @@ for (const expected of ["/api/buffer/channels","/api/buffer/channel","/api/buffe
 }
 
 console.log("Feature layout regression tests passed.");
+

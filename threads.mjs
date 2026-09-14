@@ -15,6 +15,37 @@ export function getThreadsStatus() {
   };
 }
 
+export function getThreadsMediaCapabilities() {
+  const configured = Boolean(process.env.THREADS_ACCESS_TOKEN?.trim());
+  const mediaLiveEnabled = process.env.THREADS_MEDIA_LIVE_ENABLED === "1";
+  return {
+    provider: "threads-official",
+    configured,
+    mediaLiveEnabled,
+    state: !configured ? "credential-required" : mediaLiveEnabled ? "ready-to-validate" : "live-disabled",
+    supportedMediaTypes: ["IMAGE", "CAROUSEL"],
+    maxCarouselItems: 20,
+    publicHttpsMediaRequired: true,
+    requiredScopes: ["threads_basic", "threads_content_publish"],
+  };
+}
+
+export function buildThreadsMediaDryRun({ text = "", mediaUrls = [] } = {}) {
+  const urls = (Array.isArray(mediaUrls) ? mediaUrls : []).map((value) => String(value || "").trim()).filter(Boolean);
+  if (!urls.length) throw apiError(400, "threads_media_url_required", "공개 HTTPS 이미지 URL이 최소 1개 필요합니다.");
+  if (urls.length > 20) throw apiError(400, "threads_carousel_too_many_items", "Threads 캐러셀은 최대 20개 미디어 URL만 검증합니다.");
+  for (const value of urls) {
+    let parsed;
+    try { parsed = new URL(value); } catch (_) { throw apiError(400, "threads_media_url_invalid", "유효한 이미지 URL이 필요합니다."); }
+    if (parsed.protocol !== "https:") throw apiError(400, "threads_media_url_must_be_https", "Threads 이미지 URL은 공개 HTTPS 주소여야 합니다.");
+  }
+  const mediaType = urls.length === 1 ? "IMAGE" : "CAROUSEL";
+  const steps = mediaType === "IMAGE"
+    ? [{ action: "create-container", mediaType: "IMAGE", imageUrl: urls[0] }, { action: "publish-parent" }]
+    : [...urls.map((url, index) => ({ action: "create-carousel-child", index, mediaType: "IMAGE", imageUrl: url, isCarouselItem: true })), { action: "create-carousel-parent", mediaType: "CAROUSEL", childCount: urls.length }, { action: "publish-parent" }];
+  return { dryRun: true, provider: "threads-official", mediaType, mediaCount: urls.length, textLength: [...String(text || "")].length, mediaUrls: urls, steps, capability: getThreadsMediaCapabilities() };
+}
+
 export async function getThreadsProfile() {
   requireToken();
   const url = apiUrl("/me");
