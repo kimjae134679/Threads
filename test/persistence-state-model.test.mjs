@@ -88,3 +88,23 @@ assert.throws(
 console.log("Persistence state model regression tests passed.");
 
 assert.throws(() => model.makeSnapshot({ items: [] }, {}, { profiles: [{ id: "bad", apiKey: "nope" }] }), /persistence_secret_field/);
+
+const profileStateSnapshot = model.makeSnapshot({ version: 1, items: [] }, {}, {
+  profiles: [{ id: "TH-A", platform: "threads" }, { id: "TH-B", platform: "threads" }],
+  profileStates: [
+    { id: "TH-A", status: "active", enabled: true, notes: "primary" },
+    { id: "TH-B", status: "paused", enabled: false, notes: "hold" },
+  ],
+});
+assert.equal(profileStateSnapshot.profileStates.length, 2);
+assert.equal(profileStateSnapshot.profileStates[1].enabled, false);
+const scopedProfile = model.makeScopedSnapshot({ version: 1, items: [] }, {}, "TH-A", {
+  profiles: profileStateSnapshot.profiles,
+  profileStates: profileStateSnapshot.profileStates,
+});
+assert.deepEqual(JSON.parse(JSON.stringify(scopedProfile.profileStates.map((entry) => entry.id))), ["TH-A"]);
+model.assertScope(scopedProfile, "TH-A");
+const crossProfile = structuredClone(scopedProfile);
+crossProfile.profileStates.push({ id: "TH-B", status: "active" });
+assert.throws(() => model.assertScope(crossProfile, "TH-A"), /persistence_scope_cross_profile/);
+assert.throws(() => model.makeSnapshot({ items: [] }, {}, { profileStates: [{ id: "TH-A", accessToken: "nope" }] }), /persistence_secret_field/);

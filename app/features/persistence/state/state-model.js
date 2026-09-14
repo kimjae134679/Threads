@@ -46,6 +46,28 @@
     });
   }
 
+  function normalizeProfileState(value = {}) {
+    const id = text(value.id, 80);
+    if (!id) return null;
+    const status = text(value.status, 40).toLowerCase();
+    return {
+      id,
+      enabled: value.enabled !== false,
+      status: ["planned", "testing", "active", "paused", "retired"].includes(status) ? status : "planned",
+      notes: text(value.notes, 500),
+      updatedAt: text(value.updatedAt, 64),
+    };
+  }
+
+  function normalizeProfileStates(values = []) {
+    const byId = new Map();
+    for (const value of Array.isArray(values) ? values : []) {
+      const entry = normalizeProfileState(value);
+      if (entry) byId.set(entry.id, entry);
+    }
+    return [...byId.values()];
+  }
+
   function normalizeExperiment(value = {}) {
     const itemId = text(value.itemId || value.candidateId, 120);
     const accountId = text(value.accountId, 80);
@@ -90,6 +112,9 @@
     if (actual.kind === "account" && (snapshot.experiments || []).some((entry) => entry.accountId && entry.accountId !== actual.id)) {
       throw new Error(`persistence_scope_cross_account:${actual.id}`);
     }
+    if (actual.kind === "account" && Array.isArray(snapshot.profileStates) && snapshot.profileStates.some((entry) => entry.id !== actual.id)) {
+      throw new Error(`persistence_scope_cross_profile:${actual.id}`);
+    }
     return actual;
   }
 
@@ -115,6 +140,7 @@
 
   function makeSnapshot(appState = {}, schedulerControl = {}, meta = {}) {
     assertSafe(meta.profiles || [], "meta.profiles");
+    assertSafe(meta.profileStates || [], "meta.profileStates");
     assertSafe(meta.experiments || [], "meta.experiments");
     const items = Array.isArray(appState.items) ? clone(appState.items) : [];
     const snapshot = {
@@ -126,6 +152,7 @@
       app: { version: Number(appState.version) || 1, items },
       scheduler: normalizeControl(schedulerControl),
       profiles: normalizeProfiles(meta.profiles || []),
+      profileStates: normalizeProfileStates(meta.profileStates || []),
       experiments: normalizeExperiments(meta.experiments?.length ? meta.experiments : experimentsFromItems(items)),
     };
     assertSafe(snapshot);
@@ -139,11 +166,13 @@
     if (version > CURRENT_SCHEMA) throw new Error(`persistence_schema_newer:${version}`);
     if (version === 0) {
       const legacyState = snapshot.app || snapshot.state || snapshot;
-      return makeSnapshot(
+      const legacy = makeSnapshot(
         { version: legacyState.version || 1, items: legacyState.items || [] },
         snapshot.scheduler || {},
         { exportedAt: snapshot.exportedAt, source: snapshot.source || "legacy-browser", profiles: snapshot.profiles || [], experiments: snapshot.experiments || [] }
       );
+      legacy.profileStates = null;
+      return legacy;
     }
     const app = {
       version: Number(snapshot.app?.version) || 1,
@@ -157,6 +186,9 @@
       app,
       scheduler: normalizeControl(snapshot.scheduler || {}),
       profiles: normalizeProfiles(snapshot.profiles || []),
+      profileStates: Object.prototype.hasOwnProperty.call(snapshot, "profileStates")
+        ? (snapshot.profileStates == null ? null : normalizeProfileStates(snapshot.profileStates))
+        : null,
       experiments: normalizeExperiments(
         Array.isArray(snapshot.experiments) && snapshot.experiments.length ? snapshot.experiments : experimentsFromItems(app.items)
       ),
@@ -175,6 +207,7 @@
     const full = makeSnapshot(appState, schedulerControl, meta);
     const experiments = full.experiments.filter((entry) => entry.accountId === namespace);
     const profiles = full.profiles.filter((entry) => entry.id === namespace);
+    const profileStates = (full.profileStates || []).filter((entry) => entry.id === namespace);
     const scoped = {
       ...full,
       source: text(meta.source || "browser-account-scope", 120),
@@ -182,6 +215,7 @@
       app: { version: full.app.version, items: [] },
       scheduler: normalizeControl({}),
       profiles,
+      profileStates,
       experiments,
     };
     assertSafe(scoped); assertScope(scoped, namespace); return scoped;
@@ -205,7 +239,8 @@
 
   window.ThreadsPersistenceStateModel = {
     CURRENT_SCHEMA, OWNER, ROLE_CHAIN: [...ROLE_CHAIN], assertSafe, normalizeControl,
-    normalizeProfile, normalizeProfiles, normalizeExperiment, normalizeExperiments, normalizeScope, assertScope,
+    normalizeProfile, normalizeProfiles, normalizeProfileState, normalizeProfileStates,
+    normalizeExperiment, normalizeExperiments, normalizeScope, assertScope,
     experimentsFromItems, applyExperiments, makeSnapshot, makeScopedSnapshot, migrateSnapshot, restoreAppState, restoreScopedAppState,
   };
 })();

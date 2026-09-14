@@ -95,6 +95,7 @@
       id: "persistence-state",
       scripts: [
         "./features/persistence/state/state-model.js",
+        "./features/persistence/profiles/profile-state.js",
         "./features/persistence/state/state-bridge.js",
       ],
     },

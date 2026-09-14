@@ -1,7 +1,8 @@
 (() => {
   const model = window.ThreadsPersistenceStateModel;
+  const profileState = window.ThreadsPersistenceProfileState;
   const footer = document.querySelector("footer");
-  if (!model || !footer) return;
+  if (!model || !profileState || !footer) return;
 
   const APP_KEY = "threads_trend_inbox_v1";
   const SCHEDULER_KEY = "threads_scheduler_control_v1";
@@ -25,6 +26,14 @@
       <button type="button" class="button primary" data-persist="server-save">서버 저장</button>
       <button type="button" class="button primary" data-persist="apply" disabled>미리보기 적용</button>
     </div>
+    <div id="persistenceProfileEditor" class="top-actions" hidden>
+      <label class="button ghost">프로필 상태 <select id="persistenceProfileStatus">
+        <option value="planned">planned</option><option value="testing">testing</option><option value="active">active</option><option value="paused">paused</option><option value="retired">retired</option>
+      </select></label>
+      <label class="button ghost"><input id="persistenceProfileEnabled" type="checkbox" /> 활성</label>
+      <label class="button ghost">운영 메모 <input id="persistenceProfileNotes" maxlength="500" placeholder="credential-free 운영 메모" /></label>
+      <button type="button" class="button ghost" data-persist="profile-save">로컬 프로필 상태 저장</button>
+    </div>
     <div id="persistenceStatus" class="system-message">아직 불러온 미리보기가 없습니다.</div>`;
   footer.insertAdjacentElement("beforebegin", section);
 
@@ -32,12 +41,20 @@
   const revision = section.querySelector("#persistenceRevision");
   const applyButton = section.querySelector('[data-persist="apply"]');
   const namespaceSelect = section.querySelector("#persistenceNamespace");
+  const profileEditor = section.querySelector("#persistenceProfileEditor");
+  const profileStatus = section.querySelector("#persistenceProfileStatus");
+  const profileEnabled = section.querySelector("#persistenceProfileEnabled");
+  const profileNotes = section.querySelector("#persistenceProfileNotes");
   for (const profile of window.ThreadsAccountRegistry?.list?.() || []) {
     const option = document.createElement("option"); option.value = profile.id; option.textContent = profile.id; namespaceSelect.appendChild(option);
   }
-  namespaceSelect.addEventListener("change", () => { updateRevision(0); preview = null; applyButton.disabled = true; setStatus(`저장 범위 변경: ${currentNamespace()}`, "info"); });
+  namespaceSelect.addEventListener("change", () => {
+    updateRevision(0); preview = null; applyButton.disabled = true; renderProfileEditor();
+    setStatus(`저장 범위 변경: ${currentNamespace()}`, "info");
+  });
   section.addEventListener("click", onClick);
   section.querySelector("[data-persist-file]").addEventListener("change", onFile);
+  renderProfileEditor();
 
   function readJson(key, fallback) {
     try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch (_) { return fallback; }
@@ -47,8 +64,9 @@
     const appState = readJson(APP_KEY, { version: 1, items: [] });
     const scheduler = readJson(SCHEDULER_KEY, {});
     const profiles = window.ThreadsAccountRegistry?.list?.() || [];
+    const profileStates = profileState.listStored();
     const experiments = model.experimentsFromItems(appState.items || []);
-    return model.makeScopedSnapshot(appState, scheduler, currentNamespace(), { source: "browser-session", profiles, experiments });
+    return model.makeScopedSnapshot(appState, scheduler, currentNamespace(), { source: "browser-session", profiles, profileStates, experiments });
   }
 
   function setStatus(message, tone = "info") {
@@ -64,7 +82,8 @@
     const scopeText = preview.scope?.kind === "account"
       ? `${preview.scope.id} 계정 scope · 공용 후보/Scheduler 미적용`
       : "workspace 전체 scope";
-    setStatus(`미리보기 준비: ${source} · ${scopeText} · 후보 ${preview.app.items.length}건 · 프로필 ${preview.profiles.length}개 · 실험 ${preview.experiments.length}개`, "success");
+    const profileStateCount = Array.isArray(preview.profileStates) ? preview.profileStates.length : 0;
+    setStatus(`미리보기 준비: ${source} · ${scopeText} · 후보 ${preview.app.items.length}건 · 프로필 ${preview.profiles.length}개 · 프로필상태 ${profileStateCount}개 · 실험 ${preview.experiments.length}개`, "success");
   }
 
   function currentNamespace() { return namespaceSelect?.value || "default"; }
@@ -76,6 +95,28 @@
     revision.textContent = `${currentNamespace()} · SERVER r${serverRevision}`;
   }
 
+  function renderProfileEditor() {
+    const namespace = currentNamespace();
+    const isAccount = namespace !== "default";
+    profileEditor.hidden = !isAccount;
+    if (!isAccount) return;
+    const entry = profileState.get(namespace);
+    profileStatus.value = entry?.status || "planned";
+    profileEnabled.checked = entry?.enabled !== false;
+    profileNotes.value = entry?.notes || "";
+  }
+
+  function saveProfileState() {
+    const namespace = currentNamespace();
+    if (namespace === "default") throw new Error("profile_state_requires_account_scope");
+    const saved = profileState.update(namespace, {
+      status: profileStatus.value,
+      enabled: profileEnabled.checked,
+      notes: profileNotes.value,
+    });
+    setStatus(`로컬 프로필 상태 저장: ${namespace} · ${saved.status} · ${saved.enabled ? "활성" : "비활성"}`, "success");
+  }
+
   async function onClick(event) {
     const action = event.target.closest?.("[data-persist]")?.dataset.persist;
     if (!action) return;
@@ -83,6 +124,7 @@
       if (action === "export") return exportSnapshot();
       if (action === "server-read") return await readServer();
       if (action === "server-save") return await saveServer();
+      if (action === "profile-save") return saveProfileState();
       if (action === "apply") return applyPreview();
     } catch (error) {
       setStatus(String(error?.message || error), "error");
@@ -158,8 +200,11 @@
         history: preview.scheduler.history,
         updatedAt: new Date().toISOString(),
       }));
+      if (Array.isArray(preview.profileStates)) profileState.replaceAll(preview.profileStates);
+    } else if (Array.isArray(preview.profileStates)) {
+      profileState.applyScoped(namespace, preview.profileStates);
     }
-    const scopeText = namespace === "default" ? "workspace 전체" : `${namespace} 계정 실험만`;
+    const scopeText = namespace === "default" ? "workspace 전체" : `${namespace} 계정 실험/프로필상태만`;
     setStatus(`미리보기 적용 완료: ${previewSource} · ${scopeText}. 화면을 다시 불러옵니다.`, "success");
     setTimeout(() => location.reload(), 50);
   }
