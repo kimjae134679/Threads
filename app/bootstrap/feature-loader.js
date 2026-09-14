@@ -55,6 +55,11 @@
       ],
     },
     {
+      id: "demo-showcase",
+      styles: ["./features/discovery/demo/demo-showcase.css"],
+      scripts: ["./features/discovery/demo/demo-showcase.js"],
+    },
+    {
       id: "community-cards",
       scripts: [
         "./card-story-model.js",
