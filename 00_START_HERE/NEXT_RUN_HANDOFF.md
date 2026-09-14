@@ -398,3 +398,40 @@ No new Chrome E2E is claimed in this run because the authorized Windows device w
 Latest ops note: `043-sol.md`.
 
 Next priority: once the authorized Windows/Chrome machine is online, run current-main server smoke plus fresh browser E2E through approved card artifact -> staging -> Instagram dry-run and verify zero publication/provider calls. Then add the corresponding 04 UI control only if it can remain fail-closed on stale approval and unverified media reachability. Reels/Shorts remain unsupported until a real separate 1080x1920 MP4 renderer exists.
+
+## 2026-09-15 Run 044 update
+
+Baseline was `a0a14a6713ea6af060f2c176286922e4944cc2ef`. The earlier Discovery Source Review bootstrap loop was already fixed on main, so this run continued the next real P6 blocker instead of redoing stale work.
+
+Implementation commit: `83e7a066e65d29a2dd4af4ba98676952d90664d3` (`0.38.0`).
+
+### 04-only approved-render staging UI
+
+`app/features/publish/official-media/official-media-publisher.js` now exposes server-derived capability rows for Threads media, bounded media staging, and Instagram Feed/Carousel. Currently approved queue cards receive an `Instagram 스테이징 / dry-run` control owned by `04 REVIEW_PUBLISH` only.
+
+The staging control:
+- requires the same candidate to be open in Card Factory;
+- rechecks current human approval revision;
+- accepts only current `#cardPreviewGrid` canvases;
+- requires exactly 1080×1080 canvases and at most 10 assets;
+- converts those canvases to PNG data URLs and sends them to the bounded `/api/media-staging/stage` route;
+- records `staged-unverified`, exact approval basis, returned staged URLs, and `externalReachabilityVerified:false` without claiming provider fetchability.
+
+The Instagram dry-run button becomes usable only after that approval-bound staging succeeds. It calls `/api/instagram/media/dry-run`, stores the bounded request-plan audit, displays `04_REVIEW_PUBLISH`, and explicitly says there was no live call. Missing provider credentials remain visible in capability state; dry-run plan construction is not credential validation.
+### Validation actually observed
+
+- `npm.cmd run check` passed completely after the changes.
+- The Windows-only `test/server-media-api.test.mjs` harness exposed two real portability races: URL `.pathname` produced `C:\C:\...` under Node/Windows, and registering an `exit` listener after an already-exited child caused unsettled top-level await. The test now uses `fileURLToPath()` and only waits for `exit` while the child is still running.
+- `/api/health` returned `ok:true` on the real Node server.
+- `/api/connectors` during browser validation reported staging `ready-to-validate`, Instagram `credential-required`, and staging external reachability `false`.
+- Fresh installed-Chrome E2E actually observed bootstrap `ready`, two Card Factory canvases at 1080×1080, current human approval, one real staging POST, `staged-unverified` with matching approval basis, `externalReachabilityVerified:false`, then an Instagram CAROUSEL two-item dry-run owned by `04_REVIEW_PUBLISH`.
+- Browser E2E observed zero live provider/publish calls and zero page errors. No Meta credential validity, external media reachability, provider fetch, or live publication was claimed.
+
+GitHub Actions push run `34886084824` for `83e7a06` was `in_progress` when this note was first written; only call it green if a later observation confirms completion/success.
+
+### Next priority
+
+1. Re-run/observe the latest Actions result and keep CI claims exact.
+2. With real operator Instagram configuration later, validate provider-side media URL fetch/creation without enabling live publication; until then keep `credential-required` and external reachability unverified.
+3. Do not build Reels/Shorts by stretching square cards. After Feed/Carousel provider validation is materially complete, add the separate 1080×1920 MP4 renderer.
+4. Continue compliant public discovery only when it adds useful verified candidates; do not bulk crawl Blind/DCInside or invent engagement values.
