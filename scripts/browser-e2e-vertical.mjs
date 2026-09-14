@@ -83,16 +83,46 @@ try {
   });
   const video = await page.request.get(new URL(rendered.download, base).href);
   const bytes = (await video.body()).byteLength;
+
+  const reviewFixture = await page.evaluate(() => {
+    const item = state.items.find((entry) => entry.id === "e2e-vertical-fixture");
+    item.researchBundle = { ...(item.researchBundle || {}), reviewStatus: "reviewed" };
+    item.draftStudio = { ...(item.draftStudio || {}), generated: true, reviewStatus: "approved" };
+    item.safetyGate = {
+      schemaVersion: 1,
+      fact: "pass",
+      rights: "pass",
+      privacy: "pass",
+      defamation: "pass",
+      platform: "pass",
+      notes: "E2E fixture only; no publication attempted.",
+      reviewedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    persist();
+    document.dispatchEvent(new CustomEvent("threads:content-revision-changed", { detail: { candidateId: item.id, source: "e2e-review-fixture" } }));
+    return { updatedAt: item.updatedAt, artifactBasis: item.verticalVideoArtifact?.handoffBasisUpdatedAt };
+  });
+  await page.waitForFunction(() => Boolean(document.querySelector('.approval-card[data-item-id="e2e-vertical-fixture"]')));
+  await page.waitForFunction(() => Boolean(document.querySelector('.approval-card[data-item-id="e2e-vertical-fixture"] [data-vertical-artifact-handoff]')));
+  const reviewHandoff = await page.evaluate(() => ({
+    cardClass: document.querySelector('.approval-card[data-item-id="e2e-vertical-fixture"]')?.className,
+    notice: document.querySelector('.approval-card[data-item-id="e2e-vertical-fixture"] [data-vertical-artifact-handoff]')?.textContent,
+    publishApproval: state.items.find((entry) => entry.id === "e2e-vertical-fixture")?.publishApproval || null,
+  }));
+
   const stale = await page.evaluate(() => {
     const item = state.items.find((entry) => entry.id === "e2e-vertical-fixture");
     item.updatedAt = new Date(Date.now() + 1000).toISOString();
     persist();
     document.querySelector("#cardPreviewGrid").dispatchEvent(new Event("click", { bubbles: true }));
+    document.dispatchEvent(new CustomEvent("threads:content-revision-changed", { detail: { candidateId: item.id, source: "e2e-stale" } }));
     return item.updatedAt;
   });
-  await page.waitForTimeout(100);
+  await page.waitForTimeout(120);
   const staleStatus = await page.locator("[data-vertical-status]").textContent();
-  console.log(JSON.stringify({ seeded, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, stale, staleStatus, requests, errors }));
+  const staleHandoff = await page.locator('.approval-card[data-item-id="e2e-vertical-fixture"] [data-vertical-artifact-handoff]').textContent();
+  console.log(JSON.stringify({ seeded, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, reviewFixture, reviewHandoff, stale, staleStatus, staleHandoff, requests, errors }));
 } finally {
   await browser.close();
   await fs.rm(fixture, { force: true });
