@@ -68,6 +68,14 @@
       scripts: ["./warehouse-model.js", "./content-warehouse.js"],
     },
     {
+      id: "publish-scheduler",
+      styles: ["./features/publish/scheduler/scheduler.css"],
+      scripts: [
+        "./features/publish/scheduler/scheduler-model.js",
+        "./features/publish/scheduler/scheduler.js",
+      ],
+    },
+    {
       id: "official-media-publish",
       styles: ["./features/publish/official-media/official-media-publisher.css"],
       scripts: [
