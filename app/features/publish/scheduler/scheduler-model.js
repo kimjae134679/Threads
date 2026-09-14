@@ -8,6 +8,11 @@
     sourceGapMinutes: 120,
     formatGapMinutes: 60,
   });
+  const PROVIDERS = Object.freeze({
+    "threads-direct": Object.freeze({ id: "threads-direct", label: "Threads 공식 직접", finalOwner: "04_REVIEW_PUBLISH" }),
+    buffer: Object.freeze({ id: "buffer", label: "Buffer 보조 경로", finalOwner: "04_REVIEW_PUBLISH" }),
+  });
+  const AUDIT_LIMIT = 100;
 
   function clampMinutes(value, fallback) {
     const n = Math.round(Number(value));
@@ -23,13 +28,49 @@
     };
   }
 
+  function normalizeProviderTarget(value) {
+    return PROVIDERS[String(value || "")] ? String(value) : "threads-direct";
+  }
+
+  function providerTarget(item = {}) {
+    return normalizeProviderTarget(item.scheduler?.providerTarget);
+  }
+
+  function appendAudit(history = [], event = {}, limit = AUDIT_LIMIT) {
+    const rows = Array.isArray(history) ? history.slice() : [];
+    rows.push({
+      at: event.at || new Date().toISOString(),
+      action: String(event.action || "unknown"),
+      itemId: event.itemId == null ? null : String(event.itemId),
+      from: event.from == null ? null : String(event.from),
+      to: event.to == null ? null : String(event.to),
+      detail: event.detail == null ? null : String(event.detail),
+      owner: "04_REVIEW_PUBLISH",
+    });
+    const safeLimit = Math.max(1, Math.min(500, Math.round(Number(limit)) || AUDIT_LIMIT));
+    return rows.slice(-safeLimit);
+  }
+
+  function setProviderTarget(item = {}, target, at = new Date().toISOString()) {
+    const from = providerTarget(item);
+    const to = normalizeProviderTarget(target);
+    item.scheduler = { ...(item.scheduler || {}), providerTarget: to };
+    if (from !== to) {
+      item.scheduler.audit = appendAudit(item.scheduler.audit, {
+        at, action: "provider-target", itemId: item.id, from, to,
+        detail: "Target only; final publication remains owned by 04 REVIEW_PUBLISH.",
+      });
+    }
+    return to;
+  }
+
   function meta(item = {}) {
     const w = warehouse.normalizeWarehouse(item);
     const theme = w.themeTags[0] || item.themeClassification?.primaryTheme || item.discoveryNormalized?.laneId || "general";
     const source = item.discoveryNormalized?.sourceId || item.sourceType || "unknown";
     const format = w.formatTags[0]
       || (warehouse.hasCardAsset(item) ? "carousel" : warehouse.hasTextDraft(item) ? "text" : "unknown");
-    return { theme, source, format, bucket: w.bucket, priority: w.priority };
+    return { theme, source, format, bucket: w.bucket, priority: w.priority, providerTarget: providerTarget(item) };
   }
 
   function manualRank(item = {}) {
@@ -116,5 +157,8 @@
     return ordered.map((item) => item.id);
   }
 
-  window.ThreadsSchedulerModel = { DEFAULTS, normalizeOptions, meta, sortCandidates, plan, setManualOrder, move };
+  window.ThreadsSchedulerModel = {
+    DEFAULTS, PROVIDERS, AUDIT_LIMIT, normalizeOptions, normalizeProviderTarget, providerTarget,
+    appendAudit, setProviderTarget, meta, sortCandidates, plan, setManualOrder, move,
+  };
 })();
