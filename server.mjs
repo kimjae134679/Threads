@@ -23,6 +23,7 @@ import { JsonStateStoreRegistry, STATE_SCHEMA_VERSION } from "./persistence.mjs"
 import { SqliteStateStoreRegistry } from "./persistence-sqlite.mjs";
 import { fetchSourceAsset, getSourceAssetCapabilities } from "./source-assets.mjs";
 import { handleMediaPublishRoute, getMediaConnectorSnapshot } from "./media-publish-routes.mjs";
+import { VerticalVideoArtifactStore, getVerticalVideoArtifactCapabilities } from "./vertical-video-artifacts.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -31,6 +32,8 @@ const HOST = process.env.HOST || "127.0.0.1";
 const STATE_PATH = process.env.PERSISTENCE_STATE_PATH || path.join(ROOT, "data", "runtime", "state.json");
 const SQLITE_PATH = process.env.PERSISTENCE_SQLITE_PATH || path.join(ROOT, "data", "runtime", "state.sqlite");
 const MEDIA_STAGING_PATH = process.env.MEDIA_STAGING_PATH || path.join(ROOT, "data", "runtime", "media-staging");
+const VERTICAL_VIDEO_ARTIFACT_PATH = process.env.VERTICAL_VIDEO_ARTIFACT_PATH || path.join(ROOT, "data", "runtime", "vertical-video");
+const verticalVideoArtifacts = new VerticalVideoArtifactStore(VERTICAL_VIDEO_ARTIFACT_PATH);
 const PERSISTENCE_BACKEND = String(process.env.PERSISTENCE_BACKEND || "file").trim().toLowerCase();
 if (!["file", "sqlite"].includes(PERSISTENCE_BACKEND)) throw new Error(`unsupported_persistence_backend:${PERSISTENCE_BACKEND}`);
 const stateStores = PERSISTENCE_BACKEND === "sqlite"
@@ -101,6 +104,32 @@ const server = http.createServer(async (req, res) => {
       return res.end(asset.data);
     }
 
+    if (url.pathname === "/api/vertical-video/capabilities") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      return json(res, 200, { ok: true, capability: getVerticalVideoArtifactCapabilities() });
+    }
+
+    if (url.pathname === "/api/vertical-video/render") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body = await readJsonBody(req, 176 * 1024 * 1024);
+      const artifact = await verticalVideoArtifacts.render(body);
+      return json(res, 200, { ok: true, artifact });
+    }
+
+    if (url.pathname.startsWith("/api/vertical-video/artifacts/")) {
+      if (req.method !== "GET" && req.method !== "HEAD") return methodNotAllowed(res, ["GET", "HEAD"]);
+      const artifactId = url.pathname.slice("/api/vertical-video/artifacts/".length);
+      const artifact = await verticalVideoArtifacts.read(artifactId);
+      res.writeHead(200, {
+        "content-type": "video/mp4",
+        "content-length": String(artifact.bytes),
+        "cache-control": "private, no-store",
+        "content-disposition": `attachment; filename="threads-${artifactId}.mp4"`,
+        "x-content-type-options": "nosniff",
+      });
+      return req.method === "HEAD" ? res.end() : res.end(artifact.data);
+    }
+
     if (await handleMediaPublishRoute({
       req,
       res,
@@ -133,6 +162,7 @@ const server = http.createServer(async (req, res) => {
           threads: getThreadsStatus(),
           buffer: getBufferStatus(),
           ...getMediaConnectorSnapshot(process.env),
+          verticalVideoProduction: getVerticalVideoArtifactCapabilities(),
         },
       });
     }

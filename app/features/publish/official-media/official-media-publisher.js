@@ -65,13 +65,28 @@
   function patchQueue() {
     for (const card of queue.querySelectorAll(".approval-card[data-item-id]")) {
       const item = state.items.find((candidate) => candidate.id === card.dataset.itemId);
-      if (!item || !isCurrentApproval(item)) continue;
+      if (!item) continue;
+      ensureVerticalArtifactNotice(card, item);
+      if (!isCurrentApproval(item)) continue;
       const actions = card.querySelector(".approval-actions");
       if (!actions) continue;
       ensureThreadsButton(card, item, actions);
       ensureInstagramButton(card, item, actions);
     }
   }
+  function ensureVerticalArtifactNotice(card, item) {
+    const artifact = item.verticalVideoArtifact;
+    const existing = card.querySelector("[data-vertical-artifact-handoff]");
+    if (!artifact) { existing?.remove(); return; }
+    const box = existing || document.createElement("div");
+    box.dataset.verticalArtifactHandoff = "true";
+    box.className = "threads-media-plan-box";
+    const current = artifact.handoffBasisUpdatedAt === item.updatedAt;
+    const approvedCurrent = isCurrentApproval(item);
+    box.textContent = `03 PRODUCTION 세로 MP4 · ${current ? (approvedCurrent ? "현재 revision 승인됨" : "04 검토/승인 대기") : "revision stale · 재렌더 필요"} · ${artifact.probe?.width || 0}×${artifact.probe?.height || 0} ${artifact.probe?.codec || ""} · provider ${artifact.providerCapability || "unsupported"} · live 게시 없음`;
+    if (!existing) card.appendChild(box);
+  }
+
   function ensureThreadsButton(card, item, actions) {
     if (card.querySelector(".threads-media-dryrun")) return;
     const button = document.createElement("button");

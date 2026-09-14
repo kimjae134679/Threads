@@ -18,10 +18,11 @@
   titleObserver.observe(document.querySelector("#detailTitle"), { childList: true, subtree: true });
   document.querySelector("#candidateList")?.addEventListener("click", () => queueMicrotask(renderSafety));
   document.addEventListener("click", (event) => {
-    if (event.target.closest?.("#saveResearchBtn, #saveEvaluationBtn, [data-status], #saveDraftsBtn")) {
+    if (event.target.closest?.("#saveResearchBtn, #saveEvaluationBtn, [data-status], #saveDraftsBtn, #cardSaveBtn, [data-vertical-rights-save]")) {
       setTimeout(renderSafety, 0);
     }
   });
+  document.addEventListener("threads:content-revision-changed", () => queueMicrotask(renderSafety));
   document.addEventListener("change", (event) => {
     if (event.target.matches?.("#draftReviewStatus")) setTimeout(renderSafety, 0);
   });

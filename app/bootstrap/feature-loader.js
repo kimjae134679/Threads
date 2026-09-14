@@ -74,6 +74,10 @@
       ],
     },
     {
+      id: "vertical-video-production",
+      scripts: ["./features/production/video/vertical-video.js"],
+    },
+    {
       id: "warehouse",
       scripts: ["./warehouse-model.js", "./content-warehouse.js"],
     },

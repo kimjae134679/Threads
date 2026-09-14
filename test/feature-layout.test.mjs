@@ -24,6 +24,7 @@ const requiredFiles = [
   "app/features/production/media/source-asset-model.js",
   "app/features/production/cards/privacy-mask-model.js",
   "app/features/production/cards/privacy-mask.js",
+  "app/features/production/video/vertical-video.js",
   "app/features/publish/buffer/buffer-publish-model.js",
   "app/features/publish/buffer/buffer-publisher.js",
   "app/features/publish/buffer/buffer-publisher.css",
@@ -59,6 +60,7 @@ for (const expected of [
   "card-story-model.js",
   "features/production/cards/privacy-mask-model.js",
   "features/production/cards/privacy-mask.js",
+  "features/production/video/vertical-video.js",
   "warehouse-model.js",
   "content-warehouse.js",
   "features/publish/buffer/buffer-publish-model.js",
@@ -118,6 +120,14 @@ for (const expected of ["ThreadsCardPrivacyMaskModel","마스킹 모드","개인
 }
 
 assert.ok(privacyUi.includes("observer.observe(preview, { childList: true, subtree: false })"), "Card privacy observer must not watch status/button decorations inside preview cards");
+
+const verticalVideoUi = fs.readFileSync(new URL("../app/features/production/video/vertical-video.js", import.meta.url), "utf8");
+for (const expected of ["03 PRODUCTION", "04 REVIEW_PUBLISH", "/api/vertical-video/render", "rights_review", "publishReady=false", "threads:content-revision-changed"]) {
+  assert.ok(verticalVideoUi.includes(expected), `Vertical video production UI missing safe handoff behavior: ${expected}`);
+}
+const safetyUi = fs.readFileSync(new URL("../app/safety-gate.js", import.meta.url), "utf8");
+assert.ok(safetyUi.includes('threads:content-revision-changed'), "04 approval queue must refresh when 03 changes content revision");
+assert.ok(safetyUi.includes('#cardSaveBtn'), "04 approval queue must refresh after Card Factory save");
 
 const officialMediaUi = fs.readFileSync(new URL("../app/features/publish/official-media/official-media-publisher.js", import.meta.url), "utf8");
 for (const expected of ["/api/media-staging/capabilities", "/api/media-staging/stage", "/api/instagram/media/capabilities", "/api/instagram/media/dry-run", "/api/instagram/media/validate", "04 REVIEW_PUBLISH", "staged-unverified", "externalReachabilityVerified", "canvas.toDataURL(\"image/png\")"]) {
