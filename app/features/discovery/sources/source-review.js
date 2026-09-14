@@ -61,8 +61,6 @@
 
   const candidateList = document.querySelector("#candidateList");
   if (candidateList) new MutationObserver(queuePatch).observe(candidateList, { childList: true });
-  const observer = new MutationObserver(queuePatch);
-  observer.observe(document.body, { childList: true, subtree: true });
   document.addEventListener("threads:features-ready", queuePatch);
   document.addEventListener("click", (event) => {
     if (event.target.closest?.("#viralDiscoveryImportBtn, #googleTrendsBtn, #youtubeBtn, #clusterBtn, #resetBtn, #candidateForm, [data-status]")) {
