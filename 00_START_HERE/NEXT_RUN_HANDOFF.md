@@ -273,3 +273,40 @@ Fresh installed-Chrome E2E observed PASS:
 `npm run check` passed on package `0.30.0`; server `/api/health` smoke returned `ok:true`. Temporary Playwright/runtime state was removed after E2E.
 
 Next priority: only add further DB schema changes for a concrete requirement. Useful remaining P8 work is to decide whether account-scoped profile metadata needs editable runtime state beyond the static Account Registry; if so, add that state with explicit migration and the same no-secret rule. Otherwise keep SQLite optional/file fallback stable and avoid persistence churn.
+
+## 2026-09-14 Run 037 update
+
+Credential-free editable runtime profile state is now implemented in `12c0f85c8cb655d2a449976613f2d797c50d308b`, package `0.31.0`.
+
+- new `app/features/persistence/profiles/profile-state.js`
+- known Account Registry ids only; unknown ids fail closed
+- per-account `enabled`, planned/testing/active/paused/retired status, bounded notes and updatedAt
+- existing recursive secret-field rejection applies to profile state and patches
+- account scoped snapshots/restores include only the selected profile runtime state
+- default workspace scope carries all stored profile runtime overrides
+- legacy snapshots without `profileStates` do not silently erase existing overrides
+- cross-account profile-state payloads fail closed
+
+Fresh installed-Chrome E2E observed: TH-A active state saved to account scope, local TH-A changed, TH-B paused locally, then TH-A server read/apply restored only TH-A while preserving TH-B and Scheduler `stopped`; no Threads/Buffer publish request and no page errors.
+
+`npm run check` and `/api/health` smoke passed locally. Latest ops note: `036-sol.md`.
+
+Next priority: verify CI for the new tip, then avoid persistence churn unless a concrete requirement exists. A useful remaining option is making profile active/paused state influence experiment-account selection/visibility without ever weakening 04 publication gates or storing credentials.
+
+## 2026-09-14 Run 038 update
+
+Runtime profile state now actively constrains new experiment assignment in `57595792c23d72af9356601436e37ef3d18406bf`, package `0.32.0`.
+
+- `profile-state.js` exposes `canAssign(accountId)`
+- new `profile-experiment-guard.js` disables paused, retired, or explicitly disabled accounts in the experiment assignment selector
+- planned/testing/active enabled accounts stay available
+- existing experiment records are preserved when a profile becomes paused/disabled
+- this does not alter 04 publication ownership or any rights/safety/approval gate
+
+Fresh Chrome E2E observed TH-B transition planned→paused→active→disabled reflected in the real experiment selector with pageErrors `[]`.
+
+Concurrent remote demo-showcase commits landed during this run. The profile guard commit was repeatedly rebased onto current remote main and ultimately pushed without force; demo showcase code/tests were preserved.
+
+Latest ops note: `036-sol.md`.
+
+Next priority: confirm CI for the final tip, then avoid additional persistence schema churn unless an actual operational requirement appears. Profile state/experiment visibility now has a complete credential-free path; further work should move to concrete workflow gaps rather than inventing persistence features.
