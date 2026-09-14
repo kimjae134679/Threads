@@ -58,7 +58,15 @@ try {
   await page.waitForFunction(() => Boolean(state.items.find((item) => item.id === "e2e-vertical-fixture")?.cardFactory?.updatedAt));
   await page.selectOption("[data-vertical-rights]", "cleared");
   await page.click("[data-vertical-rights-save]");
-  await page.waitForFunction(() => !document.querySelector("[data-vertical-render]").disabled);
+  await page.waitForTimeout(100);
+  const gateState = await page.evaluate(() => ({
+    disabled: document.querySelector("[data-vertical-render]").disabled,
+    status: document.querySelector("[data-vertical-status]").textContent,
+    savedPrivacy: state.items.find((item) => item.id === "e2e-vertical-fixture")?.cardFactory?.privacy?.gate || null,
+    livePrivacy: window.ThreadsCardPrivacyMask?.exportEnvelope?.()?.gate || null,
+    canvases: [...document.querySelectorAll("#cardPreviewGrid canvas[data-card-index]")].map((canvas) => [canvas.width, canvas.height]),
+  }));
+  if (gateState.disabled) throw new Error(`vertical_render_gate_blocked:${JSON.stringify(gateState)}`);
   await page.fill("[data-vertical-seconds]", "0.5");
   await page.click("[data-vertical-render]");
   await page.waitForFunction(() => {
@@ -79,13 +87,12 @@ try {
     const item = state.items.find((entry) => entry.id === "e2e-vertical-fixture");
     item.updatedAt = new Date(Date.now() + 1000).toISOString();
     persist();
-    document.querySelector("#detailNote").dispatchEvent(new Event("input", { bubbles: true }));
     document.querySelector("#cardPreviewGrid").dispatchEvent(new Event("click", { bubbles: true }));
     return item.updatedAt;
   });
   await page.waitForTimeout(100);
   const staleStatus = await page.locator("[data-vertical-status]").textContent();
-  console.log(JSON.stringify({ seeded, dimensions, reviewCount, privacyGate, rendered, videoStatus: video.status(), bytes, stale, staleStatus, requests, errors }));
+  console.log(JSON.stringify({ seeded, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, stale, staleStatus, requests, errors }));
 } finally {
   await browser.close();
   await fs.rm(fixture, { force: true });
