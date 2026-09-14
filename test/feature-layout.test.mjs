@@ -23,6 +23,9 @@ const requiredFiles = [
   "app/features/discovery/comfort/comfort-review.css",
   "app/features/production/cards/privacy-mask-model.js",
   "app/features/production/cards/privacy-mask.js",
+  "app/features/publish/buffer/buffer-publish-model.js",
+  "app/features/publish/buffer/buffer-publisher.js",
+  "app/features/publish/buffer/buffer-publisher.css",
   "app/ARCHITECTURE.md",
 ];
 
@@ -52,6 +55,9 @@ for (const expected of [
   "features/production/cards/privacy-mask.js",
   "warehouse-model.js",
   "content-warehouse.js",
+  "features/publish/buffer/buffer-publish-model.js",
+  "features/publish/buffer/buffer-publisher.js",
+  "features/publish/buffer/buffer-publisher.css",
 ]) {
   assert.ok(loader.includes(expected), `feature loader missing ${expected}`);
 }
@@ -93,6 +99,11 @@ for (const expected of ["manual-drag-rectangle","automatedOcrClaimed","automated
 const privacyUi = fs.readFileSync(new URL("../app/features/production/cards/privacy-mask.js", import.meta.url), "utf8");
 for (const expected of ["ThreadsCardPrivacyMaskModel","마스킹 모드","개인정보 검토 완료","blockUnsafeDownloads","Privacy JSON"]) {
   assert.ok(privacyUi.includes(expected), `Card privacy UI missing ${expected}`);
+}
+
+const bufferUi = fs.readFileSync(new URL("../app/features/publish/buffer/buffer-publisher.js", import.meta.url), "utf8");
+for (const expected of ["/api/buffer/channels","/api/buffer/channel","/api/buffer/publish","Buffer 예약/게시","500자를 초과"]) {
+  assert.ok(bufferUi.includes(expected), `Buffer publisher UI missing ${expected}`);
 }
 
 console.log("Feature layout regression tests passed.");
