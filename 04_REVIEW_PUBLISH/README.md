@@ -18,8 +18,8 @@
 - PASS / WARN / BLOCK 판정
 - WARN 대응 메모 확인
 - 사람 게시 승인
-- 실제 플랫폼 게시
-- 게시 ID / 게시 시각 / 최종 문안 / 계정 ID 기록
+- 실제 플랫폼 게시 또는 승인된 외부 예약 전달
+- 게시 ID / 예약 ID / 게시 시각 / 최종 문안 / 계정 ID 기록
 
 ## 하지 않는 일
 
@@ -27,6 +27,7 @@
 - 소재 점수를 다시 매기지 않는다.
 - 성과를 보고 전략을 평가하지 않는다. 그것은 05 역할이다.
 - 승인된 초안을 몰래 수정해 게시하지 않는다. 수정되면 다시 승인한다.
+- 승인 이후 자동으로 글을 잘라 여러 게시물로 만들지 않는다.
 
 ## Safety Gate
 
@@ -49,7 +50,31 @@ UNKNOWN
 
 `BLOCK` 또는 `UNKNOWN`이 있으면 게시하지 않는다. `WARN`은 대응 메모가 있어야 한다.
 
+## 게시 경로
+
+현재 두 경로를 지원한다.
+
+```text
+A. Threads 공식 API 직접 게시
+   - THREADS_ACCESS_TOKEN
+   - 사람 최종 확인 후 즉시 실제 게시
+   - 실제 Threads 게시 ID → item.publications[]
+
+B. Buffer 선택형 예약/게시
+   - BUFFER_API_KEY
+   - 연결된 Threads 채널 선택
+   - addToQueue / customScheduled / shareNow
+   - 사람 최종 확인 후 Buffer 요청
+   - Buffer 요청/예약 ID → item.bufferDeliveries[]
+```
+
+Buffer는 공식 Threads API를 대체하는 필수 구성요소가 아니다. 예약·큐 운영을 외부 발행 서비스에 맡기고 싶을 때 쓰는 선택형 adapter다.
+
+`item.bufferDeliveries[]`는 **전송/예약 기록**이며, 아직 실제 Threads 발행이 확인되지 않은 예약 건을 `published`로 간주하지 않는다. 추후 Buffer 상태 동기화에서 실제 sent 상태가 확인된 뒤 canonical publication으로 승격한다.
+
 ## 출력 — Publication Record
+
+실제 게시가 확인된 경우:
 
 ```text
 candidate_id
@@ -65,6 +90,17 @@ reply_or_comment_policy
 initial_status
 ```
 
+외부 예약/전달의 경우 별도로:
+
+```text
+provider              buffer
+external_delivery_id
+mode                  addToQueue / customScheduled / shareNow
+due_at
+approval_revision
+created_at
+```
+
 ## 완료 기준
 
-실제 게시되었다면 플랫폼이 반환한 ID가 있어야 한다. API/토큰이 없거나 실제 게시 응답이 없으면 `published`라고 기록하지 않는다.
+실제 게시되었다면 플랫폼이 반환한 ID가 있어야 한다. API/토큰이 없거나 실제 게시 응답이 없으면 `published`라고 기록하지 않는다. Buffer에 예약만 들어간 상태도 실제 Threads 게시 완료와 구분한다.
