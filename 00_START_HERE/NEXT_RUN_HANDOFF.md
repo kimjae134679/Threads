@@ -377,3 +377,24 @@ Fresh installed-Chrome E2E observed with the source-proxy request fulfilled by a
 The earlier Discovery Source Review main-thread loop is already fixed on current main and remains covered by the anti-loop regression; it did not recur in this browser run.
 
 Next priority: add a compliant public-media staging abstraction for approved rendered feed assets so Instagram Feed/Carousel can receive provider-fetchable URLs, but keep it `credential-required`/`live-disabled` until a real official provider configuration exists. Do not expose local filesystem paths or weaken 04 approval ownership.
+
+## 2026-09-15 Run 042 update
+
+Approved media staging and Instagram Feed/Carousel dry-run plumbing are now implemented through `8e41953d61656d83e17a2d052d37e9619e16a385`, package `0.37.2`.
+
+- `media-staging.mjs` accepts only PNG/JPEG/WebP rendered data URLs, max 10 assets / 5 MiB each, writes only server-generated UUID filenames under ignored runtime state, and rejects arbitrary filesystem paths.
+- `PUBLIC_MEDIA_BASE_URL` must be a public HTTPS origin; private/loopback/local origins fail closed. `MEDIA_STAGING_ENABLED=1` is a separate explicit gate. A configured origin never implies provider reachability: staged results remain `staged-unverified` with `externalReachabilityVerified:false`.
+- `instagram.mjs` requires operator-supplied access token, numeric Instagram user id, explicit Graph API version and explicit required scopes. It does not guess current scopes/version. Capability remains `credential-required` / `live-disabled` / `ready-to-validate`.
+- Instagram Feed/Carousel supports IMAGE or up to 10 images in dry-run request plans only. Plans explicitly record `externalCalls:0` and live publishing is not implemented.
+- `media-publish-routes.mjs` and `server.mjs` now expose bounded staging capabilities/stage/serve plus Instagram capability/dry-run routes. Both staging and Instagram dry-run run the existing current-human-approval validator first. Instagram dry-run accepts only URLs from the configured staging origin and reports `publicationOwner: 04_REVIEW_PUBLISH`, `livePublicationAttempted:false`.
+- `/api/connectors` now exposes non-secret media staging/Instagram capability snapshots.
+- server JSON body limit remains bounded; only the staging route opts into a larger 24 MiB ceiling for up to ten rendered assets.
+- added `test/media-staging.test.mjs`, `test/instagram-media.test.mjs`, `test/media-publish-routes.test.mjs`, and `test/server-media-api.test.mjs` covering state gates, path/origin restrictions, stale approval, bounded serving, server stage -> GET -> Instagram dry-run, and explicit no-live-publication metadata.
+
+GitHub Actions run `34881954297` for the route regression wiring completed successfully. Final-tip run for `8e41953d61656d83e17a2d052d37e9619e16a385` was queued when this handoff was written; confirm it before claiming final green.
+
+No new Chrome E2E is claimed in this run because the authorized Windows device went offline after a clean worktree was prepared. No Instagram API call, provider media fetch, live post, moderation/OCR success or credential validity is claimed.
+
+Latest ops note: `043-sol.md`.
+
+Next priority: once the authorized Windows/Chrome machine is online, run current-main server smoke plus fresh browser E2E through approved card artifact -> staging -> Instagram dry-run and verify zero publication/provider calls. Then add the corresponding 04 UI control only if it can remain fail-closed on stale approval and unverified media reachability. Reels/Shorts remain unsupported until a real separate 1080x1920 MP4 renderer exists.
