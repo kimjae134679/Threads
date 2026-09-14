@@ -30,6 +30,8 @@
     <div class="card-factory-assets">
       <label class="button ghost file-button">원문 캡처 추가<input id="cardImageInput" type="file" accept="image/*" multiple /></label>
       <span id="cardImageStatus">캡처 없음</span>
+      <label>Direct source media URLs<textarea id="cardRemoteMediaUrls" rows="3" placeholder="Public direct image HTTPS URLs, one per line"></textarea></label>
+      <button id="cardRemoteMediaLoadBtn" type="button" class="button ghost">Load source media URLs</button>
       <label>템플릿
         <select id="cardTemplate">
           <option value="reference-square">Reference Square · 기본</option>
@@ -61,6 +63,8 @@
   const template = section.querySelector("#cardTemplate");
   const imageInput = section.querySelector("#cardImageInput");
   const imageStatus = section.querySelector("#cardImageStatus");
+  const remoteMediaUrls = section.querySelector("#cardRemoteMediaUrls");
+  const remoteMediaLoadButton = section.querySelector("#cardRemoteMediaLoadBtn");
   const badge = section.querySelector("#cardFactoryBadge");
   const preview = section.querySelector("#cardPreviewGrid");
   const previewMeta = section.querySelector("#cardPreviewMeta");
@@ -73,6 +77,7 @@
   downloadAll.addEventListener("click", downloadAllCards);
   manifestButton.addEventListener("click", downloadManifest);
   imageInput.addEventListener("change", loadLocalImages);
+  remoteMediaLoadButton.addEventListener("click", loadRemoteImages);
   preview.addEventListener("click", handlePreviewClick);
 
   const title = document.querySelector("#detailTitle");
@@ -104,6 +109,7 @@
     template.value = saved.template || "reference-square";
     currentStoryboard = saved.storyboard || null;
     imageInput.value = "";
+    remoteMediaUrls.value = (saved.remoteMediaUrls || []).join("\n");
     imageStatus.textContent = saved.captureImageNames?.length
       ? `이전 세션 캡처 ${saved.captureImageNames.length}개 기록됨 · 파일 다시 선택 필요`
       : "캡처 없음";
@@ -137,6 +143,16 @@
       });
     }
     imageStatus.textContent = localImages.length ? `원문 캡처 ${localImages.length}개 · 세션 전용` : "캡처 없음";
+  }
+
+  async function loadRemoteImages() {
+    revokeImages();
+    const urls=String(remoteMediaUrls.value||"").split(/\r?\n/).map(v=>v.trim()).filter(Boolean).slice(0,10);
+    if(!urls.length){ imageStatus.textContent="No source media URLs"; return; }
+    remoteMediaLoadButton.disabled=true; imageStatus.textContent=`Loading ${urls.length} source media...`;
+    try { for(let i=0;i<urls.length;i+=1){ const sourceUrl=urls[i]; const proxyUrl=`/api/source-assets/proxy?url=${encodeURIComponent(sourceUrl)}`; const image=await loadImage(proxyUrl); localImages.push({file:null,url:proxyUrl,image,identity:{name:`remote-source-${i+1}`,size:0,lastModified:0,type:"remote-url",sourceUrl,origin:"explicit-direct-media"}}); } imageStatus.textContent=`Source media ${localImages.length} loaded · rights/privacy still require review`; }
+    catch(error){ revokeImages(); imageStatus.textContent="Blocked source media"; showSystemMessage(`Source media could not be loaded. ${String(error?.message||error)}`,"error"); }
+    finally { remoteMediaLoadButton.disabled=false; }
   }
 
   function revokeImages() {
@@ -391,14 +407,15 @@
       template: template.value,
       capture: currentStoryboard.capture,
       storyboard: currentStoryboard,
-      captureImageNames: localImages.map((entry) => entry.file.name),
+      captureImageNames: localImages.map((entry) => entry.file?.name || entry.identity?.name || "source-media"),
+      remoteMediaUrls: localImages.map((entry) => entry.identity?.sourceUrl).filter(Boolean),
       captureImageIdentities: localImages.map((entry) => ({ ...(entry.identity || {}) })),
       privacy,
-      imagePersistence: "session-only",
+      imagePersistence: localImages.some((entry) => entry.identity?.sourceUrl) ? "bytes-session-only-urls-reference-only" : "session-only",
       updatedAt: new Date().toISOString(),
     };
-    const changed = JSON.stringify({ template: previous.template, capture: previous.capture, storyboard: previous.storyboard, captureImageNames: previous.captureImageNames, captureImageIdentities: previous.captureImageIdentities, privacy: previous.privacy })
-      !== JSON.stringify({ template: next.template, capture: next.capture, storyboard: next.storyboard, captureImageNames: next.captureImageNames, captureImageIdentities: next.captureImageIdentities, privacy: next.privacy });
+    const changed = JSON.stringify({ template: previous.template, capture: previous.capture, storyboard: previous.storyboard, captureImageNames: previous.captureImageNames, captureImageIdentities: previous.captureImageIdentities, remoteMediaUrls: previous.remoteMediaUrls, privacy: previous.privacy })
+      !== JSON.stringify({ template: next.template, capture: next.capture, storyboard: next.storyboard, captureImageNames: next.captureImageNames, captureImageIdentities: next.captureImageIdentities, remoteMediaUrls: next.remoteMediaUrls, privacy: next.privacy });
     item.cardFactory = next;
     if (changed) item.updatedAt = new Date().toISOString();
     persist();
@@ -474,7 +491,8 @@
       sourceUrl: item.url || null,
       template: template.value,
       storyboard: currentStoryboard,
-      captureImageNames: localImages.map((entry) => entry.file.name),
+      captureImageNames: localImages.map((entry) => entry.file?.name || entry.identity?.name || "source-media"),
+      remoteMediaUrls: localImages.map((entry) => entry.identity?.sourceUrl).filter(Boolean),
       captureImageIdentities: localImages.map((entry) => ({ ...(entry.identity || {}) })),
       privacy: window.ThreadsCardPrivacyMask?.exportEnvelope?.() || item.cardFactory?.privacy || null,
       notice: "Source screenshots/media require separate rights/privacy review before publication.",

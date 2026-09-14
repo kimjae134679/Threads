@@ -21,6 +21,7 @@ import {
 } from "./buffer.mjs";
 import { JsonStateStoreRegistry, STATE_SCHEMA_VERSION } from "./persistence.mjs";
 import { SqliteStateStoreRegistry } from "./persistence-sqlite.mjs";
+import { fetchSourceAsset, getSourceAssetCapabilities } from "./source-assets.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -84,6 +85,18 @@ const server = http.createServer(async (req, res) => {
         return json(res, 200, { ok: true, namespace, backend: PERSISTENCE_BACKEND, ...record });
       }
       return methodNotAllowed(res, ["GET", "PUT"]);
+    }
+
+    if (url.pathname === "/api/source-assets/capabilities") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      return json(res, 200, { ok: true, capability: getSourceAssetCapabilities() });
+    }
+
+    if (url.pathname === "/api/source-assets/proxy") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const asset = await fetchSourceAsset(url.searchParams.get("url") || "");
+      res.writeHead(200, { "content-type": asset.contentType, "content-length": String(asset.data.length), "cache-control": "no-store", "x-content-type-options": "nosniff" });
+      return res.end(asset.data);
     }
 
     if (url.pathname === "/api/connectors") {
