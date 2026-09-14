@@ -7,7 +7,7 @@
   const capabilities = {
     threads: { configured: false, mediaLiveEnabled: false },
     staging: { state: "public-origin-required", externalReachabilityVerified: false },
-    instagram: { state: "credential-required", livePublishImplemented: false },
+    instagram: { state: "credential-required", validationState: "credential-required", validationEnabled: false, livePublishImplemented: false },
   };
 
   const threadsStatus = appendConnectorRow("Threads 이미지/캐러셀", "threadsMediaCapabilityStatus");
@@ -120,10 +120,11 @@
     card.querySelector(".instagram-media-stage-box")?.remove();
     const box = document.createElement("div");
     box.className = "threads-media-plan-box instagram-media-stage-box";
-    box.innerHTML = '<strong>04 REVIEW_PUBLISH · Instagram Feed/Carousel</strong><p class="instagram-media-stage-note"></p><div class="threads-media-plan-actions"><button type="button" class="button ghost" data-stage>승인 렌더 스테이징</button><button type="button" class="button ghost" data-dry-run disabled>Instagram dry-run</button></div><div class="instagram-media-stage-result"></div>';
+    box.innerHTML = '<strong>04 REVIEW_PUBLISH · Instagram Feed/Carousel</strong><p class="instagram-media-stage-note"></p><div class="threads-media-plan-actions"><button type="button" class="button ghost" data-stage>승인 렌더 스테이징</button><button type="button" class="button ghost" data-dry-run disabled>Instagram dry-run</button><button type="button" class="button ghost" data-provider-validate disabled>공식 컨테이너 검증</button></div><div class="instagram-media-stage-result"></div>';
     const note = box.querySelector(".instagram-media-stage-note");
     const stageButton = box.querySelector("[data-stage]");
     const dryRunButton = box.querySelector("[data-dry-run]");
+    const validateButton = box.querySelector("[data-provider-validate]");
     const result = box.querySelector(".instagram-media-stage-result");
     let stagedUrls = [];
 
@@ -145,12 +146,32 @@
         };
         persist();
         dryRunButton.disabled = !stagedUrls.length;
+        validateButton.disabled = !stagedUrls.length || capabilities.instagram.validationState !== "ready-to-validate";
         result.textContent = `${item.instagramMediaStaging.state} · ${stagedUrls.length}개 · approval ${item.instagramMediaStaging.approvalBasis} · 외부 도달성 미검증`;
       } catch (error) {
         stagedUrls = [];
         dryRunButton.disabled = true;
+        validateButton.disabled = true;
         result.textContent = `차단: ${error.message}`;
       } finally { stageButton.disabled = false; }
+    });
+
+    validateButton.addEventListener("click", async () => {
+      if (!stagedUrls.length || capabilities.instagram.validationState !== "ready-to-validate") return;
+      validateButton.disabled = true;
+      result.textContent = "공식 Instagram 컨테이너 생성만 검증 중… 게시 호출은 하지 않습니다.";
+      try {
+        const payload = await postJson("/api/instagram/media/validate", { candidate: clone(item), mediaUrls: stagedUrls });
+        item.instagramMediaValidations = [...(item.instagramMediaValidations || []), {
+          auditedAt: payload.auditedAt,
+          approvalBasis: payload.approvalBasis,
+          publicationOwner: payload.publicationOwner,
+          validation: payload.validation,
+        }].slice(-20);
+        persist();
+        result.textContent = `${payload.validation.mediaType} ${payload.validation.mediaCount}개 · 컨테이너 생성 관측 · 외부 호출 ${payload.validation.externalCalls}회 · media_publish 호출 없음`;
+      } catch (error) { result.textContent = `차단: ${error.message}`; }
+      finally { validateButton.disabled = capabilities.instagram.validationState !== "ready-to-validate"; }
     });
 
     dryRunButton.addEventListener("click", async () => {

@@ -1,6 +1,6 @@
 import path from "node:path";
 import { getMediaStagingCapabilities, stageRenderedMedia, readStagedMedia, assertStagedMediaForCandidate } from "./media-staging.mjs";
-import { getInstagramMediaCapabilities, buildInstagramMediaDryRun } from "./instagram.mjs";
+import { getInstagramMediaCapabilities, buildInstagramMediaDryRun, validateInstagramMediaContainers } from "./instagram.mjs";
 
 const DEFAULT_STAGING_ROOT = path.join(process.cwd(), "data", "runtime", "media-staging");
 const STAGED_PATH_PREFIX = "/media/staged/";
@@ -12,7 +12,7 @@ export function getMediaConnectorSnapshot(env = process.env) {
   };
 }
 
-export async function handleMediaPublishRoute({ req, res, url, env = process.env, stagingRoot = DEFAULT_STAGING_ROOT, readJsonBody, validateApprovedCandidate, approvedCaption } = {}) {
+export async function handleMediaPublishRoute({ req, res, url, env = process.env, stagingRoot = DEFAULT_STAGING_ROOT, readJsonBody, validateApprovedCandidate, approvedCaption, instagramFetch = globalThis.fetch } = {}) {
   if (!req || !res || !url) return false;
 
   if (url.pathname === "/api/media-staging/capabilities") {
@@ -66,6 +66,33 @@ export async function handleMediaPublishRoute({ req, res, url, env = process.env
       approvalBasis,
       publicationOwner: "04_REVIEW_PUBLISH",
       livePublicationAttempted: false,
+    });
+  }
+
+  if (url.pathname === "/api/instagram/media/validate") {
+    requireMethod(req, "POST");
+    requireFunction(readJsonBody, "readJsonBody");
+    requireFunction(validateApprovedCandidate, "validateApprovedCandidate");
+    const body = await readJsonBody(req);
+    const candidate = body?.candidate || {};
+    validateApprovedCandidate(candidate);
+    const approvalBasis = String(candidate.publishApproval?.basisUpdatedAt || "").trim();
+    const mediaUrls = await assertStagedMediaForCandidate(body?.mediaUrls || [], {
+      candidateId: candidate.id,
+      approvalBasis,
+      rootDir: stagingRoot,
+      env,
+    });
+    const caption = typeof approvedCaption === "function" ? approvedCaption(candidate) : "";
+    const validation = await validateInstagramMediaContainers({ caption, mediaUrls, env, fetchImpl: instagramFetch });
+    return sendJson(res, 200, {
+      ok: true,
+      validation,
+      auditedAt: new Date().toISOString(),
+      approvalBasis,
+      publicationOwner: "04_REVIEW_PUBLISH",
+      livePublicationAttempted: false,
+      mediaPublishEndpointCalled: false,
     });
   }
 

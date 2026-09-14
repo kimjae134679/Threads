@@ -20,3 +20,8 @@ Fail-closed rules:
 - no live Meta publication path is enabled by this UI.
 
 No password, access token, or plaintext secret belongs in client state or this feature. Provider secrets remain server-only.
+
+
+## Instagram provider container validation
+
+`INSTAGRAM_MEDIA_VALIDATION_ENABLED=1` is a separate operator gate from live publishing. When credentials, user id, explicit Graph API version and explicit scopes are configured, 04 may validate **media container creation only** against the official provider after current approval-bound staging. The adapter never calls `media_publish`; a successful container id proves only that container creation was observed, not that media processing, provider fetch completion, or publication succeeded. Provider errors are sanitized and tokens are never returned or persisted.
