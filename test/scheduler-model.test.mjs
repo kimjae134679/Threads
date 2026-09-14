@@ -32,6 +32,7 @@ let plan = model.plan([evergreen, ready, hot], { slotMinutes:60, themeGapMinutes
 assert.deepEqual(ids(plan), ["hot", "ready", "evergreen"]);
 assert.ok(plan[0].reasons.includes("hot-priority"));
 assert.equal(plan[1].scheduledAtMs - plan[0].scheduledAtMs, 60 * 60_000);
+assert.equal(plan[0].meta.providerTarget, "threads-direct");
 
 const sameTheme = item("same-theme", "ready", "ai", "other", "video");
 plan = model.plan([hot, sameTheme], { slotMinutes:30, themeGapMinutes:120, sourceGapMinutes:0, formatGapMinutes:0 }, now);
@@ -54,5 +55,21 @@ const held = item("held", "hot", "ai", "reddit", "text");
 held.warehouse.status = "hold";
 plan = model.plan([held, hot], {}, now);
 assert.deepEqual(ids(plan), ["hot"]);
+
+const providerItem = item("provider", "ready", "ai", "reddit", "text");
+assert.equal(model.providerTarget(providerItem), "threads-direct");
+assert.equal(model.setProviderTarget(providerItem, "buffer", "2026-09-14T09:00:00Z"), "buffer");
+assert.equal(providerItem.scheduler.providerTarget, "buffer");
+assert.equal(providerItem.scheduler.audit.length, 1);
+assert.equal(providerItem.scheduler.audit[0].action, "provider-target");
+assert.equal(providerItem.scheduler.audit[0].owner, "04_REVIEW_PUBLISH");
+assert.equal(model.setProviderTarget(providerItem, "not-a-provider"), "threads-direct");
+assert.equal(providerItem.scheduler.audit.length, 2);
+
+let history = [];
+for (let index = 0; index < 105; index += 1) history = model.appendAudit(history, { action: `event-${index}` });
+assert.equal(history.length, 100);
+assert.equal(history[0].action, "event-5");
+assert.equal(history[99].action, "event-104");
 
 console.log("Scheduler model regression tests passed.");
