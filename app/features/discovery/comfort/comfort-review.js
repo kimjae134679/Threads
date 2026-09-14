@@ -61,7 +61,7 @@
   const observer = new MutationObserver(() => queueRender());
   const candidateList = document.querySelector("#candidateList");
   if (candidateList) observer.observe(candidateList, { childList: true });
-  if (viralList) observer.observe(viralList, { childList: true, subtree: true });
+  if (viralList) observer.observe(viralList, { childList: true, subtree: false });
   let queued = false;
 
   document.addEventListener("click", enforceReadyGate, true);
@@ -236,7 +236,9 @@
       const reasons = comfortModel.reasonRows(item, viralModel);
       const clearance = comfortModel.clearanceStatus(item, viralModel);
       const html = `<span class="comfort-inline-state ${clearance.allowed ? "allowed" : "blocked"}">${escapeHtml(clearance.label)}</span>${reasons.map((reason) => `<span class="comfort-chip ${reason.severity}">${escapeHtml(reason.label)}</span>`).join("")}`;
-      if (existing) existing.innerHTML = html;
+      if (existing) {
+        if (existing.innerHTML !== html) existing.innerHTML = html;
+      }
       else {
         const strip = document.createElement("div");
         strip.className = "comfort-inline-row";

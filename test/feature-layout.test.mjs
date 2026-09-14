@@ -75,6 +75,8 @@ const comfortReview = fs.readFileSync(new URL("../app/features/discovery/comfort
 for (const expected of ["viralReadyBtn","Comfort gate","comfort-inline-row","comfort-detail-audit","Comfort 감사 JSON"]) {
   assert.ok(comfortReview.includes(expected), `Audience Comfort UI missing ${expected}`);
 }
+assert.ok(comfortReview.includes("observer.observe(viralList, { childList: true, subtree: false })"), "Comfort viral observer must not watch its own subtree decorations");
+assert.ok(comfortReview.includes("existing.innerHTML !== html"), "Comfort row decoration must be idempotent");
 
 const bulkModel = fs.readFileSync(new URL("../app/features/discovery/viral/bulk-review-model.js", import.meta.url), "utf8");
 for (const expected of ["editorial-handoff","editorialPacket","mayAdvance","reviewTags","bulkReview","normalizeTag","remove-tag","summarize"]) {
