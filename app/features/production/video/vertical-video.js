@@ -36,7 +36,9 @@
   const renderButton = panel.querySelector("[data-vertical-render]");
   const download = panel.querySelector("[data-vertical-download]");
   const status = panel.querySelector("[data-vertical-status]");
+  let rightsContext = "";
 
+  rightsSelect.addEventListener("change", () => { rightsSelect.dataset.dirty = "true"; });
   rightsSave.addEventListener("click", bindRightsReview);
   renderButton.addEventListener("click", renderVerticalVideo);
   preview.addEventListener("click", () => queueMicrotask(refresh));
@@ -58,9 +60,20 @@
   function refresh() {
     const item = currentItem();
     panel.hidden = !item;
-    if (!item) return;
+    if (!item) {
+      rightsContext = "";
+      rightsSelect.dataset.dirty = "false";
+      return;
+    }
     const review = item.verticalVideoRightsReview || {};
-    rightsSelect.value = ["review", "cleared", "blocked"].includes(review.status) ? review.status : "review";
+    const nextRightsContext = `${item.id}:${item.cardFactory?.updatedAt || ""}`;
+    if (nextRightsContext !== rightsContext) {
+      rightsContext = nextRightsContext;
+      rightsSelect.dataset.dirty = "false";
+    }
+    if (rightsSelect.dataset.dirty !== "true") {
+      rightsSelect.value = ["review", "cleared", "blocked"].includes(review.status) ? review.status : "review";
+    }
     const gate = productionGate(item);
     renderButton.disabled = !gate.allowed;
     const artifact = item.verticalVideoArtifact;
@@ -102,9 +115,10 @@
       show("먼저 Card Factory에서 현재 검토본을 저장하세요.", "error");
       return;
     }
+    const selectedStatus = rightsSelect.value;
     const now = new Date().toISOString();
     item.verticalVideoRightsReview = {
-      status: rightsSelect.value,
+      status: selectedStatus,
       reviewedAt: now,
       basisCardFactoryUpdatedAt: item.cardFactory.updatedAt,
       owner: "03_PRODUCTION",
@@ -112,10 +126,11 @@
     };
     item.updatedAt = now;
     delete item.publishApproval;
+    rightsSelect.dataset.dirty = "false";
     persist();
     document.dispatchEvent(new CustomEvent("threads:content-revision-changed", { detail: { candidateId: item.id, source: "vertical-rights-review" } }));
     refresh();
-    show(rightsSelect.value === "cleared" ? "권리 검토를 현재 Card Factory revision에 묶었습니다. 기존 게시 승인은 무효화됩니다." : "권리 상태를 저장했습니다. 세로 렌더는 허용되지 않습니다.", rightsSelect.value === "cleared" ? "success" : "info");
+    show(selectedStatus === "cleared" ? "권리 검토를 현재 Card Factory revision에 묶었습니다. 기존 게시 승인은 무효화됩니다." : "권리 상태를 저장했습니다. 세로 렌더는 허용되지 않습니다.", selectedStatus === "cleared" ? "success" : "info");
   }
 
   async function renderVerticalVideo() {
