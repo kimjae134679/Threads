@@ -19,11 +19,14 @@ import {
   saveBufferThreadsChannel,
   publishThreadsViaBuffer,
 } from "./buffer.mjs";
+import { JsonStateStore } from "./persistence.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || "127.0.0.1";
+const STATE_PATH = process.env.PERSISTENCE_STATE_PATH || path.join(ROOT, "data", "runtime", "state.json");
+const stateStore = new JsonStateStore(STATE_PATH);
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -45,6 +48,21 @@ const server = http.createServer(async (req, res) => {
 
     if (url.pathname === "/api/health") {
       return json(res, 200, { ok: true, service: "threads-trend-inbox", now: new Date().toISOString() });
+    }
+
+    if (url.pathname === "/api/state") {
+      if (req.method === "GET") {
+        const record = await stateStore.read();
+        return json(res, 200, { ok: true, ...record });
+      }
+      if (req.method === "PUT") {
+        const body = await readJsonBody(req);
+        const snapshot = body?.snapshot || body;
+        const expectedRevision = body?.expectedRevision ?? null;
+        const record = await stateStore.write(snapshot, expectedRevision);
+        return json(res, 200, { ok: true, ...record });
+      }
+      return methodNotAllowed(res, ["GET", "PUT"]);
     }
 
     if (url.pathname === "/api/connectors") {
