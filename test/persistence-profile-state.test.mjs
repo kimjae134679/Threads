@@ -42,3 +42,10 @@ assert.equal(profiles.get("TH-A").status, "planned", "replaceAll clears absent s
 assert.deepEqual(JSON.parse(JSON.stringify(profiles.listStored().map((entry) => entry.id))), ["TH-C"]);
 
 console.log("Persistence profile runtime-state regression tests passed.");
+assert.equal(profiles.canAssign("TH-A"), true);
+profiles.update("TH-A", { status: "paused" });
+assert.equal(profiles.canAssign("TH-A"), false, "paused profile must not accept new experiment assignment");
+profiles.update("TH-A", { status: "active", enabled: false });
+assert.equal(profiles.canAssign("TH-A"), false, "disabled profile must not accept new experiment assignment");
+profiles.update("TH-A", { status: "testing", enabled: true });
+assert.equal(profiles.canAssign("TH-A"), true);

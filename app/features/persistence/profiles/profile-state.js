@@ -71,6 +71,11 @@
     return clone(next);
   }
 
+  function canAssign(id) {
+    const entry = get(id);
+    return Boolean(entry && entry.enabled && entry.status !== "paused" && entry.status !== "retired");
+  }
+
   function replaceAll(values = []) {
     return clone(writeStored(values));
   }
@@ -93,7 +98,10 @@
     listStored: () => clone(readStored()),
     get,
     update,
+    canAssign,
     replaceAll,
     applyScoped,
   };
 })();
+
+
