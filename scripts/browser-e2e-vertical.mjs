@@ -1,3 +1,4 @@
+import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -43,6 +44,17 @@ try {
     return { title: document.querySelector("#detailTitle")?.textContent };
   });
   await page.waitForFunction(() => !document.querySelector(".card-factory-section")?.hidden);
+  const mainThreadProbeMs = [];
+  for (let index = 0; index < 20; index += 1) {
+    const startedAt = Date.now();
+    const probe = await page.evaluate(() => ({
+      bootstrap: document.documentElement.dataset.featureBootstrap || "",
+      title: document.querySelector("#detailTitle")?.textContent || "",
+    }));
+    mainThreadProbeMs.push(Date.now() - startedAt);
+    assert.equal(probe.bootstrap, "ready", `bootstrap lost readiness during responsiveness probe ${index}`);
+    assert.equal(probe.title, "E2E vertical fixture", `selection changed during responsiveness probe ${index}`);
+  }
   await page.click("#cardAutofillBtn");
   await page.setInputFiles("#cardImageInput", fixture);
   await page.waitForFunction(() => document.querySelector("#cardImageStatus")?.textContent?.includes("1"));
@@ -122,7 +134,22 @@ try {
   await page.waitForTimeout(120);
   const staleStatus = await page.locator("[data-vertical-status]").textContent();
   const staleHandoff = await page.locator('.approval-card[data-item-id="e2e-vertical-fixture"] [data-vertical-artifact-handoff]').textContent();
-  console.log(JSON.stringify({ seeded, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, reviewFixture, reviewHandoff, stale, staleStatus, staleHandoff, requests, errors }));
+  const livePublishRequests = requests.filter((entry) => /\/api\/(?:threads|buffer)\/publish/.test(entry.url));
+  assert.equal(errors.length, 0, `page errors: ${JSON.stringify(errors)}`);
+  assert.equal(livePublishRequests.length, 0, `unexpected publish requests: ${JSON.stringify(livePublishRequests)}`);
+  assert.equal(video.status(), 200, "vertical artifact download must return HTTP 200");
+  assert.ok(bytes > 0, "vertical artifact download must contain bytes");
+  assert.ok(dimensions.length > 0 && dimensions.every(([width, height]) => width === 1080 && height === 1080), "Card Factory must produce only 1080x1080 inputs");
+  assert.equal(privacyGate?.allowed, true, "privacy gate must be explicitly reviewed before render");
+  assert.equal(rendered.artifact?.probe?.width, 1080, "vertical artifact width must be 1080");
+  assert.equal(rendered.artifact?.probe?.height, 1920, "vertical artifact height must be 1920");
+  assert.equal(rendered.artifact?.publishReady, false, "03 artifact must never claim publish readiness");
+  assert.equal(rendered.artifact?.providerCapability, "unsupported", "vertical provider publishing must remain unsupported");
+  assert.match(reviewHandoff.notice || "", /04/, "04 handoff notice must be visible");
+  assert.match(staleStatus || "", /stale/, "03 status must mark changed revision stale");
+  assert.match(staleHandoff || "", /stale/, "04 handoff must mark changed revision stale");
+  assert.ok(mainThreadProbeMs.every((ms) => ms < 1000), `main-thread responsiveness regression: ${JSON.stringify(mainThreadProbeMs)}`);
+  console.log(JSON.stringify({ seeded, mainThreadProbeMs, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, reviewFixture, reviewHandoff, stale, staleStatus, staleHandoff, requests, errors }));
 } finally {
   await browser.close();
   await fs.rm(fixture, { force: true });
