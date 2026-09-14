@@ -530,3 +530,11 @@ Validation actually observed after the fix:
 - No provider publish/validation call or live publication was attempted.
 
 Next priority: exercise the complete vertical UI with a real Card Factory capture/privacy-reviewed fixture through actual browser render/download and confirm the 04 artifact notice/revision-stale behavior. Keep Reel/Short provider publishing `unsupported` until an official adapter and real credentials/contracts exist. Instagram Feed/Carousel provider validation remains blocked on operator credentials/scopes, explicit current Graph version and provider-fetchable HTTPS staging.
+
+### Run 047 CI follow-up
+
+GitHub Actions on `48f9b91` and the first Run 047 tip `a583988` were actually red at `npm run check`; do not treat those tips as CI-green. The new vertical artifact/API regressions had required FFmpeg/ffprobe even on runners where those executables may be absent, unlike the older renderer smoke which already skipped its runtime portion explicitly.
+
+`e257fff13492be316fbb2bea8b877eb588c79846` (`0.41.2`) makes artifact/API regressions portable without weakening production gates: request validation, capability state, stale-rights and privacy-block server failures still always execute; only successful encode/download assertions are skipped when FFmpeg/ffprobe are unavailable. An explicit simulated missing-runtime run passed both tests, and the normal Windows `npm.cmd run check` still passed with the real 1080x1920 encode path exercised.
+
+Verify the new tip CI before claiming green. If green, the next browser priority remains the full Card Factory privacy-reviewed fixture → vertical render → 04 artifact notice/revision-stale workflow.
