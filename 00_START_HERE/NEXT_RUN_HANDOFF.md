@@ -1,4 +1,4 @@
-# NEXT RUN HANDOFF — Threads AI Content Monetization Lab
+# NEXT RUN HANDOFF ??Threads AI Content Monetization Lab
 
 Updated: 2026-09-14 KST
 
@@ -10,7 +10,7 @@ Current implementation line now includes P8 persistence foundations after the ea
 
 ## Non-negotiable role / safety chain
 
-`01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`
+`01 DISCOVERY ??02 EDITORIAL_SCORING ??03 PRODUCTION ??04 REVIEW_PUBLISH ??05 EXPERIMENTS_ACCOUNTS`
 
 - 04 alone owns final publication.
 - Audience Comfort hard BLOCK cannot be approved.
@@ -19,14 +19,14 @@ Current implementation line now includes P8 persistence foundations after the ea
 - never fake API success, metrics, OCR/face detection, credentials, delivery, or publication.
 - never persist plaintext passwords, tokens, API keys, authorization headers or cookies.
 
-## P1–P7 current state
+## P1?밣7 current state
 
 Materially implemented for the current browser/session architecture:
 
 - multi-source/theme-lane Viral Finder, evidence normalization, dedupe/same-story grouping, risk/source filters
 - Audience Comfort BLOCK/REVIEW + audit
 - bulk review/group/tag/editorial handoff
-- Community Card Factory 1080×1350 + real manual drag privacy masks
+- Community Card Factory 1080횞1350 + real manual drag privacy masks
 - READY/HOT/EVERGREEN Warehouse + provenance/history/freshness/review/assets
 - official Threads media capability + dry-run, fail closed without current approval/credentials/live enablement
 - optional Buffer path kept separate from canonical publication until delivery is actually verified
@@ -34,7 +34,7 @@ Materially implemented for the current browser/session architecture:
 
 Earlier installed-Chrome E2E verified app bootstrap, candidate/discovery rendering, card capture build, real mouse privacy mask and privacy review. Fresh P7 Scheduler browser E2E is still required when the authorized Windows machine is online.
 
-## P8 persistence foundation — ACTIVE
+## P8 persistence foundation ??ACTIVE
 
 Package `0.22.0` begins versioned persistence/migration work.
 
@@ -105,7 +105,7 @@ Fresh repo baseline was `642bedbc44bdbc49de3cc92f5eac683278f7493c` with ops note
 
 New code commit:
 
-`4cafd5d143b8b3ca02f9b3392cd4ee54d579829f` — revisioned persistence state API.
+`4cafd5d143b8b3ca02f9b3392cd4ee54d579829f` ??revisioned persistence state API.
 
 Implemented:
 
@@ -196,7 +196,7 @@ Scoped persistence is now implemented in `fc5fbe89a7e1cee658c6ca8176ba8a0436ca85
 
 Fresh installed-Chrome E2E observed:
 
-`{"bootstrap":"ready","options":["default","TH-A","TH-B","TH-C"],"defaultRevision":1,"profileRevision":1,"badge":"default · SERVER r1","pageErrors":0}`
+`{"bootstrap":"ready","options":["default","TH-A","TH-B","TH-C"],"defaultRevision":1,"profileRevision":1,"badge":"default 쨌 SERVER r1","pageErrors":0}`
 
 Latest ops note: `033-sol.md`.
 
@@ -206,7 +206,7 @@ Next priority: DB-backed persistence behind the same schema-v2 + namespace + opt
 
 Current repo tip already contained optional SQLite persistence in `20a2986ad86ebf2d69a792b37ae73914cbaa8521`, package `0.26.0`.
 
-This run added explicit file→SQLite migration in `693248b` (`Add explicit file to SQLite persistence migration`), package `0.27.0`.
+This run added explicit file?뭆QLite migration in `693248b` (`Add explicit file to SQLite persistence migration`), package `0.27.0`.
 
 Implemented:
 
@@ -215,7 +215,7 @@ Implemented:
 - existing SQLite namespaces refuse import by default; overwrite requires explicit `overwrite: true`
 - `persistence-migrate.mjs` migrates only validated requested namespaces from JSON stores
 - empty namespaces are skipped rather than materialized
-- new regression covers revision preservation, namespace isolation, v1→v2 migration, experiment preservation, overwrite refusal/opt-in and invalid namespace rejection
+- new regression covers revision preservation, namespace isolation, v1?뭭2 migration, experiment preservation, overwrite refusal/opt-in and invalid namespace rejection
 
 Actual SQLite-backed server smoke returned:
 
@@ -289,7 +289,7 @@ Credential-free editable runtime profile state is now implemented in `12c0f85c8c
 
 Fresh installed-Chrome E2E observed: TH-A active state saved to account scope, local TH-A changed, TH-B paused locally, then TH-A server read/apply restored only TH-A while preserving TH-B and Scheduler `stopped`; no Threads/Buffer publish request and no page errors.
 
-`npm run check` and `/api/health` smoke passed locally. Latest ops note: `036-sol.md`.
+`npm run check` and `/api/health` smoke passed locally. Latest ops note: `037-sol.md`.
 
 Next priority: verify CI for the new tip, then avoid persistence churn unless a concrete requirement exists. A useful remaining option is making profile active/paused state influence experiment-account selection/visibility without ever weakening 04 publication gates or storing credentials.
 
@@ -303,10 +303,11 @@ Runtime profile state now actively constrains new experiment assignment in `5759
 - existing experiment records are preserved when a profile becomes paused/disabled
 - this does not alter 04 publication ownership or any rights/safety/approval gate
 
-Fresh Chrome E2E observed TH-B transition planned→paused→active→disabled reflected in the real experiment selector with pageErrors `[]`.
+Fresh Chrome E2E observed TH-B transition planned?뭦aused?뭓ctive?뭗isabled reflected in the real experiment selector with pageErrors `[]`.
 
 Concurrent remote demo-showcase commits landed during this run. The profile guard commit was repeatedly rebased onto current remote main and ultimately pushed without force; demo showcase code/tests were preserved.
 
-Latest ops note: `036-sol.md`.
+Latest ops note: `037-sol.md`.
 
 Next priority: confirm CI for the final tip, then avoid additional persistence schema churn unless an actual operational requirement appears. Profile state/experiment visibility now has a complete credential-free path; further work should move to concrete workflow gaps rather than inventing persistence features.
+
