@@ -538,3 +538,27 @@ GitHub Actions on `48f9b91` and the first Run 047 tip `a583988` were actually re
 `e257fff13492be316fbb2bea8b877eb588c79846` (`0.41.2`) makes artifact/API regressions portable without weakening production gates: request validation, capability state, stale-rights and privacy-block server failures still always execute; only successful encode/download assertions are skipped when FFmpeg/ffprobe are unavailable. An explicit simulated missing-runtime run passed both tests, and the normal Windows `npm.cmd run check` still passed with the real 1080x1920 encode path exercised.
 
 Verify the new tip CI before claiming green. If green, the next browser priority remains the full Card Factory privacy-reviewed fixture → vertical render → 04 artifact notice/revision-stale workflow.
+
+## 2026-09-15 Run 048 update
+
+Baseline was `af92e7392fc1ed74dd9298596a95d6ba4abb12e1` (package `0.41.2`). Repo tip already contained the full vertical Card Factory browser harness work beyond `047-sol.md`; it remained authoritative.
+
+Implementation commit `07ab9dc34294e3593cf768325440ec640d7ba9b1` (`0.41.3`) turns the real Chrome vertical flow into an assertion-bearing operator E2E command: `npm run browser:e2e:vertical`.
+
+Actually observed on installed Chrome against a real local server:
+- bootstrap and selected candidate stayed responsive across 20 consecutive main-thread probes (0-1 ms observed each);
+- Card Factory produced two 1080x1080 canvases;
+- manual privacy review gate was explicitly `image-privacy-reviewed`;
+- rights review was bound to the saved Card Factory revision;
+- real FFmpeg render produced/downloaded a 1080x1920 H.264 MP4, 12,647 bytes;
+- 04 REVIEW_PUBLISH displayed the artifact handoff with no publish approval implied;
+- changing candidate revision marked both 03 status and 04 handoff `stale`;
+- zero Threads/Buffer live publish requests and zero page errors were observed.
+
+The E2E script now fails on page errors, any live publish request, missing/empty artifact download, wrong square inputs, missing privacy review, wrong 1080x1920 probe, accidental `publishReady:true`, provider capability other than `unsupported`, missing 04 handoff notice, missing stale invalidation, or responsiveness probes >= 1 second.
+
+`npm run check` passed locally; `/api/health` returned `ok:true`. GitHub Actions run `34907268039` for `07ab9dc` was observed `completed/success`.
+
+No Instagram credential/provider validation or live publication was attempted. Feed/Carousel provider validation remains blocked on real operator credentials/scopes, explicit Graph version and provider-fetchable approved HTTPS staging. Reel/Short provider publication remains `unsupported`; local MP4 rendering is not provider readiness.
+
+Next priority: avoid inventing persistence work. Continue only concrete workflow gaps. When real provider configuration exists, validate official Instagram container creation without `media_publish`; otherwise improve non-live review/production ergonomics or compliant discovery with verifiable public evidence. Keep the role chain and 04-only publication ownership unchanged.
