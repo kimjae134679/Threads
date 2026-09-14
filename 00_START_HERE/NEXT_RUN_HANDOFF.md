@@ -333,3 +333,29 @@ This confirms the previous browser bootstrap/main-thread hang is not reproduced 
 Latest ops note: `038-sol.md`.
 
 Next priority: keep the indexed field-test feed fresh only with actually verified public examples; do not fabricate engagement. Avoid further persistence/schema churn without a concrete requirement. Any future live-post work remains gated by 04, current human approval, rights/safety state, official provider capability and real credentials/scopes.
+
+## 2026-09-15 Run 040 update
+
+Reference-first source-media production is now implemented in `28011c1fc2d344c843cfba92ba2eb5fc487cc5ce`, package `0.35.0`.
+
+- default feed renderer changed from 1080x1350 text-led cards to `reference-square` 1080x1080
+- slide 1 uses the first real selected source image as blurred/darkened full-bleed background with a large hook
+- slide 2+ preserve real source/capture images in selected order with `contain`; generated-image fallback is explicitly disabled
+- card production now fails closed when the reference profile has no actual source image
+- added `Source Asset` production gate states from `DISCOVERED` through `PUBLISH_READY`, preserving rights/privacy/human-approval requirements
+- Source Review patching keeps a coalesced `patchQueued` microtask and child-list-only candidate observer; regression now asserts those anti-loop constraints
+- source registry and docs now formalize Korean-community discovery as public-index/permitted-browser/manual capture rather than bulk crawling
+- official-media target model separates Threads feed, Instagram feed/carousel, Instagram Reel, and YouTube Short capabilities; Reels/Shorts remain `unsupported` until a real vertical-video renderer exists
+- current field-test first candidate now points to the real r/iPhone post `1wbsyos` with only the observed 8,238-vote signal and Apple official fact source; source media remains `ASSETS_PENDING`
+
+Fresh installed-Chrome E2E observed after the final changes:
+
+`{"bootstrap":"complete","fieldCards":3,"sourceHref":"https://www.reddit.com/r/iphone/comments/1wbsyos/apple_announces_foldable_iphone_duo/","imported":{"status":"inbox","basis":"field_test_requires_human_review","demo":true},"template":"reference-square","dims":[{"w":1080,"h":1080,"index":"0"},{"w":1080,"h":1080,"index":"1","file":"fixture.png"}],"privacyGate":{"allowed":true,"captureCount":1,"reviewedCount":1,"pending":[],"staleIdentity":[],"code":"image-privacy-reviewed"},"saved":{"schema":3,"renderProfile":"reference-square","size":[1080,1080],"generatedImageFallback":false,"cardTypes":["hook","capture-image"]},"publishCalls":[],"pageErrors":[]}`
+
+`npm run check` passed on the final working tree. `/api/health` returned `ok:true`. GitHub Actions run `34873538573` for `28011c1` was observed `in_progress`; do not claim CI green until a later run observes completion.
+
+Live publishing is still intentionally blocked without current human approval and real provider credentials/scopes. Instagram feed/carousel needs an official publishing connector and public media staging. Reels/Shorts additionally require a separate real 1080x1920 MP4 renderer.
+
+Latest ops note: `039-sol.md`.
+
+Next priority: implement a real, compliant source-asset acquisition/staging adapter for allowed public/official sources and manual screenshot handoff, then connect approved square artifacts to Instagram feed/carousel dry-run without weakening 04 ownership or approval gates. Do not add anti-bot bypasses or generated-image fallback.
