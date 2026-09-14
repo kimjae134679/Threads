@@ -98,3 +98,37 @@ Intermediate persistence tests already showed green CI on their commits. Verify 
 6. Buffer delivery-status sync only after verifying a real current official API query shape; never guess a field or claim delivery from job acceptance.
 
 Every meaningful run: syntax/regression/server smoke + targeted tests, actual browser E2E where relevant, meaningful commit/push, CI status only when observed, cleanup, and next sequential operations note.
+
+## 2026-09-14 Run 030 update
+
+Fresh repo baseline was `642bedbc44bdbc49de3cc92f5eac683278f7493c` with ops note `029-sol.md`.
+
+New code commit:
+
+`4cafd5d143b8b3ca02f9b3392cd4ee54d579829f` — revisioned persistence state API.
+
+Implemented:
+
+- `GET /api/state` explicit read of `{revision, updatedAt, snapshot}`
+- `PUT /api/state` explicit write with `expectedRevision`
+- runtime path configurable via `PERSISTENCE_STATE_PATH`, default ignored `data/runtime/state.json`
+- HTTP regression verifies revision 0, revision 1 write, stale 409 conflict, and secret-field 400 rejection
+- package `0.22.1`
+
+Fresh real Chrome Scheduler E2E on the authorized Windows machine is now observed PASS for:
+
+- browser feature bootstrap `ready`
+- two eligible Queue rows rendered
+- provider target selection persisted (`buffer`)
+- pause/resume visible state
+- manual reorder
+- post-now audit routed to `04_REVIEW_PUBLISH`
+- no `/api/threads/publish` or `/api/buffer/publish` network request during post-now route
+- stop state
+- no page errors in the complete Scheduler fixture
+
+Therefore the previous P7 fresh-browser-control blocker is closed. This is not a live publication claim.
+
+Latest operations note: `030-sol.md`.
+
+Next priority is P8 browser persistence bridge: explicit export/import/save/load using `ThreadsPersistenceStateModel`, preserving Scheduler control/history plus credential-free profile/experiment identifiers, with visible revision conflict handling and no silent overwrite. After that, stabilize migration contracts before DB-backed persistence/versioning.
