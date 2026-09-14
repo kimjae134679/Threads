@@ -435,3 +435,45 @@ GitHub Actions push run `34886084824` for `83e7a06` was `in_progress` when this 
 2. With real operator Instagram configuration later, validate provider-side media URL fetch/creation without enabling live publication; until then keep `credential-required` and external reachability unverified.
 3. Do not build Reels/Shorts by stretching square cards. After Feed/Carousel provider validation is materially complete, add the separate 1080×1920 MP4 renderer.
 4. Continue compliant public discovery only when it adds useful verified candidates; do not bulk crawl Blind/DCInside or invent engagement values.
+
+
+## 2026-09-15 Run 045 update
+
+Baseline was `0459dc9b482ebae3752236cf2df036be22bafc26` (package `0.38.0`). Repo tip was treated as authoritative over earlier handoffs.
+
+Implementation commit: `c9ad5c6c06929447e32e4d471a5665859de4123d` — `Add Instagram container validation gate`.
+Package is now `0.39.0`.
+
+### Exact implementation
+
+- `instagram.mjs` now separates provider container validation from live publishing with `INSTAGRAM_MEDIA_VALIDATION_ENABLED=1`.
+- Validation still requires operator-supplied access token, numeric Instagram user id, explicit Graph API version, and explicit required scopes. The adapter does not guess any of them.
+- `validateInstagramMediaContainers()` can create an IMAGE media container or CAROUSEL child containers + parent through the configured official Graph `/media` path only.
+- The validation adapter never calls `/media_publish`; `livePublishImplemented` remains `false`, and returned audit state explicitly records `livePublicationAttempted:false` and `mediaPublishEndpointCalled:false`.
+- A successful container id is recorded only as `providerContainerCreationObserved:true`; it deliberately does **not** claim media processing success or full provider media-fetch verification.
+- Provider failures are sanitized to status/code/subcode. Provider error messages and access tokens are not returned or persisted.
+- `POST /api/instagram/media/validate` remains behind current human approval plus approval-bound staged-media validation, preserving candidate/revision binding and 04-only ownership.
+- 04 REVIEW_PUBLISH UI adds a separate `공식 컨테이너 검증` control. It stays disabled unless the current candidate has staged approved media and Instagram capability reports `validationState: ready-to-validate`.
+- No live publication endpoint was added.
+
+### Validation actually performed
+
+- `npm.cmd run check` passed on package `0.39.0`, including syntax plus all existing and new regressions.
+- Mock official-boundary regression observed IMAGE validation making exactly 1 `/media` POST and CAROUSEL validation making exactly 3 `/media` POSTs (2 children + 1 parent); all asserted zero `/media_publish` calls.
+- Regression also verifies validation-disabled fail-closed behavior and sanitized upstream provider errors without token leakage.
+- `/api/health` returned `ok:true` on a fresh local server.
+- `/api/connectors` and `/api/instagram/media/capabilities` with no credentials observed `instagramState: credential-required`, `validationState: credential-required`, `validationEnabled:false`, `providerContainerValidationImplemented:true`, `livePublishImplemented:false`.
+- Fresh installed-Chrome E2E actually observed: `bootstrap:ready`, one current 04 approval card, provider-validation button present and disabled, capability text `자격 증명 필요 · live 없음`, zero Graph/provider/validation requests, and zero page errors.
+- No real Instagram credential was present, so no official provider container was created in this run. Do not describe provider validation as successful.
+
+### Safety/ownership preserved
+
+- Role chain remains `01 DISCOVERY -> 02 EDITORIAL_SCORING -> 03 PRODUCTION -> 04 REVIEW_PUBLISH -> 05 EXPERIMENTS_ACCOUNTS`.
+- Only 04 owns provider validation/publish controls.
+- Current human approval and approval-revision-bound staged media are required before provider validation.
+- No plaintext secret is stored in repository/state.
+- Demo/test outputs remain non-public.
+
+### Blocker / next priority
+
+Real provider validation now needs actual operator Instagram credentials/scopes, an explicit current Graph API version, and externally reachable approved staged media. When those are available, set `INSTAGRAM_MEDIA_VALIDATION_ENABLED=1` and validate **container creation only** first; keep live publication disabled and do not call `media_publish`. Record only the provider behavior actually observed. Only after Feed/Carousel provider validation is materially complete should the separate 1080x1920 MP4 Reels/Shorts renderer become the next major implementation target.
