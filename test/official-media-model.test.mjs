@@ -12,6 +12,10 @@ assert.equal(model.targetSpec("instagram-feed").maxItems, 10);
 assert.equal(model.targetSpec("instagram-feed").outputProfile, "reference-square");
 assert.equal(model.targetSpec("instagram-reel").outputProfile, "vertical-video");
 assert.equal(model.targetSpec("youtube-short").outputProfile, "vertical-video");
+assert.equal(model.targetSpec("instagram-reel").renderImplementation, "ffmpeg-local");
+assert.equal(model.targetSpec("instagram-reel").width, 1080);
+assert.equal(model.targetSpec("instagram-reel").height, 1920);
+assert.equal(model.targetSpec("instagram-reel").container, "mp4");
 assert.equal(model.targetCapability("instagram-reel", { configured: true, mediaLiveEnabled: true }), "unsupported");
 assert.equal(model.targetCapability("youtube-short", { configured: true, mediaLiveEnabled: true }), "unsupported");
 
@@ -19,6 +23,13 @@ const ig = model.validateTarget("instagram-feed", ["https://example.com/a.png", 
 assert.equal(ig.ok, true);
 assert.equal(ig.mediaType, "CAROUSEL");
 assert.equal(ig.capabilityState, "credential-required");
+
+const reel = model.validateTarget("instagram-reel", ["https://example.com/reel.mp4"], { configured: true, mediaLiveEnabled: true });
+assert.equal(reel.ok, true);
+assert.equal(reel.mediaType, "VIDEO");
+assert.equal(reel.renderImplementation, "ffmpeg-local");
+assert.equal(reel.capabilityState, "unsupported");
+assert.equal(reel.livePublishImplemented, false);
 
 const tooManyIg = model.validateTarget("instagram-feed", Array.from({ length: 11 }, (_, i) => `https://example.com/${i}.png`), {});
 assert.equal(tooManyIg.ok, false);
