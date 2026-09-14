@@ -50,6 +50,35 @@ export class SqliteStateStoreRegistry {
     return new SqliteNamespaceStore(this.db, normalizeStateNamespace(namespace));
   }
 
+  async importRecord(namespace, record, { overwrite = false } = {}) {
+    const id = normalizeStateNamespace(namespace);
+    const revision = Number(record?.revision);
+    if (!Number.isInteger(revision) || revision < 0) throw new Error(`invalid_persistence_revision:${record?.revision}`);
+    if (!record?.snapshot) throw new Error("persistence_import_missing_snapshot");
+    const safe = normalizeEnvelope(record.snapshot);
+    const updatedAt = record.updatedAt || new Date().toISOString();
+    this.db.exec("BEGIN IMMEDIATE");
+    try {
+      const current = this.db.prepare("SELECT revision FROM state_records WHERE namespace = ?").get(id);
+      if (current && !overwrite) {
+        const error = new Error(`persistence_import_target_exists:${id}`);
+        error.code = "persistence_import_target_exists";
+        error.status = 409;
+        error.currentRevision = Number(current.revision) || 0;
+        throw error;
+      }
+      this.db.prepare(`INSERT INTO state_records(namespace, revision, updated_at, snapshot_json)
+        VALUES (?, ?, ?, ?)
+        ON CONFLICT(namespace) DO UPDATE SET revision=excluded.revision, updated_at=excluded.updated_at, snapshot_json=excluded.snapshot_json`)
+        .run(id, revision, updatedAt, JSON.stringify(safe));
+      this.db.exec("COMMIT");
+      return { revision, updatedAt, snapshot: safe };
+    } catch (error) {
+      try { this.db.exec("ROLLBACK"); } catch {}
+      throw error;
+    }
+  }
+
   close() {
     this.db.close();
   }
