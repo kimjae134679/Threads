@@ -8,10 +8,10 @@ Inspect current `main` and recent commits first, then read the latest sequential
 
 Current verified implementation checkpoint:
 
-- implementation tip: `bc3b63c0eea4a6472605a4887e9772dee839bdb3`
-- GitHub Actions run `34822773130`: **SUCCESS**
-- package: `0.20.0`
-- latest operations note: `027-sol.md`
+- implementation tip: `980106eb8b2e36e8b0a13c248e838baf1a0d7380`
+- GitHub Actions run `34825571520`: **SUCCESS**
+- package: `0.21.0`
+- latest operations note: `028-sol.md`
 
 ## Role chain / non-negotiable gates
 
@@ -37,30 +37,28 @@ Materially complete for the current browser/session architecture:
 
 Do not bulk crawl Blind/DCInside; public search/index metadata + user URLs/screenshots/manual capture only.
 
-## P6 official publishing capability — substantially implemented, live still fail-closed
+## P6 official publishing capability
 
-Current main contains:
+Substantially implemented, live remains fail-closed:
 
 - direct official Threads text publisher
-- optional Buffer publisher, with Buffer delivery records kept separate from canonical publications until actual sent status can be verified
+- optional Buffer publisher; accepted Buffer jobs are not canonical publications until actual delivery can be verified
 - official Threads IMAGE/CAROUSEL capability model and dry-run endpoint/UI
-- 1 HTTPS image => IMAGE dry-run
-- 2–20 HTTPS images => CAROUSEL dry-run
-- local canvas/blob assets are not pretended to be hosted/public URLs
+- 1 HTTPS image => IMAGE dry-run; 2–20 HTTPS images => CAROUSEL dry-run
+- local canvas/blob assets are not represented as hosted/public URLs
 - no current human approval => server rejects
 - no token => credential-required
 - live media remains disabled unless explicitly enabled server-side
 - dry-run audit records are not represented as publication success
 
-No live media publish was claimed.
+No live media publish has been claimed.
 
-## Real browser E2E observed before the P7 commit
+## Real browser E2E already observed
 
-Installed Chrome + Playwright against the actual app/server successfully verified:
+Installed Chrome + Playwright against the actual app/server verified before P7 expansion:
 
 - feature bootstrap `ready`
-- candidate add
-- discovery normalization
+- candidate add + discovery normalization
 - Viral Finder / Audience Comfort / Warehouse rendering
 - official media capability status
 - zero page errors
@@ -70,46 +68,56 @@ Installed Chrome + Playwright against the actual app/server successfully verifie
 - privacy gate allowed, capture 1/reviewed 1/mask 1
 - download gate enabled
 
-## P7 Scheduler / Queue — NEW
+## P7 Scheduler / Queue — expanded through provider targets + audit
 
-Current main now includes `app/features/publish/scheduler/`:
+Current feature folder: `app/features/publish/scheduler/`.
 
-- `scheduler-model.js`
-- `scheduler.js`
-- `scheduler.css`
+Existing behavior retained:
 
-Behavior:
+- only Warehouse `queueEligibility()` items enter planning
+- HOT priority + theme/source/format spacing
+- RUNNING / PAUSED / STOPPED
+- up/down manual reorder
+- visible schedule reasons
+- `지금 게시` routes only to `04 REVIEW_PUBLISH`; it never directly calls an external API
 
-- only Warehouse `queueEligibility()` items enter planning, preserving Comfort/Safety/rights/privacy/current-human-approval gates
-- HOT priority preserved
-- configurable base slot + same-theme/source/format spacing
-- visible schedule reasons (`hot-priority`, `manual-order`, spacing reasons, queue-priority)
-- manual up/down reorder
-- RUNNING / PAUSED / STOPPED state in localStorage
-- `지금 게시` routes the item to `04 REVIEW_PUBLISH`; it does not directly call an external API and cannot bypass final human confirmation
-- scheduling metadata does not alter approved content bytes/text
+New in package `0.21.0`:
 
-Targeted regression `test/scheduler-model.test.mjs` covers HOT ordering, spacing, manual reorder and HOLD exclusion.
+- explicit target providers: `threads-direct` and `buffer`
+- unknown/invalid provider values fail safely to `threads-direct`
+- provider choice is scheduling metadata only; final publication owner remains `04_REVIEW_PUBLISH`
+- per-item bounded scheduler audit, latest 100 entries
+- scheduler-control bounded history for pause/resume/stop/replan/provider-target changes
+- item audit records manual reorder, provider changes, blocked post-now attempts and post-now routing
+- each audit entry records owner `04_REVIEW_PUBLISH`
+- UI shows selected target provider and change-record counts
+- no provider target selection itself is represented as publication success
+
+Regression now covers provider normalization/selection, owner audit, invalid-provider fallback, and 100-entry audit bounding in addition to HOT ordering, spacing, manual reorder and HOLD exclusion.
 
 ## Validation
 
-Final checkpoint:
+Meaningful commits this run:
 
 ```text
-bc3b63c0eea4a6472605a4887e9772dee839bdb3
+2dfd5801cd38668a15f48037b80c5a5ddd6c863c  Add scheduler provider targets and audit model
+74c289083d1080f976e66bc77f6fd7bdc199de14  Test scheduler provider targets and audit history
+ac7d468013a0b8180ef6660e352d654040d2805a  Add scheduler provider choice and audit trail
+980106eb8b2e36e8b0a13c248e838baf1a0d7380  Bump scheduler audit workflow version
 ```
 
-GitHub Actions run `34822773130` completed **SUCCESS** after syntax/regression + local server smoke.
+GitHub Actions run `34825571520` completed **SUCCESS**. Workflow includes JavaScript syntax, full regression suite, targeted scheduler regression and local server smoke.
 
-The first scheduler CI attempt failed only because a VM-realm array was compared directly with `deepStrictEqual`; the assertion was corrected by normalizing IDs into the host realm. Production logic was not weakened.
+## Browser limitation in this run
+
+The authorized remote Windows machine was offline during this run. Therefore the new P7 provider selector / pause-resume-stop / reorder / post-now UI was **not** newly claimed as browser-E2E verified. Re-run it as soon as the browser-capable machine is reachable.
 
 ## Next priority
 
-1. When a browser-capable machine is reachable, run fresh Scheduler browser E2E: plan render, pause/resume/stop, reorder, and `지금 게시` routing to 04 without external publish.
-2. Add durable scheduler audit/history and provider target choice (direct Threads vs Buffer) while keeping 04 final publication ownership.
-3. Add Buffer delivery-status sync before any accepted Buffer job can be promoted to canonical publication.
-4. Finish useful P6 external response/error audit separation; credentials/scopes absent => fail closed.
-5. Then P8 DB/server persistence, migrations/versioning, and multi-account experiment/profile state. Never commit plaintext secrets.
+1. Fresh Scheduler Chrome E2E: plan render, provider select, pause/resume/stop, reorder, audit count updates, and `지금 게시` routing to 04 with no external publish.
+2. Add Buffer delivery-status sync only against a verified official/current Buffer API query shape; never invent a status API. Until actual sent/delivered status is verified, Buffer acceptance remains delivery audit, not canonical publication.
+3. Finish P6 real external response/error audit separation where useful; credentials/scopes absent => fail closed.
+4. Then P8 DB/server persistence, migrations/versioning, scheduler audit persistence, and multi-account experiment/profile state. Never commit plaintext secrets.
 
 ## Mandatory execution loop
 
