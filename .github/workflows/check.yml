@@ -43,6 +43,9 @@ jobs:
           if (connectors.connectors?.youtubeMostPopularKr?.configured !== false) throw new Error('YouTube must be unconfigured in CI without secret');
           if (connectors.connectors?.threads?.configured !== false) throw new Error('Threads must be unconfigured in CI without secret');
           if (connectors.connectors?.naverApiHub?.configured !== false) throw new Error('NAVER API HUB must be unconfigured in CI without secret');
+          if (connectors.connectors?.buffer?.configured !== false || connectors.connectors?.buffer?.apiKeyConfigured !== false) {
+            throw new Error('Buffer must be unconfigured in CI without secret');
+          }
 
           const app = await fetch('http://127.0.0.1:4173/app/');
           const html = await app.text();
@@ -67,6 +70,9 @@ jobs:
             'features/themes/theme-model.js',
             'features/themes/theme-review.js',
             'features/themes/theme-review.css',
+            'features/publish/buffer/buffer-publish-model.js',
+            'features/publish/buffer/buffer-publisher.js',
+            'features/publish/buffer/buffer-publisher.css',
           ];
           for (const asset of baseAssets) {
             const response = await fetch(`http://127.0.0.1:4173/app/${asset}`);
@@ -87,6 +93,8 @@ jobs:
             'card-story-model.js',
             'warehouse-model.js',
             'content-warehouse.js',
+            'features/publish/buffer/buffer-publish-model.js',
+            'features/publish/buffer/buffer-publisher.js',
           ]) {
             if (!featureBootstrap.includes(required)) throw new Error(`feature bootstrap missing ${required}`);
           }
@@ -122,6 +130,12 @@ jobs:
             throw new Error(`expected Threads missing-token 503, got ${threadsProfile.status} ${JSON.stringify(threadsProfileBody)}`);
           }
 
+          const bufferChannels = await fetch('http://127.0.0.1:4173/api/buffer/channels');
+          const bufferChannelsBody = await bufferChannels.json();
+          if (bufferChannels.status !== 503 || bufferChannelsBody.error !== 'buffer_api_key_missing') {
+            throw new Error(`expected Buffer missing-key 503, got ${bufferChannels.status} ${JSON.stringify(bufferChannelsBody)}`);
+          }
+
           const unapproved = await fetch('http://127.0.0.1:4173/api/threads/publish', {
             method: 'POST', headers: {'content-type':'application/json'},
             body: JSON.stringify({candidate: {title: 'CI publish guard'}}),
@@ -129,5 +143,14 @@ jobs:
           const unapprovedBody = await unapproved.json();
           if (unapproved.status !== 409 || unapprovedBody.error !== 'candidate_not_ready') {
             throw new Error(`expected publish guard 409, got ${unapproved.status} ${JSON.stringify(unapprovedBody)}`);
+          }
+
+          const bufferUnapproved = await fetch('http://127.0.0.1:4173/api/buffer/publish', {
+            method: 'POST', headers: {'content-type':'application/json'},
+            body: JSON.stringify({candidate: {title: 'CI Buffer publish guard'}, mode: 'addToQueue'}),
+          });
+          const bufferUnapprovedBody = await bufferUnapproved.json();
+          if (bufferUnapproved.status !== 409 || bufferUnapprovedBody.error !== 'candidate_not_ready') {
+            throw new Error(`expected Buffer publish guard 409, got ${bufferUnapproved.status} ${JSON.stringify(bufferUnapprovedBody)}`);
           }
           NODE
