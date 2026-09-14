@@ -29,7 +29,7 @@ for (const item of payload.items) {
 const ui = fs.readFileSync(new URL("../app/features/discovery/demo/demo-showcase.js", import.meta.url), "utf8");
 for (const expected of [
   "DEMO SHOWCASE",
-  "productionEligible=false",
+  "productionEligible=${String(data.productionEligible)}",
   "Inbox로 복사",
   "demoOnly: true",
   "productionEligible: false",
