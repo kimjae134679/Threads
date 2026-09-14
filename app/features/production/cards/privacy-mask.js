@@ -52,7 +52,10 @@
   imageInput?.addEventListener("change", resetPrivacySession, true);
 
   const observer = new MutationObserver(() => queueMicrotask(decorateCaptureCards));
-  observer.observe(preview, { childList: true, subtree: true });
+  // Only react when preview cards themselves are replaced/added. Observing the
+  // entire subtree would also see the status labels that this module updates,
+  // which can create a self-triggering render loop in a real browser.
+  observer.observe(preview, { childList: true, subtree: false });
   decorateCaptureCards();
 
   window.ThreadsCardPrivacyMask = {
