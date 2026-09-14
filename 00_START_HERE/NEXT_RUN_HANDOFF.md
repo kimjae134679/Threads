@@ -514,3 +514,19 @@ New implementation line:
 2. Integrate the new vertical renderer into 03 PRODUCTION as an explicit human-reviewable artifact workflow rather than adding a publish shortcut. Add source/provenance binding and privacy/rights revision binding before any 04 handoff.
 3. Only after that, add platform-specific Reel/Short validation adapters using official APIs and explicit capability states. Do not infer provider readiness from local MP4 success.
 4. Continue P7/P8 only for concrete workflow gaps; avoid persistence churn.
+
+## 2026-09-15 Run 047 update
+
+Baseline was `48f9b91de804b8337a2a2c909c860915d382b794` (package `0.41.0`), which already integrated the 03 PRODUCTION vertical artifact handoff and 04 artifact notice. Repo tip remained authoritative over `046-sol.md`.
+
+Fresh real Chrome E2E exposed a selection-sync bug in that new UI: after submitting a new candidate, `#detailTitle` showed the selected candidate but `.vertical-video-production-panel` remained hidden because refresh only followed preview/click mutations. This did not reintroduce the old Discovery Source Review main-thread hang; 20 consecutive CDP Runtime evaluations completed in 0–3 ms with bootstrap still `ready` and zero page exceptions.
+
+Implementation commit `908c37c21e5a75746f50b4890aa20d26f50e6122` adds a narrowly scoped `MutationObserver` on `#detailTitle` so programmatic candidate selection/import refreshes the vertical-production gate. The preview observer remains `childList:true, subtree:false`; no document/body-wide observer was added. Package is `0.41.1` and `test/vertical-video-ui.test.mjs` guards the observer scope and selection refresh wiring.
+Validation actually observed after the fix:
+
+- `npm.cmd run check` passed on `0.41.1`, including actual FFmpeg/ffprobe render (`1080x1920`, H.264, yuv420p, 30 fps, 1.0 s), artifact API regressions and the new UI regression.
+- `/api/health` on port `43174` returned `ok:true`.
+- Fresh Chrome 140 headless E2E observed `featureBootstrap=ready`, `featureVerticalVideoProduction=ready`, candidate submit/select, vertical panel visible, render correctly disabled with explicit missing-gate reasons, 20 responsive Runtime probes, and zero page errors.
+- No provider publish/validation call or live publication was attempted.
+
+Next priority: exercise the complete vertical UI with a real Card Factory capture/privacy-reviewed fixture through actual browser render/download and confirm the 04 artifact notice/revision-stale behavior. Keep Reel/Short provider publishing `unsupported` until an official adapter and real credentials/contracts exist. Instagram Feed/Carousel provider validation remains blocked on operator credentials/scopes, explicit current Graph version and provider-fetchable HTTPS staging.
