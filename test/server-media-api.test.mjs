@@ -43,11 +43,13 @@ try {
 
   const connectors = await getJson("/api/connectors");
   assert.equal(connectors.connectors.mediaStaging.state, "ready-to-validate");
+  assert.equal(connectors.connectors.mediaStaging.approvalBindingRequired, true);
   assert.equal(connectors.connectors.instagramMedia.state, "live-disabled");
 
   const stage = await postJson("/api/media-staging/stage", { candidate, assets: [{ dataUrl: png1x1 }] });
   assert.equal(stage.response.status, 200);
   assert.equal(stage.body.staged.state, "staged-unverified");
+  assert.equal(stage.body.staged.approvalBound, true);
   assert.equal(stage.body.staged.externalReachabilityVerified, false);
   const stagedUrl = stage.body.staged.assets[0].url;
   assert.match(stagedUrl, /^https:\/\/media\.example\.com\/media\/staged\//);
@@ -64,6 +66,7 @@ try {
   assert.equal(dry.body.plan.externalCalls, 0);
   assert.equal(dry.body.livePublicationAttempted, false);
   assert.equal(dry.body.publicationOwner, "04_REVIEW_PUBLISH");
+  assert.equal(dry.body.approvalBasis, now);
 
   const foreign = await postJson("/api/instagram/media/dry-run", { candidate, mediaUrls: ["https://other.example.com/media/staged/00000000-0000-4000-8000-000000000000.png"] });
   assert.equal(foreign.response.status, 400);
@@ -74,6 +77,23 @@ try {
   const stale = await postJson("/api/media-staging/stage", { candidate: staleCandidate, assets: [{ dataUrl: png1x1 }] });
   assert.equal(stale.response.status, 409);
   assert.equal(stale.body.error, "publish_approval_stale");
+
+  const reapprovedCandidate = structuredClone(candidate);
+  reapprovedCandidate.updatedAt = "2026-09-15T00:03:00.000Z";
+  reapprovedCandidate.publishApproval = {
+    status: "approved",
+    approvedAt: "2026-09-15T00:04:00.000Z",
+    basisUpdatedAt: reapprovedCandidate.updatedAt,
+  };
+  const oldRenderAfterReapproval = await postJson("/api/instagram/media/dry-run", { candidate: reapprovedCandidate, mediaUrls: [stagedUrl] });
+  assert.equal(oldRenderAfterReapproval.response.status, 409);
+  assert.equal(oldRenderAfterReapproval.body.error, "staged_media_approval_stale");
+
+  const otherCandidate = structuredClone(candidate);
+  otherCandidate.id = "server-media-candidate-2";
+  const crossCandidateReuse = await postJson("/api/instagram/media/dry-run", { candidate: otherCandidate, mediaUrls: [stagedUrl] });
+  assert.equal(crossCandidateReuse.response.status, 409);
+  assert.equal(crossCandidateReuse.body.error, "staged_media_candidate_mismatch");
 
   console.log("Server media staging/Instagram API regression tests passed.");
 } finally {
