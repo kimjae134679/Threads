@@ -20,13 +20,19 @@ import {
   publishThreadsViaBuffer,
 } from "./buffer.mjs";
 import { JsonStateStoreRegistry } from "./persistence.mjs";
+import { SqliteStateStoreRegistry } from "./persistence-sqlite.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || "127.0.0.1";
 const STATE_PATH = process.env.PERSISTENCE_STATE_PATH || path.join(ROOT, "data", "runtime", "state.json");
-const stateStores = new JsonStateStoreRegistry(STATE_PATH);
+const SQLITE_PATH = process.env.PERSISTENCE_SQLITE_PATH || path.join(ROOT, "data", "runtime", "state.sqlite");
+const PERSISTENCE_BACKEND = String(process.env.PERSISTENCE_BACKEND || "file").trim().toLowerCase();
+if (!["file", "sqlite"].includes(PERSISTENCE_BACKEND)) throw new Error(`unsupported_persistence_backend:${PERSISTENCE_BACKEND}`);
+const stateStores = PERSISTENCE_BACKEND === "sqlite"
+  ? new SqliteStateStoreRegistry(SQLITE_PATH)
+  : new JsonStateStoreRegistry(STATE_PATH);
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -55,14 +61,14 @@ const server = http.createServer(async (req, res) => {
       const stateStore = stateStores.store(namespace);
       if (req.method === "GET") {
         const record = await stateStore.read();
-        return json(res, 200, { ok: true, namespace, ...record });
+        return json(res, 200, { ok: true, namespace, backend: PERSISTENCE_BACKEND, ...record });
       }
       if (req.method === "PUT") {
         const body = await readJsonBody(req);
         const snapshot = body?.snapshot || body;
         const expectedRevision = body?.expectedRevision ?? null;
         const record = await stateStore.write(snapshot, expectedRevision);
-        return json(res, 200, { ok: true, namespace, ...record });
+        return json(res, 200, { ok: true, namespace, backend: PERSISTENCE_BACKEND, ...record });
       }
       return methodNotAllowed(res, ["GET", "PUT"]);
     }
