@@ -42,6 +42,9 @@
   preview.addEventListener("click", () => queueMicrotask(refresh));
   const observer = new MutationObserver(() => queueMicrotask(refresh));
   observer.observe(preview, { childList: true, subtree: false });
+  const detailTitle = document.querySelector("#detailTitle");
+  const selectionObserver = detailTitle ? new MutationObserver(() => queueMicrotask(refresh)) : null;
+  selectionObserver?.observe(detailTitle, { childList: true, subtree: true, characterData: true });
   document.addEventListener("click", (event) => {
     if (event.target.closest?.(".candidate-card, [data-open-id], #cardSaveBtn, #cardBuildBtn, [data-privacy-reviewed]")) setTimeout(refresh, 0);
   });
