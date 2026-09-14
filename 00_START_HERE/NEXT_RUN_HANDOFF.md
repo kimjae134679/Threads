@@ -158,3 +158,26 @@ No automatic publication or provider API call is coupled to persistence restore.
 Latest ops note: `031-sol.md`.
 
 Next priority: credential-free account/profile identifiers + experiment state persistence and explicit schema migration tests; then define schema v2/DB migration semantics and scoped server namespaces without arbitrary filesystem access or plaintext secrets.
+
+## 2026-09-14 Run 032 update
+
+P8 persistence schema is now v2 in `d39f8401f3a365cbb2381fdcbc4888ac1c7081e7`.
+
+Implemented:
+
+- credential-free Account Registry profile metadata is included in browser snapshots
+- candidate `experimentAssignment` values are normalized into explicit experiment records
+- restore merges experiment records back by candidate id
+- v0/v1 snapshots migrate to v2; future unsupported schemas fail closed
+- profile/experiment secret-like fields are rejected before normalization
+- server JSON persistence accepts v2 and migrates v1 records to v2
+- package `0.24.0`
+- legacy sparse candidates without `sourceRisk` no longer crash Inbox rendering; they display YELLOW/review
+
+Fresh installed-Chrome E2E observed:
+
+`{"bootstrap":"ready","schema":2,"profiles":3,"experiment":"TH-B","v1Migration":2,"secretRejected":true,"serverRevision":1,"pageErrors":[]}`
+
+Latest ops note: `032-sol.md`.
+
+Next priority: scoped server persistence namespaces/profile ids with strict id validation and independent revision conflicts, then DB-backed storage behind the same contract/migrations. Do not add arbitrary filesystem paths or credentials, and never couple restore to publication.
