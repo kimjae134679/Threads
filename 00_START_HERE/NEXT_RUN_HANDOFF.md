@@ -311,3 +311,25 @@ Latest ops note: `037-sol.md`.
 
 Next priority: confirm CI for the final tip, then avoid additional persistence schema churn unless an actual operational requirement appears. Profile state/experiment visibility now has a complete credential-free path; further work should move to concrete workflow gaps rather than inventing persistence features.
 
+
+## 2026-09-15 Run 039 update
+
+Field-test Showcase rotation is now date-agnostic in `2b9e4b860daf53b12880c123cbf6eea33fc04763`, package `0.34.0`.
+
+- added `data/field-test-showcase-index.json` as the only current showcase pointer
+- browser loader validates the index as `demoOnly:true`, `productionEligible:false`, and a safe `/data/<file>.json` path before fetching
+- removed the hard-coded `field-test-showcase-2026-09-14-night.json` dependency from the UI
+- regression now resolves the current payload through the index, requires a real existing file, valid `generatedAt`, and demo/non-production flags
+- future field-test rotations can update the index without editing feature code
+
+Fresh installed-Chrome E2E observed PASS:
+
+`{"bootstrap":"ready","fieldCards":3,"before":0,"after":1,"importedDemo":true,"importedStatus":"inbox","importedBasis":"field_test_requires_human_review","publishCalls":[],"pageErrors":[]}`
+
+This confirms the previous browser bootstrap/main-thread hang is not reproduced on the current feature line, the indexed showcase loads, and importing a field-test candidate still enters the full review chain rather than publication.
+
+`npm run check` passed locally. `/api/health` returned `ok:true`. GitHub Actions run `34863278117` for `2b9e4b8` completed with `success`.
+
+Latest ops note: `038-sol.md`.
+
+Next priority: keep the indexed field-test feed fresh only with actually verified public examples; do not fabricate engagement. Avoid further persistence/schema churn without a concrete requirement. Any future live-post work remains gated by 04, current human approval, rights/safety state, official provider capability and real credentials/scopes.
