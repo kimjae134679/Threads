@@ -3,8 +3,8 @@
   const TARGETS = Object.freeze({
     "threads-feed": Object.freeze({ provider: "threads", outputProfile: "reference-square", mediaKind: "image-carousel", maxItems: 20, implementation: "current" }),
     "instagram-feed": Object.freeze({ provider: "instagram", outputProfile: "reference-square", mediaKind: "image-carousel", maxItems: 10, implementation: "connector-required" }),
-    "instagram-reel": Object.freeze({ provider: "instagram", outputProfile: "vertical-video", mediaKind: "video", maxItems: 1, implementation: "planned" }),
-    "youtube-short": Object.freeze({ provider: "youtube", outputProfile: "vertical-video", mediaKind: "video", maxItems: 1, implementation: "planned" }),
+    "instagram-reel": Object.freeze({ provider: "instagram", outputProfile: "vertical-video", mediaKind: "video", maxItems: 1, implementation: "planned", renderImplementation: "ffmpeg-local", width: 1080, height: 1920, container: "mp4" }),
+    "youtube-short": Object.freeze({ provider: "youtube", outputProfile: "vertical-video", mediaKind: "video", maxItems: 1, implementation: "planned", renderImplementation: "ffmpeg-local", width: 1080, height: 1920, container: "mp4" }),
   });
 
   function capabilityState(connector = {}) {
@@ -61,6 +61,7 @@
       mediaCount: urls.length,
       mediaUrls: urls,
       capabilityState: targetCapability(targetId, connector),
+      renderImplementation: target?.renderImplementation || null,
       livePublishImplemented: target?.implementation === "current",
     };
   }
