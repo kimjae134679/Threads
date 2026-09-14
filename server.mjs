@@ -19,7 +19,7 @@ import {
   saveBufferThreadsChannel,
   publishThreadsViaBuffer,
 } from "./buffer.mjs";
-import { JsonStateStoreRegistry } from "./persistence.mjs";
+import { JsonStateStoreRegistry, STATE_SCHEMA_VERSION } from "./persistence.mjs";
 import { SqliteStateStoreRegistry } from "./persistence-sqlite.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -54,6 +54,19 @@ const server = http.createServer(async (req, res) => {
 
     if (url.pathname === "/api/health") {
       return json(res, 200, { ok: true, service: "threads-trend-inbox", now: new Date().toISOString() });
+    }
+
+    if (url.pathname === "/api/state/status") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      return json(res, 200, {
+        ok: true,
+        backend: PERSISTENCE_BACKEND,
+        stateSchemaVersion: STATE_SCHEMA_VERSION,
+        databaseSchemaVersion: PERSISTENCE_BACKEND === "sqlite" ? stateStores.migrationVersion() : null,
+        scopedNamespaces: true,
+        optimisticConcurrency: true,
+        secretFieldsPersisted: false,
+      });
     }
 
     if (url.pathname === "/api/state") {
