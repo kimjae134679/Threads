@@ -27,6 +27,38 @@ assert.equal(snapshot.profiles[0].id, "TH-A");
 assert.equal(snapshot.experiments[0].itemId, "a");
 assert.equal(snapshot.experiments[0].accountId, "TH-A");
 
+const multiState = { version: 1, items: [
+  { id: "a", experimentAssignment: { accountId: "TH-A", variantId: "A-new" } },
+  { id: "b", experimentAssignment: { accountId: "TH-B", variantId: "B-new" } },
+] };
+const accountA = model.makeScopedSnapshot(multiState, control, "TH-A", { profiles: [
+  { id: "TH-A", platform: "threads", name: "A" }, { id: "TH-B", platform: "threads", name: "B" },
+] });
+assert.deepEqual(JSON.parse(JSON.stringify(accountA.scope)), { kind: "account", id: "TH-A" });
+assert.equal(accountA.app.items.length, 0, "account scope must not duplicate shared workspace candidates");
+assert.deepEqual(JSON.parse(JSON.stringify(accountA.profiles.map((entry) => entry.id))), ["TH-A"]);
+assert.deepEqual(JSON.parse(JSON.stringify(accountA.experiments.map((entry) => entry.itemId))), ["a"]);
+assert.equal(accountA.scheduler.status, "running", "account scope must not carry workspace scheduler control");
+model.assertScope(accountA, "TH-A");
+assert.throws(() => model.assertScope(accountA, "TH-B"), /persistence_scope_mismatch/);
+assert.throws(() => model.assertScope(snapshot, "TH-A"), /persistence_scope_mismatch/, "workspace snapshot cannot be applied to account scope");
+assert.throws(() => model.normalizeScope({ kind: "workspace", id: "TH-A" }), /persistence_scope_invalid/);
+assert.throws(() => model.normalizeScope({ kind: "mystery", id: "TH-A" }), /persistence_scope_invalid_kind/);
+const poisoned = structuredClone(accountA); poisoned.experiments.push({ itemId: "b", accountId: "TH-B" });
+assert.throws(() => model.assertScope(poisoned, "TH-A"), /persistence_scope_cross_account/);
+
+const currentMixed = { version: 1, items: [
+  { id: "a", experimentAssignment: { accountId: "TH-A", variantId: "A-old" } },
+  { id: "b", experimentAssignment: { accountId: "TH-B", variantId: "B-keep" } },
+  { id: "c", experimentAssignment: { accountId: "TH-A", variantId: "A-remove" } },
+  { id: "d", title: "shared" },
+] };
+const restoredAccountA = model.restoreScopedAppState(currentMixed, accountA, "TH-A");
+assert.equal(restoredAccountA.items.find((item) => item.id === "a").experimentAssignment.variantId, "A-new");
+assert.equal(restoredAccountA.items.find((item) => item.id === "b").experimentAssignment.variantId, "B-keep");
+assert.equal(restoredAccountA.items.find((item) => item.id === "c").experimentAssignment, undefined);
+assert.equal(restoredAccountA.items.find((item) => item.id === "d").title, "shared");
+
 const legacy = model.migrateSnapshot({ version: 1, items: [{ id: "legacy" }] });
 assert.equal(legacy.schemaVersion, 2);
 assert.equal(legacy.source, "legacy-browser");

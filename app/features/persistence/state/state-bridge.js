@@ -48,7 +48,7 @@
     const scheduler = readJson(SCHEDULER_KEY, {});
     const profiles = window.ThreadsAccountRegistry?.list?.() || [];
     const experiments = model.experimentsFromItems(appState.items || []);
-    return model.makeSnapshot(appState, scheduler, { source: "browser-session", profiles, experiments });
+    return model.makeScopedSnapshot(appState, scheduler, currentNamespace(), { source: "browser-session", profiles, experiments });
   }
 
   function setStatus(message, tone = "info") {
@@ -58,9 +58,13 @@
 
   function setPreview(input, source) {
     preview = model.migrateSnapshot(input);
+    model.assertScope(preview, currentNamespace());
     previewSource = source;
     applyButton.disabled = false;
-    setStatus(`미리보기 준비: ${source} · 후보 ${preview.app.items.length}건 · 프로필 ${preview.profiles.length}개 · 실험 ${preview.experiments.length}개 · Scheduler ${preview.scheduler.status}`, "success");
+    const scopeText = preview.scope?.kind === "account"
+      ? `${preview.scope.id} 계정 scope · 공용 후보/Scheduler 미적용`
+      : "workspace 전체 scope";
+    setStatus(`미리보기 준비: ${source} · ${scopeText} · 후보 ${preview.app.items.length}건 · 프로필 ${preview.profiles.length}개 · 실험 ${preview.experiments.length}개`, "success");
   }
 
   function currentNamespace() { return namespaceSelect?.value || "default"; }
@@ -143,15 +147,20 @@
 
   function applyPreview() {
     if (!preview) return;
-    const appState = model.restoreAppState(preview);
+    const namespace = currentNamespace();
+    const currentApp = readJson(APP_KEY, { version: 1, items: [] });
+    const appState = model.restoreScopedAppState(currentApp, preview, namespace);
     localStorage.setItem(APP_KEY, JSON.stringify(appState));
-    localStorage.setItem(SCHEDULER_KEY, JSON.stringify({
-      state: preview.scheduler.status,
-      options: preview.scheduler.options,
-      history: preview.scheduler.history,
-      updatedAt: new Date().toISOString(),
-    }));
-    setStatus(`미리보기 적용 완료: ${previewSource}. 화면을 다시 불러옵니다.`, "success");
+    if (namespace === "default") {
+      localStorage.setItem(SCHEDULER_KEY, JSON.stringify({
+        state: preview.scheduler.status,
+        options: preview.scheduler.options,
+        history: preview.scheduler.history,
+        updatedAt: new Date().toISOString(),
+      }));
+    }
+    const scopeText = namespace === "default" ? "workspace 전체" : `${namespace} 계정 실험만`;
+    setStatus(`미리보기 적용 완료: ${previewSource} · ${scopeText}. 화면을 다시 불러옵니다.`, "success");
     setTimeout(() => location.reload(), 50);
   }
 

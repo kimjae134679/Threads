@@ -65,6 +65,34 @@
     return [...byItem.values()];
   }
 
+  function normalizeScope(value = {}) {
+    const kind = text(value?.kind, 32);
+    if (!kind) return { kind: "workspace", id: "default" };
+    if (kind === "workspace") {
+      const id = text(value?.id || "default", 80);
+      if (id !== "default") throw new Error(`persistence_scope_invalid:${kind}:${id}`);
+      return { kind: "workspace", id: "default" };
+    }
+    if (kind === "account") {
+      const id = text(value.id, 80);
+      if (!/^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$/.test(id)) throw new Error(`persistence_scope_invalid:${id || "empty"}`);
+      return { kind: "account", id };
+    }
+    throw new Error(`persistence_scope_invalid_kind:${kind}`);
+  }
+
+  function assertScope(snapshot = {}, namespace = "default") {
+    const expected = namespace === "default" ? { kind: "workspace", id: "default" } : { kind: "account", id: namespace };
+    const actual = normalizeScope(snapshot.scope || {});
+    if (actual.kind !== expected.kind || actual.id !== expected.id) {
+      throw new Error(`persistence_scope_mismatch:${actual.kind}:${actual.id}->${expected.kind}:${expected.id}`);
+    }
+    if (actual.kind === "account" && (snapshot.experiments || []).some((entry) => entry.accountId && entry.accountId !== actual.id)) {
+      throw new Error(`persistence_scope_cross_account:${actual.id}`);
+    }
+    return actual;
+  }
+
   function experimentsFromItems(items = []) {
     return normalizeExperiments((Array.isArray(items) ? items : []).map((item) => ({
       itemId: item?.id,
@@ -94,6 +122,7 @@
       exportedAt: meta.exportedAt || new Date().toISOString(),
       source: text(meta.source || "browser-session", 120),
       roleChain: [...ROLE_CHAIN],
+      scope: normalizeScope(meta.scope || {}),
       app: { version: Number(appState.version) || 1, items },
       scheduler: normalizeControl(schedulerControl),
       profiles: normalizeProfiles(meta.profiles || []),
@@ -124,6 +153,7 @@
       ...snapshot,
       schemaVersion: CURRENT_SCHEMA,
       roleChain: [...ROLE_CHAIN],
+      scope: normalizeScope(snapshot.scope || {}),
       app,
       scheduler: normalizeControl(snapshot.scheduler || {}),
       profiles: normalizeProfiles(snapshot.profiles || []),
@@ -140,9 +170,42 @@
     return applyExperiments(snapshot.app, snapshot.experiments);
   }
 
+  function makeScopedSnapshot(appState = {}, schedulerControl = {}, namespace = "default", meta = {}) {
+    if (!namespace || namespace === "default") return makeSnapshot(appState, schedulerControl, { ...meta, scope: { kind: "workspace", id: "default" } });
+    const full = makeSnapshot(appState, schedulerControl, meta);
+    const experiments = full.experiments.filter((entry) => entry.accountId === namespace);
+    const profiles = full.profiles.filter((entry) => entry.id === namespace);
+    const scoped = {
+      ...full,
+      source: text(meta.source || "browser-account-scope", 120),
+      scope: normalizeScope({ kind: "account", id: namespace }),
+      app: { version: full.app.version, items: [] },
+      scheduler: normalizeControl({}),
+      profiles,
+      experiments,
+    };
+    assertSafe(scoped); assertScope(scoped, namespace); return scoped;
+  }
+
+  function restoreScopedAppState(currentAppState = {}, input = {}, namespace = "default") {
+    const snapshot = migrateSnapshot(input);
+    if (!namespace || namespace === "default") { assertScope(snapshot, "default"); return restoreAppState(snapshot); }
+    assertScope(snapshot, namespace);
+    const next = clone(currentAppState || { version: 1, items: [] });
+    const replacements = new Map(snapshot.experiments.map((entry) => [entry.itemId, entry]));
+    next.items = (Array.isArray(next.items) ? next.items : []).map((item) => {
+      const current = item?.experimentAssignment;
+      const replacement = replacements.get(String(item?.id || ""));
+      if (replacement) { const { itemId, ...assignment } = replacement; return { ...item, experimentAssignment: assignment }; }
+      if (current?.accountId === namespace) { const copy = { ...item }; delete copy.experimentAssignment; return copy; }
+      return item;
+    });
+    return next;
+  }
+
   window.ThreadsPersistenceStateModel = {
     CURRENT_SCHEMA, OWNER, ROLE_CHAIN: [...ROLE_CHAIN], assertSafe, normalizeControl,
-    normalizeProfile, normalizeProfiles, normalizeExperiment, normalizeExperiments,
-    experimentsFromItems, applyExperiments, makeSnapshot, migrateSnapshot, restoreAppState,
+    normalizeProfile, normalizeProfiles, normalizeExperiment, normalizeExperiments, normalizeScope, assertScope,
+    experimentsFromItems, applyExperiments, makeSnapshot, makeScopedSnapshot, migrateSnapshot, restoreAppState, restoreScopedAppState,
   };
 })();
