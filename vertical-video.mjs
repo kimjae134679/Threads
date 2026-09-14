@@ -61,6 +61,7 @@ export async function renderVerticalVideo({
   if (images.length > 20) throw new Error("too_many_images");
   if (!outputPath || typeof outputPath !== "string") throw new Error("output_path_required");
   const duration = assertFinitePositive(secondsPerImage, "seconds_per_image");
+  const expectedDurationSeconds = images.length * duration;
   const verifiedImages = [];
   for (const path of images) verifiedImages.push(await ensureReadableFile(path));
 
@@ -87,6 +88,7 @@ export async function renderVerticalVideo({
       "-hide_banner", "-loglevel", "error", "-y",
       "-safe", "0", "-f", "concat", "-i", concatPath,
       "-vf", vf,
+      "-t", String(expectedDurationSeconds),
       "-c:v", "libx264",
       "-preset", "veryfast",
       "-pix_fmt", VERTICAL_VIDEO_PROFILE.pixelFormat,
@@ -104,7 +106,7 @@ export async function renderVerticalVideo({
       profile: { ...VERTICAL_VIDEO_PROFILE },
       imageCount: verifiedImages.length,
       secondsPerImage: duration,
-      expectedDurationSeconds: verifiedImages.length * duration,
+      expectedDurationSeconds,
       audioIncluded: false,
       publishReady: false,
       reviewRequired: true,
