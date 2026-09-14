@@ -66,7 +66,7 @@
       return;
     }
     const review = item.verticalVideoRightsReview || {};
-    const nextRightsContext = `${item.id}:${item.cardFactory?.updatedAt || ""}`;
+    const nextRightsContext = item.id;
     if (nextRightsContext !== rightsContext) {
       rightsContext = nextRightsContext;
       rightsSelect.dataset.dirty = "false";
