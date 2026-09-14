@@ -27,7 +27,9 @@ app/
 │  │  ├─ trends/               # Google Trends
 │  │  ├─ youtube/              # YouTube metadata
 │  │  ├─ clustering/           # 유사 토픽
-│  │  └─ viral/                # Viral Finder / Comfort / batch review
+│  │  ├─ sources/              # 다중 플랫폼 source registry/분류
+│  │  ├─ comfort/              # Audience Comfort
+│  │  └─ viral/                # Viral Finder / batch review
 │  ├─ themes/
 │  │  ├─ theme-taxonomy.js     # 테마 목록·키워드 설정
 │  │  ├─ theme-model.js        # 자동 분류·정규화
@@ -40,14 +42,15 @@ app/
 │  ├─ production/
 │  │  ├─ drafts/               # AI Draft Studio
 │  │  ├─ strategy/             # format/hook/CTA/asset metadata
-│  │  └─ cards/                # Community Card Factory
+│  │  └─ cards/                # Community Card Factory / privacy mask
 │  ├─ publish/
 │  │  ├─ approval/             # approval integrity
-│  │  └─ threads/              # Threads publisher
+│  │  ├─ threads/              # direct Threads API publisher
+│  │  └─ buffer/               # optional Buffer queue/schedule publisher
 │  ├─ warehouse/
 │  │  ├─ model/                # queue eligibility/scoring
 │  │  ├─ ui/                   # warehouse UI
-│  │  └─ scheduler/            # 예약 게시 (다음 구현)
+│  │  └─ scheduler/            # 예약 게시 planner/executor
 │  └─ experiments/
 │     ├─ accounts/             # account registry/assignment
 │     └─ lab/                  # metrics / KEEP KILL SCALE
@@ -97,12 +100,15 @@ item.cardFactory            03 PRODUCTION
 item.contentStrategy        03 PRODUCTION
 item.safetyGate             04 REVIEW
 item.publishApproval        04 REVIEW
-item.publications[]         04 PUBLISH
+item.publications[]         04 PUBLISH / 실제 게시 확인 기록
+item.bufferDeliveries[]     04 PUBLISH / Buffer 예약·전달 기록
 item.warehouse              Warehouse 운영 메타
 item.experimentAssignment   05 EXPERIMENTS
 ```
 
 다른 기능의 필드를 조용히 수정하지 않는다. 예를 들어 Theme UI는 `item.themeClassification`만 수정하며 `item.researchBundle`이나 `item.safetyGate`를 수정하지 않는다.
+
+`item.bufferDeliveries[]`와 `item.publications[]`도 구분한다. Buffer에 예약 요청을 넣었다고 실제 Threads 게시 완료로 간주하지 않는다. 외부 상태를 확인한 뒤 실제 sent 게시만 publication으로 승격한다.
 
 ## 콘텐츠 변경 vs 운영 메타데이터
 
@@ -120,21 +126,24 @@ item.experimentAssignment   05 EXPERIMENTS
 - 테마 분류
 - Warehouse HOT/EVERGREEN
 - Warehouse priority/hold/notBefore/expiry
+- Buffer queue/schedule delivery record
 - 성과 수집 메타데이터
 
 ## Bootstrap 규칙
 
 `app/bootstrap/feature-loader.js`가 동적 기능의 로딩 순서를 소유한다.
 
-현재 순서:
+현재 주요 순서:
 
 ```text
 production strategy
 → experiment metadata
 → themes
-→ viral finder
+→ discovery sources
+→ viral finder / comfort / bulk review
 → community cards
 → warehouse
+→ buffer publisher
 ```
 
 새 기능은 다른 파일에서 임의로 `<script>`를 연쇄 삽입하지 말고 bootstrap 목록에 등록한다.
@@ -164,13 +173,14 @@ item.themeClassification = {
 한 번에 다 옮기지 않는다.
 
 1. `themes/` — 신규 구조로 시작 ✅
-2. `discovery/viral/` — 기존 viral model/UI/style 이동
-3. `production/cards/` — card story/render UI 이동
-4. `warehouse/` — queue model/UI 이동
-5. `experiments/` — account/lab 이동
-6. `editorial/` — research/safety 이동
-7. `publish/` — Threads publisher 이동
-8. 마지막에 `app.js`를 `core/state + core/ui`로 분해
-9. root legacy 파일이 없어지면 호환 로더 제거
+2. `discovery/sources/comfort/bulk review` — 신규 구조 적용 중 ✅
+3. 기존 root `viral-*` → `discovery/viral/`
+4. 기존 root `card-*` → `production/cards/`
+5. `warehouse/` — queue model/UI 이동
+6. `experiments/` — account/lab 이동
+7. `editorial/` — research/safety 이동
+8. `publish/` — direct Threads publisher 이동; Buffer는 이미 신규 구조 적용 ✅
+9. 마지막에 `app.js`를 `core/state + core/ui`로 분해
+10. root legacy 파일이 없어지면 호환 로더 제거
 
 각 단계마다 `npm run check`와 GitHub Actions smoke test가 통과해야 다음 단계로 넘어간다.
