@@ -94,12 +94,17 @@ assert.equal(model.inferSourceId({ url: "https://cafe.naver.com/test" }), "naver
     sourceMeta: { likeCount: 14647, publishedAt: "2026-09-03T00:00:00Z" },
   });
   assert.equal(normalized.sourceId, "reddit");
+  assert.equal(normalized.discoveryPriority, "normal");
   assert.equal(normalized.manualCaptureRequired, true);
   assert.equal(normalized.bulkBodyCollectionAllowed, false);
   assert.equal(normalized.engagementEvidence.observed.likes.value, 14647);
   assert.equal(normalized.sourceRisk, "yellow");
 }
 
+const koreanPrimary = model.listSources().filter((source) => source.discoveryPriority === "primary-korean");
+assert.ok(koreanPrimary.length >= 10, "Korean communities should remain first-class discovery sources");
+assert.ok(koreanPrimary.some((source) => source.id === "dcinside"));
+assert.ok(koreanPrimary.some((source) => source.id === "blind"));
 assert.ok(model.listSources().length >= 20, "source registry should stay broad");
 assert.ok(model.listLanes().length >= 10, "theme discovery lanes should stay broad");
 

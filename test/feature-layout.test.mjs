@@ -21,6 +21,7 @@ const requiredFiles = [
   "app/features/discovery/comfort/comfort-model.js",
   "app/features/discovery/comfort/comfort-review.js",
   "app/features/discovery/comfort/comfort-review.css",
+  "app/features/production/media/source-asset-model.js",
   "app/features/production/cards/privacy-mask-model.js",
   "app/features/production/cards/privacy-mask.js",
   "app/features/publish/buffer/buffer-publish-model.js",
@@ -54,6 +55,7 @@ for (const expected of [
   "features/discovery/comfort/comfort-model.js",
   "features/discovery/comfort/comfort-review.js",
   "features/discovery/comfort/comfort-review.css",
+  "features/production/media/source-asset-model.js",
   "card-story-model.js",
   "features/production/cards/privacy-mask-model.js",
   "features/production/cards/privacy-mask.js",
@@ -84,6 +86,11 @@ for (const expected of ["viralReadyBtn","Comfort gate","comfort-inline-row","com
 }
 assert.ok(comfortReview.includes("observer.observe(viralList, { childList: true, subtree: false })"), "Comfort viral observer must not watch its own subtree decorations");
 assert.ok(comfortReview.includes("existing.innerHTML !== html"), "Comfort row decoration must be idempotent");
+
+const sourceReview = fs.readFileSync(new URL("../app/features/discovery/sources/source-review.js", import.meta.url), "utf8");
+assert.ok(sourceReview.includes("let patchQueued = false"), "Source Review queue must coalesce repeated MutationObserver patches");
+assert.ok(sourceReview.includes("new MutationObserver(queuePatch).observe(candidateList, { childList: true })"), "Source Review observer must watch list replacement only, not decorated subtrees");
+assert.ok(sourceReview.includes("queueMicrotask(() =>"), "Source Review patches must yield through one queued microtask");
 
 const bulkModel = fs.readFileSync(new URL("../app/features/discovery/viral/bulk-review-model.js", import.meta.url), "utf8");
 for (const expected of ["editorial-handoff","editorialPacket","mayAdvance","reviewTags","bulkReview","normalizeTag","remove-tag","summarize"]) {

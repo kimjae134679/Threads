@@ -114,9 +114,11 @@
   }
 
   function renderMatrix() {
-    matrix.innerHTML = model.listSources().map((source) => `
+    const priorityRank = { "primary-korean": 0, "secondary-korean": 1, normal: 2 };
+    const orderedSources = model.listSources().sort((a, b) => (priorityRank[a.discoveryPriority || "normal"] ?? 2) - (priorityRank[b.discoveryPriority || "normal"] ?? 2) || a.label.localeCompare(b.label, "ko"));
+    matrix.innerHTML = orderedSources.map((source) => `
       <article class="discovery-source-row">
-        <div><strong>${escapeHtml(source.label)}</strong><small>${escapeHtml(source.family)}</small></div>
+        <div><strong>${escapeHtml(source.label)}</strong><small>${escapeHtml(source.family)}${source.discoveryPriority === "primary-korean" ? " · 한국 우선" : ""}</small></div>
         <span class="pill ${adapterTone(source.adapter)}">${escapeHtml(adapterLabel(source.adapter))}</span>
         <span>${escapeHtml(modeLabel(source.mode))}</span>
         <p>${escapeHtml(source.note)}</p>
@@ -231,6 +233,7 @@
       ${evidenceChip(normalized.engagementEvidence)}
       ${exactCounts.get(itemId) > 1 ? `<span class="discovery-mode-chip">완전중복 ×${exactCounts.get(itemId)}</span>` : ""}
       ${!exactCounts.get(itemId) && storyCounts.get(itemId) > 1 ? `<span class="discovery-mode-chip">같은소재 ×${storyCounts.get(itemId)}</span>` : ""}
+      ${normalized.discoveryPriority === "primary-korean" ? '<span class="discovery-mode-chip">한국 우선</span>' : ""}
       ${source.manualCapture ? '<span class="discovery-mode-chip">원문 수동확인</span>' : ""}
     `;
   }

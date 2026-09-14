@@ -44,15 +44,19 @@ const item = {
     excerpt: "작성자 이메일은 someone@example.com 이었다",
   }, 2);
   assert.equal(storyboard.width, 1080);
-  assert.equal(storyboard.height, 1350);
-  assert.equal(storyboard.schemaVersion, 2);
+  assert.equal(storyboard.height, 1080);
+  assert.equal(storyboard.schemaVersion, 3);
   assert.equal(storyboard.privacy.textPiiMasked, true);
   assert.equal(storyboard.privacy.imageMaskingRequired, true);
   assert.equal(storyboard.cards[0].type, "hook");
+  assert.equal(storyboard.renderProfile, "reference-square");
+  assert.equal(storyboard.assetPolicy.generatedImageFallback, false);
+  assert.equal(storyboard.cards[0].backgroundMode, "blurred-source-image");
   assert.equal(storyboard.cards.filter((card) => card.type === "capture-image").length, 2);
+  assert.equal(storyboard.cards.length, 3);
   assert.ok(!JSON.stringify(storyboard).includes("someone@example.com"));
   assert.ok(!JSON.stringify(storyboard).includes("010-9999-1111"));
-  assert.equal(storyboard.cards.at(-1).type, "ending");
+  assert.equal(storyboard.cards.at(-1).type, "capture-image");
   assert.equal(model.validateStoryboard(storyboard).ok, true);
 }
 
@@ -60,7 +64,14 @@ const item = {
   const invalid = model.validateStoryboard({ cards: [{ type: "excerpt" }] });
   assert.equal(invalid.ok, false);
   assert.ok(invalid.issues.includes("hook_first_required"));
-  assert.ok(invalid.issues.includes("ending_required"));
+  assert.ok(invalid.issues.includes("hook_first_required"));
+}
+
+{
+  const noAsset = model.buildStoryboard(item, {}, 0);
+  assert.equal(model.validateStoryboard(noAsset).ok, false);
+  assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_cover_required"));
+  assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_slide_required"));
 }
 
 console.log("Card storyboard regression tests passed.");

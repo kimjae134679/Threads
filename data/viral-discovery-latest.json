@@ -1,29 +1,33 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T22:28:00+09:00",
+  "generatedAt": "2026-09-15T01:54:54+09:00",
   "sourceMode": "public-indexed-discovery",
   "notes": "Current field-test feed. Stores public discovery metadata, observed reaction counts from public indexes, and short editorial notes only. It does not bulk-copy third-party post bodies or media. Rights, privacy, source and fact review remain required before production.",
   "items": [
     {
-      "sourceKey": "waglenet:iphone-duo-cross-community:20260913",
-      "title": "아이폰 Duo 가격 충격이 판·디시·뽐뿌까지 번진 사례",
-      "url": "https://www.apple.com/kr/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "sourceKey": "reddit:iphone-duo-announcement:1wbsyos",
+      "title": "폴더블 iPhone Duo 발표 글이 r/iPhone에서 8천+ 반응을 받은 사례",
+      "url": "https://www.reddit.com/r/iphone/comments/1wbsyos/apple_announces_foldable_iphone_duo/",
       "kind": "product",
       "sourceType": "public-indexed-community",
       "sourceRisk": "yellow",
       "collectionAllowed": false,
       "manualCaptureOnly": true,
-      "note": "와글넷 공개 핫이슈 인덱스에서 '아이폰 듀오' 이슈가 판/디시/뽐뿌 3개 커뮤니티로 확산된 것으로 관측됨. 공개 인덱스 기준 59,191 조회·60 댓글·HOT 1위. Apple 공식 Newsroom에서 iPhone Duo 자체와 미국 시작가 $1,999는 별도 확인됨. 한국 가격 329만원 표기는 공식 KR 가격 페이지 재확인 전 카드에서 단정하지 않는다.",
+      "note": "2026-09-15 공개 Reddit 결과에서 r/iPhone 원문 8,238 votes를 확인. Apple 공식 Newsroom에서 첫 폴더블 iPhone, 10월 16일 사전 주문, 10월 23일 출시를 확인. 실제 제작은 생성 이미지가 아니라 공식/원문 이미지 확보 후 1080x1080 레퍼런스 형식을 사용한다.",
       "sourceMeta": {
-        "sourceId": "other_public",
-        "provider": "Waglenet public hot-issue index + Apple Newsroom verification",
-        "community": "판 / DCInside / Ppomppu cross-community",
-        "viewCount": 59191,
-        "commentCount": 60,
-        "rank": 1,
-        "publishedAt": "2026-09-13T12:00:00+09:00",
-        "collectedAt": "2026-09-14T22:28:00+09:00",
-        "storyGroup": "iphone-duo-price-wave"
+        "sourceId": "reddit",
+        "provider": "Reddit public post + Apple Newsroom verification",
+        "community": "r/iPhone",
+        "likeCount": 8238,
+        "publishedAt": "2026-09-09T00:00:00Z",
+        "collectedAt": "2026-09-15T01:54:54+09:00",
+        "storyGroup": "iphone-duo-announcement"
+      },
+      "assetPlan": {
+        "status": "ASSETS_PENDING",
+        "generatedImageFallback": false,
+        "primarySourcePage": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "renderProfile": "reference-square"
       }
     },
     {

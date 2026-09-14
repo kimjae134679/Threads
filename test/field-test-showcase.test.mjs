@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import fs from "node:fs";
 import vm from "node:vm";
 
@@ -23,12 +23,21 @@ const model = sandbox.window.ThreadsFieldTestModel;
 const items = model.normalize(field, discovery);
 assert.equal(items.length, field.items.length);
 assert.equal(items.every((item) => item.demoOnly && item.productionEligible === false), true);
-assert.equal(items[0].sourceEvidence.views, 59191);
-assert.equal(items[0].sourceEvidence.comments, 60);
-assert.equal(items[0].sourceEvidence.rank, 1);
-assert.match(items[0].sourceUrl, /^https:\/\//);
-assert.equal(items[2].sourceEvidence.votes, 165);
-assert.equal(items[2].sourceEvidence.views, null);
+
+const directReddit = items.find((item) => item.sourceKey === "reddit:iphone-duo-announcement:1wbsyos");
+assert.ok(directReddit);
+assert.equal(directReddit.sourceEvidence.votes, 8238);
+assert.equal(directReddit.sourceEvidence.views, null);
+assert.match(directReddit.sourceUrl, /^https:\/\/www\.reddit\.com\//);
+assert.equal(directReddit.storyboard.renderProfile, "reference-square");
+assert.equal(directReddit.storyboard.width, 1080);
+assert.equal(directReddit.storyboard.height, 1080);
+assert.equal(directReddit.storyboard.assetPolicy.generatedImageFallback, false);
+
+const millennials = items.find((item) => item.sourceKey === "reddit:millennials-workplace-age-gap:1wbom2p");
+assert.ok(millennials);
+assert.equal(millennials.sourceEvidence.votes, 165);
+assert.equal(millennials.sourceEvidence.views, null);
 assert.ok(items.every((item) => item.storyboard.cards.length >= 3));
 
 assert.throws(() => model.normalize({ ...field, demoOnly: false }, discovery), /field_test_must_be_demo_only/);

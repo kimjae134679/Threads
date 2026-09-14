@@ -66,7 +66,8 @@
     {
       id: "community-cards",
       scripts: [
-        "./card-story-model.js",
+                "./features/production/media/source-asset-model.js",
+"./card-story-model.js",
         "./card-factory.js",
         "./features/production/cards/privacy-mask-model.js",
         "./features/production/cards/privacy-mask.js",

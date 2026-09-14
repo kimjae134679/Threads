@@ -211,6 +211,7 @@
       sourceLabel: resolvedSource.label,
       sourceFamily: resolvedSource.family,
       adapter: resolvedSource.adapter,
+      discoveryPriority: resolvedSource.discoveryPriority || "normal",
       collectionMode: resolvedSource.mode,
       manualCaptureRequired: Boolean(resolvedSource.manualCapture),
       bulkBodyCollectionAllowed: Boolean(resolvedSource.bulkBodyCollection),

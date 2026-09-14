@@ -84,22 +84,39 @@
       source: safeCardText(capture.source || base.source, 70),
     };
 
-    const cards = [{ type: "hook", title: merged.hook, body: "", source: merged.source }];
-
     const count = Math.max(0, Math.min(10, Number(imageCount) || 0));
+    const cards = [{
+      type: "hook",
+      title: merged.hook,
+      body: "",
+      source: merged.source,
+      backgroundImageIndex: count ? 0 : null,
+      backgroundMode: count ? "blurred-source-image" : "missing-source-image",
+    }];
+
     for (let index = 0; index < count; index += 1) {
-      cards.push({ type: "capture-image", title: count > 1 ? `원문 ${index + 1}` : "원문", body: "", imageIndex: index, source: merged.source });
+      cards.push({
+        type: "capture-image",
+        title: count > 1 ? `원문 ${index + 1}` : "원문",
+        body: "",
+        imageIndex: index,
+        source: merged.source,
+        fit: "contain",
+        backgroundMode: "blurred-duplicate",
+      });
     }
 
-    if (merged.excerpt) cards.push({ type: "excerpt", title: "핵심 내용", body: merged.excerpt, source: merged.source });
-    if (merged.followup) cards.push({ type: "followup", title: "여기서 포인트", body: merged.followup, source: merged.source });
-    if (merged.reactions.length) cards.push({ type: "reactions", title: "반응", body: merged.reactions.join("\n"), source: merged.source });
-    if (merged.ending) cards.push({ type: "ending", title: merged.ending, body: "", source: merged.source });
-
     return {
-      schemaVersion: 2,
+      schemaVersion: 3,
+      renderProfile: "reference-square",
       width: 1080,
-      height: 1350,
+      height: 1080,
+      assetPolicy: {
+        sourceImageRequired: true,
+        generatedImageFallback: false,
+        firstAssetUsedAsBlurredCover: true,
+        selectedAssetOrderIsCarouselOrder: true,
+      },
       privacy: {
         textPiiMasked: true,
         imageMaskingRequired: count > 0,
@@ -114,10 +131,16 @@
     const issues = [];
     if (!cards.length) issues.push("card_missing");
     if (cards[0]?.type !== "hook") issues.push("hook_first_required");
-    if (!cards.some((card) => card.type === "ending")) issues.push("ending_required");
-    if (cards.length > 12) issues.push("too_many_cards");
+    if (storyboard.renderProfile === "reference-square") {
+      if (storyboard.width !== 1080 || storyboard.height !== 1080) issues.push("reference_square_size_required");
+      if (cards[0]?.backgroundMode !== "blurred-source-image") issues.push("source_image_cover_required");
+      if (!cards.some((card) => card.type === "capture-image")) issues.push("source_image_slide_required");
+      if (storyboard.assetPolicy?.generatedImageFallback !== false) issues.push("generated_image_fallback_must_be_disabled");
+    }
+    if (cards.length > 11) issues.push("too_many_cards");
     return { ok: issues.length === 0, issues };
   }
+
 
   window.ThreadsCardStoryModel = {
     lines,

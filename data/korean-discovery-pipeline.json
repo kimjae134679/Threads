@@ -1,0 +1,32 @@
+﻿{
+  "schemaVersion": 1,
+  "goal": ["instagram-feed", "threads", "instagram-reels", "youtube-shorts"],
+  "prioritySources": [
+    "dcinside", "blind", "fmkorea", "theqoo", "instiz", "clien",
+    "ruliweb", "inven", "ppomppu", "arca", "naver_cafe", "daum_cafe"
+  ],
+  "sourceModes": {
+    "dcinside": "public-index-or-permitted-browser-capture-plus-manual",
+    "blind": "public-index-plus-manual-screenshot",
+    "defaultKoreanCommunity": "public-index-or-permitted-browser-capture-plus-manual"
+  },
+  "screenshotInput": {
+    "accepted": true,
+    "multiImage": true,
+    "urlRecommended": true,
+    "postUploadAutomation": [
+      "vision-text-extraction",
+      "asset-segmentation",
+      "privacy-review-suggestions",
+      "square-feed-render",
+      "caption-draft",
+      "source-manifest",
+      "vertical-video-handoff"
+    ],
+    "humanReviewRequired": ["privacy", "rights", "safety", "publish"]
+  },
+  "outputs": {
+    "feed": {"size": "1080x1080", "targets": ["instagram-feed", "instagram-carousel", "threads-carousel"]},
+    "video": {"size": "1080x1920", "format": "mp4", "targets": ["instagram-reels", "youtube-shorts"], "status": "renderer-not-yet-implemented"}
+  }
+}

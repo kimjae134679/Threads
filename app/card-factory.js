@@ -15,7 +15,7 @@
     <div class="card-factory-head">
       <div>
         <h3>Community Card Factory</h3>
-        <p>선택한 커뮤니티/바이럴 소재를 1080×1350 카드 스토리로 구성합니다. 원문 캡처 파일은 브라우저 세션에서만 사용하고 저장소나 localStorage에 넣지 않습니다.</p>
+        <p>레퍼런스 기준으로 실제 원문 이미지를 사용하는 1080×1080 캐러셀을 만듭니다. 1장은 첫 원문 이미지를 크게 블러 처리한 배경 + 큰 훅, 2장부터는 선택한 실제 원문 이미지를 순서대로 배치합니다. 생성 이미지는 기본 경로에서 사용하지 않습니다.</p>
       </div>
       <span id="cardFactoryBadge" class="pill neutral">미생성</span>
     </div>
@@ -32,13 +32,14 @@
       <span id="cardImageStatus">캡처 없음</span>
       <label>템플릿
         <select id="cardTemplate">
-          <option value="dark">Dark Viral</option>
-          <option value="paper">Paper Story</option>
-          <option value="signal">Signal News</option>
+          <option value="reference-square">Reference Square · 기본</option>
+          <option value="dark">Legacy Dark</option>
+          <option value="paper">Legacy Paper</option>
+          <option value="signal">Legacy Signal</option>
         </select>
       </label>
     </div>
-    <div class="card-factory-warning">원문 캡처에 실명·닉네임·얼굴·전화번호 등 개인정보가 있으면 게시 전에 반드시 가림 처리해야 합니다. 현재 MVP는 자동 OCR/PII 마스킹을 완료했다고 간주하지 않습니다.</div>
+    <div class="card-factory-warning">첫 번째로 선택한 원문 이미지가 1장 블러 배경이 되고, 같은 이미지가 2장 원문으로 다시 들어갑니다. 그 뒤 선택 순서가 그대로 캐러셀 순서입니다. 자동 OCR/권리확보를 했다고 간주하지 않으며 개인정보·초상·저작권 검토를 통과해야 게시할 수 있습니다.</div>
     <div class="card-factory-actions">
       <button id="cardAutofillBtn" type="button" class="button ghost">현재 자료로 자동 채우기</button>
       <button id="cardBuildBtn" type="button" class="button primary">카드 미리보기 생성</button>
@@ -100,7 +101,7 @@
     reactions.value = Array.isArray(capture.reactions) ? capture.reactions.join("\n") : "";
     ending.value = capture.ending || "";
     source.value = capture.source || "";
-    template.value = saved.template || "dark";
+    template.value = saved.template || "reference-square";
     currentStoryboard = saved.storyboard || null;
     imageInput.value = "";
     imageStatus.textContent = saved.captureImageNames?.length
@@ -164,6 +165,11 @@
       return;
     }
 
+    if (!localImages.length) {
+      showSystemMessage("레퍼런스 형식은 실제 원문 이미지가 최소 1장 필요합니다. 먼저 원문 이미지/캡처를 선택하세요.", "error");
+      return;
+    }
+
     currentStoryboard = model.buildStoryboard(item, captureFromInputs(), localImages.length);
     const validation = model.validateStoryboard(currentStoryboard);
     if (!validation.ok) {
@@ -211,97 +217,106 @@
     ctx.fillStyle = palette.bg;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if (template.value === "signal") {
-      ctx.fillStyle = palette.accent;
-      ctx.fillRect(0, 0, 28, canvas.height);
-    }
-
-    ctx.fillStyle = palette.muted;
-    ctx.font = "600 32px system-ui, sans-serif";
-    ctx.textAlign = "left";
-    ctx.fillText(card.source || "SOURCE", 78, 78);
-    ctx.textAlign = "right";
-    ctx.fillText(`${index + 1} / ${total}`, canvas.width - 78, 78);
-    ctx.textAlign = "left";
-
-    if (card.type === "capture-image") {
-      drawCaptureImage(ctx, localImages[card.imageIndex]?.image, card, palette);
-      drawFooter(ctx, palette);
+    if (card.type === "hook") {
+      drawHookCard(ctx, localImages[card.backgroundImageIndex]?.image, card, index, total, palette);
       return;
     }
 
-    if (card.type === "hook" || card.type === "ending") {
-      ctx.fillStyle = palette.accent;
-      roundRect(ctx, 78, 170, 150, 54, 27);
-      ctx.fill();
-      ctx.fillStyle = palette.accentText;
-      ctx.font = "800 27px system-ui, sans-serif";
-      ctx.fillText(card.type === "hook" ? "STORY" : "YOUR TAKE", 105, 207);
-
-      ctx.fillStyle = palette.text;
-      const fontSize = card.title.length > 70 ? 72 : card.title.length > 42 ? 84 : 96;
-      ctx.font = `900 ${fontSize}px system-ui, sans-serif`;
-      drawWrapped(ctx, card.title, 78, 340, canvas.width - 156, fontSize * 1.24, 8);
-      drawFooter(ctx, palette);
+    if (card.type === "capture-image") {
+      drawCaptureImage(ctx, localImages[card.imageIndex]?.image, card, index, total, palette);
       return;
     }
 
     ctx.fillStyle = palette.text;
     ctx.font = "900 64px system-ui, sans-serif";
-    drawWrapped(ctx, card.title || "", 78, 190, canvas.width - 156, 78, 3);
-
-    ctx.fillStyle = palette.panel;
-    roundRect(ctx, 68, 365, canvas.width - 136, 760, 34);
-    ctx.fill();
-
-    const bodyLines = String(card.body || "").split(/\n+/).map((line) => line.trim()).filter(Boolean);
-    let y = 435;
-    const bodyFont = bodyLines.join(" ").length > 460 ? 38 : 44;
-    ctx.font = `650 ${bodyFont}px system-ui, sans-serif`;
-    ctx.fillStyle = palette.panelText;
-    for (const [lineIndex, line] of bodyLines.entries()) {
-      if (y > 1040) break;
-      if (card.type === "reactions") {
-        ctx.fillStyle = palette.accent;
-        ctx.beginPath();
-        ctx.arc(112, y - 12, 10, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = palette.panelText;
-        y = drawWrapped(ctx, line, 145, y, canvas.width - 245, bodyFont * 1.45, 3) + 28;
-      } else {
-        y = drawWrapped(ctx, line, 112, y, canvas.width - 224, bodyFont * 1.5, 5) + (lineIndex < bodyLines.length - 1 ? 30 : 0);
-      }
-    }
-    drawFooter(ctx, palette);
+    drawWrapped(ctx, card.title || "", 78, 180, canvas.width - 156, 78, 3);
+    drawFooter(ctx, palette, card.source);
   }
 
-  function drawCaptureImage(ctx, image, card, palette) {
-    ctx.fillStyle = palette.text;
-    ctx.font = "900 58px system-ui, sans-serif";
-    ctx.fillText(card.title || "원문", 78, 185);
-    const x = 70;
-    const y = 250;
-    const w = 940;
-    const h = 920;
-    ctx.fillStyle = palette.panel;
-    roundRect(ctx, x, y, w, h, 28);
-    ctx.fill();
+  function drawHookCard(ctx, image, card, index, total, palette) {
+    if (image) {
+      ctx.save();
+      ctx.filter = "blur(34px) brightness(0.58)";
+      drawCover(ctx, image, -70, -70, ctx.canvas.width + 140, ctx.canvas.height + 140);
+      ctx.restore();
+    } else {
+      ctx.fillStyle = "#14161a";
+      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    }
+
+    const gradient = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height);
+    gradient.addColorStop(0, "rgba(0,0,0,0.20)");
+    gradient.addColorStop(0.58, "rgba(0,0,0,0.44)");
+    gradient.addColorStop(1, "rgba(0,0,0,0.78)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    ctx.fillStyle = "rgba(255,255,255,0.88)";
+    ctx.font = "700 28px system-ui, sans-serif";
+    ctx.fillText(card.source || "SOURCE", 68, 68);
+    ctx.textAlign = "right";
+    ctx.fillText(`${index + 1} / ${total}`, ctx.canvas.width - 68, 68);
+    ctx.textAlign = "left";
+
+    ctx.fillStyle = "#ffffff";
+    const title = String(card.title || "");
+    const fontSize = title.length > 62 ? 72 : title.length > 38 ? 82 : 94;
+    ctx.font = `900 ${fontSize}px system-ui, sans-serif`;
+    drawWrapped(ctx, title, 72, 520, ctx.canvas.width - 144, fontSize * 1.17, 5);
+
+    ctx.fillStyle = "rgba(255,255,255,0.72)";
+    ctx.font = "650 25px system-ui, sans-serif";
+    ctx.fillText("실제 원문 이미지 기반 · 게시 전 검수", 72, ctx.canvas.height - 60);
+  }
+
+  function drawCaptureImage(ctx, image, card, index, total, palette) {
     if (!image) {
+      ctx.fillStyle = palette.bg;
+      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       ctx.fillStyle = palette.muted;
-      ctx.font = "600 40px system-ui, sans-serif";
+      ctx.font = "600 36px system-ui, sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("원문 캡처 파일을 다시 선택하세요", canvasCenter(ctx), y + h / 2);
+      ctx.fillText("원문 이미지 파일을 다시 선택하세요", canvasCenter(ctx), ctx.canvas.height / 2);
       ctx.textAlign = "left";
       return;
     }
-    const innerX = x + 28;
-    const innerY = y + 28;
-    const innerW = w - 56;
-    const innerH = h - 56;
-    const scale = Math.min(innerW / image.naturalWidth, innerH / image.naturalHeight);
+
+    ctx.save();
+    ctx.filter = "blur(30px) brightness(0.62)";
+    drawCover(ctx, image, -60, -60, ctx.canvas.width + 120, ctx.canvas.height + 120);
+    ctx.restore();
+    ctx.fillStyle = "rgba(0,0,0,0.30)";
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    ctx.fillStyle = "rgba(255,255,255,0.90)";
+    ctx.font = "700 24px system-ui, sans-serif";
+    ctx.fillText(card.source || "SOURCE", 48, 52);
+    ctx.textAlign = "right";
+    ctx.fillText(`${index + 1} / ${total}`, ctx.canvas.width - 48, 52);
+    ctx.textAlign = "left";
+
+    const x = 44;
+    const y = 78;
+    const w = ctx.canvas.width - 88;
+    const h = ctx.canvas.height - 132;
+    ctx.fillStyle = "rgba(0,0,0,0.30)";
+    roundRect(ctx, x - 4, y - 4, w + 8, h + 8, 24);
+    ctx.fill();
+    drawContain(ctx, image, x, y, w, h);
+  }
+
+  function drawCover(ctx, image, x, y, w, h) {
+    const scale = Math.max(w / image.naturalWidth, h / image.naturalHeight);
     const drawW = image.naturalWidth * scale;
     const drawH = image.naturalHeight * scale;
-    ctx.drawImage(image, innerX + (innerW - drawW) / 2, innerY + (innerH - drawH) / 2, drawW, drawH);
+    ctx.drawImage(image, x + (w - drawW) / 2, y + (h - drawH) / 2, drawW, drawH);
+  }
+
+  function drawContain(ctx, image, x, y, w, h) {
+    const scale = Math.min(w / image.naturalWidth, h / image.naturalHeight);
+    const drawW = image.naturalWidth * scale;
+    const drawH = image.naturalHeight * scale;
+    ctx.drawImage(image, x + (w - drawW) / 2, y + (h - drawH) / 2, drawW, drawH);
   }
 
   function canvasCenter(ctx) {
@@ -317,6 +332,7 @@
   }
 
   function paletteFor(name) {
+    if (name === "reference-square") return { bg: "#101114", text: "#ffffff", muted: "#d8dbe2", panel: "#17191e", panelText: "#ffffff", accent: "#ffffff", accentText: "#111217" };
     if (name === "paper") return { bg: "#f2efe8", text: "#171717", muted: "#6e6a63", panel: "#ffffff", panelText: "#202020", accent: "#171717", accentText: "#ffffff" };
     if (name === "signal") return { bg: "#f7f8fb", text: "#14171d", muted: "#616975", panel: "#ffffff", panelText: "#1d2229", accent: "#2457ff", accentText: "#ffffff" };
     return { bg: "#101114", text: "#f7f7f8", muted: "#9b9fa8", panel: "#1d2026", panelText: "#f1f2f4", accent: "#f2ff57", accentText: "#111217" };
@@ -370,7 +386,8 @@
     const previous = item.cardFactory || {};
     const privacy = window.ThreadsCardPrivacyMask?.exportEnvelope?.() || null;
     const next = {
-      schemaVersion: 2,
+      schemaVersion: 3,
+      renderProfile: "reference-square",
       template: template.value,
       capture: currentStoryboard.capture,
       storyboard: currentStoryboard,
