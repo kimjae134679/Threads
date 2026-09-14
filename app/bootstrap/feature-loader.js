@@ -57,7 +57,11 @@
     {
       id: "demo-showcase",
       styles: ["./features/discovery/demo/demo-showcase.css"],
-      scripts: ["./features/discovery/demo/demo-showcase.js"],
+      scripts: [
+        "./features/discovery/demo/field-test-model.js",
+        "./features/discovery/demo/demo-showcase.js",
+        "./features/discovery/demo/field-test-showcase.js",
+      ],
     },
     {
       id: "community-cards",

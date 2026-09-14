@@ -3,11 +3,12 @@ import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import net from "node:net";
 
 const root = await fs.mkdtemp(path.join(os.tmpdir(), "threads-persistence-status-"));
 try {
-  await checkBackend("file", 4198);
-  await checkBackend("sqlite", 4199);
+  await checkBackend("file", await getFreePort());
+  await checkBackend("sqlite", await getFreePort());
   console.log("Persistence status diagnostics tests passed.");
 } finally {
   await fs.rm(root, { recursive: true, force: true });
@@ -18,7 +19,7 @@ async function checkBackend(backend, port) {
   const sqlitePath = path.join(root, `${backend}.sqlite`);
   const child = spawn(process.execPath, ["server.mjs"], {
     cwd: process.cwd(),
-    env: { ...process.env, PORT: String(port), PERSISTENCE_BACKEND: backend, PERSISTENCE_STATE_PATH: statePath, PERSISTENCE_SQLITE_PATH: sqlitePath },
+    env: cleanEnv({ PORT: String(port), PERSISTENCE_BACKEND: backend, PERSISTENCE_STATE_PATH: statePath, PERSISTENCE_SQLITE_PATH: sqlitePath }),
     stdio: "ignore",
   });
   const base = `http://127.0.0.1:${port}`;
@@ -53,4 +54,26 @@ async function waitForHealth(base) {
     await new Promise((resolve) => setTimeout(resolve, 50));
   }
   throw new Error("persistence_status_server_timeout");
+}
+
+function getFreePort() {
+  return new Promise((resolve, reject) => {
+    const server = net.createServer();
+    server.unref();
+    server.once("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      const port = typeof address === "object" && address ? address.port : null;
+      server.close((error) => error ? reject(error) : resolve(port));
+    });
+  });
+}
+
+function cleanEnv(overrides) {
+  const env = { ...process.env };
+  for (const key of Object.keys(overrides)) {
+    for (const existing of Object.keys(env)) if (existing.toLowerCase() === key.toLowerCase()) delete env[existing];
+    env[key] = overrides[key];
+  }
+  return env;
 }
