@@ -14,7 +14,7 @@
       </div>
       <div class="demo-showcase-actions">
         <button type="button" class="button ghost" data-demo-action="refresh">새로고침</button>
-        <button type="button" class="button primary" data-demo-action="import-all">3개 Inbox에 복사</button>
+        <button type="button" class="button primary" data-demo-action="import-all">전체 Inbox에 복사</button>
       </div>
     </div>
     <div class="demo-showcase-status" data-demo-status>불러오는 중…</div>
