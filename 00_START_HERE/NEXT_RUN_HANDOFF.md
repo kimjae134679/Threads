@@ -132,3 +132,29 @@ Therefore the previous P7 fresh-browser-control blocker is closed. This is not a
 Latest operations note: `030-sol.md`.
 
 Next priority is P8 browser persistence bridge: explicit export/import/save/load using `ThreadsPersistenceStateModel`, preserving Scheduler control/history plus credential-free profile/experiment identifiers, with visible revision conflict handling and no silent overwrite. After that, stabilize migration contracts before DB-backed persistence/versioning.
+
+## 2026-09-14 Run 031 update
+
+P8 browser bridge is now implemented in `59bd24df38b9229bfb101e99c38c5d687ca5202c` (`Add explicit browser persistence bridge`), package `0.23.0`.
+
+New behavior:
+
+- persistence model + bridge are loaded through staged `feature-loader.js`
+- explicit JSON export and file-import preview
+- explicit server read preview; server read does not overwrite browser state
+- explicit Apply required before restoring preview
+- explicit server save with optimistic revision
+- current server revision visible in UI
+- stale revision conflict fails closed and displays the current revision
+- Scheduler live browser `{state,...}` correctly maps to snapshot `{status,...}` and round-trips back
+- server 409 response exposes `currentRevision`
+
+Fresh real Chrome E2E observed PASS:
+
+`{"bootstrap":"ready","serverSave":"r1","serverRead":"preview-only","explicitApply":"restored","scheduler":"paused-preserved","conflict":"visible-r2-error"}`
+
+No automatic publication or provider API call is coupled to persistence restore.
+
+Latest ops note: `031-sol.md`.
+
+Next priority: credential-free account/profile identifiers + experiment state persistence and explicit schema migration tests; then define schema v2/DB migration semantics and scoped server namespaces without arbitrary filesystem access or plaintext secrets.
