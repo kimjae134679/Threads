@@ -25,6 +25,7 @@ export function getMediaStagingCapabilities(env = process.env) {
     supportedMimeTypes: [...MIME_TO_EXT.keys()],
     arbitraryFilesystemPathsAccepted: false,
     plaintextSecretsRequired: false,
+    approvalBindingRequired: true,
     externalReachabilityVerified: false,
     note: "A configured HTTPS public origin only creates provider-fetchable URL candidates. External reachability is not claimed until an official provider actually validates/fetches them.",
   };
@@ -43,12 +44,27 @@ export async function stageRenderedMedia({ candidateId, approvalBasis, assets, r
   const dir = path.resolve(rootDir || path.join(process.cwd(), "data", "runtime", "media-staging"));
   await fs.mkdir(dir, { recursive: true });
   const staged = [];
+  const createdPaths = [];
   try {
     for (let index = 0; index < rows.length; index += 1) {
       const decoded = decodeImageDataUrl(rows[index]?.dataUrl);
       const id = `${randomUUID()}.${decoded.ext}`;
       const target = path.join(dir, id);
+      const metadataPath = path.join(dir, metadataName(id));
+      const metadata = {
+        schemaVersion: 1,
+        id,
+        candidateId: safeCandidateId,
+        approvalBasis: safeApprovalBasis,
+        index,
+        contentType: decoded.contentType,
+        bytes: decoded.data.length,
+        stagedAt: new Date().toISOString(),
+      };
       await fs.writeFile(target, decoded.data, { mode: 0o600, flag: "wx" });
+      createdPaths.push(target);
+      await fs.writeFile(metadataPath, `${JSON.stringify(metadata)}\n`, { mode: 0o600, flag: "wx" });
+      createdPaths.push(metadataPath);
       staged.push({
         id,
         index,
@@ -60,12 +76,13 @@ export async function stageRenderedMedia({ candidateId, approvalBasis, assets, r
       });
     }
   } catch (error) {
-    await Promise.allSettled(staged.map((item) => fs.rm(path.join(dir, item.id), { force: true })));
+    await Promise.allSettled(createdPaths.map((filePath) => fs.rm(filePath, { force: true })));
     throw error;
   }
   return {
     state: "staged-unverified",
     publicBaseUrl: capability.publicBaseUrl,
+    approvalBound: true,
     externalReachabilityVerified: false,
     assets: staged,
   };
@@ -74,9 +91,22 @@ export async function stageRenderedMedia({ candidateId, approvalBasis, assets, r
 export async function readStagedMedia(id, { rootDir } = {}) {
   const safeId = normalizeStagedId(id);
   const dir = path.resolve(rootDir || path.join(process.cwd(), "data", "runtime", "media-staging"));
-  const data = await fs.readFile(path.join(dir, safeId));
-  const ext = safeId.slice(safeId.lastIndexOf(".") + 1).toLowerCase();
-  return { id: safeId, contentType: EXT_TO_MIME.get(ext), data };
+  try {
+    const [data, metadataText] = await Promise.all([
+      fs.readFile(path.join(dir, safeId)),
+      fs.readFile(path.join(dir, metadataName(safeId)), "utf8"),
+    ]);
+    const metadata = parseMetadata(metadataText, safeId);
+    const ext = safeId.slice(safeId.lastIndexOf(".") + 1).toLowerCase();
+    const contentType = EXT_TO_MIME.get(ext);
+    if (metadata.contentType !== contentType || metadata.bytes !== data.length) {
+      throw stagingError(409, "staged_media_metadata_mismatch", "Staged media metadata no longer matches the stored asset.");
+    }
+    return { id: safeId, contentType, data, metadata };
+  } catch (error) {
+    if (error?.code === "ENOENT") throw stagingError(404, "staged_media_not_found", "Staged media or its approval metadata was not found.");
+    throw error;
+  }
 }
 
 export function assertStagedMediaUrls(urls, env = process.env) {
@@ -95,6 +125,44 @@ export function assertStagedMediaUrls(urls, env = process.env) {
     if (parsed.search || parsed.hash) throw stagingError(400, "staged_media_url_invalid", "Staged media URLs cannot contain query or fragment values.");
   }
   return rows.map((value) => String(value));
+}
+
+export async function assertStagedMediaForCandidate(urls, { candidateId, approvalBasis, rootDir, env = process.env } = {}) {
+  const safeCandidateId = normalizeCandidateId(candidateId);
+  const safeApprovalBasis = normalizeApprovalBasis(approvalBasis);
+  const normalized = assertStagedMediaUrls(urls, env);
+  for (const value of normalized) {
+    const parsed = new URL(value);
+    const id = normalizeStagedId(parsed.pathname.slice("/media/staged/".length));
+    const asset = await readStagedMedia(id, { rootDir });
+    if (asset.metadata.candidateId !== safeCandidateId) {
+      throw stagingError(409, "staged_media_candidate_mismatch", "Staged media belongs to a different candidate.");
+    }
+    if (asset.metadata.approvalBasis !== safeApprovalBasis) {
+      throw stagingError(409, "staged_media_approval_stale", "Staged media was created for an older approval revision. Restage the current approved render.");
+    }
+  }
+  return normalized;
+}
+
+function parseMetadata(value, expectedId) {
+  let metadata;
+  try { metadata = JSON.parse(String(value || "")); } catch { throw stagingError(409, "staged_media_metadata_invalid", "Staged media approval metadata is invalid."); }
+  if (metadata?.schemaVersion !== 1 || metadata?.id !== expectedId) throw stagingError(409, "staged_media_metadata_invalid", "Staged media approval metadata is invalid.");
+  return {
+    schemaVersion: 1,
+    id: expectedId,
+    candidateId: normalizeCandidateId(metadata.candidateId),
+    approvalBasis: normalizeApprovalBasis(metadata.approvalBasis),
+    index: Number(metadata.index),
+    contentType: String(metadata.contentType || ""),
+    bytes: Number(metadata.bytes),
+    stagedAt: String(metadata.stagedAt || ""),
+  };
+}
+
+function metadataName(id) {
+  return `${normalizeStagedId(id)}.meta.json`;
 }
 
 function decodeImageDataUrl(value) {
