@@ -1,5 +1,5 @@
 import path from "node:path";
-import { getMediaStagingCapabilities, stageRenderedMedia, readStagedMedia, assertStagedMediaUrls } from "./media-staging.mjs";
+import { getMediaStagingCapabilities, stageRenderedMedia, readStagedMedia, assertStagedMediaForCandidate } from "./media-staging.mjs";
 import { getInstagramMediaCapabilities, buildInstagramMediaDryRun } from "./instagram.mjs";
 
 const DEFAULT_STAGING_ROOT = path.join(process.cwd(), "data", "runtime", "media-staging");
@@ -50,13 +50,20 @@ export async function handleMediaPublishRoute({ req, res, url, env = process.env
     const body = await readJsonBody(req);
     const candidate = body?.candidate || {};
     validateApprovedCandidate(candidate);
-    const mediaUrls = assertStagedMediaUrls(body?.mediaUrls || [], env);
+    const approvalBasis = String(candidate.publishApproval?.basisUpdatedAt || "").trim();
+    const mediaUrls = await assertStagedMediaForCandidate(body?.mediaUrls || [], {
+      candidateId: candidate.id,
+      approvalBasis,
+      rootDir: stagingRoot,
+      env,
+    });
     const caption = typeof approvedCaption === "function" ? approvedCaption(candidate) : "";
     const plan = buildInstagramMediaDryRun({ caption, mediaUrls, env });
     return sendJson(res, 200, {
       ok: true,
       plan,
       auditedAt: new Date().toISOString(),
+      approvalBasis,
       publicationOwner: "04_REVIEW_PUBLISH",
       livePublicationAttempted: false,
     });
