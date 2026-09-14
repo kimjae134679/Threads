@@ -91,6 +91,13 @@
         "./features/publish/buffer/buffer-publisher.js",
       ],
     },
+    {
+      id: "persistence-state",
+      scripts: [
+        "./features/persistence/state/state-model.js",
+        "./features/persistence/state/state-bridge.js",
+      ],
+    },
   ];
 
   if (document.readyState === "loading") {

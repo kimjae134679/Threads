@@ -221,6 +221,7 @@ const server = http.createServer(async (req, res) => {
         upstreamStatus: error.upstreamStatus || undefined,
         upstreamCode: error.upstreamCode || undefined,
         upstreamSubcode: error.upstreamSubcode || undefined,
+        currentRevision: error.currentRevision ?? undefined,
       });
     }
     return json(res, 500, { ok: false, error: "internal_server_error" });

@@ -20,8 +20,9 @@
   }
 
   function normalizeControl(value = {}) {
-    const status = ["running", "paused", "stopped"].includes(String(value.status || "").toLowerCase())
-      ? String(value.status).toLowerCase() : "running";
+    const rawStatus = value.status ?? value.state ?? "";
+    const status = ["running", "paused", "stopped"].includes(String(rawStatus).toLowerCase())
+      ? String(rawStatus).toLowerCase() : "running";
     return {
       status,
       options: clone(value.options || {}),

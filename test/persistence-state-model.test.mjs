@@ -16,6 +16,8 @@ const control = { status: "paused", options: { slotMinutes: 30 }, history: Array
 const snapshot = model.makeSnapshot(state, control, { exportedAt: "2026-09-14T09:10:00Z", profiles: [{ id: "TH-A" }] });
 assert.equal(snapshot.schemaVersion, 1);
 assert.equal(snapshot.scheduler.status, "paused");
+const browserControlSnapshot = model.makeSnapshot(state, { state: "stopped", options: {}, history: [] });
+assert.equal(browserControlSnapshot.scheduler.status, "stopped");
 assert.equal(snapshot.scheduler.history.length, 100);
 assert.equal(snapshot.scheduler.history[0].action, "h-5");
 assert.equal(snapshot.roleChain[3], "04_REVIEW_PUBLISH");
