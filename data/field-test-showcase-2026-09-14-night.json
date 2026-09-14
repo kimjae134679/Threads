@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "demoOnly": true,
+  "productionEligible": false,
+  "generatedAt": "2026-09-14T22:31:00+09:00",
+  "purpose": "현재 공개 검색/인덱스에서 실제로 확인한 소재를 앱의 카드 제작 방식으로 구체화한 실전 필드 테스트. 외부 이미지/원문 전문을 복제하지 않고 사실·반응 신호와 자체 재구성 텍스트만 포함한다.",
+  "items": [
+    {
+      "sourceKey": "waglenet:iphone-duo-cross-community:20260913",
+      "status": "candidate",
+      "whySelected": "3개 커뮤니티로 전파되고 공개 인덱스에서 59,191 조회·60 댓글·HOT 1위가 관측됨. Apple 공식 발표도 별도로 확인 가능해서 사실 검증 경로가 명확하다.",
+      "theme": "AI / IT / 게임 + 돈 / 소비",
+      "lane": "소식 / 이슈 / 지금 뜨는 것",
+      "observedSignals": {"views": 59191, "comments": 60, "rank": 1, "spread": "판 / DCInside / Ppomppu"},
+      "factChecks": [
+        "Apple 공식 Newsroom에서 iPhone Duo 발표 확인",
+        "미국 시작가 $1,999 확인",
+        "한국 329만원 표기는 공식 KR 판매가 재확인 전 카드에서 단정 금지"
+      ],
+      "storyboard": {
+        "schemaVersion": 2,
+        "width": 1080,
+        "height": 1350,
+        "privacy": {"textPiiMasked": true, "imageMaskingRequired": false},
+        "cards": [
+          {"type": "hook", "title": "2,000달러짜리\n폴더블 아이폰이 나왔다", "body": "", "source": "Apple + public community index"},
+          {"type": "excerpt", "title": "근데 반응이 더 빠름", "body": "공개 커뮤니티 인덱스에서 관련 이슈가 판·디시·뽐뿌 3곳으로 번졌고, 5만 9천 회 이상 조회와 60개 댓글이 관측됐다.", "source": "public index"},
+          {"type": "followup", "title": "공식으로 확인된 건", "body": "Apple은 iPhone Duo를 첫 폴더블 iPhone으로 발표했고 미국 시작가는 $1,999라고 밝혔다. 한국 가격은 공식 판매 페이지 확인 뒤 별도 표기한다.", "source": "Apple Newsroom"},
+          {"type": "reactions", "title": "카드에서 잡을 논점", "body": "폴더블 iPhone을 기다린 사람\n가격이 너무 높다는 반응\n첫 세대 제품을 지금 살 이유가 있는지", "source": "editorial summary"},
+          {"type": "ending", "title": "첫 폴더블 아이폰, 2천 달러면 산다 vs 2세대 기다린다?", "body": "", "source": "editorial"}
+        ]
+      },
+      "caption": "첫 폴더블 아이폰 자체도 큰 뉴스지만, 실제로는 가격에서 커뮤니티 반응이 먼저 터졌다. 제품 설명 복붙보다 ‘첫 세대 폴더블을 이 가격에 살 이유가 있나’로 잡는 쪽이 Threads/카드에 더 맞는다."
+    },
+    {
+      "sourceKey": "waglenet:reservist-attendance-deduction:20260913",
+      "status": "candidate",
+      "whySelected": "서울신문 원 기사로 사실을 확인할 수 있고, 커뮤니티 확산본도 30,769 조회·104 댓글로 토론 반응이 강함.",
+      "theme": "군대 / 학교 + 생활 / 공감 / 논쟁",
+      "lane": "군대 / 학교",
+      "observedSignals": {"views": 30769, "comments": 104, "rank": 6, "spread": "Ruliweb amplification"},
+      "factChecks": [
+        "서울대 한 교양수업 강의계획서에 정상 출석 2점, 사유 있는 결석 1점 안내가 있었음",
+        "예비군도 사유 있는 결석 예시에 포함돼 논란이 됨",
+        "학교 측은 뒤늦게 출석을 인정하는 방향으로 수정",
+        "예비군 불이익 관련 법적 설명은 원 기사 문구를 다시 검토하고 단정 표현을 피함"
+      ],
+      "storyboard": {
+        "schemaVersion": 2,
+        "width": 1080,
+        "height": 1350,
+        "privacy": {"textPiiMasked": true, "imageMaskingRequired": false},
+        "cards": [
+          {"type": "hook", "title": "예비군 갔다고\n출석 1점 감점?", "body": "", "source": "서울신문 + public community index"},
+          {"type": "excerpt", "title": "강의계획서에는", "body": "정상 출석 2점, 사유 있는 결석 1점으로 안내됐고 예비군이 사유 있는 결석 예시에 들어가 있었다.", "source": "서울신문"},
+          {"type": "followup", "title": "왜 논란이 됐나", "body": "예비군 훈련을 이유로 학생에게 불이익을 주는 문제가 과거에도 반복적으로 지적됐기 때문이다.", "source": "서울신문"},
+          {"type": "reactions", "title": "결국", "body": "논란 뒤 해당 수업은 예비군 훈련에 따른 출석을 인정하는 방향으로 수정됐다. 커뮤니티에서는 기준 자체가 적절했는지를 두고 댓글이 크게 붙었다.", "source": "article + public reaction index"},
+          {"type": "ending", "title": "이건 ‘결석 기준’ 문제임, 아니면 애초에 감점하면 안 되는 문제임?", "body": "", "source": "editorial"}
+        ]
+      },
+      "caption": "기사 하나만 요약하면 뉴스 계정이 되고, 커뮤니티 반응만 긁으면 출처가 약해진다. 이건 기사로 사실을 고정하고 ‘왜 100개 넘게 댓글이 붙었는지’를 논쟁 카드로 재구성하는 예시다."
+    },
+    {
+      "sourceKey": "reddit:millennials-workplace-age-gap:1wbom2p",
+      "status": "candidate-low-signal",
+      "whySelected": "반응 규모는 앞의 두 후보보다 작지만 직장/세대 논쟁으로 안전하게 카드화하기 쉬워 포맷 테스트용 비교군으로 적합함.",
+      "theme": "직장 / 커리어 + 생활 / 공감 / 논쟁",
+      "lane": "직장 / 취업 / 회사썰",
+      "observedSignals": {"votes": 165, "publishedAt": "2026-09-09"},
+      "factChecks": [
+        "공개 Reddit 글의 작성자가 직장 내 세대차이 TikTok 밈에 대한 불편함/혼란을 제기",
+        "개별 TikTok 영상이나 등장인물은 재사용하지 않음",
+        "댓글은 직접 인용보다 대표 반응을 익명 요약"
+      ],
+      "storyboard": {
+        "schemaVersion": 2,
+        "width": 1080,
+        "height": 1350,
+        "privacy": {"textPiiMasked": true, "imageMaskingRequired": false},
+        "cards": [
+          {"type": "hook", "title": "30대 직장동료가\n그렇게 신기한가?", "body": "", "source": "Reddit r/Millennials"},
+          {"type": "excerpt", "title": "요즘 보인다는 밈", "body": "젊은 직원이 30대 이상 동료와 일하면서 ‘누군가의 엄마와 일하는 느낌’처럼 세대차이를 재미 요소로 만드는 영상들이 있다는 문제제기였다.", "source": "public Reddit post summary"},
+          {"type": "followup", "title": "작성자의 고민", "body": "나이 많은 동료도 재미있는 사람이라는 걸 보여주는 건 좋은데, 30대 이상이 아직 일하는 게 신기한 것처럼 보이는 건 묘하다는 취지였다.", "source": "public Reddit post summary"},
+          {"type": "reactions", "title": "갈리는 포인트", "body": "그냥 세대차이 밈이라 귀엽다\n나이를 과하게 의식해서 피곤하다\n직장에서는 나이보다 같이 일하기 편한지가 중요하다", "source": "representative reaction summary"},
+          {"type": "ending", "title": "이런 세대차이 밈, 귀엽다 vs 은근히 나이 프레임이다?", "body": "", "source": "editorial"}
+        ]
+      },
+      "caption": "반응이 엄청 큰 글만 고르면 자극적인 소재로 치우칠 수 있다. 이런 비교군도 같이 넣어 두고 실제 게시 후 댓글률/공유율을 비교해야 어떤 톤이 오래 가는지 알 수 있다."
+    }
+  ],
+  "heldCandidates": [
+    {
+      "sourceKey": "waglenet:ruliweb-mechanic-water-callout:20260913",
+      "reason": "24,970 조회·107 댓글이라 반응은 좋지만 원문 URL/짤 맥락이 아직 확보되지 않아 카드 제작 보류. 사용자 캡처 또는 합법적 원문 확인 후 제작 가능."
+    },
+    {
+      "sourceKey": "waglenet:disability-personal-reaction-review:20260913",
+      "reason": "38,184 조회·109 댓글로 숫자는 강하지만 특정 장애 당사자와 유명인이 등장하는 평가형 영상이라 존엄·초상·맥락 왜곡 위험 때문에 반응 수치만으로 제작하지 않음."
+    }
+  ]
+}
