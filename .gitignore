@@ -3,5 +3,6 @@ node_modules/
 .env.*
 !.env.example
 config/buffer.local.json
+data/runtime/
 .DS_Store
 Thumbs.db
