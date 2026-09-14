@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.*
+!.env.example
+config/buffer.local.json
+.DS_Store
+Thumbs.db
