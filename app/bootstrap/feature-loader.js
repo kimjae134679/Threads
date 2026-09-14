@@ -67,6 +67,14 @@
       id: "warehouse",
       scripts: ["./warehouse-model.js", "./content-warehouse.js"],
     },
+    {
+      id: "buffer-publisher",
+      styles: ["./features/publish/buffer/buffer-publisher.css"],
+      scripts: [
+        "./features/publish/buffer/buffer-publish-model.js",
+        "./features/publish/buffer/buffer-publisher.js",
+      ],
+    },
   ];
 
   if (document.readyState === "loading") {
