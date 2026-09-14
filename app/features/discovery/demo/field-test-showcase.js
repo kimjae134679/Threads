@@ -37,8 +37,12 @@
     status.textContent = "현재 필드 테스트 데이터를 불러오는 중…";
     grid.innerHTML = "";
     try {
+      const indexRes = await fetch("/data/field-test-showcase-index.json", { cache: "no-store" });
+      if (!indexRes.ok) throw new Error(`field_test_index_failed:${indexRes.status}`);
+      const indexPayload = await indexRes.json();
+      if (!indexPayload?.demoOnly || indexPayload?.productionEligible !== false || !/^\/data\/[a-zA-Z0-9._-]+\.json$/.test(indexPayload.current || "")) throw new Error("field_test_index_invalid");
       const [fieldRes, discoveryRes] = await Promise.all([
-        fetch("/data/field-test-showcase-2026-09-14-night.json", { cache: "no-store" }),
+        fetch(indexPayload.current, { cache: "no-store" }),
         fetch("/data/viral-discovery-latest.json", { cache: "no-store" }),
       ]);
       if (!fieldRes.ok || !discoveryRes.ok) throw new Error(`field_test_load_failed:${fieldRes.status}/${discoveryRes.status}`);
