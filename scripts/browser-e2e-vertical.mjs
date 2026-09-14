@@ -13,7 +13,7 @@ page.on("request", (request) => {
 
 try {
   await page.goto(base, { waitUntil: "networkidle" });
-  await page.waitForSelector(".vertical-video-production-panel");
+  await page.waitForSelector(".vertical-video-production-panel", { state: "attached" });
   const seeded = await page.evaluate(() => {
     const now = new Date().toISOString();
     const item = {
