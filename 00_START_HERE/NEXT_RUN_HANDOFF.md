@@ -226,3 +226,27 @@ Actual SQLite-backed server smoke returned:
 Latest ops note: `034-sol.md`.
 
 Next priority: add an explicit operator CLI around the migration primitive without exposing filesystem paths in HTTP, then add shared backend parity tests for file vs SQLite and safe backend diagnostics. Keep file fallback until parity is proven and continue to reject plaintext secrets.
+
+## 2026-09-14 Run 035 update
+
+P8 migration/operator safety advanced in `5223bdb1a239a1db4600129a0c1cdd14206242a5`, package `0.29.0`.
+
+Implemented:
+
+- operator-only `npm run migrate:persistence` CLI
+- migration refuses all mutation without explicit `--apply`
+- existing target namespaces still require a separate explicit `--overwrite`
+- no migration filesystem path is exposed through HTTP
+- shared file/SQLite backend parity regression for revisions, namespace isolation, validation and secret rejection
+- safe `GET /api/state/status` diagnostics with backend/schema/capability fields only; no state/DB path leakage
+- diagnostics regression boots both actual file and SQLite server backends
+
+`npm run check` passed locally. A Windows SQLite WAL cleanup race in the new status test was fixed by waiting for child-server exit before temp cleanup.
+
+CLI observation: `--help` exits 0; source/target without `--apply` refuses mutation and exits 2.
+
+No browser UI changed and no new browser-E2E claim is made. Persistence remains completely decoupled from 04 publication/provider calls.
+
+Latest ops note: `035-sol.md`.
+
+Next priority: verify final CI; then focus only on concrete remaining P8 gaps, especially browser-level multi-account/profile isolation or future DB schema changes justified by actual requirements. Keep file backend as fallback and never persist provider credentials.
