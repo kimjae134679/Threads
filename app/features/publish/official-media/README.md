@@ -1,19 +1,22 @@
-# Official Threads media publisher
+# Official media publisher
 
-Purpose: prepare official Threads API image/carousel publishing without bypassing review gates.
+Purpose: keep official image/carousel preparation inside `04 REVIEW_PUBLISH` without bypassing rights, privacy, safety, or current human approval.
 
 Current scope:
-- capability state: `credential-required`, `live-disabled`, `ready-to-validate`
-- single public HTTPS image dry-run
-- 2–20 public HTTPS image carousel dry-run
-- server re-validates the same approved candidate used by text publishing
-- dry-run results are local audit records only; they are never presented as published posts
+- Threads image/carousel dry-run remains available from the approval queue.
+- Instagram Feed/Carousel now has a 04-only staging + dry-run panel on currently approved candidates.
+- the UI reads staging and Instagram capability state from server endpoints; it does not infer credential validity.
+- staging accepts only the currently visible 1080×1080 Card Factory canvases for the same open candidate, maximum 10.
+- canvases are converted to PNG data URLs and sent to `/api/media-staging/stage` only after current approval is confirmed.
+- successful staging is displayed as `staged-unverified` with the exact approval basis and `externalReachabilityVerified:false`.
+- Instagram dry-run accepts only URLs returned by that approval-bound staging step.
+- dry-run records the request plan and `publicationOwner: 04_REVIEW_PUBLISH`; it performs no live publication.
 
 Fail-closed rules:
-- no current human publish approval => server rejects dry-run
-- non-HTTPS/private/local image paths are rejected
-- no access token => live state remains credential-required
-- even with a token, media live calls remain disabled unless explicitly enabled server-side
-- Card Factory canvas/blob output is not treated as a hosted URL
+- no current human publish approval => controls are absent/server rejects requests.
+- wrong candidate, stale approval revision, missing render, non-square render, or more than 10 canvases => staging is blocked.
+- staging requires an enabled public HTTPS staging origin, but configuration alone never proves external reachability.
+- missing Instagram credentials remain visible as `credential-required`; dry-run plan construction does not claim credential validation.
+- no live Meta publication path is enabled by this UI.
 
-No password or plaintext secret belongs in this feature. `THREADS_ACCESS_TOKEN` remains server-only.
+No password, access token, or plaintext secret belongs in client state or this feature. Provider secrets remain server-only.

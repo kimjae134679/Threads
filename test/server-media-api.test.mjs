@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { spawn } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
 const png1x1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";
 const runtime = await fs.mkdtemp(path.join(os.tmpdir(), "threads-server-media-"));
@@ -32,7 +33,7 @@ const env = {
   INSTAGRAM_GRAPH_API_VERSION: "v99.0",
   INSTAGRAM_REQUIRED_SCOPES: "scope_a scope_b",
 };
-const child = spawn(process.execPath, [new URL("../server.mjs", import.meta.url).pathname], { env, stdio: ["ignore", "pipe", "pipe"] });
+const child = spawn(process.execPath, [fileURLToPath(new URL("../server.mjs", import.meta.url))], { env, stdio: ["ignore", "pipe", "pipe"] });
 let stdout = "";
 let stderr = "";
 child.stdout.on("data", (chunk) => { stdout += chunk; });
@@ -97,8 +98,10 @@ try {
 
   console.log("Server media staging/Instagram API regression tests passed.");
 } finally {
-  child.kill();
-  await new Promise((resolve) => child.once("exit", resolve)).catch(() => {});
+  if (child.exitCode === null) {
+    child.kill();
+    await new Promise((resolve) => child.once("exit", resolve));
+  }
   await fs.rm(runtime, { recursive: true, force: true });
 }
 

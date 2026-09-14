@@ -1,4 +1,4 @@
-﻿import assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import fs from "node:fs";
 
 const requiredFiles = [
@@ -118,6 +118,12 @@ for (const expected of ["ThreadsCardPrivacyMaskModel","마스킹 모드","개인
 }
 
 assert.ok(privacyUi.includes("observer.observe(preview, { childList: true, subtree: false })"), "Card privacy observer must not watch status/button decorations inside preview cards");
+
+const officialMediaUi = fs.readFileSync(new URL("../app/features/publish/official-media/official-media-publisher.js", import.meta.url), "utf8");
+for (const expected of ["/api/media-staging/capabilities", "/api/media-staging/stage", "/api/instagram/media/capabilities", "/api/instagram/media/dry-run", "04 REVIEW_PUBLISH", "staged-unverified", "externalReachabilityVerified", "canvas.toDataURL(\"image/png\")"]) {
+  assert.ok(officialMediaUi.includes(expected), `Official media UI missing safe staging behavior: ${expected}`);
+}
+assert.ok(officialMediaUi.includes('new MutationObserver(patchQueue).observe(queue, { childList: true })'), "Official media approval observer must not watch its own subtree decorations");
 
 const bufferUi = fs.readFileSync(new URL("../app/features/publish/buffer/buffer-publisher.js", import.meta.url), "utf8");
 for (const expected of ["/api/buffer/channels","/api/buffer/channel","/api/buffer/publish","Buffer 예약/게시","500자를 초과"]) {

@@ -17,3 +17,17 @@
 .threads-media-plan-result {
   font-size: 0.9rem;
 }
+.instagram-media-stage-note {
+  margin: 8px 0;
+  color: var(--muted, #666);
+  font-size: 0.9rem;
+}
+.instagram-media-stage-result {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+.instagram-media-stage-box [data-dry-run]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
