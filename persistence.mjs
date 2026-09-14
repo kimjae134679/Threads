@@ -44,6 +44,39 @@ export function normalizeEnvelope(input = {}) {
   return envelope;
 }
 
+
+export const STATE_NAMESPACE_PATTERN = /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/;
+
+export function normalizeStateNamespace(value = "default") {
+  const namespace = String(value || "default").trim();
+  if (!STATE_NAMESPACE_PATTERN.test(namespace)) {
+    const error = new Error(`invalid_persistence_namespace:${namespace}`);
+    error.code = "invalid_persistence_namespace";
+    error.status = 400;
+    throw error;
+  }
+  return namespace;
+}
+
+export class JsonStateStoreRegistry {
+  constructor(defaultFilePath) {
+    this.defaultFilePath = path.resolve(defaultFilePath);
+  }
+
+  filePath(namespace = "default") {
+    const id = normalizeStateNamespace(namespace);
+    if (id === "default") return this.defaultFilePath;
+    const directory = path.dirname(this.defaultFilePath);
+    const extension = path.extname(this.defaultFilePath) || ".json";
+    const stem = path.basename(this.defaultFilePath, path.extname(this.defaultFilePath));
+    return path.join(directory, `${stem}.${id}${extension}`);
+  }
+
+  store(namespace = "default") {
+    return new JsonStateStore(this.filePath(namespace));
+  }
+}
+
 export class JsonStateStore {
   constructor(filePath) {
     this.filePath = path.resolve(filePath);

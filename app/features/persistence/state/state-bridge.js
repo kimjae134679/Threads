@@ -15,9 +15,10 @@
     <div class="panel-title-row wrap">
       <div><p class="eyebrow">PERSISTENCE</p><h2>상태 백업 / 복원</h2>
       <p>명시적으로 저장·불러오기 할 때만 상태를 변경합니다. 충돌이나 secret 필드는 자동 덮어쓰기하지 않습니다.</p></div>
-      <span id="persistenceRevision" class="pill neutral">SERVER r0</span>
+      <span id="persistenceRevision" class="pill neutral">default · SERVER r0</span>
     </div>
     <div class="top-actions">
+      <label class="button ghost">저장 범위 <select id="persistenceNamespace"><option value="default">default</option></select></label>
       <button type="button" class="button ghost" data-persist="export">JSON 내보내기</button>
       <label class="button ghost file-button">JSON 불러오기<input type="file" data-persist-file accept="application/json" /></label>
       <button type="button" class="button ghost" data-persist="server-read">서버 읽기</button>
@@ -30,6 +31,11 @@
   const status = section.querySelector("#persistenceStatus");
   const revision = section.querySelector("#persistenceRevision");
   const applyButton = section.querySelector('[data-persist="apply"]');
+  const namespaceSelect = section.querySelector("#persistenceNamespace");
+  for (const profile of window.ThreadsAccountRegistry?.list?.() || []) {
+    const option = document.createElement("option"); option.value = profile.id; option.textContent = profile.id; namespaceSelect.appendChild(option);
+  }
+  namespaceSelect.addEventListener("change", () => { updateRevision(0); preview = null; applyButton.disabled = true; setStatus(`저장 범위 변경: ${currentNamespace()}`, "info"); });
   section.addEventListener("click", onClick);
   section.querySelector("[data-persist-file]").addEventListener("change", onFile);
 
@@ -57,9 +63,13 @@
     setStatus(`미리보기 준비: ${source} · 후보 ${preview.app.items.length}건 · 프로필 ${preview.profiles.length}개 · 실험 ${preview.experiments.length}개 · Scheduler ${preview.scheduler.status}`, "success");
   }
 
+  function currentNamespace() { return namespaceSelect?.value || "default"; }
+
+  function stateUrl() { return `/api/state?namespace=${encodeURIComponent(currentNamespace())}`; }
+
   function updateRevision(value) {
     serverRevision = Number(value) || 0;
-    revision.textContent = `SERVER r${serverRevision}`;
+    revision.textContent = `${currentNamespace()} · SERVER r${serverRevision}`;
   }
 
   async function onClick(event) {
@@ -102,7 +112,7 @@
   }
 
   async function readServer() {
-    const response = await fetch("/api/state", { cache: "no-store" });
+    const response = await fetch(stateUrl(), { cache: "no-store" });
     const body = await response.json().catch(() => ({}));
     if (!response.ok || !body.ok) throw new Error(body.message || body.error || `HTTP ${response.status}`);
     updateRevision(body.revision);
@@ -116,7 +126,7 @@
 
   async function saveServer() {
     const snapshot = currentSnapshot();
-    const response = await fetch("/api/state", {
+    const response = await fetch(stateUrl(), {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ snapshot, expectedRevision: serverRevision }),
@@ -145,5 +155,5 @@
     setTimeout(() => location.reload(), 50);
   }
 
-  window.ThreadsPersistenceBridge = { currentSnapshot, setPreview, applyPreview, readServer, saveServer };
+  window.ThreadsPersistenceBridge = { currentSnapshot, setPreview, applyPreview, readServer, saveServer, currentNamespace };
 })();

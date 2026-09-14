@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { JsonStateStore, assertNoSecrets } from "../persistence.mjs";
+import { JsonStateStore, JsonStateStoreRegistry, normalizeStateNamespace, assertNoSecrets } from "../persistence.mjs";
 
 const dir = await fs.mkdtemp(path.join(os.tmpdir(), "threads-persist-"));
 const file = path.join(dir, "state.json");
@@ -25,6 +25,16 @@ assert.equal(migratedV1.snapshot.schemaVersion, 2);
 assert.equal(migratedV1.snapshot.experiments[0].itemId, "legacy");
 assert.equal(migratedV1.snapshot.experiments[0].accountId, "TH-A");
 await assert.rejects(() => store.write({ schemaVersion: 3, app: { items: [] } }, 2), /unsupported_persistence_schema:3/);
+
+const registry = new JsonStateStoreRegistry(file);
+assert.equal(registry.filePath("default"), file);
+assert.match(registry.filePath("TH-A"), /state\.TH-A\.json$/);
+assert.equal(normalizeStateNamespace("TH_B-2"), "TH_B-2");
+assert.throws(() => normalizeStateNamespace("../escape"), /invalid_persistence_namespace/);
+assert.throws(() => normalizeStateNamespace("a/b"), /invalid_persistence_namespace/);
+await registry.store("TH-A").write(snapshot, 0);
+assert.equal((await registry.store("TH-A").read()).revision, 1);
+assert.equal((await registry.store("default").read()).revision, 2);
 
 await fs.rm(dir, { recursive: true, force: true });
 console.log("Persistence store regression tests passed.");

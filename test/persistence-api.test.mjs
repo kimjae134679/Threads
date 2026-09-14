@@ -16,5 +16,9 @@ try {
   res = await fetch(`${base}/api/state`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot, expectedRevision: 0 }) }); body = await res.json(); assert.equal(res.status, 200); assert.equal(body.revision, 1);
   res = await fetch(`${base}/api/state`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot, expectedRevision: 0 }) }); body = await res.json(); assert.equal(res.status, 409); assert.equal(body.error, "persistence_revision_conflict"); assert.equal(body.currentRevision, 1);
   res = await fetch(`${base}/api/state`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot: { ...snapshot, accessToken: "nope" }, expectedRevision: 1 }) }); body = await res.json(); assert.equal(res.status, 400); assert.equal(body.error, "persistence_secret_field");
+  res = await fetch(`${base}/api/state?namespace=TH-A`); body = await res.json(); assert.equal(body.namespace, "TH-A"); assert.equal(body.revision, 0);
+  res = await fetch(`${base}/api/state?namespace=TH-A`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ snapshot, expectedRevision: 0 }) }); body = await res.json(); assert.equal(res.status, 200); assert.equal(body.namespace, "TH-A"); assert.equal(body.revision, 1);
+  res = await fetch(`${base}/api/state`); body = await res.json(); assert.equal(body.revision, 1);
+  res = await fetch(`${base}/api/state?namespace=..%2Fescape`); body = await res.json(); assert.equal(res.status, 400); assert.equal(body.error, "invalid_persistence_namespace");
   console.log("Persistence API regression tests passed.");
 } finally { child.kill(); await fs.rm(dir, { recursive: true, force: true }); }
