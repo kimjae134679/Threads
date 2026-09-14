@@ -22,6 +22,7 @@ import {
 import { JsonStateStoreRegistry, STATE_SCHEMA_VERSION } from "./persistence.mjs";
 import { SqliteStateStoreRegistry } from "./persistence-sqlite.mjs";
 import { fetchSourceAsset, getSourceAssetCapabilities } from "./source-assets.mjs";
+import { handleMediaPublishRoute, getMediaConnectorSnapshot } from "./media-publish-routes.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -29,6 +30,7 @@ const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || "127.0.0.1";
 const STATE_PATH = process.env.PERSISTENCE_STATE_PATH || path.join(ROOT, "data", "runtime", "state.json");
 const SQLITE_PATH = process.env.PERSISTENCE_SQLITE_PATH || path.join(ROOT, "data", "runtime", "state.sqlite");
+const MEDIA_STAGING_PATH = process.env.MEDIA_STAGING_PATH || path.join(ROOT, "data", "runtime", "media-staging");
 const PERSISTENCE_BACKEND = String(process.env.PERSISTENCE_BACKEND || "file").trim().toLowerCase();
 if (!["file", "sqlite"].includes(PERSISTENCE_BACKEND)) throw new Error(`unsupported_persistence_backend:${PERSISTENCE_BACKEND}`);
 const stateStores = PERSISTENCE_BACKEND === "sqlite"
@@ -99,6 +101,17 @@ const server = http.createServer(async (req, res) => {
       return res.end(asset.data);
     }
 
+    if (await handleMediaPublishRoute({
+      req,
+      res,
+      url,
+      env: process.env,
+      stagingRoot: MEDIA_STAGING_PATH,
+      readJsonBody,
+      validateApprovedCandidate,
+      approvedCaption: approvedInstagramCaption,
+    })) return;
+
     if (url.pathname === "/api/connectors") {
       return json(res, 200, {
         ok: true,
@@ -119,6 +132,7 @@ const server = http.createServer(async (req, res) => {
           openai: getOpenAiStatus(),
           threads: getThreadsStatus(),
           buffer: getBufferStatus(),
+          ...getMediaConnectorSnapshot(process.env),
         },
       });
     }
@@ -426,12 +440,23 @@ function approvedThreadsText(candidate) {
   return text;
 }
 
-async function readJsonBody(req) {
+function approvedInstagramCaption(candidate) {
+  const manual = String(candidate.draftStudio?.manualEdits?.instagram || "").trim();
+  if (manual) return manual;
+  const generated = candidate.draftStudio?.generated?.instagram || {};
+  const text = [generated.hook, generated.caption, generated.body, generated.cta]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean)
+    .join("\n\n");
+  return text || approvedThreadsText(candidate);
+}
+
+async function readJsonBody(req, maxBytes = 256 * 1024) {
   const chunks = [];
   let size = 0;
   for await (const chunk of req) {
     size += chunk.length;
-    if (size > 256 * 1024) {
+    if (size > maxBytes) {
       throw requestError(413, "payload_too_large", "요청 본문이 너무 큽니다.");
     }
     chunks.push(chunk);
