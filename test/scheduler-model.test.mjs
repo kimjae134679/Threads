@@ -24,11 +24,12 @@ function item(id, bucket, theme, source, format) {
   };
 }
 
+const ids = (plan) => Array.from(plan, (entry) => String(entry.itemId));
 const hot = item("hot", "hot", "ai", "reddit", "carousel");
 const ready = item("ready", "ready", "work", "naver", "text");
 const evergreen = item("evergreen", "evergreen", "money", "news", "text");
 let plan = model.plan([evergreen, ready, hot], { slotMinutes:60, themeGapMinutes:120, sourceGapMinutes:120, formatGapMinutes:60 }, now);
-assert.deepEqual(plan.map((entry) => entry.itemId), ["hot", "ready", "evergreen"]);
+assert.deepEqual(ids(plan), ["hot", "ready", "evergreen"]);
 assert.ok(plan[0].reasons.includes("hot-priority"));
 assert.equal(plan[1].scheduledAtMs - plan[0].scheduledAtMs, 60 * 60_000);
 
@@ -52,6 +53,6 @@ assert.ok(plan[0].reasons.includes("manual-order"));
 const held = item("held", "hot", "ai", "reddit", "text");
 held.warehouse.status = "hold";
 plan = model.plan([held, hot], {}, now);
-assert.deepEqual(plan.map((entry) => entry.itemId), ["hot"]);
+assert.deepEqual(ids(plan), ["hot"]);
 
 console.log("Scheduler model regression tests passed.");
