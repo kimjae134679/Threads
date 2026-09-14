@@ -181,3 +181,23 @@ Fresh installed-Chrome E2E observed:
 Latest ops note: `032-sol.md`.
 
 Next priority: scoped server persistence namespaces/profile ids with strict id validation and independent revision conflicts, then DB-backed storage behind the same contract/migrations. Do not add arbitrary filesystem paths or credentials, and never couple restore to publication.
+
+## 2026-09-14 Run 033 update
+
+Scoped persistence is now implemented in `fc5fbe89a7e1cee658c6ca8176ba8a0436ca8571`, package `0.25.0`.
+
+- `/api/state?namespace=<id>` uses strict namespace validation
+- `default` preserves the old storage path
+- profile namespaces map to server-generated sibling files only; no arbitrary path input
+- traversal/slash ids fail closed with HTTP 400
+- revisions are independent per namespace
+- browser UI exposes `default` plus Account Registry ids `TH-A`, `TH-B`, `TH-C`
+- scope changes clear stale preview/revision state before further reads/writes
+
+Fresh installed-Chrome E2E observed:
+
+`{"bootstrap":"ready","options":["default","TH-A","TH-B","TH-C"],"defaultRevision":1,"profileRevision":1,"badge":"default · SERVER r1","pageErrors":0}`
+
+Latest ops note: `033-sol.md`.
+
+Next priority: DB-backed persistence behind the same schema-v2 + namespace + optimistic-revision contract, with explicit migration/versioning and file-store fallback until DB parity is proven. Never persist credentials and never couple persistence to publication.
