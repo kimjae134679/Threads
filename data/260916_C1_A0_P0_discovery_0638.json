@@ -1,0 +1,101 @@
+{
+  "batchId": "260916-0638-public-discovery",
+  "observedAt": "2026-09-16T06:38:54+09:00",
+  "rawMateriallyInspected": 42,
+  "retainedCount": 8,
+  "publicationAllowed": false,
+  "gates": {"rights":"UNKNOWN_OR_REVIEW","privacy":"REVIEW","humanReview":true,"publisher":"04_REVIEW_PUBLISH_ONLY"},
+  "notes": "Broad public/index sweep across Blind, TheQoo, Inven, Ppomppu, Reddit/YouTube/X/Threads search surfaces. Weak generic career/market/political/sexualized/removed results were inspected but not padded into retained output. Metrics are snapshot-specific and never merged across observations.",
+  "candidates": [
+    {
+      "stateName":"260916_C1_A0_P0_여자친구직장간섭",
+      "source":"Blind","topic":"dating-workplace-conflict",
+      "url":"https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%A7%81%EC%9E%A5-%EA%B0%84%EC%84%AD-%EC%A0%9C%EA%B0%80-%EB%84%88%EB%AC%B4-%EB%A7%8E%EC%9D%80%EA%B1%B8-%EB%B0%94%EB%9D%BC%EB%82%98%EC%9A%94-sfm58zhh",
+      "title":"여자친구 직장 간섭, 제가 너무 많은걸 바라나요?",
+      "metrics":{"views":104,"comments":16,"snapshotNote":"direct public page snapshot returned during this run; separate index snapshots showed later/larger counts and were not merged"},
+      "bodyRead":true,"commentsRead":true,"sourceImagesObserved":false,
+      "swipeWhy":"대기업 남친이 만족하는 여자친구에게 더 좋은 직장 이직을 요구하면서 결혼 조건과 존중 문제로 즉시 의견이 갈린다.",
+      "hook":"여친은 지금 회사가 만족스럽다는데… 남친은 결혼하려면 이직했으면 좋겠다고 했다",
+      "storyProgression":["3년 연애·결혼 논의","여친은 워라밸 좋은 중견기업에 만족","남친은 더 큰 회사·더 좋은 처우를 원함","여친의 결정사 발언","공개 댓글의 강한 반론"],
+      "acquisitionState":["BODY_READ","COMMENTS_READ","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_남자친구여자동기들",
+      "source":"Blind","topic":"dating-workplace-friendship",
+      "url":"https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EC%9D%98-%EC%97%AC%EC%9E%90%EB%8F%99%EA%B8%B0%EB%93%A4-ckomiodm",
+      "title":"남자친구의 여자동기들",
+      "metrics":{"views":235,"comments":16},"bodyRead":true,"commentsRead":true,"sourceImagesObserved":false,
+      "swipeWhy":"남친의 가장 친한 회사동기 두 명이 여자라는 사실에서 시작하지만 실제 단톡을 열어보니 너무 전형적인 직장동기 말투라 반전과 댓글 논쟁이 생긴다.",
+      "hook":"남친 단톡방에 여자 둘… 그런데 대화를 직접 열어보니 예상과 달랐다",
+      "storyProgression":["데이트 중 단톡 알림","남친이 폰을 통째로 보여줌","욕설·음슴체의 회사 이야기","3~4개월에 한 번 만남","댓글은 오히려 간섭을 지적"],
+      "acquisitionState":["BODY_READ","COMMENTS_READ","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_팀장신고",
+      "source":"Blind","topic":"workplace-conflict",
+      "url":"https://www.teamblind.com/kr/post/%EB%82%B4-%EC%8B%A0%EA%B3%A0%EB%A1%9C-%ED%8C%80%EC%9E%A5%EC%9D%B4-%EC%A7%A4%EB%A6%B4%EA%B1%B0%EA%B0%99%EC%95%84-zz6kklsm",
+      "title":"내 신고로 팀장이 짤릴거같아",
+      "metrics":{"views":133,"likes":3,"comments":11},"bodyRead":true,"commentsRead":true,"sourceImagesObserved":false,
+      "swipeWhy":"괴롭힘 신고의 결과로 팀장이 해고될 수 있다는 죄책감과 댓글의 '업보' 반응이 짧고 명확하다.",
+      "hook":"괴롭힘 신고했는데… 팀장이 진짜 잘릴 것 같자 신고한 사람이 흔들렸다",
+      "storyProgression":["괴롭힘 때문에 신고","원래 목적은 경고와 분리","팀장 해고 가능성","작성자의 죄책감","댓글의 단호한 반응"],
+      "acquisitionState":["BODY_READ","COMMENTS_READ","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"HIGH_REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_회사언니헤어진이유",
+      "source":"Inven","topic":"dating-humor",
+      "url":"https://www.inven.co.kr/board/webzine/2097/2728179",
+      "title":"회사 언니가 남친과 헤어진 이유",
+      "metrics":{"views":4432,"recommendations":1,"comments":13},"bodyRead":false,"commentsRead":false,"sourceImagesObserved":true,
+      "swipeWhy":"회사·연애·유머 조합이고 이미지형 원문이라 source-first 카드 후보가 될 수 있다. 다만 이번 검색 결과에서 본문 이미지 내용 전체를 검증하지 못했다.",
+      "hook":"회사 언니가 남친과 헤어진 이유를 들었는데… 예상한 이유가 아니었다",
+      "storyProgression":["원 이미지 확보 필요","본문 상황 확인","반전 포인트 확인","실제 댓글 반응 선별"],
+      "acquisitionState":["DISCOVERED","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_여친약속늦는이유",
+      "source":"Inven","topic":"dating-humor",
+      "url":"https://www.inven.co.kr/board/webzine/2097/2728110",
+      "title":"여친이 약속에 자꾸 늦는 이유",
+      "metrics":{"views":808,"comments":7,"snapshotNote":"search/news result snapshot"},"bodyRead":false,"commentsRead":false,"sourceImagesObserved":false,
+      "swipeWhy":"짧은 연애 유머형 훅은 강하지만 원문 자산/전개를 아직 확인하지 못해 낮은 우선순위.",
+      "hook":"약속마다 늦는 여친… 이유를 알고 나니 더 할 말이 없어졌다",
+      "storyProgression":["원문 확인 필요","실제 이유/반전 확인","댓글 반응 확인"],
+      "acquisitionState":["DISCOVERED","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_첫휴대폰",
+      "source":"Inven","topic":"nostalgia-participation",
+      "url":"https://www.inven.co.kr/board/webzine/2097/2727902",
+      "title":"당신의 첫 휴대폰은 이 중에 몇 번?",
+      "metrics":{"views":4859,"recommendations":2,"comments":55},"bodyRead":true,"commentsRead":false,"sourceImagesObserved":true,
+      "swipeWhy":"한 장 이미지에서 즉시 자기 경험을 고르게 만드는 참여형 소재이고 댓글 유도가 자연스럽다.",
+      "hook":"첫 휴대폰 기억나면 번호부터 고르게 되는 사진",
+      "storyProgression":["실제 목록 이미지","세대별 선택 포인트","댓글의 첫 폰 반응","자연스러운 번호 질문"],
+      "acquisitionState":["BODY_READ","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"LOW_REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_직장인지각공감",
+      "source":"TheQoo","topic":"workplace-relatable-humor",
+      "url":"https://theqoo.net/square/4334100477",
+      "title":"직장인 공감: 개까르잠 자고 일어나면 지각이다",
+      "metrics":{"views":305,"comments":1},"bodyRead":true,"commentsRead":false,"sourceImagesObserved":false,
+      "upstreamUrl":"https://x.com/10chd04/status/2095333236084003094",
+      "swipeWhy":"조회는 작지만 직장인 즉시공감형이고 정확한 upstream X URL이 노출돼 provenance 추적 실험에 유용하다.",
+      "hook":"출근 전에 '5분만 더' 했다가 눈 뜨면 생기는 일",
+      "storyProgression":["TheQoo repost","upstream X 확인 필요","원 media 존재 여부 확인","반응이 충분하면 짧은 카드/Threads용"],
+      "acquisitionState":["BODY_READ","UPSTREAM_URL_FOUND","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"LOW_REVIEW","humanReview":true,"publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_코인실수회고",
+      "source":"Blind index","topic":"investment-human-experience",
+      "url":"https://www.teamblind.com/kr/company/%EB%82%98%EC%9D%B8%ED%95%98%EC%9D%B4%EC%96%B4/posts/%EB%82%98%EC%9D%B8%ED%95%98%EC%9D%B4%EC%96%B4%20%ED%88%AC%EC%9E%90?page=2",
+      "title":"글 잘 안 쓰는데 불안한 사람들을 위한 글",
+      "metrics":{"views":3267,"likes":69,"comments":54,"snapshotNote":"public company/index page observation"},"bodyRead":false,"commentsRead":false,"sourceImagesObserved":false,
+      "swipeWhy":"2017년부터 코인을 해온 작성자가 본인의 가장 뼈아픈 두 실수를 회고한다는 사람 중심 구조. 단 현재 확보 URL은 개별 글이 아닌 공개 index라 C1 중에서도 재확인 우선.",
+      "hook":"2017년부터 코인한 사람이 아직도 후회한다는 딱 두 번의 실수",
+      "storyProgression":["오랜 투자 경험","가장 뼈아픈 두 실수","하락장에서 반복되는 판단","개별 원문 URL 확보 후 실제 사례 디테일 확인"],
+      "acquisitionState":["DISCOVERED","INDIVIDUAL_URL_PENDING","ASSETS_PENDING"],"rights":"UNKNOWN","privacy":"REVIEW","humanReview":true,"publicationAllowed":false
+    }
+  ]
+}
