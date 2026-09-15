@@ -1,41 +1,44 @@
 # NEXT RUN HANDOFF — Threads Source-First Build
 
-Updated: 2026-09-16 03:16 KST
+Updated: 2026-09-16 03:33 KST
 
 ## READ FIRST
 Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`; only 04 may publish.
 
-## This run — direct Korean-source reverification
-Started from repo tip `1fc44b4578f8d690772d615f13b1a9494dce0695` and read latest ops note `070-sol.md`.
+## This run — fresh exact-URL discovery sweep
+Started from prior handoff state after direct Korean-source reverification. Public/index search covered Blind, DCInside index, Inven, TheQoo/Ppomppu/Ruliweb/FMKorea/Arca search attempts, Reddit and YouTube queries. Search quality was uneven across sources; no anti-bot/login bypass or restricted-source bulk crawl was used.
 
-Fresh public/index searches rechecked five high-priority quarantined Korean leads. Three could be tied to exact direct public community pages and were promoted into `data/260916_C1_A0_P0_reverified-korean-leads_0316.json`. A visible verified backlog was added as `data/260916_C1_A0_P0_ranked-backlog_0316.md`.
+Created `data/260916_C1_A0_P0_discovery_0333.json` with **31 raw inspected leads / 10 retained exact-URL candidates / 21 rejected or deprioritized**. Every retained record has exact observed title, exact public URL, observation time, only visible metrics, body/comments read truth, source-media observation, hook, story progression, weakness, acquisition state and fail-closed rights/privacy/human gates.
 
-### Newly reverified direct candidates
-1. TheQoo — `난 아직도 내 결혼식을 뛰어넘는 사진을 본적이 없어.jpg (빡침주의)` — https://theqoo.net/square/4341458823 — observed 124,540 views / 528 comments; body read; 3 images visible. Page says `출처 스레드`, but original Threads URL was not verified. Assets not captured; rights UNKNOWN.
-2. Blind — `민원인이 400만원 빌려달래` — https://www.teamblind.com/kr/post/%EB%AF%BC%EC%9B%90%EC%9D%B8%EC%9D%B4-400%EB%A7%8C%EC%9B%90-%EB%B9%8C%EB%A0%A4%EB%8B%AC%EB%9E%98-5veokcic — observed display 37K views / 21 likes / 806 comments; body + publicly rendered top comment thread read; source image visible but not captured.
-3. Blind — `걸스나잇 했는데 나빼고 다 식중독 걸림...` — https://www.teamblind.com/kr/post/%EA%B1%B8%EC%8A%A4%EB%82%98%EC%9E%87-%ED%96%88%EB%8A%94%EB%8D%B0-%EB%82%98%EB%B9%BC%EA%B3%A0-%EB%8B%A4-%EC%8B%9D%EC%A4%91%EB%8F%85-%EA%B1%B8%EB%A6%BC-mt2n16mc — observed display 16K views / 15 likes / 78 comments; body + public top comments read; no source media visible.
+### Top retained
+1. Blind `결혼 한달 남았는데 파혼..` — https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727 — observed 1,846 views / 53 comments; body read; ASSETS_PENDING.
+2. Blind `파혼 해야 할까요..` — https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C%EC%9A%94-24j6ob7m — observed 1,043 views / 45 comments; body read; ASSETS_PENDING.
+3. Blind `결혼 돈 문제` — https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%8F%88-%EB%AC%B8%EC%A0%9C-x4bfqs7m — observed 201 views / 5 comments; body+comments read; ASSETS_PENDING.
+4. Blind `예단은 어느정도 해야해?` — https://www.teamblind.com/kr/post/%EC%98%88%EB%8B%A8%EC%9D%80-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%ED%95%B4%EC%95%BC%ED%95%B4-hmur4vk7 — observed 309 views / 21 comments; body read; ASSETS_PENDING.
+5. Blind `파혼` — https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-iscybzlg — observed 148 views / 2 likes / 4 comments; body+comments read; ASSETS_PENDING; contains derogatory language so Audience Comfort editing/review required.
+6. Inven `여친이 삐졌을때 하지말아야하는 행동` — https://www.inven.co.kr/board/webzine/2097/2727900 — observed 5,573 views / 2 recommendations / 11 comments; real image visible on source page but not captured; rights UNKNOWN.
+7. Inven `당신의 첫 휴대폰은 이 중에 몇 번?` — https://www.inven.co.kr/board/webzine/2097/2727902 — observed 4,859 views / 2 recommendations / 55 comments; real image visible but not captured; rights UNKNOWN.
 
-Not promoted: direct original Blind page for the 55M wedding-fund stock-loss story and Ppomppu `재산세 2천나왔네요`; exact direct URLs were not verified. Existing secondary C1 stock-loss reports remain secondary provenance only.
+Also retained: Inven `남자친구에게 선물을 주는 일본인 여자친구`, Blind `여자친구 생일선물 안주는`, Blind `결국엔 이렇게 30대 마지막 연애가 끝났다`.
+
+Explicitly excluded: a Blind post containing death-wish/self-harm language; sexual/body-focused candidate; ordinary stock-tax question; generic FIRE/investment advice; repetitive political item. Investment lane remains human-consequence-first; no ordinary market/rate/stock-news candidate was retained.
 
 ## State truth
-All three are `C1_A0_P0`, `publicationAllowed=false`, rights UNKNOWN, privacy/human review required. No actual screenshot/image file was captured into Source Package, so A1 was not reached. No publication occurred.
-
-## Discovery volume truth
-Raw priority leads inspected: 5. Newly retained/promoted direct-source candidates: 3. This run repaired strongest quarantined provenance rather than claiming a 40–80 fresh sweep.
+All new retained candidates are `C1_A0_P0`, `publicationAllowed=false`, rights UNKNOWN and human review required. No source screenshot/image file was captured into Source Package, so A1 was not reached. No publication occurred.
 
 ## Real source-backed result
-**Still not complete.** Real source pages/images were observed, but no production asset was actually acquired and no 1080×1080 carousel was generated/Chrome-verified. All remain ASSETS_PENDING/A0.
+**Still not complete.** Inven source images were visibly observed on public pages, but no asset file was actually acquired. No 1080×1080 carousel was generated or Chrome-verified. All remain ASSETS_PENDING/A0.
 
-## Next concrete priority
-1. TheQoo wedding-photo candidate is strongest visual lead. Try to verify its original Threads source publicly; if unavailable, do not invent it or clear repost rights.
-2. Use permitted/manual/user screenshot intake for a direct candidate (Blind 400만원 has strongest discussion arc) and run privacy masking review.
-3. Once a permitted screenshot set exists: intake → Source Package → 1080×1080 carousel → actual Chrome/dimension/readability verification → only then A1.
-4. Continue high-volume Korean discovery with exact title+URL mandatory. Investment lane stays human-consequence-first.
-5. Only 04 can set P1 after actual publication success.
-
-## Commits this run
-- `912e87da0d20f44ed65dbcdea9cb19c65b37fd86` — direct Korean lead reverification JSON
-- `6518408cf34073d7a3652c0d20a369a3623cf097` — verified ranked backlog
+## Best next asset targets
+1. Inven `여친이 삐졌을때 하지말아야하는 행동` — visual-first, current, simple reveal structure; first verify original image provenance/rights.
+2. Inven `당신의 첫 휴대폰은 이 중에 몇 번?` — visual + 55 comments; strong participation CTA, but original image provenance required.
+3. Blind `결혼 한달 남았는데 파혼..` — strongest fresh story progression; needs compliant/manual screenshot intake rather than bypassing Blind controls.
 
 ## Validation truth
-Data/docs only changed. Runtime code did not change, so no npm/browser/ffmpeg result is claimed. No OCR/moderation/API/publication result is claimed.
+Data/docs only changed. Runtime code did not change, so npm/browser/ffmpeg tests were not rerun or claimed. No OCR/moderation/API/publication result is claimed.
+
+## Commits this run
+- `9fb12cf9774923ff5869d29aefe173ec7adacf5a` — fresh exact-URL Discovery batch
+
+## Next concrete priority
+Continue toward 40–80 raw coverage across more Korean sources when search indexing permits, but do not pad weak duplicates. More importantly, acquire one compliant real source image/screenshot set from a top C1 candidate, run screenshot intake → Source Package → 1080×1080 carousel → actual Chrome dimension/readability verification, and only then mark A1. Only 04 may ever set P1 after actual publication success.
