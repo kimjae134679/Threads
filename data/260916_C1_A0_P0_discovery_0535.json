@@ -1,0 +1,63 @@
+{
+  "batchId": "260916_C1_A0_P0_discovery_0535",
+  "observedAt": "2026-09-16T05:35:20+09:00",
+  "publicationAllowed": false,
+  "gates": {"rights":"REVIEW_REQUIRED","privacy":"REVIEW_REQUIRED","humanReview":true},
+  "searchPolicy": "Public/index search only; no login, anti-bot bypass or restricted-source bulk crawling.",
+  "rawSearchResultsInspected": 14,
+  "retainedCount": 2,
+  "note": "Search coverage in this run was weak/noisy, so weak duplicates and stale results were not padded to hit a numeric target.",
+  "candidates": [
+    {
+      "stateName":"260916_C1_A0_P0_결혼한달남았는데파혼",
+      "source":"Blind",
+      "url":"https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727",
+      "title":"결혼 한달 남았는데 파혼..",
+      "lane":"marriage-money-conflict",
+      "observationTime":"2026-09-16T05:35:20+09:00",
+      "observedMetrics":{"views":1846,"comments":53},
+      "bodyRead":true,
+      "commentsRead":false,
+      "sourceImagesObserved":false,
+      "followupObserved":false,
+      "commentsExist":true,
+      "whySwipeWorthy":"전세사기에서 생긴 1억원 채무를 결혼 초반부터 알렸지만 식 한 달 전에 상대 부모가 전액 청산을 요구하는 강한 시점 반전이 있다.",
+      "weakness":"텍스트 중심이며 사적 재정/가족 갈등이라 privacy·defamation·context review가 중요하다.",
+      "firstSlideHook":"결혼 한 달 전, 이미 알고 있던 1억 빚을 갑자기 다 갚고 오라고 했다",
+      "storyProgression":["전세사기와 1억원 채무","결혼 준비 초반 상대와 부모에게 고지","상대는 함께 버티자고 함","식 한 달 전 상대 부모가 전액 청산 요구","실제 댓글 반응은 별도 확인 후 사용"],
+      "acquisitionState":["BODY_READ","ASSETS_PENDING"],
+      "rights":"UNKNOWN",
+      "privacy":"REVIEW_REQUIRED",
+      "publicationAllowed":false
+    },
+    {
+      "stateName":"260916_C1_A0_P0_한국집엔무조건있는데브라질부자집에만있는것",
+      "source":"YouTube Shorts / 어썸코리아 쇼츠",
+      "url":"https://www.youtube.com/watch?v=gxkXhfuDtT4",
+      "title":"한국 집엔 무조건 있는데 브라질은 부자집에만 있는 것",
+      "lane":"culture-difference-light-humor",
+      "observationTime":"2026-09-16T05:35:20+09:00",
+      "observedMetrics":{"views":267110,"likes":1300},
+      "publishedAt":"2025-11-30",
+      "bodyRead":false,
+      "commentsRead":false,
+      "sourceImagesObserved":false,
+      "followupObserved":false,
+      "commentsExist":null,
+      "whySwipeWorthy":"한국 생활의 당연한 물건과 브라질의 생활 차이를 비교하는 즉시 이해 가능한 가벼운 문화차이 훅이다.",
+      "weakness":"현재성은 낮고 원 영상 재사용 권리는 확인되지 않았다. 한국 커뮤니티 우선순위보다 낮게 둔다.",
+      "firstSlideHook":"한국에선 너무 흔한데 브라질에선 부자집에만 있다는 것",
+      "storyProgression":["한국에서는 흔한 생활 요소 제시","브라질에서는 보급 맥락이 다르다는 반전","원 영상의 실제 설명/장면은 asset acquisition 후에만 사용"],
+      "acquisitionState":["DISCOVERED","ASSETS_PENDING"],
+      "rights":"UNKNOWN",
+      "privacy":"LOW_EXPECTED_REVIEW_STILL_REQUIRED",
+      "publicationAllowed":false
+    }
+  ],
+  "excludedExamples":[
+    {"reason":"sexualized/adult-oriented image result","source":"Inven","title":"(ㅇㅎ) 인스타 복구된 강인경"},
+    {"reason":"political/news lane; repetitive political conflict is intentionally penalized","source":"YouTube","title":"용혜인 ‘직격’ …"},
+    {"reason":"stale generic compensation discussion, not a strong current story candidate","source":"Blind","title":"생산직은 결국 임금협상으로 가져오는 성과급이 핵심이야?"},
+    {"reason":"irrelevant developer/tool result from noisy Reddit search","source":"Reddit Developers","title":"multiple Devvit app pages"}
+  ]
+}
