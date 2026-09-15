@@ -670,3 +670,17 @@ Package `0.41.8`, implementation commit `126977cc16337ea71b04ef18e7f7649b07c983b
 - `npm run check` PASS including actual ffmpeg/ffprobe regression. No fresh Chrome E2E was claimed for the new SVG download UI.
 
 Next: browser-observe the new demo SVG download when practical, then consider turning the downloaded storyboard SVG into per-card PNG exports inside the app without bypassing rights/privacy gates. Instagram live validation remains blocked on credentials/scopes/version/provider-fetchable approved HTTPS staging.
+
+## 2026-09-15 Run 059 update
+
+Threads baseline `d00d843ac7814c0cf7c9b89702694a4720684d73`; latest ops note read was `058-sol.md`. Repo tip won.
+
+Implemented `19fafc8c9c02308032bb6bb96e6c37e26993888f`: Demo Showcase now exports each storyboard card as a real 1080x1080 PNG generated in-browser by the app. Every filename starts `DEMO_ONLY-`; the render itself visibly says `DEMO ONLY`; export does not alter approval/publication state. Existing storyboard SVG export remains.
+
+Fresh installed-Chrome observation on server 43185 / package 0.41.8: bootstrap `ready`; existing SVG download produced `DEMO_ONLY-demo-fed-oil-yields-2026-09-15-storyboard.svg`; new PNG export produced 4 actual PNG downloads (`card-01`..`card-04`); page errors 0. This is a demo-download observation, not publication.
+
+Added `data/discovery-batch-2026-09-15-1917.json`: finance/bonds, AI safety, baseball, and Reddit developer/internet-culture lanes. No unverified engagement values were promoted; rights UNKNOWN, manual review required, publicationAllowed false.
+
+Validation: targeted demo test PASS; `npm run check` PASS including real ffmpeg/ffprobe 1080x1920 H.264 yuv420p 30fps; discovery contract PASS for 4 contract-era batches. Temporary Playwright install/script/server cleaned.
+
+Next: verify CI for `19fafc8`; then improve demo PNG typography only if materially needed, otherwise return to remaining provider/status-sync usability gaps. Instagram live validation still requires real credentials/scopes, explicit Graph API version and provider-fetchable approved HTTPS staging. Only 04 may publish.
