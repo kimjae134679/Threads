@@ -133,6 +133,7 @@ try {
   });
   await page.waitForTimeout(120);
   const staleStatus = await page.locator("[data-vertical-status]").textContent();
+  const staleDownload = await page.locator("[data-vertical-download]").evaluate((el) => ({ hidden: el.hidden, href: el.getAttribute("href"), ariaDisabled: el.getAttribute("aria-disabled") }));
   const staleHandoff = await page.locator('.approval-card[data-item-id="e2e-vertical-fixture"] [data-vertical-artifact-handoff]').textContent();
   const livePublishRequests = requests.filter((entry) => /\/api\/(?:threads|buffer)\/publish/.test(entry.url));
   assert.equal(errors.length, 0, `page errors: ${JSON.stringify(errors)}`);
@@ -147,9 +148,10 @@ try {
   assert.equal(rendered.artifact?.providerCapability, "unsupported", "vertical provider publishing must remain unsupported");
   assert.match(reviewHandoff.notice || "", /04/, "04 handoff notice must be visible");
   assert.match(staleStatus || "", /stale/, "03 status must mark changed revision stale");
+  assert.deepEqual(staleDownload, { hidden: true, href: null, ariaDisabled: "true" }, "stale artifact download must fail closed");
   assert.match(staleHandoff || "", /stale/, "04 handoff must mark changed revision stale");
   assert.ok(mainThreadProbeMs.every((ms) => ms < 1000), `main-thread responsiveness regression: ${JSON.stringify(mainThreadProbeMs)}`);
-  console.log(JSON.stringify({ seeded, mainThreadProbeMs, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, reviewFixture, reviewHandoff, stale, staleStatus, staleHandoff, requests, errors }));
+  console.log(JSON.stringify({ seeded, mainThreadProbeMs, dimensions, reviewCount, privacyGate, gateState, rendered, videoStatus: video.status(), bytes, reviewFixture, reviewHandoff, stale, staleStatus, staleDownload, staleHandoff, requests, errors }));
 } finally {
   await browser.close();
   await fs.rm(fixture, { force: true });

@@ -48,6 +48,7 @@
   const detailTitle = document.querySelector("#detailTitle");
   const selectionObserver = detailTitle ? new MutationObserver(() => queueMicrotask(refresh)) : null;
   selectionObserver?.observe(detailTitle, { childList: true, subtree: true, characterData: true });
+  document.addEventListener("threads:content-revision-changed", () => queueMicrotask(refresh));
   document.addEventListener("click", (event) => {
     if (event.target.closest?.(".candidate-card, [data-open-id], #cardSaveBtn, #cardBuildBtn, [data-privacy-reviewed]")) setTimeout(refresh, 0);
   });
@@ -78,13 +79,17 @@
     const gate = productionGate(item);
     renderButton.disabled = !gate.allowed;
     const artifact = item.verticalVideoArtifact;
-    if (artifact?.downloadPath) {
+    const artifactCurrent = artifact?.handoffBasisUpdatedAt === item.updatedAt;
+    if (artifact?.downloadPath && artifactCurrent) {
       download.href = artifact.downloadPath;
       download.download = `threads-${item.id}-vertical.mp4`;
       download.hidden = false;
+      download.removeAttribute("aria-disabled");
     } else {
       download.hidden = true;
       download.removeAttribute("href");
+      if (artifact?.downloadPath) download.setAttribute("aria-disabled", "true");
+      else download.removeAttribute("aria-disabled");
     }
     status.textContent = artifact
       ? artifactStatus(item, artifact)
