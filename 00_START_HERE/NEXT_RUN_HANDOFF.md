@@ -1,34 +1,33 @@
 # NEXT RUN HANDOFF — Threads Source-First Build
 
-Updated: 2026-09-16 05:16 KST
+Updated: 2026-09-16 05:35 KST
 
 ## READ FIRST
 Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`; only 04 may publish.
 
-## This run — provenance work, not another text-only discovery batch
-Started from tip `d1646b18`. Followed the previous priority and advanced the strongest TheQoo hotel-cake/workplace candidate toward real asset acquisition.
+## This run
+Performed a fresh public/index Discovery sweep across Korean-community/workplace/marriage/investing/humor lanes plus Reddit/YouTube search coverage. Search coverage was noisy/weak this hour, so the run did **not** pad the repo with stale or irrelevant items merely to hit the 40–80 target.
 
-Created `data/260916_C1_A0_P0_hotel-cake-provenance_0516.json` with an explicit source chain:
-- Current TheQoo compilation: `임원이 사온 호텔케이크 뭉개버린 남직원 글에 달린 댓글 일화가 더 충격적임` — https://theqoo.net/square/4022365750 — this run observed 99,239 views / 902 comments. Body read; selected visible comments read.
-- Predecessor TheQoo post: `뒷일을 생각안하고 이상한짓 하는 남직원 너무 많음..` — https://theqoo.net/square/4021537698 — this run observed 73,393 views / 274 comments. Body read.
-- Both public TheQoo pages explicitly expose the original/linked X status `https://x.com/yuwisk/status/1997967558398628028`; the predecessor also exposes follow-up `https://x.com/yuwisk/status/1998002501010989169`.
-- Direct X fetch was attempted but unavailable in this run. Therefore X body/media/metrics are NOT claimed observed, no screenshot was fabricated, and state remains A0/ASSETS_PENDING.
+Added `data/260916_C1_A0_P0_discovery_0535.json`.
+- Raw search results materially inspected: 14.
+- Retained: 2 exact-URL candidates.
+- Strongest retained remains Blind `결혼 한달 남았는데 파혼..` — exact public URL recorded; observed snapshot 1,846 views / 53 comments; body read, comments not claimed read.
+- Secondary breadth candidate: YouTube Shorts `한국 집엔 무조건 있는데 브라질은 부자집에만 있는 것` — exact URL; published 2025-11-30; observed 267,110 views / 1,300 likes. It is lower priority due age/rights and is not treated as a Korean-community top candidate.
+- Excluded sexualized Inven result, repetitive political YouTube result, stale generic Blind compensation discussion and irrelevant Reddit developer-tool results.
 
-Important safety finding: the long TheQoo comment thread contains severe animal-cruelty/death anecdotes and a toxic-herbicide threat anecdote. Those beats are explicitly excluded from any production. The safe proposed story progression stops at non-graphic workplace property sabotage/passport-hiding anecdotes.
+## Existing top provenance target remains important
+The prior hotel-cake/workplace chain remains materially stronger for asset acquisition: TheQoo compilation + predecessor expose exact upstream X URLs, but X body/media/metrics were not directly accessible last run. It remains C1_A0_P0 / ASSETS_PENDING.
 
 ## State truth
-This candidate remains `C1_A0_P0`, `publicationAllowed=false`, rights UNKNOWN, privacy/human review required. Exact upstream URLs are now recorded, but **no source image/screenshot file was acquired**, no OCR/moderation was run, no carousel was generated, no Chrome verification occurred, and no publication occurred. A1/P1 remain absent.
+No source screenshot/image file was acquired this run. No OCR/moderation was run. No carousel/Chrome verification/publication occurred. All new records are `publicationAllowed=false`, rights UNKNOWN/REVIEW, privacy/human review required, A0/P0.
 
 ## Commit
-- `d06d1aca513e1cf6c57b7c6a37e61d2fcef9da62` — hotel-cake source provenance + safe story boundary
+- `f1e419eac51d18d8187712c3ae087c6bfdc232d8` — 05:35 verified public Discovery batch
 
 Runtime code unchanged; npm/browser/ffmpeg tests were not rerun or claimed.
 
-## Discovery counts for this run
-This was a focused provenance/acquisition run rather than a new high-volume sweep: 4 targeted public/index queries plus direct opening of the current TheQoo page, predecessor page and exact X URL. Retained/promoted new candidates: 0. Provenance materially advanced for 1 existing top-ranked candidate.
-
 ## Next concrete priority
-1. Use an authorized permitted browser/manual capture path for the two exact X URLs. If public media can actually be captured, preserve provenance and move only the actual acquired asset state toward ASSETS_CAPTURED; otherwise remain A0.
-2. If X remains inaccessible, advance another source-backed visual target rather than generating substitutes: Blind `민원인이 400만원 빌려달래` manual/public screenshot intake or Inven visual candidates' original provenance.
+1. Continue high-volume Korean-community discovery when public/index coverage yields useful results; do not pad weak duplicates.
+2. In parallel, prioritize compliant real-asset acquisition for the already-strong TheQoo/X hotel-cake chain or Blind `민원인이 400만원 빌려달래`.
 3. Once a permitted/user-provided real screenshot set exists: ordered screenshot intake → Source Package → genuine 1080×1080 carousel → Chrome visual/dimension verification → only then A1.
-4. Keep publication P0 until rights/privacy/current human approval pass and 04 actually observes publication success.
+4. Keep P0 until rights/privacy/current human approval pass and 04 actually observes publication success.
