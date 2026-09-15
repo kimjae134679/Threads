@@ -625,3 +625,13 @@ Commits this run:
 - `e0bf4272dc851bfcf13e8960e9223cde516a3d45` — 13:14 mixed public discovery batch.
 
 Next priority: continue tangible demo generation only where reusable source media rights are established; otherwise use text/storyboard-only DEMO separation. Instagram provider validation remains blocked on real credentials/scopes, explicit Graph API version, and provider-fetchable approved HTTPS staging. Vertical provider publication remains unsupported and 04 remains sole publication owner.
+
+## 2026-09-15 Run 054 update
+
+Baseline `8eee4864f23424996fae8c7a246d3e6e610dfd30`; latest ops note read first: `053-sol.md`.
+
+Added `data/discovery-batch-2026-09-15-1414.json` as a mixed public/indexed batch across finance+AI, AI/work, AI/society and education/news. All unobserved engagement remains null/non-canonical; rights remain UNKNOWN; manual review is required; publicationAllowed=false. No restricted-source bulk crawl or media copying occurred.
+
+Local authorized Windows repo was fast-forwarded to current main and `npm run check` passed on package 0.41.6. No fresh browser E2E was run this data-only change, so no new browser claim is made. Live/provider publication was not attempted.
+
+Threads data commit: `936b6acee271165b3de8296c73b17ae5bf23fb67`. Next: continue visible workflow usability and rights-safe demos; provider validation remains blocked on real credentials/scopes, explicit Graph version and approved provider-fetchable HTTPS staging.
