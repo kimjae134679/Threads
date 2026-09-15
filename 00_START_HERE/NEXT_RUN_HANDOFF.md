@@ -657,3 +657,16 @@ Added mixed public discovery batch data/discovery-batch-2026-09-15-1626.json acr
 npm run check PASS including actual ffmpeg/ffprobe vertical regression. Fresh server smoke on 43183 returned ok:true/version 0.41.7. No browser UI changed, so no fresh Chrome E2E claim. Latest ops note: 056-sol.md.
 
 Next: continue tangible demo/workflow usability; only attempt provider validation with real credentials/scopes/version/staging and keep 04 as sole publisher.
+
+## 2026-09-15 Run 057 update
+
+Package `0.41.8`, implementation commit `126977cc16337ea71b04ef18e7f7649b07c983ba`.
+
+- Demo Showcase now creates a downloadable `DEMO_ONLY-*-storyboard.svg` directly in the app from each existing storyboard. The asset is explicitly demo-only and does not alter approval/publication state.
+- Added UI/regression assertions for the preview generator and filename marker.
+- Added mixed discovery batch `data/discovery-batch-2026-09-15-1717.json`: Reuters US 10Y >5%, Reuters MediaTek 2nm, Reddit r/ausjobs workplace discussion, Reddit r/Games September release crowding.
+- Directly visible Reddit vote examples are canonical only where observed; Reuters engagement remains null/non-canonical. Rights stay UNKNOWN and all candidates require manual review with publication disabled.
+- Discovery contract regression now validates both 16:26 and 17:17 batches.
+- `npm run check` PASS including actual ffmpeg/ffprobe regression. No fresh Chrome E2E was claimed for the new SVG download UI.
+
+Next: browser-observe the new demo SVG download when practical, then consider turning the downloaded storyboard SVG into per-card PNG exports inside the app without bypassing rights/privacy gates. Instagram live validation remains blocked on credentials/scopes/version/provider-fetchable approved HTTPS staging.
