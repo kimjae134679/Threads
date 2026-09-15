@@ -562,3 +562,19 @@ The E2E script now fails on page errors, any live publish request, missing/empty
 No Instagram credential/provider validation or live publication was attempted. Feed/Carousel provider validation remains blocked on real operator credentials/scopes, explicit Graph version and provider-fetchable approved HTTPS staging. Reel/Short provider publication remains `unsupported`; local MP4 rendering is not provider readiness.
 
 Next priority: avoid inventing persistence work. Continue only concrete workflow gaps. When real provider configuration exists, validate official Instagram container creation without `media_publish`; otherwise improve non-live review/production ergonomics or compliant discovery with verifiable public evidence. Keep the role chain and 04-only publication ownership unchanged.
+
+## 2026-09-15 Run 049 update
+
+Vertical production now bounds accidental long renders in `1753eda` (`0.41.4`).
+
+- Server rejects vertical requests over 180 seconds with `vertical_duration_limit_exceeded`.
+- 03 UI computes duration from rendered card count × seconds-per-image and disables render above the same limit.
+- Duration input refreshes the production gate immediately.
+- Regression covers the server-side limit.
+- `npm run check` passed.
+- Fresh installed-Chrome vertical E2E passed: bootstrap stayed ready; 20 responsiveness probes were 0–1 ms; 2×1080 square cards → reviewed privacy/rights → 1080×1920 H.264 artifact → 04 handoff → stale invalidation; zero live publish requests and zero page errors.
+- `/api/health` returned `ok:true` on port 43176.
+
+Provider publication remains unsupported for vertical artifacts. Instagram official validation is still blocked on real operator credentials/scopes, explicit Graph API version and provider-fetchable approved HTTPS staging. Do not fabricate provider success.
+
+Next priority: keep nonblocked production/review ergonomics focused and evidence-based; if Instagram operator configuration appears, validate official container creation only with `/media_publish` still disabled.
