@@ -695,3 +695,25 @@ Added `data/discovery-batch-2026-09-15-2017.json` with finance, AI/work, gaming,
 Validation: `npm run check` PASS on package 0.41.8 including actual ffmpeg/ffprobe; Discovery batch contract PASS for 5 contract-era batches. No live publication/provider success claim.
 
 Next: browser-observe the PNG busy guard when useful; then continue only material provider/status-sync usability work that can be validated against current official APIs. Keep 04 as the only publication owner.
+## 2026-09-15 User-visible content quality correction
+
+The user rejected the current black-background text-only demo storyboard as a representative result. Treat the existing Demo Showcase PNG/SVG output as developer/regression material only, not as a satisfactory end-user content result.
+
+Binding production direction from now on:
+- prioritize a real source-backed end-to-end content set over more demo-output polish or bookkeeping;
+- Korean community discovery/acquisition first: DCInside, Blind, FMKorea, TheQoo, Instiz, Ruliweb, Ppomppu, Clien, Inven, Arca, NAVER/Daum cafes, then public social/news sources;
+- do not bulk crawl or bypass access controls on restricted sources; use public/index metadata, permitted browser acquisition, user URLs/screenshots, or manual capture;
+- if real source assets are not actually acquired, status remains `ASSETS_PENDING`; never substitute invented/generated media and call it finished;
+- normal carousel output must use actual source post screenshots/images/media or user-provided screenshots;
+- slide 1 = first real source image/screenshot full-bleed, strongly blurred/darkened, with a short curiosity hook;
+- slide 2 = that first source asset shown readable/unblurred; slide 3+ = actual continuation images/screenshots and, where useful, real reaction/comment captures in story order;
+- preserve original content with contain/blurred-background filler instead of silently cropping important material;
+- avoid dry text-only `CONTEXT` / `CHECK` / `특히 볼 것` filler cards as the main experience;
+- do not truncate a source story into four generic summary sentences when the original has useful narrative/reaction material;
+- aim for swipe-worthy flow: hook → actual source evidence → continuation/turning point → strongest real reaction/comment → concise question/CTA;
+- screenshot intake remains a priority gap: ordered multi-screenshot input, visible-text/region extraction, post/media/UI separation, crop/privacy suggestions, provenance, hook/caption draft, human rights/privacy confirmation, then 1080x1080 render;
+- same Source Package later feeds a separate 1080x1920 MP4 Reels/Shorts renderer; never stretch square cards into vertical video.
+
+Until one real source-backed carousel is visibly produced and browser-verified, this work outranks further text-demo PNG/SVG polish, provider/status-sync niceties, or additional infrastructure that does not directly unblock acquisition/production.
+
+Every future handoff must explicitly state: (1) whether a real source-backed user-facing result was produced, (2) which real assets were actually acquired, (3) which candidates remain `ASSETS_PENDING`, and (4) where the user can view the actual result files. Do not describe text-only demos as finished content.
