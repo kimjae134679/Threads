@@ -604,3 +604,24 @@ Fresh mixed discovery + demo refresh landed after baseline 5258390.
 - First E2E against old server on 4173 failed stale guard; fresh current server passed. Stale local servers are a test-environment hazard.
 
 Next: run mixed demos through full interactive Card Factory only when reusable source assets are established; provider validation still requires real credentials/scopes/approved HTTPS staging.
+
+
+## 2026-09-15 Run 053 update
+
+Baseline: `4ff40ce583b935b4ceeef1c6433b9d8170e3a2a7`; latest ops note read first: `052-sol.md`.
+
+Concrete unfinished task from 052 was stale local-server detection during browser E2E. Implemented runtime identity in `/api/health`: package version plus process `runtimeStartedAt`. `scripts/browser-e2e-vertical.mjs` now refuses an E2E target whose runtime version does not equal the checked-out package version, before trusting any browser observation. Package `0.41.6`.
+
+Validation:
+- `npm run check`: PASS, including actual FFmpeg/ffprobe regression.
+- Fresh server `43181` + installed Chrome vertical E2E: PASS. Main-thread probes 0–2 ms; 1080x1080 Card Factory inputs; privacy/rights gates; actual 1080x1920 H.264/yuv420p/30fps MP4; 04 handoff; stale revision/download fail-closed; page errors 0; live Threads/Buffer publish requests 0.
+- Intentional test against the stale old `4173` runtime: correctly FAILS before browser workflow with `stale E2E server: expected 0.41.6, got unknown`. This closes the false-observation risk identified in 052.
+- No provider/live publication attempted.
+
+Current public discovery batch: `data/discovery-batch-2026-09-15-1314.json`, four mixed lanes: AI sovereignty, workplace AI/data security, oil/markets, and a rare baseball moment. Sources are Reuters and Yahoo Sports/MLB-reference metadata. No engagement metric was visible/canonical in this run, so metrics remain null. No DCInside/Blind bulk crawling, bypass, article-body copying, or media copying. Rights remain UNKNOWN and publicationAllowed=false.
+
+Commits this run:
+- `c771d90f8d23c0c2332448a7323f844e3b279839` — fail E2E against stale server runtimes.
+- `e0bf4272dc851bfcf13e8960e9223cde516a3d45` — 13:14 mixed public discovery batch.
+
+Next priority: continue tangible demo generation only where reusable source media rights are established; otherwise use text/storyboard-only DEMO separation. Instagram provider validation remains blocked on real credentials/scopes, explicit Graph API version, and provider-fetchable approved HTTPS staging. Vertical provider publication remains unsupported and 04 remains sole publication owner.
