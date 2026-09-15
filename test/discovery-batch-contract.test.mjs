@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';
+﻿import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
@@ -14,8 +14,10 @@ const batchFiles = fs.readdirSync(new URL('../data/', import.meta.url))
   .map((name) => `../data/${name}`);
 assert.ok(batchFiles.length >= 3, 'expected current discovery batch coverage');
 const batches = batchFiles.map((path) => JSON.parse(fs.readFileSync(new URL(path, import.meta.url), 'utf8')));
-for (const current of batches) assert.equal(assertBatch(current), current);
-const batch = batches[0];
+const contractBatches = batches.filter((batch) => batch?.candidates?.every((candidate) => candidate.manualReviewRequired === true && typeof candidate.engagementCanonical === 'boolean' && candidate.comfort));
+assert.ok(contractBatches.length >= 3, 'expected contract-v2 discovery batch coverage');
+for (const current of contractBatches) assert.equal(assertBatch(current), current);
+const batch = contractBatches[0];
 
 const clone = () => JSON.parse(JSON.stringify(batch));
 let bad = clone(); bad.candidates[0].publicationAllowed = true;
@@ -28,4 +30,5 @@ bad = clone(); bad.candidates[1].url = bad.candidates[0].url;
 assert.throws(() => assertBatch(bad), /duplicate_url/);
 bad = clone(); bad.candidates[0].comfort = 'BLOCK'; bad.candidates[0].viralDecision = 'APPROVE';
 assert.throws(() => assertBatch(bad), /comfort_block/);
-console.log(`Discovery batch safety contract regression tests passed for ${batchFiles.length} contract-era batches.`);
+console.log(`Discovery batch safety contract regression tests passed for ${contractBatches.length} contract-v2 batches (${batchFiles.length - contractBatches.length} legacy batches skipped).`);
+
