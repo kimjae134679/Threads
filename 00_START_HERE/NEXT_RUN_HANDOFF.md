@@ -717,3 +717,5 @@ Binding production direction from now on:
 Until one real source-backed carousel is visibly produced and browser-verified, this work outranks further text-demo PNG/SVG polish, provider/status-sync niceties, or additional infrastructure that does not directly unblock acquisition/production.
 
 Every future handoff must explicitly state: (1) whether a real source-backed user-facing result was produced, (2) which real assets were actually acquired, (3) which candidates remain `ASSETS_PENDING`, and (4) where the user can view the actual result files. Do not describe text-only demos as finished content.
+
+Operations-hub mirror of this correction: `061-sol.md`. The hourly automation is now `Threads Source-First Build` and enforces the same real-source/user-visible priorities.
