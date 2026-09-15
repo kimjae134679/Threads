@@ -647,3 +647,13 @@ Added `data/discovery-batch-2026-09-15-1607.json` across finance/rates, relation
 A stale local unfinished worktree predating current main was found on the authorized Windows machine. Repo tip won: the diff was preserved outside the repo as `C:\Users\user\source\repos\Threads_unfinished_20260915_1607.patch`, then the worktree was reset/fast-forwarded to current main before validation. Do not treat that old patch as implemented.
 
 Next: prioritize visible workflow/demo usability and actual rendered demo assets when source rights permit; provider validation remains blocked on real credentials/scopes, explicit Graph API version, and provider-fetchable approved HTTPS staging.
+
+## 2026-09-15 Run 056 update
+
+Package 0.41.7 adds a reusable fail-closed Discovery batch contract and regression coverage. It rejects duplicate URLs, publication/manual-review gate violations, invalid rights states, non-canonical engagement leakage, and Audience Comfort BLOCK + APPROVE contradictions.
+
+Added mixed public discovery batch data/discovery-batch-2026-09-15-1626.json across finance, tech/news, work/career, and humor/relationships. Unobserved engagement remains null; all candidates remain manual-review and publication-disabled.
+
+npm run check PASS including actual ffmpeg/ffprobe vertical regression. Fresh server smoke on 43183 returned ok:true/version 0.41.7. No browser UI changed, so no fresh Chrome E2E claim. Latest ops note: 056-sol.md.
+
+Next: continue tangible demo/workflow usability; only attempt provider validation with real credentials/scopes/version/staging and keep 04 as sole publisher.
