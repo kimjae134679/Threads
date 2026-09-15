@@ -591,3 +591,16 @@ Stale vertical artifacts now fail closed for download in `7b94aa369a2abb10fe3ee2
 - `/api/health` returned `ok:true`.
 
 Provider publication remains unchanged: vertical is `unsupported`; Instagram container validation still requires real credentials/scopes, explicit Graph version and provider-fetchable approved HTTPS staging. No provider success or live publication is claimed.
+
+## 2026-09-15 Run 052 update
+
+Fresh mixed discovery + demo refresh landed after baseline 5258390.
+
+- Added data/discovery-batch-2026-09-15-1219.json across finance, relationships/money, human-interest, AI/markets; no invented engagement or copied third-party media.
+- Added data/demo-showcase-2026-09-15.json with three DEMO ONLY storyboards, captions, Viral/Comfort review decisions, CTA endings and pre-publish checks.
+- Demo Showcase now loads the Sep 15 mixed-source set; imports remain demoOnly and productionEligible=false and require normal gates.
+- Fresh npm run check PASS including actual FFmpeg regression.
+- Fresh installed-Chrome vertical E2E PASS on current server 43179: main-thread 0-1ms, privacy/rights gate, 1080x1920 H.264, 04 handoff, stale-download guard, zero page errors/live publish requests.
+- First E2E against old server on 4173 failed stale guard; fresh current server passed. Stale local servers are a test-environment hazard.
+
+Next: run mixed demos through full interactive Card Factory only when reusable source assets are established; provider validation still requires real credentials/scopes/approved HTTPS staging.
