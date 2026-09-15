@@ -34,6 +34,7 @@
     if (action === "import-all") importAll();
     if (action === "import-one") importOne(button.dataset.demoId);
     if (action === "toggle-story") toggleStory(button.dataset.demoId);
+    if (action === "download-preview") downloadPreview(button.dataset.demoId);
   });
 
   load();
@@ -85,6 +86,7 @@
       <div class="demo-card-actions">
         <a class="button ghost" href="${escapeAttr(item.sourceUrl || "#")}" target="_blank" rel="noopener noreferrer">원 출처 열기</a>
         <button type="button" class="button ghost" data-demo-action="toggle-story" data-demo-id="${escapeAttr(item.id)}">스토리보드 ${cards.length}장 보기</button>
+        <button type="button" class="button ghost" data-demo-action="download-preview" data-demo-id="${escapeAttr(item.id)}">데모 SVG 받기</button>
         <button type="button" class="button primary" data-demo-action="import-one" data-demo-id="${escapeAttr(item.id)}">Inbox로 복사</button>
       </div>
       <div class="demo-storyboard" data-demo-story="${escapeAttr(item.id)}" hidden>${renderStoryboard(cards)}</div>
@@ -103,6 +105,27 @@
       </div>
     `).join("");
   }
+
+  function downloadPreview(id) {
+    const item = payload?.items?.find((candidate) => candidate.id === id);
+    if (!item) return;
+    const cards = Array.isArray(item.storyboard?.cards) ? item.storyboard.cards : [];
+    const width = 1080, height = Math.max(1080, cards.length * 1080);
+    const panels = cards.map((card, index) => renderPreviewPanel(card, index, cards.length)).join("");
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">${panels}</svg>`;
+    const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url; link.download = `DEMO_ONLY-${safeFileName(item.id)}-storyboard.svg`; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showSystemMessage("DEMO ONLY 스토리보드 SVG를 만들었습니다. 실제 게시 자산이 아닙니다.", "info");
+  }
+
+  function renderPreviewPanel(card, index, total) {
+    const y = index * 1080, title = escapeXml(card.title || ""), body = escapeXml(card.body || ""), source = escapeXml(card.source || "DEMO ONLY");
+    return `<g transform="translate(0 ${y})"><rect width="1080" height="1080" fill="#111318"/><text x="72" y="110" fill="#9ca3af" font-size="28" font-family="sans-serif">DEMO ONLY · ${index + 1}/${total}</text><foreignObject x="72" y="190" width="936" height="650"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:sans-serif;color:white;font-size:68px;font-weight:800;white-space:pre-wrap;line-height:1.16">${title}<div style="font-size:34px;font-weight:400;line-height:1.45;margin-top:44px;color:#d1d5db">${body}</div></div></foreignObject><text x="72" y="990" fill="#9ca3af" font-size="25" font-family="sans-serif">${source}</text></g>`;
+  }
+  function safeFileName(value) { return String(value || "demo").replace(/[^a-zA-Z0-9_-]+/g, "-").slice(0, 80); }
+  function escapeXml(value) { return String(value ?? "").replace(/[&<>]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[char]); }
 
   function toggleStory(id) {
     const target = section.querySelector(`[data-demo-story="${cssEscape(id)}"]`);

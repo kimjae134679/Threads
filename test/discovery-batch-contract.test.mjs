@@ -7,8 +7,10 @@ const context = { globalThis: {} };
 vm.createContext(context);
 vm.runInContext(source, context);
 const { assertBatch } = context.globalThis.ThreadsDiscoveryBatchContract;
-const batch = JSON.parse(fs.readFileSync(new URL('../data/discovery-batch-2026-09-15-1626.json', import.meta.url), 'utf8'));
-assert.equal(assertBatch(batch), batch);
+const batchFiles = ['../data/discovery-batch-2026-09-15-1626.json', '../data/discovery-batch-2026-09-15-1717.json'];
+const batches = batchFiles.map((path) => JSON.parse(fs.readFileSync(new URL(path, import.meta.url), 'utf8')));
+for (const current of batches) assert.equal(assertBatch(current), current);
+const batch = batches[0];
 
 const clone = () => JSON.parse(JSON.stringify(batch));
 let bad = clone(); bad.candidates[0].publicationAllowed = true;
