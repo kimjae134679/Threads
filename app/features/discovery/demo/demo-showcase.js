@@ -1,5 +1,5 @@
 (() => {
-  const DATA_URL = "/data/demo-showcase-2026-09-14.json";
+  const DATA_URL = "/data/demo-showcase-2026-09-15.json";
   const footer = document.querySelector("footer");
   if (!footer) return;
 
@@ -151,34 +151,9 @@
       platforms: ["Threads", "Instagram Carousel", "YouTube Shorts"],
       status: "inbox",
       relatedSources: [],
-      sourceMeta: {
-        provider: demo.sourcePlatform,
-        canonicalUrl: demo.sourceUrl,
-        observedEngagement: demo.sourceEvidence || {},
-      },
-      themeClassification: {
-        schemaVersion: 1,
-        taxonomyVersion: "demo-2026-09",
-        primaryTheme: demo.primaryTheme,
-        secondaryThemes: demo.secondaryThemes || [],
-        tags: [demo.discoveryLane, "demo"].filter(Boolean),
-        confidence: 0.9,
-        score: 90,
-        reasons: ["demo-showcase curated classification"],
-        source: "manual",
-        computedAt: now,
-        updatedAt: now,
-      },
-      demoShowcase: {
-        demoOnly: true,
-        productionEligible: false,
-        sourceKey: demoKey,
-        discoveryLane: demo.discoveryLane,
-        scores: demo.scores,
-        storyboard: demo.storyboard,
-        caption: demo.caption,
-        nextChecks: demo.nextChecks || [],
-      },
+      sourceMeta: { provider: demo.sourcePlatform, canonicalUrl: demo.sourceUrl, observedEngagement: demo.sourceEvidence || {} },
+      themeClassification: { schemaVersion: 1, taxonomyVersion: "demo-2026-09", primaryTheme: demo.primaryTheme, secondaryThemes: demo.secondaryThemes || [], tags: [demo.discoveryLane, "demo"].filter(Boolean), confidence: 0.9, score: 90, reasons: ["demo-showcase curated classification"], source: "manual", computedAt: now, updatedAt: now },
+      demoShowcase: { demoOnly: true, productionEligible: false, sourceKey: demoKey, discoveryLane: demo.discoveryLane, scores: demo.scores, storyboard: demo.storyboard, caption: demo.caption, nextChecks: demo.nextChecks || [] },
       createdAt: now,
       updatedAt: now,
     };
@@ -206,16 +181,7 @@
     return "yellow";
   }
 
-  function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
-  }
-
-  function escapeAttr(value) {
-    return escapeHtml(value).replace(/`/g, "&#96;");
-  }
-
-  function cssEscape(value) {
-    if (window.CSS?.escape) return window.CSS.escape(String(value));
-    return String(value).replace(/[^a-zA-Z0-9_-]/g, "\\$&");
-  }
+  function escapeHtml(value) { return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]); }
+  function escapeAttr(value) { return escapeHtml(value).replace(/`/g, "&#96;"); }
+  function cssEscape(value) { if (window.CSS?.escape) return window.CSS.escape(String(value)); return String(value).replace(/[^a-zA-Z0-9_-]/g, "\\$&"); }
 })();
