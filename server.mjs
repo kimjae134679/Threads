@@ -27,6 +27,8 @@ import { VerticalVideoArtifactStore, getVerticalVideoArtifactCapabilities } from
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
+const PACKAGE_VERSION = JSON.parse(await fs.readFile(path.join(ROOT, 'package.json'), 'utf8')).version;
+const RUNTIME_STARTED_AT = new Date().toISOString();
 const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || "127.0.0.1";
 const STATE_PATH = process.env.PERSISTENCE_STATE_PATH || path.join(ROOT, "data", "runtime", "state.json");
@@ -59,7 +61,7 @@ const server = http.createServer(async (req, res) => {
     const url = new URL(req.url || "/", `http://${req.headers.host || `${HOST}:${PORT}`}`);
 
     if (url.pathname === "/api/health") {
-      return json(res, 200, { ok: true, service: "threads-trend-inbox", now: new Date().toISOString() });
+      return json(res, 200, { ok: true, service: "threads-trend-inbox", version: PACKAGE_VERSION, runtimeStartedAt: RUNTIME_STARTED_AT, now: new Date().toISOString() });
     }
 
     if (url.pathname === "/api/state/status") {

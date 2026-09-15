@@ -21,6 +21,13 @@ page.on("request", (request) => {
 });
 
 try {
+  const expectedVersion = JSON.parse(await fs.readFile(path.join(process.cwd(), 'package.json'), 'utf8')).version;
+  const healthUrl = new URL('/api/health', base).href;
+  const healthResponse = await page.request.get(healthUrl);
+  assert.equal(healthResponse.status(), 200, 'E2E target health endpoint must respond');
+  const health = await healthResponse.json();
+  assert.equal(health.version, expectedVersion, 'stale E2E server: expected ' + expectedVersion + ', got ' + (health.version || 'unknown'));
+  assert.ok(health.runtimeStartedAt, 'E2E target must expose runtime start identity');
   await page.goto(base, { waitUntil: "networkidle" });
   await page.waitForSelector(".vertical-video-production-panel", { state: "attached" });
   const seeded = await page.evaluate(() => {
