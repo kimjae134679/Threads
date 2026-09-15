@@ -35,6 +35,7 @@
     if (action === "import-one") importOne(button.dataset.demoId);
     if (action === "toggle-story") toggleStory(button.dataset.demoId);
     if (action === "download-preview") downloadPreview(button.dataset.demoId);
+    if (action === "download-png") downloadPngCards(button.dataset.demoId);
   });
 
   load();
@@ -87,6 +88,7 @@
         <a class="button ghost" href="${escapeAttr(item.sourceUrl || "#")}" target="_blank" rel="noopener noreferrer">원 출처 열기</a>
         <button type="button" class="button ghost" data-demo-action="toggle-story" data-demo-id="${escapeAttr(item.id)}">스토리보드 ${cards.length}장 보기</button>
         <button type="button" class="button ghost" data-demo-action="download-preview" data-demo-id="${escapeAttr(item.id)}">데모 SVG 받기</button>
+        <button type="button" class="button ghost" data-demo-action="download-png" data-demo-id="${escapeAttr(item.id)}">카드별 PNG 받기</button>
         <button type="button" class="button primary" data-demo-action="import-one" data-demo-id="${escapeAttr(item.id)}">Inbox로 복사</button>
       </div>
       <div class="demo-storyboard" data-demo-story="${escapeAttr(item.id)}" hidden>${renderStoryboard(cards)}</div>
@@ -118,6 +120,34 @@
     link.href = url; link.download = `DEMO_ONLY-${safeFileName(item.id)}-storyboard.svg`; link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     showSystemMessage("DEMO ONLY 스토리보드 SVG를 만들었습니다. 실제 게시 자산이 아닙니다.", "info");
+  }
+
+  async function downloadPngCards(id) {
+    const item = payload?.items?.find((candidate) => candidate.id === id); if (!item) return;
+    const cards = Array.isArray(item.storyboard?.cards) ? item.storyboard.cards : []; if (!cards.length) return;
+    for (let index = 0; index < cards.length; index += 1) {
+      const canvas = renderPngCard(cards[index], index, cards.length);
+      const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png")); if (!blob) throw new Error("demo_png_export_failed");
+      const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url;
+      link.download = `DEMO_ONLY-${safeFileName(item.id)}-card-${String(index + 1).padStart(2, "0")}.png`; link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000); await new Promise((resolve) => setTimeout(resolve, 80));
+    }
+    showSystemMessage(`DEMO ONLY 카드 PNG ${cards.length}장을 만들었습니다. 실제 게시 자산이 아닙니다.`, "info");
+  }
+
+  function renderPngCard(card, index, total) {
+    const canvas = document.createElement("canvas"); canvas.width = 1080; canvas.height = 1080;
+    const ctx = canvas.getContext("2d"); ctx.fillStyle = "#111318"; ctx.fillRect(0, 0, 1080, 1080);
+    ctx.fillStyle = "#9ca3af"; ctx.font = "28px sans-serif"; ctx.fillText(`DEMO ONLY · ${index + 1}/${total}`, 72, 110);
+    drawWrapped(ctx, String(card.title || ""), 72, 210, 936, 78, "800 68px sans-serif", "#ffffff", 5);
+    drawWrapped(ctx, String(card.body || ""), 72, 620, 936, 49, "34px sans-serif", "#d1d5db", 6);
+    ctx.fillStyle = "#9ca3af"; ctx.font = "25px sans-serif"; ctx.fillText(String(card.source || "DEMO ONLY").slice(0, 70), 72, 990); return canvas;
+  }
+
+  function drawWrapped(ctx, text, x, y, maxWidth, lineHeight, font, fillStyle, maxLines) {
+    ctx.font = font; ctx.fillStyle = fillStyle; const chars = [...text]; let line = "", row = 0;
+    for (const char of chars) { const next = line + char; if (ctx.measureText(next).width > maxWidth && line) { ctx.fillText(line, x, y + row * lineHeight); row += 1; line = char; if (row >= maxLines) return; } else line = next; }
+    if (line && row < maxLines) ctx.fillText(line, x, y + row * lineHeight);
   }
 
   function renderPreviewPanel(card, index, total) {
