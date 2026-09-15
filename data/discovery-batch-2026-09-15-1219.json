@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-15T12:19:00+09:00",
+  "mode": "public-indexed-discovery",
+  "productionReady": false,
+  "publicationAllowed": false,
+  "notes": "Fresh mixed-source metadata only. Visible facts only; no copied article bodies/media. Every item requires normal Viral, Audience Comfort, rights/privacy/fact and 04 approval gates.",
+  "items": [
+    {"sourceKey":"reuters:fed-oil-yields:20260915","lane":"finance_investing","source":"Reuters","url":"https://www.reuters.com/world/africa/dollar-near-two-week-high-oil-surge-lifts-yields-fed-hike-bets-2026-09-15/","title":"유가 107달러·미 국채 10년물 5% 돌파 속 Fed 인상 기대 급등","observedEngagement":null,"whyItMayWork":"숫자 훅이 강하고 미국주식/환율/금리 독자가 바로 이해할 수 있음.","whyItMayBeWeak":"시장 수치는 빠르게 변하므로 카드 제작 시 관측 시각을 명시해야 함.","followUpAvailable":true,"imagesAvailable":"article media visible; reuse rights not established","viralDecision":"REVIEW","comfortDecision":"PASS","rightsState":"UNKNOWN","manualReviewRequired":true},
+    {"sourceKey":"et:iphone17-gift-reddit:20260915","lane":"relationships_money","source":"Economic Times","url":"https://m.economictimes.com/news/new-updates/22-year-old-girl-gifts-an-iphone-17-to-her-19-year-old-boyfriend-but-he-doesnt-want-to-keep-it/articleshow/134239545.cms","title":"22세 여자친구가 선물한 iPhone 17을 19세 남자친구가 부담스러워한 사연","observedEngagement":null,"whyItMayWork":"연애+비싼 선물+소득 차이라는 즉시 토론 가능한 구조.","whyItMayBeWeak":"Reddit 원글 2차 보도라 원문 확인 전 세부 사실을 확정하면 안 됨.","followUpAvailable":true,"imagesAvailable":"article image visible; reuse rights not established","viralDecision":"REVIEW","comfortDecision":"PASS","rightsState":"UNKNOWN","manualReviewRequired":true},
+    {"sourceKey":"people:flight-attendant-baby:20260915","lane":"human_interest","source":"People","url":"https://people.com/flight-attendant-holds-baby-for-exhausted-mom-during-flight-exclusive-12116571","title":"지친 엄마 대신 아기를 안아준 승무원 이야기","observedEngagement":null,"whyItMayWork":"불쾌감 낮은 따뜻한 이야기로 피드 다양성 확보에 좋음.","whyItMayBeWeak":"개인·아동 이미지 재사용은 피하고 사실 요약 중심으로 가야 함.","followUpAvailable":true,"imagesAvailable":"article image visible; do not reuse without rights","viralDecision":"REVIEW","comfortDecision":"PASS","rightsState":"UNKNOWN","manualReviewRequired":true},
+    {"sourceKey":"reuters:ai-tech-selloff:20260914","lane":"ai_it_markets","source":"Reuters","url":"https://www.reuters.com/world/china/tech-stocks-slide-ai-slowdown-talks-2026-09-14/","title":"AI 개발 속도조절 발언 뒤 글로벌 기술주 하락","observedEngagement":null,"whyItMayWork":"AI와 주식 두 레인을 연결하고 한국 KOSPI/Nasdaq 반응까지 설명 가능.","whyItMayBeWeak":"인과를 단정하지 말고 시장 반응과 발언을 분리해야 함.","followUpAvailable":true,"imagesAvailable":"article media visible; reuse rights not established","viralDecision":"REVIEW","comfortDecision":"PASS","rightsState":"UNKNOWN","manualReviewRequired":true}
+  ]
+}
