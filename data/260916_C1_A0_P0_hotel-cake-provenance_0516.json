@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-16T05:16:00+09:00",
+  "stateName": "260916_C1_A0_P0_호텔케이크-직장괴롭힘-연쇄썰",
+  "candidateState": "C1",
+  "assetState": "A0",
+  "publicationState": "P0",
+  "publicationAllowed": false,
+  "source": {
+    "community": "TheQoo",
+    "exactObservedTitle": "임원이 사온 호텔케이크 뭉개버린 남직원 글에 달린 댓글 일화가 더 충격적임",
+    "url": "https://theqoo.net/square/4022365750",
+    "observedAt": "2026-09-16T05:16:00+09:00",
+    "observedMetrics": {
+      "views": 99239,
+      "comments": 902,
+      "note": "Values observed from the public page in this run. A previous snapshot showed a different comment count; snapshots are not merged."
+    },
+    "bodyRead": true,
+    "commentsRead": "selected-visible-comments-only"
+  },
+  "provenanceChain": [
+    {
+      "type": "linked-original-social",
+      "platform": "X",
+      "url": "https://x.com/yuwisk/status/1997967558398628028",
+      "verification": "URL is explicitly linked by both TheQoo source pages; direct X fetch was not available in this run, so post body/media/metrics are NOT claimed verified."
+    },
+    {
+      "type": "linked-followup-social",
+      "platform": "X",
+      "url": "https://x.com/yuwisk/status/1998002501010989169",
+      "verification": "URL explicitly visible in the predecessor TheQoo page; direct X content was not fetched."
+    },
+    {
+      "type": "predecessor-community-post",
+      "platform": "TheQoo",
+      "exactObservedTitle": "뒷일을 생각안하고 이상한짓 하는 남직원 너무 많음..",
+      "url": "https://theqoo.net/square/4021537698",
+      "observedAt": "2026-09-16T05:16:00+09:00",
+      "observedMetrics": {"views": 73393, "comments": 274},
+      "bodyRead": true,
+      "notes": "Public page explicitly links both X status URLs."
+    }
+  ],
+  "storyUse": {
+    "swipeWorthiness": "Strong escalating workplace chain: destroyed/hidden personal or shared items, then passport-hiding anecdote. Multiple discrete beats can form a real-evidence carousel once lawful source screenshots/media are acquired.",
+    "suggestedHook": "회사에서 남의 케이크를 망가뜨린 사람… 댓글을 보니 이게 끝이 아니었다",
+    "safeProgression": [
+      "linked X/source setup",
+      "custom coffee discarded anecdote",
+      "gift hand cream hidden anecdote",
+      "shared bread/cake or gifts deliberately damaged anecdote",
+      "passport hidden before overseas business trip as strongest safe turning point",
+      "natural question/CTA"
+    ],
+    "excludedFromProduction": [
+      "animal cruelty/death anecdotes appearing later in comments",
+      "threat involving toxic herbicide",
+      "any private-person identifying details beyond what is necessary to show the public source"
+    ]
+  },
+  "acquisition": {
+    "state": "ASSETS_PENDING",
+    "sourceImagesVisibleOnCommunityPage": true,
+    "actualFilesAcquired": false,
+    "directXFetchSucceeded": false,
+    "nextCompliantStep": "Use an authorized permitted browser/manual capture to inspect the two exact X URLs and capture only public source post/media if technically accessible; otherwise keep A0 and use user-provided screenshots. Do not use generated replacement imagery."
+  },
+  "gates": {
+    "rights": "UNKNOWN",
+    "privacyReviewRequired": true,
+    "humanReviewRequired": true,
+    "audienceComfort": "PASS_WITH_EXCLUSIONS",
+    "safetyNote": "The public comment thread contains severe animal-cruelty/death material and a toxic-substance threat anecdote. Those beats are explicitly excluded from production even though they were encountered during provenance review."
+  }
+}
