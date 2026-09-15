@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-const path = new URL("../data/demo-showcase-2026-09-14.json", import.meta.url);
+const path = new URL("../data/demo-showcase-2026-09-15.json", import.meta.url);
 const payload = JSON.parse(fs.readFileSync(path, "utf8"));
 
 assert.equal(payload.demoOnly, true);
@@ -15,7 +15,12 @@ for (const item of payload.items) {
   assert.ok(/^https:\/\//.test(item.sourceUrl));
   assert.ok(item.discoveryLane);
   assert.ok(item.primaryTheme);
-  assert.ok(item.sourceEvidence && item.sourceEvidence.mode === "observed");
+  assert.ok(item.sourceEvidence && ["observed", "secondary"].includes(item.sourceEvidence.mode));
+  if (item.sourceEvidence.mode === "secondary") {
+    assert.equal(item.sourceEvidence.votes, null);
+    assert.equal(item.sourceEvidence.comments, null);
+  }
+  assert.notEqual(item.publicationAllowed, true);
   assert.ok(item.scores && Number.isFinite(Number(item.scores.viral)));
   assert.ok(item.scores && Number.isFinite(Number(item.scores.audienceComfort)));
   const cards = item.storyboard?.cards || [];
