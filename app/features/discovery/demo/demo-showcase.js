@@ -35,7 +35,7 @@
     if (action === "import-one") importOne(button.dataset.demoId);
     if (action === "toggle-story") toggleStory(button.dataset.demoId);
     if (action === "download-preview") downloadPreview(button.dataset.demoId);
-    if (action === "download-png") downloadPngCards(button.dataset.demoId);
+    if (action === "download-png") downloadPngCards(button.dataset.demoId, button);
   });
 
   load();
@@ -122,17 +122,25 @@
     showSystemMessage("DEMO ONLY 스토리보드 SVG를 만들었습니다. 실제 게시 자산이 아닙니다.", "info");
   }
 
-  async function downloadPngCards(id) {
-    const item = payload?.items?.find((candidate) => candidate.id === id); if (!item) return;
+  async function downloadPngCards(id, button) {
+    const item = payload?.items?.find((candidate) => candidate.id === id); if (!item || button?.disabled) return;
     const cards = Array.isArray(item.storyboard?.cards) ? item.storyboard.cards : []; if (!cards.length) return;
-    for (let index = 0; index < cards.length; index += 1) {
-      const canvas = renderPngCard(cards[index], index, cards.length);
-      const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png")); if (!blob) throw new Error("demo_png_export_failed");
-      const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url;
-      link.download = `DEMO_ONLY-${safeFileName(item.id)}-card-${String(index + 1).padStart(2, "0")}.png`; link.click();
-      setTimeout(() => URL.revokeObjectURL(url), 1000); await new Promise((resolve) => setTimeout(resolve, 80));
+    const originalLabel = button?.textContent || "카드별 PNG 받기";
+    if (button) { button.disabled = true; button.textContent = "PNG 만드는 중…"; }
+    try {
+      for (let index = 0; index < cards.length; index += 1) {
+        const canvas = renderPngCard(cards[index], index, cards.length);
+        const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png")); if (!blob) throw new Error("demo_png_export_failed");
+        const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url;
+        link.download = `DEMO_ONLY-${safeFileName(item.id)}-card-${String(index + 1).padStart(2, "0")}.png`; link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000); await new Promise((resolve) => setTimeout(resolve, 80));
+      }
+      showSystemMessage(`DEMO ONLY 카드 PNG ${cards.length}장을 만들었습니다. 실제 게시 자산이 아닙니다.`, "info");
+    } catch (error) {
+      showSystemMessage(`데모 PNG 생성 실패: ${String(error?.message || error)} · 게시 상태는 변경되지 않았습니다.`, "error");
+    } finally {
+      if (button) { button.disabled = false; button.textContent = originalLabel; }
     }
-    showSystemMessage(`DEMO ONLY 카드 PNG ${cards.length}장을 만들었습니다. 실제 게시 자산이 아닙니다.`, "info");
   }
 
   function renderPngCard(card, index, total) {
