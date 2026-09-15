@@ -635,3 +635,15 @@ Added `data/discovery-batch-2026-09-15-1414.json` as a mixed public/indexed batc
 Local authorized Windows repo was fast-forwarded to current main and `npm run check` passed on package 0.41.6. No fresh browser E2E was run this data-only change, so no new browser claim is made. Live/provider publication was not attempted.
 
 Threads data commit: `936b6acee271165b3de8296c73b17ae5bf23fb67`. Next: continue visible workflow usability and rights-safe demos; provider validation remains blocked on real credentials/scopes, explicit Graph version and approved provider-fetchable HTTPS staging.
+
+## 2026-09-15 Run 055 update
+
+Current tip work closed a concrete demo-regression gap: `test/demo-showcase.test.mjs` now validates the current 2026-09-15 showcase instead of the stale 2026-09-14 fixture, permits explicitly secondary evidence only when canonical engagement remains null, and asserts demos are never `publicationAllowed=true`. Commit: `bdcde12a3dd7189a8037f4997b222cbe6d0792ef`.
+
+Added `data/discovery-batch-2026-09-15-1607.json` across finance/rates, relationships/humor, robotics/gaming/sports, and AI/work. Unobserved engagement remains null/non-canonical; rights UNKNOWN; manual review required; `publicationAllowed=false`. Commit: `cdcfd8c5b1036b4b1dc55f60a5835849a307ee84`.
+
+`npm run check` PASS on package 0.41.6 after the regression fix, including actual ffmpeg/ffprobe vertical-video regression. No new browser UI behavior was changed, so no fresh Chrome-E2E claim is made this run.
+
+A stale local unfinished worktree predating current main was found on the authorized Windows machine. Repo tip won: the diff was preserved outside the repo as `C:\Users\user\source\repos\Threads_unfinished_20260915_1607.patch`, then the worktree was reset/fast-forwarded to current main before validation. Do not treat that old patch as implemented.
+
+Next: prioritize visible workflow/demo usability and actual rendered demo assets when source rights permit; provider validation remains blocked on real credentials/scopes, explicit Graph API version, and provider-fetchable approved HTTPS staging.
