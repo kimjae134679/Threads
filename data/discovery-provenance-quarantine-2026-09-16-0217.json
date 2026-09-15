@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "discovery-provenance-quarantine-v1",
+  "createdAt": "2026-09-16T02:17:24+09:00",
+  "publicationAllowed": false,
+  "manualReviewRequired": true,
+  "quarantinedBatchIds": [
+    "kr-high-volume-2026-09-16-0128"
+  ],
+  "reason": "The batch contains titles, state claims and engagement values but no per-candidate source URL/public-page reference. Therefore this run cannot independently trace those observations back to a public source snapshot.",
+  "rules": {
+    "treatEngagementAsCanonical": false,
+    "treatBodyReadAsVerified": false,
+    "treatCommentsReadAsVerified": false,
+    "allowEditorialPromotion": false,
+    "allowProduction": false,
+    "allowPublication": false
+  },
+  "releaseCondition": "A candidate may leave quarantine only after its exact public source URL or user-provided source capture is attached, the relevant body/comments/metrics are actually re-observed, provenance is recorded, and normal rights/privacy/human-review gates remain fail-closed.",
+  "notes": "This does not assert that the prior values are false. It prevents untraceable observations from being treated as verified evidence. No metrics, OCR, moderation, rights, credentials, delivery or publication status are invented here."
+}
