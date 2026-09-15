@@ -111,3 +111,5 @@ footer { display: flex; justify-content: space-between; gap: 20px; color: var(--
   .filters { justify-content: flex-start; width: 100%; }
   .filters input, .filters select { width: 100%; max-width: none; }
 }
+
+.source-asset-list{display:grid;gap:10px;margin:10px 0 14px}.source-asset-row{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;padding:8px;border:1px solid var(--line,#303746);border-radius:10px}.source-asset-row img{width:72px;height:72px;object-fit:contain;border-radius:7px;background:#111}.source-asset-row small{display:block;opacity:.7;margin:4px 0}.source-order{display:grid;gap:4px}.source-order button{min-width:32px}.source-package-status{white-space:pre-wrap;font:inherit;font-size:12px;line-height:1.55;margin-top:10px}

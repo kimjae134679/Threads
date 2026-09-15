@@ -719,3 +719,21 @@ Until one real source-backed carousel is visibly produced and browser-verified, 
 Every future handoff must explicitly state: (1) whether a real source-backed user-facing result was produced, (2) which real assets were actually acquired, (3) which candidates remain `ASSETS_PENDING`, and (4) where the user can view the actual result files. Do not describe text-only demos as finished content.
 
 Operations-hub mirror of this correction: `061-sol.md`. The hourly automation is now `Threads Source-First Build` and enforces the same real-source/user-visible priorities.
+
+## 2026-09-15 Run 063 update
+
+Source-first screenshot intake is now wired into the actual candidate detail UI, package `0.42.0`.
+
+- Multi-image browser intake preserves operator order and allows up/down reordering.
+- Each selected image is explicitly typed as original post / continuation / media / comment.
+- Browser-local previews use object URLs only; image bytes are not silently persisted to localStorage or the repo.
+- Source Package build requires a selected candidate plus real selected image files.
+- OCR/vision remain explicitly not run; privacy review remains REQUIRED.
+- rights defaults UNKNOWN; publication remains blocked and owner stays `04_REVIEW_PUBLISH`.
+- visible status reports asset count, rights/privacy state and render flow.
+- Fixed the 21:14 discovery batch to satisfy the existing fail-closed discovery contract rather than weakening the validator.
+- Added a fresh 22:14 mixed batch (TheQoo sports, Ppomppu AI/IT, Reuters Korea AI security, Reuters semiconductor/work); no source media copied.
+
+Validation: `npm run check` PASS on Windows; actual installed Chrome E2E selected two real local image files and built a 2-asset Source Package with page errors 0. Temporary Playwright/runtime artifacts were removed. This is not a publication or OCR/rights-success claim.
+
+REAL source-backed finished carousel: **NOT YET PRODUCED**. Actual public source media remain `ASSETS_PENDING` / rights review pending. Next priority is to connect these browser-selected assets to the 1080x1080 real-asset carousel renderer and inspect the output in Chrome; do not fall back to text-only cards.

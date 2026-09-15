@@ -178,7 +178,7 @@
           </div>
 
           <div class="detail-section">
-            <h3>사람 평가 <small class="muted-inline">0~100 · 빈칸은 미평가</small></h3>
+            <div class="detail-section source-intake"><h3>실제 스크린샷 Source Package</h3><p class="muted-inline">원문 캡처/이미지를 순서대로 선택합니다. OCR/권리 확인은 자동 성공 처리하지 않습니다.</p><label>스크린샷 / 이미지<input id="sourceAssetInput" type="file" accept="image/*" multiple /></label><div id="sourceAssetList" class="source-asset-list"></div><label>첫 장 훅<input id="sourceHookInput" maxlength="180" placeholder="짧고 궁금증을 만드는 문장" /></label><label>캡션 초안<textarea id="sourceCaptionInput" rows="3"></textarea></label><label>권리 상태<select id="sourceRightsInput"><option value="UNKNOWN">UNKNOWN</option><option value="USER_CONFIRMED">사용자 확인</option><option value="LICENSED">라이선스 확인</option></select></label><div class="research-actions"><button id="buildSourcePackageBtn" class="button primary" type="button">Source Package 만들기</button><button id="clearSourceAssetsBtn" class="button ghost" type="button">선택 비우기</button></div><pre id="sourcePackageStatus" class="source-package-status"></pre></div><div class="detail-section"><h3>사람 평가 <small class="muted-inline">0~100 · 빈칸은 미평가</small></h3>
             <div class="evaluation-grid">
               <label>신선도<input id="evalFreshness" type="number" min="0" max="100" placeholder="미평가" /></label>
               <label>상승 속도<input id="evalVelocity" type="number" min="0" max="100" placeholder="미평가" /></label>
@@ -226,6 +226,8 @@
       <span><a href="../docs/SOURCE_POLICY.md">Source Policy</a> · <a href="../docs/CONTENT_PIPELINE.md">Content Pipeline</a> · <a href="../docs/EXECUTION_PLAN_30D.md">30일 실행안</a></span>
     </footer>
   </div>
+  <script src="./source-package.js"></script>
+  <script src="./source-intake.js"></script>
   <script src="./app.js"></script>
   <script src="./youtube.js"></script>
   <script src="./clustering.js"></script>

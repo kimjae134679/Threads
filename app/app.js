@@ -605,3 +605,5 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
+window.ThreadsSourceIntakeContext = { getSelectedId: function(){ return selectedId; }, getCandidate: function(id){ return state.items.find(function(x){ return x.id === id; }) || null; } };

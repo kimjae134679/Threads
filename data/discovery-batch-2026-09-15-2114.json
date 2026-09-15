@@ -1,13 +1,92 @@
 {
-  "batchId":"korean-source-first-2026-09-15-2114",
-  "observedAt":"2026-09-15T21:14:00+09:00",
-  "publicationAllowed":false,
-  "rightsState":"UNKNOWN",
-  "candidates":[
-    {"source":"TheQoo","lane":"entertainment/fandom","url":"https://theqoo.net/seventeen/2899620879?category=831246463&m=1","title":"세븐틴 2026년 9월 스케줄 정리","observedEngagement":{"views":589453},"why":"공개 페이지에 실제 이미지와 세부 일정이 많고 매우 큰 조회 신호가 보임","weak":"팬덤 일정표라 일반 대중용 스토리 훅은 약함","assets":"PUBLIC_PAGE_IMAGES_VISIBLE_RIGHTS_UNKNOWN","decision":"REVIEW"},
-    {"source":"TheQoo","lane":"entertainment","url":"https://theqoo.net/kickflip/4019605542?category=4018878301&listStyle=viewer&m=0","title":"KickFlip 9월 일정 / 15일 3D 필름 공개","observedEngagement":{"views":7233,"comments":44},"why":"당일 이벤트와 대표 이미지가 공개 페이지에서 확인됨","weak":"팬덤 외 확장성이 제한될 수 있음","assets":"PUBLIC_PAGE_IMAGES_VISIBLE_RIGHTS_UNKNOWN","decision":"REVIEW"},
-    {"source":"Ppomppu","lane":"humor/everyday","url":"https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=9796074","title":"스타벅스 화장실 키가 너무 커진 이유","observedEngagement":{"views":3736,"comments":8},"why":"한 장 이미지로 상황이 즉시 이해되고 실제 댓글 반응이 이어짐","weak":"현재 이슈는 아니어서 freshness 낮음","assets":"PUBLIC_POST_IMAGE_VISIBLE_RIGHTS_UNKNOWN","decision":"REVIEW"},
-    {"source":"Ppomppu","lane":"food/consumer","url":"https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=9873075","title":"타코가 비싸서 무한리필을 찾는 소비자 이야기","observedEngagement":{"views":1543,"comments":6},"why":"가격 공감형이고 실제 댓글에 대안 매장 언급이 있어 후속 흐름 가능","weak":"반응 규모가 작고 매장 정보는 재검증 필요","assets":"PUBLIC_POST_IMAGE_VISIBLE_RIGHTS_UNKNOWN","decision":"REVIEW"}
+  "batchId": "korean-source-first-2026-09-15-2114",
+  "observedAt": "2026-09-15T21:14:00+09:00",
+  "publicationAllowed": false,
+  "rightsState": "UNKNOWN",
+  "candidates": [
+    {
+      "source": "TheQoo",
+      "lane": "entertainment/fandom",
+      "url": "https://theqoo.net/seventeen/2899620879?category=831246463&m=1",
+      "title": "세븐틴 2026년 9월 스케줄 정리",
+      "observedEngagement": {
+        "views": 589453
+      },
+      "why": "공개 페이지에 실제 이미지와 세부 일정이 많고 매우 큰 조회 신호가 보임",
+      "weak": "팬덤 일정표라 일반 대중용 스토리 훅은 약함",
+      "assets": "PUBLIC_PAGE_IMAGES_VISIBLE_RIGHTS_UNKNOWN",
+      "decision": "REVIEW",
+      "id": "kr-2114-1",
+      "publicationAllowed": false,
+      "manualReviewRequired": true,
+      "rightsState": "UNKNOWN",
+      "engagementCanonical": true,
+      "comfort": "PASS",
+      "viralDecision": "REVIEW"
+    },
+    {
+      "source": "TheQoo",
+      "lane": "entertainment",
+      "url": "https://theqoo.net/kickflip/4019605542?category=4018878301&listStyle=viewer&m=0",
+      "title": "KickFlip 9월 일정 / 15일 3D 필름 공개",
+      "observedEngagement": {
+        "views": 7233,
+        "comments": 44
+      },
+      "why": "당일 이벤트와 대표 이미지가 공개 페이지에서 확인됨",
+      "weak": "팬덤 외 확장성이 제한될 수 있음",
+      "assets": "PUBLIC_PAGE_IMAGES_VISIBLE_RIGHTS_UNKNOWN",
+      "decision": "REVIEW",
+      "id": "kr-2114-2",
+      "publicationAllowed": false,
+      "manualReviewRequired": true,
+      "rightsState": "UNKNOWN",
+      "engagementCanonical": true,
+      "comfort": "PASS",
+      "viralDecision": "REVIEW"
+    },
+    {
+      "source": "Ppomppu",
+      "lane": "humor/everyday",
+      "url": "https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=9796074",
+      "title": "스타벅스 화장실 키가 너무 커진 이유",
+      "observedEngagement": {
+        "views": 3736,
+        "comments": 8
+      },
+      "why": "한 장 이미지로 상황이 즉시 이해되고 실제 댓글 반응이 이어짐",
+      "weak": "현재 이슈는 아니어서 freshness 낮음",
+      "assets": "PUBLIC_POST_IMAGE_VISIBLE_RIGHTS_UNKNOWN",
+      "decision": "REVIEW",
+      "id": "kr-2114-3",
+      "publicationAllowed": false,
+      "manualReviewRequired": true,
+      "rightsState": "UNKNOWN",
+      "engagementCanonical": true,
+      "comfort": "PASS",
+      "viralDecision": "REVIEW"
+    },
+    {
+      "source": "Ppomppu",
+      "lane": "food/consumer",
+      "url": "https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=9873075",
+      "title": "타코가 비싸서 무한리필을 찾는 소비자 이야기",
+      "observedEngagement": {
+        "views": 1543,
+        "comments": 6
+      },
+      "why": "가격 공감형이고 실제 댓글에 대안 매장 언급이 있어 후속 흐름 가능",
+      "weak": "반응 규모가 작고 매장 정보는 재검증 필요",
+      "assets": "PUBLIC_POST_IMAGE_VISIBLE_RIGHTS_UNKNOWN",
+      "decision": "REVIEW",
+      "id": "kr-2114-4",
+      "publicationAllowed": false,
+      "manualReviewRequired": true,
+      "rightsState": "UNKNOWN",
+      "engagementCanonical": true,
+      "comfort": "PASS",
+      "viralDecision": "REVIEW"
+    }
   ],
-  "notes":"No bulk crawler, login bypass or anti-bot bypass. Engagement is only what was visibly returned by public indexed pages. No source image has been copied into the repository; all remain rights/privacy review pending."
+  "notes": "No bulk crawler, login bypass or anti-bot bypass. Engagement is only what was visibly returned by public indexed pages. No source image has been copied into the repository; all remain rights/privacy review pending."
 }
