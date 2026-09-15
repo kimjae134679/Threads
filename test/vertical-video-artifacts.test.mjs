@@ -31,6 +31,7 @@ const runtimeAvailable = commandAvailable(process.env.FFMPEG_PATH || "ffmpeg")
 assert.equal(validateVerticalProductionRequest(request).assets.length, 2);
 assert.throws(() => validateVerticalProductionRequest({ ...request, rightsReview: { status: "review", basisCardFactoryUpdatedAt: revision } }), /rights_review_required/);
 assert.throws(() => validateVerticalProductionRequest({ ...request, rightsReview: { status: "cleared", basisCardFactoryUpdatedAt: "stale" } }), /rights_review_stale/);
+assert.throws(() => validateVerticalProductionRequest({ ...request, assets: Array.from({ length: 20 }, () => ({ dataUrl: png })), secondsPerImage: 15 }), /vertical_duration_limit_exceeded/);
 assert.throws(() => validateVerticalProductionRequest({ ...request, candidate: { ...candidate, cardFactory: { ...candidate.cardFactory, privacy: { gate: { allowed: false, code: "image-privacy-review-required" } } } } }), /privacy_review_required/);
 
 const root = await fs.mkdtemp(path.join(os.tmpdir(), "threads-vertical-store-"));

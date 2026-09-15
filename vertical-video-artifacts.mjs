@@ -7,6 +7,7 @@ import { renderVerticalVideo, probeVerticalVideo } from "./vertical-video.mjs";
 const ALLOWED_MIME = Object.freeze({ "image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp" });
 const MAX_ASSETS = 20;
 const MAX_ASSET_BYTES = 6 * 1024 * 1024;
+const MAX_DURATION_SECONDS = 180;
 const ARTIFACT_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export function validateVerticalProductionRequest(body = {}) {
@@ -33,6 +34,8 @@ export function validateVerticalProductionRequest(body = {}) {
   const decoded = assets.map((asset, index) => decodeDataUrl(asset?.dataUrl, index));
   const secondsPerImage = Number(body.secondsPerImage ?? 2);
   if (!Number.isFinite(secondsPerImage) || secondsPerImage < 0.25 || secondsPerImage > 15) throw requestError(400, "invalid_seconds_per_image");
+  const durationSeconds = assets.length * secondsPerImage;
+  if (durationSeconds > MAX_DURATION_SECONDS) throw requestError(400, "vertical_duration_limit_exceeded");
 
   return {
     candidateId,
@@ -128,6 +131,7 @@ export function getVerticalVideoArtifactCapabilities() {
     output: { width: 1080, height: 1920, container: "mp4", codec: "h264", pixelFormat: "yuv420p" },
     rightsReviewRequired: true,
     privacyReviewRequired: true,
+    maxDurationSeconds: MAX_DURATION_SECONDS,
     providerCapability: "unsupported",
     livePublishImplemented: false,
   };

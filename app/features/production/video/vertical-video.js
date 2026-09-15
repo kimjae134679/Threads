@@ -39,6 +39,7 @@
   let rightsContext = "";
 
   rightsSelect.addEventListener("change", () => { rightsSelect.dataset.dirty = "true"; });
+  secondsInput.addEventListener("input", refresh);
   rightsSave.addEventListener("click", bindRightsReview);
   renderButton.addEventListener("click", renderVerticalVideo);
   preview.addEventListener("click", () => queueMicrotask(refresh));
@@ -105,8 +106,12 @@
     if (livePrivacy.allowed !== true || livePrivacy.code !== "image-privacy-reviewed") reasons.push("live_privacy_review_required");
     if (!canvases.length) reasons.push("rendered_cards_required");
     if (canvases.length > 20) reasons.push("too_many_cards");
+    const secondsPerImage = Number(secondsInput.value || 2);
+    const durationSeconds = canvases.length * secondsPerImage;
+    if (!Number.isFinite(secondsPerImage) || secondsPerImage < 0.25 || secondsPerImage > 15) reasons.push("invalid_seconds_per_image");
+    else if (durationSeconds > 180) reasons.push("vertical_duration_limit_exceeded");
     if (canvases.some((canvas) => canvas.width !== 1080 || canvas.height !== 1080)) reasons.push("reference_square_required");
-    return { allowed: reasons.length === 0, reasons, canvases, cardRevision, livePrivacy };
+    return { allowed: reasons.length === 0, reasons, canvases, cardRevision, livePrivacy, secondsPerImage, durationSeconds };
   }
 
   function bindRightsReview() {
