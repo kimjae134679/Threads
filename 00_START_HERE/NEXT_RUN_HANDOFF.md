@@ -684,3 +684,14 @@ Added `data/discovery-batch-2026-09-15-1917.json`: finance/bonds, AI safety, bas
 Validation: targeted demo test PASS; `npm run check` PASS including real ffmpeg/ffprobe 1080x1920 H.264 yuv420p 30fps; discovery contract PASS for 4 contract-era batches. Temporary Playwright install/script/server cleaned.
 
 Next: verify CI for `19fafc8`; then improve demo PNG typography only if materially needed, otherwise return to remaining provider/status-sync usability gaps. Instagram live validation still requires real credentials/scopes, explicit Graph API version and provider-fetchable approved HTTPS staging. Only 04 may publish.
+ 
+## 2026-09-15 Run 060 update 
+ 
+
+Commit `7b05bf7667ae8d465fa275e91fafd19c09154a6e` makes Demo Showcase PNG export re-entry safe: the export button is disabled while rendering, shows progress, restores its label, and reports failures without changing publication state.
+
+Added `data/discovery-batch-2026-09-15-2017.json` with finance, AI/work, gaming, and career/human-story lanes. Directly visible Reddit values are labeled narrowly; absent/secondary engagement remains non-canonical. Rights remain UNKNOWN, manual review required, publicationAllowed false.
+
+Validation: `npm run check` PASS on package 0.41.8 including actual ffmpeg/ffprobe; Discovery batch contract PASS for 5 contract-era batches. No live publication/provider success claim.
+
+Next: browser-observe the PNG busy guard when useful; then continue only material provider/status-sync usability work that can be validated against current official APIs. Keep 04 as the only publication owner.
