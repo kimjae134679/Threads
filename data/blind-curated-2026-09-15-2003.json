@@ -1,0 +1,103 @@
+{
+  "batchId": "blind-curated-2026-09-15-2003",
+  "observedAt": "2026-09-15T20:03:00+09:00",
+  "source": "Blind public web pages / public search-indexed pages",
+  "purpose": "Human-interest / funny / highly discussable candidates for source-first Instagram/Threads production",
+  "policy": {
+    "bulkCrawlerUsed": false,
+    "loginBypassUsed": false,
+    "antiBotBypassUsed": false,
+    "publicationAllowed": false,
+    "rightsState": "UNKNOWN",
+    "notes": "Publicly visible/indexed content only. Original screenshots/images remain ASSETS_PENDING unless separately acquired and reviewed. Engagement values are snapshot-specific and must not be merged across observations."
+  },
+  "candidates": [
+    {
+      "priority": 1,
+      "id": "blind-lotto-first-202609",
+      "title": "로또 1등",
+      "sourcePlatform": "Blind",
+      "sourceUrl": null,
+      "discoveryEvidenceUrl": "https://www.teamblind.com/kr/",
+      "secondaryVerificationUrl": "https://www.asiatoday.co.kr/kn/view.php?key=20260909010003252",
+      "snapshot": {"views": 47251, "likes": 1894, "comments": null},
+      "storySummary": "30대 대기업 직장인이 로또 1등에 당첨돼 세후 약 12억원을 수령하고도 퇴사하지 않고 출근을 이어가는 사연. 당첨금 수령 과정, 대출 상환, 차량 교체, 부모 지원 계획까지 이어져 직장인 공감과 판타지가 동시에 강함.",
+      "hookDraft": "로또 1등 됐는데 다음날 다시 출근함",
+      "storyFlow": ["당첨 인증/통장 이미지", "세후 실수령 약 12억", "대출 갚고 차 바꾸면 생각보다 안 남는다는 반응", "퇴사 대신 계속 출근", "진급 욕심 없어지니 출근이 덜 싫어졌다는 반전"],
+      "whyItWorks": "돈+직장인 판타지+현실 반전. 이미 공개 웹에서 매우 큰 반응이 확인됐고 언론까지 확산됨.",
+      "acquisitionState": "ASSETS_PENDING",
+      "next": "Blind 원문 URL/원본 인증 이미지 또는 합법적 캡처 확보 후 카드 제작"
+    },
+    {
+      "priority": 2,
+      "id": "blind-late-notice-newhire",
+      "title": "신입이 지각 통보하는데ㅋㅋ",
+      "sourcePlatform": "Blind",
+      "sourceUrl": null,
+      "discoveryEvidenceUrl": "https://www.teamblind.com/kr/company/%EC%9A%B0%EB%A6%AC%EC%99%80/posts",
+      "snapshot": {"views": 25000, "likes": 7, "comments": 192},
+      "storySummary": "9시 출근 회사에서 신입이 8시 50분쯤 교통 통제로 10분 정도 늦는다고 메시지를 보냈고, 작성자가 이를 '통보'로 받아들여 양해와 통보의 차이를 묻는 직장생활 논쟁.",
+      "hookDraft": "신입이 10분 늦는다고 했는데 팀 분위기 뒤집힘",
+      "storyFlow": ["지각 메시지", "작성자의 '통보 vs 양해' 문제 제기", "댓글에서 갈리는 직장인 반응", "누가 더 예민한가 CTA"],
+      "whyItWorks": "누구나 바로 이해하는 직장 상황이고 댓글 논쟁형이라 짧은 캐러셀에 적합.",
+      "acquisitionState": "INDEX_ONLY",
+      "next": "원문 직접 URL/댓글 캡처 확보"
+    },
+    {
+      "priority": 3,
+      "id": "blind-three-sisters-boyfriend",
+      "title": "누나 3명인 남자친구랑 결혼 어떻게 생각해..??",
+      "sourcePlatform": "Blind",
+      "sourceUrl": "https://www.teamblind.com/kr/post/%EB%88%84%EB%82%98-3%EB%AA%85%EC%9D%B8-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EB%9E%91-%EA%B2%B0%ED%98%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%B4-dx3842k0",
+      "snapshot": {"views": 12000, "likes": 18, "comments": 150},
+      "storySummary": "남자친구가 누나 셋과 매일 연락하고 부모와 거의 모든 일을 상의하며, 데이트 선약보다 가족모임을 우선하는 상황을 두고 결혼해도 되는지 묻는 사연.",
+      "hookDraft": "남친 누나가 3명인데 진짜 문제는 따로 있었음",
+      "storyFlow": ["누나 셋+가족과 매일 연락", "데이트 중 가족들과 긴 통화", "선약보다 가족모임 우선", "댓글도 화목한 가족 vs 결혼 후 힘듦으로 갈림", "너라면 계속 만남? CTA"],
+      "whyItWorks": "제목부터 궁금증이 생기고 본문에 디테일이 많으며 댓글 반응도 극명하게 갈림.",
+      "acquisitionState": "BODY_READ_ASSETS_PENDING",
+      "next": "원문/댓글 스크린샷 확보 및 개인정보 마스킹 검토"
+    },
+    {
+      "priority": 4,
+      "id": "blind-breakoff-27",
+      "title": "27살 여자 오늘 파혼했어요 눈물나는데 잘한거 맞죠?",
+      "sourcePlatform": "Blind",
+      "sourceUrl": "https://www.teamblind.com/kr/post/27%EC%82%B4-%EC%97%AC%EC%9E%90-%EC%98%A4%EB%8A%98-%ED%8C%8C%ED%98%BC%ED%96%88%EC%96%B4%EC%9A%94-%EB%88%88%EB%AC%BC%EB%82%98%EB%8A%94%EB%8D%B0-%EC%9E%98%ED%95%9C%EA%B1%B0-%EB%A7%9E%EC%A3%A0-ftu7d1tv",
+      "snapshot": {"views": 2999, "likes": 8, "comments": 47},
+      "storySummary": "4년 만난 남자친구가 데이트 때 치마와 구두를 요구하고, 임신 후 산부인과는 기본적으로 혼자 가는 것이라고 말하며, 가장은 돈만 벌면 된다는 가치관을 드러낸 뒤 결혼 7개월을 남기고 파혼을 결정한 사연.",
+      "hookDraft": "결혼 7개월 남기고 파혼한 이유가 하나씩 공개됨",
+      "storyFlow": ["치마+구두 요구", "산부인과는 혼자 가는 게 기본이라는 말", "가장은 돈 벌어오면 된다는 생각", "가족에게 말한 뒤 파혼 결정", "댓글의 압도적 반응"],
+      "whyItWorks": "한 장씩 넘길수록 새로운 이유가 추가되는 구조라 캐러셀 스토리텔링에 적합.",
+      "acquisitionState": "BODY_READ_ASSETS_PENDING",
+      "next": "원문/댓글 캡처 확보 후 5장 내외 캐러셀"
+    },
+    {
+      "priority": 5,
+      "id": "blind-girls-night-food-poisoning",
+      "title": "걸스나잇 했는데 나빼고 다 식중독 걸림...",
+      "sourcePlatform": "Blind",
+      "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B1%B8%EC%8A%A4%EB%82%98%EC%9E%87-%ED%96%88%EB%8A%94%EB%8D%B0-%EB%82%98%EB%B9%BC%EA%B3%A0-%EB%8B%A4-%EC%8B%9D%EC%A4%91%EB%8F%85-%EA%B1%B8%EB%A6%BC-mt2n16mc",
+      "snapshot": {"views": 124, "likes": 2, "comments": 16},
+      "storySummary": "호텔에서 네 명이 놀다가 세 명이 연달아 복통/구토 증상을 겪고 화장실 하나 때문에 로비 화장실과 응급실까지 오가며, 유일하게 멀쩡한 작성자가 친구들 짐까지 챙기는 상황.",
+      "hookDraft": "4명이 놀러갔는데 나 빼고 3명이 동시에 쓰러짐",
+      "storyFlow": ["새벽에 2명 복통 시작", "화장실 하나라 로비로 분산", "세 번째 친구까지 증상 시작", "구급차+응급실", "혼자 호텔 돌아와 짐 챙기며 현타"],
+      "whyItWorks": "상황이 계속 악화되는 코미디/재난형 전개라 숫자가 작아도 콘텐츠 자체의 장면성이 강함.",
+      "acquisitionState": "BODY_READ_ASSETS_PENDING",
+      "next": "원문 캡처 확보; 의료 조언으로 확대하지 말고 상황 스토리 중심"
+    },
+    {
+      "priority": 6,
+      "id": "blind-bathroom-habit",
+      "title": "화장실 습관 내가 예민한건가?",
+      "sourcePlatform": "Blind",
+      "sourceUrl": "https://www.teamblind.com/kr/post/%ED%99%94%EC%9E%A5%EC%8B%A4-%EC%8A%B5%EA%B4%80-%EB%82%B4%EA%B0%80-%EC%98%88%EB%AF%BC%ED%95%9C%EA%B1%B4%EA%B0%80-fy2thvk4",
+      "snapshot": {"views": 108, "likes": null, "comments": 11},
+      "storySummary": "배우자가 화장실 사용 후 변기 흔적, 샤워 후 서랍장, 거울 물기 등을 정리하지 않는 문제를 두고 작성자가 본인이 예민한지 묻는 생활습관 논쟁.",
+      "hookDraft": "부부싸움 시작점이 거창한 게 아니라 이거였음",
+      "storyFlow": ["변기 흔적", "샤워 후 서랍장", "거울 물기", "댓글도 기본예절 vs 너무 예민으로 갈림", "너라면 어디까지 치움? CTA"],
+      "whyItWorks": "사소하지만 누구나 의견이 생기는 생활 습관 논쟁이라 댓글 유도에 좋음.",
+      "acquisitionState": "BODY_READ_ASSETS_PENDING",
+      "next": "원문/댓글 스크린샷 확보"
+    }
+  ]
+}
