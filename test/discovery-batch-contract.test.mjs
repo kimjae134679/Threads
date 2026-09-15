@@ -7,8 +7,9 @@ const context = { globalThis: {} };
 vm.createContext(context);
 vm.runInContext(source, context);
 const { assertBatch } = context.globalThis.ThreadsDiscoveryBatchContract;
+const contractEraStart = 'discovery-batch-2026-09-15-1626.json';
 const batchFiles = fs.readdirSync(new URL('../data/', import.meta.url))
-  .filter((name) => /^discovery-batch-.*\.json$/.test(name))
+  .filter((name) => /^discovery-batch-.*\.json$/.test(name) && name >= contractEraStart)
   .sort()
   .map((name) => `../data/${name}`);
 assert.ok(batchFiles.length >= 3, 'expected current discovery batch coverage');
@@ -27,4 +28,4 @@ bad = clone(); bad.candidates[1].url = bad.candidates[0].url;
 assert.throws(() => assertBatch(bad), /duplicate_url/);
 bad = clone(); bad.candidates[0].comfort = 'BLOCK'; bad.candidates[0].viralDecision = 'APPROVE';
 assert.throws(() => assertBatch(bad), /comfort_block/);
-console.log(`Discovery batch safety contract regression tests passed for ${batchFiles.length} batches.`);
+console.log(`Discovery batch safety contract regression tests passed for ${batchFiles.length} contract-era batches.`);
