@@ -1,47 +1,42 @@
 # NEXT RUN HANDOFF — Threads Source-First Build
 
-Updated: 2026-09-16 07:18 KST
+Updated: 2026-09-16 08:15 KST
 
 ## READ FIRST
 Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`; only 04 may publish.
 
-## This run — asset acquisition path advanced
-Asset acquisition outranked another small text-only batch. Re-verified top candidate `누나가 남친 옥바라지 중이라 답답하다` on the direct public DCInside realtime-best page and followed its public attachment links without bulk crawling or bypassing controls.
+## Repo-tip reconciliation
+Repo tip had moved beyond the prior handoff: `c830688c` added `data/260916_C1_A0_P0_discovery_0736.json` (42 raw leads inspected / 4 retained). This handoff includes that state rather than treating the older 07:18 handoff as authoritative over repo tip.
 
-Added `data/260916_C1_A0_P0_asset-acquisition_0718.json`.
+## This run — fresh source-first Discovery
+Added `data/260916_C1_A0_P0_discovery_0815.json` after fresh public/index search. Search coverage was weaker than the desired 40–80 raw target, so the record truthfully states **24 raw materially inspected / 5 retained** rather than padding weak results.
 
-Single direct-page observation:
-- URL `https://gall.dcinside.com/board/view/?id=dcbest&no=416863`
-- exact title `누나가 남친 옥바라지 중이라 답답하다`
-- 39,286 views / 372 comments displayed in header / 70 recommendations / 92 non-recommendations
-- six original WEBP attachment filenames exposed
-- all six public attachment links resolved through permitted navigation
-- page states source is 기타 국내 드라마 갤러리 and exposes original-view link
+Top new retained candidates:
+1. Blind `배우자의 빚` — observed 178 views / 15 comments; body and visible comments read. Marriage-hidden stock debt: 30M KRW loss → debt rollover → 60M KRW. Strong investment-disaster + marriage-trust progression.
+2. Blind `결혼 전 청약된 집 빚 갚는 문제` — observed 125 views / 9 comments; body/comments read. Family money, premarital apartment debt, joint-vs-separate finances conflict.
+3. Blind `상대방 부모님 빚.. 결혼 괜찮을까요?` — observed 678 views / 11 comments; body/comments read. 3–4B KRW parental business debt disclosed during marriage discussion; legal claims must not be inferred.
+4. TheQoo `영어 섞어쓰는 장도연 AI남친 보고 바로 욕하는 기안84 AI여친` — observed 3,039 views / 33 comments in the selected snapshot; upstream YouTube Shorts URL exposed. Original video metrics not claimed.
+5. Reddit `AITA for refusing to share my lottery winnings with my family, even though I used the family numbers?` — observed score 2,120; body read; exact winnings not stated and therefore not invented.
 
-TheQoo same-story repost `https://theqoo.net/square/4143320857` was also re-observed with the same six-image sequence. Its engagement is a separate snapshot and is NOT merged.
+## Existing acquisition priority
+`누나가 남친 옥바라지 중이라 답답하다` remains the best exact-asset acquisition target: direct DCInside page exposes six ordered WEBP attachment links and TheQoo repost exposes the same six-image sequence. Exact URLs were resolved in the 07:18 run, but image bytes are still not in a Source Package.
 
 ## Asset truth
-Meaningful acquisition-path progress, but **NOT A1**. The six attachment URLs were located/resolved; image bytes were not downloaded into a local/repo Source Package. State remains `C1_A0_P0 / ASSETS_PENDING` rather than ASSETS_CAPTURED.
+Completed real source-backed user-facing set: **NO**.
+Actual source files captured into Source Package this run: **0**.
+A1=0, P1=0. New retained records remain `C1_A0_P0 / ASSETS_PENDING`, `publicationAllowed=false`, rights UNKNOWN/REVIEW and privacy/human review required. No OCR or moderation result claimed.
 
-No OCR. Image text not transcribed. Comments not read. Rights UNKNOWN; public accessibility is not reuse permission. Privacy/PII inside images still requires visual review. No moderation result claimed. `publicationAllowed=false`; human review required.
+Remote Desktop Commander was attempted for local repo/browser/binary work but no authorized device was online. This is a tooling blocker for local binary capture/E2E in this run, not evidence that the public assets are unavailable.
 
-## Why this moved up
-Unlike many text/index candidates, this one has a direct public source page exposing a complete six-image ordered sequence. It can support the intended real-source flow: blurred first image + hook → readable first image → remaining source images in order → only actually captured/reviewed reactions → CTA.
+## Repo changes
+- `c830688c178266c042d010c1852e8c5b1d0e0c4e` — repo-tip 07:36 discovery refresh (pre-existing at start of this run)
+- `58fa8fe5b9e9015b6ba984c56ab10bd71be23555` — 08:15 fresh candidate refresh
 
-## Discovery-count truth
-Acquisition-focused run, not fresh high-volume Discovery. Fresh raw discovery: **0**; fresh retained: **0**. Existing ranked candidate advanced in provenance/acquisition readiness.
-
-## Repo change
-- `3837263ad6608a93add7b0e7830c8bf60cfcfa14` — exact DC attachment acquisition path
-
-Runtime code unchanged. No npm/app-browser/ffmpeg test claimed. Public-page navigation and attachment resolution were actually performed; app E2E was not.
-
-## Real source-backed result
-Completed user-facing set: **NO**. Source files captured into Source Package: **0**. Exact public source attachments located/resolved: **6**. A1=0, P1=0.
+Runtime code unchanged. Therefore no npm/server/browser/ffmpeg result is claimed. Public/index research was actually performed; app E2E was not.
 
 ## Next concrete priority
-1. With authorized browser/remote or permitted binary-download path, capture the six DC attachment files into an ordered Source Package, preserving filenames/order/provenance.
-2. Visually inspect them for PII/privacy, unsafe material and story continuity. Do not claim OCR unless actually run.
-3. If gates permit, run actual files through screenshot intake → genuine 1080×1080 carousel → Chrome visual/dimension verification → only then A1.
-4. If capture is blocked, pursue TheQoo wedding-photo three-image source and hotel-cake/X chain using the same exact-asset approach.
-5. Keep P0 until rights/privacy/current human approval pass and 04 actually observes publication success.
+1. When authorized browser/remote or permitted binary-download path is available, capture the six ordered DC WEBPs into a Source Package with provenance and original filenames.
+2. Visually inspect actual bytes for PII/privacy/safety/story continuity; only run/claim OCR if actually executed and verified.
+3. Feed captured assets through screenshot intake → 1080×1080 real carousel → Chrome visual/dimension verification; only then A1.
+4. If binary capture remains blocked, continue high-volume Korean-community discovery toward 40–80 raw / 15–30 retained while prioritizing candidates with direct source assets/upstream URLs.
+5. Keep P0 until rights/privacy/current human approval pass and only role 04 observes real publication success.
