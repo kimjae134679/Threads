@@ -578,3 +578,16 @@ Vertical production now bounds accidental long renders in `1753eda` (`0.41.4`).
 Provider publication remains unsupported for vertical artifacts. Instagram official validation is still blocked on real operator credentials/scopes, explicit Graph API version and provider-fetchable approved HTTPS staging. Do not fabricate provider success.
 
 Next priority: keep nonblocked production/review ergonomics focused and evidence-based; if Instagram operator configuration appears, validate official container creation only with `/media_publish` still disabled.
+
+## 2026-09-15 Run 050 update
+
+Stale vertical artifacts now fail closed for download in `7b94aa369a2abb10fe3ee2058708910773bad61a` (`0.41.5`).
+
+- 03 hides/removes the MP4 download URL whenever artifact `handoffBasisUpdatedAt` no longer matches the candidate revision.
+- The vertical panel now refreshes directly on `threads:content-revision-changed`; no broad DOM observer was added.
+- The Chrome E2E now asserts stale download `{hidden:true, href:null, ariaDisabled:"true"}` in addition to stale 03/04 notices.
+- `npm run check` passed, including actual FFmpeg/ffprobe 1080x1920 H.264 render.
+- Fresh Chrome E2E on a fresh server at 43177 passed: 20 main-thread probes 0–1 ms, two 1080x1080 inputs, reviewed privacy/rights, 12,647-byte vertical MP4, 04 handoff, stale invalidation, stale download blocked, zero live publish requests and zero page errors.
+- `/api/health` returned `ok:true`.
+
+Provider publication remains unchanged: vertical is `unsupported`; Instagram container validation still requires real credentials/scopes, explicit Graph version and provider-fetchable approved HTTPS staging. No provider success or live publication is claimed.
