@@ -1,6 +1,6 @@
 {
   "name": "threads-ai-content-lab",
-  "version": "0.42.0",
+  "version": "0.42.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,7 +11,5 @@
     "migrate:persistence": "node scripts/migrate-persistence.mjs",
     "browser:e2e:vertical": "node scripts/browser-e2e-vertical.mjs"
   },
-  "engines": {
-    "node": ">=18"
-  }
+  "engines": {"node": ">=18"}
 }
