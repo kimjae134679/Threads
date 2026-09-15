@@ -1,0 +1,77 @@
+{
+  "batchId": "asset-acquisition-2026-09-16-0718-kst",
+  "observedAt": "2026-09-16T07:18:00+09:00",
+  "purpose": "Advance a top ranked Korean community candidate from vague ASSETS_PENDING to an exact permitted public asset acquisition path without claiming local capture or rights clearance.",
+  "publicationAllowed": false,
+  "roleChain": "01_DISCOVERY -> 02_EDITORIAL_SCORING -> 03_PRODUCTION -> 04_REVIEW_PUBLISH -> 05_EXPERIMENTS_ACCOUNTS",
+  "candidate": {
+    "stateName": "260916_C1_A0_P0_누나가남친옥바라지중이라답답하다",
+    "source": "DCInside realtime best",
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=dcbest&no=416863",
+    "exactObservedTitle": "누나가 남친 옥바라지 중이라 답답하다",
+    "publishedAt": "2026-03-29T21:20:01+09:00",
+    "observation": {
+      "observedAt": "2026-09-16T07:18:00+09:00",
+      "views": 39286,
+      "commentsDisplayedAtPostHeader": 372,
+      "recommendations": 70,
+      "nonRecommendations": 92,
+      "metricRule": "These values are from the single direct-page observation used in this run. Earlier/later snapshots are not merged."
+    },
+    "bodyRead": false,
+    "commentsRead": false,
+    "sourceImagesObserved": true,
+    "sourceImageCount": 6,
+    "directAttachmentLinksObserved": true,
+    "directAttachmentFilenames": [
+      "Internet_20260329_200748_1.webp",
+      "Internet_20260329_200748_2.webp",
+      "Internet_20260329_200748_3.webp",
+      "Internet_20260329_200748_4.webp",
+      "Internet_20260329_200748_5.webp",
+      "Internet_20260329_200748_6.webp"
+    ],
+    "acquisitionState": [
+      "DISCOVERED",
+      "PUBLIC_PAGE_VERIFIED",
+      "SOURCE_IMAGES_OBSERVED",
+      "DIRECT_ATTACHMENT_URLS_OBSERVED",
+      "ASSETS_PENDING"
+    ],
+    "assetTruth": "The public DCInside page exposes six original attachment download links and each link resolved through permitted public navigation. The image bytes were NOT downloaded into the repo or local Source Package in this run, so this remains A0/ASSETS_PENDING rather than ASSETS_CAPTURED.",
+    "provenance": {
+      "pageStatesOriginalSource": "기타 국내 드라마 갤러리",
+      "pageProvidesOriginalViewLink": true,
+      "crossPostObserved": {
+        "source": "TheQoo",
+        "url": "https://theqoo.net/square/4143320857",
+        "note": "Same-story repost with the same six-image sequence. Do not treat its engagement as the DCInside snapshot."
+      }
+    },
+    "whySwipeWorthy": "Six sequential source images create a natural evidence-first carousel, while the title immediately creates a family/relationship argument. It is substantially more production-ready than text-only candidates because the public source exposes the full attachment sequence.",
+    "suggestedFirstSlideHook": "누나가 남친 옥바라지 중인데… 동생이 답답해진 이유",
+    "storyProgression": [
+      "blurred first real source image + short hook",
+      "first source screenshot/image readable",
+      "remaining source images in original order",
+      "only add reaction/comment screenshots after they are actually captured and reviewed",
+      "short natural question/CTA"
+    ],
+    "weaknesses": [
+      "Image text/content itself was not OCRed or independently transcribed in this run.",
+      "Comments were not read in this run even though the header exposes a comment count.",
+      "Copyright/reuse rights remain UNKNOWN; public accessibility is not reuse permission.",
+      "Privacy/PII inside the six images has not been reviewed yet.",
+      "The source is a repost into realtime-best and points to another DC gallery as original; original-chain provenance should be preserved."
+    ],
+    "gates": {
+      "rights": "UNKNOWN_REVIEW_REQUIRED",
+      "privacy": "REVIEW_REQUIRED",
+      "humanReview": "REQUIRED",
+      "moderation": "NOT_RUN",
+      "ocr": "NOT_RUN",
+      "publicationAllowed": false
+    },
+    "nextAction": "Use an authorized browser/remote session or a permitted download path to capture the six public attachment files into an ordered Source Package; visually inspect privacy/PII and story continuity before rendering. Do not set A1 until the actual files are captured and the 1080x1080 result is generated/verified."
+  }
+}
