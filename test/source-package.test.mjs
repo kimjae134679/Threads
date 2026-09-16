@@ -16,17 +16,19 @@ const pkg = api.build({
   fullBodyCaptureStatus: 'complete',
   assets: [
     { name: '01-cover.png', mime: 'image/png', kind: 'cover', provenance: 'selected cover image' },
-    { name: '02-post.png', mime: 'image/png', kind: 'post', provenance: 'public page screenshot 1' },
-    { name: '03-post.png', mime: 'image/png', kind: 'post', provenance: 'public page screenshot 2' }
+    { name: '02-post.png', mime: 'image/png', kind: 'post', acquisitionState: 'CAPTURED', sourceSequence: 1, sourceWidth: 1080, sourceHeight: 1800, provenance: 'public page screenshot 1' },
+    { name: '03-post.png', mime: 'image/png', kind: 'post', acquisitionState: 'CAPTURED', sourceSequence: 2, sourceWidth: 1080, sourceHeight: 1800, provenance: 'public page screenshot 2' }
   ]
 });
-assert.equal(pkg.schemaVersion, 2);
+assert.equal(pkg.schemaVersion, 5);
 assert.equal(pkg.publicationAllowed, false);
 assert.equal(pkg.publishOwner, '04_REVIEW_PUBLISH');
 assert.equal(pkg.rightsState, 'UNKNOWN');
 assert.equal(pkg.sourceFormat, '이미지 포스팅');
 assert.equal(pkg.coverText, '원문 제목 그대로');
 assert.equal(pkg.fullBodyCaptureStatus, 'complete');
+assert.equal(pkg.bodyAssetsAcquired, true);
+assert.equal(pkg.completeBodyEvidence, true);
 assert.equal(pkg.assetsPending, false);
 assert.equal(pkg.renderPlan[0].treatment, 'cover-image-plus-original-title');
 assert.equal(pkg.renderPlan[1].treatment, 'faithful-original-screenshot-contain');
@@ -46,6 +48,18 @@ const partial = api.build({
 });
 assert.equal(partial.fullBodyCaptureStatus, 'pending');
 assert.equal(partial.assetsPending, true);
+assert.equal(partial.bodyAssetsAcquired, false);
+assert.equal(partial.completeBodyEvidence, false);
+
+assert.throws(() => api.build({
+  sourceUrl: 'https://example.com/incomplete',
+  title: '완료라고 잘못 표시한 캡처',
+  fullBodyCaptureStatus: 'complete',
+  assets: [
+    { name: 'cover.png', mime: 'image/png', kind: 'cover' },
+    { name: 'post.png', mime: 'image/png', kind: 'post', provenance: 'missing acquisition and dimensions' }
+  ]
+}), /requires every body asset to be acquired with provenance and source dimensions/);
 assert.throws(() => api.build({ sourceUrl: 'https://example.com', assets: [] }), /cover plus at least one real original-post/);
 assert.throws(() => api.build({ sourceUrl: 'https://example.com', assets: [{name:'x.png',mime:'image/png',kind:'cover'}] }), /cover plus at least one real original-post/);
 assert.throws(() => api.build({ sourceUrl: 'https://example.com', apiToken: 'x', assets: [{name:'cover.png',mime:'image/png',kind:'cover'},{name:'post.png',mime:'image/png'}] }), /secret-like field/);
