@@ -82,8 +82,18 @@ Queue, 예약, dry-run, provider-ready, API 호출 의도는 P1이 아니다.
 정확한 링크
 조회수 / 좋아요 / 댓글 등 같은 관측시점의 실제 수치
 평가
+형식
 이미지·자산 / 제작·게시 상태
 ```
+
+### 형식 분류
+복잡한 세부 타입을 만들지 않는다. **아래 3개만 사용한다.**
+
+- `글` — 텍스트 중심이며 콘텐츠 이해에 필요한 원문 이미지가 없음.
+- `이미지` — 글 본문과 함께 첨부 이미지/사진/뉴스 캡처 등이 있음. 글과 이미지를 같이 확보한다.
+- `이미지 포스팅` — 이미지/카드/슬라이드/스크린샷 자체가 본문의 중심. 전체 이미지를 원래 순서대로 확보한다.
+
+`CAROUSEL_SOURCE`, `NEWS_CARD_POST`, `SCREENSHOT_POST`, `MIXED_MEDIA_POST` 같은 세부 분류는 새 후보 기록에 만들지 않는다.
 
 - 공개 제3자 글 전문을 장문 복제하지 않고, **실제로 읽은 전체 내용을 충실하게 요약**한다.
 - 본문을 실제로 읽지 않았으면 `본문 미확인`이라고 쓴다. 내용을 만들어 채우지 않는다.
@@ -103,12 +113,15 @@ DCInside/Blind 등 제한 소스는 bulk crawl, 로그인/anti-bot 우회 금지
 
 ## 6. 실제 사용자용 카드 규칙
 
-- Slide 1: 첫 실제 source image full-bleed + 강한 blur/darken + 짧은 hook
-- Slide 2: 첫 원본 image/post screenshot을 읽을 수 있게 제시
-- Slide 3+: 실제 continuation/image/comment/reaction을 story order로
-- 마지막: 짧고 자연스러운 질문/CTA
-- 원문을 억지 crop하지 말고 contain + blurred-background filler
-- `CONTEXT`, `CHECK`, `특히 볼 것` 같은 개발식 text-only 카드로 이야기를 대체하지 않는다.
+- Slide 1: cover only. 이미지 1장 + 원문 제목/훅.
+- 커버 문구는 원문 제목을 기본으로 사용하며 별도 지시 없이는 자극적으로 재작성하지 않는다.
+- Slide 2부터는 원문 post screenshot을 실제 순서대로 사용한다.
+- 전체 원문 본문을 빠뜨리지 않는다. 여러 화면이면 연속 screenshot으로 모두 포함한다.
+- platform/browser UI chrome은 잘라도 되지만 원문 본문을 잘라내지 않는다.
+- 자동 설명카드·요약카드·반응카드·CTA카드를 중간에 삽입하지 않는다.
+- privacy/PII는 자동 마스킹하지 않고 수동 마스킹 도구만 유지한다. 사용자가 명시적으로 요청한 경우에만 변경한다.
+- 원문 첨부 이미지/media가 있으면 원문 screenshot/source sequence와 함께 보존한다. 생성 이미지로 대체하지 않는다.
+- 첫 cover 이미지 선택 방식은 source image/사용자 제공/별도 생성 등 케이스별로 결정하며 아직 하나로 고정하지 않는다.
 
 ## 7. 안전/권리 기준
 
