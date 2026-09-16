@@ -12,6 +12,8 @@
     return `${text.slice(0, Math.max(0, max - 1)).trim()}…`;
   }
 
+  // Legacy helper retained for non-source editorial surfaces only. Source-backed
+  // carousel screenshots and cover titles must never be altered automatically.
   function redactPII(value) {
     let text = String(value || "");
     const rules = [
@@ -39,7 +41,7 @@
   }
 
   function sourceLabel(item = {}) {
-    return safeCardText(
+    return cleanText(
       item.sourceMeta?.community
       || item.sourceMeta?.provider
       || item.sourceType
@@ -54,34 +56,29 @@
     const claims = lines(bundle.claimsToVerify);
     const angles = lines(bundle.angles);
     const noteLines = lines(item.note);
-
-    const excerpt = facts.length
-      ? facts.slice(0, 4).join("\n")
-      : noteLines.slice(0, 5).join("\n");
-
-    const followup = bundle.whyNow
-      || claims.slice(0, 3).join("\n")
-      || angles.slice(0, 2).join("\n");
-
+    const excerpt = facts.length ? facts.slice(0, 4).join("\n") : noteLines.slice(0, 5).join("\n");
+    const followup = bundle.whyNow || claims.slice(0, 3).join("\n") || angles.slice(0, 2).join("\n");
     return {
-      hook: safeCardText(item.title || "제목 없음", 110),
-      excerpt: safeCardText(excerpt, 650),
-      followup: safeCardText(followup, 520),
+      hook: cleanText(item.title || "제목 없음", 110),
+      excerpt: cleanText(excerpt, 650),
+      followup: cleanText(followup, 520),
       reactions: [],
-      ending: safeCardText(defaultEnding(item), 180),
+      ending: cleanText(defaultEnding(item), 180),
       source: sourceLabel(item),
     };
   }
 
   function buildStoryboard(item = {}, capture = {}, imageCount = 0) {
     const base = deriveCapture(item);
+    // Binding source-first rule: slide 1 defaults to the exact observed post title.
+    // Editorial fields never rewrite the cover automatically.
     const merged = {
-      hook: safeCardText(capture.hook || base.hook, 110),
-      excerpt: safeCardText(capture.excerpt || base.excerpt, 650),
-      followup: safeCardText(capture.followup || base.followup, 520),
-      reactions: lines(capture.reactions || base.reactions).slice(0, 6).map((entry) => safeCardText(entry, 180)),
-      ending: safeCardText(capture.ending || base.ending, 180),
-      source: safeCardText(capture.source || base.source, 70),
+      hook: cleanText(item.title || base.hook || "제목 없음", 110),
+      excerpt: cleanText(capture.excerpt || base.excerpt, 650),
+      followup: cleanText(capture.followup || base.followup, 520),
+      reactions: lines(capture.reactions || base.reactions).slice(0, 6).map((entry) => cleanText(entry, 180)),
+      ending: cleanText(capture.ending || base.ending, 180),
+      source: cleanText(capture.source || base.source, 70),
     };
 
     const count = Math.max(0, Math.min(10, Number(imageCount) || 0));
@@ -93,17 +90,8 @@
       backgroundImageIndex: count ? 0 : null,
       backgroundMode: count ? "blurred-source-image" : "missing-source-image",
     }];
-
     for (let index = 0; index < count; index += 1) {
-      cards.push({
-        type: "capture-image",
-        title: count > 1 ? `원문 ${index + 1}` : "원문",
-        body: "",
-        imageIndex: index,
-        source: merged.source,
-        fit: "contain",
-        backgroundMode: "blurred-duplicate",
-      });
+      cards.push({ type: "capture-image", title: count > 1 ? `원문 ${index + 1}` : "원문", body: "", imageIndex: index, source: merged.source, fit: "contain", backgroundMode: "blurred-duplicate" });
     }
 
     return {
@@ -111,15 +99,12 @@
       renderProfile: "reference-square",
       width: 1080,
       height: 1080,
-      assetPolicy: {
-        sourceImageRequired: true,
-        generatedImageFallback: false,
-        firstAssetUsedAsBlurredCover: true,
-        selectedAssetOrderIsCarouselOrder: true,
-      },
+      assetPolicy: { sourceImageRequired: true, generatedImageFallback: false, firstAssetUsedAsBlurredCover: true, selectedAssetOrderIsCarouselOrder: true },
       privacy: {
-        textPiiMasked: true,
-        imageMaskingRequired: count > 0,
+        automaticMasking: false,
+        automaticPiiMutation: false,
+        manualReviewRequired: true,
+        manualMaskingAvailable: true,
       },
       capture: merged,
       cards,
@@ -136,21 +121,11 @@
       if (cards[0]?.backgroundMode !== "blurred-source-image") issues.push("source_image_cover_required");
       if (!cards.some((card) => card.type === "capture-image")) issues.push("source_image_slide_required");
       if (storyboard.assetPolicy?.generatedImageFallback !== false) issues.push("generated_image_fallback_must_be_disabled");
+      if (storyboard.privacy?.automaticMasking !== false || storyboard.privacy?.automaticPiiMutation !== false) issues.push("automatic_privacy_mutation_forbidden");
     }
     if (cards.length > 11) issues.push("too_many_cards");
     return { ok: issues.length === 0, issues };
   }
 
-
-  window.ThreadsCardStoryModel = {
-    lines,
-    cleanText,
-    redactPII,
-    safeCardText,
-    defaultEnding,
-    sourceLabel,
-    deriveCapture,
-    buildStoryboard,
-    validateStoryboard,
-  };
+  window.ThreadsCardStoryModel = { lines, cleanText, redactPII, safeCardText, defaultEnding, sourceLabel, deriveCapture, buildStoryboard, validateStoryboard };
 })();
