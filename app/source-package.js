@@ -5,6 +5,7 @@
   const ALLOWED_KINDS = new Set(['cover','post','media']);
   const ALLOWED_SOURCE_FORMATS = new Set(['글','이미지','이미지 포스팅']);
   const ALLOWED_ACQUISITION_STATES = new Set(['CAPTURED','USER_PROVIDED','SOURCE_MEDIA','ASSETS_PENDING']);
+  const ALLOWED_CROP_DECISIONS = new Set(['NONE','USER_CONFIRMED','VERIFIED_UI_ONLY']);
 
   function cleanText(value, max) { return String(value || '').trim().slice(0, max); }
   function positiveInt(value) { const n = Number(value); return Number.isInteger(n) && n > 0 ? n : null; }
@@ -25,6 +26,10 @@
     if (!name) throw new Error(`asset ${index + 1} needs a name`);
     if (!/^image\//.test(mime)) throw new Error(`asset ${index + 1} must be an image`);
     const acquisitionState = ALLOWED_ACQUISITION_STATES.has(asset.acquisitionState) ? asset.acquisitionState : 'ASSETS_PENDING';
+    const cropApplied = cleanText(asset.cropApplied, 500);
+    const cropDecision = ALLOWED_CROP_DECISIONS.has(asset.cropDecision) ? asset.cropDecision : 'NONE';
+    if (cropApplied && cropDecision === 'NONE') throw new Error(`asset ${index + 1} has cropApplied without an explicit crop decision`);
+    if (!cropApplied && cropDecision !== 'NONE') throw new Error(`asset ${index + 1} has a crop decision but no applied crop`);
     return {
       id: cleanText(asset.id, 80) || `asset-${String(index + 1).padStart(2, '0')}`,
       order: index + 1,
@@ -33,7 +38,8 @@
       sourceWidth: positiveInt(asset.sourceWidth), sourceHeight: positiveInt(asset.sourceHeight),
       provenance: cleanText(asset.provenance, 500), captureUrl: cleanText(asset.captureUrl, 1200), observedAt: cleanText(asset.observedAt, 80),
       cropSuggestion: cleanText(asset.cropSuggestion, 500) || '플랫폼/브라우저 UI만 crop 가능; 원문 본문과 첨부 이미지는 자르지 않음',
-      cropApplied: cleanText(asset.cropApplied, 500),
+      cropApplied, cropDecision,
+      cropPolicy: 'suggest-only-until-user-confirmed-or-ui-only-verified',
       verifiedByVision: asset.verifiedByVision === true, verifiedByOcr: asset.verifiedByOcr === true
     };
   }
@@ -62,7 +68,7 @@
     }
 
     return {
-      schemaVersion: 4, type: 'SOURCE_PACKAGE', roleChain: ROLE_CHAIN.slice(), publishOwner: '04_REVIEW_PUBLISH', publicationAllowed: false,
+      schemaVersion: 5, type: 'SOURCE_PACKAGE', roleChain: ROLE_CHAIN.slice(), publishOwner: '04_REVIEW_PUBLISH', publicationAllowed: false,
       approvalState: 'NOT_APPROVED', rightsState: cleanText(input.rightsState, 40) || 'UNKNOWN', privacyState: 'USER_REVIEW',
       sourcePlatform: cleanText(input.sourcePlatform, 80) || 'manual', sourceFormat, sourceUrl,
       userProvidedProvenance: cleanText(input.userProvidedProvenance, 1200), title, coverText: cleanText(input.coverText, 240) || title,
