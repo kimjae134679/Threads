@@ -8,10 +8,11 @@ vm.createContext(context);
 vm.runInContext(source, context);
 const { assertBatch } = context.globalThis.ThreadsDiscoveryBatchContract;
 const contractEraStart = 'discovery-batch-2026-09-15-1626.json';
-const batchFiles = fs.readdirSync(new URL('../data/', import.meta.url))
+const rawDir = new URL('../data/_raw_batches/', import.meta.url);
+const batchFiles = fs.readdirSync(rawDir)
   .filter((name) => /^discovery-batch-.*\.json$/.test(name) && name >= contractEraStart)
   .sort()
-  .map((name) => `../data/${name}`);
+  .map((name) => `../data/_raw_batches/${name}`);
 assert.ok(batchFiles.length >= 3, 'expected current discovery batch coverage');
 const batches = batchFiles.map((path) => JSON.parse(fs.readFileSync(new URL(path, import.meta.url), 'utf8')));
 const contractBatches = batches.filter((batch) => batch?.candidates?.every((candidate) => candidate.manualReviewRequired === true && typeof candidate.engagementCanonical === 'boolean' && candidate.comfort));
@@ -31,4 +32,3 @@ assert.throws(() => assertBatch(bad), /duplicate_url/);
 bad = clone(); bad.candidates[0].comfort = 'BLOCK'; bad.candidates[0].viralDecision = 'APPROVE';
 assert.throws(() => assertBatch(bad), /comfort_block/);
 console.log(`Discovery batch safety contract regression tests passed for ${contractBatches.length} contract-v2 batches (${batchFiles.length - contractBatches.length} legacy batches skipped).`);
-
