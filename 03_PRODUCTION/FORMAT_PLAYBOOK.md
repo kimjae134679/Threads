@@ -1,425 +1,93 @@
 # FORMAT PLAYBOOK — 실제 제작 형식
 
-이 문서는 `02_EDITORIAL_SCORING`에서 승인된 사실과 각도를 **어떤 실제 콘텐츠 형식으로 만들지** 결정하는 제작 규칙이다.
+이 문서는 `02_EDITORIAL_SCORING`에서 승인된 사실과 각도를 어떤 실제 콘텐츠 형식으로 만들지 결정하는 제작 규칙이다.
 
 `03_PRODUCTION`은 사실을 새로 만들지 않는다. 포맷/표현/시각화만 담당한다.
 
----
+## 최우선 바인딩 규칙 — Source Screenshot Carousel
+
+커뮤니티/Threads/Instagram 등 **원문 게시물을 소재로 만드는 기본 carousel**은 아래 규칙이 다른 과거 F08 예시보다 우선한다.
+
+1. **Slide 1 = COVER ONLY.** 이미지 1장 + 원문 게시물 제목/훅 텍스트만 둔다.
+2. Cover 문구는 기본적으로 **원문 제목 그대로** 쓴다. 원문 제목 안의 강한 구절을 그대로 발췌하는 것은 허용하지만, 별도 요청 없이 선정적으로 재작성하지 않는다.
+3. **Slide 2부터 끝까지 = 원문 게시물 screenshot을 원래 순서대로.**
+4. 원문 본문은 전부 포함한다. 여러 화면이면 순차 screenshot을 충분히 확보해 한 문장도 요약·축약·재작성·누락하지 않는다.
+5. 플랫폼/브라우저 UI chrome은 crop 가능하지만 실제 게시물 내용은 crop하지 않는다.
+6. 설명 카드, 요약 카드, 반응 카드, CTA 카드, 재작성 story card를 screenshot 사이에 자동 삽입하지 않는다.
+7. privacy/PII 후보를 자동 masking하지 않는다. 수동 masking 도구는 유지할 수 있으나 실제 변경은 사용자 지시가 있을 때만 한다.
+8. 게시물 자체 첨부 이미지/미디어가 있으면 screenshot/source sequence의 일부로 보존한다. 생성 이미지로 대체하지 않는다.
+9. Cover 이미지는 source media, 사용자 제공 이미지, 별도 생성 이미지 등 case-by-case로 결정하며 아직 하나의 방식으로 고정하지 않는다.
+10. 실제 screenshot/media가 없으면 `ASSETS_PENDING`; 가짜 body card를 만들지 않는다.
+
+### 원문 시각 형식 기록
+
+Discovery/Source Package는 원문에 이미지나 고유 레이아웃이 있는지도 기록한다. 필요 시 다음 중 하나 이상을 사용한다.
+
+- `TEXT_ONLY`
+- `TEXT_WITH_INLINE_IMAGE`
+- `CAROUSEL_SOURCE`
+- `SCREENSHOT_POST`
+- `NEWS_CARD_POST`
+- `MIXED_MEDIA_POST`
+
+원문에 자체 이미지/뉴스 캡처/여러 슬라이드가 있으면 텍스트만 떼어 저장하지 않고, 원문 screenshot 및 첨부 이미지 순서를 Source Package에 함께 보존한다.
+
+### Screenshot Intake가 해야 하는 일
+
+- ordered screenshot intake
+- UI-chrome crop suggestion
+- 원문 순서 보존
+- 1080×1080 canvas 안에서 contain/letterbox 방식의 dimension normalization
+- source URL / observation / screenshot order provenance 보존
+- body completeness 확인용 수동 checklist
+
+Screenshot Intake가 자동으로 해서는 안 되는 일:
+
+- 본문 요약/재작성
+- 본문 일부 생략
+- 자동 privacy masking
+- OCR 성공을 실행 없이 주장
+- 원문 대신 생성 이미지/body card 삽입
 
 ## 공통 제작 원칙
 
 1. 첫 화면/첫 문장만 봐도 주제가 이해되어야 한다.
-2. 원문을 읽지 않아도 핵심 가치를 얻을 수 있는 zero-click value를 우선한다.
-3. 외부 링크는 보충 자료/전환용이지 본문 대신이 아니다.
-4. 남의 완성 콘텐츠를 최소 수정해 재업로드하지 않는다.
-5. screenshot은 `증거/맥락`이지 콘텐츠 자체가 아니다.
-6. 같은 Research Bundle도 플랫폼별로 다른 output을 만든다.
-7. 모든 제작물에는 `content_format`, `hook_type`, `cta_type`을 기록한다.
+2. 외부 사실을 새로 만들지 않는다.
+3. 동일 Source Package에서 Instagram/Threads용 1080×1080 패키지를 먼저 만들고, 이후 별도 1080×1920 MP4 renderer가 Reels/Shorts를 만든다.
+4. square carousel을 세로 영상으로 단순 stretch하지 않는다.
+5. 모든 제작물에는 `content_format`, `hook_type`, `cta_type`과 provenance를 기록한다.
 
----
+## F08 Source Screenshot Carousel — 기본형
 
-# F01 Text Hot Take
-
-### 적합
-- 빠른 이슈
-- 새 기능/발표
-- 의견이 갈리는 주제
-
-### 구조
 ```text
-[강한 첫 문장]
-사실 1~2줄
-왜 중요한지 1~3줄
-질문/결론
-```
-
-### 좋은 예의 구조
-`X가 나왔다`에서 끝내지 말고 `그래서 기존 Y 사용자에게 뭐가 달라지는가`까지 간다.
-
-### 실패 패턴
-- 기사 제목 복붙
-- 근거 없는 단정
-- 과도한 낚시 제목
-
----
-
-# F02 Text Explainer
-
-### 구조
-```text
-무슨 일?
-왜 지금 뜸?
-핵심 2~4개
-그래서 누구에게 중요한가?
-```
-
-TH-A 기본 포맷.
-
----
-
-# F03 List / Checklist
-
-### 적합
-- 앱/도구 추천
-- 준비물
-- 실수 모음
-- 기능 비교
-
-### 구조
-```text
-Hook
-1.
-2.
-3.
+Slide 1  Cover: source/선택 이미지 + 원문 제목
+Slide 2  Original post screenshot #1
+Slide 3  Original post screenshot #2
 ...
-한줄 결론
+Slide N  Original post screenshot #N (본문 끝까지)
 ```
 
-숫자만 늘려 `10가지`로 만드는 식의 filler 금지.
+본문 screenshot 사이에 editorial card를 넣지 않는다. 원문이 한 화면이면 Slide 2 한 장으로 끝날 수 있다. 원문이 12화면이면 필요한 12화면을 모두 포함한다.
 
----
+## 기타 포맷
 
-# F04 Question / Open Thread
+기존 text explainer, checklist, chart, original card, screen recording, short video 등은 **자체 제작 콘텐츠나 독립 분석물**에 계속 사용할 수 있다. 하지만 타인의 원문 게시물을 carousel로 재현하는 작업에서는 위 Source Screenshot Carousel 규칙이 우선한다.
 
-### 목적
-conversation/replies.
+## Short Vertical Video
 
-### 구조
-```text
-짧은 배경 1~2줄
-명확한 질문 1개
-```
+동일 Source Package를 사용하되 1080×1920 전용 renderer에서 별도로 구성한다. 원본 square carousel을 늘려 쓰지 않는다. source media가 필요한 경우 실제 확보된 asset만 사용한다.
 
-답이 너무 뻔한 engagement bait 대신 실제 경험/선택이 갈리는 질문을 쓴다.
+## Hook Taxonomy
 
----
+`H01 Breaking`, `H02 Why`, `H03 Number`, `H04 Contrarian`, `H05 Problem`, `H06 Result-first`, `H07 Story`, `H08 Comparison`, `H09 Curiosity`, `H10 Question`을 실험 기록에 사용할 수 있다. 단 Source Screenshot Carousel cover에서는 taxonomy보다 **원문 제목 보존 규칙이 우선**한다.
 
-# F05 Original Screenshot Commentary
+## CTA Taxonomy
 
-### 적극 사용 가능한 source
-- 우리 자체 blog
-- 우리 newsletter
-- 우리 자체 분석 대시보드
-- 우리 자체 코드/UI
-- 사용 권한 확보 자료
+`C00 None`, `C01 Reply question`, `C02 Save / remember`, `C03 Share`, `C04 Profile / follow`, `C05 Link click`, `C06 Try product/tool`, `C07 Blog/newsletter`, `C08 Next post / series`.
 
-### 제작법
-1. 핵심 영역만 crop
-2. 중요한 부분 highlight
-3. caption에서 `왜 중요한지` 새 설명
-4. 필요하면 full source 링크
+Source Screenshot Carousel 본문 사이에는 CTA를 자동 삽입하지 않는다.
 
-### 금지
-남의 viral post screenshot에 자막 1줄만 붙이는 방식.
-
----
-
-# F06 Screenshot Evidence + Analysis
-
-공식 발표, 가격 페이지, 제품 UI, 통계 등 **사실의 일부를 보여줘야 설명력이 커지는 경우**.
-
-### 카드 구성
-```text
-[원본의 필요한 일부]
-        ↓
-highlight / arrow
-        ↓
-우리 해설
-```
-
-### Rights Gate
-- 필요한 만큼만 사용
-- source 표시
-- 원문을 대체하는 전체 screenshot 금지
-- 개인 계정/일반인 정보는 식별 위험 검토
-
----
-
-# F07 Original Image Card
-
-### 기본형
-```text
-큰 headline
-핵심 숫자 또는 한 문장
-작은 context
-source / brand mark
-```
-
-### 용도
-- 숫자 하나가 강한 이슈
-- 오늘의 핵심
-- 가격/출시일
-- quote가 아니라 `우리 요약`
-
-### 원칙
-한 장에 너무 많은 문장을 넣지 않는다.
-
----
-
-# F08 Carousel
-
-### 추천 5~8장 기본 구조
-```text
-1. Hook
-2. 상황
-3. 핵심 사실 A
-4. 핵심 사실 B
-5. 비교/예시
-6. 그래서 뭐가 중요?
-7. 결론
-8. 질문/CTA (필요 시)
-```
-
-### 활용
-- 복잡한 이슈
-- 제품 비교
-- 단계형 튜토리얼
-- blog 요약
-
-Instagram에서는 discovery보다 깊은 engagement/save/share 목적을 우선한다.
-
----
-
-# F09 Meme / Relatable
-
-### 조건
-- 계정 niche와 연결
-- 직접 제작 또는 이용 가능한 template
-- 사실 전달용으로 오해되면 안 됨
-
-### 목표
-humor / shares / personality.
-
----
-
-# F10 Chart / Comparison Card
-
-### 형식
-- A vs B
-- 가격표
-- 기능 matrix
-- before/after
-- 순위
-- timeline
-
-### 원칙
-숫자 source를 명시하고 비교 조건을 통일한다.
-
-TH-B의 핵심 포맷.
-
----
-
-# F11 Short Vertical Video
-
-### 기본 9:16
-
-초기 템플릿:
-```text
-0~1초    Hook
-1~5초    상황 설명
-5~20초   핵심/증거
-20~35초  결론/의외점
-마지막   질문/다음 행동
-```
-
-길이는 내용에 맞게 조정한다.
-
-### visual 재료 우선순위
-1. 직접 촬영
-2. 직접 screen recording
-3. 직접 만든 motion/card
-4. 허가/licensed/public domain asset
-5. 필요한 인용 범위의 external material + substantive commentary
-
-### 금지
-- 타인 영상 그대로 + TTS
-- compilation만 제작
-- crop/speed/filter만 변경
-
----
-
-# F12 Screen Recording Demo
-
-TH-B에서 특히 유용.
-
-### 구조
-```text
-결과 먼저 보여주기
-→ 어떻게 하는지
-→ 단점/주의점
-→ 누구에게 맞는지
-```
-
-AI tool/app 비교는 marketing claim보다 직접 사용 결과를 우선한다.
-
----
-
-# F13 Voiceover Explainer
-
-직접 만든 script + original/licensed visual.
-
-얼굴을 안 보여도 가능:
-- screen recording
-- card animation
-- chart motion
-- simple B-roll
-
-핵심은 voice/TTS 자체가 아니라 **original analysis와 visual construction**이다.
-
----
-
-# F14 Long Text Attachment
-
-Threads long text attachment 활용.
-
-### 구조
-```text
-Main post: 한두 문장 hook
-Attached text: 자세한 설명
-Main/attached: 필요한 외부 링크
-```
-
-복잡한 이슈를 screenshot 여러 장으로 억지로 나누는 것보다 적합할 수 있다.
-
----
-
-# F15 Reply / Quote Response
-
-Threads 핵심 포맷 중 하나.
-
-### 좋은 reply
-- 빠진 사실 추가
-- 반대 사례
-- 직접 경험
-- 숫자/자료
-- 더 좋은 설명
-- 유머지만 conversation에 실제로 기여
-
-### 나쁜 reply
-- `맞아요`
-- 무관한 자기 홍보
-- 반복 자동 reply
-
-초기 운영에서는 original post 수만큼 reply activity도 별도 실험한다.
-
----
-
-# F16 Poll / Binary Choice
-
-### 목적
-- 수요 확인
-- 다음 콘텐츠 선택
-- audience segmentation
-
-결과를 다음 콘텐츠에 실제 반영한다.
-
----
-
-# F17 Personal / Failure Story
-
-### 구조
-```text
-당시 상황
-내가 한 선택
-실패/의외 결과
-구체적인 숫자/장면
-배운 점
-독자 질문
-```
-
-실제 경험이 없는데 AI가 경험담을 만들어내면 안 된다.
-
----
-
-# F18 Case Study
-
-### 구조
-```text
-Before
-Problem
-Action
-Result
-Numbers
-What changed
-Lesson
-```
-
-자기 사례 또는 확인 가능한 공개 사례만 사용.
-
----
-
-# F19 Before / After
-
-시각적으로 결과가 분명한 경우.
-
-- 디자인
-- 코드/UI
-- 앱 설정
-- 시간/비용 변화
-- 제품 사용 전후
-
-과장된 효과 표현 금지.
-
----
-
-# F20 Repurposed Own Content
-
-한 번 만든 고품질 원본을 여러 플랫폼에 맞게 재가공한다.
-
-예:
-```text
-Blog article
-  ├─ Threads F02 요약
-  ├─ Threads F07 image card
-  ├─ IG F08 carousel
-  ├─ Short F11 video
-  └─ YouTube Long 확장
-```
-
-**동일 파일을 무지성 복붙하는 것과 다름.** 각 플랫폼에서 hook/caption/길이/CTA를 다시 설계한다.
-
----
-
-# Hook Taxonomy
-
-실험용 초기 분류:
-
-```text
-H01 Breaking        방금 바뀐 것
-H02 Why             왜 갑자기 뜨는가
-H03 Number          구체적인 숫자
-H04 Contrarian      예상과 다른 결론
-H05 Problem         독자의 문제부터 제시
-H06 Result-first    결과를 먼저 공개
-H07 Story           사건/경험의 첫 장면
-H08 Comparison      A vs B
-H09 Curiosity       빠진 정보/의외점
-H10 Question        직접 질문
-```
-
-낚시만 하고 payoff가 없는 curiosity gap은 KILL 후보.
-
----
-
-# CTA Taxonomy
-
-```text
-C00 None
-C01 Reply question
-C02 Save / remember
-C03 Share
-C04 Profile / follow
-C05 Link click
-C06 Try product/tool
-C07 Blog/newsletter
-C08 Next post / series
-```
-
-모든 post에 CTA를 억지로 넣지 않는다.
-
----
-
-# Source Asset Taxonomy
+## Source Asset Taxonomy
 
 ```text
 A01 Original text
@@ -431,12 +99,12 @@ A06 Official source excerpt/screenshot
 A07 Licensed asset
 A08 Public domain / permissive asset
 A09 External material used for commentary
-A10 Unknown rights  → publish BLOCK until resolved
+A10 Unknown rights
 ```
 
----
+rights 상태는 사실대로 기록한다. 확인되지 않은 권리를 임의로 승인 처리하지 않는다.
 
-# 제작 완료시 넘길 Draft Package
+## Draft Package
 
 ```text
 candidate_id
@@ -445,15 +113,19 @@ hypothesis_id
 variant_id
 platform
 content_format
-hook_type
-cta_type
+original_title
+cover_text
+source_visual_format[]
 source_asset_type
-final_text
-media_plan
+source_url
+source_screenshots[]       # ordered
+full_body_capture_status   # complete / partial / pending
+ui_crop_status
+normalization_status
 media_files
 source_refs
 rights_notes
 production_notes
 ```
 
-`04_REVIEW_PUBLISH`는 이 package를 Safety Gate에서 검수한다.
+`04_REVIEW_PUBLISH`만 실제 게시 여부를 결정한다.
