@@ -1,67 +1,48 @@
 # NEXT RUN HANDOFF — Threads Source-First Build
 
-Updated: 2026-09-16 10:37 KST
+Updated: 2026-09-16 11:16 KST
 
 ## READ FIRST
-Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`; only 04 may publish.
+Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03_PRODUCTION → 04_REVIEW_PUBLISH → 05_EXPERIMENTS_ACCOUNTS`; only 04 may publish.
 
-## Current binding production contract
-- Slide 1 cover only: one image + original post title by default.
-- Slide 2 onward: ordered original-post screenshots only.
-- Full original body must be captured; no summarizing, rewriting, condensing or dropping body text in the carousel.
-- Platform/browser UI chrome may be cropped, body content may not.
-- No automatic explanatory/summary/reaction/CTA/story cards between screenshots.
-- No automatic privacy masking; masking remains user-directed.
-- Attached source images/media and source visual order must be preserved.
-- Missing real screenshots/media remains `ASSETS_PENDING`.
-- Source format for new records is only `글 / 이미지 / 이미지 포스팅`.
+## This run — Source Package runtime now matches the binding carousel contract
+`app/source-package.js` was still implementing the obsolete editorial storyboard behavior despite the docs already being corrected. It has now been changed materially:
+- package requires a cover plus at least one real original-post screenshot/image;
+- slide 1 is cover image + original title by default;
+- slide 2 onward accepts only original `post`/`media` assets in source order;
+- no reaction/comment/context card kinds in the normal source package;
+- no automatic CTA, reaction label, rewritten hook, or body overlay;
+- no automatic PII mask suggestions/privacy alterations;
+- source format is only `글 / 이미지 / 이미지 포스팅`;
+- `fullBodyCaptureStatus` is explicit (`complete / partial / pending`), and incomplete capture remains `assetsPending=true`;
+- crop suggestion is limited to platform/browser UI while preserving original body/media.
 
-## This run — 10:37 Korean-community Discovery refresh
-Public/index discovery was run Korean-community first without restricted-source crawling or access-control bypass. Inven's current public board/list plus direct pages provided the strongest fresh coverage; additional search lanes were inspected but did not yield enough verifiable high-quality exact posts to pad the retained set.
+`test/source-package.test.mjs` was replaced to lock this behavior. A stale regression assertion for developer showcase data was also corrected to accept the already-moved `/data/_developer/...` location.
 
-Raw materially inspected: **52** (current board/list leads plus direct-page/search candidates; duplicates and clearly unsuitable sexual/graphic/political/dry-news items were not retained).
-Retained as one-file-per-candidate Markdown: **18**.
+## Verification truth
+Targeted `node test/source-package.test.mjs`: **PASS** on the authorized local machine.
+`npm run check`: syntax phase ran, but the local working tree had a pre-existing uncommitted stale copy of `test/field-test-showcase.test.mjs`, so the full suite stopped on its old path assertion. The repo-tip test itself was corrected in commit `400a734e`; no claim of a full green suite is made. A clean temporary-clone verification attempt did not complete through the remote execution channel, so it is not claimed.
+Browser E2E: not run; this change is package-model behavior and no new rendered user-facing output was produced.
 
-### C1 exact-page candidates added
-1. `마약사범에게 뇌물 받은 경찰의 충격적인 반전..` — 3,949 views / 22 rec / 14 comments; image-post core; image text not OCRed.
-2. `입주 청소하러 갔다가` — 7,339 / 19 / 8; high-comfort couple/life story; image core.
-3. `당근 꿀 알바 하실분 구해용` — 2,385 / 0 / 13; 3 source images visible.
-4. `결혼하면 은근히 의견 갈린다는 돈관리 유형` — 3,983 / 1 / 23; marriage/money debate.
-5. `ㅈ소기업 리뷰이벤트 근황` — 4,928 / 1 / 28; workplace absurdity; body read.
-6. `회사에서 뒷담화를 끊게 된 계기` — 4,193 / 5 / 9; 2-image workplace story, image text not transcribed.
-7. `KTX혼자서 두자리 예매?` — 4,203 / 0 / 38; strong everyday-etiquette debate.
-8. `남자들은 모였을때 얌전히 있어야한다.` — 3,704 / 1 / 10; visual mishap/humor; media pending.
-9. `곤충친구가 생긴 식물갤러` — 2,520 / 8 / 13; 2-image light surprise.
-10. `비밀번호를 적어두지 말라는 충고를 무시한 남자` — 2,301 / 4 / 3; short visual reversal.
-11. `배우 신현준이 페루 아이돌이 된 이유` — 5,809 / 2 / 6; body read, 2 images + upstream YouTube/news links.
-12. `북한에서 아이스크림을 부르는 말` — 2,712 / 1 / 9; 4-image ordered joke.
-13. `쪼개진 나무를 복원하는 방법` — 2,514 / 2 / 14; process/visual payoff.
-14. `고출력자동차 첨타면 벌어지는일` — 4,184 / 3 / 18; visual safety review required before promotion.
-15. `또 논란 될거 같은 더본` — 653 / 1 / 5; body read; multi-image consumer claim, factual/defamation gate required.
-
-### C0 public-index leads added
-16. `결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라` — index 2,485 / 2 / 16; exact URL unresolved.
-17. `콜센터 직원이 느낀 진상 손님 직업` — index 2,781 / 1 / 11; exact URL unresolved.
-18. `결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ` — index 7,093 / 4 / 9; exact URL unresolved.
-19. `한국 전철 찍고 있다가 어리둥절해진 일본인 .jpg` — index 4,275 / recommendation not shown / 14; exact URL unresolved.
-20. `이시대를 사는 4050 특징` — index 3,893 / 4 / 12; exact URL unresolved.
-
-Note: five C0 leads are included in retained accounting above only when considering useful leads; 15 C1 + 5 C0 files were actually created in this run = **20 candidate files**. The initial retained count line of 18 was superseded during continued verification; authoritative retained/file count for this run is **20**.
+## Discovery state inherited from 10:37 run
+Raw materially inspected: **52**.
+Retained: **20 candidate files** (15 C1 + 5 C0).
+Top candidates remain `입주 청소하러 갔다가`, `마약사범에게 뇌물 받은 경찰의 충격적인 반전..`, `ㅈ소기업 리뷰이벤트 근황`, `회사에서 뒷담화를 끊게 된 계기`, `KTX혼자서 두자리 예매?`, `결혼하면 은근히 의견 갈린다는 돈관리 유형`.
 
 ## Asset / production truth
-Full-post screenshots captured this run: **NO (0)**.
+Full-post screenshots captured this run: **0**.
 Actual source bytes copied into a Source Package: **0**.
 Completed REAL source-backed carousel this run: **NO**.
-All new records are A0/P0 and `publicationAllowed=false`. No OCR/moderation/rights/publication success was fabricated. Image-heavy pages whose image text was not actually read explicitly say so.
+A1=0, P1=0. No OCR/moderation/rights/publication success was fabricated.
 
 ## Repo changes
-- Added 20 individual human-readable candidate Markdown files under `data/candidates/` only.
-- No new grouped discovery JSON was created in `data/` root.
-- Final candidate commit in this run before handoff: `d04dbab62f93756750e4aad1a980a6a06fcf6031`.
+- `011179f715ca65f6b479632dc06764f71bff1763` — production: enforce cover plus faithful screenshot package
+- `739c2dafc95a4b75797f15853b3f73d850cef36c` — test: cover and full-post screenshot contract
+- `400a734eac8f972ccc1f71546c83b2e38af2aeb9` — test: accept developer showcase data location
 
 ## Next concrete priority
-1. Resolve the strongest C0 exact URLs first: `결혼 전 vs 결혼 후`, `결혼식 5만원`, `콜센터 진상 직업`, `한국 전철 일본인`, `4050 특징`.
-2. Acquire actual ordered source screenshots/images for top C1: `입주 청소하러 갔다가`, `마약사범에게 뇌물 받은 경찰...`, `결혼 돈관리 유형`, `ㅈ소기업 리뷰이벤트`, `회사 뒷담화`.
-3. Preserve source order and full original body; do not OCR/summarize/rewrite unless actually executed for verification, and never substitute generated body imagery.
-4. Continue broad Korean-community discovery beyond Inven when public exact-page coverage permits; do not pad with low-quality or unverifiable leads.
+1. Acquire actual ordered source screenshots/images for a top C1 candidate and mark full-body capture complete only after every original body screen is present.
+2. Feed those real assets through the corrected Source Package and produce the first 1080×1080 cover + faithful full-post screenshot carousel.
+3. Verify actual dimensions/readability in Chrome; do not use old black-background demo cards as completion evidence.
+4. Continue high-volume Korean-community Discovery and resolve the strongest C0 exact URLs.
 5. Keep P0 until 04 observes actual approved publication success.
