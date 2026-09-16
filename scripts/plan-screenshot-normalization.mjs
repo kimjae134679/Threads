@@ -5,7 +5,18 @@ function fail(message) { console.error(message); process.exit(1); }
 const [manifestFile, outFile] = process.argv.slice(2);
 if (!manifestFile) fail('usage: node scripts/plan-screenshot-normalization.mjs <intake-manifest.json> [out.json]');
 const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
-if (manifest.type !== 'SCREENSHOT_INTAKE_MANIFEST' || !Array.isArray(manifest.assets)) fail('expected SCREENSHOT_INTAKE_MANIFEST');
+if (manifest.type !== 'SCREENSHOT_INTAKE_MANIFEST' || !Array.isArray(manifest.assets) || manifest.assets.length === 0) fail('expected non-empty SCREENSHOT_INTAKE_MANIFEST');
+
+const sequences = manifest.assets.map((asset, index) => {
+  const n = Number(asset.sourceSequence);
+  if (!Number.isInteger(n) || n < 1) fail(`invalid sourceSequence at asset ${index + 1}`);
+  return n;
+});
+if (new Set(sequences).size !== sequences.length) fail('duplicate sourceSequence values are not allowed');
+for (let i = 1; i < sequences.length; i += 1) {
+  if (sequences[i] <= sequences[i - 1]) fail('manifest assets must already be in strictly increasing sourceSequence order');
+}
+
 const slides = manifest.assets.map((asset) => {
   const w = Number(asset.sourceWidth), h = Number(asset.sourceHeight);
   if (!(w > 0 && h > 0)) fail(`invalid source dimensions: ${asset.name || asset.file || 'asset'}`);
@@ -34,9 +45,10 @@ const plan = {
   type: 'SCREENSHOT_NORMALIZATION_PLAN',
   sourceUrl: manifest.sourceUrl || null,
   sourceManifest: manifestFile,
+  sourceSequencePolicy: 'PRESERVE_STRICT_INPUT_ORDER',
   publicationAllowed: false,
   publishOwner: '04_REVIEW_PUBLISH',
-  note: 'Square normalization contains the complete source image without stretching. It does not infer safe crop bounds, full-body completeness, OCR, moderation, rights or publication readiness.',
+  note: 'Square normalization contains the complete source image without stretching. It rejects missing, duplicate or reordered sourceSequence values and does not infer safe crop bounds, full-body completeness, OCR, moderation, rights or publication readiness.',
   slides
 };
 const text = `${JSON.stringify(plan, null, 2)}\n`;
