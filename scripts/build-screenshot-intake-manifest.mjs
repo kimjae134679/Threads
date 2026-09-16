@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 function pngSize(buf) {
   if (buf.length < 24 || buf.toString('ascii', 1, 4) !== 'PNG') return null;
@@ -22,9 +23,9 @@ function jpegSize(buf) {
   }
   return null;
 }
-function imageSize(file) {
+function readImage(file) {
   const buf = fs.readFileSync(file);
-  return pngSize(buf) || jpegSize(buf);
+  return { buf, size: pngSize(buf) || jpegSize(buf) };
 }
 function fail(message) { console.error(message); process.exit(1); }
 
@@ -40,14 +41,20 @@ for (let i = 0; i < args.length; i += 1) {
 if (!sourceUrl) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> [--observed-at <ISO>] [--out file.json] <ordered screenshot files...>');
 if (!files.length) fail('at least one ordered source screenshot/image is required');
 
+const seenHashes = new Map();
 const assets = files.map((file, index) => {
   if (!fs.existsSync(file)) fail(`missing file: ${file}`);
-  const size = imageSize(file);
+  const { buf, size } = readImage(file);
   if (!size) fail(`unsupported image or unreadable dimensions (PNG/JPEG only): ${file}`);
+  const sha256 = crypto.createHash('sha256').update(buf).digest('hex');
+  if (seenHashes.has(sha256)) fail(`duplicate source asset bytes: ${file} duplicates ${seenHashes.get(sha256)}`);
+  seenHashes.set(sha256, file);
   return {
     sourceSequence: index + 1,
     file: path.resolve(file),
     name: path.basename(file),
+    byteLength: buf.length,
+    sha256,
     sourceWidth: size.width,
     sourceHeight: size.height,
     acquisitionState: 'USER_PROVIDED',
@@ -71,7 +78,7 @@ const manifest = {
   publicationAllowed: false,
   publishOwner: '04_REVIEW_PUBLISH',
   privacyMasking: 'USER_DIRECTED_ONLY',
-  note: 'Order and dimensions are machine-recorded. Full-body completeness, source relationship, rights, privacy, OCR/vision, moderation and publication are NOT inferred.',
+  note: 'Order, dimensions, byte length and SHA-256 are machine-recorded. Duplicate bytes are rejected. Full-body completeness, source relationship, rights, privacy, OCR/vision, moderation and publication are NOT inferred.',
   assets
 };
 const text = `${JSON.stringify(manifest, null, 2)}\n`;
