@@ -5,7 +5,7 @@ import vm from "node:vm";
 const indexPayload = JSON.parse(fs.readFileSync(new URL("../data/field-test-showcase-index.json", import.meta.url), "utf8"));
 assert.equal(indexPayload.demoOnly, true);
 assert.equal(indexPayload.productionEligible, false);
-assert.match(indexPayload.current, /^\/data\/[a-zA-Z0-9._-]+\.json$/);
+assert.match(indexPayload.current, /^\/data\/(?:_developer\/)?[a-zA-Z0-9._-]+\.json$/);
 assert.equal(Number.isNaN(Date.parse(indexPayload.generatedAt)), false);
 const fieldUrl = new URL(`..${indexPayload.current}`, import.meta.url);
 assert.equal(fs.existsSync(fieldUrl), true);
