@@ -19,16 +19,15 @@
 9. Cover 이미지는 source media, 사용자 제공 이미지, 별도 생성 이미지 등 case-by-case로 결정하며 아직 하나의 방식으로 고정하지 않는다.
 10. 실제 screenshot/media가 없으면 `ASSETS_PENDING`; 가짜 body card를 만들지 않는다.
 
-### 원문 시각 형식 기록
+### 원문 형식 기록 — 세 개만 사용
 
-Discovery/Source Package는 원문에 이미지나 고유 레이아웃이 있는지도 기록한다. 필요 시 다음 중 하나 이상을 사용한다.
+Discovery/Source Package의 형식 분류는 복잡하게 나누지 않는다.
 
-- `TEXT_ONLY`
-- `TEXT_WITH_INLINE_IMAGE`
-- `CAROUSEL_SOURCE`
-- `SCREENSHOT_POST`
-- `NEWS_CARD_POST`
-- `MIXED_MEDIA_POST`
+- `글` — 텍스트 중심이며 콘텐츠 이해에 필요한 원문 이미지가 없음.
+- `이미지` — 글 본문에 첨부 이미지/사진/뉴스 캡처 등이 같이 있음. 원문 글과 이미지를 함께 가져온다.
+- `이미지 포스팅` — 이미지/카드/슬라이드/스크린샷 자체가 본문의 중심. 전체 이미지/슬라이드를 원래 순서대로 가져온다.
+
+`TEXT_ONLY`, `TEXT_WITH_INLINE_IMAGE`, `CAROUSEL_SOURCE`, `SCREENSHOT_POST`, `NEWS_CARD_POST`, `MIXED_MEDIA_POST` 같은 세부 taxonomy는 더 이상 새 후보/Source Package에 사용하지 않는다.
 
 원문에 자체 이미지/뉴스 캡처/여러 슬라이드가 있으면 텍스트만 떼어 저장하지 않고, 원문 screenshot 및 첨부 이미지 순서를 Source Package에 함께 보존한다.
 
@@ -115,11 +114,11 @@ platform
 content_format
 original_title
 cover_text
-source_visual_format[]
+source_format            # 글 / 이미지 / 이미지 포스팅
 source_asset_type
 source_url
-source_screenshots[]       # ordered
-full_body_capture_status   # complete / partial / pending
+source_screenshots[]     # ordered
+full_body_capture_status # complete / partial / pending
 ui_crop_status
 normalization_status
 media_files
