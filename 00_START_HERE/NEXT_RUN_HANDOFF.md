@@ -6,7 +6,7 @@ Updated: 2026-09-16 12:38 KST
 Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01_DISCOVERY → 02_EDITORIAL_SCORING → 03_PRODUCTION → 04_REVIEW_PUBLISH → 05_EXPERIMENTS_ACCOUNTS`; only 04 may publish.
 
 ## Latest useful Discovery refresh
-Public search/index/page exploration screened **~58 materially distinct leads** across Korean-community-first queries and adjacent public social/search lanes. Restricted sources were not bulk crawled or bypassed. After dedupe, story-potential, safety/comfort and provenance filtering, **15 new C1 candidate Markdown files** were retained under `data/candidates/`.
+Public search/index/page exploration screened **~58 materially distinct leads** across Korean-community-first queries and adjacent public social/search lanes. Restricted sources were not bulk crawled or bypassed. After dedupe, story-potential, safety/comfort and provenance filtering, **16 new C1 candidate Markdown files** were retained under `data/candidates/`.
 
 Top newly retained candidates:
 1. `상황 진짜 위험해보이는 돌고래유괴단` — https://www.inven.co.kr/board/webzine/2097/2597765 — observed 11,347 views / 2 recommendations / 17 comments; public text body read, attached image details not fully verified.
@@ -18,7 +18,7 @@ Top newly retained candidates:
 7. `AI 급 가속하는 발전 속도..` — https://m.inven.co.kr/board/webzine/2097/2728406?iskin=lol — observed 4,278 views / 2 recommendations / 15 comments; image body pending.
 8. `미국 고딩들이 한국 지하철 타보고 충격받은 이유.` — https://www.inven.co.kr/board/webzine/2097/2728059 — observed 4,133 views / 10 comments; image body pending.
 
-Other retained C1: `남자친구에게 선물을 주는 일본인 여자친구`, `차 문 열어주는 일본인 여자친구`, `그린랜턴 새 실사판 근황`, `여친이 약속에 자꾸 늦는 이유`, `영화 선구안 지리는 할리우드 배우`, `신생아가 집에 오면 생기는 일`, `한전 사유지에 송전탑 설치`, plus `7,000원 돈까스 세트` as a lower-priority visual/value reference. (This makes 16 files written during the run; the primary retained editorial set is 15, with the 돈까스 item kept as a low-priority visual reference.)
+Other retained C1: `남자친구에게 선물을 주는 일본인 여자친구`, `차 문 열어주는 일본인 여자친구`, `그린랜턴 새 실사판 근황`, `여친이 약속에 자꾸 늦는 이유`, `영화 선구안 지리는 할리우드 배우`, `신생아가 집에 오면 생기는 일`, `한전 사유지에 송전탑 설치`, `7,000원 돈까스 세트`.
 
 ## Asset / production truth
 Full-post screenshots captured this Discovery run: **0**.
