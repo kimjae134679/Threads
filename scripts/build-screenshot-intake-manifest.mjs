@@ -38,8 +38,18 @@ function validateSourceUrl(value) {
   if (/^(10\.|127\.|169\.254\.|192\.168\.)/.test(host)) fail('source URL must not point to a local/private host');
   const m = host.match(/^172\.(\d+)\./);
   if (m && Number(m[1]) >= 16 && Number(m[1]) <= 31) fail('source URL must not point to a local/private host');
+  const secretKeys = /^(access[_-]?token|auth|authorization|api[_-]?key|key|secret|signature|sig|token)$/i;
+  for (const key of parsed.searchParams.keys()) {
+    if (secretKeys.test(key)) fail(`source URL query appears to contain a secret-bearing parameter: ${key}`);
+  }
   parsed.hash = '';
   return parsed.toString();
+}
+function validateObservedAt(value) {
+  if (!value) return '';
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime()) || !/^\d{4}-\d{2}-\d{2}T/.test(value)) fail('--observed-at must be an ISO-8601 datetime');
+  return parsed.toISOString();
 }
 
 const args = process.argv.slice(2);
@@ -53,6 +63,7 @@ for (let i = 0; i < args.length; i += 1) {
 }
 if (!sourceUrl) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> [--observed-at <ISO>] [--out file.json] <ordered screenshot files...>');
 sourceUrl = validateSourceUrl(sourceUrl);
+observedAt = validateObservedAt(observedAt);
 if (!files.length) fail('at least one ordered source screenshot/image is required');
 
 const seenHashes = new Map();
