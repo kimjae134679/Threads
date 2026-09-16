@@ -28,6 +28,19 @@ function readImage(file) {
   return { buf, size: pngSize(buf) || jpegSize(buf) };
 }
 function fail(message) { console.error(message); process.exit(1); }
+function validateSourceUrl(value) {
+  let parsed;
+  try { parsed = new URL(value); } catch { fail('source URL must be an exact absolute public http(s) URL'); }
+  if (!['http:', 'https:'].includes(parsed.protocol)) fail('source URL must use http(s)');
+  if (!parsed.hostname || parsed.username || parsed.password) fail('source URL must be a public URL without embedded credentials');
+  const host = parsed.hostname.toLowerCase();
+  if (host === 'localhost' || host === '0.0.0.0' || host === '::1' || host.endsWith('.local')) fail('source URL must not point to a local/private host');
+  if (/^(10\.|127\.|169\.254\.|192\.168\.)/.test(host)) fail('source URL must not point to a local/private host');
+  const m = host.match(/^172\.(\d+)\./);
+  if (m && Number(m[1]) >= 16 && Number(m[1]) <= 31) fail('source URL must not point to a local/private host');
+  parsed.hash = '';
+  return parsed.toString();
+}
 
 const args = process.argv.slice(2);
 let sourceUrl = '', observedAt = '', out = '';
@@ -39,6 +52,7 @@ for (let i = 0; i < args.length; i += 1) {
   else files.push(args[i]);
 }
 if (!sourceUrl) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> [--observed-at <ISO>] [--out file.json] <ordered screenshot files...>');
+sourceUrl = validateSourceUrl(sourceUrl);
 if (!files.length) fail('at least one ordered source screenshot/image is required');
 
 const seenHashes = new Map();
