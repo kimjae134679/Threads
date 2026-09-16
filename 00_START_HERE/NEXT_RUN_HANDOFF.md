@@ -1,30 +1,31 @@
 # NEXT RUN HANDOFF — Threads Source-First Build
 
-Updated: 2026-09-16 17:16 KST
+Updated: 2026-09-16 17:36 KST
 
 ## READ FIRST
 Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01_DISCOVERY → 02_EDITORIAL_SCORING → 03_PRODUCTION → 04_REVIEW_PUBLISH → 05_EXPERIMENTS_ACCOUNTS`; only 04 may publish.
 
 ## Latest Discovery state
-Previous discovery inspected roughly **40+ leads** and retained **15 candidates (14 C1 + 1 C0)**. Top acquisition target remains `돈 때문에 결혼접을까 고민된다는 남자` — Ppomppu exact page, 6,298 views / 15 comments, two JPG attachments listed. A fresh public search still exposes the exact page and attachment names, but direct page fetch is currently 403; no bypass was attempted.
+This discovery pass searched Korean-community-first public/index surfaces across multiple requested lanes without bypassing login/anti-bot controls. Roughly **40+ raw leads/search results** were inspected; search quality was unusually noisy, so only **3 genuinely usable new C1 candidates** were retained rather than padding the queue with weak items.
 
-## Production change this run
-`app/source-package.js` schema is now v3. Screenshot/media intake records explicit `sourceSequence`, `acquisitionState` (`CAPTURED`, `USER_PROVIDED`, `SOURCE_MEDIA`, `ASSETS_PENDING`), original dimensions, capture URL/time and applied crop provenance. Body assets must remain in nondecreasing source sequence. `assetsPending` now stays true unless full-body status is complete AND every body asset is actually acquired. This prevents metadata-only attachment listings from being mistaken for usable source-backed carousel assets.
+Top new candidate: `임대아파트 사는 여친과 결혼문제` — Ppomppu exact public page, observed 20,103 views, full text body read, overall comment set not read. It is a strong marriage/money/family-background argument story. `급여담당하는 직방덬들 있어? 공제내역 계산하는 거 말이야` is a lower-engagement but clear workplace/payroll absurdity (48 views / 6 comments observed). `내가 홍콩 보내줄게.jpg` has 1,670 observed views and one attached image, but the image body itself was not read, so the candidate explicitly says `본문 미확인` and remains acquisition-first.
 
-Role chain, publication ownership, `publicationAllowed=false`, rights/privacy/human review gates and no automatic privacy masking remain unchanged. No OCR/vision result was claimed.
+Previous top acquisition target `돈 때문에 결혼접을까 고민된다는 남자` remains relevant; metadata-only attachment listings are not acquisition.
 
 ## Asset / publication truth
-Raw candidate count this run: **0 new discovery leads** (production-focused run).
-Retained count this run: **0 new candidates**.
+Raw candidate leads/results inspected this run: **40+**.
+Retained count this run: **3 C1**.
 Full-post screenshots captured this run: **0**.
 Actual source bytes acquired this run: **0**.
 Completed real source-backed carousel: **NO**.
 A1/P1 created: **0**.
+All new candidates remain A0/P0 and `publicationAllowed=false`; rights/privacy/human review gates remain. Only 04_REVIEW_PUBLISH may publish.
 
 ## Verification truth
-The runtime file was changed directly on main through GitHub. Connector environment does not provide a checkout/runtime shell for this repository in this run, so `npm run check`, server smoke and browser E2E were **not run**; no test success is claimed.
+Discovery Markdown files were written directly to current main through GitHub. No runtime application code changed in this discovery-only pass, so npm/server/browser tests were not applicable and are not claimed. No OCR, moderation, rights clearance, credential, delivery or publication success was fabricated.
 
 ## Next concrete priority
-1. Acquire the two actual Ppomppu JPG bytes through a permitted public/manual capture path; do not treat filenames/index metadata as acquisition.
-2. Verify whether they contain the complete original body. If not, capture every remaining body screen in source order.
-3. Feed acquired assets into schema-v3 screenshot intake, render the first real source-backed square carousel, and verify it in Chrome before any A1 consideration.
+1. Acquire actual source screenshot/image bytes for the strongest accessible candidates through permitted public/manual capture paths.
+2. For `내가 홍콩 보내줄게.jpg`, do not score the story as verified until the actual attached image is read.
+3. For any acquired post, verify the complete body sequence before Source Package v3 intake; keep `ASSETS_PENDING` until every required body asset exists.
+4. Render and Chrome-verify the first real source-backed square carousel before any A1 consideration.
