@@ -13,8 +13,9 @@ const sequences = manifest.assets.map((asset, index) => {
   return n;
 });
 if (new Set(sequences).size !== sequences.length) fail('duplicate sourceSequence values are not allowed');
+if (sequences[0] !== 1) fail('sourceSequence must start at 1; missing first source screenshot is not allowed');
 for (let i = 1; i < sequences.length; i += 1) {
-  if (sequences[i] <= sequences[i - 1]) fail('manifest assets must already be in strictly increasing sourceSequence order');
+  if (sequences[i] !== sequences[i - 1] + 1) fail(`sourceSequence gap or reorder at asset ${i + 1}; expected ${sequences[i - 1] + 1}, got ${sequences[i]}`);
 }
 
 const slides = manifest.assets.map((asset) => {
@@ -45,10 +46,10 @@ const plan = {
   type: 'SCREENSHOT_NORMALIZATION_PLAN',
   sourceUrl: manifest.sourceUrl || null,
   sourceManifest: manifestFile,
-  sourceSequencePolicy: 'PRESERVE_STRICT_INPUT_ORDER',
+  sourceSequencePolicy: 'PRESERVE_CONTIGUOUS_SOURCE_ORDER_FROM_1',
   publicationAllowed: false,
   publishOwner: '04_REVIEW_PUBLISH',
-  note: 'Square normalization contains the complete source image without stretching. It rejects missing, duplicate or reordered sourceSequence values and does not infer safe crop bounds, full-body completeness, OCR, moderation, rights or publication readiness.',
+  note: 'Square normalization contains the complete source image without stretching. It requires a contiguous sourceSequence beginning at 1 so missing middle/first screenshots cannot silently pass. It does not infer safe crop bounds, full-body completeness, OCR, moderation, rights or publication readiness.',
   slides
 };
 const text = `${JSON.stringify(plan, null, 2)}\n`;
