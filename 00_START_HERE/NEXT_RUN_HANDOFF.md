@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-17 09:19 KST
+Updated: 2026-09-17 09:48 KST
 
 ## Start here
 Repo tip wins. Preserve the role chain:
@@ -20,33 +20,34 @@ Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/
 - Square carousel target: 1080×1080. Vertical video is a separate 1080×1920 renderer; never stretch square cards.
 
 ## Current screenshot-intake implementation
-`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot sequence, PNG/JPEG dimensions, byte length, SHA-256, exact public capture URL and observation time. Duplicate bytes are rejected. This run fixed a truthfulness bug: the script previously hard-coded every local file as `USER_PROVIDED`, even when the file could have come from manual/browser capture. `--acquisition-state` is now required and limited to `USER_PROVIDED`, `MANUAL_CAPTURE`, or `BROWSER_CAPTURE`; the manifest and each asset preserve that explicit state and matching provenance. The script still does NOT infer full-body completeness, source relationship, rights, privacy, OCR/vision, moderation, or publication.
+`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot sequence, PNG/JPEG dimensions, byte length, SHA-256, exact public capture URL and observation time. Duplicate bytes are rejected. `--acquisition-state` is required and limited to `USER_PROVIDED`, `MANUAL_CAPTURE`, or `BROWSER_CAPTURE`; manifest/assets preserve the supplied acquisition truth. It does NOT infer full-body completeness, source relationship, rights, privacy, OCR/vision, moderation, or publication.
 
 `scripts/plan-screenshot-normalization.mjs` requires a non-empty ordered manifest, sequence 1..N with no gaps/duplicates, unique source hashes, matching capture URLs, dimensions/provenance/acquisition state, and plans 1080×1080 no-stretch normalization. Crop remains manual/verified UI-chrome-only; body crop and automatic privacy masking remain forbidden.
 
 ## Latest Discovery baseline
-Latest discovery refresh (ops 124-sol):
-- raw inspected: 40+
-- retained: 3 (C1 2 + C0 1)
-- top candidates from that run: wedding cancellation venue-cost repayment conflict (+9,412 observed Reddit score); $500 memorial donation wedding-gift conflict (+1,353 observed score); Blind `연애경험없는데 제가 여자분에게 무례 범한건가요..` as C0 because exact individual URL/full body were not verified.
+Discovery refresh at 2026-09-17 09:35–09:48 KST:
+- raw inspected: 40+ public search/index leads across Korean-community-first queries plus Reddit/other public lanes; restricted sources were not bypassed. Clien/Instiz robots restrictions were respected.
+- retained as new candidate files: 17, all C1_A0_P0.
+- Korean retained dominates this run: 14 Blind C1 + 3 Reddit C1.
+- top candidates: Blind `어쩌다 괴물이 되어버렸을까...` (400만→8,000만→루나 -99.99%→대출 주식 재손실); Blind `죄의식이 낮은건가?` (몰래 대출·코인·돌려막기·남편/시어머니 개인회생); Blind `이혼이 답인데 자식이 너무 맘에 걸린다` (반복 비밀대출, 코인으로 보였으나 게임 현질 중독 반전); Blind `축의금 문화, 결혼 문화 10년내 다바뀔 듯` (85K views / 433 likes / 543 comments observed); Reddit wedding-support escalation ($1,000 intended vs $15,000 requested, +7,958 observed score).
 - full-post screenshots captured: 0
 - actual source bytes acquired: 0
 - real source-backed carousel produced: NO
 - A1/P1: 0
 
-Existing strong acquisition priorities remain Korean source-first, including `하이닉스37억몰빵`, `주식으로8천날림`, `하루52억한달15억손실`, plus strong relationship/workplace candidates where exact public URLs are already C1.
+Other retained Korean C1s include `돈 안갚는 친구`, `첫만남에 돈얘기 꺼냈던 황당 소개팅녀`, `결혼 주선자 사례 X, 청첩장 못 받음. 축의금 해야돼?`, `시댁/처가 반찬 폭력`, `결혼 첫 명절 시댁/처가 일정문의`, `결혼식 하객 수`, `결혼 비용및 축의금 정산 의견 차이`, `부모님 결혼 반대`, `결혼준비할때 양가부모님 지원말야`, `코인 중독`, `결혼 전까지 소개팅 마니함`, `내가 프로불편러인가 봐줄래?`.
 
 ## This run
-Material repo change: screenshot intake acquisition method can no longer be silently mislabeled as user-provided. Commit `e34fb2111e3bba745ccf2341346da2d22f7b23d6`.
+Material repo change: 17 individual human-readable Markdown candidate files were added under `data/candidates/`; no grouped discovery JSON was created in `data/`. Each file records the exact public URL, observed metrics only, body/comment read state, story evaluation, and truthful `ASSETS_PENDING`/A0/P0 state. `publicationAllowed=false` and rights/privacy/human-review gates are preserved.
 
-No source screenshot bytes were available in this connector-only run, so full-post screenshots remain 0 and no source-backed carousel was produced. No OCR/vision/moderation/rights/publication success is claimed.
+No source screenshot bytes were acquired, so full-post screenshots remain 0 and no source-backed carousel was produced. No OCR/vision/moderation/rights/publication success is claimed.
 
-Executable checkout/Node/Chrome were not available through the current connector surface, so `npm run check`, server smoke, and browser E2E were NOT executed in this run. Run them at the next executable checkout before claiming green status.
+Executable checkout/Node/Chrome were not available through the current connector surface, so `npm run check`, server smoke, and browser E2E were NOT executed in this discovery-only run.
 
 ## Next highest-priority work
-1. Continue high-volume Korean-community discovery/ranking (40–80 raw when coverage permits, retain 15–30 genuinely usable rather than filler).
-2. Acquire full-post screenshots for the strongest C1/C0-resolved candidates through permitted public/manual/browser paths.
-3. Feed real ordered files through `build-screenshot-intake-manifest.mjs` with the truthful `--acquisition-state` value.
-4. Verify full-body coverage manually, then normalize with the no-stretch/UI-chrome-only pipeline.
-5. Produce the first real cover + full-post screenshot carousel and inspect it in Chrome.
-6. Only after source-backed user-facing quality is working, continue provider/publishing work.
+1. Acquire real full-post screenshots for the strongest Korean C1s, starting with `어쩌다 괴물이 되어버렸을까...`, `죄의식이 낮은건가?`, `이혼이 답인데 자식이 너무 맘에 걸린다`, and existing `하이닉스37억몰빵` priorities, through permitted public/manual/browser paths.
+2. Feed real ordered files through `build-screenshot-intake-manifest.mjs` with truthful acquisition state.
+3. Manually verify full-body coverage, then normalize with no-stretch/UI-chrome-only rules.
+4. Produce the first real cover + full-post screenshot carousel and inspect it in Chrome.
+5. Continue high-volume Korean-community discovery in parallel; retain quality rather than filler.
+6. Only after source-backed user-facing quality works, continue provider/publishing work.
