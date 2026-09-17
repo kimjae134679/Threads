@@ -23,17 +23,23 @@ for (let i = 0; i < plan.slides.length; i += 1) {
   const hash = s.sha256.toLowerCase();
   if (hashes.has(hash)) fail(`duplicate source hash at slide ${expected}`);
   hashes.add(hash);
-  if (!(Number(s.byteLength) > 0)) fail(`invalid byteLength at slide ${expected}`);
+  if (!Number.isSafeInteger(Number(s.byteLength)) || Number(s.byteLength) <= 0) fail(`invalid byteLength at slide ${expected}`);
   if (s.captureUrl !== plan.sourceUrl) fail(`captureUrl/sourceUrl mismatch at slide ${expected}`);
-  if (!s.acquisitionState || !s.provenance) fail(`missing acquisition/provenance at slide ${expected}`);
+  if (typeof s.acquisitionState !== 'string' || !s.acquisitionState.trim() || typeof s.provenance !== 'string' || !s.provenance.trim()) fail(`missing acquisition/provenance at slide ${expected}`);
   if (s.mode !== 'CONTAIN_NO_STRETCH') fail(`stretch/crop normalization mode forbidden at slide ${expected}`);
   if (s.bodyCropAllowed !== false) fail(`body cropping must remain forbidden at slide ${expected}`);
   if (s.privacyMasking !== 'USER_DIRECTED_ONLY') fail(`privacy masking must remain user-directed at slide ${expected}`);
   if (Number(s.target?.width) !== 1080 || Number(s.target?.height) !== 1080) fail(`target must be 1080x1080 at slide ${expected}`);
+
   const w = Number(s.sourceWidth), h = Number(s.sourceHeight), sw = Number(s.scaledWidth), sh = Number(s.scaledHeight);
-  if (!(w > 0 && h > 0 && sw > 0 && sh > 0 && sw <= 1080 && sh <= 1080)) fail(`invalid dimensions at slide ${expected}`);
+  if (![w, h, sw, sh].every(Number.isSafeInteger) || !(w > 0 && h > 0 && sw > 0 && sh > 0 && sw <= 1080 && sh <= 1080)) fail(`invalid dimensions at slide ${expected}`);
   const scale = Math.min(1080 / w, 1080 / h);
   if (sw !== Math.max(1, Math.round(w * scale)) || sh !== Math.max(1, Math.round(h * scale))) fail(`non-contain dimensions at slide ${expected}`);
-  if (Number(s.padLeft) + sw + Number(s.padRight) !== 1080 || Number(s.padTop) + sh + Number(s.padBottom) !== 1080) fail(`padding does not close to 1080 at slide ${expected}`);
+
+  const pads = [s.padLeft, s.padTop, s.padRight, s.padBottom].map(Number);
+  if (!pads.every((v) => Number.isSafeInteger(v) && v >= 0)) fail(`padding must be non-negative integers at slide ${expected}`);
+  const [pl, pt, pr, pb] = pads;
+  if (pl + sw + pr !== 1080 || pt + sh + pb !== 1080) fail(`padding does not close to 1080 at slide ${expected}`);
+  if (Math.abs(pl - pr) > 1 || Math.abs(pt - pb) > 1) fail(`contain padding must stay centered at slide ${expected}`);
 }
 console.log(`OK: ${plan.slides.length} source screenshots preserve evidence/order and 1080x1080 contain/no-stretch normalization.`);
