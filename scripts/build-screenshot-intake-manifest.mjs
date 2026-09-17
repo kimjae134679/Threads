@@ -52,20 +52,28 @@ function validateObservedAt(value) {
   return parsed.toISOString();
 }
 
+const allowedAcquisitionStates = new Set(['USER_PROVIDED', 'MANUAL_CAPTURE', 'BROWSER_CAPTURE']);
 const args = process.argv.slice(2);
-let sourceUrl = '', observedAt = '', out = '';
+let sourceUrl = '', observedAt = '', out = '', acquisitionState = '';
 const files = [];
 for (let i = 0; i < args.length; i += 1) {
   if (args[i] === '--source-url') sourceUrl = args[++i] || '';
   else if (args[i] === '--observed-at') observedAt = args[++i] || '';
+  else if (args[i] === '--acquisition-state') acquisitionState = args[++i] || '';
   else if (args[i] === '--out') out = args[++i] || '';
   else files.push(args[i]);
 }
-if (!sourceUrl) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> [--observed-at <ISO>] [--out file.json] <ordered screenshot files...>');
+if (!sourceUrl || !acquisitionState) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> --acquisition-state <USER_PROVIDED|MANUAL_CAPTURE|BROWSER_CAPTURE> [--observed-at <ISO>] [--out file.json] <ordered screenshot files...>');
 sourceUrl = validateSourceUrl(sourceUrl);
 observedAt = validateObservedAt(observedAt);
+if (!allowedAcquisitionStates.has(acquisitionState)) fail('--acquisition-state must be USER_PROVIDED, MANUAL_CAPTURE, or BROWSER_CAPTURE');
 if (!files.length) fail('at least one ordered source screenshot/image is required');
 
+const provenanceByState = {
+  USER_PROVIDED: 'local file supplied by user for source intake; exact source relationship requires human verification',
+  MANUAL_CAPTURE: 'local file recorded as a manual capture from the stated source URL; exact source relationship requires human verification',
+  BROWSER_CAPTURE: 'local file recorded as a browser capture from the stated source URL; exact source relationship requires human verification'
+};
 const seenHashes = new Map();
 const assets = files.map((file, index) => {
   if (!fs.existsSync(file)) fail(`missing file: ${file}`);
@@ -82,8 +90,8 @@ const assets = files.map((file, index) => {
     sha256,
     sourceWidth: size.width,
     sourceHeight: size.height,
-    acquisitionState: 'USER_PROVIDED',
-    provenance: 'local file selected for source intake; exact source relationship requires human verification',
+    acquisitionState,
+    provenance: provenanceByState[acquisitionState],
     captureUrl: sourceUrl,
     observedAt: observedAt || null,
     cropSuggestion: 'NONE — review manually; only platform/browser UI chrome may be cropped',
@@ -98,12 +106,13 @@ const manifest = {
   type: 'SCREENSHOT_INTAKE_MANIFEST',
   sourceUrl,
   observedAt: observedAt || null,
+  acquisitionState,
   orderedAssetCount: assets.length,
   fullBodyCaptureStatus: 'pending',
   publicationAllowed: false,
   publishOwner: '04_REVIEW_PUBLISH',
   privacyMasking: 'USER_DIRECTED_ONLY',
-  note: 'Order, dimensions, byte length and SHA-256 are machine-recorded. Duplicate bytes are rejected. Full-body completeness, source relationship, rights, privacy, OCR/vision, moderation and publication are NOT inferred.',
+  note: 'Order, dimensions, byte length and SHA-256 are machine-recorded. Acquisition method is explicitly supplied, never inferred. Duplicate bytes are rejected. Full-body completeness, source relationship, rights, privacy, OCR/vision, moderation and publication are NOT inferred.',
   assets
 };
 const text = `${JSON.stringify(manifest, null, 2)}\n`;
