@@ -1,48 +1,52 @@
-# NEXT RUN HANDOFF — Threads Source-First Build
+# NEXT RUN HANDOFF
 
-Updated: 2026-09-17 08:37 KST
+Updated: 2026-09-17 09:19 KST
 
-## READ FIRST
-Before work: `00_START_HERE/README.md` → this file → current `main`/recent commits → latest sequential ops note in `project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/`. Repo tip wins. Preserve `01_DISCOVERY → 02_EDITORIAL_SCORING → 03_PRODUCTION → 04_REVIEW_PUBLISH → 05_EXPERIMENTS_ACCOUNTS`; only 04 may publish.
+## Start here
+Repo tip wins. Preserve the role chain:
+`01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`.
+Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/metrics/credentials/delivery/publication success and never store plaintext secrets.
 
-## Material work this run — Discovery refresh
-Used public search/index only; no login/anti-bot bypass or restricted bulk crawl. Queried Korean-community-first lanes across Blind/DCInside/FMKorea/TheQoo/Ruliweb/Ppomppu/Inven/Arca plus Reddit. Clien/Instiz were robots-blocked and were not bypassed. Broad search coverage produced 40+ raw leads/results; after relevance, dedupe, access and story-potential filtering retained 3 new candidates (2 C1 + 1 C0).
+## User-facing format is binding
+- Old black-background text-only Demo Showcase/storyboard is regression/developer material only.
+- Slide 1: cover only, one image + original post title/hook; original title unchanged by default.
+- Slide 2+: original source screenshots in order, covering the FULL original post body.
+- No summarizing/paraphrasing/rewriting/dropping body text in the carousel.
+- UI/browser chrome may be cropped only if body content is preserved.
+- No automatic explanatory/summary/reaction/CTA cards between screenshots.
+- No automatic privacy masking. User-directed masking only.
+- Source-attached media should remain in the source sequence where relevant.
+- If real screenshots/source assets are unavailable, remain `ASSETS_PENDING`; never synthesize body cards.
+- Square carousel target: 1080×1080. Vertical video is a separate 1080×1920 renderer; never stretch square cards.
 
-New retained:
-1. C1 `AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding` — https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/ — observed score +9,412.
-2. C1 `AITA for gifting a donation` — https://www.reddit.com/r/BORUpdates/comments/1wa3pjd/aita_for_gifting_a_donation/ — observed score +1,353; BORUpdates repost/update provenance, not claimed as original OOP URL.
-3. C0 `연애경험없는데 제가 여자분에게 무례 범한건가요..` — Blind public browse/index only; observed views 204 / likes 3 / comments 1; exact individual URL and full body not verified.
+## Current screenshot-intake implementation
+`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot sequence, PNG/JPEG dimensions, byte length, SHA-256, exact public capture URL and observation time. Duplicate bytes are rejected. This run fixed a truthfulness bug: the script previously hard-coded every local file as `USER_PROVIDED`, even when the file could have come from manual/browser capture. `--acquisition-state` is now required and limited to `USER_PROVIDED`, `MANUAL_CAPTURE`, or `BROWSER_CAPTURE`; the manifest and each asset preserve that explicit state and matching provenance. The script still does NOT infer full-body completeness, source relationship, rights, privacy, OCR/vision, moderation, or publication.
 
-The Korean search pool was comparatively weak/noisy this run; generic market analysis/high-view salary-list material was rejected because high views alone do not satisfy story taste. No ordinary stock-market news was retained.
+`scripts/plan-screenshot-normalization.mjs` requires a non-empty ordered manifest, sequence 1..N with no gaps/duplicates, unique source hashes, matching capture URLs, dimensions/provenance/acquisition state, and plans 1080×1080 no-stretch normalization. Crop remains manual/verified UI-chrome-only; body crop and automatic privacy masking remain forbidden.
 
-## Discovery truth
-- raw candidate leads/results inspected: 40+
-- retained this run: 3 (C1 2 + C0 1)
+## Latest Discovery baseline
+Latest discovery refresh (ops 124-sol):
+- raw inspected: 40+
+- retained: 3 (C1 2 + C0 1)
+- top candidates from that run: wedding cancellation venue-cost repayment conflict (+9,412 observed Reddit score); $500 memorial donation wedding-gift conflict (+1,353 observed score); Blind `연애경험없는데 제가 여자분에게 무례 범한건가요..` as C0 because exact individual URL/full body were not verified.
 - full-post screenshots captured: 0
 - actual source bytes acquired: 0
 - real source-backed carousel produced: NO
 - A1/P1: 0
-- all new candidates: A0/P0, `publicationAllowed=false`, rights/privacy/human-review gated
-- no OCR/moderation/rights/publication success claimed
 
-Top source-acquisition targets remain:
-1. `하이닉스 37억 몰빵 풀매수`
-2. `주식으로 8천날림`
-3. `[인증] 하루 5.2억 손실, 한 달 15억 손실`
-4. C0 `SK하이닉스 약 70억원 투자 후 약 18억원 평가손실 인증 lead` — resolve exact original DCInside URL before C1.
+Existing strong acquisition priorities remain Korean source-first, including `하이닉스37억몰빵`, `주식으로8천날림`, `하루52억한달15억손실`, plus strong relationship/workplace candidates where exact public URLs are already C1.
 
-## Existing production state
-Screenshot normalization requires exact public sourceUrl, orderedAssetCount, per-asset SHA-256/byteLength/captureUrl/acquisitionState/provenance, unique hashes and contiguous sourceSequence from 1. Body crop remains forbidden; UI-chrome crop manual/verified-suggestion only; privacy masking user-directed only; CONTAIN_NO_STRETCH remains required.
+## This run
+Material repo change: screenshot intake acquisition method can no longer be silently mislabeled as user-provided. Commit `e34fb2111e3bba745ccf2341346da2d22f7b23d6`.
 
-## Verification truth
-- material repo change: YES — 3 candidate Markdown files + handoff
-- `npm run check`: not run (GitHub connector runtime; no executable checkout)
-- server smoke/browser E2E: not applicable to candidate-only Markdown changes and not run
-- no publication/provider action attempted
+No source screenshot bytes were available in this connector-only run, so full-post screenshots remain 0 and no source-backed carousel was produced. No OCR/vision/moderation/rights/publication success is claimed.
 
-## Next concrete priority
-1. Continue Korean-first high-volume discovery; improve funny/workplace/reversal coverage rather than padding with weak high-view posts.
-2. Resolve exact original URLs for strong C0 Korean leads.
-3. Acquire complete original-post screenshots/source media for top C1 investment stories; do not fabricate body cards.
-4. Run intake → normalization on an executable checkout after real bytes exist.
-5. Build 1080×1080 cover + complete original screenshot carousel only after source bytes exist; Chrome-verify before A1.
+Executable checkout/Node/Chrome were not available through the current connector surface, so `npm run check`, server smoke, and browser E2E were NOT executed in this run. Run them at the next executable checkout before claiming green status.
+
+## Next highest-priority work
+1. Continue high-volume Korean-community discovery/ranking (40–80 raw when coverage permits, retain 15–30 genuinely usable rather than filler).
+2. Acquire full-post screenshots for the strongest C1/C0-resolved candidates through permitted public/manual/browser paths.
+3. Feed real ordered files through `build-screenshot-intake-manifest.mjs` with the truthful `--acquisition-state` value.
+4. Verify full-body coverage manually, then normalize with the no-stretch/UI-chrome-only pipeline.
+5. Produce the first real cover + full-post screenshot carousel and inspect it in Chrome.
+6. Only after source-backed user-facing quality is working, continue provider/publishing work.
