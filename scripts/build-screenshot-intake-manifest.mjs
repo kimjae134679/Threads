@@ -28,6 +28,22 @@ function readImage(file) {
   return { buf, size: pngSize(buf) || jpegSize(buf) };
 }
 function fail(message) { console.error(message); process.exit(1); }
+function isNonPublicIpv4(host) {
+  const parts = host.split('.');
+  if (parts.length !== 4 || parts.some((part) => !/^\d+$/.test(part) || Number(part) > 255)) return false;
+  const [a, b] = parts.map(Number);
+  if (a === 0 || a === 10 || a === 127) return true;
+  if (a === 169 && b === 254) return true;
+  if (a === 172 && b >= 16 && b <= 31) return true;
+  if (a === 192 && b === 168) return true;
+  if (a === 100 && b >= 64 && b <= 127) return true; // carrier-grade NAT
+  if (a === 192 && b === 0) return true; // protocol assignments / TEST-NET edge space
+  if (a === 198 && (b === 18 || b === 19)) return true; // benchmark networks
+  if (a === 198 && b === 51) return true; // TEST-NET-2
+  if (a === 203 && b === 0) return true; // TEST-NET-3
+  if (a >= 224) return true; // multicast/reserved/broadcast
+  return false;
+}
 function isPrivateIpv6(host) {
   const bare = host.replace(/^\[|\]$/g, '').toLowerCase();
   if (!bare.includes(':')) return false;
@@ -45,9 +61,7 @@ function validateSourceUrl(value) {
   if (!parsed.hostname || parsed.username || parsed.password) fail('source URL must be a public URL without embedded credentials');
   const host = parsed.hostname.toLowerCase();
   if (host === 'localhost' || host === '0.0.0.0' || host === '::1' || host.endsWith('.local')) fail('source URL must not point to a local/private host');
-  if (/^(10\.|127\.|169\.254\.|192\.168\.)/.test(host)) fail('source URL must not point to a local/private host');
-  const m = host.match(/^172\.(\d+)\./);
-  if (m && Number(m[1]) >= 16 && Number(m[1]) <= 31) fail('source URL must not point to a local/private host');
+  if (isNonPublicIpv4(host)) fail('source URL must point to a globally routable public IPv4 host');
   if (isPrivateIpv6(host)) fail('source URL must not point to a local/private IPv6 host');
   const secretKeys = /^(access[_-]?token|auth|authorization|api[_-]?key|key|secret|signature|sig|token)$/i;
   for (const key of parsed.searchParams.keys()) {
