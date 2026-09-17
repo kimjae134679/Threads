@@ -8,6 +8,9 @@ const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
 if (manifest.type !== 'SCREENSHOT_INTAKE_MANIFEST' || !Array.isArray(manifest.assets) || manifest.assets.length === 0) fail('expected non-empty SCREENSHOT_INTAKE_MANIFEST');
 if (!manifest.sourceUrl || !/^https?:\/\//i.test(manifest.sourceUrl)) fail('intake manifest must preserve an exact public sourceUrl');
 if (manifest.orderedAssetCount !== manifest.assets.length) fail(`orderedAssetCount mismatch; expected ${manifest.assets.length}, got ${manifest.orderedAssetCount}`);
+if (manifest.fullBodyCaptureStatus !== 'VERIFIED_COMPLETE') fail('normalization requires fullBodyCaptureStatus=VERIFIED_COMPLETE after human verification; pending/incomplete source sequences must remain ASSETS_PENDING');
+if (!manifest.fullBodyVerifiedAt || Number.isNaN(new Date(manifest.fullBodyVerifiedAt).getTime())) fail('VERIFIED_COMPLETE requires a valid fullBodyVerifiedAt timestamp');
+if (!manifest.fullBodyVerificationMethod || !['HUMAN_REVIEW','USER_CONFIRMED'].includes(manifest.fullBodyVerificationMethod)) fail('VERIFIED_COMPLETE requires fullBodyVerificationMethod=HUMAN_REVIEW or USER_CONFIRMED');
 
 const sequences = manifest.assets.map((asset, index) => {
   const n = Number(asset.sourceSequence);
@@ -15,7 +18,7 @@ const sequences = manifest.assets.map((asset, index) => {
   if (!asset.sha256 || !/^[a-f0-9]{64}$/i.test(asset.sha256)) fail(`missing/invalid sha256 at asset ${index + 1}`);
   if (!(Number(asset.byteLength) > 0)) fail(`missing/invalid byteLength at asset ${index + 1}`);
   if (!asset.captureUrl || asset.captureUrl !== manifest.sourceUrl) fail(`captureUrl/sourceUrl mismatch at asset ${index + 1}`);
-  if (!asset.acquisitionState) fail(`missing acquisitionState at asset ${index + 1}`);
+  if (!asset.acquisitionState || asset.acquisitionState !== manifest.acquisitionState) fail(`acquisitionState mismatch at asset ${index + 1}`);
   if (!asset.provenance) fail(`missing provenance at asset ${index + 1}`);
   return n;
 });
@@ -60,12 +63,14 @@ const plan = {
   sourceUrl: manifest.sourceUrl,
   sourceManifest: manifestFile,
   orderedAssetCount: manifest.orderedAssetCount,
-  fullBodyCaptureStatus: manifest.fullBodyCaptureStatus || 'pending',
+  fullBodyCaptureStatus: manifest.fullBodyCaptureStatus,
+  fullBodyVerifiedAt: manifest.fullBodyVerifiedAt,
+  fullBodyVerificationMethod: manifest.fullBodyVerificationMethod,
   sourceSequencePolicy: 'PRESERVE_CONTIGUOUS_SOURCE_ORDER_FROM_1',
   sourceEvidencePolicy: 'PRESERVE_SHA256_BYTES_CAPTURE_URL_ACQUISITION_AND_PROVENANCE',
   publicationAllowed: false,
   publishOwner: '04_REVIEW_PUBLISH',
-  note: 'Square normalization contains the complete source image without stretching. It requires contiguous sourceSequence beginning at 1 and preserves source hashes, byte counts, capture URL, acquisition state and provenance into the plan. It does not infer safe crop bounds, full-body completeness, OCR, moderation, rights or publication readiness.',
+  note: 'Square normalization is gated on explicit human/user full-body verification, then contains every complete source image without stretching. It preserves source order/evidence and does not infer crop bounds, OCR, moderation, rights or publication readiness.',
   slides
 };
 const text = `${JSON.stringify(plan, null, 2)}\n`;
