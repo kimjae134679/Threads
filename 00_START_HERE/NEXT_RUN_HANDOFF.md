@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-17 12:16 KST
+Updated: 2026-09-17 12:35 KST
 
 ## Start here
 Repo tip wins. Preserve the role chain:
@@ -15,35 +15,29 @@ Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/
 - UI/browser chrome may be cropped only if body content is preserved.
 - No automatic explanatory/summary/reaction/CTA cards between screenshots.
 - No automatic privacy masking. User-directed masking only.
-- Source-attached media should remain in the source sequence where relevant.
 - If real screenshots/source assets are unavailable, remain `ASSETS_PENDING`; never synthesize body cards.
-- Square carousel target: 1080×1080. Vertical video is a separate 1080×1920 renderer; never stretch square cards.
 
 ## Current screenshot-intake implementation
-`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot sequence, dimensions, byte length, SHA-256, exact public capture URL, observation time and explicit acquisition state. Intake starts with `fullBodyCaptureStatus=pending` and does not infer completeness.
-
-`scripts/plan-screenshot-normalization.mjs` now refuses to normalize pending/incomplete screenshot sets. It requires `fullBodyCaptureStatus=VERIFIED_COMPLETE`, a valid `fullBodyVerifiedAt`, and `fullBodyVerificationMethod=HUMAN_REVIEW|USER_CONFIRMED`. This prevents a partial post capture from silently becoming a production carousel. It still preserves contiguous source order, hashes, source URL, acquisition state/provenance, 1080×1080 no-stretch containment, body-crop prohibition, and user-directed privacy masking.
+`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot evidence and starts with full-body completeness pending. `scripts/plan-screenshot-normalization.mjs` requires explicit `VERIFIED_COMPLETE` plus human/user verification before normalization. Existing source-order/provenance/no-stretch/body-crop/privacy rules remain binding.
 
 ## Latest Discovery baseline
-Discovery refresh at 2026-09-17 11:38 KST:
-- raw inspected: 40+
+Discovery refresh at 2026-09-17 12:35 KST:
+- raw inspected: 40+ public/index/search leads across Korean-community, investment/debt, workplace, marriage/family and Reddit lanes; restricted sources were not bypassed.
 - retained as new candidate files: 4 C1_A0_P0.
-- top candidates: Blind `이혼 고민 (빚쟁이인 나...백수 남편)` (24K views/260 comments observed), `자꾸 빚 내서 미국주식 사자는 남편` (1,078/11), `헤어지는게 맞을까..?` (610/14), `빚 숨기고 결혼한 남편` (117/5).
+- new retained: Reddit `AITA for refusing to take out a loan to pay for my brother's wedding?` (+5,192 observed score), `AITA: broke sister won’t pay back rich brother` (+3,432), `AITA for not helping my sister pay for her wedding?` (+3,943), `AITA for not helping my sister pay for her wedding but helping our family go to the wedding?` (+547).
+- Korean search produced public Blind material too, but no weak/filler item was retained merely to hit quota; one sensitive workplace-distress lead was deliberately not added.
 - full-post screenshots captured: 0
 - actual source bytes acquired: 0
 - real source-backed carousel produced: NO
 - A1/P1: 0
 
 ## This run
-Material repo change: normalization is now hard-gated on explicit full-body verification instead of accepting the intake manifest's default `pending` state. Implementation commit `b62062988d3d1e94e37e5cc4a028d8cdd67d755a`.
+Created four individual human-readable candidate Markdown files under `data/candidates/`; no grouped discovery JSON was created. Exact individual Reddit URLs were observed and the visible same-observation score only was recorded. Full body was read for the four retained posts; comments were not read except where explicitly noted in the candidate. All remain `ASSETS_PENDING`, publicationAllowed=false, rights/privacy/human-review gated.
 
-No source screenshot bytes were available through this connector-only run, so full-post screenshots remain 0 and no source-backed carousel was produced. No OCR/vision/moderation/rights/publication success is claimed.
-
-Executable checkout/Node/Chrome were unavailable through the current connector surface, so `npm run check`, server smoke, and browser E2E were NOT executed or claimed.
+No source screenshot bytes were acquired, so no asset/carousel/OCR/moderation/rights/publication success is claimed.
 
 ## Next highest-priority work
-1. Acquire permitted full-post screenshot sequences for the strongest Korean C1, beginning with the 24K/260-comment crypto-debt marriage conflict.
-2. Feed real ordered files through screenshot intake with truthful acquisition state.
-3. Human/user verify that the sequence covers the FULL body, set the explicit verification fields, then normalize no-stretch/UI-chrome-only.
-4. Produce the first real cover + source-screenshot carousel and inspect the actual 1080×1080 output in Chrome.
-5. Continue Korean-first high-volume Discovery in parallel without filler.
+1. Continue Korean-first discovery, especially exact public Blind/DC/FM/TheQoo/Instiz/Ruliweb/Ppomppu/Clien/Inven/Arca leads with stronger funny/absurd/workplace/dating/money reversals rather than generic advice posts.
+2. Acquire permitted full-post screenshot sequences for strongest Korean C1 candidates.
+3. Intake real ordered files with truthful provenance, verify full-body completeness, normalize no-stretch/UI-chrome-only.
+4. Produce and visually inspect the first real cover + source-screenshot 1080×1080 carousel.
