@@ -28,6 +28,16 @@ function readImage(file) {
   return { buf, size: pngSize(buf) || jpegSize(buf) };
 }
 function fail(message) { console.error(message); process.exit(1); }
+function isPrivateIpv6(host) {
+  const bare = host.replace(/^\[|\]$/g, '').toLowerCase();
+  if (!bare.includes(':')) return false;
+  if (bare === '::' || bare === '::1') return true;
+  if (/^(fc|fd)[0-9a-f]{2}:/.test(bare)) return true;
+  if (/^fe[89ab][0-9a-f]:/.test(bare)) return true;
+  if (/^::ffff:(10\.|127\.|169\.254\.|192\.168\.)/.test(bare)) return true;
+  const mapped172 = bare.match(/^::ffff:172\.(\d+)\./);
+  return Boolean(mapped172 && Number(mapped172[1]) >= 16 && Number(mapped172[1]) <= 31);
+}
 function validateSourceUrl(value) {
   let parsed;
   try { parsed = new URL(value); } catch { fail('source URL must be an exact absolute public http(s) URL'); }
@@ -38,6 +48,7 @@ function validateSourceUrl(value) {
   if (/^(10\.|127\.|169\.254\.|192\.168\.)/.test(host)) fail('source URL must not point to a local/private host');
   const m = host.match(/^172\.(\d+)\./);
   if (m && Number(m[1]) >= 16 && Number(m[1]) <= 31) fail('source URL must not point to a local/private host');
+  if (isPrivateIpv6(host)) fail('source URL must not point to a local/private IPv6 host');
   const secretKeys = /^(access[_-]?token|auth|authorization|api[_-]?key|key|secret|signature|sig|token)$/i;
   for (const key of parsed.searchParams.keys()) {
     if (secretKeys.test(key)) fail(`source URL query appears to contain a secret-bearing parameter: ${key}`);
