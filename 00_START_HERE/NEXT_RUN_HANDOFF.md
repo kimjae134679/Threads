@@ -12,7 +12,7 @@ Slide 1 cover only; slide 2+ ordered ORIGINAL POST SCREENSHOTS covering the FULL
 Screenshot intake → explicit HUMAN_REVIEW/USER_CONFIRMED completeness verification → non-destructive UI-chrome crop suggestion/review → reviewed crop gate → 1080x1080 contain/no-stretch normalization → independent normalization validator → strict source-backed carousel plan → validator.
 
 ## This run — Discovery refresh
-Read current README, handoff, main/recent commits and latest ops `148-sol.md`; repo tip treated as authoritative. Performed Korean-community-first public search/index/page exploration across multiple lanes without bypassing login/anti-bot controls. Raw candidate leads inspected: **40+**. Retained as new one-file-per-candidate Markdown records: **14 C1 candidates**. No grouped discovery JSON was created in `data/` root.
+Read current README, handoff, main/recent commits and latest ops `148-sol.md`; repo tip treated as authoritative. Performed Korean-community-first public search/index/page exploration across multiple lanes without bypassing login/anti-bot controls. Raw candidate leads inspected: **40+**. Retained as new one-file-per-candidate Markdown records: **16 C1 candidates**. No grouped discovery JSON was created in `data/` root.
 
 Top retained candidates this run:
 1. Blind `축의금 내고 식권 안받으면` — https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%82%B4%EA%B3%A0-%EC%8B%9D%EA%B6%8C-%EC%95%88%EB%B0%9B%EC%9C%BC%EB%A9%B4-m8z6OP5S — observed 64K views / 51 likes / 384 comments.
@@ -21,7 +21,7 @@ Top retained candidates this run:
 4. Blind `주식` — https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D-so870fdq — repeated stock-debt/family crisis; observed 674 views / 17 comments; body not verified to end.
 5. Reddit `AITA for declining a late invite I got to a coworker’s wedding?` — https://www.reddit.com/r/AmItheAsshole/comments/1kabtqu — observed +1,042 score.
 
-Other retained lanes include rotation-dating zero-vote and matched-but-no-message reversals, premarital savings disclosure conflict, newlywed monthly spending, housing-pension family disclosure conflict, spouse 2억 stock-loss/economic-control story, friend wedding unpaid balance, destination-wedding family funding and loan-pressure stories. Each candidate records exact source URL, observed metrics only, body/comments read state, source asset state, swipe rationale and acquisition state.
+Other retained lanes include rotation-dating zero-vote and matched-but-no-message reversals, premarital savings disclosure conflict, newlywed monthly spending, housing-pension family disclosure conflict, spouse 2억 stock-loss/economic-control story, wedding-gift settlement conflict, friend wedding unpaid balance, destination-wedding family funding and loan-pressure stories. Each candidate records exact source URL, observed metrics only, body/comments read state, source asset state, swipe rationale and acquisition state.
 
 ## Asset truth
 Full-post screenshots captured this run: **0**. Actual source bytes acquired: **0**. Real source-backed carousel produced: **NO**. A1/P1: **0**. New candidates remain `C1_A0_P0 / ASSETS_PENDING / publicationAllowed=false`. Rights/privacy/human-review gates remain; only 04_REVIEW_PUBLISH may publish. No OCR/moderation success claimed.
