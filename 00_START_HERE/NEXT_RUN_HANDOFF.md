@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-17 10:42 KST
+Updated: 2026-09-17 11:38 KST
 
 ## Start here
 Repo tip wins. Preserve the role chain:
@@ -20,32 +20,30 @@ Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/
 - Square carousel target: 1080×1080. Vertical video is a separate 1080×1920 renderer; never stretch square cards.
 
 ## Current screenshot-intake implementation
-`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot sequence, PNG/JPEG dimensions, byte length, SHA-256, exact public capture URL and observation time. Duplicate bytes are rejected. `--acquisition-state` is required and limited to `USER_PROVIDED`, `MANUAL_CAPTURE`, or `BROWSER_CAPTURE`; manifest/assets preserve the supplied acquisition truth. It does NOT infer full-body completeness, source relationship, rights, privacy, OCR/vision, moderation, or publication.
-
-`scripts/plan-screenshot-normalization.mjs` requires a non-empty ordered manifest, sequence 1..N with no gaps/duplicates, unique source hashes, matching capture URLs, dimensions/provenance/acquisition state, and plans 1080×1080 no-stretch normalization. Crop remains manual/verified UI-chrome-only; body crop and automatic privacy masking remain forbidden. Both intake scripts are in the normal syntax/check gate.
+`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot sequence, dimensions, byte length, SHA-256, exact public capture URL, observation time and explicit acquisition state. `scripts/plan-screenshot-normalization.mjs` validates sequence/provenance and plans 1080×1080 no-stretch normalization. UI-chrome crop remains manual/verified; body crop and automatic privacy masking remain forbidden.
 
 ## Latest Discovery baseline
-Discovery refresh at 2026-09-17 10:34–10:42 KST:
-- raw inspected: 40+ public search/index leads across Korean-community-first multi-lane queries plus Reddit; restricted sources were not bypassed. Clien/Instiz were robots-blocked and not circumvented.
-- retained as new candidate files this run: 1 C1_A0_P0. Quality threshold was kept rather than filling with generic/old wedding-gift results.
-- new retained: Blind `이혼 고민` — exact public post URL verified; visible full body read; observed at the same public-page snapshot as 조회수 192 / 댓글 16; post describes discovering during marriage that the otherwise highly compatible partner borrowed money to invest.
-- prior strong priorities remain Blind `어쩌다 괴물이 되어버렸을까...`, `죄의식이 낮은건가?`, `이혼이 답인데 자식이 너무 맘에 걸린다`, `축의금 문화, 결혼 문화 10년내 다바뀔 듯`.
+Discovery refresh at 2026-09-17 11:38 KST:
+- raw inspected: 40+ public search/index leads across Korean-community-first multi-lane queries plus Reddit/other public lanes; restricted sources were not bypassed.
+- retained as new candidate files: 4 C1_A0_P0.
+- top new candidates:
+  1. Blind `이혼 고민 (빚쟁이인 나...백수 남편)` — exact public URL; observed 조회수 24K / 댓글 260; 코인빚 6,400만원 + 장기 미취업 배우자 + 추가 금전/집안 갈등.
+  2. Blind `자꾸 빚 내서 미국주식 사자는 남편` — exact public URL; observed 조회수 1,078 / 댓글 11; 약 2억원 투자, 그중 약 1억원 회사대출, 배우자 병원대출까지 받아 테슬라/엔비디아/비트코인 추가매수 제안.
+  3. Blind `헤어지는게 맞을까..?` — exact public URL; observed 조회수 610 / 댓글 14; 재산보다 큰 빚으로 코인/선물/주식 투자, 절반 손실 및 약속 위반 뒤 결혼 5개월 신뢰 붕괴.
+  4. Blind `빚 숨기고 결혼한 남편` — exact public URL; observed 조회수 117 / 댓글 5; 기존 빚 외 휴대폰 경품 뽑기 중독 추가빚 1,800만원 고백과 임신/결혼 갈등.
 - full-post screenshots captured: 0
 - actual source bytes acquired: 0
 - real source-backed carousel produced: NO
 - A1/P1: 0
 
 ## This run
-Material repo change: added `data/candidates/260917_C1_A0_P0_이혼고민_결혼중빚투발견.md` from an exact public Blind URL. Candidate commit: `3ee34058c03c88d48ba5ebd0be993ddd15464e7a`.
+Material repo changes: four individual Markdown candidates added under `data/candidates/`; no grouped discovery JSON was created. Exact URLs and only same-snapshot visible metrics were recorded. All remain `ASSETS_PENDING`, A0/P0, `publicationAllowed=false`; rights/privacy/human review remain required and only 04_REVIEW_PUBLISH may publish.
 
-No source screenshot bytes were acquired, so the new candidate remains `ASSETS_PENDING`, A0/P0, `publicationAllowed=false`. No OCR/vision/moderation/rights/publication success is claimed.
-
-Executable checkout/Node/Chrome were unavailable through the current connector surface, so `npm run check`, server smoke, and browser E2E were NOT executed or claimed.
+No source screenshot bytes were acquired. No OCR/vision/moderation/rights/publication success is claimed. Executable checkout/Node/Chrome were unavailable through the current connector surface, so npm check/server smoke/browser E2E were not executed or claimed.
 
 ## Next highest-priority work
-1. Acquire real full-post screenshots for strongest Korean C1s through permitted public/manual/browser paths.
-2. Feed real ordered files through `build-screenshot-intake-manifest.mjs` with truthful acquisition state.
-3. Manually verify full-body coverage, then normalize with no-stretch/UI-chrome-only rules.
-4. Produce the first real cover + full-post screenshot carousel and inspect it in Chrome.
-5. Continue Korean-first high-volume Discovery in parallel; retain quality rather than filler.
-6. Only after source-backed user-facing quality works, continue provider/publishing work.
+1. Acquire permitted full-post screenshot sequences for the four strongest Korean C1s above, starting with the 24K/260-comment crypto-debt marriage conflict.
+2. Feed real ordered files through screenshot intake with truthful acquisition state.
+3. Manually verify full-body coverage, normalize no-stretch/UI-chrome-only, and produce first real cover + source-screenshot carousel.
+4. Inspect actual 1080×1080 output in Chrome.
+5. Continue Korean-first high-volume Discovery in parallel without filler.
