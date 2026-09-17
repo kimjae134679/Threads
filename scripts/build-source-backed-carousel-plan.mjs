@@ -15,10 +15,22 @@ if (!cover.originalTitle || typeof cover.originalTitle !== 'string') fail('cover
 if (!cover.imageAsset || typeof cover.imageAsset !== 'string') fail('cover requires imageAsset');
 if (cover.hookText && cover.hookText !== cover.originalTitle && cover.hookText !== cover.exactStrongPhrase) fail('cover hook must be originalTitle or an explicitly recorded exactStrongPhrase');
 
+const seenHashes = new Set();
 const body = normalization.slides.map((slide, index) => {
   if (slide.sourceSequence !== index + 1) fail(`body screenshot order mismatch at ${index + 1}`);
   if (slide.mode !== 'CONTAIN_NO_STRETCH' || slide.bodyCropAllowed !== false) fail(`body screenshot ${index + 1} violates no-stretch/full-body policy`);
-  if (!slide.sha256 || !slide.captureUrl || !slide.provenance) fail(`body screenshot ${index + 1} lacks provenance evidence`);
+  if (!slide.sha256 || !/^[a-f0-9]{64}$/i.test(slide.sha256) || !slide.captureUrl || !slide.provenance) fail(`body screenshot ${index + 1} lacks provenance evidence`);
+  const hash = slide.sha256.toLowerCase();
+  if (seenHashes.has(hash)) fail(`duplicate source screenshot hash at ${index + 1}`);
+  seenHashes.add(hash);
+  if (slide.captureUrl !== normalization.sourceUrl) fail(`body screenshot ${index + 1} captureUrl/sourceUrl mismatch`);
+  if (!slide.target || slide.target.width !== 1080 || slide.target.height !== 1080) fail(`body screenshot ${index + 1} must target 1080x1080`);
+  for (const key of ['sourceWidth','sourceHeight','scaledWidth','scaledHeight','padLeft','padRight','padTop','padBottom']) {
+    if (!Number.isInteger(slide[key]) || slide[key] < (key.startsWith('pad') ? 0 : 1)) fail(`body screenshot ${index + 1} invalid ${key}`);
+  }
+  if (slide.scaledWidth + slide.padLeft + slide.padRight !== 1080 || slide.scaledHeight + slide.padTop + slide.padBottom !== 1080) fail(`body screenshot ${index + 1} normalization does not close to 1080x1080`);
+  if (Math.abs(slide.padLeft - slide.padRight) > 1 || Math.abs(slide.padTop - slide.padBottom) > 1) fail(`body screenshot ${index + 1} is not centered contain geometry`);
+  if (slide.privacyMasking !== 'USER_DIRECTED_ONLY') fail(`body screenshot ${index + 1} privacy masking must remain user-directed`);
   return { slideNumber: index + 2, kind: 'ORIGINAL_POST_SCREENSHOT', ...slide };
 });
 
