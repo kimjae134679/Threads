@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-17 13:17 KST
+Updated: 2026-09-17 13:34 KST
 
 ## Start here
 Repo tip wins. Preserve the role chain:
@@ -18,25 +18,24 @@ Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/
 - If real screenshots/source assets are unavailable, remain `ASSETS_PENDING`; never synthesize body cards.
 
 ## Current screenshot-intake implementation
-`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot evidence and starts full-body completeness pending. New `scripts/verify-screenshot-intake-complete.mjs` is the explicit transition step: it only accepts a non-empty contiguous source sequence and requires `HUMAN_REVIEW` or `USER_CONFIRMED`, then records `VERIFIED_COMPLETE`, verification timestamp and method while keeping publicationAllowed=false. `scripts/plan-screenshot-normalization.mjs` continues to reject anything not explicitly verified complete. The new verifier is included in `npm run syntax`.
+`scripts/build-screenshot-intake-manifest.mjs` records ordered screenshot evidence and starts full-body completeness pending. `scripts/verify-screenshot-intake-complete.mjs` only accepts a non-empty contiguous source sequence and explicit `HUMAN_REVIEW` or `USER_CONFIRMED`, then records `VERIFIED_COMPLETE`. `scripts/plan-screenshot-normalization.mjs` rejects anything not explicitly verified complete. publicationAllowed remains false and only 04 may publish.
 
 ## Latest Discovery baseline
-Discovery refresh at 2026-09-17 12:35 KST:
-- raw inspected: 40+ public/index/search leads.
-- retained as new candidate files: 4 C1_A0_P0.
-- top new retained: family wedding-loan conflict (+5,192 observed Reddit score), inheritance/wedding debt conflict (+3,432), sister wedding-gift conflict (+3,943), destination-wedding invitation conflict (+547).
+Discovery refresh at 2026-09-17 13:34 KST:
+- raw inspected: 40+ public/index/search leads across Korean-community-first and secondary Reddit lanes; weak market/news/filler excluded.
+- retained as new candidate files: 3 total — 2 C1_A0_P0 + 1 C0_A0_P0.
+- top retained: Blind `황당 면접 후기` (4,000 views / 5 likes / 13 comments; exact public URL and full body read), Blind `직장내괴롭힘 피해 직원을 징계한 회사` (1,012 / 6 / 10; exact public URL and full body read; heightened defamation/privacy review), Blind `나 똥차 타는데 소개팅 태우러간다했네..` (19K / 16 / 165 observed on public index only, so C0; body not verified).
 - full-post screenshots captured: 0
 - actual source bytes acquired: 0
 - real source-backed carousel produced: NO
 - A1/P1: 0
 
 ## This run
-Material implementation: added an explicit, auditable full-body screenshot verification transition instead of requiring hand-edited manifest fields. This makes the intended flow executable: intake pending → human/user completeness confirmation → normalization. It does not infer source relationship, rights, privacy, OCR/vision, moderation or publication readiness.
-
-No source screenshot bytes were available through this connector-only run, so full-post screenshots remain 0 and no source-backed carousel was produced. Executable checkout/Node/Chrome were not available through the current connector surface, so `npm run check`, server smoke and browser E2E were NOT executed and no green status is claimed.
+Korean-first discovery was refreshed using public search/index/pages only; no login, anti-bot bypass or bulk crawling. Candidate files remain one Markdown file per candidate under `data/candidates/`. Exact individual URL was required for C1; index-only lead stayed C0. No screenshot/OCR/moderation/rights/publication success is claimed.
 
 ## Next highest-priority work
-1. Acquire permitted full-post screenshot sequences for strongest Korean C1 candidates.
-2. Run intake → explicit completeness verification → normalization on real source bytes.
-3. Build the first real cover + full-post screenshot 1080×1080 carousel and inspect it in Chrome.
-4. Continue Korean-first high-volume discovery/ranking alongside acquisition; do not substitute weak filler for volume.
+1. Resolve exact individual URL/full body for the high-response C0 `나 똥차 타는데 소개팅 태우러간다했네..` and other strong Korean index leads.
+2. Acquire permitted full-post screenshot sequences for strongest Korean C1 candidates.
+3. Run intake → explicit completeness verification → normalization on real source bytes.
+4. Build the first real cover + full-post screenshot 1080×1080 carousel and inspect it in Chrome.
+5. Continue Korean-first high-volume discovery/ranking alongside acquisition; do not substitute weak filler for volume.
