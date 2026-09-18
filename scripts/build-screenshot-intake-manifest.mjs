@@ -80,7 +80,7 @@ function naturalFileOrder(a, b) {
   return path.basename(a).localeCompare(path.basename(b), undefined, { numeric: true, sensitivity: 'base' });
 }
 
-const allowedAcquisitionStates = new Set(['USER_PROVIDED', 'MANUAL_CAPTURE', 'BROWSER_CAPTURE']);
+const allowedAcquisitionStates = new Set(['USER_PROVIDED', 'MANUAL_CAPTURE', 'BROWSER_CAPTURE', 'SOURCE_MEDIA_DOWNLOAD']);
 const allowedOrderModes = new Set(['cli', 'filename']);
 const args = process.argv.slice(2);
 let sourceUrl = '', observedAt = '', out = '', acquisitionState = '', orderMode = 'cli';
@@ -93,18 +93,19 @@ for (let i = 0; i < args.length; i += 1) {
   else if (args[i] === '--out') out = args[++i] || '';
   else files.push(args[i]);
 }
-if (!sourceUrl || !acquisitionState) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> --acquisition-state <USER_PROVIDED|MANUAL_CAPTURE|BROWSER_CAPTURE> [--order-mode <cli|filename>] [--observed-at <ISO>] [--out file.json] <source screenshot files...>');
+if (!sourceUrl || !acquisitionState) fail('usage: node scripts/build-screenshot-intake-manifest.mjs --source-url <exact-public-url> --acquisition-state <USER_PROVIDED|MANUAL_CAPTURE|BROWSER_CAPTURE|SOURCE_MEDIA_DOWNLOAD> [--order-mode <cli|filename>] [--observed-at <ISO>] [--out file.json] <source screenshot/media files...>');
 sourceUrl = validateSourceUrl(sourceUrl);
 observedAt = validateObservedAt(observedAt);
-if (!allowedAcquisitionStates.has(acquisitionState)) fail('--acquisition-state must be USER_PROVIDED, MANUAL_CAPTURE, or BROWSER_CAPTURE');
+if (!allowedAcquisitionStates.has(acquisitionState)) fail('--acquisition-state must be USER_PROVIDED, MANUAL_CAPTURE, BROWSER_CAPTURE, or SOURCE_MEDIA_DOWNLOAD');
 if (!allowedOrderModes.has(orderMode)) fail('--order-mode must be cli or filename');
-if (!files.length) fail('at least one ordered source screenshot/image is required');
+if (!files.length) fail('at least one ordered source screenshot/media image is required');
 if (orderMode === 'filename') files = [...files].sort(naturalFileOrder);
 
 const provenanceByState = {
   USER_PROVIDED: 'local file supplied by user for source intake; exact source relationship requires human verification',
   MANUAL_CAPTURE: 'local file recorded as a manual capture from the stated source URL; exact source relationship requires human verification',
-  BROWSER_CAPTURE: 'local file recorded as a browser capture from the stated source URL; exact source relationship requires human verification'
+  BROWSER_CAPTURE: 'local file recorded as a browser capture from the stated source URL; exact source relationship requires human verification',
+  SOURCE_MEDIA_DOWNLOAD: 'source-linked media bytes downloaded from the stated post; this records attached media provenance and does NOT claim a full-post screenshot or full-body completeness'
 };
 const seenHashes = new Map();
 const assets = files.map((file, index) => {
