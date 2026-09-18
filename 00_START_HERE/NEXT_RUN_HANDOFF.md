@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-18 08:37 KST
+Updated: 2026-09-18 09:16 KST
 
 ## Start here
 Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`. Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/metrics/credentials/delivery/publication success or store plaintext secrets.
@@ -13,17 +13,17 @@ Latest useful Discovery at 2026-09-18 08:37 KST inspected **40+ raw leads** acro
 
 TheQoo/Ruliweb image-centric candidates explicitly say `본문 미확인` where image body was not actually read. Restricted sources were not bulk crawled or bypassed. Clien/Instiz search access was robots-blocked and was not circumvented. One attempted candidate write was blocked by tooling and was not counted as retained.
 
-Full-post screenshots captured this run: **0**. Actual source bytes acquired: **0**. Real source-backed carousel produced: **NO**. A1/P1: **0**. New candidates remain `ASSETS_PENDING`, `publicationAllowed=false`; rights/privacy/human review remains required and only 04_REVIEW_PUBLISH may publish.
+Full-post screenshots captured this implementation run: **0**. Actual source bytes acquired: **0**. Real source-backed carousel produced: **NO**. A1/P1: **0**. New candidates remain `ASSETS_PENDING`, `publicationAllowed=false`; rights/privacy/human review remains required and only 04_REVIEW_PUBLISH may publish.
 
 ## Existing implementation
-`scripts/build-acquisition-queue.mjs` + `npm run acquisition:queue` rank Korean-community exact-source candidates ahead of overseas support lanes. Exact acquisition URL is read only from the candidate `## 정확한 링크` section. A filename classified C1 but missing an exact-link URL is fail-closed into blocked-inconsistent rather than sent to capture. The queue carries recorded acquisition state for manual capture operators and does not grant rights, infer OCR/moderation, fabricate screenshots, change A/P state, auto-mask privacy, or publish.
+`scripts/build-acquisition-queue.mjs` + `npm run acquisition:queue` rank Korean-community exact-source candidates ahead of overseas support lanes. Exact acquisition URL is read only from the candidate `## 정확한 링크` section. As of commit `d76155d34f28800046bf459ca1131906c24432a2`, C0/index-only records are fail-closed out of deterministic screenshot capture entirely: they are emitted only under `Provenance pending` and must obtain an exact individual public source and be promoted to C1 first. A filename classified C1 but missing an exact-link URL is separately blocked as inconsistent. The queue carries recorded acquisition state for manual capture operators and does not grant rights, infer OCR/moderation, fabricate screenshots, change A/P state, auto-mask privacy, or publish.
 
 ## Verification truth
-This run wrote 10 candidate Markdown files and this handoff through GitHub contents API. Discovery-data work only; no executable checkout/browser was used, so `npm run check`, server smoke and Chrome E2E are not claimed. No source screenshot bytes or temporary artifacts were created.
+This implementation run changed the acquisition queue and this handoff through GitHub contents API. Discovery this implementation run: **raw 0 / retained 0**; latest useful Discovery remains **40+ / 10 C1**. No executable checkout/browser was available, so `npm run check`, server smoke and Chrome E2E are not claimed. No source screenshot bytes or temporary artifacts were created.
 
 ## Next
-1. Acquire permitted ordered full-post screenshots for strongest Korean C1 candidates first, including existing `나몰래 대출받은 남편`, `주식중독 남편.. 대출 막는법 있을까?`, plus new high-response `결혼 승낙 받자마자 탈모인거 밝힌 남편..` where source image sequence can be captured lawfully.
-2. For image-centric records marked `본문 미확인`, do not editorially reconstruct; obtain the actual ordered source images/screenshots first.
+1. Run the stricter queue in an executable checkout and acquire permitted ordered full-post screenshots for strongest Korean C1 candidates first, including existing `나몰래 대출받은 남편`, `주식중독 남편.. 대출 막는법 있을까?`, plus high-response `결혼 승낙 받자마자 탈모인거 밝힌 남편..` where source image sequence can be captured lawfully.
+2. For C0 records, verify exact individual public provenance and promote to C1 before any deterministic screenshot intake. For image-centric records marked `본문 미확인`, do not editorially reconstruct; obtain the actual ordered source images/screenshots first.
 3. Feed real bytes through deterministic intake → human completeness verification → UI-chrome crop review/gate → reviewed-crop-plan validator → 1080x1080 contain normalization → strict carousel builder/validator.
 4. Render the first real 1080x1080 cover + full-original-post screenshot carousel and inspect it in Chrome.
 5. Keep Korean-community-first high-volume Discovery; A0 until actual source-backed user-facing assets exist and P0 until 04 verifies real publication.
