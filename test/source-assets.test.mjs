@@ -24,3 +24,16 @@ await assert.rejects(
   (error) => error.code === "source_asset_not_supported_image" && error.status === 415
 );
 console.log("Source asset acquisition policy regression tests passed.");
+let cancelled = false;
+await assert.rejects(fetchSourceAsset('https://i.redd.it/oversize.png', {
+  fetchImpl: async () => new Response(new ReadableStream({
+    pull(controller) { controller.enqueue(new Uint8Array(1024 * 1024)); },
+    cancel() { cancelled = true; },
+  }), { headers: { 'content-type': 'image/png' } }),
+}), (error) => error.status === 413);
+assert.equal(cancelled, true, 'Oversized chunked responses must stop downloading');
+await assert.rejects(fetchSourceAsset('https://i.redd.it/stalled.png', {
+  timeoutMs: 30,
+  fetchImpl: async () => new Response(new ReadableStream({ start() {} }), { headers: { 'content-type': 'image/png' } }),
+}), (error) => error.status === 504);
+console.log('Source image streaming byte limit and body timeout passed.');

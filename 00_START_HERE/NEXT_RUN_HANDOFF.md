@@ -1,31 +1,38 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 01:16 KST
+## Current task
 
-## Start here
-Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`; only 04 may publish. Never fabricate API/moderation/OCR/rights/metrics/credentials/delivery/publication success or store plaintext secrets.
+The user requested a review of unverified accumulated work across Threads and its operations hub. This supersedes the earlier discovery-volume backlog. Read `docs/AUDIT_2026-09-18.md` before resuming.
 
-## Binding format
-Slide 1 cover only: one image plus exact original title/hook text; slide 2+ ordered ORIGINAL POST SCREENSHOTS covering the FULL original body. No rewritten/summary/interstitial/CTA body cards. UI-chrome crop only with body preserved. Privacy masking is user-directed. Missing real source assets = `ASSETS_PENDING`.
+Baseline: `50bbcade9ca8b67a54139b1406fcee3a2fe997b4`. Concurrent documentation-only main updates through `7676292fe9ace5bcd777ba01d00b6a92ca2b12ca` are preserved. The earlier worker's Windows verification remains in `docs/run-verification-2026-09-19-0116.md`; it is not a Windows test of this patch. Repository tip and PR check results remain authoritative.
 
-## Discovery truth
-Latest full high-volume useful Discovery remains **40+ raw / 15 retained C1** from 2026-09-18 10:37 KST. Latest additional Korean-community refresh was **29 raw / 10 retained** at 23:15 KST. Top acquisition targets remain `[네이트판] 너무 많이 먹는 남편 ㅠㅠ`, `네이트판) 아이이름 짓는데 술집여자 같다는 남편`, `[네이트판] 우리집 홈캠을 보고 계셨던 시어머니.`, plus the high-response TheQoo leads from the 18:14 refresh. They remain `ASSETS_PENDING` until real full-post assets are acquired.
+## Changes
 
-## Real asset progress
-TheQoo `결혼 승낙 받자마자 탈모인거 밝힌 남편..` has one real Chrome full-page PNG, eight attached source JPEGs, five reviewed 1080x1080 screenshot-derived body slides, an exact-title/source-image cover, and a strict assembled six-slide source-backed carousel.
+- Node 24 runtime contract; automatic discovery of all syntax checks and regression suites.
+- Static file and local API request boundaries; strict publish validation and durable request deduplication.
+- Concurrent JSON save protection, explicit revision requirement, client conflict/namespace race fixes.
+- Source intake now measures image dimensions, binds images to candidates, supplies acquisition evidence, invalidates changed previews, persists metadata and exports aspect-preserving slices.
+- Source-image stream limits and body timeout.
+- Rendered-file plans now have a distinct type and a required source URL. Existing six PNGs were not changed.
 
-## Material progress this run
-Executable Windows device returned online. Pulled current repo tip and ran the full project check plus strict rendered-carousel validation. Added `docs/run-verification-2026-09-19-0116.md` at commit `5de677049ee1e612deb72be14126b94546ef0d66` to persist the verified runtime truth.
+## Verification
 
-## Verification truth
-`npm run check`: **PASS** on current main. Existing six-slide source-backed carousel validation: **PASS**. All six rendered files are 1080x1080 and byte-identical to the strict plan; slide 1 is COVER and slides 2–6 are ordered `ORIGINAL_POST_SCREENSHOT`. Temporary local test file was removed and working tree returned clean. This does not prove rights, moderation, OCR, delivery, publication, or human visual approval. No publication occurred; only 04 may publish.
+Local `npm run check` passed all 44 suites on Node.js 24.19.0. Added behavioral tests cover HTTP boundaries, concurrent saves, publication replay and ambiguous responses, persistence UI responses, source intake and real carousel PNG fidelity. Check the PR for final local/CI outcomes.
 
-## Run truth
-Discovery this run: **raw 0 / retained 0**; latest full useful Discovery remains **40+ / 15 C1**. New full-post screenshots this run: **0**. Existing selected-post full-page screenshot: **1 real PNG**. Existing attached source media: **8 JPEGs**. Existing reviewed body slides: **5**. Full-post screenshots captured: **YES for the existing first post; NO new capture this run**. Real source-backed carousel produced: **YES, existing first 6-slide carousel; revalidated this run**. A1/P1 remain 0; only `04_REVIEW_PUBLISH` may publish.
+Actual browser interaction remains unverified: the available cloud browser blocked the local app URL with ERR_BLOCKED_BY_CLIENT. Source intake DOM-handler tests use image/canvas doubles. Video regression tests render real FFmpeg output. No real account publication, credential changes, new discovery, OCR, moderation, automated masking or rights approval occurred.
 
-## Next
-1. Acquire full original post/screenshots for `[네이트판] 너무 많이 먹는 남편 ㅠㅠ` and build the second Source Package.
-2. Acquire `아이이름 짓는데 술집여자 같다는 남편` and `우리집 홈캠을 보고 계셨던 시어머니.` without bypassing access controls.
-3. Continue a 40–80 raw Korean-community-first discovery pass when coverage permits, retaining 15–30 only when genuinely usable.
-4. Feed the strongest newly acquired candidate through screenshot intake/crop/normalization/strict-carousel and actual Chrome inspection.
-5. Do not advance rights/publication state without evidence; only 04 may publish.
+## Preserve
+
+Keep the role chain and human publication gate. Cover uses the exact original title; body slides use original screenshots in order. Keep all original assets and raw discovery evidence. Do not mark A/P states from tests, queue entries or development previews.
+
+Existing first source package: `data/source-packages/theqoo-3826792703/`. Its six-file rendered output is structurally verified, but full visual/user approval and publication are still separate.
+
+## Next concrete work
+
+1. Verify one real candidate in the user's browser from file selection to PNG downloads, including switching candidates and restoring a backup.
+2. Connect Source Package assets to 04 review/publish using candidate identity, file hashes and approval revision. The old Card Factory staging path is separate today.
+3. Only after user review, validate one account's actual publish/insights round trip. Do not expand discovery volume or platform integrations as a substitute for this work.
+
+## Environment
+
+Validation checkout: `/workspace/scratch/7dc461d71eca/Threads` (isolated Linux). No Windows installations, user-data moves, launcher changes or remote-device operations. The Windows AI installation-root policy has no new installation to record for this run.

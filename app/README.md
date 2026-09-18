@@ -47,7 +47,7 @@ Google Trends / YouTube / 직접 URL
 
 ## 실행
 
-Node.js 18 이상에서 저장소 루트:
+Node.js 24 이상에서 저장소 루트:
 
 ```bash
 npm start

@@ -84,7 +84,7 @@ http://127.0.0.1:4173/app/
 npm run check
 ```
 
-`npm run check`는 JavaScript 문법 + Experiment scoring 회귀 테스트를 수행한다. GitHub Actions는 실제 로컬 서버 기동, 주요 브라우저 script 로드, keyless connector fail-closed까지 smoke test한다.
+`npm run check`는 JavaScript 문법과 전체 회귀 테스트를 수행한다. GitHub Actions는 실제 로컬 서버 기동, 주요 브라우저 script 로드, keyless connector fail-closed까지 smoke test한다.
 
 ## 현재 주요 코드
 
@@ -179,15 +179,14 @@ AI 조사 성공은 사람 검토 완료가 아니다. AI 초안 생성 성공�
 
 ## 다음 구현 우선순위
 
-1. account_id / hypothesis_id / variant_id를 현재 앱 데이터 모델에 정식 추가
-2. 여러 실제 Threads 계정을 Account Registry에 등록
-3. 계정별 1~3건 소량 E2E 게시
-4. 실제 Insights를 account/variant 단위로 수집
-5. 최소 표본 후 계정/콘텐츠/포맷별 Experiment 비교
-6. 잘 되는 전략만 SCALE
-7. 이미지/영상 자체 제작 파이프라인
-8. Instagram/YouTube 공식 게시/성과 adapter
-9. localStorage → 서버 DB/다계정 동기화
+현재 작업은 사용자 검수 없이 누적된 기능의 안정화다. `docs/AUDIT_2026-09-18.md`와 `00_START_HERE/NEXT_RUN_HANDOFF.md`를 따른다.
+
+- 런타임은 Node.js 24 이상이다. `node:sqlite`를 사용한다.
+- `npm run check`는 app/scripts/test의 모든 JS 문법과 모든 `test/*.test.mjs`를 실행한다. 새 테스트를 수동 목록에 추가할 필요가 없다.
+- JSON/SQLite 및 account/hypothesis/variant 필드는 이미 구현되어 있으므로 새 기능처럼 중복 구현하지 않는다.
+- 다음 우선순위는 실제 브라우저 제작·복원 검수와 Source Package에서 04 검수로 이어지는 명시적 자산 전달이다.
+- 임의로 후보를 추가 수집하거나 실제 계정을 게시 테스트에 사용하지 않는다. 현재 사용자의 작업 범위를 먼저 따른다.
+- 테스트 더블, DOM 핸들러 테스트, 실제 브라우저 테스트, 외부 플랫폼 성공을 구분한다.
 
 ## 완료 기준
 
