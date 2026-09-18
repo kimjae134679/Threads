@@ -1,3 +1,18 @@
+# Latest cover sizing update — 2026-09-19 KST
+
+The user explicitly requested full-bleed image covers, automatic canvas adjustment for awkward source dimensions, and a complete progress/remaining-work list. This continues the authorized 03 production work in the review PR; unrelated Discovery remains scoped to its own handoff below.
+
+- Baseline: `db1ee73c93d65992f6eea6d74c3c43c5972d7f6c`; branch `codex/audit-reliability-20260919`, PR #1.
+- Cover width stays 1080px; height follows the first source aspect ratio, bounded to 608–1350px for readable headlines. The image fills every edge without stretching or blur. Extreme source ratios are cropped on the cover only; body pages retain the complete source. All pages in one set share the same dimensions.
+- Headline bottom scales to about 83% of height, with responsive font size and the existing 2px outline. Text-only remains 1080×1350.
+- Preview canvas dimensions, CSS, package metadata, status and download label now follow actual output dimensions.
+- Tests cover six image proportions, mixed-size sources, complete source coverage and adaptive export integration. Native Canvas image example: 1080×673; text example: 1080×1350. No browser/Windows or actual Instagram upload result is claimed.
+- Full checklist: `docs/PRODUCTION_PROGRESS.md`. No acquisition, C/A/P promotion or external publication in this change. Existing original assets are untouched.
+- Next: review output and exercise one candidate in the real browser through export and restoration, then connect Source Package to 04 asset review.
+- Workspace remains `/workspace/scratch/7dc461d71eca/Threads`; Linux review checkout, no Windows installation/move.
+
+---
+
 # Current user-approved production direction — 2026-09-19 KST
 
 User reviewed 22 uploaded Instagram screenshots and an initial cover mockup. The next request explicitly authorizes implementation: raise the title, remove blurred styling, use a thin outline, and support text-only originals. These instructions supersede older exact-title-only and image-required production rules.

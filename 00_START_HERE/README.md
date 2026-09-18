@@ -36,7 +36,7 @@
 2. 정확한 제목 + 정확한 원문 URL 검증
 3. 실제 source screenshot/image/media 확보
 4. screenshot intake → Source Package
-5. 원문 기반 1080×1350 Instagram/Threads carousel (텍스트 원문도 지원)
+5. 원문 비율에 맞춘 Instagram/Threads carousel (폭 1080, 높이 608~1350; 텍스트 원문은 1080×1350)
 6. Chrome에서 실제 파일/크기/가독성 검증
 7. 같은 Source Package로 별도 1080×1920 Reels/Shorts MP4
 8. 이후 live provider/publisher

@@ -130,19 +130,23 @@
     next.candidateId = candidate.id;
     next.captionDraft = values.caption;
     next.originalImageBytesPersisted = false;
-    next.coverStyle = { ...renderer().STYLE, backgroundBlur: 0, titleStroke: '#000', titleFill: '#fff' };
     const measure = document.createElement('canvas').getContext('2d');
     const slides = renderer().plan(measure, next, images, entries);
+    const { width, height } = slides[0];
+    next.coverStyle = { ...renderer().STYLE, width, height,
+      titleBottom: renderer().titleLayout(measure, next.coverText || next.title, { width, height }).bottom,
+      canvasSizing: textOnly ? 'text-default' : 'source-aspect',
+      backgroundBlur: 0, titleStroke: '#000', titleFill: '#fff' };
     const canvases = slides.map((slide) => {
       const canvas = document.createElement('canvas');
-      canvas.width = renderer().WIDTH;
-      canvas.height = renderer().HEIGHT;
+      canvas.width = slide.width;
+      canvas.height = slide.height;
       canvas.setAttribute('role', 'img');
       canvas.setAttribute('aria-label', slide.type === 'cover' ? `표지: ${next.coverText}` : '원문 본문');
       renderer().render(canvas.getContext('2d'), slide);
       return canvas;
     });
-    next.output = { width: renderer().WIDTH, height: renderer().HEIGHT, slideCount: slides.length,
+    next.output = { width, height, slideCount: slides.length,
       bodyPagination: textOnly ? 'wrapped-original-text' : 'aspect-preserving-slices' };
     if (next.renderPlan[0]) {
       next.renderPlan[0].treatment = textOnly ? 'source-text-plus-headline' : 'source-image-plus-headline';
@@ -152,7 +156,7 @@
     packagePreview = next;
     previewBasis = expectedBasis;
     previewCanvases = canvases;
-    $('#sourcePackageStatus').textContent = `표지 1장 + 본문 ${slides.length - 1}장 · 1080×1350\n${textOnly
+    $('#sourcePackageStatus').textContent = `표지 1장 + 본문 ${slides.length - 1}장 · ${width}×${height}\n${textOnly
       ? '제목과 원문 텍스트 저장됨' : '제목과 이미지 정보 저장됨 · 원본 파일은 브라우저 세션에만 유지'}\n전체 본문: ${next.fullBodyCaptureStatus} · 실제 게시 없음`;
     renderCarousel();
     return next;
@@ -181,7 +185,7 @@
     const button = document.createElement('button');
     button.type = 'button';
     button.id = 'exportSourceCarouselPngBtn';
-    button.textContent = '1080×1350 PNG 세트 받기';
+    button.textContent = `${packagePreview.output.width}×${packagePreview.output.height} PNG 세트 받기`;
     button.disabled = packagePreview.assetsPending || exporting;
     button.addEventListener('click', exportPngSet);
     actions.appendChild(button);

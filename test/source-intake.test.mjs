@@ -20,6 +20,7 @@ for (const id of ['sourceFormatInput', 'sourceBodyCaptureStatus', 'sourceRightsI
 elements.set('#exportSourceCarouselPngBtn', new Element());
 const documentListeners = {};
 const drawCalls = [];
+const canvases = [];
 let downloads = 0;
 const ctx = {
   drawImage(...args) { drawCalls.push(args); }, fillRect() {}, save() {}, restore() {}, strokeText() {},
@@ -31,7 +32,11 @@ const document = {
   addEventListener(type, listener) { documentListeners[type] = listener; },
   body: { appendChild() {} },
   createElement(tag) {
-    if (tag === 'canvas') return { setAttribute() {}, getContext: () => ctx, toBlob(callback) { callback({}); } };
+    if (tag === 'canvas') {
+      const canvas = { setAttribute() {}, getContext: () => ctx, toBlob(callback) { callback({}); } };
+      canvases.push(canvas);
+      return canvas;
+    }
     const element = new Element();
     if (tag === 'a') element.click = () => { downloads += 1; };
     return element;
@@ -41,9 +46,10 @@ let selectedId = 'a';
 const candidates = { a: { id: 'a', title: '정확한 원문 제목', url: 'https://example.com/a' }, b: { id: 'b', title: '다른 후보', url: 'https://example.com/b' } };
 let imageError = false;
 let deferImages = false;
+let imageWidth = 600, imageHeight = 1500;
 const imageCallbacks = [];
 class Image {
-  constructor() { this.naturalWidth = 600; this.naturalHeight = 1500; }
+  constructor() { this.naturalWidth = imageWidth; this.naturalHeight = imageHeight; }
   set src(value) {
     this.url = value;
     const callback = () => imageError ? this.onerror() : this.onload();
@@ -81,6 +87,23 @@ for (const args of drawCalls.filter((call) => call.length === 9)) {
 const almostSquare = api.sourceSlices({ naturalWidth: 984, naturalHeight: 1300 });
 assert.ok(almostSquare.length > 1, 'Images taller than the 4:5 content area must not be squashed');
 assert.equal(almostSquare.at(-1).sy + almostSquare.at(-1).sh, 1300);
+
+imageWidth = 1200; imageHeight = 1000;
+const canvasStart = canvases.length;
+const resized = await api.buildPackage();
+assert.equal(resized.output.height, 900);
+assert.equal(resized.coverStyle.height, 900);
+assert.equal(resized.coverStyle.canvasSizing, 'source-aspect');
+assert.ok(canvases.slice(canvasStart).filter((canvas) => canvas.width)
+  .every((canvas) => canvas.width === 1080 && canvas.height === 900));
+assert.match(elements.get('#sourcePackageStatus').textContent, /1080×900/);
+assert.match(elements.get('#exportSourceCarouselPngBtn').textContent, /1080×900/);
+const beforeResizedDownloads = downloads;
+await api.exportPngSet();
+assert.equal(downloads - beforeResizedDownloads, resized.output.slideCount);
+assert.ok(!fs.readFileSync(new URL('../app/styles.css', import.meta.url), 'utf8')
+  .match(/\.source-slide canvas\{[^}]*aspect-ratio/), 'CSS must not force a different preview ratio');
+imageWidth = 600; imageHeight = 1500;
 
 selectedId = 'b'; documentListeners['threads:candidate-selected']();
 assert.equal(api.getPreview(), null);
