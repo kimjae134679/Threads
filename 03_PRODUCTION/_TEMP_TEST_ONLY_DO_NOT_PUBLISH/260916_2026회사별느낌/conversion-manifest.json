@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
   "publicationAllowed": false,
   "candidateKey": "260916_2026회사별느낌",
   "sourceCandidate": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
   "titleOriginal": "2026년 회사별 느낌 NEW ver.",
   "sourceUrl": "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco",
   "sourceFormat": "글",
-  "sourceBodyComplete": false,
+  "sourceBodyComplete": true,
   "commentsComplete": false,
   "sourceAssetsComplete": false,
   "cover": {
@@ -24,13 +25,16 @@
     "2026년 회사별 이미지를 한 줄로 적어봤다"
   ],
   "bodyTransformation": {
-    "status": "BLOCKED_ON_FULL_SOURCE",
-    "reason": "전체 본문을 끝까지 확인하지 못했으므로 문단/장면 분할이나 본문 카드 생성은 수행하지 않음."
+    "status": "READY_FOR_TEMP_SPLIT_TEST",
+    "strategy": "paragraph/scene boundary first; sentence boundary fallback; no raw fixed-length slicing",
+    "prototypeTool": "../tools/natural-boundary-splitter.js",
+    "sourceCopyPolicy": "do not commit full verbatim third-party body into this test workspace",
+    "safetyNote": "source contains potentially defamatory/derogatory occupational and company statements; transformation remains review-only"
   },
   "review": {
     "rights": "UNREVIEWED",
     "privacy": "UNREVIEWED",
-    "defamation": "UNREVIEWED",
+    "defamation": "REVIEW_REQUIRED",
     "humanApproval": "NOT_APPROVED"
   }
 }
