@@ -1,14 +1,20 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 04:27 KST
+Updated: 2026-09-19 05:19 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the `Threads 소재 발굴` automation, the user's explicit automation instruction is narrower than the general sequential-candidate handoff and therefore wins for that automation: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
-## Latest discovery run — 2026-09-19 04:20 KST
+## Latest discovery run — 2026-09-19 05:19 KST
+- Broad public search/index pass reviewed roughly **60 raw leads** across Korean-community-first queries plus supplemental Reddit/public social indexing; retained **15 new candidates** after duplicate/quality/access/safety/story filtering.
+- Retained provenance: **14 C1 + 1 C0**. C0 is the `엄마→임마` lead because only the public TheQoo index title was verified and no exact individual URL was found. No provenance tier was inflated.
+- Top new hooks include `친구 픽업하러 공항 갔는데 친구 엄마와 이모가 왔습니다`, `브레이크 고치라고 750달러 줬더니 골프채를 샀습니다`, `잘 모르는 여친 친구 결혼식에 7천달러를 내랍니다`, `몇 번 본 남친 조카가 갑자기 학비를 내달랍니다`, `미결제 영수증 받았는데 가족 외모 비하 메모가 적혀 있었습니다`.
+- Korean-source retained items came from TheQoo and Blind; TheQoo live Square pages were also used as a high-volume raw-lead index. Searches for DCInside/FMKorea/Ppomppu/Ruliweb/Inven/Arca/NAVER/Daum cafe material produced weak/unverifiable results in this run; NAVER Cafe public search was robots-blocked and was not bypassed.
+- No screenshot/media acquisition, image download, OCR, moderation, rights clearance, production, rendering, Chrome E2E, provider/publishing work, or publishing was performed. All retained candidates remain A0/P0 with `publicationAllowed=false`.
+
+## Previous discovery run — 2026-09-19 04:20 KST
 - Broad public search pass retained **15 new C1 candidates**, all with exact individual public URLs verified and no A1/P1 promotion.
-- Top new hooks include `모은 돈 5천이라던 남친, 알고 보니 재산이 4억이었습니다`, `9년 연애했는데 처가 사정 때문에 결혼을 말립니다`, `2만원 입장료로 시작된 싸움이 이혼 얘기까지 갔습니다`, `이름도 모른 채 소개팅을 세 번이나 만났습니다`, `타일 8장 고치는데 60세대 동의를 받아오랍니다`.
-- No screenshot/media acquisition, OCR, moderation, rights clearance, production, rendering, browser E2E, or publishing was performed by discovery.
+- Top hooks included `모은 돈 5천이라던 남친, 알고 보니 재산이 4억이었습니다`, `9년 연애했는데 처가 사정 때문에 결혼을 말립니다`, `2만원 입장료로 시작된 싸움이 이혼 얘기까지 갔습니다`, `이름도 모른 채 소개팅을 세 번이나 만났습니다`, `타일 8장 고치는데 60세대 동의를 받아오랍니다`.
 
 ## Sequential-candidate lane — 2026-09-19 04:27 KST
 - `260916_2026회사별느낌` changed blocker was rechecked. Its exact public Blind page now exposes the complete post body, so `full body read=YES`; comments remain PARTIAL.
