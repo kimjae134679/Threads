@@ -3,23 +3,28 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T03:00:00+09:00",
-  "processed": [
-    {
-      "candidateKey": "260916_2026회사별느낌",
-      "originalPath": "data/candidates/260916_C0_A0_P0_2026회사별느낌.md",
-      "currentPath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "originalRank": 1,
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": [
-        "provenance-verification"
-      ],
-      "nextStage": "source-asset-acquisition",
-      "blocker": "Blind exact public URL recovered, but project policy requires manual screenshot/source-asset acquisition; do not automate crawl, login, anti-bot, or access-control bypass.",
-      "unblockWhen": "A real user/manual source screenshot or permitted source asset is added and candidate asset state can advance.",
-      "publicationAllowed": false
-    }
-  ],
+  "lastCycleAt": "2026-09-19T04:27:00+09:00",
+  "processed": [{
+    "candidateKey": "260916_2026회사별느낌",
+    "originalPath": "data/candidates/260916_C0_A0_P0_2026회사별느낌.md",
+    "currentPath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+    "originalRank": 1,
+    "result": "BLOCKED_NEXT_STAGE",
+    "completedStages": ["provenance-verification", "public-full-body-read"],
+    "nextStage": "source-asset-acquisition",
+    "fullBodyRead": true,
+    "commentsRead": "PARTIAL",
+    "observedMetrics": {"observedAt": "2026-09-19T04:27:00+09:00", "views": "28K", "likes": 66, "comments": 202},
+    "blocker": "Public full body is now readable without login, but real screenshot/source assets remain unacquired and rights/privacy/defamation/human review is incomplete.",
+    "unblockWhen": "A real user/manual source screenshot or otherwise permitted source asset is added; do not automate login, anti-bot, paywall, or access-control bypass.",
+    "publicationAllowed": false
+  }],
   "completed": [],
-  "notes": "First sequential candidate was advanced from C0 to C1. No screenshot, OCR, moderation, rights clearance, A1, or P1 is claimed."
+  "queueRefresh": {
+    "observedCandidateFileCount": 30,
+    "storedQueueEntryCount": 15,
+    "status": "NEEDS_EXACT_FILENAME_REFRESH",
+    "note": "Directory metadata reports 30 candidate files while the stored queue has 15. Missing filenames were not guessed; exact filename-level expansion remains pending."
+  },
+  "notes": "Changed unblock condition rechecked: full-body-read blocker cleared for the first candidate, but C1/A0/P0 remains. No screenshot, OCR, moderation, rights clearance, A1, or P1 is claimed."
 }
