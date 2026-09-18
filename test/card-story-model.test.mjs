@@ -45,7 +45,7 @@ const item = {
   }, 2);
   assert.equal(storyboard.width, 1080);
   assert.equal(storyboard.height, 1080);
-  assert.equal(storyboard.schemaVersion, 3);
+  assert.equal(storyboard.schemaVersion, 4);
   assert.equal(storyboard.privacy.automaticMasking, false);
   assert.equal(storyboard.privacy.automaticPiiMutation, false);
   assert.equal(storyboard.privacy.manualReviewRequired, true);
@@ -70,9 +70,10 @@ const item = {
 
 {
   const noAsset = model.buildStoryboard(item, {}, 0);
-  assert.equal(model.validateStoryboard(noAsset).ok, false);
-  assert.ok(model.validateStoryboard(noAsset).issues.includes("cover_mode_invalid"));
-  assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_slide_required"));
+  assert.equal(noAsset.cards[0].backgroundMode, "text-only-cover");
+  assert.equal(noAsset.assetPolicy.coverMode, "text-only");
+  assert.equal(noAsset.assetPolicy.generatedImageFallback, false);
+  assert.equal(model.validateStoryboard(noAsset).ok, true);
 }
 
 console.log("Card storyboard regression tests passed.");
