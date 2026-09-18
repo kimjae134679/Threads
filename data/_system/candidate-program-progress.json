@@ -3,69 +3,15 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T07:24:42+09:00",
+  "lastCycleAt": "2026-09-19T08:24:56+09:00",
   "processed": [
-    {
-      "candidateKey": "260916_2026회사별느낌",
-      "originalPath": "data/candidates/260916_C0_A0_P0_2026회사별느낌.md",
-      "currentPath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": ["provenance-verification", "public-full-body-read"],
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": true,
-      "commentsRead": "PARTIAL",
-      "observedMetrics": {"observedAt": "2026-09-19T04:27:00+09:00", "views": "28K", "likes": 66, "comments": 202},
-      "blocker": "Real screenshot/source assets remain unacquired and rights/privacy/defamation/human review is incomplete.",
-      "unblockWhen": "A real user/manual source screenshot or otherwise permitted source asset is added; do not automate login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_25살연애불가능할까",
-      "originalPath": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
-      "currentPath": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": ["provenance-verification", "public-body-read", "partial-comment-read"],
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": true,
-      "commentsRead": "PARTIAL",
-      "blocker": "Exact individual Blind URL and public body are verified, but real screenshot/source assets and rights/privacy/defamation/human review are incomplete.",
-      "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_27살여자오늘파혼",
-      "originalPath": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
-      "currentPath": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": ["provenance-verification", "public-full-body-read", "partial-comment-read"],
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": true,
-      "commentsRead": "PARTIAL",
-      "observedMetrics": {"observedAt": "2026-09-19T06:25:50+09:00", "views": 2096, "comments": 39},
-      "blocker": "Exact public Blind page/body is verified, but real screenshot/source assets and rights/privacy/defamation/human review are incomplete.",
-      "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_41세비혼녀",
-      "originalPath": "data/candidates/260916_C0_A0_P0_41세비혼녀.md",
-      "currentPath": "data/candidates/260916_C0_A0_P0_41세비혼녀.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": ["provenance-verification", "public-text-partial-read"],
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": false,
-      "commentsRead": false,
-      "blocker": "Exact public Inven page is verified, but the substantive post is image-centric; real source images/assets and their contents remain unacquired/unread, and rights/privacy/defamation/human review is incomplete.",
-      "unblockWhen": "Permitted real source images/assets are available for inspection; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    }
+    {"candidateKey":"260916_2026회사별느낌","currentPath":"data/candidates/260916_C1_A0_P0_2026회사별느낌.md","result":"BLOCKED_NEXT_STAGE","nextStage":"source-asset-acquisition","unblockWhen":"A real user/manual source screenshot or otherwise permitted source asset is added; do not automate login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false},
+    {"candidateKey":"260916_25살연애불가능할까","currentPath":"data/candidates/260916_C0_A0_P0_25살연애불가능할까.md","result":"BLOCKED_NEXT_STAGE","nextStage":"source-asset-acquisition","unblockWhen":"A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false},
+    {"candidateKey":"260916_27살여자오늘파혼","currentPath":"data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md","result":"BLOCKED_NEXT_STAGE","nextStage":"source-asset-acquisition","unblockWhen":"A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false},
+    {"candidateKey":"260916_41세비혼녀","currentPath":"data/candidates/260916_C0_A0_P0_41세비혼녀.md","result":"BLOCKED_NEXT_STAGE","nextStage":"source-asset-acquisition","unblockWhen":"Permitted real source images/assets are available for inspection; no login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false},
+    {"candidateKey":"260916_6만원도난오해","originalPath":"data/candidates/260916_C0_A0_P0_6만원도난오해.md","currentPath":"data/candidates/260916_C0_A0_P0_6만원도난오해.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-page-read","partial-comment-read"],"nextStage":"source-asset-acquisition","fullBodyRead":false,"commentsRead":"PARTIAL","observedMetrics":{"observedAt":"2026-09-19T08:24:56+09:00","views":15256,"recommendations":207,"comments":16},"exactSource":"https://www.bobaedream.co.kr/view?No=1032069&code=best&vdate=","blocker":"Exact public Bobaedream individual page is verified, but the substantive post is image-centric and the real source image contents/assets remain unacquired/unread. Rights/privacy/defamation/human review is incomplete.","unblockWhen":"A permitted real source image/asset is available for inspection; no login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {
-    "observedCandidateFileCount": 583,
-    "storedQueueEntryCount": 583,
-    "status": "COUNT_MATCH_CONFIRMED; DISCOVERY_ADDITIONS_EXIST_OUTSIDE_STORED_QUEUE",
-    "note": "Recursive main-tree inspection confirms the historical data/candidates queue remains 583 entries while fresh discovery has also added candidate files under 01_DISCOVERY/candidates. The requested queue source is data/candidates, so no cross-directory identity was fabricated. Some historical filename stage metadata remains stale; candidateKey is stable identity."
-  },
-  "notes": "Fourth sequential candidate exact Inven provenance verified. The substantive content appears image-centric, so image contents were not guessed and A0/P0 remain. TEMP synthetic browser conversion roundtrip was executed successfully in a compatible Node runtime using only synthetic fixture text; no third-party body was persisted and no publish action occurred."
+  "queueRefresh": {"observedCandidateFileCount":598,"storedQueueEntryCount":583,"status":"REFRESH_REQUIRED_AFTER_15_CANONICAL_DISCOVERY_ADDITIONS","note":"The 08:19 discovery handoff explicitly records 15 new C1 Markdown records added to data/candidates after the prior 583-entry queue. Current connector output confirms those canonical files exist, but the stored queue JSON still contains 583 entries. Do not fabricate the 15 missing queue identities from truncated API output; next queue regeneration should enumerate the directory completely and rebuild filename-ascending ranks."},
+  "notes":"Fifth sequential candidate exact Bobaedream provenance verified. Core content is image-centric, so image contents were not guessed and A0/P0 remain. TEMP-only review-screen/browser download+restore UI wiring was added, but real-browser click execution remains unverified. No publish action occurred."
 }
