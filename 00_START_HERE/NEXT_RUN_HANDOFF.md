@@ -1,3 +1,34 @@
+# Current user-approved production direction — 2026-09-19 KST
+
+User reviewed 22 uploaded Instagram screenshots and an initial cover mockup. The next request explicitly authorizes implementation: raise the title, remove blurred styling, use a thin outline, and support text-only originals. These instructions supersede older exact-title-only and image-required production rules.
+
+## Implemented in the review branch
+
+- Source intake now composes a sharp original screenshot or source text with a lower gradient and a large white headline. Title block bottom: 1120px in a 1080×1350 output; black outline: 2px; image blur and text shadow: zero.
+- Editable cover headline with explicit line breaks; original candidate title preserved. Long headlines are fitted to 2–3 lines or rejected instead of truncated.
+- Text-only source packages preserve up to 20,000 original characters, paginate the full text and do not fabricate screenshot acquisition. Text input is restricted to source format `글`.
+- One shared canvas renderer produces both preview and export. Every exported page is previewed. Local regular/black Korean fonts are bundled with OFL.
+- Candidate switching and fresh-session restoration preserve saved headline/text/settings. Changed content invalidates previews and existing publication approval through the existing save callback.
+- Source-image bytes remain session-local. Text and metadata are included in existing JSON backup/persistence.
+
+## Verification
+
+`npm run check`: 45 suites passed locally (Node 24). New checks cover headline line breaks/position/outline, complete text pagination, source-text package gates, candidate isolation, edited-headline persistence and stale-export invalidation. DOM handlers use doubles; two actual 1080×1350 PNGs were rendered with the production canvas module via the installed native canvas runtime and visually inspected. This is not browser E2E. Cloud Browser could not reach the local app in this session; Windows interaction/downloads remain unverified. No external publication.
+
+Examples: `docs/examples/source-cover-image.png` and `source-cover-text.png`. These are rendering examples, not newly acquired/approved candidates. No C/A/P promotion.
+
+## Next
+
+User reviews the actual app outputs. Then verify browser interaction and download on the user's runtime. Long screenshot splitting currently preserves aspect ratio with overlap; semantic paragraph/scene boundaries and automatic Instagram UI removal are not implemented. Connect approved Source Packages to 04 assets only after output review.
+
+## Concurrent main work preserved
+
+Main advanced to `89e800400a7aecb4f88b16cf947168e9f3f17c45` while the review PR was open. Its newly added homecam provenance candidate is preserved. It remains `PROVENANCE_PENDING`: the exact original Nate Pann URL and full original body were not recovered. That Discovery work does not supersede the current production request.
+
+Workspace: `/workspace/scratch/7dc461d71eca/Threads`. No Windows software was installed or moved. The Windows `C:\Program Files\_My\AI` installation policy is not applicable to this Linux review checkout.
+
+---
+
 # NEXT RUN HANDOFF
 
 ## Current task
@@ -23,7 +54,7 @@ Actual browser interaction remains unverified: the available cloud browser block
 
 ## Preserve
 
-Keep the role chain and human publication gate. Cover uses the exact original title; body slides use original screenshots in order. Keep all original assets and raw discovery evidence. Do not mark A/P states from tests, queue entries or development previews.
+Keep the role chain and human publication gate. The user approved short, large editable cover headlines over original screenshots or original text, with a raised position and a thin black outline; no blur. Preserve the original candidate title separately. Body slides preserve original screenshot order or the full user-provided text. Keep all original assets and raw discovery evidence. Do not mark A/P states from tests, queue entries or development previews.
 
 Existing first source package: `data/source-packages/theqoo-3826792703/`. Its six-file rendered output is structurally verified, but full visual/user approval and publication are still separate.
 

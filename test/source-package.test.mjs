@@ -64,4 +64,20 @@ assert.throws(() => api.build({ sourceUrl: 'https://example.com', assets: [] }),
 assert.throws(() => api.build({ sourceUrl: 'https://example.com', assets: [{name:'x.png',mime:'image/png',kind:'cover'}] }), /cover plus at least one real original-post/);
 assert.throws(() => api.build({ sourceUrl: 'https://example.com', apiToken: 'x', assets: [{name:'cover.png',mime:'image/png',kind:'cover'},{name:'post.png',mime:'image/png'}] }), /secret-like field/);
 assert.throws(() => api.build({ sourceUrl: 'https://example.com', assets: [{name:'cover.png',mime:'image/png',kind:'cover'},{name:'x.txt',mime:'text\/plain'}] }), /must be an image/);
+const textInput = { inputMode: 'text', sourceFormat: '글', sourceUrl: 'https://example.com/text',
+  title: '보존할 원제목', coverText: '짧은 표지 제목', sourceText: '첫 문단\n\n마지막 문단',
+  fullBodyCaptureStatus: 'complete' };
+const textPackage = api.build(textInput);
+assert.equal(textPackage.sourceText, textInput.sourceText);
+assert.equal(textPackage.assetsPending, false);
+assert.equal(textPackage.assets.length, 0);
+assert.equal(textPackage.bodyAssetsAcquired, false);
+assert.equal(textPackage.publicationAllowed, false);
+assert.equal(textPackage.rightsState, 'UNKNOWN');
+assert.equal(textPackage.title, textInput.title);
+assert.equal(api.build({ ...textInput, fullBodyCaptureStatus: 'pending' }).assetsPending, true);
+assert.throws(() => api.build({ ...textInput, sourceText: '' }), /본문/);
+assert.throws(() => api.build({ ...textInput, sourceText: '가'.repeat(20001) }), /20,000/);
+assert.throws(() => api.build({ ...textInput, sourceFormat: '이미지' }), /글일 때/);
+assert.throws(() => api.build({ ...textInput, assets: [{}] }), /함께/);
 console.log('source-package: PASS');

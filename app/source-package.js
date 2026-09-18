@@ -46,6 +46,7 @@
 
   function build(input) {
     assertNoSecrets(input);
+    if (input.inputMode === 'text') return buildTextPackage(input);
     const assets = (Array.isArray(input.assets) ? input.assets : []).map(normalizeAsset);
     if (assets.length < 2) throw new Error('cover plus at least one real original-post screenshot/image is required');
     if (assets[0].kind !== 'cover') throw new Error('asset 1 must be the cover');
@@ -71,12 +72,41 @@
       schemaVersion: 5, type: 'SOURCE_PACKAGE', roleChain: ROLE_CHAIN.slice(), publishOwner: '04_REVIEW_PUBLISH', publicationAllowed: false,
       approvalState: 'NOT_APPROVED', rightsState: cleanText(input.rightsState, 40) || 'UNKNOWN', privacyState: 'USER_REVIEW',
       sourcePlatform: cleanText(input.sourcePlatform, 80) || 'manual', sourceFormat, sourceUrl,
+      inputMode: 'images',
       userProvidedProvenance: cleanText(input.userProvidedProvenance, 1200), title, coverText: cleanText(input.coverText, 240) || title,
       assets, fullBodyCaptureStatus, bodyAssetsAcquired, completeBodyEvidence,
       assetsPending: fullBodyCaptureStatus !== 'complete' || !completeBodyEvidence,
       renderPlan: assets.map((asset, index) => ({ slide: index + 1, assetId: asset.id, sourceSequence: asset.sourceSequence,
         treatment: index === 0 ? 'cover-image-plus-original-title' : 'faithful-original-screenshot-contain', overlay: index === 0 ? 'original-title' : 'none' })),
       gates: { audienceComfort: 'UNREVIEWED', privacy: 'USER_REVIEW', rights: 'REQUIRED', humanApproval: 'REQUIRED' }
+    };
+  }
+
+  function buildTextPackage(input) {
+    if (input.sourceFormat !== '글') throw new Error('텍스트 입력은 원문 형식이 글일 때만 사용할 수 있습니다.');
+    if (input.assets?.length) throw new Error('텍스트 입력에 이미지 자산을 함께 기록할 수 없습니다.');
+    const sourceText = String(input.sourceText || '').replace(/\r\n?/g, '\n');
+    if (!sourceText.trim()) throw new Error('원문 본문을 입력하세요.');
+    if (sourceText.length > 20000) throw new Error('원문은 20,000자까지 지원합니다. 본문을 임의로 자르지 않습니다.');
+    const sourceUrl = cleanText(input.sourceUrl, 1200);
+    const userProvidedProvenance = cleanText(input.userProvidedProvenance, 1200);
+    if (!sourceUrl && !userProvidedProvenance) throw new Error('source URL or user-provided provenance is required');
+    const title = cleanText(input.title, 240);
+    const fullBodyCaptureStatus = ['complete', 'partial', 'pending'].includes(input.fullBodyCaptureStatus)
+      ? input.fullBodyCaptureStatus : 'pending';
+    return {
+      schemaVersion: 6, type: 'SOURCE_PACKAGE', roleChain: ROLE_CHAIN.slice(), publishOwner: '04_REVIEW_PUBLISH',
+      publicationAllowed: false, approvalState: 'NOT_APPROVED', privacyState: 'USER_REVIEW',
+      rightsState: cleanText(input.rightsState, 40) || 'UNKNOWN', sourceFormat: '글', inputMode: 'text',
+      sourcePlatform: cleanText(input.sourcePlatform, 80) || 'manual', sourceUrl, userProvidedProvenance,
+      title, coverText: cleanText(input.coverText, 240) || title, sourceText,
+      assets: [], bodyAssetsAcquired: false, completeBodyEvidence: true,
+      fullBodyCaptureStatus, assetsPending: fullBodyCaptureStatus !== 'complete',
+      renderPlan: [
+        { slide: 1, treatment: 'source-text-plus-headline', overlay: 'user-headline' },
+        { slide: 2, treatment: 'faithful-source-text-paginated', overlay: 'none' },
+      ],
+      gates: { audienceComfort: 'UNREVIEWED', privacy: 'USER_REVIEW', rights: 'REQUIRED', humanApproval: 'REQUIRED' },
     };
   }
 
