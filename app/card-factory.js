@@ -365,6 +365,26 @@
     ctx.closePath();
   }
 
+  function drawWrappedOutlined(ctx, text, x, startY, maxWidth, lineHeight, maxLines) {
+    const words = String(text || "").split(/\s+/).filter(Boolean);
+    const lines = [];
+    let current = "";
+    for (const word of words) {
+      const test = current ? `${current} ${word}` : word;
+      if (ctx.measureText(test).width <= maxWidth || !current) current = test;
+      else { lines.push(current); current = word; }
+    }
+    if (current) lines.push(current);
+    const visible = lines.slice(0, maxLines);
+    let y = startY;
+    for (const line of visible) {
+      ctx.strokeText(line, x, y);
+      ctx.fillText(line, x, y);
+      y += lineHeight;
+    }
+    return y;
+  }
+
   function drawWrapped(ctx, text, x, startY, maxWidth, lineHeight, maxLines) {
     const words = String(text || "").split(/\s+/).filter(Boolean);
     const lines = [];
