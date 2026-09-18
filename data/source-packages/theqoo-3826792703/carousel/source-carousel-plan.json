@@ -1,0 +1,72 @@
+{
+  "type": "SOURCE_BACKED_CAROUSEL_PLAN",
+  "exactOriginalTitle": "결혼 승낙 받자마자 탈모인거 밝힌 남편..",
+  "publicationAllowed": false,
+  "publishOwner": "04_REVIEW_PUBLISH",
+  "bodyPolicy": "FULL_ORIGINAL_POST_SCREENSHOTS_IN_ORDER",
+  "slides": [
+    {
+      "slideNumber": 1,
+      "kind": "COVER_ONLY",
+      "titleText": "결혼 승낙 받자마자 탈모인거 밝힌 남편..",
+      "source": "C:\\Users\\user\\AppData\\Local\\Temp\\Threads_run047\\data\\source-packages\\theqoo-3826792703\\carousel\\cover.png",
+      "sha256": "284177f537fb4dff6c6c0760e74f8503fa60e97f2075940ea06b63531bacb004",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 664292
+    },
+    {
+      "slideNumber": 2,
+      "kind": "ORIGINAL_POST_SCREENSHOT",
+      "source": "C:\\Users\\user\\AppData\\Local\\Temp\\Threads_run047\\data\\source-packages\\theqoo-3826792703\\carousel\\body-00.png",
+      "sha256": "83595a33f2595c0426f2c5648ed55c30a1e8663deaa16352c0440fbd5722b7de",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 627174
+    },
+    {
+      "slideNumber": 3,
+      "kind": "ORIGINAL_POST_SCREENSHOT",
+      "source": "C:\\Users\\user\\AppData\\Local\\Temp\\Threads_run047\\data\\source-packages\\theqoo-3826792703\\carousel\\body-01.png",
+      "sha256": "0cd835bfe572b428f194ecab69d46f3ae8434d362bd3f0e4c622b225371e0b17",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 692073
+    },
+    {
+      "slideNumber": 4,
+      "kind": "ORIGINAL_POST_SCREENSHOT",
+      "source": "C:\\Users\\user\\AppData\\Local\\Temp\\Threads_run047\\data\\source-packages\\theqoo-3826792703\\carousel\\body-02.png",
+      "sha256": "f88ad6d2f20674f381b0befced4dee330e09ed498e663efd1309c1ee964b4bbb",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 493978
+    },
+    {
+      "slideNumber": 5,
+      "kind": "ORIGINAL_POST_SCREENSHOT",
+      "source": "C:\\Users\\user\\AppData\\Local\\Temp\\Threads_run047\\data\\source-packages\\theqoo-3826792703\\carousel\\body-03.png",
+      "sha256": "19db5d2a737e7f5519c3a530a3f75fa31f44baa1ddbc1638843b06942a3322d1",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 706239
+    },
+    {
+      "slideNumber": 6,
+      "kind": "ORIGINAL_POST_SCREENSHOT",
+      "source": "C:\\Users\\user\\AppData\\Local\\Temp\\Threads_run047\\data\\source-packages\\theqoo-3826792703\\carousel\\body-04.png",
+      "sha256": "13bb7a9339b59155b9256cb0c3fc34a2f9eb96cced047cce9453d449389fb7a6",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 652132
+    }
+  ],
+  "claims": {
+    "ocr": false,
+    "automaticPrivacyMasking": false,
+    "rightsCleared": false,
+    "published": false,
+    "humanVisualApproval": false
+  },
+  "note": "Plan only. Slide 1 is cover; every later slide must remain an original-post screenshot derivative in source order. No summary/rewrite/interstitial/CTA body cards."
+}
