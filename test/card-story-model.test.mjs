@@ -52,7 +52,8 @@ const item = {
   assert.equal(storyboard.cards[0].type, "hook");
   assert.equal(storyboard.renderProfile, "reference-square");
   assert.equal(storyboard.assetPolicy.generatedImageFallback, false);
-  assert.equal(storyboard.cards[0].backgroundMode, "source-image-no-blur");\n  assert.equal(storyboard.assetPolicy.coverBlur, false);
+  assert.equal(storyboard.cards[0].backgroundMode, "source-image-no-blur");
+  assert.equal(storyboard.assetPolicy.coverBlur, false);
   assert.equal(storyboard.cards.filter((card) => card.type === "capture-image").length, 2);
   assert.equal(storyboard.cards.length, 3);
   assert.ok(JSON.stringify(storyboard).includes("someone@example.com"));
