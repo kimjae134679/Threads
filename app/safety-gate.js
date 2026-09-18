@@ -217,10 +217,11 @@
     const reasons = [];
     let blocked = false;
     if (item.status !== "ready") reasons.push("후보 상태가 제작 후보가 아님");
-    if (item.score === null || item.score === undefined) reasons.push("점수 평가 미완료");
+    if (typeof item.score !== "number" || !Number.isFinite(item.score) || item.score < 0 || item.score > 100) reasons.push("점수 평가 미완료");
     if (item.researchBundle?.reviewStatus !== "reviewed") reasons.push("Research 사람 검토 미완료");
     if (item.draftStudio?.reviewStatus !== "approved") reasons.push("Draft 사람 승인 미완료");
 
+    if (item.contentStrategy?.sourceAssetType === "A10") reasons.push("권리 미확인 자산");
     const gate = item.safetyGate || emptyGate();
     const statuses = gateStatuses(gate);
     if (statuses.includes("block")) {
@@ -301,7 +302,7 @@
   }
 
   function gateStatuses(gate) {
-    return [gate.fact, gate.rights, gate.privacy, gate.defamation, gate.platform].map((x) => x || "unknown");
+    return [gate.fact, gate.rights, gate.privacy, gate.defamation, gate.platform].map((x) => ["pass", "warn", "block"].includes(x) ? x : "unknown");
   }
 
   function gateStateLabel(gate) {

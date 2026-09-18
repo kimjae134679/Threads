@@ -36,7 +36,7 @@
 2. 정확한 제목 + 정확한 원문 URL 검증
 3. 실제 source screenshot/image/media 확보
 4. screenshot intake → Source Package
-5. source-backed 1080×1080 Instagram/Threads carousel
+5. 원문 비율에 맞춘 Instagram/Threads carousel (폭 1080, 높이 608~1350; 텍스트 원문은 1080×1350)
 6. Chrome에서 실제 파일/크기/가독성 검증
 7. 같은 Source Package로 별도 1080×1920 Reels/Shorts MP4
 8. 이후 live provider/publisher
@@ -113,9 +113,10 @@ DCInside/Blind 등 제한 소스는 bulk crawl, 로그인/anti-bot 우회 금지
 
 ## 6. 실제 사용자용 카드 규칙
 
-- Slide 1: cover only. 이미지 1장 + 원문 제목/훅.
-- 커버 문구는 원문 제목을 기본으로 사용하며 별도 지시 없이는 자극적으로 재작성하지 않는다.
-- Slide 2부터는 원문 post screenshot을 실제 순서대로 사용한다.
+- Slide 1: 원문 캡처 또는 원문 텍스트 + 짧고 눈에 띄는 큰 제목.
+- 사용자 승인된 표지 방향: 하단 그라데이션, 하단에서 위로 올린 굵은 흰색 제목, 얇은 검정 테두리. 배경 블러와 흐린 글자 그림자는 쓰지 않는다.
+- 원제목은 보존하고 표지 문구는 따로 편집한다. 내용을 벗어난 사실을 덧붙이지 않는다.
+- Slide 2부터는 원문 post screenshot을 실제 순서대로 사용한다. 글만 있는 원문은 직접 입력한 본문을 빠짐없이 텍스트 페이지로 출력할 수 있다.
 - 전체 원문 본문을 빠뜨리지 않는다. 여러 화면이면 연속 screenshot으로 모두 포함한다.
 - platform/browser UI chrome은 잘라도 되지만 원문 본문을 잘라내지 않는다.
 - 자동 설명카드·요약카드·반응카드·CTA카드를 중간에 삽입하지 않는다.
