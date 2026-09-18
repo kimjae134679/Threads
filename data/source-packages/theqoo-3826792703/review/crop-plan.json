@@ -1,0 +1,12 @@
+{
+  "source": "screenshots/full-page-20260918-1319.png",
+  "reviewedAt": "2026-09-18T14:19:00+09:00",
+  "reviewMethod": "human visual inspection of real Chrome full-page capture",
+  "postContent": {"x":15,"y":150,"width":760,"height":3850},
+  "excludedBelow": "comments/list/advertising UI",
+  "fullBodyMediaObserved": 8,
+  "privacyMasking": "NONE_AUTOMATIC",
+  "ocrRun": false,
+  "rightsInferred": false,
+  "publicationAllowed": false
+}
