@@ -75,7 +75,7 @@
       assets, fullBodyCaptureStatus, bodyAssetsAcquired, completeBodyEvidence,
       assetsPending: fullBodyCaptureStatus !== 'complete' || !completeBodyEvidence,
       renderPlan: assets.map((asset, index) => ({ slide: index + 1, assetId: asset.id, sourceSequence: asset.sourceSequence,
-        treatment: index === 0 ? 'cover-image-plus-original-title' : 'faithful-original-screenshot-contain', overlay: index === 0 ? 'original-title' : 'none' })),
+        treatment: index === 0 ? (sourceFormat === '글' ? 'text-only-cover-no-generated-image' : 'source-media-no-blur-plus-title') : 'faithful-original-screenshot-contain', overlay: index === 0 ? 'cover-title' : 'none' })),
       gates: { audienceComfort: 'UNREVIEWED', privacy: 'USER_REVIEW', rights: 'REQUIRED', humanApproval: 'REQUIRED' }
     };
   }
