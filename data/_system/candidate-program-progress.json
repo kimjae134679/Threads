@@ -3,13 +3,12 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T05:24:00+09:00",
+  "lastCycleAt": "2026-09-19T06:25:50+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
       "originalPath": "data/candidates/260916_C0_A0_P0_2026회사별느낌.md",
       "currentPath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "originalRank": 1,
       "result": "BLOCKED_NEXT_STAGE",
       "completedStages": ["provenance-verification", "public-full-body-read"],
       "nextStage": "source-asset-acquisition",
@@ -23,7 +22,7 @@
     {
       "candidateKey": "260916_25살연애불가능할까",
       "originalPath": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
-      "currentPath": "data/candidates/260916_C1_A0_P0_25살연애불가능할까.md",
+      "currentPath": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
       "result": "BLOCKED_NEXT_STAGE",
       "completedStages": ["provenance-verification", "public-body-read", "partial-comment-read"],
       "nextStage": "source-asset-acquisition",
@@ -32,14 +31,28 @@
       "blocker": "Exact individual Blind URL and public body are verified, but real screenshot/source assets and rights/privacy/defamation/human review are incomplete.",
       "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_27살여자오늘파혼",
+      "originalPath": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
+      "currentPath": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
+      "result": "BLOCKED_NEXT_STAGE",
+      "completedStages": ["provenance-verification", "public-full-body-read", "partial-comment-read"],
+      "nextStage": "source-asset-acquisition",
+      "fullBodyRead": true,
+      "commentsRead": "PARTIAL",
+      "observedMetrics": {"observedAt": "2026-09-19T06:25:50+09:00", "views": 2096, "comments": 39},
+      "blocker": "Exact public Blind page/body is verified, but real screenshot/source assets and rights/privacy/defamation/human review are incomplete.",
+      "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
     "observedCandidateFileCount": 583,
     "storedQueueEntryCount": 583,
-    "status": "CURRENT_QUEUE_COUNT_MATCHES_LATEST_DISCOVERY_STATE",
-    "note": "Stored queue now reports 583 candidates. The selected next filename-ascending unprocessed entry was 260916_25살연애불가능할까; its exact provenance was verified this cycle. Queue path state should be regenerated on the next refresh to reflect its C1 filename/state change."
+    "status": "COUNT_MATCH_CONFIRMED; STATE_METADATA_STALE",
+    "note": "GitHub directory listing still contains 583 candidate files. Some historical filenames retain C0 even when file content/progress records verified C1; candidateKey remains the stable identity. Do not infer A1/P1 from filename/content mismatch."
   },
-  "notes": "Second sequential candidate provenance blocker cleared via exact public Blind individual URL. No screenshot, source-media acquisition, OCR, moderation, rights clearance, A1, or P1 claimed. TEMP lane separately wired the natural splitter into a memory-only browser conversion adapter."
+  "notes": "Third sequential candidate exact Blind provenance/body verified. No source screenshot/media acquisition, OCR, moderation, rights clearance, A1, or P1 claimed. TEMP lane added a synthetic browser conversion JSON roundtrip fixture test; execution in a real browser/runtime remains pending."
 }
