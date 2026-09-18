@@ -67,6 +67,39 @@ Original queue rank 1:
 After refresh, the current next queue item is:
 - `data/candidates/260916_C0_A0_P0_25살연애불가능할까.md`
 
+
+## TEMP TEST ONLY conversion lane — user-added 2026-09-19
+The hourly candidate-processing automation now has a second, explicitly temporary lane for gradually testing real conversion work from the user's 9–16 progress list.
+
+Canonical temporary root:
+- `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/`
+
+Binding isolation rules:
+- Every test artifact stays under that root or a descendant whose name still contains `TEMP_TEST_ONLY` / `DO_NOT_PUBLISH`.
+- Test outputs are **not production assets**, **not approved assets**, and **not live-use artifacts**.
+- Keep `temporaryTestOnly=true` and `publicationAllowed=false`.
+- Test results do not promote real candidate C/A/P states.
+- Real publishing/metrics (item 16) stays disabled until the user later gives separate explicit approval for a specific live post.
+
+The temporary lane advances one small unit per hourly run across:
+9. permitted URL→full source body/media acquisition wiring
+10. UI-chrome exclusion/crop review
+11. paragraph/scene-boundary splitting
+12. verified-content title suggestions
+13. browser generate→download→reconnect/restore review
+14. review-screen connection
+15. approved-test-output runtime/PR reflection
+16. live publish/metrics — DISABLED in this test lane
+
+First temporary prototype exists at:
+- `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/`
+- text-only no-blur cover prototype created
+- conversion manifest created
+- full body/source screenshot work is BLOCKED because the Blind source is not fully acquired and must not be bypassed.
+
+Temporary progress:
+- `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/TEMP_TEST_PROGRESS.json`
+
 ## Publication ownership / safety
 Only **04_REVIEW_PUBLISH** may actually publish or mark P1.
 Human rights/privacy/safety approval remains required. The hourly processing schedule must never auto-publish.
