@@ -3,14 +3,14 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T07:24:42+09:00",
+  "updatedAt": "2026-09-19T08:24:56+09:00",
   "requestedTrack": {
-    "9_source_auto_acquisition": {"status": "PARTIAL", "note": "첫 테스트 소재 공개 URL의 본문 읽기 가능성은 확인됨. 자동 대량수집/로그인 우회 없음; 원본 스크린샷/미디어 자산은 미확보."},
+    "9_source_auto_acquisition": {"status": "PARTIAL", "note": "공개 URL 본문 읽기 가능성 확인. 자동 대량수집/로그인 우회 없음; 이미지 중심 소재의 실제 원본 자산은 미확보."},
     "10_ui_exclusion": {"status": "PARTIAL", "note": "실제 허용된 원본 스크린샷/자산이 들어오면 후보별 UI chrome crop 검증 필요."},
-    "11_natural_splitting": {"status": "PARTIAL", "note": "natural-boundary-splitter.js를 TEMP browser-conversion-adapter.js에 연결. 제3자 원문은 저장하지 않고 런타임 입력을 메모리에서만 분할하는 구조."},
+    "11_natural_splitting": {"status": "PARTIAL", "note": "natural-boundary-splitter.js를 TEMP browser-conversion-adapter.js에 연결. 제3자 원문은 저장하지 않고 런타임 입력을 메모리에서만 분할."},
     "12_title_suggestion": {"status": "PARTIAL", "note": "TITLE_STYLE_GUIDE 기반 후보 존재. 검증된 sourceText만 입력받도록 실제 UI 연결 필요."},
-    "13_browser_review": {"status": "PARTIAL", "note": "합성 fixture browser-e2e-fixture-test.mjs를 호환 Node 런타임에서 실제 실행해 생성→JSON 왕복→복원, TEMP 플래그, publicationAllowed=false, text-only/no-generated-image/no-blur, slide 2 시작, publishable/non-test 모델 거부를 모두 통과함. 실제 브라우저 다운로드 이벤트와 재접속 UI 연결은 아직 남음."},
-    "14_review_screen": {"status": "TODO", "note": "만든 파일과 승인 버전을 게시 검수 화면에 테스트 연결."},
+    "13_browser_review": {"status": "PARTIAL", "note": "합성 fixture Node roundtrip은 실행 통과. TEMP 전용 review-screen HTML에 실제 브라우저 Blob JSON 다운로드/파일 복원 UI를 연결했으나 브라우저에서 직접 클릭 실행 검증은 아직."},
+    "14_review_screen": {"status": "PARTIAL", "note": "TEMP_TEST_ONLY_review-screen.html 프로토타입 추가. TEMP 플래그/publicationAllowed=false 강제, 슬라이드 검수, JSON 다운로드 및 복원 입력 제공. canonical 04_REVIEW_PUBLISH에는 연결하지 않음."},
     "15_approval_runtime_reflection": {"status": "TODO", "note": "승인한 최종 출력물이 실행/PR 환경에 반영되는지 테스트."},
     "16_live_publish_metrics": {"status": "DISABLED", "note": "테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."}
   },
@@ -18,13 +18,13 @@
     "candidateKey": "260916_2026회사별느낌",
     "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
     "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-    "state": "TEMP_TEST_SYNTHETIC_ROUNDTRIP_EXECUTED",
+    "state": "TEMP_TEST_REVIEW_SCREEN_WIRED_NOT_BROWSER_EXECUTED",
     "sourceBodyComplete": true,
     "sourceAssetsComplete": false,
     "commentsComplete": false,
-    "completed": ["metadata-to-test-manifest", "text-only-cover-prototype", "public-full-body-read", "natural-boundary-splitter-prototype", "in-memory-browser-conversion-adapter", "synthetic-roundtrip-test-code", "synthetic-roundtrip-node-execution-pass"],
+    "completed": ["metadata-to-test-manifest", "text-only-cover-prototype", "public-full-body-read", "natural-boundary-splitter-prototype", "in-memory-browser-conversion-adapter", "synthetic-roundtrip-test-code", "synthetic-roundtrip-node-execution-pass", "temp-review-screen-prototype", "browser-download-restore-ui-wiring"],
     "executionEvidence": {"runtime": "Node compatible runtime", "temporaryTestOnly": true, "publicationAllowed": false, "slideCount": 1, "firstSlideIndex": 2, "roundTripEqual": true, "syntheticFixtureOnly": true},
-    "blocked": ["real-source-screenshots-or-permitted-source-assets", "full-comment-thread", "rights/privacy/defamation/human-approval", "actual-browser-download-and-reconnect-ui-not-yet-wired"],
-    "next": "Connect the already-passing synthetic model to a TEMP-only review screen/browser download+restore path. Do not commit third-party full body verbatim and do not publish."
+    "blocked": ["real-source-screenshots-or-permitted-source-assets", "full-comment-thread", "rights/privacy/defamation/human-approval", "actual-browser-click-download-and-reconnect-execution-not-yet-verified"],
+    "next": "Execute the TEMP review screen in a real browser environment and verify Blob download→fresh-page file restore. Keep canonical review/publish untouched and do not persist third-party full body."
   }]
 }
