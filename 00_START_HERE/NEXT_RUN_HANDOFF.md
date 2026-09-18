@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-18 10:37 KST
+Updated: 2026-09-18 11:17 KST
 
 ## Start here
 Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`. Only `04_REVIEW_PUBLISH` may publish. Never fabricate API/moderation/OCR/rights/metrics/credentials/delivery/publication success or store plaintext secrets.
@@ -9,29 +9,21 @@ Repo tip wins. Preserve `01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION
 Slide 1 cover only; slide 2+ ordered ORIGINAL POST SCREENSHOTS/media covering the FULL original body. No rewritten/summary/interstitial/CTA body cards. UI-chrome crop only with body preserved. Privacy masking is user-directed. Missing real source assets = `ASSETS_PENDING`.
 
 ## Latest Discovery truth
-Latest useful Discovery at 2026-09-18 10:37 KST inspected **40+ raw leads** across Korean-community-first searches plus Reddit backup lanes and retained **15 new C1 candidates**. Restricted/community sources were used only through public/index/search-accessible pages; no login/anti-bot bypass or bulk crawl.
+Latest useful Discovery at 2026-09-18 10:37 KST inspected **40+ raw leads** and retained **15 new C1 candidates**. Top lanes: Blind `공직자윤리법 재산등록 대출???`, TheQoo `같은 대기업 다니고 돈 많아 믿었는데…동료 30명 속여 70억원 가로챈 40대女`, TheQoo `[네이트판] 취집한 친구 너무 얄밉네요...`, Reddit hidden ~$300k spouse debt, and Reddit $500 bridesmaid bracelet/cash-gift conflict. Restricted sources were not bulk crawled or bypassed.
 
-Top newly retained candidates:
-- Blind `공직자윤리법 재산등록 대출???` — spouse-hidden loan may surface through mandatory asset reporting; exact public URL, 220 views / 1 like / 14 comments observed.
-- TheQoo `같은 대기업 다니고 돈 많아 믿었는데…동료 30명 속여 70억원 가로챈 40대女` — coworker/investment fraud report, 22,704 views observed; defamation/legal framing review required.
-- TheQoo `[네이트판] 취집한 친구 너무 얄밉네요...` — marriage wealth-gap/bragging conflict, 61,875 views observed; repost provenance/rights review required.
-- Reddit `My [26F] husband [28M] hid debt from me for more than 3 years, and therapy isn’t helping. What next?` — nearly $300k hidden debt followed by another secret emergency loan.
-- Reddit `AITA best friend upset about wedding gift` — bridesmaids paid $500 each for a requested bracelet, then bride complained about missing cash gifts; +412 votes observed.
-- Lighter lane: TheQoo `아내 생일 준비를 제대로 못한 남편 (feat. 결혼 바이럴)` — surprise plan abandoned in favor of spouse-preferred quiet birthday; 13,867 views / 8 comments observed.
+## Existing real source package
+`data/source-packages/theqoo-3826792703/` contains eight real source-linked JPEGs in page order for `결혼 승낙 받자마자 탈모인거 밝힌 남편..`, 534,020 bytes total. OCR not run; privacy not auto-masked; rights clearance not claimed; publication false/04-only. Human full-body completeness approval is pending, so no final source-backed carousel is claimed.
 
-All 15 were stored one-candidate-per-Markdown under `data/candidates/` with actual observed metrics only. No grouped discovery JSON was created in `data/` root.
+## This implementation run
+Pulled current `main` into the executable Windows checkout and ran `npm run check`. It exposed a real regression: `test/card-story-model.test.mjs` still expected automatic PII masking even though the binding rule and runtime model now require user-directed privacy handling (`automaticMasking=false`, `automaticPiiMutation=false`, manual review required). Updated the regression assertions to match the binding rule without changing source screenshots or auto-masking anything. Commit `1a62842` was pushed to `main`.
 
-## Existing first real source asset acquisition
-Commit `01475a8` added `data/source-packages/theqoo-3826792703/` for TheQoo `결혼 승낙 받자마자 탈모인거 밝힌 남편..`: eight source-linked JPEGs in page order, 534,020 bytes total. OCR was not run, privacy was not auto-masked, rights clearance is not claimed, publication remains false/04-only. Human full-body completeness approval is still pending and no final 1080x1080 source-backed carousel has been produced.
+After the fix, `npm run check` completed successfully, including syntax/tests and an actual ffmpeg 1080x1920 H.264 render+ffprobe test. No Chrome user-facing E2E was run this implementation run, so none is claimed.
 
 ## Run truth
-Discovery this run: **raw 40+ / retained 15 C1**. Full-post screenshots captured this run: **0**. New source bytes captured this run: **0**. Real final source-backed carousel produced this run: **NO**. Existing source package remains 8 images / 534,020 bytes for one TheQoo image post. New candidates remain `A0_P0 / ASSETS_PENDING / publicationAllowed=false`.
-
-## Verification
-This run changed candidate Markdown/handoff only; no application/runtime path changed. `npm run check`, server smoke, OCR/moderation and browser E2E were not run and no success is claimed.
+Discovery this implementation run: **raw 0 / retained 0**; latest useful Discovery remains **40+ / 15 C1**. Full-post screenshots captured this run: **0**. New source bytes: **0**. Real final source-backed carousel produced this run: **NO**. Existing source package remains 8 images / 534,020 bytes. A1/P1 remains 0; `publicationAllowed=false` and only 04 may publish.
 
 ## Next
-1. Verify the existing eight-image TheQoo 3826792703 sequence for full-body completeness and build the first real cover + ordered source carousel.
-2. Attempt permitted source screenshot/media acquisition for the strongest new Korean C1 candidates, prioritizing the hidden-loan asset-reporting story and high-view TheQoo money/workplace candidates.
-3. Keep screenshot body exact and complete; do not convert summaries into body cards.
-4. Keep all new candidates A0/P0 until real source-backed user-facing assets and 04 publication evidence exist.
+1. Human-verify the eight-image TheQoo sequence for full-body completeness, then run it through strict 1080x1080 cover + ordered-source carousel production.
+2. Inspect that real carousel in Chrome; do not count the legacy black text-only Demo Showcase.
+3. Continue permitted full-post screenshot/media acquisition for strongest Korean C1 candidates.
+4. Keep all candidates A0/P0 until the corresponding real evidence gates are satisfied.
