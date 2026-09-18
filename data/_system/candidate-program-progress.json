@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "queue": "data/_system/candidate-program-queue.json",
+  "ordering": "filename-ascending",
+  "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
+  "lastCycleAt": "2026-09-19T03:00:00+09:00",
+  "processed": [
+    {
+      "candidateKey": "260916_2026회사별느낌",
+      "originalPath": "data/candidates/260916_C0_A0_P0_2026회사별느낌.md",
+      "currentPath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+      "originalRank": 1,
+      "result": "BLOCKED_NEXT_STAGE",
+      "completedStages": [
+        "provenance-verification"
+      ],
+      "nextStage": "source-asset-acquisition",
+      "blocker": "Blind exact public URL recovered, but project policy requires manual screenshot/source-asset acquisition; do not automate crawl, login, anti-bot, or access-control bypass.",
+      "unblockWhen": "A real user/manual source screenshot or permitted source asset is added and candidate asset state can advance.",
+      "publicationAllowed": false
+    }
+  ],
+  "completed": [],
+  "notes": "First sequential candidate was advanced from C0 to C1. No screenshot, OCR, moderation, rights clearance, A1, or P1 is claimed."
+}
