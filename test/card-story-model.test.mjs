@@ -52,7 +52,7 @@ const item = {
   assert.equal(storyboard.cards[0].type, "hook");
   assert.equal(storyboard.renderProfile, "reference-square");
   assert.equal(storyboard.assetPolicy.generatedImageFallback, false);
-  assert.equal(storyboard.cards[0].backgroundMode, "blurred-source-image");
+  assert.equal(storyboard.cards[0].backgroundMode, "source-image-no-blur");\n  assert.equal(storyboard.assetPolicy.coverBlur, false);
   assert.equal(storyboard.cards.filter((card) => card.type === "capture-image").length, 2);
   assert.equal(storyboard.cards.length, 3);
   assert.ok(JSON.stringify(storyboard).includes("someone@example.com"));
@@ -71,7 +71,7 @@ const item = {
 {
   const noAsset = model.buildStoryboard(item, {}, 0);
   assert.equal(model.validateStoryboard(noAsset).ok, false);
-  assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_cover_required"));
+  assert.ok(model.validateStoryboard(noAsset).issues.includes("cover_mode_invalid"));
   assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_slide_required"));
 }
 
