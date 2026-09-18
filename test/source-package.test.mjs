@@ -30,7 +30,7 @@ assert.equal(pkg.fullBodyCaptureStatus, 'complete');
 assert.equal(pkg.bodyAssetsAcquired, true);
 assert.equal(pkg.completeBodyEvidence, true);
 assert.equal(pkg.assetsPending, false);
-assert.equal(pkg.renderPlan[0].treatment, 'cover-image-plus-original-title');
+assert.equal(pkg.renderPlan[0].treatment, 'source-media-no-blur-plus-title');
 assert.equal(pkg.renderPlan[1].treatment, 'faithful-original-screenshot-contain');
 assert.equal(pkg.renderPlan[1].overlay, 'none');
 assert.equal('finalCta' in pkg, false);
@@ -50,6 +50,20 @@ assert.equal(partial.fullBodyCaptureStatus, 'pending');
 assert.equal(partial.assetsPending, true);
 assert.equal(partial.bodyAssetsAcquired, false);
 assert.equal(partial.completeBodyEvidence, false);
+const textOnly = api.build({
+  sourcePlatform: 'Blind',
+  sourceFormat: '글',
+  sourceUrl: 'https://example.com/text-post',
+  title: '글형 후보',
+  coverText: '짧은 표지 제목',
+  assets: [
+    { name: 'text-cover.png', mime: 'image/png', kind: 'cover', provenance: 'text-only cover; no generated imagery' },
+    { name: 'post.png', mime: 'image/png', kind: 'post' }
+  ]
+});
+assert.equal(textOnly.renderPlan[0].treatment, 'text-only-cover-no-generated-image');
+assert.equal(textOnly.renderPlan[0].overlay, 'cover-title');
+
 
 assert.throws(() => api.build({
   sourceUrl: 'https://example.com/incomplete',
