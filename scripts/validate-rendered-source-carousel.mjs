@@ -24,8 +24,15 @@ const rendered = files.map((file, index) => {
   if (bytes.length < 24 || bytes.toString('ascii',1,4) !== 'PNG') fail(`${file} is not PNG`);
   const width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
   if (width !== 1080 || height !== 1080) fail(`${file} must be 1080x1080, got ${width}x${height}`);
-  return {slideNumber:index+1,file,width,height,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),kind:plan.slides[index].kind};
+  const digest = crypto.createHash('sha256').update(bytes).digest('hex');
+  const planned = plan.slides[index];
+  if (!planned.sha256 || !/^[a-f0-9]{64}$/i.test(planned.sha256)) fail(`plan slide ${index + 1} is missing a valid sha256`);
+  if (digest !== planned.sha256.toLowerCase()) fail(`${file} bytes differ from planned source slide ${index + 1}`);
+  if (planned.bytes !== undefined && bytes.length !== planned.bytes) fail(`${file} byte count differs from plan`);
+  if (planned.width !== undefined && planned.width !== width) fail(`${file} width differs from plan`);
+  if (planned.height !== undefined && planned.height !== height) fail(`${file} height differs from plan`);
+  return {slideNumber:index+1,file,width,height,bytes:bytes.length,sha256:digest,kind:planned.kind,byteIdenticalToPlan:true};
 });
-const result = {type:'RENDERED_SOURCE_CAROUSEL_VALIDATION',sourceUrl:plan.sourceUrl,validated:true,publicationAllowed:false,publishOwner:'04_REVIEW_PUBLISH',slideCount:rendered.length,slides:rendered,claims:{ocr:false,automaticPrivacyMasking:false,rightsCleared:false,published:false},note:'Structural/render validation only. It does not prove rights, moderation, OCR, delivery, publication, or human visual approval.'};
+const result = {type:'RENDERED_SOURCE_CAROUSEL_VALIDATION',sourceUrl:plan.sourceUrl ?? null,validated:true,publicationAllowed:false,publishOwner:'04_REVIEW_PUBLISH',slideCount:rendered.length,slides:rendered,claims:{ocr:false,automaticPrivacyMasking:false,rightsCleared:false,published:false},fidelity:{allSlidesByteIdenticalToPlan:true},note:'Structural/render and byte-fidelity validation only. It proves assembled slide files match the planned cover/body PNG bytes; it does not prove full-post completeness, rights, moderation, OCR, delivery, publication, or human visual approval.'};
 const text = `${JSON.stringify(result,null,2)}\n`;
 if (outFile) fs.writeFileSync(outFile,text); else process.stdout.write(text);
