@@ -46,16 +46,17 @@ const item = {
   assert.equal(storyboard.width, 1080);
   assert.equal(storyboard.height, 1080);
   assert.equal(storyboard.schemaVersion, 3);
-  assert.equal(storyboard.privacy.textPiiMasked, true);
-  assert.equal(storyboard.privacy.imageMaskingRequired, true);
+  assert.equal(storyboard.privacy.automaticMasking, false);
+  assert.equal(storyboard.privacy.automaticPiiMutation, false);
+  assert.equal(storyboard.privacy.manualReviewRequired, true);
   assert.equal(storyboard.cards[0].type, "hook");
   assert.equal(storyboard.renderProfile, "reference-square");
   assert.equal(storyboard.assetPolicy.generatedImageFallback, false);
   assert.equal(storyboard.cards[0].backgroundMode, "blurred-source-image");
   assert.equal(storyboard.cards.filter((card) => card.type === "capture-image").length, 2);
   assert.equal(storyboard.cards.length, 3);
-  assert.ok(!JSON.stringify(storyboard).includes("someone@example.com"));
-  assert.ok(!JSON.stringify(storyboard).includes("010-9999-1111"));
+  assert.ok(JSON.stringify(storyboard).includes("someone@example.com"));
+  assert.ok(JSON.stringify(storyboard).includes("010-9999-1111"));
   assert.equal(storyboard.cards.at(-1).type, "capture-image");
   assert.equal(model.validateStoryboard(storyboard).ok, true);
 }
