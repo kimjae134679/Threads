@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T06:25:50+09:00",
+  "lastCycleAt": "2026-09-19T07:24:42+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -45,14 +45,27 @@
       "blocker": "Exact public Blind page/body is verified, but real screenshot/source assets and rights/privacy/defamation/human review are incomplete.",
       "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_41세비혼녀",
+      "originalPath": "data/candidates/260916_C0_A0_P0_41세비혼녀.md",
+      "currentPath": "data/candidates/260916_C0_A0_P0_41세비혼녀.md",
+      "result": "BLOCKED_NEXT_STAGE",
+      "completedStages": ["provenance-verification", "public-text-partial-read"],
+      "nextStage": "source-asset-acquisition",
+      "fullBodyRead": false,
+      "commentsRead": false,
+      "blocker": "Exact public Inven page is verified, but the substantive post is image-centric; real source images/assets and their contents remain unacquired/unread, and rights/privacy/defamation/human review is incomplete.",
+      "unblockWhen": "Permitted real source images/assets are available for inspection; no login, anti-bot, paywall, or access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
     "observedCandidateFileCount": 583,
     "storedQueueEntryCount": 583,
-    "status": "COUNT_MATCH_CONFIRMED; STATE_METADATA_STALE",
-    "note": "GitHub directory listing still contains 583 candidate files. Some historical filenames retain C0 even when file content/progress records verified C1; candidateKey remains the stable identity. Do not infer A1/P1 from filename/content mismatch."
+    "status": "COUNT_MATCH_CONFIRMED; DISCOVERY_ADDITIONS_EXIST_OUTSIDE_STORED_QUEUE",
+    "note": "Recursive main-tree inspection confirms the historical data/candidates queue remains 583 entries while fresh discovery has also added candidate files under 01_DISCOVERY/candidates. The requested queue source is data/candidates, so no cross-directory identity was fabricated. Some historical filename stage metadata remains stale; candidateKey is stable identity."
   },
-  "notes": "Third sequential candidate exact Blind provenance/body verified. No source screenshot/media acquisition, OCR, moderation, rights clearance, A1, or P1 claimed. TEMP lane added a synthetic browser conversion JSON roundtrip fixture test; execution in a real browser/runtime remains pending."
+  "notes": "Fourth sequential candidate exact Inven provenance verified. The substantive content appears image-centric, so image contents were not guessed and A0/P0 remain. TEMP synthetic browser conversion roundtrip was executed successfully in a compatible Node runtime using only synthetic fixture text; no third-party body was persisted and no publish action occurred."
 }
