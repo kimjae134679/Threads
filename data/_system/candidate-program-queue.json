@@ -1,13 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedFrom": "data/candidates",
   "generatedAtKst": "2026-09-19",
   "ordering": "filename-ascending",
-  "policy": "Every candidate file is queued. C0 must verify exact provenance before source acquisition; publication remains gated by 04_REVIEW_PUBLISH.",
+  "identity": "candidateKey is stable across C/A/P filename state changes",
+  "policy": "Refresh every cycle. Process the next candidateKey not completed or currently blocked. C0 verifies exact provenance first; C1 acquires source assets without access-control bypass. Only 04_REVIEW_PUBLISH may publish.",
   "counts": {
     "total": 583,
-    "c0": 77,
-    "c1": 506,
+    "c0": 76,
+    "c1": 507,
     "c2": 0,
     "a0": 583,
     "a1": 0,
@@ -17,16 +18,7 @@
   "items": [
     {
       "rank": 1,
-      "path": "data/candidates/260916_C0_A0_P0_2026회사별느낌.md",
-      "date": "260916",
-      "candidateStage": "C0",
-      "assetStage": "A0",
-      "publishStage": "P0",
-      "nextStage": "provenance-verification",
-      "slug": "2026회사별느낌"
-    },
-    {
-      "rank": 2,
+      "candidateKey": "260916_25살연애불가능할까",
       "path": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -36,7 +28,8 @@
       "slug": "25살연애불가능할까"
     },
     {
-      "rank": 3,
+      "rank": 2,
+      "candidateKey": "260916_27살여자오늘파혼",
       "path": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -46,7 +39,8 @@
       "slug": "27살여자오늘파혼"
     },
     {
-      "rank": 4,
+      "rank": 3,
+      "candidateKey": "260916_41세비혼녀",
       "path": "data/candidates/260916_C0_A0_P0_41세비혼녀.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -56,7 +50,8 @@
       "slug": "41세비혼녀"
     },
     {
-      "rank": 5,
+      "rank": 4,
+      "candidateKey": "260916_6만원도난오해",
       "path": "data/candidates/260916_C0_A0_P0_6만원도난오해.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -66,7 +61,8 @@
       "slug": "6만원도난오해"
     },
     {
-      "rank": 6,
+      "rank": 5,
+      "candidateKey": "260916_98년생여자생퇴사",
       "path": "data/candidates/260916_C0_A0_P0_98년생여자생퇴사.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -76,7 +72,8 @@
       "slug": "98년생여자생퇴사"
     },
     {
-      "rank": 7,
+      "rank": 6,
+      "candidateKey": "260916_개물림견주주장",
       "path": "data/candidates/260916_C0_A0_P0_개물림견주주장.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -86,7 +83,8 @@
       "slug": "개물림견주주장"
     },
     {
-      "rank": 8,
+      "rank": 7,
+      "candidateKey": "260916_결혼돈관리유형",
       "path": "data/candidates/260916_C0_A0_P0_결혼돈관리유형.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -96,7 +94,8 @@
       "slug": "결혼돈관리유형"
     },
     {
-      "rank": 9,
+      "rank": 8,
+      "candidateKey": "260916_결혼식5만원인간관계",
       "path": "data/candidates/260916_C0_A0_P0_결혼식5만원인간관계.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -106,7 +105,8 @@
       "slug": "결혼식5만원인간관계"
     },
     {
-      "rank": 10,
+      "rank": 9,
+      "candidateKey": "260916_결혼식축의금5만원논쟁",
       "path": "data/candidates/260916_C0_A0_P0_결혼식축의금5만원논쟁.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -116,7 +116,8 @@
       "slug": "결혼식축의금5만원논쟁"
     },
     {
-      "rank": 11,
+      "rank": 10,
+      "candidateKey": "260916_결혼잘사는부부특징",
       "path": "data/candidates/260916_C0_A0_P0_결혼잘사는부부특징.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -126,7 +127,8 @@
       "slug": "결혼잘사는부부특징"
     },
     {
-      "rank": 12,
+      "rank": 11,
+      "candidateKey": "260916_결혼전후",
       "path": "data/candidates/260916_C0_A0_P0_결혼전후.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -136,7 +138,8 @@
       "slug": "결혼전후"
     },
     {
-      "rank": 13,
+      "rank": 12,
+      "candidateKey": "260916_공무원면접정장입지마",
       "path": "data/candidates/260916_C0_A0_P0_공무원면접정장입지마.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -146,7 +149,8 @@
       "slug": "공무원면접정장입지마"
     },
     {
-      "rank": 14,
+      "rank": 13,
+      "candidateKey": "260916_국장에서존버하기7",
       "path": "data/candidates/260916_C0_A0_P0_국장에서존버하기7.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -156,7 +160,8 @@
       "slug": "국장에서존버하기7"
     },
     {
-      "rank": 15,
+      "rank": 14,
+      "candidateKey": "260916_권태기모든게싫음",
       "path": "data/candidates/260916_C0_A0_P0_권태기모든게싫음.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -166,7 +171,8 @@
       "slug": "권태기모든게싫음"
     },
     {
-      "rank": 16,
+      "rank": 15,
+      "candidateKey": "260916_남친이나남편이세차모임자주나가서걱정",
       "path": "data/candidates/260916_C0_A0_P0_남친이나남편이세차모임자주나가서걱정.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -176,7 +182,8 @@
       "slug": "남친이나남편이세차모임자주나가서걱정"
     },
     {
-      "rank": 17,
+      "rank": 16,
+      "candidateKey": "260916_남편생활습관다짜증",
       "path": "data/candidates/260916_C0_A0_P0_남편생활습관다짜증.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -186,7 +193,8 @@
       "slug": "남편생활습관다짜증"
     },
     {
-      "rank": 18,
+      "rank": 17,
+      "candidateKey": "260916_누나3명인남친결혼",
       "path": "data/candidates/260916_C0_A0_P0_누나3명인남친결혼.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -196,7 +204,8 @@
       "slug": "누나3명인남친결혼"
     },
     {
-      "rank": 19,
+      "rank": 18,
+      "candidateKey": "260916_당근쥐잡기5만원",
       "path": "data/candidates/260916_C0_A0_P0_당근쥐잡기5만원.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -206,7 +215,8 @@
       "slug": "당근쥐잡기5만원"
     },
     {
-      "rank": 20,
+      "rank": 19,
+      "candidateKey": "260916_마트에서누가사먹는거임",
       "path": "data/candidates/260916_C0_A0_P0_마트에서누가사먹는거임.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -216,7 +226,8 @@
       "slug": "마트에서누가사먹는거임"
     },
     {
-      "rank": 21,
+      "rank": 20,
+      "candidateKey": "260916_북미돈없어도관심갖는것",
       "path": "data/candidates/260916_C0_A0_P0_북미돈없어도관심갖는것.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -226,7 +237,8 @@
       "slug": "북미돈없어도관심갖는것"
     },
     {
-      "rank": 22,
+      "rank": 21,
+      "candidateKey": "260916_블라에서술먹기로해서",
       "path": "data/candidates/260916_C0_A0_P0_블라에서술먹기로해서.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -236,7 +248,8 @@
       "slug": "블라에서술먹기로해서"
     },
     {
-      "rank": 23,
+      "rank": 22,
+      "candidateKey": "260916_삼성월세부정수급자들",
       "path": "data/candidates/260916_C0_A0_P0_삼성월세부정수급자들.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -246,7 +259,8 @@
       "slug": "삼성월세부정수급자들"
     },
     {
-      "rank": 24,
+      "rank": 23,
+      "candidateKey": "260916_승진누락차장퇴사안해",
       "path": "data/candidates/260916_C0_A0_P0_승진누락차장퇴사안해.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -256,7 +270,8 @@
       "slug": "승진누락차장퇴사안해"
     },
     {
-      "rank": 25,
+      "rank": 24,
+      "candidateKey": "260916_실시간으로인생망하는중",
       "path": "data/candidates/260916_C0_A0_P0_실시간으로인생망하는중.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -266,7 +281,8 @@
       "slug": "실시간으로인생망하는중"
     },
     {
-      "rank": 26,
+      "rank": 25,
+      "candidateKey": "260916_아기성을채씨로고민중",
       "path": "data/candidates/260916_C0_A0_P0_아기성을채씨로고민중.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -276,7 +292,8 @@
       "slug": "아기성을채씨로고민중"
     },
     {
-      "rank": 27,
+      "rank": 26,
+      "candidateKey": "260916_아들여친엄마표정",
       "path": "data/candidates/260916_C0_A0_P0_아들여친엄마표정.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -286,7 +303,8 @@
       "slug": "아들여친엄마표정"
     },
     {
-      "rank": 28,
+      "rank": 27,
+      "candidateKey": "260916_알뜰폰이상한문자",
       "path": "data/candidates/260916_C0_A0_P0_알뜰폰이상한문자.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -296,7 +314,8 @@
       "slug": "알뜰폰이상한문자"
     },
     {
-      "rank": 29,
+      "rank": 28,
+      "candidateKey": "260916_애플폴더블완성도별로",
       "path": "data/candidates/260916_C0_A0_P0_애플폴더블완성도별로.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -306,7 +325,8 @@
       "slug": "애플폴더블완성도별로"
     },
     {
-      "rank": 30,
+      "rank": 29,
+      "candidateKey": "260916_얼마예요거지취급",
       "path": "data/candidates/260916_C0_A0_P0_얼마예요거지취급.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -316,7 +336,8 @@
       "slug": "얼마예요거지취급"
     },
     {
-      "rank": 31,
+      "rank": 30,
+      "candidateKey": "260916_여행유튜버현실",
       "path": "data/candidates/260916_C0_A0_P0_여행유튜버현실.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -326,7 +347,8 @@
       "slug": "여행유튜버현실"
     },
     {
-      "rank": 32,
+      "rank": 31,
+      "candidateKey": "260916_연돈카레제보디시인",
       "path": "data/candidates/260916_C0_A0_P0_연돈카레제보디시인.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -336,7 +358,8 @@
       "slug": "연돈카레제보디시인"
     },
     {
-      "rank": 33,
+      "rank": 32,
+      "candidateKey": "260916_연휴중간결혼싸움",
       "path": "data/candidates/260916_C0_A0_P0_연휴중간결혼싸움.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -346,7 +369,8 @@
       "slug": "연휴중간결혼싸움"
     },
     {
-      "rank": 34,
+      "rank": 33,
+      "candidateKey": "260916_와이프가싸준도시락",
       "path": "data/candidates/260916_C0_A0_P0_와이프가싸준도시락.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -356,7 +380,8 @@
       "slug": "와이프가싸준도시락"
     },
     {
-      "rank": 35,
+      "rank": 34,
+      "candidateKey": "260916_월급300명품시계",
       "path": "data/candidates/260916_C0_A0_P0_월급300명품시계.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -366,7 +391,8 @@
       "slug": "월급300명품시계"
     },
     {
-      "rank": 36,
+      "rank": 35,
+      "candidateKey": "260916_이게맞아맞벌이육아",
       "path": "data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -376,7 +402,8 @@
       "slug": "이게맞아맞벌이육아"
     },
     {
-      "rank": 37,
+      "rank": 36,
+      "candidateKey": "260916_이사가는아랫집",
       "path": "data/candidates/260916_C0_A0_P0_이사가는아랫집.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -386,7 +413,8 @@
       "slug": "이사가는아랫집"
     },
     {
-      "rank": 38,
+      "rank": 37,
+      "candidateKey": "260916_이시대4050특징",
       "path": "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -396,7 +424,8 @@
       "slug": "이시대4050특징"
     },
     {
-      "rank": 39,
+      "rank": 38,
+      "candidateKey": "260916_이혼가정예랑상견례두번",
       "path": "data/candidates/260916_C0_A0_P0_이혼가정예랑상견례두번.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -406,7 +435,8 @@
       "slug": "이혼가정예랑상견례두번"
     },
     {
-      "rank": 40,
+      "rank": 39,
+      "candidateKey": "260916_인생망한38살",
       "path": "data/candidates/260916_C0_A0_P0_인생망한38살.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -416,7 +446,8 @@
       "slug": "인생망한38살"
     },
     {
-      "rank": 41,
+      "rank": 40,
+      "candidateKey": "260916_입사직후퇴사vs스테이",
       "path": "data/candidates/260916_C0_A0_P0_입사직후퇴사vs스테이.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -426,7 +457,8 @@
       "slug": "입사직후퇴사vs스테이"
     },
     {
-      "rank": 42,
+      "rank": 41,
+      "candidateKey": "260916_입주청소부부",
       "path": "data/candidates/260916_C0_A0_P0_입주청소부부.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -436,7 +468,8 @@
       "slug": "입주청소부부"
     },
     {
-      "rank": 43,
+      "rank": 42,
+      "candidateKey": "260916_자취하지마세요",
       "path": "data/candidates/260916_C0_A0_P0_자취하지마세요.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -446,7 +479,8 @@
       "slug": "자취하지마세요"
     },
     {
-      "rank": 44,
+      "rank": 43,
+      "candidateKey": "260916_잘생남만나고싶다",
       "path": "data/candidates/260916_C0_A0_P0_잘생남만나고싶다.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -456,7 +490,8 @@
       "slug": "잘생남만나고싶다"
     },
     {
-      "rank": 45,
+      "rank": 44,
+      "candidateKey": "260916_재산세2천나왔네요",
       "path": "data/candidates/260916_C0_A0_P0_재산세2천나왔네요.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -466,7 +501,8 @@
       "slug": "재산세2천나왔네요"
     },
     {
-      "rank": 46,
+      "rank": 45,
+      "candidateKey": "260916_직장인현실명언",
       "path": "data/candidates/260916_C0_A0_P0_직장인현실명언.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -476,7 +512,8 @@
       "slug": "직장인현실명언"
     },
     {
-      "rank": 47,
+      "rank": 46,
+      "candidateKey": "260916_진짜집구하는거개토나온다",
       "path": "data/candidates/260916_C0_A0_P0_진짜집구하는거개토나온다.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -486,7 +523,8 @@
       "slug": "진짜집구하는거개토나온다"
     },
     {
-      "rank": 48,
+      "rank": 47,
+      "candidateKey": "260916_집구하는과정느낀점정리",
       "path": "data/candidates/260916_C0_A0_P0_집구하는과정느낀점정리.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -496,7 +534,8 @@
       "slug": "집구하는과정느낀점정리"
     },
     {
-      "rank": 49,
+      "rank": 48,
+      "candidateKey": "260916_집안일분담으로왜싸움",
       "path": "data/candidates/260916_C0_A0_P0_집안일분담으로왜싸움.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -506,7 +545,8 @@
       "slug": "집안일분담으로왜싸움"
     },
     {
-      "rank": 50,
+      "rank": 49,
+      "candidateKey": "260916_첫해외여행오사카정떨어짐",
       "path": "data/candidates/260916_C0_A0_P0_첫해외여행오사카정떨어짐.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -516,7 +556,8 @@
       "slug": "첫해외여행오사카정떨어짐"
     },
     {
-      "rank": 51,
+      "rank": 50,
+      "candidateKey": "260916_추석당근알바",
       "path": "data/candidates/260916_C0_A0_P0_추석당근알바.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -526,7 +567,8 @@
       "slug": "추석당근알바"
     },
     {
-      "rank": 52,
+      "rank": 51,
+      "candidateKey": "260916_축의금얼마나적당",
       "path": "data/candidates/260916_C0_A0_P0_축의금얼마나적당.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -536,7 +578,8 @@
       "slug": "축의금얼마나적당"
     },
     {
-      "rank": 53,
+      "rank": 52,
+      "candidateKey": "260916_출산전후바람많이펴",
       "path": "data/candidates/260916_C0_A0_P0_출산전후바람많이펴.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -546,7 +589,8 @@
       "slug": "출산전후바람많이펴"
     },
     {
-      "rank": 54,
+      "rank": 53,
+      "candidateKey": "260916_코인실수회고",
       "path": "data/candidates/260916_C0_A0_P0_코인실수회고.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -556,7 +600,8 @@
       "slug": "코인실수회고"
     },
     {
-      "rank": 55,
+      "rank": 54,
+      "candidateKey": "260916_콜센터진상손님직업",
       "path": "data/candidates/260916_C0_A0_P0_콜센터진상손님직업.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -566,7 +611,8 @@
       "slug": "콜센터진상손님직업"
     },
     {
-      "rank": 56,
+      "rank": 55,
+      "candidateKey": "260916_콜센터진상직업",
       "path": "data/candidates/260916_C0_A0_P0_콜센터진상직업.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -576,7 +622,8 @@
       "slug": "콜센터진상직업"
     },
     {
-      "rank": 57,
+      "rank": 56,
+      "candidateKey": "260916_탕수육딸기먼저먹을까봐",
       "path": "data/candidates/260916_C0_A0_P0_탕수육딸기먼저먹을까봐.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -586,7 +633,8 @@
       "slug": "탕수육딸기먼저먹을까봐"
     },
     {
-      "rank": 58,
+      "rank": 57,
+      "candidateKey": "260916_팀장이헤드셋벗김",
       "path": "data/candidates/260916_C0_A0_P0_팀장이헤드셋벗김.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -596,7 +644,8 @@
       "slug": "팀장이헤드셋벗김"
     },
     {
-      "rank": 59,
+      "rank": 58,
+      "candidateKey": "260916_팁거절종업원",
       "path": "data/candidates/260916_C0_A0_P0_팁거절종업원.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -606,7 +655,8 @@
       "slug": "팁거절종업원"
     },
     {
-      "rank": 60,
+      "rank": 59,
+      "candidateKey": "260916_폭우웅덩이샴푸병원",
       "path": "data/candidates/260916_C0_A0_P0_폭우웅덩이샴푸병원.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -616,7 +666,8 @@
       "slug": "폭우웅덩이샴푸병원"
     },
     {
-      "rank": 61,
+      "rank": 60,
+      "candidateKey": "260916_한국전철보고어리둥절한일본인",
       "path": "data/candidates/260916_C0_A0_P0_한국전철보고어리둥절한일본인.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -626,7 +677,8 @@
       "slug": "한국전철보고어리둥절한일본인"
     },
     {
-      "rank": 62,
+      "rank": 61,
+      "candidateKey": "260916_허경환후회",
       "path": "data/candidates/260916_C0_A0_P0_허경환후회.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -636,7 +688,8 @@
       "slug": "허경환후회"
     },
     {
-      "rank": 63,
+      "rank": 62,
+      "candidateKey": "260916_회사에서만난MZ직원썰",
       "path": "data/candidates/260916_C0_A0_P0_회사에서만난MZ직원썰.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -646,7 +699,8 @@
       "slug": "회사에서만난MZ직원썰"
     },
     {
-      "rank": 64,
+      "rank": 63,
+      "candidateKey": "260916_AI오타30번",
       "path": "data/candidates/260916_C0_A0_P0_AI오타30번.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -656,7 +710,8 @@
       "slug": "AI오타30번"
     },
     {
-      "rank": 65,
+      "rank": 64,
+      "candidateKey": "260916_GTA6가상외도",
       "path": "data/candidates/260916_C0_A0_P0_GTA6가상외도.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -666,7 +721,8 @@
       "slug": "GTA6가상외도"
     },
     {
-      "rank": 66,
+      "rank": 65,
+      "candidateKey": "260916_MZ신입9개월느낀점",
       "path": "data/candidates/260916_C0_A0_P0_MZ신입9개월느낀점.md",
       "date": "260916",
       "candidateStage": "C0",
@@ -676,7 +732,8 @@
       "slug": "MZ신입9개월느낀점"
     },
     {
-      "rank": 67,
+      "rank": 66,
+      "candidateKey": "260916_12년차차장넵쓰지마세요",
       "path": "data/candidates/260916_C1_A0_P0_12년차차장넵쓰지마세요.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -686,7 +743,8 @@
       "slug": "12년차차장넵쓰지마세요"
     },
     {
-      "rank": 68,
+      "rank": 67,
+      "candidateKey": "260916_165남친키때문에결혼반대",
       "path": "data/candidates/260916_C1_A0_P0_165남친키때문에결혼반대.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -696,7 +754,8 @@
       "slug": "165남친키때문에결혼반대"
     },
     {
-      "rank": 69,
+      "rank": 68,
+      "candidateKey": "260916_1조재산아빠50살연하재혼",
       "path": "data/candidates/260916_C1_A0_P0_1조재산아빠50살연하재혼.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -706,7 +765,19 @@
       "slug": "1조재산아빠50살연하재혼"
     },
     {
+      "rank": 69,
+      "candidateKey": "260916_2026회사별느낌",
+      "path": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+      "date": "260916",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "2026회사별느낌"
+    },
+    {
       "rank": 70,
+      "candidateKey": "260916_20년지기여사친결혼",
       "path": "data/candidates/260916_C1_A0_P0_20년지기여사친결혼.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -717,6 +788,7 @@
     },
     {
       "rank": 71,
+      "candidateKey": "260916_30대마지막연애가끝났다",
       "path": "data/candidates/260916_C1_A0_P0_30대마지막연애가끝났다.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -727,6 +799,7 @@
     },
     {
       "rank": 72,
+      "candidateKey": "260916_30초남자빚오픈",
       "path": "data/candidates/260916_C1_A0_P0_30초남자빚오픈.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -737,6 +810,7 @@
     },
     {
       "rank": 73,
+      "candidateKey": "260916_4050특징",
       "path": "data/candidates/260916_C1_A0_P0_4050특징.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -747,6 +821,7 @@
     },
     {
       "rank": 74,
+      "candidateKey": "260916_4만달러결혼선물거절",
       "path": "data/candidates/260916_C1_A0_P0_4만달러결혼선물거절.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -757,6 +832,7 @@
     },
     {
       "rank": 75,
+      "candidateKey": "260916_7000원돈까스세트",
       "path": "data/candidates/260916_C1_A0_P0_7000원돈까스세트.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -767,6 +843,7 @@
     },
     {
       "rank": 76,
+      "candidateKey": "260916_95년생75년생결혼",
       "path": "data/candidates/260916_C1_A0_P0_95년생75년생결혼.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -777,6 +854,7 @@
     },
     {
       "rank": 77,
+      "candidateKey": "260916_가족결혼식1만달러부담",
       "path": "data/candidates/260916_C1_A0_P0_가족결혼식1만달러부담.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -787,6 +865,7 @@
     },
     {
       "rank": 78,
+      "candidateKey": "260916_가족숫자로산복권당첨",
       "path": "data/candidates/260916_C1_A0_P0_가족숫자로산복권당첨.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -797,6 +876,7 @@
     },
     {
       "rank": 79,
+      "candidateKey": "260916_가족여행비대주는데초대제외",
       "path": "data/candidates/260916_C1_A0_P0_가족여행비대주는데초대제외.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -807,6 +887,7 @@
     },
     {
       "rank": 80,
+      "candidateKey": "260916_간호사의사기싸움",
       "path": "data/candidates/260916_C1_A0_P0_간호사의사기싸움.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -817,6 +898,7 @@
     },
     {
       "rank": 81,
+      "candidateKey": "260916_거절한유럽여행결혼선물",
       "path": "data/candidates/260916_C1_A0_P0_거절한유럽여행결혼선물.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -827,6 +909,7 @@
     },
     {
       "rank": 82,
+      "candidateKey": "260916_걸스나잇나빼고식중독",
       "path": "data/candidates/260916_C1_A0_P0_걸스나잇나빼고식중독.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -837,6 +920,7 @@
     },
     {
       "rank": 83,
+      "candidateKey": "260916_결혼기부선물갈등",
       "path": "data/candidates/260916_C1_A0_P0_결혼기부선물갈등.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -847,6 +931,7 @@
     },
     {
       "rank": 84,
+      "candidateKey": "260916_결혼노쇼청구서",
       "path": "data/candidates/260916_C1_A0_P0_결혼노쇼청구서.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -857,6 +942,7 @@
     },
     {
       "rank": 85,
+      "candidateKey": "260916_결혼돈관리유형",
       "path": "data/candidates/260916_C1_A0_P0_결혼돈관리유형.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -867,6 +953,7 @@
     },
     {
       "rank": 86,
+      "candidateKey": "260916_결혼돈문제",
       "path": "data/candidates/260916_C1_A0_P0_결혼돈문제.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -877,6 +964,7 @@
     },
     {
       "rank": 87,
+      "candidateKey": "260916_결혼비용지원금엄마계좌갈등",
       "path": "data/candidates/260916_C1_A0_P0_결혼비용지원금엄마계좌갈등.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -887,6 +975,7 @@
     },
     {
       "rank": 88,
+      "candidateKey": "260916_결혼선물로내목걸이요구",
       "path": "data/candidates/260916_C1_A0_P0_결혼선물로내목걸이요구.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -897,6 +986,7 @@
     },
     {
       "rank": 89,
+      "candidateKey": "260916_결혼식5만원축의금",
       "path": "data/candidates/260916_C1_A0_P0_결혼식5만원축의금.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -907,6 +997,7 @@
     },
     {
       "rank": 90,
+      "candidateKey": "260916_결혼식에_저축_대부분_쓸까",
       "path": "data/candidates/260916_C1_A0_P0_결혼식에_저축_대부분_쓸까.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -917,6 +1008,7 @@
     },
     {
       "rank": 91,
+      "candidateKey": "260916_결혼식이탈리아3만파운드",
       "path": "data/candidates/260916_C1_A0_P0_결혼식이탈리아3만파운드.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -927,6 +1019,7 @@
     },
     {
       "rank": 92,
+      "candidateKey": "260916_결혼앞둔남친주식빚",
       "path": "data/candidates/260916_C1_A0_P0_결혼앞둔남친주식빚.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -937,6 +1030,7 @@
     },
     {
       "rank": 93,
+      "candidateKey": "260916_결혼앨범마다다른여친",
       "path": "data/candidates/260916_C1_A0_P0_결혼앨범마다다른여친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -947,6 +1041,7 @@
     },
     {
       "rank": 94,
+      "candidateKey": "260916_결혼자금5500만원주식손실",
       "path": "data/candidates/260916_C1_A0_P0_결혼자금5500만원주식손실.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -957,6 +1052,7 @@
     },
     {
       "rank": 95,
+      "candidateKey": "260916_결혼자금받고집산딸",
       "path": "data/candidates/260916_C1_A0_P0_결혼자금받고집산딸.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -967,6 +1063,7 @@
     },
     {
       "rank": 96,
+      "candidateKey": "260916_결혼전경제권요구",
       "path": "data/candidates/260916_C1_A0_P0_결혼전경제권요구.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -977,6 +1074,7 @@
     },
     {
       "rank": 97,
+      "candidateKey": "260916_결혼전재산속인남친",
       "path": "data/candidates/260916_C1_A0_P0_결혼전재산속인남친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -987,6 +1085,7 @@
     },
     {
       "rank": 98,
+      "candidateKey": "260916_결혼전청약집빚",
       "path": "data/candidates/260916_C1_A0_P0_결혼전청약집빚.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -997,6 +1096,7 @@
     },
     {
       "rank": 99,
+      "candidateKey": "260916_결혼전후",
       "path": "data/candidates/260916_C1_A0_P0_결혼전후.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1007,6 +1107,7 @@
     },
     {
       "rank": 100,
+      "candidateKey": "260916_결혼준비중신뢰무너짐",
       "path": "data/candidates/260916_C1_A0_P0_결혼준비중신뢰무너짐.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1017,6 +1118,7 @@
     },
     {
       "rank": 101,
+      "candidateKey": "260916_결혼축의금엄마가사용",
       "path": "data/candidates/260916_C1_A0_P0_결혼축의금엄마가사용.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1027,6 +1129,7 @@
     },
     {
       "rank": 102,
+      "candidateKey": "260916_결혼축의금절반시댁요구",
       "path": "data/candidates/260916_C1_A0_P0_결혼축의금절반시댁요구.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1037,6 +1140,7 @@
     },
     {
       "rank": 103,
+      "candidateKey": "260916_결혼한달남았는데파혼",
       "path": "data/candidates/260916_C1_A0_P0_결혼한달남았는데파혼.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1047,6 +1151,7 @@
     },
     {
       "rank": 104,
+      "candidateKey": "260916_고출력자동차처음타면",
       "path": "data/candidates/260916_C1_A0_P0_고출력자동차처음타면.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1057,6 +1162,7 @@
     },
     {
       "rank": 105,
+      "candidateKey": "260916_곤충친구가생긴식물갤러",
       "path": "data/candidates/260916_C1_A0_P0_곤충친구가생긴식물갤러.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1067,6 +1173,7 @@
     },
     {
       "rank": 106,
+      "candidateKey": "260916_교토아라시야마역근황",
       "path": "data/candidates/260916_C1_A0_P0_교토아라시야마역근황.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1077,6 +1184,7 @@
     },
     {
       "rank": 107,
+      "candidateKey": "260916_군대리아최신근황",
       "path": "data/candidates/260916_C1_A0_P0_군대리아최신근황.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1087,6 +1195,7 @@
     },
     {
       "rank": 108,
+      "candidateKey": "260916_그거너야바부가나디야",
       "path": "data/candidates/260916_C1_A0_P0_그거너야바부가나디야.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1097,6 +1206,7 @@
     },
     {
       "rank": 109,
+      "candidateKey": "260916_그린랜턴실사판",
       "path": "data/candidates/260916_C1_A0_P0_그린랜턴실사판.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1107,6 +1217,7 @@
     },
     {
       "rank": 110,
+      "candidateKey": "260916_극호반응결혼답례품",
       "path": "data/candidates/260916_C1_A0_P0_극호반응결혼답례품.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1117,6 +1228,7 @@
     },
     {
       "rank": 111,
+      "candidateKey": "260916_급여처리가이상한회사",
       "path": "data/candidates/260916_C1_A0_P0_급여처리가이상한회사.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1127,6 +1239,7 @@
     },
     {
       "rank": 112,
+      "candidateKey": "260916_길에서폰빌려줬더니카톡",
       "path": "data/candidates/260916_C1_A0_P0_길에서폰빌려줬더니카톡.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1137,6 +1250,7 @@
     },
     {
       "rank": 113,
+      "candidateKey": "260916_낙수효과실천한사장님",
       "path": "data/candidates/260916_C1_A0_P0_낙수효과실천한사장님.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1147,6 +1261,7 @@
     },
     {
       "rank": 114,
+      "candidateKey": "260916_난아직도내결혼식을뛰어넘는사진을본적이없어",
       "path": "data/candidates/260916_C1_A0_P0_난아직도내결혼식을뛰어넘는사진을본적이없어.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1157,6 +1272,7 @@
     },
     {
       "rank": 115,
+      "candidateKey": "260916_남자들은모였을때얌전히",
       "path": "data/candidates/260916_C1_A0_P0_남자들은모였을때얌전히.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1167,6 +1283,7 @@
     },
     {
       "rank": 116,
+      "candidateKey": "260916_남자친구에게선물주는일본인여친",
       "path": "data/candidates/260916_C1_A0_P0_남자친구에게선물주는일본인여친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1177,6 +1294,7 @@
     },
     {
       "rank": 117,
+      "candidateKey": "260916_남자친구의여자동기들",
       "path": "data/candidates/260916_C1_A0_P0_남자친구의여자동기들.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1187,6 +1305,7 @@
     },
     {
       "rank": 118,
+      "candidateKey": "260916_남친선물일본인여친",
       "path": "data/candidates/260916_C1_A0_P0_남친선물일본인여친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1197,6 +1316,7 @@
     },
     {
       "rank": 119,
+      "candidateKey": "260916_남친이헤어지자고하자울어버리는여친",
       "path": "data/candidates/260916_C1_A0_P0_남친이헤어지자고하자울어버리는여친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1207,6 +1327,7 @@
     },
     {
       "rank": 120,
+      "candidateKey": "260916_남편도시락저녁밥수준",
       "path": "data/candidates/260916_C1_A0_P0_남편도시락저녁밥수준.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1217,6 +1338,7 @@
     },
     {
       "rank": 121,
+      "candidateKey": "260916_남편비상금발견",
       "path": "data/candidates/260916_C1_A0_P0_남편비상금발견.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1227,6 +1349,7 @@
     },
     {
       "rank": 122,
+      "candidateKey": "260916_남편아이없이친구들과핵노잼여행",
       "path": "data/candidates/260916_C1_A0_P0_남편아이없이친구들과핵노잼여행.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1237,6 +1360,7 @@
     },
     {
       "rank": 123,
+      "candidateKey": "260916_남편아이없이핵노잼여행",
       "path": "data/candidates/260916_C1_A0_P0_남편아이없이핵노잼여행.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1247,6 +1371,7 @@
     },
     {
       "rank": 124,
+      "candidateKey": "260916_내가홍콩보내줄게",
       "path": "data/candidates/260916_C1_A0_P0_내가홍콩보내줄게.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1257,6 +1382,7 @@
     },
     {
       "rank": 125,
+      "candidateKey": "260916_내방달라는딸대처법",
       "path": "data/candidates/260916_C1_A0_P0_내방달라는딸대처법.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1267,6 +1393,7 @@
     },
     {
       "rank": 126,
+      "candidateKey": "260916_내신고로팀장이짤릴거같아",
       "path": "data/candidates/260916_C1_A0_P0_내신고로팀장이짤릴거같아.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1277,6 +1404,7 @@
     },
     {
       "rank": 127,
+      "candidateKey": "260916_노력한흙수저인생",
       "path": "data/candidates/260916_C1_A0_P0_노력한흙수저인생.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1287,6 +1415,7 @@
     },
     {
       "rank": 128,
+      "candidateKey": "260916_누나가남친옥바라지중이라답답하다",
       "path": "data/candidates/260916_C1_A0_P0_누나가남친옥바라지중이라답답하다.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1297,6 +1426,7 @@
     },
     {
       "rank": 129,
+      "candidateKey": "260916_당근꿀알바",
       "path": "data/candidates/260916_C1_A0_P0_당근꿀알바.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1307,6 +1437,7 @@
     },
     {
       "rank": 130,
+      "candidateKey": "260916_당근꿀알바하실분구해용",
       "path": "data/candidates/260916_C1_A0_P0_당근꿀알바하실분구해용.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1317,6 +1448,7 @@
     },
     {
       "rank": 131,
+      "candidateKey": "260916_대기업남편이고졸",
       "path": "data/candidates/260916_C1_A0_P0_대기업남편이고졸.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1327,6 +1459,7 @@
     },
     {
       "rank": 132,
+      "candidateKey": "260916_더본카레당류논란",
       "path": "data/candidates/260916_C1_A0_P0_더본카레당류논란.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1337,6 +1470,7 @@
     },
     {
       "rank": 133,
+      "candidateKey": "260916_도와준언니결혼식불참",
       "path": "data/candidates/260916_C1_A0_P0_도와준언니결혼식불참.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1347,6 +1481,7 @@
     },
     {
       "rank": 134,
+      "candidateKey": "260916_돈때문에결혼접을까",
       "path": "data/candidates/260916_C1_A0_P0_돈때문에결혼접을까.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1357,6 +1492,7 @@
     },
     {
       "rank": 135,
+      "candidateKey": "260916_돈안내는여친",
       "path": "data/candidates/260916_C1_A0_P0_돈안내는여친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1367,6 +1503,7 @@
     },
     {
       "rank": 136,
+      "candidateKey": "260916_돌고래유괴단계약위험",
       "path": "data/candidates/260916_C1_A0_P0_돌고래유괴단계약위험.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1377,6 +1514,7 @@
     },
     {
       "rank": 137,
+      "candidateKey": "260916_동생결혼식22000파운드요구",
       "path": "data/candidates/260916_C1_A0_P0_동생결혼식22000파운드요구.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1387,6 +1525,7 @@
     },
     {
       "rank": 138,
+      "candidateKey": "260916_딸결혼식35000달러지원",
       "path": "data/candidates/260916_C1_A0_P0_딸결혼식35000달러지원.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1397,6 +1536,7 @@
     },
     {
       "rank": 139,
+      "candidateKey": "260916_마약사범에게뇌물받은경찰반전",
       "path": "data/candidates/260916_C1_A0_P0_마약사범에게뇌물받은경찰반전.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1407,6 +1547,7 @@
     },
     {
       "rank": 140,
+      "candidateKey": "260916_미국고딩한국지하철",
       "path": "data/candidates/260916_C1_A0_P0_미국고딩한국지하철.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1417,6 +1558,7 @@
     },
     {
       "rank": 141,
+      "candidateKey": "260916_민원인이400만원빌려달래",
       "path": "data/candidates/260916_C1_A0_P0_민원인이400만원빌려달래.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1427,6 +1569,7 @@
     },
     {
       "rank": 142,
+      "candidateKey": "260916_반려동물사료이유",
       "path": "data/candidates/260916_C1_A0_P0_반려동물사료이유.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1437,6 +1580,7 @@
     },
     {
       "rank": 143,
+      "candidateKey": "260916_배우신현준페루아이돌",
       "path": "data/candidates/260916_C1_A0_P0_배우신현준페루아이돌.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1447,6 +1591,7 @@
     },
     {
       "rank": 144,
+      "candidateKey": "260916_배우자의빚",
       "path": "data/candidates/260916_C1_A0_P0_배우자의빚.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1457,6 +1602,7 @@
     },
     {
       "rank": 145,
+      "candidateKey": "260916_베트남여자랑결혼한다는사촌동생",
       "path": "data/candidates/260916_C1_A0_P0_베트남여자랑결혼한다는사촌동생.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1467,6 +1613,7 @@
     },
     {
       "rank": 146,
+      "candidateKey": "260916_부모가원한결혼식비용",
       "path": "data/candidates/260916_C1_A0_P0_부모가원한결혼식비용.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1477,6 +1624,7 @@
     },
     {
       "rank": 147,
+      "candidateKey": "260916_북한에서아이스크림부르는말",
       "path": "data/candidates/260916_C1_A0_P0_북한에서아이스크림부르는말.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1487,6 +1635,7 @@
     },
     {
       "rank": 148,
+      "candidateKey": "260916_분당헬스장의문의남성",
       "path": "data/candidates/260916_C1_A0_P0_분당헬스장의문의남성.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1497,6 +1646,7 @@
     },
     {
       "rank": 149,
+      "candidateKey": "260916_불륜장소와2만달러계약금",
       "path": "data/candidates/260916_C1_A0_P0_불륜장소와2만달러계약금.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1507,6 +1657,7 @@
     },
     {
       "rank": 150,
+      "candidateKey": "260916_블라인드결혼후퇴사고민",
       "path": "data/candidates/260916_C1_A0_P0_블라인드결혼후퇴사고민.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1517,6 +1668,7 @@
     },
     {
       "rank": 151,
+      "candidateKey": "260916_비밀번호충고무시한남자",
       "path": "data/candidates/260916_C1_A0_P0_비밀번호충고무시한남자.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1527,6 +1679,7 @@
     },
     {
       "rank": 152,
+      "candidateKey": "260916_빚그리고결혼어떻게해야할까",
       "path": "data/candidates/260916_C1_A0_P0_빚그리고결혼어떻게해야할까.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1537,6 +1690,7 @@
     },
     {
       "rank": 153,
+      "candidateKey": "260916_빚있는데결혼준비",
       "path": "data/candidates/260916_C1_A0_P0_빚있는데결혼준비.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1547,6 +1701,7 @@
     },
     {
       "rank": 154,
+      "candidateKey": "260916_삐에로여친삐앙세여시글",
       "path": "data/candidates/260916_C1_A0_P0_삐에로여친삐앙세여시글.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1557,6 +1712,7 @@
     },
     {
       "rank": 155,
+      "candidateKey": "260916_사촌결혼식500달러모금",
       "path": "data/candidates/260916_C1_A0_P0_사촌결혼식500달러모금.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1567,6 +1723,7 @@
     },
     {
       "rank": 156,
+      "candidateKey": "260916_산길러닝족등산객",
       "path": "data/candidates/260916_C1_A0_P0_산길러닝족등산객.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1577,6 +1734,7 @@
     },
     {
       "rank": 157,
+      "candidateKey": "260916_산에서뛰는러닝족",
       "path": "data/candidates/260916_C1_A0_P0_산에서뛰는러닝족.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1587,6 +1745,7 @@
     },
     {
       "rank": 158,
+      "candidateKey": "260916_삼국지최애",
       "path": "data/candidates/260916_C1_A0_P0_삼국지최애.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1597,6 +1756,7 @@
     },
     {
       "rank": 159,
+      "candidateKey": "260916_상대방부모님빚결혼",
       "path": "data/candidates/260916_C1_A0_P0_상대방부모님빚결혼.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1607,6 +1767,7 @@
     },
     {
       "rank": 160,
+      "candidateKey": "260916_소개팅주선결혼초콜렛선물",
       "path": "data/candidates/260916_C1_A0_P0_소개팅주선결혼초콜렛선물.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1617,6 +1778,7 @@
     },
     {
       "rank": 161,
+      "candidateKey": "260916_시누이_때문에_결혼연도_변경",
       "path": "data/candidates/260916_C1_A0_P0_시누이_때문에_결혼연도_변경.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1627,6 +1789,7 @@
     },
     {
       "rank": 162,
+      "candidateKey": "260916_시댁에_결혼사진_안줌",
       "path": "data/candidates/260916_C1_A0_P0_시댁에_결혼사진_안줌.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1637,6 +1800,7 @@
     },
     {
       "rank": 163,
+      "candidateKey": "260916_시카고캐스팅",
       "path": "data/candidates/260916_C1_A0_P0_시카고캐스팅.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1647,6 +1811,7 @@
     },
     {
       "rank": 164,
+      "candidateKey": "260916_신생아집에오면",
       "path": "data/candidates/260916_C1_A0_P0_신생아집에오면.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1657,6 +1822,7 @@
     },
     {
       "rank": 165,
+      "candidateKey": "260916_싼결혼식비웃던동생",
       "path": "data/candidates/260916_C1_A0_P0_싼결혼식비웃던동생.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1667,6 +1833,7 @@
     },
     {
       "rank": 166,
+      "candidateKey": "260916_아이스크림에불닭소스",
       "path": "data/candidates/260916_C1_A0_P0_아이스크림에불닭소스.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1677,6 +1844,7 @@
     },
     {
       "rank": 167,
+      "candidateKey": "260916_암표수십억원30대",
       "path": "data/candidates/260916_C1_A0_P0_암표수십억원30대.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1687,6 +1855,7 @@
     },
     {
       "rank": 168,
+      "candidateKey": "260916_언니가말하는한남특징",
       "path": "data/candidates/260916_C1_A0_P0_언니가말하는한남특징.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1697,6 +1866,7 @@
     },
     {
       "rank": 169,
+      "candidateKey": "260916_에버레스트입산비용",
       "path": "data/candidates/260916_C1_A0_P0_에버레스트입산비용.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1707,6 +1877,7 @@
     },
     {
       "rank": 170,
+      "candidateKey": "260916_여자친구생일선물안주는",
       "path": "data/candidates/260916_C1_A0_P0_여자친구생일선물안주는.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1717,6 +1888,7 @@
     },
     {
       "rank": 171,
+      "candidateKey": "260916_여자친구직장간섭",
       "path": "data/candidates/260916_C1_A0_P0_여자친구직장간섭.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1727,6 +1899,7 @@
     },
     {
       "rank": 172,
+      "candidateKey": "260916_여직원원룸방내어줌",
       "path": "data/candidates/260916_C1_A0_P0_여직원원룸방내어줌.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1737,6 +1910,7 @@
     },
     {
       "rank": 173,
+      "candidateKey": "260916_여친때문에롤토체스승급전",
       "path": "data/candidates/260916_C1_A0_P0_여친때문에롤토체스승급전.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1747,6 +1921,7 @@
     },
     {
       "rank": 174,
+      "candidateKey": "260916_여친삐졌을때하지말아야할행동",
       "path": "data/candidates/260916_C1_A0_P0_여친삐졌을때하지말아야할행동.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1757,6 +1932,7 @@
     },
     {
       "rank": 175,
+      "candidateKey": "260916_여친아파서지각한다는신입",
       "path": "data/candidates/260916_C1_A0_P0_여친아파서지각한다는신입.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1767,6 +1943,7 @@
     },
     {
       "rank": 176,
+      "candidateKey": "260916_여친약속자꾸늦는이유",
       "path": "data/candidates/260916_C1_A0_P0_여친약속자꾸늦는이유.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1777,6 +1954,7 @@
     },
     {
       "rank": 177,
+      "candidateKey": "260916_여친이약속에자꾸늦는이유",
       "path": "data/candidates/260916_C1_A0_P0_여친이약속에자꾸늦는이유.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1787,6 +1965,7 @@
     },
     {
       "rank": 178,
+      "candidateKey": "260916_영화선구안배우",
       "path": "data/candidates/260916_C1_A0_P0_영화선구안배우.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1797,6 +1976,7 @@
     },
     {
       "rank": 179,
+      "candidateKey": "260916_예단은어느정도해야해",
       "path": "data/candidates/260916_C1_A0_P0_예단은어느정도해야해.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1807,6 +1987,7 @@
     },
     {
       "rank": 180,
+      "candidateKey": "260916_오늘이혼도장찍었다",
       "path": "data/candidates/260916_C1_A0_P0_오늘이혼도장찍었다.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1817,6 +1998,7 @@
     },
     {
       "rank": 181,
+      "candidateKey": "260916_웨딩베뉴불륜프러포즈",
       "path": "data/candidates/260916_C1_A0_P0_웨딩베뉴불륜프러포즈.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1827,6 +2009,7 @@
     },
     {
       "rank": 182,
+      "candidateKey": "260916_웨딩프로그램QR광고",
       "path": "data/candidates/260916_C1_A0_P0_웨딩프로그램QR광고.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1837,6 +2020,7 @@
     },
     {
       "rank": 183,
+      "candidateKey": "260916_임대아파트사는여친과결혼문제",
       "path": "data/candidates/260916_C1_A0_P0_임대아파트사는여친과결혼문제.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1847,6 +2031,7 @@
     },
     {
       "rank": 184,
+      "candidateKey": "260916_임신으로_결혼미루니_시동생반발",
       "path": "data/candidates/260916_C1_A0_P0_임신으로_결혼미루니_시동생반발.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1857,6 +2042,7 @@
     },
     {
       "rank": 185,
+      "candidateKey": "260916_임신후잠적한남친",
       "path": "data/candidates/260916_C1_A0_P0_임신후잠적한남친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1867,6 +2053,7 @@
     },
     {
       "rank": 186,
+      "candidateKey": "260916_입주청소하러갔다가",
       "path": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1877,6 +2064,7 @@
     },
     {
       "rank": 187,
+      "candidateKey": "260916_절대놓치면안되는남자",
       "path": "data/candidates/260916_C1_A0_P0_절대놓치면안되는남자.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1887,6 +2075,7 @@
     },
     {
       "rank": 188,
+      "candidateKey": "260916_조선시대현피",
       "path": "data/candidates/260916_C1_A0_P0_조선시대현피.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1897,6 +2086,7 @@
     },
     {
       "rank": 189,
+      "candidateKey": "260916_중소기업리뷰이벤트근황",
       "path": "data/candidates/260916_C1_A0_P0_중소기업리뷰이벤트근황.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1907,6 +2097,7 @@
     },
     {
       "rank": 190,
+      "candidateKey": "260916_직장인지각공감",
       "path": "data/candidates/260916_C1_A0_P0_직장인지각공감.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1917,6 +2108,7 @@
     },
     {
       "rank": 191,
+      "candidateKey": "260916_쪼개진나무복원방법",
       "path": "data/candidates/260916_C1_A0_P0_쪼개진나무복원방법.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1927,6 +2119,7 @@
     },
     {
       "rank": 192,
+      "candidateKey": "260916_찐케이팝노래",
       "path": "data/candidates/260916_C1_A0_P0_찐케이팝노래.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1937,6 +2130,7 @@
     },
     {
       "rank": 193,
+      "candidateKey": "260916_차문열어주는일본인여친",
       "path": "data/candidates/260916_C1_A0_P0_차문열어주는일본인여친.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1947,6 +2141,7 @@
     },
     {
       "rank": 194,
+      "candidateKey": "260916_첫날짤릴뻔안마직원",
       "path": "data/candidates/260916_C1_A0_P0_첫날짤릴뻔안마직원.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1957,6 +2152,7 @@
     },
     {
       "rank": 195,
+      "candidateKey": "260916_첫휴대폰은몇번",
       "path": "data/candidates/260916_C1_A0_P0_첫휴대폰은몇번.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1967,6 +2163,7 @@
     },
     {
       "rank": 196,
+      "candidateKey": "260916_초봉4700선박승무원",
       "path": "data/candidates/260916_C1_A0_P0_초봉4700선박승무원.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1977,6 +2174,7 @@
     },
     {
       "rank": 197,
+      "candidateKey": "260916_추석승차권결제",
       "path": "data/candidates/260916_C1_A0_P0_추석승차권결제.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1987,6 +2185,7 @@
     },
     {
       "rank": 198,
+      "candidateKey": "260916_친구랑낡은집",
       "path": "data/candidates/260916_C1_A0_P0_친구랑낡은집.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -1997,6 +2196,7 @@
     },
     {
       "rank": 199,
+      "candidateKey": "260916_카프카직장에서귀여움",
       "path": "data/candidates/260916_C1_A0_P0_카프카직장에서귀여움.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2007,6 +2207,7 @@
     },
     {
       "rank": 200,
+      "candidateKey": "260916_티파니목걸이결혼선물",
       "path": "data/candidates/260916_C1_A0_P0_티파니목걸이결혼선물.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2017,6 +2218,7 @@
     },
     {
       "rank": 201,
+      "candidateKey": "260916_파혼1500만원명품백",
       "path": "data/candidates/260916_C1_A0_P0_파혼1500만원명품백.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2027,6 +2229,7 @@
     },
     {
       "rank": 202,
+      "candidateKey": "260916_파혼해야할까요",
       "path": "data/candidates/260916_C1_A0_P0_파혼해야할까요.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2037,6 +2240,7 @@
     },
     {
       "rank": 203,
+      "candidateKey": "260916_파혼후_결혼비용_상환갈등",
       "path": "data/candidates/260916_C1_A0_P0_파혼후_결혼비용_상환갈등.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2047,6 +2251,7 @@
     },
     {
       "rank": 204,
+      "candidateKey": "260916_파혼후결혼식장비용",
       "path": "data/candidates/260916_C1_A0_P0_파혼후결혼식장비용.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2057,6 +2262,7 @@
     },
     {
       "rank": 205,
+      "candidateKey": "260916_하객에게1만달러결혼식",
       "path": "data/candidates/260916_C1_A0_P0_하객에게1만달러결혼식.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2067,6 +2273,7 @@
     },
     {
       "rank": 206,
+      "candidateKey": "260916_한국연애연락빈도",
       "path": "data/candidates/260916_C1_A0_P0_한국연애연락빈도.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2077,6 +2284,7 @@
     },
     {
       "rank": 207,
+      "candidateKey": "260916_한전사유지송전탑",
       "path": "data/candidates/260916_C1_A0_P0_한전사유지송전탑.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2087,6 +2295,7 @@
     },
     {
       "rank": 208,
+      "candidateKey": "260916_호텔케이크남직원댓글일화",
       "path": "data/candidates/260916_C1_A0_P0_호텔케이크남직원댓글일화.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2097,6 +2306,7 @@
     },
     {
       "rank": 209,
+      "candidateKey": "260916_혼전임신남친빚5억코인중독",
       "path": "data/candidates/260916_C1_A0_P0_혼전임신남친빚5억코인중독.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2107,6 +2317,7 @@
     },
     {
       "rank": 210,
+      "candidateKey": "260916_회사뒷담화끊은계기",
       "path": "data/candidates/260916_C1_A0_P0_회사뒷담화끊은계기.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2117,6 +2328,7 @@
     },
     {
       "rank": 211,
+      "candidateKey": "260916_회사언니가남친과헤어진이유",
       "path": "data/candidates/260916_C1_A0_P0_회사언니가남친과헤어진이유.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2127,6 +2339,7 @@
     },
     {
       "rank": 212,
+      "candidateKey": "260916_회사언니남친헤어진이유",
       "path": "data/candidates/260916_C1_A0_P0_회사언니남친헤어진이유.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2137,6 +2350,7 @@
     },
     {
       "rank": 213,
+      "candidateKey": "260916_AI급가속발전",
       "path": "data/candidates/260916_C1_A0_P0_AI급가속발전.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2147,6 +2361,7 @@
     },
     {
       "rank": 214,
+      "candidateKey": "260916_AI남친AI여친욕반응",
       "path": "data/candidates/260916_C1_A0_P0_AI남친AI여친욕반응.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2157,6 +2372,7 @@
     },
     {
       "rank": 215,
+      "candidateKey": "260916_KTX혼자두자리예매",
       "path": "data/candidates/260916_C1_A0_P0_KTX혼자두자리예매.md",
       "date": "260916",
       "candidateStage": "C1",
@@ -2167,6 +2383,7 @@
     },
     {
       "rank": 216,
+      "candidateKey": "260917_똥차타고소개팅",
       "path": "data/candidates/260917_C0_A0_P0_똥차타고소개팅.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2177,6 +2394,7 @@
     },
     {
       "rank": 217,
+      "candidateKey": "260917_소개팅35녀33남자산차이",
       "path": "data/candidates/260917_C0_A0_P0_소개팅35녀33남자산차이.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2187,6 +2405,7 @@
     },
     {
       "rank": 218,
+      "candidateKey": "260917_소개팅무한시스템없냐",
       "path": "data/candidates/260917_C0_A0_P0_소개팅무한시스템없냐.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2197,6 +2416,7 @@
     },
     {
       "rank": 219,
+      "candidateKey": "260917_아이못낳겠다는데계속낳자는남편",
       "path": "data/candidates/260917_C0_A0_P0_아이못낳겠다는데계속낳자는남편.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2207,6 +2427,7 @@
     },
     {
       "rank": 220,
+      "candidateKey": "260917_양가어른용돈문제",
       "path": "data/candidates/260917_C0_A0_P0_양가어른용돈문제.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2217,6 +2438,7 @@
     },
     {
       "rank": 221,
+      "candidateKey": "260917_연애경험없는데무례했나",
       "path": "data/candidates/260917_C0_A0_P0_연애경험없는데무례했나.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2227,6 +2449,7 @@
     },
     {
       "rank": 222,
+      "candidateKey": "260917_하이닉스70억손실",
       "path": "data/candidates/260917_C0_A0_P0_하이닉스70억손실.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2237,6 +2460,7 @@
     },
     {
       "rank": 223,
+      "candidateKey": "260917_화담숲예약킹받는다",
       "path": "data/candidates/260917_C0_A0_P0_화담숲예약킹받는다.md",
       "date": "260917",
       "candidateStage": "C0",
@@ -2247,6 +2471,7 @@
     },
     {
       "rank": 224,
+      "candidateKey": "260917_10년연애파혼고민",
       "path": "data/candidates/260917_C1_A0_P0_10년연애파혼고민.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2257,6 +2482,7 @@
     },
     {
       "rank": 225,
+      "candidateKey": "260917_17년결혼숨긴빚",
       "path": "data/candidates/260917_C1_A0_P0_17년결혼숨긴빚.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2267,6 +2493,7 @@
     },
     {
       "rank": 226,
+      "candidateKey": "260917_27살여자오늘파혼",
       "path": "data/candidates/260917_C1_A0_P0_27살여자오늘파혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2277,6 +2504,7 @@
     },
     {
       "rank": 227,
+      "candidateKey": "260917_3500달러웨딩드레스",
       "path": "data/candidates/260917_C1_A0_P0_3500달러웨딩드레스.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2287,6 +2515,7 @@
     },
     {
       "rank": 228,
+      "candidateKey": "260917_3일해외결혼식비용",
       "path": "data/candidates/260917_C1_A0_P0_3일해외결혼식비용.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2297,6 +2526,7 @@
     },
     {
       "rank": 229,
+      "candidateKey": "260917_4000달러결혼식선물갈등",
       "path": "data/candidates/260917_C1_A0_P0_4000달러결혼식선물갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2307,6 +2537,7 @@
     },
     {
       "rank": 230,
+      "candidateKey": "260917_5살조카흰드레스",
       "path": "data/candidates/260917_C1_A0_P0_5살조카흰드레스.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2317,6 +2548,7 @@
     },
     {
       "rank": 231,
+      "candidateKey": "260917_6년만에하는인증",
       "path": "data/candidates/260917_C1_A0_P0_6년만에하는인증.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2327,6 +2559,7 @@
     },
     {
       "rank": 232,
+      "candidateKey": "260917_800달러결혼선물보류",
       "path": "data/candidates/260917_C1_A0_P0_800달러결혼선물보류.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2337,6 +2570,7 @@
     },
     {
       "rank": 233,
+      "candidateKey": "260917_가상화폐전재산반날린남편",
       "path": "data/candidates/260917_C1_A0_P0_가상화폐전재산반날린남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2347,6 +2581,7 @@
     },
     {
       "rank": 234,
+      "candidateKey": "260917_가족끼리엮인빚",
       "path": "data/candidates/260917_C1_A0_P0_가족끼리엮인빚.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2357,6 +2592,7 @@
     },
     {
       "rank": 235,
+      "candidateKey": "260917_가족축의금적어서초대제외",
       "path": "data/candidates/260917_C1_A0_P0_가족축의금적어서초대제외.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2367,6 +2603,7 @@
     },
     {
       "rank": 236,
+      "candidateKey": "260917_결혼2년차이혼통보",
       "path": "data/candidates/260917_C1_A0_P0_결혼2년차이혼통보.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2377,6 +2614,7 @@
     },
     {
       "rank": 237,
+      "candidateKey": "260917_결혼6주전9만달러학자금",
       "path": "data/candidates/260917_C1_A0_P0_결혼6주전9만달러학자금.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2387,6 +2625,7 @@
     },
     {
       "rank": 238,
+      "candidateKey": "260917_결혼문화10년내변화",
       "path": "data/candidates/260917_C1_A0_P0_결혼문화10년내변화.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2397,6 +2636,7 @@
     },
     {
       "rank": 239,
+      "candidateKey": "260917_결혼반대조언",
       "path": "data/candidates/260917_C1_A0_P0_결혼반대조언.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2407,6 +2647,7 @@
     },
     {
       "rank": 240,
+      "candidateKey": "260917_결혼반대할정도야",
       "path": "data/candidates/260917_C1_A0_P0_결혼반대할정도야.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2417,6 +2658,7 @@
     },
     {
       "rank": 241,
+      "candidateKey": "260917_결혼비용약속거짓",
       "path": "data/candidates/260917_C1_A0_P0_결혼비용약속거짓.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2427,6 +2669,7 @@
     },
     {
       "rank": 242,
+      "candidateKey": "260917_결혼비용축의금정산",
       "path": "data/candidates/260917_C1_A0_P0_결혼비용축의금정산.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2437,6 +2680,7 @@
     },
     {
       "rank": 243,
+      "candidateKey": "260917_결혼비용축의금정산차이",
       "path": "data/candidates/260917_C1_A0_P0_결혼비용축의금정산차이.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2447,6 +2691,7 @@
     },
     {
       "rank": 244,
+      "candidateKey": "260917_결혼비용카드1700달러",
       "path": "data/candidates/260917_C1_A0_P0_결혼비용카드1700달러.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2457,6 +2702,7 @@
     },
     {
       "rank": 245,
+      "candidateKey": "260917_결혼선물3천달러잔액요구",
       "path": "data/candidates/260917_C1_A0_P0_결혼선물3천달러잔액요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2467,6 +2713,7 @@
     },
     {
       "rank": 246,
+      "candidateKey": "260917_결혼식3천달러더내놔",
       "path": "data/candidates/260917_C1_A0_P0_결혼식3천달러더내놔.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2477,6 +2724,7 @@
     },
     {
       "rank": 247,
+      "candidateKey": "260917_결혼식44k대출거부하고법원결혼",
       "path": "data/candidates/260917_C1_A0_P0_결혼식44k대출거부하고법원결혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2487,6 +2735,7 @@
     },
     {
       "rank": 248,
+      "candidateKey": "260917_결혼식부모축의금갈등",
       "path": "data/candidates/260917_C1_A0_P0_결혼식부모축의금갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2497,6 +2746,7 @@
     },
     {
       "rank": 249,
+      "candidateKey": "260917_결혼식비웃던동생이비용지원요구",
       "path": "data/candidates/260917_C1_A0_P0_결혼식비웃던동생이비용지원요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2507,6 +2757,7 @@
     },
     {
       "rank": 250,
+      "candidateKey": "260917_결혼식사회친구답례갈등",
       "path": "data/candidates/260917_C1_A0_P0_결혼식사회친구답례갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2517,6 +2768,7 @@
     },
     {
       "rank": 251,
+      "candidateKey": "260917_결혼식장친구미수금",
       "path": "data/candidates/260917_C1_A0_P0_결혼식장친구미수금.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2527,6 +2779,7 @@
     },
     {
       "rank": 252,
+      "candidateKey": "260917_결혼식초대만받고선물",
       "path": "data/candidates/260917_C1_A0_P0_결혼식초대만받고선물.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2537,6 +2790,7 @@
     },
     {
       "rank": 253,
+      "candidateKey": "260917_결혼식초대선물용이었음",
       "path": "data/candidates/260917_C1_A0_P0_결혼식초대선물용이었음.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2547,6 +2801,7 @@
     },
     {
       "rank": 254,
+      "candidateKey": "260917_결혼식취소_장소비상환갈등",
       "path": "data/candidates/260917_C1_A0_P0_결혼식취소_장소비상환갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2557,6 +2812,7 @@
     },
     {
       "rank": 255,
+      "candidateKey": "260917_결혼식하객수",
       "path": "data/candidates/260917_C1_A0_P0_결혼식하객수.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2567,6 +2823,7 @@
     },
     {
       "rank": 256,
+      "candidateKey": "260917_결혼안할아들결혼자금",
       "path": "data/candidates/260917_C1_A0_P0_결혼안할아들결혼자금.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2577,6 +2834,7 @@
     },
     {
       "rank": 257,
+      "candidateKey": "260917_결혼앞둔예신고민",
       "path": "data/candidates/260917_C1_A0_P0_결혼앞둔예신고민.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2587,6 +2845,7 @@
     },
     {
       "rank": 258,
+      "candidateKey": "260917_결혼일주전취소요구",
       "path": "data/candidates/260917_C1_A0_P0_결혼일주전취소요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2597,6 +2856,7 @@
     },
     {
       "rank": 259,
+      "candidateKey": "260917_결혼자금통장까고당황",
       "path": "data/candidates/260917_C1_A0_P0_결혼자금통장까고당황.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2607,6 +2867,7 @@
     },
     {
       "rank": 260,
+      "candidateKey": "260917_결혼전거짓말동거",
       "path": "data/candidates/260917_C1_A0_P0_결혼전거짓말동거.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2617,6 +2878,7 @@
     },
     {
       "rank": 261,
+      "candidateKey": "260917_결혼전주식15억물림",
       "path": "data/candidates/260917_C1_A0_P0_결혼전주식15억물림.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2627,6 +2889,7 @@
     },
     {
       "rank": 262,
+      "candidateKey": "260917_결혼주선자청첩장못받음",
       "path": "data/candidates/260917_C1_A0_P0_결혼주선자청첩장못받음.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2637,6 +2900,7 @@
     },
     {
       "rank": 263,
+      "candidateKey": "260917_결혼준비부모지원1억",
       "path": "data/candidates/260917_C1_A0_P0_결혼준비부모지원1억.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2647,6 +2911,7 @@
     },
     {
       "rank": 264,
+      "candidateKey": "260917_결혼준비카드론부모지원",
       "path": "data/candidates/260917_C1_A0_P0_결혼준비카드론부모지원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2657,6 +2922,7 @@
     },
     {
       "rank": 265,
+      "candidateKey": "260917_결혼지원1억거절싸움",
       "path": "data/candidates/260917_C1_A0_P0_결혼지원1억거절싸움.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2667,6 +2933,7 @@
     },
     {
       "rank": 266,
+      "candidateKey": "260917_결혼진행괜찮을까요",
       "path": "data/candidates/260917_C1_A0_P0_결혼진행괜찮을까요.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2677,6 +2944,7 @@
     },
     {
       "rank": 267,
+      "candidateKey": "260917_결혼첫명절일정문의",
       "path": "data/candidates/260917_C1_A0_P0_결혼첫명절일정문의.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2687,6 +2955,7 @@
     },
     {
       "rank": 268,
+      "candidateKey": "260917_결혼축의금모바일청첩장",
       "path": "data/candidates/260917_C1_A0_P0_결혼축의금모바일청첩장.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2697,6 +2966,7 @@
     },
     {
       "rank": 269,
+      "candidateKey": "260917_결혼축하음식거부",
       "path": "data/candidates/260917_C1_A0_P0_결혼축하음식거부.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2707,6 +2977,7 @@
     },
     {
       "rank": 270,
+      "candidateKey": "260917_결혼하며알게된남친빚",
       "path": "data/candidates/260917_C1_A0_P0_결혼하며알게된남친빚.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2717,6 +2988,7 @@
     },
     {
       "rank": 271,
+      "candidateKey": "260917_결혼한달남았는데파혼",
       "path": "data/candidates/260917_C1_A0_P0_결혼한달남았는데파혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2727,6 +2999,7 @@
     },
     {
       "rank": 272,
+      "candidateKey": "260917_고기김치타이밍",
       "path": "data/candidates/260917_C1_A0_P0_고기김치타이밍.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2737,6 +3010,7 @@
     },
     {
       "rank": 273,
+      "candidateKey": "260917_교사7년월급비트코인",
       "path": "data/candidates/260917_C1_A0_P0_교사7년월급비트코인.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2747,6 +3021,7 @@
     },
     {
       "rank": 274,
+      "candidateKey": "260917_기부했더니왜우리한테안줬냐",
       "path": "data/candidates/260917_C1_A0_P0_기부했더니왜우리한테안줬냐.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2757,6 +3032,7 @@
     },
     {
       "rank": 275,
+      "candidateKey": "260917_나몰래대출받은남편",
       "path": "data/candidates/260917_C1_A0_P0_나몰래대출받은남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2767,6 +3043,7 @@
     },
     {
       "rank": 276,
+      "candidateKey": "260917_남친부모님결혼반대",
       "path": "data/candidates/260917_C1_A0_P0_남친부모님결혼반대.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2777,6 +3054,7 @@
     },
     {
       "rank": 277,
+      "candidateKey": "260917_남편몰래주식1억8천",
       "path": "data/candidates/260917_C1_A0_P0_남편몰래주식1억8천.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2787,6 +3065,7 @@
     },
     {
       "rank": 278,
+      "candidateKey": "260917_남편비밀카드빚45k",
       "path": "data/candidates/260917_C1_A0_P0_남편비밀카드빚45k.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2797,6 +3076,7 @@
     },
     {
       "rank": 279,
+      "candidateKey": "260917_남편비자금1억5천주식",
       "path": "data/candidates/260917_C1_A0_P0_남편비자금1억5천주식.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2807,6 +3087,7 @@
     },
     {
       "rank": 280,
+      "candidateKey": "260917_남편빚투2억5천",
       "path": "data/candidates/260917_C1_A0_P0_남편빚투2억5천.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2817,6 +3098,7 @@
     },
     {
       "rank": 281,
+      "candidateKey": "260917_남편이돈빌려준사연",
       "path": "data/candidates/260917_C1_A0_P0_남편이돈빌려준사연.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2827,6 +3109,7 @@
     },
     {
       "rank": 282,
+      "candidateKey": "260917_남편주식사랑대출상환갈등",
       "path": "data/candidates/260917_C1_A0_P0_남편주식사랑대출상환갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2837,6 +3120,7 @@
     },
     {
       "rank": 283,
+      "candidateKey": "260917_남편투자3억손실",
       "path": "data/candidates/260917_C1_A0_P0_남편투자3억손실.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2847,6 +3131,7 @@
     },
     {
       "rank": 284,
+      "candidateKey": "260917_누나결혼비용거절여행비지원",
       "path": "data/candidates/260917_C1_A0_P0_누나결혼비용거절여행비지원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2857,6 +3142,7 @@
     },
     {
       "rank": 285,
+      "candidateKey": "260917_늦게온직장동료결혼초대",
       "path": "data/candidates/260917_C1_A0_P0_늦게온직장동료결혼초대.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2867,6 +3153,7 @@
     },
     {
       "rank": 286,
+      "candidateKey": "260917_대출받아처제결혼식가라",
       "path": "data/candidates/260917_C1_A0_P0_대출받아처제결혼식가라.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2877,6 +3164,7 @@
     },
     {
       "rank": 287,
+      "candidateKey": "260917_대출카드론주식몰빵",
       "path": "data/candidates/260917_C1_A0_P0_대출카드론주식몰빵.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2887,6 +3175,7 @@
     },
     {
       "rank": 288,
+      "candidateKey": "260917_대학지원금언니결혼식",
       "path": "data/candidates/260917_C1_A0_P0_대학지원금언니결혼식.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2897,6 +3186,7 @@
     },
     {
       "rank": 289,
+      "candidateKey": "260917_돈관리못하는약혼자",
       "path": "data/candidates/260917_C1_A0_P0_돈관리못하는약혼자.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2907,6 +3197,7 @@
     },
     {
       "rank": 290,
+      "candidateKey": "260917_돈안갚는친구",
       "path": "data/candidates/260917_C1_A0_P0_돈안갚는친구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2917,6 +3208,7 @@
     },
     {
       "rank": 291,
+      "candidateKey": "260917_돈없는시댁500만원",
       "path": "data/candidates/260917_C1_A0_P0_돈없는시댁500만원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2927,6 +3219,7 @@
     },
     {
       "rank": 292,
+      "candidateKey": "260917_돈잘버는여자집안일결혼",
       "path": "data/candidates/260917_C1_A0_P0_돈잘버는여자집안일결혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2937,6 +3230,7 @@
     },
     {
       "rank": 293,
+      "candidateKey": "260917_돌잔치20받고10돌려준친구",
       "path": "data/candidates/260917_C1_A0_P0_돌잔치20받고10돌려준친구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2947,6 +3241,7 @@
     },
     {
       "rank": 294,
+      "candidateKey": "260917_동생결혼식대출요구",
       "path": "data/candidates/260917_C1_A0_P0_동생결혼식대출요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2957,6 +3252,7 @@
     },
     {
       "rank": 295,
+      "candidateKey": "260917_동생꿈의결혼식돈요구",
       "path": "data/candidates/260917_C1_A0_P0_동생꿈의결혼식돈요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2967,6 +3263,7 @@
     },
     {
       "rank": 296,
+      "candidateKey": "260917_동생호화결혼비요구",
       "path": "data/candidates/260917_C1_A0_P0_동생호화결혼비요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2977,6 +3274,7 @@
     },
     {
       "rank": 297,
+      "candidateKey": "260917_두번째결혼식여행비",
       "path": "data/candidates/260917_C1_A0_P0_두번째결혼식여행비.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2987,6 +3285,7 @@
     },
     {
       "rank": 298,
+      "candidateKey": "260917_로테이션7표받고연락0",
       "path": "data/candidates/260917_C1_A0_P0_로테이션7표받고연락0.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -2997,6 +3296,7 @@
     },
     {
       "rank": 299,
+      "candidateKey": "260917_막판유럽여행4000달러",
       "path": "data/candidates/260917_C1_A0_P0_막판유럽여행4000달러.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3007,6 +3307,7 @@
     },
     {
       "rank": 300,
+      "candidateKey": "260917_맨날사고치는남편",
       "path": "data/candidates/260917_C1_A0_P0_맨날사고치는남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3017,6 +3318,7 @@
     },
     {
       "rank": 301,
+      "candidateKey": "260917_목적지결혼식2천달러선물불만",
       "path": "data/candidates/260917_C1_A0_P0_목적지결혼식2천달러선물불만.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3027,6 +3329,7 @@
     },
     {
       "rank": 302,
+      "candidateKey": "260917_몰래대출주식코인1억이혼",
       "path": "data/candidates/260917_C1_A0_P0_몰래대출주식코인1억이혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3037,6 +3340,7 @@
     },
     {
       "rank": 303,
+      "candidateKey": "260917_미국주식빚투권하는남편",
       "path": "data/candidates/260917_C1_A0_P0_미국주식빚투권하는남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3047,6 +3351,7 @@
     },
     {
       "rank": 304,
+      "candidateKey": "260917_반반결혼의최후",
       "path": "data/candidates/260917_C1_A0_P0_반반결혼의최후.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3057,6 +3362,7 @@
     },
     {
       "rank": 305,
+      "candidateKey": "260917_배우자동의없는대출주식",
       "path": "data/candidates/260917_C1_A0_P0_배우자동의없는대출주식.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3067,6 +3373,7 @@
     },
     {
       "rank": 306,
+      "candidateKey": "260917_배우자빚회생신청",
       "path": "data/candidates/260917_C1_A0_P0_배우자빚회생신청.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3077,6 +3384,7 @@
     },
     {
       "rank": 307,
+      "candidateKey": "260917_백수남편인생최대투자",
       "path": "data/candidates/260917_C1_A0_P0_백수남편인생최대투자.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3087,6 +3395,7 @@
     },
     {
       "rank": 308,
+      "candidateKey": "260917_복권15k남편이아내에500만",
       "path": "data/candidates/260917_C1_A0_P0_복권15k남편이아내에500만.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3097,6 +3406,7 @@
     },
     {
       "rank": 309,
+      "candidateKey": "260917_부모가복권당첨금절반요구",
       "path": "data/candidates/260917_C1_A0_P0_부모가복권당첨금절반요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3107,6 +3417,7 @@
     },
     {
       "rank": 310,
+      "candidateKey": "260917_부모결혼식초대안한여동생",
       "path": "data/candidates/260917_C1_A0_P0_부모결혼식초대안한여동생.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3117,6 +3428,7 @@
     },
     {
       "rank": 311,
+      "candidateKey": "260917_부모결혼지원7만달러요구",
       "path": "data/candidates/260917_C1_A0_P0_부모결혼지원7만달러요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3127,6 +3439,7 @@
     },
     {
       "rank": 312,
+      "candidateKey": "260917_부모노후호화결혼대출",
       "path": "data/candidates/260917_C1_A0_P0_부모노후호화결혼대출.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3137,6 +3450,7 @@
     },
     {
       "rank": 313,
+      "candidateKey": "260917_부모님결혼반대6년연애",
       "path": "data/candidates/260917_C1_A0_P0_부모님결혼반대6년연애.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3147,6 +3461,7 @@
     },
     {
       "rank": 314,
+      "candidateKey": "260917_부모님결혼반대사주",
       "path": "data/candidates/260917_C1_A0_P0_부모님결혼반대사주.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3157,6 +3472,7 @@
     },
     {
       "rank": 315,
+      "candidateKey": "260917_부모빚30억결혼고민",
       "path": "data/candidates/260917_C1_A0_P0_부모빚30억결혼고민.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3167,6 +3483,7 @@
     },
     {
       "rank": 316,
+      "candidateKey": "260917_부모생활비부부갈등",
       "path": "data/candidates/260917_C1_A0_P0_부모생활비부부갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3177,6 +3494,7 @@
     },
     {
       "rank": 317,
+      "candidateKey": "260917_부모초대안한동생",
       "path": "data/candidates/260917_C1_A0_P0_부모초대안한동생.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3187,6 +3505,7 @@
     },
     {
       "rank": 318,
+      "candidateKey": "260917_부모축의금",
       "path": "data/candidates/260917_C1_A0_P0_부모축의금.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3197,6 +3516,7 @@
     },
     {
       "rank": 319,
+      "candidateKey": "260917_부모축의금누구돈",
       "path": "data/candidates/260917_C1_A0_P0_부모축의금누구돈.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3207,6 +3527,7 @@
     },
     {
       "rank": 320,
+      "candidateKey": "260917_부모축의금정산갈등",
       "path": "data/candidates/260917_C1_A0_P0_부모축의금정산갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3217,6 +3538,7 @@
     },
     {
       "rank": 321,
+      "candidateKey": "260917_부모친구결혼식15석",
       "path": "data/candidates/260917_C1_A0_P0_부모친구결혼식15석.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3227,6 +3549,7 @@
     },
     {
       "rank": 322,
+      "candidateKey": "260917_부모친구결혼식좌석",
       "path": "data/candidates/260917_C1_A0_P0_부모친구결혼식좌석.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3237,6 +3560,7 @@
     },
     {
       "rank": 323,
+      "candidateKey": "260917_부유한처가여행과빚",
       "path": "data/candidates/260917_C1_A0_P0_부유한처가여행과빚.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3247,6 +3571,7 @@
     },
     {
       "rank": 324,
+      "candidateKey": "260917_비혼친구축의금10만원",
       "path": "data/candidates/260917_C1_A0_P0_비혼친구축의금10만원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3257,6 +3582,7 @@
     },
     {
       "rank": 325,
+      "candidateKey": "260917_빚그리고결혼어떻게해야할까",
       "path": "data/candidates/260917_C1_A0_P0_빚그리고결혼어떻게해야할까.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3267,6 +3593,7 @@
     },
     {
       "rank": 326,
+      "candidateKey": "260917_빚숨기고결혼한남편_뽑기중독",
       "path": "data/candidates/260917_C1_A0_P0_빚숨기고결혼한남편_뽑기중독.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3277,6 +3604,7 @@
     },
     {
       "rank": 327,
+      "candidateKey": "260917_빚탕감이결혼선물",
       "path": "data/candidates/260917_C1_A0_P0_빚탕감이결혼선물.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3287,6 +3615,7 @@
     },
     {
       "rank": 328,
+      "candidateKey": "260917_사돈간축의금200대30",
       "path": "data/candidates/260917_C1_A0_P0_사돈간축의금200대30.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3297,6 +3626,7 @@
     },
     {
       "rank": 329,
+      "candidateKey": "260917_사주때문에결혼반대",
       "path": "data/candidates/260917_C1_A0_P0_사주때문에결혼반대.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3307,6 +3637,7 @@
     },
     {
       "rank": 330,
+      "candidateKey": "260917_상대부모빚3040억결혼고민",
       "path": "data/candidates/260917_C1_A0_P0_상대부모빚3040억결혼고민.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3317,6 +3648,7 @@
     },
     {
       "rank": 331,
+      "candidateKey": "260917_상속금안갚는언니",
       "path": "data/candidates/260917_C1_A0_P0_상속금안갚는언니.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3327,6 +3659,7 @@
     },
     {
       "rank": 332,
+      "candidateKey": "260917_새가족선물중단",
       "path": "data/candidates/260917_C1_A0_P0_새가족선물중단.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3337,6 +3670,7 @@
     },
     {
       "rank": 333,
+      "candidateKey": "260917_성형해준다는남편",
       "path": "data/candidates/260917_C1_A0_P0_성형해준다는남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3347,6 +3681,7 @@
     },
     {
       "rank": 334,
+      "candidateKey": "260917_소개팅20명마지막과결혼",
       "path": "data/candidates/260917_C1_A0_P0_소개팅20명마지막과결혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3357,6 +3692,7 @@
     },
     {
       "rank": 335,
+      "candidateKey": "260917_소개팅4연속마지막0표",
       "path": "data/candidates/260917_C1_A0_P0_소개팅4연속마지막0표.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3367,6 +3703,7 @@
     },
     {
       "rank": 336,
+      "candidateKey": "260917_소개팅첫날현타",
       "path": "data/candidates/260917_C1_A0_P0_소개팅첫날현타.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3377,6 +3714,7 @@
     },
     {
       "rank": 337,
+      "candidateKey": "260917_소개팅해달라고괴롭히는상사",
       "path": "data/candidates/260917_C1_A0_P0_소개팅해달라고괴롭히는상사.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3387,6 +3725,7 @@
     },
     {
       "rank": 338,
+      "candidateKey": "260917_소설출간가족무관심",
       "path": "data/candidates/260917_C1_A0_P0_소설출간가족무관심.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3397,6 +3736,7 @@
     },
     {
       "rank": 339,
+      "candidateKey": "260917_숨긴빚친정지원금",
       "path": "data/candidates/260917_C1_A0_P0_숨긴빚친정지원금.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3407,6 +3747,7 @@
     },
     {
       "rank": 340,
+      "candidateKey": "260917_시댁매주방문요구",
       "path": "data/candidates/260917_C1_A0_P0_시댁매주방문요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3417,6 +3758,7 @@
     },
     {
       "rank": 341,
+      "candidateKey": "260917_시댁매주저녁",
       "path": "data/candidates/260917_C1_A0_P0_시댁매주저녁.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3427,6 +3769,7 @@
     },
     {
       "rank": 342,
+      "candidateKey": "260917_시댁처가반찬폭력",
       "path": "data/candidates/260917_C1_A0_P0_시댁처가반찬폭력.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3437,6 +3780,7 @@
     },
     {
       "rank": 343,
+      "candidateKey": "260917_시부모생신방문",
       "path": "data/candidates/260917_C1_A0_P0_시부모생신방문.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3447,6 +3791,7 @@
     },
     {
       "rank": 344,
+      "candidateKey": "260917_신부가부탁한결혼식장난",
       "path": "data/candidates/260917_C1_A0_P0_신부가부탁한결혼식장난.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3457,6 +3802,7 @@
     },
     {
       "rank": 345,
+      "candidateKey": "260917_신입사원퇴사레전드",
       "path": "data/candidates/260917_C1_A0_P0_신입사원퇴사레전드.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3467,6 +3813,7 @@
     },
     {
       "rank": 346,
+      "candidateKey": "260917_신혼생활비숨만쉬어도돈",
       "path": "data/candidates/260917_C1_A0_P0_신혼생활비숨만쉬어도돈.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3477,6 +3824,7 @@
     },
     {
       "rank": 347,
+      "candidateKey": "260917_실직후해외결혼선물압박",
       "path": "data/candidates/260917_C1_A0_P0_실직후해외결혼선물압박.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3487,6 +3835,7 @@
     },
     {
       "rank": 348,
+      "candidateKey": "260917_아내몰래빚17k",
       "path": "data/candidates/260917_C1_A0_P0_아내몰래빚17k.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3497,6 +3846,7 @@
     },
     {
       "rank": 349,
+      "candidateKey": "260917_아내몰래투자선물손실",
       "path": "data/candidates/260917_C1_A0_P0_아내몰래투자선물손실.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3507,6 +3857,7 @@
     },
     {
       "rank": 350,
+      "candidateKey": "260917_아내불면증고친남편",
       "path": "data/candidates/260917_C1_A0_P0_아내불면증고친남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3517,6 +3868,7 @@
     },
     {
       "rank": 351,
+      "candidateKey": "260917_약혼자아들과12시간이사갈등",
       "path": "data/candidates/260917_C1_A0_P0_약혼자아들과12시간이사갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3527,6 +3879,7 @@
     },
     {
       "rank": 352,
+      "candidateKey": "260917_양가설거지파혼",
       "path": "data/candidates/260917_C1_A0_P0_양가설거지파혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3537,6 +3890,7 @@
     },
     {
       "rank": 353,
+      "candidateKey": "260917_어쩌다괴물이되어버렸을까",
       "path": "data/candidates/260917_C1_A0_P0_어쩌다괴물이되어버렸을까.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3547,6 +3901,7 @@
     },
     {
       "rank": 354,
+      "candidateKey": "260917_언니결혼비용카드거절",
       "path": "data/candidates/260917_C1_A0_P0_언니결혼비용카드거절.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3557,6 +3912,7 @@
     },
     {
       "rank": 355,
+      "candidateKey": "260917_언니이탈리아결혼식총각파티",
       "path": "data/candidates/260917_C1_A0_P0_언니이탈리아결혼식총각파티.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3567,6 +3923,7 @@
     },
     {
       "rank": 356,
+      "candidateKey": "260917_엄마가결혼축의금써버림",
       "path": "data/candidates/260917_C1_A0_P0_엄마가결혼축의금써버림.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3577,6 +3934,7 @@
     },
     {
       "rank": 357,
+      "candidateKey": "260917_엄마웨딩드레스몰래수선",
       "path": "data/candidates/260917_C1_A0_P0_엄마웨딩드레스몰래수선.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3587,6 +3945,7 @@
     },
     {
       "rank": 358,
+      "candidateKey": "260917_엄마친구초대조건결혼비",
       "path": "data/candidates/260917_C1_A0_P0_엄마친구초대조건결혼비.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3597,6 +3956,7 @@
     },
     {
       "rank": 359,
+      "candidateKey": "260917_여행비대신결혼비요구",
       "path": "data/candidates/260917_C1_A0_P0_여행비대신결혼비요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3607,6 +3967,7 @@
     },
     {
       "rank": 360,
+      "candidateKey": "260917_영수증에쓴소설출간",
       "path": "data/candidates/260917_C1_A0_P0_영수증에쓴소설출간.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3617,6 +3978,7 @@
     },
     {
       "rank": 361,
+      "candidateKey": "260917_오만달러대출전액손실",
       "path": "data/candidates/260917_C1_A0_P0_오만달러대출전액손실.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3627,6 +3989,7 @@
     },
     {
       "rank": 362,
+      "candidateKey": "260917_외벌이이혼전본심",
       "path": "data/candidates/260917_C1_A0_P0_외벌이이혼전본심.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3637,6 +4000,7 @@
     },
     {
       "rank": 363,
+      "candidateKey": "260917_웨딩지원천달러요청만오천",
       "path": "data/candidates/260917_C1_A0_P0_웨딩지원천달러요청만오천.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3647,6 +4011,7 @@
     },
     {
       "rank": 364,
+      "candidateKey": "260917_유럽여행결혼선물막판요구",
       "path": "data/candidates/260917_C1_A0_P0_유럽여행결혼선물막판요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3657,6 +4022,7 @@
     },
     {
       "rank": 365,
+      "candidateKey": "260917_이혼고민_결혼중빚투발견",
       "path": "data/candidates/260917_C1_A0_P0_이혼고민_결혼중빚투발견.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3667,6 +4033,7 @@
     },
     {
       "rank": 366,
+      "candidateKey": "260917_이혼고민_코인빚백수남편",
       "path": "data/candidates/260917_C1_A0_P0_이혼고민_코인빚백수남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3677,6 +4044,7 @@
     },
     {
       "rank": 367,
+      "candidateKey": "260917_이혼고민빚쟁이백수남편",
       "path": "data/candidates/260917_C1_A0_P0_이혼고민빚쟁이백수남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3687,6 +4055,7 @@
     },
     {
       "rank": 368,
+      "candidateKey": "260917_이혼이답인데자식이걸린다",
       "path": "data/candidates/260917_C1_A0_P0_이혼이답인데자식이걸린다.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3697,6 +4066,7 @@
     },
     {
       "rank": 369,
+      "candidateKey": "260917_전남편착오송금빚상계",
       "path": "data/candidates/260917_C1_A0_P0_전남편착오송금빚상계.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3707,6 +4077,7 @@
     },
     {
       "rank": 370,
+      "candidateKey": "260917_전업주부몰래1만7천달러빚",
       "path": "data/candidates/260917_C1_A0_P0_전업주부몰래1만7천달러빚.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3717,6 +4088,7 @@
     },
     {
       "rank": 371,
+      "candidateKey": "260917_절친축의금10만원",
       "path": "data/candidates/260917_C1_A0_P0_절친축의금10만원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3727,6 +4099,7 @@
     },
     {
       "rank": 372,
+      "candidateKey": "260917_죄의식이낮은건가",
       "path": "data/candidates/260917_C1_A0_P0_죄의식이낮은건가.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3737,6 +4110,7 @@
     },
     {
       "rank": 373,
+      "candidateKey": "260917_주선결혼축의금60만원",
       "path": "data/candidates/260917_C1_A0_P0_주선결혼축의금60만원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3747,6 +4121,7 @@
     },
     {
       "rank": 374,
+      "candidateKey": "260917_주식2억잃고경제권이관",
       "path": "data/candidates/260917_C1_A0_P0_주식2억잃고경제권이관.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3757,6 +4132,7 @@
     },
     {
       "rank": 375,
+      "candidateKey": "260917_주식빚2억회생후또1억손실",
       "path": "data/candidates/260917_C1_A0_P0_주식빚2억회생후또1억손실.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3767,6 +4143,7 @@
     },
     {
       "rank": 376,
+      "candidateKey": "260917_주식빚숨겨줘야할까",
       "path": "data/candidates/260917_C1_A0_P0_주식빚숨겨줘야할까.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3777,6 +4154,7 @@
     },
     {
       "rank": 377,
+      "candidateKey": "260917_주식으로8천날림",
       "path": "data/candidates/260917_C1_A0_P0_주식으로8천날림.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3787,6 +4165,7 @@
     },
     {
       "rank": 378,
+      "candidateKey": "260917_주식을광적으로하는남편",
       "path": "data/candidates/260917_C1_A0_P0_주식을광적으로하는남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3797,6 +4176,7 @@
     },
     {
       "rank": 379,
+      "candidateKey": "260917_주택연금숨긴신혼부부",
       "path": "data/candidates/260917_C1_A0_P0_주택연금숨긴신혼부부.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3807,6 +4187,7 @@
     },
     {
       "rank": 380,
+      "candidateKey": "260917_주택연금숨김",
       "path": "data/candidates/260917_C1_A0_P0_주택연금숨김.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3817,6 +4198,7 @@
     },
     {
       "rank": 381,
+      "candidateKey": "260917_직장그만둔척한아내",
       "path": "data/candidates/260917_C1_A0_P0_직장그만둔척한아내.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3827,6 +4209,7 @@
     },
     {
       "rank": 382,
+      "candidateKey": "260917_직장내괴롭힘피해직원징계",
       "path": "data/candidates/260917_C1_A0_P0_직장내괴롭힘피해직원징계.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3837,6 +4220,7 @@
     },
     {
       "rank": 383,
+      "candidateKey": "260917_직장내소개팅주선안받게된계기",
       "path": "data/candidates/260917_C1_A0_P0_직장내소개팅주선안받게된계기.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3847,6 +4231,7 @@
     },
     {
       "rank": 384,
+      "candidateKey": "260917_직장상사소개팅거절",
       "path": "data/candidates/260917_C1_A0_P0_직장상사소개팅거절.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3857,6 +4242,7 @@
     },
     {
       "rank": 385,
+      "candidateKey": "260917_직장상사수술선물",
       "path": "data/candidates/260917_C1_A0_P0_직장상사수술선물.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3867,6 +4253,7 @@
     },
     {
       "rank": 386,
+      "candidateKey": "260917_찐친축의금100만원",
       "path": "data/candidates/260917_C1_A0_P0_찐친축의금100만원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3877,6 +4264,7 @@
     },
     {
       "rank": 387,
+      "candidateKey": "260917_첫만남돈얘기소개팅",
       "path": "data/candidates/260917_C1_A0_P0_첫만남돈얘기소개팅.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3887,6 +4275,7 @@
     },
     {
       "rank": 388,
+      "candidateKey": "260917_첫만남에돈얘기소개팅",
       "path": "data/candidates/260917_C1_A0_P0_첫만남에돈얘기소개팅.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3897,6 +4286,7 @@
     },
     {
       "rank": 389,
+      "candidateKey": "260917_첫명절시댁처가일정",
       "path": "data/candidates/260917_C1_A0_P0_첫명절시댁처가일정.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3907,6 +4297,7 @@
     },
     {
       "rank": 390,
+      "candidateKey": "260917_청약집빚갚는문제",
       "path": "data/candidates/260917_C1_A0_P0_청약집빚갚는문제.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3917,6 +4308,7 @@
     },
     {
       "rank": 391,
+      "candidateKey": "260917_청첩장못받은주선자",
       "path": "data/candidates/260917_C1_A0_P0_청첩장못받은주선자.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3927,6 +4319,7 @@
     },
     {
       "rank": 392,
+      "candidateKey": "260917_청첩장예절친구갈등",
       "path": "data/candidates/260917_C1_A0_P0_청첩장예절친구갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3937,6 +4330,7 @@
     },
     {
       "rank": 393,
+      "candidateKey": "260917_최저임금직원상사결혼축의금",
       "path": "data/candidates/260917_C1_A0_P0_최저임금직원상사결혼축의금.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3947,6 +4341,7 @@
     },
     {
       "rank": 394,
+      "candidateKey": "260917_추석친정복수고민",
       "path": "data/candidates/260917_C1_A0_P0_추석친정복수고민.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3957,6 +4352,7 @@
     },
     {
       "rank": 395,
+      "candidateKey": "260917_축의금내고식권안받으면",
       "path": "data/candidates/260917_C1_A0_P0_축의금내고식권안받으면.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3967,6 +4363,7 @@
     },
     {
       "rank": 396,
+      "candidateKey": "260917_축의금논란특이케이스",
       "path": "data/candidates/260917_C1_A0_P0_축의금논란특이케이스.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3977,6 +4374,7 @@
     },
     {
       "rank": 397,
+      "candidateKey": "260917_축의금문화10년내바뀐다",
       "path": "data/candidates/260917_C1_A0_P0_축의금문화10년내바뀐다.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3987,6 +4385,7 @@
     },
     {
       "rank": 398,
+      "candidateKey": "260917_축의금문화10년내바뀔듯",
       "path": "data/candidates/260917_C1_A0_P0_축의금문화10년내바뀔듯.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -3997,6 +4396,7 @@
     },
     {
       "rank": 399,
+      "candidateKey": "260917_축의금물가",
       "path": "data/candidates/260917_C1_A0_P0_축의금물가.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4007,6 +4407,7 @@
     },
     {
       "rank": 400,
+      "candidateKey": "260917_축의금물가15년",
       "path": "data/candidates/260917_C1_A0_P0_축의금물가15년.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4017,6 +4418,7 @@
     },
     {
       "rank": 401,
+      "candidateKey": "260917_축의금진짜난감",
       "path": "data/candidates/260917_C1_A0_P0_축의금진짜난감.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4027,6 +4429,7 @@
     },
     {
       "rank": 402,
+      "candidateKey": "260917_축의금친구섭섭",
       "path": "data/candidates/260917_C1_A0_P0_축의금친구섭섭.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4037,6 +4440,7 @@
     },
     {
       "rank": 403,
+      "candidateKey": "260917_축의금크게준비혼친구",
       "path": "data/candidates/260917_C1_A0_P0_축의금크게준비혼친구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4047,6 +4451,7 @@
     },
     {
       "rank": 404,
+      "candidateKey": "260917_취소된결혼식비용딸에게상환요구",
       "path": "data/candidates/260917_C1_A0_P0_취소된결혼식비용딸에게상환요구.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4057,6 +4462,7 @@
     },
     {
       "rank": 405,
+      "candidateKey": "260917_친구결혼업체잔금850달러",
       "path": "data/candidates/260917_C1_A0_P0_친구결혼업체잔금850달러.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4067,6 +4473,7 @@
     },
     {
       "rank": 406,
+      "candidateKey": "260917_친구축의금50답례고민",
       "path": "data/candidates/260917_C1_A0_P0_친구축의금50답례고민.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4077,6 +4484,7 @@
     },
     {
       "rank": 407,
+      "candidateKey": "260917_친동생결혼축의금천만원",
       "path": "data/candidates/260917_C1_A0_P0_친동생결혼축의금천만원.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4087,6 +4495,7 @@
     },
     {
       "rank": 408,
+      "candidateKey": "260917_카지노잭팟빚갈등",
       "path": "data/candidates/260917_C1_A0_P0_카지노잭팟빚갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4097,6 +4506,7 @@
     },
     {
       "rank": 409,
+      "candidateKey": "260917_코로나이후자산현타",
       "path": "data/candidates/260917_C1_A0_P0_코로나이후자산현타.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4107,6 +4517,7 @@
     },
     {
       "rank": 410,
+      "candidateKey": "260917_코인안파는남편",
       "path": "data/candidates/260917_C1_A0_P0_코인안파는남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4117,6 +4528,7 @@
     },
     {
       "rank": 411,
+      "candidateKey": "260917_코인중독",
       "path": "data/candidates/260917_C1_A0_P0_코인중독.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4127,6 +4539,7 @@
     },
     {
       "rank": 412,
+      "candidateKey": "260917_코인하는남편간섭",
       "path": "data/candidates/260917_C1_A0_P0_코인하는남편간섭.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4137,6 +4550,7 @@
     },
     {
       "rank": 413,
+      "candidateKey": "260917_탈모밝힌남편",
       "path": "data/candidates/260917_C1_A0_P0_탈모밝힌남편.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4147,6 +4561,7 @@
     },
     {
       "rank": 414,
+      "candidateKey": "260917_투자빚8000여친결혼",
       "path": "data/candidates/260917_C1_A0_P0_투자빚8000여친결혼.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4157,6 +4572,7 @@
     },
     {
       "rank": 415,
+      "candidateKey": "260917_파혼경험연애",
       "path": "data/candidates/260917_C1_A0_P0_파혼경험연애.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4167,6 +4583,7 @@
     },
     {
       "rank": 416,
+      "candidateKey": "260917_파혼후예식비상환갈등",
       "path": "data/candidates/260917_C1_A0_P0_파혼후예식비상환갈등.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4177,6 +4594,7 @@
     },
     {
       "rank": 417,
+      "candidateKey": "260917_하루52억한달15억손실",
       "path": "data/candidates/260917_C1_A0_P0_하루52억한달15억손실.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4187,6 +4605,7 @@
     },
     {
       "rank": 418,
+      "candidateKey": "260917_하이닉스37억몰빵",
       "path": "data/candidates/260917_C1_A0_P0_하이닉스37억몰빵.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4197,6 +4616,7 @@
     },
     {
       "rank": 419,
+      "candidateKey": "260917_해외결혼식3200달러",
       "path": "data/candidates/260917_C1_A0_P0_해외결혼식3200달러.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4207,6 +4627,7 @@
     },
     {
       "rank": 420,
+      "candidateKey": "260917_헤어지는게맞을까_빚투신뢰붕괴",
       "path": "data/candidates/260917_C1_A0_P0_헤어지는게맞을까_빚투신뢰붕괴.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4217,6 +4638,7 @@
     },
     {
       "rank": 421,
+      "candidateKey": "260917_협의이혼주식비트코인빚",
       "path": "data/candidates/260917_C1_A0_P0_협의이혼주식비트코인빚.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4227,6 +4649,7 @@
     },
     {
       "rank": 422,
+      "candidateKey": "260917_황당면접후기",
       "path": "data/candidates/260917_C1_A0_P0_황당면접후기.md",
       "date": "260917",
       "candidateStage": "C1",
@@ -4237,6 +4660,7 @@
     },
     {
       "rank": 423,
+      "candidateKey": "260918_결혼10년사위는남인가",
       "path": "data/candidates/260918_C0_A0_P0_결혼10년사위는남인가.md",
       "date": "260918",
       "candidateStage": "C0",
@@ -4247,6 +4671,7 @@
     },
     {
       "rank": 424,
+      "candidateKey": "260918_양가지원금차이감사인사",
       "path": "data/candidates/260918_C0_A0_P0_양가지원금차이감사인사.md",
       "date": "260918",
       "candidateStage": "C0",
@@ -4257,6 +4682,7 @@
     },
     {
       "rank": 425,
+      "candidateKey": "260918_축의금문제제가잘못했나요",
       "path": "data/candidates/260918_C0_A0_P0_축의금문제제가잘못했나요.md",
       "date": "260918",
       "candidateStage": "C0",
@@ -4267,6 +4693,7 @@
     },
     {
       "rank": 426,
+      "candidateKey": "260918_2년째결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_2년째결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4277,6 +4704,7 @@
     },
     {
       "rank": 427,
+      "candidateKey": "260918_2만달러예식장과불륜",
       "path": "data/candidates/260918_C1_A0_P0_2만달러예식장과불륜.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4287,6 +4715,7 @@
     },
     {
       "rank": 428,
+      "candidateKey": "260918_5개월연애부모반대",
       "path": "data/candidates/260918_C1_A0_P0_5개월연애부모반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4297,6 +4726,7 @@
     },
     {
       "rank": 429,
+      "candidateKey": "260918_5만달러받고도망결혼",
       "path": "data/candidates/260918_C1_A0_P0_5만달러받고도망결혼.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4307,6 +4737,7 @@
     },
     {
       "rank": 430,
+      "candidateKey": "260918_6년연애결혼비용반대",
       "path": "data/candidates/260918_C1_A0_P0_6년연애결혼비용반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4317,6 +4748,7 @@
     },
     {
       "rank": 431,
+      "candidateKey": "260918_가족친구결혼잔금",
       "path": "data/candidates/260918_C1_A0_P0_가족친구결혼잔금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4327,6 +4759,7 @@
     },
     {
       "rank": 432,
+      "candidateKey": "260918_갓난아기육아분담",
       "path": "data/candidates/260918_C1_A0_P0_갓난아기육아분담.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4337,6 +4770,7 @@
     },
     {
       "rank": 433,
+      "candidateKey": "260918_개꿀빠는회사고민",
       "path": "data/candidates/260918_C1_A0_P0_개꿀빠는회사고민.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4347,6 +4781,7 @@
     },
     {
       "rank": 434,
+      "candidateKey": "260918_개원비용며느리",
       "path": "data/candidates/260918_C1_A0_P0_개원비용며느리.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4357,6 +4792,7 @@
     },
     {
       "rank": 435,
+      "candidateKey": "260918_결혼가능할까요",
       "path": "data/candidates/260918_C1_A0_P0_결혼가능할까요.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4367,6 +4803,7 @@
     },
     {
       "rank": 436,
+      "candidateKey": "260918_결혼돈받고엘로프",
       "path": "data/candidates/260918_C1_A0_P0_결혼돈받고엘로프.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4377,6 +4814,7 @@
     },
     {
       "rank": 437,
+      "candidateKey": "260918_결혼반대_엄마와형",
       "path": "data/candidates/260918_C1_A0_P0_결혼반대_엄마와형.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4387,6 +4825,7 @@
     },
     {
       "rank": 438,
+      "candidateKey": "260918_결혼비용_70퍼센트_분담",
       "path": "data/candidates/260918_C1_A0_P0_결혼비용_70퍼센트_분담.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4397,6 +4836,7 @@
     },
     {
       "rank": 439,
+      "candidateKey": "260918_결혼비용대신부모여행비",
       "path": "data/candidates/260918_C1_A0_P0_결혼비용대신부모여행비.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4407,6 +4847,7 @@
     },
     {
       "rank": 440,
+      "candidateKey": "260918_결혼비용부모계좌",
       "path": "data/candidates/260918_C1_A0_P0_결혼비용부모계좌.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4417,6 +4858,7 @@
     },
     {
       "rank": 441,
+      "candidateKey": "260918_결혼비용축의금정산",
       "path": "data/candidates/260918_C1_A0_P0_결혼비용축의금정산.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4427,6 +4869,7 @@
     },
     {
       "rank": 442,
+      "candidateKey": "260918_결혼빚증명요구",
       "path": "data/candidates/260918_C1_A0_P0_결혼빚증명요구.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4437,6 +4880,7 @@
     },
     {
       "rank": 443,
+      "candidateKey": "260918_결혼선물유럽여행번복",
       "path": "data/candidates/260918_C1_A0_P0_결혼선물유럽여행번복.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4447,6 +4891,7 @@
     },
     {
       "rank": 444,
+      "candidateKey": "260918_결혼승낙후탈모고백",
       "path": "data/candidates/260918_C1_A0_P0_결혼승낙후탈모고백.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4457,6 +4902,7 @@
     },
     {
       "rank": 445,
+      "candidateKey": "260918_결혼식6천달러빚",
       "path": "data/candidates/260918_C1_A0_P0_결혼식6천달러빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4467,6 +4913,7 @@
     },
     {
       "rank": 446,
+      "candidateKey": "260918_결혼식가려고대출4500달러",
       "path": "data/candidates/260918_C1_A0_P0_결혼식가려고대출4500달러.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4477,6 +4924,7 @@
     },
     {
       "rank": 447,
+      "candidateKey": "260918_결혼식가려고대출거부",
       "path": "data/candidates/260918_C1_A0_P0_결혼식가려고대출거부.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4487,6 +4935,7 @@
     },
     {
       "rank": 448,
+      "candidateKey": "260918_결혼식돈으로집살까",
       "path": "data/candidates/260918_C1_A0_P0_결혼식돈으로집살까.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4497,6 +4946,7 @@
     },
     {
       "rank": 449,
+      "candidateKey": "260918_결혼식보다_저축_3만2천파운드",
       "path": "data/candidates/260918_C1_A0_P0_결혼식보다_저축_3만2천파운드.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4507,6 +4957,7 @@
     },
     {
       "rank": 450,
+      "candidateKey": "260918_결혼식비용부족남성",
       "path": "data/candidates/260918_C1_A0_P0_결혼식비용부족남성.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4517,6 +4968,7 @@
     },
     {
       "rank": 451,
+      "candidateKey": "260918_결혼식비용축의금",
       "path": "data/candidates/260918_C1_A0_P0_결혼식비용축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4527,6 +4979,7 @@
     },
     {
       "rank": 452,
+      "candidateKey": "260918_결혼식빚과맞벌이",
       "path": "data/candidates/260918_C1_A0_P0_결혼식빚과맞벌이.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4537,6 +4990,7 @@
     },
     {
       "rank": 453,
+      "candidateKey": "260918_결혼전_시댁고민",
       "path": "data/candidates/260918_C1_A0_P0_결혼전_시댁고민.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4547,6 +5001,7 @@
     },
     {
       "rank": 454,
+      "candidateKey": "260918_결혼전경제권요구",
       "path": "data/candidates/260918_C1_A0_P0_결혼전경제권요구.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4557,6 +5012,7 @@
     },
     {
       "rank": 455,
+      "candidateKey": "260918_결혼주선자축의금",
       "path": "data/candidates/260918_C1_A0_P0_결혼주선자축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4567,6 +5023,7 @@
     },
     {
       "rank": 456,
+      "candidateKey": "260918_결혼하고보니엄마가멘헤라",
       "path": "data/candidates/260918_C1_A0_P0_결혼하고보니엄마가멘헤라.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4577,6 +5034,7 @@
     },
     {
       "rank": 457,
+      "candidateKey": "260918_공직자재산등록몰래대출",
       "path": "data/candidates/260918_C1_A0_P0_공직자재산등록몰래대출.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4587,6 +5045,7 @@
     },
     {
       "rank": 458,
+      "candidateKey": "260918_나몰래_대출받은_남편",
       "path": "data/candidates/260918_C1_A0_P0_나몰래_대출받은_남편.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4597,6 +5056,7 @@
     },
     {
       "rank": 459,
+      "candidateKey": "260918_남편_술자리_회식횟수",
       "path": "data/candidates/260918_C1_A0_P0_남편_술자리_회식횟수.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4607,6 +5067,7 @@
     },
     {
       "rank": 460,
+      "candidateKey": "260918_남편_회식_늦으면_불안",
       "path": "data/candidates/260918_C1_A0_P0_남편_회식_늦으면_불안.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4617,6 +5078,7 @@
     },
     {
       "rank": 461,
+      "candidateKey": "260918_남편50세차선물",
       "path": "data/candidates/260918_C1_A0_P0_남편50세차선물.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4627,6 +5089,7 @@
     },
     {
       "rank": 462,
+      "candidateKey": "260918_남편동생800만원",
       "path": "data/candidates/260918_C1_A0_P0_남편동생800만원.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4637,6 +5100,7 @@
     },
     {
       "rank": 463,
+      "candidateKey": "260918_남편몰래빚30만달러",
       "path": "data/candidates/260918_C1_A0_P0_남편몰래빚30만달러.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4647,6 +5111,7 @@
     },
     {
       "rank": 464,
+      "candidateKey": "260918_남편불쌍해",
       "path": "data/candidates/260918_C1_A0_P0_남편불쌍해.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4657,6 +5122,7 @@
     },
     {
       "rank": 465,
+      "candidateKey": "260918_남편비밀적금",
       "path": "data/candidates/260918_C1_A0_P0_남편비밀적금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4667,6 +5133,7 @@
     },
     {
       "rank": 466,
+      "candidateKey": "260918_남편숨긴7만달러카드빚",
       "path": "data/candidates/260918_C1_A0_P0_남편숨긴7만달러카드빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4677,6 +5144,7 @@
     },
     {
       "rank": 467,
+      "candidateKey": "260918_남편외도소개팅앱",
       "path": "data/candidates/260918_C1_A0_P0_남편외도소개팅앱.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4687,6 +5155,7 @@
     },
     {
       "rank": 468,
+      "candidateKey": "260918_남편이숨긴2만달러빚",
       "path": "data/candidates/260918_C1_A0_P0_남편이숨긴2만달러빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4697,6 +5166,7 @@
     },
     {
       "rank": 469,
+      "candidateKey": "260918_남편전화못받는아내",
       "path": "data/candidates/260918_C1_A0_P0_남편전화못받는아내.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4707,6 +5177,7 @@
     },
     {
       "rank": 470,
+      "candidateKey": "260918_남편주식마이너스2억",
       "path": "data/candidates/260918_C1_A0_P0_남편주식마이너스2억.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4717,6 +5188,7 @@
     },
     {
       "rank": 471,
+      "candidateKey": "260918_남편카드값",
       "path": "data/candidates/260918_C1_A0_P0_남편카드값.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4727,6 +5199,7 @@
     },
     {
       "rank": 472,
+      "candidateKey": "260918_남편회식징글징글",
       "path": "data/candidates/260918_C1_A0_P0_남편회식징글징글.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4737,6 +5210,7 @@
     },
     {
       "rank": 473,
+      "candidateKey": "260918_대출싫은배우자",
       "path": "data/candidates/260918_C1_A0_P0_대출싫은배우자.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4747,6 +5221,7 @@
     },
     {
       "rank": 474,
+      "candidateKey": "260918_도박과이혼",
       "path": "data/candidates/260918_C1_A0_P0_도박과이혼.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4757,6 +5232,7 @@
     },
     {
       "rank": 475,
+      "candidateKey": "260918_돈없는시댁",
       "path": "data/candidates/260918_C1_A0_P0_돈없는시댁.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4767,6 +5243,7 @@
     },
     {
       "rank": 476,
+      "candidateKey": "260918_동료결혼영상무료요구",
       "path": "data/candidates/260918_C1_A0_P0_동료결혼영상무료요구.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4777,6 +5254,7 @@
     },
     {
       "rank": 477,
+      "candidateKey": "260918_동생_스몰웨딩_결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_동생_스몰웨딩_결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4787,6 +5265,7 @@
     },
     {
       "rank": 478,
+      "candidateKey": "260918_동의없는대출주식이혼",
       "path": "data/candidates/260918_C1_A0_P0_동의없는대출주식이혼.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4797,6 +5276,7 @@
     },
     {
       "rank": 479,
+      "candidateKey": "260918_들러리500달러선물추가축의금",
       "path": "data/candidates/260918_C1_A0_P0_들러리500달러선물추가축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4807,6 +5287,7 @@
     },
     {
       "rank": 480,
+      "candidateKey": "260918_딸결혼식만지원한부모",
       "path": "data/candidates/260918_C1_A0_P0_딸결혼식만지원한부모.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4817,6 +5298,7 @@
     },
     {
       "rank": 481,
+      "candidateKey": "260918_명절당일시댁",
       "path": "data/candidates/260918_C1_A0_P0_명절당일시댁.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4827,6 +5309,7 @@
     },
     {
       "rank": 482,
+      "candidateKey": "260918_몰래대출코인6천손실",
       "path": "data/candidates/260918_C1_A0_P0_몰래대출코인6천손실.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4837,6 +5320,7 @@
     },
     {
       "rank": 483,
+      "candidateKey": "260918_몰래카드빚1만달러",
       "path": "data/candidates/260918_C1_A0_P0_몰래카드빚1만달러.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4847,6 +5331,7 @@
     },
     {
       "rank": 484,
+      "candidateKey": "260918_복권48만달러남편몰래",
       "path": "data/candidates/260918_C1_A0_P0_복권48만달러남편몰래.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4857,6 +5342,7 @@
     },
     {
       "rank": 485,
+      "candidateKey": "260918_복권4백만달러약혼",
       "path": "data/candidates/260918_C1_A0_P0_복권4백만달러약혼.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4867,6 +5353,7 @@
     },
     {
       "rank": 486,
+      "candidateKey": "260918_부모결혼반대사주",
       "path": "data/candidates/260918_C1_A0_P0_부모결혼반대사주.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4877,6 +5364,7 @@
     },
     {
       "rank": 487,
+      "candidateKey": "260918_부모결혼비용거절",
       "path": "data/candidates/260918_C1_A0_P0_부모결혼비용거절.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4887,6 +5375,7 @@
     },
     {
       "rank": 488,
+      "candidateKey": "260918_부모결혼식초대제외",
       "path": "data/candidates/260918_C1_A0_P0_부모결혼식초대제외.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4897,6 +5386,7 @@
     },
     {
       "rank": 489,
+      "candidateKey": "260918_부모결혼지원금갈등",
       "path": "data/candidates/260918_C1_A0_P0_부모결혼지원금갈등.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4907,6 +5397,7 @@
     },
     {
       "rank": 490,
+      "candidateKey": "260918_부모반대고아",
       "path": "data/candidates/260918_C1_A0_P0_부모반대고아.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4917,6 +5408,7 @@
     },
     {
       "rank": 491,
+      "candidateKey": "260918_부모빚과언니결혼식",
       "path": "data/candidates/260918_C1_A0_P0_부모빚과언니결혼식.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4927,6 +5419,7 @@
     },
     {
       "rank": 492,
+      "candidateKey": "260918_부모요구대형결혼식",
       "path": "data/candidates/260918_C1_A0_P0_부모요구대형결혼식.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4937,6 +5430,7 @@
     },
     {
       "rank": 493,
+      "candidateKey": "260918_부모쪽축의금질문",
       "path": "data/candidates/260918_C1_A0_P0_부모쪽축의금질문.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4947,6 +5441,7 @@
     },
     {
       "rank": 494,
+      "candidateKey": "260918_부모축의금누구돈",
       "path": "data/candidates/260918_C1_A0_P0_부모축의금누구돈.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4957,6 +5452,7 @@
     },
     {
       "rank": 495,
+      "candidateKey": "260918_부자직장동료지출압박",
       "path": "data/candidates/260918_C1_A0_P0_부자직장동료지출압박.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4967,6 +5463,7 @@
     },
     {
       "rank": 496,
+      "candidateKey": "260918_비밀빚이세번째",
       "path": "data/candidates/260918_C1_A0_P0_비밀빚이세번째.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4977,6 +5474,7 @@
     },
     {
       "rank": 497,
+      "candidateKey": "260918_빚250파운드를결혼선물로",
       "path": "data/candidates/260918_C1_A0_P0_빚250파운드를결혼선물로.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4987,6 +5485,7 @@
     },
     {
       "rank": 498,
+      "candidateKey": "260918_빚대신결혼선물",
       "path": "data/candidates/260918_C1_A0_P0_빚대신결혼선물.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -4997,6 +5496,7 @@
     },
     {
       "rank": 499,
+      "candidateKey": "260918_빚안갚고주식하겠다는남편",
       "path": "data/candidates/260918_C1_A0_P0_빚안갚고주식하겠다는남편.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5007,6 +5507,7 @@
     },
     {
       "rank": 500,
+      "candidateKey": "260918_사고치는남편3억",
       "path": "data/candidates/260918_C1_A0_P0_사고치는남편3억.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5017,6 +5518,7 @@
     },
     {
       "rank": 501,
+      "candidateKey": "260918_사업하다숨긴카드빚4만달러",
       "path": "data/candidates/260918_C1_A0_P0_사업하다숨긴카드빚4만달러.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5027,6 +5529,7 @@
     },
     {
       "rank": 502,
+      "candidateKey": "260918_사주때문에_결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_사주때문에_결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5037,6 +5540,7 @@
     },
     {
       "rank": 503,
+      "candidateKey": "260918_사주때문에결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_사주때문에결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5047,6 +5551,7 @@
     },
     {
       "rank": 504,
+      "candidateKey": "260918_소비빚20만달러주식베팅",
       "path": "data/candidates/260918_C1_A0_P0_소비빚20만달러주식베팅.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5057,6 +5562,7 @@
     },
     {
       "rank": 505,
+      "candidateKey": "260918_수의사남편개인투자",
       "path": "data/candidates/260918_C1_A0_P0_수의사남편개인투자.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5067,6 +5573,7 @@
     },
     {
       "rank": 506,
+      "candidateKey": "260918_숨긴30만달러빚",
       "path": "data/candidates/260918_C1_A0_P0_숨긴30만달러빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5077,6 +5584,7 @@
     },
     {
       "rank": 507,
+      "candidateKey": "260918_숨은_2만5천달러_남편빚",
       "path": "data/candidates/260918_C1_A0_P0_숨은_2만5천달러_남편빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5087,6 +5595,7 @@
     },
     {
       "rank": 508,
+      "candidateKey": "260918_숨은6만달러카드빚",
       "path": "data/candidates/260918_C1_A0_P0_숨은6만달러카드빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5097,6 +5606,7 @@
     },
     {
       "rank": 509,
+      "candidateKey": "260918_시댁일주일한번예비신랑",
       "path": "data/candidates/260918_C1_A0_P0_시댁일주일한번예비신랑.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5107,6 +5617,7 @@
     },
     {
       "rank": 510,
+      "candidateKey": "260918_신부들러리500달러한도",
       "path": "data/candidates/260918_C1_A0_P0_신부들러리500달러한도.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5117,6 +5628,7 @@
     },
     {
       "rank": 511,
+      "candidateKey": "260918_신혼여행보다가족항공료",
       "path": "data/candidates/260918_C1_A0_P0_신혼여행보다가족항공료.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5127,6 +5639,7 @@
     },
     {
       "rank": 512,
+      "candidateKey": "260918_실직후결혼금거부이혼",
       "path": "data/candidates/260918_C1_A0_P0_실직후결혼금거부이혼.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5137,6 +5650,7 @@
     },
     {
       "rank": 513,
+      "candidateKey": "260918_아내몰래1만7천달러빚",
       "path": "data/candidates/260918_C1_A0_P0_아내몰래1만7천달러빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5147,6 +5661,7 @@
     },
     {
       "rank": 514,
+      "candidateKey": "260918_아내불면증고친남편",
       "path": "data/candidates/260918_C1_A0_P0_아내불면증고친남편.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5157,6 +5672,7 @@
     },
     {
       "rank": 515,
+      "candidateKey": "260918_아내생일서프라이즈취소",
       "path": "data/candidates/260918_C1_A0_P0_아내생일서프라이즈취소.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5167,6 +5683,7 @@
     },
     {
       "rank": 516,
+      "candidateKey": "260918_아내주식탕진대출",
       "path": "data/candidates/260918_C1_A0_P0_아내주식탕진대출.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5177,6 +5694,7 @@
     },
     {
       "rank": 517,
+      "candidateKey": "260918_아내카드대출시누이",
       "path": "data/candidates/260918_C1_A0_P0_아내카드대출시누이.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5187,6 +5705,7 @@
     },
     {
       "rank": 518,
+      "candidateKey": "260918_약혼자_웨딩통장_3천달러",
       "path": "data/candidates/260918_C1_A0_P0_약혼자_웨딩통장_3천달러.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5197,6 +5716,7 @@
     },
     {
       "rank": 519,
+      "candidateKey": "260918_약혼자거짓말로결혼취소",
       "path": "data/candidates/260918_C1_A0_P0_약혼자거짓말로결혼취소.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5207,6 +5727,7 @@
     },
     {
       "rank": 520,
+      "candidateKey": "260918_언니결혼비용카드결제거절",
       "path": "data/candidates/260918_C1_A0_P0_언니결혼비용카드결제거절.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5217,6 +5738,7 @@
     },
     {
       "rank": 521,
+      "candidateKey": "260918_언니꿈의결혼식지원요구",
       "path": "data/candidates/260918_C1_A0_P0_언니꿈의결혼식지원요구.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5227,6 +5749,7 @@
     },
     {
       "rank": 522,
+      "candidateKey": "260918_엄마가빚안갚아주면결혼식불참",
       "path": "data/candidates/260918_C1_A0_P0_엄마가빚안갚아주면결혼식불참.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5237,6 +5760,7 @@
     },
     {
       "rank": 523,
+      "candidateKey": "260918_엄마가축의금써버림",
       "path": "data/candidates/260918_C1_A0_P0_엄마가축의금써버림.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5247,6 +5771,7 @@
     },
     {
       "rank": 524,
+      "candidateKey": "260918_엄마세금빚3만달러임신중발견",
       "path": "data/candidates/260918_C1_A0_P0_엄마세금빚3만달러임신중발견.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5257,6 +5782,7 @@
     },
     {
       "rank": 525,
+      "candidateKey": "260918_여자후배좋아하나요",
       "path": "data/candidates/260918_C1_A0_P0_여자후배좋아하나요.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5267,6 +5793,7 @@
     },
     {
       "rank": 526,
+      "candidateKey": "260918_여친동생결혼축의금",
       "path": "data/candidates/260918_C1_A0_P0_여친동생결혼축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5277,6 +5804,7 @@
     },
     {
       "rank": 527,
+      "candidateKey": "260918_연봉학벌결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_연봉학벌결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5287,6 +5815,7 @@
     },
     {
       "rank": 528,
+      "candidateKey": "260918_연상여친결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_연상여친결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5297,6 +5826,7 @@
     },
     {
       "rank": 529,
+      "candidateKey": "260918_예상두배15만달러학자금",
       "path": "data/candidates/260918_C1_A0_P0_예상두배15만달러학자금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5307,6 +5837,7 @@
     },
     {
       "rank": 530,
+      "candidateKey": "260918_왕복4시간축의금",
       "path": "data/candidates/260918_C1_A0_P0_왕복4시간축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5317,6 +5848,7 @@
     },
     {
       "rank": 531,
+      "candidateKey": "260918_외벌이500용돈",
       "path": "data/candidates/260918_C1_A0_P0_외벌이500용돈.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5327,6 +5859,7 @@
     },
     {
       "rank": 532,
+      "candidateKey": "260918_웨딩업체친구미수금",
       "path": "data/candidates/260918_C1_A0_P0_웨딩업체친구미수금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5337,6 +5870,7 @@
     },
     {
       "rank": 533,
+      "candidateKey": "260918_유산끼남편회식",
       "path": "data/candidates/260918_C1_A0_P0_유산끼남편회식.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5347,6 +5881,7 @@
     },
     {
       "rank": 534,
+      "candidateKey": "260918_육아후소득불안",
       "path": "data/candidates/260918_C1_A0_P0_육아후소득불안.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5357,6 +5892,7 @@
     },
     {
       "rank": 535,
+      "candidateKey": "260918_이모때문에결혼식스트레스",
       "path": "data/candidates/260918_C1_A0_P0_이모때문에결혼식스트레스.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5367,6 +5903,7 @@
     },
     {
       "rank": 536,
+      "candidateKey": "260918_이탈리아결혼식3200",
       "path": "data/candidates/260918_C1_A0_P0_이탈리아결혼식3200.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5377,6 +5914,7 @@
     },
     {
       "rank": 537,
+      "candidateKey": "260918_일본유학결혼썰",
       "path": "data/candidates/260918_C1_A0_P0_일본유학결혼썰.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5387,6 +5925,7 @@
     },
     {
       "rank": 538,
+      "candidateKey": "260918_임신막달남편격일회식",
       "path": "data/candidates/260918_C1_A0_P0_임신막달남편격일회식.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5397,6 +5936,7 @@
     },
     {
       "rank": 539,
+      "candidateKey": "260918_임신중남편세금빚발견",
       "path": "data/candidates/260918_C1_A0_P0_임신중남편세금빚발견.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5407,6 +5947,7 @@
     },
     {
       "rank": 540,
+      "candidateKey": "260918_전남편착오송금",
       "path": "data/candidates/260918_C1_A0_P0_전남편착오송금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5417,6 +5958,7 @@
     },
     {
       "rank": 541,
+      "candidateKey": "260918_절약부부천만원빚",
       "path": "data/candidates/260918_C1_A0_P0_절약부부천만원빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5427,6 +5969,7 @@
     },
     {
       "rank": 542,
+      "candidateKey": "260918_주담대갱신40K비밀빚",
       "path": "data/candidates/260918_C1_A0_P0_주담대갱신40K비밀빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5437,6 +5980,7 @@
     },
     {
       "rank": 543,
+      "candidateKey": "260918_주식안팔고빚최대로",
       "path": "data/candidates/260918_C1_A0_P0_주식안팔고빚최대로.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5447,6 +5991,7 @@
     },
     {
       "rank": 544,
+      "candidateKey": "260918_주식중독남편대출",
       "path": "data/candidates/260918_C1_A0_P0_주식중독남편대출.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5457,6 +6002,7 @@
     },
     {
       "rank": 545,
+      "candidateKey": "260918_직장결혼선물기부압박",
       "path": "data/candidates/260918_C1_A0_P0_직장결혼선물기부압박.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5467,6 +6013,7 @@
     },
     {
       "rank": 546,
+      "candidateKey": "260918_직장동료70억사기",
       "path": "data/candidates/260918_C1_A0_P0_직장동료70억사기.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5477,6 +6024,7 @@
     },
     {
       "rank": 547,
+      "candidateKey": "260918_직장동료결혼식밴드",
       "path": "data/candidates/260918_C1_A0_P0_직장동료결혼식밴드.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5487,6 +6035,7 @@
     },
     {
       "rank": 548,
+      "candidateKey": "260918_직장동료자녀축하금압박",
       "path": "data/candidates/260918_C1_A0_P0_직장동료자녀축하금압박.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5497,6 +6046,7 @@
     },
     {
       "rank": 549,
+      "candidateKey": "260918_집사려다7년비밀빚발견",
       "path": "data/candidates/260918_C1_A0_P0_집사려다7년비밀빚발견.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5507,6 +6057,7 @@
     },
     {
       "rank": 550,
+      "candidateKey": "260918_집안화목결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_집안화목결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5517,6 +6068,7 @@
     },
     {
       "rank": 551,
+      "candidateKey": "260918_집없는데외벌이논쟁",
       "path": "data/candidates/260918_C1_A0_P0_집없는데외벌이논쟁.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5527,6 +6079,7 @@
     },
     {
       "rank": 552,
+      "candidateKey": "260918_창업남친_아빠결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_창업남친_아빠결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5537,6 +6090,7 @@
     },
     {
       "rank": 553,
+      "candidateKey": "260918_처제빚_결혼저축_1만4천달러",
       "path": "data/candidates/260918_C1_A0_P0_처제빚_결혼저축_1만4천달러.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5547,6 +6101,7 @@
     },
     {
       "rank": 554,
+      "candidateKey": "260918_첫명절_시댁친정_일정",
       "path": "data/candidates/260918_C1_A0_P0_첫명절_시댁친정_일정.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5557,6 +6112,7 @@
     },
     {
       "rank": 555,
+      "candidateKey": "260918_첫식사후결혼반대",
       "path": "data/candidates/260918_C1_A0_P0_첫식사후결혼반대.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5567,6 +6123,7 @@
     },
     {
       "rank": 556,
+      "candidateKey": "260918_최저임금직원상사축의금",
       "path": "data/candidates/260918_C1_A0_P0_최저임금직원상사축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5577,6 +6134,7 @@
     },
     {
       "rank": 557,
+      "candidateKey": "260918_추석친정혼자가라는남편",
       "path": "data/candidates/260918_C1_A0_P0_추석친정혼자가라는남편.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5587,6 +6145,7 @@
     },
     {
       "rank": 558,
+      "candidateKey": "260918_축의금계좌이체식권",
       "path": "data/candidates/260918_C1_A0_P0_축의금계좌이체식권.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5597,6 +6156,7 @@
     },
     {
       "rank": 559,
+      "candidateKey": "260918_축의금국룰",
       "path": "data/candidates/260918_C1_A0_P0_축의금국룰.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5607,6 +6167,7 @@
     },
     {
       "rank": 560,
+      "candidateKey": "260918_축의금문제제가잘못",
       "path": "data/candidates/260918_C1_A0_P0_축의금문제제가잘못.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5617,6 +6178,7 @@
     },
     {
       "rank": 561,
+      "candidateKey": "260918_축의금물가가많이올랐다",
       "path": "data/candidates/260918_C1_A0_P0_축의금물가가많이올랐다.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5627,6 +6189,7 @@
     },
     {
       "rank": 562,
+      "candidateKey": "260918_축의금식대논쟁",
       "path": "data/candidates/260918_C1_A0_P0_축의금식대논쟁.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5637,6 +6200,7 @@
     },
     {
       "rank": 563,
+      "candidateKey": "260918_축의금인플레이션",
       "path": "data/candidates/260918_C1_A0_P0_축의금인플레이션.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5647,6 +6211,7 @@
     },
     {
       "rank": 564,
+      "candidateKey": "260918_축의금정산양가",
       "path": "data/candidates/260918_C1_A0_P0_축의금정산양가.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5657,6 +6222,7 @@
     },
     {
       "rank": 565,
+      "candidateKey": "260918_취집한친구얄밉다",
       "path": "data/candidates/260918_C1_A0_P0_취집한친구얄밉다.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5667,6 +6233,7 @@
     },
     {
       "rank": 566,
+      "candidateKey": "260918_친구결혼2만달러대출",
       "path": "data/candidates/260918_C1_A0_P0_친구결혼2만달러대출.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5677,6 +6244,7 @@
     },
     {
       "rank": 567,
+      "candidateKey": "260918_친구결혼식사회비",
       "path": "data/candidates/260918_C1_A0_P0_친구결혼식사회비.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5687,6 +6255,7 @@
     },
     {
       "rank": 568,
+      "candidateKey": "260918_친구축의금섭섭",
       "path": "data/candidates/260918_C1_A0_P0_친구축의금섭섭.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5697,6 +6266,7 @@
     },
     {
       "rank": 569,
+      "candidateKey": "260918_친오빠_결혼_축의금",
       "path": "data/candidates/260918_C1_A0_P0_친오빠_결혼_축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5707,6 +6277,7 @@
     },
     {
       "rank": 570,
+      "candidateKey": "260918_카지노잭팟약혼녀빚",
       "path": "data/candidates/260918_C1_A0_P0_카지노잭팟약혼녀빚.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5717,6 +6288,7 @@
     },
     {
       "rank": 571,
+      "candidateKey": "260918_코인단타2억3억",
       "path": "data/candidates/260918_C1_A0_P0_코인단타2억3억.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5727,6 +6299,7 @@
     },
     {
       "rank": 572,
+      "candidateKey": "260918_코인대출남편",
       "path": "data/candidates/260918_C1_A0_P0_코인대출남편.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5737,6 +6310,7 @@
     },
     {
       "rank": 573,
+      "candidateKey": "260918_타지결혼식축의금",
       "path": "data/candidates/260918_C1_A0_P0_타지결혼식축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5747,6 +6321,7 @@
     },
     {
       "rank": 574,
+      "candidateKey": "260918_타지친구축의금",
       "path": "data/candidates/260918_C1_A0_P0_타지친구축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5757,6 +6332,7 @@
     },
     {
       "rank": 575,
+      "candidateKey": "260918_파혼뒤_결혼비용_상환요구",
       "path": "data/candidates/260918_C1_A0_P0_파혼뒤_결혼비용_상환요구.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5767,6 +6343,7 @@
     },
     {
       "rank": 576,
+      "candidateKey": "260918_파혼웨딩비용상환",
       "path": "data/candidates/260918_C1_A0_P0_파혼웨딩비용상환.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5777,6 +6354,7 @@
     },
     {
       "rank": 577,
+      "candidateKey": "260918_하객알바축의금",
       "path": "data/candidates/260918_C1_A0_P0_하객알바축의금.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5787,6 +6365,7 @@
     },
     {
       "rank": 578,
+      "candidateKey": "260918_형결혼식800달러선물취소",
       "path": "data/candidates/260918_C1_A0_P0_형결혼식800달러선물취소.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5797,6 +6376,7 @@
     },
     {
       "rank": 579,
+      "candidateKey": "260918_호텔결혼축의금얼마",
       "path": "data/candidates/260918_C1_A0_P0_호텔결혼축의금얼마.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5807,6 +6387,7 @@
     },
     {
       "rank": 580,
+      "candidateKey": "260918_혼테크6년30억자가",
       "path": "data/candidates/260918_C1_A0_P0_혼테크6년30억자가.md",
       "date": "260918",
       "candidateStage": "C1",
@@ -5817,6 +6398,7 @@
     },
     {
       "rank": 581,
+      "candidateKey": "260919_반반결혼의최후",
       "path": "data/candidates/260919_C1_A0_P0_반반결혼의최후.md",
       "date": "260919",
       "candidateStage": "C1",
@@ -5827,6 +6409,7 @@
     },
     {
       "rank": 582,
+      "candidateKey": "260919_아침밥결혼식후이혼",
       "path": "data/candidates/260919_C1_A0_P0_아침밥결혼식후이혼.md",
       "date": "260919",
       "candidateStage": "C1",
@@ -5837,6 +6420,7 @@
     },
     {
       "rank": 583,
+      "candidateKey": "260919_ATM남편이혼고민",
       "path": "data/candidates/260919_C1_A0_P0_ATM남편이혼고민.md",
       "date": "260919",
       "candidateStage": "C1",
