@@ -19,25 +19,21 @@ For each useful run, when coverage allows:
 Restricted sources must not be bulk crawled or accessed by bypassing login/anti-bot controls.
 
 ## Canonical material location
-The main material pool is **`data/candidates/`**. One candidate = one Markdown file.
-
-Current repository inventory checked on 2026-09-19:
-- total candidate files: **580**
-- 2026-09-16: C0 66 / C1 149
-- 2026-09-17: C0 8 / C1 199
-- 2026-09-18: C0 3 / C1 155
-
-A newer one-off discovery record also exists under `01_DISCOVERY/candidates/`, but new discovery should be normalized into `data/candidates/` rather than creating another parallel pool.
+The main material pool is **`data/candidates/`**. One candidate = one Markdown file. New discovery belongs there rather than in a parallel pool.
 
 For each retained candidate record source, exact/public URL if actually verified, exact observed title, observation time, only visible metrics, whether full body/comments were actually read, whether source images/screenshots are known to exist, why it is usable, and exact provenance/acquisition state. Exact individual public source = C1; only index/list provenance = C0. Do not invent body text, metrics, rights, OCR/moderation, assets, or publication state.
 
-## Existing production assets
-Existing source packages/carousels are historical work only. Leave them untouched while this DISCOVERY ONLY override is active.
+Candidate files should also include a concise **내용 확인 요약** when the public body was actually read, so the user can evaluate the premise quickly. Do not copy entire copyrighted posts into the repository; retain the exact public source URL for full-source review.
 
 ## Latest discovery truth
-Latest full high-volume useful Discovery on record: **40+ raw / 15 retained C1**. A later Korean-community refresh recorded **29 raw / 10 retained**. The focused Nate Pann provenance search was 3 raw / 1 corroborated and was not a full discovery pass.
+Latest discovery-only refresh (ops 190): approximately **20 visible raw leads/results inspected / 3 retained C1**. Coverage was below the desired 40–80 because prioritized community search access was partly blocked and weak/duplicate results were not padded.
 
-Recent notable material includes:
+New retained candidates:
+- `[네이트판] ATM남편 된 것 같은데.. 이혼해야 할까요?`
+- `반반결혼의 최후 (애로부부 캡쳐)`
+- `[네이트판] 아침밥 때문에 결혼식하고 이혼`
+
+Earlier notable material includes:
 - 우리집 홈캠을 보고 계셨던 시어머니.
 - 너무 많이 먹는 남편 ㅠㅠ
 - 아이이름 짓는데 술집여자 같다는 남편
@@ -50,6 +46,9 @@ Recent notable material includes:
 - 파혼 뒤 결혼비용 상환 요구
 - 형 결혼식 800달러 선물 취소
 - 호텔 결혼 축의금 얼마
+
+## Existing production assets
+Existing source packages/carousels are historical work only. Leave them untouched while this DISCOVERY ONLY override is active.
 
 ## Next
 Only continue high-volume material discovery and exact-source/provenance verification. Keep adding strong candidates to `data/candidates/`. Do not turn any candidate into screenshots, carousels, videos, or publications unless the user later explicitly reopens production.
