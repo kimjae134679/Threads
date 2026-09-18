@@ -3,58 +3,27 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T03:00:00+09:00",
+  "updatedAt": "2026-09-19T04:27:00+09:00",
   "requestedTrack": {
-    "9_source_auto_acquisition": {
-      "status": "PARTIAL",
-      "note": "URL→원문 전체 본문·이미지 자동 입력 연결을 후보별로 검증. 접근 제한 우회 금지."
-    },
-    "10_ui_exclusion": {
-      "status": "PARTIAL",
-      "note": "기존 UI chrome crop 기반 있음. 실제 후보별 자동 연결 검증 필요."
-    },
-    "11_natural_splitting": {
-      "status": "PARTIAL",
-      "note": "기존 길이 분할을 문단/장면 경계 기준으로 개선·검증."
-    },
-    "12_title_suggestion": {
-      "status": "PARTIAL",
-      "note": "TITLE_STYLE_GUIDE 존재. 실제 변환 단계 연결 검증 필요."
-    },
-    "13_browser_review": {
-      "status": "TODO",
-      "note": "한 소재 전체 생성→다운로드→재접속→복원 테스트."
-    },
-    "14_review_screen": {
-      "status": "TODO",
-      "note": "만든 파일과 승인 버전을 게시 검수 화면에 테스트 연결."
-    },
-    "15_approval_runtime_reflection": {
-      "status": "TODO",
-      "note": "승인한 최종 출력물이 실행/PR 환경에 반영되는지 테스트."
-    },
-    "16_live_publish_metrics": {
-      "status": "DISABLED",
-      "note": "테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."
-    }
+    "9_source_auto_acquisition": {"status": "PARTIAL", "note": "첫 테스트 소재의 공개 Blind URL에서 본문 시작~끝을 로그인/우회 없이 직접 읽을 수 있음을 확인. 자동 대량수집은 하지 않으며 원본 스크린샷/미디어 자산은 아직 미확보."},
+    "10_ui_exclusion": {"status": "PARTIAL", "note": "기존 UI chrome crop 기반 있음. 실제 원본 스크린샷/자산이 들어오면 후보별 자동 crop 검증 필요."},
+    "11_natural_splitting": {"status": "PARTIAL", "note": "TEMP 전용 natural-boundary-splitter.js 추가. 빈 줄 문단 경계를 우선하고 긴 문단만 문장/줄 경계로 fallback하며 고정 길이 절단을 피함. 실제 제3자 원문 전체를 저장소에 복제하지 않고 검증하도록 설계."},
+    "12_title_suggestion": {"status": "PARTIAL", "note": "TITLE_STYLE_GUIDE 기반 테스트 제목 후보 존재. 실제 변환 UI 연결 검증 필요."},
+    "13_browser_review": {"status": "TODO", "note": "한 소재 전체 생성→다운로드→재접속→복원 테스트."},
+    "14_review_screen": {"status": "TODO", "note": "만든 파일과 승인 버전을 게시 검수 화면에 테스트 연결."},
+    "15_approval_runtime_reflection": {"status": "TODO", "note": "승인한 최종 출력물이 실행/PR 환경에 반영되는지 테스트."},
+    "16_live_publish_metrics": {"status": "DISABLED", "note": "테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."}
   },
-  "samples": [
-    {
-      "candidateKey": "260916_2026회사별느낌",
-      "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-      "state": "TEMP_TEST_STARTED",
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "completed": [
-        "metadata-to-test-manifest",
-        "text-only-cover-prototype"
-      ],
-      "blocked": [
-        "full-source-body",
-        "real-source-screenshots"
-      ],
-      "next": "When real/permitted source body or screenshots are available, test natural splitting and UI exclusion. Until then, keep test-only and do not infer missing content."
-    }
-  ]
+  "samples": [{
+    "candidateKey": "260916_2026회사별느낌",
+    "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+    "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
+    "state": "TEMP_TEST_BODY_VERIFIED_SPLITTER_READY",
+    "sourceBodyComplete": true,
+    "sourceAssetsComplete": false,
+    "commentsComplete": false,
+    "completed": ["metadata-to-test-manifest", "text-only-cover-prototype", "public-full-body-read", "natural-boundary-splitter-prototype"],
+    "blocked": ["real-source-screenshots-or-permitted-source-assets", "full-comment-thread", "rights/privacy/defamation/human-approval"],
+    "next": "Use a permitted source screenshot/asset to test UI exclusion, or run the natural splitter through the browser conversion path without committing the third-party full body verbatim."
+  }]
 }
