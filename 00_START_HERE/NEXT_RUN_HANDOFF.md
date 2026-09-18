@@ -2,53 +2,82 @@
 
 Updated: 2026-09-19 KST
 
-## CURRENT USER OVERRIDE — DISCOVERY ONLY
-Until the user explicitly changes this again, work on **01_DISCOVERY / 소재 발굴 only**.
+## CURRENT USER OVERRIDE — PROCESS ALL CANDIDATES SEQUENTIALLY
+The previous **DISCOVERY ONLY** override is superseded by the user's 2026-09-19 instruction.
 
-Do NOT continue 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS work. Do NOT capture screenshots, download source media, build/crop/normalize carousels, render images/video, run publishing/provider work, or modify existing production assets. Existing role ownership remains intact and only 04_REVIEW_PUBLISH may ever publish.
+Current operating order:
+1. Start from current `main`, this file, the latest sequential T-0008 ops note, `data/_system/candidate-program-queue.json`, and `data/_system/candidate-program-progress.json`.
+2. Refresh the queue from **every current file in `data/candidates/`**, including newly discovered candidates.
+3. Process candidates one-by-one in deterministic filename-ascending order using stable `candidateKey` identity.
+4. On the hourly scheduled run, work on **one next unprocessed candidate** as far as safely possible.
+5. Record progress/blockers so future runs do not repeat finished work.
 
-## Discovery operating rule
-Korean-community first: Blind, DCInside, FMKorea, TheQoo, Instiz, Ruliweb, Ppomppu, Clien, Inven, Arca, NAVER/Daum cafes, then public Threads/Instagram/Reddit/YouTube/news.
+## Current inventory / program wiring
+Current inventory after the first sequential provenance pass:
+- total: **583**
+- C0: **76**
+- C1: **507**
+- C2: 0
+- A0: **583**
+- A1: 0
+- P0: **583**
+- P1: 0
 
-For each useful run, when coverage allows:
-- inspect roughly 40–80 raw leads;
-- retain roughly 15–30 genuinely usable candidates after dedupe/safety/access/story filtering;
-- prioritize funny/absurd true stories, workplace conflict, dating/marriage arguments, money/gifts/debt/lottery, family drama, embarrassing misunderstandings, reversals, relatable annoyance, and posts that trigger instant opinions;
-- do not rank by views alone.
+Program version: **0.42.3**
 
-Restricted sources must not be bulk crawled or accessed by bypassing login/anti-bot controls.
+Repository candidates now flow into the running app through:
+- `repo-candidates.mjs`
+- `GET /api/repo-candidates`
+- `app/repo-candidate-sync.js`
 
-## Canonical material location
-The main material pool is **`data/candidates/`**. One candidate = one Markdown file. New discovery belongs there rather than in a parallel pool.
+The browser Inbox merges repo candidates without overwriting richer user-edited state. Queue order is also written to:
+- `data/_system/candidate-program-queue.json`
 
-For each retained candidate record source, exact/public URL if actually verified, exact observed title, observation time, only visible metrics, whether full body/comments were actually read, whether source images/screenshots are known to exist, why it is usable, and exact provenance/acquisition state. Exact individual public source = C1; only index/list provenance = C0. Do not invent body text, metrics, rights, OCR/moderation, assets, or publication state.
+Cycle state is written to:
+- `data/_system/candidate-program-progress.json`
 
-Candidate files should also include a concise **내용 확인 요약** when the public body was actually read, so the user can evaluate the premise quickly. Do not copy entire copyrighted posts into the repository; retain the exact public source URL for full-source review.
+## Stage rules
+- **C0**: verify the exact individual public source/provenance first. Do not treat an index/list URL as the canonical source.
+- **C1**: acquire real source screenshots/media only through public/permitted access. Never bypass login, anti-bot, paywall, or access controls.
+- If a restricted/community source requires a manual screenshot, record the blocker/unblock condition and move to the next candidate on the next cycle.
+- Never fabricate body text, comments, metrics, screenshots, media, OCR/vision results, moderation, rights clearance, A1, or P1.
+- Production/editorial steps may proceed only from evidence actually acquired/verified.
 
-## Latest discovery truth
-Latest discovery-only refresh (ops 190): approximately **20 visible raw leads/results inspected / 3 retained C1**. Coverage was below the desired 40–80 because prioritized community search access was partly blocked and weak/duplicate results were not padded.
+## Binding cover / carousel rule
+Latest user cover decision supersedes older blur language:
+- **NO blur on the cover.**
+- If the source contains a real image/media asset: use that source media directly as the cover background, without blur or generated replacement imagery.
+- If the source is text-only: use **text-only cover**, with no generated image.
+- Cover title: large, punchy, positioned higher; thin outline only for readability.
+- Slide 2 onward: preserve original source screenshot/media order and content. No editorial reordering.
+- Generated-image fallback remains disabled.
 
-New retained candidates:
-- `[네이트판] ATM남편 된 것 같은데.. 이혼해야 할까요?`
-- `반반결혼의 최후 (애로부부 캡쳐)`
-- `[네이트판] 아침밥 때문에 결혼식하고 이혼`
+The runtime/card/source-package implementation was updated to this rule in v0.42.3.
 
-Earlier notable material includes:
-- 우리집 홈캠을 보고 계셨던 시어머니.
-- 너무 많이 먹는 남편 ㅠㅠ
-- 아이이름 짓는데 술집여자 같다는 남편
-- 결혼 승낙 받자마자 탈모인거 밝힌 남편..
-- 나몰래 대출받은 남편
-- 주식중독 남편.. 대출 막는법 있을까?
-- 친구 결혼 2만달러 대출
-- 카지노 잭팟 약혼녀 빚
-- 코인 대출 남편
-- 파혼 뒤 결혼비용 상환 요구
-- 형 결혼식 800달러 선물 취소
-- 호텔 결혼 축의금 얼마
+## First sequential cycle completed
+Original queue rank 1:
+- `260916_C0_A0_P0_2026회사별느낌.md`
+- exact public Blind post recovered:
+  `https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco`
+- candidate promoted to:
+  `260916_C1_A0_P0_2026회사별느낌.md`
+- next stage is blocked on **manual source screenshot acquisition** because Blind must not be auto-crawled/bypassed.
+- no A1/P1/right/privacy/OCR/moderation success was claimed.
 
-## Existing production assets
-Existing source packages/carousels are historical work only. Leave them untouched while this DISCOVERY ONLY override is active.
+After refresh, the current next queue item is:
+- `data/candidates/260916_C0_A0_P0_25살연애불가능할까.md`
+
+## Publication ownership / safety
+Only **04_REVIEW_PUBLISH** may actually publish or mark P1.
+Human rights/privacy/safety approval remains required. The hourly processing schedule must never auto-publish.
+
+## Verification
+Windows clean-clone verification on 2026-09-19:
+- `npm run check` **PASS**
+- repository candidate sync test PASS
+- source-package/card storyboard regressions PASS
+- existing persistence/publisher/video/discovery regression suite PASS
+- actual ffmpeg vertical render/ffprobe PASS
 
 ## Next
-Only continue high-volume material discovery and exact-source/provenance verification. Keep adding strong candidates to `data/candidates/`. Do not turn any candidate into screenshots, carousels, videos, or publications unless the user later explicitly reopens production.
+Refresh the queue first, then process exactly the next eligible candidateKey. Update both the progress file and this handoff after meaningful changes. Append the next sequential Sol ops note.
