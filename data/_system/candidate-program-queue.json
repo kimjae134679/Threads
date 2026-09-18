@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "data/candidates",
+  "generatedAtKst": "2026-09-19",
+  "ordering": "filename-ascending",
+  "policy": "Every candidate file is queued. C0 must verify exact provenance before source acquisition; publication remains gated by 04_REVIEW_PUBLISH.",
+  "counts": {
+    "total": 0,
+    "c0": 0,
+    "c1": 0,
+    "c2": 0,
+    "a0": 0,
+    "a1": 0,
+    "p0": 0,
+    "p1": 0
+  },
+  "items": []
+}
