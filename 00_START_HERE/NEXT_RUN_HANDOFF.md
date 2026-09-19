@@ -1,14 +1,15 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 02:28 KST
+Updated: 2026-09-20 03:14 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only ops note: `01_DISCOVERY/ops/232-sol.md`.
+- Latest discovery-only ops note: `01_DISCOVERY/ops/234-sol.md`.
 - Raw lead review: 40+ Korean-community-first public/indexed leads; retained 15 new C1 candidates.
-- All retained candidates remain A1=false, P1=false, publicationAllowed=false.
+- Top new titles include `(블라인드) 혼테크는 이렇게 하는거임`, `결혼이랑 임출육 후회 하는 중기`, `눈새 친구 때문에 짜증나는 후기`, `결혼한지 1년도 안되서 이혼을 생각중인 중기 그리고 이혼한 덬들의 삶이 궁금한 중기`, `주부인지 백수인지 어정쩡하게 살고 있는 중기`, `'반반 결혼 합의서' 갈등 부부..오은영 "찢어버렸으면 좋겠다"`.
+- All retained candidates remain A1=false, P1=false, publicationAllowed=false. Reposts were marked as repost provenance; missing original-source identity was not invented.
 - Next discovery run: continue finding new material and verifying exact provenance only; do not advance candidates into production even if the pool is sufficient.
 
 ## Sequential candidate/TEMP lane — latest
