@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T22:26:12+09:00",
+  "updatedAt": "2026-09-19T23:26:43+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {"status":"PARTIAL","note":"Public URL/body wiring only where permitted; no login/access-control bypass and no invented source bytes."},
     "10_ui_exclusion": {"status":"PARTIAL","note":"Needs permitted real source screenshot/assets for candidate-specific crop verification."},
     "11_natural_splitting": {"status":"PARTIAL","note":"Natural-boundary splitter wiring exists; third-party source text is not fabricated."},
     "12_title_suggestion": {"status":"PARTIAL","note":"Guard requires verified provenance/content and rejects unsupported numeric/quoted claims."},
-    "13_browser_review": {"status":"PARTIAL","note":"Synthetic harness passed previously; actual review-screen file download and fresh-page restore remain unobserved."},
-    "14_review_screen": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_fresh_page_roundtrip_observation.json as a fail-closed observation record. It currently records false/null until a real browser roundtrip is directly observed."},
-    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"Digest contract synthetic tests passed previously, but approved/restored/execution digest equality from an actual browser roundtrip is not yet observed."},
+    "13_browser_review": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_roundtrip-observation-runner.html to exercise browser serialization -> restore -> execution digest continuity using synthetic text only. It explicitly does not claim an OS download or fresh-page file-picker roundtrip."},
+    "14_review_screen": {"status":"PARTIAL","note":"Review-screen download/restore wiring exists, plus fail-closed observation manifest. Actual fresh-document file restore remains unobserved."},
+    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"Digest contract and in-browser roundtrip runner exist, but approved/restored/execution digest equality from an actual downloaded file restored in a fresh page is not yet directly observed."},
     "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
   },
   "samples": [{
@@ -25,6 +25,6 @@
     "temporaryTestOnly":true,
     "publicationAllowed":false,
     "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","review-screen-actual-download-fresh-page-restore-not-yet-observed"],
-    "next":"Use the TEMP observation manifest during a real permitted review-screen browser run; do not mark PASS unless exact downloaded-file restore and approved/restored/execution digest equality are directly observed."
+    "next":"Run the TEMP roundtrip observer/review screen in a permitted real browser, then perform actual JSON download -> fresh page -> exact file restore. Fill the observation manifest only from directly observed values."
   }]
 }
