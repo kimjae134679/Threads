@@ -27,10 +27,32 @@ export function buildVerifiedTitleInput({ exactObservedTitle = '', verifiedSourc
   });
 }
 
+function numericTokens(text) {
+  return new Set(String(text).match(/\d+(?:[.,]\d+)*/g) || []);
+}
+
+function quotedSegments(text) {
+  const out = [];
+  const re = /["“”'‘’「」『』]([^"“”'‘’「」『』]{2,})["“”'‘’「」『』]/g;
+  let match;
+  while ((match = re.exec(String(text))) !== null) out.push(match[1].trim());
+  return out.filter(Boolean);
+}
+
 export function assertSuggestedTitle(title, verifiedInput) {
   if (!verifiedInput?.temporaryTestOnly || verifiedInput?.publicationAllowed !== false) throw new Error('Unsafe title input');
   const value = String(title || '').trim();
   if (!value) throw new Error('Empty suggested title');
-  // Semantic fact checking remains a human/model review step; this guard only enforces safe provenance input.
+
+  // Deterministic checks for two high-risk invention classes. This is intentionally conservative:
+  // semantic fact checking still requires human/model review and this does not grant publication approval.
+  const evidence = `${verifiedInput.exactObservedTitle || ''}\n${verifiedInput.verifiedSourceText || ''}`;
+  const evidenceNumbers = numericTokens(evidence);
+  for (const token of numericTokens(value)) {
+    if (!evidenceNumbers.has(token)) throw new Error(`Suggested title blocked: unverified numeric token ${token}`);
+  }
+  for (const quote of quotedSegments(value)) {
+    if (!evidence.includes(quote)) throw new Error('Suggested title blocked: quoted wording is not present in verified evidence');
+  }
   return value;
 }
