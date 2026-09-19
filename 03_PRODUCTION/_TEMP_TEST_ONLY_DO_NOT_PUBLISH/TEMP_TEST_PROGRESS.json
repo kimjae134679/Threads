@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T23:26:43+09:00",
+  "updatedAt": "2026-09-20T00:27:14+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {"status":"PARTIAL","note":"Public URL/body wiring only where permitted; no login/access-control bypass and no invented source bytes."},
     "10_ui_exclusion": {"status":"PARTIAL","note":"Needs permitted real source screenshot/assets for candidate-specific crop verification."},
     "11_natural_splitting": {"status":"PARTIAL","note":"Natural-boundary splitter wiring exists; third-party source text is not fabricated."},
     "12_title_suggestion": {"status":"PARTIAL","note":"Guard requires verified provenance/content and rejects unsupported numeric/quoted claims."},
-    "13_browser_review": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_roundtrip-observation-runner.html to exercise browser serialization -> restore -> execution digest continuity using synthetic text only. It explicitly does not claim an OS download or fresh-page file-picker roundtrip."},
-    "14_review_screen": {"status":"PARTIAL","note":"Review-screen download/restore wiring exists, plus fail-closed observation manifest. Actual fresh-document file restore remains unobserved."},
-    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"Digest contract and in-browser roundtrip runner exist, but approved/restored/execution digest equality from an actual downloaded file restored in a fresh page is not yet directly observed."},
+    "13_browser_review": {"status":"PARTIAL","note":"Synthetic serialization/restore runner exists. Added TEMP_TEST_ONLY_fresh-page-restore-evidence-template.json so actual OS download/fresh-page restore cannot be confused with synthetic continuity."},
+    "14_review_screen": {"status":"PARTIAL","note":"Review-screen wiring exists; fresh-page evidence template remains UNOBSERVED until exact downloaded file is selected and restored in a fresh document."},
+    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"Approved/restored/execution digest fields are null and allDigestsEqual=false until directly observed from an actual downloaded file restored in a fresh page."},
     "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
   },
   "samples": [{
@@ -25,6 +25,6 @@
     "temporaryTestOnly":true,
     "publicationAllowed":false,
     "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","review-screen-actual-download-fresh-page-restore-not-yet-observed"],
-    "next":"Run the TEMP roundtrip observer/review screen in a permitted real browser, then perform actual JSON download -> fresh page -> exact file restore. Fill the observation manifest only from directly observed values."
+    "next":"Use TEMP_TEST_ONLY_fresh-page-restore-evidence-template.json only after directly observing review-screen JSON download -> fresh page -> exact downloaded-file restore -> approved/restored/execution digest equality."
   }]
 }
