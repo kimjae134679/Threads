@@ -1,14 +1,14 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 15:27 KST
+Updated: 2026-09-19 16:17 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
-## Latest discovery-only state — batch 212
-- Korean-community-first public search inspected approximately 50+ visible raw results/leads across Blind and broader prioritized-domain queries. NAVER Cafe, Clien and Instiz were blocked by robots and were not bypassed; weak/no-result community queries were not padded.
+## Latest discovery-only state — batch 213
+- Korean-community-first public search inspected approximately 50+ visible raw results/leads across Blind, TheQoo, Inven and broader prioritized-domain queries. Access restrictions were not bypassed and weak/no-result searches were not padded.
 - Retained 15 new C1 records in canonical `data/candidates/`, each with an exact individual public Blind URL.
-- Strong examples: `임테기 연한 두 줄 보여줘도 게임 계속`, `추석 제주 시댁 방문 항공료 72만원`, `결혼식 없이 4년 살았는데 돈은 계속 시댁으로`, `10년지기 친구 가족 셋 참석 축의 5만원`, `며느리 생일은 모른 척한 시어머니`.
+- Strong examples: `친정에 시댁 주택연금 사실을 숨긴 신혼`, `사실혼 여친의 유일한 남사친 때문에 무너진 신뢰`, `2년 여행비는 냈지만 반반 결혼 거부로 헤어진 커플`, `식 없는 결혼 뒤 10년 친구 축의 논쟁`, `비혼 친구에게 축의 100만원을 언제 돌려줄까`.
 - Every new record preserves exact observed title separately, only observed metrics, body/comment read state, and exact provenance/acquisition status. Partial observations are marked BODY_PARTIAL rather than inferred complete.
 - No screenshots, media downloads, OCR/moderation, editorial scoring, production, rendering, Chrome E2E, publishing or scheduling were performed. All new records remain A0/P0 and `publicationAllowed=false`.
 
