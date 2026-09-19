@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TEMP TEST ONLY Browser E2E Harness</title><style>body{font-family:system-ui,sans-serif;max-width:900px;margin:32px auto;padding:0 20px;background:#111;color:#eee}.danger{color:#ff8b8b;font-weight:800}.pass{color:#8fda9b}.fail{color:#ff8b8b}pre{white-space:pre-wrap;border:1px solid #555;padding:16px}</style></head><body>
-<h1>TEMP TEST ONLY · DO NOT PUBLISH</h1><p class="danger">합성 fixture만 사용합니다. 실제 게시/실사용 검증이 아닙니다.</p><pre id="out">RUNNING…</pre>
+<html lang="ko" data-temp-e2e="running"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="temp-test-only" content="true"><meta name="publication-allowed" content="false"><title>TEMP_E2E_RUNNING · DO NOT PUBLISH</title><style>body{font-family:system-ui,sans-serif;max-width:900px;margin:32px auto;padding:0 20px;background:#111;color:#eee}.danger{color:#ff8b8b;font-weight:800}.pass{color:#8fda9b}.fail{color:#ff8b8b}pre{white-space:pre-wrap;border:1px solid #555;padding:16px}</style></head><body>
+<h1>TEMP TEST ONLY · DO NOT PUBLISH</h1><p class="danger">합성 fixture만 사용합니다. 실제 게시/실사용 검증이 아닙니다.</p><pre id="out">RUNNING…</pre><output id="machine-result" hidden>TEMP_E2E_RUNNING</output>
 <script type="module">
 import {buildBrowserConversionModel,restoreBrowserConversionModel} from './browser-conversion-adapter.js';
-const out=document.querySelector('#out'); const results=[];
+const out=document.querySelector('#out'); const machine=document.querySelector('#machine-result'); const results=[];
+const emit=(state,detail)=>{const marker='TEMP_E2E_'+state.toUpperCase();document.documentElement.dataset.tempE2e=state;document.title=marker+' · DO NOT PUBLISH';machine.textContent=marker;window.__TEMP_E2E_RESULT__={state,marker,temporaryTestOnly:true,publicationAllowed:false,detail};};
 const check=(name,ok)=>{results.push({name,ok}); if(!ok) throw new Error(name)};
 const canonical=m=>JSON.stringify({temporaryTestOnly:m.temporaryTestOnly,publicationAllowed:m.publicationAllowed,title:m.title,sourceType:m.sourceType,cover:m.cover,slides:m.slides,sourceMediaOrderPolicy:m.sourceMediaOrderPolicy});
 const digest=async m=>{const bytes=new TextEncoder().encode(canonical(m));const hash=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('')};
@@ -21,6 +22,6 @@ try{
  const tampered=structuredClone(freshPageRestored); tampered.title='변조된 제목';
  check('tamper detected',tampered.tempApproval.sha256!==await digest(tampered));
  let refused=false; try{restoreBrowserConversionModel(JSON.stringify({...approved,publicationAllowed:true}))}catch{refused=true} check('publishable restore refused',refused);
- out.textContent=results.map(r=>'PASS  '+r.name).join('\n')+'\n\nTEMP_TEST_ONLY=true\npublicationAllowed=false\nNo network/publish action performed.'; out.className='pass'; document.documentElement.dataset.tempE2e='pass';
-}catch(err){out.textContent=results.map(r=>(r.ok?'PASS  ':'FAIL  ')+r.name).join('\n')+'\n\nERROR: '+err.message;out.className='fail';document.documentElement.dataset.tempE2e='fail';}
+ out.textContent=results.map(r=>'PASS  '+r.name).join('\n')+'\n\nTEMP_TEST_ONLY=true\npublicationAllowed=false\nNo network/publish action performed.'; out.className='pass'; emit('pass',results);
+}catch(err){out.textContent=results.map(r=>(r.ok?'PASS  ':'FAIL  ')+r.name).join('\n')+'\n\nERROR: '+err.message;out.className='fail';emit('fail',{results,error:err.message});}
 </script></body></html>
