@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T21:29:52+09:00",
+  "lastCycleAt": "2026-09-19T22:26:12+09:00",
   "processed": [
     {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
@@ -21,15 +21,11 @@
     {"candidateKey":"260916_국장에서존버하기7","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.teamblind.com/kr/post/%EA%B5%AD%EC%9E%A5%EC%97%90%EC%84%9C-%EC%A1%B4%EB%B2%84%ED%95%98%EA%B8%B0---7-zq4quyn7","publicationAllowed":false},
     {"candidateKey":"260916_권태기모든게싫음","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL or trustworthy identifier for this specific indexed account becomes publicly resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_남친이나남편이세차모임자주나가서걱정","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL or distinctive trustworthy identifier becomes publicly resolvable.","publicationAllowed":false},
-    {"candidateKey":"260916_남편생활습관다짜증","currentPath":"data/candidates/260916_C0_A0_P0_남편생활습관다짜증.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","fullBodyRead":true,"exactSource":"https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%82%AC%EC%86%8C%ED%95%9C-%EC%83%9D%ED%99%9C%EC%8A%B5%EA%B4%80%EC%9D%B4-%EB%8B%A4-%EC%A7%9C%EC%A6%9D%EB%82%98%EA%B3%A0-%EB%8B%A4-%EA%B1%B0%EC%8A%AC%EB%A0%A4-rkas3lr6","observedAt":"2026-09-19T21:29:52+09:00","observedEvidence":{"title":"남편 사소한 생활습관이 다 짜증나고 다 거슬려","displayedAuthor":"NH농협 · ᘳ********","publicBodyReadable":true},"blocker":"Exact public Blind post and public body text were verified. No source screenshots/media, complete comment capture, OCR/vision, rights clearance, moderation, A1 or P1 were acquired or inferred.","unblockWhen":"Permitted real source media/screenshots or other required source assets become available without login, anti-bot, paywall, or access-control bypass; rights/privacy/safety remain human-review gates.","publicationAllowed":false},
+    {"candidateKey":"260916_남편생활습관다짜증","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
+    {"candidateKey":"260916_누나3명인남친결혼","currentPath":"data/candidates/260916_C0_A0_P0_누나3명인남친결혼.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","fullBodyRead":true,"exactSource":"https://www.teamblind.com/kr/post/%EB%88%84%EB%82%98-3%EB%AA%85%EC%9D%B8-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EB%9E%91-%EA%B2%B0%ED%98%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%B4-dx3842k0","observedAt":"2026-09-19T22:26:12+09:00","observedEvidence":{"title":"누나 3명인 남자친구랑 결혼 어떻게 생각해..??","displayedAuthor":"공무원 · h*****","publicBodyReadable":true,"observedViews":171,"observedComments":33,"observedLikes":2},"blocker":"Exact public Blind provenance/body verified. Source screenshots/media bytes, complete comments, OCR/vision, rights clearance and human safety/privacy review were not acquired.","unblockWhen":"Permitted real source assets become available without login, anti-bot, paywall, or access-control bypass; rights/privacy/safety remain human-review gates.","publicationAllowed":false},
     {"candidateKey":"260916_마트에서누가사먹는거임","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4341632690","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {
-    "storedQueueEntryCount": 836,
-    "observedCurrentCandidateCount": 866,
-    "status": "REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION",
-    "note": "Current main handoff states 851 candidates before the latest discovery run and that run added 15, so 866 are expected. GitHub recursive-tree read confirms current main was read, but connector output is truncated and cannot safely reconstruct all 866 queue item identities in this runtime. Canonical queue was therefore not overwritten with an incomplete list. Next capable run must rebuild from a complete local/API enumeration without a strict filename parser."
-  },
-  "notes": "Processed exactly the earliest unprocessed key visible in filename order after existing blockers: 260916_남편생활습관다짜증. Exact public Blind provenance/body verified; no publication or P1. TEMP lane separately tested fail-closed digest contract."
+  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION","note":"Current main recursive tree remains truncated in this connector runtime, so all current candidate identities cannot be reconstructed safely. Canonical queue was not overwritten with an incomplete list."},
+  "notes": "Processed exactly one next unprocessed filename-order candidate: 260916_누나3명인남친결혼. Exact public Blind provenance/body verified; no A1/P1 or publication. TEMP lane remains independent."
 }
