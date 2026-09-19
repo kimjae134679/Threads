@@ -1,39 +1,29 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 11:30 KST
+Updated: 2026-09-19 12:17 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
 ## Latest discovery-only batch
-- Public Korean-community-first search pass inspected approximately 50+ visible raw leads/results across Blind, TheQoo and searches targeting FMKorea/DCInside/Ruliweb/Ppomppu/Inven/Arca/NAVER/Daum cafe. NAVER Cafe robots restriction was not bypassed.
-- 17 genuinely usable, non-duplicate C1 candidates were retained after filtering. One discovered duplicate was removed immediately.
-- All retained records are C1_A0_P0 with exact individual public URLs, observed title, observation state and `publicationAllowed=false`. No source media was acquired.
+- Korean-community-first public search inspected approximately 50+ visible raw leads/results across Blind, TheQoo, Inven and searches targeting FMKorea/DCInside/Ruliweb/Ppomppu/Arca/NAVER/Daum cafe. NAVER Cafe robots restriction was not bypassed; no login/anti-bot bypass or bulk crawl was used.
+- 17 usable non-duplicate records retained this run: **15 C1 + 2 C0**. C0 records are Blind index-only leads where exact individual public URL was not verified.
+- Strong new titles include: `친정이 7억 집 해줬는데 남편은 몰래 시댁에 월 100만원씩 보냈습니다`, `결혼식에 30만원 내고 집들이 선물까지 했는데 몇 달 뒤 손절당했습니다`, `아내 카드로 대출받아 동생들 돈 빌려준 남편`, `연애할 땐 완벽한 반반, 결혼하니 "여자가 남자쪽에 맞춰야"`, `주식으로 5천 잃고 "형 믿고 매수해라" 종목 추천하는 사람`.
+- Every retained record preserves exact observed title separately, observation state, only visible metrics, body/comment read state, and exact provenance/acquisition status. Image-centered material not read was marked `본문 미확인`.
+- All records remain A0/P0 and `publicationAllowed=false`. No screenshots, image downloads, OCR, rendering, E2E, provider/publishing, scheduling or publication work was performed.
 
-## Sequential-candidate lane — latest state
-- Processed exactly one next historical unprocessed candidate: `260916_결혼돈관리유형`.
-- Exact public source verified: `https://www.inven.co.kr/board/webzine/2097/2728411`, title `결혼하면 은근히 의견 갈린다는 돈관리 유형`, displayed author `치킨`, displayed time `2026-09-16 07:20`.
-- The substantive post body is image-centered in the public HTML. Image contents were not inferred or transcribed without a permitted real source asset.
-- Logical provenance is C1, but repository filename remains C0/A0/P0; `publicationAllowed=false`.
-- Result: `BLOCKED_NEXT_STAGE` at source-asset-acquisition. Unblock only when a permitted real source image/asset is available; no login/anti-bot/paywall/access-control bypass.
+## Sequential-candidate lane — preserved state
+- Previous non-discovery work processed `260916_결혼돈관리유형`; this discovery automation did not continue that lane.
+- Logical provenance there is C1 but repository filename remains C0/A0/P0; no source asset acquisition was performed here.
 
 ## Queue refresh truth
-- Stored queue remains 583 and is stale while canonical `data/candidates` continues growing (last complete observed count 614).
-- Available connector directory/tree responses are truncated; do not fabricate unseen identities to force a full queue rewrite.
-- Continue known historical filename order until an identity-safe complete enumeration is available.
+- Stored queue may be stale while canonical `data/candidates` continues growing. Do not fabricate unseen identities to force a full queue rewrite.
 
-## TEMP TEST ONLY conversion lane — latest state
-- `temporaryTestOnly=true`, `publicationAllowed=false`; real publishing/metrics remains DISABLED.
-- `tools/TEMP_TEST_ONLY_review-screen.html` now hashes the canonical TEMP approval payload with SHA-256 and records the digest in the approval snapshot.
-- Restoring an approved TEMP JSON recomputes the digest and refuses runtime reflection when canonical approved fields were changed after approval.
-- This improves stage 15 integrity wiring only. Actual browser click/download/fresh-page restore has not been executed, so stages 13–15 remain PARTIAL.
+## TEMP TEST ONLY conversion lane — preserved state
+- This discovery automation did not touch TEMP conversion/review work.
 
 ## Publication ownership / safety
 Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy/safety approval remains required.
 
-## Next sequential run
-- Candidate lane: continue with the next known unprocessed filename after `결혼돈관리유형`, skipping unchanged blockers.
-- TEMP lane: when a real browser/static HTTP environment is available, execute TEMP build → approval → JSON download → fresh-page restore, verify matching SHA-256/runtime reflection, then modify a canonical field and verify rejection. Do not mark complete without evidence.
-
 ## Next discovery run
-Continue fresh Korean-community-first discovery under its separate discovery-only override; do not enter production from that automation.
+Continue fresh Korean-community-first discovery and exact-source/provenance verification. Prefer new story-rich material over padding. Revisit C0 index-only leads only to verify exact public source when possible. Do not enter production from this automation.
