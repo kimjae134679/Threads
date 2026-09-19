@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "evidenceType": "TEMP_TEST_ONLY_ACTUAL_DOWNLOAD_FRESH_PAGE_RESTORE",
+  "status": "UNOBSERVED",
+  "requirements": {
+    "reviewScreenJsonActuallyDownloaded": false,
+    "freshBrowserDocumentOpened": false,
+    "exactDownloadedFileSelectedForRestore": false,
+    "restoreSucceeded": false,
+    "approvedDigest": null,
+    "restoredDigest": null,
+    "executionDigest": null,
+    "allDigestsEqual": false
+  },
+  "failClosed": true,
+  "notes": "Prototype evidence template only. Do not mark PASS from same-document serialization, synthetic fixtures, inferred values, or automation without direct observation. Stage 16 publishing/metrics remains disabled."
+}
