@@ -1,15 +1,15 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 04:26 KST
+Updated: 2026-09-20 05:19 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only ops note: `01_DISCOVERY/ops/236-sol.md`.
+- Latest discovery-only ops note: `01_DISCOVERY/ops/238-sol.md`.
 - Raw lead review: 40+ Korean-community-first public/indexed leads; retained 15 new C1 candidates.
-- Top new titles include `부모랑 연 끊고 결혼하련다`, `신혼인데 6주차 유산했는데 남편이 너무 힘들어해`, `파혼 고민-연애때부터 고민되던 점..`, `남편과의 아이를 죽어도 낳기 싫으면 이혼일까`, `장인 장모`, `프로포즈로 9850X3D + RTX 5090 해달라하면 에반가`.
-- All retained candidates remain A1=false, P1=false, publicationAllowed=false. Missing/limited body or media was not invented; publisher allegations were not promoted to verified facts.
+- Top new titles include `돈 모을려면 일단 친구를 끊어라`, `30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기`, `육아휴직 이후 남편이 은근히 눈치주는 후기`, `쌍둥이 언니들의 시댁이 너무나 다른 후기`, `남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기`, `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`.
+- All retained candidates remain A1=false, P1=false, publicationAllowed=false. Missing/unobserved metrics or image state was explicitly marked rather than invented; comments were not claimed read and poster allegations were not promoted to verified facts.
 - Next discovery run: continue finding new material and verifying exact provenance only; do not advance candidates into production even if the pool is sufficient.
 
 ## Sequential candidate/TEMP lane — latest
