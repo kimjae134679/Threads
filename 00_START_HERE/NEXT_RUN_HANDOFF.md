@@ -1,15 +1,15 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 05:26 KST
+Updated: 2026-09-20 06:15 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only ops note: `01_DISCOVERY/ops/238-sol.md`.
+- Latest discovery-only ops note: `01_DISCOVERY/ops/240-sol.md`.
 - Raw lead review: 40+ Korean-community-first public/indexed leads; retained 15 new C1 candidates.
-- Top new titles include `돈 모을려면 일단 친구를 끊어라`, `30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기`, `육아휴직 이후 남편이 은근히 눈치주는 후기`, `쌍둥이 언니들의 시댁이 너무나 다른 후기`, `남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기`, `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`.
-- All retained candidates remain A1=false, P1=false, publicationAllowed=false. Missing/unobserved metrics or image state was explicitly marked rather than invented; comments were not claimed read and poster allegations were not promoted to verified facts.
+- Top new titles include `밑에 파혼 후기가 있어서.. 세 번 파혼한 후기`, `모순이 집 가서 결혼허락 받은 썰`, `친구가 나를 질투하는 것 같은 후기`, `자소서에 교육내역 날짜 잘못 입력한채로 제출했는데 어떡하지?`, `사소한 것에 크게 서운한 후기(스압)`, `[판] 아마 나때문에(?) 시동생 파혼당함 (?)`.
+- All retained candidates remain A1=false, P1=false, publicationAllowed=false. Reposts were labeled as repost provenance; ambiguous/unobserved metrics and image state were not invented; comments were not claimed read and poster allegations were not promoted to verified facts.
 - Next discovery run: continue finding new material and verifying exact provenance only; do not advance candidates into production even if the pool is sufficient.
 
 ## Sequential candidate/TEMP lane — latest
