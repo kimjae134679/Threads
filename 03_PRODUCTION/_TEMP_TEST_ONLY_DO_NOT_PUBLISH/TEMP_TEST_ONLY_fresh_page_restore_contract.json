@@ -1,0 +1,17 @@
+﻿{
+    "schemaVersion":  1,
+    "temporaryTestOnly":  true,
+    "publicationAllowed":  false,
+    "name":  "TEMP_TEST_ONLY_fresh_page_restore_contract",
+    "purpose":  "Prototype acceptance contract for items 13-15; never publication evidence.",
+    "requiredChecks":  [
+                           "export JSON keeps temporaryTestOnly=true and publicationAllowed=false",
+                           "fresh page imports exact downloaded JSON",
+                           "restored approved digest equals approval-time digest",
+                           "execution preview digest equals restored approved digest",
+                           "tampered digest or publicationAllowed=true is rejected",
+                           "no real candidate C/A/P upgrade"
+                       ],
+    "passState":  "PASS only after direct real-browser observation.",
+    "currentState":  "PENDING_REAL_REVIEW_SCREEN_DOWNLOAD_FRESH_PAGE_RESTORE"
+}
