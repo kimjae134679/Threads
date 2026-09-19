@@ -1,12 +1,14 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 07:25 KST
+Updated: 2026-09-20 08:14 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only ops note: `01_DISCOVERY/ops/242-sol.md`.
+- Latest discovery-only ops note: `01_DISCOVERY/ops/243-sol.md`.
+- Latest run reviewed 40+ public/indexed Korean-community-first raw leads and retained 16 new C1 candidates with exact individual public URLs.
+- Top additions include `요즘 축의금 5 진짜 안 하는 것 같은 후기`, `축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기`, `계획못짜고 알아보는거 못하는 남편 너무 답답했는데 집안살림을 다하니까 상쇄되는 후기`, `민생지원금 달라고 하는 부모님 때문에 현타오는 후기`, `부모님 자영업을 왜 내가 도와야하는지 어이없는 후기`, `평범한데 결혼식에 돈 많이 쓴 더쿠들의 후기가 궁금한 후기,,`.
 - Continue discovery/provenance only from that automation; no production-state upgrades. All new candidates remain A1=false, P1=false, publicationAllowed=false.
 
 ## Sequential candidate/TEMP lane — latest
