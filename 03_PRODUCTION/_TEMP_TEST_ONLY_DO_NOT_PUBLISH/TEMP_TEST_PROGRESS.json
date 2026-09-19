@@ -3,25 +3,78 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T17:27:24+09:00",
+  "updatedAt": "2026-09-19T18:29:22+09:00",
   "requestedTrack": {
-    "9_source_auto_acquisition": {"status":"PARTIAL","note":"공개 URL 본문 읽기 가능성 확인. 자동 대량수집/로그인 우회 없음; 이미지 중심 소재의 실제 원본 자산은 미확보."},
-    "10_ui_exclusion": {"status":"PARTIAL","note":"실제 허용된 원본 스크린샷/자산이 들어오면 후보별 UI chrome crop 검증 필요."},
-    "11_natural_splitting": {"status":"PARTIAL","note":"natural-boundary-splitter.js를 TEMP browser-conversion-adapter.js에 연결. 제3자 원문은 저장하지 않고 런타임 입력을 메모리에서만 분할."},
-    "12_title_suggestion": {"status":"PARTIAL","note":"TEMP title guard는 exact observed title + verified source text + sourceVerified=true를 요구하고 evidence에 없는 숫자/인용 추가를 거부. 의미 사실검증과 실제 모델 생성 검증은 별도 필요."},
-    "13_browser_review": {"status":"PARTIAL","note":"합성 fixture Node roundtrip과 browser harness 존재. Harness가 이제 document title, html[data-temp-e2e], hidden output, window.__TEMP_E2E_RESULT__에 TEMP_E2E_PASS/FAIL을 명시적으로 내보내도록 개선됨. 개선본의 실제 브라우저 PASS 관측 전에는 완료 아님."},
-    "14_review_screen": {"status":"PARTIAL","note":"TEMP review screen에 슬라이드 검수, JSON 복원, TEMP 승인본 고정 UI 및 SHA-256 무결성 검증 연결. 실제 브라우저의 명시적 PASS/상태 관측 전에는 완료로 승격하지 않음."},
-    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"TEMP 승인 스냅샷 SHA-256 검증과 변조 거부 구성. publicationAllowed=false 강제. machine-observable marker wiring은 추가됐지만 개선본 브라우저 실행 PASS는 아직 관측하지 않음."},
-    "16_live_publish_metrics": {"status":"DISABLED","note":"테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."}
+    "9_source_auto_acquisition": {
+      "status": "PARTIAL",
+      "note": "공개 URL 본문 읽기 가능성 확인. 자동 대량수집/로그인 우회 없음; 이미지 중심 소재의 실제 원본 자산은 미확보."
+    },
+    "10_ui_exclusion": {
+      "status": "PARTIAL",
+      "note": "실제 허용된 원본 스크린샷/자산이 들어오면 후보별 UI chrome crop 검증 필요."
+    },
+    "11_natural_splitting": {
+      "status": "PARTIAL",
+      "note": "natural-boundary-splitter.js를 TEMP browser-conversion-adapter.js에 연결. 제3자 원문은 저장하지 않고 런타임 입력을 메모리에서만 분할."
+    },
+    "12_title_suggestion": {
+      "status": "PARTIAL",
+      "note": "TEMP title guard는 exact observed title + verified source text + sourceVerified=true를 요구하고 evidence에 없는 숫자/인용 추가를 거부. 의미 사실검증과 실제 모델 생성 검증은 별도 필요."
+    },
+    "13_browser_review": {
+      "status": "PARTIAL",
+      "note": "Installed Chrome headless over local HTTP explicitly observed TEMP_E2E_PASS in DOM. Synthetic fixture only; actual review-screen download to fresh-page restore remains unverified."
+    },
+    "14_review_screen": {
+      "status": "PARTIAL",
+      "note": "TEMP review screen에 슬라이드 검수, JSON 복원, TEMP 승인본 고정 UI 및 SHA-256 무결성 검증 연결. 실제 브라우저의 명시적 PASS/상태 관측 전에는 완료로 승격하지 않음."
+    },
+    "15_approval_runtime_reflection": {
+      "status": "PARTIAL",
+      "note": "TEMP 승인 스냅샷 SHA-256 검증과 변조 거부 구성. publicationAllowed=false 강제. machine-observable marker wiring은 추가됐지만 개선본 브라우저 실행 PASS는 아직 관측하지 않음."
+    },
+    "16_live_publish_metrics": {
+      "status": "DISABLED",
+      "note": "테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."
+    }
   },
-  "samples": [{
-    "candidateKey":"260916_2026회사별느낌",
-    "candidatePath":"data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-    "testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-    "state":"TEMP_TEST_MACHINE_OBSERVABLE_MARKER_WIRED_NOT_YET_RERUN",
-    "sourceBodyComplete":true,"sourceAssetsComplete":false,"commentsComplete":false,
-    "executionEvidence":{"runtime":"Node compatible runtime + installed Chrome headless","temporaryTestOnly":true,"publicationAllowed":false,"slideCount":1,"firstSlideIndex":2,"roundTripEqual":true,"syntheticFixtureOnly":true,"priorRealBrowserExecuted":true,"priorBrowserProcessExitCode":0,"priorBrowserDomOrPassOutputObserved":false,"browserPassClaimed":false,"machineObservableMarkersAdded":["document.title","html[data-temp-e2e]","#machine-result","window.__TEMP_E2E_RESULT__"]},
-    "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","updated-browser-harness-explicit-TEMP_E2E_PASS-not-yet-observed"],
-    "next":"Run the updated TEMP harness in a real browser/headless DOM dump and require explicit TEMP_E2E_PASS. If observed, then verify review-screen download/fresh-page restore separately. Keep canonical review/publish untouched."
-  }]
+  "samples": [
+    {
+      "candidateKey": "260916_2026회사별느낌",
+      "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
+      "state": "TEMP_TEST_BROWSER_HARNESS_EXPLICIT_PASS_OBSERVED_REVIEW_DOWNLOAD_RESTORE_PENDING",
+      "sourceBodyComplete": true,
+      "sourceAssetsComplete": false,
+      "commentsComplete": false,
+      "executionEvidence": {
+        "runtime": "Node compatible runtime + installed Chrome headless",
+        "temporaryTestOnly": true,
+        "publicationAllowed": false,
+        "slideCount": 1,
+        "firstSlideIndex": 2,
+        "roundTripEqual": true,
+        "syntheticFixtureOnly": true,
+        "priorRealBrowserExecuted": true,
+        "priorBrowserProcessExitCode": 0,
+        "priorBrowserDomOrPassOutputObserved": false,
+        "browserPassClaimed": true,
+        "machineObservableMarkersAdded": [
+          "document.title",
+          "html[data-temp-e2e]",
+          "#machine-result",
+          "window.__TEMP_E2E_RESULT__"
+        ],
+        "realBrowserExecuted": true,
+        "browserPassObserved": "TEMP_E2E_PASS"
+      },
+      "blocked": [
+        "real-source-screenshots-or-permitted-source-assets",
+        "full-comment-thread",
+        "rights/privacy/defamation/human-approval",
+        "review-screen-actual-download-fresh-page-restore-not-yet-observed"
+      ],
+      "next": "Verify TEMP review-screen actual JSON download then fresh-page reconnect/restore. Keep canonical review/publish untouched."
+    }
+  ]
 }

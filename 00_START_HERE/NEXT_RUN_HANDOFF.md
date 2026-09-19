@@ -34,3 +34,10 @@ Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy
 
 ## Next discovery automation run
 Continue new Korean-community-first discovery plus exact-source verification of useful existing C0 candidates. Do not enter production.
+
+
+## 2026-09-19 18:29 KST · Sol sequential update
+- Queue fully refreshed from current data/candidates: 821 candidate Markdown files, filename-ascending; README excluded.
+- Candidate lane: exactly one next key processed: 260916_권태기모든게싫음. Exact individual provenance not verified; BLOCKED_PROVENANCE. No missing evidence fabricated.
+- TEMP TEST ONLY: local HTTP + installed Chrome headless explicitly observed TEMP_E2E_PASS. Synthetic fixture only; actual review-screen download→fresh-page restore remains pending. temporaryTestOnly=true; publicationAllowed=false; live publishing disabled.
+- Next: process next filename-ascending unprocessed key unless a recorded unblock condition changed; TEMP lane verify one actual review-screen download→restore unit.
