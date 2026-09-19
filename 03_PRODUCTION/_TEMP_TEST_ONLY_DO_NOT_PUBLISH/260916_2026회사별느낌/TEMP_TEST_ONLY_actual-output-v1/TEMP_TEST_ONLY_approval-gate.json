@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "reviewConnection": "TEMP_TEST_ONLY_review-connection.json",
+  "generatedOutput": "index.html",
+  "approvalRequiredForStage15": true,
+  "approvedVersion": null,
+  "approvedArtifactDigest": null,
+  "restoredArtifactDigest": null,
+  "executionArtifactDigest": null,
+  "allDigestsEqual": false,
+  "executionEligible": false,
+  "stage15Status": "BLOCKED_HUMAN_APPROVAL_AND_FRESH_PAGE_ROUNDTRIP_REQUIRED",
+  "unblockWhen": "A human explicitly selects an approved TEMP test version, then the exact downloaded artifact is restored in a fresh browser page and the approved/restored/execution digests are directly observed equal.",
+  "stage16": "DISABLED",
+  "note": "This gate is fail-closed. Generated output, review wiring, or synthetic digest tests cannot imply human approval or publication permission."
+}
