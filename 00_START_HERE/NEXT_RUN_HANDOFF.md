@@ -1,14 +1,15 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 17:27 KST
+Updated: 2026-09-19 18:19 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
-## Latest discovery-only state — batch 215
+## Latest discovery-only state — batch 216
 - Reviewed approximately 40+ raw public-search leads, Korean-community-first.
 - Retained 15 new C1 records in canonical `data/candidates/`, each with an exact individual public URL.
-- Image-centric candidates were marked `본문 미확인` or partial rather than inferred.
+- Top examples: `남편 통장에 200만원도 없다는데..`, `시어머니 돈돈 거리는거 듣기 힘들어`, `임신 막달 남편 격일 회식 이해가 가는지`, `친구가 자꾸 자랑하는데`, `꼴딱 밤샜네..`.
+- One truncated long post was marked partial rather than inferred.
 - No screenshots, media downloads, OCR/moderation, editorial scoring, production, rendering, Chrome E2E, publishing or scheduling were performed. All remain A0/P0 and `publicationAllowed=false`.
 
 ## Sequential-candidate lane — latest state
@@ -31,5 +32,5 @@ For the separate `Threads 소재 발굴` automation, the user's explicit instruc
 ## Publication ownership / safety
 Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy/safety approval remains required.
 
-## Next sequential run
-If a complete queue refresh still cannot be safely produced and no prior blocked condition changed, continue the next known historical unprocessed candidate after `260916_국장에서존버하기7` in filename order. Independently rerun the updated TEMP harness if a real browser/headless DOM dump is available and require explicit `TEMP_E2E_PASS`; otherwise record the exact blocker and work another safe TEMP unit.
+## Next discovery automation run
+Continue new Korean-community-first discovery plus exact-source verification of useful existing C0 candidates. Do not enter production.
