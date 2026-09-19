@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "outputVersion": "v1",
+  "size": "1080x1080",
+  "slideCount": 8,
+  "format": "SVG",
+  "gallery": "index.html",
+  "generatedImagery": false,
+  "blur": false,
+  "sourceBodyMode": "verified-public-body-paraphrase-in-original-order",
+  "rights": "UNREVIEWED",
+  "privacy": "UNREVIEWED",
+  "defamation": "REVIEW_REQUIRED",
+  "humanApproval": "NOT_APPROVED"
+}

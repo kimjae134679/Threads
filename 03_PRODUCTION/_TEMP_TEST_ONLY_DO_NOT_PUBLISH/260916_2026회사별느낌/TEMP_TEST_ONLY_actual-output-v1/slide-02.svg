@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0f1115"/>
+  <rect x="54" y="52" width="196" height="52" rx="22" fill="#20242b"/>
+  <text x="78" y="86" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="24" font-weight="700" fill="#dce0e6">TEMP TEST ONLY</text>
+  <text x="1026" y="86" text-anchor="end" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="23" font-weight="700" fill="#a4aab4">02 / 08</text>
+  <line x1="54" y1="126" x2="1026" y2="126" stroke="#3a4048" stroke-width="2"/>
+  <text x="54" y="174" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="24" font-weight="700" fill="#c2ff5b">초반 · 새회사 · 전문직 · 삼성</text><text x="54" y="225" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="43" font-weight="800" fill="#f4f6f8">처음엔 직업과 삼성 이야기</text><rect x="54" y="258" width="972" height="108" rx="25" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+      <circle cx="98" cy="297" r="20" fill="#c2ff5b"/>
+      <text x="98" y="305" text-anchor="middle" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" font-weight="800" fill="#0f1115">1</text>
+      <text x="140" y="298" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="28" font-weight="800" fill="#f4f6f8">새회사</text>
+      <text x="140" y="334" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="22" fill="#cdd2d9">자영업자 정체성이 강해 보인다는 다소 냉소적인 첫인상</text><rect x="54" y="380" width="972" height="108" rx="25" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+      <circle cx="98" cy="419" r="20" fill="#c2ff5b"/>
+      <text x="98" y="427" text-anchor="middle" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" font-weight="800" fill="#0f1115">2</text>
+      <text x="140" y="420" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="28" font-weight="800" fill="#f4f6f8">스타트업</text>
+      <text x="140" y="456" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="22" fill="#cdd2d9">“스타트업”이라는 이름 자체에 자부심이 강해 보인다는 평</text><rect x="54" y="502" width="972" height="108" rx="25" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+      <circle cx="98" cy="541" r="20" fill="#c2ff5b"/>
+      <text x="98" y="549" text-anchor="middle" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" font-weight="800" fill="#0f1115">3</text>
+      <text x="140" y="542" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="28" font-weight="800" fill="#f4f6f8">의사</text>
+      <text x="140" y="578" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="22" fill="#cdd2d9">여전히 주변에서 선망 반응이 나오는 대표적인 직업</text><rect x="54" y="624" width="972" height="108" rx="25" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+      <circle cx="98" cy="663" r="20" fill="#c2ff5b"/>
+      <text x="98" y="671" text-anchor="middle" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" font-weight="800" fill="#0f1115">4</text>
+      <text x="140" y="664" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="28" font-weight="800" fill="#f4f6f8">회계·세무</text>
+      <text x="140" y="700" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="22" fill="#cdd2d9">전문직이지만 상대적으로 임팩트는 약하다는 인상</text><rect x="54" y="746" width="972" height="108" rx="25" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+      <circle cx="98" cy="785" r="20" fill="#c2ff5b"/>
+      <text x="98" y="793" text-anchor="middle" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" font-weight="800" fill="#0f1115">5</text>
+      <text x="140" y="786" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="28" font-weight="800" fill="#f4f6f8">변호사</text>
+      <text x="140" y="822" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="22" fill="#cdd2d9">드라마 속 강한 변론 장면이 연상되는 직업 이미지</text><rect x="54" y="868" width="972" height="108" rx="25" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+      <circle cx="98" cy="907" r="20" fill="#c2ff5b"/>
+      <text x="98" y="915" text-anchor="middle" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" font-weight="800" fill="#0f1115">6</text>
+      <text x="140" y="908" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="28" font-weight="800" fill="#f4f6f8">삼성전자</text>
+      <text x="140" y="944" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="22" fill="#cdd2d9">예전의 깔끔한 이미지보다 최근 온라인 평판 변화가 크게 느껴졌다는 의견</text><line x1="54" y1="996" x2="1026" y2="996" stroke="#3a4048" stroke-width="2"/>
+  <text x="54" y="1034" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" fill="#a4aab4">Blind 원문 작성자의 주관적 인상을 요약한 비게시용 테스트 콘텐츠</text>
+  <text x="1026" y="1034" text-anchor="end" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="19" font-weight="700" fill="#a4aab4">DO NOT PUBLISH</text>
+  </svg>

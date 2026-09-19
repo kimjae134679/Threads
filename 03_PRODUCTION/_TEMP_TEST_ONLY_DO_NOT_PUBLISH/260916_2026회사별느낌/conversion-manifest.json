@@ -15,9 +15,20 @@
     "mode": "text-only",
     "generatedImagery": false,
     "blur": false,
-    "prototypeTitle": "2026년 회사별 느낌 NEW ver.",
+    "prototypeTitle": "직장인이 적어본 2026 회사별 느낌",
     "titlePosition": "upper",
     "outline": "thin"
+  },
+  "actualOutput": {
+    "status": "TEMP_TEST_OUTPUT_GENERATED",
+    "version": "v1",
+    "path": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1",
+    "gallery": "index.html",
+    "slideCount": 8,
+    "size": "1080x1080",
+    "format": "SVG",
+    "generatedImagery": false,
+    "blur": false
   },
   "titleSuggestions": [
     "직장인들이 말하는 2026 회사별 느낌",
@@ -25,9 +36,8 @@
     "2026년 회사별 이미지를 한 줄로 적어봤다"
   ],
   "bodyTransformation": {
-    "status": "READY_FOR_TEMP_SPLIT_TEST",
-    "strategy": "paragraph/scene boundary first; sentence boundary fallback; no raw fixed-length slicing",
-    "prototypeTool": "../tools/natural-boundary-splitter.js",
+    "status": "TEMP_CAROUSEL_V1_RENDERED",
+    "strategy": "verified source order + natural topic groups; paraphrased summary; no raw fixed-length slicing",
     "sourceCopyPolicy": "do not commit full verbatim third-party body into this test workspace",
     "safetyNote": "source contains potentially defamatory/derogatory occupational and company statements; transformation remains review-only"
   },
