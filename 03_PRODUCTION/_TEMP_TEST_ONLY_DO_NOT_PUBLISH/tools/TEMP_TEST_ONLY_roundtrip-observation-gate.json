@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "name": "TEMP_TEST_ONLY_roundtrip-observation-gate",
+  "purpose": "Fail-closed evidence gate for stages 13-15. Synthetic/browser-internal continuity is not accepted as an actual download -> fresh page -> exact-file restore observation.",
+  "requiredDirectObservations": {
+    "reviewScreenGeneratedFile": false,
+    "osDownloadObserved": false,
+    "freshBrowserDocumentOpened": false,
+    "exactDownloadedFileSelected": false,
+    "restoreSucceeded": false,
+    "approvedDigestObserved": null,
+    "restoredDigestObserved": null,
+    "executionDigestObserved": null,
+    "allDigestsEqual": false
+  },
+  "passCondition": "Every boolean above must be true and all three non-null digests must be exactly equal.",
+  "currentResult": "UNOBSERVED_FAIL_CLOSED",
+  "mayUpgradeRealCandidateState": false,
+  "mayPublish": false,
+  "stage16": "DISABLED"
+}
