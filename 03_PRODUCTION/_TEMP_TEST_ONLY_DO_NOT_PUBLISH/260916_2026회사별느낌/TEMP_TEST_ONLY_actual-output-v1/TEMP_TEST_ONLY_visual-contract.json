@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "outputVersion": "v1",
+  "verificationUnit": "static visual-contract verification",
+  "expectedSlides": [
+    "slide-01.svg",
+    "slide-02.svg",
+    "slide-03.svg",
+    "slide-04.svg",
+    "slide-05.svg",
+    "slide-06.svg",
+    "slide-07.svg",
+    "slide-08.svg"
+  ],
+  "contract": {
+    "width": 1080,
+    "height": 1080,
+    "coverBlurAllowed": false,
+    "generatedImageFallbackAllowed": false,
+    "textOnlySourceUsesGeneratedImage": false,
+    "coverTitlePosition": "upper",
+    "coverTitleOutline": "thin",
+    "slide2PlusOrderingPolicy": "preserve verified source order; do not invent missing media",
+    "platformChromeMayBeIncluded": false
+  },
+  "observedFromCommittedOutput": {
+    "slideCount": 8,
+    "declaredCanvas": "1080x1080",
+    "generatedImagery": false,
+    "blur": false,
+    "gallery": "index.html"
+  },
+  "notVerifiedByThisUnit": [
+    "real source media bytes",
+    "manual screenshot crop correctness",
+    "OS download to fresh-page restore",
+    "human-approved version",
+    "approved/restored/execution digest equality",
+    "rights/privacy/defamation clearance",
+    "publication eligibility"
+  ],
+  "executionEligible": false,
+  "stage16LivePublishing": "DISABLED"
+}
