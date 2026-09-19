@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T04:26:39+09:00",
+  "lastCycleAt": "2026-09-20T05:26:00+09:00",
   "processed": [
     {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
@@ -13,6 +13,7 @@
     {"candidateKey":"260916_98년생여자생퇴사","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.teamblind.com/kr/s/iu4xi5ax","publicationAllowed":false},
     {"candidateKey":"260916_AI오타30번","currentPath":"data/candidates/260916_C0_A0_P0_AI오타30번.md","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL/unique post ID or another trustworthy public identifier proving the same individual post becomes resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_GTA6가상외도","currentPath":"data/candidates/260916_C0_A0_P0_GTA6가상외도.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","exactSource":"https://www.inven.co.kr/board/party/6292/1835","sourceAssetsComplete":false,"unblockWhen":"Permitted original TikTok/source media bytes become publicly acquirable without login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false},
+    {"candidateKey":"260916_MZ신입9개월느낀점","currentPath":"data/candidates/260916_C0_A0_P0_MZ신입9개월느낀점.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification"],"nextStage":"source-asset-acquisition","exactSource":"https://www.inven.co.kr/board/webzine/2097/2727901","sourcePostId":"2727901","sourceAssetsComplete":false,"unblockWhen":"The exact public Inven post image bytes are acquired through permitted access and OCR/vision review is completed without login, anti-bot, paywall, or access-control bypass.","publicationAllowed":false},
     {"candidateKey":"260916_개물림견주주장","result":"BLOCKED_PROVENANCE","unblockWhen":"An exact individual source URL, distinctive source title/quote, or other provenance identifier for this specific incident becomes publicly available.","publicationAllowed":false},
     {"candidateKey":"260916_결혼돈관리유형","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2728411","publicationAllowed":false},
     {"candidateKey":"260916_결혼식5만원인간관계","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Blind post URL/shortlink or another trustworthy individual-source identifier becomes publicly resolvable.","publicationAllowed":false},
@@ -32,6 +33,6 @@
     {"candidateKey":"260916_삼성월세부정수급자들","currentPath":"data/candidates/260916_C0_A0_P0_삼성월세부정수급자들.md","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Ppomppu post URL/post ID, or a trustworthy distinctive title/quote proving the same Ppomppu post, becomes publicly resolvable.","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION_AND_REMOTE_UNAVAILABLE","note":"Refresh retried from current main. Complete candidate identity enumeration remains unavailable through truncated connector output; authorized remote desktop was unavailable this cycle. Canonical queue was not overwritten with an incomplete list."},
-  "notes": "Processed exactly one next unprocessed stored filename-order candidate: 260916_GTA6가상외도. Exact Inven individual article /board/party/6292/1835 and public body were verified, so logical C1 provenance/text-read is recorded. Original TikTok/source media bytes were not acquired; A0/P0 and publicationAllowed=false remain. Existing blockers were not re-evaluated because no recorded unblock condition was observed to change. TEMP lane added a stage-9 source-evidence map only."
+  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION","note":"Refresh retried from current main. data/candidates directory output is still truncated, so complete candidate identity enumeration is unavailable. Canonical queue was not overwritten with an incomplete list; prior observed-current count 866 is retained."},
+  "notes": "Processed exactly one next unprocessed stored filename-order candidate: 260916_MZ신입9개월느낀점. Exact Inven individual post /board/webzine/2097/2727901 was verified. The post is image-centric; actual image bytes/OCR/vision were not acquired, so only logical C1 provenance is recorded and A0/P0/publicationAllowed=false remain. Existing blockers were not re-evaluated because no recorded unblock condition was observed to change. TEMP lane added a deterministic stage-13/14 review-bundle manifest only; stage 15 remains blocked and stage 16 disabled."
 }
