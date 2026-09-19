@@ -1,15 +1,15 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 13:29 KST
+Updated: 2026-09-19 14:17 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
-## Latest discovery-only state — batch 209
-- Public Korean-community-first search inspected approximately 50+ visible raw results/leads across Blind, TheQoo and broader prioritized-domain queries. NAVER Cafe search access was blocked by robots and was not bypassed; several other community-domain queries returned weak/no usable public results and were not padded.
-- Retained 15 new C1 records in canonical `data/candidates/`. Most are exact individual Blind pages; TheQoo records are explicitly marked repost provenance rather than original-source provenance.
-- Strong examples: `결혼 직전 전재산 2억5천을 여동생 계좌로 빼놨습니다`, `신용대출 1억에 집담보까지 몰래 주식… 손실 80% 넘었습니다`, `대출 꽉 찼는데 카드론까지 받아 돈 빌려달라는 남편`, `입사 이틀 만에 청첩장 받았는데 그 직원은 그달 퇴사했습니다`, `주식빚 갚아줬는데 각서 쓰고도 또 5천만원 대출했습니다`.
-- Every new record preserves exact observed title separately, only observed metrics, body/comment read state, and exact provenance/acquisition status. Partial long-body observations are marked BODY_PARTIAL rather than inferred complete.
+## Latest discovery-only state — batch 211
+- Korean-community-first public search inspected approximately 50+ visible raw results/leads across Blind and broader prioritized-domain queries. NAVER Cafe, Clien and Instiz were blocked by robots and were not bypassed; weak/no-result community queries were not padded.
+- Retained 15 new C1 records in canonical `data/candidates/`, each with an exact individual public Blind URL.
+- Strong examples: `부모가 소개팅 장소를 사전답사`, `가족 빚 갚는 남친이 주변 사람 밥·대리비까지 부담`, `돈 많이 가져오는 며느리를 원해 결혼 반대`, `10년 못 본 친구가 갑자기 결혼식 축가 부탁`, `내가 10만원 냈는데 4인가족이 와서 5만원 축의`.
+- Every new record preserves exact observed title separately, only observed metrics, body/comment read state, and exact provenance/acquisition status. Partial observations are marked BODY_PARTIAL rather than inferred complete.
 - No screenshots, media downloads, OCR/moderation, production, rendering, Chrome E2E, publishing or scheduling were performed. All new records remain A0/P0 and `publicationAllowed=false`.
 
 ## Sequential-candidate lane — latest state
