@@ -1,29 +1,33 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 12:17 KST
+Updated: 2026-09-19 12:30 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
-## Latest discovery-only batch
-- Korean-community-first public search inspected approximately 50+ visible raw leads/results across Blind, TheQoo, Inven and searches targeting FMKorea/DCInside/Ruliweb/Ppomppu/Arca/NAVER/Daum cafe. NAVER Cafe robots restriction was not bypassed; no login/anti-bot bypass or bulk crawl was used.
-- 17 usable non-duplicate records retained this run: **15 C1 + 2 C0**. C0 records are Blind index-only leads where exact individual public URL was not verified.
-- Strong new titles include: `친정이 7억 집 해줬는데 남편은 몰래 시댁에 월 100만원씩 보냈습니다`, `결혼식에 30만원 내고 집들이 선물까지 했는데 몇 달 뒤 손절당했습니다`, `아내 카드로 대출받아 동생들 돈 빌려준 남편`, `연애할 땐 완벽한 반반, 결혼하니 "여자가 남자쪽에 맞춰야"`, `주식으로 5천 잃고 "형 믿고 매수해라" 종목 추천하는 사람`.
-- Every retained record preserves exact observed title separately, observation state, only visible metrics, body/comment read state, and exact provenance/acquisition status. Image-centered material not read was marked `본문 미확인`.
-- All records remain A0/P0 and `publicationAllowed=false`. No screenshots, image downloads, OCR, rendering, E2E, provider/publishing, scheduling or publication work was performed.
+## Latest discovery-only state
+- Discovery continues adding candidates, so canonical `data/candidates` is larger than the stored sequential queue.
+- Every retained discovery record must preserve exact observed title separately, observation state, only visible metrics, body/comment read state, and exact provenance/acquisition status. Image-centered material not read stays `본문 미확인`.
+- Discovery outputs remain A0/P0 and `publicationAllowed=false`.
 
-## Sequential-candidate lane — preserved state
-- Previous non-discovery work processed `260916_결혼돈관리유형`; this discovery automation did not continue that lane.
-- Logical provenance there is C1 but repository filename remains C0/A0/P0; no source asset acquisition was performed here.
+## Sequential-candidate lane — latest
+- Processed exactly one next historical candidate: `260916_결혼식5만원인간관계`.
+- Fresh public search confirms the exact Blind title `결혼식 해보니까 오지도 않고 5만원만 보내는 사람들 많더라` exists. Blind public index exposed displayed company `한국전력공사`, likes 6, comments 117 at observation; a secondary community index snapshot exposed comments/views for the same title.
+- Exact individual Blind post URL/shortlink was NOT resolved. Do not promote index/aggregator evidence into exact individual provenance or infer the full body.
+- Result: `BLOCKED_PROVENANCE`; A0/P0 and `publicationAllowed=false` remain. Unblock only when exact individual Blind URL/shortlink or another trustworthy individual-source identifier becomes publicly resolvable.
 
 ## Queue refresh truth
-- Stored queue may be stale while canonical `data/candidates` continues growing. Do not fabricate unseen identities to force a full queue rewrite.
+- Stored queue remains 583 entries while canonical `data/candidates` was last fully observed at 614 and discovery continues adding records.
+- Available large-directory/recursive connector responses are truncated. Do not fabricate unseen identities to force a full rewrite. Rebuild only from complete enumeration; historical filename order remains usable for the known prefix.
 
-## TEMP TEST ONLY conversion lane — preserved state
-- This discovery automation did not touch TEMP conversion/review work.
+## TEMP TEST ONLY conversion lane — latest
+- Added `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/tools/TEMP_TEST_ONLY_browser-e2e-harness.html`.
+- It uses only synthetic fixture text and browser-native Blob + `crypto.subtle` to automate safety flags, text-only/no-blur cover rule, slide numbering, approved snapshot digest, serialization→fresh-page-equivalent restore, canonical-field tamper detection, and rejection of `publicationAllowed=true` restores.
+- This is test wiring only. No actual browser PASS was observed in this run, so stages 13–15 remain PARTIAL and `realBrowserExecuted=false`.
+- Next TEMP step: run the harness in an actual browser/static HTTP environment and record PASS evidence; then separately run the interactive review-screen download→fresh-page restore flow. Never touch canonical review/publish.
 
 ## Publication ownership / safety
-Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy/safety approval remains required.
+Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy/safety approval remains required. TEMP lane is always `temporaryTestOnly=true`, `publicationAllowed=false` unless the user later gives explicit separate live-post approval.
 
-## Next discovery run
-Continue fresh Korean-community-first discovery and exact-source/provenance verification. Prefer new story-rich material over padding. Revisit C0 index-only leads only to verify exact public source when possible. Do not enter production from this automation.
+## Next sequential run
+Continue with the next known filename after `260916_결혼식5만원인간관계`, skipping unchanged blockers. Refresh the queue only from complete candidate enumeration; never invent missing identities.
