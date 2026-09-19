@@ -1,31 +1,29 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 16:17 KST
+Updated: 2026-09-19 16:27 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
 
 ## Latest discovery-only state — batch 213
-- Korean-community-first public search inspected approximately 50+ visible raw results/leads across Blind, TheQoo, Inven and broader prioritized-domain queries. Access restrictions were not bypassed and weak/no-result searches were not padded.
 - Retained 15 new C1 records in canonical `data/candidates/`, each with an exact individual public Blind URL.
-- Strong examples: `친정에 시댁 주택연금 사실을 숨긴 신혼`, `사실혼 여친의 유일한 남사친 때문에 무너진 신뢰`, `2년 여행비는 냈지만 반반 결혼 거부로 헤어진 커플`, `식 없는 결혼 뒤 10년 친구 축의 논쟁`, `비혼 친구에게 축의 100만원을 언제 돌려줄까`.
-- Every new record preserves exact observed title separately, only observed metrics, body/comment read state, and exact provenance/acquisition status. Partial observations are marked BODY_PARTIAL rather than inferred complete.
-- No screenshots, media downloads, OCR/moderation, editorial scoring, production, rendering, Chrome E2E, publishing or scheduling were performed. All new records remain A0/P0 and `publicationAllowed=false`.
+- No screenshots, media downloads, OCR/moderation, editorial scoring, production, rendering, Chrome E2E, publishing or scheduling were performed. All remain A0/P0 and `publicationAllowed=false`.
 
 ## Sequential-candidate lane — latest state
-- Processed exactly one next known historical candidate: `260916_결혼전후`.
-- Exact public individual Inven source resolved: `https://www.inven.co.kr/board/webzine/2097/2728393`, observed title `결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ`, displayed author `파아랑망토`, posted `2026-09-16 06:34`.
-- Public page exposes short text `내가 왜 화났는지 몰라?` / `우리가 왜 화났는지 몰라?` plus two images.
-- No permitted source-image bytes were acquired/inspected; image contents were not inferred, transcribed, OCRed, or moderated. Logical provenance is C1; A0/P0 and `publicationAllowed=false` remain.
+- Processed exactly one next known historical candidate: `260916_공무원면접정장입지마`.
+- Exact public individual TheQoo source resolved: `https://theqoo.net/square/4341526040`, observed title `앞으로 정장 입지 말라는 국가공무원 면접`, displayed author `무명의 더쿠`, displayed date `09-10`.
+- Public page exposes short text `괜찮은듯` plus an image. No permitted source-image bytes were acquired/inspected; image contents were not inferred, OCRed, vision-read, or moderated.
+- Logical provenance is C1; A0/P0 and `publicationAllowed=false` remain. Block until permitted real source image assets are available without access-control bypass.
 
 ## TEMP TEST ONLY conversion lane — latest state
-- Stage 12 safety guard strengthened in `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/tools/title-suggestion-input-guard.js`.
-- Suggested titles are now deterministically rejected if they introduce Arabic numeric tokens absent from verified evidence or quoted wording absent from verified evidence.
-- This is only a narrow anti-invention guard; semantic fact checking remains a human/model review step and it grants no publication approval.
-- Actual browser execution evidence remains pending. Stages 13–15 stay PARTIAL; 16 remains DISABLED. TEMP invariants remain `temporaryTestOnly=true`, `publicationAllowed=false`.
+- Existing committed synthetic browser E2E harness was invoked through installed Chrome headless on 2026-09-19.
+- Browser process completed with exit code 0, but emitted no DOM/PASS output. This is execution evidence only, **not** a functional browser PASS.
+- `TEMP_TEST_PROGRESS.json` now records `realBrowserExecuted=true`, `browserProcessExitCode=0`, `browserDomOrPassOutputObserved=false`, `browserPassClaimed=false`.
+- Stages 13–15 remain PARTIAL. Next safe unit: make the TEMP harness expose an unambiguous machine-observable PASS/FAIL marker or perform the click/download/fresh-page restore path and record observed evidence.
+- Stage 16 remains DISABLED. TEMP invariants remain `temporaryTestOnly=true`, `publicationAllowed=false`.
 
 ## Queue refresh truth
-- Current `data/candidates` contents/tree were queried again. The stored queue remains 583 entries while discovery has added later candidates.
+- Current `data/candidates` contents/tree were queried again. Stored queue remains 583 entries while discovery has added later candidates.
 - Connector responses still truncate before a complete identity list. Do not fabricate unseen identities or partially rewrite the queue. Rebuild only from complete enumeration.
 
 ## Publication ownership / safety
@@ -33,8 +31,8 @@ Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy
 
 ## Next sequential run
 - Skip blocked candidates unless their recorded unblock condition changed.
-- Rebuild the queue only if complete filename enumeration becomes available; otherwise preserve identity safety and process exactly one next known unprocessed filename-order candidate (`260916_공무원면접정장입지마` in the stored historical queue unless complete refresh changes ordering).
-- TEMP: run the committed TEMP title UI and/or browser E2E harness in an actual browser/static HTTP environment and record observed PASS/FAIL evidence. Do not claim browser completion without observed evidence.
+- Rebuild the queue only if complete filename enumeration becomes available; otherwise preserve identity safety and process exactly one next known unprocessed filename-order candidate from the stored historical queue.
+- TEMP: obtain an explicit browser PASS/FAIL observation without touching canonical production/review/publish.
 
 ## Next discovery automation run
-Continue new Korean-community-first discovery plus exact-source verification of useful existing C0 candidates. Aim for 40–80 raw / 15–30 retained when public coverage supports it. Do not enter production even if the material pool is large.
+Continue new Korean-community-first discovery plus exact-source verification of useful existing C0 candidates. Do not enter production.
