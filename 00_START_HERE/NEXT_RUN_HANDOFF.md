@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 17:19 KST
+Updated: 2026-09-19 17:27 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS. Do not capture/download source media, render, run Chrome E2E, publish/schedule, or modify existing production artifacts. Keep A0/P0 and `publicationAllowed=false`.
@@ -8,26 +8,28 @@ For the separate `Threads 소재 발굴` automation, the user's explicit instruc
 ## Latest discovery-only state — batch 215
 - Reviewed approximately 40+ raw public-search leads, Korean-community-first.
 - Retained 15 new C1 records in canonical `data/candidates/`, each with an exact individual public URL.
-- Top examples: `결혼식 축의금 13,000원 낸 친구`, `요즘 결혼 뷔페 가격이 8만원인데 축의금 10만원은 뭐야.jpg`, `새벽1시에 15만원 뽑아 친구 아들한테 용돈 준 남편`, `결혼 3년차 통장잔고 23만원 남은 부부`, `축의금 안 받는 결혼한 사람 때문에 살벌해진 회사.jpg`.
 - Image-centric candidates were marked `본문 미확인` or partial rather than inferred.
 - No screenshots, media downloads, OCR/moderation, editorial scoring, production, rendering, Chrome E2E, publishing or scheduling were performed. All remain A0/P0 and `publicationAllowed=false`.
 
-## Sequential-candidate lane — prior state (not touched by this automation)
-- Processed exactly one next known historical candidate: `260916_공무원면접정장입지마`.
-- Exact public individual TheQoo source resolved: `https://theqoo.net/square/4341526040`, observed title `앞으로 정장 입지 말라는 국가공무원 면접`, displayed author `무명의 더쿠`, displayed date `09-10`.
-- Public page exposes short text `괜찮은듯` plus an image. No permitted source-image bytes were acquired/inspected; image contents were not inferred, OCRed, vision-read, or moderated.
+## Sequential-candidate lane — latest state
+- Processed exactly one next known historical candidate: `260916_국장에서존버하기7`.
+- Exact public individual Blind source resolved: `https://www.teamblind.com/kr/post/%EA%B5%AD%EC%9E%A5%EC%97%90%EC%84%9C-%EC%A1%B4%EB%B2%84%ED%95%98%EA%B8%B0---7-zq4quyn7`.
+- Public page exposes the title `국장에서 존버하기 - (7)`, displayed author `비공개 · 국***`, displayed date `08.16`, views 1,369 and comments 28 at observation. Public body text was readable without login/bypass.
+- Do not treat claimed investment balances/performance as independently verified financial results. No screenshots/media/comment thread/rights clearance were acquired or inferred.
 - Logical provenance is C1; A0/P0 and `publicationAllowed=false` remain.
 
-## TEMP TEST ONLY conversion lane — prior state (not touched by this automation)
-- Existing committed synthetic browser E2E harness had been invoked through installed Chrome headless on 2026-09-19.
-- Browser process completed with exit code 0, but emitted no DOM/PASS output; this is execution evidence only, not a functional browser PASS.
-- Stage 16 remains DISABLED. TEMP invariants remain `temporaryTestOnly=true`, `publicationAllowed=false`.
+## TEMP TEST ONLY conversion lane — latest state
+- `TEMP_TEST_ONLY_browser-e2e-harness.html` now emits unambiguous machine-observable state through document title (`TEMP_E2E_PASS/FAIL`), `html[data-temp-e2e]`, hidden `#machine-result`, and `window.__TEMP_E2E_RESULT__`.
+- This addresses the prior run where Chrome exited 0 but no DOM/PASS evidence was observable.
+- The updated harness has NOT yet been rerun to an observed PASS, so stages 13–15 remain PARTIAL.
+- Stage 16 remains DISABLED. `temporaryTestOnly=true`, `publicationAllowed=false` remain binding.
 
 ## Queue refresh truth
-- Stored historical queue was not partially/fictitiously rewritten; connector enumeration has previously truncated before all identities.
+- Stored historical queue remains 583 entries. Discovery has added later records, but available connector enumeration in this run still did not yield a complete identity-safe list suitable for rewriting the whole queue.
+- Do not fabricate unseen candidate identities or partially replace the queue. Rebuild only from complete enumeration.
 
 ## Publication ownership / safety
 Only **04_REVIEW_PUBLISH** may actually publish or mark P1. Human rights/privacy/safety approval remains required.
 
-## Next discovery automation run
-Continue new Korean-community-first discovery plus exact-source verification of useful existing C0 candidates. Do not enter production.
+## Next sequential run
+If a complete queue refresh still cannot be safely produced and no prior blocked condition changed, continue the next known historical unprocessed candidate after `260916_국장에서존버하기7` in filename order. Independently rerun the updated TEMP harness if a real browser/headless DOM dump is available and require explicit `TEMP_E2E_PASS`; otherwise record the exact blocker and work another safe TEMP unit.
