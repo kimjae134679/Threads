@@ -1,13 +1,14 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 22:26 KST
+Updated: 2026-09-19 23:18 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only note: `01_DISCOVERY/ops/224-sol.md`.
-- Discovery 224 retained 15 new C1 candidates; all remain A1=false, P1=false, publicationAllowed=false.
+- Latest discovery-only note: `01_DISCOVERY/ops/226-sol.md`.
+- Discovery 226 reviewed 40+ public/indexed raw leads and retained 15 new C1 candidates; all remain A1=false, P1=false, publicationAllowed=false.
+- Top new titles include `부부+아기 참석 vs 혼자 참석, 친구 축의금 얼마가 적당할까?`, `결혼후 월 250만원 고정 투자 어떻게 생각하세요?`, `[남자들만답해줘] 소개팅으로 만난 다잘맞는 썸녀(34살)가 알고보니 결혼식올린 경험이있다면`, `와이프가 둘째 출산 곧인데 조리원문제`, `배우자 핸드폰 무음으로 해놓는 것에 대한 싸움`, `친구 없는 결혼식`.
 
 ## Sequential candidate lane — latest
 - Latest sequential/TEMP note: `01_DISCOVERY/ops/225-sol.md`.
