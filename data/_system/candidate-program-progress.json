@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T02:28:33+09:00",
+  "lastCycleAt": "2026-09-20T03:27:16+09:00",
   "processed": [
     {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
@@ -11,6 +11,7 @@
     {"candidateKey":"260916_41세비혼녀","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_6만원도난오해","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_98년생여자생퇴사","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.teamblind.com/kr/s/iu4xi5ax","publicationAllowed":false},
+    {"candidateKey":"260916_AI오타30번","currentPath":"data/candidates/260916_C0_A0_P0_AI오타30번.md","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL/unique post ID or another trustworthy public identifier proving the same individual post becomes resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_개물림견주주장","result":"BLOCKED_PROVENANCE","unblockWhen":"An exact individual source URL, distinctive source title/quote, or other provenance identifier for this specific incident becomes publicly available.","publicationAllowed":false},
     {"candidateKey":"260916_결혼돈관리유형","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2728411","publicationAllowed":false},
     {"candidateKey":"260916_결혼식5만원인간관계","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Blind post URL/shortlink or another trustworthy individual-source identifier becomes publicly resolvable.","publicationAllowed":false},
@@ -30,6 +31,6 @@
     {"candidateKey":"260916_삼성월세부정수급자들","currentPath":"data/candidates/260916_C0_A0_P0_삼성월세부정수급자들.md","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Ppomppu post URL/post ID, or a trustworthy distinctive title/quote proving the same Ppomppu post, becomes publicly resolvable.","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION_AND_REMOTE_UNAVAILABLE","note":"Refresh retried from current main. GitHub directory/tree output remains truncated, and the authorized remote desktop was temporarily unavailable, so every current candidate identity could not be reconstructed safely. Canonical queue was not overwritten with an incomplete list."},
-  "notes": "Processed exactly one next unprocessed stored filename-order candidate after prior processed entries: 260916_삼성월세부정수급자들. Independent public reporting corroborates the broader Samsung DS housing-support investigation, but the exact Ppomppu individual source for this candidate was not resolved. Similar TheQoo/Blind/news posts were not substituted. Retained C0/A0/P0 and publicationAllowed=false. TEMP lane remains independent."
+  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION_AND_REMOTE_UNAVAILABLE","note":"Refresh retried from current main. Complete candidate identity enumeration remains unavailable through truncated connector output, and the authorized remote desktop was unavailable again this cycle. Canonical queue was not overwritten with an incomplete list."},
+  "notes": "Processed exactly one next unprocessed stored filename-order candidate: 260916_AI오타30번. Public index reconfirmed the title and exposed sentence, but no exact individual source URL/post ID was resolved. Result BLOCKED_PROVENANCE; C0/A0/P0 and publicationAllowed=false retained. Existing blockers were not re-evaluated because no recorded unblock condition was observed to change. TEMP lane remains independent."
 }
