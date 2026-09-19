@@ -3,10 +3,10 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T06:26:00+09:00",
+  "updatedAt": "2026-09-20T07:25:00+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {"status":"PARTIAL","note":"Source-evidence map links verified public body to actual eight rendered files. Real source media bytes remain unacquired; no login/access-control bypass or invented bytes."},
-    "10_ui_exclusion": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_visual-contract.json: committed text-only v1 declares 1080x1080, no platform chrome, no blur, no generated-image fallback. Real screenshot crop verification still needs permitted source assets."},
+    "10_ui_exclusion": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_crop-review-gate.json. Current source is text-only and no real screenshot/media bytes exist, so cropReviewPassed remains false; synthetic SVG cannot prove real UI-chrome exclusion."},
     "11_natural_splitting": {"status":"PARTIAL","note":"Actual 8-slide v1 uses verified source order and natural topic grouping rather than raw fixed-length slicing."},
     "12_title_suggestion": {"status":"PARTIAL","note":"Actual cover v1 uses a verified-content title: 직장인이 적어본 2026 회사별 느낌."},
     "13_browser_review": {"status":"PARTIAL","note":"Deterministic review bundle exists, but actual OS download -> fresh-page restore is still unobserved."},
@@ -19,18 +19,14 @@
     "candidatePath":"data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
     "testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
     "actualOutputPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/index.html",
-    "sourceEvidenceMapPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_source-evidence-map.json",
-    "reviewConnectionPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_review-connection.json",
-    "reviewBundleManifestPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_review-bundle-manifest.json",
-    "approvalGatePath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_approval-gate.json",
-    "visualContractPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_visual-contract.json",
-    "state":"TEMP_TEST_ACTUAL_VISUAL_OUTPUT_V1_STATIC_CONTRACT_VERIFIED_STAGE15_FAIL_CLOSED",
+    "cropReviewGatePath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_crop-review-gate.json",
+    "state":"TEMP_TEST_ACTUAL_VISUAL_OUTPUT_V1_STAGE10_FAIL_CLOSED_STAGE15_FAIL_CLOSED",
     "sourceBodyComplete":true,
     "sourceAssetsComplete":false,
     "commentsComplete":false,
     "temporaryTestOnly":true,
     "publicationAllowed":false,
     "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","approved-version-not-selected","review-screen-actual-download-fresh-page-restore-not-yet-observed"],
-    "next":"Continue another safe stage 9-14 unit while approval is absent; do not infer stage-15 success."
+    "next":"Continue another safe stage 9-14 unit while approval is absent; do not infer crop or stage-15 success from synthetic output."
   }]
 }
