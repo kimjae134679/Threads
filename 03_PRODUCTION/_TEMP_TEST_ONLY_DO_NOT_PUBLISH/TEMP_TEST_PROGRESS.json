@@ -3,28 +3,28 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T21:29:52+09:00",
+  "updatedAt": "2026-09-19T22:26:12+09:00",
   "requestedTrack": {
-    "9_source_auto_acquisition": {"status":"PARTIAL","note":"공개 URL 본문 읽기 가능성 확인. 자동 대량수집/로그인 우회 없음; 이미지 중심 소재의 실제 원본 자산은 미확보."},
-    "10_ui_exclusion": {"status":"PARTIAL","note":"실제 허용된 원본 스크린샷/자산이 들어오면 후보별 UI chrome crop 검증 필요."},
-    "11_natural_splitting": {"status":"PARTIAL","note":"natural-boundary-splitter.js를 TEMP browser-conversion-adapter.js에 연결. 제3자 원문은 저장하지 않고 런타임 입력을 메모리에서만 분할."},
-    "12_title_suggestion": {"status":"PARTIAL","note":"TEMP title guard는 exact observed title + verified source text + sourceVerified=true를 요구하고 evidence에 없는 숫자/인용 추가를 거부."},
-    "13_browser_review": {"status":"PARTIAL","note":"Synthetic Chrome harness previously passed. Actual review-screen JSON download then fresh-page restore observation is still pending."},
-    "14_review_screen": {"status":"PARTIAL","note":"TEMP review screen has slide review, JSON restore, approved snapshot and SHA-256 integrity wiring; real review-screen fresh-page round trip is not yet observed."},
-    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"TEMP_TEST_ONLY_validate_fresh_page_restore.test.js added and its equivalent 4-case synthetic test executed successfully: matching digests pass; publicationAllowed=true, restore mismatch, and execution mismatch fail closed. This is contract verification only, not proof of an actual browser download/restore/execution round trip."},
-    "16_live_publish_metrics": {"status":"DISABLED","note":"테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."}
+    "9_source_auto_acquisition": {"status":"PARTIAL","note":"Public URL/body wiring only where permitted; no login/access-control bypass and no invented source bytes."},
+    "10_ui_exclusion": {"status":"PARTIAL","note":"Needs permitted real source screenshot/assets for candidate-specific crop verification."},
+    "11_natural_splitting": {"status":"PARTIAL","note":"Natural-boundary splitter wiring exists; third-party source text is not fabricated."},
+    "12_title_suggestion": {"status":"PARTIAL","note":"Guard requires verified provenance/content and rejects unsupported numeric/quoted claims."},
+    "13_browser_review": {"status":"PARTIAL","note":"Synthetic harness passed previously; actual review-screen file download and fresh-page restore remain unobserved."},
+    "14_review_screen": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_fresh_page_roundtrip_observation.json as a fail-closed observation record. It currently records false/null until a real browser roundtrip is directly observed."},
+    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"Digest contract synthetic tests passed previously, but approved/restored/execution digest equality from an actual browser roundtrip is not yet observed."},
+    "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
   },
   "samples": [{
     "candidateKey":"260916_2026회사별느낌",
     "candidatePath":"data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
     "testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-    "state":"TEMP_TEST_FAIL_CLOSED_DIGEST_CONTRACT_TESTED_REAL_REVIEW_DOWNLOAD_RESTORE_PENDING",
+    "state":"TEMP_TEST_FAIL_CLOSED_REAL_BROWSER_ROUNDTRIP_PENDING",
     "sourceBodyComplete":true,
     "sourceAssetsComplete":false,
     "commentsComplete":false,
     "temporaryTestOnly":true,
     "publicationAllowed":false,
     "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","review-screen-actual-download-fresh-page-restore-not-yet-observed"],
-    "next":"Run TEMP review screen, download actual JSON, open a fresh page, restore that exact file, and validate approval/restored/execution digests. Keep canonical review/publish untouched."
+    "next":"Use the TEMP observation manifest during a real permitted review-screen browser run; do not mark PASS unless exact downloaded-file restore and approved/restored/execution digest equality are directly observed."
   }]
 }
