@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "purpose": "stage-14 review-screen connection for the actual generated v1 files; not a publish approval",
+  "generatedFiles": [
+    "slide-01.svg",
+    "slide-02.svg",
+    "slide-03.svg",
+    "slide-04.svg",
+    "slide-05.svg",
+    "slide-06.svg",
+    "slide-07.svg",
+    "slide-08.svg"
+  ],
+  "gallery": "index.html",
+  "approvedVersion": null,
+  "humanApproval": "NOT_APPROVED",
+  "rights": "UNREVIEWED",
+  "privacy": "UNREVIEWED",
+  "defamation": "REVIEW_REQUIRED",
+  "executionEligible": false,
+  "reviewConnection": "WIRED_TO_ACTUAL_OUTPUT_FILES",
+  "freshPageRestoreObserved": false,
+  "approvedRestoredExecutionDigestMatch": false,
+  "unblockForStage15": "Human selects an approved test version, then the exact downloaded review artifact is restored in a fresh browser document and its approved/restored/execution digests are directly observed equal.",
+  "note": "This file connects review metadata to the actual 8-slide v1 output. It cannot set P1, cannot enable publishing, and cannot upgrade the real candidate C/A/P state."
+}
