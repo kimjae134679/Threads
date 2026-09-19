@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T01:24:43+09:00",
+  "lastCycleAt": "2026-09-20T02:28:33+09:00",
   "processed": [
     {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
@@ -26,9 +26,10 @@
     {"candidateKey":"260916_당근쥐잡기5만원","result":"BLOCKED_PROVENANCE","unblockWhen":"An exact individual source URL, unique post ID, or trustworthy distinctive title/quote for this specific lead becomes publicly resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_마트에서누가사먹는거임","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4341632690","publicationAllowed":false},
     {"candidateKey":"260916_북미돈없어도관심갖는것","currentPath":"data/candidates/260916_C0_A0_P0_북미돈없어도관심갖는것.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","exactSource":"https://theqoo.net/square/4341540872","sourcePostId":"4341540872","sourceAssetsComplete":false,"publicationAllowed":false},
-    {"candidateKey":"260916_블라에서술먹기로해서","currentPath":"data/candidates/260916_C0_A0_P0_블라에서술먹기로해서.md","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Blind URL/shortlink/post ID for the indexed title `블라에서 술 먹기로해서`, or another trustworthy public identifier proving the same individual post, becomes resolvable.","publicationAllowed":false}
+    {"candidateKey":"260916_블라에서술먹기로해서","currentPath":"data/candidates/260916_C0_A0_P0_블라에서술먹기로해서.md","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Blind URL/shortlink/post ID for the indexed title `블라에서 술먹기로해서`, or another trustworthy public identifier proving the same individual post, becomes resolvable.","publicationAllowed":false},
+    {"candidateKey":"260916_삼성월세부정수급자들","currentPath":"data/candidates/260916_C0_A0_P0_삼성월세부정수급자들.md","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Ppomppu post URL/post ID, or a trustworthy distinctive title/quote proving the same Ppomppu post, becomes publicly resolvable.","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION","note":"Refresh retried against current main data/candidates. Directory output is still truncated, so every current candidate identity cannot be reconstructed safely. Canonical queue was not overwritten with an incomplete list."},
-  "notes": "Processed exactly one next unprocessed filename-order candidate: 260916_블라에서술먹기로해서. Public indexes corroborate title/author marker, but exact individual Blind provenance remains unresolved, so C0/A0/P0 is retained. TEMP lane remains independent."
+  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION_AND_REMOTE_UNAVAILABLE","note":"Refresh retried from current main. GitHub directory/tree output remains truncated, and the authorized remote desktop was temporarily unavailable, so every current candidate identity could not be reconstructed safely. Canonical queue was not overwritten with an incomplete list."},
+  "notes": "Processed exactly one next unprocessed stored filename-order candidate after prior processed entries: 260916_삼성월세부정수급자들. Independent public reporting corroborates the broader Samsung DS housing-support investigation, but the exact Ppomppu individual source for this candidate was not resolved. Similar TheQoo/Blind/news posts were not substituted. Retained C0/A0/P0 and publicationAllowed=false. TEMP lane remains independent."
 }
