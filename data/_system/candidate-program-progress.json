@@ -3,183 +3,33 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T20:25:35+09:00",
+  "lastCycleAt": "2026-09-19T21:29:52+09:00",
   "processed": [
-    {
-      "candidateKey": "260916_2026회사별느낌",
-      "currentPath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "unblockWhen": "A real user/manual source screenshot or otherwise permitted source asset is added; do not automate login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_25살연애불가능할까",
-      "currentPath": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_27살여자오늘파혼",
-      "currentPath": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "unblockWhen": "A permitted real source screenshot/asset is available; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_41세비혼녀",
-      "currentPath": "data/candidates/260916_C0_A0_P0_41세비혼녀.md",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "unblockWhen": "Permitted real source images/assets are available for inspection; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_6만원도난오해",
-      "currentPath": "data/candidates/260916_C0_A0_P0_6만원도난오해.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "unblockWhen": "A permitted real source image/asset is available for inspection; no login, anti-bot, paywall, or access-control bypass.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_98년생여자생퇴사",
-      "currentPath": "data/candidates/260916_C0_A0_P0_98년생여자생퇴사.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": false,
-      "exactSource": "https://www.teamblind.com/kr/s/iu4xi5ax",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_개물림견주주장",
-      "currentPath": "data/candidates/260916_C0_A0_P0_개물림견주주장.md",
-      "result": "BLOCKED_PROVENANCE",
-      "nextStage": "provenance-verification",
-      "unblockWhen": "An exact individual source URL, distinctive source title/quote, or other provenance identifier for this specific incident becomes publicly available.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_결혼돈관리유형",
-      "currentPath": "data/candidates/260916_C0_A0_P0_결혼돈관리유형.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728411",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_결혼식5만원인간관계",
-      "currentPath": "data/candidates/260916_C0_A0_P0_결혼식5만원인간관계.md",
-      "result": "BLOCKED_PROVENANCE",
-      "nextStage": "provenance-verification",
-      "unblockWhen": "The exact individual Blind post URL/shortlink or another trustworthy individual-source identifier becomes publicly resolvable.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_결혼식축의금5만원논쟁",
-      "currentPath": "data/candidates/260916_C0_A0_P0_결혼식축의금5만원논쟁.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728407",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_결혼잘사는부부특징",
-      "currentPath": "data/candidates/260916_C0_A0_P0_결혼잘사는부부특징.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2722113",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_결혼전후",
-      "currentPath": "data/candidates/260916_C0_A0_P0_결혼전후.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728393",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_공무원면접정장입지마",
-      "currentPath": "data/candidates/260916_C0_A0_P0_공무원면접정장입지마.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": [
-        "provenance-verification",
-        "public-visible-text-read"
-      ],
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": false,
-      "exactSource": "https://theqoo.net/square/4341526040",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_국장에서존버하기7",
-      "currentPath": "data/candidates/260916_C0_A0_P0_국장에서존버하기7.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "completedStages": [
-        "provenance-verification",
-        "public-visible-text-read"
-      ],
-      "nextStage": "source-asset-acquisition",
-      "fullBodyRead": true,
-      "exactSource": "https://www.teamblind.com/kr/post/%EA%B5%AD%EC%9E%A5%EC%97%90%EC%84%9C-%EC%A1%B4%EB%B2%84%ED%95%98%EA%B8%B0---7-zq4quyn7",
-      "observedAt": "2026-09-19T17:27:24+09:00",
-      "observedEvidence": {
-        "title": "국장에서 존버하기 - (7)",
-        "displayedAuthor": "비공개 · 국***",
-        "displayedDate": "08.16",
-        "views": 1369,
-        "comments": 28,
-        "bodyTextPubliclyReadable": true
-      },
-      "blocker": "Exact public Blind post and publicly readable text were verified. No screenshots/media/comments/rights clearance were acquired or inferred; source-asset and human review gates remain unmet.",
-      "unblockWhen": "Permitted real source media/screenshots or other required source assets become available without login, anti-bot, paywall, or access-control bypass; comments/rights/privacy/safety require their own evidence and review.",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_권태기모든게싫음",
-      "currentPath": "data/candidates/260916_C0_A0_P0_권태기모든게싫음.md",
-      "result": "BLOCKED_PROVENANCE",
-      "nextStage": "provenance-verification",
-      "unblockWhen": "Exact individual source URL or trustworthy identifier for this specific indexed account becomes publicly resolvable.",
-      "observedAt": "2026-09-19T18:29:22+09:00",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_남친이나남편이세차모임자주나가서걱정",
-      "currentPath": "data/candidates/260916_C0_A0_P0_남친이나남편이세차모임자주나가서걱정.md",
-      "result": "BLOCKED_PROVENANCE",
-      "nextStage": "provenance-verification",
-      "unblockWhen": "Exact individual source URL or distinctive trustworthy identifier becomes publicly resolvable.",
-      "observedAt": "2026-09-19T19:26:04+09:00",
-      "publicationAllowed": false
-    },
-    {
-      "candidateKey": "260916_마트에서누가사먹는거임",
-      "currentPath": "data/candidates/260916_C0_A0_P0_마트에서누가사먹는거임.md",
-      "logicalCandidateStage": "C1",
-      "result": "BLOCKED_NEXT_STAGE",
-      "nextStage": "source-asset-acquisition",
-      "exactSource": "https://theqoo.net/square/4341632690",
-      "publicationAllowed": false
-    }
+    {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
+    {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
+    {"candidateKey":"260916_27살여자오늘파혼","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
+    {"candidateKey":"260916_41세비혼녀","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
+    {"candidateKey":"260916_6만원도난오해","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
+    {"candidateKey":"260916_98년생여자생퇴사","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.teamblind.com/kr/s/iu4xi5ax","publicationAllowed":false},
+    {"candidateKey":"260916_개물림견주주장","result":"BLOCKED_PROVENANCE","unblockWhen":"An exact individual source URL, distinctive source title/quote, or other provenance identifier for this specific incident becomes publicly available.","publicationAllowed":false},
+    {"candidateKey":"260916_결혼돈관리유형","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2728411","publicationAllowed":false},
+    {"candidateKey":"260916_결혼식5만원인간관계","result":"BLOCKED_PROVENANCE","unblockWhen":"The exact individual Blind post URL/shortlink or another trustworthy individual-source identifier becomes publicly resolvable.","publicationAllowed":false},
+    {"candidateKey":"260916_결혼식축의금5만원논쟁","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2728407","publicationAllowed":false},
+    {"candidateKey":"260916_결혼잘사는부부특징","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2722113","publicationAllowed":false},
+    {"candidateKey":"260916_결혼전후","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2728393","publicationAllowed":false},
+    {"candidateKey":"260916_공무원면접정장입지마","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4341526040","publicationAllowed":false},
+    {"candidateKey":"260916_국장에서존버하기7","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.teamblind.com/kr/post/%EA%B5%AD%EC%9E%A5%EC%97%90%EC%84%9C-%EC%A1%B4%EB%B2%84%ED%95%98%EA%B8%B0---7-zq4quyn7","publicationAllowed":false},
+    {"candidateKey":"260916_권태기모든게싫음","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL or trustworthy identifier for this specific indexed account becomes publicly resolvable.","publicationAllowed":false},
+    {"candidateKey":"260916_남친이나남편이세차모임자주나가서걱정","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL or distinctive trustworthy identifier becomes publicly resolvable.","publicationAllowed":false},
+    {"candidateKey":"260916_남편생활습관다짜증","currentPath":"data/candidates/260916_C0_A0_P0_남편생활습관다짜증.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","fullBodyRead":true,"exactSource":"https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%82%AC%EC%86%8C%ED%95%9C-%EC%83%9D%ED%99%9C%EC%8A%B5%EA%B4%80%EC%9D%B4-%EB%8B%A4-%EC%A7%9C%EC%A6%9D%EB%82%98%EA%B3%A0-%EB%8B%A4-%EA%B1%B0%EC%8A%AC%EB%A0%A4-rkas3lr6","observedAt":"2026-09-19T21:29:52+09:00","observedEvidence":{"title":"남편 사소한 생활습관이 다 짜증나고 다 거슬려","displayedAuthor":"NH농협 · ᘳ********","publicBodyReadable":true},"blocker":"Exact public Blind post and public body text were verified. No source screenshots/media, complete comment capture, OCR/vision, rights clearance, moderation, A1 or P1 were acquired or inferred.","unblockWhen":"Permitted real source media/screenshots or other required source assets become available without login, anti-bot, paywall, or access-control bypass; rights/privacy/safety remain human-review gates.","publicationAllowed":false},
+    {"candidateKey":"260916_마트에서누가사먹는거임","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4341632690","publicationAllowed":false}
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 851,
-    "status": "REFRESHED_FROM_COMPLETE_LOCAL_GIT_ENUMERATION",
-    "note": "Fresh main clone; README excluded; filename-ascending; new discovery included."
+    "storedQueueEntryCount": 836,
+    "observedCurrentCandidateCount": 866,
+    "status": "REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION",
+    "note": "Current main handoff states 851 candidates before the latest discovery run and that run added 15, so 866 are expected. GitHub recursive-tree read confirms current main was read, but connector output is truncated and cannot safely reconstruct all 866 queue item identities in this runtime. Canonical queue was therefore not overwritten with an incomplete list. Next capable run must rebuild from a complete local/API enumeration without a strict filename parser."
   },
-  "notes": "Processed exactly one next candidate; exact TheQoo provenance verified; source visual bytes not inspected; no publication."
+  "notes": "Processed exactly the earliest unprocessed key visible in filename order after existing blockers: 260916_남편생활습관다짜증. Exact public Blind provenance/body verified; no publication or P1. TEMP lane separately tested fail-closed digest contract."
 }
