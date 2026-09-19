@@ -1,22 +1,24 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 20:18 KST
+Updated: 2026-09-19 20:25 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter production/review/publish from that automation.
 
 ## Discovery automation — latest
-- Public Korean-community search reviewed **40+ raw leads** with Blind/TheQoo prioritized; no login/anti-bot bypass.
-- Retained **15 new C1 candidates** under `data/candidates/`.
-- Strong new titles: `친구 남편 마음에 안들어..`, `짜치는 축의금 ㅜ 그냥 넘어가는게 맞는거야?`, `가치관 안맞는 남편`, `남편 외도 후, 임신 고민한 사람입니다.`, `남편 어제 회식 조금만 먹겠다더니`, `돈 빌리는 친구 어떻게 생각하냐?`.
-- Reposts are marked as repost provenance; partial bodies are explicitly partial.
-- All discovery candidates remain `A1=false`, `P1=false`, `publicationAllowed=false`.
-- Latest discovery ops note: `01_DISCOVERY/ops/220-sol.md`.
+- Latest discovery note remains `01_DISCOVERY/ops/220-sol.md`; it added 15 candidates after the prior 836-entry sequential refresh.
+- All discovery candidates remain A1=false, P1=false, publicationAllowed=false.
 
-## Sequential candidate lane — prior state
-- Queue was refreshed from a complete fresh clone: **836 candidate Markdown files**, README excluded, filename-ascending, including prior discovery.
-- Processed exactly one next candidate: `260916_남친이나남편이세차모임자주나가서걱정`.
-- Exact individual provenance was not publicly resolved, so it is `BLOCKED_PROVENANCE`. Re-evaluate only if its recorded unblock condition changes.
+## Sequential candidate lane — latest
+- Current `data/candidates` enumeration observed 851 Markdown files excluding README. The prior identity-safe queue file is retained because an attempted strict filename parser omitted legacy/nonstandard candidate filenames; do not treat that incomplete parser result as authoritative. Next run should refresh all 851 with the repository's identity-safe filename handling before selecting the next item.
+- Processed exactly one next candidate from the prior safe ordering: `260916_마트에서누가사먹는거임`.
+- Exact public TheQoo post verified: `https://theqoo.net/square/4341632690`, title `"도대체 이런 걸 누가 마트에서 사먹는 거임?"`, displayed author `무명의 더쿠`, displayed date `09-10`, observed indexed views 92855, visual media present.
+- Image bytes/content were not acquired/inspected, so no OCR/vision/body reconstruction/comments/rights claims were made. Logical C1 only; A0/P0 and publicationAllowed=false remain.
+
+## TEMP TEST ONLY lane — latest
+- Added `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/TEMP_TEST_ONLY_validate_fresh_page_restore.js` for items 13-15.
+- Validator requires temporaryTestOnly=true, publicationAllowed=false, approval digest == restored digest == execution digest; it rejects missing/mismatched digests or publicationAllowed=true.
+- Actual review-screen JSON download -> fresh-page restore remains unobserved, so items 13-15 stay PARTIAL and item 16 stays DISABLED.
 
 ## Publication ownership / safety
-Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. Nothing was published in this discovery run.
+Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. Nothing was published and no P1 was set.
