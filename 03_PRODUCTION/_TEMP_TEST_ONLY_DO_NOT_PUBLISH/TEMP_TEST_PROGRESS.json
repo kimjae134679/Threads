@@ -3,28 +3,28 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-19T11:30:22+09:00",
+  "updatedAt": "2026-09-19T12:30:24+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {"status": "PARTIAL", "note": "공개 URL 본문 읽기 가능성 확인. 자동 대량수집/로그인 우회 없음; 이미지 중심 소재의 실제 원본 자산은 미확보."},
     "10_ui_exclusion": {"status": "PARTIAL", "note": "실제 허용된 원본 스크린샷/자산이 들어오면 후보별 UI chrome crop 검증 필요."},
     "11_natural_splitting": {"status": "PARTIAL", "note": "natural-boundary-splitter.js를 TEMP browser-conversion-adapter.js에 연결. 제3자 원문은 저장하지 않고 런타임 입력을 메모리에서만 분할."},
     "12_title_suggestion": {"status": "PARTIAL", "note": "TITLE_STYLE_GUIDE 기반 후보 존재. 검증된 sourceText만 입력받도록 실제 UI 연결 필요."},
-    "13_browser_review": {"status": "PARTIAL", "note": "합성 fixture Node roundtrip은 실행 통과. 실제 브라우저 클릭→다운로드→fresh-page 복원 증거는 아직 없음."},
-    "14_review_screen": {"status": "PARTIAL", "note": "TEMP review screen에 슬라이드 검수, JSON 복원, TEMP 승인본 고정 UI가 연결됨. 승인 스냅샷 SHA-256 무결성 검증도 추가했으나 실제 브라우저 실행 전에는 완료로 승격하지 않음."},
-    "15_approval_runtime_reflection": {"status": "PARTIAL", "note": "TEMP 승인 스냅샷에 canonical conversion payload SHA-256을 기록하고 복원 시 재계산하여 변조된 승인본의 runtime reflection을 거부하도록 강화. publicationAllowed=false 강제. 실제 브라우저 fresh-page 증거는 여전히 필요."},
+    "13_browser_review": {"status": "PARTIAL", "note": "합성 fixture Node roundtrip 통과에 더해 TEMP_TEST_ONLY_browser-e2e-harness.html을 추가. 브라우저 네이티브 Blob/crypto.subtle 기반 다운로드-equivalent 직렬화→fresh-page-equivalent 복원, digest/tamper/publishable-refusal 검사를 자동화했으나 실제 브라우저에서 harness PASS를 관측한 증거는 아직 없음."},
+    "14_review_screen": {"status": "PARTIAL", "note": "TEMP review screen에 슬라이드 검수, JSON 복원, TEMP 승인본 고정 UI 및 SHA-256 무결성 검증이 연결됨. 별도 자동 browser harness도 추가했으나 실제 브라우저 실행 전에는 완료로 승격하지 않음."},
+    "15_approval_runtime_reflection": {"status": "PARTIAL", "note": "TEMP 승인 스냅샷 canonical payload SHA-256 검증과 변조 거부를 review screen 및 browser harness에서 검사하도록 구성. publicationAllowed=false 강제. 실제 브라우저 PASS 관측 필요."},
     "16_live_publish_metrics": {"status": "DISABLED", "note": "테스트 트랙에서는 실게시 금지. 별도 명시적 승인 전까지 수행하지 않음."}
   },
   "samples": [{
     "candidateKey": "260916_2026회사별느낌",
     "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
     "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-    "state": "TEMP_TEST_APPROVAL_INTEGRITY_WIRED_BROWSER_EXECUTION_PENDING",
+    "state": "TEMP_TEST_BROWSER_HARNESS_ADDED_EXECUTION_PENDING",
     "sourceBodyComplete": true,
     "sourceAssetsComplete": false,
     "commentsComplete": false,
-    "completed": ["metadata-to-test-manifest", "text-only-cover-prototype", "public-full-body-read", "natural-boundary-splitter-prototype", "in-memory-browser-conversion-adapter", "synthetic-roundtrip-test-code", "synthetic-roundtrip-node-execution-pass", "temp-review-screen-prototype", "browser-download-restore-ui-wiring", "temp-approval-snapshot-ui-wiring", "temp-runtime-reflection-wiring", "real-browser-e2e-evidence-checklist", "temp-approval-sha256-integrity-wiring"],
+    "completed": ["metadata-to-test-manifest", "text-only-cover-prototype", "public-full-body-read", "natural-boundary-splitter-prototype", "in-memory-browser-conversion-adapter", "synthetic-roundtrip-test-code", "synthetic-roundtrip-node-execution-pass", "temp-review-screen-prototype", "browser-download-restore-ui-wiring", "temp-approval-snapshot-ui-wiring", "temp-runtime-reflection-wiring", "real-browser-e2e-evidence-checklist", "temp-approval-sha256-integrity-wiring", "synthetic-browser-e2e-harness-added"],
     "executionEvidence": {"runtime": "Node compatible runtime", "temporaryTestOnly": true, "publicationAllowed": false, "slideCount": 1, "firstSlideIndex": 2, "roundTripEqual": true, "syntheticFixtureOnly": true, "realBrowserExecuted": false},
-    "blocked": ["real-source-screenshots-or-permitted-source-assets", "full-comment-thread", "rights/privacy/defamation/human-approval", "actual-browser-click-download-fresh-page-restore-and-approval-reflection-execution-not-yet-verified"],
-    "next": "Execute the TEMP review screen in an actual browser/static HTTP environment. Verify approved JSON download, fresh-page restore, matching SHA-256/runtime reflection, and rejection after modifying a canonical approved field. Keep canonical review/publish untouched."
+    "blocked": ["real-source-screenshots-or-permitted-source-assets", "full-comment-thread", "rights/privacy/defamation/human-approval", "actual-browser-harness-pass-or-click-download-fresh-page-restore-and-approval-reflection-execution-not-yet-verified"],
+    "next": "Run tools/TEMP_TEST_ONLY_browser-e2e-harness.html in an actual browser/static HTTP environment and record PASS evidence. Then separately execute the interactive review screen download→fresh-page restore flow. Keep canonical review/publish untouched."
   }]
 }
