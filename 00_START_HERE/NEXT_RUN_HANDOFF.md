@@ -1,6 +1,6 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 05:19 KST
+Updated: 2026-09-20 05:26 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
@@ -13,12 +13,13 @@ For the separate `Threads 소재 발굴` automation, the user's explicit instruc
 - Next discovery run: continue finding new material and verifying exact provenance only; do not advance candidates into production even if the pool is sufficient.
 
 ## Sequential candidate/TEMP lane — latest
-- Latest sequential/TEMP note: `01_DISCOVERY/ops/237-sol.md`.
-- Queue refresh retried, but complete identity enumeration remains blocked by truncated connector output and unavailable authorized remote desktop. Do not overwrite the 836-entry canonical queue from an incomplete list; prior observed-current count remains 866.
-- Processed exactly one next unprocessed stored filename-order candidate: `260916_GTA6가상외도`.
-- Exact individual Inven source verified: `https://www.inven.co.kr/board/party/6292/1835`; public article body was read. Logical C1 provenance/public-text read recorded. Original TikTok/source media bytes remain unacquired, so A0/P0 and publicationAllowed=false remain.
+- Latest sequential/TEMP note: `01_DISCOVERY/ops/239-sol.md`.
+- Queue refresh retried, but `data/candidates` connector enumeration is still truncated. Do not overwrite the 836-entry canonical queue from an incomplete identity list; prior observed-current count remains 866.
+- Processed exactly one next unprocessed stored filename-order candidate: `260916_MZ신입9개월느낀점`.
+- Exact individual Inven source verified: `https://www.inven.co.kr/board/webzine/2097/2727901`, post ID `2727901`, author/time `Earth / 2026-09-15 07:22`, same-page observation 조회 14,154 / 추천 14 / 댓글 46.
+- The post is image-centric. Actual image bytes/OCR/vision were not acquired, so no image-body claims were invented. Logical C1 provenance only; A0/P0 and publicationAllowed=false remain.
 - TEMP actual 8-slide output remains at `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/`.
-- Added `TEMP_TEST_ONLY_source-evidence-map.json` to map the verified public-body source to the actual gallery/eight rendered files while fail-closing all missing source-media/OCR/rights/approval claims.
+- Added `TEMP_TEST_ONLY_review-bundle-manifest.json`, defining the exact ordered v1 review bundle and fail-closed restore contract. This is stage-13/14 wiring only, not approval or a claimed browser roundtrip.
 - Stage 15 remains BLOCKED pending human TEMP-version selection and direct OS-download -> fresh-page restore -> digest-equality observation. Stage 16 remains DISABLED. No real candidate state is upgraded by TEMP tests.
 
 ## Publication ownership / safety
