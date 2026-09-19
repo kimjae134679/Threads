@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-19T22:26:12+09:00",
+  "lastCycleAt": "2026-09-19T23:26:43+09:00",
   "processed": [
     {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
@@ -22,10 +22,11 @@
     {"candidateKey":"260916_권태기모든게싫음","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL or trustworthy identifier for this specific indexed account becomes publicly resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_남친이나남편이세차모임자주나가서걱정","result":"BLOCKED_PROVENANCE","unblockWhen":"Exact individual source URL or distinctive trustworthy identifier becomes publicly resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_남편생활습관다짜증","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
-    {"candidateKey":"260916_누나3명인남친결혼","currentPath":"data/candidates/260916_C0_A0_P0_누나3명인남친결혼.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","fullBodyRead":true,"exactSource":"https://www.teamblind.com/kr/post/%EB%88%84%EB%82%98-3%EB%AA%85%EC%9D%B8-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EB%9E%91-%EA%B2%B0%ED%98%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%B4-dx3842k0","observedAt":"2026-09-19T22:26:12+09:00","observedEvidence":{"title":"누나 3명인 남자친구랑 결혼 어떻게 생각해..??","displayedAuthor":"공무원 · h*****","publicBodyReadable":true,"observedViews":171,"observedComments":33,"observedLikes":2},"blocker":"Exact public Blind provenance/body verified. Source screenshots/media bytes, complete comments, OCR/vision, rights clearance and human safety/privacy review were not acquired.","unblockWhen":"Permitted real source assets become available without login, anti-bot, paywall, or access-control bypass; rights/privacy/safety remain human-review gates.","publicationAllowed":false},
+    {"candidateKey":"260916_누나3명인남친결혼","currentPath":"data/candidates/260916_C0_A0_P0_누나3명인남친결혼.md","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","completedStages":["provenance-verification","public-visible-text-read"],"nextStage":"source-asset-acquisition","fullBodyRead":true,"exactSource":"https://www.teamblind.com/kr/post/%EB%88%84%EB%82%98-3%EB%AA%85%EC%9D%B8-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EB%9E%91-%EA%B2%B0%ED%98%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%B4-dx3842k0","publicationAllowed":false},
+    {"candidateKey":"260916_당근쥐잡기5만원","currentPath":"data/candidates/260916_C0_A0_P0_당근쥐잡기5만원.md","result":"BLOCKED_PROVENANCE","observedAt":"2026-09-19T23:26:43+09:00","blocker":"Public searches did not resolve an exact individual source for this specific indexed lead; unrelated results were not substituted.","unblockWhen":"An exact individual source URL, unique post ID, or trustworthy distinctive title/quote for this specific lead becomes publicly resolvable.","publicationAllowed":false},
     {"candidateKey":"260916_마트에서누가사먹는거임","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4341632690","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION","note":"Current main recursive tree remains truncated in this connector runtime, so all current candidate identities cannot be reconstructed safely. Canonical queue was not overwritten with an incomplete list."},
-  "notes": "Processed exactly one next unprocessed filename-order candidate: 260916_누나3명인남친결혼. Exact public Blind provenance/body verified; no A1/P1 or publication. TEMP lane remains independent."
+  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_CONNECTOR_OUTPUT_TRUNCATION","note":"Current main recursive tree and contents responses remain truncated in this connector runtime, so every current candidate identity cannot be reconstructed safely. Canonical queue was not overwritten with an incomplete list."},
+  "notes": "Processed exactly one next unprocessed filename-order candidate: 260916_당근쥐잡기5만원. Exact provenance remains unresolved; recorded BLOCKED_PROVENANCE without fabrication. TEMP lane remains independent."
 }
