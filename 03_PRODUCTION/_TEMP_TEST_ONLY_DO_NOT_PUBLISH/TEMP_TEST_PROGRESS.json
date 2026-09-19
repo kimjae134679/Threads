@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T01:58:00+09:00",
+  "updatedAt": "2026-09-20T02:28:33+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {"status":"PARTIAL","note":"Public URL/body wiring only where permitted; no login/access-control bypass and no invented source bytes."},
     "10_ui_exclusion": {"status":"PARTIAL","note":"Text-only sample rendered without platform chrome; real screenshot crop verification still needs permitted source assets."},
-    "11_natural_splitting": {"status":"PARTIAL","note":"Actual 8-slide v1 now uses verified source order and natural topic grouping rather than raw fixed-length slicing."},
+    "11_natural_splitting": {"status":"PARTIAL","note":"Actual 8-slide v1 uses verified source order and natural topic grouping rather than raw fixed-length slicing."},
     "12_title_suggestion": {"status":"PARTIAL","note":"Actual cover v1 uses a verified-content title: 직장인이 적어본 2026 회사별 느낌."},
-    "13_browser_review": {"status":"PARTIAL","note":"Visual output exists, but actual OS download -> fresh-page restore observation is still pending."},
-    "14_review_screen": {"status":"PARTIAL","note":"Actual output can be viewed in its own index.html; review-screen roundtrip remains unobserved."},
-    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"No inferred PASS; approved/restored/execution digest equality still requires direct observation."},
+    "13_browser_review": {"status":"PARTIAL","note":"Actual visual output exists; OS download -> fresh-page restore observation remains pending."},
+    "14_review_screen": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_review-connection.json pointing the review contract at the actual eight v1 SVG files and index.html. approvedVersion remains null; this is wiring, not approval."},
+    "15_approval_runtime_reflection": {"status":"PARTIAL","note":"Fail-closed: no approved version exists and approved/restored/execution digest equality has not been directly observed."},
     "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
   },
   "samples": [{
@@ -19,13 +19,14 @@
     "candidatePath":"data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
     "testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
     "actualOutputPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/index.html",
-    "state":"TEMP_TEST_ACTUAL_VISUAL_OUTPUT_V1_READY_ROUNDTRIP_STILL_PENDING",
+    "reviewConnectionPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_review-connection.json",
+    "state":"TEMP_TEST_ACTUAL_VISUAL_OUTPUT_V1_REVIEW_WIRED_APPROVAL_AND_ROUNDTRIP_PENDING",
     "sourceBodyComplete":true,
     "sourceAssetsComplete":false,
     "commentsComplete":false,
     "temporaryTestOnly":true,
     "publicationAllowed":false,
-    "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","review-screen-actual-download-fresh-page-restore-not-yet-observed"],
-    "next":"Review actual 8-slide v1 visually, then continue permitted-source asset acquisition or fresh-page roundtrip verification."
+    "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","approved-version-not-selected","review-screen-actual-download-fresh-page-restore-not-yet-observed"],
+    "next":"After human selects an approved test version, perform exact downloaded-file fresh-page restore and directly verify approved/restored/execution digest equality."
   }]
 }
