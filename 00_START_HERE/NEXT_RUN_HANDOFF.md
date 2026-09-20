@@ -6,11 +6,11 @@ Updated: 2026-09-20 13:26 KST
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only ops note: `01_DISCOVERY/ops/251-sol.md`.
-- All discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false. Continue discovery/provenance only; no production-state upgrades.
+- Discovery-only notes are independent of the sequential/TEMP lane; do not overwrite or reinterpret them from this lane.
+- All discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false unless their own workflow explicitly changes them.
 
 ## Sequential candidate/TEMP lane — latest
-- Latest sequential/TEMP note: `01_DISCOVERY/ops/253-sol.md`.
+- Latest sequential/TEMP note: `01_DISCOVERY/ops/254-sol.md`.
 - Queue refresh was retried from current `data/candidates` recursive tree. 866 candidate files are observed, but connector rendering still truncates before complete identity extraction, so the 836-entry canonical queue was not overwritten from partial data.
 - Processed exactly one next stored filename-order candidate: `260916_여행유튜버현실` (rank 33).
 - Exact individual public TheQoo source verified: `https://theqoo.net/square/4347897214`; visible title/author/source attribution and linked YouTube source were observed.
