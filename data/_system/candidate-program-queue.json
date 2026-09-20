@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedFrom": "data/candidates",
-  "generatedAtKst": "2026-09-20T22:30:11+09:00",
+  "generatedAtKst": "2026-09-20T23:28:58+09:00",
   "ordering": "filename-ascending",
   "identity": "candidateKey is stable across C/A/P filename state changes; unstaged discovery filenames use date_filenameStem and parse state from file metadata",
   "policy": "Refresh every cycle. Process the next candidateKey not completed or currently blocked. C0 verifies exact provenance first; C1 acquires source assets without access-control bypass. Only 04_REVIEW_PUBLISH may publish.",
@@ -9,11 +9,11 @@
     "p1": 0,
     "a1": 0,
     "c2": 0,
-    "c0": 365,
-    "c1": 815,
-    "p0": 1180,
-    "total": 1180,
-    "a0": 1180
+    "c0": 433,
+    "c1": 750,
+    "p0": 1183,
+    "total": 1183,
+    "a0": 1183
   },
   "items": [
     {
@@ -21,10 +21,10 @@
       "candidateKey": "260916_25살연애불가능할까",
       "path": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
       "date": "260916",
-      "candidateStage": "C0",
+      "candidateStage": "C1",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "provenance-verification",
+      "nextStage": "source-asset-acquisition",
       "slug": "25살연애불가능할까"
     },
     {
@@ -32,10 +32,10 @@
       "candidateKey": "260916_27살여자오늘파혼",
       "path": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
       "date": "260916",
-      "candidateStage": "C0",
+      "candidateStage": "C1",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "provenance-verification",
+      "nextStage": "source-asset-acquisition",
       "slug": "27살여자오늘파혼"
     },
     {
@@ -87,10 +87,10 @@
       "candidateKey": "260916_결혼돈관리유형",
       "path": "data/candidates/260916_C0_A0_P0_결혼돈관리유형.md",
       "date": "260916",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼돈관리유형"
     },
     {
@@ -131,10 +131,10 @@
       "candidateKey": "260916_결혼전후",
       "path": "data/candidates/260916_C0_A0_P0_결혼전후.md",
       "date": "260916",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼전후"
     },
     {
@@ -7226,10 +7226,10 @@
       "candidateKey": "260919_돌잔치20대10",
       "path": "data/candidates/260919_돌잔치20대10.md",
       "date": "260919",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "돌잔치20대10"
     },
     {
@@ -10218,10 +10218,10 @@
       "candidateKey": "260920_32_24이결혼하시나요",
       "path": "data/candidates/260920_32_24이결혼하시나요.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "32_24이결혼하시나요"
     },
     {
@@ -10262,10 +10262,10 @@
       "candidateKey": "260920_가난한시댁에시집간후기",
       "path": "data/candidates/260920_가난한시댁에시집간후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "가난한시댁에시집간후기"
     },
     {
@@ -10317,10 +10317,10 @@
       "candidateKey": "260920_결혼2년차생활후기",
       "path": "data/candidates/260920_결혼2년차생활후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼2년차생활후기"
     },
     {
@@ -10339,10 +10339,10 @@
       "candidateKey": "260920_결혼때회사사람축의금어이없는후기",
       "path": "data/candidates/260920_결혼때회사사람축의금어이없는후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼때회사사람축의금어이없는후기"
     },
     {
@@ -10361,10 +10361,10 @@
       "candidateKey": "260920_결혼식에돈많이쓴후기가궁금한후기",
       "path": "data/candidates/260920_결혼식에돈많이쓴후기가궁금한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼식에돈많이쓴후기가궁금한후기"
     },
     {
@@ -10372,10 +10372,10 @@
       "candidateKey": "260920_결혼식에이것저것생략했던후기",
       "path": "data/candidates/260920_결혼식에이것저것생략했던후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼식에이것저것생략했던후기"
     },
     {
@@ -10405,10 +10405,10 @@
       "candidateKey": "260920_결혼식후배파혼시키고싶었던후기",
       "path": "data/candidates/260920_결혼식후배파혼시키고싶었던후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼식후배파혼시키고싶었던후기"
     },
     {
@@ -10438,10 +10438,10 @@
       "candidateKey": "260920_결혼잘해서일그만두고싶은후기",
       "path": "data/candidates/260920_결혼잘해서일그만두고싶은후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼잘해서일그만두고싶은후기"
     },
     {
@@ -10493,10 +10493,10 @@
       "candidateKey": "260920_결혼출산후친구0명적응후기",
       "path": "data/candidates/260920_결혼출산후친구0명적응후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼출산후친구0명적응후기"
     },
     {
@@ -10515,10 +10515,10 @@
       "candidateKey": "260920_결혼하고싶은애인이취준후기",
       "path": "data/candidates/260920_결혼하고싶은애인이취준후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼하고싶은애인이취준후기"
     },
     {
@@ -10526,10 +10526,10 @@
       "candidateKey": "260920_결혼후회중기",
       "path": "data/candidates/260920_결혼후회중기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "결혼후회중기"
     },
     {
@@ -10537,10 +10537,10 @@
       "candidateKey": "260920_경조사비5년결산후기",
       "path": "data/candidates/260920_경조사비5년결산후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "경조사비5년결산후기"
     },
     {
@@ -10570,10 +10570,10 @@
       "candidateKey": "260920_계획못짜는남편집안살림으로상쇄후기",
       "path": "data/candidates/260920_계획못짜는남편집안살림으로상쇄후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "계획못짜는남편집안살림으로상쇄후기"
     },
     {
@@ -10625,10 +10625,10 @@
       "candidateKey": "260920_남자친구네가족만나고울다잠든후기",
       "path": "data/candidates/260920_남자친구네가족만나고울다잠든후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "남자친구네가족만나고울다잠든후기"
     },
     {
@@ -10691,10 +10691,10 @@
       "candidateKey": "260920_남편선물살말고민",
       "path": "data/candidates/260920_남편선물살말고민.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "남편선물살말고민"
     },
     {
@@ -10702,10 +10702,10 @@
       "candidateKey": "260920_남편선물살말고민인중기",
       "path": "data/candidates/260920_남편선물살말고민인중기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "남편선물살말고민인중기"
     },
     {
@@ -10746,10 +10746,10 @@
       "candidateKey": "260920_눈새친구때문에짜증나는후기",
       "path": "data/candidates/260920_눈새친구때문에짜증나는후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "눈새친구때문에짜증나는후기"
     },
     {
@@ -10768,10 +10768,10 @@
       "candidateKey": "260920_대만남자랑결혼한후기",
       "path": "data/candidates/260920_대만남자랑결혼한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "대만남자랑결혼한후기"
     },
     {
@@ -10790,10 +10790,10 @@
       "candidateKey": "260920_돈때문에결혼접을까고민된다는남자",
       "path": "data/candidates/260920_돈때문에결혼접을까고민된다는남자.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "돈때문에결혼접을까고민된다는남자"
     },
     {
@@ -10812,10 +10812,10 @@
       "candidateKey": "260920_돈없는친구가피곤한후기",
       "path": "data/candidates/260920_돈없는친구가피곤한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "돈없는친구가피곤한후기"
     },
     {
@@ -10845,10 +10845,10 @@
       "candidateKey": "260920_동등조건반반맞벌이결혼생활중기",
       "path": "data/candidates/260920_동등조건반반맞벌이결혼생활중기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "동등조건반반맞벌이결혼생활중기"
     },
     {
@@ -10944,10 +10944,10 @@
       "candidateKey": "260920_모로코집가서결혼허락받은썰",
       "path": "data/candidates/260920_모로코집가서결혼허락받은썰.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "모로코집가서결혼허락받은썰"
     },
     {
@@ -10955,10 +10955,10 @@
       "candidateKey": "260920_민생지원금달라는부모님현타후기",
       "path": "data/candidates/260920_민생지원금달라는부모님현타후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "민생지원금달라는부모님현타후기"
     },
     {
@@ -10966,10 +10966,10 @@
       "candidateKey": "260920_버거킹카운터오픈데일리마감후기",
       "path": "data/candidates/260920_버거킹카운터오픈데일리마감후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "버거킹카운터오픈데일리마감후기"
     },
     {
@@ -10996,17 +10996,6 @@
     },
     {
       "rank": 999,
-      "candidateKey": "260920_부모님노후대책없이정년후기",
-      "path": "data/candidates/260920_부모님노후대책없이정년후기.md",
-      "date": "260920",
-      "candidateStage": "C0",
-      "assetStage": "A0",
-      "publishStage": "P0",
-      "nextStage": "provenance-verification",
-      "slug": "부모님노후대책없이정년후기"
-    },
-    {
-      "rank": 1000,
       "candidateKey": "260920_부모님자영업무급도움_C1",
       "path": "data/candidates/260920_부모님자영업무급도움_C1.md",
       "date": "260920",
@@ -11017,18 +11006,18 @@
       "slug": "부모님자영업무급도움_C1"
     },
     {
-      "rank": 1001,
+      "rank": 1000,
       "candidateKey": "260920_부모님자영업왜내가도와야하나후기",
       "path": "data/candidates/260920_부모님자영업왜내가도와야하나후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "부모님자영업왜내가도와야하나후기"
     },
     {
-      "rank": 1002,
+      "rank": 1001,
       "candidateKey": "260920_부모님주식돈갈등_C1",
       "path": "data/candidates/260920_부모님주식돈갈등_C1.md",
       "date": "260920",
@@ -11039,7 +11028,7 @@
       "slug": "부모님주식돈갈등_C1"
     },
     {
-      "rank": 1003,
+      "rank": 1002,
       "candidateKey": "260920_부모님집빚다갚은후기",
       "path": "data/candidates/260920_부모님집빚다갚은후기.md",
       "date": "260920",
@@ -11050,7 +11039,7 @@
       "slug": "부모님집빚다갚은후기"
     },
     {
-      "rank": 1004,
+      "rank": 1003,
       "candidateKey": "260920_부모님첫놀이공원후기",
       "path": "data/candidates/260920_부모님첫놀이공원후기.md",
       "date": "260920",
@@ -11061,7 +11050,7 @@
       "slug": "부모님첫놀이공원후기"
     },
     {
-      "rank": 1005,
+      "rank": 1004,
       "candidateKey": "260920_부부돈관리맡는후기",
       "path": "data/candidates/260920_부부돈관리맡는후기.md",
       "date": "260920",
@@ -11072,7 +11061,7 @@
       "slug": "부부돈관리맡는후기"
     },
     {
-      "rank": 1006,
+      "rank": 1005,
       "candidateKey": "260920_빚1억여자친구자산공개",
       "path": "data/candidates/260920_빚1억여자친구자산공개.md",
       "date": "260920",
@@ -11083,18 +11072,18 @@
       "slug": "빚1억여자친구자산공개"
     },
     {
-      "rank": 1007,
+      "rank": 1006,
       "candidateKey": "260920_사소한것에크게서운한후기",
       "path": "data/candidates/260920_사소한것에크게서운한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "사소한것에크게서운한후기"
     },
     {
-      "rank": 1008,
+      "rank": 1007,
       "candidateKey": "260920_사촌동생축의금얼마가좋을까",
       "path": "data/candidates/260920_사촌동생축의금얼마가좋을까.md",
       "date": "260920",
@@ -11105,51 +11094,51 @@
       "slug": "사촌동생축의금얼마가좋을까"
     },
     {
-      "rank": 1009,
+      "rank": 1008,
       "candidateKey": "260920_산후조리에3천만원쓴후기추천",
       "path": "data/candidates/260920_산후조리에3천만원쓴후기추천.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "산후조리에3천만원쓴후기추천"
     },
     {
-      "rank": 1010,
+      "rank": 1009,
       "candidateKey": "260920_세번파혼한후기",
       "path": "data/candidates/260920_세번파혼한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "세번파혼한후기"
     },
     {
-      "rank": 1011,
+      "rank": 1010,
       "candidateKey": "260920_소개팅주선하고그커플이결혼한다는후기",
       "path": "data/candidates/260920_소개팅주선하고그커플이결혼한다는후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "소개팅주선하고그커플이결혼한다는후기"
     },
     {
-      "rank": 1012,
+      "rank": 1011,
       "candidateKey": "260920_수준안맞는옛날친구연락고민후기",
       "path": "data/candidates/260920_수준안맞는옛날친구연락고민후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "수준안맞는옛날친구연락고민후기"
     },
     {
-      "rank": 1013,
+      "rank": 1012,
       "candidateKey": "260920_스몰같지않은스몰웨딩",
       "path": "data/candidates/260920_스몰같지않은스몰웨딩.md",
       "date": "260920",
@@ -11160,7 +11149,7 @@
       "slug": "스몰같지않은스몰웨딩"
     },
     {
-      "rank": 1014,
+      "rank": 1013,
       "candidateKey": "260920_스파링하고출근",
       "path": "data/candidates/260920_스파링하고출근.md",
       "date": "260920",
@@ -11171,7 +11160,7 @@
       "slug": "스파링하고출근"
     },
     {
-      "rank": 1015,
+      "rank": 1014,
       "candidateKey": "260920_시누아이호적입양갈등",
       "path": "data/candidates/260920_시누아이호적입양갈등.md",
       "date": "260920",
@@ -11182,7 +11171,7 @@
       "slug": "시누아이호적입양갈등"
     },
     {
-      "rank": 1016,
+      "rank": 1015,
       "candidateKey": "260920_시댁다E며느리만I",
       "path": "data/candidates/260920_시댁다E며느리만I.md",
       "date": "260920",
@@ -11193,7 +11182,7 @@
       "slug": "시댁다E며느리만I"
     },
     {
-      "rank": 1017,
+      "rank": 1016,
       "candidateKey": "260920_시댁용돈무소득남편",
       "path": "data/candidates/260920_시댁용돈무소득남편.md",
       "date": "260920",
@@ -11204,29 +11193,29 @@
       "slug": "시댁용돈무소득남편"
     },
     {
-      "rank": 1018,
+      "rank": 1017,
       "candidateKey": "260920_시동생파혼당한이유추정",
       "path": "data/candidates/260920_시동생파혼당한이유추정.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "시동생파혼당한이유추정"
     },
     {
-      "rank": 1019,
+      "rank": 1018,
       "candidateKey": "260920_신입직장그만둘말",
       "path": "data/candidates/260920_신입직장그만둘말.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "신입직장그만둘말"
     },
     {
-      "rank": 1020,
+      "rank": 1019,
       "candidateKey": "260920_신혼월급관리대출vs투자",
       "path": "data/candidates/260920_신혼월급관리대출vs투자.md",
       "date": "260920",
@@ -11237,29 +11226,29 @@
       "slug": "신혼월급관리대출vs투자"
     },
     {
-      "rank": 1021,
+      "rank": 1020,
       "candidateKey": "260920_싸웠던상사나르시스트인거같은후기",
       "path": "data/candidates/260920_싸웠던상사나르시스트인거같은후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "싸웠던상사나르시스트인거같은후기"
     },
     {
-      "rank": 1022,
+      "rank": 1021,
       "candidateKey": "260920_아무생각없이집지른후기",
       "path": "data/candidates/260920_아무생각없이집지른후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "아무생각없이집지른후기"
     },
     {
-      "rank": 1023,
+      "rank": 1022,
       "candidateKey": "260920_아빠가남편한테돈빌림",
       "path": "data/candidates/260920_아빠가남편한테돈빌림.md",
       "date": "260920",
@@ -11270,7 +11259,7 @@
       "slug": "아빠가남편한테돈빌림"
     },
     {
-      "rank": 1024,
+      "rank": 1023,
       "candidateKey": "260920_애봐줄사람없는데둘낳으라는시댁",
       "path": "data/candidates/260920_애봐줄사람없는데둘낳으라는시댁.md",
       "date": "260920",
@@ -11281,7 +11270,7 @@
       "slug": "애봐줄사람없는데둘낳으라는시댁"
     },
     {
-      "rank": 1025,
+      "rank": 1024,
       "candidateKey": "260920_에어컨철거자리복구갈등",
       "path": "data/candidates/260920_에어컨철거자리복구갈등.md",
       "date": "260920",
@@ -11292,7 +11281,7 @@
       "slug": "에어컨철거자리복구갈등"
     },
     {
-      "rank": 1026,
+      "rank": 1025,
       "candidateKey": "260920_옛날고백황당후기",
       "path": "data/candidates/260920_옛날고백황당후기.md",
       "date": "260920",
@@ -11303,18 +11292,18 @@
       "slug": "옛날고백황당후기"
     },
     {
-      "rank": 1027,
+      "rank": 1026,
       "candidateKey": "260920_오늘회사동료레전드썰들음",
       "path": "data/candidates/260920_오늘회사동료레전드썰들음.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "오늘회사동료레전드썰들음"
     },
     {
-      "rank": 1028,
+      "rank": 1027,
       "candidateKey": "260920_오배송받고소보원까지가서협상결렬된후기",
       "path": "data/candidates/260920_오배송받고소보원까지가서협상결렬된후기.md",
       "date": "260920",
@@ -11325,18 +11314,18 @@
       "slug": "오배송받고소보원까지가서협상결렬된후기"
     },
     {
-      "rank": 1029,
+      "rank": 1028,
       "candidateKey": "260920_요즘축의금5진짜안하는것같은후기",
       "path": "data/candidates/260920_요즘축의금5진짜안하는것같은후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "요즘축의금5진짜안하는것같은후기"
     },
     {
-      "rank": 1030,
+      "rank": 1029,
       "candidateKey": "260920_우리같은부부특이",
       "path": "data/candidates/260920_우리같은부부특이.md",
       "date": "260920",
@@ -11347,7 +11336,7 @@
       "slug": "우리같은부부특이"
     },
     {
-      "rank": 1031,
+      "rank": 1030,
       "candidateKey": "260920_웨딩밴드실패후기",
       "path": "data/candidates/260920_웨딩밴드실패후기.md",
       "date": "260920",
@@ -11358,18 +11347,18 @@
       "slug": "웨딩밴드실패후기"
     },
     {
-      "rank": 1032,
+      "rank": 1031,
       "candidateKey": "260920_유니콘아들육아후기",
       "path": "data/candidates/260920_유니콘아들육아후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "유니콘아들육아후기"
     },
     {
-      "rank": 1033,
+      "rank": 1032,
       "candidateKey": "260920_육아참여안하는남편",
       "path": "data/candidates/260920_육아참여안하는남편.md",
       "date": "260920",
@@ -11380,7 +11369,7 @@
       "slug": "육아참여안하는남편"
     },
     {
-      "rank": 1034,
+      "rank": 1033,
       "candidateKey": "260920_육아휴직바톤터치",
       "path": "data/candidates/260920_육아휴직바톤터치.md",
       "date": "260920",
@@ -11391,7 +11380,7 @@
       "slug": "육아휴직바톤터치"
     },
     {
-      "rank": 1035,
+      "rank": 1034,
       "candidateKey": "260920_이직최악중최선",
       "path": "data/candidates/260920_이직최악중최선.md",
       "date": "260920",
@@ -11402,7 +11391,7 @@
       "slug": "이직최악중최선"
     },
     {
-      "rank": 1036,
+      "rank": 1035,
       "candidateKey": "260920_일본유학및결혼썰",
       "path": "data/candidates/260920_일본유학및결혼썰.md",
       "date": "260920",
@@ -11413,7 +11402,7 @@
       "slug": "일본유학및결혼썰"
     },
     {
-      "rank": 1037,
+      "rank": 1036,
       "candidateKey": "260920_임산부출산용품생활비",
       "path": "data/candidates/260920_임산부출산용품생활비.md",
       "date": "260920",
@@ -11424,7 +11413,7 @@
       "slug": "임산부출산용품생활비"
     },
     {
-      "rank": 1038,
+      "rank": 1037,
       "candidateKey": "260920_임자있는사람건드린지인손절후기",
       "path": "data/candidates/260920_임자있는사람건드린지인손절후기.md",
       "date": "260920",
@@ -11435,7 +11424,7 @@
       "slug": "임자있는사람건드린지인손절후기"
     },
     {
-      "rank": 1039,
+      "rank": 1038,
       "candidateKey": "260920_입이가벼운친구",
       "path": "data/candidates/260920_입이가벼운친구.md",
       "date": "260920",
@@ -11446,18 +11435,18 @@
       "slug": "입이가벼운친구"
     },
     {
-      "rank": 1040,
+      "rank": 1039,
       "candidateKey": "260920_자소서교육내역날짜잘못입력면접문자",
       "path": "data/candidates/260920_자소서교육내역날짜잘못입력면접문자.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "자소서교육내역날짜잘못입력면접문자"
     },
     {
-      "rank": 1041,
+      "rank": 1040,
       "candidateKey": "260920_장례식친구상사첫마디후기",
       "path": "data/candidates/260920_장례식친구상사첫마디후기.md",
       "date": "260920",
@@ -11468,7 +11457,7 @@
       "slug": "장례식친구상사첫마디후기"
     },
     {
-      "rank": 1042,
+      "rank": 1041,
       "candidateKey": "260920_전재산날린남편시부모부양까지",
       "path": "data/candidates/260920_전재산날린남편시부모부양까지.md",
       "date": "260920",
@@ -11479,7 +11468,7 @@
       "slug": "전재산날린남편시부모부양까지"
     },
     {
-      "rank": 1043,
+      "rank": 1042,
       "candidateKey": "260920_조카돌잔치축의금고민",
       "path": "data/candidates/260920_조카돌잔치축의금고민.md",
       "date": "260920",
@@ -11490,29 +11479,29 @@
       "slug": "조카돌잔치축의금고민"
     },
     {
-      "rank": 1044,
+      "rank": 1043,
       "candidateKey": "260920_좋은시댁만난것같은후기",
       "path": "data/candidates/260920_좋은시댁만난것같은후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "좋은시댁만난것같은후기"
     },
     {
-      "rank": 1045,
+      "rank": 1044,
       "candidateKey": "260920_좋은시댁만난후기",
       "path": "data/candidates/260920_좋은시댁만난후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "좋은시댁만난후기"
     },
     {
-      "rank": 1046,
+      "rank": 1045,
       "candidateKey": "260920_좋은시댁후기",
       "path": "data/candidates/260920_좋은시댁후기.md",
       "date": "260920",
@@ -11523,40 +11512,40 @@
       "slug": "좋은시댁후기"
     },
     {
-      "rank": 1047,
+      "rank": 1046,
       "candidateKey": "260920_중고공유기이쑤시개배송후기",
       "path": "data/candidates/260920_중고공유기이쑤시개배송후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "중고공유기이쑤시개배송후기"
     },
     {
-      "rank": 1048,
+      "rank": 1047,
       "candidateKey": "260920_직장동료결혼식친구약속고민",
       "path": "data/candidates/260920_직장동료결혼식친구약속고민.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "직장동료결혼식친구약속고민"
     },
     {
-      "rank": 1049,
+      "rank": 1048,
       "candidateKey": "260920_직장동료돈얘기기분상한후기",
       "path": "data/candidates/260920_직장동료돈얘기기분상한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "직장동료돈얘기기분상한후기"
     },
     {
-      "rank": 1050,
+      "rank": 1049,
       "candidateKey": "260920_직장동료축의금질문",
       "path": "data/candidates/260920_직장동료축의금질문.md",
       "date": "260920",
@@ -11567,7 +11556,7 @@
       "slug": "직장동료축의금질문"
     },
     {
-      "rank": 1051,
+      "rank": 1050,
       "candidateKey": "260920_직장상사갈등3인분",
       "path": "data/candidates/260920_직장상사갈등3인분.md",
       "date": "260920",
@@ -11578,7 +11567,7 @@
       "slug": "직장상사갈등3인분"
     },
     {
-      "rank": 1052,
+      "rank": 1051,
       "candidateKey": "260920_직장상사선물조언",
       "path": "data/candidates/260920_직장상사선물조언.md",
       "date": "260920",
@@ -11589,29 +11578,29 @@
       "slug": "직장상사선물조언"
     },
     {
-      "rank": 1053,
+      "rank": 1052,
       "candidateKey": "260920_직장인5년차동료한계후기",
       "path": "data/candidates/260920_직장인5년차동료한계후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "직장인5년차동료한계후기"
     },
     {
-      "rank": 1054,
+      "rank": 1053,
       "candidateKey": "260920_첫연애첫이별후기",
       "path": "data/candidates/260920_첫연애첫이별후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "첫연애첫이별후기"
     },
     {
-      "rank": 1055,
+      "rank": 1054,
       "candidateKey": "260920_청첩장만원밥축의금",
       "path": "data/candidates/260920_청첩장만원밥축의금.md",
       "date": "260920",
@@ -11622,7 +11611,7 @@
       "slug": "청첩장만원밥축의금"
     },
     {
-      "rank": 1056,
+      "rank": 1055,
       "candidateKey": "260920_청첩장무시신경쓰이는후기",
       "path": "data/candidates/260920_청첩장무시신경쓰이는후기.md",
       "date": "260920",
@@ -11633,7 +11622,7 @@
       "slug": "청첩장무시신경쓰이는후기"
     },
     {
-      "rank": 1057,
+      "rank": 1056,
       "candidateKey": "260920_축의금10년지기세명5만원",
       "path": "data/candidates/260920_축의금10년지기세명5만원.md",
       "date": "260920",
@@ -11644,7 +11633,7 @@
       "slug": "축의금10년지기세명5만원"
     },
     {
-      "rank": 1058,
+      "rank": 1057,
       "candidateKey": "260920_축의금10만원축가",
       "path": "data/candidates/260920_축의금10만원축가.md",
       "date": "260920",
@@ -11655,7 +11644,7 @@
       "slug": "축의금10만원축가"
     },
     {
-      "rank": 1059,
+      "rank": 1058,
       "candidateKey": "260920_축의금5만원시세논쟁_C1",
       "path": "data/candidates/260920_축의금5만원시세논쟁_C1.md",
       "date": "260920",
@@ -11666,7 +11655,7 @@
       "slug": "축의금5만원시세논쟁_C1"
     },
     {
-      "rank": 1060,
+      "rank": 1059,
       "candidateKey": "260920_축의금적정선월급220",
       "path": "data/candidates/260920_축의금적정선월급220.md",
       "date": "260920",
@@ -11677,7 +11666,7 @@
       "slug": "축의금적정선월급220"
     },
     {
-      "rank": 1061,
+      "rank": 1060,
       "candidateKey": "260920_취준남매부모가게나만도움",
       "path": "data/candidates/260920_취준남매부모가게나만도움.md",
       "date": "260920",
@@ -11688,29 +11677,29 @@
       "slug": "취준남매부모가게나만도움"
     },
     {
-      "rank": 1062,
+      "rank": 1061,
       "candidateKey": "260920_취직1년차아빠돈좀있냔소리후기",
       "path": "data/candidates/260920_취직1년차아빠돈좀있냔소리후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "취직1년차아빠돈좀있냔소리후기"
     },
     {
-      "rank": 1063,
+      "rank": 1062,
       "candidateKey": "260920_친구가나를질투하는것같은후기",
       "path": "data/candidates/260920_친구가나를질투하는것같은후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "친구가나를질투하는것같은후기"
     },
     {
-      "rank": 1064,
+      "rank": 1063,
       "candidateKey": "260920_친구결혼식사진촬영연끊음",
       "path": "data/candidates/260920_친구결혼식사진촬영연끊음.md",
       "date": "260920",
@@ -11721,7 +11710,7 @@
       "slug": "친구결혼식사진촬영연끊음"
     },
     {
-      "rank": 1065,
+      "rank": 1064,
       "candidateKey": "260920_친구결혼식축의금5만원해서서운한후기",
       "path": "data/candidates/260920_친구결혼식축의금5만원해서서운한후기.md",
       "date": "260920",
@@ -11732,7 +11721,7 @@
       "slug": "친구결혼식축의금5만원해서서운한후기"
     },
     {
-      "rank": 1066,
+      "rank": 1065,
       "candidateKey": "260920_친구결혼식통역부탁갈등",
       "path": "data/candidates/260920_친구결혼식통역부탁갈등.md",
       "date": "260920",
@@ -11743,7 +11732,7 @@
       "slug": "친구결혼식통역부탁갈등"
     },
     {
-      "rank": 1067,
+      "rank": 1066,
       "candidateKey": "260920_친구결혼후멀어짐",
       "path": "data/candidates/260920_친구결혼후멀어짐.md",
       "date": "260920",
@@ -11754,7 +11743,7 @@
       "slug": "친구결혼후멀어짐"
     },
     {
-      "rank": 1068,
+      "rank": 1067,
       "candidateKey": "260920_친구만나는데계속폰보는후기",
       "path": "data/candidates/260920_친구만나는데계속폰보는후기.md",
       "date": "260920",
@@ -11765,18 +11754,7 @@
       "slug": "친구만나는데계속폰보는후기"
     },
     {
-      "rank": 1069,
-      "candidateKey": "260920_친구만날때계속휴대폰보는후기",
-      "path": "data/candidates/260920_친구만날때계속휴대폰보는후기.md",
-      "date": "260920",
-      "candidateStage": "C0",
-      "assetStage": "A0",
-      "publishStage": "P0",
-      "nextStage": "provenance-verification",
-      "slug": "친구만날때계속휴대폰보는후기"
-    },
-    {
-      "rank": 1070,
+      "rank": 1068,
       "candidateKey": "260920_친구사기후2년후기",
       "path": "data/candidates/260920_친구사기후2년후기.md",
       "date": "260920",
@@ -11787,29 +11765,18 @@
       "slug": "친구사기후2년후기"
     },
     {
-      "rank": 1071,
-      "candidateKey": "260920_친구생일축하정떨어진후기",
-      "path": "data/candidates/260920_친구생일축하정떨어진후기.md",
+      "rank": 1069,
+      "candidateKey": "260920_친구에게맞는사이즈옷권할방법후기",
+      "path": "data/candidates/260920_친구에게맞는사이즈옷권할방법후기.md",
       "date": "260920",
       "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
       "nextStage": "provenance-verification",
-      "slug": "친구생일축하정떨어진후기"
-    },
-    {
-      "rank": 1072,
-      "candidateKey": "260920_친구에게맞는사이즈옷권할방법후기",
-      "path": "data/candidates/260920_친구에게맞는사이즈옷권할방법후기.md",
-      "date": "260920",
-      "candidateStage": "C1",
-      "assetStage": "A0",
-      "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
       "slug": "친구에게맞는사이즈옷권할방법후기"
     },
     {
-      "rank": 1073,
+      "rank": 1070,
       "candidateKey": "260920_친구옷사이즈권하기",
       "path": "data/candidates/260920_친구옷사이즈권하기.md",
       "date": "260920",
@@ -11820,18 +11787,18 @@
       "slug": "친구옷사이즈권하기"
     },
     {
-      "rank": 1074,
+      "rank": 1071,
       "candidateKey": "260920_친구옷사이즈권하기고민",
       "path": "data/candidates/260920_친구옷사이즈권하기고민.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "친구옷사이즈권하기고민"
     },
     {
-      "rank": 1075,
+      "rank": 1072,
       "candidateKey": "260920_친구적은남자랑결혼한후기",
       "path": "data/candidates/260920_친구적은남자랑결혼한후기.md",
       "date": "260920",
@@ -11842,40 +11809,40 @@
       "slug": "친구적은남자랑결혼한후기"
     },
     {
-      "rank": 1076,
+      "rank": 1073,
       "candidateKey": "260920_친구축의금5만원해서서운한후기",
       "path": "data/candidates/260920_친구축의금5만원해서서운한후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "친구축의금5만원해서서운한후기"
     },
     {
-      "rank": 1077,
+      "rank": 1074,
       "candidateKey": "260920_친구축의금원화유로고민",
       "path": "data/candidates/260920_친구축의금원화유로고민.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "친구축의금원화유로고민"
     },
     {
-      "rank": 1078,
+      "rank": 1075,
       "candidateKey": "260920_친구축의금원화vs유로고민",
       "path": "data/candidates/260920_친구축의금원화vs유로고민.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "친구축의금원화vs유로고민"
     },
     {
-      "rank": 1079,
+      "rank": 1076,
       "candidateKey": "260920_친구출산선물좋았던것후기부탁해",
       "path": "data/candidates/260920_친구출산선물좋았던것후기부탁해.md",
       "date": "260920",
@@ -11886,7 +11853,7 @@
       "slug": "친구출산선물좋았던것후기부탁해"
     },
     {
-      "rank": 1080,
+      "rank": 1077,
       "candidateKey": "260920_친한친구축의금보통얼마",
       "path": "data/candidates/260920_친한친구축의금보통얼마.md",
       "date": "260920",
@@ -11897,7 +11864,7 @@
       "slug": "친한친구축의금보통얼마"
     },
     {
-      "rank": 1081,
+      "rank": 1078,
       "candidateKey": "260920_카페알바두달만에그만둔후기",
       "path": "data/candidates/260920_카페알바두달만에그만둔후기.md",
       "date": "260920",
@@ -11908,7 +11875,7 @@
       "slug": "카페알바두달만에그만둔후기"
     },
     {
-      "rank": 1082,
+      "rank": 1079,
       "candidateKey": "260920_쿠팡계약직3주차",
       "path": "data/candidates/260920_쿠팡계약직3주차.md",
       "date": "260920",
@@ -11919,29 +11886,29 @@
       "slug": "쿠팡계약직3주차"
     },
     {
-      "rank": 1083,
+      "rank": 1080,
       "candidateKey": "260920_쿠팡비마트일일알바후기",
       "path": "data/candidates/260920_쿠팡비마트일일알바후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "쿠팡비마트일일알바후기"
     },
     {
-      "rank": 1084,
+      "rank": 1081,
       "candidateKey": "260920_파혼한지좀됐는데아빠가계속중인후기",
       "path": "data/candidates/260920_파혼한지좀됐는데아빠가계속중인후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "파혼한지좀됐는데아빠가계속중인후기"
     },
     {
-      "rank": 1085,
+      "rank": 1082,
       "candidateKey": "260920_파혼후아빠갈등후기",
       "path": "data/candidates/260920_파혼후아빠갈등후기.md",
       "date": "260920",
@@ -11952,7 +11919,7 @@
       "slug": "파혼후아빠갈등후기"
     },
     {
-      "rank": 1086,
+      "rank": 1083,
       "candidateKey": "260920_호텔결혼돈쓴추천비추천후기",
       "path": "data/candidates/260920_호텔결혼돈쓴추천비추천후기.md",
       "date": "260920",
@@ -11963,7 +11930,7 @@
       "slug": "호텔결혼돈쓴추천비추천후기"
     },
     {
-      "rank": 1087,
+      "rank": 1084,
       "candidateKey": "260920_황당면접연봉",
       "path": "data/candidates/260920_황당면접연봉.md",
       "date": "260920",
@@ -11974,7 +11941,7 @@
       "slug": "황당면접연봉"
     },
     {
-      "rank": 1088,
+      "rank": 1085,
       "candidateKey": "260920_회사동료매일돈얘기후기",
       "path": "data/candidates/260920_회사동료매일돈얘기후기.md",
       "date": "260920",
@@ -11985,7 +11952,7 @@
       "slug": "회사동료매일돈얘기후기"
     },
     {
-      "rank": 1089,
+      "rank": 1086,
       "candidateKey": "260920_회사사람축의금어이없음_C1",
       "path": "data/candidates/260920_회사사람축의금어이없음_C1.md",
       "date": "260920",
@@ -11996,7 +11963,7 @@
       "slug": "회사사람축의금어이없음_C1"
     },
     {
-      "rank": 1090,
+      "rank": 1087,
       "candidateKey": "260920_blind_6년차6천모았어",
       "path": "data/candidates/260920_blind_6년차6천모았어.md",
       "date": "260920",
@@ -12007,7 +11974,7 @@
       "slug": "blind_6년차6천모았어"
     },
     {
-      "rank": 1091,
+      "rank": 1088,
       "candidateKey": "260920_blind_97년생투자저축현황",
       "path": "data/candidates/260920_blind_97년생투자저축현황.md",
       "date": "260920",
@@ -12018,7 +11985,7 @@
       "slug": "blind_97년생투자저축현황"
     },
     {
-      "rank": 1092,
+      "rank": 1089,
       "candidateKey": "260920_blind_결혼한달전살빼라는남친",
       "path": "data/candidates/260920_blind_결혼한달전살빼라는남친.md",
       "date": "260920",
@@ -12029,7 +11996,7 @@
       "slug": "blind_결혼한달전살빼라는남친"
     },
     {
-      "rank": 1093,
+      "rank": 1090,
       "candidateKey": "260920_blind_남편과아이낳기싫으면이혼",
       "path": "data/candidates/260920_blind_남편과아이낳기싫으면이혼.md",
       "date": "260920",
@@ -12040,7 +12007,7 @@
       "slug": "blind_남편과아이낳기싫으면이혼"
     },
     {
-      "rank": 1094,
+      "rank": 1091,
       "candidateKey": "260920_blind_남편벌초시댁이해안돼",
       "path": "data/candidates/260920_blind_남편벌초시댁이해안돼.md",
       "date": "260920",
@@ -12051,7 +12018,7 @@
       "slug": "blind_남편벌초시댁이해안돼"
     },
     {
-      "rank": 1095,
+      "rank": 1092,
       "candidateKey": "260920_blind_부모랑연끊고결혼하련다",
       "path": "data/candidates/260920_blind_부모랑연끊고결혼하련다.md",
       "date": "260920",
@@ -12062,7 +12029,7 @@
       "slug": "blind_부모랑연끊고결혼하련다"
     },
     {
-      "rank": 1096,
+      "rank": 1093,
       "candidateKey": "260920_blind_부산호텔추가요금",
       "path": "data/candidates/260920_blind_부산호텔추가요금.md",
       "date": "260920",
@@ -12073,7 +12040,7 @@
       "slug": "blind_부산호텔추가요금"
     },
     {
-      "rank": 1097,
+      "rank": 1094,
       "candidateKey": "260920_blind_신혼인데6주차유산남편힘들어해",
       "path": "data/candidates/260920_blind_신혼인데6주차유산남편힘들어해.md",
       "date": "260920",
@@ -12084,7 +12051,7 @@
       "slug": "blind_신혼인데6주차유산남편힘들어해"
     },
     {
-      "rank": 1098,
+      "rank": 1095,
       "candidateKey": "260920_blind_이혼보다파혼이낫다고",
       "path": "data/candidates/260920_blind_이혼보다파혼이낫다고.md",
       "date": "260920",
@@ -12095,7 +12062,7 @@
       "slug": "blind_이혼보다파혼이낫다고"
     },
     {
-      "rank": 1099,
+      "rank": 1096,
       "candidateKey": "260920_blind_임신초음파남편동행",
       "path": "data/candidates/260920_blind_임신초음파남편동행.md",
       "date": "260920",
@@ -12106,7 +12073,7 @@
       "slug": "blind_임신초음파남편동행"
     },
     {
-      "rank": 1100,
+      "rank": 1097,
       "candidateKey": "260920_blind_장인장모킹크랩",
       "path": "data/candidates/260920_blind_장인장모킹크랩.md",
       "date": "260920",
@@ -12117,7 +12084,7 @@
       "slug": "blind_장인장모킹크랩"
     },
     {
-      "rank": 1101,
+      "rank": 1098,
       "candidateKey": "260920_blind_주식손실복구",
       "path": "data/candidates/260920_blind_주식손실복구.md",
       "date": "260920",
@@ -12128,7 +12095,7 @@
       "slug": "blind_주식손실복구"
     },
     {
-      "rank": 1102,
+      "rank": 1099,
       "candidateKey": "260920_blind_카푸어인가520i",
       "path": "data/candidates/260920_blind_카푸어인가520i.md",
       "date": "260920",
@@ -12139,7 +12106,7 @@
       "slug": "blind_카푸어인가520i"
     },
     {
-      "rank": 1103,
+      "rank": 1100,
       "candidateKey": "260920_blind_파혼고민연애때부터",
       "path": "data/candidates/260920_blind_파혼고민연애때부터.md",
       "date": "260920",
@@ -12150,7 +12117,7 @@
       "slug": "blind_파혼고민연애때부터"
     },
     {
-      "rank": 1104,
+      "rank": 1101,
       "candidateKey": "260920_blind_프로포즈5090컴퓨터",
       "path": "data/candidates/260920_blind_프로포즈5090컴퓨터.md",
       "date": "260920",
@@ -12161,7 +12128,7 @@
       "slug": "blind_프로포즈5090컴퓨터"
     },
     {
-      "rank": 1105,
+      "rank": 1102,
       "candidateKey": "260920_20년베프축의후연락없음",
       "path": "data/candidates/260920_C1_A0_P0_20년베프축의후연락없음.md",
       "date": "260920",
@@ -12172,7 +12139,7 @@
       "slug": "20년베프축의후연락없음"
     },
     {
-      "rank": 1106,
+      "rank": 1103,
       "candidateKey": "260920_25살새댁결혼식",
       "path": "data/candidates/260920_C1_A0_P0_25살새댁결혼식.md",
       "date": "260920",
@@ -12183,7 +12150,7 @@
       "slug": "25살새댁결혼식"
     },
     {
-      "rank": 1107,
+      "rank": 1104,
       "candidateKey": "260920_35살언니부모님돈",
       "path": "data/candidates/260920_C1_A0_P0_35살언니부모님돈.md",
       "date": "260920",
@@ -12194,7 +12161,7 @@
       "slug": "35살언니부모님돈"
     },
     {
-      "rank": 1108,
+      "rank": 1105,
       "candidateKey": "260920_결혼2년차새댁결혼생활",
       "path": "data/candidates/260920_C1_A0_P0_결혼2년차새댁결혼생활.md",
       "date": "260920",
@@ -12205,7 +12172,7 @@
       "slug": "결혼2년차새댁결혼생활"
     },
     {
-      "rank": 1109,
+      "rank": 1106,
       "candidateKey": "260920_결혼2년차생활후기",
       "path": "data/candidates/260920_C1_A0_P0_결혼2년차생활후기.md",
       "date": "260920",
@@ -12216,7 +12183,7 @@
       "slug": "결혼2년차생활후기"
     },
     {
-      "rank": 1110,
+      "rank": 1107,
       "candidateKey": "260920_결혼식130만원푸대접",
       "path": "data/candidates/260920_C1_A0_P0_결혼식130만원푸대접.md",
       "date": "260920",
@@ -12227,7 +12194,7 @@
       "slug": "결혼식130만원푸대접"
     },
     {
-      "rank": 1111,
+      "rank": 1108,
       "candidateKey": "260920_결혼후회중기",
       "path": "data/candidates/260920_C1_A0_P0_결혼후회중기.md",
       "date": "260920",
@@ -12238,7 +12205,7 @@
       "slug": "결혼후회중기"
     },
     {
-      "rank": 1112,
+      "rank": 1109,
       "candidateKey": "260920_남친엄마소개고민",
       "path": "data/candidates/260920_C1_A0_P0_남친엄마소개고민.md",
       "date": "260920",
@@ -12249,7 +12216,7 @@
       "slug": "남친엄마소개고민"
     },
     {
-      "rank": 1113,
+      "rank": 1110,
       "candidateKey": "260920_남편몰래주식몇천손실",
       "path": "data/candidates/260920_C1_A0_P0_남편몰래주식몇천손실.md",
       "date": "260920",
@@ -12260,7 +12227,7 @@
       "slug": "남편몰래주식몇천손실"
     },
     {
-      "rank": 1114,
+      "rank": 1111,
       "candidateKey": "260920_남편생일선물과소비고민",
       "path": "data/candidates/260920_C1_A0_P0_남편생일선물과소비고민.md",
       "date": "260920",
@@ -12271,7 +12238,7 @@
       "slug": "남편생일선물과소비고민"
     },
     {
-      "rank": 1115,
+      "rank": 1112,
       "candidateKey": "260920_남편선물살말고민",
       "path": "data/candidates/260920_C1_A0_P0_남편선물살말고민.md",
       "date": "260920",
@@ -12282,7 +12249,7 @@
       "slug": "남편선물살말고민"
     },
     {
-      "rank": 1116,
+      "rank": 1113,
       "candidateKey": "260920_남편주식마이너스2억",
       "path": "data/candidates/260920_C1_A0_P0_남편주식마이너스2억.md",
       "date": "260920",
@@ -12293,7 +12260,18 @@
       "slug": "남편주식마이너스2억"
     },
     {
-      "rank": 1117,
+      "rank": 1114,
+      "candidateKey": "260920_다정지인기혼상사손절",
+      "path": "data/candidates/260920_C1_A0_P0_다정지인기혼상사손절.md",
+      "date": "260920",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "다정지인기혼상사손절"
+    },
+    {
+      "rank": 1115,
       "candidateKey": "260920_대만남자결혼5년",
       "path": "data/candidates/260920_C1_A0_P0_대만남자결혼5년.md",
       "date": "260920",
@@ -12304,7 +12282,7 @@
       "slug": "대만남자결혼5년"
     },
     {
-      "rank": 1118,
+      "rank": 1116,
       "candidateKey": "260920_돈때문에결혼접을까",
       "path": "data/candidates/260920_C1_A0_P0_돈때문에결혼접을까.md",
       "date": "260920",
@@ -12315,7 +12293,7 @@
       "slug": "돈때문에결혼접을까"
     },
     {
-      "rank": 1119,
+      "rank": 1117,
       "candidateKey": "260920_뒷담친구축의금복수",
       "path": "data/candidates/260920_C1_A0_P0_뒷담친구축의금복수.md",
       "date": "260920",
@@ -12326,7 +12304,7 @@
       "slug": "뒷담친구축의금복수"
     },
     {
-      "rank": 1120,
+      "rank": 1118,
       "candidateKey": "260920_몰래대출주식남편",
       "path": "data/candidates/260920_C1_A0_P0_몰래대출주식남편.md",
       "date": "260920",
@@ -12337,7 +12315,7 @@
       "slug": "몰래대출주식남편"
     },
     {
-      "rank": 1121,
+      "rank": 1119,
       "candidateKey": "260920_미자떡밥친구손절썰",
       "path": "data/candidates/260920_C1_A0_P0_미자떡밥친구손절썰.md",
       "date": "260920",
@@ -12348,7 +12326,7 @@
       "slug": "미자떡밥친구손절썰"
     },
     {
-      "rank": 1122,
+      "rank": 1120,
       "candidateKey": "260920_민생지원금부모님",
       "path": "data/candidates/260920_C1_A0_P0_민생지원금부모님.md",
       "date": "260920",
@@ -12359,7 +12337,7 @@
       "slug": "민생지원금부모님"
     },
     {
-      "rank": 1123,
+      "rank": 1121,
       "candidateKey": "260920_빚숨기고결혼한남편",
       "path": "data/candidates/260920_C1_A0_P0_빚숨기고결혼한남편.md",
       "date": "260920",
@@ -12370,7 +12348,7 @@
       "slug": "빚숨기고결혼한남편"
     },
     {
-      "rank": 1124,
+      "rank": 1122,
       "candidateKey": "260920_선배청첩장무시",
       "path": "data/candidates/260920_C1_A0_P0_선배청첩장무시.md",
       "date": "260920",
@@ -12381,7 +12359,18 @@
       "slug": "선배청첩장무시"
     },
     {
-      "rank": 1125,
+      "rank": 1123,
+      "candidateKey": "260920_소수인원결혼원판",
+      "path": "data/candidates/260920_C1_A0_P0_소수인원결혼원판.md",
+      "date": "260920",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "소수인원결혼원판"
+    },
+    {
+      "rank": 1124,
       "candidateKey": "260920_손절친구다시연락",
       "path": "data/candidates/260920_C1_A0_P0_손절친구다시연락.md",
       "date": "260920",
@@ -12392,7 +12381,7 @@
       "slug": "손절친구다시연락"
     },
     {
-      "rank": 1126,
+      "rank": 1125,
       "candidateKey": "260920_스몰웨딩친구후기",
       "path": "data/candidates/260920_C1_A0_P0_스몰웨딩친구후기.md",
       "date": "260920",
@@ -12403,7 +12392,7 @@
       "slug": "스몰웨딩친구후기"
     },
     {
-      "rank": 1127,
+      "rank": 1126,
       "candidateKey": "260920_시댁김장없앤후기",
       "path": "data/candidates/260920_C1_A0_P0_시댁김장없앤후기.md",
       "date": "260920",
@@ -12414,7 +12403,7 @@
       "slug": "시댁김장없앤후기"
     },
     {
-      "rank": 1128,
+      "rank": 1127,
       "candidateKey": "260920_시댁노견월100만원요구",
       "path": "data/candidates/260920_C1_A0_P0_시댁노견월100만원요구.md",
       "date": "260920",
@@ -12425,7 +12414,7 @@
       "slug": "시댁노견월100만원요구"
     },
     {
-      "rank": 1129,
+      "rank": 1128,
       "candidateKey": "260920_시부모남편명의집계약",
       "path": "data/candidates/260920_C1_A0_P0_시부모남편명의집계약.md",
       "date": "260920",
@@ -12436,7 +12425,7 @@
       "slug": "시부모남편명의집계약"
     },
     {
-      "rank": 1130,
+      "rank": 1129,
       "candidateKey": "260920_아무생각없이집지른후기",
       "path": "data/candidates/260920_C1_A0_P0_아무생각없이집지른후기.md",
       "date": "260920",
@@ -12447,7 +12436,7 @@
       "slug": "아무생각없이집지른후기"
     },
     {
-      "rank": 1131,
+      "rank": 1130,
       "candidateKey": "260920_안부전화하라는시어머니",
       "path": "data/candidates/260920_C1_A0_P0_안부전화하라는시어머니.md",
       "date": "260920",
@@ -12458,7 +12447,7 @@
       "slug": "안부전화하라는시어머니"
     },
     {
-      "rank": 1132,
+      "rank": 1131,
       "candidateKey": "260920_오래된친구거리두기",
       "path": "data/candidates/260920_C1_A0_P0_오래된친구거리두기.md",
       "date": "260920",
@@ -12469,7 +12458,7 @@
       "slug": "오래된친구거리두기"
     },
     {
-      "rank": 1133,
+      "rank": 1132,
       "candidateKey": "260920_유니콘아들육아후기",
       "path": "data/candidates/260920_C1_A0_P0_유니콘아들육아후기.md",
       "date": "260920",
@@ -12480,7 +12469,7 @@
       "slug": "유니콘아들육아후기"
     },
     {
-      "rank": 1134,
+      "rank": 1133,
       "candidateKey": "260920_육아휴직중회식가는남편",
       "path": "data/candidates/260920_C1_A0_P0_육아휴직중회식가는남편.md",
       "date": "260920",
@@ -12491,7 +12480,7 @@
       "slug": "육아휴직중회식가는남편"
     },
     {
-      "rank": 1135,
+      "rank": 1134,
       "candidateKey": "260920_재혼시어머니새남편까지챙겨달라",
       "path": "data/candidates/260920_C1_A0_P0_재혼시어머니새남편까지챙겨달라.md",
       "date": "260920",
@@ -12502,7 +12491,7 @@
       "slug": "재혼시어머니새남편까지챙겨달라"
     },
     {
-      "rank": 1136,
+      "rank": 1135,
       "candidateKey": "260920_좋은시댁연락압박",
       "path": "data/candidates/260920_C1_A0_P0_좋은시댁연락압박.md",
       "date": "260920",
@@ -12513,7 +12502,7 @@
       "slug": "좋은시댁연락압박"
     },
     {
-      "rank": 1137,
+      "rank": 1136,
       "candidateKey": "260920_주식광적으로하는남편",
       "path": "data/candidates/260920_C1_A0_P0_주식광적으로하는남편.md",
       "date": "260920",
@@ -12524,7 +12513,7 @@
       "slug": "주식광적으로하는남편"
     },
     {
-      "rank": 1138,
+      "rank": 1137,
       "candidateKey": "260920_집대출부부의견차",
       "path": "data/candidates/260920_C1_A0_P0_집대출부부의견차.md",
       "date": "260920",
@@ -12535,7 +12524,7 @@
       "slug": "집대출부부의견차"
     },
     {
-      "rank": 1139,
+      "rank": 1138,
       "candidateKey": "260920_첫째6개월둘째임신남편회식",
       "path": "data/candidates/260920_C1_A0_P0_첫째6개월둘째임신남편회식.md",
       "date": "260920",
@@ -12546,7 +12535,29 @@
       "slug": "첫째6개월둘째임신남편회식"
     },
     {
+      "rank": 1139,
+      "candidateKey": "260920_청첩장만원대밥더치",
+      "path": "data/candidates/260920_C1_A0_P0_청첩장만원대밥더치.md",
+      "date": "260920",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "청첩장만원대밥더치"
+    },
+    {
       "rank": 1140,
+      "candidateKey": "260920_축의금5만원기준변화",
+      "path": "data/candidates/260920_C1_A0_P0_축의금5만원기준변화.md",
+      "date": "260920",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "축의금5만원기준변화"
+    },
+    {
+      "rank": 1141,
       "candidateKey": "260920_축의금액수거짓말친구",
       "path": "data/candidates/260920_C1_A0_P0_축의금액수거짓말친구.md",
       "date": "260920",
@@ -12557,7 +12568,7 @@
       "slug": "축의금액수거짓말친구"
     },
     {
-      "rank": 1141,
+      "rank": 1142,
       "candidateKey": "260920_축의금적게한건지후기",
       "path": "data/candidates/260920_C1_A0_P0_축의금적게한건지후기.md",
       "date": "260920",
@@ -12568,7 +12579,7 @@
       "slug": "축의금적게한건지후기"
     },
     {
-      "rank": 1142,
+      "rank": 1143,
       "candidateKey": "260920_축의금적게했나축가",
       "path": "data/candidates/260920_C1_A0_P0_축의금적게했나축가.md",
       "date": "260920",
@@ -12579,7 +12590,7 @@
       "slug": "축의금적게했나축가"
     },
     {
-      "rank": 1143,
+      "rank": 1144,
       "candidateKey": "260920_친구결혼식사진촬영손절",
       "path": "data/candidates/260920_C1_A0_P0_친구결혼식사진촬영손절.md",
       "date": "260920",
@@ -12590,7 +12601,7 @@
       "slug": "친구결혼식사진촬영손절"
     },
     {
-      "rank": 1144,
+      "rank": 1145,
       "candidateKey": "260920_친구결혼식와이프동반축의",
       "path": "data/candidates/260920_C1_A0_P0_친구결혼식와이프동반축의.md",
       "date": "260920",
@@ -12601,7 +12612,18 @@
       "slug": "친구결혼식와이프동반축의"
     },
     {
-      "rank": 1145,
+      "rank": 1146,
+      "candidateKey": "260920_친구여행후손절",
+      "path": "data/candidates/260920_C1_A0_P0_친구여행후손절.md",
+      "date": "260920",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "친구여행후손절"
+    },
+    {
+      "rank": 1147,
       "candidateKey": "260920_친구축의금원화유로",
       "path": "data/candidates/260920_C1_A0_P0_친구축의금원화유로.md",
       "date": "260920",
@@ -12612,7 +12634,18 @@
       "slug": "친구축의금원화유로"
     },
     {
-      "rank": 1146,
+      "rank": 1148,
+      "candidateKey": "260920_친구협찬돈갈등",
+      "path": "data/candidates/260920_C1_A0_P0_친구협찬돈갈등.md",
+      "date": "260920",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "친구협찬돈갈등"
+    },
+    {
+      "rank": 1149,
       "candidateKey": "260920_친정오빠부모님돈야박",
       "path": "data/candidates/260920_C1_A0_P0_친정오빠부모님돈야박.md",
       "date": "260920",
@@ -12623,7 +12656,7 @@
       "slug": "친정오빠부모님돈야박"
     },
     {
-      "rank": 1147,
+      "rank": 1150,
       "candidateKey": "260920_편애집안둘째언니",
       "path": "data/candidates/260920_C1_A0_P0_편애집안둘째언니.md",
       "date": "260920",
@@ -12634,7 +12667,7 @@
       "slug": "편애집안둘째언니"
     },
     {
-      "rank": 1148,
+      "rank": 1151,
       "candidateKey": "260920_피곤한친구성격바꾼후기",
       "path": "data/candidates/260920_C1_A0_P0_피곤한친구성격바꾼후기.md",
       "date": "260920",
@@ -12645,7 +12678,7 @@
       "slug": "피곤한친구성격바꾼후기"
     },
     {
-      "rank": 1149,
+      "rank": 1152,
       "candidateKey": "260920_혼기찬지인의결혼과정",
       "path": "data/candidates/260920_C1_A0_P0_혼기찬지인의결혼과정.md",
       "date": "260920",
@@ -12656,183 +12689,183 @@
       "slug": "혼기찬지인의결혼과정"
     },
     {
-      "rank": 1150,
+      "rank": 1153,
       "candidateKey": "260920_C1_dcinside_1817416",
       "path": "data/candidates/260920_C1_dcinside_1817416.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_dcinside_1817416"
     },
     {
-      "rank": 1151,
+      "rank": 1154,
       "candidateKey": "260920_C1_theqoo_1180746869",
       "path": "data/candidates/260920_C1_theqoo_1180746869.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_1180746869"
     },
     {
-      "rank": 1152,
+      "rank": 1155,
       "candidateKey": "260920_C1_theqoo_1491297724",
       "path": "data/candidates/260920_C1_theqoo_1491297724.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_1491297724"
     },
     {
-      "rank": 1153,
+      "rank": 1156,
       "candidateKey": "260920_C1_theqoo_1501219035",
       "path": "data/candidates/260920_C1_theqoo_1501219035.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_1501219035"
     },
     {
-      "rank": 1154,
+      "rank": 1157,
       "candidateKey": "260920_C1_theqoo_2029762430",
       "path": "data/candidates/260920_C1_theqoo_2029762430.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_2029762430"
     },
     {
-      "rank": 1155,
+      "rank": 1158,
       "candidateKey": "260920_C1_theqoo_2033567435",
       "path": "data/candidates/260920_C1_theqoo_2033567435.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_2033567435"
     },
     {
-      "rank": 1156,
+      "rank": 1159,
       "candidateKey": "260920_C1_theqoo_2160915219",
       "path": "data/candidates/260920_C1_theqoo_2160915219.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_2160915219"
     },
     {
-      "rank": 1157,
+      "rank": 1160,
       "candidateKey": "260920_C1_theqoo_2481598091",
       "path": "data/candidates/260920_C1_theqoo_2481598091.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_2481598091"
     },
     {
-      "rank": 1158,
+      "rank": 1161,
       "candidateKey": "260920_C1_theqoo_2569473707",
       "path": "data/candidates/260920_C1_theqoo_2569473707.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_2569473707"
     },
     {
-      "rank": 1159,
+      "rank": 1162,
       "candidateKey": "260920_C1_theqoo_2584083741",
       "path": "data/candidates/260920_C1_theqoo_2584083741.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_2584083741"
     },
     {
-      "rank": 1160,
+      "rank": 1163,
       "candidateKey": "260920_C1_theqoo_3126844431",
       "path": "data/candidates/260920_C1_theqoo_3126844431.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_3126844431"
     },
     {
-      "rank": 1161,
+      "rank": 1164,
       "candidateKey": "260920_C1_theqoo_3159065260",
       "path": "data/candidates/260920_C1_theqoo_3159065260.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_3159065260"
     },
     {
-      "rank": 1162,
+      "rank": 1165,
       "candidateKey": "260920_C1_theqoo_3264042087",
       "path": "data/candidates/260920_C1_theqoo_3264042087.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_3264042087"
     },
     {
-      "rank": 1163,
+      "rank": 1166,
       "candidateKey": "260920_C1_theqoo_4074622063",
       "path": "data/candidates/260920_C1_theqoo_4074622063.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_4074622063"
     },
     {
-      "rank": 1164,
+      "rank": 1167,
       "candidateKey": "260920_C1_theqoo_745067299",
       "path": "data/candidates/260920_C1_theqoo_745067299.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "C1_theqoo_745067299"
     },
     {
-      "rank": 1165,
+      "rank": 1168,
       "candidateKey": "260920_iptv재약정연락처황당후기",
       "path": "data/candidates/260920_iptv재약정연락처황당후기.md",
       "date": "260920",
-      "candidateStage": "C1",
+      "candidateStage": "C0",
       "assetStage": "A0",
       "publishStage": "P0",
-      "nextStage": "source-asset-acquisition",
+      "nextStage": "provenance-verification",
       "slug": "iptv재약정연락처황당후기"
     },
     {
-      "rank": 1166,
+      "rank": 1169,
       "candidateKey": "260920_theqoo_강아지키우고싶고싫음",
       "path": "data/candidates/260920_theqoo_강아지키우고싶고싫음.md",
       "date": "260920",
@@ -12843,7 +12876,7 @@
       "slug": "theqoo_강아지키우고싶고싫음"
     },
     {
-      "rank": 1167,
+      "rank": 1170,
       "candidateKey": "260920_theqoo_결혼1년전재산70만원",
       "path": "data/candidates/260920_theqoo_결혼1년전재산70만원.md",
       "date": "260920",
@@ -12854,7 +12887,7 @@
       "slug": "theqoo_결혼1년전재산70만원"
     },
     {
-      "rank": 1168,
+      "rank": 1171,
       "candidateKey": "260920_theqoo_결혼임출육후회중기",
       "path": "data/candidates/260920_theqoo_결혼임출육후회중기.md",
       "date": "260920",
@@ -12865,7 +12898,7 @@
       "slug": "theqoo_결혼임출육후회중기"
     },
     {
-      "rank": 1169,
+      "rank": 1172,
       "candidateKey": "260920_theqoo_결혼자금없고시엄마개업",
       "path": "data/candidates/260920_theqoo_결혼자금없고시엄마개업.md",
       "date": "260920",
@@ -12876,7 +12909,7 @@
       "slug": "theqoo_결혼자금없고시엄마개업"
     },
     {
-      "rank": 1170,
+      "rank": 1173,
       "candidateKey": "260920_theqoo_계모임남편합석",
       "path": "data/candidates/260920_theqoo_계모임남편합석.md",
       "date": "260920",
@@ -12887,7 +12920,7 @@
       "slug": "theqoo_계모임남편합석"
     },
     {
-      "rank": 1171,
+      "rank": 1174,
       "candidateKey": "260920_theqoo_남편집안일말해야함",
       "path": "data/candidates/260920_theqoo_남편집안일말해야함.md",
       "date": "260920",
@@ -12898,7 +12931,7 @@
       "slug": "theqoo_남편집안일말해야함"
     },
     {
-      "rank": 1172,
+      "rank": 1175,
       "candidateKey": "260920_theqoo_눈새친구돈없다징징",
       "path": "data/candidates/260920_theqoo_눈새친구돈없다징징.md",
       "date": "260920",
@@ -12909,7 +12942,7 @@
       "slug": "theqoo_눈새친구돈없다징징"
     },
     {
-      "rank": 1173,
+      "rank": 1176,
       "candidateKey": "260920_theqoo_돈없는친구피곤",
       "path": "data/candidates/260920_theqoo_돈없는친구피곤.md",
       "date": "260920",
@@ -12920,7 +12953,7 @@
       "slug": "theqoo_돈없는친구피곤"
     },
     {
-      "rank": 1174,
+      "rank": 1177,
       "candidateKey": "260920_theqoo_반반결혼합의서",
       "path": "data/candidates/260920_theqoo_반반결혼합의서.md",
       "date": "260920",
@@ -12931,7 +12964,7 @@
       "slug": "theqoo_반반결혼합의서"
     },
     {
-      "rank": 1175,
+      "rank": 1178,
       "candidateKey": "260920_theqoo_반반맞벌이결혼생활",
       "path": "data/candidates/260920_theqoo_반반맞벌이결혼생활.md",
       "date": "260920",
@@ -12942,7 +12975,7 @@
       "slug": "theqoo_반반맞벌이결혼생활"
     },
     {
-      "rank": 1176,
+      "rank": 1179,
       "candidateKey": "260920_theqoo_사촌축의금엄마와갈등",
       "path": "data/candidates/260920_theqoo_사촌축의금엄마와갈등.md",
       "date": "260920",
@@ -12953,7 +12986,7 @@
       "slug": "theqoo_사촌축의금엄마와갈등"
     },
     {
-      "rank": 1177,
+      "rank": 1180,
       "candidateKey": "260920_theqoo_찐친축의금100고민",
       "path": "data/candidates/260920_theqoo_찐친축의금100고민.md",
       "date": "260920",
@@ -12964,7 +12997,7 @@
       "slug": "theqoo_찐친축의금100고민"
     },
     {
-      "rank": 1178,
+      "rank": 1181,
       "candidateKey": "260920_theqoo_친구보다남친중요",
       "path": "data/candidates/260920_theqoo_친구보다남친중요.md",
       "date": "260920",
@@ -12975,7 +13008,7 @@
       "slug": "theqoo_친구보다남친중요"
     },
     {
-      "rank": 1179,
+      "rank": 1182,
       "candidateKey": "260920_theqoo_쿠팡계약직3주차",
       "path": "data/candidates/260920_theqoo_쿠팡계약직3주차.md",
       "date": "260920",
@@ -12986,7 +13019,7 @@
       "slug": "theqoo_쿠팡계약직3주차"
     },
     {
-      "rank": 1180,
+      "rank": 1183,
       "candidateKey": "260920_theqoo_혼테크는이렇게하는거임",
       "path": "data/candidates/260920_theqoo_혼테크는이렇게하는거임.md",
       "date": "260920",

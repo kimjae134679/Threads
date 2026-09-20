@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_입사직후퇴사vs스테이",
+  "stage": 9,
+  "sourcePlatformClaim": "Ppomppu",
+  "exactPrimarySourceVerified": false,
+  "sourceAssetsComplete": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "bodySlidePolicy": "SLIDE_2_PLUS_ORIGINAL_SOURCE_ONLY_IN_ORDER",
+  "result": "BLOCKED_PROVENANCE",
+  "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+  "note": "Prototype verification only. No source body, screenshots, media, OCR, rights clearance, A1, P1, publishing or metrics are inferred."
+}

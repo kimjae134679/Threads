@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T22:30:11+09:00",
+  "updatedAt": "2026-09-20T23:28:58+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "For 260916_인생망한38살, public Inven index/search evidence confirms the title/author listing, but exact individual primary URL/post ID remains unresolved. Secondary Fomos repost was rejected as primary provenance; fail-closed before source-byte acquisition."
+      "note": "For 260916_입사직후퇴사vs스테이, candidate metadata names Ppomppu but no exact individual primary URL/post ID is stored or publicly resolved in this run. Fail-closed before source-byte acquisition; no secondary/guessed source accepted."
     },
     "10_ui_exclusion": {
       "status": "PARTIAL",
@@ -121,6 +121,18 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Resolve exact primary Inven individual post URL/post ID before any body/media acquisition or rendering."
+    },
+    {
+      "candidateKey": "260916_입사직후퇴사vs스테이",
+      "candidatePath": "data/candidates/260916_C0_A0_P0_입사직후퇴사vs스테이.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_입사직후퇴사vs스테이_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_입사직후퇴사vs스테이_TEMP_TEST_ONLY/stage9_primary_source_gate.json",
+      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Resolve exact primary Ppomppu individual post URL/post ID before any body/media acquisition or rendering."
     }
   ]
 }

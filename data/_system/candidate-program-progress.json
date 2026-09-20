@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T22:30:11+09:00",
+  "lastCycleAt": "2026-09-20T23:28:58+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -287,14 +287,23 @@
       "observedEvidence": "Public Inven index/search listings show the exact title and author 전자팔찌, but no exact individual-post URL/post ID was resolved in this run. A Fomos repost is secondary and is not accepted as primary provenance.",
       "unblockWhen": "Exact individual primary Inven post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_입사직후퇴사vs스테이",
+      "currentPath": "data/candidates/260916_C0_A0_P0_입사직후퇴사vs스테이.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Candidate says Ppomppu but stores no exact original URL. Fresh public web searches for the exact/near-exact title did not resolve a trustworthy individual Ppomppu post.",
+      "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 1180,
-    "observedCurrentCandidateCount": 1180,
+    "storedQueueEntryCount": 1183,
+    "observedCurrentCandidateCount": 1183,
     "status": "REFRESHED_COMPLETE_LOCAL_ENUMERATION",
-    "note": "Refreshed from every current data/candidates markdown file on main; 1180 candidate files represented."
+    "note": "Refreshed from every current data/candidates markdown file on main; 1183 candidate files represented."
   },
-  "notes": "Queue refreshed to 1180 current candidate files. Processed exactly one next filename-order candidate: 260916_인생망한38살. Exact title is visible on public Inven listings, but exact individual primary URL/post ID was not resolved; secondary Fomos repost is insufficient. C0/A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 primary-source gate."
+  "notes": "Queue refreshed to 1183 current candidate files. Processed exactly one next filename-order candidate: 260916_입사직후퇴사vs스테이. Candidate names Ppomppu but has no exact source URL; fresh public searches did not resolve a trustworthy individual post. C0/A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 primary-source gate."
 }
