@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T07:28:54+09:00",
+  "lastCycleAt": "2026-09-21T08:28:14+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -364,19 +364,28 @@
       "c1": "BLOCKED_SOURCE_ASSET_BYTES",
       "unblockWhen": "Permitted real source body/media bytes from the same public individual Blind post are persisted with source URL/provenance/hash; no login or access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_집안일분담으로왜싸움",
+      "currentPath": "data/candidates/260916_C0_A0_P0_집안일분담으로왜싸움.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Public Blind recommendation/topic cards repeatedly show exact title, author display HD현대일렉트릭 · 𝙅*****************, and body prefix 와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴.; exact individual URL/stable post ID was not resolved.",
+      "unblockWhen": "Exact individual Blind URL/stable post ID or another trustworthy unique identifier proving this same post becomes publicly resolvable without login/access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T07:28:54+09:00",
-    "total": 1208,
+    "at": "2026-09-21T08:28:14+09:00",
+    "total": 1211,
     "C0": 442,
-    "C1": 766,
-    "A0": 1208,
+    "C1": 769,
+    "A0": 1211,
     "A1": 0,
-    "P0": 1208,
+    "P0": 1211,
     "P1": 0,
     "source": "all current data/candidates markdown files excluding README.md"
   },
-  "notes": "Queue deterministically refreshed from all current candidate markdown files. Processed exactly one next filename-order candidate: 260916_집구하는과정느낀점정리. Exact public Blind individual source b0fwwaed and publicly readable body were verified; source bytes were not persisted, so A0/P0 and publicationAllowed=false remain. TEMP lane records only the stage-9 source gate."
+  "notes": "Queue refreshed from all 1,211 current candidate markdown files. Processed exactly one next filename-order candidate: 260916_집안일분담으로왜싸움. Public Blind cards verify title/author/body prefix but not exact individual URL/post ID, so BLOCKED_PROVENANCE; A0/P0/publicationAllowed=false remain. TEMP lane records only the stage-9 provenance gate."
 }

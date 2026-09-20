@@ -1,0 +1,21 @@
+{
+  "candidateKey": "260916_집안일분담으로왜싸움",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 9,
+  "state": "BLOCKED_PROVENANCE",
+  "exactSourceVerified": false,
+  "observedPublicEvidence": {
+    "platform": "Blind",
+    "title": "집안일 분담으로 왜싸움?",
+    "authorDisplay": "HD현대일렉트릭 · 𝙅*****************",
+    "verifiedBodyPrefix": "와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴."
+  },
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "generatedImageFallback": false,
+  "blurAllowed": false,
+  "unblockWhen": "Exact individual Blind URL/stable post ID for the same post becomes publicly verifiable without login/access-control bypass; then acquire permitted real source body/media bytes with provenance/hash before stage 10/11."
+}

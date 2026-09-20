@@ -1,17 +1,17 @@
 {
   "schemaVersion": 2,
   "generatedFrom": "data/candidates",
-  "generatedAtKst": "2026-09-21T07:28:54+09:00",
+  "generatedAtKst": "2026-09-21T08:28:14+09:00",
   "ordering": "filename-ascending",
   "identity": "candidateKey is stable across C/A/P filename state changes; unstaged discovery filenames use date_filenameStem and parse state from file metadata",
   "policy": "Refresh every cycle. Process the next candidateKey not completed or currently blocked. C0 verifies exact provenance first; C1 acquires source assets without access-control bypass. Only 04_REVIEW_PUBLISH may publish.",
   "counts": {
-    "total": 1208,
+    "total": 1211,
     "C0": 442,
-    "C1": 766,
-    "A0": 1208,
+    "C1": 769,
+    "A0": 1211,
     "A1": 0,
-    "P0": 1208,
+    "P0": 1211,
     "P1": 0
   },
   "items": [
@@ -13194,7 +13194,18 @@
       "slug": "비혼덬_결혼공격2연타_C1"
     },
     {
-      "rank": 1199,
+      "candidateKey": "260921_쇼킹한생일선물이네",
+      "path": "data/candidates/260921_쇼킹한생일선물이네.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "쇼킹한생일선물이네",
+      "rank": 1199
+    },
+    {
+      "rank": 1200,
       "candidateKey": "260921_쌍둥이언니들_극과극시댁",
       "path": "data/candidates/260921_쌍둥이언니들_극과극시댁_C1.md",
       "date": "260921",
@@ -13213,10 +13224,10 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "여자친구랑쫑낸썰",
-      "rank": 1200
+      "rank": 1201
     },
     {
-      "rank": 1201,
+      "rank": 1202,
       "candidateKey": "260921_연애때마다_친구갈등_절교후기",
       "path": "data/candidates/260921_연애때마다_친구갈등_절교후기.md",
       "date": "260921",
@@ -13227,7 +13238,18 @@
       "slug": "연애때마다_친구갈등_절교후기"
     },
     {
-      "rank": 1202,
+      "candidateKey": "260921_전남친연락차단푼여친",
+      "path": "data/candidates/260921_전남친연락차단푼여친.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "전남친연락차단푼여친",
+      "rank": 1203
+    },
+    {
+      "rank": 1204,
       "candidateKey": "260921_친구가나를질투하는것같은후기",
       "path": "data/candidates/260921_친구가나를질투하는것같은후기.md",
       "date": "260921",
@@ -13238,7 +13260,7 @@
       "slug": "친구가나를질투하는것같은후기"
     },
     {
-      "rank": 1203,
+      "rank": 1205,
       "candidateKey": "260921_친구결혼하면원래멀어지는건가싶은후기",
       "path": "data/candidates/260921_친구결혼하면원래멀어지는건가싶은후기.md",
       "date": "260921",
@@ -13249,7 +13271,7 @@
       "slug": "친구결혼하면원래멀어지는건가싶은후기"
     },
     {
-      "rank": 1204,
+      "rank": 1206,
       "candidateKey": "260921_친정오빠부모님금전야박후기",
       "path": "data/candidates/260921_친정오빠부모님금전야박후기.md",
       "date": "260921",
@@ -13260,7 +13282,7 @@
       "slug": "친정오빠부모님금전야박후기"
     },
     {
-      "rank": 1205,
+      "rank": 1207,
       "candidateKey": "260921_쿠팡계약직3주차후기",
       "path": "data/candidates/260921_쿠팡계약직3주차후기.md",
       "date": "260921",
@@ -13279,10 +13301,10 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "타커뮤에서본여친이랑두쫀쿠로싸운썰",
-      "rank": 1206
+      "rank": 1208
     },
     {
-      "rank": 1207,
+      "rank": 1209,
       "candidateKey": "260921_튀니지여행_눈탱이위기",
       "path": "data/candidates/260921_튀니지여행_눈탱이위기_C1.md",
       "date": "260921",
@@ -13293,7 +13315,7 @@
       "slug": "튀니지여행_눈탱이위기_C1"
     },
     {
-      "rank": 1208,
+      "rank": 1210,
       "candidateKey": "260921_헬스장번호따일뻔한썰",
       "path": "data/candidates/260921_헬스장번호따일뻔한썰.md",
       "date": "260921",
@@ -13302,6 +13324,17 @@
       "publishStage": "P0",
       "nextStage": "provenance-verification",
       "slug": "헬스장번호따일뻔한썰"
+    },
+    {
+      "candidateKey": "260921_회사후배업무스위치갈등",
+      "path": "data/candidates/260921_회사후배업무스위치갈등.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "회사후배업무스위치갈등",
+      "rank": 1211
     }
   ]
 }
