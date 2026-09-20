@@ -5,6 +5,14 @@
   let project = M.newProject(), images = [], selected = 0, mode = 'pan', scale = 1, drag = null;
   let busy = false, dirty = false, previewReady = false, paintRequest = 0, lastPointer = null;
   let freshRectangle = false, scrollRequest = 0;
+  let fontsReady = !document.fonts?.load;
+  let auditTimer = 0, historyBefore = null, historyProject = '', auditAction = 'edit';
+  let savedOriginals = new Set();
+  const presetKey = 'threads-cut-style-presets-v1';
+  let presets = [];
+  try { const saved = JSON.parse(localStorage.getItem(presetKey) || '[]'); if (Array.isArray(saved)) presets = saved.slice(0, 20).map(M.preset); } catch (_) { /* Keep file-based presets available when local storage is unavailable. */ }
+  const pageKeys = ['paddingTop', 'paddingBottom', 'paddingSide', 'minimumHeight', 'background', 'beforeText', 'afterText', 'noteSize'];
+
   const modes = [...document.querySelectorAll('[data-mode]')];
   const message = (text) => { $('message').textContent = text; };
   const asset = () => project.assets[selected];
@@ -17,10 +25,13 @@
     document.querySelectorAll('button,input,textarea,select').forEach((el) => { el.disabled = value; });
     if (!value) syncExport();
     if ($('captureUrlButton')) $('captureUrlButton').disabled = value || !window.ThreadsCutDesktop;
+    if ($('openReferences')) $('openReferences').disabled = value || !window.ThreadsCutDesktop;
   }
   function syncExport() { $('exportZip').disabled = busy || !previewReady || !project.complete; }
   function changed(body = false) {
     dirty = true;
+    project.referenceApproved = false; if ($('referenceApproved')) $('referenceApproved').checked = false;
+    scheduleAudit();
     if (body) { project.complete = false; $('complete').checked = false; }
     draw(); schedulePreview(); syncExport();
   }
@@ -47,6 +58,11 @@
     $('title').value = project.title;
     for (const key of ['color', 'highlightColor', 'highlightWords', 'titleBottom']) $(key).value = project.appearance[key];
     $('outline').value = project.appearance.outlineWidth;
+    refreshFontControls();
+    $('productionNotes').value = project.source.productionNotes || '';
+    $('editingReason').value = project.editingReason || ''; $('referenceApproved').checked = project.referenceApproved === true;
+    scheduleAudit('open-or-style');
+    refreshPageOptions(); syncPageFields(); refreshPresetList();
     $('outlineValue').textContent = project.appearance.outlineWidth + 'px';
     $('titleBottomValue').textContent = project.appearance.titleBottom + '%';
     $('sourceInfo').textContent = project.source.title ? `소재: ${project.source.title}` : '원문 범위와 페이지가 나뉠 위치를 직접 정하세요.';
@@ -108,19 +124,20 @@
   }
   function preview() {
     $('coverPreview').replaceChildren(); $('bodyPreview').replaceChildren(); $('previewError').textContent = '';
-    const slides = M.slides(project); previewReady = false;
+    const slides = M.slides(project); previewReady = false; syncExport(); refreshPageOptions();
+    if (!fontsReady) { $('previewError').textContent = '상업용 글꼴을 불러오는 중입니다.'; return; }
     if (!slides.length) return;
     if (slides.length > 150) { $('previewError').textContent = '한 편집에서는 150장 이하로 나눠주세요.'; return; }
     try {
       slides.forEach((slide, index) => {
         const figure = document.createElement('figure'), c = document.createElement('canvas'), caption = document.createElement('figcaption');
         M.render(c, images[slide.assetIndex], slide, project, true, $('raw').checked);
-        const r = slide.rect, outputHeight = Math.round(1080 * r.height / r.width);
+        const r = slide.rect, outputHeight = Math.round(M.pageGeometry(c.getContext('2d'), slide, project).height);
         c.setAttribute('role', 'img'); c.setAttribute('aria-label', index ? `본문 ${index}` : '표지');
         caption.textContent = `${index ? '본문 ' + index : '표지'} · 원문 ${slide.assetIndex + 1} · ${Math.round(r.y)}–${Math.round(r.y + r.height)}px · 출력 1080×${outputHeight}`;
         figure.append(c, caption); $(index ? 'bodyPreview' : 'coverPreview').append(figure);
       });
-      if (slides.some((s) => Math.round(1080 * s.rect.height / s.rect.width) > 8192)) throw new Error('너무 긴 조각이 있습니다. 분할선을 추가하면 다운로드할 수 있습니다.');
+      if (slides.some((s) => M.pageGeometry(canvas.getContext('2d'), s, project).height > 8192)) throw new Error('너무 긴 조각이 있습니다. 분할선을 추가하면 다운로드할 수 있습니다.');
       previewReady = true;
     } catch (error) { $('previewError').textContent = error.message; }
     $('pageCount').textContent = `${slides.length - 1}장`; syncExport();
@@ -156,6 +173,7 @@
   }
   async function exportZip() {
     if (busy || !previewReady || !project.complete) return;
+    await flushAudit('export-request');
     const snapshot = clone(project), snapshotImages = [...images], raw = $('raw').checked; setBusy(true);
     try {
       const entries = [], slides = M.slides(snapshot);
@@ -168,11 +186,99 @@
         c.width = 1; c.height = 1;
       }
       const manifest = { ...snapshot, assets: snapshot.assets.map(({ dataUrl, ...a }) => a), rawCover: raw, slides };
+      entries.push({ name: 'edit-log.json', data: new TextEncoder().encode(JSON.stringify(snapshot.editLog || [], null, 2)) });
+      entries.push({ name: 'reference-summary.json', data: new TextEncoder().encode(JSON.stringify(M.reference(snapshot), null, 2)) });
       entries.push({ name: 'cut-manifest.json', data: new TextEncoder().encode(JSON.stringify(manifest, null, 2)) });
       download(window.ThreadsSourceCutZip.zip(entries), 'source-cut-images.zip'); message('ZIP 다운로드를 요청했습니다. 브라우저 다운로드 목록에서 확인하세요.');
     } catch (error) { message(error.message); }
     finally { setBusy(false); }
   }
+  function scheduleAudit(action) {
+    if (action) auditAction = action;
+    clearTimeout(auditTimer); auditTimer = setTimeout(() => flushAudit(auditAction), 800);
+  }
+  function showHistory() {
+    $('recentHistory').textContent = (project.editLog || []).slice(-8).reverse().map(e => `${e.at} · ${e.action} · ${e.changes.map(c => c.field).join(', ')}${e.userReason ? '\n기준: ' + e.userReason : ''}`).join('\n\n');
+  }
+  async function flushAudit(action = 'edit') {
+    clearTimeout(auditTimer); if (!project.assets.length) return;
+    if (historyProject !== project.projectId) { historyBefore = null; historyProject = project.projectId; savedOriginals = new Set(); }
+    project.editingReason = $('editingReason').value;
+    historyBefore = M.recordEdit(project, historyBefore, action, project.editingReason);
+    showHistory();
+    if (!window.ThreadsCutDesktop?.saveReference) { $('historyStatus').textContent = `${project.editLog.length}건 기록됨. 편집 저장이나 로그 받기로 보관하세요. PC 자동 기록은 데스크톱 앱에서 제공합니다.`; return; }
+    const projectId = project.projectId, pending = project.assets.filter(a => !savedOriginals.has(a.uid));
+    try {
+      const result = await window.ThreadsCutDesktop.saveReference({ projectId, images: pending.map(a => ({ uid: a.uid, dataUrl: a.dataUrl })), summary: M.reference(project), events: clone(project.editLog) });
+      if (project.projectId === projectId) { pending.forEach(a => savedOriginals.add(a.uid)); $('historyStatus').textContent = `PC 자동 기록 ${result.eventCount}건 · ${result.folder}`; }
+    } catch (error) { $('historyStatus').textContent = 'PC 기록 저장 실패: ' + error.message + ' · 편집 저장 파일로 보관해주세요.'; }
+  }
+  document.addEventListener('input', event => { auditAction = event.target.id || 'input'; }, true);
+  document.addEventListener('change', event => { auditAction = event.target.id || 'change'; }, true);
+  $('editingReason').addEventListener('input', () => { project.editingReason = $('editingReason').value; dirty = true; });
+  $('recordReason').addEventListener('click', () => { dirty = true; flushAudit('reason'); });
+  $('referenceApproved').addEventListener('change', () => { project.referenceApproved = $('referenceApproved').checked; dirty = true; flushAudit('reference-selection'); });
+  $('saveHistory').addEventListener('click', async () => { await flushAudit('save-log'); download(new Blob([JSON.stringify({ ...M.reference(project), events: project.editLog }, null, 2)], {type:'application/json'}), 'source-cut-edit-log.json'); });
+  $('openReferences').disabled = !window.ThreadsCutDesktop;
+  $('openReferences').addEventListener('click', () => window.ThreadsCutDesktop?.openReferences().catch(error => message(error.message)));
+  function refreshFontControls() {
+    $('fontId').value = project.appearance.fontId;
+    $('fontWeight').replaceChildren();
+    M.FONTS[project.appearance.fontId].weights.forEach(weight => { const option = document.createElement('option'); option.value = weight; option.textContent = weight === 400 ? '보통 · 400' : '아주 굵게 · ' + weight; $('fontWeight').appendChild(option); });
+    $('fontWeight').value = project.appearance.fontWeight;
+  }
+  function refreshPageOptions() {
+    const select = $('layoutPage'), previous = select.value, all = M.slides(project);
+    select.replaceChildren(); all.forEach((slide, i) => { const option = document.createElement('option'); option.value = slide.key; option.textContent = i ? `본문 ${i}` : '표지'; select.appendChild(option); });
+    select.value = all.some(s => s.key === previous) ? previous : all[0]?.key || '';
+    if (previous !== select.value) syncPageFields();
+    const unused = Object.entries(project.pageLayouts || {}).filter(([key, value]) => !all.some(s => s.key === key) && (value.beforeText || value.afterText));
+    $('unplacedNotes').textContent = unused.length ? '현재 장에 배치되지 않은 보관 문구: ' + unused.map(([,v]) => [v.beforeText,v.afterText].filter(Boolean).join(' / ')).join(' · ') : '';
+  }
+  function syncPageFields() { const style = M.pageStyle(project.pageLayouts?.[$('layoutPage').value]); pageKeys.forEach(key => { $(key).value = style[key]; }); }
+  function persistPresets() {
+    project.presets = presets.map(M.preset);
+    try { localStorage.setItem(presetKey, JSON.stringify(presets)); } catch (_) { message('이 환경에서는 프리셋을 자동 보관할 수 없습니다. 편집 저장 파일로 보관하세요.'); }
+  }
+  function refreshPresetList() {
+    const previous = $('presetList').value; $('presetList').replaceChildren();
+    presets.forEach((p, i) => { const option = document.createElement('option'); option.value = String(i); option.textContent = p.name; $('presetList').appendChild(option); });
+    $('presetList').value = presets[Number(previous)] ? previous : presets.length ? '0' : '';
+  }
+  $('layoutPage').addEventListener('change', syncPageFields);
+  pageKeys.forEach(key => $(key).addEventListener('input', () => {
+    const page = $('layoutPage').value; if (!page) return;
+    project.pageLayouts ||= {}; project.pageLayouts[page] = M.pageStyle(Object.fromEntries(pageKeys.map(k => [k, $(k).value]))); changed(true);
+  }));
+  $('productionNotes').addEventListener('input', () => { project.source.productionNotes = $('productionNotes').value; dirty = true; scheduleAudit('production-notes'); });
+  for (const key of ['fontId','fontWeight']) $(key).addEventListener('change', () => {
+    project.appearance = M.appearance({ ...project.appearance, [key]: $(key).value }); refreshFontControls(); changed();
+  });
+  $('applyBodySpacing').addEventListener('click', () => {
+    const selectedStyle = M.pageStyle(project.pageLayouts?.[$('layoutPage').value]); project.pageLayouts ||= {};
+    M.slides(project).filter(s => s.type === 'body').forEach(slide => {
+      const old = M.pageStyle(project.pageLayouts[slide.key]); project.pageLayouts[slide.key] = { ...selectedStyle, beforeText: old.beforeText, afterText: old.afterText };
+    }); syncPageFields(); changed(true);
+  });
+  $('savePreset').addEventListener('click', () => {
+    const name = $('presetName').value.trim(); if (!name) return message('프리셋 이름을 입력하세요.');
+    const next = M.preset({ name, appearance: project.appearance, page: project.pageLayouts?.[$('layoutPage').value] });
+    const index = presets.findIndex(p => p.name === name);
+    if (index < 0 && presets.length >= 20) return message('프리셋은 20개까지 저장합니다. 사용하지 않는 프리셋을 삭제하세요.');
+    if (index < 0) presets.push(next); else presets[index] = next;
+    persistPresets(); refreshPresetList(); dirty = true; message('폰트·굵기·색상·여백을 프리셋으로 저장했습니다. 문구 내용은 복사하지 않습니다.');
+  });
+  $('applyPreset').addEventListener('click', () => {
+    const selected = presets[Number($('presetList').value)]; if (!selected) return;
+    project.appearance = M.appearance(selected.appearance); project.pageLayouts ||= {};
+    const page = $('layoutPage').value;
+    if (page) { const old = M.pageStyle(project.pageLayouts[page]); project.pageLayouts[page] = { ...selected.page, beforeText: old.beforeText, afterText: old.afterText }; }
+    refreshAssets(); syncPageFields(); changed(true);
+  });
+  $('deletePreset').addEventListener('click', () => {
+    if (!$('presetList').value) return; presets.splice(Number($('presetList').value),1); persistPresets(); refreshPresetList(); dirty = true;
+  });
+  refreshFontControls(); refreshPresetList();
   const desktop = window.ThreadsCutDesktop;
   if ($('captureUrlButton')) {
     $('captureUrlButton').disabled = !desktop;
@@ -204,11 +310,14 @@
   }
   $('files').addEventListener('change', () => acquire([...$('files').files]));
   async function openProject(value) {
+    if (project.assets.length) await flushAudit('before-open');
     const next = M.restore(value), loaded = [];
     if (next.assets.reduce((n, a) => n + a.width * a.height, 0) > 80000000
       || next.assets.reduce((n, a) => n + a.dataUrl.length, 0) > 80 * 1024 * 1024) throw new Error('원본 합계가 너무 큽니다. 나누어 편집하세요.');
     for (const a of next.assets) { const image = await decode(a.dataUrl); if (image.naturalWidth !== a.width || image.naturalHeight !== a.height) throw new Error('저장된 크기와 실제 이미지가 다릅니다.'); loaded.push(image); }
-    project = next; images = loaded; selected = 0; dirty = false; refreshAssets();
+    project = next; images = loaded; selected = 0; dirty = false;
+    if (next.presets?.length) { const combined = new Map(presets.map(p => [p.name, p])); next.presets.forEach(p => combined.set(p.name, p)); presets = [...combined.values()].slice(-20); persistPresets(); }
+    refreshAssets();
   }
   $('projectFile').addEventListener('change', async () => {
     const file = $('projectFile').files[0]; if (!file || busy) return;
@@ -220,8 +329,10 @@
     } catch (error) { message(error.message); }
     finally { setBusy(false); $('projectFile').value = ''; }
   });
-  $('saveProject').addEventListener('click', () => {
+  $('saveProject').addEventListener('click', async () => {
+    await flushAudit('save-project');
     if (!images.length) return message('먼저 원문 이미지를 넣으세요.');
+    project.presets = presets.map(M.preset);
     download(new Blob([JSON.stringify(project)], { type: 'application/json' }), 'source-cut-project.json');
     message('원본 이미지와 편집 설정을 함께 저장 요청했습니다. 파일을 다시 열면 편집을 이어갈 수 있습니다.');
   });
@@ -309,6 +420,7 @@
     if (busy || !text.trim() || text.length > 20000) return message('텍스트 원문은 1~20,000자로 입력하세요.');
     setBusy(true);
     try {
+      M.assertFontText(text, 'sans');
       await document.fonts?.load(`400 40px ${M.FONT}`);
       const c = document.createElement('canvas'); c.width = 1080; const context = c.getContext('2d'); context.font = `400 40px ${M.FONT}`;
       const lines = M.splitLines(context, text, 984), prepared = [];
@@ -330,11 +442,17 @@
   window.addEventListener('message', (event) => {
     if (!window.opener || event.source !== window.opener || event.origin !== location.origin || event.data?.type !== 'threads-cut-input' || intakeAccepted || dirty) return;
     intakeAccepted = true;
-    const data = event.data, metadata = { title: String(data.title || ''), source: { candidateId: String(data.source?.candidateId || ''), title: String(data.source?.title || ''), url: String(data.source?.url || ''), inputMode: data.source?.inputMode === 'text' ? 'text' : 'images' } };
+    const data = event.data, metadata = { title: String(data.title || ''), source: { candidateId: String(data.source?.candidateId || ''), title: String(data.source?.title || ''), url: String(data.source?.url || ''), inputMode: data.source?.inputMode === 'text' ? 'text' : 'images', productionNotes: String(data.source?.productionNotes || '').slice(0, 6000) } };
     if (data.sourceText) fromText(String(data.sourceText), metadata);
     else if (Array.isArray(data.files)) acquire(data.files, metadata);
   });
   if (window.opener && location.hash === '#intake') window.opener.postMessage({ type: 'threads-cut-ready' }, location.origin);
+  if (document.fonts?.load) {
+    Promise.all(Object.values(M.FONTS).flatMap(f => f.weights.map(w => document.fonts.load(`${w} 48px ${f.family}`)))).then(results => {
+      if (results.some(f => !f.length)) throw new Error('동봉한 폰트를 불러오지 못했습니다. 앱 폴더 전체가 있는지 확인하세요.');
+      fontsReady = true; schedulePreview();
+    }).catch(error => { message(error.message); $('previewError').textContent = error.message; });
+  }
   document.fonts?.ready.then(schedulePreview);
   window.ThreadsSourceCutEditor = Object.freeze({ openProject: async (value) => {
     if (busy) throw new Error('파일 처리 중입니다. 잠시 후 다시 시도하세요.');

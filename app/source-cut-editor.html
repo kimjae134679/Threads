@@ -35,10 +35,20 @@
     </section>
     <section class="result-panel" aria-label="제목과 결과">
       <label>대문 글씨<textarea id="title" rows="2" maxlength="240" placeholder="짧고 눈에 띄는 제목"></textarea></label>
-      <div class="settings"><label>검정 테두리 <output id="outlineValue">8px</output><input id="outline" type="range" min="2" max="20" step="1" value="8"></label>
+      <div class="settings"><label>폰트<select id="fontId"><option value="sans">Noto Sans KR 기반</option><option value="gothic">나눔고딕 기반</option></select></label><label>글자 굵기<select id="fontWeight"></select></label><label>검정 테두리 <output id="outlineValue">8px</output><input id="outline" type="range" min="2" max="20" step="1" value="8"></label>
         <label>제목 아래쪽 위치 <output id="titleBottomValue">83%</output><input id="titleBottom" type="range" min="42" max="94" value="83"></label>
         <label>기본 글씨색<input id="color" type="color" value="#ffffff"></label><label>강조 색상<input id="highlightColor" type="color" value="#ffe34f"></label></div>
       <label>강조할 단어 · 쉼표로 구분<input id="highlightWords" type="text" maxlength="500" placeholder="북향, 남향"></label>
+      <p class="small">상업적 디자인 사용이 허용된 SIL OFL 글꼴만 제공합니다. 원본 라이선스를 앱에 동봉했습니다.</p>
+      <div class="style-presets"><label>스타일 프리셋<select id="presetList"></select></label><div class="actions"><button id="applyPreset" type="button">프리셋 적용</button><button id="deletePreset" type="button">프리셋 삭제</button></div><label>저장할 이름<input id="presetName" maxlength="40" placeholder="내 흰 여백 스타일"></label><button id="savePreset" type="button">현재 폰트·굵기·색상·여백 저장</button></div>
+      <details class="style-presets"><summary>내 편집 기록과 자동화용 레퍼런스</summary><label>이번 편집의 기준·이유<textarea id="editingReason" rows="2" maxlength="1000" placeholder="예: 문단이 끝나는 위치에서 자르고, 의견을 넣을 아래 여백을 확보"></textarea></label><label class="check"><input id="referenceApproved" type="checkbox">이 결과를 다음 자동화의 기준 예시로 사용</label><button id="recordReason" type="button">기준 기록</button><p id="historyStatus" class="small">범위·분할선·여백·폰트 변경을 전후 값과 함께 기록합니다.</p><div class="actions"><button id="saveHistory" type="button">편집 로그 받기</button><button id="openReferences" type="button">PC 레퍼런스 폴더 열기</button></div><div id="recentHistory" class="notes-buffer"></div></details>
+      <div class="page-decoration"><h2>장별 여백과 의견</h2><label>편집할 장<select id="layoutPage"></select></label>
+        <div class="settings"><label>위 여백<input id="paddingTop" type="number" min="0" max="800" step="10" value="0"></label><label>아래 여백<input id="paddingBottom" type="number" min="0" max="800" step="10" value="0"></label><label>좌우 여백<input id="paddingSide" type="number" min="0" max="400" step="10" value="0"></label><label>최소 캔버스 높이<select id="minimumHeight"><option value="0">내용에 맞춤</option><option value="1080">정사각형 이상</option><option value="1350">세로형 4:5 이상</option></select></label><label>여백 색상<input id="background" type="color" value="#ffffff"></label><label>의견 글씨 크기<input id="noteSize" type="number" min="20" max="110" value="56"></label></div>
+        <label>원문 위에 넣을 글<textarea id="beforeText" maxlength="1000" placeholder="이 장을 읽기 전 짧은 설명"></textarea></label><label>원문 아래에 넣을 의견<textarea id="afterText" maxlength="1000" placeholder="내 의견이나 독자에게 던질 질문"></textarea></label>
+        <button id="applyBodySpacing" type="button">이 여백을 모든 본문에 적용</button><p class="small">글씨 스타일은 위 설정을 따릅니다. 분할선을 추가하거나 삭제하면 문구가 붙은 장 번호를 다시 확인하세요.</p>
+        <details><summary>소재를 찾을 때 적어둔 중간 문구</summary><textarea id="productionNotes" rows="5" maxlength="6000" placeholder="넣을 위치 / 의견 문구 / 원문 근거를 적어두세요."></textarea><p class="small">아래에 사용할 문구를 복사해 원하는 장의 위·아래에 넣으세요. 실제 댓글로 확인한 내용과 직접 쓴 의견을 구분합니다.</p></details>
+        <p id="unplacedNotes" class="small"></p>
+      </div>
       <p class="small">입력한 단어가 제목에 나오는 모든 위치에 강조 색상이 적용됩니다.</p>
       <label class="check"><input id="raw" type="checkbox">표지를 제목 없는 원본 조각으로 받기</label>
       <p id="previewError" role="alert"></p><div id="coverPreview"></div>
@@ -47,5 +57,5 @@
     </section>
   </div>
 </main>
-<script src="./source-cut-model.js"></script><script src="./source-cut-zip.js"></script><script src="./source-cut-editor.js"></script>
+<script src="./source-cut-model.js"></script><script src="./source-cut-composition.js"></script><script src="./source-cut-history.js"></script><script src="./source-cut-zip.js"></script><script src="./source-cut-editor.js"></script>
 </body></html>

@@ -279,7 +279,7 @@
       if (values.mode === 'images' && !files.length) return invalidate('원문 이미지를 먼저 선택하세요.');
       if (values.mode === 'text' && !values.text.trim()) return invalidate('원문 본문을 먼저 입력하세요.');
       const payload = { type: 'threads-cut-input', title: values.hook,
-        source: { candidateId: candidate.id, title: candidate.title, url: candidate.url || '', inputMode: values.mode },
+        source: { candidateId: candidate.id, title: candidate.title, url: candidate.url || '', inputMode: values.mode, productionNotes: candidate.sourceMeta?.productionNotes || '' },
         sourceText: values.mode === 'text' ? values.text : '', files: values.mode === 'text' ? [] : files.map((entry) => entry.file) };
       const popup = window.open('./source-cut-editor.html#intake', '_blank');
       if (!popup) return invalidate('팝업이 차단되었습니다. 이 사이트의 새 창 열기를 허용하세요.');

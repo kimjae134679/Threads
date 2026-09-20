@@ -23,7 +23,8 @@
       "preload.cjs",
       "capture.cjs",
       "network.cjs",
-      "package.json"
+      "package.json",
+      "reference-store.cjs"
     ],
     "extraResources": [
       {

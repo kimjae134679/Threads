@@ -1,10 +1,11 @@
 'use strict';
-const { app, BrowserWindow, dialog, ipcMain, protocol, session } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, protocol, session, shell } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs/promises');
 const dns = require('node:dns/promises');
 const { captureUrl, capturePage, WIDTH } = require('./capture.cjs');
 const { publicAddress } = require('./network.cjs');
+const { createReferenceStore } = require('./reference-store.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
 let editor, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
@@ -19,7 +20,7 @@ function denyPermissions(ses) {
 async function start() {
   const root = app.isPackaged ? path.join(process.resourcesPath, 'editor') : path.join(__dirname, '..', 'app');
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
-  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-model.js', 'source-cut-zip.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff']);
+  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
   protocol.handle('cut-editor', async (request) => {
     const url = new URL(request.url), name = url.pathname.slice(1);
     if (url.host !== 'app' || !allowed.has(name) || request.method !== 'GET') return new Response('Not found', { status: 404 });
@@ -40,6 +41,9 @@ async function start() {
     if (dialog.showMessageBoxSync(editor, { type: 'question', buttons: ['편집 계속', '저장하지 않고 닫기'], defaultId: 0, cancelId: 0, message: '저장하지 않은 편집이 있을 수 있습니다. 창을 닫을까요?' }) === 1) event.preventDefault();
   });
   editor.on('closed', () => { editor = null; if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
+  const referenceStore = createReferenceStore(path.join(app.getPath('userData'), 'references'));
+  ipcMain.handle('source-cut:save-reference', (event, payload) => { trusted(event); return referenceStore.save(payload); });
+  ipcMain.handle('source-cut:open-references', async (event) => { trusted(event); await fs.mkdir(referenceStore.root, { recursive: true }); const error = await shell.openPath(referenceStore.root); if(error) throw new Error(error); });
   ipcMain.handle('source-cut:cancel', (event) => { trusted(event); if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   ipcMain.handle('source-cut:capture', async (event, input) => {
     trusted(event);
@@ -60,7 +64,7 @@ async function start() {
         }).catch(() => callback({ cancel: true }));
       });
       captureSession.webRequest.onHeadersReceived((details, callback) => callback({ cancel: details.resourceType === 'mainFrame' && details.statusCode >= 400 }));
-      const win = new BrowserWindow({ show: false, width: WIDTH, height: 900, useContentSize: true,
+      const win = new BrowserWindow({ show: true, width: WIDTH, height: 900, useContentSize: true,
         webPreferences: { ...preferences, session: captureSession, backgroundThrottling: false } });
       activeCapture = win;
       win.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));

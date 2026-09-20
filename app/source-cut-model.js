@@ -1,8 +1,18 @@
 (function () {
   'use strict';
   const FONT = '"Carousel Sans KR", "Noto Sans KR", "Malgun Gothic", sans-serif';
+  const FONTS = Object.freeze({ sans: { name: 'Noto Sans KR 기반', family: '\"Carousel Sans KR\"', weights: [400, 900] }, gothic: { name: '나눔고딕 기반', family: '\"Cut Gothic\"', weights: [800] } });
+  const COVERAGE = {"sans":[[32,126],[160,259],[272,275],[282,283],[296,299],[323,324],[327,328],[332,335],[338,339],[360,365],[402,402],[416,417],[431,432],[461,476],[504,505],[4352,4607],[8194,8195],[8208,8214],[8216,8218],[8220,8222],[8224,8226],[8229,8231],[8240,8240],[8242,8243],[8245,8245],[8249,8252],[8258,8258],[8263,8265],[8273,8273],[12288,12351],[12353,12438],[12441,12543],[12549,12591],[12593,12686],[12688,12731],[12736,12771],[12784,12799],[44032,55203],[65281,65281],[65311,65311]],"gothic":[[32,126],[161,167],[169,174],[176,179],[181,183],[185,191],[198,198],[208,208],[215,216],[222,223],[230,230],[240,240],[247,248],[254,254],[273,273],[294,295],[306,307],[312,312],[319,322],[330,331],[338,339],[358,359],[8208,8208],[8211,8212],[8214,8214],[8216,8226],[8229,8230],[8240,8240],[8242,8246],[8249,8252],[8258,8258],[12289,12291],[12296,12313],[12318,12320],[12342,12342],[12593,12643],[12645,12686],[44032,55203],[65281,65281],[65311,65311]]};
+  const fontFamily = (id) => (FONTS[id] || FONTS.sans).family;
+  function assertFontText(text, id) {
+    const ranges = COVERAGE[id] || COVERAGE.sans;
+    for (const c of String(text)) {
+      const n = c.codePointAt(0);
+      if (c !== '\n' && c !== '\r' && !ranges.some(([a, b]) => n >= a && n <= b)) throw new Error(`선택한 폰트에 없는 글자 ‘${c}’를 바꾸세요. 다른 시스템 폰트로 대체하지 않습니다.`);
+    }
+  }
   const DEFAULTS = Object.freeze({ outlineWidth: 8, color: '#ffffff', highlightColor: '#ffe34f',
-    highlightWords: '', titleBottom: 83 });
+    highlightWords: '', titleBottom: 83, fontId: 'sans', fontWeight: 900 });
   const clamp = (n, low, high) => Math.max(low, Math.min(high, n));
   const copyRect = (r) => ({ x: r.x, y: r.y, width: r.width, height: r.height });
 
@@ -23,7 +33,9 @@
   }
   function appearance(value = {}) {
     const color = (v, fallback) => /^#[0-9a-f]{6}$/i.test(v || '') ? v : fallback;
-    return { outlineWidth: clamp(Number(value.outlineWidth) || 8, 2, 20),
+    const fontId = Object.hasOwn(FONTS, value.fontId) ? value.fontId : 'sans';
+    const fontWeight = FONTS[fontId].weights.includes(Number(value.fontWeight)) ? Number(value.fontWeight) : FONTS[fontId].weights.at(-1);
+    return { fontId, fontWeight, outlineWidth: clamp(Number(value.outlineWidth) || 8, 2, 20),
       titleBottom: clamp(Number(value.titleBottom) || 83, 42, 94),
       color: color(value.color, DEFAULTS.color), highlightColor: color(value.highlightColor, DEFAULTS.highlightColor),
       highlightWords: String(value.highlightWords || '').slice(0, 500) };
@@ -90,9 +102,10 @@
   function headline(ctx, title, height, style) {
     const text = String(title).replace(/\r\n?/g, '\n').trim();
     if (!text) throw new Error('표지 제목을 입력하세요.');
+    assertFontText(text, style.fontId);
     const bottom = height * style.titleBottom / 100;
     for (let size = Math.min(116, Math.floor(height * .14)); size >= 24; size -= 2) {
-      ctx.font = `900 ${size}px ${FONT}`;
+      ctx.font = `${style.fontWeight || 900} ${size}px ${fontFamily(style.fontId)}`;
       const lines = splitLines(ctx, text, 984), lineHeight = size * 1.2;
       if (lines.length <= 3 && bottom - lines.length * lineHeight >= 24) {
         return { text, lines, size, lineHeight, top: bottom - lines.length * lineHeight,
@@ -134,6 +147,6 @@
       }
     });
   }
-  window.ThreadsSourceCut = Object.freeze({ FONT, DEFAULTS, clamp, rectangle, normalizeCuts, bodySlices,
+  window.ThreadsSourceCut = Object.freeze({ FONT, FONTS, fontFamily, assertFontText, DEFAULTS, clamp, rectangle, normalizeCuts, bodySlices,
     appearance, newProject, addAsset, restore, pointer, splitLines, highlightRanges, headline, slides, render });
 })();

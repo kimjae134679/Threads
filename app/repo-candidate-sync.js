@@ -31,6 +31,7 @@
           sourceMeta: {
             ...(incoming.sourceMeta || {}),
             ...(current.sourceMeta || {}),
+            productionNotes: incoming.sourceMeta?.productionNotes || current.sourceMeta?.productionNotes || "",
             processingRank: incoming.sourceMeta?.processingRank,
             processingTotal: incoming.sourceMeta?.processingTotal,
             processingStage: incoming.sourceMeta?.processingStage,

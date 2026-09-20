@@ -1,3 +1,17 @@
+# Latest user additions — padding, opinions, presets and reference logs
+
+User added six image references, requested spacing around crops, own opinion text, discovery-time intermediate copy, licensed selectable fonts/weights/presets, and edit logs for future automation. Instagram UI in references is not the target.
+
+- Added page-specific padding/background/minimum height and before/after authored text. Original crop proportions are preserved. Presets store styles, not opinion text.
+- Fonts: bundled OFL Noto Sans KR derivatives 400/900 and renamed Nanum derivative Cut Gothic 800. Regular Cut Gothic upload was rejected and excluded, not retried. UI lists actual bundled weights. Glyph validation avoids authored text falling back to unverified fonts.
+- New Discovery instruction/template + repo parser + source-intake handoff preserve location/opinion/evidence drafts. No existing candidates fabricated or rewritten.
+- Original coordinates, normalized ratios, cuts, title/style/layout changes and user-stated reasons are logged. Private desktop reference folders retain source bytes/hashes and append-only JSONL plus final state. Explicit approved-example flag resets on edits. No automated training or publication.
+- Local full check: 50 suites / 153 JS syntax files. Windows runtime verification is in progress; the initial hidden capture window stalled, so source capture now opens a visible sandboxed window. A smoke fixture Content-Type was corrected. Do not claim final native success until the final verification entry below.
+- App source is being staged in C:\Users\user\AppData\Local\Programs\ThreadsCutEditor\source, using the standard per-user Programs path without elevation; the configured Program Files AI root is absent. No existing project folders moved.
+- User uploads and generated examples are not committed. Native smoke uses an isolated test profile; remove that test profile after verification. Canva remains deferred.
+
+---
+
 # Latest URL capture / desktop update
 
 User requested: enter a link, capture the page and open it in the editor; replace direct HTML-file usage with an app. Scope is source capture plus existing 03 editor only, no autonomous discovery or publication.
