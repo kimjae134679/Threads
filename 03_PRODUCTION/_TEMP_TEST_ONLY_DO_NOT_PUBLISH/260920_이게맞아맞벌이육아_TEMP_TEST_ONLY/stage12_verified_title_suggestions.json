@@ -1,0 +1,28 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 12,
+  "unit": "verified-source-only-title-suggestions",
+  "candidateKey": "260916_이게맞아맞벌이육아",
+  "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077",
+  "exactObservedTitle": "이게맞아????",
+  "verifiedContentBasis": [
+    "육아휴직 후 복직",
+    "어린이집 준비물을 깜빡함",
+    "맞벌이 남편이 괜찮다며 위로함",
+    "작성자는 남편이 육아 책임을 제3자처럼 보는 태도라고 문제 제기"
+  ],
+  "titleStyleGuide": "01_DISCOVERY/TITLE_STYLE_GUIDE.md",
+  "suggestions": [
+    "복직한 맞벌이 엄마, 준비물 깜빡했는데 남편 반응이 이게 맞아?",
+    "아이 준비물 깜빡한 맞벌이 부부, 남편의 위로가 화난 이유",
+    "맞벌이인데 육아 실수는 왜 내 일? 남편 한마디에 화난 아내"
+  ],
+  "selectedForProduction": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "bodyMutationAllowed": false,
+  "slide2PlusPolicy": "original screenshot/media order and content only",
+  "realPublishingEnabled": false,
+  "note": "Prototype title-suggestion verification only. This artifact does not upgrade canonical C/A/P state and is not approval for publication. Source screenshot/media bytes remain missing for the conversion lane."
+}
