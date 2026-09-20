@@ -7,6 +7,7 @@ For the separate `Threads 소재 발굴` automation, the user's explicit instruc
 
 ## Discovery automation — latest
 - Latest discovery-only note remains the newest discovery note already on main; sequential processing does not alter discovery-stage evidence.
+- Human-readable exact-source handoff for the three TheQoo C1 entries retained in run 271: `01_DISCOVERY/ops/2026-09-20_verified-source-digest.md`. It links each original and records rechecked page metadata plus bounded summaries; it does not copy bodies or comments.
 - Discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false.
 
 ## Sequential candidate/TEMP lane — latest
