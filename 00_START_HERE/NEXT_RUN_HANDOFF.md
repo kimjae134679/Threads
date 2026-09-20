@@ -1,16 +1,16 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 14:28 KST
+Updated: 2026-09-20 15:17 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only note: `01_DISCOVERY/ops/255-sol.md`.
-- This run reviewed 40+ raw/search leads and retained 7 new exact-URL C1 candidates. Existing/duplicate candidates were not overwritten.
-- Top new leads include `오배송 받고 소보원까지 가서 협상결렬된 후기`, `친구 적은 남자랑 결혼한 후기`, `속상주의. 카페 알바 두 달만에 그만둔 후기`, `친구가 결혼식 축의금 5만원해서 서운한 후기`, `사촌동생 축의금 얼마가 좋을까 자문을 구하는 후기`.
+- Latest discovery-only note: `01_DISCOVERY/ops/257-sol.md`.
+- This run reviewed 40+ raw/search leads and retained 15 new exact-URL C1 candidates with readable public body text.
+- Top new leads include `남자친구네 가족 만나고 나서 엉엉 울다 잠든 후기(두서X)`, `네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)`, `직장동료랑 대화하다가 기분 상했는데 내가 잘못한 건가 싶은 후기`, `결혼 및 임출산후 친구가 0이됐는데 적응한 후기`, `직장동료 결혼식과 친구약속 둘중 뭘 선택해야할지 고민중인 초기`.
 - All discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false unless their own workflow explicitly changes them.
-- Continue new Korean-community discovery and exact-source verification only; restricted sources must not be bypassed.
+- Comments were not read; only observed metrics were recorded. Continue new Korean-community discovery and exact-source verification only; restricted sources must not be bypassed.
 
 ## Sequential candidate/TEMP lane — latest
 - Latest sequential/TEMP note: `01_DISCOVERY/ops/256-sol.md`.
