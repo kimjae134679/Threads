@@ -1,0 +1,27 @@
+{
+  "type": "TEMP_TEST_ONLY_STAGE9_SOURCE_ACQUISITION_VERIFICATION",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_이사가는아랫집",
+  "stage": 9,
+  "verifiedAt": "2026-09-20T19:27:00+09:00",
+  "candidateSourceState": "C0",
+  "publicMirror": {
+    "url": "https://bada.us/post/9545344",
+    "reachableByPublicSearch": true,
+    "contentMatch": "MATCHES_STORED_PARTIAL_MEMO",
+    "role": "SECONDARY_MIRROR_NOT_PRIMARY_PROVENANCE"
+  },
+  "primarySource": {
+    "status": "BLOCKED_NOT_RESOLVED",
+    "unblockCondition": "Exact individual primary/original post URL or trustworthy unique primary-post identifier becomes publicly resolvable."
+  },
+  "sourceBytes": {
+    "status": "NOT_ACQUIRED_AS_PRIMARY_SOURCE_ASSET"
+  },
+  "renderAllowed": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "slide2PlusPolicy": "ORIGINAL_SCREENSHOT_OR_MEDIA_IN_SOURCE_ORDER_ONLY",
+  "note": "This prototype verification does not reproduce the mirror body and must not upgrade canonical C/A/P state. Secondary mirror visibility is not treated as exact primary provenance."
+}

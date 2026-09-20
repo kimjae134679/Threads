@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "purpose": "stage-13/14 deterministic review-bundle definition for the actual v1 output; not approval or publishing",
+  "bundleVersion": "TEMP_TEST_ONLY_actual-output-v1",
+  "entrypoint": "index.html",
+  "orderedFiles": [
+    "index.html",
+    "slide-01.svg",
+    "slide-02.svg",
+    "slide-03.svg",
+    "slide-04.svg",
+    "slide-05.svg",
+    "slide-06.svg",
+    "slide-07.svg",
+    "slide-08.svg",
+    "TEMP_TEST_ONLY_actual-output-manifest.json",
+    "TEMP_TEST_ONLY_source-evidence-map.json",
+    "TEMP_TEST_ONLY_review-connection.json",
+    "TEMP_TEST_ONLY_approval-gate.json"
+  ],
+  "restoreContract": {
+    "selectionMustMatchBundleVersion": true,
+    "missingFileFailsClosed": true,
+    "unexpectedFileRequiresReview": true,
+    "approvedVersion": null,
+    "freshPageRestoreObserved": false,
+    "executionEligible": false
+  },
+  "coverRules": {
+    "blur": false,
+    "generatedImageFallback": false,
+    "textOnlySourceUsesGeneratedImage": false,
+    "titlePosition": "upper",
+    "outline": "thin"
+  },
+  "stage15Unblock": "A human explicitly selects an approved TEMP version and the exact downloaded bundle is restored in a fresh browser document with approved/restored/execution digests directly observed equal.",
+  "note": "This manifest only makes the existing actual-output review bundle deterministic. It does not claim that OS download, fresh-page restore, approval, rights clearance, A1, or P1 occurred."
+}

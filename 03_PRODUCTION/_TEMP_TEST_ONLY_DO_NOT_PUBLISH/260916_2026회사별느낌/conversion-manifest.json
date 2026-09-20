@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "sourceCandidate": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+  "titleOriginal": "2026년 회사별 느낌 NEW ver.",
+  "sourceUrl": "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco",
+  "sourceFormat": "글",
+  "sourceBodyComplete": true,
+  "commentsComplete": false,
+  "sourceAssetsComplete": false,
+  "cover": {
+    "mode": "text-only",
+    "generatedImagery": false,
+    "blur": false,
+    "prototypeTitle": "직장인이 적어본 2026 회사별 느낌",
+    "titlePosition": "upper",
+    "outline": "thin"
+  },
+  "actualOutput": {
+    "status": "TEMP_TEST_OUTPUT_GENERATED",
+    "version": "v1",
+    "path": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1",
+    "gallery": "index.html",
+    "slideCount": 8,
+    "size": "1080x1080",
+    "format": "SVG",
+    "generatedImagery": false,
+    "blur": false
+  },
+  "titleSuggestions": [
+    "직장인들이 말하는 2026 회사별 느낌",
+    "회사 이름만 봐도 느낌 온다는 직장인들",
+    "2026년 회사별 이미지를 한 줄로 적어봤다"
+  ],
+  "bodyTransformation": {
+    "status": "TEMP_CAROUSEL_V1_RENDERED",
+    "strategy": "verified source order + natural topic groups; paraphrased summary; no raw fixed-length slicing",
+    "sourceCopyPolicy": "do not commit full verbatim third-party body into this test workspace",
+    "safetyNote": "source contains potentially defamatory/derogatory occupational and company statements; transformation remains review-only"
+  },
+  "review": {
+    "rights": "UNREVIEWED",
+    "privacy": "UNREVIEWED",
+    "defamation": "REVIEW_REQUIRED",
+    "humanApproval": "NOT_APPROVED"
+  }
+}

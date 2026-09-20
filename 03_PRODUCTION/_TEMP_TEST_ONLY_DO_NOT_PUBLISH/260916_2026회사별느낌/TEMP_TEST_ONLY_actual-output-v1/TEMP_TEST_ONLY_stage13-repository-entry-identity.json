@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 13,
+  "unit": "repository-entry-identity-preflight",
+  "prototypeOnly": true,
+  "observedAt": "2026-09-20T16:27:00+09:00",
+  "entryPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/index.html",
+  "githubBlobShaObserved": "12f2e58f3d7552d9c2da3b70bf1e088e3d575062",
+  "orderedReferencesObserved": [
+    "slide-01.svg",
+    "slide-02.svg",
+    "slide-03.svg",
+    "slide-04.svg",
+    "slide-05.svg",
+    "slide-06.svg",
+    "slide-07.svg",
+    "slide-08.svg"
+  ],
+  "entryExplicitlySaysTempTestOnly": true,
+  "entryExplicitlySaysDoNotPublish": true,
+  "generatedImageFallbackAllowed": false,
+  "browserDownloadObserved": false,
+  "freshPageRestoreObserved": false,
+  "approvedVersion": null,
+  "approvedRestoredDigestEqualityObserved": false,
+  "executionEligible": false,
+  "status": "PARTIAL_BLOCKED_BROWSER_RESTORE",
+  "unblockWhen": "A human selects a TEMP approved version and the exact bundle is downloaded through the browser, restored in a fresh page/session, and the approved/restored digest equality is directly observed. Repository blob identity alone is insufficient.",
+  "notes": "This unit only pins the currently observed repository entry file and its ordered slide references. It does not prove source-media acquisition, crop correctness, rights/privacy/safety approval, browser download/restore, runtime identity, A1, or P1. Stage 16 remains disabled."
+}

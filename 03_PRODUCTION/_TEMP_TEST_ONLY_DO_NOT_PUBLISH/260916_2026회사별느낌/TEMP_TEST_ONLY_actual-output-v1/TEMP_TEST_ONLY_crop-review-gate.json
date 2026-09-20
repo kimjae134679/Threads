@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "verificationUnit": "automatic UI-chrome exclusion / crop-review gate",
+  "stage": 10,
+  "sourceType": "text-only",
+  "generatedImageFallbackAllowed": false,
+  "blurAllowed": false,
+  "platformChromeAllowed": false,
+  "realSourceMediaBytesAcquired": false,
+  "manualScreenshotBytesAcquired": false,
+  "cropReviewApplicableToCurrentTextOnlyV1": false,
+  "cropReviewPassed": false,
+  "reason": "Current verified source is text-only and no real screenshot/source-media bytes are acquired. A crop PASS must not be inferred from synthetic SVG output.",
+  "unblockWhen": "A future permitted source with real visual-media/screenshot bytes is acquired, then platform UI/chrome bounds are detected or manually reviewed against those exact bytes.",
+  "mayUpgradeRealCandidateState": false,
+  "executionEligible": false,
+  "stage16LivePublishing": "DISABLED"
+}

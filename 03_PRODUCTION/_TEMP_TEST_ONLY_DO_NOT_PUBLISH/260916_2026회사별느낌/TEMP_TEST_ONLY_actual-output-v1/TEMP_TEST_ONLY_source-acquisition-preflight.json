@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeOnly": true,
+  "stage": 9,
+  "unit": "source-acquisition-preflight",
+  "candidateKey": "260916_2026회사별느낌",
+  "verifiedSourceBodyAvailable": true,
+  "sourceMediaBytesAcquired": false,
+  "manualScreenshotsProvided": false,
+  "loginRequiredAccessAllowed": false,
+  "antiBotBypassAllowed": false,
+  "paywallBypassAllowed": false,
+  "accessControlBypassAllowed": false,
+  "generatedImageFallbackAllowed": false,
+  "coverRule": {
+    "blurAllowed": false,
+    "realSourceMediaOnlyWhenVerifiedVisualMediaExists": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "largeTitleHigherWithThinOutline": true,
+    "slide2PlusPreserveVerifiedOriginalOrder": true
+  },
+  "status": "BLOCKED_SOURCE_MEDIA_BYTES",
+  "unblockWhen": "Real source media/screenshot bytes become available through public/permitted access or are manually supplied, without login, anti-bot, paywall, or access-control bypass.",
+  "effectOnCanonicalCandidateState": "NONE",
+  "executionEligible": false,
+  "livePublishingEnabled": false
+}

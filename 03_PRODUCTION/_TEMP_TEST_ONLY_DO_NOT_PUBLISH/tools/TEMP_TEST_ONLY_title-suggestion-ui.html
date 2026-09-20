@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>TEMP TEST ONLY — Verified Title Suggestion Input</title>
+<style>body{font:16px system-ui;max-width:860px;margin:40px auto;padding:0 18px}textarea,input{width:100%;box-sizing:border-box;margin:6px 0 14px;padding:10px}button{padding:10px 14px}pre{white-space:pre-wrap;background:#f4f4f4;padding:12px}.warn{font-weight:700}</style>
+<h1>TEMP TEST ONLY — DO NOT PUBLISH</h1>
+<p class="warn">Prototype only. temporaryTestOnly=true / publicationAllowed=false. This screen does not publish and must not upgrade C/A/P.</p>
+<label>Exact observed title<input id="observed" value="합성 테스트 원문 제목"></label>
+<label>Verified source text (synthetic fixture only)<textarea id="body" rows="5">서로 힘든 점을 말로 확인한다. 문제가 생기면 상대의 말을 먼저 듣는다. 이 문장은 제3자 원문이 아닌 TEMP 합성 fixture다.</textarea></label>
+<button id="build">Build verified title input</button>
+<label>Suggested title for validation<input id="suggested" value="서로의 힘듦을 먼저 알아주는 부부"></label>
+<button id="validate">Validate suggestion</button>
+<pre id="out">Not run.</pre>
+<script type="module">
+import {buildVerifiedTitleInput,assertSuggestedTitle} from './title-suggestion-input-guard.js';
+let verified=null; const out=document.querySelector('#out');
+document.querySelector('#build').onclick=()=>{try{verified=buildVerifiedTitleInput({exactObservedTitle:observed.value,verifiedSourceText:body.value,sourceVerified:true,fullBodyRead:true});out.textContent=JSON.stringify(verified,null,2)}catch(e){verified=null;out.textContent='BLOCKED: '+e.message}};
+document.querySelector('#validate').onclick=()=>{try{const title=assertSuggestedTitle(suggested.value,verified);out.textContent='TEMP VALIDATION PASS (not publication approval)\n'+title}catch(e){out.textContent='BLOCKED: '+e.message}};
+</script>

@@ -1,0 +1,1 @@
+Deprecated: user rejected v1 as dashboard/list-like and not representative of the intended social-card output. Use ../TEMP_TEST_ONLY_actual-output-v2/index.html instead.

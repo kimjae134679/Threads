@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "purpose": "stage-13/14 file-existence verification against the declared review bundle; not browser restore or approval",
+  "bundleVersion": "TEMP_TEST_ONLY_actual-output-v1",
+  "declaredRequiredFiles": ["index.html","slide-01.svg","slide-02.svg","slide-03.svg","slide-04.svg","slide-05.svg","slide-06.svg","slide-07.svg","slide-08.svg"],
+  "repositoryExistenceObserved": true,
+  "missingRequiredFiles": [],
+  "browserDownloadObserved": false,
+  "freshPageRestoreObserved": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "result": "PASS_REPOSITORY_FILE_EXISTENCE_ONLY__BLOCKED_BROWSER_RESTORE",
+  "unblockWhen": "A human selects the TEMP version and the exact bundle is downloaded through the browser, restored in a fresh page, and approved/restored/execution digests are directly observed equal.",
+  "note": "This verifies only that the declared entrypoint and eight SVG files exist in the current repository bundle. It does not prove OS download, fresh-page restore, visual correctness, approval, rights clearance, A1, P1, or publishing."
+}

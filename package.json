@@ -1,6 +1,6 @@
 {
   "name": "threads-ai-content-lab",
-  "version": "0.42.1",
+  "version": "0.42.3",
   "private": true,
   "type": "module",
   "scripts": {

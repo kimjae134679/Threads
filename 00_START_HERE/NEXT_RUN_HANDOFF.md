@@ -8,9 +8,10 @@ Baseline: `eddbc9d49df2aa74fdc48e901aa925b28761d32c`; review branch `codex/audit
 - Virtual viewport supports scroll/zoom, region movement/resizing and edge auto-scroll. Absolute source coordinates preserve split positions. Split labels identify the preceding/next page, with jump/edit/delete controls.
 - Default outline 8px (2–20px), literal comma-separated highlighted words and editable colors. No image blur or shadow. Original automatic renderer remains separate.
 - Project JSON includes original images and editable settings. Restore validates source dimensions and resets completeness confirmation. ZIP contains cover/body PNGs plus source-cut manifest. No reverse write to legacy Source Package approvals or actual publication.
-- Local full check: 46 suites; focused same-origin handoff and model regressions passed. Native Canvas + DOM doubles exercised the real editor script through scroll/zoom, cuts, styles, project restore and ZIP output; independent ZIP read passed. HTTP routes 200. Browser/Windows E2E remains unverified. No new source acquisition or C/A/P changes.
+- Local full check after reconciling main `bc255bd`: 47 suites / 142 JavaScript syntax checks; focused same-origin handoff and model regressions passed. Native Canvas + DOM doubles exercised the real editor script through scroll/zoom, cuts, styles, project restore and ZIP output; independent ZIP read passed. HTTP routes 200. Browser/Windows E2E remains unverified. No new source acquisition or C/A/P changes.
 - User guide: `docs/SOURCE_CUT_EDITOR.md`. An actual ZIP-produced cover was visually inspected locally using 12px outline; default remains 8px. The user-derived preview image was excluded from the public PR after automatic approval review rejected its external disclosure.
 - Next: real browser interaction/download review on the user's runtime; connect review assets only after that. Do not resume Canva unless requested.
+- Merge reconciliation preserves current main Discovery/candidate sync/WebP work. The production renderer replaces the older duplicate no-blur implementation; Node >=24 and automatic test discovery are retained with package version 0.42.3.
 - Workspace: `/workspace/scratch/7dc461d71eca/Threads` on Linux. No Windows installations or relocations. Windows AI installation-root policy not applicable.
 
 ---
@@ -109,56 +110,31 @@ The following is the concurrent Discovery workstream's handoff, preserved verbat
 
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-19 KST
+## 2026-09-21 02:25 KST — hourly two-lane run
+- Queue refreshed from all current `data/candidates`: 1,193 candidates; C0 442 / C1 751 / A0 1,193 / A1 0 / P0 1,193 / P1 0.
+- Candidate lane processed exactly one next unprocessed key: `260916_자취하지마세요` (current rank 45 after refresh). Ppomppu official 자취포럼 listing verifies exact title `자취하지마세요`, post number `21310`, date 2026-08-26. Canonical individual URL is recorded as `https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310`; automated individual-page fetch returned 403, so no body/assets were claimed. Logical C1, A0/P0, blocker `BLOCKED_SOURCE_ASSET_BYTES`.
+- TEMP lane: added `webp-intake-prototype_TEMP_TEST_ONLY.mjs` and `stage9_webp_native_intake_TEMP_TEST_ONLY.json` under the existing `260921_입주청소하러갔다가_TEMP_TEST_ONLY` folder. It reads original WebP natively without transcoding and verified 600x871 / 39,288 bytes / SHA-256 `37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6`. Prototype only; canonical intake support/A1/P1 unchanged.
+- No publish, P1, rights/privacy/safety approval, OCR/vision claim, or live metrics.
 
-## CURRENT USER OVERRIDE — DISCOVERY ONLY
-Until the user explicitly changes this again, work on **01_DISCOVERY / 소재 발굴 only**.
+Updated: 2026-09-21 02:16 KST
 
-Do NOT continue 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS work. Do NOT capture screenshots, download source media, build/crop/normalize carousels, render images/video, run publishing/provider work, or modify existing production assets. Existing role ownership remains intact and only 04_REVIEW_PUBLISH may ever publish.
+## 01_DISCOVERY latest
+- Latest discovery-only run reviewed 40+ raw/search leads and retained 3 new C1 candidates: `친구 결혼하면 원래 멀어지는건가 싶은 후기`, `돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기`, `쿠팡 계약직 3주차 후기`.
+- Restricted sources were not bypassed; all new candidates remain A0/P0 and publicationAllowed=false.
 
-## Discovery operating rule
-Korean-community first: Blind, DCInside, FMKorea, TheQoo, Instiz, Ruliweb, Ppomppu, Clien, Inven, Arca, NAVER/Daum cafes, then public Threads/Instagram/Reddit/YouTube/news.
+## Sequential candidate lane
+- Queue refreshed from every current `data/candidates` markdown file after pulling main: 1,190 candidates total; the 2 newest 260921 candidates are included.
+- Processed exactly one next unprocessed filename-order key: `260916_입주청소하러갔다가`.
+- Exact source was already verified at `https://www.inven.co.kr/board/webzine/2097/2728192` (post ID `2728192`).
+- Public direct source media was actually downloaded without login/bypass: WebP, 39,288 bytes, SHA-256 `37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6`.
+- Candidate remains C1/A0/P0: the canonical screenshot-intake script currently supports PNG/JPEG dimensions only, so WebP cannot yet be persisted through the verified intake path. No A1/P1 or rights/moderation claims were made.
+- Do not re-evaluate older blocked entries unless their unblock condition changes. Continue with the next unprocessed filename-order key next run.
 
-For each useful run, when coverage allows:
-- inspect roughly 40–80 raw leads;
-- retain roughly 15–30 genuinely usable candidates after dedupe/safety/access/story filtering;
-- prioritize funny/absurd true stories, workplace conflict, dating/marriage arguments, money/gifts/debt/lottery, family drama, embarrassing misunderstandings, reversals, relatable annoyance, and posts that trigger instant opinions;
-- do not rank by views alone.
+## TEMP TEST ONLY lane
+- Added `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_intake_blocker.json` plus the real source WebP only inside that TEMP_TEST_ONLY folder.
+- Running the real stage-9 intake exposed a concrete blocker: `build-screenshot-intake-manifest.mjs` rejects WebP because dimension parsing is PNG/JPEG-only; stage 10 was therefore not run.
+- `temporaryTestOnly=true`, `publicationAllowed=false`, approvedVersion=null, executionEligible=false; no blur/generated fallback and no fabricated conversion.
+- Exact unblock: add provenance-preserving WebP intake/dimension support (without pretending a transcode is original bytes), then rerun stage 9 before UI-chrome review.
 
-Restricted sources must not be bulk crawled or accessed by bypassing login/anti-bot controls.
-
-## Canonical material location
-The main material pool is **`data/candidates/`**. One candidate = one Markdown file.
-
-Current repository inventory checked on 2026-09-19:
-- total candidate files: **580**
-- 2026-09-16: C0 66 / C1 149
-- 2026-09-17: C0 8 / C1 199
-- 2026-09-18: C0 3 / C1 155
-
-A newer one-off discovery record also exists under `01_DISCOVERY/candidates/`, but new discovery should be normalized into `data/candidates/` rather than creating another parallel pool.
-
-For each retained candidate record source, exact/public URL if actually verified, exact observed title, observation time, only visible metrics, whether full body/comments were actually read, whether source images/screenshots are known to exist, why it is usable, and exact provenance/acquisition state. Exact individual public source = C1; only index/list provenance = C0. Do not invent body text, metrics, rights, OCR/moderation, assets, or publication state.
-
-## Existing production assets
-Existing source packages/carousels are historical work only. Leave them untouched while this DISCOVERY ONLY override is active.
-
-## Latest discovery truth
-Latest full high-volume useful Discovery on record: **40+ raw / 15 retained C1**. A later Korean-community refresh recorded **29 raw / 10 retained**. The focused Nate Pann provenance search was 3 raw / 1 corroborated and was not a full discovery pass.
-
-Recent notable material includes:
-- 우리집 홈캠을 보고 계셨던 시어머니.
-- 너무 많이 먹는 남편 ㅠㅠ
-- 아이이름 짓는데 술집여자 같다는 남편
-- 결혼 승낙 받자마자 탈모인거 밝힌 남편..
-- 나몰래 대출받은 남편
-- 주식중독 남편.. 대출 막는법 있을까?
-- 친구 결혼 2만달러 대출
-- 카지노 잭팟 약혼녀 빚
-- 코인 대출 남편
-- 파혼 뒤 결혼비용 상환 요구
-- 형 결혼식 800달러 선물 취소
-- 호텔 결혼 축의금 얼마
-
-## Next
-Only continue high-volume material discovery and exact-source/provenance verification. Keep adding strong candidates to `data/candidates/`. Do not turn any candidate into screenshots, carousels, videos, or publications unless the user later explicitly reopens production.
+## Publication ownership / safety
+Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. No real publishing or metrics collection was performed.

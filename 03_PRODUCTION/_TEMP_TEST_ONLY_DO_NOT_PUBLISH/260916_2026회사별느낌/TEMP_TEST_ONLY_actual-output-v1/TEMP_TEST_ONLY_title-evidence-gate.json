@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "stage": 12,
+  "purpose": "Bind title suggestions to verified source content only.",
+  "verifiedSourceTitle": "2026년 회사별 느낌 NEW ver.",
+  "verifiedSourceBodyComplete": true,
+  "sourceMediaBytesAcquired": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "titleGuide": "01_DISCOVERY/TITLE_STYLE_GUIDE.md",
+  "suggestions": [
+    "직장인들이 말하는 2026 회사별 느낌",
+    "회사 이름만 봐도 느낌 온다는 직장인들",
+    "2026년 회사별 이미지를 한 줄로 적어봤다"
+  ],
+  "selectedForTempV1": "직장인이 적어본 2026 회사별 느낌",
+  "selectionScope": "TEMP prototype only; not human publication approval",
+  "forbiddenInference": [
+    "Do not add claims absent from the verified source body.",
+    "Do not treat a title suggestion as rights/privacy/safety approval.",
+    "Do not upgrade C/A/P state from this artifact."
+  ],
+  "executionEligible": false,
+  "humanApproval": "NOT_APPROVED"
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "stage": 9,
+  "unit": "verified-body-to-rendered-output evidence wiring",
+  "source": {
+    "url": "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco",
+    "publicBodyVerified": true,
+    "sourceMediaBytesAcquired": false,
+    "commentsComplete": false
+  },
+  "renderedOutput": {
+    "gallery": "index.html",
+    "slides": ["slide-01.svg","slide-02.svg","slide-03.svg","slide-04.svg","slide-05.svg","slide-06.svg","slide-07.svg","slide-08.svg"],
+    "sourceUse": "verified public body paraphrase in observed order/topic groups",
+    "generatedImageFallback": false,
+    "blur": false
+  },
+  "failClosed": {
+    "sourceMediaClaimsAllowed": false,
+    "ocrVisionClaimsAllowed": false,
+    "rightsCleared": false,
+    "humanApproved": false,
+    "executionEligible": false
+  },
+  "unblockSourceAssetsWhen": "Permitted real source screenshot/media bytes are actually acquired without login, anti-bot, paywall, or access-control bypass.",
+  "note": "Prototype evidence map only. It does not upgrade the real candidate C/A/P state and is not a publication approval."
+}

@@ -82,24 +82,26 @@
     };
 
     const count = Math.max(0, Math.min(10, Number(imageCount) || 0));
+    const sourceFormat = String(item.sourceMeta?.format || "").trim();
+    const sourceHasVisualMedia = count > 0 && sourceFormat !== "글";
     const cards = [{
       type: "hook",
       title: merged.hook,
       body: "",
       source: merged.source,
-      backgroundImageIndex: count ? 0 : null,
-      backgroundMode: count ? "blurred-source-image" : "missing-source-image",
+      backgroundImageIndex: sourceHasVisualMedia ? 0 : null,
+      backgroundMode: sourceHasVisualMedia ? "source-image-no-blur" : "text-only-cover",
     }];
     for (let index = 0; index < count; index += 1) {
-      cards.push({ type: "capture-image", title: count > 1 ? `원문 ${index + 1}` : "원문", body: "", imageIndex: index, source: merged.source, fit: "contain", backgroundMode: "blurred-duplicate" });
+      cards.push({ type: "capture-image", title: count > 1 ? `원문 ${index + 1}` : "원문", body: "", imageIndex: index, source: merged.source, fit: "contain", backgroundMode: "plain-contain" });
     }
 
     return {
-      schemaVersion: 3,
+      schemaVersion: 4,
       renderProfile: "reference-square",
       width: 1080,
       height: 1080,
-      assetPolicy: { sourceImageRequired: true, generatedImageFallback: false, firstAssetUsedAsBlurredCover: true, selectedAssetOrderIsCarouselOrder: true },
+      assetPolicy: { sourceImageRequired: count > 0, generatedImageFallback: false, coverBlur: false, coverMode: sourceHasVisualMedia ? "source-media" : "text-only", selectedAssetOrderIsCarouselOrder: true },
       privacy: {
         automaticMasking: false,
         automaticPiiMutation: false,
@@ -118,8 +120,10 @@
     if (cards[0]?.type !== "hook") issues.push("hook_first_required");
     if (storyboard.renderProfile === "reference-square") {
       if (storyboard.width !== 1080 || storyboard.height !== 1080) issues.push("reference_square_size_required");
-      if (cards[0]?.backgroundMode !== "blurred-source-image") issues.push("source_image_cover_required");
-      if (!cards.some((card) => card.type === "capture-image")) issues.push("source_image_slide_required");
+      if (!["source-image-no-blur", "text-only-cover"].includes(cards[0]?.backgroundMode)) issues.push("cover_mode_invalid");
+      if (storyboard.assetPolicy?.coverBlur !== false) issues.push("cover_blur_forbidden");
+      if (storyboard.assetPolicy?.coverMode === "source-media" && cards[0]?.backgroundMode !== "source-image-no-blur") issues.push("source_media_cover_required");
+      if (storyboard.assetPolicy?.sourceImageRequired && !cards.some((card) => card.type === "capture-image")) issues.push("source_image_slide_required");
       if (storyboard.assetPolicy?.generatedImageFallback !== false) issues.push("generated_image_fallback_must_be_disabled");
       if (storyboard.privacy?.automaticMasking !== false || storyboard.privacy?.automaticPiiMutation !== false) issues.push("automatic_privacy_mutation_forbidden");
     }

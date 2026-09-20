@@ -1,0 +1,23 @@
+{
+  "type": "TEMP_TEST_ONLY_STAGE9_EXACT_SOURCE_ASSET_GATE",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_이시대4050특징",
+  "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728400?iskin=webzine",
+  "sourcePostId": "2728400",
+  "exactIndividualSourceVerified": true,
+  "verifiedPublicContent": {
+    "title": "이시대를 사는 4050 특징",
+    "author": "파아랑망토",
+    "publishedAt": "2026-09-16 06:51",
+    "visibleText": "변화가 너무 빠르긴 함",
+    "visualMediaObserved": true
+  },
+  "sourceAssetBytesAcquired": false,
+  "status": "BLOCKED_SOURCE_ASSET_BYTES",
+  "unblockWhen": "Acquire permitted real screenshot/media bytes from this exact public post with URL/provenance/hash, without login, anti-bot, paywall, or access-control bypass.",
+  "coverRule": {"blur": false, "generatedImageFallback": false, "realSourceMediaOnlyWhenAcquired": true},
+  "slide2Plus": "No render until real source screenshot/media bytes are acquired; preserve original order/content.",
+  "approvedVersion": null,
+  "executionEligible": false
+}

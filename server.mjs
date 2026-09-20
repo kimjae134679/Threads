@@ -25,6 +25,7 @@ import { SqliteStateStoreRegistry } from "./persistence-sqlite.mjs";
 import { fetchSourceAsset, getSourceAssetCapabilities } from "./source-assets.mjs";
 import { handleMediaPublishRoute, getMediaConnectorSnapshot } from "./media-publish-routes.mjs";
 import { VerticalVideoArtifactStore, getVerticalVideoArtifactCapabilities } from "./vertical-video-artifacts.mjs";
+import { loadRepoCandidates } from "./repo-candidates.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -68,6 +69,12 @@ const server = http.createServer(async (req, res) => {
 
     if (url.pathname === "/api/health") {
       return json(res, 200, { ok: true, service: "threads-trend-inbox", version: PACKAGE_VERSION, runtimeStartedAt: RUNTIME_STARTED_AT, now: new Date().toISOString() });
+    }
+
+    if (url.pathname === "/api/repo-candidates") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const result = await loadRepoCandidates(ROOT);
+      return json(res, 200, { ok: true, ...result });
     }
 
     if (url.pathname === "/api/state/status") {

@@ -1,0 +1,20 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_입주청소부부",
+  "stage": 9,
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728192",
+  "sourcePostId": "2728192",
+  "exactSourceVerified": true,
+  "sourceAssetsComplete": false,
+  "status": "BLOCKED_SOURCE_ASSET_BYTES",
+  "unblockWhen": "Acquire permitted real screenshot/media bytes from this exact public post with provenance and SHA-256. No login/access-control bypass.",
+  "coverRule": {
+    "blur": false,
+    "generatedImageFallback": false,
+    "visualMediaCoverOnlyIfVerifiedSourceMedia": true
+  },
+  "slide2Plus": "ORIGINAL_SCREENSHOT_MEDIA_ONLY_IN_SOURCE_ORDER",
+  "approvedVersion": null,
+  "executionEligible": false
+}

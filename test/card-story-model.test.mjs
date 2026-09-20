@@ -45,14 +45,15 @@ const item = {
   }, 2);
   assert.equal(storyboard.width, 1080);
   assert.equal(storyboard.height, 1080);
-  assert.equal(storyboard.schemaVersion, 3);
+  assert.equal(storyboard.schemaVersion, 4);
   assert.equal(storyboard.privacy.automaticMasking, false);
   assert.equal(storyboard.privacy.automaticPiiMutation, false);
   assert.equal(storyboard.privacy.manualReviewRequired, true);
   assert.equal(storyboard.cards[0].type, "hook");
   assert.equal(storyboard.renderProfile, "reference-square");
   assert.equal(storyboard.assetPolicy.generatedImageFallback, false);
-  assert.equal(storyboard.cards[0].backgroundMode, "blurred-source-image");
+  assert.equal(storyboard.cards[0].backgroundMode, "source-image-no-blur");
+  assert.equal(storyboard.assetPolicy.coverBlur, false);
   assert.equal(storyboard.cards.filter((card) => card.type === "capture-image").length, 2);
   assert.equal(storyboard.cards.length, 3);
   assert.ok(JSON.stringify(storyboard).includes("someone@example.com"));
@@ -70,9 +71,10 @@ const item = {
 
 {
   const noAsset = model.buildStoryboard(item, {}, 0);
-  assert.equal(model.validateStoryboard(noAsset).ok, false);
-  assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_cover_required"));
-  assert.ok(model.validateStoryboard(noAsset).issues.includes("source_image_slide_required"));
+  assert.equal(noAsset.cards[0].backgroundMode, "text-only-cover");
+  assert.equal(noAsset.assetPolicy.coverMode, "text-only");
+  assert.equal(noAsset.assetPolicy.generatedImageFallback, false);
+  assert.equal(model.validateStoryboard(noAsset).ok, true);
 }
 
 console.log("Card storyboard regression tests passed.");

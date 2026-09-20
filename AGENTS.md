@@ -86,6 +86,18 @@ npm run check
 
 `npm run check`는 JavaScript 문법과 전체 회귀 테스트를 수행한다. GitHub Actions는 실제 로컬 서버 기동, 주요 브라우저 script 로드, keyless connector fail-closed까지 smoke test한다.
 
+## 작업 완료와 GitHub 동기화
+
+사용자가 작업 완료를 요청했거나 실제 변경 작업을 마무리할 때는, 로컬 파일만 수정한 상태로 끝내지 않는다. 검증이 끝난 변경은 다음 순서로 정리한다.
+
+1. 관련 검증과 `git diff --check`를 실행한다.
+2. 변경 파일만 명시적으로 stage하고 의미 있는 커밋을 만든다.
+3. 현재 브랜치를 GitHub 원격에 push한다.
+4. 로컬 `HEAD`와 `origin/<branch>`가 같은 SHA인지, 작업 트리가 깨끗한지 확인한다.
+5. 최종 보고에는 GitHub 반영 커밋과 로컬 절대 경로를 함께 적는다.
+
+원격 반영이 실패하면 완료로 표현하지 않고, 실패 원인과 현재 로컬 커밋 상태를 명확히 보고한다.
+
 ## 현재 주요 코드
 
 ```text

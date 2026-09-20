@@ -1,0 +1,20 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "stageScope": [13,14,15],
+  "purpose": "Record only directly observed review-screen download -> fresh-page restore -> approved/execution digest equality. This file is not proof until every observed field is populated from a real browser run.",
+  "requiredObservations": {
+    "reviewScreenGeneratedFileDownloaded": false,
+    "freshBrowserPageOpened": false,
+    "exactDownloadedFileRestored": false,
+    "approvedDigestObserved": null,
+    "restoredDigestObserved": null,
+    "executionEnvironmentDigestObserved": null,
+    "allThreeDigestsEqual": false
+  },
+  "status": "BLOCKED_PENDING_REAL_BROWSER_ROUNDTRIP_OBSERVATION",
+  "unblockWhen": "A permitted real browser run directly observes the actual TEMP review-screen download, opens a fresh page, restores that exact downloaded file, and observes identical approved/restored/execution digests.",
+  "publishing": "DISABLED",
+  "canonicalCandidateStateUpgradeAllowed": false
+}

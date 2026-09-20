@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "purpose": "stage-13/14 restore preflight; deterministic checks before any fresh-page restore can be considered observed",
+  "bundleVersion": "TEMP_TEST_ONLY_actual-output-v1",
+  "requiredOrderedFiles": [
+    "index.html",
+    "slide-01.svg",
+    "slide-02.svg",
+    "slide-03.svg",
+    "slide-04.svg",
+    "slide-05.svg",
+    "slide-06.svg",
+    "slide-07.svg",
+    "slide-08.svg"
+  ],
+  "preflightChecks": {
+    "bundleManifestExists": true,
+    "entrypointDeclared": true,
+    "orderedSlidesDeclared": true,
+    "approvedVersionSelected": false,
+    "osDownloadObserved": false,
+    "freshPageRestoreObserved": false,
+    "restoredBundleDigestObserved": false,
+    "executionEligible": false
+  },
+  "failClosedWhen": [
+    "any required file is missing",
+    "downloaded bundle version differs from selected version",
+    "fresh-page restore was not directly observed",
+    "approved/restored/execution digests are absent or unequal"
+  ],
+  "result": "BLOCKED_PENDING_DIRECT_BROWSER_DOWNLOAD_RESTORE_OBSERVATION",
+  "unblockWhen": "A human selects the TEMP version, the exact bundle is downloaded through the browser, restored in a fresh page, and required file identity plus approved/restored/execution digests are directly observed equal.",
+  "note": "This prototype preflight does not assert download, restore, approval, rights clearance, A1, P1, or publishing."
+}

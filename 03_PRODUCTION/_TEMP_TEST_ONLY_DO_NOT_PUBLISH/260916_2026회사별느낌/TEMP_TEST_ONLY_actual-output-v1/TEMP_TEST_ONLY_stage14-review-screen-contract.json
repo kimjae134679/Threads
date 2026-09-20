@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeOnly": true,
+  "stage": 14,
+  "unit": "review-screen-approved-version-contract",
+  "candidateKey": "260916_2026회사별느낌",
+  "generatedBundle": {
+    "entry": "index.html",
+    "slides": ["slide-01.svg", "slide-02.svg", "slide-03.svg", "slide-04.svg", "slide-05.svg", "slide-06.svg", "slide-07.svg", "slide-08.svg"]
+  },
+  "reviewScreenRequirements": {
+    "generatedFilesMustBeVisible": true,
+    "approvedVersionMustBeExplicitlyHumanSelected": true,
+    "approvedVersion": null,
+    "browserDownloadObserved": false,
+    "freshPageRestoreObserved": false,
+    "approvedDigest": null,
+    "restoredDigest": null,
+    "digestsEqual": false
+  },
+  "status": "BLOCKED_HUMAN_TEMP_APPROVAL_AND_BROWSER_ROUNDTRIP",
+  "unblockWhen": "A human explicitly selects a TEMP version and the exact downloaded bundle is restored on a fresh page with approved/restored digest equality directly observed.",
+  "effectOnCanonicalCandidateState": "NONE",
+  "executionEligible": false,
+  "livePublishingEnabled": false,
+  "coverRule": {
+    "blurAllowed": false,
+    "realSourceMediaOnlyWhenVerifiedVisualMediaExists": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "largeTitleHigherWithThinOutline": true,
+    "slide2PlusPreserveVerifiedOriginalOrder": true,
+    "generatedImageFallbackAllowed": false
+  }
+}

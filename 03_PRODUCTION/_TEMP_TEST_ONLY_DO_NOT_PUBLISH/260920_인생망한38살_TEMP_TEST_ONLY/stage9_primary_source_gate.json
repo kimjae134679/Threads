@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_인생망한38살",
+  "stage": 9,
+  "state": "BLOCKED_EXACT_PRIMARY_SOURCE",
+  "verified": {
+    "publicIndexTitle": true,
+    "publicIndexAuthor": "전자팔찌",
+    "exactIndividualPrimaryUrl": false,
+    "sourceAssetBytes": false
+  },
+  "secondaryMirrorObserved": "https://www.fomos.kr/talk/article_view?bbs_id=4&indexno=2096719&lurl=%2Ftalk%2Farticle_list%3Fbbs_id%3D4",
+  "secondaryMirrorAcceptedAsPrimary": false,
+  "unblockWhen": "Exact individual primary Inven post URL/post ID becomes publicly resolvable, then permitted source bytes may be acquired without login/access-control bypass.",
+  "coverRules": {
+    "blur": false,
+    "generatedImageFallback": false,
+    "textOnlyCoverIfTextOnly": true,
+    "sourceMediaCoverOnlyIfVerifiedVisualMedia": true
+  },
+  "slide2Plus": "BLOCKED_UNTIL_PRIMARY_SOURCE_AND_PERMITTED_BYTES",
+  "approvedVersion": null,
+  "executionEligible": false
+}

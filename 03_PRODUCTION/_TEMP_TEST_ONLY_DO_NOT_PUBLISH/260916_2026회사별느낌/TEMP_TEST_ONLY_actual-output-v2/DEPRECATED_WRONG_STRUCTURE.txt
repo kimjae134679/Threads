@@ -1,0 +1,7 @@
+REJECTED / DO NOT USE
+
+Reason: This v2 rewrote the source into summarized category cards.
+The required structure is:
+- slide 1: one large hook title
+- slide 2+: original source body verbatim in original order, only split/layout changes
+See ../../CONTENT_LAYOUT_LOCK.md

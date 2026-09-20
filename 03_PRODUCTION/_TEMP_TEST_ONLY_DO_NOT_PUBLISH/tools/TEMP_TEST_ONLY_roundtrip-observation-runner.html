@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>TEMP TEST ONLY Roundtrip Observer</title></head><body>
+<h1>TEMP TEST ONLY · DO NOT PUBLISH</h1><pre id="result">NOT_RUN</pre>
+<script type="module">
+import {buildBrowserConversionModel,restoreBrowserConversionModel} from './browser-conversion-adapter.js';
+const out=document.querySelector('#result');
+const canonical=m=>JSON.stringify({temporaryTestOnly:m.temporaryTestOnly,publicationAllowed:m.publicationAllowed,title:m.title,sourceType:m.sourceType,cover:m.cover,slides:m.slides,sourceMediaOrderPolicy:m.sourceMediaOrderPolicy});
+const digest=async m=>{const bytes=new TextEncoder().encode(canonical(m));const hash=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('')};
+try{
+  const built=buildBrowserConversionModel({sourceText:'합성 테스트 첫 문단입니다. 실제 제3자 원문이 아닙니다.\n\n합성 테스트 두 번째 문단입니다.',title:'TEMP 합성 검수',sourceType:'text'});
+  if(!built.temporaryTestOnly||built.publicationAllowed!==false) throw new Error('unsafe model');
+  const approvedDigest=await digest(built);
+  const approved={...built,tempApproval:{approved:true,scope:'TEMP_TEST_ONLY_DO_NOT_PUBLISH',runtimeReflected:false,sha256:approvedDigest}};
+  const downloadedBytes=JSON.stringify(approved,null,2);
+  const restored=restoreBrowserConversionModel(downloadedBytes);
+  const restoredDigest=await digest(restored);
+  const execution=structuredClone(restored);
+  const executionDigest=await digest(execution);
+  const pass=approvedDigest===restoredDigest&&restoredDigest===executionDigest&&execution.temporaryTestOnly===true&&execution.publicationAllowed===false;
+  const result={temporaryTestOnly:true,publicationAllowed:false,prototypeOnly:true,realPublishingDisabled:true,simulatedDownloadBytesInBrowser:true,freshDocumentNavigationObserved:false,approvedDigest,restoredDigest,executionDigest,pass,limitation:'This verifies browser serialization/restore/runtime digest continuity in one document only. It does NOT claim an OS download or fresh-page file-picker roundtrip.'};
+  window.__TEMP_ROUNDTRIP_OBSERVATION__=result; document.documentElement.dataset.tempRoundtrip=pass?'pass':'fail'; document.title=pass?'TEMP_ROUNDTRIP_PASS':'TEMP_ROUNDTRIP_FAIL'; out.textContent=JSON.stringify(result,null,2);
+}catch(err){const result={temporaryTestOnly:true,publicationAllowed:false,pass:false,error:String(err?.message||err)};window.__TEMP_ROUNDTRIP_OBSERVATION__=result;document.documentElement.dataset.tempRoundtrip='fail';document.title='TEMP_ROUNDTRIP_FAIL';out.textContent=JSON.stringify(result,null,2)}
+</script></body></html>

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "marker": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_2026회사별느낌",
+  "stage": 15,
+  "purpose": "Verify that a human-approved TEMP version is exactly what the execution/PR environment consumes.",
+  "approvedVersion": null,
+  "approvedBundleDigest": null,
+  "restoredBundleDigest": null,
+  "executionInputDigest": null,
+  "allDigestsEqual": false,
+  "executionEligible": false,
+  "status": "BLOCKED_FAIL_CLOSED",
+  "requiredObservations": [
+    "human explicitly selects one TEMP version",
+    "exact generated bundle is downloaded through the browser/OS path",
+    "a fresh browser document reconnects/restores that exact downloaded bundle",
+    "approved, restored, and execution-input digests are directly observed and equal",
+    "execution/PR environment reports the same immutable bundle identity"
+  ],
+  "notProvenByThisFile": [
+    "human approval",
+    "OS download success",
+    "fresh-page restore success",
+    "digest equality",
+    "rights/privacy/safety clearance",
+    "A1 or P1",
+    "publication eligibility"
+  ],
+  "realPublishing": "DISABLED"
+}

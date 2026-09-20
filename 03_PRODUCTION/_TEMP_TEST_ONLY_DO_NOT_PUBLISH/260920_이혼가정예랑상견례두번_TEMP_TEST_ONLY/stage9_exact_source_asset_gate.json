@@ -1,0 +1,20 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 9,
+  "candidateKey": "260916_이혼가정예랑상견례두번",
+  "exactSourceVerified": true,
+  "exactSource": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EA%B0%80%EC%A0%95-%EC%98%88%EB%9E%91%EC%9D%B4-%EC%83%81%EA%B2%AC%EB%A1%80-%EB%91%90%EB%B2%88-%ED%95%98%EC%9E%AC%EC%9A%94-8e8228tt",
+  "sourcePostId": "8e8228tt",
+  "sourceAssetsComplete": false,
+  "status": "BLOCKED_SOURCE_ASSET_BYTES",
+  "coverRule": {
+    "blur": false,
+    "generatedImageFallback": false,
+    "textOnlySource": true,
+    "cover": "text-only-large-title-high-position-thin-outline"
+  },
+  "slide2Plus": "BLOCKED_UNTIL_PERMITTED_REAL_SOURCE_BYTES_IN_ORIGINAL_ORDER",
+  "approvedVersion": null,
+  "executionEligible": false
+}

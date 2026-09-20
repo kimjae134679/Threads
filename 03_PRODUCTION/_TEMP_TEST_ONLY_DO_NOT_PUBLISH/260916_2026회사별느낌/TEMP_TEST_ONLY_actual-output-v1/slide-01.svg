@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#0f1115"/>
+  <rect x="54" y="52" width="196" height="52" rx="22" fill="#20242b"/>
+  <text x="78" y="86" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="24" font-weight="700" fill="#dce0e6">TEMP TEST ONLY</text>
+  <text x="1026" y="86" text-anchor="end" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="23" font-weight="700" fill="#a4aab4">01 / 08</text>
+  <line x1="54" y1="126" x2="1026" y2="126" stroke="#3a4048" stroke-width="2"/>
+  <text x="54" y="174" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="24" font-weight="700" fill="#c2ff5b">SOURCE-BASED CAROUSEL</text><text x="54" y="295" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="52" font-weight="700" fill="#a4aab4">직장인이 적어본</text>
+    <text x="54" y="395" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="90" font-weight="800" fill="#f4f6f8" stroke="#000" stroke-width="2" paint-order="stroke">2026 회사별 느낌</text>
+    <text x="54" y="480" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="38" fill="#d6dae1">회사·직업을 보며 떠오른 이미지를</text>
+    <text x="54" y="535" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="38" fill="#d6dae1">한 Blind 사용자의 주관적 인상으로 요약했습니다.</text>
+    <rect x="54" y="635" width="972" height="220" rx="36" fill="#191c22" stroke="#3a4048" stroke-width="2"/>
+    <text x="86" y="715" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="24" font-weight="700" fill="#c2ff5b">원문</text>
+    <text x="86" y="772" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="38" font-weight="700" fill="#f4f6f8">2026년 회사별 느낌 NEW ver.</text>
+    <text x="86" y="820" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="24" fill="#a4aab4">Blind · 공개 본문 기반 · 생성 이미지 없음 · 무블러</text><line x1="54" y1="996" x2="1026" y2="996" stroke="#3a4048" stroke-width="2"/>
+  <text x="54" y="1034" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="20" fill="#a4aab4">Blind 원문 작성자의 주관적 인상을 요약한 비게시용 테스트 콘텐츠</text>
+  <text x="1026" y="1034" text-anchor="end" font-family="Pretendard,Noto Sans KR,sans-serif" font-size="19" font-weight="700" fill="#a4aab4">DO NOT PUBLISH</text>
+  </svg>
