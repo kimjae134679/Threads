@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 11,
+  "unit": "natural-paragraph-scene-boundary-verification",
+  "sampleCandidateKey": "260916_2026회사별느낌",
+  "outputBundle": "TEMP_TEST_ONLY_actual-output-v1",
+  "observedOutput": {
+    "indexFile": "index.html",
+    "orderedSlides": ["slide-01.svg","slide-02.svg","slide-03.svg","slide-04.svg","slide-05.svg","slide-06.svg","slide-07.svg","slide-08.svg"],
+    "slideCount": 8
+  },
+  "rule": "Split only on verified source paragraph/topic/scene boundaries; never invent bridge text or split solely to hit a character-count target.",
+  "verificationState": "PARTIAL_FAIL_CLOSED",
+  "verified": [
+    "The browser index explicitly reconnects the ordered eight-slide bundle.",
+    "The existing TEMP workflow records natural topic grouping rather than raw fixed-length slicing."
+  ],
+  "notProvenByThisUnit": [
+    "real source screenshot/media acquisition",
+    "pixel-level UI chrome exclusion",
+    "rights/privacy/defamation approval",
+    "human approval of a TEMP version",
+    "OS browser download and fresh-page restore",
+    "approved/restored/execution digest equality",
+    "A1 or P1 eligibility"
+  ],
+  "generatedImageFallback": false,
+  "executionEligible": false,
+  "livePublishingEnabled": false
+}
