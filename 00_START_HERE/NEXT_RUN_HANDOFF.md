@@ -1,13 +1,15 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 18:28 KST
+Updated: 2026-09-20 19:18 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only note remains `01_DISCOVERY/ops/261-sol.md`.
-- Discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false unless their own workflow explicitly changes them.
+- Latest discovery-only note: `01_DISCOVERY/ops/265-sol.md`.
+- Run 265 reviewed 40+ raw/search leads and retained 7 new C1 candidates with exact individual public URLs and readable public text bodies.
+- Top new titles include `민생지원금 달라고 하는 부모님 때문에 현타오는 후기`, `오래된 친구 손절?거리두기? 고민중인 중기 장문주의`, `좋은 시댁 만난 것 같은 후기`, `집있는 덬들 대출금이 어느 정도인지 궁금한 초기`, `남편 선물 살말 고민인 중기`.
+- Discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false. Continue new discovery and exact-source verification only.
 
 ## Sequential candidate/TEMP lane — latest
 - Queue refresh was attempted first. The authorized remote device was unavailable, while connector directory rendering is incomplete for a safe 866-file identity rebuild. The 836-entry canonical queue was therefore not overwritten from partial identities; this is recorded as `REFRESH_BLOCKED_REMOTE_DEVICE_UNAVAILABLE` rather than guessed.
