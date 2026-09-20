@@ -1,16 +1,19 @@
-﻿# NEXT RUN HANDOFF
+# NEXT RUN HANDOFF
 
-## 2026-09-21 07:16 KST — discovery-only update
-- User instruction for this automation is authoritative: run only `01_DISCOVERY`; do not enter scoring/production/review-publish/experiments.
-- Korean-community-first public search reviewed 40+ raw/search leads and retained 3 new C1 candidates: `친구가 나를 질투하는 것 같은 후기` (TheQoo), `(초스압) 망한 피씨방 인수한 썰` (Inven), `메이플 길드사람 여친 뺏어진 썰` (Inven).
-- All three have exact individual public URLs and publicly readable body text verified. `publicationAllowed=false`; A1/P1 promotions 0.
-- One additional relationship candidate had a verified individual URL/body but repository write was safety-blocked and therefore was not counted as retained.
-- Run detail: `01_DISCOVERY/ops/287-sol.md`.
-- Next discovery run should continue new Korean-community material discovery and exact-source verification only. Do not progress accumulated candidates into production.
+## 2026-09-21 07:28 KST — hourly two-lane update
+- Current user instruction is authoritative for this run: candidate sequential lane + TEMP TEST ONLY lane; no publishing/P1.
+- Deterministically refreshed queue from every current `data/candidates/*.md` except README: **1,208 total / C0 442 / C1 766 / A0 1,208 / A1 0 / P0 1,208 / P1 0**. Six C1 discovery files added after the 05:25 snapshot are now included.
+- Processed exactly one next unprocessed filename-order key: `260916_집구하는과정느낀점정리` (previous queue rank 50).
+- Exact public Blind source verified: post ID `b0fwwaed`; public individual page title and body match the candidate. No login/access-control bypass.
+- Logical C1 only. Exact source bytes were not persisted with provenance/hash, so `BLOCKED_SOURCE_ASSET_BYTES`; A0/P0 and `publicationAllowed=false` remain.
+- TEMP artifact exists only under `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집구하는과정느낀점정리_TEMP_TEST_ONLY/`; stage 9 records exact-source verification and source-byte blocker. `temporaryTestOnly=true`, `approvedVersion=null`, `executionEligible=false`.
+- No body/comments/metrics/screenshots/assets/OCR/vision/moderation/rights clearance/A1/P1 were fabricated.
 
-## Prior repository state noticed before this run
-- Previous handoff reported a 1,202-candidate queue snapshot (C0 442 / C1 760 / A1 0 / P1 0) generated at 05:25 KST and noted later discovery additions. Those totals are stale until a deterministic queue rebuild, but queue rebuild/production advancement is outside this discovery-only automation scope.
-- TEMP/production state from other lanes must be left untouched.
+## Next hourly run
+- Refresh queue again from all current candidate markdown files before selection.
+- Re-evaluate blocked entries only if their unblock condition changed.
+- Process exactly one next unprocessed candidateKey in filename order (expected next legacy key: `260916_집안일분담으로왜싸움`, subject to refreshed queue).
+- TEMP lane: one small safe unit from stages 9–15; stage 16 remains disabled.
 
 ## Publication boundary
-Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. This discovery automation performs no real publishing, screenshots, image downloads, OCR, rendering, Chrome E2E, provider implementation, or metrics collection.
+Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. TEMP outputs never promote canonical C/A/P state by themselves.

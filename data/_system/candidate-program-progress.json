@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T05:25:17+09:00",
+  "lastCycleAt": "2026-09-21T07:28:54+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -352,19 +352,31 @@
       "observedEvidence": "Fresh public searches for the exact/near-exact title with Ppomppu did not resolve a trustworthy individual Ppomppu post. Generic third-party workplace-quote pages are not provenance.",
       "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique identifier proving this same candidate becomes publicly resolvable.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_집구하는과정느낀점정리",
+      "currentPath": "data/candidates/260916_C0_A0_P0_집구하는과정느낀점정리.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/post/%EC%A7%91-%EA%B5%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95-%EB%8B%A4-%EA%B2%AA%EA%B3%A0-%EB%8A%90%EB%82%80-%EC%A0%90-%EC%A0%95%EB%A6%AC-b0fwwaed",
+      "sourcePostId": "b0fwwaed",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real source body/media bytes from the same public individual Blind post are persisted with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T03:24:47+09:00",
-    "total": 1198,
+    "at": "2026-09-21T07:28:54+09:00",
+    "total": 1208,
     "C0": 442,
-    "C1": 756,
-    "A0": 1198,
+    "C1": 766,
+    "A0": 1208,
     "A1": 0,
-    "P0": 1198,
+    "P0": 1208,
     "P1": 0,
     "source": "all current data/candidates markdown files excluding README.md"
   },
-  "notes": "Queue refreshed to 1190 current candidate files. Processed exactly one next filename-order candidate: 260916_입주청소하러갔다가. Exact Inven source was already C1; real public WebP source-media bytes were acquired (39288 bytes, SHA-256 recorded), but canonical intake supports PNG/JPEG only, so A0/P0 and publicationAllowed=false remain. TEMP lane records the WebP intake blocker only."
+  "notes": "Queue deterministically refreshed from all current candidate markdown files. Processed exactly one next filename-order candidate: 260916_집구하는과정느낀점정리. Exact public Blind individual source b0fwwaed and publicly readable body were verified; source bytes were not persisted, so A0/P0 and publicationAllowed=false remain. TEMP lane records only the stage-9 source gate."
 }

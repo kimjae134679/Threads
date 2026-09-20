@@ -1,0 +1,18 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_집구하는과정느낀점정리",
+  "stage": 9,
+  "exactSourceVerified": true,
+  "exactSource": "https://www.teamblind.com/kr/post/%EC%A7%91-%EA%B5%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95-%EB%8B%A4-%EA%B2%AA%EA%B3%A0-%EB%8A%90%EB%82%80-%EC%A0%90-%EC%A0%95%EB%A6%AC-b0fwwaed",
+  "sourcePostId": "b0fwwaed",
+  "publicBodyReadable": true,
+  "sourceBytesPersisted": false,
+  "sourceAssetsComplete": false,
+  "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "generatedImageFallback": false,
+  "blurAllowed": false,
+  "next": "Persist permitted exact source body/media bytes with provenance/hash before stage 10/11; no login or access-control bypass."
+}
