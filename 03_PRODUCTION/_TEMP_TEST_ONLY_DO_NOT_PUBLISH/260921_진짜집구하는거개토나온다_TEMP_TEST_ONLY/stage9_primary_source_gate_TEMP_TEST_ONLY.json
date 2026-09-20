@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "candidateKey": "260916_진짜집구하는거개토나온다",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "stage": 9,
+  "state": "BLOCKED_PROVENANCE",
+  "sourcePlatform": "Blind",
+  "verifiedPublicEvidence": {
+    "title": "진짜 집구하는거 개토나온다",
+    "snippet": "아니 돈은 둘째치고 매물이 너무 없어서",
+    "authorDisplay": "삼성전자 · 힘*******",
+    "exactIndividualUrl": null,
+    "stablePostId": null
+  },
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "unblockWhen": "Exact individual Blind URL/stable post ID or another trustworthy unique identifier proving the same individual post becomes publicly resolvable without login or access-control bypass; then acquire permitted real source body/media bytes with provenance/hash.",
+  "bindingCoverRule": {
+    "blurAllowed": false,
+    "generatedImageFallback": false,
+    "realSourceMediaCoverOnlyWhenVerifiedVisualMedia": true,
+    "textOnlyCoverWithoutGeneratedImage": true,
+    "titleLargeAndHigherWithThinOutline": true,
+    "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
+  },
+  "forbiddenClaims": [
+    "full body acquired",
+    "comments acquired",
+    "source media acquired",
+    "OCR complete",
+    "vision complete",
+    "moderation complete",
+    "rights cleared",
+    "A1",
+    "P1"
+  ]
+}
