@@ -1,5 +1,11 @@
 ﻿# NEXT RUN HANDOFF
 
+## 2026-09-21 06:18 KST — discovery-only update
+- 01_DISCOVERY only: Korean-community-first public search reviewed 40+ raw/search leads and retained 3 new C1 candidates.
+- New top titles: `남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기`, `연애할때마다 염병떨던 (전)친구 (현)절교 한 후기`, `35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기`.
+- All new candidates remain A1=false / P1=false / publicationAllowed=false. No scoring, production, screenshots/images/OCR, rendering, E2E, provider/publishing, or existing production-asset edits.
+- Next discovery run: continue finding new material and exact-source verification only; do not advance lanes.
+
 ## 2026-09-21 05:25 KST — latest two-lane state
 - Refreshed `candidate-program-queue.json` from all current `data/candidates`: 1,202 candidates, C0 442 / C1 760 / A1 0 / P1 0. This incorporates the four discovery candidates that had accumulated beyond the prior 1,198 snapshot.
 - Processed exactly one next unprocessed filename-order key: `260916_직장인현실명언` (rank 48).
