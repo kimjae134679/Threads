@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T03:24:47+09:00",
+  "updatedAt": "2026-09-21T04:24:54+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "TEMP-only native WebP intake prototype successfully read the previously acquired original WebP bytes without transcoding: 600x871, 39,288 bytes, SHA-256 preserved. Canonical intake script is not changed by this prototype; production support remains separate."
+      "note": "Native WebP intake prototype previously verified exact original bytes without transcoding. This run additionally verified exact source identity for Ppomppu post 27215, but body/media bytes remain blocked because the individual page was not readable through the public automated reader. No bypass attempted."
     },
     "10_ui_exclusion": {
       "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
-      "note": "Concrete stage-10 gate run against the acquired direct WebP: provenance proves real source-media bytes, but does not prove whether the pixels themselves contain embedded UI/chrome. No OCR/vision result is fabricated. Unblock requires an actual visual review/classifier result on these exact hashed bytes or a permitted exact source screenshot."
+      "note": "Existing exact WebP still requires actual visual review/classifier evidence on the exact hashed bytes. The new 재산세 unit cannot enter stage 10 until real source image/screenshot bytes are acquired."
     },
     "11_natural_splitting": {
       "status": "PARTIAL",
@@ -19,38 +19,37 @@
     },
     "12_title_suggestion": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Added a new TEMP-only title-suggestion unit for 260916_이게맞아맞벌이육아 using only the newly verified exact Blind source and TITLE_STYLE_GUIDE. No suggestion alters slide 2+ source content or canonical A/P state."
+      "note": "Verified-source-only title suggestion unit exists for 260916_이게맞아맞벌이육아. No canonical A/P state change."
     },
     "13_browser_review": {
       "status": "PARTIAL",
-      "note": "Repository entry identity was previously pinned, but v1/v2 were explicitly rejected by the user. No rejected bundle can advance approval or execution eligibility."
+      "note": "Repository entry identity was pinned previously, but rejected v1/v2 cannot advance approval or execution eligibility."
     },
     "14_review_screen": {
       "status": "BLOCKED",
-      "note": "v1 and v2 remain explicitly rejected; approvedVersion remains null. A new CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection and browser roundtrip review."
+      "note": "approvedVersion remains null. A CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection."
     },
     "15_approval_runtime_reflection": {
       "status": "BLOCKED",
-      "note": "Requires a conforming human-selected TEMP version, exact OS download, fresh-page restore, approved/restored/execution-input digest equality, and immutable execution/PR bundle identity. executionEligible=false."
+      "note": "Requires a conforming human-selected TEMP version and digest equality through download/restore/execution input. executionEligible=false."
     },
     "16_live_publish_metrics": {
       "status": "DISABLED",
       "note": "No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."
     }
   },
+  "bindingCoverRule": {
+    "blurAllowed": false,
+    "generatedImageFallback": false,
+    "realSourceMediaCoverOnlyWhenVerifiedVisualMedia": true,
+    "textOnlyCoverWithoutGeneratedImage": true,
+    "titleLargeAndHigherWithThinOutline": true,
+    "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
+  },
   "samples": [
     {
       "candidateKey": "260916_2026회사별느낌",
-      "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-      "rejectedOutputPaths": [
-        "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1",
-        "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v2"
-      ],
       "state": "TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION",
-      "sourceBodyComplete": true,
-      "sourceAssetsComplete": false,
-      "commentsComplete": false,
       "temporaryTestOnly": true,
       "publicationAllowed": false,
       "approvedVersion": null,
@@ -58,113 +57,87 @@
     },
     {
       "candidateKey": "260916_이게맞아맞벌이육아",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이게맞아맞벌이육아_TEMP_TEST_ONLY",
-      "stage12Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이게맞아맞벌이육아_TEMP_TEST_ONLY/stage12_verified_title_suggestions.json",
       "state": "TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_이사가는아랫집",
+      "state": "TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_이시대4050특징",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_이혼가정예랑상견례두번",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_인생망한38살",
+      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_입사직후퇴사vs스테이",
+      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_입주청소부부",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_입주청소하러갔다가",
+      "state": "TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED",
+      "sourceBytesAcquired": true,
+      "sourceMediaFormat": "webp",
+      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+      "sourceMediaDimensions": {"width": 600, "height": 871},
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_재산세2천나왔네요",
+      "candidatePath": "data/candidates/260916_C0_A0_P0_재산세2천나왔네요.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_재산세2천나왔네요_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_재산세2천나왔네요_TEMP_TEST_ONLY/stage9_exact_source_asset_gate_TEMP_TEST_ONLY.json",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
       "exactSourceVerified": true,
+      "sourcePostId": "27215",
+      "sourceBodyComplete": false,
       "sourceAssetsComplete": false,
       "temporaryTestOnly": true,
       "publicationAllowed": false,
       "approvedVersion": null,
       "executionEligible": false,
-      "blocked": [
-        "real-source-screenshot-or-media-bytes",
-        "rights/privacy/safety-human-review"
-      ],
-      "next": "Do not render slide 2+ from summaries. Acquire permitted real source screenshot/media bytes first; otherwise remain blocked."
-    },
-    {
-      "candidateKey": "260916_이사가는아랫집",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_이사가는아랫집.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이사가는아랫집_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이사가는아랫집_TEMP_TEST_ONLY/stage9_public_mirror_vs_primary_verification.json",
-      "state": "TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact primary/original individual source before any body/media acquisition or rendering."
-    },
-    {
-      "candidateKey": "260916_이시대4050특징",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이시대4050특징_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이시대4050특징_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire permitted real source screenshot/media bytes with provenance/hash; then UI-chrome review may proceed. No generated fallback."
-    },
-    {
-      "candidateKey": "260916_이혼가정예랑상견례두번",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_이혼가정예랑상견례두번.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이혼가정예랑상견례두번_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이혼가정예랑상견례두번_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire permitted real source screenshot/media bytes with provenance/hash; then UI-chrome review may proceed. No generated fallback."
-    },
-    {
-      "candidateKey": "260916_인생망한38살",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_인생망한38살.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_인생망한38살_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_인생망한38살_TEMP_TEST_ONLY/stage9_primary_source_gate.json",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact primary Inven individual post URL/post ID before any body/media acquisition or rendering."
-    },
-    {
-      "candidateKey": "260916_입사직후퇴사vs스테이",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_입사직후퇴사vs스테이.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_입사직후퇴사vs스테이_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_입사직후퇴사vs스테이_TEMP_TEST_ONLY/stage9_primary_source_gate.json",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact primary Ppomppu individual post URL/post ID before any body/media acquisition or rendering."
-    },
-    {
-      "candidateKey": "260916_입주청소부부",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_입주청소부부.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소부부_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소부부_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire permitted real source screenshot/media bytes with provenance/hash; then UI-chrome review may proceed. No generated fallback."
-    },
-    {
-      "candidateKey": "260916_입주청소하러갔다가",
-      "candidatePath": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_native_intake_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED",
-      "sourceBytesAcquired": true,
-      "sourceMediaFormat": "webp",
-      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Run visual UI-chrome/crop review on the exact SHA-256-pinned WebP bytes (or permitted exact source screenshot). Do not infer from provenance alone; no crop/render until verified.",
-      "sourceMediaDimensions": {
-        "width": 600,
-        "height": 871
-      },
-      "stage10Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage10_ui_chrome_review_gate_TEMP_TEST_ONLY.json"
+      "next": "Acquire permitted real body and source image/screenshot bytes from Ppomppu post 27215 with source URL/provenance/hash; do not bypass access controls."
     }
   ]
 }
