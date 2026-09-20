@@ -1,10 +1,10 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-21 01:27 KST
+Updated: 2026-09-21 02:16 KST
 
 ## 01_DISCOVERY latest
-- Latest discovery-only run retained 2 new C1 candidates: `헬스장에서 얼떨결에 번호 따일 뻔한 썰`, `[스압]20년 만에 전재산 천만원 된 썰`.
-- Restricted sources were not bypassed; those candidates remain A0/P0 and publicationAllowed=false.
+- Latest discovery-only run reviewed 40+ raw/search leads and retained 3 new C1 candidates: `친구 결혼하면 원래 멀어지는건가 싶은 후기`, `돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기`, `쿠팡 계약직 3주차 후기`.
+- Restricted sources were not bypassed; all new candidates remain A0/P0 and publicationAllowed=false.
 
 ## Sequential candidate lane
 - Queue refreshed from every current `data/candidates` markdown file after pulling main: 1,190 candidates total; the 2 newest 260921 candidates are included.
