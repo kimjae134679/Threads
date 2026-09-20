@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T09:28:00+09:00",
+  "updatedAt": "2026-09-20T10:28:00+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {"status":"PARTIAL","note":"Source-evidence map links verified public body to actual eight rendered files. Real source media bytes remain unacquired; no login/access-control bypass or invented bytes."},
     "10_ui_exclusion": {"status":"PARTIAL","note":"Crop-review gate remains fail-closed. Current source is text-only and no real screenshot/media bytes exist, so synthetic SVG cannot prove real UI-chrome exclusion."},
     "11_natural_splitting": {"status":"PARTIAL","note":"Actual 8-slide v1 uses verified source order and natural topic grouping rather than raw fixed-length slicing."},
-    "12_title_suggestion": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_title-evidence-gate.json binding the three suggestions and selected TEMP v1 title to the verified source title/body plus TITLE_STYLE_GUIDE. It explicitly cannot imply approval or C/A/P upgrade."},
-    "13_browser_review": {"status":"PARTIAL","note":"Deterministic review bundle exists, but actual OS download -> fresh-page restore is still unobserved."},
-    "14_review_screen": {"status":"PARTIAL","note":"Review metadata, bundle manifest, and static visual contract point at the actual eight v1 SVG files plus index.html. approvedVersion remains null; wiring is not approval."},
-    "15_approval_runtime_reflection": {"status":"BLOCKED","note":"Stage-15 execution contract requires human TEMP-version selection, exact OS download, fresh-page restore, approved/restored/execution-input digest equality, and immutable execution/PR bundle identity. Approval/digest fields remain null/false and executionEligible=false."},
+    "12_title_suggestion": {"status":"PARTIAL","note":"TEMP_TEST_ONLY_title-evidence-gate.json binds suggestions and selected TEMP title to verified source title/body plus TITLE_STYLE_GUIDE; it cannot imply approval or C/A/P upgrade."},
+    "13_browser_review": {"status":"PARTIAL","note":"Added TEMP_TEST_ONLY_restore-preflight.json defining required bundle files and fail-closed checks before download/restore can count. Actual OS browser download and fresh-page restore remain unobserved."},
+    "14_review_screen": {"status":"PARTIAL","note":"Review metadata, deterministic bundle manifest, visual contract, and restore preflight point at the actual eight v1 SVG files plus index.html. approvedVersion remains null; wiring is not approval."},
+    "15_approval_runtime_reflection": {"status":"BLOCKED","note":"Requires human TEMP-version selection, exact OS download, fresh-page restore, approved/restored/execution-input digest equality, and immutable execution/PR bundle identity. Approval/digest fields remain null/false and executionEligible=false."},
     "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
   },
   "samples": [{
@@ -21,14 +21,15 @@
     "actualOutputPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/index.html",
     "cropReviewGatePath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_crop-review-gate.json",
     "titleEvidenceGatePath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_title-evidence-gate.json",
+    "restorePreflightPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_restore-preflight.json",
     "stage15ExecutionContractPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1/TEMP_TEST_ONLY_stage15-execution-contract.json",
-    "state":"TEMP_TEST_ACTUAL_VISUAL_OUTPUT_V1_TITLE_EVIDENCE_BOUND_STAGE10_AND_STAGE15_FAIL_CLOSED",
+    "state":"TEMP_TEST_ACTUAL_VISUAL_OUTPUT_V1_RESTORE_PREFLIGHT_FAIL_CLOSED",
     "sourceBodyComplete":true,
     "sourceAssetsComplete":false,
     "commentsComplete":false,
     "temporaryTestOnly":true,
     "publicationAllowed":false,
     "blocked":["real-source-screenshots-or-permitted-source-assets","full-comment-thread","rights/privacy/defamation/human-approval","approved-version-not-selected","review-screen-actual-download-fresh-page-restore-not-yet-observed","approved-restored-execution-digests-not-observed-equal"],
-    "next":"Continue another safe stage 9-14 unit while approval is absent; stage 15 must remain fail-closed until all required direct observations exist."
+    "next":"Perform direct browser download/fresh-page restore only when the environment and explicit human TEMP-version selection make that observation possible; otherwise continue another safe stage 9-14 unit. Stage 15 remains fail-closed."
   }]
 }
