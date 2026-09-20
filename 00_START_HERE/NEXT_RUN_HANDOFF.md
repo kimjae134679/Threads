@@ -1,5 +1,11 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 02:25 KST — hourly two-lane run
+- Queue refreshed from all current `data/candidates`: 1,193 candidates; C0 442 / C1 751 / A0 1,193 / A1 0 / P0 1,193 / P1 0.
+- Candidate lane processed exactly one next unprocessed key: `260916_자취하지마세요` (current rank 45 after refresh). Ppomppu official 자취포럼 listing verifies exact title `자취하지마세요`, post number `21310`, date 2026-08-26. Canonical individual URL is recorded as `https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310`; automated individual-page fetch returned 403, so no body/assets were claimed. Logical C1, A0/P0, blocker `BLOCKED_SOURCE_ASSET_BYTES`.
+- TEMP lane: added `webp-intake-prototype_TEMP_TEST_ONLY.mjs` and `stage9_webp_native_intake_TEMP_TEST_ONLY.json` under the existing `260921_입주청소하러갔다가_TEMP_TEST_ONLY` folder. It reads original WebP natively without transcoding and verified 600x871 / 39,288 bytes / SHA-256 `37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6`. Prototype only; canonical intake support/A1/P1 unchanged.
+- No publish, P1, rights/privacy/safety approval, OCR/vision claim, or live metrics.
+
 Updated: 2026-09-21 02:16 KST
 
 ## 01_DISCOVERY latest

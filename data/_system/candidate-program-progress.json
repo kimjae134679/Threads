@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T01:27:32+09:00",
+  "lastCycleAt": "2026-09-21T02:25:44+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -324,6 +324,15 @@
       "assetStage": "A0",
       "blocker": "Canonical source-intake script cannot currently ingest WebP dimensions; no A1/production upgrade from ephemeral acquisition.",
       "unblockWhen": "Add provenance-preserving WebP intake support or obtain independently permitted original PNG/JPEG bytes, then persist/verify source asset before editorial production.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_자취하지마세요",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "blocker": "BLOCKED_SOURCE_ASSET_BYTES",
+      "exactSource": "https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310",
+      "sourceIdentityEvidence": "Ppomppu official 자취포럼 listing: post 21310, title 자취하지마세요, 2026-08-26; individual view returned 403 so body not claimed",
       "publicationAllowed": false
     }
   ],

@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T01:27:32+09:00",
+  "updatedAt": "2026-09-21T02:25:44+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "For 260916_입주청소부부, exact public Inven post 2728192 was verified. Real screenshot/media bytes were not acquired in this unit, so acquisition remains fail-closed."
+      "note": "TEMP-only native WebP intake prototype successfully read the previously acquired original WebP bytes without transcoding: 600x871, 39,288 bytes, SHA-256 preserved. Canonical intake script is not changed by this prototype; production support remains separate."
     },
     "10_ui_exclusion": {
       "status": "PARTIAL",
@@ -150,8 +150,8 @@
       "candidateKey": "260916_입주청소하러갔다가",
       "candidatePath": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
       "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_intake_blocker.json",
-      "state": "TEMP_STAGE9_REAL_WEBP_BYTES_ACQUIRED_INTAKE_BLOCKED",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_native_intake_TEMP_TEST_ONLY.json",
+      "state": "TEMP_STAGE9_NATIVE_WEBP_INTAKE_PROTOTYPE_VERIFIED",
       "sourceBytesAcquired": true,
       "sourceMediaFormat": "webp",
       "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
@@ -159,7 +159,11 @@
       "publicationAllowed": false,
       "approvedVersion": null,
       "executionEligible": false,
-      "next": "Add provenance-preserving WebP dimension/intake support, then rerun stage 9 before any stage-10 UI-chrome review. Do not transcode and pretend it is original bytes."
+      "next": "Prototype proves provenance-preserving native WebP dimension intake. Do not treat this as canonical production support or A1. Next safe TEMP unit may test stage 10 only against real screenshot bytes; attached source media alone does not prove UI-chrome crop behavior.",
+      "sourceMediaDimensions": {
+        "width": 600,
+        "height": 871
+      }
     }
   ]
 }

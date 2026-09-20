@@ -1,0 +1,14 @@
+﻿{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "type": "TEMP_TEST_ONLY_WEBP_INTAKE_PROTOTYPE",
+  "file": "03_PRODUCTION\\_TEMP_TEST_ONLY_DO_NOT_PUBLISH\\260921_?낆＜泥?냼?섎윭媛붾떎媛_TEMP_TEST_ONLY\\source_media_01.webp",
+  "byteLength": 39288,
+  "sha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+  "webpChunk": "VP8 ",
+  "width": 600,
+  "height": 871,
+  "provenancePreserved": true,
+  "conversionPerformed": false,
+  "note": "Prototype only. Demonstrates native WebP dimension intake without converting or mutating source bytes. Does not imply rights/privacy/moderation/A1/P1."
+}
