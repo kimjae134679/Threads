@@ -57,12 +57,16 @@ class Image {
   }
 }
 let serial = 0;
+const messageListeners = new Map(), cutMessages = [];
+const popup = { postMessage(payload, origin) { cutMessages.push({ payload, origin }); } };
 const window = { ThreadsSourceIntakeContext: {
   getSelectedId: () => selectedId, getCandidate: (id) => candidates[id],
   saveSourcePackage(id, value) { candidates[id].sourcePackage = value; },
-} };
+}, open: () => popup, addEventListener(type, listener) { messageListeners.set(type, listener); },
+removeEventListener(type) { messageListeners.delete(type); } };
 const sandbox = { window, document, Image, URL: { createObjectURL: () => `blob:test-${++serial}`, revokeObjectURL() {} },
-  setTimeout(callback) { callback(); }, console };
+  location: { origin: 'http://localhost:4173' },
+  setTimeout(callback, delay) { if (delay !== 60000) callback(); }, console };
 vm.createContext(sandbox);
 for (const file of ['source-package.js', 'source-carousel.js', 'source-intake.js']) vm.runInContext(fs.readFileSync(new URL('../app/' + file, import.meta.url), 'utf8'), sandbox);
 documentListeners.DOMContentLoaded();
@@ -79,6 +83,13 @@ assert.equal(pkg.assets[1].sourceHeight, 1500);
 assert.equal(pkg.assets[1].acquisitionState, 'USER_PROVIDED');
 assert.equal(pkg.publicationAllowed, false);
 assert.equal(candidates.a.sourcePackage, pkg);
+elements.get('#openSourceCutEditorBtn').listeners.click();
+messageListeners.get('message')({ source: popup, origin: 'https://untrusted.example', data: { type: 'threads-cut-ready' } });
+assert.equal(cutMessages.length, 0, 'Only the same-origin editor may receive original files');
+messageListeners.get('message')({ source: popup, origin: 'http://localhost:4173', data: { type: 'threads-cut-ready' } });
+assert.equal(cutMessages[0].payload.source.candidateId, 'a');
+assert.equal(cutMessages[0].payload.files[0].name, 'original.png');
+assert.equal(cutMessages[0].origin, 'http://localhost:4173');
 await api.exportPngSet();
 assert.ok(downloads >= 3, 'Cover plus all long-body slices must be exported');
 for (const args of drawCalls.filter((call) => call.length === 9)) {

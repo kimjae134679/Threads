@@ -1,0 +1,60 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import { spawnSync } from 'node:child_process';
+
+const window = {};
+for (const name of ['source-cut-model.js', 'source-cut-zip.js']) vm.runInNewContext(fs.readFileSync(new URL('../app/' + name, import.meta.url), 'utf8'), { window, Blob, TextEncoder });
+const m = window.ThreadsSourceCut;
+const project = m.newProject();
+m.addAsset(project, { name: 'long.png', width: 1000, height: 10000, dataUrl: 'data:image/png;base64,YQ==', kind: 'image' });
+project.title = '북향 vs 남향\n차이가 이 정도?';
+project.source = { candidateId: 'a', sourceText: '원문 그대로' };
+project.appearance.highlightWords = '북향, 남향';
+project.assets[0].body = { x: 60, y: 200, width: 800, height: 9600 };
+project.assets[0].cuts = [1800, 4500, 8000];
+const pieces = m.bodySlices(project.assets[0]);
+assert.equal(pieces.length, 4);
+assert.equal(pieces.reduce((n, r) => n + r.height, 0), 9600);
+assert.equal(pieces[0].y, 200);
+assert.equal(pieces.at(-1).y + pieces.at(-1).height, 9800);
+pieces.slice(1).forEach((piece, i) => assert.equal(piece.y, pieces[i].y + pieces[i].height, 'Manual cuts must have no gaps or overlaps'));
+const basePoint = m.pointer({ clientX: 200, clientY: 300 }, { left: 0, top: 0 }, { left: 0, top: 600 }, .5);
+assert.equal(basePoint.y, 1800);
+const zoomedPoint = m.pointer({ clientX: 400, clientY: 300 }, { left: 0, top: 0 }, { left: 0, top: 1500 }, 1);
+assert.equal(zoomedPoint.y, basePoint.y, 'Scroll and zoom must resolve to original coordinates');
+assert.deepEqual(JSON.parse(JSON.stringify(m.normalizeCuts(project.assets[0], [100, 200, 500, 500, 501, 9000, 9800]))), [500, 9000]);
+project.complete = true;
+const restored = m.restore(JSON.parse(JSON.stringify(project)));
+assert.equal(restored.complete, false);
+assert.equal(restored.publicationAllowed, false);
+assert.equal(restored.source.sourceText, '원문 그대로');
+assert.equal(restored.assets[0].dataUrl, project.assets[0].dataUrl);
+assert.equal(JSON.stringify(m.slides(restored)), JSON.stringify(m.slides(project)), 'Image crops and cuts survive project restoration');
+const broken = JSON.parse(JSON.stringify(project)); broken.assets[0].dataUrl = 'https://example.com/tracker.png';
+assert.throws(() => m.restore(broken), /올바르지/);
+assert.equal(m.appearance({ highlightColor: 'red', outlineWidth: 500 }).highlightColor, '#ffe34f');
+assert.equal(m.appearance({ outlineWidth: 500 }).outlineWidth, 20);
+const bodyCopy = JSON.stringify(project.assets[0].body);
+m.addAsset(project, { name: 'second.png', width: 600, height: 600, dataUrl: 'data:image/png;base64,YQ==', kind: 'image' });
+assert.equal(JSON.stringify(project.assets[0].body), bodyCopy);
+assert.equal(m.slides(project).at(-1).assetIndex, 1);
+const calls = [];
+const ctx = { font: '', scale() {}, drawImage(...args) { calls.push(['image', ...args.slice(1)]); },
+  createLinearGradient() { return { addColorStop() {} }; }, fillRect() {},
+  measureText(text) { return { width: Array.from(text).length * parseFloat(this.font.match(/([\d.]+)px/)?.[1] || '40') }; },
+  strokeText(text) { calls.push(['stroke', text, this.lineWidth]); },
+  fillText(text) { calls.push(['fill', text, this.fillStyle]); } };
+const canvas = { getContext: () => ctx };
+m.render(canvas, {}, m.slides(project)[0], project);
+assert.ok(calls.some((c) => c[0] === 'stroke' && c[2] === 8));
+assert.ok(calls.some((c) => c[0] === 'fill' && c[2] === '#ffe34f'), 'Highlighted title characters use the selected color');
+assert.ok(calls.some((c) => c[0] === 'fill' && c[2] === '#ffffff'));
+const wrapped = m.splitLines(ctx, '북향남향\n끝', 2 * 40); assert.equal(wrapped.map((l) => l.text).join(''), '북향남향끝');
+assert.throws(() => m.render(canvas, {}, { type: 'body', rect: { x: 0, y: 0, width: 100, height: 10000 } }, project), /분할선/);
+const encoded = new TextEncoder().encode('123456789');
+assert.equal(window.ThreadsSourceCutZip.crc32(encoded), 0xcbf43926);
+const archive = window.ThreadsSourceCutZip.zip([{ name: 'cover.png', data: encoded }, { name: '본문.json', data: new TextEncoder().encode('{"한글":true}') }]);
+const verified = spawnSync('python3', ['-c', 'import sys,io,zipfile; z=zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read())); assert z.testzip() is None; assert z.read("cover.png")==b"123456789"; assert z.read("본문.json").decode()==\'{"한글":true}\'; print("ZIP verified")'], { input: Buffer.from(await archive.arrayBuffer()), encoding: 'utf8' });
+assert.equal(verified.status, 0, verified.stderr);
+console.log('Manual crop geometry, scrolling coordinates, colored outlines, project restore and independent ZIP reader: PASS');

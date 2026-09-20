@@ -272,6 +272,25 @@
         if (generation === buildGeneration && !packagePreview) $('#sourcePackageStatus').textContent = `생성 차단: ${error.message}`;
       }
     });
+    $('#openSourceCutEditorBtn')?.addEventListener('click', () => {
+      syncSelection();
+      const candidate = selectedCandidate(), values = fields();
+      if (!candidate) return invalidate('먼저 후보를 선택하세요.');
+      if (values.mode === 'images' && !files.length) return invalidate('원문 이미지를 먼저 선택하세요.');
+      if (values.mode === 'text' && !values.text.trim()) return invalidate('원문 본문을 먼저 입력하세요.');
+      const payload = { type: 'threads-cut-input', title: values.hook,
+        source: { candidateId: candidate.id, title: candidate.title, url: candidate.url || '', inputMode: values.mode },
+        sourceText: values.mode === 'text' ? values.text : '', files: values.mode === 'text' ? [] : files.map((entry) => entry.file) };
+      const popup = window.open('./source-cut-editor.html#intake', '_blank');
+      if (!popup) return invalidate('팝업이 차단되었습니다. 이 사이트의 새 창 열기를 허용하세요.');
+      const onReady = (event) => {
+        if (event.source !== popup || event.origin !== location.origin || event.data?.type !== 'threads-cut-ready') return;
+        popup.postMessage(payload, location.origin);
+        window.removeEventListener('message', onReady);
+      };
+      window.addEventListener('message', onReady);
+      setTimeout(() => window.removeEventListener('message', onReady), 60000);
+    });
     $('#sourceAssetList').addEventListener('change', (event) => {
       const row = event.target.closest('.source-asset-row[data-index]');
       if (!row) return;

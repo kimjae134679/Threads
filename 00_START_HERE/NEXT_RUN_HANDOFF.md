@@ -1,3 +1,20 @@
+# Latest production update — 2026-09-20
+
+The user approved the source-cut editor and requested clearer split-line guidance, long-source scrolling, thicker title outlines and word color emphasis. Canva is explicitly deferred. This is authorized 03 production work; the unrelated Discovery handoff below remains preserved.
+
+Baseline: `eddbc9d49df2aa74fdc48e901aa925b28761d32c`; review branch `codex/audit-reliability-20260919`, PR #1.
+
+- Added `app/source-cut-editor.html`, CSS, editor script, pure model and ZIP writer. Existing source intake opens the editor with same-origin file/text/title handoff.
+- Virtual viewport supports scroll/zoom, region movement/resizing and edge auto-scroll. Absolute source coordinates preserve split positions. Split labels identify the preceding/next page, with jump/edit/delete controls.
+- Default outline 8px (2–20px), literal comma-separated highlighted words and editable colors. No image blur or shadow. Original automatic renderer remains separate.
+- Project JSON includes original images and editable settings. Restore validates source dimensions and resets completeness confirmation. ZIP contains cover/body PNGs plus source-cut manifest. No reverse write to legacy Source Package approvals or actual publication.
+- Local full check: 46 suites; focused same-origin handoff and model regressions passed. Native Canvas + DOM doubles exercised the real editor script through scroll/zoom, cuts, styles, project restore and ZIP output; independent ZIP read passed. HTTP routes 200. Browser/Windows E2E remains unverified. No new source acquisition or C/A/P changes.
+- User guide: `docs/SOURCE_CUT_EDITOR.md`. An actual ZIP-produced cover was visually inspected locally using 12px outline; default remains 8px. The user-derived preview image was excluded from the public PR after automatic approval review rejected its external disclosure.
+- Next: real browser interaction/download review on the user's runtime; connect review assets only after that. Do not resume Canva unless requested.
+- Workspace: `/workspace/scratch/7dc461d71eca/Threads` on Linux. No Windows installations or relocations. Windows AI installation-root policy not applicable.
+
+---
+
 # Latest cover sizing update — 2026-09-19 KST
 
 The user explicitly requested full-bleed image covers, automatic canvas adjustment for awkward source dimensions, and a complete progress/remaining-work list. This continues the authorized 03 production work in the review PR; unrelated Discovery remains scoped to its own handoff below.

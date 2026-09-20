@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>원문 컷 편집기</title><link rel="stylesheet" href="./source-cut-editor.css"></head>
+<body>
+<main id="source-cut-editor">
+  <header><div><h1>원문 컷 편집기</h1><p id="sourceInfo">원문 범위와 페이지가 나뉠 위치를 직접 정하세요.</p></div>
+    <div class="actions"><label class="file-button">원문 이미지 추가<input id="files" type="file" accept="image/png,image/jpeg,image/webp" multiple></label>
+      <label class="file-button">편집 파일 열기<input id="projectFile" type="file" accept="application/json,.json"></label>
+      <button id="saveProject" type="button">편집 저장</button></div></header>
+  <p id="message" role="status" aria-live="polite">긴 글은 전체 페이지 캡처 또는 순서대로 찍은 여러 장의 캡처를 넣으세요.</p>
+  <div class="editor-grid">
+    <section class="source-panel" aria-label="원문과 분할선">
+      <div class="actions"><label>원문<select id="asset"></select></label><button id="moveUp" type="button">앞으로</button><button id="moveDown" type="button">뒤로</button>
+        <label>확대<select id="zoom"><option value="1">너비 맞춤</option><option value="1.5">150%</option><option value="2">200%</option></select></label></div>
+      <div class="actions" aria-label="편집 도구">
+        <button data-mode="pan" type="button" aria-pressed="true">원문 이동</button>
+        <button data-mode="cover" type="button" aria-pressed="false">표지 범위</button>
+        <button data-mode="body" type="button" aria-pressed="false">본문 범위</button>
+        <button data-mode="cut" type="button" aria-pressed="false">여기서 페이지 나누기</button>
+      </div>
+      <p class="guide" id="modeHelp">원문 안에서 휠로 스크롤하거나 드래그해 이동하세요.</p>
+      <div id="viewport" tabindex="0" aria-label="긴 원문 편집 영역. 방향키 또는 휠로 스크롤합니다."><div id="spacer"><canvas id="sourceCanvas" role="img" aria-label="원문과 선택 범위"></canvas></div></div>
+      <p id="position" class="small">원본 좌표로 저장되므로 스크롤해도 분할선은 같은 글 위치에 남습니다.</p>
+      <div class="coordinates" id="coordinates"><label>왼쪽<input id="rectX" type="number" min="0"></label><label>위쪽<input id="rectY" type="number" min="0"></label><label>너비<input id="rectWidth" type="number" min="8"></label><label>높이<input id="rectHeight" type="number" min="8"></label></div>
+      <div class="actions"><button id="fullBody" type="button">본문 전체 선택</button><button id="showCover" type="button">표지 위치로 이동</button></div>
+      <h2>페이지 경계</h2><p class="small">선을 하나 넣으면 두 장이 됩니다. 선 위까지 이전 장, 아래부터 다음 장입니다. 선을 끌거나 아래 숫자를 바꾸세요.</p>
+      <div id="cutList"></div>
+    </section>
+    <section class="result-panel" aria-label="제목과 결과">
+      <label>대문 글씨<textarea id="title" rows="2" maxlength="240" placeholder="짧고 눈에 띄는 제목"></textarea></label>
+      <div class="settings"><label>검정 테두리 <output id="outlineValue">8px</output><input id="outline" type="range" min="2" max="20" step="1" value="8"></label>
+        <label>제목 아래쪽 위치 <output id="titleBottomValue">83%</output><input id="titleBottom" type="range" min="42" max="94" value="83"></label>
+        <label>기본 글씨색<input id="color" type="color" value="#ffffff"></label><label>강조 색상<input id="highlightColor" type="color" value="#ffe34f"></label></div>
+      <label>강조할 단어 · 쉼표로 구분<input id="highlightWords" type="text" maxlength="500" placeholder="북향, 남향"></label>
+      <p class="small">입력한 단어가 제목에 나오는 모든 위치에 강조 색상이 적용됩니다.</p>
+      <label class="check"><input id="raw" type="checkbox">표지를 제목 없는 원본 조각으로 받기</label>
+      <p id="previewError" role="alert"></p><div id="coverPreview"></div>
+      <div class="actions"><label class="check"><input id="complete" type="checkbox">본문 범위·순서·분할 결과를 확인했음</label><button id="exportZip" type="button" disabled>전체 PNG를 ZIP으로 받기</button></div>
+      <h2>본문 미리보기 <span id="pageCount"></span></h2><div id="bodyPreview"></div>
+    </section>
+  </div>
+</main>
+<script src="./source-cut-model.js"></script><script src="./source-cut-zip.js"></script><script src="./source-cut-editor.js"></script>
+</body></html>
