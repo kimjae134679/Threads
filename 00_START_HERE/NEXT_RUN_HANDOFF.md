@@ -1,16 +1,19 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-21 00:17 KST
+Updated: 2026-09-21 00:27 KST
 
-## 01_DISCOVERY — latest discovery-only run
-- Reviewed 40+ raw/search leads using Korean-community-first public searches; retained 5 new C1 candidates.
-- Top new titles: `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`, `쌍둥이 언니들의 시댁이 너무나 다른 후기`, `가난한(?) 시댁에 시집간 후기.`, `부부 돈관리 맡는 덬 어떻게 하는지 궁금한 후기`, `여행와서 눈탱이 맞을뻔한 후기`.
-- New candidates remain A1=false, P1=false, publicationAllowed=false. Restricted sources were not bypassed; no screenshots/images/OCR/scoring/production/rendering/publishing were performed.
-- Continue future discovery runs with new-material discovery plus exact-source verification only.
+## Sequential candidate lane
+- Queue refreshed from every current `data/candidates` markdown file after pulling latest main, including the five new 260921 discovery candidates.
+- Processed exactly one next unprocessed filename-order candidate: `260916_입주청소부부`.
+- Exact public individual source verified: `https://www.inven.co.kr/board/webzine/2097/2728192` (post ID `2728192`). Candidate title and recorded sentence match the public page.
+- Logical C0 verification passed, but C1 is `BLOCKED_SOURCE_ASSET_BYTES`: no permitted real screenshot/media bytes with provenance/hash were acquired. A0/P0 and publicationAllowed=false remain.
+- Do not re-evaluate blocked entries unless their recorded unblock condition changes. Continue with the next unprocessed filename-order candidate next run.
 
-## Sequential candidate/TEMP lane — preserved prior state (not executed by discovery automation)
-- Prior handoff reported 1183 candidates (433 C0 / 750 C1; A1=0, P1=0) before this discovery run.
-- Prior sequential lane processed `260916_입사직후퇴사vs스테이` as BLOCKED_PROVENANCE and created its TEMP source-gate record. This discovery run did not touch that lane or any production artifact.
+## TEMP TEST ONLY lane
+- Added `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소부부_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json`.
+- This is only a stage-9 exact-source/asset gate. `temporaryTestOnly=true`, `publicationAllowed=false`, approvedVersion=null, executionEligible=false.
+- Binding cover/body rules remain: no blur; no generated-image fallback; source media cover only when verified; slide 2+ original screenshot/media only in source order.
+- Stage 10+ for this unit remains blocked until real source bytes are acquired through permitted public access.
 
 ## Publication ownership / safety
-Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. Restricted sources must not be bypassed; no missing body/comments/metrics/screenshots/media/OCR/rights/moderation state may be invented.
+Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. No real publishing or metrics collection was performed.
