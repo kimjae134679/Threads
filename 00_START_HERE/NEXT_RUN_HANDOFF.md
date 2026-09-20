@@ -1,15 +1,16 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 16:27 KST
+Updated: 2026-09-20 17:16 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only note: `01_DISCOVERY/ops/259-sol.md`.
-- That run reviewed 40+ raw/search leads and retained 15 new exact-URL C1 candidates with readable public body text.
+- Latest discovery-only note: `01_DISCOVERY/ops/261-sol.md`.
+- This run reviewed 40+ raw/search leads and retained 15 new exact-URL C1 candidates: 13 readable public text bodies and 2 image-dependent Ppomppu candidates explicitly marked `본문 미확인` without image download/OCR.
 - All discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false unless their own workflow explicitly changes them.
 - Comments were not read; only observed metrics were recorded. Continue new Korean-community discovery and exact-source verification only; restricted sources must not be bypassed.
+- Top new titles: `10년동안 날 감쓰 취급하던 친구 손절 후기`, `직장인 5년차 동료때문에 한계점 온 후기`, `선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기`, `32 24 이 결혼 하시나요?`, `회사 사장이 갑자기 자폐테스트 시킨 썰`.
 
 ## Sequential candidate/TEMP lane — latest
 - Latest sequential/TEMP note: `01_DISCOVERY/ops/260-sol.md`.
