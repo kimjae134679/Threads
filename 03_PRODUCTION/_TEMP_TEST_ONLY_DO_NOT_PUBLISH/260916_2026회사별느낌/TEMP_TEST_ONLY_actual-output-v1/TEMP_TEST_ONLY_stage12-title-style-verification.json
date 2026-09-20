@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 12,
+  "unit": "verified-source-title-style-gate",
+  "sampleCandidateKey": "260916_2026회사별느낌",
+  "rule": "Short title suggestions may use only verified source content plus 01_DISCOVERY/TITLE_STYLE_GUIDE.md. Do not introduce claims, names, numbers, reactions, or scene details absent from acquired evidence.",
+  "coverRule": {
+    "blur": false,
+    "realSourceMediaOnlyWhenVerifiedSourceHasVisualMedia": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "generatedImageFallback": false,
+    "largeTitleHigherWithThinOutline": true,
+    "slide2PlusPreserveVerifiedOriginalOrderAndContent": true
+  },
+  "verificationState": "PARTIAL_FAIL_CLOSED",
+  "notProvenByThisUnit": [
+    "human title approval",
+    "real source media acquisition",
+    "rights/privacy/safety clearance",
+    "browser download and fresh-page restore",
+    "approved/restored/execution digest equality",
+    "A1 or P1 eligibility"
+  ],
+  "executionEligible": false,
+  "livePublishingEnabled": false
+}
