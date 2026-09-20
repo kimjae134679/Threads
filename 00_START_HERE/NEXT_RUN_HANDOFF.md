@@ -1,8 +1,24 @@
+# Installed Windows build — 2026-09-20
+
+Code commit: `592434f25d783d96ecb6ef3c19410a3497f958af`. Native smoke and Windows x64 packaging passed on this exact code. The packaged app was launched and its process was responsive with the editor window title; the desktop shortcut and packaged history module were verified.
+
+- Launch: desktop shortcut `원문 컷 편집기.lnk`.
+- Installed EXE: `C:\Users\user\AppData\Local\Programs\ThreadsCutEditor\app\Threads Cut Editor.exe`.
+- Final ZIP: `C:\Users\user\AppData\Local\Programs\ThreadsCutEditor\Threads-Cut-Editor-0.1.0-Windows-x64.zip`.
+- ZIP SHA-256: `95F4F65F3D41485C06675627AAC54560A5154462CEBE246B5F5E47C1730B9BD7`.
+- Reproducible source: the same Programs folder's `source` directory; verification report: `verification-report.json`.
+- The standard per-user Programs folder avoids elevation; configured `C:\Program Files\_My\AI` was absent. Existing projects were not moved. Moving the app requires updating the desktop shortcut target/working directory; keep EXE resources together. User references are separate under Electron userData and can be opened with the editor button.
+- Owned smoke profile, test screenshots and setup probe were removed. Final ZIP/app/source/report retained; remote connection service left running.
+- Verification: full local check 50 suites / 153 syntax files before final refinements, focused history/syntax checks afterward, GitHub Actions syntax passed on the code commit; actual Windows 18000px/3-tile capture, public HTTPS capture, editor import, spacing/opinion/font preset and private source/hash/JSONL persistence passed.
+- Remaining: user review of real post outputs, 04 review handoff, future automation from approved examples. No automatic training, Canva integration or external publication. Both existing PRs stay unmerged. User reference images/logs are not in GitHub.
+
+---
+
 # Final desktop verification — user additions
 
 Native Windows smoke passed on device KJW using the actual Electron app: 18000px controlled page -> three continuous PNG tiles, live https://example.com/ capture, app-button capture -> editable source, per-page spacing and opinion text, Cut Gothic 800 preset, private reference JSONL/source hashing. Remote Node is v24.16.0. Smoke uses a separate temporary userData profile, not real user presets/reference folders.
 
-Final refinements preserve the initial import before later edits, flush committed gestures/input changes into the log, retain the first preset selection, and flush the latest private reference before closing the app. Packaging/install/shortcut confirmation is recorded after completion. Local full regression prior to these refinements: 50 suites / 153 JS syntax files; focused history checks remain passing.
+Final refinements preserve the initial import before later edits, flush committed gestures/input changes into the log, retain the first preset selection, and flush the latest private reference before closing the app. Final packaging, installation and shortcut launch passed; see the entry above. Local full regression prior to these refinements: 50 suites / 153 JS syntax files; focused history checks remain passing.
 
 ---
 
