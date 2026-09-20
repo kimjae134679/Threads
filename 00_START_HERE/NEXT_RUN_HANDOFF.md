@@ -1,6 +1,13 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-21 00:27 KST
+Updated: 2026-09-21 01:16 KST
+
+## 01_DISCOVERY latest
+- Discovery-only run reviewed 40+ Korean-community-first public search leads and retained 2 new C1 candidates.
+- New titles: `헬스장에서 얼떨결에 번호 따일 뻔한 썰`, `[스압]20년 만에 전재산 천만원 된 썰`.
+- Restricted sources were not bypassed. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, provider work, or publishing.
+- New candidates remain A1=false, P1=false, publicationAllowed=false.
+- Next discovery run should continue finding new material and exact-source verification only; do not advance into production.
 
 ## Sequential candidate lane
 - Queue refreshed from every current `data/candidates` markdown file after pulling latest main, including the five new 260921 discovery candidates.
