@@ -16,6 +16,7 @@
     busy = value;
     document.querySelectorAll('button,input,textarea,select').forEach((el) => { el.disabled = value; });
     if (!value) syncExport();
+    if ($('captureUrlButton')) $('captureUrlButton').disabled = value || !window.ThreadsCutDesktop;
   }
   function syncExport() { $('exportZip').disabled = busy || !previewReady || !project.complete; }
   function changed(body = false) {
@@ -171,6 +172,35 @@
       download(window.ThreadsSourceCutZip.zip(entries), 'source-cut-images.zip'); message('ZIP 다운로드를 요청했습니다. 브라우저 다운로드 목록에서 확인하세요.');
     } catch (error) { message(error.message); }
     finally { setBusy(false); }
+  }
+  const desktop = window.ThreadsCutDesktop;
+  if ($('captureUrlButton')) {
+    $('captureUrlButton').disabled = !desktop;
+    if (desktop) {
+      $('captureHelp').textContent = '공개 페이지를 아래까지 불러와 캡처합니다. 아주 긴 글은 여러 원문 이미지로 이어서 열립니다. 로그인 화면이나 무한 스크롤은 직접 캡처를 사용하세요.';
+      desktop.onProgress(({ percent, message: text }) => { $('captureProgress').value = percent; message(text); });
+      $('cancelCapture').addEventListener('click', () => desktop.cancel().catch((error) => message(error.message)));
+      $('captureUrlButton').addEventListener('click', async () => {
+        if (busy) return;
+        const input = $('captureUrl').value.trim();
+        if (!input) return message('먼저 게시글 링크를 입력하세요.');
+        if (dirty && !window.confirm('새 링크로 현재 편집을 교체합니다. 필요한 경우 취소 후 편집 저장을 먼저 해주세요.')) return;
+        setBusy(true); $('cancelCapture').hidden = false; $('cancelCapture').disabled = false;
+        $('captureProgress').hidden = false; $('captureProgress').value = 0;
+        try {
+          const result = await desktop.capture(input);
+          if (!result.ok) throw new Error(result.error);
+          const next = M.newProject();
+          next.title = result.title;
+          next.source = { title: result.title, url: result.url, inputMode: 'images' };
+          for (const a of result.assets) M.addAsset(next, { ...a, kind: 'image' });
+          await openProject(next); dirty = true;
+          $('captureProgress').value = 100;
+          message(`캡처 ${result.assets.length}장을 열었습니다. 본문이 모두 보이는지 확인하고 표지와 분할선을 지정하세요.`);
+        } catch (error) { message(error.message); $('captureProgress').hidden = true; }
+        finally { setBusy(false); $('cancelCapture').hidden = true; }
+      });
+    }
   }
   $('files').addEventListener('change', () => acquire([...$('files').files]));
   async function openProject(value) {

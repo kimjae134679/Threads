@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const files = fs.readdirSync(root).filter((name) => /\.(mjs|js)$/.test(name));
 for (const directory of ["app", "scripts", "test"]) collect(directory);
+files.push(...fs.readdirSync(path.join(root, "desktop")).filter((name) => name.endsWith(".cjs")).map((name) => "desktop/" + name));
 for (const file of files.sort()) {
   const result = spawnSync(process.execPath, ["--check", file], { cwd: root, stdio: "inherit" });
   if (result.error) throw result.error;

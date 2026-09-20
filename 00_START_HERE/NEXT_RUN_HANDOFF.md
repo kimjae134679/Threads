@@ -1,3 +1,15 @@
+# Latest URL capture / desktop update
+
+User requested: enter a link, capture the page and open it in the editor; replace direct HTML-file usage with an app. Scope is source capture plus existing 03 editor only, no autonomous discovery or publication.
+
+- Added isolated Electron desktop entry, explicit HTTPS capture, bounded scrolling and continuous screenshot tiles, progress/cancel, automatic atomic editor import. Existing crop/title/ZIP/project behavior remains.
+- Windows x64 ZIP build uses pinned Electron 44.4.3 and electron-builder 26.15.3, separate desktop dependencies. No server/API keys are required for the desktop editor.
+- Baseline bc9cac17. Local full regression: 48 suites passed before desktop smoke script addition. Windows build and real desktop smoke are being verified; do not infer installation or runtime success from code alone.
+- Guide: docs/SOURCE_CUT_DESKTOP.md. Login/CAPTCHA/private endpoints/restricted DCInside and Blind automation are not bypassed. Infinite/virtual scrolling may require manual capture.
+- Work folder: /workspace/scratch/7dc461d71eca/Threads. Connected Windows app directory selected under the standard per-user LocalAppData Programs location; exact installed state will be recorded after validation. The requested Program Files _My AI root does not exist on this connected PC; no elevation is requested and existing folders are not moved.
+
+---
+
 # Latest production update — 2026-09-20
 
 The user approved the source-cut editor and requested clearer split-line guidance, long-source scrolling, thicker title outlines and word color emphasis. Canva is explicitly deferred. This is authorized 03 production work; the unrelated Discovery handoff below remains preserved.
