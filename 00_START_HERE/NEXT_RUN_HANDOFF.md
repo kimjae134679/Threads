@@ -13,16 +13,14 @@ For the separate `Threads 소재 발굴` automation, the user's explicit instruc
 - Continue new Korean-community discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate/TEMP lane — latest
-- Queue refresh now succeeded from the local main checkout: all **1166** current `data/candidates/*.md` files are represented. Legacy staged filenames parse C/A/P from filename; newer unstaged discovery files parse `state:` metadata from file content.
-- No previously blocked entry had a recorded unblock condition observed to change before selecting the next unprocessed key.
-- Processed exactly one next filename-order candidate: `260916_이사가는아랫집` (rank 39 in the refreshed queue).
-- Public search found a readable secondary mirror at `https://bada.us/post/9545344` whose title/body matches the stored partial memo, but no exact primary/original individual post URL or trustworthy primary-post identifier was resolved.
-- Result: C0 remains `BLOCKED_PROVENANCE`; no C1/A/P upgrade. A0/P0 and publicationAllowed=false remain.
-- TEMP lane completed one stage-9 fail-closed verification under `260920_이사가는아랫집_TEMP_TEST_ONLY/stage9_public_mirror_vs_primary_verification.json`: secondary mirror visibility is not treated as primary provenance or source-asset acquisition.
-- No body reproduction/render, generated-image fallback, approval, P1, live publish, or metrics occurred.
+- Queue refreshed from all **1172** current `data/candidates/*.md` files after six new discovery candidates landed: C0 394, C1 778, A0/P0 1172; no A1/P1.
+- No recorded unblock condition was observed to change before selecting the next unprocessed filename-order key.
+- Processed exactly one next candidate: `260916_이시대4050특징`. Exact public Inven individual source resolved to post `2728400`: `https://www.inven.co.kr/board/webzine/2097/2728400?iskin=webzine`.
+- C0 provenance is verified logically to C1, but real screenshot/media bytes were not acquired, so `BLOCKED_SOURCE_ASSET_BYTES`; A0/P0 and publicationAllowed=false remain.
+- TEMP lane added only `260920_이시대4050특징_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json`; no body reproduction/render/approval/publish/metrics.
 
 ## Next sequential item
-- Refresh queue first again, then process exactly one next unprocessed candidateKey in filename order after `260916_이사가는아랫집`, unless refresh inserts an earlier unprocessed key.
+- Refresh queue first again, then process exactly one next unprocessed candidateKey in filename order after `260916_이시대4050특징`, unless refresh inserts an earlier unprocessed key.
 
 ## Publication ownership / safety
 Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. Restricted sources must not be bypassed; no missing body/comments/metrics/screenshots/media/OCR/rights/moderation state may be invented.

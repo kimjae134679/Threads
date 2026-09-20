@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T19:27:00+09:00",
+  "lastCycleAt": "2026-09-20T20:26:00+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -254,14 +254,26 @@
       "observedPublicMirror": "https://bada.us/post/9545344",
       "unblockWhen": "Exact individual primary/original post URL or trustworthy unique primary-post identifier becomes publicly resolvable; a secondary mirror alone is insufficient for C0.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_이시대4050특징",
+      "currentPath": "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728400?iskin=webzine",
+      "sourcePostId": "2728400",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 1166,
-    "observedCurrentCandidateCount": 1166,
+    "storedQueueEntryCount": 1172,
+    "observedCurrentCandidateCount": 1172,
     "status": "REFRESHED_COMPLETE_LOCAL_ENUMERATION",
-    "note": "Refreshed from every current data/candidates markdown file on main. Legacy staged filenames parse C/A/P from filename; newer unstaged discovery filenames parse state metadata from file content. No candidate identities guessed."
+    "note": "Refreshed from every current data/candidates markdown file on main after pulling six new discovery files. No candidate identities guessed."
   },
-  "notes": "Queue fully refreshed to 1166 current candidate files. Processed exactly one next filename-order candidate: 260916_이사가는아랫집. Public search found a readable secondary mirror matching the stored partial story, but not the exact primary/original individual post, so C0 remains BLOCKED_PROVENANCE; no C1/A/P upgrade. TEMP lane recorded a stage-9 mirror-vs-primary acquisition verification only; no body reproduction, render, approval, publish, or metrics."
+  "notes": "Queue refreshed to 1172 current candidate files. Processed exactly one next filename-order candidate: 260916_이시대4050특징. Exact public Inven individual URL/post ID 2728400 resolved, so logical C1 provenance is verified; real source screenshot/media bytes were not acquired, therefore A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 exact-source-vs-bytes verification."
 }

@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T19:27:00+09:00",
+  "updatedAt": "2026-09-20T20:26:00+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Verified one fail-closed public-acquisition case for 260916_이사가는아랫집: a readable secondary mirror exists, but exact primary provenance is unresolved, so the mirror is not promoted to primary source bytes and no canonical state changes."
+      "note": "Resolved exact public Inven individual post 2728400 for 260916_이시대4050특징, but did not claim source-asset acquisition without permitted real screenshot/media bytes. Fail-closed at BLOCKED_SOURCE_ASSET_BYTES."
     },
     "10_ui_exclusion": {
       "status": "PARTIAL",
@@ -85,6 +85,18 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Resolve exact primary/original individual source before any body/media acquisition or rendering."
+    },
+    {
+      "candidateKey": "260916_이시대4050특징",
+      "candidatePath": "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이시대4050특징_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이시대4050특징_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Acquire permitted real source screenshot/media bytes with provenance/hash; then UI-chrome review may proceed. No generated fallback."
     }
   ]
 }
