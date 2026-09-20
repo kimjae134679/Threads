@@ -1,14 +1,14 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 21:28 KST
+Updated: 2026-09-20 22:18 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only note: `01_DISCOVERY/ops/269-sol.md`.
-- This pass reviewed 40+ raw/search leads and retained 6 new C1 candidates with exact individual public URLs/readable public bodies.
-- Top new titles include `오늘 회사 동료 레전드 썰 들음`, `소개팅 주선하고 그 커플이 결혼한다는 후기`, `눈새 친구 때문에 짜증나는 후기`, `돈 없는 친구가 피곤한 후기`, `싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기`, `결혼하고 싶은 애인이 취준.. 덬들 주위엔 기다렸다가 잘 결혼했나 궁금한 후기`.
+- Latest discovery-only note: `01_DISCOVERY/ops/271-sol.md`.
+- This pass reviewed 40+ raw/search leads and retained 3 new C1 candidates with exact individual public URLs/readable public bodies.
+- Top new titles include `친구 생일축하 해주고 정떨어진 후기`, `친구랑 만나서 얘기하는데 친구가 계속 휴대폰 보는 후기`, `부모님 노후대책 없이 정년되신 덬들 부모님은 어떻게 살고 있는지 궁금한 후기`.
 - Discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false.
 - Continue new Korean-community discovery and exact-source verification only; do not advance stages.
 
