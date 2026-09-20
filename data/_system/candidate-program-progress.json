@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T17:25:00+09:00",
+  "lastCycleAt": "2026-09-20T18:28:00+09:00",
   "processed": [
     {"candidateKey":"260916_2026회사별느낌","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
     {"candidateKey":"260916_25살연애불가능할까","result":"BLOCKED_NEXT_STAGE","publicationAllowed":false},
@@ -41,10 +41,11 @@
     {"candidateKey":"260916_여행유튜버현실","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4347897214","publicationAllowed":false},
     {"candidateKey":"260916_연돈카레제보디시인","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.inven.co.kr/board/webzine/2097/2727699","publicationAllowed":false},
     {"candidateKey":"260916_연휴중간결혼싸움","logicalCandidateStage":"C1","result":"BLOCKED_NEXT_STAGE","exactSource":"https://theqoo.net/square/4341661279","publicationAllowed":false},
-    {"candidateKey":"260916_와이프가싸준도시락","currentPath":"data/candidates/260916_C0_A0_P0_와이프가싸준도시락.md","result":"BLOCKED_PROVENANCE","sourceCandidate":"https://www.inven.co.kr/board/webzine/2097/2718549","conflict":"Stored nickname 두루드루 conflicts with found post author 번거롭게.","unblockWhen":"A trustworthy unique identifier proves identity or another exact individual URL/post ID matching stored provenance becomes publicly resolvable.","publicationAllowed":false},
-    {"candidateKey":"260916_월급300명품시계","currentPath":"data/candidates/260916_C0_A0_P0_월급300명품시계.md","result":"BLOCKED_PROVENANCE","sourceSearch":{"queries":["\"월급 300인데 명품 시계 사는거\" Blind","\"월급 300\" \"명품 시계\" 블라인드"],"exactIndividualSourceFound":false},"unblockWhen":"An exact individual Blind URL/shortlink/post ID or another trustworthy unique identifier matching this candidate becomes publicly resolvable.","publicationAllowed":false}
+    {"candidateKey":"260916_와이프가싸준도시락","result":"BLOCKED_PROVENANCE","publicationAllowed":false},
+    {"candidateKey":"260916_월급300명품시계","result":"BLOCKED_PROVENANCE","publicationAllowed":false},
+    {"candidateKey":"260916_이게맞아맞벌이육아","logicalCandidateStage":"C1","currentPath":"data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md","result":"BLOCKED_NEXT_STAGE","exactSource":"https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077","sourcePostId":"3sx7p077","c0":"VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE","c1":"BLOCKED_SOURCE_ASSET_BYTES","unblockWhen":"Permitted real screenshot/media bytes from the same public individual post are acquired with source URL/provenance/hash; no login or access-control bypass.","publicationAllowed":false}
   ],
   "completed": [],
-  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_PARTIAL_IDENTITY_REBUILD_UNAVAILABLE","note":"Current main candidate directory was re-read. 866 candidate files remain observed, but connector rendering truncates before all identities can be extracted safely; canonical queue was not overwritten from partial data."},
-  "notes": "Processed exactly one next stored filename-order candidate after rank 36: 260916_월급300명품시계. Public searches did not resolve an exact individual Blind URL/post ID, so C0 remains BLOCKED_PROVENANCE; no unrelated search result was substituted. TEMP lane added a fail-closed approved-version guard recording the user's explicit rejection of v1/v2 and requiring a new CONTENT_LAYOUT_LOCK-conforming output before any human TEMP selection/roundtrip can pass. Stage 16 remains disabled."
+  "queueRefresh": {"storedQueueEntryCount":836,"observedCurrentCandidateCount":866,"status":"REFRESH_BLOCKED_REMOTE_DEVICE_UNAVAILABLE","note":"Current GitHub candidate directory was read, but the canonical refresh script could not run because the authorized remote device was unavailable. The existing queue was not overwritten from a partial/truncated connector listing; no candidate identities were guessed."},
+  "notes": "Processed exactly one next stored filename-order candidate after rank 37: 260916_이게맞아맞벌이육아. Public search resolved the exact individual Blind post 3sx7p077, so C0 provenance is verified and logical stage advances to C1. Real source screenshot/media bytes were not acquired, so A0/P0 remain and C1 is blocked on permitted source bytes. TEMP lane completed one small stage-12 verified-content title-suggestion unit only; no body rewrite/render, approval, publishing or metrics."
 }
