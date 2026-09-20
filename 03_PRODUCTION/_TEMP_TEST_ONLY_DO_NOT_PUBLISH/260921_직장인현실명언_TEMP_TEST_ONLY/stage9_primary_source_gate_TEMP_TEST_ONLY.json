@@ -1,0 +1,14 @@
+﻿{
+  "candidateKey": "260916_직장인현실명언",
+  "stage": 9,
+  "state": "BLOCKED_PROVENANCE",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "sourceBytesAcquired": false,
+  "unblockWhen": "Exact individual primary Ppomppu post URL/post ID becomes publicly resolvable, then permitted real source body/media bytes can be acquired with provenance/hash without access-control bypass.",
+  "blurAllowed": false,
+  "generatedImageFallback": false,
+  "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
+}

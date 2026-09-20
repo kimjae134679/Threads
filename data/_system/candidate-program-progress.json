@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T03:24:47+09:00",
+  "lastCycleAt": "2026-09-21T05:25:17+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -342,6 +342,15 @@
       "verifiedObservedTitle": "잘생남 만나고 싶다",
       "verifiedObservedBody": "모든 조건 포기하고 잘생+no여미새 찾는데 없.음.",
       "unblockCondition": "Exact individual Blind post URL or stable post ID becomes publicly verifiable without login/access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_직장인현실명언",
+      "currentPath": "data/candidates/260916_C0_A0_P0_직장인현실명언.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Fresh public searches for the exact/near-exact title with Ppomppu did not resolve a trustworthy individual Ppomppu post. Generic third-party workplace-quote pages are not provenance.",
+      "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique identifier proving this same candidate becomes publicly resolvable.",
       "publicationAllowed": false
     }
   ],

@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T04:24:54+09:00",
+  "updatedAt": "2026-09-21T05:25:17+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Native WebP intake prototype previously verified exact original bytes without transcoding. This run additionally verified exact source identity for Ppomppu post 27215, but body/media bytes remain blocked because the individual page was not readable through the public automated reader. No bypass attempted."
+      "note": "Queue refreshed to 1,202 live candidates. This run tested 260916_직장인현실명언: exact Ppomppu individual provenance did not resolve through public search, so source bytes remain blocked and no downstream content was inferred."
     },
     "10_ui_exclusion": {
       "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
@@ -117,7 +117,10 @@
       "sourceBytesAcquired": true,
       "sourceMediaFormat": "webp",
       "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
-      "sourceMediaDimensions": {"width": 600, "height": 871},
+      "sourceMediaDimensions": {
+        "width": 600,
+        "height": 871
+      },
       "temporaryTestOnly": true,
       "publicationAllowed": false,
       "approvedVersion": null,
@@ -138,6 +141,14 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Acquire permitted real body and source image/screenshot bytes from Ppomppu post 27215 with source URL/provenance/hash; do not bypass access controls."
+    },
+    {
+      "candidateKey": "260916_직장인현실명언",
+      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
     }
   ]
 }
