@@ -1,28 +1,25 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-20 19:18 KST
+Updated: 2026-09-20 19:27 KST
 
 ## AUTOMATION-SPECIFIC OVERRIDE — DISCOVERY ONLY
 For the separate `Threads 소재 발굴` automation, the user's explicit instruction wins: **01_DISCOVERY only**. Do not enter editorial scoring, production, review/publish, or experiments/accounts from that automation.
 
 ## Discovery automation — latest
-- Latest discovery-only note: `01_DISCOVERY/ops/265-sol.md`.
-- Run 265 reviewed 40+ raw/search leads and retained 7 new C1 candidates with exact individual public URLs and readable public text bodies.
-- Top new titles include `민생지원금 달라고 하는 부모님 때문에 현타오는 후기`, `오래된 친구 손절?거리두기? 고민중인 중기 장문주의`, `좋은 시댁 만난 것 같은 후기`, `집있는 덬들 대출금이 어느 정도인지 궁금한 초기`, `남편 선물 살말 고민인 중기`.
-- Discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false. Continue new discovery and exact-source verification only.
+- Latest discovery-only note remains `01_DISCOVERY/ops/265-sol.md`.
+- Discovery-retained candidates remain A1=false, P1=false, publicationAllowed=false.
 
 ## Sequential candidate/TEMP lane — latest
-- Queue refresh was attempted first. The authorized remote device was unavailable, while connector directory rendering is incomplete for a safe 866-file identity rebuild. The 836-entry canonical queue was therefore not overwritten from partial identities; this is recorded as `REFRESH_BLOCKED_REMOTE_DEVICE_UNAVAILABLE` rather than guessed.
-- Existing blocked entries were not re-evaluated because no recorded unblock condition was observed to change.
-- Processed exactly one next stored filename-order candidate: `260916_이게맞아맞벌이육아` (rank 38).
-- Fresh public verification resolved the exact individual Blind post: `https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077`, post ID `3sx7p077`, exact observed title `이게맞아????`.
-- C0 provenance is now verified and the candidate is logically C1. Actual source screenshot/media bytes were not acquired, so C1 is `BLOCKED_SOURCE_ASSET_BYTES`; A0/P0 and publicationAllowed=false remain unchanged. No body/comments/metrics/assets were fabricated.
-- TEMP lane completed one small stage-12 unit under `260920_이게맞아맞벌이육아_TEMP_TEST_ONLY/stage12_verified_title_suggestions.json`, using only verified source facts plus `TITLE_STYLE_GUIDE.md`.
-- TEMP title suggestions do not rewrite slide 2+ content, do not upgrade canonical C/A/P state, and are not an approved version. `temporaryTestOnly=true`, `publicationAllowed=false`, generated-image fallback=false, cover blur=false.
-- Stage 14/15 remain blocked pending conforming real source bytes + human/browser approval roundtrip; Stage 16 remains disabled.
+- Queue refresh now succeeded from the local main checkout: all **1166** current `data/candidates/*.md` files are represented. Legacy staged filenames parse C/A/P from filename; newer unstaged discovery files parse `state:` metadata from file content.
+- No previously blocked entry had a recorded unblock condition observed to change before selecting the next unprocessed key.
+- Processed exactly one next filename-order candidate: `260916_이사가는아랫집` (rank 39 in the refreshed queue).
+- Public search found a readable secondary mirror at `https://bada.us/post/9545344` whose title/body matches the stored partial memo, but no exact primary/original individual post URL or trustworthy primary-post identifier was resolved.
+- Result: C0 remains `BLOCKED_PROVENANCE`; no C1/A/P upgrade. A0/P0 and publicationAllowed=false remain.
+- TEMP lane completed one stage-9 fail-closed verification under `260920_이사가는아랫집_TEMP_TEST_ONLY/stage9_public_mirror_vs_primary_verification.json`: secondary mirror visibility is not treated as primary provenance or source-asset acquisition.
+- No body reproduction/render, generated-image fallback, approval, P1, live publish, or metrics occurred.
 
 ## Next sequential item
-- Continue with exactly one next unprocessed stored filename-order candidate after rank 38, unless a successful identity-safe queue refresh inserts an earlier unprocessed candidate.
+- Refresh queue first again, then process exactly one next unprocessed candidateKey in filename order after `260916_이사가는아랫집`, unless refresh inserts an earlier unprocessed key.
 
 ## Publication ownership / safety
 Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. Restricted sources must not be bypassed; no missing body/comments/metrics/screenshots/media/OCR/rights/moderation state may be invented.

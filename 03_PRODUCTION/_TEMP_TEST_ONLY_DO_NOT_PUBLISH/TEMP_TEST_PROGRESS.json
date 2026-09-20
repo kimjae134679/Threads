@@ -3,46 +3,88 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T18:28:00+09:00",
+  "updatedAt": "2026-09-20T19:27:00+09:00",
   "requestedTrack": {
-    "9_source_auto_acquisition": {"status":"PARTIAL","note":"Source-acquisition preflight remains fail-closed: verified body may feed text-only conversion only when permitted exact source content is available; real source media/screenshot bytes remain blocked. No login/anti-bot/paywall/access-control bypass and no generated-image fallback."},
-    "10_ui_exclusion": {"status":"PARTIAL","note":"Crop-review remains fail-closed until real source screenshot/media bytes exist; synthetic output cannot prove UI-chrome exclusion."},
-    "11_natural_splitting": {"status":"PARTIAL","note":"Natural-boundary logic exists, but rejected summary prototypes are not acceptable evidence for the binding slide-2+ original-body rule."},
-    "12_title_suggestion": {"status":"PARTIAL_VERIFIED_UNIT","note":"Added a new TEMP-only title-suggestion unit for 260916_이게맞아맞벌이육아 using only the newly verified exact Blind source and TITLE_STYLE_GUIDE. No suggestion alters slide 2+ source content or canonical A/P state."},
-    "13_browser_review": {"status":"PARTIAL","note":"Repository entry identity was previously pinned, but v1/v2 were explicitly rejected by the user. No rejected bundle can advance approval or execution eligibility."},
-    "14_review_screen": {"status":"BLOCKED","note":"v1 and v2 remain explicitly rejected; approvedVersion remains null. A new CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection and browser roundtrip review."},
-    "15_approval_runtime_reflection": {"status":"BLOCKED","note":"Requires a conforming human-selected TEMP version, exact OS download, fresh-page restore, approved/restored/execution-input digest equality, and immutable execution/PR bundle identity. executionEligible=false."},
-    "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
+    "9_source_auto_acquisition": {
+      "status": "PARTIAL_VERIFIED_UNIT",
+      "note": "Verified one fail-closed public-acquisition case for 260916_이사가는아랫집: a readable secondary mirror exists, but exact primary provenance is unresolved, so the mirror is not promoted to primary source bytes and no canonical state changes."
+    },
+    "10_ui_exclusion": {
+      "status": "PARTIAL",
+      "note": "Crop-review remains fail-closed until real source screenshot/media bytes exist; synthetic output cannot prove UI-chrome exclusion."
+    },
+    "11_natural_splitting": {
+      "status": "PARTIAL",
+      "note": "Natural-boundary logic exists, but rejected summary prototypes are not acceptable evidence for the binding slide-2+ original-body rule."
+    },
+    "12_title_suggestion": {
+      "status": "PARTIAL_VERIFIED_UNIT",
+      "note": "Added a new TEMP-only title-suggestion unit for 260916_이게맞아맞벌이육아 using only the newly verified exact Blind source and TITLE_STYLE_GUIDE. No suggestion alters slide 2+ source content or canonical A/P state."
+    },
+    "13_browser_review": {
+      "status": "PARTIAL",
+      "note": "Repository entry identity was previously pinned, but v1/v2 were explicitly rejected by the user. No rejected bundle can advance approval or execution eligibility."
+    },
+    "14_review_screen": {
+      "status": "BLOCKED",
+      "note": "v1 and v2 remain explicitly rejected; approvedVersion remains null. A new CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection and browser roundtrip review."
+    },
+    "15_approval_runtime_reflection": {
+      "status": "BLOCKED",
+      "note": "Requires a conforming human-selected TEMP version, exact OS download, fresh-page restore, approved/restored/execution-input digest equality, and immutable execution/PR bundle identity. executionEligible=false."
+    },
+    "16_live_publish_metrics": {
+      "status": "DISABLED",
+      "note": "No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."
+    }
   },
   "samples": [
     {
-      "candidateKey":"260916_2026회사별느낌",
-      "candidatePath":"data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
-      "testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
-      "rejectedOutputPaths":["03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1","03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v2"],
-      "state":"TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION",
-      "sourceBodyComplete":true,
-      "sourceAssetsComplete":false,
-      "commentsComplete":false,
-      "temporaryTestOnly":true,
-      "publicationAllowed":false,
-      "approvedVersion":null,
-      "executionEligible":false
+      "candidateKey": "260916_2026회사별느낌",
+      "candidatePath": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌",
+      "rejectedOutputPaths": [
+        "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v1",
+        "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260916_2026회사별느낌/TEMP_TEST_ONLY_actual-output-v2"
+      ],
+      "state": "TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION",
+      "sourceBodyComplete": true,
+      "sourceAssetsComplete": false,
+      "commentsComplete": false,
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
     },
     {
-      "candidateKey":"260916_이게맞아맞벌이육아",
-      "candidatePath":"data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md",
-      "testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이게맞아맞벌이육아_TEMP_TEST_ONLY",
-      "stage12Artifact":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이게맞아맞벌이육아_TEMP_TEST_ONLY/stage12_verified_title_suggestions.json",
-      "state":"TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY",
-      "exactSourceVerified":true,
-      "sourceAssetsComplete":false,
-      "temporaryTestOnly":true,
-      "publicationAllowed":false,
-      "approvedVersion":null,
-      "executionEligible":false,
-      "blocked":["real-source-screenshot-or-media-bytes","rights/privacy/safety-human-review"],
-      "next":"Do not render slide 2+ from summaries. Acquire permitted real source screenshot/media bytes first; otherwise remain blocked."
+      "candidateKey": "260916_이게맞아맞벌이육아",
+      "candidatePath": "data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이게맞아맞벌이육아_TEMP_TEST_ONLY",
+      "stage12Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이게맞아맞벌이육아_TEMP_TEST_ONLY/stage12_verified_title_suggestions.json",
+      "state": "TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY",
+      "exactSourceVerified": true,
+      "sourceAssetsComplete": false,
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "blocked": [
+        "real-source-screenshot-or-media-bytes",
+        "rights/privacy/safety-human-review"
+      ],
+      "next": "Do not render slide 2+ from summaries. Acquire permitted real source screenshot/media bytes first; otherwise remain blocked."
+    },
+    {
+      "candidateKey": "260916_이사가는아랫집",
+      "candidatePath": "data/candidates/260916_C0_A0_P0_이사가는아랫집.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이사가는아랫집_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이사가는아랫집_TEMP_TEST_ONLY/stage9_public_mirror_vs_primary_verification.json",
+      "state": "TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Resolve exact primary/original individual source before any body/media acquisition or rendering."
     }
   ]
 }
