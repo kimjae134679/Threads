@@ -38,7 +38,10 @@ async function start() {
   editor.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
   editor.webContents.on('will-navigate', (event) => event.preventDefault());
   editor.webContents.on('will-prevent-unload', (event) => {
-    if (dialog.showMessageBoxSync(editor, { type: 'question', buttons: ['편집 계속', '저장하지 않고 닫기'], defaultId: 0, cancelId: 0, message: '저장하지 않은 편집이 있을 수 있습니다. 창을 닫을까요?' }) === 1) event.preventDefault();
+    if (dialog.showMessageBoxSync(editor, { type: 'question', buttons: ['편집 계속', '편집 파일 저장 없이 닫기'], defaultId: 0, cancelId: 0, message: '편집 파일을 저장하지 않고 닫을까요? 레퍼런스 기록은 PC에 남깁니다.' }) === 1) {
+      const closing = editor;
+      closing.webContents.executeJavaScript('window.ThreadsSourceCutEditor.flushHistory()').then(() => { if (!closing.isDestroyed()) closing.destroy(); }).catch(error => dialog.showErrorBox('기록 저장 확인', error.message));
+    }
   });
   editor.on('closed', () => { editor = null; if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   const referenceStore = createReferenceStore(path.join(app.getPath('userData'), 'references'));

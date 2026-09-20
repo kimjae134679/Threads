@@ -48,13 +48,13 @@ app.whenReady().then(async () => {
       const save = await window.ThreadsCutDesktop.saveReference({projectId:p.projectId,images:p.assets.map(a=>({uid:a.uid,dataUrl:a.dataUrl})),summary:window.ThreadsSourceCut.reference(p),events:p.editLog});
       return {family:p.appearance.fontId,weight:p.appearance.fontWeight,layout:p.pageLayouts[select.value],edits:p.editLog.length,referenceFolder:save.folder,presets:p.presets.length};
     })()`);
-    assert.equal(styled.family,'gothic'); assert.equal(styled.weight,800); assert.equal(styled.layout.afterText,'직접 작성한 의견'); assert(styled.edits>0);
+    assert.equal(styled.family,'gothic'); assert.equal(styled.weight,800); assert.equal(styled.layout.afterText,'직접 작성한 의견'); assert(styled.edits>=2);
     assert((await fs.stat(path.join(styled.referenceFolder,'edits.jsonl'))).size>0);
     await fs.writeFile(path.join(output,'styled-editor.png'),(await editor.webContents.capturePage()).toPNG());
     const live = await editor.webContents.executeJavaScript("window.ThreadsCutDesktop.capture('https://example.com')");
     assert.equal(live.ok,true,live.error);
     assert(live.assets.length > 0);
-    await editor.webContents.executeJavaScript('window.confirm = () => true');
+    await editor.webContents.executeJavaScript('window.confirm = () => true; undefined');
     await editor.webContents.executeJavaScript("document.getElementById('captureUrl').value='https://example.com'; document.getElementById('captureUrlButton').click()");
     let ui;
     for(let i=0;i<700;i++) {

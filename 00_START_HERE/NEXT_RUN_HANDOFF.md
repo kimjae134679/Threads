@@ -1,3 +1,11 @@
+# Final desktop verification — user additions
+
+Native Windows smoke passed on device KJW using the actual Electron app: 18000px controlled page -> three continuous PNG tiles, live https://example.com/ capture, app-button capture -> editable source, per-page spacing and opinion text, Cut Gothic 800 preset, private reference JSONL/source hashing. Remote Node is v24.16.0. Smoke uses a separate temporary userData profile, not real user presets/reference folders.
+
+Final refinements preserve the initial import before later edits, flush committed gestures/input changes into the log, retain the first preset selection, and flush the latest private reference before closing the app. Packaging/install/shortcut confirmation is recorded after completion. Local full regression prior to these refinements: 50 suites / 153 JS syntax files; focused history checks remain passing.
+
+---
+
 # Latest user additions — padding, opinions, presets and reference logs
 
 User added six image references, requested spacing around crops, own opinion text, discovery-time intermediate copy, licensed selectable fonts/weights/presets, and edit logs for future automation. Instagram UI in references is not the target.

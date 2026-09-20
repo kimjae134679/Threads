@@ -61,6 +61,10 @@
     refreshFontControls();
     $('productionNotes').value = project.source.productionNotes || '';
     $('editingReason').value = project.editingReason || ''; $('referenceApproved').checked = project.referenceApproved === true;
+    if (project.assets.length && historyProject !== project.projectId) {
+      historyBefore = null; historyProject = project.projectId; savedOriginals = new Set();
+      historyBefore = M.recordEdit(project, null, 'open/import'); showHistory();
+    }
     scheduleAudit('open-or-style');
     refreshPageOptions(); syncPageFields(); refreshPresetList();
     $('outlineValue').textContent = project.appearance.outlineWidth + 'px';
@@ -211,10 +215,13 @@
     try {
       const result = await window.ThreadsCutDesktop.saveReference({ projectId, images: pending.map(a => ({ uid: a.uid, dataUrl: a.dataUrl })), summary: M.reference(project), events: clone(project.editLog) });
       if (project.projectId === projectId) { pending.forEach(a => savedOriginals.add(a.uid)); $('historyStatus').textContent = `PC 자동 기록 ${result.eventCount}건 · ${result.folder}`; }
-    } catch (error) { $('historyStatus').textContent = 'PC 기록 저장 실패: ' + error.message + ' · 편집 저장 파일로 보관해주세요.'; }
+    } catch (error) { $('historyStatus').textContent = 'PC 기록 저장 실패: ' + error.message + ' · 편집 저장 파일로 보관해주세요.'; return false; }
   }
   document.addEventListener('input', event => { auditAction = event.target.id || 'input'; }, true);
   document.addEventListener('change', event => { auditAction = event.target.id || 'change'; }, true);
+  document.addEventListener('change', event => { if (!busy && event.target.id !== 'projectFile' && event.target.id !== 'files') flushAudit(event.target.id || 'change'); });
+  canvas.addEventListener('pointerup', () => flushAudit(mode + '-gesture'));
+  document.addEventListener('click', event => { if (['fullBody','applyPreset','applyBodySpacing','moveUp','moveDown'].includes(event.target.id)) flushAudit(event.target.id); });
   $('editingReason').addEventListener('input', () => { project.editingReason = $('editingReason').value; dirty = true; });
   $('recordReason').addEventListener('click', () => { dirty = true; flushAudit('reason'); });
   $('referenceApproved').addEventListener('change', () => { project.referenceApproved = $('referenceApproved').checked; dirty = true; flushAudit('reference-selection'); });
@@ -243,7 +250,7 @@
   function refreshPresetList() {
     const previous = $('presetList').value; $('presetList').replaceChildren();
     presets.forEach((p, i) => { const option = document.createElement('option'); option.value = String(i); option.textContent = p.name; $('presetList').appendChild(option); });
-    $('presetList').value = presets[Number(previous)] ? previous : presets.length ? '0' : '';
+    $('presetList').value = previous !== '' && presets[Number(previous)] ? previous : presets.length ? '0' : '';
   }
   $('layoutPage').addEventListener('change', syncPageFields);
   pageKeys.forEach(key => $(key).addEventListener('input', () => {
@@ -457,6 +464,6 @@
   window.ThreadsSourceCutEditor = Object.freeze({ openProject: async (value) => {
     if (busy) throw new Error('파일 처리 중입니다. 잠시 후 다시 시도하세요.');
     setBusy(true); try { await openProject(value); } finally { setBusy(false); }
-  }, getProject: () => clone(project) });
+  }, getProject: () => clone(project), flushHistory: async () => { if (await flushAudit('close') === false) throw new Error('PC 기록 저장에 실패했습니다. 편집 저장 후 다시 닫아주세요.'); } });
   setMode('pan'); layout();
 })();
