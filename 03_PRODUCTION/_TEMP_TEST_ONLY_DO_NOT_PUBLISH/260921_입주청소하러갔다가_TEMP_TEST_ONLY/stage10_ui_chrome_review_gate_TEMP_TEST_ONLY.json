@@ -1,0 +1,23 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 10,
+  "unit": "automatic-ui-chrome-exclusion-crop-review",
+  "input": {
+    "file": "source_media_01.webp",
+    "sha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+    "width": 600,
+    "height": 871,
+    "provenance": "public direct source media previously acquired"
+  },
+  "result": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
+  "reason": "Direct-source provenance does not establish whether the image pixels contain embedded site/app chrome. This run has no verified pixel-level vision/classifier result and will not invent one.",
+  "cropProduced": false,
+  "ocrPerformed": false,
+  "visionClaim": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "unblockCondition": "Run an actual visual UI-chrome/crop classifier/review against these exact hashed bytes, or acquire a permitted exact source screenshot and review that exact file."
+}

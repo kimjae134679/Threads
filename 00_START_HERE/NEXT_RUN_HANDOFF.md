@@ -1,5 +1,11 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 03:24 KST — hourly two-lane run
+- Queue refreshed from all current data/candidates markdown files: 1198 total; C0 442 / C1 756; all A0/P0. Five new 260921 C1 discovery files since the prior sequential run are included.
+- Candidate lane processed exactly one next unprocessed filename-order key: 260916_잘생남만나고싶다 (rank 46). Blind public topic listing verifies the exact title and body snippet “모든 조건 포기하고 잘생+no여미새 찾는데 없.음.”, but no exact individual post URL/stable ID was publicly resolved. Keep C0/A0/P0; BLOCKED_PROVENANCE. Unblock only when exact individual URL/ID is verifiable without bypass.
+- TEMP lane ran one concrete stage-10 gate on the SHA-256-pinned source_media_01.webp. Direct-media provenance alone cannot prove pixels contain no embedded UI chrome, and no verified vision/classifier result exists, so stage 10 is fail-closed as BLOCKED_REAL_VISUAL_REVIEW_INPUT. No crop/render was produced.
+- temporaryTestOnly=true; publicationAllowed=false; approvedVersion=null; executionEligible=false. No publish/P1, live metrics, OCR/vision claim, or rights/privacy/safety approval.
+
 ## 2026-09-21 02:25 KST — hourly two-lane run
 - Queue refreshed from all current `data/candidates`: 1,193 candidates; C0 442 / C1 751 / A0 1,193 / A1 0 / P0 1,193 / P1 0.
 - Candidate lane processed exactly one next unprocessed key: `260916_자취하지마세요` (current rank 45 after refresh). Ppomppu official 자취포럼 listing verifies exact title `자취하지마세요`, post number `21310`, date 2026-08-26. Canonical individual URL is recorded as `https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310`; automated individual-page fetch returned 403, so no body/assets were claimed. Logical C1, A0/P0, blocker `BLOCKED_SOURCE_ASSET_BYTES`.

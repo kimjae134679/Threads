@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T02:25:44+09:00",
+  "updatedAt": "2026-09-21T03:24:47+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
       "note": "TEMP-only native WebP intake prototype successfully read the previously acquired original WebP bytes without transcoding: 600x871, 39,288 bytes, SHA-256 preserved. Canonical intake script is not changed by this prototype; production support remains separate."
     },
     "10_ui_exclusion": {
-      "status": "PARTIAL",
-      "note": "Crop-review remains fail-closed until real source screenshot/media bytes exist; synthetic output cannot prove UI-chrome exclusion."
+      "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
+      "note": "Concrete stage-10 gate run against the acquired direct WebP: provenance proves real source-media bytes, but does not prove whether the pixels themselves contain embedded UI/chrome. No OCR/vision result is fabricated. Unblock requires an actual visual review/classifier result on these exact hashed bytes or a permitted exact source screenshot."
     },
     "11_natural_splitting": {
       "status": "PARTIAL",
@@ -151,7 +151,7 @@
       "candidatePath": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
       "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY",
       "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_native_intake_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_NATIVE_WEBP_INTAKE_PROTOTYPE_VERIFIED",
+      "state": "TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED",
       "sourceBytesAcquired": true,
       "sourceMediaFormat": "webp",
       "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
@@ -159,11 +159,12 @@
       "publicationAllowed": false,
       "approvedVersion": null,
       "executionEligible": false,
-      "next": "Prototype proves provenance-preserving native WebP dimension intake. Do not treat this as canonical production support or A1. Next safe TEMP unit may test stage 10 only against real screenshot bytes; attached source media alone does not prove UI-chrome crop behavior.",
+      "next": "Run visual UI-chrome/crop review on the exact SHA-256-pinned WebP bytes (or permitted exact source screenshot). Do not infer from provenance alone; no crop/render until verified.",
       "sourceMediaDimensions": {
         "width": 600,
         "height": 871
-      }
+      },
+      "stage10Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage10_ui_chrome_review_gate_TEMP_TEST_ONLY.json"
     }
   ]
 }

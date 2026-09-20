@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T02:25:44+09:00",
+  "lastCycleAt": "2026-09-21T03:24:47+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -334,14 +334,28 @@
       "exactSource": "https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310",
       "sourceIdentityEvidence": "Ppomppu official 자취포럼 listing: post 21310, title 자취하지마세요, 2026-08-26; individual view returned 403 so body not claimed",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_잘생남만나고싶다",
+      "result": "BLOCKED_PROVENANCE",
+      "verifiedListing": "https://www.teamblind.com/kr/topics/%EC%8D%B8%C2%B7%EC%97%B0%EC%95%A0",
+      "verifiedObservedTitle": "잘생남 만나고 싶다",
+      "verifiedObservedBody": "모든 조건 포기하고 잘생+no여미새 찾는데 없.음.",
+      "unblockCondition": "Exact individual Blind post URL or stable post ID becomes publicly verifiable without login/access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 1190,
-    "observedCurrentCandidateCount": 1190,
-    "status": "REFRESHED_COMPLETE_LOCAL_ENUMERATION",
-    "note": "Refreshed from every current data/candidates markdown file after pulling main; 2 new 260921 discovery candidates added."
+    "at": "2026-09-21T03:24:47+09:00",
+    "total": 1198,
+    "C0": 442,
+    "C1": 756,
+    "A0": 1198,
+    "A1": 0,
+    "P0": 1198,
+    "P1": 0,
+    "source": "all current data/candidates markdown files excluding README.md"
   },
   "notes": "Queue refreshed to 1190 current candidate files. Processed exactly one next filename-order candidate: 260916_입주청소하러갔다가. Exact Inven source was already C1; real public WebP source-media bytes were acquired (39288 bytes, SHA-256 recorded), but canonical intake supports PNG/JPEG only, so A0/P0 and publicationAllowed=false remain. TEMP lane records the WebP intake blocker only."
 }
