@@ -12,11 +12,12 @@
 - TEMP lane: added `webp-intake-prototype_TEMP_TEST_ONLY.mjs` and `stage9_webp_native_intake_TEMP_TEST_ONLY.json` under the existing `260921_입주청소하러갔다가_TEMP_TEST_ONLY` folder. It reads original WebP natively without transcoding and verified 600x871 / 39,288 bytes / SHA-256 `37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6`. Prototype only; canonical intake support/A1/P1 unchanged.
 - No publish, P1, rights/privacy/safety approval, OCR/vision claim, or live metrics.
 
-Updated: 2026-09-21 03:14 KST
+Updated: 2026-09-21 04:14 KST
 
 ## 01_DISCOVERY latest
-- Latest discovery-only run reviewed 40+ raw/search leads and retained 5 new C1 candidates: `30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기`, `30대 덬들의 친구의 기준이 궁금한 중기`, `편애심한 집안의 둘째인데 언니랑 친한 후기`, `미팅인줄 모르고 단체 미팅 다녀온 후기`, `결혼을 후회하는 중기`.
-- Restricted sources were not bypassed; all new candidates remain A0/P0 and publicationAllowed=false.
+- Latest discovery-only run reviewed 40+ raw/search leads and retained 2 new C1 candidates: `돈 모을려면 일단 친구를 끊어라`, `여자친구랑 쫑낸 썰`.
+- The DCInside candidate has exact individual URL/body verified. The Inven candidate has exact URL/title/metrics verified but its core story is image-dependent, so it is explicitly `본문 미확인`; no OCR/inference was used.
+- Restricted sources were not bypassed; both remain A0/P0 and publicationAllowed=false. Details: `01_DISCOVERY/ops/283-sol.md`.
 
 ## Sequential candidate lane
 - Queue refreshed from every current `data/candidates` markdown file after pulling main: 1,190 candidates total; the 2 newest 260921 candidates are included.
