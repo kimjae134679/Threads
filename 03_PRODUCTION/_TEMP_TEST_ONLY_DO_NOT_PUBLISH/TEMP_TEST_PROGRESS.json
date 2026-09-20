@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-20T20:26:00+09:00",
+  "updatedAt": "2026-09-20T21:28:54+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Resolved exact public Inven individual post 2728400 for 260916_이시대4050특징, but did not claim source-asset acquisition without permitted real screenshot/media bytes. Fail-closed at BLOCKED_SOURCE_ASSET_BYTES."
+      "note": "Resolved exact public Blind individual post 8e8228tt for 260916_이혼가정예랑상견례두번, but did not claim source-asset acquisition without permitted real screenshot/media bytes. Fail-closed at BLOCKED_SOURCE_ASSET_BYTES."
     },
     "10_ui_exclusion": {
       "status": "PARTIAL",
@@ -91,6 +91,18 @@
       "candidatePath": "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
       "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이시대4050특징_TEMP_TEST_ONLY",
       "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이시대4050특징_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Acquire permitted real source screenshot/media bytes with provenance/hash; then UI-chrome review may proceed. No generated fallback."
+    },
+    {
+      "candidateKey": "260916_이혼가정예랑상견례두번",
+      "candidatePath": "data/candidates/260916_C0_A0_P0_이혼가정예랑상견례두번.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이혼가정예랑상견례두번_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260920_이혼가정예랑상견례두번_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json",
       "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
       "temporaryTestOnly": true,
       "publicationAllowed": false,

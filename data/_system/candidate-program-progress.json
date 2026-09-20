@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T20:26:00+09:00",
+  "lastCycleAt": "2026-09-20T21:28:54+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -266,14 +266,26 @@
       "c1": "BLOCKED_SOURCE_ASSET_BYTES",
       "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_이혼가정예랑상견례두번",
+      "currentPath": "data/candidates/260916_C0_A0_P0_이혼가정예랑상견례두번.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EA%B0%80%EC%A0%95-%EC%98%88%EB%9E%91%EC%9D%B4-%EC%83%81%EA%B2%AC%EB%A1%80-%EB%91%90%EB%B2%88-%ED%95%98%EC%9E%AC%EC%9A%94-8e8228tt",
+      "sourcePostId": "8e8228tt",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Blind post are acquired with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 1172,
-    "observedCurrentCandidateCount": 1172,
+    "storedQueueEntryCount": 1177,
+    "observedCurrentCandidateCount": 1177,
     "status": "REFRESHED_COMPLETE_LOCAL_ENUMERATION",
-    "note": "Refreshed from every current data/candidates markdown file on main after pulling six new discovery files. No candidate identities guessed."
+    "note": "Refreshed from every current data/candidates markdown file on main after pulling six new discovery files; 1178 files represented."
   },
-  "notes": "Queue refreshed to 1172 current candidate files. Processed exactly one next filename-order candidate: 260916_이시대4050특징. Exact public Inven individual URL/post ID 2728400 resolved, so logical C1 provenance is verified; real source screenshot/media bytes were not acquired, therefore A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 exact-source-vs-bytes verification."
+  "notes": "Queue refreshed to 1178 current candidate files. Processed exactly one next filename-order candidate: 260916_이혼가정예랑상견례두번. Exact public Blind individual URL/post ID 8e8228tt resolved; real source screenshot/media bytes were not acquired, therefore A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 exact-source-vs-bytes verification."
 }
