@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T00:27:24+09:00",
+  "lastCycleAt": "2026-09-21T01:27:32+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -308,14 +308,31 @@
       "c1": "BLOCKED_SOURCE_ASSET_BYTES",
       "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_입주청소하러갔다가",
+      "currentPath": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728192",
+      "sourcePostId": "2728192",
+      "c0": "ALREADY_VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "REAL_SOURCE_MEDIA_BYTES_ACQUIRED_TO_EPHEMERAL_INTAKE",
+      "sourceMediaUrl": "https://upload3.inven.co.kr/upload/2026/09/15/bbs/i1624795188720000.webp?MW=800",
+      "sourceMediaByteLength": 39288,
+      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+      "assetStage": "A0",
+      "blocker": "Canonical source-intake script cannot currently ingest WebP dimensions; no A1/production upgrade from ephemeral acquisition.",
+      "unblockWhen": "Add provenance-preserving WebP intake support or obtain independently permitted original PNG/JPEG bytes, then persist/verify source asset before editorial production.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 1188,
-    "observedCurrentCandidateCount": 1188,
+    "storedQueueEntryCount": 1190,
+    "observedCurrentCandidateCount": 1190,
     "status": "REFRESHED_COMPLETE_LOCAL_ENUMERATION",
-    "note": "Refreshed from every current data/candidates markdown file on main; 1188 candidate files represented."
+    "note": "Refreshed from every current data/candidates markdown file after pulling main; 2 new 260921 discovery candidates added."
   },
-  "notes": "Queue refreshed to 1188 current candidate files. Processed exactly one next filename-order candidate: 260916_입주청소부부. Exact public Inven individual source 2728192 verified; real source screenshot/media bytes not acquired, so A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 exact-source/asset gate."
+  "notes": "Queue refreshed to 1190 current candidate files. Processed exactly one next filename-order candidate: 260916_입주청소하러갔다가. Exact Inven source was already C1; real public WebP source-media bytes were acquired (39288 bytes, SHA-256 recorded), but canonical intake supports PNG/JPEG only, so A0/P0 and publicationAllowed=false remain. TEMP lane records the WebP intake blocker only."
 }

@@ -1,26 +1,24 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-21 01:16 KST
+Updated: 2026-09-21 01:27 KST
 
 ## 01_DISCOVERY latest
-- Discovery-only run reviewed 40+ Korean-community-first public search leads and retained 2 new C1 candidates.
-- New titles: `헬스장에서 얼떨결에 번호 따일 뻔한 썰`, `[스압]20년 만에 전재산 천만원 된 썰`.
-- Restricted sources were not bypassed. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, provider work, or publishing.
-- New candidates remain A1=false, P1=false, publicationAllowed=false.
-- Next discovery run should continue finding new material and exact-source verification only; do not advance into production.
+- Latest discovery-only run retained 2 new C1 candidates: `헬스장에서 얼떨결에 번호 따일 뻔한 썰`, `[스압]20년 만에 전재산 천만원 된 썰`.
+- Restricted sources were not bypassed; those candidates remain A0/P0 and publicationAllowed=false.
 
 ## Sequential candidate lane
-- Queue refreshed from every current `data/candidates` markdown file after pulling latest main, including the five new 260921 discovery candidates.
-- Processed exactly one next unprocessed filename-order candidate: `260916_입주청소부부`.
-- Exact public individual source verified: `https://www.inven.co.kr/board/webzine/2097/2728192` (post ID `2728192`). Candidate title and recorded sentence match the public page.
-- Logical C0 verification passed, but C1 is `BLOCKED_SOURCE_ASSET_BYTES`: no permitted real screenshot/media bytes with provenance/hash were acquired. A0/P0 and publicationAllowed=false remain.
-- Do not re-evaluate blocked entries unless their recorded unblock condition changes. Continue with the next unprocessed filename-order candidate next run.
+- Queue refreshed from every current `data/candidates` markdown file after pulling main: 1,190 candidates total; the 2 newest 260921 candidates are included.
+- Processed exactly one next unprocessed filename-order key: `260916_입주청소하러갔다가`.
+- Exact source was already verified at `https://www.inven.co.kr/board/webzine/2097/2728192` (post ID `2728192`).
+- Public direct source media was actually downloaded without login/bypass: WebP, 39,288 bytes, SHA-256 `37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6`.
+- Candidate remains C1/A0/P0: the canonical screenshot-intake script currently supports PNG/JPEG dimensions only, so WebP cannot yet be persisted through the verified intake path. No A1/P1 or rights/moderation claims were made.
+- Do not re-evaluate older blocked entries unless their unblock condition changes. Continue with the next unprocessed filename-order key next run.
 
 ## TEMP TEST ONLY lane
-- Added `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소부부_TEMP_TEST_ONLY/stage9_exact_source_asset_gate.json`.
-- This is only a stage-9 exact-source/asset gate. `temporaryTestOnly=true`, `publicationAllowed=false`, approvedVersion=null, executionEligible=false.
-- Binding cover/body rules remain: no blur; no generated-image fallback; source media cover only when verified; slide 2+ original screenshot/media only in source order.
-- Stage 10+ for this unit remains blocked until real source bytes are acquired through permitted public access.
+- Added `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_intake_blocker.json` plus the real source WebP only inside that TEMP_TEST_ONLY folder.
+- Running the real stage-9 intake exposed a concrete blocker: `build-screenshot-intake-manifest.mjs` rejects WebP because dimension parsing is PNG/JPEG-only; stage 10 was therefore not run.
+- `temporaryTestOnly=true`, `publicationAllowed=false`, approvedVersion=null, executionEligible=false; no blur/generated fallback and no fabricated conversion.
+- Exact unblock: add provenance-preserving WebP intake/dimension support (without pretending a transcode is original bytes), then rerun stage 9 before UI-chrome review.
 
 ## Publication ownership / safety
 Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. No real publishing or metrics collection was performed.

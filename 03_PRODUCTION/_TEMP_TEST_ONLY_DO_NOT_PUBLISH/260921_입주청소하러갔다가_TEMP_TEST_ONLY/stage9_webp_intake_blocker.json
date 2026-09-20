@@ -1,0 +1,21 @@
+{
+  "type": "TEMP_TEST_ONLY_STAGE9_WEBP_INTAKE_VERIFICATION",
+  "candidateKey": "260916_입주청소하러갔다가",
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728192",
+  "directSourceMediaUrl": "https://upload3.inven.co.kr/upload/2026/09/15/bbs/i1624795188720000.webp?MW=800",
+  "acquisitionState": "SOURCE_MEDIA_DOWNLOAD",
+  "acquiredByteLength": 39288,
+  "sha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+  "sourceMediaFormat": "webp",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "stage9Result": "BLOCKED_INTAKE_UNSUPPORTED_WEBP",
+  "stage10Result": "NOT_RUN",
+  "observedFailure": "build-screenshot-intake-manifest.mjs currently accepts PNG/JPEG dimensions only; the real public source media is WebP.",
+  "unblockWhen": "Add verified WebP dimension/intake support without transcoding away original provenance, or acquire an independently permitted PNG/JPEG original-source asset. Then rerun intake before UI-chrome review.",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "note": "Prototype evidence only. This file must not upgrade a real candidate C/A/P state by itself."
+}

@@ -3,7 +3,7 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T00:27:24+09:00",
+  "updatedAt": "2026-09-21T01:27:32+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
@@ -145,6 +145,21 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Acquire permitted real source screenshot/media bytes with provenance/hash; then UI-chrome review may proceed. No generated fallback."
+    },
+    {
+      "candidateKey": "260916_입주청소하러갔다가",
+      "candidatePath": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_입주청소하러갔다가_TEMP_TEST_ONLY/stage9_webp_intake_blocker.json",
+      "state": "TEMP_STAGE9_REAL_WEBP_BYTES_ACQUIRED_INTAKE_BLOCKED",
+      "sourceBytesAcquired": true,
+      "sourceMediaFormat": "webp",
+      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Add provenance-preserving WebP dimension/intake support, then rerun stage 9 before any stage-10 UI-chrome review. Do not transcode and pretend it is original bytes."
     }
   ]
 }
