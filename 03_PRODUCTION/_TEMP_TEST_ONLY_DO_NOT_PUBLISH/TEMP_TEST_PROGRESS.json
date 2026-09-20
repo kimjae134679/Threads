@@ -3,40 +3,19 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T05:25:17+09:00",
+  "updatedAt": "2026-09-21T06:30:04+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Queue refreshed to 1,202 live candidates. This run tested 260916_직장인현실명언: exact Ppomppu individual provenance did not resolve through public search, so source bytes remain blocked and no downstream content was inferred."
+      "note": "This run tested 260916_진짜집구하는거개토나온다. Public Blind recommendation/search evidence verifies the exact title, snippet and masked author display, but no exact individual URL/stable post ID resolved; source bytes remain blocked and no downstream content was inferred."
     },
-    "10_ui_exclusion": {
-      "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
-      "note": "Existing exact WebP still requires actual visual review/classifier evidence on the exact hashed bytes. The new 재산세 unit cannot enter stage 10 until real source image/screenshot bytes are acquired."
-    },
-    "11_natural_splitting": {
-      "status": "PARTIAL",
-      "note": "Natural-boundary logic exists, but rejected summary prototypes are not acceptable evidence for the binding slide-2+ original-body rule."
-    },
-    "12_title_suggestion": {
-      "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Verified-source-only title suggestion unit exists for 260916_이게맞아맞벌이육아. No canonical A/P state change."
-    },
-    "13_browser_review": {
-      "status": "PARTIAL",
-      "note": "Repository entry identity was pinned previously, but rejected v1/v2 cannot advance approval or execution eligibility."
-    },
-    "14_review_screen": {
-      "status": "BLOCKED",
-      "note": "approvedVersion remains null. A CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection."
-    },
-    "15_approval_runtime_reflection": {
-      "status": "BLOCKED",
-      "note": "Requires a conforming human-selected TEMP version and digest equality through download/restore/execution input. executionEligible=false."
-    },
-    "16_live_publish_metrics": {
-      "status": "DISABLED",
-      "note": "No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."
-    }
+    "10_ui_exclusion": {"status":"BLOCKED_REAL_VISUAL_REVIEW_INPUT","note":"Existing exact WebP still requires actual visual review/classifier evidence on the exact hashed bytes. New stage9-blocked material cannot enter stage10 without permitted real source image/screenshot bytes."},
+    "11_natural_splitting": {"status":"PARTIAL","note":"Natural-boundary logic exists, but rejected summary prototypes are not acceptable evidence for the binding slide-2+ original-body rule."},
+    "12_title_suggestion": {"status":"PARTIAL_VERIFIED_UNIT","note":"Verified-source-only title suggestion unit exists for 260916_이게맞아맞벌이육아. No canonical A/P state change."},
+    "13_browser_review": {"status":"PARTIAL","note":"Repository entry identity was pinned previously, but rejected v1/v2 cannot advance approval or execution eligibility."},
+    "14_review_screen": {"status":"BLOCKED","note":"approvedVersion remains null. A CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection."},
+    "15_approval_runtime_reflection": {"status":"BLOCKED","note":"Requires a conforming human-selected TEMP version and digest equality through download/restore/execution input. executionEligible=false."},
+    "16_live_publish_metrics": {"status":"DISABLED","note":"No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."}
   },
   "bindingCoverRule": {
     "blurAllowed": false,
@@ -47,108 +26,17 @@
     "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
   },
   "samples": [
-    {
-      "candidateKey": "260916_2026회사별느낌",
-      "state": "TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이게맞아맞벌이육아",
-      "state": "TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이사가는아랫집",
-      "state": "TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이시대4050특징",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이혼가정예랑상견례두번",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_인생망한38살",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_입사직후퇴사vs스테이",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_입주청소부부",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_입주청소하러갔다가",
-      "state": "TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED",
-      "sourceBytesAcquired": true,
-      "sourceMediaFormat": "webp",
-      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
-      "sourceMediaDimensions": {
-        "width": 600,
-        "height": 871
-      },
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_재산세2천나왔네요",
-      "candidatePath": "data/candidates/260916_C0_A0_P0_재산세2천나왔네요.md",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_재산세2천나왔네요_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_재산세2천나왔네요_TEMP_TEST_ONLY/stage9_exact_source_asset_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "exactSourceVerified": true,
-      "sourcePostId": "27215",
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire permitted real body and source image/screenshot bytes from Ppomppu post 27215 with source URL/provenance/hash; do not bypass access controls."
-    },
-    {
-      "candidateKey": "260916_직장인현실명언",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    }
+    {"candidateKey":"260916_2026회사별느낌","state":"TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_이게맞아맞벌이육아","state":"TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_이사가는아랫집","state":"TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_이시대4050특징","state":"TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_이혼가정예랑상견례두번","state":"TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_인생망한38살","state":"TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_입사직후퇴사vs스테이","state":"TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_입주청소부부","state":"TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_입주청소하러갔다가","state":"TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED","sourceBytesAcquired":true,"sourceMediaFormat":"webp","sourceMediaSha256":"37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6","sourceMediaDimensions":{"width":600,"height":871},"temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_재산세2천나왔네요","state":"TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_직장인현실명언","state":"TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED","temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false},
+    {"candidateKey":"260916_진짜집구하는거개토나온다","testPath":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_진짜집구하는거개토나온다_TEMP_TEST_ONLY","stage9Artifact":"03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_진짜집구하는거개토나온다_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json","state":"TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED","exactSourceVerified":false,"sourceBodyComplete":false,"sourceAssetsComplete":false,"temporaryTestOnly":true,"publicationAllowed":false,"approvedVersion":null,"executionEligible":false,"next":"Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."}
   ]
 }
