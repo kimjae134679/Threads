@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeOnly": true,
+  "stage": 14,
+  "unit": "approved-version-guard-after-layout-rejection",
+  "candidateKey": "260916_2026회사별느낌",
+  "reviewedAt": "2026-09-20T17:25:00+09:00",
+  "humanFeedbackObserved": {
+    "v1Rejected": true,
+    "v2Rejected": true,
+    "reason": "User explicitly rejected summary/list/dashboard-style cards and restated the binding structure: slide 1 is a large hook cover; slide 2+ must preserve the original source body/media in original order without summarization or rewriting."
+  },
+  "approvedVersion": null,
+  "approvalState": "NO_APPROVED_TEMP_VERSION",
+  "executionEligible": false,
+  "browserDownloadObserved": false,
+  "freshPageRestoreObserved": false,
+  "approvedDigest": null,
+  "restoredDigest": null,
+  "digestsEqual": false,
+  "status": "BLOCKED_NEW_CONFORMING_TEMP_OUTPUT_AND_HUMAN_SELECTION",
+  "unblockWhen": "A new TEMP output conforming to CONTENT_LAYOUT_LOCK.md is built from permitted exact source body/media bytes, then a human explicitly selects that TEMP version and the exact downloaded bundle is restored on a fresh page with digest equality directly observed.",
+  "coverRule": {
+    "blurAllowed": false,
+    "realSourceMediaOnlyWhenVerifiedVisualMediaExists": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "largeTitleHigherWithThinOutline": true,
+    "slide2PlusOriginalBodyOrMediaOnly": true,
+    "summaryParaphraseRewriteAllowedOnSlide2Plus": false,
+    "generatedImageFallbackAllowed": false
+  },
+  "effectOnCanonicalCandidateState": "NONE",
+  "livePublishingEnabled": false
+}
