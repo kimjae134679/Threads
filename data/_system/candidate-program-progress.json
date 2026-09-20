@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-20T21:28:54+09:00",
+  "lastCycleAt": "2026-09-20T22:30:11+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -278,14 +278,23 @@
       "c1": "BLOCKED_SOURCE_ASSET_BYTES",
       "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Blind post are acquired with source URL/provenance/hash; no login or access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_인생망한38살",
+      "currentPath": "data/candidates/260916_C0_A0_P0_인생망한38살.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Public Inven index/search listings show the exact title and author 전자팔찌, but no exact individual-post URL/post ID was resolved in this run. A Fomos repost is secondary and is not accepted as primary provenance.",
+      "unblockWhen": "Exact individual primary Inven post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "storedQueueEntryCount": 1177,
-    "observedCurrentCandidateCount": 1177,
+    "storedQueueEntryCount": 1180,
+    "observedCurrentCandidateCount": 1180,
     "status": "REFRESHED_COMPLETE_LOCAL_ENUMERATION",
-    "note": "Refreshed from every current data/candidates markdown file on main after pulling six new discovery files; 1178 files represented."
+    "note": "Refreshed from every current data/candidates markdown file on main; 1180 candidate files represented."
   },
-  "notes": "Queue refreshed to 1178 current candidate files. Processed exactly one next filename-order candidate: 260916_이혼가정예랑상견례두번. Exact public Blind individual URL/post ID 8e8228tt resolved; real source screenshot/media bytes were not acquired, therefore A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 exact-source-vs-bytes verification."
+  "notes": "Queue refreshed to 1180 current candidate files. Processed exactly one next filename-order candidate: 260916_인생망한38살. Exact title is visible on public Inven listings, but exact individual primary URL/post ID was not resolved; secondary Fomos repost is insufficient. C0/A0/P0 and publicationAllowed=false remain. TEMP lane records only a fail-closed stage-9 primary-source gate."
 }
