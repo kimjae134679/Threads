@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "candidateKey": "260916_재산세2천나왔네요",
+  "stage": 9,
+  "status": "BLOCKED_SOURCE_ASSET_BYTES",
+  "source": {
+    "site": "Ppomppu",
+    "board": "whatever",
+    "postId": "27215",
+    "exactTitle": "재산세 2천나왔네요",
+    "canonicalIndividualUrl": "https://www.ppomppu.co.kr/zboard/view.php?id=whatever&no=27215",
+    "identityEvidence": "Official public Ppomppu 전/현/무포럼 listing exposes post 27215 with the exact title, 2026-09-10 date, anonymous author and an image marker. The individual page was not accessible to the automated reader in this run, so no body/image bytes are claimed."
+  },
+  "sourceBodyAcquired": false,
+  "sourceMediaBytesAcquired": false,
+  "ocrPerformed": false,
+  "visionPerformed": false,
+  "rightsCleared": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "coverRules": {
+    "blurAllowed": false,
+    "generatedImageFallback": false,
+    "realSourceMediaCoverOnlyWhenVerifiedVisualMedia": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "slide2PlusPreserveOriginalOrderAndContent": true
+  },
+  "unblockCondition": "Acquire the real body and any source image/screenshot bytes from post 27215 through public/permitted access, preserving the exact source URL and byte provenance/hash, without login, anti-bot, paywall or access-control bypass.",
+  "notes": "This TEMP TEST ONLY gate verifies source identity only. It does not upgrade canonical C/A/P state and must never be published."
+}
