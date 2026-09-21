@@ -1,0 +1,21 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "candidateKey": "260916_팁거절종업원",
+  "stage": 9,
+  "status": "BLOCKED_SOURCE_ASSET_BYTES",
+  "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728428",
+  "sourcePostId": "2728428",
+  "verifiedTitle": "팁을 거절하는 종업원",
+  "verifiedAuthor": "돌체콜드부르",
+  "verifiedPublishedAt": "2026-09-16 08:22",
+  "observedBodyText": "하지만 어림없지",
+  "sourceBytesAcquired": false,
+  "unblockWhen": "Permitted real source-media bytes from the same exact public Inven post are acquired with source URL/provenance/SHA-256; no login, anti-bot, paywall, or access-control bypass.",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "generatedImageFallback": false,
+  "nextStage": "10_ui_exclusion_after_source_bytes",
+  "notes": "Do not infer image contents, OCR, comments, rights clearance, A1, or P1. This TEMP gate cannot upgrade canonical candidate state."
+}
