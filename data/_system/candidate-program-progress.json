@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T20:30:03+09:00",
+  "lastCycleAt": "2026-09-21T22:30:00+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -498,14 +498,23 @@
       "observedEvidence": "Exact public Inven post ID 2728531 verified; exact title, author 전자팔찌, timestamp 2026-09-16 11:57 and public page text/metrics are visible. Original source image bytes were not acquired/stored with provenance/hash.",
       "unblockWhen": "Acquire the original source image bytes through public/permitted access without bypass and record source URLs plus hashes.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_회사에서만난MZ직원썰",
+      "currentPath": "data/candidates/260916_C0_A0_P0_회사에서만난MZ직원썰.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Fresh public exact/near-exact searches did not resolve a trustworthy individual Ppomppu post. The public Ppomppu 전/현/무 listing was checked but did not expose this exact title in the available indexed slice.",
+      "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T21:31:00+09:00",
-    "candidateFileCount": 1264,
-    "newCandidatesIncluded": 0,
-    "note": "Rebuilt/rechecked against every current file in data/candidates; blocked entries not re-evaluated unless unblock condition changed."
+    "at": "2026-09-21T22:30:00+09:00",
+    "candidateFileCount": 1273,
+    "newCandidatesIncluded": 9,
+    "note": "Rebuilt against every current data/candidates markdown after discovery run 302. Previously blocked entries were not re-evaluated because no recorded unblock condition change was observed."
   },
-  "notes": "Queue rechecked at 1264 current candidates. Processed exactly one next candidate 260916_허경환후회 (rank 64); exact Inven post 2728531 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
+  "notes": "Queue refreshed to 1,273 current candidates. Processed exactly one next genuinely unprocessed key after honoring already-recorded blocked candidate files: 260916_회사에서만난MZ직원썰; BLOCKED_PROVENANCE, C0/A0/P0, publicationAllowed=false."
 }

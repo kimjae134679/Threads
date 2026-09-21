@@ -3,7 +3,7 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T20:30:03+09:00",
+  "updatedAt": "2026-09-21T22:30:00+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PASS_TEMP_VERIFIED_UNIT",
@@ -14,12 +14,12 @@
       "note": "Visual review of all four exact hashed TEMP source images found no browser/app UI chrome; preserve originals unchanged and in order. Source_01 title line is source content, not chrome."
     },
     "11_natural_splitting": {
-      "status": "READY_FOR_REVIEW",
+      "status": "PASS_TEMP_VERIFIED_UNIT",
       "note": "Stage 10 passed on exact TEMP bytes. Next unit may review natural paragraph/scene boundaries while preserving original screenshot order/content."
     },
     "12_title_suggestion": {
-      "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Verified-source-only title suggestion unit exists for 260916_이게맞아맞벌이육아. No canonical A/P state change."
+      "status": "PASS_TEMP_VERIFIED_UNIT",
+      "note": "For 260916_팀장이헤드셋벗김, three short title suggestions were derived only from the verified exact Inven source title and TITLE_STYLE_GUIDE.md; no OCR/vision/image-content inference. TEMP only; no canonical state change."
     },
     "13_browser_review": {
       "status": "PARTIAL",
@@ -279,7 +279,7 @@
       "candidateKey": "260916_팀장이헤드셋벗김",
       "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY",
       "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/stage9_source_acquisition_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_SOURCE_BYTES_ACQUIRED",
+      "state": "TEMP_STAGE12_VERIFIED_TITLE_SUGGESTIONS",
       "exactSourceVerified": true,
       "sourceBodyComplete": true,
       "sourceAssetsComplete": true,
@@ -288,7 +288,7 @@
       "publicationAllowed": false,
       "approvedVersion": null,
       "executionEligible": false,
-      "next": "Run stage 10 UI-chrome exclusion/crop review on these exact hashed TEMP bytes; preserve original media order/content and do not upgrade canonical state."
+      "next": "Stage 13 one-material browser generation/download/reconnect review may proceed only under TEMP-only safeguards; publication remains disabled."
     },
     {
       "candidateKey": "260916_폭우웅덩이샴푸병원",

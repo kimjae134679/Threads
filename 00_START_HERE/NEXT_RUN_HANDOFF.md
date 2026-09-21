@@ -1,4 +1,12 @@
-﻿# NEXT RUN HANDOFF
+# NEXT RUN HANDOFF
+
+## 2026-09-21 22:30 KST — Sequential candidate + TEMP TEST ONLY
+- Refreshed queue from every current `data/candidates` file: 1,273 candidates. Discovery additions are included; blocked entries were not re-evaluated absent an unblock-condition change.
+- Processed exactly one next genuinely unprocessed candidate: `260916_회사에서만난MZ직원썰` (current rank 65 after refresh).
+- Fresh public exact/near-exact searches did not resolve a trustworthy exact individual Ppomppu post URL/post ID. Result: `BLOCKED_PROVENANCE`; C0/A0/P0, publicationAllowed=false. No body/comments/metrics/assets/OCR/vision/rights inference.
+- TEMP lane advanced separate `260916_팀장이헤드셋벗김` to stage 12: three short title suggestions derived only from the verified exact Inven source title plus `TITLE_STYLE_GUIDE.md`; no image-content inference.
+- TEMP flags remain temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false; no canonical C/A/P upgrade.
+- REAL publishing/P1 remains disabled. Next sequential run: refresh queue and process exactly one next filename-ascending unprocessed candidate; TEMP may attempt stage 13 only under TEMP-only safeguards.
 
 ## 2026-09-21 22:18 KST — Discovery-only run 302
 - User scope strictly `01_DISCOVERY`; no downstream stage work.

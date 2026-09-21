@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "prototypeNotice": "TEMP TEST ONLY prototype; may differ from eventual production. DO NOT PUBLISH.",
+  "candidateKey": "260916_팀장이헤드셋벗김",
+  "stage": 12,
+  "status": "PASS_VERIFIED_SOURCE_ONLY_TITLE_SUGGESTIONS",
+  "evidenceBasis": "Only the verified exact source title and identity from Inven post 2728525; no OCR/vision or unverified image interpretation used.",
+  "titleSuggestions": [
+    "말 못 알아듣는다고 헤드셋 벗긴 팀장",
+    "팀장이 강제로 헤드셋을 벗겼습니다",
+    "말 못 알아듣는다고 팀장이 헤드셋을 벗겼습니다"
+  ],
+  "styleGuide": "01_DISCOVERY/TITLE_STYLE_GUIDE.md",
+  "generatedImageFallback": false,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "canonicalCandidateStateUpgraded": false,
+  "next": "Stage 13 may test one-material browser generation/download/reconnect only if it can preserve the verified four-source-media order and all TEMP-only safeguards; otherwise record the exact blocker."
+}
