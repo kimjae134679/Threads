@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T10:25:03+09:00",
+  "updatedAt": "2026-09-21T11:26:25+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "260916_추석당근알바 exact public TheQoo individual source/post ID verified. Source is image-based (3 observed media items), but actual image bytes were not persisted; stage 9 remains BLOCKED_SOURCE_ASSET_BYTES and no OCR/image contents are claimed."
+      "note": "260916_축의금얼마나적당 stage-9 primary-source gate tested; exact Ppomppu individual provenance remains unresolved, so source bytes/body/media were not acquired or inferred."
     },
     "10_ui_exclusion": {
       "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
@@ -210,6 +210,14 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Acquire permitted exact source image bytes with provenance/hash before stage 10; no login/access-control bypass."
+    },
+    {
+      "candidateKey": "260916_축의금얼마나적당",
+      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false
     }
   ]
 }

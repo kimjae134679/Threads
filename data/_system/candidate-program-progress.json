@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T10:25:03+09:00",
+  "lastCycleAt": "2026-09-21T11:26:25+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -393,6 +393,14 @@
       "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
       "c1": "BLOCKED_SOURCE_ASSET_BYTES",
       "unblockWhen": "Permitted real image bytes from the same public individual TheQoo post are acquired with source URL/provenance/hash; no login, anti-bot, or access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_축의금얼마나적당",
+      "currentPath": "data/candidates/260916_C0_A0_P0_축의금얼마나적당.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
       "publicationAllowed": false
     }
   ],
