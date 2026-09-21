@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-22 00:18 KST — Discovery-only run 304
+- User scope strictly `01_DISCOVERY`; no downstream stage work. User instruction overrides unrelated repo-tip TEMP/downstream notes.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 10 new C1 candidates with exact individual public URLs.
+- Top additions: `[판] 친구랑 손절했는데 누구잘못인가요?`, `[판] 결혼하면 진짜친구가 보인다더니 맞는말이네요`, `싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기`, `[판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생`, `내 친구랑 바람난 와이프 이혼 썰...`.
+- `축의금 없는 스몰웨딩 찐 후기.jpg` is retained as C1 for its exact Ppomppu page but explicitly `본문 미확인`; core content is image/external-blog based and was not inferred.
+- All remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-21 23:15 KST — Discovery-only run 303
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 10 new C1 candidates with exact individual public URLs.
@@ -24,11 +32,11 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 303 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 303.
+- Discovery run 304 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 304.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 303. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 304. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
 
 ## 2026-09-21 21:31 KST — Sequential candidate + TEMP TEST ONLY
