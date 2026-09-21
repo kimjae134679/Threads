@@ -1,5 +1,12 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 12:28 KST — Sol sequential run
+- Queue refreshed from every current `data/candidates` markdown: **1231 total / C0 444 / C1 787 / A0 1231 / A1 0 / P0 1231 / P1 0**.
+- Candidate lane processed exactly one next key: `260916_출산전후바람많이펴` (rank 55). Exact public Blind individual source verified, stable post ID `yj0s4svu`; public page title/body matched. Direct unauthenticated byte fetch returned HTTP 403, so no bypass was attempted and C1 source-byte acquisition remains `BLOCKED_SOURCE_ASSET_BYTES`. A0/P0/publicationAllowed=false.
+- TEMP TEST ONLY lane added only `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json`. `temporaryTestOnly=true`, `publicationAllowed=false`, no canonical state upgrade. Stage 10+ remains blocked until permitted source bytes with provenance/hash exist.
+- No P1, real publishing, real metrics, rights/privacy/safety approval, OCR/vision, or fabricated assets/body/comments were recorded.
+- Next sequential candidate after refresh: `260916_코인실수회고` (rank 56), unless a newly discovered filename sorts earlier before the next refresh.
+
 Updated: 2026-09-21 12:14 KST
 
 ## Sequential candidate automation

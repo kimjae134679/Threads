@@ -402,19 +402,31 @@
       "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
       "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_출산전후바람많이펴",
+      "currentPath": "data/candidates/260916_C0_A0_P0_출산전후바람많이펴.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EB%93%A4%EC%9D%80-%EC%B6%9C%EC%82%B0%EC%A0%84%ED%9B%84%EB%A1%9C-%EB%B0%94%EB%9E%8C-%EB%A7%8E%EC%9D%B4-%ED%8E%B4-yj0s4svu",
+      "sourcePostId": "yj0s4svu",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real source body/media bytes from the same public individual Blind post are persisted with source URL/provenance/hash; no login, anti-bot, or access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T09:52:59+09:00",
-    "total": 1211,
-    "C0": 442,
-    "C1": 769,
-    "A0": 1211,
+    "at": "2026-09-21T12:28:43+09:00",
+    "total": 1231,
+    "C0": 444,
+    "C1": 787,
+    "A0": 1231,
     "A1": 0,
-    "P0": 1211,
+    "P0": 1231,
     "P1": 0,
     "source": "all current data/candidates markdown files excluding README.md"
   },
-  "notes": "Queue refreshed from all 1,211 current candidate markdown files. Processed exactly one next filename-order candidate at rank 52: exact Blind individual URL/post ID 26ecbnxk verified publicly; source bytes with provenance/hash not persisted, so BLOCKED_SOURCE_ASSET_BYTES; A0/P0/publicationAllowed=false remain. TEMP lane records only the stage-9 exact-source gate."
+  "notes": "Queue refreshed from all 1,231 current candidate markdown files by preserving existing path/state entries and merging 4 newly discovered paths in filename order. Processed exactly one next candidate: 260916_출산전후바람많이펴; exact Blind post yj0s4svu verified, direct unauthenticated byte fetch returned HTTP 403 and was not bypassed; BLOCKED_SOURCE_ASSET_BYTES, A0/P0/publicationAllowed=false."
 }

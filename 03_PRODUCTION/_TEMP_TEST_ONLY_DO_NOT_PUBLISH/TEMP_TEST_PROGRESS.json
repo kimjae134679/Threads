@@ -3,11 +3,11 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T11:26:25+09:00",
+  "updatedAt": "2026-09-21T12:28:43+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "260916_축의금얼마나적당 stage-9 primary-source gate tested; exact Ppomppu individual provenance remains unresolved, so source bytes/body/media were not acquired or inferred."
+      "note": "260916_출산전후바람많이펴 exact public Blind individual source yj0s4svu verified; direct unauthenticated byte fetch returned HTTP 403 and was not bypassed, so source bytes remain blocked."
     },
     "10_ui_exclusion": {
       "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
@@ -218,6 +218,20 @@
       "publicationAllowed": false,
       "approvedVersion": null,
       "executionEligible": false
+    },
+    {
+      "candidateKey": "260916_출산전후바람많이펴",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
+      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+      "exactSourceVerified": true,
+      "sourceBodyComplete": false,
+      "sourceAssetsComplete": false,
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Acquire permitted exact source body/media bytes with provenance/hash before stage 10; no login/access-control bypass."
     }
   ]
 }

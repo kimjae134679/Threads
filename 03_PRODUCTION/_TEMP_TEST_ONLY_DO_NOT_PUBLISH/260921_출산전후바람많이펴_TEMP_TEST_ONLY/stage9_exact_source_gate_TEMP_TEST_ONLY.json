@@ -1,0 +1,30 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_출산전후바람많이펴",
+  "stage": 9,
+  "prototypeOnly": true,
+  "exactSourceVerified": true,
+  "exactSource": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EB%93%A4%EC%9D%80-%EC%B6%9C%EC%82%B0%EC%A0%84%ED%9B%84%EB%A1%9C-%EB%B0%94%EB%9E%8C-%EB%A7%8E%EC%9D%B4-%ED%8E%B4-yj0s4svu",
+  "sourcePostId": "yj0s4svu",
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "acquisitionAttempt": {
+    "method": "direct unauthenticated HTTP GET",
+    "result": "HTTP_403",
+    "bypassAttempted": false
+  },
+  "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+  "blocker": "BLOCKED_SOURCE_ASSET_BYTES",
+  "unblockWhen": "Permitted real source body/media bytes from the same exact public post can be acquired and persisted with provenance/hash without login, anti-bot, paywall, or access-control bypass.",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "coverRule": {
+    "blur": false,
+    "generatedImageFallback": false,
+    "realSourceMediaOnlyIfVerifiedSourceHasVisualMedia": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "preserveSlide2PlusOriginalOrderAndContent": true
+  },
+  "note": "TEMP TEST ONLY prototype. Does not upgrade canonical C/A/P state and must not be published."
+}
