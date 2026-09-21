@@ -1,19 +1,18 @@
 # NEXT RUN HANDOFF
 
-Updated: 2026-09-21 09:52 KST
+Updated: 2026-09-21 10:16 KST
 
-## Candidate sequential lane
-- Queue refreshed from all current `data/candidates`: 1,211 total; no new candidate file since prior queue snapshot, ordering remains filename-ascending.
-- Processed exactly one next unprocessed candidate: rank 52 `260916_첫해외여행오사카정떨어짐`.
-- Exact public Blind individual source verified: stable post ID `26ecbnxk`; title and full public body matched the candidate topic.
-- Logical state: C1 / A0 / P0. Result: `BLOCKED_SOURCE_ASSET_BYTES` because exact source body/media bytes were not persisted with provenance/hash. Do not infer assets, OCR/vision, rights clearance, A1 or P1.
-- Next sequential candidate after respecting existing blocked conditions: rank 53 `260916_추석당근알바` unless queue refresh inserts an earlier filename or a recorded unblock condition changes.
+## User-priority scope
+- This automation is `01_DISCOVERY` only. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS.
+- Do not capture screenshots, download images, OCR, make carousels, render, run Chrome E2E, implement providers/publishing, publish/schedule posts, or modify existing production assets.
+- `publicationAllowed=false`; no A1/P1 promotion.
 
-## TEMP TEST ONLY lane
-- Added one concrete stage-9 verification unit under `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_rank52_TEMP_TEST_ONLY/`.
-- Exact Blind source is publicly readable, but persisted source bytes/provenance hash are still missing, therefore stage 10/11 is blocked for this unit.
-- `temporaryTestOnly=true`, `publicationAllowed=false`, `approvedVersion=null`, `executionEligible=false` remain binding.
-- Cover rules remain binding: no blur; verified real source media only for visual cover; text-only source gets text-only cover; large high title with thin outline; slide 2+ preserves original media/screenshot order/content; generated-image fallback disabled.
+## Latest discovery run
+- Public Korean-community search/discovery reviewed 40+ raw/search leads.
+- Newly retained: 4 C1 candidates in `data/candidates/`.
+- Top new titles: `남자친구네 가족 만나고 나서 엉엉 울다 잠든 후기(두서X)`, `눈새 친구 때문에 짜증나는 후기`, `네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)`, `친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기`.
+- Exact individual public URLs and exposed bodies were verified for all four; comments were not read. No access restriction was bypassed.
+- Detailed log: `01_DISCOVERY/ops/290-sol.md`.
 
-## Publishing
-- No publish, P1, live metrics, rights/privacy/safety approval, or canonical production upgrade was performed.
+## Next run
+Continue new Korean-community-first discovery plus exact provenance/source verification of existing candidates. Filter duplicates, weak-story, unsafe/sensitive, image-only and weak-provenance leads rather than inventing or padding metadata.
