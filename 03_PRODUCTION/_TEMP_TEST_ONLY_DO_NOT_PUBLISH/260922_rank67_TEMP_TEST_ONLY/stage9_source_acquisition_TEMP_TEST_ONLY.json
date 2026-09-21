@@ -16,11 +16,14 @@
   "acquiredAssets": [{
     "order": 1,
     "url": "https://img-cdn.theqoo.net/Quzyme.jpg",
-    "file": "source_01.jpg",
-    "sha256": "b0ff9dbb601241eaec8647e4a71f0c13ea85b17259fac0ebb5f26c1a5981307d"
+    "localTempFile": "source_01.jpg",
+    "sha256": "b0ff9dbb601241eaec8647e4a71f0c13ea85b17259fac0ebb5f26c1a5981307d",
+    "repositoryPersisted": false
   }],
+  "state": "TEMP_STAGE9_BYTES_ACQUIRED_LOCALLY_REPOSITORY_PERSISTENCE_PENDING",
+  "unblockWhen": "Persist the exact acquired binary into the TEMP_TEST_ONLY workspace in repository-capable tooling, preserving URL+SHA-256 provenance.",
   "rightsClearance": "NOT_INFERRED",
   "approvedVersion": null,
   "executionEligible": false,
-  "next": "Stage 10 UI-chrome/crop visual review only; no publishing."
+  "next": "Persist exact binary first; only then stage 10 UI-chrome/crop visual review. No publishing."
 }
