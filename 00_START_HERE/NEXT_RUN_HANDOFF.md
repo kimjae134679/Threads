@@ -1,5 +1,12 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 23:15 KST — Discovery-only run 303
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 10 new C1 candidates with exact individual public URLs.
+- Top additions: `아이 키우는데 졸라 황당한 후기`, `채용 관련 일 하면서 겪은 최근의 황당한 후기`, `군인 남친한테 받은 2주년 선물이 서운한 후기`, `친구가 결혼식 축의금 5만원해서 서운한 후기`, `동생 커플 결혼식 못 오게 한 후기(하소연글)`.
+- All remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-21 22:30 KST — Sequential candidate + TEMP TEST ONLY
 - Refreshed queue from every current `data/candidates` file: 1,273 candidates. Discovery additions are included; blocked entries were not re-evaluated absent an unblock-condition change.
 - Processed exactly one next genuinely unprocessed candidate: `260916_회사에서만난MZ직원썰` (current rank 65 after refresh).
@@ -17,11 +24,11 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 302 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 302.
+- Discovery run 303 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 303.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 302. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 303. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
 
 ## 2026-09-21 21:31 KST — Sequential candidate + TEMP TEST ONLY
