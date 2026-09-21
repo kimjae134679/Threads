@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-22 08:16 KST — Discovery-only run 312
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 10 new C1 candidates with exact individual public URLs. One attempted candidate was already present and was not modified or duplicated.
+- Top additions: `회사 사람들이 돈 모아서 나한테 240만원 준 후기.. 근데 나는 퇴사할지도 모르는 중기..`, `다시는 시댁 성묘 못 (안) 갈 것 같은 후기 ㅋㅋㅋ`, `판) 아빠가 복권 당첨 사실을 숨겼어요`, `청첩장 받고 축의금 고민하게 된 후기`, `로테이션 소개팅 후기`.
+- NAVER Cafe/Instiz/Clien access restrictions were not bypassed. All retained bodies were read; comments were not read.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-22 07:14 KST — Discovery-only run 311
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 5 new C1 candidates with exact individual public URLs. Heavy duplication with prior discovery runs kept retention strict.
@@ -17,9 +25,9 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 311 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 311.
+- Discovery run 312 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 312.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 311. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 312. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
