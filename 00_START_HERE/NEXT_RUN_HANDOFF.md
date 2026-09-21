@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-22 03:16 KST — Discovery-only run 307
+- User scope strictly `01_DISCOVERY`; no downstream stage work. User instruction overrides unrelated repo-tip TEMP/downstream notes.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 10 new C1 candidates with exact individual public URLs.
+- Top additions: `판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요`, `결혼한 친구랑 결혼전후로 관계 파탄난거 써보는 후기`, `축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기`, `핫게 보고 내 친구 생각난 후기`, `의도치 않게 소개팅한 후기`.
+- Clien/Instiz robots restrictions were not bypassed.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-22 02:15 KST — Discovery-only run 306
 - User scope strictly `01_DISCOVERY`; no downstream stage work. User instruction overrides unrelated repo-tip TEMP/downstream notes.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 7 new C1 candidates with exact individual public URLs.
@@ -24,9 +32,9 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 306 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 306.
+- Discovery run 307 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 307.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 306. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 307. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
