@@ -60,3 +60,10 @@
 - Exact public Inven source verified: post `2728525`, exact title, author `제르만크록`, timestamp `2026-09-16 11:48`, four ordered WebP source-media references. Canonical candidate remains C0/A0/P0 / `BLOCKED_SOURCE_ASSET_BYTES`; TEMP evidence cannot upgrade it.
 - TEMP TEST ONLY stage 9 acquired all four public image bytes into `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/` with source URL + SHA-256 provenance. `temporaryTestOnly=true`, `publicationAllowed=false`, `approvedVersion=null`, `executionEligible=false`; stage 10 is now ready for review on these exact hashed TEMP bytes.
 - No OCR/vision interpretation, comments, rights clearance, A1/P1, real publishing, or metrics were fabricated/performed. Next sequential candidate by filename is `260916_팁거절종업원` unless newly discovered files sort earlier.
+
+## Sol run 267 ??2026-09-21 18:26 KST
+- Queue source directory rechecked after discovery run 298; existing queue snapshot is 1,255 and repository currently contains newly added discovery files requiring refresh before the next candidate selection.
+- Processed exactly one next candidate: `260916_?곴굅?덉쥌?낆썝`. Candidate only had an Inven hot-list title; fresh public exact/near-exact searches did not resolve a trustworthy individual Inven URL/post ID. Kept C0/A0/P0 and `BLOCKED_PROVENANCE`; unrelated tipping pages were rejected.
+- TEMP TEST ONLY advanced the prior `260916_??μ씠?ㅻ뱶?뗫쿁源` unit through stage 10. Visual review of all four exact hashed source images found no browser/app UI chrome, so decision is PASS_NO_CROP_NEEDED and preserve all four originals unchanged/in order. Stage 11 is ready for review.
+- TEMP flags remain temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. No OCR/rewriting, rights clearance, A1/P1, metrics, or publishing.
+

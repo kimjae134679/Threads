@@ -1,298 +1,298 @@
-{
-  "schemaVersion": 1,
-  "temporaryTestOnly": true,
-  "publicationAllowed": false,
-  "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T17:27:44+09:00",
-  "requestedTrack": {
-    "9_source_auto_acquisition": {
-      "status": "PASS_TEMP_VERIFIED_UNIT",
-      "note": "Exact public Inven post 2728525 verified and all four ordered public source image bytes acquired into TEMP TEST ONLY workspace with SHA-256 provenance. TEMP evidence does not upgrade canonical C/A/P state."
-    },
-    "10_ui_exclusion": {
-      "status": "READY_FOR_REVIEW",
-      "note": "Four exact hashed TEMP source images are now available for stage 10 UI-chrome exclusion/crop review; no crop decision fabricated in this run."
-    },
-    "11_natural_splitting": {
-      "status": "PARTIAL",
-      "note": "Natural-boundary logic exists, but rejected summary prototypes are not acceptable evidence for the binding slide-2+ original-body rule."
-    },
-    "12_title_suggestion": {
-      "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "Verified-source-only title suggestion unit exists for 260916_이게맞아맞벌이육아. No canonical A/P state change."
-    },
-    "13_browser_review": {
-      "status": "PARTIAL",
-      "note": "Repository entry identity was pinned previously, but rejected v1/v2 cannot advance approval or execution eligibility."
-    },
-    "14_review_screen": {
-      "status": "BLOCKED",
-      "note": "approvedVersion remains null. A CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection."
-    },
-    "15_approval_runtime_reflection": {
-      "status": "BLOCKED",
-      "note": "Requires a conforming human-selected TEMP version and digest equality through download/restore/execution input. executionEligible=false."
-    },
-    "16_live_publish_metrics": {
-      "status": "DISABLED",
-      "note": "No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."
-    }
-  },
-  "bindingCoverRule": {
-    "blurAllowed": false,
-    "generatedImageFallback": false,
-    "realSourceMediaCoverOnlyWhenVerifiedVisualMedia": true,
-    "textOnlyCoverWithoutGeneratedImage": true,
-    "titleLargeAndHigherWithThinOutline": true,
-    "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
-  },
-  "samples": [
-    {
-      "candidateKey": "260916_2026회사별느낌",
-      "state": "TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이게맞아맞벌이육아",
-      "state": "TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이사가는아랫집",
-      "state": "TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이시대4050특징",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_이혼가정예랑상견례두번",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_인생망한38살",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_입사직후퇴사vs스테이",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_입주청소부부",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_입주청소하러갔다가",
-      "state": "TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED",
-      "sourceBytesAcquired": true,
-      "sourceMediaFormat": "webp",
-      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
-      "sourceMediaDimensions": {
-        "width": 600,
-        "height": 871
-      },
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_재산세2천나왔네요",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_직장인현실명언",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_진짜집구하는거개토나온다",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_진짜집구하는거개토나온다_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_진짜집구하는거개토나온다_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "exactSourceVerified": false,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_집구하는과정느낀점정리",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집구하는과정느낀점정리_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집구하는과정느낀점정리_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
-      "exactSourceVerified": true,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Persist permitted exact source body/media bytes with provenance/hash before stage 10/11; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_집안일분담으로왜싸움",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집안일분담으로왜싸움_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집안일분담으로왜싸움_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "exactSourceVerified": false,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_첫해외여행오사카정떨어짐",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_rank52_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_rank52_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
-      "exactSourceVerified": true,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_추석당근알바",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_추석당근알바_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_추석당근알바_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
-      "exactSourceVerified": true,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire permitted exact source image bytes with provenance/hash before stage 10; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_축의금얼마나적당",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false
-    },
-    {
-      "candidateKey": "260916_출산전후바람많이펴",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
-      "exactSourceVerified": true,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire permitted exact source body/media bytes with provenance/hash before stage 10; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_코인실수회고",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_코인실수회고_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_코인실수회고_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "exactSourceVerified": false,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_콜센터진상손님직업",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상손님직업_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상손님직업_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
-      "exactSourceVerified": false,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Resolve exact individual Inven URL/post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
-    },
-    {
-      "candidateKey": "260916_콜센터진상직업",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상직업_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상직업_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSETS_BLOCKED",
-      "exactSourceVerified": true,
-      "sourceBodyComplete": false,
-      "sourceAssetsComplete": false,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Acquire all 8 original Inven image bytes via public/permitted access with URL+hash provenance; then stage10 review may begin."
-    },
-    {
-      "candidateKey": "260916_팀장이헤드셋벗김",
-      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY",
-      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/stage9_source_acquisition_TEMP_TEST_ONLY.json",
-      "state": "TEMP_STAGE9_SOURCE_BYTES_ACQUIRED",
-      "exactSourceVerified": true,
-      "sourceBodyComplete": true,
-      "sourceAssetsComplete": true,
-      "sourceAssetCount": 4,
-      "temporaryTestOnly": true,
-      "publicationAllowed": false,
-      "approvedVersion": null,
-      "executionEligible": false,
-      "next": "Run stage 10 UI-chrome exclusion/crop review on these exact hashed TEMP bytes; preserve original media order/content and do not upgrade canonical state."
-    }
-  ],
-  "lastUpdated": "2026-09-21T17:27:44+09:00",
-  "lastCandidateKey": "260916_팀장이헤드셋벗김",
-  "lastStage": 9,
-  "lastStatus": "PASS_TEMP_SOURCE_BYTES_ACQUIRED"
+﻿{
+    "schemaVersion":  1,
+    "temporaryTestOnly":  true,
+    "publicationAllowed":  false,
+    "root":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+    "updatedAt":  "2026-09-21T18:26:52+09:00",
+    "requestedTrack":  {
+                           "9_source_auto_acquisition":  {
+                                                             "status":  "PASS_TEMP_VERIFIED_UNIT",
+                                                             "note":  "Exact public Inven post 2728525 verified and all four ordered public source image bytes acquired into TEMP TEST ONLY workspace with SHA-256 provenance. TEMP evidence does not upgrade canonical C/A/P state."
+                                                         },
+                           "10_ui_exclusion":  {
+                                                   "status":  "PASS_TEMP_NO_CROP_NEEDED",
+                                                   "note":  "Visual review of all four exact hashed TEMP source images found no browser/app UI chrome; preserve originals unchanged and in order. Source_01 title line is source content, not chrome."
+                                               },
+                           "11_natural_splitting":  {
+                                                        "status":  "READY_FOR_REVIEW",
+                                                        "note":  "Stage 10 passed on exact TEMP bytes. Next unit may review natural paragraph/scene boundaries while preserving original screenshot order/content."
+                                                    },
+                           "12_title_suggestion":  {
+                                                       "status":  "PARTIAL_VERIFIED_UNIT",
+                                                       "note":  "Verified-source-only title suggestion unit exists for 260916_이게맞아맞벌이육아. No canonical A/P state change."
+                                                   },
+                           "13_browser_review":  {
+                                                     "status":  "PARTIAL",
+                                                     "note":  "Repository entry identity was pinned previously, but rejected v1/v2 cannot advance approval or execution eligibility."
+                                                 },
+                           "14_review_screen":  {
+                                                    "status":  "BLOCKED",
+                                                    "note":  "approvedVersion remains null. A CONTENT_LAYOUT_LOCK-conforming TEMP output from permitted exact source body/media bytes is required before human selection."
+                                                },
+                           "15_approval_runtime_reflection":  {
+                                                                  "status":  "BLOCKED",
+                                                                  "note":  "Requires a conforming human-selected TEMP version and digest equality through download/restore/execution input. executionEligible=false."
+                                                              },
+                           "16_live_publish_metrics":  {
+                                                           "status":  "DISABLED",
+                                                           "note":  "No real publishing or metrics in TEMP lane without separate explicit approval for a specific live post."
+                                                       }
+                       },
+    "bindingCoverRule":  {
+                             "blurAllowed":  false,
+                             "generatedImageFallback":  false,
+                             "realSourceMediaCoverOnlyWhenVerifiedVisualMedia":  true,
+                             "textOnlyCoverWithoutGeneratedImage":  true,
+                             "titleLargeAndHigherWithThinOutline":  true,
+                             "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent":  true
+                         },
+    "samples":  [
+                    {
+                        "candidateKey":  "260916_2026회사별느낌",
+                        "state":  "TEMP_TEST_REJECTED_PROTOTYPES_NO_APPROVED_VERSION",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_이게맞아맞벌이육아",
+                        "state":  "TEMP_STAGE12_VERIFIED_TITLE_UNIT_ONLY",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_이사가는아랫집",
+                        "state":  "TEMP_STAGE9_SECONDARY_MIRROR_PRIMARY_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_이시대4050특징",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_이혼가정예랑상견례두번",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_인생망한38살",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_입사직후퇴사vs스테이",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_입주청소부부",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_입주청소하러갔다가",
+                        "state":  "TEMP_STAGE10_UI_CHROME_REVIEW_BLOCKED",
+                        "sourceBytesAcquired":  true,
+                        "sourceMediaFormat":  "webp",
+                        "sourceMediaSha256":  "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+                        "sourceMediaDimensions":  {
+                                                      "width":  600,
+                                                      "height":  871
+                                                  },
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_재산세2천나왔네요",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSET_BYTES_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_직장인현실명언",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_진짜집구하는거개토나온다",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_진짜집구하는거개토나온다_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_진짜집구하는거개토나온다_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "exactSourceVerified":  false,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_집구하는과정느낀점정리",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집구하는과정느낀점정리_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집구하는과정느낀점정리_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+                        "exactSourceVerified":  true,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Persist permitted exact source body/media bytes with provenance/hash before stage 10/11; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_집안일분담으로왜싸움",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집안일분담으로왜싸움_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집안일분담으로왜싸움_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "exactSourceVerified":  false,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_첫해외여행오사카정떨어짐",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_rank52_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_rank52_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+                        "exactSourceVerified":  true,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_추석당근알바",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_추석당근알바_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_추석당근알바_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+                        "exactSourceVerified":  true,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Acquire permitted exact source image bytes with provenance/hash before stage 10; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_축의금얼마나적당",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false
+                    },
+                    {
+                        "candidateKey":  "260916_출산전후바람많이펴",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+                        "exactSourceVerified":  true,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Acquire permitted exact source body/media bytes with provenance/hash before stage 10; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_코인실수회고",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_코인실수회고_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_코인실수회고_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "exactSourceVerified":  false,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_콜센터진상손님직업",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상손님직업_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상손님직업_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+                        "exactSourceVerified":  false,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Resolve exact individual Inven URL/post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
+                    },
+                    {
+                        "candidateKey":  "260916_콜센터진상직업",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상직업_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상직업_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSETS_BLOCKED",
+                        "exactSourceVerified":  true,
+                        "sourceBodyComplete":  false,
+                        "sourceAssetsComplete":  false,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Acquire all 8 original Inven image bytes via public/permitted access with URL+hash provenance; then stage10 review may begin."
+                    },
+                    {
+                        "candidateKey":  "260916_팀장이헤드셋벗김",
+                        "testPath":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY",
+                        "stage9Artifact":  "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/stage9_source_acquisition_TEMP_TEST_ONLY.json",
+                        "state":  "TEMP_STAGE9_SOURCE_BYTES_ACQUIRED",
+                        "exactSourceVerified":  true,
+                        "sourceBodyComplete":  true,
+                        "sourceAssetsComplete":  true,
+                        "sourceAssetCount":  4,
+                        "temporaryTestOnly":  true,
+                        "publicationAllowed":  false,
+                        "approvedVersion":  null,
+                        "executionEligible":  false,
+                        "next":  "Run stage 10 UI-chrome exclusion/crop review on these exact hashed TEMP bytes; preserve original media order/content and do not upgrade canonical state."
+                    }
+                ],
+    "lastUpdated":  "2026-09-21T18:26:52+09:00",
+    "lastCandidateKey":  "260916_팀장이헤드셋벗김",
+    "lastStage":  9,
+    "lastStatus":  "PASS_TEMP_SOURCE_BYTES_ACQUIRED"
 }

@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T17:27:44+09:00",
+  "lastCycleAt": "2026-09-21T18:26:52+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -461,6 +461,15 @@
       "c1": "BLOCKED_REAL_SOURCE_ASSET_ACQUISITION",
       "observedEvidence": "Exact public Inven post ID 2728525 verified: canonical URL, exact title, author 제르만크록, timestamp 2026-09-16 11:48, and four ordered source image references. TEMP TEST ONLY acquired copies do not upgrade canonical candidate state.",
       "unblockWhen": "Acquire/store the four original Inven source image bytes in an approved canonical evidence location with URL+hash provenance and complete required rights/privacy/safety review; TEMP-only bytes do not satisfy canonical C1.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_팁거절종업원",
+      "currentPath": "data/candidates/260916_C0_A0_P0_팁거절종업원.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Candidate records only an Inven Open Issue Gallery public hot-list title. Fresh exact/near-exact public searches did not resolve a trustworthy individual Inven post URL/post ID; unrelated tipping pages were rejected.",
+      "unblockWhen": "Exact individual primary Inven post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
       "publicationAllowed": false
     }
   ],

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "prototypeNotice": "TEMP TEST ONLY prototype; may differ from eventual production. DO NOT PUBLISH.",
+  "candidateKey": "260916_팀장이헤드셋벗김",
+  "stage": 10,
+  "status": "PASS_NO_CROP_NEEDED",
+  "reviewedAssets": 4,
+  "decision": "Preserve all four exact source images unchanged and in original order.",
+  "uiChromeDetected": false,
+  "cropApplied": false,
+  "reason": "Visual review of the four hashed source images shows content-only white-background text screenshots; no browser/app navigation bars, controls, or unrelated platform chrome were present. The title line in source_01 is source content and must not be cropped.",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "canonicalCandidateStateUpgraded": false,
+  "next": "Stage 11 may evaluate natural paragraph/scene boundaries while preserving the four original images/order/content; do not OCR or rewrite source text as a substitute for the original screenshots."
+}
