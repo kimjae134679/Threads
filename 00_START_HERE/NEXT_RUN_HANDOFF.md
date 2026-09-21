@@ -1,5 +1,14 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 18:14 KST — Discovery-only run 298
+- User scope was strictly `01_DISCOVERY`; no downstream stage work was performed.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs.
+- Top additions: `혼기 찬 지인의 결혼 과정`, `친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기`, `결혼 정보회사에 다녀온 썰.txt`.
+- The first candidate's observed body was image-based and was not read; its candidate explicitly says `본문 미확인`. The other two had public text body content observed, and only actually observed material was recorded.
+- All retained remain A0/P0 with `publicationAllowed=false`.
+- No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-21 17:14 KST — Discovery-only run 297
 - User scope was strictly `01_DISCOVERY`; no downstream stage work was performed.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs and readable body text.
@@ -33,11 +42,11 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 297 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 297.
+- Discovery run 298 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 298.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged. Discovery run 297 did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged. Discovery run 298 did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
 
 ## Sol run 265 (2026-09-21 16:28 KST)
