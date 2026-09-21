@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 20:15 KST — Discovery-only run 300
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs.
+- Top additions: `(초스압) 망한 피씨방 인수한 썰`, `얼떨결에 결혼한 상견례 썰.txt`, `펌) 중소기업 썰.ssul`.
+- The SME item is explicitly a repost (`펌`); first-origin provenance was not invented or claimed.
+- All remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-21 19:18 KST — Discovery-only run 299
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads. Retained 3 new C1 candidates with exact individual public URLs and observed text bodies.
@@ -35,11 +43,11 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 299 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 299.
+- Discovery run 300 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 300.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged. Discovery run 299 did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged. Discovery run 300 did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
 
 ## 2026-09-21 19:25 KST — Sequential candidate + TEMP TEST ONLY
