@@ -1,5 +1,14 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 17:14 KST — Discovery-only run 297
+- User scope was strictly `01_DISCOVERY`; no downstream stage work was performed.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs and readable body text.
+- Top additions: `다시는 룸메이트랑 같이 안 살게된 썰`, `돈 없는 친구가 피곤한 후기`, `맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기`, `시댁에서 나만 설거지 해서 계속 화가나는 후기`.
+- One additional verified lead (`미팅인줄 모르고 단체 미팅 다녀온 후기`) was not counted because its repository write was blocked.
+- All retained remain A0/P0 with `publicationAllowed=false`.
+- No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-21 16:16 KST — Discovery-only run 296
 - User scope for this run was strictly `01_DISCOVERY`; no downstream stage work was performed.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs and readable body text.
@@ -24,13 +33,12 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 296 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 296.
+- Discovery run 297 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 297.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged. Discovery run 296 did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged. Discovery run 297 did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
-
 
 ## Sol run 265 (2026-09-21 16:28 KST)
 - Queue snapshot rechecked: 1,248 candidates; next sequential rank 59 processed: `260916_탕수육딸기먼저먹을까봐`.
