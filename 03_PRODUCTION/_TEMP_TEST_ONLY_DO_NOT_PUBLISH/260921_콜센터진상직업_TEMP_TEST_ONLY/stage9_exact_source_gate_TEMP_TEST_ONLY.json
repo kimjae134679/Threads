@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "candidateKey": "260916_콜센터진상직업",
+  "stage": 9,
+  "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_ASSETS_BLOCKED",
+  "exactSourceVerified": true,
+  "exactSourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728413",
+  "sourcePostId": "2728413",
+  "verifiedPublicEvidence": {
+    "title": "콜센터 직원이 느낀 진상 손님 직업",
+    "author": "치킨",
+    "publishedAt": "2026-09-16 07:28",
+    "visualMediaElementsObserved": 8
+  },
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "ocrVisionComplete": false,
+  "rightsClearance": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "blocker": "Original image bytes not acquired/stored with provenance/hash.",
+  "unblockCondition": "Acquire all 8 original source image bytes via public/permitted access without bypass and record exact asset URLs+hashes.",
+  "bindingCoverRule": {
+    "blurAllowed": false,
+    "generatedImageFallback": false,
+    "realSourceMediaCoverOnlyWhenVerifiedVisualMedia": true,
+    "textOnlyCoverWithoutGeneratedImage": true,
+    "titleLargeAndHigherWithThinOutline": true,
+    "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
+  }
+}

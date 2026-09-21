@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T14:26:47+09:00",
+  "lastCycleAt": "2026-09-21T15:26:50+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -432,19 +432,29 @@
       "observedEvidence": "Fresh public Inven evidence confirms the exact title in the official Open Issue Gallery listing, author 치킨, 07:28, and public listing metrics; exact individual post URL/stable post ID was not resolved.",
       "unblockWhen": "Exact individual Inven post URL/post ID or another trustworthy unique identifier proving this same post becomes publicly resolvable without login/access-control bypass.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_콜센터진상직업",
+      "currentPath": "data/candidates/260916_C0_A0_P0_콜센터진상직업.md",
+      "result": "BLOCKED_SOURCE_ASSET_BYTES",
+      "c0": "VERIFIED_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_REAL_SOURCE_ASSET_ACQUISITION",
+      "observedEvidence": "Exact public Inven post ID 2728413 verified; title, author, time and 8 image elements match. Actual source image bytes were not acquired/stored with provenance/hash.",
+      "unblockWhen": "Acquire all 8 original image bytes via public/permitted access without bypass and record source URLs plus hashes.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T14:26:47+09:00",
-    "total": 1238,
+    "at": "2026-09-21T15:26:50+09:00",
+    "total": 1248,
     "C0": 444,
-    "C1": 794,
-    "A0": 1238,
+    "C1": 804,
+    "A0": 1248,
     "A1": 0,
-    "P0": 1238,
+    "P0": 1248,
     "P1": 0,
     "source": "all current data/candidates markdown files excluding README.md"
   },
-  "notes": "Queue refreshed from all 1,238 current candidate markdown files; 3 discovery files added since prior sequential snapshot. Processed exactly one next candidate after rank 56: 260916_콜센터진상손님직업 (rank 57); official Inven public listing reconfirmed exact title/author/time/metrics, but exact individual post URL/post ID remains unresolved. BLOCKED_PROVENANCE, C0/A0/P0/publicationAllowed=false."
+  "notes": "Queue refreshed from all 1248 current candidate markdown files; 10 new files added. Processed exactly one next candidate 260916_콜센터진상직업 (rank 58); exact Inven post 2728413 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
 }
