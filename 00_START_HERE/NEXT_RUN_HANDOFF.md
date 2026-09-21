@@ -41,3 +41,12 @@
 ## TEMP TEST ONLY conversion lane
 - Prior TEMP TEST ONLY state unchanged. Discovery run 299 did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
+
+## 2026-09-21 19:25 KST — Sequential candidate + TEMP TEST ONLY
+- Rebuilt queue from every current `data/candidates/*.md`: 1,261 files including README; C0 444 / C1 817 / A0 1,261 / A1 0 / P0 1,261 / P1 0. Six post-snapshot discovery candidates are now included and README remains represented as before.
+- Processed exactly one next unprocessed candidate: `260916_폭우웅덩이샴푸병원` (rank 62).
+- Candidate names TheQoo HOT but has no exact individual URL. Fresh exact/near-exact public searches did not resolve a trustworthy individual primary post; generic health results were rejected as provenance.
+- Result: `BLOCKED_PROVENANCE`, C0/A0/P0, publicationAllowed=false. Unblock only when exact individual primary TheQoo URL/post ID or another trustworthy unique primary identifier becomes publicly resolvable.
+- TEMP lane added only `260921_폭우웅덩이샴푸병원_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json`; temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. Stage 10+ blocked.
+- No body/media fabrication, OCR/vision, comments, metrics, rights clearance, A1/P1, access-control bypass, or publishing.
+- Next sequential run: refresh queue again, re-evaluate blocked only on changed unblock condition, then process exactly one next filename-ascending unprocessed candidate.

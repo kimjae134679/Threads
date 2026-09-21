@@ -1,0 +1,16 @@
+{
+  "candidateKey": "260916_폭우웅덩이샴푸병원",
+  "stage": 9,
+  "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+  "exactSourceVerified": false,
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "observedEvidence": "Candidate names TheQoo HOT but stores no exact individual URL. Fresh public exact/near-exact searches did not resolve a trustworthy individual primary post.",
+  "unblockWhen": "Exact individual primary TheQoo post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable; then acquire permitted real source body/media bytes with provenance/hash.",
+  "stage10Plus": "BLOCKED",
+  "generatedImageFallback": false
+}

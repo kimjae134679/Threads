@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T18:26:52+09:00",
+  "lastCycleAt": "2026-09-21T19:25:55+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -470,6 +470,14 @@
       "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
       "observedEvidence": "Candidate records only an Inven Open Issue Gallery public hot-list title. Fresh exact/near-exact public searches did not resolve a trustworthy individual Inven post URL/post ID; unrelated tipping pages were rejected.",
       "unblockWhen": "Exact individual primary Inven post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_폭우웅덩이샴푸병원",
+      "currentPath": "data/candidates/260916_C0_A0_P0_폭우웅덩이샴푸병원.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_PRIMARY_SOURCE",
+      "unblockWhen": "Exact individual primary TheQoo post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
       "publicationAllowed": false
     }
   ],
