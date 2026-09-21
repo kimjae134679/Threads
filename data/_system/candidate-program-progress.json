@@ -488,14 +488,24 @@
       "observedEvidence": "Fresh public search reconfirmed the exact title in Inven hot-list surfaces, but did not resolve the exact individual Inven post URL/post ID. A secondary issue aggregator indicates an earlier Ruliweb appearance, but no exact primary/original individual URL was independently resolved, so it was not substituted as provenance.",
       "unblockWhen": "Exact individual primary Inven post URL/post ID, or an independently verified exact original individual source URL/post ID, becomes publicly resolvable.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_허경환후회",
+      "currentPath": "data/candidates/260916_C0_A0_P0_허경환후회.md",
+      "result": "BLOCKED_SOURCE_ASSET_BYTES",
+      "c0": "VERIFIED_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_REAL_SOURCE_ASSET_ACQUISITION",
+      "observedEvidence": "Exact public Inven post ID 2728531 verified; exact title, author 전자팔찌, timestamp 2026-09-16 11:57 and public page text/metrics are visible. Original source image bytes were not acquired/stored with provenance/hash.",
+      "unblockWhen": "Acquire the original source image bytes through public/permitted access without bypass and record source URLs plus hashes.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T17:27:44+09:00",
-    "candidateFileCount": 1255,
-    "newCandidatesIncluded": 7,
-    "note": "Rebuilt from every current file in data/candidates; blocked entries were not re-evaluated unless unblock condition changed."
+    "at": "2026-09-21T21:31:00+09:00",
+    "candidateFileCount": 1264,
+    "newCandidatesIncluded": 0,
+    "note": "Rebuilt/rechecked against every current file in data/candidates; blocked entries not re-evaluated unless unblock condition changed."
   },
-  "notes": "Queue rechecked at 1248 current candidates. Processed exactly one next candidate 260916_탕수육딸기먼저먹을까봐 (rank 59); exact TheQoo post 4341634677 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
+  "notes": "Queue rechecked at 1264 current candidates. Processed exactly one next candidate 260916_허경환후회 (rank 64); exact Inven post 2728531 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
 }

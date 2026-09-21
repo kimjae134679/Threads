@@ -319,8 +319,8 @@
       "next": "Resolve exact individual Inven URL/post ID or independently verified exact original individual source publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
     }
   ],
-  "lastUpdated": "2026-09-21T20:30:03+09:00",
-  "lastCandidateKey": "260916_한국전철보고어리둥절한일본인",
-  "lastStage": 9,
-  "lastStatus": "BLOCKED_PRIMARY_SOURCE"
+  "lastUpdated": "2026-09-21T21:31:00+09:00",
+  "lastCandidateKey": "260916_허경환후회",
+  "lastStage": 11,
+  "lastStatus": "PASS_NATURAL_SCENE_BOUNDARIES"
 }

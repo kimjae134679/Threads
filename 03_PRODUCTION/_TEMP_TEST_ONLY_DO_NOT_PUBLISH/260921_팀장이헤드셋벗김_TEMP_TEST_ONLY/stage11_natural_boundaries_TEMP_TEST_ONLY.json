@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "prototypeNotice": "TEMP TEST ONLY prototype; may differ from eventual production. DO NOT PUBLISH.",
+  "candidateKey": "260916_팀장이헤드셋벗김",
+  "stage": 11,
+  "status": "PASS_NATURAL_SCENE_BOUNDARIES",
+  "decision": "Treat each of the four verified ordered source screenshots as one natural scene/slide boundary; do not split by raw length and do not merge or reorder them.",
+  "boundaryPlan": [
+    {"slide": 1, "sourceAsset": "source_01_TEMP_TEST_ONLY.webp", "action": "preserve-whole-source-image"},
+    {"slide": 2, "sourceAsset": "source_02_TEMP_TEST_ONLY.webp", "action": "preserve-whole-source-image"},
+    {"slide": 3, "sourceAsset": "source_03_TEMP_TEST_ONLY.webp", "action": "preserve-whole-source-image"},
+    {"slide": 4, "sourceAsset": "source_04_TEMP_TEST_ONLY.webp", "action": "preserve-whole-source-image"}
+  ],
+  "ocrUsed": false,
+  "sourceTextRewritten": false,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "canonicalCandidateStateUpgraded": false,
+  "next": "Stage 12 may propose short titles using only verified source content and 01_DISCOVERY/TITLE_STYLE_GUIDE.md; generated-image fallback remains disabled."
+}
