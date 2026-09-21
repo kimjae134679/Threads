@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "prototypeNotice": "TEMP TEST ONLY prototype; may differ from eventual production. DO NOT PUBLISH.",
+  "candidateKey": "260916_팀장이헤드셋벗김",
+  "stage": 9,
+  "status": "PASS_TEMP_SOURCE_BYTES_ACQUIRED",
+  "exactSourceVerified": true,
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728525",
+  "sourcePostId": "2728525",
+  "sourceBodyType": "four ordered visual-media images plus literal period",
+  "assets": [
+    {
+      "order": 1,
+      "sourceUrl": "https://upload3.inven.co.kr/upload/2026/09/16/bbs/i1016820128094499.webp",
+      "file": "source_01_TEMP_TEST_ONLY.webp",
+      "bytes": 39068,
+      "sha256": "f411e3a598922fcec2e5dbfdf9cc90551eaa6364857efb7044b3770bf18f9d00"
+    },
+    {
+      "order": 2,
+      "sourceUrl": "https://upload3.inven.co.kr/upload/2026/09/16/bbs/i1990729200919911.webp",
+      "file": "source_02_TEMP_TEST_ONLY.webp",
+      "bytes": 49508,
+      "sha256": "797a32139dcf6778b9f24b08cee3f3a59118aade45f0e95a473459cfa4ab8fbb"
+    },
+    {
+      "order": 3,
+      "sourceUrl": "https://upload3.inven.co.kr/upload/2026/09/16/bbs/i1708627946255299.webp",
+      "file": "source_03_TEMP_TEST_ONLY.webp",
+      "bytes": 46814,
+      "sha256": "d0dda717738305d8e294f7841bd538d4c648dd77d843d53521b75f3545cf385d"
+    },
+    {
+      "order": 4,
+      "sourceUrl": "https://upload3.inven.co.kr/upload/2026/09/16/bbs/i1890787359108957.webp",
+      "file": "source_04_TEMP_TEST_ONLY.webp",
+      "bytes": 51864,
+      "sha256": "764e7b8c38fde9b02d609cb77b852c2e18ddd8be3cc0bca1805966e5f8b8e700"
+    }
+  ],
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "canonicalCandidateStateUpgraded": false,
+  "next": "Stage 10 may review these exact hashed TEMP bytes for UI-chrome exclusion/crop; no canonical C/A/P upgrade from TEMP evidence."
+}

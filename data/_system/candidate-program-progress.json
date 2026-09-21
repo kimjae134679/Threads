@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T15:26:50+09:00",
+  "lastCycleAt": "2026-09-21T17:27:44+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -452,19 +452,24 @@
       "observedEvidence": "Exact public TheQoo post 4341634677 verified; title exact match and three public media references observed. Actual source media bytes were not acquired/stored with provenance/hash.",
       "unblockWhen": "Acquire original public/permitted source media bytes without bypass and record source URLs plus hashes.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_팀장이헤드셋벗김",
+      "currentPath": "data/candidates/260916_C0_A0_P0_팀장이헤드셋벗김.md",
+      "result": "BLOCKED_SOURCE_ASSET_BYTES",
+      "c0": "VERIFIED_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_REAL_SOURCE_ASSET_ACQUISITION",
+      "observedEvidence": "Exact public Inven post ID 2728525 verified: canonical URL, exact title, author 제르만크록, timestamp 2026-09-16 11:48, and four ordered source image references. TEMP TEST ONLY acquired copies do not upgrade canonical candidate state.",
+      "unblockWhen": "Acquire/store the four original Inven source image bytes in an approved canonical evidence location with URL+hash provenance and complete required rights/privacy/safety review; TEMP-only bytes do not satisfy canonical C1.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T15:26:50+09:00",
-    "total": 1248,
-    "C0": 444,
-    "C1": 804,
-    "A0": 1248,
-    "A1": 0,
-    "P0": 1248,
-    "P1": 0,
-    "source": "all current data/candidates markdown files excluding README.md"
+    "at": "2026-09-21T17:27:44+09:00",
+    "candidateFileCount": 1255,
+    "newCandidatesIncluded": 7,
+    "note": "Rebuilt from every current file in data/candidates; blocked entries were not re-evaluated unless unblock condition changed."
   },
   "notes": "Queue rechecked at 1248 current candidates. Processed exactly one next candidate 260916_탕수육딸기먼저먹을까봐 (rank 59); exact TheQoo post 4341634677 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
 }

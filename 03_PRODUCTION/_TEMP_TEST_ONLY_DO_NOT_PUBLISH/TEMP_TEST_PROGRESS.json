@@ -3,15 +3,15 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T15:26:50+09:00",
+  "updatedAt": "2026-09-21T17:27:44+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
-      "status": "PARTIAL_VERIFIED_UNIT",
-      "note": "260916_콜센터진상직업 exact public Inven post 2728413 verified; 8 visual media elements observed, but source bytes not acquired/stored with provenance/hash; stage10+ blocked."
+      "status": "PASS_TEMP_VERIFIED_UNIT",
+      "note": "Exact public Inven post 2728525 verified and all four ordered public source image bytes acquired into TEMP TEST ONLY workspace with SHA-256 provenance. TEMP evidence does not upgrade canonical C/A/P state."
     },
     "10_ui_exclusion": {
-      "status": "BLOCKED_REAL_VISUAL_REVIEW_INPUT",
-      "note": "Existing exact WebP still requires actual visual review/classifier evidence on the exact hashed bytes. New stage9-blocked material cannot enter stage10 without permitted real source image/screenshot bytes."
+      "status": "READY_FOR_REVIEW",
+      "note": "Four exact hashed TEMP source images are now available for stage 10 UI-chrome exclusion/crop review; no crop decision fabricated in this run."
     },
     "11_natural_splitting": {
       "status": "PARTIAL",
@@ -274,10 +274,25 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Acquire all 8 original Inven image bytes via public/permitted access with URL+hash provenance; then stage10 review may begin."
+    },
+    {
+      "candidateKey": "260916_팀장이헤드셋벗김",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/stage9_source_acquisition_TEMP_TEST_ONLY.json",
+      "state": "TEMP_STAGE9_SOURCE_BYTES_ACQUIRED",
+      "exactSourceVerified": true,
+      "sourceBodyComplete": true,
+      "sourceAssetsComplete": true,
+      "sourceAssetCount": 4,
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Run stage 10 UI-chrome exclusion/crop review on these exact hashed TEMP bytes; preserve original media order/content and do not upgrade canonical state."
     }
   ],
-  "lastUpdated": "2026-09-21T16:28:00+09:00",
-  "lastCandidateKey": "260916_탕수육딸기먼저먹을까봐",
+  "lastUpdated": "2026-09-21T17:27:44+09:00",
+  "lastCandidateKey": "260916_팀장이헤드셋벗김",
   "lastStage": 9,
-  "lastStatus": "BLOCKED_SOURCE_ASSET_BYTES"
+  "lastStatus": "PASS_TEMP_SOURCE_BYTES_ACQUIRED"
 }

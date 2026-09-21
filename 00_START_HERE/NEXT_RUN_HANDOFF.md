@@ -44,3 +44,10 @@
 - Queue snapshot rechecked: 1,248 candidates; next sequential rank 59 processed: `260916_탕수육딸기먼저먹을까봐`.
 - Exact TheQoo source verified: https://theqoo.net/square/4341634677 (post ID 4341634677). Public page exposes three media references, but source bytes+hash provenance were not stored; keep C0/A0/P0 and `BLOCKED_SOURCE_ASSET_BYTES`.
 - TEMP stage-9 gate saved under `_TEMP_TEST_ONLY_DO_NOT_PUBLISH`; `temporaryTestOnly=true`, `publicationAllowed=false`, `executionEligible=false`. Stage 10+ blocked until original permitted bytes are acquired. No P1/publishing.
+
+## Sol run 266 — 2026-09-21 17:27 KST
+- Queue rebuilt from every current `data/candidates` file: 1,255 total (C0 444 / C1 811 / A0 1,255 / A1 0 / P0 1,255 / P1 0); 7 files added since the prior 1,248 snapshot.
+- Processed exactly one next filename-ascending unprocessed candidate: `260916_팀장이헤드셋벗김`.
+- Exact public Inven source verified: post `2728525`, exact title, author `제르만크록`, timestamp `2026-09-16 11:48`, four ordered WebP source-media references. Canonical candidate remains C0/A0/P0 / `BLOCKED_SOURCE_ASSET_BYTES`; TEMP evidence cannot upgrade it.
+- TEMP TEST ONLY stage 9 acquired all four public image bytes into `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/` with source URL + SHA-256 provenance. `temporaryTestOnly=true`, `publicationAllowed=false`, `approvedVersion=null`, `executionEligible=false`; stage 10 is now ready for review on these exact hashed TEMP bytes.
+- No OCR/vision interpretation, comments, rights clearance, A1/P1, real publishing, or metrics were fabricated/performed. Next sequential candidate by filename is `260916_팁거절종업원` unless newly discovered files sort earlier.
