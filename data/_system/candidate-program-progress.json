@@ -442,6 +442,16 @@
       "observedEvidence": "Exact public Inven post ID 2728413 verified; title, author, time and 8 image elements match. Actual source image bytes were not acquired/stored with provenance/hash.",
       "unblockWhen": "Acquire all 8 original image bytes via public/permitted access without bypass and record source URLs plus hashes.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_탕수육딸기먼저먹을까봐",
+      "currentPath": "data/candidates/260916_C0_A0_P0_탕수육딸기먼저먹을까봐.md",
+      "result": "BLOCKED_SOURCE_ASSET_BYTES",
+      "c0": "VERIFIED_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_REAL_SOURCE_ASSET_ACQUISITION",
+      "observedEvidence": "Exact public TheQoo post 4341634677 verified; title exact match and three public media references observed. Actual source media bytes were not acquired/stored with provenance/hash.",
+      "unblockWhen": "Acquire original public/permitted source media bytes without bypass and record source URLs plus hashes.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
@@ -456,5 +466,5 @@
     "P1": 0,
     "source": "all current data/candidates markdown files excluding README.md"
   },
-  "notes": "Queue refreshed from all 1248 current candidate markdown files; 10 new files added. Processed exactly one next candidate 260916_콜센터진상직업 (rank 58); exact Inven post 2728413 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
+  "notes": "Queue rechecked at 1248 current candidates. Processed exactly one next candidate 260916_탕수육딸기먼저먹을까봐 (rank 59); exact TheQoo post 4341634677 verified; source bytes blocked; C0/A0/P0, publicationAllowed=false."
 }
