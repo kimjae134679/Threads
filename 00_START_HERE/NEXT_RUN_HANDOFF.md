@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-22 07:14 KST — Discovery-only run 311
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 5 new C1 candidates with exact individual public URLs. Heavy duplication with prior discovery runs kept retention strict.
+- Top additions: `미팅인줄 모르고 단체 미팅 다녀온 후기`, `남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기`, `친구에게 맞는 사이즈의 옷을 권할 방법 찾는 후기`, `30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기`, `친구한테 사과 카톡이 왔는데 용서해줘야하는걸까?`.
+- Last candidate is explicitly `본문 미확인`; core story was not read. NAVER Cafe/Clien access restrictions were not bypassed.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No downstream-stage work.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-22 06:19 KST — Discovery-only run 310
 - User scope strictly `01_DISCOVERY`; no downstream stage work. User instruction overrides unrelated repo-tip TEMP/downstream notes.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 5 new C1 candidates with exact individual public URLs; retention remained strict because many results duplicated prior runs, lacked story, or were inaccessible.
@@ -8,26 +16,10 @@
 - All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
-## 2026-09-22 05:18 KST — Discovery-only run 309
-- User scope strictly `01_DISCOVERY`; no downstream stage work. User instruction overrides unrelated repo-tip TEMP/downstream notes.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs; retention was strict because many results duplicated prior runs or were low-story/low-accessibility.
-- Top additions: `남자친구네 가족 만나고 나서 엉엉 울다 잠든 후기(두서X)`, `혼족인 무묭이가 경험한 황당한 에피소드 몇가지`, `쿠팡 계약직 3주차 후기`.
-- Instiz robots restriction was not bypassed.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
-## 2026-09-22 04:17 KST — Discovery-only run 308
-- User scope strictly `01_DISCOVERY`; no downstream stage work. User instruction overrides unrelated repo-tip TEMP/downstream notes.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 7 new C1 candidates with exact individual public URLs.
-- Top additions: `눈새 친구 때문에 짜증나는 후기`, `돈 없는 친구가 피곤한 후기`, `손절한 친구에게서 다시 연락이 온 초기`, `"애 가져야지" 며느리 반려묘 몰래 보낸 시모…남편은 '황당' 반응`, `엔터사에서 일하고 다시는 돌덕질 못하게 된 썰`.
-- NAVER Cafe/Clien access restrictions were not bypassed.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
 ## Sequential candidate automation
-- Discovery run 310 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 310.
+- Discovery run 311 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 311.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 310. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 311. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
