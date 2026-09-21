@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "candidateKey": "260916_코인실수회고",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "stage": 9,
+  "status": "BLOCKED_EXACT_PRIMARY_SOURCE",
+  "exactSourceVerified": false,
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "observedPublicEvidence": "Blind public recommendation/index cards repeatedly expose the same title, author mask and body prefix, but no exact individual URL/stable post ID was resolved.",
+  "unblockWhen": "Exact individual Blind URL/shortlink/stable post ID or another trustworthy unique identifier proving the same individual post becomes publicly resolvable; then acquire permitted real source body/media bytes with provenance/hash without login or access-control bypass.",
+  "bindingCoverRule": {
+    "blurAllowed": false,
+    "generatedImageFallback": false,
+    "realSourceMediaCoverOnlyWhenVerifiedVisualMedia": true,
+    "textOnlyCoverWithoutGeneratedImage": true,
+    "titleLargeAndHigherWithThinOutline": true,
+    "slide2PlusPreserveOriginalScreenshotMediaOrderAndContent": true
+  },
+  "stage10PlusAllowed": false,
+  "realPublishingMetrics": "DISABLED"
+}
