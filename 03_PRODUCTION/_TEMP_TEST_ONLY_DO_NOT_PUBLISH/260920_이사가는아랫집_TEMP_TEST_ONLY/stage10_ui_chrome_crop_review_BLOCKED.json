@@ -1,0 +1,17 @@
+{
+  "type": "TEMP_TEST_ONLY_STAGE10_UI_CHROME_CROP_REVIEW",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_이사가는아랫집",
+  "stage": 10,
+  "status": "BLOCKED_PREREQUISITE",
+  "verifiedAt": "2026-09-22T01:29:57+09:00",
+  "reason": "Stage 9 has no verified primary source bytes/assets. UI-chrome exclusion/crop review cannot be performed against a secondary mirror or reconstructed content without violating provenance rules.",
+  "unblockCondition": "Exact individual primary/original post becomes publicly resolvable and permitted source screenshot/media bytes are actually acquired and persisted for this TEMP_TEST_ONLY unit.",
+  "renderAllowed": false,
+  "generatedImageFallback": false,
+  "coverBlur": false,
+  "slide2PlusPolicy": "ORIGINAL_SCREENSHOT_OR_MEDIA_IN_SOURCE_ORDER_ONLY",
+  "canonicalStateUpgradeAllowed": false,
+  "note": "Prototype-only blocker record. No crop, OCR, vision inference, source reconstruction, rights clearance, A1, or P1 is asserted."
+}
