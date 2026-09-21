@@ -1,19 +1,14 @@
 # NEXT RUN HANDOFF
 
-## 2026-09-21 08:28 KST — hourly two-lane run
-- Current user instruction overrides the prior discovery-only handoff: every hourly run has independent Candidate sequential + TEMP TEST ONLY lanes.
-- Queue refreshed from all current `data/candidates` markdown files: **1,211 total / C0 442 / C1 769 / A0 1,211 / A1 0 / P0 1,211 / P1 0**. Three C1 discovery files added after the 07:28 snapshot are included.
-- Processed exactly one next filename-order key: `260916_집안일분담으로왜싸움`.
-- Public Blind recommendation/topic cards repeatedly verify exact title `집안일 분담으로 왜싸움?`, author display `HD현대일렉트릭 · 𝙅*****************`, and body prefix `와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴.`.
-- Exact individual Blind URL/stable post ID was not resolved; result remains `BLOCKED_PROVENANCE`, C0/A0/P0, `publicationAllowed=false`. Do not treat recommendation-card metrics or other Blind posts as the source.
-
-## TEMP TEST ONLY
-- Added only under `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_집안일분담으로왜싸움_TEMP_TEST_ONLY/`: `stage9_primary_source_gate_TEMP_TEST_ONLY.json`.
-- `temporaryTestOnly=true`, `publicationAllowed=false`, `approvedVersion=null`, `executionEligible=false`; no blur and generated-image fallback remains disabled.
-- Stage 10/11 is blocked until the exact individual source and permitted real source bytes are acquired with provenance/hash.
+## 2026-09-21 09:16 KST — discovery-only run 289
+- Current user instruction is authoritative for this run and next automation run: **01_DISCOVERY only**. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS.
+- Korean-community-first public/index search reviewed **40+ raw/search leads**; duplicate, weak-story, image-only, sensitive/high-risk, and weak-provenance items were filtered rather than padded.
+- Newly retained **4 C1** candidates in `data/candidates/`: `로테이션 소개팅 후기`, `결혼식 가서 130만원 넘게 썼지만 푸대접 받은 후기`, `시댁이 다 E인데 며느리만 I라 미치겠는 후기`, `완전히 엉망진창이었던 소개팅 후기`.
+- Exact individual public URLs and visible body were verified for all four. Comments were not read. One candidate page had an image reference, but no image was downloaded and no OCR/screenshot was performed.
+- A1 promotions: 0. P1 promotions: 0. `publicationAllowed=false` throughout.
 
 ## Next run
-Refresh queue again, skip unchanged blockers, then process exactly one next unprocessed filename-order candidate. Continue one small safe TEMP unit independently. Never fabricate missing source/body/comments/metrics/assets/OCR/vision/moderation/rights clearance/A1/P1.
+Continue fresh Korean-community-first discovery and provenance verification only. Prefer Blind, DCInside, FMKorea, TheQoo, Instiz, Ruliweb, Ppomppu, Clien, Inven, Arca, NAVER/Daum cafes via permitted public pages/index/search. Do not bypass access controls. Even if candidates accumulate, do not advance them into production.
 
 ## Publication boundary
-Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. No real publishing or live metrics collection occurred.
+Only `04_REVIEW_PUBLISH` may publish or mark P1 after human rights/privacy/safety approval. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, provider/publishing implementation, real publishing, or existing production asset modification occurred in this run.
