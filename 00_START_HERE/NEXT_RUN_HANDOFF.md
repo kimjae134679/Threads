@@ -1,20 +1,19 @@
 ﻿# NEXT RUN HANDOFF
 
-Updated: 2026-09-21 10:25 KST
+Updated: 2026-09-21 11:16 KST
 
-## Sequential candidate automation — latest run
-- Queue refreshed from every candidate markdown under `data/candidates` (excluding `README.md`): 1,219 candidates.
-- Counts: C0 442 / C1 777 / A0 1,219 / A1 0 / P0 1,219 / P1 0.
-- Exactly one next sequential candidate processed: rank 53 `260916_추석당근알바`.
-- Exact public TheQoo individual source verified: `https://theqoo.net/square/4345896878`, post ID `4345896878`, title `추석 당근 알바 근황`.
-- Public page exposes three image items, but actual image bytes were not persisted. Candidate is logical C1 / A0 / P0 with `BLOCKED_SOURCE_ASSET_BYTES`; no image contents/OCR/comments/rights/A1/P1 claimed.
-- TEMP stage-9 gate added only under `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_추석당근알바_TEMP_TEST_ONLY/`; `temporaryTestOnly=true`, `publicationAllowed=false`, `approvedVersion=null`, `executionEligible=false`.
-- Next sequential target after refresh/unblock checks: rank 54 `260916_축의금얼마나적당`.
+## User-priority lane: 01_DISCOVERY only
+- Latest discovery-only run: `01_DISCOVERY/ops/291-sol.md`.
+- 40+ public/search leads reviewed with Korean communities prioritized; 8 new C1 candidates retained under `data/candidates/`.
+- Top additions include `돈문제? 때문에 친구랑 싸운 썰.txt`, `속상주의. 카페 알바 두 달만에 그만둔 후기`, `친구랑 여행갔다와서 쌩깐 후기`, `집들이 문제로 제가 유독 쪼잔한걸까요?.pann (+후기)`, and `7개월 워홀... 거의 실패한 이야기 차근차근 적어보는 긴글 후기`.
+- All new candidates remain A1=false / P1=false / `publicationAllowed=false`.
+- Continue only new-material discovery and exact-source/provenance verification on the next discovery execution.
 
-## Discovery lane context retained from the immediately preceding main update
-- The separate Korean-community discovery run retained four new C1 candidates at 10:16 KST. They are now included by the refreshed sequential queue.
-- Continue to preserve exact provenance and never infer missing body/assets/comments/metrics.
+## Existing sequential automation context (do not execute from discovery-only runs)
+- Prior handoff reported 1,219 candidates and next sequential target rank 54 `260916_축의금얼마나적당`.
+- A later main commit (`Process next candidate and refresh queue`) exists after that handoff. Discovery-only automation must not alter or continue production/sequential candidate processing.
 
 ## Binding safety / publication rule
-- Do not publish or mark P1 in this automation. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
-- TEMP outputs are prototypes only and never upgrade canonical candidate A/P state by themselves.
+- Do not enter `02_EDITORIAL_SCORING`, `03_PRODUCTION`, `04_REVIEW_PUBLISH`, or `05_EXPERIMENTS_ACCOUNTS` from this automation.
+- Do not capture screenshots, download images, OCR, render, run Chrome E2E, publish/schedule, or implement providers/publishing.
+- Never mark A1/P1 here. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
