@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_일본유학결혼썰.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.6,
+      "confidence": 0.37,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.47,
+        "2": 0.42,
+        "3": 0.1
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.65,
+      "probabilities": {
+        "usable": 0.2,
+        "discard": 0.02,
+        "hold": 0.74,
+        "priority": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.89,
+      "probabilities": {
+        "skip": 0.04,
+        "empathy": 0.04,
+        "issue": 0.0,
+        "humor": 0.92,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.55
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.49,
+      "confidence": 0.24,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.21,
+        "2": 0.64
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.9,
+      "probabilities": {
+        "none": 0.0,
+        "asset": 0.07,
+        "story": 0.0,
+        "hook": 0.0,
+        "safety": 0.93,
+        "source": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.88,
+      "confidence": 0.82,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.09,
+        "2": 0.89
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6562,
+    "output_tokens": 294
+  }
+}

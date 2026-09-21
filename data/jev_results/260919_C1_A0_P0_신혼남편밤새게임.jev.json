@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_신혼남편밤새게임.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.7,
+      "confidence": 0.39,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.34,
+        "2": 0.45,
+        "3": 0.15
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.51,
+      "probabilities": {
+        "hold": 0.63,
+        "usable": 0.21,
+        "priority": 0.08,
+        "discard": 0.08
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.92,
+      "probabilities": {
+        "humor": 0.0,
+        "empathy": 0.93,
+        "issue": 0.04,
+        "skip": 0.02,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.28,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.23,
+        "1": 0.27,
+        "2": 0.5
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.96,
+      "probabilities": {
+        "story": 0.0,
+        "hook": 0.0,
+        "none": 0.0,
+        "asset": 0.03,
+        "safety": 0.97,
+        "source": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.79,
+      "confidence": 0.68,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.14,
+        "2": 0.82
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9432,
+    "output_tokens": 294
+  }
+}

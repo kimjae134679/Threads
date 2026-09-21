@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_소개팅20명마지막과결혼.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.36,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.54,
+        "2": 0.39,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.64,
+      "probabilities": {
+        "hold": 0.72,
+        "priority": 0.01,
+        "discard": 0.1,
+        "usable": 0.17
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.38,
+      "probabilities": {
+        "humor": 0.51,
+        "issue": 0.0,
+        "empathy": 0.22,
+        "skip": 0.24,
+        "info": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.62
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.74,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.08,
+        "2": 0.87
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.32
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.73,
+      "probabilities": {
+        "safety": 0.78,
+        "hook": 0.0,
+        "story": 0.0,
+        "none": 0.0,
+        "source": 0.03,
+        "asset": 0.19
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.8,
+      "confidence": 0.7,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.14,
+        "2": 0.83
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8952,
+    "output_tokens": 294
+  }
+}

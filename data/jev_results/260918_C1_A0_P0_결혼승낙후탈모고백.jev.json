@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_결혼승낙후탈모고백.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.12,
+      "confidence": 0.83,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.85,
+        "2": 0.11,
+        "3": 0.02
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.94,
+      "probabilities": {
+        "hold": 0.95,
+        "priority": 0.02,
+        "usable": 0.01,
+        "discard": 0.02
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.68,
+      "probabilities": {
+        "info": 0.0,
+        "issue": 0.02,
+        "empathy": 0.02,
+        "skip": 0.21,
+        "humor": 0.75
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.74,
+      "probabilities": {
+        "story": 0.0,
+        "none": 0.0,
+        "source": 0.01,
+        "asset": 0.79,
+        "safety": 0.2,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6872,
+    "output_tokens": 292
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_둘째조리원대호텔.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.91,
+      "confidence": 0.59,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.17,
+        "2": 0.63,
+        "3": 0.16
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.31,
+      "probabilities": {
+        "usable": 0.48,
+        "hold": 0.17,
+        "discard": 0.28,
+        "priority": 0.07
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.88,
+      "probabilities": {
+        "info": 0.0,
+        "humor": 0.0,
+        "skip": 0.05,
+        "issue": 0.04,
+        "empathy": 0.91
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.64
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.6,
+      "confidence": 0.1,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.54,
+        "1": 0.31,
+        "2": 0.15
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.46
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.84,
+      "probabilities": {
+        "story": 0.02,
+        "none": 0.0,
+        "hook": 0.01,
+        "safety": 0.87,
+        "source": 0.03,
+        "asset": 0.07
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.28,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.41,
+        "2": 0.44
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7262,
+    "output_tokens": 294
+  }
+}

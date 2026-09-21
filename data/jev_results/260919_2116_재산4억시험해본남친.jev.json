@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_2116_재산4억시험해본남친.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.66,
+      "confidence": 0.12,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.2,
+        "1": 0.21,
+        "2": 0.32,
+        "3": 0.27
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.11,
+      "probabilities": {
+        "priority": 0.19,
+        "usable": 0.33,
+        "discard": 0.3,
+        "hold": 0.18
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.17,
+      "probabilities": {
+        "issue": 0.25,
+        "humor": 0.32,
+        "info": 0.0,
+        "skip": 0.09,
+        "empathy": 0.34
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.46,
+      "confidence": 0.19,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.22,
+        "2": 0.62
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.69,
+      "probabilities": {
+        "safety": 0.2,
+        "source": 0.75,
+        "asset": 0.04,
+        "none": 0.0,
+        "hook": 0.0,
+        "story": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.71,
+      "confidence": 0.56,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.14,
+        "2": 0.78
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6572,
+    "output_tokens": 292
+  }
+}

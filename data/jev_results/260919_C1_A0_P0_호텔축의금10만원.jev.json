@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_호텔축의금10만원.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.92,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.19,
+        "2": 0.5599999999999999,
+        "3": 0.2
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.2,
+      "probabilities": {
+        "discard": 0.09,
+        "priority": 0.11,
+        "usable": 0.41000000000000003,
+        "hold": 0.39
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.75,
+      "probabilities": {
+        "empathy": 0.81,
+        "issue": 0.16,
+        "humor": 0.0,
+        "skip": 0.03,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.35,
+      "confidence": 0.03,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.3,
+        "2": 0.53
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.45
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.94,
+      "probabilities": {
+        "story": 0.0,
+        "hook": 0.0,
+        "safety": 0.96,
+        "source": 0.01,
+        "none": 0.0,
+        "asset": 0.03
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.81,
+      "confidence": 0.71,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.16,
+        "2": 0.82
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8832,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_부부끼리통장합쳤나요.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.85,
+      "confidence": 0.5,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.17,
+        "2": 0.58,
+        "3": 0.18
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.47,
+      "probabilities": {
+        "priority": 0.13,
+        "hold": 0.13,
+        "usable": 0.6,
+        "discard": 0.14
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.72,
+      "probabilities": {
+        "skip": 0.03,
+        "issue": 0.19,
+        "info": 0.0,
+        "humor": 0.0,
+        "empathy": 0.78
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.3,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.21,
+        "1": 0.29,
+        "2": 0.5
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.46,
+      "probabilities": {
+        "story": 0.02,
+        "none": 0.0,
+        "source": 0.55,
+        "asset": 0.07,
+        "safety": 0.35,
+        "hook": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.57,
+      "confidence": 0.36,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.27,
+        "2": 0.65
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6612,
+    "output_tokens": 292
+  }
+}

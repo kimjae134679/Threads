@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_한국전철보고어리둥절한일본인.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.83,
+      "confidence": 0.75,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.21,
+        "1": 0.75,
+        "2": 0.04,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.67,
+      "probabilities": {
+        "priority": 0.0,
+        "hold": 0.75,
+        "discard": 0.24,
+        "usable": 0.01
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.77,
+      "probabilities": {
+        "skip": 0.13,
+        "humor": 0.82,
+        "issue": 0.04,
+        "empathy": 0.01,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.54
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.96,
+      "confidence": 0.93,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.02,
+        "2": 0.97
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.34
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.49,
+      "probabilities": {
+        "safety": 0.26,
+        "none": 0.0,
+        "source": 0.58,
+        "hook": 0.0,
+        "asset": 0.15,
+        "story": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7572,
+    "output_tokens": 292
+  }
+}

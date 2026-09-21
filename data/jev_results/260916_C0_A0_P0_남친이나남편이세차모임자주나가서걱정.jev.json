@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_남친이나남편이세차모임자주나가서걱정.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.02,
+      "confidence": 0.92,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.92,
+        "2": 0.05,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.93,
+      "probabilities": {
+        "priority": 0.0,
+        "hold": 0.95,
+        "usable": 0.02,
+        "discard": 0.03
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.9,
+      "probabilities": {
+        "humor": 0.0,
+        "skip": 0.07,
+        "info": 0.0,
+        "issue": 0.0,
+        "empathy": 0.93
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.54
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.73,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.08,
+        "2": 0.87
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.95,
+      "probabilities": {
+        "asset": 0.01,
+        "hook": 0.0,
+        "safety": 0.0,
+        "none": 0.0,
+        "source": 0.96,
+        "story": 0.03
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.94,
+      "confidence": 0.91,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.03,
+        "2": 0.96
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6102,
+    "output_tokens": 292
+  }
+}

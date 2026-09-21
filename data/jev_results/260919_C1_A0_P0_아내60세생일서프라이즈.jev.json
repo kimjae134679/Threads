@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_아내60세생일서프라이즈.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.52,
+      "confidence": 0.44,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.38,
+        "2": 0.51,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.35,
+      "probabilities": {
+        "hold": 0.5,
+        "usable": 0.3,
+        "priority": 0.02,
+        "discard": 0.18
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.76,
+      "probabilities": {
+        "empathy": 0.81,
+        "humor": 0.06,
+        "info": 0.0,
+        "issue": 0.0,
+        "skip": 0.13
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.7
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.87,
+      "confidence": 0.81,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.06,
+        "2": 0.91
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.94,
+      "probabilities": {
+        "source": 0.0,
+        "story": 0.0,
+        "hook": 0.0,
+        "none": 0.0,
+        "safety": 0.96,
+        "asset": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.93,
+      "confidence": 0.9,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.05,
+        "2": 0.94
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8942,
+    "output_tokens": 294
+  }
+}

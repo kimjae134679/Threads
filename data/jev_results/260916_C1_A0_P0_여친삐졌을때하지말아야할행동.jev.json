@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_여친삐졌을때하지말아야할행동.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.26,
+      "confidence": 0.63,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.64,
+        "2": 0.3,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.65,
+      "probabilities": {
+        "priority": 0.0,
+        "usable": 0.13,
+        "discard": 0.13,
+        "hold": 0.74
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.96,
+      "probabilities": {
+        "skip": 0.01,
+        "humor": 0.97,
+        "info": 0.02,
+        "issue": 0.0,
+        "empathy": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.54
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.98,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.74,
+      "probabilities": {
+        "story": 0.0,
+        "safety": 0.18,
+        "none": 0.0,
+        "asset": 0.78,
+        "hook": 0.0,
+        "source": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.79,
+      "confidence": 0.68,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.18,
+        "2": 0.8
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5792,
+    "output_tokens": 292
+  }
+}

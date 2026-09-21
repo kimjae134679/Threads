@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_2116_60대샤넬지갑허영심.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.54,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.16,
+        "2": 0.58,
+        "3": 0.22
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.45,
+      "probabilities": {
+        "discard": 0.1,
+        "priority": 0.22,
+        "hold": 0.1,
+        "usable": 0.58
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.91,
+      "probabilities": {
+        "empathy": 0.93,
+        "issue": 0.04,
+        "humor": 0.0,
+        "skip": 0.03,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.72
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.27,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.23,
+        "1": 0.28,
+        "2": 0.49
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.4
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.5,
+      "probabilities": {
+        "story": 0.21,
+        "safety": 0.59,
+        "asset": 0.1,
+        "source": 0.09,
+        "hook": 0.01,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.56,
+      "confidence": 0.35,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.29,
+        "2": 0.64
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6672,
+    "output_tokens": 294
+  }
+}

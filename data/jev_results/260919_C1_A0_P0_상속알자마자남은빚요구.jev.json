@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_상속알자마자남은빚요구.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.03,
+      "confidence": 0.53,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.16,
+        "2": 0.56,
+        "3": 0.25
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.22,
+      "probabilities": {
+        "discard": 0.14,
+        "hold": 0.34,
+        "usable": 0.41,
+        "priority": 0.11
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.8,
+      "probabilities": {
+        "skip": 0.05,
+        "issue": 0.1,
+        "info": 0.0,
+        "humor": 0.0,
+        "empathy": 0.85
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.22,
+        "1": 0.25,
+        "2": 0.53
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.84,
+      "probabilities": {
+        "story": 0.02,
+        "source": 0.02,
+        "safety": 0.86,
+        "none": 0.0,
+        "asset": 0.08,
+        "hook": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.39,
+      "confidence": 0.09,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.35,
+        "2": 0.52
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7262,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_상속금은각자라더니아내가내상속에화냄.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.36,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.24,
+        "2": 0.44,
+        "3": 0.24
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.37,
+      "probabilities": {
+        "usable": 0.21,
+        "hold": 0.54,
+        "discard": 0.18,
+        "priority": 0.07
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.77,
+      "probabilities": {
+        "skip": 0.11,
+        "info": 0.0,
+        "empathy": 0.82,
+        "issue": 0.06,
+        "humor": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.2,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.28,
+        "1": 0.23,
+        "2": 0.49
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.96,
+      "probabilities": {
+        "none": 0.0,
+        "hook": 0.01,
+        "source": 0.0,
+        "safety": 0.97,
+        "story": 0.01,
+        "asset": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.52,
+      "confidence": 0.29,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.27,
+        "2": 0.63
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7442,
+    "output_tokens": 294
+  }
+}

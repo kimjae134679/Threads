@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_언니가말하는한남특징.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.91,
+      "confidence": 0.91,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.91,
+        "2": 0.0,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.95,
+      "probabilities": {
+        "hold": 0.96,
+        "usable": 0.0,
+        "priority": 0.0,
+        "discard": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "skip",
+      "confidence": 0.33,
+      "probabilities": {
+        "empathy": 0.05,
+        "issue": 0.24,
+        "skip": 0.47000000000000003,
+        "info": 0.0,
+        "humor": 0.24
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.49
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.15
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.69,
+      "probabilities": {
+        "hook": 0.0,
+        "source": 0.03,
+        "none": 0.0,
+        "safety": 0.75,
+        "story": 0.0,
+        "asset": 0.22
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.96,
+      "confidence": 0.94,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.03,
+        "2": 0.97
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6742,
+    "output_tokens": 293
+  }
+}

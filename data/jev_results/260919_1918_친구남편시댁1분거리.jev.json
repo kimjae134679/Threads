@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_1918_친구남편시댁1분거리.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.55,
+      "confidence": 0.29,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.31,
+        "2": 0.43,
+        "3": 0.13
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.11,
+      "probabilities": {
+        "priority": 0.1,
+        "discard": 0.28,
+        "hold": 0.28,
+        "usable": 0.33
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.72,
+      "probabilities": {
+        "info": 0.0,
+        "skip": 0.16,
+        "issue": 0.02,
+        "empathy": 0.78,
+        "humor": 0.04
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.7
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.67
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.55,
+      "confidence": 0.32,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.22,
+        "2": 0.66
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.44,
+      "probabilities": {
+        "story": 0.38,
+        "none": 0.0,
+        "source": 0.01,
+        "asset": 0.05,
+        "safety": 0.54,
+        "hook": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.73,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.13,
+        "2": 0.85
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5742,
+    "output_tokens": 294
+  }
+}

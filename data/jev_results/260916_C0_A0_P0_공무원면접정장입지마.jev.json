@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_공무원면접정장입지마.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.77,
+      "confidence": 0.74,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.25,
+        "1": 0.73,
+        "2": 0.02,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.56,
+      "probabilities": {
+        "discard": 0.33,
+        "hold": 0.67,
+        "usable": 0.0,
+        "priority": 0.0
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.42,
+      "probabilities": {
+        "info": 0.23,
+        "skip": 0.19,
+        "issue": 0.53,
+        "humor": 0.01,
+        "empathy": 0.04
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.98,
+      "probabilities": {
+        "story": 0.0,
+        "hook": 0.0,
+        "asset": 0.01,
+        "safety": 0.0,
+        "source": 0.99,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5012,
+    "output_tokens": 291
+  }
+}

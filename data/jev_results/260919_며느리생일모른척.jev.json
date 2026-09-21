@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_며느리생일모른척.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.6,
+      "confidence": 0.6,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.04,
+        "2": 0.3,
+        "3": 0.65
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "priority",
+      "confidence": 0.43,
+      "probabilities": {
+        "usable": 0.37,
+        "hold": 0.03,
+        "priority": 0.57,
+        "discard": 0.03
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.94,
+      "probabilities": {
+        "empathy": 0.95,
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.05,
+        "skip": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.69,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.48,
+        "1": 0.34,
+        "2": 0.18
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.56
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.38,
+      "probabilities": {
+        "safety": 0.5,
+        "source": 0.18,
+        "none": 0.0,
+        "hook": 0.01,
+        "asset": 0.17,
+        "story": 0.14
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.0,
+      "confidence": 0.11,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.3,
+        "1": 0.39999999999999997,
+        "2": 0.3
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7312,
+    "output_tokens": 294
+  }
+}

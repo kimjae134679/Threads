@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_교환학생기회비용3800.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.89,
+      "confidence": 0.49,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.15,
+        "2": 0.57,
+        "3": 0.2
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.37,
+      "probabilities": {
+        "priority": 0.11,
+        "usable": 0.53,
+        "discard": 0.24,
+        "hold": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.9,
+      "probabilities": {
+        "humor": 0.0,
+        "empathy": 0.92,
+        "issue": 0.05,
+        "skip": 0.03,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.72
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.45,
+      "confidence": 0.33,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.65,
+        "1": 0.25,
+        "2": 0.1
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.57
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.74,
+      "probabilities": {
+        "asset": 0.12,
+        "hook": 0.0,
+        "safety": 0.8,
+        "story": 0.02,
+        "none": 0.0,
+        "source": 0.06
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.3,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.34,
+        "2": 0.48
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7302,
+    "output_tokens": 294
+  }
+}

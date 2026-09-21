@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_200일만났는데대학교물었다가짐싸감.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.48,
+      "confidence": 0.22,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.14,
+        "1": 0.36,
+        "2": 0.37,
+        "3": 0.13
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.35,
+      "probabilities": {
+        "discard": 0.31,
+        "priority": 0.05,
+        "hold": 0.52,
+        "usable": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.58,
+      "probabilities": {
+        "skip": 0.14,
+        "issue": 0.03,
+        "humor": 0.16,
+        "empathy": 0.67,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.19,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.26,
+        "1": 0.28,
+        "2": 0.46
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.27
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.96,
+      "probabilities": {
+        "hook": 0.0,
+        "safety": 0.97,
+        "none": 0.0,
+        "source": 0.01,
+        "asset": 0.02,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.79,
+      "confidence": 0.68,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.12,
+        "2": 0.84
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9222,
+    "output_tokens": 294
+  }
+}

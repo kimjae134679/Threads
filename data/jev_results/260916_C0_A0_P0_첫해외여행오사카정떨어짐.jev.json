@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_첫해외여행오사카정떨어짐.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.78,
+      "confidence": 0.7,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.26,
+        "1": 0.71,
+        "2": 0.03,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.52,
+      "probabilities": {
+        "usable": 0.01,
+        "discard": 0.35,
+        "hold": 0.64,
+        "priority": 0.0
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.44,
+      "probabilities": {
+        "empathy": 0.55,
+        "issue": 0.0,
+        "skip": 0.37,
+        "info": 0.0,
+        "humor": 0.08
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.71
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.97,
+      "confidence": 0.95,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.02,
+        "2": 0.97
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.31
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.95,
+      "probabilities": {
+        "story": 0.0,
+        "source": 0.96,
+        "safety": 0.01,
+        "none": 0.0,
+        "asset": 0.03,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5012,
+    "output_tokens": 292
+  }
+}

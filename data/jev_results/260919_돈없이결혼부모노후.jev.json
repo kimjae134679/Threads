@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_돈없이결혼부모노후.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.15,
+      "confidence": 0.43,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.09,
+        "2": 0.49,
+        "3": 0.36
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.41,
+      "probabilities": {
+        "hold": 0.07,
+        "priority": 0.25,
+        "usable": 0.56,
+        "discard": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.96,
+      "probabilities": {
+        "info": 0.0,
+        "skip": 0.0,
+        "issue": 0.03,
+        "empathy": 0.97,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.73
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.62
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.86,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.38,
+        "1": 0.37,
+        "2": 0.25
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.45
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.33,
+      "probabilities": {
+        "story": 0.06,
+        "none": 0.01,
+        "safety": 0.44,
+        "source": 0.25,
+        "hook": 0.01,
+        "asset": 0.23
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 0.89,
+      "confidence": 0.1,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.35,
+        "1": 0.41000000000000003,
+        "2": 0.24
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7172,
+    "output_tokens": 294
+  }
+}

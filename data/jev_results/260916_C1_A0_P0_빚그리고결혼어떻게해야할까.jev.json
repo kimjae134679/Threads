@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_빚그리고결혼어떻게해야할까.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.9,
+      "confidence": 0.48,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.26,
+        "2": 0.51,
+        "3": 0.21
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.26,
+      "probabilities": {
+        "discard": 0.06,
+        "hold": 0.37,
+        "usable": 0.44,
+        "priority": 0.13
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.95,
+      "probabilities": {
+        "info": 0.0,
+        "humor": 0.0,
+        "skip": 0.03,
+        "issue": 0.01,
+        "empathy": 0.96
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.61
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.56,
+      "confidence": 0.34,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.2,
+        "2": 0.68
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.45,
+      "probabilities": {
+        "safety": 0.55,
+        "story": 0.02,
+        "hook": 0.0,
+        "asset": 0.42,
+        "source": 0.01,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.58,
+      "confidence": 0.37,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.31,
+        "2": 0.63
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6532,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_부모용돈월급5퍼.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.62,
+      "confidence": 0.36,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.34,
+        "2": 0.44,
+        "3": 0.13
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.25,
+      "probabilities": {
+        "hold": 0.43,
+        "usable": 0.3,
+        "priority": 0.08,
+        "discard": 0.19
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.78,
+      "probabilities": {
+        "info": 0.0,
+        "humor": 0.0,
+        "empathy": 0.82,
+        "issue": 0.12,
+        "skip": 0.06
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.25,
+        "1": 0.18,
+        "2": 0.57
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.29
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.67,
+      "probabilities": {
+        "story": 0.02,
+        "hook": 0.0,
+        "source": 0.25,
+        "asset": 0.01,
+        "none": 0.0,
+        "safety": 0.72
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.62,
+      "confidence": 0.42,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.2,
+        "2": 0.71
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7602,
+    "output_tokens": 294
+  }
+}

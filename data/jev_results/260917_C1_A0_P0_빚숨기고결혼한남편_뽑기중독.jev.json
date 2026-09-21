@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_빚숨기고결혼한남편_뽑기중독.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.58,
+      "confidence": 0.4,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.5,
+        "2": 0.39,
+        "3": 0.1
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.7,
+      "probabilities": {
+        "discard": 0.01,
+        "usable": 0.14,
+        "priority": 0.08,
+        "hold": 0.77
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.8,
+      "probabilities": {
+        "skip": 0.12,
+        "empathy": 0.84,
+        "humor": 0.01,
+        "issue": 0.03,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.64,
+      "probabilities": {
+        "hook": 0.0,
+        "safety": 0.28,
+        "none": 0.0,
+        "story": 0.0,
+        "asset": 0.71,
+        "source": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.92,
+      "confidence": 0.88,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.07,
+        "2": 0.92
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9082,
+    "output_tokens": 292
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_상속금으로시누이집.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.29,
+      "confidence": 0.29,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.11,
+        "2": 0.4,
+        "3": 0.46
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.14,
+      "probabilities": {
+        "discard": 0.11,
+        "usable": 0.31,
+        "priority": 0.22,
+        "hold": 0.36
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.89,
+      "probabilities": {
+        "info": 0.0,
+        "issue": 0.05,
+        "empathy": 0.91,
+        "skip": 0.04,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.42,
+      "confidence": 0.13,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.24,
+        "2": 0.59
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.43
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.86,
+      "probabilities": {
+        "story": 0.02,
+        "asset": 0.07,
+        "none": 0.0,
+        "source": 0.02,
+        "safety": 0.89,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.37,
+        "2": 0.47
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7132,
+    "output_tokens": 294
+  }
+}

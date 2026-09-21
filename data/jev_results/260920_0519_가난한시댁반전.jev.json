@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_0519_가난한시댁반전.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.41,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.2,
+        "2": 0.51,
+        "3": 0.2
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.34,
+      "probabilities": {
+        "usable": 0.51,
+        "priority": 0.13,
+        "discard": 0.2,
+        "hold": 0.16
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.55,
+      "probabilities": {
+        "issue": 0.0,
+        "info": 0.0,
+        "skip": 0.11,
+        "humor": 0.25,
+        "empathy": 0.64
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.63
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.46,
+      "confidence": 0.19,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.25,
+        "2": 0.6
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.33
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.59,
+      "probabilities": {
+        "story": 0.03,
+        "hook": 0.01,
+        "safety": 0.66,
+        "source": 0.1,
+        "none": 0.0,
+        "asset": 0.2
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.19,
+        "1": 0.3,
+        "2": 0.51
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5902,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_축의금10만원KTX9만원.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.88,
+      "confidence": 0.61,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.19,
+        "2": 0.65,
+        "3": 0.13
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.44,
+      "probabilities": {
+        "priority": 0.07,
+        "usable": 0.57,
+        "hold": 0.24,
+        "discard": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.97,
+      "probabilities": {
+        "empathy": 0.98,
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.01,
+        "skip": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.72
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.94,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.37,
+        "1": 0.31,
+        "2": 0.32
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.64,
+      "probabilities": {
+        "hook": 0.01,
+        "source": 0.14,
+        "story": 0.01,
+        "none": 0.0,
+        "safety": 0.71,
+        "asset": 0.13
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.21,
+      "confidence": 0.13,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.19,
+        "1": 0.41,
+        "2": 0.4
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7332,
+    "output_tokens": 294
+  }
+}

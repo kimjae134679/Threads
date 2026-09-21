@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_여친아파서지각한다는신입.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.51,
+      "confidence": 0.45,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.55,
+        "2": 0.33,
+        "3": 0.1
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.68,
+      "probabilities": {
+        "usable": 0.12,
+        "discard": 0.02,
+        "hold": 0.75,
+        "priority": 0.11
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.97,
+      "probabilities": {
+        "empathy": 0.0,
+        "issue": 0.0,
+        "humor": 0.98,
+        "info": 0.0,
+        "skip": 0.02
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.59
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.37
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.32,
+      "probabilities": {
+        "none": 0.0,
+        "safety": 0.23,
+        "story": 0.0,
+        "source": 0.33,
+        "asset": 0.44,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.7,
+      "confidence": 0.55,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.27,
+        "2": 0.71
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5882,
+    "output_tokens": 292
+  }
+}

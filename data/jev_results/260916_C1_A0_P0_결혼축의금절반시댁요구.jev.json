@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_결혼축의금절반시댁요구.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.91,
+      "confidence": 0.35,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.26,
+        "2": 0.4,
+        "3": 0.28
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.42,
+      "probabilities": {
+        "priority": 0.18,
+        "hold": 0.57,
+        "discard": 0.05,
+        "usable": 0.2
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.88,
+      "probabilities": {
+        "empathy": 0.91,
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.03,
+        "skip": 0.06
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.52,
+      "confidence": 0.28,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.17,
+        "2": 0.68
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.8,
+      "probabilities": {
+        "source": 0.02,
+        "hook": 0.0,
+        "none": 0.0,
+        "asset": 0.14,
+        "story": 0.01,
+        "safety": 0.83
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.61,
+      "confidence": 0.41,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.23,
+        "2": 0.69
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7992,
+    "output_tokens": 294
+  }
+}

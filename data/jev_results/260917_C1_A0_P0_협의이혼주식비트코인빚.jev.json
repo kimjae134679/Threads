@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_협의이혼주식비트코인빚.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.05,
+      "confidence": 0.39,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.18,
+        "2": 0.44,
+        "3": 0.33
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.23,
+      "probabilities": {
+        "usable": 0.42,
+        "hold": 0.21,
+        "priority": 0.28,
+        "discard": 0.09
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "info",
+      "confidence": 0.37,
+      "probabilities": {
+        "empathy": 0.34,
+        "info": 0.49,
+        "skip": 0.04,
+        "issue": 0.13,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.72
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.21,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.26,
+        "1": 0.27,
+        "2": 0.47
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.76,
+      "probabilities": {
+        "story": 0.0,
+        "hook": 0.0,
+        "asset": 0.15,
+        "safety": 0.81,
+        "none": 0.0,
+        "source": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.48,
+      "confidence": 0.22,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.33,
+        "2": 0.57
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8442,
+    "output_tokens": 293
+  }
+}

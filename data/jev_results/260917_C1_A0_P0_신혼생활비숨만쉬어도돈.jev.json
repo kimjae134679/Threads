@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_신혼생활비숨만쉬어도돈.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.69,
+      "confidence": 0.69,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.3,
+        "2": 0.7,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.45,
+      "probabilities": {
+        "priority": 0.0,
+        "discard": 0.01,
+        "usable": 0.59,
+        "hold": 0.4
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.93,
+      "probabilities": {
+        "empathy": 0.95,
+        "info": 0.05,
+        "skip": 0.0,
+        "issue": 0.0,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.45
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.74,
+      "confidence": 0.61,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.18,
+        "2": 0.78
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.55,
+      "probabilities": {
+        "hook": 0.0,
+        "source": 0.01,
+        "asset": 0.62,
+        "none": 0.0,
+        "safety": 0.37,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.36,
+      "confidence": 0.23,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.48,
+        "2": 0.44
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8312,
+    "output_tokens": 292
+  }
+}

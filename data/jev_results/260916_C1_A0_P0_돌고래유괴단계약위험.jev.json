@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_돌고래유괴단계약위험.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.01,
+      "confidence": 0.89,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.89,
+        "2": 0.06,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.92,
+      "probabilities": {
+        "priority": 0.0,
+        "hold": 0.94,
+        "usable": 0.01,
+        "discard": 0.05
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.55,
+      "probabilities": {
+        "humor": 0.01,
+        "skip": 0.3,
+        "issue": 0.65,
+        "info": 0.04,
+        "empathy": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.19
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.49,
+      "probabilities": {
+        "asset": 0.05,
+        "story": 0.0,
+        "safety": 0.37,
+        "none": 0.0,
+        "source": 0.58,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7262,
+    "output_tokens": 291
+  }
+}

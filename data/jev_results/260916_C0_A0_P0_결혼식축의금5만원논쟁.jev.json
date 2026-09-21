@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_결혼식축의금5만원논쟁.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.88,
+      "confidence": 0.8,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.81,
+        "2": 0.03,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.82,
+      "probabilities": {
+        "priority": 0.0,
+        "usable": 0.02,
+        "hold": 0.86,
+        "discard": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.42,
+      "probabilities": {
+        "humor": 0.02,
+        "empathy": 0.54,
+        "skip": 0.3,
+        "info": 0.0,
+        "issue": 0.14
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.7
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.98,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.2
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.95,
+      "probabilities": {
+        "source": 0.0,
+        "asset": 0.97,
+        "story": 0.0,
+        "hook": 0.0,
+        "none": 0.0,
+        "safety": 0.03
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.84,
+      "confidence": 0.77,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.04,
+        "2": 0.9
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9162,
+    "output_tokens": 292
+  }
+}

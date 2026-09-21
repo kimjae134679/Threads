@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_연애공평결혼남자쪽.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.63,
+      "confidence": 0.26,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.11,
+        "1": 0.33,
+        "2": 0.38,
+        "3": 0.18
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.55,
+      "probabilities": {
+        "usable": 0.11,
+        "discard": 0.13,
+        "priority": 0.1,
+        "hold": 0.66
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.28,
+      "probabilities": {
+        "empathy": 0.41,
+        "issue": 0.43,
+        "humor": 0.02,
+        "skip": 0.14,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.68,
+      "confidence": 0.52,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.13,
+        "2": 0.78
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.33
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.83,
+      "probabilities": {
+        "story": 0.0,
+        "source": 0.13,
+        "safety": 0.86,
+        "none": 0.0,
+        "asset": 0.01,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.96,
+      "confidence": 0.94,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.03,
+        "2": 0.97
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 10062,
+    "output_tokens": 293
+  }
+}

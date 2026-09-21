@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_손잡았다고불륜오해.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.8,
+      "confidence": 0.58,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.22,
+        "2": 0.62,
+        "3": 0.11
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.24,
+      "probabilities": {
+        "hold": 0.42,
+        "discard": 0.13,
+        "priority": 0.02,
+        "usable": 0.43
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.92,
+      "probabilities": {
+        "skip": 0.02,
+        "issue": 0.0,
+        "info": 0.0,
+        "humor": 0.94,
+        "empathy": 0.04
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.52,
+      "confidence": 0.28,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.19,
+        "2": 0.66
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.59
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.78,
+      "probabilities": {
+        "none": 0.0,
+        "asset": 0.09,
+        "source": 0.08,
+        "safety": 0.83,
+        "story": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.73,
+      "confidence": 0.6,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.22,
+        "2": 0.76
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7402,
+    "output_tokens": 294
+  }
+}

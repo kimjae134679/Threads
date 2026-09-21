@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_도와준언니결혼식불참.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.87,
+      "confidence": 0.39,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.32,
+        "2": 0.41,
+        "3": 0.24
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.61,
+      "probabilities": {
+        "usable": 0.15,
+        "hold": 0.71,
+        "discard": 0.05,
+        "priority": 0.09
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.9,
+      "probabilities": {
+        "skip": 0.06,
+        "empathy": 0.92,
+        "issue": 0.02,
+        "info": 0.0,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.85,
+      "confidence": 0.77,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.09,
+        "2": 0.88
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.8,
+      "probabilities": {
+        "safety": 0.84,
+        "source": 0.02,
+        "asset": 0.14,
+        "none": 0.0,
+        "hook": 0.0,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.75,
+      "confidence": 0.63,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.18,
+        "2": 0.79
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7622,
+    "output_tokens": 294
+  }
+}

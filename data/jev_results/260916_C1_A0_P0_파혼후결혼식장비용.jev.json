@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_파혼후결혼식장비용.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.81,
+      "confidence": 0.29,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.27,
+        "2": 0.38,
+        "3": 0.26
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.38,
+      "probabilities": {
+        "hold": 0.54,
+        "discard": 0.16,
+        "priority": 0.11,
+        "usable": 0.19
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.76,
+      "probabilities": {
+        "skip": 0.1,
+        "issue": 0.08,
+        "info": 0.0,
+        "humor": 0.0,
+        "empathy": 0.81
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.71,
+      "confidence": 0.57,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.13,
+        "2": 0.79
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.75,
+      "probabilities": {
+        "hook": 0.0,
+        "asset": 0.19,
+        "story": 0.0,
+        "safety": 0.8,
+        "source": 0.01,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.59,
+      "confidence": 0.38,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.26,
+        "2": 0.66
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8132,
+    "output_tokens": 294
+  }
+}

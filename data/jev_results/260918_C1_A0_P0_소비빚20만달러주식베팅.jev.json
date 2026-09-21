@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_소비빚20만달러주식베팅.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.61,
+      "confidence": 0.2,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.42,
+        "2": 0.27,
+        "3": 0.22
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.35,
+      "probabilities": {
+        "usable": 0.16,
+        "priority": 0.13,
+        "discard": 0.19,
+        "hold": 0.52
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.71,
+      "probabilities": {
+        "empathy": 0.77,
+        "info": 0.0,
+        "skip": 0.18,
+        "issue": 0.04,
+        "humor": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.69,
+      "confidence": 0.53,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.16,
+        "2": 0.76
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.29
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.93,
+      "probabilities": {
+        "asset": 0.05,
+        "hook": 0.0,
+        "source": 0.01,
+        "none": 0.0,
+        "story": 0.0,
+        "safety": 0.94
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.74,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.1,
+        "2": 0.87
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6642,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_임신으로_결혼미루니_시동생반발.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.04,
+      "confidence": 0.53,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.16,
+        "2": 0.55,
+        "3": 0.26
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.34,
+      "probabilities": {
+        "priority": 0.12,
+        "hold": 0.3,
+        "discard": 0.07,
+        "usable": 0.51
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.93,
+      "probabilities": {
+        "humor": 0.0,
+        "skip": 0.04,
+        "info": 0.0,
+        "empathy": 0.95,
+        "issue": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.36,
+      "confidence": 0.04,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.19,
+        "1": 0.27,
+        "2": 0.54
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.46
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.47,
+      "probabilities": {
+        "none": 0.0,
+        "safety": 0.56,
+        "source": 0.03,
+        "hook": 0.0,
+        "story": 0.01,
+        "asset": 0.4
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.46,
+      "confidence": 0.2,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.38,
+        "2": 0.54
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8082,
+    "output_tokens": 294
+  }
+}

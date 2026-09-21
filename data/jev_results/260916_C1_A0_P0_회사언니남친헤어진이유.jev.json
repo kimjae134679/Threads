@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_회사언니남친헤어진이유.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.93,
+      "confidence": 0.73,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.74,
+        "2": 0.09,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.62,
+      "probabilities": {
+        "hold": 0.72,
+        "usable": 0.03,
+        "priority": 0.0,
+        "discard": 0.25
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.96,
+      "probabilities": {
+        "humor": 0.97,
+        "issue": 0.0,
+        "empathy": 0.0,
+        "info": 0.0,
+        "skip": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.97,
+      "confidence": 0.96,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.02,
+        "2": 0.97
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.27
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.72,
+      "probabilities": {
+        "safety": 0.77,
+        "asset": 0.17,
+        "hook": 0.0,
+        "story": 0.03,
+        "source": 0.03,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.98
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6332,
+    "output_tokens": 294
+  }
+}

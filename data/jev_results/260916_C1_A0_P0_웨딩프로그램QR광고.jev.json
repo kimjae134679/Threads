@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_웨딩프로그램QR광고.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.15,
+      "confidence": 0.48,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.12,
+        "2": 0.52,
+        "3": 0.33
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.39,
+      "probabilities": {
+        "priority": 0.25,
+        "usable": 0.54,
+        "hold": 0.13,
+        "discard": 0.08
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.95,
+      "probabilities": {
+        "empathy": 0.96,
+        "issue": 0.01,
+        "humor": 0.01,
+        "info": 0.0,
+        "skip": 0.02
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.7
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.98,
+      "confidence": 0.07,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.32,
+        "1": 0.38,
+        "2": 0.3
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.58
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.53,
+      "probabilities": {
+        "asset": 0.61,
+        "hook": 0.0,
+        "source": 0.11,
+        "none": 0.0,
+        "story": 0.01,
+        "safety": 0.27
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.39,
+      "confidence": 0.08,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.41,
+        "2": 0.49
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6782,
+    "output_tokens": 292
+  }
+}

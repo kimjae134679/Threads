@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_소개팅해달라고괴롭히는상사.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.44,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.59,
+        "2": 0.32,
+        "3": 0.07
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.78,
+      "probabilities": {
+        "discard": 0.02,
+        "priority": 0.05,
+        "hold": 0.83,
+        "usable": 0.1
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.66,
+      "probabilities": {
+        "empathy": 0.74,
+        "skip": 0.05,
+        "humor": 0.0,
+        "issue": 0.21,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.73,
+      "confidence": 0.6,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.13,
+        "2": 0.8
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.78,
+      "probabilities": {
+        "source": 0.04,
+        "story": 0.02,
+        "hook": 0.0,
+        "asset": 0.11,
+        "none": 0.0,
+        "safety": 0.83
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.96,
+      "confidence": 0.94,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.03,
+        "2": 0.97
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8902,
+    "output_tokens": 294
+  }
+}

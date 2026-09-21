@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_결혼자금지원받으면부모간섭.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.05,
+      "confidence": 0.6,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.13,
+        "2": 0.62,
+        "3": 0.23
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.36,
+      "probabilities": {
+        "usable": 0.34,
+        "hold": 0.52,
+        "discard": 0.07,
+        "priority": 0.07
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.69,
+      "probabilities": {
+        "info": 0.0,
+        "skip": 0.01,
+        "issue": 0.23,
+        "empathy": 0.76,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.39,
+      "confidence": 0.08,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.24,
+        "2": 0.58
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.47
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.84,
+      "probabilities": {
+        "safety": 0.86,
+        "hook": 0.0,
+        "none": 0.0,
+        "asset": 0.11,
+        "source": 0.02,
+        "story": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.51,
+      "confidence": 0.27,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.41,
+        "2": 0.55
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7342,
+    "output_tokens": 294
+  }
+}

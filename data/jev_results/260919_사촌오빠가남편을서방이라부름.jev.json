@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_사촌오빠가남편을서방이라부름.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.18,
+      "confidence": 0.14,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.25,
+        "1": 0.35,
+        "2": 0.38,
+        "3": 0.02
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "discard",
+      "confidence": 0.18,
+      "probabilities": {
+        "usable": 0.33,
+        "discard": 0.39,
+        "hold": 0.27,
+        "priority": 0.01
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.6,
+      "probabilities": {
+        "skip": 0.08,
+        "issue": 0.03,
+        "humor": 0.21,
+        "empathy": 0.68,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.48
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.44
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.59,
+      "confidence": 0.11,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.56,
+        "1": 0.29,
+        "2": 0.15
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.51,
+      "probabilities": {
+        "source": 0.03,
+        "hook": 0.13,
+        "none": 0.01,
+        "asset": 0.11,
+        "story": 0.14,
+        "safety": 0.58
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.17,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.25,
+        "1": 0.33,
+        "2": 0.42
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7202,
+    "output_tokens": 294
+  }
+}

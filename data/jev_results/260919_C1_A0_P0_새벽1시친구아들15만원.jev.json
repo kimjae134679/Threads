@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_새벽1시친구아들15만원.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.88,
+      "confidence": 0.53,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.21,
+        "2": 0.57,
+        "3": 0.18
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.32,
+      "probabilities": {
+        "discard": 0.13,
+        "priority": 0.15,
+        "hold": 0.24,
+        "usable": 0.48
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.78,
+      "probabilities": {
+        "skip": 0.05,
+        "empathy": 0.83,
+        "issue": 0.1,
+        "humor": 0.02,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.73,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.09,
+        "2": 0.87
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.46
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.34,
+      "probabilities": {
+        "hook": 0.0,
+        "story": 0.41,
+        "none": 0.0,
+        "source": 0.09,
+        "safety": 0.46,
+        "asset": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.74,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.13,
+        "2": 0.85
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6202,
+    "output_tokens": 294
+  }
+}

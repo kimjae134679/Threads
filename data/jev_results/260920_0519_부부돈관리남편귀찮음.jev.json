@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_0519_부부돈관리남편귀찮음.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.66,
+      "confidence": 0.58,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.26,
+        "2": 0.64,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.47,
+      "probabilities": {
+        "hold": 0.18,
+        "priority": 0.03,
+        "discard": 0.2,
+        "usable": 0.59
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.54,
+      "probabilities": {
+        "skip": 0.02,
+        "humor": 0.0,
+        "issue": 0.06,
+        "empathy": 0.63,
+        "info": 0.29
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.68,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.52,
+        "1": 0.28,
+        "2": 0.2
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.36,
+      "probabilities": {
+        "none": 0.01,
+        "hook": 0.08,
+        "source": 0.04,
+        "safety": 0.46,
+        "story": 0.21,
+        "asset": 0.2
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.11,
+      "confidence": 0.1,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.25,
+        "1": 0.4,
+        "2": 0.35
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5852,
+    "output_tokens": 294
+  }
+}

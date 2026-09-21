@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_파혼해야할까요.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.43,
+      "confidence": 0.43,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.09,
+        "2": 0.37,
+        "3": 0.53
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.28,
+      "probabilities": {
+        "hold": 0.19,
+        "usable": 0.46,
+        "priority": 0.32,
+        "discard": 0.03
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.96,
+      "probabilities": {
+        "humor": 0.0,
+        "skip": 0.01,
+        "issue": 0.02,
+        "info": 0.0,
+        "empathy": 0.97
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.71
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.5,
+      "confidence": 0.25,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.14,
+        "1": 0.22,
+        "2": 0.64
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.48
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.74,
+      "probabilities": {
+        "none": 0.0,
+        "asset": 0.79,
+        "story": 0.02,
+        "hook": 0.0,
+        "safety": 0.17,
+        "source": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.14,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.26,
+        "1": 0.33,
+        "2": 0.41000000000000003
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5852,
+    "output_tokens": 292
+  }
+}

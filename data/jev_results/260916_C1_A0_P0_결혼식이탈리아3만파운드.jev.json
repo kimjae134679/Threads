@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_결혼식이탈리아3만파운드.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.02,
+      "confidence": 0.9,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.9,
+        "2": 0.06,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.91,
+      "probabilities": {
+        "hold": 0.9400000000000001,
+        "usable": 0.03,
+        "discard": 0.03,
+        "priority": 0.0
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.77,
+      "probabilities": {
+        "skip": 0.07,
+        "empathy": 0.82,
+        "humor": 0.0,
+        "issue": 0.11,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.17,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.26,
+        "1": 0.31,
+        "2": 0.43
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.33
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.74,
+      "probabilities": {
+        "safety": 0.1,
+        "none": 0.0,
+        "asset": 0.78,
+        "hook": 0.0,
+        "source": 0.1,
+        "story": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.6,
+      "confidence": 0.4,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.36,
+        "2": 0.62
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6812,
+    "output_tokens": 292
+  }
+}

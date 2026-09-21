@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_아들생일10달러취소.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.49,
+      "confidence": 0.47,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.53,
+        "2": 0.39,
+        "3": 0.06
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.72,
+      "probabilities": {
+        "discard": 0.03,
+        "hold": 0.79,
+        "priority": 0.05,
+        "usable": 0.13
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.89,
+      "probabilities": {
+        "skip": 0.07,
+        "issue": 0.01,
+        "humor": 0.0,
+        "empathy": 0.92,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.22,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.22,
+        "1": 0.34,
+        "2": 0.44
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "story",
+      "confidence": 0.43,
+      "probabilities": {
+        "asset": 0.0,
+        "hook": 0.0,
+        "safety": 0.43,
+        "story": 0.54,
+        "source": 0.03,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.97,
+      "confidence": 0.95,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.03,
+        "2": 0.97
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8362,
+    "output_tokens": 292
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_남편도시락저녁밥수준.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.35,
+      "confidence": 0.45,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.49,
+        "2": 0.37,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.47,
+      "probabilities": {
+        "usable": 0.24,
+        "discard": 0.14,
+        "hold": 0.6,
+        "priority": 0.02
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.32,
+      "probabilities": {
+        "info": 0.32,
+        "humor": 0.09,
+        "empathy": 0.46,
+        "skip": 0.12,
+        "issue": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.58
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.76,
+      "confidence": 0.64,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.07,
+        "2": 0.85
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.45
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.97,
+      "probabilities": {
+        "hook": 0.0,
+        "story": 0.0,
+        "none": 0.0,
+        "source": 0.0,
+        "safety": 0.02,
+        "asset": 0.98
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 0.74,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.55,
+        "1": 0.16,
+        "2": 0.29
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5492,
+    "output_tokens": 292
+  }
+}

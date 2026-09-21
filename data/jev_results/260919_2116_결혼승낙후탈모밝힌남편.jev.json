@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_2116_결혼승낙후탈모밝힌남편.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.18,
+      "confidence": 0.5,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.54,
+        "2": 0.27,
+        "3": 0.03
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.34,
+      "probabilities": {
+        "hold": 0.51,
+        "priority": 0.01,
+        "usable": 0.12,
+        "discard": 0.36
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.45,
+      "probabilities": {
+        "empathy": 0.05,
+        "issue": 0.12,
+        "skip": 0.27,
+        "info": 0.0,
+        "humor": 0.56
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.93,
+      "confidence": 0.9,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.03,
+        "2": 0.95
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.27
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.32,
+      "probabilities": {
+        "asset": 0.44,
+        "source": 0.04,
+        "safety": 0.15,
+        "none": 0.0,
+        "hook": 0.0,
+        "story": 0.37
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.92,
+      "confidence": 0.88,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.05,
+        "2": 0.93
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6122,
+    "output_tokens": 292
+  }
+}

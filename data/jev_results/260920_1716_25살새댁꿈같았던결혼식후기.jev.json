@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_1716_25살새댁꿈같았던결혼식후기.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.71,
+      "confidence": 0.48,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.23,
+        "2": 0.57,
+        "3": 0.11
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.44,
+      "probabilities": {
+        "hold": 0.18,
+        "discard": 0.16,
+        "priority": 0.08,
+        "usable": 0.58
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.89,
+      "probabilities": {
+        "skip": 0.05,
+        "issue": 0.03,
+        "info": 0.01,
+        "humor": 0.0,
+        "empathy": 0.91
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.68
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.61,
+      "confidence": 0.42,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.21,
+        "2": 0.7
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.4
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.33,
+      "probabilities": {
+        "safety": 0.38,
+        "none": 0.0,
+        "hook": 0.0,
+        "story": 0.02,
+        "source": 0.45,
+        "asset": 0.15
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.33,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.14,
+        "1": 0.39,
+        "2": 0.47
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6082,
+    "output_tokens": 292
+  }
+}

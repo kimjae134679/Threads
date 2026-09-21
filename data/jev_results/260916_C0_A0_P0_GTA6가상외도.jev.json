@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_GTA6가상외도.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.04,
+      "confidence": 0.8,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.81,
+        "2": 0.11,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.79,
+      "probabilities": {
+        "usable": 0.06,
+        "discard": 0.1,
+        "hold": 0.84,
+        "priority": 0.0
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.62,
+      "probabilities": {
+        "info": 0.03,
+        "issue": 0.69,
+        "empathy": 0.14,
+        "skip": 0.13,
+        "humor": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.68
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.8,
+      "confidence": 0.7,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.14,
+        "2": 0.83
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.23
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.39,
+      "probabilities": {
+        "safety": 0.49,
+        "story": 0.0,
+        "source": 0.02,
+        "hook": 0.0,
+        "asset": 0.49,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.65,
+      "confidence": 0.48,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.22,
+        "2": 0.72
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8352,
+    "output_tokens": 293
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_시어머니돈돈거리는거.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.51,
+      "confidence": 0.25,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.2,
+        "1": 0.23,
+        "2": 0.44,
+        "3": 0.13
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.38,
+      "probabilities": {
+        "priority": 0.13,
+        "usable": 0.54,
+        "hold": 0.13,
+        "discard": 0.2
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.92,
+      "probabilities": {
+        "skip": 0.05,
+        "issue": 0.02,
+        "empathy": 0.93,
+        "info": 0.0,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.05,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.32,
+        "1": 0.31,
+        "2": 0.37
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.34
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.59,
+      "probabilities": {
+        "story": 0.1,
+        "safety": 0.66,
+        "source": 0.13,
+        "asset": 0.07,
+        "none": 0.0,
+        "hook": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.43,
+      "confidence": 0.15,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.14,
+        "1": 0.29,
+        "2": 0.57
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6902,
+    "output_tokens": 294
+  }
+}

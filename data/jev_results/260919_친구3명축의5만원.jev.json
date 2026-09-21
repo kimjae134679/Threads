@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_친구3명축의5만원.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.32,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.06,
+        "2": 0.53,
+        "3": 0.4
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.48,
+      "probabilities": {
+        "priority": 0.32,
+        "usable": 0.61,
+        "discard": 0.03,
+        "hold": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.98,
+      "probabilities": {
+        "issue": 0.01,
+        "info": 0.0,
+        "skip": 0.0,
+        "empathy": 0.99,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.59
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.54,
+      "confidence": 0.2,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.58,
+        "1": 0.3,
+        "2": 0.12
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.52
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "story",
+      "confidence": 0.24,
+      "probabilities": {
+        "source": 0.11,
+        "story": 0.38,
+        "safety": 0.28,
+        "none": 0.01,
+        "hook": 0.12,
+        "asset": 0.1
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 0.97,
+      "confidence": 0.18,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.29,
+        "1": 0.45,
+        "2": 0.26
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6672,
+    "output_tokens": 292
+  }
+}

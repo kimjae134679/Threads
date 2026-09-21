@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_4년8개월짝사랑청첩장.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.67,
+      "confidence": 0.35,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.22,
+        "2": 0.49,
+        "3": 0.16
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.2,
+      "probabilities": {
+        "hold": 0.15,
+        "usable": 0.4,
+        "discard": 0.31,
+        "priority": 0.14
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.8,
+      "probabilities": {
+        "info": 0.0,
+        "skip": 0.06,
+        "issue": 0.0,
+        "empathy": 0.85,
+        "humor": 0.09
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.82
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.28,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.23,
+        "1": 0.27,
+        "2": 0.5
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.49
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.8,
+      "probabilities": {
+        "safety": 0.84,
+        "source": 0.03,
+        "asset": 0.11,
+        "none": 0.0,
+        "hook": 0.0,
+        "story": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.45,
+      "confidence": 0.17,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.26,
+        "2": 0.59
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6132,
+    "output_tokens": 294
+  }
+}

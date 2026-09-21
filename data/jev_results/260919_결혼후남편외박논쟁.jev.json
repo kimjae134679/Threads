@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_결혼후남편외박논쟁.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.47,
+      "confidence": 0.43,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.35,
+        "2": 0.53,
+        "3": 0.02
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.18,
+      "probabilities": {
+        "hold": 0.31,
+        "priority": 0.01,
+        "usable": 0.39,
+        "discard": 0.29
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.96,
+      "probabilities": {
+        "skip": 0.02,
+        "issue": 0.01,
+        "info": 0.0,
+        "empathy": 0.97,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.51
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.95,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.37,
+        "1": 0.31,
+        "2": 0.32
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.46,
+      "probabilities": {
+        "asset": 0.03,
+        "safety": 0.35,
+        "none": 0.0,
+        "source": 0.55,
+        "story": 0.06,
+        "hook": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.32,
+        "2": 0.5
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6622,
+    "output_tokens": 292
+  }
+}

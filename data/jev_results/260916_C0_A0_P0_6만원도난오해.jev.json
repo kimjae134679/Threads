@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_6만원도난오해.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.91,
+      "confidence": 0.86,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.86,
+        "2": 0.02,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.79,
+      "probabilities": {
+        "hold": 0.85,
+        "usable": 0.0,
+        "priority": 0.0,
+        "discard": 0.15
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "skip",
+      "confidence": 0.31,
+      "probabilities": {
+        "skip": 0.46,
+        "empathy": 0.03,
+        "info": 0.02,
+        "humor": 0.21,
+        "issue": 0.28
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.73
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.16
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.97,
+      "probabilities": {
+        "story": 0.0,
+        "safety": 0.02,
+        "asset": 0.98,
+        "hook": 0.0,
+        "source": 0.0,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.27,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.28,
+        "1": 0.17,
+        "2": 0.55
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9332,
+    "output_tokens": 291
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_부모축의금정산갈등.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.33,
+      "confidence": 0.65,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.65,
+        "2": 0.33,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.89,
+      "probabilities": {
+        "discard": 0.01,
+        "usable": 0.07,
+        "priority": 0.0,
+        "hold": 0.92
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.63,
+      "probabilities": {
+        "humor": 0.0,
+        "info": 0.0,
+        "empathy": 0.71,
+        "skip": 0.02,
+        "issue": 0.27
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.52
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.74,
+      "confidence": 0.61,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.17,
+        "2": 0.78
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.29
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.41,
+      "probabilities": {
+        "hook": 0.0,
+        "story": 0.0,
+        "none": 0.0,
+        "source": 0.01,
+        "safety": 0.48,
+        "asset": 0.51
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.59,
+      "confidence": 0.38,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.39,
+        "2": 0.6
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8342,
+    "output_tokens": 292
+  }
+}

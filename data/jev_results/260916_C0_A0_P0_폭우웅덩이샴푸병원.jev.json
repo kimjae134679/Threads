@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_폭우웅덩이샴푸병원.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.56,
+      "confidence": 0.53,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.46,
+        "1": 0.53,
+        "2": 0.01,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "discard",
+      "confidence": 0.36,
+      "probabilities": {
+        "priority": 0.0,
+        "usable": 0.0,
+        "hold": 0.48,
+        "discard": 0.52
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "skip",
+      "confidence": 0.47,
+      "probabilities": {
+        "skip": 0.58,
+        "empathy": 0.0,
+        "issue": 0.09,
+        "humor": 0.33,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.75
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.01,
+        "2": 0.98
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.11
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.91,
+      "probabilities": {
+        "story": 0.0,
+        "source": 0.92,
+        "none": 0.0,
+        "hook": 0.0,
+        "asset": 0.06,
+        "safety": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.8,
+      "confidence": 0.7,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.06,
+        "2": 0.87
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5172,
+    "output_tokens": 291
+  }
+}

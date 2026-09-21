@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_절대놓치면안되는남자.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.04,
+      "confidence": 0.56,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.2,
+        "1": 0.57,
+        "2": 0.22,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.45,
+      "probabilities": {
+        "hold": 0.59,
+        "discard": 0.31,
+        "priority": 0.0,
+        "usable": 0.1
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.97,
+      "probabilities": {
+        "skip": 0.03,
+        "empathy": 0.0,
+        "info": 0.0,
+        "humor": 0.97,
+        "issue": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.6
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.68,
+      "confidence": 0.52,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.16,
+        "2": 0.76
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.79,
+      "probabilities": {
+        "asset": 0.11,
+        "safety": 0.83,
+        "story": 0.0,
+        "source": 0.06,
+        "none": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.47,
+      "confidence": 0.2,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.27,
+        "2": 0.6
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6482,
+    "output_tokens": 294
+  }
+}

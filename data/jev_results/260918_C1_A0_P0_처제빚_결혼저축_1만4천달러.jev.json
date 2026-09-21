@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_처제빚_결혼저축_1만4천달러.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.17,
+      "confidence": 0.7,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.73,
+        "2": 0.19,
+        "3": 0.02
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.79,
+      "probabilities": {
+        "discard": 0.1,
+        "usable": 0.04,
+        "priority": 0.02,
+        "hold": 0.84
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.53,
+      "probabilities": {
+        "skip": 0.24,
+        "humor": 0.0,
+        "info": 0.0,
+        "empathy": 0.62,
+        "issue": 0.14
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.01,
+        "2": 0.98
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.19
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.92,
+      "probabilities": {
+        "story": 0.0,
+        "safety": 0.93,
+        "source": 0.04,
+        "asset": 0.03,
+        "none": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.97,
+      "confidence": 0.96,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.98
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7262,
+    "output_tokens": 294
+  }
+}

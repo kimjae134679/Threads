@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_나들이2만원이혼갈등.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.89,
+      "confidence": 0.37,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.22,
+        "2": 0.44,
+        "3": 0.26
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.22,
+      "probabilities": {
+        "usable": 0.26,
+        "priority": 0.12,
+        "hold": 0.41,
+        "discard": 0.21
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.96,
+      "probabilities": {
+        "skip": 0.02,
+        "empathy": 0.97,
+        "info": 0.0,
+        "humor": 0.0,
+        "issue": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.52,
+      "confidence": 0.28,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.19,
+        "2": 0.66
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.9,
+      "probabilities": {
+        "asset": 0.08,
+        "hook": 0.0,
+        "safety": 0.92,
+        "story": 0.0,
+        "source": 0.0,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.65,
+      "confidence": 0.48,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.23,
+        "2": 0.71
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 10002,
+    "output_tokens": 294
+  }
+}

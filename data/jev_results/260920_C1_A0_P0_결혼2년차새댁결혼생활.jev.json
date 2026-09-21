@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_C1_A0_P0_결혼2년차새댁결혼생활.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.73,
+      "confidence": 0.62,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.24,
+        "2": 0.66,
+        "3": 0.06
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.47,
+      "probabilities": {
+        "hold": 0.24,
+        "usable": 0.6,
+        "priority": 0.03,
+        "discard": 0.13
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.99,
+      "probabilities": {
+        "info": 0.0,
+        "issue": 0.0,
+        "skip": 0.01,
+        "empathy": 0.99,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.56
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.31,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.22,
+        "1": 0.26,
+        "2": 0.52
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.42
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.58,
+      "probabilities": {
+        "safety": 0.66,
+        "story": 0.01,
+        "none": 0.0,
+        "hook": 0.0,
+        "source": 0.08,
+        "asset": 0.25
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.21,
+      "confidence": 0.17,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.45,
+        "2": 0.38
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6092,
+    "output_tokens": 294
+  }
+}

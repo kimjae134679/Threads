@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_찐케이팝노래.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.21,
+      "confidence": 0.66,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.66,
+        "2": 0.27,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.5,
+      "probabilities": {
+        "discard": 0.14,
+        "hold": 0.63,
+        "priority": 0.0,
+        "usable": 0.23
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.77,
+      "probabilities": {
+        "empathy": 0.11,
+        "humor": 0.82,
+        "info": 0.0,
+        "issue": 0.04,
+        "skip": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.47
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.94,
+      "confidence": 0.22,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.29,
+        "1": 0.48,
+        "2": 0.23
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.33
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.58,
+      "probabilities": {
+        "asset": 0.65,
+        "safety": 0.17,
+        "none": 0.0,
+        "source": 0.17,
+        "story": 0.01,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.64,
+      "confidence": 0.46,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.32,
+        "2": 0.66
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6432,
+    "output_tokens": 292
+  }
+}

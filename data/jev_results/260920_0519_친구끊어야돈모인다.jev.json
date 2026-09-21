@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_0519_친구끊어야돈모인다.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.66,
+      "confidence": 0.38,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.21,
+        "2": 0.52,
+        "3": 0.14
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.29,
+      "probabilities": {
+        "discard": 0.28,
+        "usable": 0.47,
+        "priority": 0.13,
+        "hold": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.88,
+      "probabilities": {
+        "issue": 0.01,
+        "humor": 0.0,
+        "empathy": 0.91,
+        "skip": 0.08,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.48
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.87,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.43,
+        "1": 0.26,
+        "2": 0.31
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.22,
+      "probabilities": {
+        "safety": 0.35,
+        "none": 0.01,
+        "source": 0.13,
+        "hook": 0.12,
+        "asset": 0.25,
+        "story": 0.14
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.59,
+      "confidence": 0.38,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.11,
+        "1": 0.19,
+        "2": 0.7
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6472,
+    "output_tokens": 294
+  }
+}

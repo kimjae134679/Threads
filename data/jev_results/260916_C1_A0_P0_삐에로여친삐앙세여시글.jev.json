@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_삐에로여친삐앙세여시글.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.71,
+      "confidence": 0.47,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.39,
+        "2": 0.48,
+        "3": 0.12
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.59,
+      "probabilities": {
+        "priority": 0.1,
+        "discard": 0.02,
+        "hold": 0.7,
+        "usable": 0.18
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.89,
+      "probabilities": {
+        "issue": 0.0,
+        "info": 0.0,
+        "skip": 0.04,
+        "humor": 0.92,
+        "empathy": 0.04
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.64
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 2.0,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.46
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.62,
+      "probabilities": {
+        "story": 0.0,
+        "safety": 0.11,
+        "asset": 0.68,
+        "source": 0.21,
+        "none": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.91,
+      "confidence": 0.86,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.09,
+        "2": 0.91
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6442,
+    "output_tokens": 292
+  }
+}

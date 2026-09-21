@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_결혼알리자5일만에퇴사통보.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.77,
+      "confidence": 0.4,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.31,
+        "2": 0.45,
+        "3": 0.19
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.5,
+      "probabilities": {
+        "discard": 0.17,
+        "priority": 0.05,
+        "hold": 0.62,
+        "usable": 0.16
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.46,
+      "probabilities": {
+        "skip": 0.04,
+        "issue": 0.57,
+        "empathy": 0.38,
+        "info": 0.0,
+        "humor": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.92,
+      "confidence": 0.87,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.06,
+        "2": 0.93
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.35
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.77,
+      "probabilities": {
+        "source": 0.13,
+        "story": 0.0,
+        "hook": 0.0,
+        "asset": 0.07,
+        "none": 0.0,
+        "safety": 0.8
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.9,
+      "confidence": 0.85,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.09,
+        "2": 0.9
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7782,
+    "output_tokens": 293
+  }
+}

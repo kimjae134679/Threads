@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_17년차몰래형에게1800대여.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.47,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.14,
+        "2": 0.54,
+        "3": 0.25
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.38,
+      "probabilities": {
+        "usable": 0.54,
+        "discard": 0.21,
+        "hold": 0.14,
+        "priority": 0.11
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.74,
+      "probabilities": {
+        "empathy": 0.8,
+        "info": 0.0,
+        "skip": 0.06,
+        "issue": 0.14,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.71
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.06,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.33,
+        "1": 0.28,
+        "2": 0.39
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.32
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.38,
+      "probabilities": {
+        "story": 0.03,
+        "hook": 0.0,
+        "safety": 0.49,
+        "asset": 0.01,
+        "none": 0.0,
+        "source": 0.47
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.48,
+      "confidence": 0.23,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.28,
+        "2": 0.6
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6852,
+    "output_tokens": 294
+  }
+}

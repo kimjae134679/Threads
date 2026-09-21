@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_목적지결혼식2천달러선물불만.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.6,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.43,
+        "2": 0.52,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.5,
+      "probabilities": {
+        "priority": 0.02,
+        "usable": 0.32,
+        "hold": 0.63,
+        "discard": 0.03
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.91,
+      "probabilities": {
+        "info": 0.0,
+        "skip": 0.05,
+        "issue": 0.02,
+        "humor": 0.0,
+        "empathy": 0.93
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.58
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.81,
+      "confidence": 0.71,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.1,
+        "2": 0.86
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.33
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.53,
+      "probabilities": {
+        "story": 0.0,
+        "hook": 0.0,
+        "source": 0.02,
+        "asset": 0.37,
+        "none": 0.0,
+        "safety": 0.61
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.6,
+      "confidence": 0.4,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.3,
+        "2": 0.65
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8822,
+    "output_tokens": 294
+  }
+}

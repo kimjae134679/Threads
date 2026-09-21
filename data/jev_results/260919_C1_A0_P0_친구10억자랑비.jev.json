@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_친구10억자랑비.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.6,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.18,
+        "2": 0.66,
+        "3": 0.11
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.55,
+      "probabilities": {
+        "usable": 0.66,
+        "discard": 0.18,
+        "hold": 0.1,
+        "priority": 0.06
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.57,
+      "probabilities": {
+        "humor": 0.65,
+        "issue": 0.01,
+        "empathy": 0.3,
+        "skip": 0.04,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.69
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.57
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.52,
+      "confidence": 0.22,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.61,
+        "1": 0.25,
+        "2": 0.14
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.49
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.57,
+      "probabilities": {
+        "hook": 0.05,
+        "story": 0.02,
+        "source": 0.04,
+        "none": 0.0,
+        "safety": 0.64,
+        "asset": 0.25
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 0.91,
+      "confidence": 0.07,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.36,
+        "1": 0.37,
+        "2": 0.27
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6802,
+    "output_tokens": 294
+  }
+}

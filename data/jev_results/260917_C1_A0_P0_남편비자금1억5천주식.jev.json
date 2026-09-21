@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_남편비자금1억5천주식.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.68,
+      "confidence": 0.25,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.45,
+        "2": 0.32,
+        "3": 0.2
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.6,
+      "probabilities": {
+        "hold": 0.69,
+        "priority": 0.11,
+        "usable": 0.15,
+        "discard": 0.05
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.93,
+      "probabilities": {
+        "humor": 0.0,
+        "skip": 0.04,
+        "issue": 0.02,
+        "info": 0.0,
+        "empathy": 0.94
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.9,
+      "confidence": 0.86,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.06,
+        "2": 0.92
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.38
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.86,
+      "probabilities": {
+        "story": 0.0,
+        "safety": 0.88,
+        "source": 0.02,
+        "asset": 0.1,
+        "none": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.74,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.12,
+        "2": 0.85
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8052,
+    "output_tokens": 294
+  }
+}

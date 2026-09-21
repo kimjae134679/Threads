@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_아기성을채씨로고민중.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.96,
+      "confidence": 0.95,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.95,
+        "2": 0.01,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.94,
+      "probabilities": {
+        "hold": 0.96,
+        "usable": 0.0,
+        "priority": 0.0,
+        "discard": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.3,
+      "probabilities": {
+        "skip": 0.34,
+        "info": 0.0,
+        "humor": 0.01,
+        "issue": 0.45,
+        "empathy": 0.2
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.52
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.96
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.14
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.96,
+      "probabilities": {
+        "none": 0.0,
+        "story": 0.0,
+        "safety": 0.02,
+        "source": 0.01,
+        "hook": 0.0,
+        "asset": 0.97
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.72,
+      "confidence": 0.59,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.11,
+        "1": 0.06,
+        "2": 0.83
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7572,
+    "output_tokens": 291
+  }
+}

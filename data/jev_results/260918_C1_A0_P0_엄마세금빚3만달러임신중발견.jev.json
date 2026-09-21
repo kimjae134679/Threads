@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_엄마세금빚3만달러임신중발견.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.38,
+      "confidence": 0.34,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.14,
+        "1": 0.46,
+        "2": 0.29,
+        "3": 0.11
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.61,
+      "probabilities": {
+        "hold": 0.71,
+        "usable": 0.06,
+        "discard": 0.19,
+        "priority": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.67,
+      "probabilities": {
+        "info": 0.05,
+        "humor": 0.0,
+        "empathy": 0.74,
+        "issue": 0.03,
+        "skip": 0.18
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.58,
+      "confidence": 0.37,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.19,
+        "2": 0.69
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.24
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.97,
+      "probabilities": {
+        "none": 0.0,
+        "asset": 0.02,
+        "source": 0.01,
+        "safety": 0.97,
+        "story": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.9,
+      "confidence": 0.85,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.06,
+        "2": 0.92
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6622,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_여자친구생일선물안주는.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.88,
+      "confidence": 0.67,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.2,
+        "2": 0.68,
+        "3": 0.11
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.59,
+      "probabilities": {
+        "hold": 0.24,
+        "discard": 0.02,
+        "priority": 0.05,
+        "usable": 0.69
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.97,
+      "probabilities": {
+        "empathy": 0.98,
+        "issue": 0.02,
+        "humor": 0.0,
+        "skip": 0.0,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.5
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.51
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.09,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.29,
+        "1": 0.34,
+        "2": 0.37
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.52
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.86,
+      "probabilities": {
+        "source": 0.01,
+        "none": 0.0,
+        "asset": 0.88,
+        "safety": 0.08,
+        "hook": 0.01,
+        "story": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.19,
+      "confidence": 0.14,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.19,
+        "1": 0.43,
+        "2": 0.38
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6362,
+    "output_tokens": 292
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_탕수육딸기먼저먹을까봐.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.78,
+      "confidence": 0.75,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.23,
+        "1": 0.76,
+        "2": 0.01,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.46,
+      "probabilities": {
+        "hold": 0.6,
+        "usable": 0.01,
+        "discard": 0.39,
+        "priority": 0.0
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.95,
+      "probabilities": {
+        "empathy": 0.0,
+        "issue": 0.0,
+        "info": 0.0,
+        "skip": 0.04,
+        "humor": 0.96
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.48
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.01,
+        "2": 0.98
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.24
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "source",
+      "confidence": 0.6,
+      "probabilities": {
+        "story": 0.0,
+        "source": 0.67,
+        "safety": 0.03,
+        "asset": 0.3,
+        "hook": 0.0,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.95,
+      "confidence": 0.93,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.04,
+        "2": 0.96
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 4972,
+    "output_tokens": 292
+  }
+}

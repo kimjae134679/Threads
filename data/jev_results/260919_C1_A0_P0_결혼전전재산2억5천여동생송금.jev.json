@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_결혼전전재산2억5천여동생송금.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.78,
+      "confidence": 0.04,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.34,
+        "2": 0.27,
+        "3": 0.3
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.49,
+      "probabilities": {
+        "priority": 0.11,
+        "hold": 0.61,
+        "discard": 0.19,
+        "usable": 0.09
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.4,
+      "probabilities": {
+        "empathy": 0.52,
+        "issue": 0.19,
+        "skip": 0.21,
+        "humor": 0.08,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.75,
+      "confidence": 0.63,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.14,
+        "2": 0.8
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.29
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.94,
+      "probabilities": {
+        "asset": 0.04,
+        "source": 0.01,
+        "none": 0.0,
+        "safety": 0.95,
+        "story": 0.0,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.89,
+      "confidence": 0.83,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.07,
+        "2": 0.91
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9432,
+    "output_tokens": 294
+  }
+}

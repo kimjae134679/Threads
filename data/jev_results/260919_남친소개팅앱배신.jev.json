@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_남친소개팅앱배신.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.95,
+      "confidence": 0.6,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.16,
+        "2": 0.63,
+        "3": 0.18
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.55,
+      "probabilities": {
+        "priority": 0.17,
+        "usable": 0.67,
+        "hold": 0.1,
+        "discard": 0.06
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.94,
+      "probabilities": {
+        "issue": 0.05,
+        "info": 0.0,
+        "skip": 0.0,
+        "empathy": 0.95,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.83,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.41,
+        "1": 0.36,
+        "2": 0.23
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.39,
+      "probabilities": {
+        "source": 0.24,
+        "none": 0.0,
+        "asset": 0.2,
+        "safety": 0.5,
+        "hook": 0.01,
+        "story": 0.05
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 0.97,
+      "confidence": 0.17,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.29,
+        "1": 0.45,
+        "2": 0.26
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6852,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_1716_약국알바기억손님.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.71,
+      "confidence": 0.56,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.24,
+        "2": 0.62,
+        "3": 0.08
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.34,
+      "probabilities": {
+        "usable": 0.51,
+        "priority": 0.02,
+        "hold": 0.25,
+        "discard": 0.22
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.75,
+      "probabilities": {
+        "empathy": 0.1,
+        "skip": 0.1,
+        "humor": 0.8,
+        "issue": 0.0,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.67
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.96,
+      "confidence": 0.04,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.34,
+        "1": 0.36,
+        "2": 0.3
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.39
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.72,
+      "probabilities": {
+        "hook": 0.0,
+        "source": 0.02,
+        "asset": 0.14,
+        "none": 0.0,
+        "story": 0.07,
+        "safety": 0.77
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.29,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.36,
+        "2": 0.47000000000000003
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5932,
+    "output_tokens": 294
+  }
+}

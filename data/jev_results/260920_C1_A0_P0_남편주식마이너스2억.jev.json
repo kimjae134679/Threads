@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_C1_A0_P0_남편주식마이너스2억.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.63,
+      "confidence": 0.31,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.22,
+        "2": 0.47000000000000003,
+        "3": 0.16
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.21,
+      "probabilities": {
+        "priority": 0.13,
+        "usable": 0.41,
+        "hold": 0.17,
+        "discard": 0.29
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.87,
+      "probabilities": {
+        "issue": 0.01,
+        "humor": 0.0,
+        "info": 0.0,
+        "empathy": 0.9,
+        "skip": 0.09
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.15,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.28,
+        "1": 0.29,
+        "2": 0.43
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.64,
+      "probabilities": {
+        "story": 0.02,
+        "safety": 0.69,
+        "hook": 0.01,
+        "source": 0.14,
+        "none": 0.0,
+        "asset": 0.14
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.39,
+      "confidence": 0.08,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.19,
+        "1": 0.22,
+        "2": 0.59
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6022,
+    "output_tokens": 294
+  }
+}

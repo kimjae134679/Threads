@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_북미돈없어도관심갖는것.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.99,
+      "confidence": 0.92,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.92,
+        "2": 0.03,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.93,
+      "probabilities": {
+        "hold": 0.95,
+        "discard": 0.04,
+        "priority": 0.0,
+        "usable": 0.01
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.38,
+      "probabilities": {
+        "info": 0.02,
+        "humor": 0.13,
+        "empathy": 0.28,
+        "issue": 0.51,
+        "skip": 0.06
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.62
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.97,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.01,
+        "2": 0.98
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.21
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 1.0,
+      "probabilities": {
+        "hook": 0.0,
+        "safety": 0.0,
+        "none": 0.0,
+        "source": 0.0,
+        "asset": 1.0,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.91,
+      "confidence": 0.86,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.06,
+        "2": 0.93
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7102,
+    "output_tokens": 291
+  }
+}

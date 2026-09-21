@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_부모가소개팅장소사전답사.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.21,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.09,
+        "2": 0.54,
+        "3": 0.34
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.53,
+      "probabilities": {
+        "hold": 0.05,
+        "discard": 0.04,
+        "usable": 0.65,
+        "priority": 0.26
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.9,
+      "probabilities": {
+        "info": 0.0,
+        "humor": 0.05,
+        "skip": 0.01,
+        "issue": 0.03,
+        "empathy": 0.91
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.68
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.59
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.56,
+      "confidence": 0.16,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.5700000000000001,
+        "1": 0.31,
+        "2": 0.12
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.44
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.25,
+      "probabilities": {
+        "hook": 0.04,
+        "none": 0.01,
+        "source": 0.15,
+        "asset": 0.37,
+        "safety": 0.33,
+        "story": 0.1
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 0.94,
+      "confidence": 0.17,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.31,
+        "1": 0.44,
+        "2": 0.25
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6872,
+    "output_tokens": 292
+  }
+}

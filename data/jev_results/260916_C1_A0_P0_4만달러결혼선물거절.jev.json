@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_4만달러결혼선물거절.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.05,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.18,
+        "2": 0.54,
+        "3": 0.26
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.24,
+      "probabilities": {
+        "discard": 0.05,
+        "priority": 0.13,
+        "hold": 0.4,
+        "usable": 0.42
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.89,
+      "probabilities": {
+        "humor": 0.0,
+        "issue": 0.04,
+        "info": 0.0,
+        "skip": 0.04,
+        "empathy": 0.92
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.43,
+      "confidence": 0.15,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.24,
+        "2": 0.6
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.4
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.75,
+      "probabilities": {
+        "story": 0.01,
+        "hook": 0.0,
+        "asset": 0.19,
+        "safety": 0.79,
+        "none": 0.0,
+        "source": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.29,
+      "confidence": 0.19,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.46,
+        "2": 0.41
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7862,
+    "output_tokens": 294
+  }
+}

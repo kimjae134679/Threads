@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_남편_술자리_회식횟수.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.76,
+      "confidence": 0.52,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.3,
+        "2": 0.55,
+        "3": 0.12
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.51,
+      "probabilities": {
+        "usable": 0.29,
+        "hold": 0.63,
+        "discard": 0.03,
+        "priority": 0.05
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.77,
+      "probabilities": {
+        "info": 0.0,
+        "issue": 0.15,
+        "skip": 0.03,
+        "empathy": 0.82,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.74,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.1,
+        "2": 0.86
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.37
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.93,
+      "probabilities": {
+        "none": 0.0,
+        "source": 0.01,
+        "story": 0.0,
+        "asset": 0.05,
+        "hook": 0.0,
+        "safety": 0.94
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.79,
+      "confidence": 0.68,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.16,
+        "2": 0.81
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6952,
+    "output_tokens": 294
+  }
+}

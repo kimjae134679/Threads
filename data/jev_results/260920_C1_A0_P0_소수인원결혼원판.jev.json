@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_C1_A0_P0_소수인원결혼원판.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.5,
+      "confidence": 0.48,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.41,
+        "2": 0.53,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.42,
+      "probabilities": {
+        "hold": 0.56,
+        "priority": 0.0,
+        "usable": 0.26,
+        "discard": 0.18
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.91,
+      "probabilities": {
+        "empathy": 0.93,
+        "humor": 0.0,
+        "info": 0.0,
+        "skip": 0.07,
+        "issue": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.56
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.85
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.3,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.23,
+        "1": 0.24,
+        "2": 0.53
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.7,
+      "probabilities": {
+        "source": 0.01,
+        "asset": 0.2,
+        "hook": 0.0,
+        "safety": 0.75,
+        "story": 0.04,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.38,
+      "confidence": 0.07,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.38,
+        "2": 0.5
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7802,
+    "output_tokens": 294
+  }
+}

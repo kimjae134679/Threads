@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_150달러축의금부담되는알바생들.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.67,
+      "confidence": 0.51,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.33,
+        "2": 0.55,
+        "3": 0.08
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.44,
+      "probabilities": {
+        "hold": 0.59,
+        "discard": 0.07,
+        "priority": 0.03,
+        "usable": 0.31
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.69,
+      "probabilities": {
+        "empathy": 0.76,
+        "issue": 0.18,
+        "info": 0.0,
+        "skip": 0.06,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.73
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.27,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.22,
+        "1": 0.28,
+        "2": 0.5
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.34
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.92,
+      "probabilities": {
+        "safety": 0.9299999999999999,
+        "hook": 0.03,
+        "asset": 0.02,
+        "none": 0.0,
+        "source": 0.01,
+        "story": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.54,
+      "confidence": 0.31,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.27,
+        "2": 0.63
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7902,
+    "output_tokens": 294
+  }
+}

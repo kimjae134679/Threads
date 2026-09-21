@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_1918_나따라하는친구결혼.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.37,
+      "confidence": 0.3,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.4,
+        "2": 0.43,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.21,
+      "probabilities": {
+        "usable": 0.31,
+        "priority": 0.01,
+        "discard": 0.27,
+        "hold": 0.41
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.8,
+      "probabilities": {
+        "humor": 0.02,
+        "issue": 0.03,
+        "empathy": 0.83,
+        "info": 0.0,
+        "skip": 0.12
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.6
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.63
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.54,
+      "confidence": 0.31,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.2,
+        "2": 0.67
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.56,
+      "probabilities": {
+        "asset": 0.03,
+        "safety": 0.65,
+        "story": 0.31,
+        "none": 0.0,
+        "source": 0.01,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.73,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.14,
+        "2": 0.84
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6012,
+    "output_tokens": 294
+  }
+}

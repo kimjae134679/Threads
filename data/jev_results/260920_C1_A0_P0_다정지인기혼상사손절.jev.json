@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_C1_A0_P0_다정지인기혼상사손절.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.36,
+      "confidence": 0.43,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.46,
+        "2": 0.42,
+        "3": 0.02
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.52,
+      "probabilities": {
+        "usable": 0.21,
+        "hold": 0.64,
+        "discard": 0.14,
+        "priority": 0.01
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.4,
+      "probabilities": {
+        "skip": 0.32,
+        "issue": 0.03,
+        "empathy": 0.52,
+        "humor": 0.13,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.16,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.27,
+        "1": 0.31,
+        "2": 0.42
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.28
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.91,
+      "probabilities": {
+        "source": 0.03,
+        "none": 0.0,
+        "safety": 0.93,
+        "asset": 0.04,
+        "hook": 0.0,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.42,
+      "confidence": 0.12,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.29,
+        "2": 0.56
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8252,
+    "output_tokens": 294
+  }
+}

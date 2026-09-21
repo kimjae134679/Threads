@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_몰래카드빚1만달러.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.52,
+      "confidence": 0.36,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.44,
+        "2": 0.42,
+        "3": 0.08
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.54,
+      "probabilities": {
+        "hold": 0.66,
+        "usable": 0.18,
+        "discard": 0.12,
+        "priority": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.72,
+      "probabilities": {
+        "info": 0.0,
+        "empathy": 0.77,
+        "issue": 0.04,
+        "skip": 0.18,
+        "humor": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.69,
+      "confidence": 0.53,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.17,
+        "2": 0.76
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.93,
+      "probabilities": {
+        "story": 0.0,
+        "asset": 0.05,
+        "none": 0.0,
+        "source": 0.01,
+        "safety": 0.94,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.82,
+      "confidence": 0.73,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.12,
+        "2": 0.85
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6422,
+    "output_tokens": 294
+  }
+}

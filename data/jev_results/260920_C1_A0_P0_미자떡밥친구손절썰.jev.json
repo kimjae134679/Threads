@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_C1_A0_P0_미자떡밥친구손절썰.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.44,
+      "confidence": 0.33,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.39,
+        "2": 0.44,
+        "3": 0.05
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.2,
+      "probabilities": {
+        "hold": 0.4,
+        "discard": 0.22,
+        "priority": 0.02,
+        "usable": 0.36
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.86,
+      "probabilities": {
+        "empathy": 0.08,
+        "issue": 0.0,
+        "humor": 0.89,
+        "info": 0.0,
+        "skip": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.67
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.69
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.94,
+      "confidence": 0.04,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.35,
+        "1": 0.36,
+        "2": 0.29
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.32
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.31,
+      "probabilities": {
+        "asset": 0.33,
+        "none": 0.01,
+        "safety": 0.42,
+        "hook": 0.02,
+        "source": 0.12,
+        "story": 0.1
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.36,
+      "confidence": 0.03,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.14,
+        "1": 0.36,
+        "2": 0.5
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6362,
+    "output_tokens": 294
+  }
+}

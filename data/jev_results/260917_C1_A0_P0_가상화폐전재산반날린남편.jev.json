@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_가상화폐전재산반날린남편.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.57,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.61,
+        "2": 0.29,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.63,
+      "probabilities": {
+        "hold": 0.72,
+        "priority": 0.03,
+        "discard": 0.13,
+        "usable": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.35,
+      "probabilities": {
+        "humor": 0.09,
+        "skip": 0.26,
+        "info": 0.0,
+        "empathy": 0.48,
+        "issue": 0.17
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.74,
+      "confidence": 0.61,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.12,
+        "2": 0.81
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.85,
+      "probabilities": {
+        "source": 0.01,
+        "asset": 0.11,
+        "story": 0.0,
+        "hook": 0.0,
+        "none": 0.0,
+        "safety": 0.88
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.9,
+      "confidence": 0.85,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.08,
+        "2": 0.91
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6512,
+    "output_tokens": 294
+  }
+}

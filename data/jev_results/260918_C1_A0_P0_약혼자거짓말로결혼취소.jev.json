@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_약혼자거짓말로결혼취소.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.75,
+      "confidence": 0.42,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.34,
+        "2": 0.46,
+        "3": 0.16
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.62,
+      "probabilities": {
+        "hold": 0.72,
+        "usable": 0.16,
+        "priority": 0.08,
+        "discard": 0.04
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.91,
+      "probabilities": {
+        "skip": 0.06,
+        "empathy": 0.93,
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.77
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.87,
+      "confidence": 0.81,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.06,
+        "2": 0.91
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.34
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.86,
+      "probabilities": {
+        "source": 0.03,
+        "story": 0.0,
+        "hook": 0.0,
+        "asset": 0.08,
+        "none": 0.0,
+        "safety": 0.89
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.85,
+      "confidence": 0.77,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.11,
+        "2": 0.87
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6792,
+    "output_tokens": 294
+  }
+}

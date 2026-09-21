@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_싸우고생활비회수.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.05,
+      "confidence": 0.05,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.15,
+        "2": 0.36,
+        "3": 0.39
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "priority",
+      "confidence": 0.09,
+      "probabilities": {
+        "hold": 0.15,
+        "priority": 0.32,
+        "discard": 0.24,
+        "usable": 0.29
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.91,
+      "probabilities": {
+        "humor": 0.0,
+        "issue": 0.04,
+        "empathy": 0.93,
+        "info": 0.0,
+        "skip": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.86
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.63
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.21,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.24,
+        "1": 0.3,
+        "2": 0.46
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.47
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.88,
+      "probabilities": {
+        "safety": 0.91,
+        "story": 0.02,
+        "hook": 0.02,
+        "none": 0.0,
+        "source": 0.01,
+        "asset": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.44,
+      "confidence": 0.16,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.23,
+        "2": 0.61
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7742,
+    "output_tokens": 294
+  }
+}

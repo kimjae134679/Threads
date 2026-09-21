@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_2018_결혼하면진짜친구가보인다더니.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.36,
+      "confidence": 0.25,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.17,
+        "1": 0.35,
+        "2": 0.42,
+        "3": 0.06
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "discard",
+      "confidence": 0.16,
+      "probabilities": {
+        "discard": 0.37,
+        "hold": 0.26,
+        "priority": 0.05,
+        "usable": 0.32
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.83,
+      "probabilities": {
+        "empathy": 0.86,
+        "issue": 0.04,
+        "humor": 0.04,
+        "info": 0.0,
+        "skip": 0.06
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.73
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.56,
+      "confidence": 0.34,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.19,
+        "2": 0.68
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.24
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.36,
+      "probabilities": {
+        "story": 0.14,
+        "none": 0.0,
+        "source": 0.35,
+        "asset": 0.05,
+        "safety": 0.46,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.84,
+      "confidence": 0.75,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.11,
+        "2": 0.86
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6422,
+    "output_tokens": 294
+  }
+}

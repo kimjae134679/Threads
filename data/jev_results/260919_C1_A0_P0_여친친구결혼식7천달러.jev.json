@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_여친친구결혼식7천달러.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.51,
+      "confidence": 0.51,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.05,
+        "2": 0.31,
+        "3": 0.61
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "priority",
+      "confidence": 0.37,
+      "probabilities": {
+        "discard": 0.07,
+        "usable": 0.35,
+        "hold": 0.06,
+        "priority": 0.52
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.91,
+      "probabilities": {
+        "empathy": 0.93,
+        "humor": 0.0,
+        "issue": 0.05,
+        "info": 0.0,
+        "skip": 0.02
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.65
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.77,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.43,
+        "1": 0.38,
+        "2": 0.19
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.59
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.78,
+      "probabilities": {
+        "story": 0.04,
+        "safety": 0.83,
+        "none": 0.0,
+        "asset": 0.07,
+        "source": 0.05,
+        "hook": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.21,
+      "confidence": 0.14,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.43,
+        "2": 0.39
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8182,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_한국연애연락빈도.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.64,
+      "confidence": 0.59,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.33,
+        "2": 0.61,
+        "3": 0.03
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.37,
+      "probabilities": {
+        "priority": 0.02,
+        "usable": 0.53,
+        "discard": 0.08,
+        "hold": 0.37
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.89,
+      "probabilities": {
+        "empathy": 0.92,
+        "issue": 0.06,
+        "humor": 0.0,
+        "skip": 0.02,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.63
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.31,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.39,
+        "2": 0.46
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.45
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.92
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.33,
+      "probabilities": {
+        "story": 0.01,
+        "hook": 0.0,
+        "safety": 0.44,
+        "source": 0.14,
+        "none": 0.0,
+        "asset": 0.41
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.61,
+      "confidence": 0.42,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.34,
+        "2": 0.64
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6372,
+    "output_tokens": 294
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_반반합의서부부.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.14,
+      "confidence": 0.44,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.14,
+        "2": 0.47,
+        "3": 0.35
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.18,
+      "probabilities": {
+        "discard": 0.15,
+        "priority": 0.13,
+        "usable": 0.33,
+        "hold": 0.39
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "issue",
+      "confidence": 0.34,
+      "probabilities": {
+        "humor": 0.04,
+        "issue": 0.48,
+        "empathy": 0.46,
+        "skip": 0.02,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.7,
+      "confidence": 0.55,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.17,
+        "2": 0.76
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.46
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.92,
+      "probabilities": {
+        "story": 0.0,
+        "hook": 0.0,
+        "safety": 0.94,
+        "asset": 0.04,
+        "none": 0.0,
+        "source": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.58,
+      "confidence": 0.37,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.3,
+        "2": 0.64
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7682,
+    "output_tokens": 293
+  }
+}

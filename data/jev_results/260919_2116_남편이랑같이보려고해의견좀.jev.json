@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_2116_남편이랑같이보려고해의견좀.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.44,
+      "confidence": 0.36,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.33,
+        "2": 0.5,
+        "3": 0.04
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.19,
+      "probabilities": {
+        "hold": 0.22,
+        "usable": 0.39,
+        "priority": 0.03,
+        "discard": 0.36
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.92,
+      "probabilities": {
+        "skip": 0.05,
+        "empathy": 0.94,
+        "humor": 0.0,
+        "issue": 0.01,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.72
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.13,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.31,
+        "1": 0.26,
+        "2": 0.43
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.66,
+      "probabilities": {
+        "safety": 0.71,
+        "hook": 0.02,
+        "source": 0.02,
+        "asset": 0.05,
+        "story": 0.2,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.65,
+      "confidence": 0.47,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.23,
+        "2": 0.71
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6672,
+    "output_tokens": 294
+  }
+}

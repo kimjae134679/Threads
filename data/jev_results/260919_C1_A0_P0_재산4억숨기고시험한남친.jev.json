@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_재산4억숨기고시험한남친.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.65,
+      "confidence": 0.29,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.11,
+        "1": 0.31,
+        "2": 0.4,
+        "3": 0.18
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.27,
+      "probabilities": {
+        "priority": 0.13,
+        "discard": 0.1,
+        "hold": 0.45,
+        "usable": 0.32
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.43,
+      "probabilities": {
+        "skip": 0.24,
+        "empathy": 0.54,
+        "issue": 0.12,
+        "humor": 0.1,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.88
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.14,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.27,
+        "1": 0.32,
+        "2": 0.41
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.3
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.87,
+      "probabilities": {
+        "source": 0.07,
+        "hook": 0.0,
+        "asset": 0.03,
+        "none": 0.0,
+        "safety": 0.9,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.85,
+      "confidence": 0.78,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.12,
+        "2": 0.87
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8712,
+    "output_tokens": 294
+  }
+}

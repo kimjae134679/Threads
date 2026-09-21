@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260917_C1_A0_P0_신입사원퇴사레전드.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.28,
+      "confidence": 0.65,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.67,
+        "2": 0.27,
+        "3": 0.02
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.78,
+      "probabilities": {
+        "usable": 0.11,
+        "discard": 0.04,
+        "hold": 0.83,
+        "priority": 0.02
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.76,
+      "probabilities": {
+        "empathy": 0.01,
+        "issue": 0.06,
+        "skip": 0.12,
+        "info": 0.0,
+        "humor": 0.81
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.75,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.11,
+        "2": 0.86
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.25
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.74,
+      "probabilities": {
+        "asset": 0.02,
+        "hook": 0.0,
+        "safety": 0.78,
+        "source": 0.14,
+        "story": 0.06,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.95,
+      "confidence": 0.93,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.04,
+        "2": 0.96
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9212,
+    "output_tokens": 294
+  }
+}

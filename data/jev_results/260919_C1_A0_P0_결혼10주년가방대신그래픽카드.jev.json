@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_결혼10주년가방대신그래픽카드.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.5,
+      "confidence": 0.44,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.39,
+        "2": 0.51,
+        "3": 0.03
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.44,
+      "probabilities": {
+        "usable": 0.31,
+        "priority": 0.01,
+        "discard": 0.11,
+        "hold": 0.57
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "humor",
+      "confidence": 0.84,
+      "probabilities": {
+        "skip": 0.03,
+        "info": 0.0,
+        "empathy": 0.1,
+        "issue": 0.0,
+        "humor": 0.87
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.68,
+      "confidence": 0.51,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.19,
+        "2": 0.74
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.36
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.5,
+      "probabilities": {
+        "story": 0.0,
+        "source": 0.0,
+        "none": 0.0,
+        "hook": 0.0,
+        "asset": 0.41,
+        "safety": 0.59
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.67,
+      "confidence": 0.51,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.23,
+        "2": 0.72
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9242,
+    "output_tokens": 294
+  }
+}

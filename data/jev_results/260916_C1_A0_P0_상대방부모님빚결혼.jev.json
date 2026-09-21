@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_상대방부모님빚결혼.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.83,
+      "confidence": 0.41,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.33,
+        "2": 0.44,
+        "3": 0.21
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.39,
+      "probabilities": {
+        "priority": 0.14,
+        "usable": 0.27,
+        "discard": 0.05,
+        "hold": 0.54
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.81,
+      "probabilities": {
+        "humor": 0.0,
+        "issue": 0.1,
+        "skip": 0.04,
+        "info": 0.01,
+        "empathy": 0.85
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.34,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.2,
+        "1": 0.26,
+        "2": 0.54
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.43
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.42,
+      "probabilities": {
+        "story": 0.01,
+        "safety": 0.46,
+        "none": 0.0,
+        "hook": 0.0,
+        "asset": 0.52,
+        "source": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.66,
+      "confidence": 0.49,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.2,
+        "2": 0.73
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6872,
+    "output_tokens": 292
+  }
+}

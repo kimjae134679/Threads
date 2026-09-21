@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260918_C1_A0_P0_부모축의금누구돈.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.4,
+      "confidence": 0.5,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.51,
+        "2": 0.43,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.64,
+      "probabilities": {
+        "usable": 0.2,
+        "priority": 0.01,
+        "discard": 0.07,
+        "hold": 0.72
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.5,
+      "probabilities": {
+        "empathy": 0.6,
+        "info": 0.03,
+        "humor": 0.0,
+        "issue": 0.34,
+        "skip": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.54
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.76,
+      "confidence": 0.63,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.16,
+        "2": 0.8
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.32
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.37,
+      "probabilities": {
+        "hook": 0.0,
+        "safety": 0.48,
+        "none": 0.0,
+        "source": 0.05,
+        "asset": 0.47,
+        "story": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.55,
+      "confidence": 0.32,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.33,
+        "2": 0.61
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7292,
+    "output_tokens": 292
+  }
+}

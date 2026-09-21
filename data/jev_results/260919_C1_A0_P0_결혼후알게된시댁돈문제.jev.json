@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_결혼후알게된시댁돈문제.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.21,
+      "confidence": 0.39,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.15,
+        "2": 0.41,
+        "3": 0.41
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.16,
+      "probabilities": {
+        "usable": 0.34,
+        "discard": 0.06,
+        "hold": 0.37,
+        "priority": 0.23
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.94,
+      "probabilities": {
+        "skip": 0.01,
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.04,
+        "empathy": 0.95
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.4,
+      "confidence": 0.09,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.25,
+        "2": 0.57
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.45
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.9,
+      "probabilities": {
+        "asset": 0.08,
+        "safety": 0.92,
+        "story": 0.0,
+        "source": 0.0,
+        "hook": 0.0,
+        "none": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.74,
+      "confidence": 0.61,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.17,
+        "2": 0.79
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8562,
+    "output_tokens": 294
+  }
+}

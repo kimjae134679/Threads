@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_34살퇴사선언남편.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.69,
+      "confidence": 0.45,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.29,
+        "2": 0.52,
+        "3": 0.12
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.37,
+      "probabilities": {
+        "priority": 0.07,
+        "usable": 0.29,
+        "hold": 0.52,
+        "discard": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.94,
+      "probabilities": {
+        "humor": 0.0,
+        "issue": 0.03,
+        "empathy": 0.95,
+        "skip": 0.02,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.58,
+      "confidence": 0.36,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.13,
+        "1": 0.16,
+        "2": 0.71
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.94
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.85,
+      "probabilities": {
+        "story": 0.01,
+        "source": 0.02,
+        "safety": 0.87,
+        "none": 0.0,
+        "asset": 0.09,
+        "hook": 0.01
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.71,
+      "confidence": 0.57,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.24,
+        "2": 0.73
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8122,
+    "output_tokens": 294
+  }
+}

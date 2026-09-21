@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_친정지원없이결혼후연끊기고민.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.44,
+      "confidence": 0.39,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.09,
+        "1": 0.45999999999999996,
+        "2": 0.38,
+        "3": 0.07
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.57,
+      "probabilities": {
+        "hold": 0.68,
+        "discard": 0.15,
+        "priority": 0.02,
+        "usable": 0.15
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.94,
+      "probabilities": {
+        "empathy": 0.96,
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.0,
+        "skip": 0.04
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.93,
+      "confidence": 0.9,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.03,
+        "2": 0.95
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.22
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.79,
+      "probabilities": {
+        "source": 0.01,
+        "hook": 0.0,
+        "none": 0.0,
+        "asset": 0.17,
+        "story": 0.0,
+        "safety": 0.82
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.77,
+      "confidence": 0.66,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.17,
+        "2": 0.8
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 8722,
+    "output_tokens": 294
+  }
+}

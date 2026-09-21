@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_결혼식노쇼청구서.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.26,
+      "confidence": 0.53,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.07,
+        "2": 0.54,
+        "3": 0.37
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.42,
+      "probabilities": {
+        "priority": 0.22,
+        "hold": 0.13,
+        "usable": 0.57,
+        "discard": 0.08
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.9,
+      "probabilities": {
+        "humor": 0.0,
+        "info": 0.0,
+        "issue": 0.06,
+        "skip": 0.02,
+        "empathy": 0.92
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.83
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.56,
+      "confidence": 0.16,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.55,
+        "1": 0.34,
+        "2": 0.11
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.64,
+      "probabilities": {
+        "source": 0.24,
+        "story": 0.02,
+        "none": 0.0,
+        "safety": 0.7,
+        "hook": 0.0,
+        "asset": 0.04
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.39,
+      "confidence": 0.08,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.1,
+        "1": 0.42,
+        "2": 0.48
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 7992,
+    "output_tokens": 294
+  }
+}

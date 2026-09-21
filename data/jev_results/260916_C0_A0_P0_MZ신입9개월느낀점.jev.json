@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C0_A0_P0_MZ신입9개월느낀점.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 0.94,
+      "confidence": 0.92,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.07,
+        "1": 0.92,
+        "2": 0.01,
+        "3": 0.0
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.92,
+      "probabilities": {
+        "discard": 0.05,
+        "usable": 0.0,
+        "priority": 0.0,
+        "hold": 0.95
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.6,
+      "probabilities": {
+        "skip": 0.16,
+        "issue": 0.14,
+        "humor": 0.02,
+        "empathy": 0.68,
+        "info": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.55
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.17
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.96,
+      "probabilities": {
+        "source": 0.0,
+        "none": 0.0,
+        "hook": 0.0,
+        "asset": 0.97,
+        "story": 0.01,
+        "safety": 0.02
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.34,
+      "confidence": 0.02,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.27,
+        "1": 0.11,
+        "2": 0.62
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 9132,
+    "output_tokens": 292
+  }
+}

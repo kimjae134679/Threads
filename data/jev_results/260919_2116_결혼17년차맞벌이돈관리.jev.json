@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_2116_결혼17년차맞벌이돈관리.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.22,
+      "confidence": 0.47,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.1,
+        "2": 0.49,
+        "3": 0.38
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.35,
+      "probabilities": {
+        "discard": 0.06,
+        "priority": 0.37,
+        "usable": 0.51,
+        "hold": 0.06
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.77,
+      "probabilities": {
+        "humor": 0.0,
+        "info": 0.0,
+        "empathy": 0.82,
+        "issue": 0.15,
+        "skip": 0.03
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.74
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.37,
+      "confidence": 0.06,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.2,
+        "1": 0.22,
+        "2": 0.58
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.37
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.74,
+      "probabilities": {
+        "story": 0.13,
+        "none": 0.0,
+        "source": 0.04,
+        "asset": 0.04,
+        "safety": 0.79,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.45,
+      "confidence": 0.17,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.32,
+        "2": 0.56
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6652,
+    "output_tokens": 294
+  }
+}

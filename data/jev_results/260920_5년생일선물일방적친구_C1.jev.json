@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_5년생일선물일방적친구_C1.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.87,
+      "confidence": 0.58,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.16,
+        "2": 0.63,
+        "3": 0.15
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.53,
+      "probabilities": {
+        "hold": 0.09,
+        "priority": 0.13,
+        "discard": 0.13,
+        "usable": 0.65
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.96,
+      "probabilities": {
+        "skip": 0.03,
+        "issue": 0.0,
+        "info": 0.0,
+        "humor": 0.0,
+        "empathy": 0.97
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.78
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.57
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.97,
+      "confidence": 0.05,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.33,
+        "1": 0.37,
+        "2": 0.3
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.42
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.39,
+      "probabilities": {
+        "safety": 0.49,
+        "source": 0.27,
+        "hook": 0.01,
+        "story": 0.06,
+        "none": 0.0,
+        "asset": 0.17
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.32,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.32,
+        "2": 0.5
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6212,
+    "output_tokens": 294
+  }
+}

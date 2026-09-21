@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_대기업남편이고졸.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 1.05,
+      "confidence": 0.87,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.87,
+        "2": 0.08,
+        "3": 0.01
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.95,
+      "probabilities": {
+        "usable": 0.01,
+        "priority": 0.0,
+        "hold": 0.96,
+        "discard": 0.03
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.6,
+      "probabilities": {
+        "skip": 0.18,
+        "info": 0.0,
+        "issue": 0.13,
+        "empathy": 0.67,
+        "humor": 0.02
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.84
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.99,
+      "confidence": 0.99,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.22
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.59,
+      "probabilities": {
+        "none": 0.0,
+        "safety": 0.66,
+        "source": 0.04,
+        "hook": 0.0,
+        "story": 0.04,
+        "asset": 0.26
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.98,
+      "confidence": 0.98,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.99
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6712,
+    "output_tokens": 294
+  }
+}

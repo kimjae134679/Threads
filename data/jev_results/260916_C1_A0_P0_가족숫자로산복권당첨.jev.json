@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260916_C1_A0_P0_가족숫자로산복권당첨.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.41,
+      "confidence": 0.41,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.1,
+        "2": 0.27,
+        "3": 0.59
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "priority",
+      "confidence": 0.25,
+      "probabilities": {
+        "hold": 0.15,
+        "priority": 0.43,
+        "usable": 0.34,
+        "discard": 0.08
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.81,
+      "probabilities": {
+        "skip": 0.05,
+        "issue": 0.09,
+        "info": 0.0,
+        "empathy": 0.85,
+        "humor": 0.01
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.53
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.16,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.28,
+        "1": 0.28,
+        "2": 0.44
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.47
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.9
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "asset",
+      "confidence": 0.82,
+      "probabilities": {
+        "none": 0.0,
+        "safety": 0.11,
+        "story": 0.03,
+        "asset": 0.85,
+        "source": 0.01,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.31,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.21,
+        "1": 0.26,
+        "2": 0.53
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 5522,
+    "output_tokens": 292
+  }
+}

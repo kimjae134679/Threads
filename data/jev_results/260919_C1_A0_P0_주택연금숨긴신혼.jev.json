@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260919_C1_A0_P0_주택연금숨긴신혼.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.11,
+      "confidence": 0.35,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.15,
+        "2": 0.41,
+        "3": 0.38
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.13,
+      "probabilities": {
+        "hold": 0.13,
+        "usable": 0.35,
+        "discard": 0.19,
+        "priority": 0.33
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.62,
+      "probabilities": {
+        "issue": 0.25,
+        "info": 0.0,
+        "empathy": 0.7,
+        "skip": 0.05,
+        "humor": 0.0
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.8
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 1.38,
+      "confidence": 0.07,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.19,
+        "1": 0.24,
+        "2": 0.57
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.42
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.64,
+      "probabilities": {
+        "safety": 0.71,
+        "story": 0.17,
+        "none": 0.0,
+        "source": 0.05,
+        "hook": 0.01,
+        "asset": 0.06
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.75,
+      "confidence": 0.62,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.06,
+        "1": 0.14,
+        "2": 0.8
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6512,
+    "output_tokens": 294
+  }
+}

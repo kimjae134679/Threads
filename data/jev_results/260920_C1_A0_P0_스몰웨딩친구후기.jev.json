@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "file": "260920_C1_A0_P0_스몰웨딩친구후기.md",
+  "model": "jev-1.13.0",
+  "answers": {
+    "overall_score": {
+      "type": "score",
+      "score": 2.02,
+      "confidence": 0.56,
+      "legend": {
+        "0": "버림",
+        "1": "보류",
+        "2": "쓸만함",
+        "3": "우선 제작"
+      },
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.12,
+        "2": 0.61,
+        "3": 0.23
+      }
+    },
+    "final_status": {
+      "type": "choice",
+      "choice": "usable",
+      "confidence": 0.48,
+      "probabilities": {
+        "priority": 0.11,
+        "usable": 0.62,
+        "discard": 0.15,
+        "hold": 0.12
+      }
+    },
+    "content_type": {
+      "type": "choice",
+      "choice": "empathy",
+      "confidence": 0.73,
+      "probabilities": {
+        "humor": 0.01,
+        "skip": 0.06,
+        "issue": 0.11,
+        "info": 0.03,
+        "empathy": 0.79
+      }
+    },
+    "hook_strength": {
+      "type": "noul",
+      "noul": 0.64
+    },
+    "needs_research": {
+      "type": "noul",
+      "noul": 0.73
+    },
+    "asset_importance": {
+      "type": "score",
+      "score": 0.35,
+      "confidence": 0.47,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.75,
+        "1": 0.15,
+        "2": 0.1
+      }
+    },
+    "threads_fit": {
+      "type": "noul",
+      "noul": 0.47
+    },
+    "needs_improvement": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "improvement_area": {
+      "type": "choice",
+      "choice": "safety",
+      "confidence": 0.56,
+      "probabilities": {
+        "safety": 0.64,
+        "asset": 0.09,
+        "story": 0.02,
+        "none": 0.0,
+        "source": 0.25,
+        "hook": 0.0
+      }
+    },
+    "improvement_level": {
+      "type": "score",
+      "score": 1.28,
+      "confidence": 0.0,
+      "legend": {
+        "0": "낮음",
+        "1": "보통",
+        "2": "높음"
+      },
+      "probabilities": {
+        "0": 0.18,
+        "1": 0.36,
+        "2": 0.46
+      }
+    }
+  },
+  "usage_total": {
+    "input_tokens": 6502,
+    "output_tokens": 294
+  }
+}
