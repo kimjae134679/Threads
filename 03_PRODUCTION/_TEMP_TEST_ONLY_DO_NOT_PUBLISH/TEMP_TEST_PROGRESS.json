@@ -275,5 +275,9 @@
       "executionEligible": false,
       "next": "Acquire all 8 original Inven image bytes via public/permitted access with URL+hash provenance; then stage10 review may begin."
     }
-  ]
+  ],
+  "lastUpdated": "2026-09-21T16:28:00+09:00",
+  "lastCandidateKey": "260916_탕수육딸기먼저먹을까봐",
+  "lastStage": 9,
+  "lastStatus": "BLOCKED_SOURCE_ASSET_BYTES"
 }

@@ -30,3 +30,9 @@
 ## TEMP TEST ONLY conversion lane
 - Prior TEMP TEST ONLY state unchanged. Discovery run 296 did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
+
+
+## Sol run 265 (2026-09-21 16:28 KST)
+- Queue snapshot rechecked: 1,248 candidates; next sequential rank 59 processed: `260916_탕수육딸기먼저먹을까봐`.
+- Exact TheQoo source verified: https://theqoo.net/square/4341634677 (post ID 4341634677). Public page exposes three media references, but source bytes+hash provenance were not stored; keep C0/A0/P0 and `BLOCKED_SOURCE_ASSET_BYTES`.
+- TEMP stage-9 gate saved under `_TEMP_TEST_ONLY_DO_NOT_PUBLISH`; `temporaryTestOnly=true`, `publicationAllowed=false`, `executionEligible=false`. Stage 10+ blocked until original permitted bytes are acquired. No P1/publishing.

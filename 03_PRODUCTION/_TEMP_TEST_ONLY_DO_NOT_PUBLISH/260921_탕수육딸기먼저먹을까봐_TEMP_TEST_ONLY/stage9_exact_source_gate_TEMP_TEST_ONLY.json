@@ -1,0 +1,19 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_탕수육딸기먼저먹을까봐",
+  "stage": 9,
+  "status": "BLOCKED_SOURCE_ASSET_BYTES",
+  "verifiedSourceUrl": "https://theqoo.net/square/4341634677",
+  "postId": "4341634677",
+  "observedPublicMedia": [
+    "https://img.theqoo.net/rLQEwT",
+    "https://img-cdn.theqoo.net/rPKjNn.jpg",
+    "https://img-cdn.theqoo.net/OMkwDl.jpg"
+  ],
+  "sourceBytesAcquired": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "unblockCondition": "Acquire and store the original public/permitted source media bytes with URL+hash provenance; do not bypass login, anti-bot, paywall, or access controls.",
+  "coverRule": "No blur; real source media only when verified; no generated-image fallback; preserve slide 2+ source order/content."
+}
