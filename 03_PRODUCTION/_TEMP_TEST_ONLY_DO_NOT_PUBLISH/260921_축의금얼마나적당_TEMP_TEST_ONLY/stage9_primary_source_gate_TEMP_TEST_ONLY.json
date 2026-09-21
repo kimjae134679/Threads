@@ -1,0 +1,15 @@
+{
+  "candidateKey": "260916_축의금얼마나적당",
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "stage": 9,
+  "status": "BLOCKED_PROVENANCE",
+  "exactSource": null,
+  "sourceBytesAcquired": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "unblockWhen": "Exact individual primary Ppomppu URL/post ID or another trustworthy unique identifier for the same individual post becomes publicly resolvable.",
+  "claimsNotMade": ["body", "comments", "metrics", "screenshots", "assets", "OCR", "vision", "moderation", "rightsClearance", "A1", "P1"],
+  "coverRule": {"blurAllowed": false, "generatedImageFallback": false},
+  "note": "TEMP TEST ONLY / DO NOT PUBLISH prototype gate. No canonical candidate state upgrade."
+}
