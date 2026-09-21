@@ -1,4 +1,4 @@
-# NEXT RUN HANDOFF
+﻿# NEXT RUN HANDOFF
 
 ## 2026-09-21 20:15 KST — Discovery-only run 300
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
@@ -58,3 +58,13 @@
 - TEMP lane added only `260921_폭우웅덩이샴푸병원_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json`; temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. Stage 10+ blocked.
 - No body/media fabrication, OCR/vision, comments, metrics, rights clearance, A1/P1, access-control bypass, or publishing.
 - Next sequential run: refresh queue again, re-evaluate blocked only on changed unblock condition, then process exactly one next filename-ascending unprocessed candidate.
+
+## 2026-09-21 20:30 KST — Sequential candidate + TEMP TEST ONLY
+- Refreshed queue from every current candidate file after discovery run 300; duplicate candidateKey paths were collapsed to the staged path when present. Counts: total 1,264 / C0 444 / C1 820 / A0 1,264 / A1 0 / P0 1,264 / P1 0.
+- Processed exactly one next unprocessed candidate: `260916_한국전철보고어리둥절한일본인` (rank 63 after refresh).
+- Exact title is still visible on public Inven hot-list surfaces, but exact individual Inven URL/post ID was not resolved. Secondary aggregation suggests an earlier Ruliweb appearance, but no exact original individual URL was independently verified; no provenance substitution.
+- Result: BLOCKED_PROVENANCE, C0/A0/P0, publicationAllowed=false.
+- TEMP lane added only `260921_한국전철보고어리둥절한일본인_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json`; temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. Stage 10+ blocked.
+- No fabricated body/media/comments/metrics/OCR/vision/rights clearance, no A1/P1, no access-control bypass, no publishing.
+- Next sequential run: refresh queue again and process exactly one next filename-ascending unprocessed candidate, skipping unchanged blockers.
+

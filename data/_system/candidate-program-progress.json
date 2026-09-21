@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T19:25:55+09:00",
+  "lastCycleAt": "2026-09-21T20:30:03+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -478,6 +478,15 @@
       "result": "BLOCKED_PROVENANCE",
       "c0": "BLOCKED_EXACT_PRIMARY_SOURCE",
       "unblockWhen": "Exact individual primary TheQoo post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_한국전철보고어리둥절한일본인",
+      "currentPath": "data/candidates/260916_C0_A0_P0_한국전철보고어리둥절한일본인.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Fresh public search reconfirmed the exact title in Inven hot-list surfaces, but did not resolve the exact individual Inven post URL/post ID. A secondary issue aggregator indicates an earlier Ruliweb appearance, but no exact primary/original individual URL was independently resolved, so it was not substituted as provenance.",
+      "unblockWhen": "Exact individual primary Inven post URL/post ID, or an independently verified exact original individual source URL/post ID, becomes publicly resolvable.",
       "publicationAllowed": false
     }
   ],

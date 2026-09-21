@@ -1,0 +1,20 @@
+{
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "candidateKey": "260916_한국전철보고어리둥절한일본인",
+  "stage": 9,
+  "status": "BLOCKED_PRIMARY_SOURCE",
+  "exactSourceVerified": false,
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "observedEvidence": [
+    "Exact title reconfirmed on public Inven hot-list surfaces.",
+    "Fresh public search did not resolve the exact individual Inven post URL/post ID.",
+    "Secondary issue aggregation indicates an earlier Ruliweb appearance, but an exact primary/original individual URL was not independently resolved and was not promoted to provenance."
+  ],
+  "unblockCondition": "Exact individual primary Inven post URL/post ID, or independently verified exact original individual source URL/post ID, becomes publicly resolvable; then acquire permitted real source bytes with URL/hash provenance.",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "generatedImageFallback": false
+}
