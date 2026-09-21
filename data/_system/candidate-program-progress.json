@@ -3,7 +3,7 @@
   "queue": "data/_system/candidate-program-queue.json",
   "ordering": "filename-ascending",
   "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-  "lastCycleAt": "2026-09-21T13:24:43+09:00",
+  "lastCycleAt": "2026-09-21T14:26:47+09:00",
   "processed": [
     {
       "candidateKey": "260916_2026회사별느낌",
@@ -423,19 +423,28 @@
       "observedEvidence": "Blind public recommendation/index cards repeatedly expose the same title, author mask and body prefix, but no exact individual URL/stable post ID was resolved.",
       "unblockWhen": "Exact individual Blind URL/shortlink/stable post ID or another trustworthy unique identifier proving the same individual post becomes publicly resolvable.",
       "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_콜센터진상손님직업",
+      "currentPath": "data/candidates/260916_C0_A0_P0_콜센터진상손님직업.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Fresh public Inven evidence confirms the exact title in the official Open Issue Gallery listing, author 치킨, 07:28, and public listing metrics; exact individual post URL/stable post ID was not resolved.",
+      "unblockWhen": "Exact individual Inven post URL/post ID or another trustworthy unique identifier proving this same post becomes publicly resolvable without login/access-control bypass.",
+      "publicationAllowed": false
     }
   ],
   "completed": [],
   "queueRefresh": {
-    "at": "2026-09-21T12:28:43+09:00",
-    "total": 1231,
+    "at": "2026-09-21T14:26:47+09:00",
+    "total": 1238,
     "C0": 444,
-    "C1": 787,
-    "A0": 1231,
+    "C1": 794,
+    "A0": 1238,
     "A1": 0,
-    "P0": 1231,
+    "P0": 1238,
     "P1": 0,
     "source": "all current data/candidates markdown files excluding README.md"
   },
-  "notes": "Queue refreshed from all 1,231 current candidate markdown files by preserving existing path/state entries and merging 4 newly discovered paths in filename order. Processed exactly one next candidate: 260916_출산전후바람많이펴; exact Blind post yj0s4svu verified, direct unauthenticated byte fetch returned HTTP 403 and was not bypassed; BLOCKED_SOURCE_ASSET_BYTES, A0/P0/publicationAllowed=false."
+  "notes": "Queue refreshed from all 1,238 current candidate markdown files; 3 discovery files added since prior sequential snapshot. Processed exactly one next candidate after rank 56: 260916_콜센터진상손님직업 (rank 57); official Inven public listing reconfirmed exact title/author/time/metrics, but exact individual post URL/post ID remains unresolved. BLOCKED_PROVENANCE, C0/A0/P0/publicationAllowed=false."
 }

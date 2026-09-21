@@ -3,7 +3,7 @@
   "temporaryTestOnly": true,
   "publicationAllowed": false,
   "root": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH",
-  "updatedAt": "2026-09-21T13:24:43+09:00",
+  "updatedAt": "2026-09-21T14:26:47+09:00",
   "requestedTrack": {
     "9_source_auto_acquisition": {
       "status": "PARTIAL_VERIFIED_UNIT",
@@ -246,6 +246,20 @@
       "approvedVersion": null,
       "executionEligible": false,
       "next": "Resolve exact individual Blind URL/stable post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
+    },
+    {
+      "candidateKey": "260916_콜센터진상손님직업",
+      "testPath": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상손님직업_TEMP_TEST_ONLY",
+      "stage9Artifact": "03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_콜센터진상손님직업_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json",
+      "state": "TEMP_STAGE9_PRIMARY_SOURCE_BLOCKED",
+      "exactSourceVerified": false,
+      "sourceBodyComplete": false,
+      "sourceAssetsComplete": false,
+      "temporaryTestOnly": true,
+      "publicationAllowed": false,
+      "approvedVersion": null,
+      "executionEligible": false,
+      "next": "Resolve exact individual Inven URL/post ID publicly, then acquire permitted real source body/media bytes with provenance/hash; no login/access-control bypass."
     }
   ]
 }
