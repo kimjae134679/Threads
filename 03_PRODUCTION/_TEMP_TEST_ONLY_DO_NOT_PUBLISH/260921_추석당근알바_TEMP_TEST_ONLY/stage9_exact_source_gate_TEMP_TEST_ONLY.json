@@ -1,0 +1,19 @@
+﻿{
+  "schemaVersion": 1,
+  "candidateKey": "260916_추석당근알바",
+  "stage": 9,
+  "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+  "exactSourceVerified": true,
+  "exactSource": "https://theqoo.net/square/4345896878",
+  "sourcePostId": "4345896878",
+  "observedSourceMediaCount": 3,
+  "sourceBodyComplete": false,
+  "sourceAssetsComplete": false,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "generatedImageFallback": false,
+  "blurAllowed": false,
+  "next": "Acquire permitted real image bytes from the exact public source with source URL/provenance/hash before stage 10. Do not infer image contents, OCR, or bypass access controls."
+}

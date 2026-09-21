@@ -1,402 +1,412 @@
 {
-    "schemaVersion":  1,
-    "queue":  "data/_system/candidate-program-queue.json",
-    "ordering":  "filename-ascending",
-    "cyclePolicy":  "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
-    "lastCycleAt":  "2026-09-21T09:52:59+09:00",
-    "processed":  [
-                      {
-                          "candidateKey":  "260916_2026회사별느낌",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_25살연애불가능할까",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_27살여자오늘파혼",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_41세비혼녀",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_6만원도난오해",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_98년생여자생퇴사",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.teamblind.com/kr/s/iu4xi5ax",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_AI오타30번",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_GTA6가상외도",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/party/6292/1835",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_MZ신입9개월느낀점",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2727901",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_개물림견주주장",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_결혼돈관리유형",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728411",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_결혼식5만원인간관계",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_결혼식축의금5만원논쟁",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728407",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_결혼잘사는부부특징",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2722113",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_결혼전후",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728393",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_공무원면접정장입지마",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://theqoo.net/square/4341526040",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_국장에서존버하기7",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_권태기모든게싫음",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_남친이나남편이세차모임자주나가서걱정",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_남편생활습관다짜증",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_누나3명인남친결혼",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_당근쥐잡기5만원",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_마트에서누가사먹는거임",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_북미돈없어도관심갖는것",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_블라에서술먹기로해서",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_삼성월세부정수급자들",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_승진누락차장퇴사안해",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2727666",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_실시간으로인생망하는중",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "unblockWhen":  "Exact individual Blind URL/shortlink/post ID or another trustworthy unique identifier proving the same individual post becomes publicly resolvable.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_아기성을채씨로고민중",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2727194",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_아들여친엄마표정",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2727653",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_알뜰폰이상한문자",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_애플폴더블완성도별로",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://theqoo.net/square/4341523562",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_얼마예요거지취급",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728033",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_여행유튜버현실",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://theqoo.net/square/4347897214",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_연돈카레제보디시인",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2727699",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_연휴중간결혼싸움",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://theqoo.net/square/4341661279",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_와이프가싸준도시락",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_월급300명품시계",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_이게맞아맞벌이육아",
-                          "logicalCandidateStage":  "C1",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077",
-                          "sourcePostId":  "3sx7p077",
-                          "c0":  "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
-                          "c1":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "unblockWhen":  "Permitted real screenshot/media bytes from the same public individual post are acquired with source URL/provenance/hash; no login or access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_이사가는아랫집",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_이사가는아랫집.md",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "c0":  "BLOCKED_EXACT_PRIMARY_SOURCE",
-                          "observedPublicMirror":  "https://bada.us/post/9545344",
-                          "unblockWhen":  "Exact individual primary/original post URL or trustworthy unique primary-post identifier becomes publicly resolvable; a secondary mirror alone is insufficient for C0.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_이시대4050특징",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728400?iskin=webzine",
-                          "sourcePostId":  "2728400",
-                          "c0":  "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
-                          "c1":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "unblockWhen":  "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_이혼가정예랑상견례두번",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_이혼가정예랑상견례두번.md",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EA%B0%80%EC%A0%95-%EC%98%88%EB%9E%91%EC%9D%B4-%EC%83%81%EA%B2%AC%EB%A1%80-%EB%91%90%EB%B2%88-%ED%95%98%EC%9E%AC%EC%9A%94-8e8228tt",
-                          "sourcePostId":  "8e8228tt",
-                          "c0":  "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
-                          "c1":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "unblockWhen":  "Permitted real screenshot/media bytes from the same public individual Blind post are acquired with source URL/provenance/hash; no login or access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_인생망한38살",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_인생망한38살.md",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "c0":  "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
-                          "observedEvidence":  "Public Inven index/search listings show the exact title and author 전자팔찌, but no exact individual-post URL/post ID was resolved in this run. A Fomos repost is secondary and is not accepted as primary provenance.",
-                          "unblockWhen":  "Exact individual primary Inven post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_입사직후퇴사vs스테이",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_입사직후퇴사vs스테이.md",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "c0":  "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
-                          "observedEvidence":  "Candidate says Ppomppu but stores no exact original URL. Fresh public web searches for the exact/near-exact title did not resolve a trustworthy individual Ppomppu post.",
-                          "unblockWhen":  "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_입주청소부부",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_입주청소부부.md",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728192",
-                          "sourcePostId":  "2728192",
-                          "c0":  "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
-                          "c1":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "unblockWhen":  "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_입주청소하러갔다가",
-                          "currentPath":  "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.inven.co.kr/board/webzine/2097/2728192",
-                          "sourcePostId":  "2728192",
-                          "c0":  "ALREADY_VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
-                          "c1":  "REAL_SOURCE_MEDIA_BYTES_ACQUIRED_TO_EPHEMERAL_INTAKE",
-                          "sourceMediaUrl":  "https://upload3.inven.co.kr/upload/2026/09/15/bbs/i1624795188720000.webp?MW=800",
-                          "sourceMediaByteLength":  39288,
-                          "sourceMediaSha256":  "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
-                          "assetStage":  "A0",
-                          "blocker":  "Canonical source-intake script cannot currently ingest WebP dimensions; no A1/production upgrade from ephemeral acquisition.",
-                          "unblockWhen":  "Add provenance-preserving WebP intake support or obtain independently permitted original PNG/JPEG bytes, then persist/verify source asset before editorial production.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_자취하지마세요",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "blocker":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "exactSource":  "https://www.ppomppu.co.kr/zboard/view.php?id=alone\u0026no=21310",
-                          "sourceIdentityEvidence":  "Ppomppu official 자취포럼 listing: post 21310, title 자취하지마세요, 2026-08-26; individual view returned 403 so body not claimed",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_잘생남만나고싶다",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "verifiedListing":  "https://www.teamblind.com/kr/topics/%EC%8D%B8%C2%B7%EC%97%B0%EC%95%A0",
-                          "verifiedObservedTitle":  "잘생남 만나고 싶다",
-                          "verifiedObservedBody":  "모든 조건 포기하고 잘생+no여미새 찾는데 없.음.",
-                          "unblockCondition":  "Exact individual Blind post URL or stable post ID becomes publicly verifiable without login/access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_직장인현실명언",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_직장인현실명언.md",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "c0":  "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
-                          "observedEvidence":  "Fresh public searches for the exact/near-exact title with Ppomppu did not resolve a trustworthy individual Ppomppu post. Generic third-party workplace-quote pages are not provenance.",
-                          "unblockWhen":  "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique identifier proving this same candidate becomes publicly resolvable.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_집구하는과정느낀점정리",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_집구하는과정느낀점정리.md",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_NEXT_STAGE",
-                          "exactSource":  "https://www.teamblind.com/kr/post/%EC%A7%91-%EA%B5%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95-%EB%8B%A4-%EA%B2%AA%EA%B3%A0-%EB%8A%90%EB%82%80-%EC%A0%90-%EC%A0%95%EB%A6%AC-b0fwwaed",
-                          "sourcePostId":  "b0fwwaed",
-                          "c0":  "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
-                          "c1":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "unblockWhen":  "Permitted real source body/media bytes from the same public individual Blind post are persisted with source URL/provenance/hash; no login or access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_집안일분담으로왜싸움",
-                          "currentPath":  "data/candidates/260916_C0_A0_P0_집안일분담으로왜싸움.md",
-                          "result":  "BLOCKED_PROVENANCE",
-                          "c0":  "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
-                          "observedEvidence":  "Public Blind recommendation/topic cards repeatedly show exact title, author display HD현대일렉트릭 · 𝙅*****************, and body prefix 와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴.; exact individual URL/stable post ID was not resolved.",
-                          "unblockWhen":  "Exact individual Blind URL/stable post ID or another trustworthy unique identifier proving this same post becomes publicly resolvable without login/access-control bypass.",
-                          "publicationAllowed":  false
-                      },
-                      {
-                          "candidateKey":  "260916_첫해외여행오사카정떨어짐",
-                          "logicalCandidateStage":  "C1",
-                          "result":  "BLOCKED_SOURCE_ASSET_BYTES",
-                          "exactSource":  "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C%EC%9D%B4%EB%9E%91-%EC%B2%AB-%ED%95%B4%EC%99%B8%EC%97%AC%ED%96%89%EC%9C%BC%EB%A1%9C-%EC%98%A4%EC%82%AC%EC%B9%B4-%EA%B0%80%EB%8A%94%EB%8D%B0-%EC%A2%80-%EC%A0%95-%EB%96%A8%EC%96%B4%EC%A7%90-26ecbnxk",
-                          "stablePostId":  "26ecbnxk",
-                          "publicationAllowed":  false,
-                          "unblockCondition":  "Persist permitted exact source body/media bytes with provenance/hash; no login/access-control bypass."
-                      }
-                  ],
-    "completed":  [
-
-                  ],
-    "queueRefresh":  {
-                         "at":  "2026-09-21T09:52:59+09:00",
-                         "total":  1211,
-                         "C0":  442,
-                         "C1":  769,
-                         "A0":  1211,
-                         "A1":  0,
-                         "P0":  1211,
-                         "P1":  0,
-                         "source":  "all current data/candidates markdown files excluding README.md"
-                     },
-    "notes":  "Queue refreshed from all 1,211 current candidate markdown files. Processed exactly one next filename-order candidate at rank 52: exact Blind individual URL/post ID 26ecbnxk verified publicly; source bytes with provenance/hash not persisted, so BLOCKED_SOURCE_ASSET_BYTES; A0/P0/publicationAllowed=false remain. TEMP lane records only the stage-9 exact-source gate."
+  "schemaVersion": 1,
+  "queue": "data/_system/candidate-program-queue.json",
+  "ordering": "filename-ascending",
+  "cyclePolicy": "One candidate per scheduled cycle. Refresh queue first. Skip blocked entries unless their unblock condition has become true.",
+  "lastCycleAt": "2026-09-21T10:25:03+09:00",
+  "processed": [
+    {
+      "candidateKey": "260916_2026회사별느낌",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_25살연애불가능할까",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_27살여자오늘파혼",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_41세비혼녀",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_6만원도난오해",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_98년생여자생퇴사",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/s/iu4xi5ax",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_AI오타30번",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_GTA6가상외도",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/party/6292/1835",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_MZ신입9개월느낀점",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2727901",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_개물림견주주장",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_결혼돈관리유형",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728411",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_결혼식5만원인간관계",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_결혼식축의금5만원논쟁",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728407",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_결혼잘사는부부특징",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2722113",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_결혼전후",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728393",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_공무원면접정장입지마",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://theqoo.net/square/4341526040",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_국장에서존버하기7",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_권태기모든게싫음",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_남친이나남편이세차모임자주나가서걱정",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_남편생활습관다짜증",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_누나3명인남친결혼",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_당근쥐잡기5만원",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_마트에서누가사먹는거임",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_북미돈없어도관심갖는것",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_블라에서술먹기로해서",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_삼성월세부정수급자들",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_승진누락차장퇴사안해",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2727666",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_실시간으로인생망하는중",
+      "result": "BLOCKED_PROVENANCE",
+      "unblockWhen": "Exact individual Blind URL/shortlink/post ID or another trustworthy unique identifier proving the same individual post becomes publicly resolvable.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_아기성을채씨로고민중",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2727194",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_아들여친엄마표정",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2727653",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_알뜰폰이상한문자",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_애플폴더블완성도별로",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://theqoo.net/square/4341523562",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_얼마예요거지취급",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728033",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_여행유튜버현실",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://theqoo.net/square/4347897214",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_연돈카레제보디시인",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2727699",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_연휴중간결혼싸움",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://theqoo.net/square/4341661279",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_와이프가싸준도시락",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_월급300명품시계",
+      "result": "BLOCKED_PROVENANCE",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_이게맞아맞벌이육아",
+      "logicalCandidateStage": "C1",
+      "currentPath": "data/candidates/260916_C0_A0_P0_이게맞아맞벌이육아.md",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077",
+      "sourcePostId": "3sx7p077",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real screenshot/media bytes from the same public individual post are acquired with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_이사가는아랫집",
+      "currentPath": "data/candidates/260916_C0_A0_P0_이사가는아랫집.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_PRIMARY_SOURCE",
+      "observedPublicMirror": "https://bada.us/post/9545344",
+      "unblockWhen": "Exact individual primary/original post URL or trustworthy unique primary-post identifier becomes publicly resolvable; a secondary mirror alone is insufficient for C0.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_이시대4050특징",
+      "currentPath": "data/candidates/260916_C0_A0_P0_이시대4050특징.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728400?iskin=webzine",
+      "sourcePostId": "2728400",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_이혼가정예랑상견례두번",
+      "currentPath": "data/candidates/260916_C0_A0_P0_이혼가정예랑상견례두번.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EA%B0%80%EC%A0%95-%EC%98%88%EB%9E%91%EC%9D%B4-%EC%83%81%EA%B2%AC%EB%A1%80-%EB%91%90%EB%B2%88-%ED%95%98%EC%9E%AC%EC%9A%94-8e8228tt",
+      "sourcePostId": "8e8228tt",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Blind post are acquired with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_인생망한38살",
+      "currentPath": "data/candidates/260916_C0_A0_P0_인생망한38살.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Public Inven index/search listings show the exact title and author 전자팔찌, but no exact individual-post URL/post ID was resolved in this run. A Fomos repost is secondary and is not accepted as primary provenance.",
+      "unblockWhen": "Exact individual primary Inven post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_입사직후퇴사vs스테이",
+      "currentPath": "data/candidates/260916_C0_A0_P0_입사직후퇴사vs스테이.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Candidate says Ppomppu but stores no exact original URL. Fresh public web searches for the exact/near-exact title did not resolve a trustworthy individual Ppomppu post.",
+      "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_입주청소부부",
+      "currentPath": "data/candidates/260916_C0_A0_P0_입주청소부부.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728192",
+      "sourcePostId": "2728192",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real screenshot/media bytes from the same public individual Inven post are acquired with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_입주청소하러갔다가",
+      "currentPath": "data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.inven.co.kr/board/webzine/2097/2728192",
+      "sourcePostId": "2728192",
+      "c0": "ALREADY_VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "REAL_SOURCE_MEDIA_BYTES_ACQUIRED_TO_EPHEMERAL_INTAKE",
+      "sourceMediaUrl": "https://upload3.inven.co.kr/upload/2026/09/15/bbs/i1624795188720000.webp?MW=800",
+      "sourceMediaByteLength": 39288,
+      "sourceMediaSha256": "37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6",
+      "assetStage": "A0",
+      "blocker": "Canonical source-intake script cannot currently ingest WebP dimensions; no A1/production upgrade from ephemeral acquisition.",
+      "unblockWhen": "Add provenance-preserving WebP intake support or obtain independently permitted original PNG/JPEG bytes, then persist/verify source asset before editorial production.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_자취하지마세요",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "blocker": "BLOCKED_SOURCE_ASSET_BYTES",
+      "exactSource": "https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310",
+      "sourceIdentityEvidence": "Ppomppu official 자취포럼 listing: post 21310, title 자취하지마세요, 2026-08-26; individual view returned 403 so body not claimed",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_잘생남만나고싶다",
+      "result": "BLOCKED_PROVENANCE",
+      "verifiedListing": "https://www.teamblind.com/kr/topics/%EC%8D%B8%C2%B7%EC%97%B0%EC%95%A0",
+      "verifiedObservedTitle": "잘생남 만나고 싶다",
+      "verifiedObservedBody": "모든 조건 포기하고 잘생+no여미새 찾는데 없.음.",
+      "unblockCondition": "Exact individual Blind post URL or stable post ID becomes publicly verifiable without login/access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_직장인현실명언",
+      "currentPath": "data/candidates/260916_C0_A0_P0_직장인현실명언.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Fresh public searches for the exact/near-exact title with Ppomppu did not resolve a trustworthy individual Ppomppu post. Generic third-party workplace-quote pages are not provenance.",
+      "unblockWhen": "Exact individual primary Ppomppu post URL/post ID or another trustworthy unique identifier proving this same candidate becomes publicly resolvable.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_집구하는과정느낀점정리",
+      "currentPath": "data/candidates/260916_C0_A0_P0_집구하는과정느낀점정리.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://www.teamblind.com/kr/post/%EC%A7%91-%EA%B5%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95-%EB%8B%A4-%EA%B2%AA%EA%B3%A0-%EB%8A%90%EB%82%80-%EC%A0%90-%EC%A0%95%EB%A6%AC-b0fwwaed",
+      "sourcePostId": "b0fwwaed",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real source body/media bytes from the same public individual Blind post are persisted with source URL/provenance/hash; no login or access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_집안일분담으로왜싸움",
+      "currentPath": "data/candidates/260916_C0_A0_P0_집안일분담으로왜싸움.md",
+      "result": "BLOCKED_PROVENANCE",
+      "c0": "BLOCKED_EXACT_INDIVIDUAL_SOURCE",
+      "observedEvidence": "Public Blind recommendation/topic cards repeatedly show exact title, author display HD현대일렉트릭 · 𝙅*****************, and body prefix 와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴.; exact individual URL/stable post ID was not resolved.",
+      "unblockWhen": "Exact individual Blind URL/stable post ID or another trustworthy unique identifier proving this same post becomes publicly resolvable without login/access-control bypass.",
+      "publicationAllowed": false
+    },
+    {
+      "candidateKey": "260916_첫해외여행오사카정떨어짐",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_SOURCE_ASSET_BYTES",
+      "exactSource": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C%EC%9D%B4%EB%9E%91-%EC%B2%AB-%ED%95%B4%EC%99%B8%EC%97%AC%ED%96%89%EC%9C%BC%EB%A1%9C-%EC%98%A4%EC%82%AC%EC%B9%B4-%EA%B0%80%EB%8A%94%EB%8D%B0-%EC%A2%80-%EC%A0%95-%EB%96%A8%EC%96%B4%EC%A7%90-26ecbnxk",
+      "stablePostId": "26ecbnxk",
+      "publicationAllowed": false,
+      "unblockCondition": "Persist permitted exact source body/media bytes with provenance/hash; no login/access-control bypass."
+    },
+    {
+      "candidateKey": "260916_추석당근알바",
+      "currentPath": "data/candidates/260916_C0_A0_P0_추석당근알바.md",
+      "logicalCandidateStage": "C1",
+      "result": "BLOCKED_NEXT_STAGE",
+      "exactSource": "https://theqoo.net/square/4345896878",
+      "sourcePostId": "4345896878",
+      "c0": "VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE",
+      "c1": "BLOCKED_SOURCE_ASSET_BYTES",
+      "unblockWhen": "Permitted real image bytes from the same public individual TheQoo post are acquired with source URL/provenance/hash; no login, anti-bot, or access-control bypass.",
+      "publicationAllowed": false
+    }
+  ],
+  "completed": [],
+  "queueRefresh": {
+    "at": "2026-09-21T09:52:59+09:00",
+    "total": 1211,
+    "C0": 442,
+    "C1": 769,
+    "A0": 1211,
+    "A1": 0,
+    "P0": 1211,
+    "P1": 0,
+    "source": "all current data/candidates markdown files excluding README.md"
+  },
+  "notes": "Queue refreshed from all 1,211 current candidate markdown files. Processed exactly one next filename-order candidate at rank 52: exact Blind individual URL/post ID 26ecbnxk verified publicly; source bytes with provenance/hash not persisted, so BLOCKED_SOURCE_ASSET_BYTES; A0/P0/publicationAllowed=false remain. TEMP lane records only the stage-9 exact-source gate."
 }

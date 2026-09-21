@@ -1,17 +1,17 @@
 {
   "schemaVersion": 2,
   "generatedFrom": "data/candidates",
-  "generatedAtKst": "2026-09-21T09:52:59+09:00",
+  "generatedAtKst": "2026-09-21T10:25:03+09:00",
   "ordering": "filename-ascending",
   "identity": "candidateKey is stable across C/A/P filename state changes; unstaged discovery filenames use date_filenameStem and parse state from file metadata",
   "policy": "Refresh every cycle. Process the next candidateKey not completed or currently blocked. C0 verifies exact provenance first; C1 acquires source assets without access-control bypass. Only 04_REVIEW_PUBLISH may publish.",
   "counts": {
-    "total": 1211,
+    "total": 1219,
     "C0": 442,
-    "C1": 769,
-    "A0": 1211,
+    "C1": 777,
+    "A0": 1219,
     "A1": 0,
-    "P0": 1211,
+    "P0": 1219,
     "P1": 0
   },
   "items": [
@@ -13117,7 +13117,18 @@
       "slug": "가난한시댁_반전후기_C1"
     },
     {
-      "rank": 1192,
+      "candidateKey": "260921_결혼식130만원푸대접후기",
+      "path": "data/candidates/260921_결혼식130만원푸대접후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "결혼식130만원푸대접후기",
+      "rank": 1192
+    },
+    {
+      "rank": 1193,
       "candidateKey": "260921_남자친구_환골탈태_결혼후기",
       "path": "data/candidates/260921_남자친구_환골탈태_결혼후기.md",
       "date": "260921",
@@ -13128,6 +13139,28 @@
       "slug": "남자친구_환골탈태_결혼후기"
     },
     {
+      "candidateKey": "260921_남자친구네가족만나고울다잠든후기",
+      "path": "data/candidates/260921_남자친구네가족만나고울다잠든후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "남자친구네가족만나고울다잠든후기",
+      "rank": 1194
+    },
+    {
+      "candidateKey": "260921_눈새친구돈없다고징징후기",
+      "path": "data/candidates/260921_눈새친구돈없다고징징후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "눈새친구돈없다고징징후기",
+      "rank": 1195
+    },
+    {
       "candidateKey": "260921_돈모을려면일단친구를끊어라",
       "path": "data/candidates/260921_돈모을려면일단친구를끊어라.md",
       "date": "260921",
@@ -13136,10 +13169,21 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "돈모을려면일단친구를끊어라",
-      "rank": 1193
+      "rank": 1196
     },
     {
-      "rank": 1194,
+      "candidateKey": "260921_로테이션소개팅후기",
+      "path": "data/candidates/260921_로테이션소개팅후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "로테이션소개팅후기",
+      "rank": 1197
+    },
+    {
+      "rank": 1198,
       "candidateKey": "260921_망한피씨방인수한썰",
       "path": "data/candidates/260921_망한피씨방인수한썰.md",
       "date": "260921",
@@ -13150,7 +13194,7 @@
       "slug": "망한피씨방인수한썰"
     },
     {
-      "rank": 1195,
+      "rank": 1199,
       "candidateKey": "260921_메이플길드사람여친뺏어진썰",
       "path": "data/candidates/260921_메이플길드사람여친뺏어진썰.md",
       "date": "260921",
@@ -13161,7 +13205,7 @@
       "slug": "메이플길드사람여친뺏어진썰"
     },
     {
-      "rank": 1196,
+      "rank": 1200,
       "candidateKey": "260921_부모님돈_쓰는_언니_갈등후기",
       "path": "data/candidates/260921_부모님돈_쓰는_언니_갈등후기.md",
       "date": "260921",
@@ -13172,7 +13216,7 @@
       "slug": "부모님돈_쓰는_언니_갈등후기"
     },
     {
-      "rank": 1197,
+      "rank": 1201,
       "candidateKey": "260921_부부돈관리_남편비협조",
       "path": "data/candidates/260921_부부돈관리_남편비협조_C1.md",
       "date": "260921",
@@ -13183,7 +13227,7 @@
       "slug": "부부돈관리_남편비협조_C1"
     },
     {
-      "rank": 1198,
+      "rank": 1202,
       "candidateKey": "260921_비혼덬_결혼공격2연타",
       "path": "data/candidates/260921_비혼덬_결혼공격2연타_C1.md",
       "date": "260921",
@@ -13202,10 +13246,21 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "쇼킹한생일선물이네",
-      "rank": 1199
+      "rank": 1203
     },
     {
-      "rank": 1200,
+      "candidateKey": "260921_시댁다E며느리만I후기",
+      "path": "data/candidates/260921_시댁다E며느리만I후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "시댁다E며느리만I후기",
+      "rank": 1204
+    },
+    {
+      "rank": 1205,
       "candidateKey": "260921_쌍둥이언니들_극과극시댁",
       "path": "data/candidates/260921_쌍둥이언니들_극과극시댁_C1.md",
       "date": "260921",
@@ -13224,10 +13279,10 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "여자친구랑쫑낸썰",
-      "rank": 1201
+      "rank": 1206
     },
     {
-      "rank": 1202,
+      "rank": 1207,
       "candidateKey": "260921_연애때마다_친구갈등_절교후기",
       "path": "data/candidates/260921_연애때마다_친구갈등_절교후기.md",
       "date": "260921",
@@ -13238,6 +13293,17 @@
       "slug": "연애때마다_친구갈등_절교후기"
     },
     {
+      "candidateKey": "260921_완전히엉망진창소개팅후기",
+      "path": "data/candidates/260921_완전히엉망진창소개팅후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "완전히엉망진창소개팅후기",
+      "rank": 1208
+    },
+    {
       "candidateKey": "260921_전남친연락차단푼여친",
       "path": "data/candidates/260921_전남친연락차단푼여친.md",
       "date": "260921",
@@ -13246,10 +13312,21 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "전남친연락차단푼여친",
-      "rank": 1203
+      "rank": 1209
     },
     {
-      "rank": 1204,
+      "candidateKey": "260921_중고노트북공유기이쑤시개후기",
+      "path": "data/candidates/260921_중고노트북공유기이쑤시개후기.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "중고노트북공유기이쑤시개후기",
+      "rank": 1210
+    },
+    {
+      "rank": 1211,
       "candidateKey": "260921_친구가나를질투하는것같은후기",
       "path": "data/candidates/260921_친구가나를질투하는것같은후기.md",
       "date": "260921",
@@ -13260,7 +13337,7 @@
       "slug": "친구가나를질투하는것같은후기"
     },
     {
-      "rank": 1205,
+      "rank": 1212,
       "candidateKey": "260921_친구결혼하면원래멀어지는건가싶은후기",
       "path": "data/candidates/260921_친구결혼하면원래멀어지는건가싶은후기.md",
       "date": "260921",
@@ -13271,7 +13348,18 @@
       "slug": "친구결혼하면원래멀어지는건가싶은후기"
     },
     {
-      "rank": 1206,
+      "candidateKey": "260921_친구동생결혼식축의금고민",
+      "path": "data/candidates/260921_친구동생결혼식축의금고민.md",
+      "date": "260921",
+      "candidateStage": "C1",
+      "assetStage": "A0",
+      "publishStage": "P0",
+      "nextStage": "source-asset-acquisition",
+      "slug": "친구동생결혼식축의금고민",
+      "rank": 1213
+    },
+    {
+      "rank": 1214,
       "candidateKey": "260921_친정오빠부모님금전야박후기",
       "path": "data/candidates/260921_친정오빠부모님금전야박후기.md",
       "date": "260921",
@@ -13282,7 +13370,7 @@
       "slug": "친정오빠부모님금전야박후기"
     },
     {
-      "rank": 1207,
+      "rank": 1215,
       "candidateKey": "260921_쿠팡계약직3주차후기",
       "path": "data/candidates/260921_쿠팡계약직3주차후기.md",
       "date": "260921",
@@ -13301,10 +13389,10 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "타커뮤에서본여친이랑두쫀쿠로싸운썰",
-      "rank": 1208
+      "rank": 1216
     },
     {
-      "rank": 1209,
+      "rank": 1217,
       "candidateKey": "260921_튀니지여행_눈탱이위기",
       "path": "data/candidates/260921_튀니지여행_눈탱이위기_C1.md",
       "date": "260921",
@@ -13315,7 +13403,7 @@
       "slug": "튀니지여행_눈탱이위기_C1"
     },
     {
-      "rank": 1210,
+      "rank": 1218,
       "candidateKey": "260921_헬스장번호따일뻔한썰",
       "path": "data/candidates/260921_헬스장번호따일뻔한썰.md",
       "date": "260921",
@@ -13334,7 +13422,7 @@
       "publishStage": "P0",
       "nextStage": "source-asset-acquisition",
       "slug": "회사후배업무스위치갈등",
-      "rank": 1211
+      "rank": 1219
     }
   ]
 }

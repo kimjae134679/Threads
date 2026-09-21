@@ -1,18 +1,20 @@
-# NEXT RUN HANDOFF
+﻿# NEXT RUN HANDOFF
 
-Updated: 2026-09-21 10:16 KST
+Updated: 2026-09-21 10:25 KST
 
-## User-priority scope
-- This automation is `01_DISCOVERY` only. Do not enter 02_EDITORIAL_SCORING, 03_PRODUCTION, 04_REVIEW_PUBLISH, or 05_EXPERIMENTS_ACCOUNTS.
-- Do not capture screenshots, download images, OCR, make carousels, render, run Chrome E2E, implement providers/publishing, publish/schedule posts, or modify existing production assets.
-- `publicationAllowed=false`; no A1/P1 promotion.
+## Sequential candidate automation — latest run
+- Queue refreshed from every candidate markdown under `data/candidates` (excluding `README.md`): 1,219 candidates.
+- Counts: C0 442 / C1 777 / A0 1,219 / A1 0 / P0 1,219 / P1 0.
+- Exactly one next sequential candidate processed: rank 53 `260916_추석당근알바`.
+- Exact public TheQoo individual source verified: `https://theqoo.net/square/4345896878`, post ID `4345896878`, title `추석 당근 알바 근황`.
+- Public page exposes three image items, but actual image bytes were not persisted. Candidate is logical C1 / A0 / P0 with `BLOCKED_SOURCE_ASSET_BYTES`; no image contents/OCR/comments/rights/A1/P1 claimed.
+- TEMP stage-9 gate added only under `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_추석당근알바_TEMP_TEST_ONLY/`; `temporaryTestOnly=true`, `publicationAllowed=false`, `approvedVersion=null`, `executionEligible=false`.
+- Next sequential target after refresh/unblock checks: rank 54 `260916_축의금얼마나적당`.
 
-## Latest discovery run
-- Public Korean-community search/discovery reviewed 40+ raw/search leads.
-- Newly retained: 4 C1 candidates in `data/candidates/`.
-- Top new titles: `남자친구네 가족 만나고 나서 엉엉 울다 잠든 후기(두서X)`, `눈새 친구 때문에 짜증나는 후기`, `네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)`, `친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기`.
-- Exact individual public URLs and exposed bodies were verified for all four; comments were not read. No access restriction was bypassed.
-- Detailed log: `01_DISCOVERY/ops/290-sol.md`.
+## Discovery lane context retained from the immediately preceding main update
+- The separate Korean-community discovery run retained four new C1 candidates at 10:16 KST. They are now included by the refreshed sequential queue.
+- Continue to preserve exact provenance and never infer missing body/assets/comments/metrics.
 
-## Next run
-Continue new Korean-community-first discovery plus exact provenance/source verification of existing candidates. Filter duplicates, weak-story, unsafe/sensitive, image-only and weak-provenance leads rather than inventing or padding metadata.
+## Binding safety / publication rule
+- Do not publish or mark P1 in this automation. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
+- TEMP outputs are prototypes only and never upgrade canonical candidate A/P state by themselves.
