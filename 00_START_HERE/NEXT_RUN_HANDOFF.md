@@ -1,72 +1,20 @@
 ﻿# NEXT RUN HANDOFF
 
-## 2026-09-21 20:15 KST — Discovery-only run 300
+## 2026-09-21 22:18 KST — Discovery-only run 302
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs.
-- Top additions: `(초스압) 망한 피씨방 인수한 썰`, `얼떨결에 결혼한 상견례 썰.txt`, `펌) 중소기업 썰.ssul`.
-- The SME item is explicitly a repost (`펌`); first-origin provenance was not invented or claimed.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 5 new C1 candidates with exact individual public URLs.
+- Top additions: `돈문제? 때문에 친구랑 싸운 썰.txt`, `직장 상사랑 갈등 있을 때 어떻게 해결해?`, `결벽증 새언니 썰`, `자체생산)본인 일본 유학 및 결혼 썰`, `돈 때문에 결혼접을까 고민된다는 남자`.
+- The Ppomppu marriage-money candidate is image-based and explicitly stored as `본문 미확인`; no OCR/image download or body inference.
 - All remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
-## 2026-09-21 19:18 KST — Discovery-only run 299
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads. Retained 3 new C1 candidates with exact individual public URLs and observed text bodies.
-- Top additions: `미팅인줄 모르고 단체 미팅 다녀온 후기`, `남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기`, `돈 모을려면 일단 친구를 끊어라`.
-- The first item had been verified in run 297 but its write was blocked then; it is now stored successfully. The other two are new verified additions.
-- All remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
-## 2026-09-21 18:14 KST — Discovery-only run 298
-- User scope was strictly `01_DISCOVERY`; no downstream stage work was performed.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs.
-- Top additions: `혼기 찬 지인의 결혼 과정`, `친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기`, `결혼 정보회사에 다녀온 썰.txt`.
-- The first candidate's observed body was image-based and was not read; its candidate explicitly says `본문 미확인`. The other two had public text body content observed, and only actually observed material was recorded.
-- All retained remain A0/P0 with `publicationAllowed=false`.
-- No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
-## 2026-09-21 17:14 KST — Discovery-only run 297
-- User scope was strictly `01_DISCOVERY`; no downstream stage work was performed.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs and readable body text.
-- Top additions: `다시는 룸메이트랑 같이 안 살게된 썰`, `돈 없는 친구가 피곤한 후기`, `맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기`, `시댁에서 나만 설거지 해서 계속 화가나는 후기`.
-- One additional verified lead (`미팅인줄 모르고 단체 미팅 다녀온 후기`) was not counted because its repository write was blocked.
-- All retained remain A0/P0 with `publicationAllowed=false`.
-- No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
-## 2026-09-21 16:16 KST — Discovery-only run 296
-- User scope for this run was strictly `01_DISCOVERY`; no downstream stage work was performed.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs and readable body text.
-- Top additions: `[스압]20년 만에 전재산 천만원 된 썰`, `엄청난 신입사원이 두달만에 짤린 썰 후기`, `[초스압] 4개월 다니고 퇴사한 썰`.
-- All new candidates remain A0/P0 with `publicationAllowed=false`.
-- No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 300 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 300.
+- Discovery run 302 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 302.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged. Discovery run 300 did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 302. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
-
-## 2026-09-21 19:25 KST — Sequential candidate + TEMP TEST ONLY
-- Rebuilt queue from every current `data/candidates/*.md`: 1,261 files including README; C0 444 / C1 817 / A0 1,261 / A1 0 / P0 1,261 / P1 0. Six post-snapshot discovery candidates are now included and README remains represented as before.
-- Processed exactly one next unprocessed candidate: `260916_폭우웅덩이샴푸병원` (rank 62).
-- Candidate names TheQoo HOT but has no exact individual URL. Fresh exact/near-exact public searches did not resolve a trustworthy individual primary post; generic health results were rejected as provenance.
-- Result: `BLOCKED_PROVENANCE`, C0/A0/P0, publicationAllowed=false. Unblock only when exact individual primary TheQoo URL/post ID or another trustworthy unique primary identifier becomes publicly resolvable.
-- TEMP lane added only `260921_폭우웅덩이샴푸병원_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json`; temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. Stage 10+ blocked.
-- No body/media fabrication, OCR/vision, comments, metrics, rights clearance, A1/P1, access-control bypass, or publishing.
-- Next sequential run: refresh queue again, re-evaluate blocked only on changed unblock condition, then process exactly one next filename-ascending unprocessed candidate.
-
-## 2026-09-21 20:30 KST — Sequential candidate + TEMP TEST ONLY
-- Refreshed queue from every current candidate file after discovery run 300; duplicate candidateKey paths were collapsed to the staged path when present. Counts: total 1,264 / C0 444 / C1 820 / A0 1,264 / A1 0 / P0 1,264 / P1 0.
-- Processed exactly one next unprocessed candidate: `260916_한국전철보고어리둥절한일본인` (rank 63 after refresh).
-- Exact title is still visible on public Inven hot-list surfaces, but exact individual Inven URL/post ID was not resolved. Secondary aggregation suggests an earlier Ruliweb appearance, but no exact original individual URL was independently verified; no provenance substitution.
-- Result: BLOCKED_PROVENANCE, C0/A0/P0, publicationAllowed=false.
-- TEMP lane added only `260921_한국전철보고어리둥절한일본인_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json`; temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. Stage 10+ blocked.
-- No fabricated body/media/comments/metrics/OCR/vision/rights clearance, no A1/P1, no access-control bypass, no publishing.
-- Next sequential run: refresh queue again and process exactly one next filename-ascending unprocessed candidate, skipping unchanged blockers.
 
 ## 2026-09-21 21:31 KST — Sequential candidate + TEMP TEST ONLY
 - Rechecked current queue at 1,264 candidates; no new candidate files since the latest refresh.
@@ -76,4 +24,3 @@
 - TEMP lane advanced a separate safe unit for `260916_팀장이헤드셋벗김`: stage 11 records the four already verified hashed source screenshots as four natural scene/slide boundaries, preserving each whole image and original order. No raw-length splitting, OCR, rewrite, merge, or reorder.
 - TEMP flags remain temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false; no canonical C/A/P upgrade.
 - Next sequential run: refresh queue and process exactly one next filename-ascending unprocessed candidate; TEMP may proceed to stage 12 using verified content/style guide only.
-
