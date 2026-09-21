@@ -1,0 +1,24 @@
+{
+  "prototype": "TEMP_TEST_ONLY_DO_NOT_PUBLISH",
+  "candidateKey": "260916_첫해외여행오사카정떨어짐",
+  "stage": 9,
+  "state": "TEMP_STAGE9_EXACT_SOURCE_VERIFIED_SOURCE_BYTES_BLOCKED",
+  "exactSourceVerified": true,
+  "stablePostId": "26ecbnxk",
+  "sourceBodyPubliclyReadable": true,
+  "sourceBytesAcquired": false,
+  "sourceAssetsComplete": false,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "approvedVersion": null,
+  "executionEligible": false,
+  "coverRule": {
+    "blur": false,
+    "generatedImageFallback": false,
+    "visualSourceMediaOnlyWhenVerified": true,
+    "textOnlySourceUsesTextOnlyCover": true,
+    "slide2PlusPreserveOriginalOrderAndContent": true
+  },
+  "blocker": "Exact Blind page/body is publicly readable, but source body/media bytes have not yet been persisted with provenance/hash.",
+  "unblockCondition": "Persist permitted exact source body/media bytes with provenance/hash; do not use login or bypass anti-bot/paywall/access controls."
+}

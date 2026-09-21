@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedFrom": "data/candidates",
-  "generatedAtKst": "2026-09-21T08:28:14+09:00",
+  "generatedAtKst": "2026-09-21T09:52:59+09:00",
   "ordering": "filename-ascending",
   "identity": "candidateKey is stable across C/A/P filename state changes; unstaged discovery filenames use date_filenameStem and parse state from file metadata",
   "policy": "Refresh every cycle. Process the next candidateKey not completed or currently blocked. C0 verifies exact provenance first; C1 acquires source assets without access-control bypass. Only 04_REVIEW_PUBLISH may publish.",
