@@ -1,12 +1,19 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-21 14:15 KST — Discovery-only run 294
+- User scope for this run was strictly `01_DISCOVERY`; no downstream stage work was performed.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs and readable body text.
+- Top additions: `친구 결혼하면 원래 멀어지는건가 싶은 후기`, `신점 보고 엄마한테 커밍아웃한 후기`, `결혼 11년차.. 친구 없어서 너무 우울한 후기`.
+- All new candidates remain A0/P0 with `publicationAllowed=false`.
+- No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits. Access restrictions were not bypassed.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-21 13:24 KST - Sol sequential run
 - Queue refreshed from every current `data/candidates` markdown: **1235 total / C0 444 / C1 791 / A0 1235 / A1 0 / P0 1235 / P1 0**. Four discovery files added since the prior sequential snapshot are now included.
 - Candidate lane processed exactly one next key: `260916_코인실수회고` (rank 56). Public Blind recommendation/index evidence reconfirmed the same title, author mask and body prefix, but no exact individual URL/stable post ID was resolved. Result: `BLOCKED_PROVENANCE`, C0/A0/P0, publicationAllowed=false.
 - TEMP TEST ONLY lane added only `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_코인실수회고_TEMP_TEST_ONLY/stage9_primary_source_gate_TEMP_TEST_ONLY.json`. temporaryTestOnly=true, publicationAllowed=false, approvedVersion=null, executionEligible=false. Stage 10+ remains blocked.
 - No login/access-control bypass, fabricated body/comments/assets, OCR/vision completion, rights clearance, A1, P1, real publishing or real metrics.
 - Next sequential candidate: refresh first, then take the next filename-ascending unprocessed key after rank 56.
-
 
 ## 2026-09-21 13:16 KST — Discovery-only run 293
 - User scope for this run was strictly `01_DISCOVERY`; no downstream stage work was performed.
@@ -16,17 +23,10 @@
 - NAVER Cafe/Instiz robots restrictions were not bypassed. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
-## 2026-09-21 12:28 KST — Sol sequential run
-- Queue refreshed from every current `data/candidates` markdown: **1231 total / C0 444 / C1 787 / A0 1231 / A1 0 / P0 1231 / P1 0**.
-- Candidate lane processed exactly one next key: `260916_출산전후바람많이펴` (rank 55). Exact public Blind individual source verified, stable post ID `yj0s4svu`; public page title/body matched. Direct unauthenticated byte fetch returned HTTP 403, so no bypass was attempted and C1 source-byte acquisition remains `BLOCKED_SOURCE_ASSET_BYTES`. A0/P0/publicationAllowed=false.
-- TEMP TEST ONLY lane added only `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_출산전후바람많이펴_TEMP_TEST_ONLY/stage9_exact_source_gate_TEMP_TEST_ONLY.json`. `temporaryTestOnly=true`, `publicationAllowed=false`, no canonical state upgrade. Stage 10+ remains blocked until permitted source bytes with provenance/hash exist.
-- No P1, real publishing, real metrics, rights/privacy/safety approval, OCR/vision, or fabricated assets/body/comments were recorded.
-- Next sequential candidate after refresh: `260916_코인실수회고` (rank 56), unless a newly discovered filename sorts earlier before the next refresh.
-
 ## Sequential candidate automation
-- Discovery run 293 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 293.
+- Discovery run 294 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 294.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged. Discovery run 293 did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged. Discovery run 294 did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
