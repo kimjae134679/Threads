@@ -1,0 +1,22 @@
+# 홈쇼핑 콜센터 1년 꽉 채운 후기
+
+- source: TheQoo 후기
+- source_url: https://theqoo.net/review/1452250208
+- exact_observed_title: `홈쇼핑 콜센터 1년 꽉 채운 후기`
+- observed_at: 2026-09-23 00:14 KST
+- provenance_level: C1
+- acquisition: public individual page discovered/read through public web index; exact individual public URL verified
+- body_read: true
+- comments_read: false
+- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함
+- observed_metrics: 조회 수 8730, 댓글 21 (공개 페이지에 관찰된 값만 기록; 댓글 내용은 읽지 않음)
+- why_good: 홈쇼핑 콜센터에서 1년 동안 겪은 고객 응대 사례를 여러 에피소드로 묶은 경험담이다. 사소한 결제 오류 뒤 장시간 훈계받는 등 서비스직 공감과 황당함이 즉시 전달되는 장면이 있다.
+- claim_status: 작성자의 개인 경험 주장으로 미검증
+- rights_status: 미확인
+- OCR: false
+- moderation_status: 미판정
+- asset_status: A0
+- publication_status: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
