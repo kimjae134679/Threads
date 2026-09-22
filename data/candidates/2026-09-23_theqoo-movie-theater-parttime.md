@@ -1,0 +1,22 @@
+# 영화관 알바가 너무 힘든 후기
+
+- source: TheQoo 후기
+- source_url: https://theqoo.net/review/810237940
+- exact_observed_title: `영화관 알바가 너무 힘든 후기`
+- observed_at: 2026-09-23 00:14 KST
+- provenance_level: C1
+- acquisition: public individual page discovered/read through public web index; exact individual public URL verified
+- body_read: true
+- comments_read: false
+- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함
+- observed_metrics: 조회 수 6043 (공개 페이지에 관찰된 값만 기록)
+- why_good: 성수기 영화관에서 200~300석 규모 상영관을 짧은 시간 안에 혼자 퇴장·청소해야 하고 입장을 기다리는 고객 항의까지 동시에 받는 알바 경험이다. 구조적인 업무 압박과 고객 갈등이 명확해 서비스직 공감 소재로 쓰기 좋다.
+- claim_status: 작성자의 개인 경험 주장으로 미검증
+- rights_status: 미확인
+- OCR: false
+- moderation_status: 미판정
+- asset_status: A0
+- publication_status: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
