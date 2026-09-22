@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-22 17:17 KST — Discovery-only run 321
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs. Duplicate/thin/unsafe/image-dependent/unclear-provenance results were filtered rather than padded.
+- Top additions: `축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기`, `쌍둥이 언니들의 시댁이 너무나 다른 후기`, `가난한(?) 시댁에 시집간 후기.`, `축의금 내가 적게 한 건지 궁금한 후기`.
+- NAVER Cafe, Clien, and Instiz were access-restricted; restrictions were not bypassed. Retained bodies were read from public pages or indexed public text; comments were not read.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-22 16:18 KST — Discovery-only run 320
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 5 new C1 candidates with exact individual public URLs. Duplicate/thin/unsafe/image-dependent/unclear-provenance results were filtered rather than padded.
@@ -34,9 +42,9 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 320 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 320.
+- Discovery run 321 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 321.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 320. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 321. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
