@@ -1,0 +1,22 @@
+# 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기
+
+- source: TheQoo 후기
+- source_url: https://theqoo.net/review/3204349278
+- exact_observed_title: `10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기`
+- observed_at: 2026-09-23 00:14 KST
+- provenance_level: C1
+- acquisition: public individual page discovered/read through public web index; exact individual public URL verified
+- body_read: true
+- comments_read: false
+- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함
+- observed_metrics: 조회 수 11256 (공개 페이지에 관찰된 값만 기록)
+- why_good: 결혼식 원판사진에 찍힐 지인이 10명 이하라는 상황에서 주변 시선과 인맥 평가를 의식해 상처받는 이야기. 결혼식 규모·인맥·체면을 두고 즉시 의견이 갈릴 수 있고 상황이 한 문장으로 이해된다.
+- claim_status: 작성자의 개인 경험 주장으로 미검증
+- rights_status: 미확인
+- OCR: false
+- moderation_status: 미판정
+- asset_status: A0
+- publication_status: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
