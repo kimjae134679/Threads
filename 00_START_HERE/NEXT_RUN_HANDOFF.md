@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-23 00:14 KST — Discovery-only run 328
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 7 new C1 candidates with exact individual public URLs; duplicate/thin/unsafe/image-dependent/weak-story results were filtered rather than padded.
+- Top additions: `친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기`, `결혼 초대받았는데 서운한 후기`, `10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기`, `룸메가 병신같은 후기`, `홈쇼핑 콜센터 1년 꽉 채운 후기`, `영화관 알바가 너무 힘든 후기`, `결혼 11년차.. 친구 없어서 너무 우울한 후기`.
+- Exact public individual URLs and public body text were verified for retained items; comments were not read. The interior item is retained from the exact public TheQoo repost URL; original Nate Pann provenance was not asserted. Personal-experience claims remain attributed/unverified.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-22 23:15 KST — Discovery-only run 327
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs; duplicate/thin/unsafe/image-dependent/weak-story results were filtered rather than padded.
@@ -33,9 +41,9 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 327 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 327.
+- Discovery run 328 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 328.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 327. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 328. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
