@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-23 01:17 KST — Discovery-only run 329
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs; duplicate/thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
+- Top additions: `친구 결혼하면 원래 멀어지는건가 싶은 후기`, `핫게 보고 내 친구 생각난 후기`, `애기 엄마가된 친구들 만나고 마음 헛헛한 후기`, `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`.
+- NAVER Cafe, Clien, and Instiz were access-restricted; restrictions were not bypassed. Exact public individual URLs and public body text were verified for retained items; comments were not read. Personal-experience claims remain attributed/unverified.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-23 00:14 KST — Discovery-only run 328
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 7 new C1 candidates with exact individual public URLs; duplicate/thin/unsafe/image-dependent/weak-story results were filtered rather than padded.
@@ -32,18 +40,10 @@
 - All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
-## 2026-09-22 20:18 KST — Discovery-only run 324
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs. Existing candidate `쿠팡 계약직 3주차 후기` and duplicate/thin/image-dependent/unsafe results were filtered rather than padded.
-- Top additions: `결혼 및 임출산후 친구가 0이됐는데 적응한 후기`, `베스트 보고 생각난 고깃집 썰`, `[초스압] 4개월 다니고 퇴사한 썰`, `대만 남자랑 결혼한 후기`.
-- NAVER Cafe, Clien, and Instiz were access-restricted; restrictions were not bypassed. Retained bodies were read from public pages; comments were not read. Personal-experience claims/cultural generalizations remain attributed and unverified.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
 ## Sequential candidate automation
-- Discovery run 328 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 328.
+- Discovery run 329 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 329.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 328. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 329. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
