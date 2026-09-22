@@ -1,0 +1,22 @@
+# 결혼 11년차.. 친구 없어서 너무 우울한 후기
+
+- source: TheQoo 후기
+- source_url: https://theqoo.net/review/4154128418
+- exact_observed_title: `결혼 11년차.. 친구 없어서 너무 우울한 후기`
+- observed_at: 2026-09-23 00:14 KST
+- provenance_level: C1
+- acquisition: public individual page discovered/read through public web index; exact individual public URL verified
+- body_read: true
+- comments_read: false
+- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함
+- observed_metrics: 조회 수 543, 댓글 7 (공개 페이지에 관찰된 값만 기록; 댓글 내용은 읽지 않음)
+- why_good: 결혼 11년차 워킹맘이 남편이 드물게 집을 비우는 날 함께 저녁을 먹을 사람 한 명을 떠올리지 못하면서 친구관계의 공백을 체감하는 이야기다. 조회수보다 상황의 공감성과 선명한 감정 전환을 우선해 남겼다.
+- claim_status: 작성자의 개인 경험 주장으로 미검증
+- rights_status: 미확인
+- OCR: false
+- moderation_status: 미판정
+- asset_status: A0
+- publication_status: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
