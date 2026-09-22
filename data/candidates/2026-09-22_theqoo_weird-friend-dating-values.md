@@ -1,0 +1,21 @@
+# 갑자기 생각난 연애 관련 유난히 이상했던 친구 후기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/532016950
+- exactObservedTitle: `갑자기 생각난 연애 관련 유난히 이상했던 친구 후기`
+- observedAt: 2026-09-22 23:15 KST
+- acquisitionStatus: C1 — exact individual public URL verified via public indexed page
+- provenance: Public indexed TheQoo review page exposed readable body text. Personal-experience claims and the poster's characterization of the friend remain attributed/unverified.
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotPresent: false observed in retained text
+- observedMetrics: none retained; no metric was relied on for selection
+- whyGoodMaterial: 연애·성 가치관을 두고 친구가 반복적으로 상대를 깎아내리고 저주성 발언까지 이어지는 갈등이라 친구 사이 선 넘는 조언의 기준을 놓고 반응이 나오기 쉽다.
+- assetStatus: A0
+- publicationStatus: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
+- rightsStatus: not established
+- OCR: not performed
+- moderation: not performed
