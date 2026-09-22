@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-22 14:18 KST — Discovery-only run 318
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs. Duplicate/thin/unsafe/image-dependent/unclear-provenance results were filtered rather than padded.
+- Top additions: `친구랑 카풀한 다음 크게 싸우고 마음 제대로 상한 후기`, `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`, `핫게 보고 내 친구 생각난 후기`, `친구 결혼하면 원래 멀어지는건가 싶은 후기`.
+- Three were directly opened/read; one exact URL/body was available through public index but direct open was restricted, and its provenance records that limitation. Comments were not read.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-22 13:18 KST — Discovery-only run 317
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 5 new C1 candidates with exact individual public URLs. Duplicate/thin/unsafe/image-only/index-only/unclear-provenance results were filtered rather than padded.
@@ -16,18 +24,10 @@
 - All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
-## 2026-09-22 11:15 KST — Discovery-only run 315
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs. Duplicate/thin/unsafe/image-only/unclear-provenance results were filtered rather than padded.
-- Top additions: `친구가 연락 안본다고 화내고 잠수타는데 님들 생각 좀 말해주세영`, `회사 대표 옆에 태우고 운전하다 사고낸 썰`, `난 아부지 회사 썰 듣는거 좋아함`.
-- Access restrictions were not bypassed. All retained bodies were read; comments were not read.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
 ## Sequential candidate automation
-- Discovery run 317 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 317.
+- Discovery run 318 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 318.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 317. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 318. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
