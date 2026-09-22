@@ -1,0 +1,21 @@
+# 돈 없는 친구가 피곤한 후기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/261535896
+- exactObservedTitle: `돈 없는 친구가 피곤한 후기`
+- observedAt: 2026-09-22 23:15 KST
+- acquisitionStatus: C1 — exact individual public URL verified via public indexed page
+- provenance: Public search/index result exposed the individual TheQoo review page and readable body text. Personal-experience claims are attributed to the anonymous poster and are not independently verified.
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotPresent: false observed in retained text
+- observedMetrics: 조회 수 4,871 (as displayed by indexed public page at observation)
+- whyGoodMaterial: 반복적으로 소액을 빌리고 갚지 않는 친구와 금전적 경계 문제라 상황이 즉시 이해되고, 어디까지 친구를 배려해야 하는지 의견이 갈리기 쉽다.
+- assetStatus: A0
+- publicationStatus: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
+- rightsStatus: not established
+- OCR: not performed
+- moderation: not performed
