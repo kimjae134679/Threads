@@ -1,0 +1,45 @@
+[TITLE]
+27살 여자 오늘 파혼했어요 눈물나는데 잘한거 맞죠?
+PROGRAM_TITLE: 27살 여자 오늘 파혼했어요 눈물나는데 잘한거 맞죠?
+
+[BODY_SEQUENCE]
+BODY 01: 파혼 직후이며 댓글의 지지를 보며 마음을 추스르고 있다는 현재 상황.
+BODY 02: 4년 교제한 상대와 결혼 준비 4개월 동안 드러난 첫 갈등. 상대는 데이트 때 치마와 구두를 선호했고, 작성자는 발이 쉽게 다치는 문제와 배려의 기준을 두고 충돌함.
+BODY 03: 두 번째 갈등. 임신 후 산부인과 방문을 기본적으로 아내 혼자 하는 일로 보는 상대와, 남편 동행을 기본으로 보는 작성자의 가치관 차이.
+BODY 04: 세 번째 갈등. 상대는 가장의 역할을 경제활동으로 보고 생활력 강한 배우자의 전폭적 지지를 기대함.
+BODY 05: 결혼 7개월 전, 작성자가 언니와 부모에게 위 내용을 처음 털어놓음. 집 매매 관련 금전 문제는 가족이 해결을 돕겠다고 하면서 파혼 결정으로 전환됨.
+BODY 06: 작성자는 평소에도 외출 때 충분히 꾸미지만 상대가 원하는 특정 복장과는 다르다고 설명함.
+BODY 07: 3년 동안 상대가 다정하고 잘해줬던 모습과, 가부장적인 가족 배경 및 결혼 준비 중 드러난 가치관 사이의 대비를 언급함.
+BODY 08: 다음 날 대화를 앞두고 파혼·주변 시선·향후 결혼 가능성에 대한 두려움을 밝히며 자신의 결정이 맞는지 질문함.
+
+MEDIA: 공개 본문에서 콘텐츠 이미지 확인되지 않음. media 삽입 없음.
+
+[CUT_PLAN]
+CUT 1: BODY 01 뒤 — 파혼 직후 상황에서 구체적인 이유로 넘어가기 전.
+CUT 2: BODY 02 뒤 — 복장/구두 갈등 한 장면 종료.
+CUT 3: BODY 04 뒤 — 세 가지 가치관 충돌을 모두 제시한 직후.
+CUT 4: BODY 05 뒤 — 가족에게 공개하고 파혼이 결정되는 핵심 전환점 직후.
+CUT 5: BODY 07 뒤 — 과거의 다정함과 현재 가치관의 대비를 보여준 뒤.
+CUT 6: BODY 08 뒤 — 작성자의 질문으로 본문 종료, 댓글 반응으로 전환.
+
+[COMMENTS_TO_USE]
+COMMENT 01: "27살이면 한창인데 파혼 잘하는거"
+purpose: 결정 지지 / 본문 종료 직후 첫 반응
+COMMENT 02: "백번 천번 생각해도 잘했음... 잠깐 힘들뿐이다"
+purpose: 공감·안심 반응
+COMMENT 03: "4년 시간낭비했네"
+purpose: 짧고 강한 대비 반응
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → CUT 1 → BODY 02 → CUT 2 → BODY 03 → BODY 04 → CUT 3 → BODY 05 → CUT 4 → BODY 06 → BODY 07 → CUT 5 → BODY 08 → CUT 6 → COMMENT 01 → COMMENT 02 → COMMENT 03
+SKIP: 본문 콘텐츠 이미지 없음.
+SKIP: 광고, 작성자/댓글 작성자 프로필, 회사명, UI 메타, 추천글.
+
+[SOURCE_STATUS]
+source_url: https://www.teamblind.com/kr/post/27%EC%82%B4-%EC%97%AC%EC%9E%90-%EC%98%A4%EB%8A%98-%ED%8C%8C%ED%98%BC%ED%96%88%EC%96%B4%EC%9A%94-%EB%88%88%EB%AC%BC%EB%82%98%EB%8A%94%EB%8D%B0-%EC%9E%98%ED%95%9C%EA%B1%B0-%EB%A7%9E%EC%A3%A0-ftu7d1tv
+body_verified: true (2026-09-24 KST public page)
+comments_verified: partial (publicly visible top comments)
+media_verified: true; body content media not observed
+stage: C1 / A0 / P0
+publicationAllowed=false
+blocker: 전체 댓글 55개 전부를 검증한 것은 아님. 원문 전문은 repository에 복제하지 않고 검증된 순서 요약으로 보존.
