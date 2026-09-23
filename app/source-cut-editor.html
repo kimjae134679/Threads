@@ -68,6 +68,7 @@
             <button data-mode="pan" type="button" aria-pressed="true">✋ 이동</button>
             <button data-mode="cover" type="button" aria-pressed="false">▣ 표지 영역</button>
             <button data-mode="body" type="button" aria-pressed="false">▢ 본문 영역</button>
+            <button data-mode="comment" type="button" aria-pressed="false">💬 댓글 시작점</button>
             <button data-mode="cut" type="button" aria-pressed="false">✂ 분할선 추가</button>
           </div>
           <div class="tool-group compact">
@@ -117,15 +118,27 @@
         <section class="panel settings-card community-card">
           <div class="settings-title"><span class="number green">2</span><div><strong>본문 게시판 변환</strong><small>원본 사이트 UI 대신 새 양식으로 재구성</small></div></div>
           <label class="toggle-row"><span>새 커뮤니티 양식 사용</span><input id="communityEnabled" type="checkbox" checked></label>
+          <div class="settings two-col mode-pickers">
+            <label>본문 출력 방식<select id="bodyMode"><option value="screenshot">스크린샷 그대로</option><option value="text">글·이미지로 재구성</option></select></label>
+            <label>댓글 출력 방식<select id="commentMode"><option value="text">댓글 글씨로 재구성</option><option value="screenshot">스크린샷 그대로</option></select></label>
+          </div>
           <label>가상 사이트명<input id="communityBrand" maxlength="24" value="모두의톡"></label>
-          <label>게시글 원제목<input id="communityTitle" maxlength="240" placeholder="원문 제목 그대로"></label>
-          <label>원문 본문<textarea id="communityBody" rows="8" maxlength="30000" placeholder="게시글 본문만 그대로 붙여넣으세요. 사이트 메뉴·버튼·댓글은 제외합니다."></textarea></label>
-          <label>실제 댓글 텍스트만<textarea id="communityComments" rows="7" maxlength="30000" placeholder="닉네임/날짜/좋아요 없이 실제 댓글 내용만 입력하세요. 한 줄 또는 빈 줄로 댓글을 구분합니다."></textarea></label>
+          <label>게시글 원제목<input id="communityTitle" maxlength="240" placeholder="사이트명·게시판명은 빼고 실제 글 제목만"></label>
+          <label>원문 본문<textarea id="communityBody" rows="8" maxlength="30000" placeholder="게시글 본문 글자만 그대로. 링크 캡처에서 추출되면 자동으로 채웁니다."></textarea></label>
+          <div class="media-box">
+            <div class="media-head"><strong>본문 이미지</strong><label class="file-button mini-add">+ 이미지 추가<input id="bodyMediaFiles" type="file" accept="image/png,image/jpeg,image/webp" multiple></label></div>
+            <p class="small">광고·프로필·UI가 아니라 실제 게시글 본문에 들어간 이미지만 사용합니다. 각 이미지는 어느 문단 뒤에 넣을지 바꿀 수 있습니다.</p>
+            <div id="bodyMediaList" class="body-media-list"></div>
+          </div>
+          <label>실제 댓글 텍스트만<textarea id="communityComments" rows="7" maxlength="30000" placeholder="닉네임/날짜/좋아요 없이 실제 댓글 내용만. 링크에서 추출되면 자동으로 채웁니다."></textarea></label>
           <div class="settings two-col">
             <label>댓글 위 여백<input id="commentPaddingTop" type="number" min="40" max="360" step="10" value="110"></label>
             <label>댓글 아래 여백<input id="commentPaddingBottom" type="number" min="40" max="360" step="10" value="120"></label>
           </div>
-          <div class="rule-box">댓글 출력에는 프로필·닉네임·날짜·좋아요·댓글 수·입력창을 만들지 않습니다. 입력한 실제 댓글 문장만 순서대로 표시합니다.</div>
+          <div id="commentBoundaryStatus" class="rule-box">스크린샷 댓글을 쓸 때는 왼쪽 도구의 ‘댓글 시작점’을 누르고 댓글이 시작되는 위치를 한 번 클릭하세요. 그 지점 이후 캡처는 댓글로 분리됩니다.</div>
+          <button id="clearCommentBoundary" type="button" class="subtle boundary-clear">선택 원문 댓글 시작선 지우기</button>
+          <div id="captureEvidence" class="evidence-box small"></div>
+          <div class="rule-box">댓글 글씨 출력에는 프로필·닉네임·날짜·좋아요·댓글 수·입력창을 만들지 않습니다. 실제 댓글 문장만 순서대로 표시합니다.</div>
         </section>
 
         <details class="panel advanced">
@@ -175,6 +188,7 @@
         <div class="save-note">실제 게시 승인과는 별개입니다. 이 단계는 이미지 ZIP만 만듭니다.</div>
       </div>
       <button id="exportZip" class="primary export" type="button" disabled>전체 PNG를 ZIP으로 받기</button>
+      <p id="exportReason" class="export-reason"></p>
       <button data-step-target="3" class="back-link" type="button">← 미리보기로 돌아가기</button>
     </div>
   </section>

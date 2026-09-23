@@ -1,5 +1,17 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-24 03:30 KST — Source-cut editor + acquisition contract update
+- Source-cut editor now keeps BOTH output methods: screenshot mode and reconstructed text/media mode. Cover/title behavior stays on the existing cover renderer.
+- Screenshot comment separation: use the editor tool **댓글 시작점** and click the first comment line inside the selected body range. That marker splits later screenshot slices into body vs comment. Text-comment mode ignores this marker.
+- Reconstructed mode: source body text is rendered from the acquired text itself; comments are rendered from acquired comment text itself. Comment output must contain only the real comment sentences in source order—no invented profile, nickname, date, likes, counts, reply controls, or input UI.
+- Title cleanup must strip site/chrome wrappers such as `웹진 인벤 :`, `웹젠 인벤 :`, and suffixes such as `- 오픈이슈갤러리`, `- 자유게시판`; keep the actual post title.
+- Body media is now part of acquisition. Capture only images that are actually inside the post body; reject ads, banners, logos, avatars/profiles, UI icons, recommendations/related-content thumbnails, and tracking pixels. Preserve source order and record where each image belongs between body paragraphs so reconstructed output can place it mid-post.
+- IMPORTANT discovery/sequential acquisition contract from this run onward: for each exact public individual source, attempt to acquire **(1) exact title, (2) full publicly visible body text, (3) publicly visible comment text, (4) body media used by the post, (5) exact source URL/provenance, (6) actually observed metrics if present**. Never invent missing text/comments/media/metrics and never bypass login, paywall, anti-bot, robots, or access controls. If any are unavailable, record the precise blocker.
+- Candidate/discovery records should retain body text + comments text + body-media references/bytes where public/permitted so the editor can open a candidate without re-scraping. If images are acquired, keep source URL/order and enough metadata to insert them back into the text flow.
+- Default safety: A1/P1 remain false and publicationAllowed=false. This acquisition upgrade is evidence gathering only and does not grant rights or publication approval.
+- ZIP export is gated by successful preview + the user checkbox confirming body/comment order. The UI must show the exact blocking reason instead of a silently disabled button.
+- Current editor work is on branch `ui-redesign-source-editor`; do not overwrite it with the old dashboard/TEMP SVG prototype path. Run `npm run check` and desktop smoke before release.
+
 ## 2026-09-24 02:17 KST — Discovery-only run 355
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 8 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/inaccessible/weak-story results were filtered rather than padded.

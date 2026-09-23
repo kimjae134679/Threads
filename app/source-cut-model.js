@@ -46,7 +46,7 @@
   }
   function addAsset(project, source) {
     const body = rectangle({ x: 0, y: 0, width: source.width, height: source.height }, source.width, source.height);
-    project.assets.push({ ...source, body, cuts: [] });
+    project.assets.push({ ...source, body, cuts: [], commentStartY: null });
     if (!project.cover) project.cover = { assetIndex: 0, rect: { ...body, height: Math.min(body.height, body.width * 1.25) } };
   }
   function restore(value) {
@@ -58,7 +58,7 @@
     project.rawCover = value.rawCover === true;
     project.source = { candidateId: String(value.source?.candidateId || ''), title: String(value.source?.title || ''),
       url: String(value.source?.url || ''), inputMode: value.source?.inputMode === 'text' ? 'text' : 'images',
-      sourceText: String(value.source?.sourceText || '').slice(0, 20000) };
+      sourceText: String(value.source?.sourceText || '').slice(0, 30000) };
     project.assets = value.assets.map((a) => {
       if (!/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(a.dataUrl || '')
         || !Number.isInteger(a.width) || !Number.isInteger(a.height) || a.width < 1 || a.height < 1
@@ -66,8 +66,12 @@
         throw new Error('저장된 원본 이미지나 분할선이 올바르지 않습니다.');
       }
       const asset = { name: String(a.name || 'original'), dataUrl: a.dataUrl, width: a.width, height: a.height,
-        kind: a.kind === 'text' ? 'text' : 'image', body: rectangle(a.body, a.width, a.height) };
+        kind: a.kind === 'text' ? 'text' : 'image', body: rectangle(a.body, a.width, a.height), commentStartY: null };
       asset.cuts = normalizeCuts(asset, a.cuts);
+      const commentStartY = Number(a.commentStartY);
+      if (Number.isFinite(commentStartY) && commentStartY > asset.body.y + 2 && commentStartY < asset.body.y + asset.body.height - 2) {
+        asset.commentStartY = commentStartY;
+      }
       return asset;
     });
     const index = value.cover?.assetIndex;

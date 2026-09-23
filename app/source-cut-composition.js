@@ -30,9 +30,12 @@
   function defaultCommunity(source = {}) {
     return C().settings({
       enabled: true,
+      bodyMode: source.bodyMode === 'text' ? 'text' : 'screenshot',
+      commentMode: source.commentMode === 'screenshot' ? 'screenshot' : 'text',
       title: source.title || '',
       body: source.sourceText || '',
-      comments: '',
+      comments: source.commentsText || '',
+      bodyMedia: source.bodyMedia || [],
       commentPaddingTop: 110,
       commentPaddingBottom: 120,
     });
@@ -48,53 +51,117 @@
     project.community ||= defaultCommunity(project.source);
   }
 
-  function sourceSlides(project) {
-    const counts = {};
-    return B.slides(project).map((slide) => {
-      const a = project.assets[slide.assetIndex]; a.uid ||= id();
-      const index = counts[a.uid] || 0;
-      if (slide.type === 'body') counts[a.uid] = index + 1;
-      return { ...slide, key: slide.type === 'cover' ? 'cover' : a.uid + ':body:' + index };
-    });
+  function screenshotSlides(project) {
+    if (!project.cover || !project.assets.length) return [];
+    const result = [{
+      type: 'cover',
+      sourceKind: 'cover',
+      assetIndex: project.cover.assetIndex,
+      rect: { ...project.cover.rect },
+      key: 'cover',
+    }];
+    let commentsStarted = false;
+    for (const [assetIndex, asset] of project.assets.entries()) {
+      asset.uid ||= id();
+      const body = asset.body;
+      const marker = Number(asset.commentStartY);
+      const hasMarker = Number.isFinite(marker) && marker > body.y + 2 && marker < body.y + body.height - 2;
+      const stops = [body.y, ...B.normalizeCuts(asset), ...(hasMarker ? [marker] : []), body.y + body.height]
+        .sort((a, b) => a - b)
+        .filter((value, index, all) => !index || value - all[index - 1] >= 1);
+      let bodyIndex = 0;
+      let commentIndex = 0;
+      for (let i = 0; i < stops.length - 1; i++) {
+        const y = stops[i];
+        const next = stops[i + 1];
+        if (next - y < 1) continue;
+        const sourceKind = commentsStarted || (hasMarker && y >= marker - 0.5) ? 'comment' : 'body';
+        const index = sourceKind === 'comment' ? commentIndex++ : bodyIndex++;
+        result.push({
+          type: sourceKind,
+          sourceKind,
+          assetIndex,
+          rect: { x: body.x, y, width: body.width, height: next - y },
+          key: asset.uid + ':' + sourceKind + ':' + index,
+        });
+      }
+      if (hasMarker) commentsStarted = true;
+    }
+    return result;
   }
 
-  function communitySlides(project) {
+  function measureContext() {
+    if (typeof document !== 'undefined' && document.createElement) return document.createElement('canvas').getContext('2d');
+    return {
+      font: '',
+      measureText(text) { return { width: Array.from(String(text || '')).length * 30 }; },
+    };
+  }
+
+  function communityBodySlides(project) {
     const v = C().settings(project.community);
-    if (!v.enabled || !project.cover) return null;
-    if (!v.body.trim()) return [{ type: 'cover', assetIndex: project.cover.assetIndex, rect: { ...project.cover.rect }, key: 'cover' }];
-    const measure = document.createElement('canvas').getContext('2d');
-    const pages = C().plan(measure, v);
-    return [
-      { type: 'cover', assetIndex: project.cover.assetIndex, rect: { ...project.cover.rect }, key: 'cover' },
-      ...pages.map((page, i) => ({
-        type: 'community',
-        assetIndex: project.cover.assetIndex,
-        rect: { x: 0, y: 0, width: C().WIDTH, height: C().HEIGHT },
-        key: 'community:' + i,
-        communityPage: page,
-      })),
-    ];
+    if (v.bodyMode !== 'text' || !project.cover) return [];
+    const ctx = measureContext();
+    return C().bodyPages(ctx, v).map((page, i) => ({
+      type: 'community',
+      sourceKind: 'body',
+      assetIndex: project.cover.assetIndex,
+      rect: { x: 0, y: 0, width: C().WIDTH, height: C().HEIGHT },
+      key: 'community:body:' + i,
+      communityPage: { ...page, index: i, width: C().WIDTH, height: C().HEIGHT },
+    }));
+  }
+
+  function communityCommentSlides(project) {
+    const v = C().settings(project.community);
+    if (v.commentMode !== 'text' || !project.cover) return [];
+    const ctx = measureContext();
+    return C().commentPages(ctx, v).map((page, i) => ({
+      type: 'community',
+      sourceKind: 'comment',
+      assetIndex: project.cover.assetIndex,
+      rect: { x: 0, y: 0, width: C().WIDTH, height: C().HEIGHT },
+      key: 'community:comment:' + i,
+      communityPage: { ...page, index: i, width: C().WIDTH, height: C().HEIGHT },
+    }));
   }
 
   function slides(project) {
-    return communitySlides(project) || sourceSlides(project);
+    const source = screenshotSlides(project);
+    if (!source.length) return [];
+    const v = C().settings(project.community);
+    if (!v.enabled) return source;
+    const cover = source[0];
+    const sourceBody = source.slice(1).filter((slide) => slide.sourceKind === 'body');
+    const sourceComments = source.slice(1).filter((slide) => slide.sourceKind === 'comment');
+    const body = v.bodyMode === 'text' ? communityBodySlides(project) : sourceBody;
+    const comments = v.commentMode === 'text' ? communityCommentSlides(project) : sourceComments;
+    return [cover, ...body, ...comments];
   }
 
   function restore(value) {
     const p = B.restore(value), seen = new Set();
     p.assets.forEach((a, i) => {
       const uid = String(value.assets[i].uid || '');
-      a.uid = /^[a-zA-Z0-9_-]{1,80}$/.test(uid) && !seen.has(uid) ? uid : id(); seen.add(a.uid);
+      a.uid = /^[a-zA-Z0-9_-]{1,80}$/.test(uid) && !seen.has(uid) ? uid : id();
+      seen.add(a.uid);
     });
     p.pageLayouts = Object.create(null);
     for (const [key, style] of Object.entries(value.pageLayouts || {}).slice(0, 200)) {
-      if (key === 'cover' || /^[a-zA-Z0-9_-]{1,80}:body:[0-9]{1,3}$/.test(key)) p.pageLayouts[key] = pageStyle(style);
+      if (key === 'cover' || /^[a-zA-Z0-9_-]{1,80}:(body|comment):[0-9]{1,3}$/.test(key)) p.pageLayouts[key] = pageStyle(style);
     }
     p.presets = Array.isArray(value.presets) ? value.presets.slice(0, 20).map(preset) : [];
     p.source.productionNotes = String(value.source?.productionNotes || '').slice(0, 6000);
+    p.source.commentsText = String(value.source?.commentsText || '').slice(0, 30000);
+    p.source.extraction = {
+      selector: String(value.source?.extraction?.selector || '').slice(0, 200),
+      confidence: String(value.source?.extraction?.confidence || 'none').slice(0, 20),
+      reviewRequired: value.source?.extraction?.reviewRequired !== false,
+    };
     p.community = C().settings(value.community || defaultCommunity(p.source));
     if (!p.community.title) p.community.title = p.source.title || '';
     if (!p.community.body && p.source.sourceText) p.community.body = p.source.sourceText;
+    if (!p.community.comments && p.source.commentsText) p.community.comments = p.source.commentsText;
     return p;
   }
 
@@ -141,28 +208,41 @@
     }
 
     const measure = canvas.getContext('2d'), g = pageGeometry(measure, slide, project);
-    if (!preview && g.height > 8192) throw new Error('여백과 문구를 포함한 높이가 너무 깁니다. 본문을 더 나누세요.');
+    if (!preview && g.height > 8192) throw new Error('너무 긴 조각이 있습니다. 본문을 더 나누세요.');
     const scale = preview ? Math.min(360 / 1080, 640 / g.height) : 1;
-    canvas.width = Math.max(1, Math.round(1080 * scale)); canvas.height = Math.max(1, Math.round(g.height * scale));
-    const ctx = canvas.getContext('2d'); ctx.scale(canvas.width / 1080, canvas.height / g.height);
-    ctx.fillStyle = g.page.background; ctx.fillRect(0, 0, 1080, g.height);
+    canvas.width = Math.max(1, Math.round(1080 * scale));
+    canvas.height = Math.max(1, Math.round(g.height * scale));
+    const ctx = canvas.getContext('2d');
+    ctx.scale(canvas.width / 1080, canvas.height / g.height);
+    ctx.fillStyle = g.page.background;
+    ctx.fillRect(0, 0, 1080, g.height);
     if (slide.type === 'cover' && !raw) {
-      const cover = document.createElement('canvas'); B.render(cover, image, slide, project, false, false);
-      ctx.drawImage(cover, g.page.paddingSide, g.imageTop, g.imageWidth, g.imageHeight); cover.width = cover.height = 1;
+      const cover = document.createElement('canvas');
+      B.render(cover, image, slide, project, false, false);
+      ctx.drawImage(cover, g.page.paddingSide, g.imageTop, g.imageWidth, g.imageHeight);
+      cover.width = cover.height = 1;
     } else {
-      const r = slide.rect; ctx.drawImage(image, r.x, r.y, r.width, r.height, g.page.paddingSide, g.imageTop, g.imageWidth, g.imageHeight);
+      const r = slide.rect;
+      ctx.drawImage(image, r.x, r.y, r.width, r.height, g.page.paddingSide, g.imageTop, g.imageWidth, g.imageHeight);
     }
     ctx.font = `${g.style.fontWeight} ${g.page.noteSize}px ${B.fontFamily(g.style.fontId)}`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'top'; ctx.lineJoin = 'round'; ctx.lineWidth = g.style.outlineWidth; ctx.strokeStyle = '#000';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = g.style.outlineWidth;
+    ctx.strokeStyle = '#000';
     for (const [lines, top] of [[g.before, g.beforeTop], [g.after, g.afterTop]]) {
       lines.forEach((line, i) => {
         const y = top + i * g.lineHeight;
-        ctx.strokeText(line.text, 540, y); ctx.fillStyle = g.style.color; ctx.fillText(line.text, 540, y);
+        ctx.strokeText(line.text, 540, y);
+        ctx.fillStyle = g.style.color;
+        ctx.fillText(line.text, 540, y);
       });
     }
   }
 
   window.ThreadsSourceCut = Object.freeze({
-    ...B, pageStyle, preset, defaultCommunity, newProject, addAsset, slides, restore, pageGeometry, render,
+    ...B, pageStyle, preset, defaultCommunity, newProject, addAsset, screenshotSlides,
+    communityBodySlides, communityCommentSlides, slides, restore, pageGeometry, render,
   });
 })();
