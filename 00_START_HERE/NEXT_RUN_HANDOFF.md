@@ -1,5 +1,14 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-23 15:19 KST — Discovery-only run 343
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 6 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
+- Top additions: `동거와 결혼은 다르구나를 느꼈던 후기`, `쿠팡 계약직 3주차 후기`, `남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기`, `유럽여행에서 만났던 그 남자 뭐 할까 궁금한 후기(엄청긴글주의)`.
+- Exact public individual URLs and public body text were verified for retained items; comments were not read. Personal-experience claims remain attributed/unverified.
+- Access restrictions were not bypassed.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-23 14:16 KST — Discovery-only run 342
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 6 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
@@ -7,7 +16,6 @@
 - Exact public individual URLs and public body text were verified for retained items; comments were not read. Personal-experience claims remain attributed/unverified.
 - One promising result was already present and was not overwritten or counted. Access restrictions were not bypassed.
 - All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## 2026-09-23 13:19 KST — Discovery-only run 341
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
@@ -18,9 +26,9 @@
 - All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 
 ## Sequential candidate automation
-- Discovery run 342 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 342.
+- Discovery run 343 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 343.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 342. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 343. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
