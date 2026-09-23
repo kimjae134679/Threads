@@ -1,5 +1,14 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-24 00:16 KST — Discovery-only run 352
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 8 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
+- Top additions: `지난 주 로또 1등 당첨, 수령 후기`, `로테이션 소개팅 후기`, `스터디카페 알바 진상 종류 후기`, `영화관 알바가 너무 힘든 후기`, `살짝 다른 입장에서 쓴 후기답지 않은 후기(장문임)`.
+- Exact public individual URLs and public body text were verified for retained items; comments were not read. Anonymous/pseudonymous personal claims, including the lottery-win claim, remain attributed/unverified.
+- Public search/index and publicly accessible individual pages only; no access-control or anti-bot bypass.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-23 23:14 KST — Discovery-only run 351
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 3 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
@@ -27,19 +36,10 @@
 - All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
-## 2026-09-23 20:16 KST — Discovery-only run 348
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 7 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
-- Top additions: `기분 나쁜데 웃긴 면접 후기`, `택시 탈 때마다 낮지 않은 확률로 기분 잡치는 중기`, `카페 알바 손님들 후기...`, `저가카페 알바 후기`, `가난한(?) 시댁에 시집간 후기.`, `파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기`, `키즈카페 알바 그만둔 후기(키즈카페 알바의 모든 것)`.
-- Exact public individual URLs and public body text were verified for retained items; comments were not read. Personal-experience claims remain attributed/unverified.
-- Instiz was robots/access restricted and was not bypassed; public search/index and publicly accessible individual pages only.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
 ## Sequential candidate automation
-- Discovery run 351 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 351.
+- Discovery run 352 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 352.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 351. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 352. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
