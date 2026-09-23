@@ -1,5 +1,14 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-23 22:14 KST — Discovery-only run 350
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 4 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
+- Top additions: `가족여행 다신 안 간다고 벼르는 후기`, `직장동료가 이미지만드는게 맞는 것 같은 후기 (스압)`, `소개팅 주선하고 그 커플이 결혼한다는 후기`, `대학 새내기 시절 짝사랑 / 소개팅 / 첫 남자친구 후기 (뻘글. 김)`.
+- Exact public individual URLs and public body text were verified for retained items; comments were not read.
+- NAVER Cafe, Clien, and Instiz were robots/access restricted and were not bypassed; public search/index and publicly accessible individual pages only.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-23 21:18 KST — Discovery-only run 349
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 6 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
@@ -19,9 +28,9 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 349 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 349.
+- Discovery run 350 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 350.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 349. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 350. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
