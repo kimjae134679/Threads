@@ -1372,19 +1372,25 @@ Source file: data/candidates/260916_C0_A0_P0_입주청소부부.md
 
 Source file: data/candidates/260916_C0_A0_P0_자취하지마세요.md
 
-# 자취하지마세요
+﻿# 자취하지마세요
 
-- 상태: C0 / A0 / P0
-- 출처: Ppomppu
-- 정확한 원문 링크: 미확인
-- 과거 반응 수치: provenance가 없어 사용 금지
+- 상태: C1 / A0 / P0
+- 출처: Ppomppu 자취포럼
+- 정확한 원문 링크: https://www.ppomppu.co.kr/zboard/view.php?id=alone&no=21310
+- 원문 식별: 자취포럼 게시물 번호 21310
+- provenance 확인: 2026-09-21 KST Ppomppu 공식 자취포럼 공개 목록에서 제목 `자취하지마세요`, 게시물 번호 21310, 등록일 2026-08-26, 댓글 3, 조회 765를 확인했다. 개별 view 페이지는 자동 접근에서 403이므로 본문은 확인하지 않았다.
 
 ## 글 내용
-자취 경험의 단점이나 예상 밖 현실을 다룬 것으로 보이는 생활 후보로 과거 인덱스에서 발견됐다. 본문은 재확인하지 못했다.
+공식 목록으로 정확한 개별 게시물 identity만 검증했다. 본문은 확보하지 않았으며 과거 인덱스 요약을 원문처럼 사용하지 않는다.
 
-## 평가
-- 평가: 제목 훅은 있으나 C1 검증 필요
-- 제작: ASSETS_PENDING / publicationAllowed=false
+## 현재 상태
+- C1: 공식 Ppomppu 목록에서 정확한 게시물 번호/제목 provenance 확인
+- A0: 실제 원본 본문 screenshot/media bytes 미확보
+- P0: 권리/개인정보/안전/사람 승인 미완료
+- publicationAllowed=false
+
+## 다음 단계 / blocker
+`BLOCKED_SOURCE_ASSET_BYTES`: 공개·허용된 방식으로 실제 원문 screenshot/media bytes를 확보해야 한다. 개별 view 페이지 403을 우회하거나 로그인/anti-bot/access-control을 우회하지 않는다.
 
 ---
 
@@ -1414,17 +1420,26 @@ Source file: data/candidates/260916_C0_A0_P0_재산세2천나왔네요.md
 
 # 재산세 2천나왔네요
 
-- 상태: C0 / A0 / P0
-- 출처: Ppomppu
-- 정확한 원문 링크: 미확인
+- 상태: logical C1 / A0 / P0
+- 출처: Ppomppu 전/현/무포럼
+- 정확한 원문 링크: https://www.ppomppu.co.kr/zboard/view.php?id=whatever&no=27215
+- source post ID: 27215
+- C0 provenance: VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE_IDENTITY
+- C1 source assets: BLOCKED_SOURCE_ASSET_BYTES
+- publicationAllowed=false
 - 과거 반응 수치: provenance가 없어 사용 금지
 
+## 검증된 공개 근거
+2026-09-21 공개 Ppomppu 전/현/무포럼 목록에서 post 27215, 정확한 제목 `재산세 2천나왔네요`, 2026-09-10 등록, 익명 작성자, 이미지 표시를 확인했다. 자동 개별 페이지 읽기는 이번 실행에서 접근되지 않았으므로 본문·이미지 bytes·댓글 내용은 확보했다고 간주하지 않는다.
+
 ## 글 내용
-재산세 고지액이 약 2천만원이라는 큰 숫자를 중심으로 한 돈·부동산 경험담 후보로 과거 수집됐다. 정확한 URL과 고지서/본문 자산 검증이 필요하다.
+기존 후보 요약에는 재산세 고지액이 약 2천만원이라는 큰 숫자를 중심으로 한 돈·부동산 경험담으로 기록돼 있었지만, 원문 본문 bytes를 이번 실행에서 읽지 못했으므로 이 요약을 원문 본문으로 승격하거나 제작 근거로 사용하지 않는다.
 
 ## 평가
-- 평가: 숫자 훅 강함, C1 재검증 필요
+- 평가: 숫자 훅 강함. exact individual identity는 확인됨.
 - 제작: ASSETS_PENDING / publicationAllowed=false
+- unblock: post 27215의 실제 본문 및 원본 이미지/스크린샷 bytes를 public/permitted 방식으로 확보하고 source URL/provenance/hash를 보존할 것. 로그인·anti-bot·paywall·access-control 우회 금지.
+- OCR/vision/moderation/rights/A1/P1: 미확인·미승격
 
 ---
 
@@ -1446,6 +1461,13 @@ Source file: data/candidates/260916_C0_A0_P0_직장인현실명언.md
 - 평가: 일반 공감형, 낮은 우선순위
 - 제작: ASSETS_PENDING / publicationAllowed=false
 
+## 2026-09-21 05:25 KST sequential verification
+- Fresh public search did not resolve an exact individual Ppomppu post URL/post ID for this candidate. Generic third-party pages about workplace quotes are not accepted as provenance.
+- C0 remains blocked; no body, comments, metrics, screenshot/media bytes, OCR/vision, rights clearance, A1 or P1 claimed.
+- blocker: `BLOCKED_PROVENANCE`
+- unblockWhen: Exact individual primary Ppomppu post URL/post ID or another trustworthy unique identifier proving this same candidate becomes publicly resolvable.
+- publicationAllowed=false
+
 ---
 
 ## [0049] 260916_C0_A0_P0_진짜집구하는거개토나온다.md
@@ -1458,9 +1480,21 @@ Source file: data/candidates/260916_C0_A0_P0_진짜집구하는거개토나온�
 - 출처: Blind
 - 정확한 원문 링크: 미확인
 - 과거 반응 수치: provenance가 없어 사용 금지
+- 검증 상태: BLOCKED_PROVENANCE
+- publicationAllowed: false
+
+## 공개 검증 증거
+2026-09-21 공개 웹 검색에서 Blind의 다른 공개 부동산 게시물 추천 영역과 공개 인덱스에서 동일 제목 `진짜 집구하는거 개토나온다`를 확인했다. 노출된 짧은 본문은 `아니 돈은 둘째치고 매물이 너무 없어서`, 작성 표시는 `삼성전자 · 힘*******`이었다. 다만 해당 추천 카드가 가리키는 정확한 개별 Blind URL/stable post ID는 이번 실행에서 공개적으로 확정하지 못했다.
+
+검색/추천 목록의 조회수·좋아요·댓글 수는 시점별로 변하며 정확한 개별 원문 provenance가 고정되지 않았으므로 후보 성과 수치로 사용하지 않는다.
 
 ## 글 내용
-서울 등에서 집을 구하는 과정의 현실적 피로를 다룬 공감형 후보로 과거 인덱스에서 발견됐다. 본문/개별 URL 재확인이 필요하다.
+서울 등에서 집을 구하는 과정의 현실적 피로를 다룬 공감형 후보로 과거 인덱스에서 발견됐다. 공개 검색에서 위 짧은 본문까지는 재확인했지만 전체 본문/댓글은 확보하지 않았다.
+
+## 차단 조건
+- C0: `BLOCKED_EXACT_INDIVIDUAL_SOURCE`
+- unblockWhen: 정확한 개별 Blind 원문 URL/stable post ID 또는 동일 개별 게시물임을 입증하는 신뢰 가능한 고유 식별자가 로그인/접근제어 우회 없이 공개적으로 확인될 때.
+- 전체 본문, 댓글, 원본 스크린샷/미디어 bytes, OCR/vision/moderation, 권리 확인은 미확보 상태이며 추정하지 않는다.
 
 ## 평가
 - 평가: 공감형, C1 재검증 필요
@@ -1474,17 +1508,26 @@ Source file: data/candidates/260916_C0_A0_P0_집구하는과정느낀점정리.m
 
 # 집 구하는 과정 다 겪고 느낀 점 정리
 
-- 상태: C0 / A0 / P0
-- 출처: Blind
-- 정확한 원문 링크: 미확인
-- 과거 반응 수치: provenance가 없어 사용 금지
+- 상태: logical C1 / A0 / P0
+- 출처: Blind 부동산
+- 정확한 원문 링크: https://www.teamblind.com/kr/post/%EC%A7%91-%EA%B5%AC%ED%95%98%EB%8A%94-%EA%B3%BC%EC%A0%95-%EB%8B%A4-%EA%B2%AA%EA%B3%A0-%EB%8A%90%EB%82%80-%EC%A0%90-%EC%A0%95%EB%A6%AC-b0fwwaed
+- sourcePostId: b0fwwaed
+- 검증 상태: C0 VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE / C1 BLOCKED_SOURCE_ASSET_BYTES
+- publicationAllowed: false
 
-## 글 내용
-집을 구한 경험에서 느낀 점을 정리한 실용·경험담 후보로 과거 수집됐으나 현재 정확한 원문 URL과 본문을 확인하지 못했다.
+## 공개 검증 증거
+2026-09-21 공개 Blind 개별 페이지에서 후보와 동일한 제목과 전체 공개 본문을 확인했다. 본문은 서울 아파트를 실제로 구한 뒤 느낀 점을 1~7 항목으로 정리하며, 빠르게 움직이기·직접 많이 돌아보기·가격대별 선택지·자금 준비·투자 성향·계약/대출 과정의 어려움·가계약/언덕/날씨 같은 실무 팁을 다룬다.
+
+공개 페이지에서 보이는 반응 수치는 시점에 따라 변할 수 있으므로 후보 성과 수치로 고정하지 않는다. 댓글 전체를 확보했다고 처리하지 않는다.
+
+## 차단 조건
+- C1: `BLOCKED_SOURCE_ASSET_BYTES`
+- unblockWhen: 동일 공개 개별 게시물의 허용된 실제 source body/media bytes를 source URL/provenance/hash와 함께 보존할 때. 로그인·anti-bot·접근제어 우회 금지.
+- source bytes, 원본 screenshot/media, OCR/vision/moderation, 권리 확인은 미확보 상태이며 추정하지 않는다.
 
 ## 평가
-- 평가: 저장형 후보, C1 재검증 필요
-- 제작: ASSETS_PENDING / publicationAllowed=false
+- 평가: 실용·저장형 후보, exact provenance 검증 완료
+- 제작: ASSETS_PENDING / A0 / P0 / publicationAllowed=false
 
 ---
 
@@ -1506,6 +1549,12 @@ Source file: data/candidates/260916_C0_A0_P0_집안일분담으로왜싸움.md
 - 평가: 즉답형 생활논쟁, C1 재검증 필요
 - 제작: ASSETS_PENDING / publicationAllowed=false
 
+## 2026-09-21 08:28 KST 순차 재검증
+- 공개 Blind 페이지의 추천/토픽 영역에서 정확한 제목 `집안일 분담으로 왜싸움?`, 작성 표시 `HD현대일렉트릭 · 𝙅*****************`, 본문 첫 문장 `와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴.`까지 반복 확인했다.
+- 그러나 이 회차의 공개 검색으로는 해당 글의 정확한 개별 Blind URL/stable post ID를 확정하지 못했다. 다른 Blind 글의 추천 카드만 provenance로 승격하지 않는다.
+- 결과: `BLOCKED_PROVENANCE` / C0 / A0 / P0 / `publicationAllowed=false`.
+- unblock: 동일 개별 글의 정확한 Blind URL/stable post ID 또는 이를 증명하는 신뢰 가능한 고유 식별자가 로그인·접근제어 우회 없이 공개적으로 확인될 것.
+
 ---
 
 ## [0052] 260916_C0_A0_P0_첫해외여행오사카정떨어짐.md
@@ -1514,17 +1563,22 @@ Source file: data/candidates/260916_C0_A0_P0_첫해외여행오사카정떨어�
 
 # 남친이랑 첫 해외여행으로 오사카 가는데 좀 정 떨어짐
 
-- 상태: C0 / A0 / P0
+- 상태: logical C1 / A0 / P0
 - 출처: Blind
-- 정확한 원문 링크: 미확인
-- 과거 반응 수치: provenance가 없어 사용 금지
+- 정확한 원문 링크: https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C%EC%9D%B4%EB%9E%91-%EC%B2%AB-%ED%95%B4%EC%99%B8%EC%97%AC%ED%96%89%EC%9C%BC%EB%A1%9C-%EC%98%A4%EC%82%AC%EC%B9%B4-%EA%B0%80%EB%8A%94%EB%8D%B0-%EC%A2%80-%EC%A0%95-%EB%96%A8%EC%96%B4%EC%A7%90-26ecbnxk
+- stable post ID: 26ecbnxk
+- 검증: 공개 Blind 개별 페이지에서 제목과 본문을 직접 확인함
+- 과거 반응 수치: 현재 페이지의 시점 의존 수치는 provenance snapshot 없이 재사용 금지
 
-## 글 내용
-연인과 첫 해외여행을 준비하면서 상대에게 정이 떨어진 계기가 생긴 연애·여행 후보로 과거 수집됐지만 구체 원문은 재확인하지 못했다.
+## 검증된 내용
+연인과 첫 오사카 여행을 준비하면서 항공사 선택과 약 20만원의 총 비용 차이를 두고 소비습관 차이를 느꼈다는 글이다. 공개 원문 본문은 확인했지만 source body/media bytes를 provenance/hash와 함께 저장하지는 않았다.
 
-## 평가
-- 평가: 클릭성 높은 연애형, C1 재검증 필요
-- 제작: ASSETS_PENDING / publicationAllowed=false
+## 현재 게이트
+- C0 exact individual provenance: PASS
+- logical candidate stage: C1
+- C1 source-asset acquisition: BLOCKED_SOURCE_ASSET_BYTES
+- unblock: 공개·허용된 방식으로 exact source body/media bytes를 저장하고 provenance/hash를 기록할 것. 로그인/anti-bot/paywall/access-control 우회 금지.
+- 제작: A0 / P0 / publicationAllowed=false
 
 ---
 
@@ -1532,32 +1586,37 @@ Source file: data/candidates/260916_C0_A0_P0_첫해외여행오사카정떨어�
 
 Source file: data/candidates/260916_C0_A0_P0_추석당근알바.md
 
-# 추석 당근 알바 근황
+﻿# 추석 당근 알바 근황
 
 ## 글 내용
-본문 미확인. 공개 검색/index에서 제목만 확인한 명절·당근 단기알바 소재 lead.
+공개 TheQoo 개별 게시물에서 제목과 게시물 ID를 확인했다. 게시물 본문은 텍스트가 아니라 이미지 3장으로 구성되어 있으며, 이번 순차 처리에서는 이미지 내부 내용을 읽거나 추정하지 않았다.
 
 ## 정확한 링크
-정확한 개별 원문 URL 미확인. 공개 검색/index에서만 확인.
+- exact public source: https://theqoo.net/square/4345896878
+- source post ID: 4345896878
+- source: TheQoo / 스퀘어
+- exactObservedTitle: `추석 당근 알바 근황`
+- C0: VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE
+- logicalCandidateStage: C1
 
 ## 관측 수치
-- 관측: 2026-09-16 14:34 KST 부근
-- 조회/좋아요/댓글 미확인
-- 본문 읽음: 아니오
+- 최초 후보 관측: 2026-09-16 14:34 KST 부근
+- 2026-09-21 공개 원문 재검증: TheQoo 개별 페이지 확인
+- 본문 텍스트: 없음/이미지 기반으로 관측
+- 원문 이미지: 3개 존재 표시 확인
+- 이미지 bytes 저장: 아니오
 - 댓글 읽음: 아니오
 
 ## 평가
-명절 특수와 당근 알바의 황당 조건/사연 가능성이 있어 기존 `당근 꿀 알바`와 별개로 원문 확인 가치가 있다.
-
-## 형식
-미확인
+명절 특수와 당근 알바 소재. 정확한 개별 공개 원문은 확인됐지만 실제 이미지 bytes가 provenance/hash와 함께 확보되지 않았으므로 이미지 내부 내용, OCR, 세부 조건을 제작 근거로 사용하지 않는다.
 
 ## 이미지·자산 / 제작·게시 상태
 - source 파일 확보: 아니오
-- acquisition: ASSETS_PENDING
-- C0 / A0 / P0
+- acquisition: BLOCKED_SOURCE_ASSET_BYTES
+- A0 / P0
 - publicationAllowed=false
 - rights/privacy/human review 필요
+- unblockWhen: 동일 공개 TheQoo 개별 게시물의 실제 이미지 bytes를 허용된 공개 접근으로 확보하고 source URL/provenance/hash를 기록할 수 있을 때. 로그인·anti-bot·접근통제 우회 금지.
 
 ---
 
@@ -1571,9 +1630,18 @@ Source file: data/candidates/260916_C0_A0_P0_축의금얼마나적당.md
 - 출처: Ppomppu
 - 정확한 원문 링크: 미확인
 - 과거 반응 수치: provenance가 없어 사용 금지
+- C0 검증: BLOCKED_EXACT_INDIVIDUAL_SOURCE
+- unblockWhen: 정확한 개별 Ppomppu 원문 URL/post ID 또는 동일 개별 게시물임을 증명하는 신뢰 가능한 고유 식별자가 공개적으로 확인될 때
+- publicationAllowed: false
 
 ## 글 내용
 결혼식 축의금 액수를 묻는 돈·인간관계 후보로 과거 수집됐다. 현재는 일반 조언형 성격이 강해 우선순위가 낮다.
+
+## 이번 순차 검증 (2026-09-21 11:26 KST)
+- 제목 exact/near-exact와 Ppomppu 도메인 조합으로 공개 웹 검색을 재실행했다.
+- 동일 개별 Ppomppu 게시물의 안정적인 URL/post ID는 확인하지 못했다.
+- 일반 축의금 조언 페이지는 검색되지만 원 후보 provenance로 사용할 수 없어 연결하지 않았다.
+- 본문/댓글/metrics/source bytes/스크린샷/OCR/vision/rights clearance는 확보 또는 추정하지 않았다.
 
 ## 평가
 - 평가: 낮은 우선순위 / C1 재검증 필요
@@ -1589,7 +1657,10 @@ Source file: data/candidates/260916_C0_A0_P0_출산전후바람많이펴.md
 
 - 상태: C0 / A0 / P0
 - 출처: Blind
-- 정확한 원문 링크: 미확인
+- 정확한 원문 링크: https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EB%93%A4%EC%9D%80-%EC%B6%9C%EC%82%B0%EC%A0%84%ED%9B%84%EB%A1%9C-%EB%B0%94%EB%9E%8C-%EB%A7%8E%EC%9D%B4-%ED%8E%B4-yj0s4svu
+- stable post ID: yj0s4svu
+- C0 검증: 공개 개별 Blind 원문에서 제목과 본문 일치 확인 (2026-09-21)
+- C1 상태: BLOCKED_SOURCE_ASSET_BYTES — 동일 원문의 실제 body/media bytes를 provenance/hash와 함께 저장하지 못함; 직접 curl은 HTTP 403이므로 우회하지 않음
 - 과거 반응 수치: provenance가 없어 사용 금지
 
 ## 글 내용
@@ -1598,6 +1669,12 @@ Source file: data/candidates/260916_C0_A0_P0_출산전후바람많이펴.md
 ## 평가
 - 평가: 민감도 높은 관계논쟁, C1 재검증 필요
 - 제작: ASSETS_PENDING / publicationAllowed=false
+
+## 2026-09-21 순차 검증
+- 공개 개별 원문 provenance: VERIFIED (`yj0s4svu`)
+- 공개 페이지에서 후보 제목과 본문을 직접 확인했으나, 원문 bytes 자체를 허용된 방식으로 저장하지 못했으므로 logical C1만 인정한다.
+- unblock: 로그인/anti-bot/access-control 우회 없이 동일 개별 원문의 실제 source body/media bytes를 provenance/hash와 함께 영구 저장할 수 있을 때.
+- A0 / P0 / publicationAllowed=false 유지.
 
 ---
 
@@ -1608,18 +1685,22 @@ Source file: data/candidates/260916_C0_A0_P0_코인실수회고.md
 # 글 잘 안 쓰는데 불안한 사람들을 위한 글
 
 - 상태: C0 / A0 / P0
-- 출처: Blind 공개 회사 인덱스
+- 출처: Blind 공개 회사/암호화폐 추천 인덱스
 - 개별 원문 링크: 미확인
 - 확인된 인덱스: https://www.teamblind.com/kr/company/%EB%82%98%EC%9D%B8%ED%95%98%EC%9D%B4%EC%96%B4/posts/%EB%82%98%EC%9D%B8%ED%95%98%EC%9D%B4%EC%96%B4%20%ED%88%AC%EC%9E%90?page=2
-- 인덱스 관측: 조회 3,267 / 좋아요 69 / 댓글 54
-- 본문: 미확인
+- 공개 재검증(2026-09-21): Blind 암호화폐 추천 카드에서 동일 제목, 작성 표시 `인천메트로서비스 · 졸***`, 본문 시작 `본인은 2017년 부터 코인한 사람임. 몇백억 벌은 건 아니지만`까지 반복 확인됨.
+- C0: BLOCKED_EXACT_INDIVIDUAL_SOURCE
+- blocker: 공개 검색/추천 카드로 동일 글 존재와 일부 본문은 확인했지만 exact individual Blind URL/stable post ID를 확인하지 못함. 다른 Blind 게시물의 추천 카드를 원문 URL로 간주하지 않음.
+- unblockWhen: Exact individual Blind URL/shortlink/stable post ID or another trustworthy unique identifier proving this same individual post becomes publicly resolvable.
+- 본문 전체/댓글/원본 source bytes: 미확인
 
 ## 글 내용
-인덱스에는 2017년부터 코인을 해온 작성자가 가장 뼈아픈 두 번의 실수를 회고하는 글로 노출됐다. 개별 게시물 URL과 본문을 아직 찾지 못했기 때문에 구체 실수 내용은 적지 않는다.
+공개 Blind 추천 카드에는 2017년부터 코인을 해온 작성자가 가장 뼈아픈 두 번의 실수를 회고하며 1~2년차 코인 이용자에게 경험을 공유하는 글로 노출된다. 공개 검색 결과에서 양자컴퓨터·역프 등 일부 후속 문장도 관측되지만, exact individual source가 확정되지 않았으므로 전체 본문으로 저장하거나 완전성/댓글/미디어를 추정하지 않는다.
 
 ## 평가
-- 평가: C1 승격 전 검증 우선 투자 인간사
+- 평가: C1 승격 전 exact provenance 검증 우선
 - 제작: ASSETS_PENDING / publicationAllowed=false
+- A1/P1: 금지
 
 ---
 
@@ -1660,6 +1741,14 @@ Source file: data/candidates/260916_C0_A0_P0_콜센터진상손님직업.md
 - rights: 미확인
 - defamation/privacy/human review: 필요
 - 실제 게시: 없음
+## 2026-09-21 14:26 KST 순차 재검증
+- Inven 공식 오픈이슈갤러리 공개 목록에서 정확한 제목 `콜센터 직원이 느낀 진상 손님 직업`, 작성자 `치킨`, 시각 `07:28`을 재확인했다.
+- 공개 목록 관측값은 조회 2,781 / 추천 1 / 댓글 11이었다. 이후 값은 변동 가능하므로 이번 관측값으로만 취급한다.
+- 검색 결과의 다른 개별 게시물들에 노출된 `지금 뜨는 글` 카드에서도 같은 제목이 반복 확인됐지만, 그 주변 게시물 URL을 이 글의 원문 URL로 간주하지 않았다.
+- 정확한 individual Inven URL/post ID는 이번 실행에서도 해결되지 않았다.
+- 결과: `BLOCKED_PROVENANCE` / C0 / A0 / P0 / publicationAllowed=false.
+- unblock: 동일 글의 exact individual Inven URL/post ID 또는 이를 고유하게 증명하는 공개 식별자가 확인될 것. 로그인·anti-bot·paywall·access-control 우회 금지.
+- 본문·댓글·원본 이미지 bytes·OCR/vision·rights/A1/P1은 미확인·미승격.
 
 ---
 
@@ -1673,7 +1762,7 @@ Source file: data/candidates/260916_C0_A0_P0_콜센터진상직업.md
 본문 미확인. 공개 화제 목록에서 제목만 확인한 콜센터·직장 경험담 lead.
 
 ## 정확한 링크
-개별 원문 URL 미확인. 공개 Inven 화제 목록에서 제목 확인.
+정확한 개별 원문: https://www.inven.co.kr/board/webzine/2097/2728413 (Inven post ID 2728413).
 
 ## 관측 수치
 - 관측: 2026-09-16 14:34 KST 부근
@@ -1695,6 +1784,12 @@ Source file: data/candidates/260916_C0_A0_P0_콜센터진상직업.md
 - publicationAllowed=false
 - rights/privacy/human review 필요
 
+## 순차 검증 2026-09-21 15:26 KST
+- C0 exact provenance: VERIFIED — Inven post 2728413, 제목/작성자 치킨/2026-09-16 07:28 일치, 이미지 요소 8개 확인.
+- C1: BLOCKED_SOURCE_ASSET_BYTES — 실제 원본 이미지 bytes를 URL+hash provenance와 함께 저장하지 못함. 이미지 내부 내용/OCR은 추정하지 않음.
+- unblock: 공개/허용 경로에서 원본 이미지 8개 bytes 취득 및 URL+hash 기록. 로그인/anti-bot/paywall/access-control 우회 금지.
+- A0 / P0 / publicationAllowed=false. A1/P1 금지.
+
 ---
 
 ## [0059] 260916_C0_A0_P0_탕수육딸기먼저먹을까봐.md
@@ -1705,7 +1800,10 @@ Source file: data/candidates/260916_C0_A0_P0_탕수육딸기먼저먹을까봐.m
 
 - 상태: C0 / A0 / P0
 - 출처: TheQoo HOT
-- 정확한 원문 링크: 미확인
+- 정확한 원문 링크: https://theqoo.net/square/4341634677
+- 원문 post ID: 4341634677
+- provenance 검증: 완료 (2026-09-21)
+- source asset bytes: 미확보 / BLOCKED_SOURCE_ASSET_BYTES
 - 과거 반응 수치: provenance가 없어 사용 금지
 
 ## 글 내용
@@ -1747,6 +1845,13 @@ Source file: data/candidates/260916_C0_A0_P0_팀장이헤드셋벗김.md
 - publicationAllowed=false
 - rights/privacy/human review 필요
 
+## Sequential verification — 2026-09-21 17:27 KST
+- Exact individual public source verified: `https://www.inven.co.kr/board/webzine/2097/2728525` (Inven post ID `2728525`).
+- Exact title match; author `제르만크록`; published `2026-09-16 11:48`.
+- Source body exposes four ordered WebP image references plus a literal period. No OCR/vision interpretation was performed.
+- Four public source image bytes were acquired with SHA-256 provenance only inside `03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/260921_팀장이헤드셋벗김_TEMP_TEST_ONLY/` as prototype evidence.
+- TEMP-only evidence does **not** upgrade this real candidate. Canonical state remains C0/A0/P0, `publicationAllowed=false`, `BLOCKED_SOURCE_ASSET_BYTES` until canonical evidence storage and human rights/privacy/safety review requirements are satisfied.
+
 ---
 
 ## [0061] 260916_C0_A0_P0_팁거절종업원.md
@@ -1756,28 +1861,38 @@ Source file: data/candidates/260916_C0_A0_P0_팁거절종업원.md
 # 팁을 거절하는 종업원
 
 ## 글 내용
-본문 미확인. 공개 화제 목록에서 확인한 서비스·돈·문화차이 소재.
+공개 Inven 개별 페이지에서 확인된 본문 텍스트는 `하지만 어림없지`이다. 그 밖의 이미지 내부 내용은 이번 순차 처리에서 읽거나 추정하지 않았다.
 
 ## 정확한 링크
-정확한 개별 원문 URL 미확인. Inven 오픈이슈갤러리 공개 화제 목록에서 제목 확인.
+https://www.inven.co.kr/board/webzine/2097/2728428
+
+- source post ID: `2728428`
+- 작성자: `돌체콜드부르`
+- 게시 시각: `2026-09-16 08:22`
+- 제목: `팁을 거절하는 종업원`
+- C0: VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE
 
 ## 관측 수치
-- 관측: 2026-09-16 13:37 KST 부근
-- 화제 목록 댓글 16 표시 확인, 개별 페이지 검증 전
-- 본문 읽음: 아니오 / 댓글 읽음: 아니오
+- 개별 페이지 공개 검색 결과에서 조회 4,085 / 추천 3 / 댓글 16이 관측되었으나 이는 관측 시점 값이며 현재값으로 일반화하지 않는다.
+- 본문 이미지 내부 내용/OCR: 미확인
+- 댓글 본문: 미확인
 
 ## 평가
-팁을 받는 것이 당연하다는 기대를 뒤집는 행동이라 짧은 반전 소재가 될 수 있다. 원문과 국가/상황 확인 필요.
+정확한 개별 원문 provenance는 해결되었다. 다음 단계는 동일 개별 원문의 실제 source media bytes를 공개·허용된 접근으로 확보하고 URL/provenance/SHA-256을 기록하는 것이다. 로그인, anti-bot, paywall, access-control 우회는 금지한다.
 
 ## 형식
 이미지 포스팅
 
 ## 이미지·자산 / 제작·게시 상태
 - source 파일 확보: 아니오
-- acquisition: INDEX_ONLY / ASSETS_PENDING
-- C0 / A0 / P0
+- acquisition: EXACT_SOURCE_VERIFIED / ASSETS_PENDING
+- logical candidate stage: C1
+- canonical filename state: C0 / A0 / P0 (TEMP 또는 provenance 검증만으로 파일명 상태 승격 금지)
+- blocker: BLOCKED_SOURCE_ASSET_BYTES
+- unblockWhen: 동일 Inven 개별 글의 실제 원본 미디어 bytes를 공개·허용 접근으로 source URL/provenance/SHA-256과 함께 확보할 때
 - publicationAllowed=false
-- rights/privacy/human review 필요
+- rights/privacy/safety/human review 필요
+- A1/P1 아님
 
 ---
 
@@ -1798,6 +1913,13 @@ Source file: data/candidates/260916_C0_A0_P0_폭우웅덩이샴푸병원.md
 ## 평가
 - 평가: 황당실화형, 사실검증 필수
 - 제작: ASSETS_PENDING / publicationAllowed=false
+
+## 2026-09-21 sequential verification
+- C0: BLOCKED_EXACT_PRIMARY_SOURCE
+- Fresh public exact/near-exact searches did not resolve the exact individual TheQoo post URL/post ID.
+- Do not treat generic health pages or secondary references as provenance for this candidate.
+- unblockWhen: exact individual primary TheQoo URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.
+- A0 / P0 / publicationAllowed=false 유지. 본문·이미지·OCR/vision·댓글·metrics·rights는 추정하지 않음.
 
 ---
 
@@ -1837,6 +1959,13 @@ Source file: data/candidates/260916_C0_A0_P0_한국전철보고어리둥절한�
 - rights: 미확인
 - privacy/human review: 필요
 - 실제 게시: 없음
+
+## 2026-09-21 20:30 KST 순차 검증
+- C0: BLOCKED_EXACT_INDIVIDUAL_SOURCE
+- 공개 Inven hot-list에서 동일 제목 노출은 재확인했으나 exact individual Inven URL/post ID는 해결하지 못함.
+- 2차 이슈 집계에서 더 이른 Ruliweb 노출 정황은 확인했지만 exact primary/original individual URL을 독립 검증하지 못했으므로 원문 provenance로 대체하지 않음.
+- unblock: exact individual Inven URL/post ID 또는 독립 검증된 정확한 원출처 individual URL/post ID가 공개적으로 확인될 때.
+- source bytes/body/comments/OCR/vision/rights/A1/P1: 미확인·미수행. publicationAllowed=false.
 
 ---
 

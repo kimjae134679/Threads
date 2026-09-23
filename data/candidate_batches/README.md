@@ -1,8 +1,8 @@
 # Candidate Batches
 
-- Total candidates: 1188
+- Total candidates: 1273
 - Batch size: 100
-- Batch files: 12
+- Batch files: 13
 
 These files are generated from data/candidates/ for easier bulk review.
 The individual candidate markdown files remain the source of truth.
@@ -18,4 +18,5 @@ The individual candidate markdown files remain the source of truth.
 - candidates_0801-0900.md
 - candidates_0901-1000.md
 - candidates_1001-1100.md
-- candidates_1101-1188.md
+- candidates_1101-1200.md
+- candidates_1201-1273.md

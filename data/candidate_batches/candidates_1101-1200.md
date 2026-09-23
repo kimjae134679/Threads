@@ -1,7 +1,7 @@
 # Candidate Batch 012
 
-- Range: 1101-1188
-- Count: 88
+- Range: 1101-1200
+- Count: 100
 - Source: data/candidates/
 - Each section below preserves the source candidate markdown.
 
@@ -1957,140 +1957,494 @@ Source file: data/candidates/260920_회사사람축의금어이없음_C1.md
 
 ---
 
-## [1184] 260921_가난한시댁_반전후기_C1.md
+## [1184] 260921_10명이하결혼원판후기.md
 
-Source file: data/candidates/260921_가난한시댁_반전후기_C1.md
+Source file: data/candidates/260921_10명이하결혼원판후기.md
 
-# 가난한(?) 시댁에 시집간 후기.
+# 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기
 
-- source: TheQoo 후기
-- sourceUrl: https://theqoo.net/review/582597183
-- exactObservedTitle: 가난한(?) 시댁에 시집간 후기.
-- observedAt: 2026-09-21 00:17 KST
-- provenanceStage: C1
-- acquisition: public individual page verified via public web index/page
-- bodyRead: true
-- commentsRead: false
-- imageOrScreenshot: 미확인
-- observedMetrics: 공개 검색 결과에서 신뢰할 수 있는 전체 수치 확인 못함
-- publicationAllowed: false
+- stage: C1
 - A1: false
 - P1: false
+- publicationAllowed: false
+- source: TheQoo 후기
+- publicUrl: https://theqoo.net/review/3204349278
+- exactObservedTitle: `10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기`
+- observedAt: 2026-09-21 12:14 KST
+- observedMetrics: 조회 수 11256 (공개 검색 결과에서 실제 관찰)
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotObserved: false
+- acquisition: 공개 웹 검색 결과에서 개별 TheQoo 원문 URL 및 노출 본문 확인
+- provenance: exact individual public URL verified; C1
 
-## 왜 소재로 좋은가
-경제적으로 어려운 시댁이라 부담이 클 것으로 예상했지만 실제로는 용돈 요구·제사·안부전화 강요가 없고 서로 독립적으로 존중해 오히려 시부모를 좋아하게 됐다는 반전 경험담. 제목의 선입견과 결말이 뒤집히며 가족·돈·시댁 문화에 대한 공감과 의견을 끌기 좋다.
+## 소재 메모
+결혼식 본식 원판에 함께 찍을 지인이 10명 이하라 주변 시선을 의식하고 상처받은 경험담. 결혼식 인맥·친구 숫자에 대한 공감과 논쟁이 즉시 발생할 수 있는 소재.
 
-## provenance note
-본문은 공개 페이지에서 실제 확인. 댓글은 읽지 않음. 이미지/스크린샷 존재 여부는 확인하지 않았으며 권리·OCR·moderation·asset 상태를 추정하지 않음. 원문 작성자의 경험담이므로 외부 사실로 승격하지 않음.
+## 검증 주의
+본문은 공개 검색 결과에 실제 노출된 범위만 읽음. 댓글은 읽지 않음. 권리·moderation·asset/publication 상태를 추정하지 않음.
 
 ---
 
-## [1185] 260921_부부돈관리_남편비협조_C1.md
+## [1185] 260921_20년만에전재산천만원.md
 
-Source file: data/candidates/260921_부부돈관리_남편비협조_C1.md
+Source file: data/candidates/260921_20년만에전재산천만원.md
 
-# 부부 돈관리 맡는 덬 어떻게 하는지 궁금한 후기
+# [스압]20년 만에 전재산 천만원 된 썰
 
-- source: TheQoo 후기
-- sourceUrl: https://theqoo.net/review/2812558709
-- exactObservedTitle: 부부 돈관리 맡는 덬 어떻게 하는지 궁금한 후기
-- observedAt: 2026-09-21 00:17 KST
-- provenanceStage: C1
-- acquisition: public individual page verified via public web index/page
+- source: Inven 오픈이슈갤러리 (본문에 개드립 재게시 취지 언급)
+- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1508828
+- exactObservedTitle: `[스압]20년 만에 전재산 천만원 된 썰`
+- observedAt: 2026-09-21 16:16 KST
+- provenanceLevel: C1
+- acquisitionStatus: exact individual public URL verified; public page body readable
 - bodyRead: true
 - commentsRead: false
-- imageOrScreenshot: 미확인
-- observedMetrics: 조회 3,652 / 댓글 19 (공개 페이지에서 관찰)
-- publicationAllowed: false
+- imageOrScreenshotPresent: true (page exposes image elements; bytes not acquired)
+- observedMetrics: 조회 10,729 / 추천 20 / 댓글 28
 - A1: false
 - P1: false
+- publicationAllowed: false
 
-## 왜 소재로 좋은가
-외벌이 부부에서 작성자가 월급 전체를 관리하지만 카드·예금 혜택을 챙기려 할 때마다 남편이 귀찮아하며 비협조적이라는 생활 갈등. 부부 공동재정, 절약 노력, 명의·연말정산 문제까지 이어져 현실 공감과 의견 충돌이 생기기 좋은 소재다.
+## 왜 소재로 좋은지
+IMF 시기 공장 화재와 가족의 빚 3억에서 출발해 장기간 빚을 갚고 변호사가 된 뒤 빚을 정리하는 장기 서사가 있다. 가족·돈·직장·연애·역전 요소가 한 이야기 안에 있고 중간 사건과 결말이 분명해 스토리성이 강하다.
 
-## provenance note
-본문은 공개 페이지에서 실제 확인. 댓글은 읽지 않음. 이미지/스크린샷 존재 여부는 확인하지 않았으며 권리·OCR·moderation·asset 상태를 추정하지 않음. 법률·세무 결론은 검증하지 않았고 원문의 고민으로만 기록함.
+## provenance 주의
+공개 Inven 개별 페이지에서 제목·본문·표시 수치를 직접 확인했다. 원 최초 게시처/권리관계는 확인하지 않았으며, 이미지 파일은 다운로드하지 않았다. 댓글 본문도 읽지 않았다. 제작·게시 권한을 의미하지 않는다.
 
 ---
 
-## [1186] 260921_비혼덬_결혼공격2연타_C1.md
+## [1186] 260921_20년전재산천만원썰.md
 
-Source file: data/candidates/260921_비혼덬_결혼공격2연타_C1.md
+Source file: data/candidates/260921_20년전재산천만원썰.md
 
-# 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)
+# [스압]20년 만에 전재산 천만원 된 썰
 
-- source: TheQoo 후기
-- sourceUrl: https://theqoo.net/review/2584083741
-- exactObservedTitle: 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)
-- observedAt: 2026-09-21 00:17 KST
-- provenanceStage: C1
-- acquisition: public individual page verified via public web index/page
+- stage: C1
+- source: Inven 오픈이슈갤러리
+- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1508828
+- exactObservedTitle: `[스압]20년 만에 전재산 천만원 된 썰`
+- observedAt: 2026-09-21 01:16 KST
+- observedMetrics: 수치 기록 안 함 (이번 관찰 결과에서 신뢰 가능한 수치를 확정하지 않음)
 - bodyRead: true
 - commentsRead: false
-- imageOrScreenshot: 미확인
-- observedMetrics: 조회 9,501 / 댓글 38 (공개 페이지에서 관찰)
-- publicationAllowed: false
+- imageOrScreenshotObserved: false/미확인
+- whyGood: 직장에서 무시받던 사람이 자신이 잘하는 업무를 발견하고 계약서의 이상점을 포착하는 흐름이 있어 직장 갈등, 좌절, 역전의 서사성이 강하다.
+- acquisition: 공개 검색으로 발견 후 정확한 개별 public URL의 본문을 직접 확인한 C1. 접근 우회 없음. 이미지 다운로드/OCR/권리 검증은 수행하지 않음.
+- provenance: 게시자의 회고성 서술로 취급하며 외부에서 사실 검증된 사건으로 승격하지 않음.
 - A1: false
 - P1: false
-
-## 왜 소재로 좋은가
-40세 비혼 작성자가 하루 동안 외숙모와 다른 지인에게 연속으로 결혼·출산 압박을 받은 경험을 적은 글. 세대 갈등, 비혼, 사생활 간섭이라는 즉시 의견이 갈리는 주제이며 두 사건이 연달아 발생하는 서사 구조가 있다.
-
-## provenance note
-본문은 공개 페이지에서 실제 확인. 댓글은 읽지 않음. 이미지/스크린샷 존재 여부는 확인하지 않았으며 권리·OCR·moderation·asset 상태를 추정하지 않음. 원문 작성자의 경험담이므로 외부 사실로 승격하지 않음.
+- publicationAllowed: false
 
 ---
 
-## [1187] 260921_쌍둥이언니들_극과극시댁_C1.md
+## [1187] 260921_20대중후반인데친구가무심해서섭섭한거내가예민한건지모르겠는후기.md
 
-Source file: data/candidates/260921_쌍둥이언니들_극과극시댁_C1.md
+Source file: data/candidates/260921_20대중후반인데친구가무심해서섭섭한거내가예민한건지모르겠는후기.md
 
-# 쌍둥이 언니들의 시댁이 너무나 다른 후기
+# 20대 중후반인데 친구가 무심해서 섭섭한거 내가 예민한건지 모르겠는 후기
 
 - source: TheQoo 후기
-- sourceUrl: https://theqoo.net/review/2573576391
-- exactObservedTitle: 쌍둥이 언니들의 시댁이 너무나 다른 후기
-- observedAt: 2026-09-21 00:17 KST
+- sourceUrl: https://theqoo.net/review/2403061554
+- exactObservedTitle: 20대 중후반인데 친구가 무심해서 섭섭한거 내가 예민한건지 모르겠는 후기
+- observedAt: 2026-09-21 05:15 KST
 - provenanceStage: C1
-- acquisition: public individual page verified via public web index/page
+- acquisitionStatus: exact individual public URL and readable body verified through public web index
 - bodyRead: true
 - commentsRead: false
-- imageOrScreenshot: 미확인
-- observedMetrics: 조회 9,710 / 댓글 65 (공개 페이지에서 관찰)
-- publicationAllowed: false
+- imageOrScreenshotPresent: not claimed
+- observedMetrics: 4,120 / 21 displayed on public page (labels not safely inferred beyond page display)
 - A1: false
 - P1: false
+- publicationAllowed: false
+
+## 관찰 내용
+작성자는 친한 친구가 예전에는 잘 챙겨줬지만 성인이 된 뒤 서로 직장과 거리가 생기면서 거리감을 느낀다고 적었다. 특히 친구가 피곤하다는 이유로 약속을 당일이나 전날 취소하는 일이 잦아 서운하며, 이 감정을 말해야 할지 넘어가야 할지 고민하는 내용이다.
 
 ## 왜 소재로 좋은가
-쌍둥이 자매가 결혼 후 전혀 다른 시댁 문화를 겪는 대비형 경험담. 한쪽은 명절 음식을 각자 준비하고 남성들이 상을 차리는 등 전통적인 명절상과 다른 풍경이 등장해 상황 자체가 재미있고, 가족·명절·시댁 문화에 대한 의견을 유도하기 좋다.
+직장인이 된 뒤 친구 관계가 달라지는 상황과 약속 직전 취소라는 흔한 갈등이 결합돼 공감과 반론이 모두 나오기 쉽다. `친구가 너무 무심하다`와 `직장인이면 피곤할 수 있다`로 의견이 자연스럽게 갈린다.
 
-## provenance note
-본문은 공개 페이지에서 실제 확인. 댓글은 읽지 않음. 이미지/스크린샷 존재 여부는 확인하지 않았으며 권리·OCR·moderation·asset 상태를 추정하지 않음. 원문 작성자의 경험담이므로 외부 사실로 승격하지 않음.
+## 주의
+댓글은 읽지 않았다. 화면에 표시된 두 수치의 의미를 임의로 조회/댓글로 단정하지 않았다. 제작/게시 권리나 moderation 완료를 의미하지 않는다.
 
 ---
 
-## [1188] 260921_튀니지여행_눈탱이위기_C1.md
+## [1188] 260921_4개월다니고퇴사한썰.md
 
-Source file: data/candidates/260921_튀니지여행_눈탱이위기_C1.md
+Source file: data/candidates/260921_4개월다니고퇴사한썰.md
 
-# 여행와서 눈탱이 맞을뻔한 후기
+# [초스압] 4개월 다니고 퇴사한 썰
 
-- source: TheQoo 후기
-- sourceUrl: https://theqoo.net/review/2560491496
-- exactObservedTitle: 여행와서 눈탱이 맞을뻔한 후기
-- observedAt: 2026-09-21 00:17 KST
-- provenanceStage: C1
-- acquisition: public individual page verified via public web index/page
+- source: Inven 오픈이슈갤러리
+- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1802194
+- exactObservedTitle: `[초스압] 4개월 다니고 퇴사한 썰`
+- observedAt: 2026-09-21 16:16 KST
+- provenanceLevel: C1
+- acquisitionStatus: exact individual public URL verified; public page body readable
 - bodyRead: true
 - commentsRead: false
-- imageOrScreenshot: 미확인
-- observedMetrics: 조회 2,445 (공개 페이지에서 관찰; 댓글 수 미확인)
-- publicationAllowed: false
+- imageOrScreenshotPresent: true (page exposes an image element; bytes not acquired)
+- observedMetrics: 조회 7,359 / 추천 0 / 댓글 9
 - A1: false
 - P1: false
+- publicationAllowed: false
+
+## 왜 소재로 좋은지
+번아웃 때문에 업무 강도가 낮을 것으로 예상한 회사로 옮겼다가 4개월 만에 퇴사하게 된 장문 직장 경험담이다. 이직 선택과 실제 회사생활의 괴리가 핵심이라 직장인 공감·논쟁 소재로 쓰기 좋다.
+
+## provenance 주의
+공개 Inven 개별 페이지에서 제목·본문·표시 수치를 확인했다. 최초 작성처 및 권리관계는 별도 검증하지 않았다. 이미지 파일 다운로드와 댓글 열람은 하지 않았다. 제작·게시 권한을 의미하지 않는다.
+
+---
+
+## [1189] 260921_C1_A0_P0_30대덬들의친구의기준이궁금한중기.md
+
+Source file: data/candidates/260921_C1_A0_P0_30대덬들의친구의기준이궁금한중기.md
+
+# 30대 덬들의 친구의 기준이 궁금한 중기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/3846082879?category=25894
+- exactObservedTitle: 30대 덬들의 친구의 기준이 궁금한 중기
+- observedAt: 2026-09-21 03:14 KST
+- stage: C1
+- A1: false
+- P1: false
+- publicationAllowed: false
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotObserved: false
+- observedMetrics: 조회 5,314 (공개 페이지에서 관찰된 값)
+- acquisition: 공개 개별 게시물 URL과 본문을 직접 확인. 로그인/우회/스크린샷/OCR 없음.
+- provenance: public individual page; exact source URL verified
 
 ## 왜 소재로 좋은가
-튀니지에서 현지인의 친절을 따라갔다가 에센셜 오일 구매 후 다시 기념품점으로 이어지는 관광객 경험담. 친절인지 판매 유도인지 경계가 바뀌는 과정과 낯선 여행지에서의 긴장감이 있어 짧은 썰 구조에 적합하다.
+정치관·연애/결혼 가치관·더치페이·사진 습관 등 어떤 차이까지 친구로 감수할 수 있는지 구체적인 기준이 제시되어 독자가 자신의 기준을 바로 대입하고 의견을 내기 좋은 소재다.
 
-## provenance note
-본문은 공개 페이지에서 실제 확인. 댓글은 읽지 않음. 이미지/스크린샷 존재 여부는 확인하지 않았으며 권리·OCR·moderation·asset 상태를 추정하지 않음. 가격·의도·사기 여부는 작성자의 경험 서술 이상으로 단정하지 않음.
+## 확인 메모
+본문 확인. 댓글은 읽지 않음.
+
+---
+
+## [1190] 260921_C1_A0_P0_30대초중반미혼여자평소연락하는사람엄마제외1도없는후기.md
+
+Source file: data/candidates/260921_C1_A0_P0_30대초중반미혼여자평소연락하는사람엄마제외1도없는후기.md
+
+# 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/4074622063
+- exactObservedTitle: 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기
+- observedAt: 2026-09-21 03:14 KST
+- stage: C1
+- A1: false
+- P1: false
+- publicationAllowed: false
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotObserved: false
+- observedMetrics: 조회 3,346 / 댓글 19 (공개 페이지에서 관찰된 값)
+- acquisition: 공개 개별 게시물 URL과 본문을 직접 확인. 로그인/우회/스크린샷/OCR 없음.
+- provenance: public individual page; exact source URL verified
+
+## 왜 소재로 좋은가
+결혼·연애 시기에 친구들이 멀어지는 문제와 40만원 축의금 이후 연락이 끊긴 경험이 결합되어 관계·축의금·비혼 관점의 즉각적인 의견 충돌이 생기기 좋은 실제 경험담이다.
+
+## 확인 메모
+본문 확인. 댓글은 읽지 않음. 게시물의 개인 경험 주장은 외부 사실로 검증한 것이 아님.
+
+---
+
+## [1191] 260921_C1_A0_P0_결혼을후회하는중기.md
+
+Source file: data/candidates/260921_C1_A0_P0_결혼을후회하는중기.md
+
+# 결혼을 후회하는 중기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/1645433994?category=25892
+- exactObservedTitle: 결혼을 후회하는 중기
+- observedAt: 2026-09-21 03:14 KST
+- stage: C1
+- A1: false
+- P1: false
+- publicationAllowed: false
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotObserved: false
+- observedMetrics: 조회 11,932 (공개 페이지에서 관찰된 값)
+- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인. 로그인/우회/스크린샷/OCR 없음.
+- provenance: public individual page; exact source URL verified
+
+## 왜 소재로 좋은가
+원래 비혼주의였던 작성자가 여러 차례 고백을 거절했던 상대와 결국 결혼하게 된 과정에서 시작하는 이야기로, 제목의 '결혼 후회'와 연애 과정 사이의 긴장감이 강하다. 결혼 선택·감정 변화에 대해 독자 의견을 끌어내기 쉽다.
+
+## 확인 메모
+공개 페이지에서 제공된 본문을 확인. 댓글은 읽지 않음. 작성자의 관계 서술은 외부 사실로 검증한 것이 아님.
+
+---
+
+## [1192] 260921_C1_A0_P0_돈없는친구피곤.md
+
+Source file: data/candidates/260921_C1_A0_P0_돈없는친구피곤.md
+
+# 돈 없는 친구가 피곤한 후기
+
+- source: TheQoo / 후기
+- sourceUrl: https://theqoo.net/review/261535896
+- exactObservedTitle: 돈 없는 친구가 피곤한 후기
+- observedAt: 2026-09-21 17:14 KST
+- acquisitionStatus: C1 — exact individual public URL verified
+- bodyRead: true
+- commentsRead: false
+- observedMetrics: 조회 수 4,871
+- imageOrScreenshotPresent: 확인하지 않음
+- A1: false
+- P1: false
+- publicationAllowed: false
+
+## 소재 가치
+친구가 소액을 반복해서 빌려가고 갚지 않다가 거절하자 정말 돈이 없냐고 재차 확인하는 상황이다. 소액이라 참아야 하는지, 반복되면 관계 문제인지 즉시 의견이 갈리는 돈·친구 갈등 소재다.
+
+## provenance
+공개 개별 페이지에서 노출된 본문을 실제 읽음. 댓글은 읽지 않음. 이미지/권리/OCR/자산 상태는 추정하지 않음.
+
+---
+
+## [1193] 260921_C1_A0_P0_돈없다면서할거다하는친구.md
+
+Source file: data/candidates/260921_C1_A0_P0_돈없다면서할거다하는친구.md
+
+# 맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기
+
+- source: TheQoo / 후기
+- sourceUrl: https://theqoo.net/review/488718057
+- exactObservedTitle: 맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기
+- observedAt: 2026-09-21 17:14 KST
+- acquisitionStatus: C1 — exact individual public URL verified
+- bodyRead: true
+- commentsRead: false
+- observedMetrics: 조회 수 3,052
+- imageOrScreenshotPresent: 확인하지 않음
+- A1: false
+- P1: false
+- publicationAllowed: false
+
+## 소재 가치
+만날 때마다 돈이 없다고 말해 작성자가 식사를 사게 되는데 정작 해외여행과 소비는 계속하는 친구 이야기다. 배려와 호구의 경계, 소비 우선순위 문제로 댓글 반응을 만들기 좋은 생활 갈등이다.
+
+## provenance
+공개 개별 페이지에서 노출된 본문을 실제 읽음. 댓글은 읽지 않음. 이미지/권리/OCR/자산 상태는 추정하지 않음.
+
+---
+
+## [1194] 260921_C1_A0_P0_룸메이트같이안살게된썰.md
+
+Source file: data/candidates/260921_C1_A0_P0_룸메이트같이안살게된썰.md
+
+# 다시는 룸메이트랑 같이 안 살게된 썰
+
+- source: Inven / 메이플스토리 자유게시판(구)
+- sourceUrl: https://www.inven.co.kr/board/maple/2299/3381810
+- exactObservedTitle: 다시는 룸메이트랑 같이 안 살게된 썰
+- observedAt: 2026-09-21 17:14 KST
+- acquisitionStatus: C1 — exact individual public URL verified
+- bodyRead: true
+- commentsRead: false
+- observedMetrics: 조회 1,916 / 추천 0 / 댓글 21
+- imageOrScreenshotPresent: true (public page exposes an image marker; asset not downloaded or inspected)
+- A1: false
+- P1: false
+- publicationAllowed: false
+
+## 소재 가치
+왕복 5시간 통학을 피하려다 학교 커뮤니티에서 룸메이트를 구하게 되는 도입이 명확하고, 이후 '다시는 룸메이트와 살지 않게 됐다'는 결론을 예고해 다음 상황을 궁금하게 만드는 생활형 경험담이다.
+
+## provenance
+본문은 공개 페이지에서 실제 읽음. 댓글 내용은 읽지 않음. 이미지 바이트/OCR/권리 상태는 확인하지 않았고 어떤 자산도 취득하지 않음.
+
+---
+
+## [1195] 260921_C1_A0_P0_망한피씨방인수한썰.md
+
+Source file: data/candidates/260921_C1_A0_P0_망한피씨방인수한썰.md
+
+# (초스압) 망한 피씨방 인수한 썰
+
+## source
+- Inven 오픈이슈갤러리
+- exact public URL: https://www.inven.co.kr/board/webzine/2097/2239107
+
+## 관찰
+- observedAt: 2026-09-21 20:15 KST
+- exact observed title: `(초스압) 망한 피씨방 인수한 썰`
+- 게시 표시: 2024-04-08 20:46
+- 조회: 33,115
+- 추천: 45
+- 댓글: 44
+- 본문 읽음: 예 (공개 페이지에서 노출된 텍스트 범위)
+- 댓글 읽음: 아니오
+- 이미지/스크린샷 존재: 페이지에 이미지 요소 존재. 별도 다운로드/캡처하지 않음.
+
+## 왜 소재로 좋은가
+망한 PC방을 실제로 인수해 운영하는 경험담으로 시작하며, 매장 규모·흡연실·좌석 배치 등 구체적인 운영 디테일이 있어 `망한 가게를 인수하면 무슨 일이 생기나`라는 강한 도입을 만들기 좋다. 자영업 현실/돈/운영 판단으로 의견이 갈릴 여지도 있다.
+
+## acquisition / provenance
+- C1: 정확한 개별 공개 URL 확인.
+- acquisition: PUBLIC_TEXT_OBSERVED
+- provenance: Inven 개별 공개 게시물 자체를 확인. 최초 창작 원출처/저작권 소유 여부는 별도 확인하지 않았으므로 주장하지 않음.
+- A0 / P0
+- publicationAllowed=false
+- 스크린샷, 이미지 다운로드, OCR, 제작, 게시 작업 없음.
+
+---
+
+## [1196] 260921_C1_A0_P0_미팅인줄모르고단체미팅다녀온후기.md
+
+Source file: data/candidates/260921_C1_A0_P0_미팅인줄모르고단체미팅다녀온후기.md
+
+# 미팅인줄 모르고 단체 미팅 다녀온 후기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/490143476
+- exactObservedTitle: 미팅인줄 모르고 단체 미팅 다녀온 후기
+- observedAt: 2026-09-21 03:14 KST
+- stage: C1
+- A1: false
+- P1: false
+- publicationAllowed: false
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotObserved: false
+- observedMetrics: 조회 4,494 (공개 페이지에서 관찰된 값)
+- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인. 로그인/우회/스크린샷/OCR 없음.
+- provenance: public individual page; exact source URL verified
+
+## 왜 소재로 좋은가
+일본에서 친구를 만들려다가 미팅인지 모르고 단체 미팅에 참석했다는 제목 자체가 강한 민망한 오해 훅을 갖고 있다. 타지 인간관계·문화차이·소개 모임이라는 상황도 스토리성이 있다.
+
+## 확인 메모
+공개 페이지에서 제공된 본문을 확인. 댓글은 읽지 않음.
+
+---
+
+## [1197] 260921_C1_A0_P0_시댁나만설거지.md
+
+Source file: data/candidates/260921_C1_A0_P0_시댁나만설거지.md
+
+# 시댁에서 나만 설거지 해서 계속 화가나는 후기
+
+- source: TheQoo / 후기
+- sourceUrl: https://theqoo.net/review/2222967424
+- exactObservedTitle: 시댁에서 나만 설거지 해서 계속 화가나는 후기
+- observedAt: 2026-09-21 17:14 KST
+- acquisitionStatus: C1 — exact individual public URL verified
+- bodyRead: true
+- commentsRead: false
+- observedMetrics: 조회 9,980 / 댓글 136
+- imageOrScreenshotPresent: 확인하지 않음
+- A1: false
+- P1: false
+- publicationAllowed: false
+
+## 소재 가치
+시댁에서 외식 대신 늘 집밥을 먹는데 식사 후 설거지가 며느리 한 사람의 몫으로 굳어졌다는 갈등이다. 가족 역할·성별 기대·배우자의 대응을 두고 즉시 의견이 갈릴 수 있는 구조다.
+
+## provenance
+공개 개별 페이지에서 노출된 본문을 실제 읽음. 댓글 내용은 읽지 않음. 이미지/권리/OCR/자산 상태는 추정하지 않음.
+
+---
+
+## [1198] 260921_C1_A0_P0_얼떨결에결혼한상견례썰.md
+
+Source file: data/candidates/260921_C1_A0_P0_얼떨결에결혼한상견례썰.md
+
+# 얼떨결에 결혼한 상견례 썰.txt
+
+## source
+- TheQoo 스퀘어
+- exact public URL: https://theqoo.net/square/1552430279
+
+## 관찰
+- observedAt: 2026-09-21 20:15 KST
+- exact observed title: `얼떨결에 결혼한 상견례 썰.txt`
+- 게시 표시: 2020.08.05 11:02
+- 조회: 15,234
+- 댓글/표시 수치: 공개 검색 페이지에 38 표시(해당 숫자의 UI 의미를 추가 추정하지 않음)
+- 본문 읽음: 예 (공개 페이지에서 노출된 텍스트 범위)
+- 댓글 읽음: 아니오
+- 이미지/스크린샷 존재 여부: 이번 관찰에서 별도 자산 검증하지 않음.
+
+## 왜 소재로 좋은가
+원래 비혼을 생각하던 작성자가 가족의 경제 문제와 본인 명의 빚 등 복잡한 배경을 가진 상태에서 결혼 과정으로 들어가는 이야기다. 제목 자체가 `얼떨결에 결혼`이라는 강한 궁금증을 만들고, 돈·가족·결혼이라는 즉각적인 논쟁 요소가 함께 있다.
+
+## acquisition / provenance
+- C1: 정확한 개별 공개 URL 확인.
+- acquisition: PUBLIC_TEXT_OBSERVED
+- provenance: TheQoo 개별 공개 게시물을 확인. 재전파 여부/최초 원저작자는 확정하지 않음.
+- A0 / P0
+- publicationAllowed=false
+- 스크린샷, 이미지 다운로드, OCR, 제작, 게시 작업 없음.
+
+---
+
+## [1199] 260921_C1_A0_P0_중소기업썰.md
+
+Source file: data/candidates/260921_C1_A0_P0_중소기업썰.md
+
+# 펌) 중소기업 썰.ssul
+
+## source
+- Inven 오픈이슈갤러리
+- exact public URL: https://www.inven.co.kr/board/webzine/2097/1104760
+
+## 관찰
+- observedAt: 2026-09-21 20:15 KST
+- exact observed title: `펌) 중소기업 썰.ssul`
+- 게시 표시: 2018-11-23 00:00
+- 조회: 24,272
+- 추천: 6
+- 댓글: 37
+- 본문 읽음: 예 (공개 페이지에서 노출된 텍스트 범위)
+- 댓글 읽음: 아니오
+- 이미지/스크린샷 존재: 페이지에 이미지 요소 존재. 별도 다운로드/캡처하지 않음.
+
+## 왜 소재로 좋은가
+석사 후 전문연구요원으로 중소기업에 다닌 작성자가 회사의 무능, 형식적인 국책과제, 과제비 사용 등 직접 겪었다고 서술하는 직장 경험담이다. `중소기업 다녀보니 왜 대기업을 찾는지 알겠다`는 구조가 직장인 공감과 논쟁을 동시에 만들 수 있다.
+
+## acquisition / provenance
+- C1: 정확한 개별 공개 URL 확인.
+- acquisition: PUBLIC_TEXT_OBSERVED_REPOST
+- provenance: 제목에 `펌)`이 명시된 Inven 재게시물. Inven을 최초 원출처로 취급하지 않으며 최초 원문은 이번 실행에서 확인하지 못함.
+- A0 / P0
+- publicationAllowed=false
+- 스크린샷, 이미지 다운로드, OCR, 제작, 게시 작업 없음.
+
+---
+
+## [1200] 260921_C1_A0_P0_편애심한집안의둘째인데언니랑친한후기.md
+
+Source file: data/candidates/260921_C1_A0_P0_편애심한집안의둘째인데언니랑친한후기.md
+
+# 편애심한 집안의 둘째인데 언니랑 친한 후기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/1164925843
+- exactObservedTitle: 편애심한 집안의 둘째인데 언니랑 친한 후기
+- observedAt: 2026-09-21 03:14 KST
+- stage: C1
+- A1: false
+- P1: false
+- publicationAllowed: false
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotObserved: false
+- observedMetrics: 조회 8,367 / 댓글 9 (공개 페이지에서 관찰된 값)
+- acquisition: 공개 개별 게시물 URL과 본문을 직접 확인. 로그인/우회/스크린샷/OCR 없음.
+- provenance: public individual page; exact source URL verified
+
+## 왜 소재로 좋은가
+부모의 형제 편애라는 갈등에서 출발하지만 편애를 받은 둘째가 오히려 언니에게 부채감을 느끼고 부모 문제를 자신이 책임지려는 방향으로 이어지는 반전이 있다. 첫째 희생·형제관계·부모 책임을 두고 의견이 갈릴 수 있다.
+
+## 확인 메모
+본문 확인. 댓글은 읽지 않음. 개인 경험담의 사실관계는 외부 검증하지 않음.

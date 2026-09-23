@@ -2844,7 +2844,7 @@ Source file: data/candidates/260916_C1_A0_P0_임신후잠적한남친.md
 
 Source file: data/candidates/260916_C1_A0_P0_입주청소하러갔다가.md
 
-# 입주 청소하러 갔다가
+﻿# 입주 청소하러 갔다가
 
 ## 글 내용
 원문 페이지를 확인했다. 게시물은 첨부 이미지가 이야기의 핵심이고 작성자는 돈을 떠나 부부의 마음이 예쁘다는 취지의 짧은 감상을 덧붙였다. 이미지 안에 담긴 원래 사연의 세부 문장은 이번 수집에서 별도 OCR/전사하지 않았으므로 미확인이다.
@@ -2874,9 +2874,9 @@ https://www.inven.co.kr/board/webzine/2097/2728192
 
 ## 이미지·자산 / 제작·게시 상태
 - 원문 이미지: 있음(페이지에서 확인)
-- 실제 source 파일 확보: 아니오
+- 실제 source 파일 확보: 예 — 공개 direct WebP 39,288 bytes를 이번 회차에 취득하고 SHA-256 검증함; canonical intake/persistence는 WebP 미지원으로 차단
 - 전체 원문 screenshot 확보: 아니오
-- acquisition: exact page verified / source image visible / bytes pending
+- acquisition: exact page verified / public source WebP bytes acquired / SHA-256 `37de18cc8d8ea30768d297f065db267846578b05573fe45a10374aadb771d1c6` / canonical WebP intake blocked
 - C1 / A0 / P0 / ASSETS_PENDING
 - publicationAllowed=false
 - rights: 미확인
