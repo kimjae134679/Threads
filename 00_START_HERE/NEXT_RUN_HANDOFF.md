@@ -1,36 +1,35 @@
 # NEXT RUN HANDOFF
 
+## 🔴 LATEST USER OVERRIDE — 2026-09-24 04:19 KST
+- **Do not collect any new material for now.** No new raw leads or retained candidates until the existing discovery corpus is fully normalized.
+- Current job is only to inventory and modify/merge **all existing** discovery TXT/Markdown/legacy candidates/bundles.
+- Use existing Jev results where present and convert candidates into program-ready canonical bundles.
+- Canonical bundle target: `candidate.md` + `content.txt` + `comments.txt` + `manifest.json` + `media/` when actual source media can be acquired.
+- `content.txt` must carry `[TITLE]`, `[BODY_SEQUENCE]`, `[CUT_PLAN]`, `[COMMENTS_TO_USE]`, `[PROGRAM_ASSEMBLY_ORDER]`, `[SOURCE_STATUS]` so the current program can immediately understand title/body/image/comment placement and natural cut points.
+- Search/web access is allowed only to reverify or fill evidence for an **already-existing** candidate. Never use it to discover a new candidate during this phase.
+- Do not infer missing body/comments/media. Record exact blockers.
+- Scope remains `01_DISCOVERY`; A1/P1/publishing remain forbidden and `publicationAllowed=false`.
+
+## 2026-09-24 04:19 KST — Existing-corpus normalization run 357
+- New discovery: **0** by user override.
+- Started canonical conversion from the existing Jev corpus with `260916_C0_A0_P0_25살연애불가능할까.md` / Blind `cn6hnlfx`.
+- Jev result consumed: `jev-1.13.0`, final=`hold`, overall=0.95, needs_research=0.94, asset_importance=1.98, threads_fit=0.22, needs_improvement=0.95, improvement_area=`safety`.
+- Created `data/candidate_bundles/blind-cn6hnlfx/` with `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
+- Exact source URL/provenance remains C1 from prior verification, but current retrieval could not reopen Blind. Therefore exact body paragraphs, comment text, media existence/order/bytes and meaningful body-based cut points were **not invented**; blockers are explicit in the bundle.
+- This bundle is PARTIAL, not complete: title/program skeleton is ready; body/comments/media/CUT_PLAN require exact-source re-verification before being usable.
+- Existing-corpus total inventory is still being established from the repository tree; do not claim completion counts until inventory is deterministic. Current run modified/integrated 1 existing candidate and created 1 canonical bundle.
+- Next run: continue existing-file inventory and convert the next Jev-backed legacy candidate. Do not collect new material.
+
 ## 2026-09-24 03:16 KST — Discovery-only run 356
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads across TheQoo/DCInside/FMKorea/Ruliweb-oriented searches; retained 2 new C1 candidates after duplicate, weak-story, inaccessible and safety filtering. A safety-sensitive lead briefly recorded during triage was immediately removed and is not retained.
 - New retained titles: `중소기업 다니면서 이해 안되는점 있는 후기`, `회사 너무 스트레스 받는 후기`.
 - Exact individual public URLs were verified through public search index, but page bodies/comments were not directly read this run; both records explicitly say `본문 미확인` and do not invent details or metrics.
 - All retained candidates remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; prioritize body verification of C1 records where public pages are accessible; do not advance stages.
-
-## 2026-09-24 02:17 KST — Discovery-only run 355
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 8 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/inaccessible/weak-story results were filtered rather than padded.
-- Top additions: `싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기`, `핫게 보고 내 친구 생각난 후기`, `30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기`, `돈 없는 친구가 피곤한 후기`, `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`.
-- Exact public individual URLs and publicly visible body text were verified for retained items; comments were not intentionally read and only actually observed metrics were stored.
-- NAVER Cafe and Instiz were robots/access restricted and were not bypassed; public search/index and publicly accessible individual pages only.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
-
-## 2026-09-24 01:15 KST — Discovery-only run 354
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads and retained 7 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-only/weak-story results were filtered rather than padded.
-- Top additions: `(초스압) 망한 피씨방 인수한 썰`, `친구 결혼하면 원래 멀어지는건가 싶은 후기`, `소리지르는 상사`, `10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기`, `(장문) 야간 편돌이 담배 도둑맞은 썰`.
-- Exact public individual URLs and publicly visible body text were verified for retained items; comments were not intentionally read and only actually observed metrics were stored.
-- Anonymous/pseudonymous personal claims remain attributed/unverified; no rights status was inferred. Sensitive/self-harm and sexualized leads were filtered out rather than retained.
-- Public search/index and publicly accessible individual pages only; no access-control or anti-bot bypass.
-- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
-- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 356 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 356.
+- During the current override, sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 356. Discovery did not enter `03_PRODUCTION`.
+- Existing production/test state remains untouched. This automation must not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
