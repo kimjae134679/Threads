@@ -1,0 +1,8 @@
+# comments
+
+status: 댓글 미확인/접근 불가
+
+Legacy candidate에는 2026-09-19 05:24 KST에 공개 댓글 일부를 확인했다는 사실만 남아 있다. 실제 댓글 문구가 현재 repository evidence에 보존되어 있지 않고 현재 원문도 재열람할 수 없으므로 댓글을 추정·복원하지 않는다.
+
+use_after: PENDING — 실제 댓글과 본문 순서를 재확인한 뒤 지정
+purpose: PENDING
