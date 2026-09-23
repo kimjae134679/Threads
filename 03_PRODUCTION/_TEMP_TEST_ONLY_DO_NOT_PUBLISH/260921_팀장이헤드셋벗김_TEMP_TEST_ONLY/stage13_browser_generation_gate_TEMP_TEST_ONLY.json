@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "candidateKey": "260916_팀장이헤드셋벗김",
+  "stage": 13,
+  "status": "BLOCKED_PREREQUISITE",
+  "verifiedInputs": [
+    "stage9 exact source plus four hashed source images",
+    "stage10 no-crop UI-chrome review",
+    "stage11 four natural whole-image scene boundaries",
+    "stage12 verified-title-only suggestions"
+  ],
+  "missing": [
+    "CONTENT_LAYOUT_LOCK-conforming generated material",
+    "browser generation/download artifact",
+    "reconnect/restore digest evidence",
+    "human-approved TEMP version"
+  ],
+  "unblockWhen": "Generate one conforming TEMP-only material from already verified source bytes, download it into this TEMP-only descendant, record digest/provenance, then test reconnect/restore. Human approval is still required before stage 14/15.",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "livePublishMetrics": "DISABLED"
+}

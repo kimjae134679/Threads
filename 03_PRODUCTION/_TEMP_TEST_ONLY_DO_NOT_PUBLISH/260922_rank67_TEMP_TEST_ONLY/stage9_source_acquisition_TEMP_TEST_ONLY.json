@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "candidateKey": "260916_165남친키때문에결혼반대",
+  "stage": 9,
+  "temporaryTestOnly": true,
+  "publicationAllowed": false,
+  "prototypeMayDifferFromProduction": true,
+  "exactSource": "https://theqoo.net/square/3182870671",
+  "verifiedPublicFacts": {
+    "title": "165㎝ 남친 본 부모님 \"결혼 반대\"…예비시댁도 \"키 큰 사돈네 불편\"",
+    "postedAt": "2024-04-14 15:33",
+    "viewsObserved": 60314,
+    "commentsObserved": 327,
+    "sourceBodyPubliclyReadable": true
+  },
+  "acquiredAssets": [{
+    "order": 1,
+    "url": "https://img-cdn.theqoo.net/Quzyme.jpg",
+    "localTempFile": "source_01.jpg",
+    "sha256": "b0ff9dbb601241eaec8647e4a71f0c13ea85b17259fac0ebb5f26c1a5981307d",
+    "repositoryPersisted": false
+  }],
+  "state": "TEMP_STAGE9_BYTES_ACQUIRED_LOCALLY_REPOSITORY_PERSISTENCE_PENDING",
+  "unblockWhen": "Persist the exact acquired binary into the TEMP_TEST_ONLY workspace in repository-capable tooling, preserving URL+SHA-256 provenance.",
+  "rightsClearance": "NOT_INFERRED",
+  "approvedVersion": null,
+  "executionEligible": false,
+  "next": "Persist exact binary first; only then stage 10 UI-chrome/crop visual review. No publishing."
+}

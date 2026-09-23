@@ -1,0 +1,21 @@
+# 파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기
+
+- source: TheQoo
+- sourceUrl: https://theqoo.net/review/4327958733
+- exactObservedTitle: `파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기`
+- observedAt: 2026-09-22 23:15 KST
+- acquisitionStatus: C1 — exact individual public URL verified via public indexed page
+- provenance: Public indexed TheQoo review page exposed readable body text. Personal-experience and dispute claims are attributed to the anonymous poster and remain unverified.
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotPresent: false observed in retained text
+- observedMetrics: none retained; no metric was relied on for selection
+- whyGoodMaterial: 결혼 직전 상대의 전 연인 관련 금전 소송을 알게 되어 파혼했는데 가족이 계속 재결합을 압박하는 이야기라 결혼 전 고지 의무와 부모 개입을 두고 즉시 의견이 갈릴 수 있다.
+- assetStatus: A0
+- publicationStatus: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
+- rightsStatus: not established
+- OCR: not performed
+- moderation: not performed

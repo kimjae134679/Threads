@@ -1,0 +1,22 @@
+# 친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기
+
+- source: TheQoo 스퀘어 (게시물 제목상 네이트판 글 후기 재게시)
+- source_url: https://theqoo.net/square/984182907
+- exact_observed_title: `친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기`
+- observed_at: 2026-09-23 00:14 KST
+- provenance_level: C1
+- acquisition: exact public TheQoo individual repost URL verified and public body read; original Nate Pann URL/provenance was not verified and is not asserted
+- body_read: true
+- comments_read: false
+- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함
+- observed_metrics: 조회 수 9222 (공개 페이지에 관찰된 값만 기록)
+- why_good: 친구 부모에게 신혼집 인테리어를 맡긴 뒤 지인 가격·인건비를 둘러싸고 갈등이 커지고 단체채팅방까지 번지는 구조다. 지인 거래에서 어디까지 할인·호의를 기대할 수 있는지 의견이 강하게 갈릴 소재다.
+- claim_status: 재게시된 개인 경험 주장으로 미검증
+- rights_status: 미확인
+- OCR: false
+- moderation_status: 미판정
+- asset_status: A0
+- publication_status: P0
+- A1: false
+- P1: false
+- publicationAllowed: false

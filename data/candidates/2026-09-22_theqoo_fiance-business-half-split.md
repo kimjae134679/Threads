@@ -1,0 +1,21 @@
+# [네이트판] 후기 씁니다/사업하는 예비신랑이 반반을 원하네요
+
+- source: TheQoo (reposted Nate Pann material)
+- sourceUrl: https://theqoo.net/square/3155191489
+- exactObservedTitle: `[네이트판] 후기 씁니다/사업하는 예비신랑이 반반을 원하네요`
+- observedAt: 2026-09-22 23:15 KST
+- acquisitionStatus: C1 — exact individual public URL verified; this is a public repost page, not verified original Nate Pann provenance
+- provenance: Public TheQoo page exposes readable reposted body text. The post describes an anonymous personal account; underlying claims and original-source identity are unverified.
+- bodyRead: true
+- commentsRead: false
+- imageOrScreenshotPresent: true (page indicates Files; images were not downloaded or inspected)
+- observedMetrics: 65,305 views; 551 comments as displayed on the public page
+- whyGoodMaterial: 예비신랑의 사업을 무급으로 장기간 도왔는데 결혼 비용은 반반을 요구받는 구조라 기여·공정성·결혼 경제관을 두고 강한 논쟁이 가능한 소재다.
+- assetStatus: A0
+- publicationStatus: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
+- rightsStatus: not established
+- OCR: not performed
+- moderation: not performed

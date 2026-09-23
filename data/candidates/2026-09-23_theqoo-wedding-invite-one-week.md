@@ -1,0 +1,22 @@
+# 결혼 초대받았는데 서운한 후기
+
+- source: TheQoo 후기
+- source_url: https://theqoo.net/review/619025927
+- exact_observed_title: `결혼 초대받았는데 서운한 후기`
+- observed_at: 2026-09-23 00:14 KST
+- provenance_level: C1
+- acquisition: public individual page discovered/read through public web index; exact individual public URL verified
+- body_read: true
+- comments_read: false
+- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함
+- observed_metrics: 조회 수 5673 (공개 페이지에 관찰된 값만 기록)
+- why_good: 친한 친구가 결혼 일주일 전에 전화와 모바일 청첩장으로만 초대한 데서 서운함이 생기고, 직접 밥을 사며 청첩장을 준 친구와 축의금을 다르게 해야 하는지까지 이어진다. 청첩장 예절·친밀도·축의금 기준이 한꺼번에 걸린 논쟁형 소재다.
+- claim_status: 작성자의 개인 경험 주장으로 미검증
+- rights_status: 미확인
+- OCR: false
+- moderation_status: 미판정
+- asset_status: A0
+- publication_status: P0
+- A1: false
+- P1: false
+- publicationAllowed: false
