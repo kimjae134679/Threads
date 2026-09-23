@@ -1,5 +1,13 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-24 03:16 KST — Discovery-only run 356
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads across TheQoo/DCInside/FMKorea/Ruliweb-oriented searches; retained 2 new C1 candidates after duplicate, weak-story, inaccessible and safety filtering. A safety-sensitive lead briefly recorded during triage was immediately removed and is not retained.
+- New retained titles: `중소기업 다니면서 이해 안되는점 있는 후기`, `회사 너무 스트레스 받는 후기`.
+- Exact individual public URLs were verified through public search index, but page bodies/comments were not directly read this run; both records explicitly say `본문 미확인` and do not invent details or metrics.
+- All retained candidates remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; prioritize body verification of C1 records where public pages are accessible; do not advance stages.
+
 ## 2026-09-24 02:17 KST — Discovery-only run 355
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 8 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/inaccessible/weak-story results were filtered rather than padded.
@@ -20,9 +28,9 @@
 - Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
 
 ## Sequential candidate automation
-- Discovery run 355 added candidates, so any separate sequential lane must rebuild its queue before continuing.
-- No sequential candidate was processed by discovery run 355.
+- Discovery run 356 added candidates, so any separate sequential lane must rebuild its queue before continuing.
+- No sequential candidate was processed by discovery run 356.
 
 ## TEMP TEST ONLY conversion lane
-- Prior TEMP TEST ONLY state unchanged by discovery run 355. Discovery did not enter `03_PRODUCTION`.
+- Prior TEMP TEST ONLY state unchanged by discovery run 356. Discovery did not enter `03_PRODUCTION`.
 - REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
