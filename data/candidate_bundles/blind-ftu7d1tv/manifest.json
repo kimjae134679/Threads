@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "blind-ftu7d1tv",
+  "source": "Blind",
+  "sourceUrl": "https://www.teamblind.com/kr/post/27%EC%82%B4-%EC%97%AC%EC%9E%90-%EC%98%A4%EB%8A%98-%ED%8C%8C%ED%98%BC%ED%96%88%EC%96%B4%EC%9A%94-%EB%88%88%EB%AC%BC%EB%82%98%EB%8A%94%EB%8D%B0-%EC%9E%98%ED%95%9C%EA%B1%B0-%EB%A7%9E%EC%A3%A0-ftu7d1tv",
+  "observedTitle": "27살 여자 오늘 파혼했어요 눈물나는데 잘한거 맞죠?",
+  "observedAt": "2026-09-24T05:15:00+09:00",
+  "stage": "C1",
+  "assetStage": "A0",
+  "publicationStage": "P0",
+  "publicationAllowed": false,
+  "body": {"verified": true, "storage": "verified-ordered-summary"},
+  "comments": {"verified": "partial", "selectedCount": 3, "observedTotal": 55},
+  "media": {"verified": true, "bodyContentMediaObserved": false, "files": []},
+  "observedMetrics": {"views": 5821, "comments": 55, "likes": 14, "volatile": true},
+  "jev": {"path": "data/jev_results/260916_C0_A0_P0_27살여자오늘파혼.jev.json", "finalStatus": "hold", "contentType": "empathy", "assetImportance": 1.91, "threadsFit": 0.16},
+  "programReady": {"cutPlan": true, "commentsToUse": true, "assemblyOrder": true},
+  "provenance": "Exact public individual URL and body re-verified on 2026-09-24 KST.",
+  "blockers": ["All 55 comments were not individually verified.", "Third-party full body is not duplicated; verified ordered summary is stored instead." ]
+}
