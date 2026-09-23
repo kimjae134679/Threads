@@ -1,0 +1,47 @@
+[TITLE]
+난 아부지 회사 썰 듣는거 좋아함
+
+[BODY_SEQUENCE]
+BODY 01
+아버지가 예전에 다니던 회사의 상사와 관련된 임플란트 일화를 포함해 웃긴 회사 이야기가 많다는 도입.
+
+BODY 02
+그 상사가 점심에 임플란트를 7개 하고도 회사로 복귀함.
+
+BODY 03
+사장님이 괜찮냐고 묻자 괜찮다며 술을 마시자고 했고, 술을 마시면 안 되지 않느냐는 만류에도 문제없다는 식으로 술을 마시러 감.
+
+BODY 04
+결국 술을 마시던 중 입이 안 다물어진다고 할 정도로 입술이 심하게 붓고 실려 감.
+
+[IMAGE:001 BLOCKED]
+USE_AT: BODY 04 직후
+SOURCE_POSITION: 본문 마지막, `개불은 이렇게 생겼다` 설명 부근
+STATUS: 공개 페이지에서 외부 이미지 노출은 확인했으나 정확한 원본 bytes/권리/자산 식별을 확정하지 못해 media 미저장
+
+[CUT_PLAN]
+CUT 1: BODY 01 직후 — 회사 썰 도입 종료
+CUT 2: BODY 02 직후 — 임플란트 7개 후 복귀라는 첫 황당 포인트
+CUT 3: BODY 03 직후 — 만류를 무시하고 술을 마시러 가는 행동까지 제시
+CUT 4: BODY 04 직후 — 결과/펀치라인 종료
+CUT 5: IMAGE:001은 정확한 자산 확보 시 BODY 04 직후 보조 비유 이미지로 배치 가능
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+현재 공개 페이지에는 댓글(3) 수치만 확인되며 실제 댓글 문구는 자동 추출에 노출되지 않음. 댓글 내용을 추정하지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → BODY 02 → BODY 03 → BODY 04
+IMAGE:001 → 정확한 자산 확보/검증 완료 시에만 BODY 04 뒤에 사용
+SKIP: 댓글 — 실제 문구 미확인
+
+[SOURCE_STATUS]
+sourceUrl: https://www.inven.co.kr/board/lostark/6271/3290621
+bodyConfirmed: true
+commentsConfirmed: false
+imageConfirmed: partial — 본문 끝 이미지 노출 확인, exact asset bytes/권리 미확정
+candidateStage: C1
+assetStage: A0
+publicationStage: P0
+publicationAllowed: false
+blocker: 실제 댓글 문구 미노출; IMAGE:001 exact source asset 미확정
