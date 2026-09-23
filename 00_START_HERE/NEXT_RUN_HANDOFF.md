@@ -10,6 +10,18 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing remain forbidden and `publicationAllowed=false`.
 
+## 2026-09-24 05:15 KST — Existing-corpus normalization run
+- New discovery: **0**.
+- Converted existing Jev-backed candidate `260916_C0_A0_P0_27살여자오늘파혼.md` into `data/candidate_bundles/blind-ftu7d1tv/`.
+- Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`; no `media/` asset because no body-content image was observed on the public post.
+- Exact Blind URL and body were publicly reverified. Current observed public values: views 5,821 / comments 55 / likes 14 (volatile).
+- Public body structure was verified and converted into ordered BODY 01..08 summaries. Natural CUT_PLAN and final PROGRAM_ASSEMBLY_ORDER are present.
+- Three actually visible public comments were selected and mapped after BODY 08; author/company/date/like UI metadata omitted.
+- Jev linked: final=`hold`, content_type=`empathy`, asset_importance=1.91, threads_fit=0.16.
+- `publicationAllowed=false`; C1/A0/P0 retained. No scoring/production/review/publishing work performed.
+- Blocker: all 55 comments were not individually verified. Third-party full body is not duplicated; verified ordered summary is canonical.
+- Existing-corpus deterministic total is still being established. Cumulative canonical bundles currently present: at least 2 (`blind-cn6hnlfx`, `blind-ftu7d1tv`). Continue with next Jev-backed existing candidate only.
+
 ## 2026-09-24 04:19 KST — Existing-corpus normalization run 357
 - New discovery: **0** by user override.
 - Started canonical conversion from the existing Jev corpus with `260916_C0_A0_P0_25살연애불가능할까.md` / Blind `cn6hnlfx`.
@@ -19,13 +31,6 @@
 - This bundle is PARTIAL, not complete: title/program skeleton is ready; body/comments/media/CUT_PLAN require exact-source re-verification before being usable.
 - Existing-corpus total inventory is still being established from the repository tree; do not claim completion counts until inventory is deterministic. Current run modified/integrated 1 existing candidate and created 1 canonical bundle.
 - Next run: continue existing-file inventory and convert the next Jev-backed legacy candidate. Do not collect new material.
-
-## 2026-09-24 03:16 KST — Discovery-only run 356
-- User scope strictly `01_DISCOVERY`; no downstream stage work.
-- Reviewed 40+ Korean-community-focused public search/index leads across TheQoo/DCInside/FMKorea/Ruliweb-oriented searches; retained 2 new C1 candidates after duplicate, weak-story, inaccessible and safety filtering. A safety-sensitive lead briefly recorded during triage was immediately removed and is not retained.
-- New retained titles: `중소기업 다니면서 이해 안되는점 있는 후기`, `회사 너무 스트레스 받는 후기`.
-- Exact individual public URLs were verified through public search index, but page bodies/comments were not directly read this run; both records explicitly say `본문 미확인` and do not invent details or metrics.
-- All retained candidates remain A0/P0 with `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
 
 ## Sequential candidate automation
 - During the current override, sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
