@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "inven-2727679",
+  "source": "Inven 오픈이슈갤러리",
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2727679?iskin=webzine",
+  "observedTitle": "41세 비혼녀, 실제로 많이 듣는 말.",
+  "sourceTimestamp": "2026-09-14 16:40",
+  "reverifiedAt": "2026-09-24 KST",
+  "provenance": "EXACT_PUBLIC_URL_REVERIFIED / IMAGE_CORE_UNACQUIRED",
+  "stage": {"candidate": "C1", "asset": "A0", "publication": "P0"},
+  "publicationAllowed": false,
+  "body": {"verified": "partial", "directText": "매력있으시디."},
+  "comments": {"verified": false, "observedCount": 47},
+  "media": {"observed": true, "acquired": false, "ordered": false, "files": []},
+  "observedMetrics": {"views": 10702, "recommendations": 0, "comments": 47, "volatile": true},
+  "jev": {"model": "jev-1.13.0", "final": "hold", "overall": 0.65, "contentType": "skip", "needsResearch": 0.92, "assetImportance": 1.99, "threadsFit": 0.17, "needsImprovement": 0.95, "improvementArea": "asset"},
+  "cutPlanReady": false,
+  "programAssemblyOrderReady": true,
+  "blockers": [
+    "본문 핵심 이미지의 정확한 URL/bytes/순서/내용 미확인",
+    "페이지의 본문 이미지와 작성자 프로필/서명 이미지의 정확한 분리 필요",
+    "실제 댓글 문구 미확인"
+  ]
+}
