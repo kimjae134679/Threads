@@ -10,6 +10,19 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing remain forbidden and `publicationAllowed=false`.
 
+## 2026-09-24 08:19 KST — Existing-corpus normalization run
+- New discovery: **0**.
+- Converted existing `data/candidates/2026-09-22_blind_L5aQCt8c.md` into `data/candidate_bundles/blind-L5aQCt8c/`.
+- Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
+- Exact Blind source reverified. Current public values: views 19K / likes 31 / comments 151.
+- Verified body normalized into BODY 01..05: boyfriend quits demanding job to study → writer visits frequently believing it is supportive → boyfriend says the meetings defeat the purpose of quitting and gets angry → writer questions whether the meeting frequency is excessive → writer feels hurt because he still takes solo leisure time.
+- `content.txt` includes 5 natural CUT_PLAN entries and final PROGRAM_ASSEMBLY_ORDER.
+- Four actually exposed public comment viewpoints were selected and mapped after BODY 05; company/nickname/date/like UI metadata omitted. All 151 comments were not individually verified.
+- No body-content image/media observed on the public post; no `media/` asset fabricated.
+- `publicationAllowed=false`; C1/A0/P0 maintained. No scoring/production/review/publishing work.
+- Cumulative canonical bundles: at least 5. Full deterministic existing-corpus inventory remains to be established; do not claim remaining count yet.
+- Next: continue another existing candidate only; do not collect new material.
+
 ## 2026-09-24 07:19 KST — Existing-corpus normalization run
 - New discovery: **0**.
 - Converted existing `data/candidates/2026-09-22_inven-dad-company-implant.md` into `data/candidate_bundles/inven-3290621/`.
