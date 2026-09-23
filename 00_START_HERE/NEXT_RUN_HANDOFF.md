@@ -1,5 +1,15 @@
 # NEXT RUN HANDOFF
 
+## 2026-09-24 00:46 KST — Discovery-only run 353
+- User scope strictly `01_DISCOVERY`; no downstream stage work.
+- Reviewed 40+ Korean-community-focused public search/index leads and retained 20 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/weak-story, inaccessible, and sensitive results were filtered rather than padded.
+- Top additions: `황당 소개팅 어플썰`, `결혼 준비가 너무 스트레스라 눈물나는 중기`, `결혼 14년차 결혼 자체를 후회하는 중기`, `돈 빌리는 친구.. 무슨 생각인걸까..?`, `퇴임하는 회사 상사`, `입사한지 한달도안됬는데 상사 행동`.
+- Exact public individual URLs and publicly visible body text were verified for retained items; comments were not intentionally read and only actually observed metrics were stored.
+- Anonymous/pseudonymous personal claims remain attributed/unverified; no rights status was inferred.
+- Clien and Instiz public access were robots-restricted and were not bypassed; public search/index and publicly accessible individual pages only.
+- All remain A0/P0 with A1=false/P1=false and `publicationAllowed=false`. No screenshots, image downloads, OCR, scoring, production, rendering, Chrome E2E, publishing, scheduling, provider implementation, or existing production edits.
+- Next discovery run: continue new Korean-community material discovery and exact-source verification only; do not advance stages.
+
 ## 2026-09-24 00:16 KST — Discovery-only run 352
 - User scope strictly `01_DISCOVERY`; no downstream stage work.
 - Reviewed 40+ Korean-community-focused public search/index leads and retained 8 new C1 candidates with exact individual public URLs; duplicates, already-retained, thin/unsafe/sensitive/image-dependent/weak-story results were filtered rather than padded.
