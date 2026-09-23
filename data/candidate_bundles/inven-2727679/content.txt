@@ -1,0 +1,39 @@
+[TITLE]
+41세 비혼녀, 실제로 많이 듣는 말.
+
+[BODY_SEQUENCE]
+BODY 01
+매력있으시디.
+
+[IMAGE:001 BLOCKED]
+USE_AT: 원문 게시물의 핵심이 이미지형으로 보이지만, 페이지에 섞여 노출되는 작성자 프로필/서명 이미지와 본문 이미지를 이번 실행에서 정확히 분리하지 못함.
+POSITION: 본문 내 정확한 위치 미확인
+SOURCE_URL: https://www.inven.co.kr/board/webzine/2097/2727679?iskin=webzine
+BLOCKER: 본문 이미지 bytes/내용/순서의 정확한 식별 필요. 추정 금지.
+
+[CUT_PLAN]
+CUT 1: TITLE 뒤 BODY 01 진입.
+CUT BLOCKED: 핵심 이미지 내용과 위치가 미확인이라 이미지 기반 장면/반전 절단점을 만들지 않음.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+현재 공개 텍스트 추출에서는 댓글 47이라는 개수만 확인되며 실제 댓글 문구는 확인되지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01
+BLOCKED → IMAGE:001: 정확한 본문 이미지 확보·식별 후 위치 확정 필요
+SKIP → 댓글: 실제 댓글 문구 미확인
+
+[SOURCE_STATUS]
+source_url: https://www.inven.co.kr/board/webzine/2097/2727679?iskin=webzine
+source: Inven 오픈이슈갤러리
+body_verified: PARTIAL (직접 노출 텍스트 `매력있으시디.`만 확인)
+comments_verified: NO
+media_verified: EXISTS/CORE_UNRESOLVED
+observed_at: 2026-09-24 KST
+observed_metrics: views=10702, recommendations=0, comments=47 (volatile)
+C_stage: C1
+A_stage: A0
+P_stage: P0
+publicationAllowed=false
+blocker: 핵심 본문 이미지의 정확한 URL/bytes/순서/내용 및 실제 댓글 문구 미확인
