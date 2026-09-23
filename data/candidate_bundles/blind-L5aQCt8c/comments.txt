@@ -1,0 +1,27 @@
+# Verified public comments selected for possible use
+# UI metadata such as company, nickname, date and likes intentionally omitted.
+
+COMMENT 01
+평일 저녁 서너 번과 주말 낮이면 일주일의 절반 이상 만나는 셈이고, 직장을 포기할 정도로 공부에 매진하는 상황이면 집중을 깨지 않는 편이 좋다는 취지.
+use_after: BODY 05
+purpose: 만남 빈도에 대한 작성자와 독자의 관점 차이
+
+COMMENT 02
+하루 전체를 공부에 쓰는 것과 공부 도중 누군가를 만나는 것은 효율 차이가 크고, 혼자 쉬는 시간과 연인을 만나는 시간은 같은 종류의 휴식이 아니라는 취지.
+use_after: COMMENT 01
+purpose: 마지막 서운함에 대한 직접 반론
+
+COMMENT 03
+상대를 돕고 싶다면 공부를 도우면서 관계도 유지할 합의점을 찾고, 합의가 안 되면 서로 맞지 않는 문제일 수 있다는 취지.
+use_after: COMMENT 02
+purpose: 균형 잡힌 정리/논쟁 확장
+
+COMMENT 04
+혼자 시간을 보내는 것과 사람을 만나는 것은 다르고, 처음 화낸 것이라면 그동안 상대가 많이 맞춰줬을 가능성이 있다는 취지.
+use_after: COMMENT 03
+purpose: 3년 만의 첫 분노를 재해석하는 반응
+
+STATUS
+- commentsRead: partial
+- 공개 페이지에서 실제 노출된 댓글 일부를 확인해 의미를 보존한 요약으로 정리함.
+- 총 댓글 수 151. 전체 댓글을 검증한 것으로 간주하지 않음.
