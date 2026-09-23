@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "canonicalBundle": true,
+  "bundleStatus": "partial_source_reverify_blocked",
+  "source": "Blind",
+  "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98-%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-25-%EC%97%AC%EC%9D%B8%EB%8D%B0-cn6hnlfx",
+  "observedTitle": "나 불가능할까...? 25 여인데",
+  "provenanceStage": "C1",
+  "legacyCandidate": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
+  "jevResult": "data/jev_results/260916_C0_A0_P0_25살연애불가능할까.jev.json",
+  "priorObservedAt": "2026-09-19T05:24:00+09:00",
+  "body": {
+    "previouslyObserved": true,
+    "currentExactTextAvailable": false,
+    "status": "reverification_blocked"
+  },
+  "comments": {
+    "previouslyObservedPartially": true,
+    "currentExactTextAvailable": false,
+    "status": "reverification_blocked"
+  },
+  "media": {
+    "confirmed": false,
+    "acquired": false,
+    "items": [],
+    "status": "unknown_reverification_required"
+  },
+  "cutPlan": "blocked_until_exact_body_available",
+  "programAssemblyOrder": "partial_title_only",
+  "jev": {
+    "model": "jev-1.13.0",
+    "finalStatus": "hold",
+    "overallScore": 0.95,
+    "needsResearch": 0.94,
+    "assetImportance": 1.98,
+    "threadsFit": 0.22,
+    "needsImprovement": 0.95,
+    "improvementArea": "safety"
+  },
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false,
+  "blockers": [
+    "Blind source page unavailable to current retrieval path",
+    "exact body paragraphs not preserved in current repository evidence",
+    "exact comment text not preserved in current repository evidence",
+    "body media existence/order/bytes not verified"
+  ]
+}
