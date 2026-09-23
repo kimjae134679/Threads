@@ -1,0 +1,21 @@
+# Verified comments selected for program use
+
+COMMENT 01
+text: 27살이면 한창인데 파혼 잘하는거
+use_after: BODY 08
+purpose: 결정 지지 / 본문 종료 직후 첫 반응
+verified: 2026-09-24 KST public page
+
+COMMENT 02
+text: 백번 천번 생각해도 잘했음... 잠깐 힘들뿐이다
+use_after: COMMENT 01
+purpose: 공감·안심 반응
+verified: 2026-09-24 KST public page
+
+COMMENT 03
+text: 4년 시간낭비했네
+use_after: COMMENT 02
+purpose: 짧고 강한 후속 반응
+verified: 2026-09-24 KST public page
+
+NOTE: 공개 페이지에서 실제 확인한 댓글만 기록. 닉네임/회사/작성시각/좋아요/UI 메타 제외. 전체 55개 댓글을 모두 읽었다고 주장하지 않음.
