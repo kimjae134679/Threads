@@ -10,6 +10,19 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing remain forbidden and `publicationAllowed=false`.
 
+## 2026-09-24 07:19 KST — Existing-corpus normalization run
+- New discovery: **0**.
+- Converted existing `data/candidates/2026-09-22_inven-dad-company-implant.md` into `data/candidate_bundles/inven-3290621/`.
+- Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
+- Exact Inven source reverified. Current volatile values: views 828 / recommendations 0 / comments 3.
+- Verified story flow was normalized into BODY 01..04 summaries: company-story intro → seven implants at lunch and return to work → ignores warning and goes drinking → lips swell badly and is taken away.
+- Public page exposes an image near the end with the text `개불은 이렇게 생겼다`; exact source asset bytes/rights/body-asset identity were not sufficiently established, so no `media/` file was fabricated. IMAGE:001 remains BLOCKED after BODY 04.
+- Actual comment text was not exposed by current extraction; comments count 3 only. No comment text invented.
+- `content.txt` includes TITLE, BODY_SEQUENCE, 5 CUT_PLAN notes, COMMENTS blocker, PROGRAM_ASSEMBLY_ORDER, SOURCE_STATUS.
+- `publicationAllowed=false`; C1/A0/P0 maintained. No scoring/production/review/publishing work.
+- Cumulative canonical bundles: at least 4. Full deterministic existing-corpus inventory remains to be established; do not claim remaining count yet.
+- Next: continue another existing candidate only; do not collect new material.
+
 ## 2026-09-24 06:15 KST — Existing-corpus normalization run
 - New discovery: **0**.
 - Converted existing Jev-backed `260916_C0_A0_P0_41세비혼녀.md` into `data/candidate_bundles/inven-2727679/`.
