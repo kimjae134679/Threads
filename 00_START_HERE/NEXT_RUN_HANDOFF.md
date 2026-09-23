@@ -10,6 +10,20 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing remain forbidden and `publicationAllowed=false`.
 
+## 2026-09-24 06:15 KST — Existing-corpus normalization run
+- New discovery: **0**.
+- Converted existing Jev-backed `260916_C0_A0_P0_41세비혼녀.md` into `data/candidate_bundles/inven-2727679/`.
+- Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
+- Exact Inven source reverified. Current volatile values: views 10,702 / recommendations 0 / comments 47.
+- Direct readable post text: `매력있으시디.` only. Core appears image-driven.
+- Page extraction exposes many author/profile/signature images after the post, so none were falsely treated as body media. No `media/` asset created until exact body image URL/bytes/order/content can be distinguished.
+- Actual comment text was not exposed in current extraction; no comment text invented.
+- `content.txt` includes TITLE, BODY 01, IMAGE blocker, conservative CUT_PLAN, COMMENTS blocker, PROGRAM_ASSEMBLY_ORDER, SOURCE_STATUS.
+- Jev linked: final=`hold`, overall=0.65, content_type=`skip`, asset_importance=1.99, threads_fit=0.17, improvement_area=`asset`.
+- `publicationAllowed=false`; C1/A0/P0 maintained. No scoring/production/review/publishing work.
+- Cumulative canonical bundles: at least 3. Full deterministic existing-corpus inventory remains to be established; do not claim remaining count yet.
+- Next: continue the next Jev-backed existing candidate only. Do not collect new material.
+
 ## 2026-09-24 05:15 KST — Existing-corpus normalization run
 - New discovery: **0**.
 - Converted existing Jev-backed candidate `260916_C0_A0_P0_27살여자오늘파혼.md` into `data/candidate_bundles/blind-ftu7d1tv/`.
