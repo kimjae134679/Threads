@@ -1,0 +1,29 @@
+{
+  "bundleId": "blind-L5aQCt8c",
+  "source": "Blind",
+  "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%ED%99%94%EB%82%B4%EB%8A%94%EA%B1%B0-%EC%B2%98%EC%9D%8C-%EB%B4%84-%E3%85%A0-L5aQCt8c",
+  "exactObservedTitle": "남자친구 화내는거 처음 봄 ㅠ",
+  "originalObservedAt": "2026-09-22 06:19 KST",
+  "reverifiedAt": "2026-09-24 08:19 KST",
+  "stage": "C1",
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false,
+  "bodyRead": true,
+  "commentsRead": "partial",
+  "mediaObserved": false,
+  "mediaAcquired": false,
+  "observedMetrics": {
+    "views": "19K",
+    "likes": 31,
+    "comments": 151
+  },
+  "provenance": "Blind public individual post; author narrative, not independently fact-checked",
+  "acquisition": "Exact public post/body and currently exposed public comments reverified",
+  "bodySections": 5,
+  "cutPlanEntries": 5,
+  "selectedComments": 4,
+  "programAssemblyOrder": ["TITLE", "BODY 01", "BODY 02", "BODY 03", "BODY 04", "BODY 05", "COMMENT 01", "COMMENT 02", "COMMENT 03", "COMMENT 04"],
+  "media": [],
+  "blockers": ["Only currently exposed public comments were verified; all 151 comments were not individually reviewed"]
+}
