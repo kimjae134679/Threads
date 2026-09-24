@@ -10,17 +10,16 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 13:14 KST — Existing-corpus normalization
+## 2026-09-24 14:14 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo-convenience-store-customer-stories_C1.md` into `data/candidate_bundles/theqoo-425048627/`.
+- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo-recruiting-interviewer-blame_C1.md` into `data/candidate_bundles/theqoo-3240588755/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Existing C1 record confirms exact public URL and that body was read on 2026-09-23; it preserves a summary and legacy metrics (views 6,430 / comments 7), but not full body wording.
-- Current source re-open on 2026-09-24 returned HTTP 403. Therefore body wording, episode boundaries/CUT_PLAN, and comments were not reconstructed from the summary.
-- Legacy candidate says commentsRead=false and no image/screenshot dependency observed. No media file was fabricated.
-- PROGRAM_ASSEMBLY_ORDER explicitly blocks body/comments/cuts that are not evidenced.
+- Exact source reverified. Body is readable and was normalized into BODY 01–07, CUT_PLAN 5, and PROGRAM_ASSEMBLY_ORDER.
+- Current accessible source shows views 10,179 / comments 22. Individual comment text is not exposed, so comments remain blocked and none were invented.
+- No body-content media observed; site/share/UI images excluded.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **10**.
-- Full deterministic legacy/raw candidate total is still not established; do not claim remaining count yet.
+- Cumulative canonical bundles now: **11**.
+- Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
 ## Prior normalized bundles
@@ -34,6 +33,7 @@
 - `inven-2727900` — 여친이 삐졌을때 하지말아야하는 행동; C1/PARTIAL, body image observed but exact asset/provenance blocked, comments text blocked.
 - `inven-2424028` — 일본 유학 및 결혼 썰; C1/PARTIAL, body verified, IMAGE:001 direct asset resolved, IMAGE:002 fetch blocked, comments text blocked.
 - `theqoo-425048627` — 편의점 알바 진상 후기; C1/PARTIAL, legacy body-read evidence but full wording not preserved; current source HTTP 403; comments blocked.
+- `theqoo-3240588755` — 채용 관련 황당 후기; C1/PARTIAL, body verified and sequenced; comments count 22 visible but wording blocked; no body media observed.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
