@@ -1,0 +1,40 @@
+[TITLE]
+난 아부지 회사 썰 듣는거 좋아함
+
+[BODY_SEQUENCE]
+BODY 01: 예전에 다니시던 회사 상사 임플란트 썰이랑 웃긴 이야기가 많다고 도입한다.
+BODY 02: 그 상사가 당일 점심에 임플란트를 7개 하고도 회사로 복귀했다.
+BODY 03: 사장님이 괜찮냐고 묻자 괜찮다며 술을 마시러 가자고 했다.
+BODY 04: 술을 마시면 안 되지 않느냐는 만류에도 `안 뒤진다`며 술을 마시러 갔다.
+BODY 05: 결국 술을 마시다가 입이 다물어지지 않을 정도로 입술이 퉁퉁 부어 실려 갔다.
+[IMAGE:001 BLOCKED]
+USE_AT: BODY 05 직후
+POSITION: 본문 끝
+SOURCE_URL: 원문 본문에 `개불은 이렇게 생겼다` 설명과 함께 삽입된 외부 이미지가 표시됨
+BLOCKER: 이미지 존재와 위치는 확인했으나 이번 실행에서 원본 bytes를 확보하지 않음. UI/프로필 이미지로 대체 금지.
+
+[CUT_PLAN]
+CUT 1: BODY 01 도입 끝
+CUT 2: BODY 02 `임플란트 7개 후 회사 복귀` 공개 직후
+CUT 3: BODY 03 술 제안 직후
+CUT 4: BODY 04 만류를 무시하는 대목 직후
+CUT 5: BODY 05 결말 직후 / IMAGE:001 직전
+CUT 6: IMAGE:001 직후
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+표시 댓글 수 3은 확인했으나 개별 댓글 문구를 읽지 못했으므로 채워 넣지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → BODY 02 → BODY 03 → BODY 04 → BODY 05 → IMAGE:001
+SKIP: 댓글 — 개별 댓글 본문 미확인
+SKIP: 프로필/레벨/광고/게시판 UI 이미지 — 본문 콘텐츠 아님
+
+[SOURCE_STATUS]
+source URL: https://www.inven.co.kr/board/lostark/6271/3290621
+본문 확인 여부: 확인
+댓글 확인 여부: 개별 문구 미확인/접근 불가
+이미지 확인/확보 여부: 본문 이미지 1개 존재·위치 확인 / bytes 미확보
+stage: C1
+blocker: 댓글 문구 미노출, IMAGE:001 bytes 미확보
+publicationAllowed=false
