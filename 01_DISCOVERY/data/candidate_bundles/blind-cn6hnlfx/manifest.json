@@ -1,0 +1,28 @@
+{
+  "id": "blind-cn6hnlfx",
+  "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98-%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-25-%EC%97%AC%EC%9D%B8%EB%8D%B0-cn6hnlfx",
+  "observedTitle": "나 불가능할까...? 25 여인데",
+  "observedAt": "2026-09-25T00:16:00+09:00",
+  "stage": "C1",
+  "assetStage": "A0",
+  "publicationStage": "P0",
+  "publicationAllowed": false,
+  "provenance": {
+    "legacyCandidate": "data/candidates/260916_C0_A0_P0_25살연애불가능할까.md",
+    "jevBatch": "data/candidate_batches/candidates_0001-0100.md#0001",
+    "acquisition": "EXACT_PUBLIC_URL_VERIFIED_NO_ACCESS_CONTROL_BYPASS"
+  },
+  "body": {"status": "verified_public_page", "sequenceParts": 7},
+  "comments": {"status": "partial_public_read", "pageDisplayedCount": 43, "selectedCount": 6},
+  "media": {"status": "no_body_content_media_observed", "count": 0, "files": []},
+  "observedMetrics": [
+    {"context": "page_main", "views": 243, "comments": 43},
+    {"context": "same_page_recommendation_card", "views": 175, "likes": 1}
+  ],
+  "cutPlanCount": 7,
+  "programAssemblyOrderWritten": true,
+  "blockers": [
+    "전체 댓글 43개 완전 수집 아님",
+    "rights/privacy/defamation/human review 미완료"
+  ]
+}
