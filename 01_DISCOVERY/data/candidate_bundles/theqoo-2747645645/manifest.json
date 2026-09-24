@@ -1,0 +1,22 @@
+{
+  "bundleId": "theqoo-2747645645",
+  "source": "TheQoo 후기",
+  "sourceUrl": "https://theqoo.net/review/2747645645",
+  "observedTitle": "개 한번도 안 키워본 원덬이 친구 강아지 일주일간 돌본 후기",
+  "candidateStage": "C1",
+  "observations": [
+    {"observedAt": "2026-09-23T15:19:00+09:00", "views": 5026},
+    {"observedAt": "2026-09-24", "views": 5026, "comments": 20}
+  ],
+  "body": {"verified": true, "sequenceSegments": 8},
+  "comments": {"countObserved": 20, "individualTextRead": false, "selected": 0, "status": "blocked"},
+  "media": {"bodyMediaObserved": false, "filesAcquired": 0, "status": "none observed in source body"},
+  "cutPlanCount": 8,
+  "programAssemblyOrderWritten": true,
+  "provenance": "TheQoo anonymous personal-experience post; author-attributed claims independently unverified",
+  "acquisition": "existing-candidate-specific public individual page re-verification only",
+  "blockers": ["individual comment text not exposed in current public extraction"],
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false
+}
