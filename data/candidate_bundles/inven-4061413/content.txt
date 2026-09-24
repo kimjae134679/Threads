@@ -1,0 +1,54 @@
+[TITLE]
+일하기 싫어서 푸는 우리 회사 썰
+
+[BODY_SEQUENCE]
+BODY 01
+작성자는 회사에 불륜 관계가 있었다고 이야기를 시작한다. 남성 직원은 과거 사내연애와 다른 직원과의 썸 이력이 있었고, 여성 직원은 본사에서 이동해 온 뒤 결혼해 아이도 낳은 상태였다고 설명한다.
+
+BODY 02
+둘 다 업무가 적어 같이 일을 맡겼는데 가까워졌고, 사무실에서 공개적으로 다투거나 외박·회식 중 사라지는 등 주변에서도 관계를 의심할 행동이 반복됐다고 한다. 당사자들은 관계를 부인했다고 적었다.
+
+BODY 03
+작성자는 두 직원의 업무 태도 문제도 열거한다. CCTV를 피하려 파티션 위를 가리거나, 근무 중 말없이 사라졌다 돌아오고, 자신들이 할 일을 회사 비용으로 외주 처리하거나 도메인을 날린 사례 등을 적었다.
+
+BODY 04
+이후 여성 직원은 이혼했고 집을 주는 조건으로 합의가 끝난 것으로 안다고 적었다.
+
+BODY 05
+몇 년 뒤 사장이 해고를 통보했다. 퇴사 과정에서도 컴퓨터 저장공간의 절반가량을 지우고 나갔고, 여성 직원은 필요한 인수인계 문서를 직접 작성하기 싫어해 임원이 옆에서 하나씩 물어보며 대신 작성했다고 한다.
+
+BODY 06
+작성자는 10년 넘게 근무하고도 입사 때와 같은 직급으로 퇴사했다고 덧붙인 뒤, 이 두 사람 외에도 회사에 현재진행형 커플이 하나 더 있다고 끝맺는다.
+
+[CUT_PLAN]
+CUT 1: BODY 01 뒤 — 두 사람의 배경 설명 종료
+CUT 2: BODY 02 뒤 — 관계 의심 행동과 부인까지 한 묶음
+CUT 3: BODY 03 뒤 — 업무상 문제 사례 묶음 종료
+CUT 4: BODY 04 뒤 — 이혼이라는 큰 전환점
+CUT 5: BODY 05 뒤 — 해고와 퇴사 과정 종료
+CUT 6: BODY 06 뒤 — 현재진행형 커플 언급으로 결말
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+공개 페이지에는 댓글(6) 수치는 보이지만 이번 검증에서 실제 댓글 문구는 노출되지 않았다.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → BODY 02 → BODY 03 → BODY 04 → BODY 05 → BODY 06
+SKIP: 댓글 — 실제 댓글 문구 미확인
+SKIP: 이미지 — 본문 콘텐츠 이미지가 확인되지 않음
+
+[SOURCE_STATUS]
+source_url: https://www.inven.co.kr/board/lostark/6271/4061413
+source: Inven / 로스트아크 인벤 자유 게시판
+observed_title: 일하기 싫어서 푸는 우리 회사 썰
+body_verified: true
+comments_verified: false
+media_verified: true (본문 콘텐츠 이미지 없음)
+observed_at_original: 2026-09-16T02:34:00+09:00
+observed_at_recheck: 2026-09-24T10:15:00+09:00
+current_visible_metrics_at_recheck: views=192, recommendations=2, comments=6
+classification: C1
+publicationAllowed=false
+blocker: 실제 댓글 문구가 공개 추출 결과에 노출되지 않음
+
+주의: BODY_SEQUENCE는 검증된 원문 사건 순서를 프로그램용으로 압축 정리한 것이다. 원문에 없는 사실을 추가하지 않는다.
