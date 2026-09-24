@@ -1,0 +1,45 @@
+[TITLE]
+observed_title: 동거와 결혼은 다르구나를 느꼈던 후기
+program_title: 동거와 결혼은 다르구나를 느꼈던 후기
+
+[BODY_SEQUENCE]
+BODY 01: 남자친구와 4년째 동거 중. 남자친구가 결혼 이야기를 꺼냈지만 작성자는 결혼 생각이 별로 없다고 여러 차례 말했다.
+
+BODY 02: 남자친구가 자기 집에는 결혼하고 싶다고 말한 뒤, 이전에는 오지 않던 남자친구 어머니가 반찬을 핑계로 집에 찾아오기 시작했다.
+
+BODY 03: 방문 뒤 냉장고와 살림을 살피고 작성자를 며느리처럼 대하며 지적하는 일이 생겼고, 방문 횟수도 늘었다. 작성자는 재택근무는 남자친구가 하는데 자신에게 살림 문제를 지적한다고 불만을 적었다.
+
+BODY 04: 더 큰 갈등은 종교였다. 작성자는 성당에 다니고, 남자친구는 교회에 다닌다고 말하지만 작성자가 지켜본 기간에는 실제로 교회에 가는 모습을 거의 보지 못했다고 적었다.
+
+BODY 05: 남자친구 어머니는 결혼하면 자신들이 다니는 서울의 특정 교회에 함께 다녀야 한다고 요구했다. 작성자는 그 교회가 과거 세습·방역 관련 논란으로 뉴스에 나온 곳이라고 인식해 강하게 거부감을 보였다.
+
+BODY 06: 작성자는 자신은 아직 결혼 생각이 없고 결혼은 남자친구 혼자 생각한 것이라고 선을 그었다. 남자친구에게도 이전부터 결혼 의사가 낮다고 말해 왔다고 적었다.
+
+BODY 07: 결혼 이야기만 나왔는데도 이런 간섭이 시작됐다면 실제 결혼 뒤에는 어느 정도일지 상상이 안 간다며, 남자친구 자체는 좋지만 결혼은 싫다는 결론으로 이어진다.
+
+[CUT_PLAN]
+CUT 1: BODY 01 뒤 — 4년 동거와 결혼 의사 차이를 제시한 도입 끝.
+CUT 2: BODY 02 뒤 — 이전에는 없던 어머니 방문이 시작되는 갈등 진입점.
+CUT 3: BODY 03 뒤 — 살림 간섭까지 보여준 뒤 종교 갈등으로 넘어가기 직전.
+CUT 4: BODY 05 직전 — 종교 요구의 구체적 대상이 공개되기 직전.
+CUT 5: BODY 05 뒤 — 단순 가족 간섭에서 가치관·종교 문제로 갈등이 확대된 지점.
+CUT 6: BODY 06 뒤 — 작성자가 결혼 의사가 없다고 다시 선을 긋는 지점.
+CUT 7: BODY 07 뒤 — 결혼 전후의 차이를 체감했다는 결론.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+현재 공개 표현에서 댓글 91개라는 수치는 확인했으나 개별 댓글 문구는 노출되지 않아 사용하지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → BODY 02 → BODY 03 → BODY 04 → BODY 05 → BODY 06 → BODY 07
+SKIP: COMMENTS — 실제 댓글 문구 미확인.
+SKIP: MEDIA — 본문 콘텐츠 이미지가 관찰되지 않음.
+
+[SOURCE_STATUS]
+source_url: https://theqoo.net/review/1924192134
+body_verified: true
+comments_verified: false
+media_verified: true (no body-content media observed in accessible representation)
+candidate_stage: C1
+blocker: individual comment wording not exposed in current accessible public representation
+publicationAllowed=false
