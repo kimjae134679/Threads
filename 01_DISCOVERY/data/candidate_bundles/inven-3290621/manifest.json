@@ -1,0 +1,30 @@
+{
+  "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/3290621",
+  "source": "Inven / 로스트아크 인벤 자유 게시판",
+  "observedTitle": "난 아부지 회사 썰 듣는거 좋아함",
+  "candidateStage": "C1",
+  "assetStage": "A0",
+  "publicationStage": "P0",
+  "publicationAllowed": false,
+  "provenance": {
+    "legacyCandidate": "data/candidates/2026-09-22_inven-dad-company-implant.md",
+    "acquisition": "existing candidate public-source verification only; no new lead discovery"
+  },
+  "observations": [
+    {"observedAt": "2026-09-22T11:15:00+09:00", "views": 779, "recommendations": 0, "comments": 3, "source": "legacy candidate"},
+    {"observedAt": "2026-09-24", "views": 828, "recommendations": 0, "comments": 3, "source": "public source recheck"}
+  ],
+  "body": {"verified": true, "sequenceCaptured": true},
+  "comments": {"countObserved": 3, "individualTextRead": false, "selected": 0},
+  "media": {
+    "present": true,
+    "verifiedCount": 1,
+    "bytesAcquired": false,
+    "items": [
+      {"id": "001", "position": "after BODY 05 / end of post", "description": "개불은 이렇게 생겼다 설명 이미지", "status": "BLOCKED", "blocker": "original bytes not acquired in this run"}
+    ]
+  },
+  "cutPlanCount": 6,
+  "programAssemblyOrderWritten": true,
+  "blockers": ["individual comment text not exposed in current extraction", "IMAGE:001 original bytes not acquired"]
+}
