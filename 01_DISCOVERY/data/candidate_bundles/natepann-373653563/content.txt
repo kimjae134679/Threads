@@ -1,0 +1,50 @@
+[TITLE]
+우리집 홈캠을 보고 계셨던 시어머니.
+PROGRAM_TITLE: 우리집 홈캠을 보고 계셨던 시어머니.
+
+[BODY_SEQUENCE]
+BODY 01: 언제부터인지 모르겠는데 우리집 홈캠을 어머님이 보고 계셨다는 사실을 알게 됨. 남편은 처음엔 모른다고 했지만, 어떻게 어머님이 볼 수 있느냐고 묻자 사실대로 말함.
+BODY 02: 시누이가 자기 집 홈캠 아이디와 비밀번호를 어머니에게 알려줬고, 남편에게도 손주를 보고 싶어 하니 알려주라고 제안함. 남편은 아기만 볼 거라 생각해 아내에게 말하지 않고 알려줌.
+BODY 03: 작성자는 안방과 거실까지 볼 수 있었다는 점에 충격과 소름을 느낌. 매일 영상통화와 사진을 보내는데 홈캠까지 공유해야 하는지 문제를 제기함.
+BODY 04: 10월부터 남편이 지역 이동 발령으로 주말에만 집에 오고 평일에는 작성자와 아기만 있었음. 남편 유무와 상관없이 시어머니가 수시로 봤던 것 같아 자기 집에서 감시받은 기분이라고 함.
+BODY 05: 남편은 아무 생각이 없었고 알려준 뒤 잊었다며 거듭 사과하고 전적으로 자기 잘못이라고 인정함. 작성자는 이런 식이면 비슷한 일이 반복될 것 같다고 불안해함.
+BODY 06: 제안한 시누이, 말 없이 정보를 넘긴 남편, 홈캠을 본 시어머니 모두 이해되지 않고 싫다고 함. 남편에게 이번 주에는 집에 오지 말라고 함.
+BODY 07: 홈캠 연결을 끊고 키즈노트 비밀번호도 바꿈. 전부 차단하고 싶은 심정이며 답답해서 글을 올렸다고 마무리함.
+
+[CUT_PLAN]
+CUT 1: BODY 01 직후 — 남편이 결국 사실을 말하는 첫 폭로 지점.
+CUT 2: BODY 02 직후 — 비밀번호 전달 경위가 밝혀진 뒤.
+CUT 3: BODY 03 직후 — 안방·거실까지 노출됐다는 사생활 침해 핵심 지점.
+CUT 4: BODY 04 직후 — 평일에는 작성자와 아기만 있었다는 사실로 긴장이 커지는 지점.
+CUT 5: BODY 05 직후 — 남편의 사과와 작성자의 신뢰 문제 전환 지점.
+CUT 6: BODY 06 직후 — 가족 구성원 모두에 대한 분노가 정점에 이르는 지점.
+CUT 7: BODY 07 끝 — 차단 조치와 질문으로 마무리.
+
+[COMMENTS_TO_USE]
+COMMENT 01: 샤워나 옷을 벗고 나온 모습까지 시부모에게 공개됐을 수 있다는 취지로, 남편의 행동이 아내를 몰카 피해자처럼 만들었다며 신뢰 문제를 지적한 반응.
+purpose: 사생활 침해의 체감 강도를 보강
+use_after: BODY 04
+COMMENT 02: 이혼 사유로 볼 만큼 심각하고 항의해도 할 말 없는 상황이라는 반응.
+purpose: 논쟁 포인트
+use_after: BODY 05
+COMMENT 03: 알려주고 잊은 것이 아니라 숨기고 있었던 것 아니냐는 의심 반응.
+purpose: 남편 해명에 대한 반론
+use_after: BODY 05
+COMMENT 04: 상상만 해도 수치스럽다는 반응.
+purpose: 공감 반응
+use_after: BODY 04
+NOTE: 위 반응은 공개 보도에서 실제 댓글 반응으로 인용·요약된 범위만 사용. 660개 원댓글 전체를 읽은 것으로 간주하지 않는다.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → BODY 02 → BODY 03 → BODY 04 → COMMENT 01 → COMMENT 04 → BODY 05 → COMMENT 02 → COMMENT 03 → BODY 06 → BODY 07
+SKIP: source media — 원 게시글 본문 미디어의 존재/순서/bytes가 검증되지 않음.
+SKIP: remaining comments — 원댓글 전체를 직접 읽지 못함.
+
+[SOURCE_STATUS]
+source URL: https://pann.nate.com/talk/373653563#replyArea
+body confirmed: YES, via candidate-specific public repost/corroboration preserving body sequence
+comments confirmed: PARTIAL, selected publicly quoted reactions only
+images confirmed/acquired: NO / NO
+status: C1 / PARTIAL
+blocker: original Nate Pann comments and source-post media not directly retrieved
+publicationAllowed=false
