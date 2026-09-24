@@ -10,16 +10,16 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 15:15 KST — Existing-corpus normalization
+## 2026-09-24 16:17 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo_32-unemployed-no-money_C1.md` into `data/candidate_bundles/theqoo-1913908638/`.
+- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo_1924192134.md` into `data/candidate_bundles/theqoo-1924192134/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Exact source reverified. Body normalized into BODY 01–07, CUT_PLAN 6, PROGRAM_ASSEMBLY_ORDER completed.
-- Current accessible representation shows views 4,832 / comments 24; legacy candidate separately recorded views 5,451 / comments 24, so metrics remain observation-time values rather than overwritten truth.
+- Exact source reverified. Body normalized into BODY 01–07, CUT_PLAN 7, PROGRAM_ASSEMBLY_ORDER completed.
+- Current accessible representation shows views 10,933 / comments 91; legacy candidate separately recorded views 10,806, so metrics remain observation-time values rather than overwritten truth.
 - Individual comment text is not exposed; 0 comments copied/invented.
 - No body-content media observed; share/site/UI images excluded.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **12**.
+- Cumulative canonical bundles now: **13**.
 - Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
@@ -36,6 +36,7 @@
 - `theqoo-425048627` — 편의점 알바 진상 후기; C1/PARTIAL, legacy body-read evidence but full wording not preserved; current source HTTP 403; comments blocked.
 - `theqoo-3240588755` — 채용 관련 황당 후기; C1/PARTIAL, body verified and sequenced; comments count 22 visible but wording blocked; no body media observed.
 - `theqoo-1913908638` — 32살 무직/돈 없음/남친 없음; C1/PARTIAL, body verified and sequenced; comments count 24 visible but wording blocked; no body media observed.
+- `theqoo-1924192134` — 동거와 결혼은 다르구나; C1/PARTIAL, body verified and sequenced; comments count 91 visible but wording blocked; no body media observed.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
