@@ -1,0 +1,31 @@
+COMMENT 01
+text: 평일 1시간, 주말 3시간 게임을 중독으로 보는 기준이 너무 엄격한 것 아니냐는 반응.
+use_after: BODY 06
+purpose: 게임 조건 논쟁 포인트
+
+COMMENT 02
+text: 게임 자체를 이해하기 어렵다면 게임을 하지 않는 사람을 만나는 편이 낫겠다는 반응.
+use_after: COMMENT 01
+purpose: 현실적 후속 반응
+
+COMMENT 03
+text: 작성자는 전남편이 평일 퇴근 후 매일 4시간, 주말에는 10시간씩 게임했다고 설명했다.
+use_after: COMMENT 02
+purpose: 게임 조건이 생긴 배경 보강
+
+COMMENT 04
+text: 술을 2~3주에 한 번 이상 마시는 것을 많이 마시는 것으로 보는지 묻는 반응.
+use_after: COMMENT 03
+purpose: 술 조건 논쟁 포인트
+
+COMMENT 05
+text: 작성자는 술을 거의 못 마셔 주 1회 음주도 많다고 느끼며 양도 중요할 것 같다고 답했다.
+use_after: COMMENT 04
+purpose: 음주 기준의 개인적 배경 보강
+
+COMMENT 06
+text: 나이가 판단에 중요하니 나이를 알려 달라는 반응에 작성자가 25세라고 답했다.
+use_after: BODY 07
+purpose: 제목/프로필 정보 재확인
+
+NOTE: 공개 페이지에서 실제 읽은 댓글만 정리했다. 페이지 표시 댓글 43개 전체를 읽었다고 간주하지 않는다.
