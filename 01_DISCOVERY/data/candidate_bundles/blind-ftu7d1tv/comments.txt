@@ -1,0 +1,28 @@
+# Selected comments
+
+COMMENT 01
+27살이면 한창이고 파혼을 잘한 결정이라는 반응.
+use_after: BODY 08
+purpose: 파혼 직후 불안을 완화하는 대표 지지 반응
+
+COMMENT 02
+세상에 좋지 않은 상대는 많지만 자신의 생각을 숨기려는 노력조차 하지 않는 경우는 드물다는 취지의 강한 반응.
+use_after: BODY 07
+purpose: 결혼 준비 중 드러난 위험 신호 강조
+
+COMMENT 03
+백번 천번 생각해도 잘한 결정이고 지금 잠깐 힘들 뿐이라는 반응.
+use_after: BODY 08
+purpose: 결말 공감·지지 보강
+
+COMMENT 04
+4년을 시간 낭비했다는 반응.
+use_after: BODY 07
+purpose: 장기연애 후 파혼의 손실감·논쟁 포인트
+
+COMMENT 05
+잘했다는 짧은 지지 반응.
+use_after: BODY 08
+purpose: 반응 흐름 마감
+
+NOTE: 현재 공개 페이지에서 직접 읽힌 댓글만 정리했다. 화면상 총 댓글은 55개지만 전체 55개를 읽었다고 간주하지 않는다. 회사명·닉네임·프로필·날짜·좋아요 등 UI 메타는 제외했다.
