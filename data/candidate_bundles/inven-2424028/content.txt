@@ -1,0 +1,75 @@
+[TITLE]
+자체생산)본인 일본 유학 및 결혼 썰
+PROGRAM_TITLE: 자체생산)본인 일본 유학 및 결혼 썰
+
+[BODY_SEQUENCE]
+BODY 01: 아래 일본 여성과 결혼한 남성 급증 게시글이 생각보다 인기가 많길래 본인 결혼 썰을 풀어봄. 작성자는 고교 졸업 후 일본으로 건너가 대학·대학원을 마치고 군대를 제외하면 약 14년 일본에 있었다고 설명한다.
+
+BODY 02: 일본행 계기. 수능을 망친 뒤 외국에 나가보고 싶어 학원에서 1년 공부하고 일본 어학당으로 갔다. JASSO 장학생으로 월 5만엔을 받았고 EJU를 준비한 뒤 일본 대학에 진학했다. 졸업 전 군대 대신 대학원을 선택했고 부모가 아는 학교 중 한 곳으로 진학했다고 적었다.
+
+BODY 03: 군대. 여권 갱신 과정에서 장기 연장에 추가 서류와 보증인이 필요해 휴학 후 입대했다. 자대에서 대위(진)와 동갑이라 비교적 편한 군생활을 했다고 서술한다.
+
+BODY 04: 복학과 현 배우자. 대학원 복학 뒤 지인에게 소개를 부탁해 5살 연하 여성을 소개받았고 약 1년 만난 뒤 정식 교제를 시작했다고 한다.
+
+BODY 05: 일본 취업. 긴 학업·군복무로 일본 신입보다 나이가 많아 걱정했지만 유학생 취업박람회 흡연장에서 업계 기업 사장과 친해져 지원 권유를 받고 내정을 받았다고 한다. 첫 조건은 월급 28만엔, 연 2회 보너스, 연 약 420만엔, 월세 8만엔 지원이었다고 서술한다.
+
+BODY 06: 결혼. 첫 직장 3년 시점에 이직 제안과 여자친구의 동거 제안을 함께 받아 집을 계약했다. 여자친구가 예정보다 일찍 입주하게 된 이유는 혼전임신이었고 장인에게 사과한 뒤 빠르게 결혼했다고 한다. 당시 본인 저금은 50만엔 미만, 배우자는 약 300만엔이었다고 적었다.
+
+BODY 07: 주택 구입 시작. 아이가 태어나면 살 집 이야기를 하다가 부동산에 외국인·이직 2개월차도 대출이 가능한지 문의했고, 2023-03-11 일곱 건물을 본 뒤 마지막 집을 마음에 들어 해 당일 밤 구매 의사를 전달했다고 한다.
+
+BODY 08: 대출 과정. SBI신생은행 조건 중 장기근속이 부족했으나 중개 측이 유초은행을 사이에 둔 구조를 제시해 이전 직장 3년 근무와 즉시 이직을 연속 근속처럼 설명했다고 서술한다.
+
+[IMAGE:001]
+USE_AT: BODY 08 직후
+POSITION_IN_SOURCE: 대출 통과 결과를 묻는 문장 직후
+ASSET_URL: https://upload3.inven.co.kr/upload/2025/03/24/bbs/i1487587364.jpg?MW=800
+STATUS: direct public body asset resolved; repository media bytes not imported in this pass
+DESCRIPTION: 2023/05/24 거래 내역 표. 27,400,000엔 입금 후 각종 출금이 표시된 화면.
+
+BODY 09: 2023-05-24 대출금이 들어오고 당일 빠져나갔다고 한다. 대출은 2,740만엔, 실질 땅+집값은 2,480만엔이고 나머지는 중개·브로커·등기 비용 등을 포함했다고 적었다. 집은 사이타마 외곽의 4LDK+정원 주택이며 도쿄 미나토구 직장까지 전철 약 1시간30분이라고 한다.
+
+BODY 10: 현재 평가. 즉흥적으로 결정해 온 과정이지만 자기 이름의 집에서 가족과 사는 결과는 나쁘지 않았다고 평가하면서 같은 경로를 그대로 추천하지는 않는다고 적었다.
+
+BODY 11: Q&A — 일본어 공부는 정답 없이 많이 해야 하며 NHK 뉴스 스크립트로 리스닝·리딩한 것이 도움이 됐다고 한다. 집값은 지역·넓이에 따라 다르며 도쿄 23구 1.5룸 월 13만엔, 가나가와 2룸 월 7만엔에 살았던 경험을 예로 든다.
+
+BODY 12: Q&A — 일본 월급 역시 회사별 차이가 크다고 한다. 현재 30대 중반, 세전 월 48만엔과 연 2회 보너스로 연 약 700만엔 수준이라고 적었다.
+
+[IMAGE:002 BLOCKED]
+USE_AT: BODY 12 직후
+POSITION_IN_SOURCE: 현재 급여 설명 직후
+SOURCE_ASSET_REFERENCE: https://upload3.inven.co.kr/upload/2025/03/24/bbs/i1613837339.png?MW=800
+BLOCKER: body asset is linked by the public source, but fetch timed out during this pass; bytes not acquired.
+
+BODY 13: 급여 화면의 세후 44만4천엔에는 경비정산·교통비와 주민세 납부 방식 등의 함정이 있어 순수 월급은 37~38만엔 정도를 오간다고 설명한다.
+
+BODY 14: Q&A — 일본인 배우자와의 결혼생활에 만족한다고 적으며 가족 분위기와 현실적인 성향을 사례로 든다. 일본인 여자친구를 만나는 허들이 과거보다 낮아졌지만 쉬운 것은 아니며, 소개팅 앱이나 한일부부 지인을 통한 소개를 언급한다.
+
+[CUT_PLAN]
+CUT 1: BODY 02 뒤 — 일본행/학업 선택기 종료
+CUT 2: BODY 05 뒤 — 군대·복학·취업까지의 전반부 종료
+CUT 3: BODY 06 뒤 — 혼전임신과 결혼 반전 직후
+CUT 4: BODY 08 뒤 — 주택대출 조건과 중개 구조 설명 직후, IMAGE:001 직전
+CUT 5: IMAGE:001 + BODY 09 뒤 — 실제 대출 결과와 집 구매 결과 확인 후
+CUT 6: BODY 10 뒤 — 본편 회고 종료, Q&A 전환점
+CUT 7: BODY 11 뒤 — 공부/집값 Q&A 종료
+CUT 8: BODY 12 뒤 — 현재 연봉 공개 후 IMAGE:002 직전
+CUT 9: BODY 14 뒤 — 결혼생활/만남 Q&A와 전체 글 종료
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+COMMENT_COUNT_OBSERVED: 21
+NOTE: 실제 댓글 문구가 현재 공개 추출에 노출되지 않아 생성하지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY 01 → BODY 02 → CUT 1 → BODY 03 → BODY 04 → BODY 05 → CUT 2 → BODY 06 → CUT 3 → BODY 07 → BODY 08 → CUT 4 → IMAGE:001 → BODY 09 → CUT 5 → BODY 10 → CUT 6 → BODY 11 → CUT 7 → BODY 12 → CUT 8 → IMAGE:002(BLOCKED) → BODY 13 → BODY 14 → CUT 9
+SKIP: comments — actual comment text not verified.
+SKIP: IMAGE:002 bytes — fetch timed out; do not substitute UI/profile media.
+
+[SOURCE_STATUS]
+source URL: https://www.inven.co.kr/board/webzine/2097/2424028
+body: 확인
+comments: 댓글 수 21 확인 / 실제 댓글 문구 미확인
+images: 본문 이미지 2개 확인; IMAGE:001 direct asset resolved, IMAGE:002 bytes blocked
+confidence: C1
+blocker: 댓글 실제 문구 미노출; IMAGE:002 fetch timeout; media bytes not yet committed
+publicationAllowed=false
