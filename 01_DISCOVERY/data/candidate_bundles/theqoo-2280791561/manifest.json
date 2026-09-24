@@ -1,0 +1,20 @@
+{
+  "bundleId": "theqoo-2280791561",
+  "sourceUrl": "https://theqoo.net/review/2280791561",
+  "observedTitle": "쿠팡 계약직 3주차 후기",
+  "observedAt": "2026-09-24T17:19:00+09:00",
+  "candidateStage": "C1",
+  "normalizationStatus": "PARTIAL",
+  "body": {"confirmed": true, "sequenceParts": 8},
+  "comments": {"confirmed": false, "visibleCount": 633, "selectedCount": 0, "blocker": "individual comment text not exposed in current accessible representation"},
+  "media": {"bodyMediaObserved": false, "files": []},
+  "observedMetrics": {"views": 259938, "comments": 633},
+  "legacyObservation": {"observedAt": "2026-09-23T15:19:00+09:00", "views": 259938},
+  "provenance": {"acquisition": "public individual page; existing candidate re-verification only", "sourceType": "TheQoo anonymous personal-experience post", "claimsVerifiedExternally": false},
+  "cutPlanCount": 8,
+  "programAssemblyOrderWritten": true,
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false,
+  "blockers": ["individual comment text unavailable in current accessible representation"]
+}
