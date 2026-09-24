@@ -1,0 +1,19 @@
+{
+  "canonicalId": "inven-2727900",
+  "source": "Inven",
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2727900",
+  "observedTitle": "여친이 삐졌을때 하지말아야하는 행동",
+  "existingRawSource": "data/_raw_batches/260916_C1_A0_P0_discovery_0333.json",
+  "existingCandidateName": "260916_C1_A0_P0_여친이삐졌을때하지말아야하는행동",
+  "classification": "C1",
+  "state": "PARTIAL",
+  "body": {"verified": true, "visibleText": "😂😂"},
+  "comments": {"verified": false, "observedCount": 11, "blocker": "actual comment text not exposed in this verification"},
+  "media": {"observed": true, "acquired": false, "order": ["IMAGE:001"], "placement": "body start / before visible author reaction", "blocker": "exact source image bytes/direct asset URL and original provenance/rights unresolved"},
+  "cutPlanReady": true,
+  "programAssemblyOrderReady": true,
+  "rights": "UNKNOWN",
+  "privacyReviewRequired": true,
+  "humanReviewRequired": true,
+  "publicationAllowed": false
+}
