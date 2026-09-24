@@ -10,22 +10,22 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 22:16 KST — Existing-corpus normalization
+## 2026-09-24 23:15 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Reconciled existing candidate `data/candidates/2026-09-22_inven-dad-company-implant.md` with the previously handoff-listed but missing canonical path `01_DISCOVERY/data/candidate_bundles/inven-3290621/`.
-- Created/filled canonical `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`; this is a repair/completion of an already-counted bundle, not a newly discovered lead.
-- Exact original Inven URL/body reverified. BODY 01~05 / CUT_PLAN 6 / PROGRAM_ASSEMBLY_ORDER written.
-- Current public observation: 828 views / 0 recommendations / 3 comments; legacy 2026-09-22 observation 779 / 0 / 3 retained separately.
-- Individual comment text was not exposed in current extraction, so selected comments remain 0.
-- One source-body explanatory image is present after BODY 05; original bytes were not acquired, so IMAGE:001 is explicitly BLOCKED and no substitute/UI image was stored.
+- Converted existing C1 `data/candidates/2026-09-22_blind_g1gb3ari.md` into canonical `01_DISCOVERY/data/candidate_bundles/blind-g1gb3ari/`.
+- Exact title/source/provenance and legacy observation retained: 162 views / 8 comments at 2026-09-22 06:19 KST; legacy bodyRead=true, commentsRead=false, imageOrScreenshotPresent=false.
+- Exact source URL reverification on 2026-09-24 returns HTTP 410 Gone. Retained candidate has summary only, not verbatim body/order, so BODY_SEQUENCE and CUT_PLAN were not invented; explicitly BLOCKED.
+- Comments selected: 0; no actual comment text was read. Media bytes: 0; no substitute/UI assets created.
+- PROGRAM_ASSEMBLY_ORDER written as TITLE → BODY BLOCKED with explicit SKIP reasons.
 - `publicationAllowed=false`; no downstream work.
-- Cumulative canonical count remains **18** because `inven-3290621` was already included in the prior handoff count/list; this run repaired its missing canonical files rather than adding a new counted candidate.
-- Existing Jev batch snapshot: 1,273 candidates; current repo candidate Markdown count was previously observed higher, so deterministic full-corpus denominator still needs reconciliation before claiming remaining count.
+- Cumulative canonical count: **19**.
+- Existing Jev batch snapshot: 1,273 candidates; deterministic current full-corpus denominator reconciliation remains pending.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
 ## Prior normalized bundles
 - `blind-cn6hnlfx`
 - `blind-ftu7d1tv`
+- `blind-g1gb3ari`
 - `inven-2727679`
 - `inven-3290621`
 - `blind-L5aQCt8c`
