@@ -1,0 +1,6 @@
+[COMMENTS]
+댓글 미확인/접근 불가
+
+observed_comment_count: 3
+selected_comments: 0
+reason: 공개 원문에서 댓글 수는 3으로 표시되지만 현재 접근 가능한 추출 결과에는 개별 댓글 문구가 노출되지 않음. 확인하지 않은 댓글은 생성하지 않는다.
