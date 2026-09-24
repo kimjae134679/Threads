@@ -1,0 +1,30 @@
+[TITLE]
+편의점 알바 진상 후기
+
+[BODY_SEQUENCE]
+BODY BLOCKED
+- Existing C1 record confirms the public body was read on 2026-09-23.
+- Preserved summary only: convenience-store worker recounts repeated difficult-customer episodes, including customers repeatedly adding items during checkout and requesting personal service while the store is busy.
+- Do not treat this summary as verbatim source body.
+- Current source re-open on 2026-09-24: HTTP 403.
+
+[CUT_PLAN]
+CUT BLOCKED: full source paragraph/episode boundaries are not preserved, so natural cut points cannot be asserted without inventing structure.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY BLOCKED
+SKIP: COMMENTS — actual comment text was never read.
+SKIP: MEDIA — no content-image dependency was observed in the existing verified candidate.
+SKIP: CUTS — source body boundaries unavailable in preserved material.
+
+[SOURCE_STATUS]
+source URL: https://theqoo.net/review/425048627
+body: previously verified/read; exact body text not preserved in accessible repo candidate; current re-open HTTP 403
+comments: 미확인/접근 불가
+media: prior observation says no image/screenshot dependency observed
+stage: C1 / PARTIAL
+blocker: current TheQoo source returns HTTP 403 and legacy candidate preserves only summary, not full body/comments
+publicationAllowed=false
