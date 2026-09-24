@@ -10,17 +10,26 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 23:15 KST — Existing-corpus normalization
+## 2026-09-25 00:16 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 `data/candidates/2026-09-22_blind_g1gb3ari.md` into canonical `01_DISCOVERY/data/candidate_bundles/blind-g1gb3ari/`.
-- Exact title/source/provenance and legacy observation retained: 162 views / 8 comments at 2026-09-22 06:19 KST; legacy bodyRead=true, commentsRead=false, imageOrScreenshotPresent=false.
-- Exact source URL reverification on 2026-09-24 returns HTTP 410 Gone. Retained candidate has summary only, not verbatim body/order, so BODY_SEQUENCE and CUT_PLAN were not invented; explicitly BLOCKED.
-- Comments selected: 0; no actual comment text was read. Media bytes: 0; no substitute/UI assets created.
-- PROGRAM_ASSEMBLY_ORDER written as TITLE → BODY BLOCKED with explicit SKIP reasons.
+- Rebuilt/filled existing Jev [0001] candidate `data/candidates/260916_C0_A0_P0_25살연애불가능할까.md` as canonical `01_DISCOVERY/data/candidate_bundles/blind-cn6hnlfx/`.
+- Public Blind source reverified: full visible body; page displays 43 comments; 6 actually-read comments selected; body-content media observed: 0.
+- BODY_SEQUENCE 7 / CUT_PLAN 7 / PROGRAM_ASSEMBLY_ORDER 1.
+- Current observations kept separately: main display views 243/comments 43; same-page recommendation card views 175/likes 1. No metric normalization/inference.
 - `publicationAllowed=false`; no downstream work.
-- Cumulative canonical count: **19**.
+- This ID was already present in the prior-normalized list, so cumulative unique canonical count remains **19** rather than double-counting it.
 - Existing Jev batch snapshot: 1,273 candidates; deterministic current full-corpus denominator reconciliation remains pending.
-- Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
+
+## Progress summary
+- 전체 기존 대상 수: final deterministic denominator unresolved; Jev snapshot 1,273.
+- 이번 실행 수정·통합 수: 1.
+- 누적 완료 수: 19 unique canonical IDs tracked (this run repaired an already-counted ID).
+- 남은 수: final denominator unresolved; Jev-snapshot arithmetic alone is not a proven all-corpus remaining count.
+- Jev 통합 수: 1 existing Jev item repaired/consumed this run.
+- 새 canonical bundle 수: 0 unique (bundle files were missing/incomplete and were filled for an already-counted ID).
+- 본문·댓글·이미지: body verified / 6 selected from publicly visible comments / body media 0 observed.
+- CUT_PLAN·PROGRAM_ASSEMBLY_ORDER: 7 / 1.
+- blocker: final all-existing inventory denominator unresolved; full 43-comment set not exhaustively read; rights/privacy/defamation/human review incomplete.
 
 ## Prior normalized bundles
 - `blind-cn6hnlfx`
@@ -43,7 +52,8 @@
 - `theqoo-2747645645`
 
 ## Sequential candidate automation
-- Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
+- Continue another already-existing raw/Jev/candidate file only. No new-material discovery.
+- Prefer deterministic inventory reconciliation alongside conversion so the true denominator can be reported without guessing.
 
 ## TEMP TEST ONLY conversion lane
 - Existing production/test state remains untouched. This automation must not enter `03_PRODUCTION`.
