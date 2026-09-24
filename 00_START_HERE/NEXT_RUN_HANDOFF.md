@@ -10,17 +10,16 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 12:14 KST — Existing-corpus normalization
+## 2026-09-24 13:14 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing candidate `01_DISCOVERY/data/candidates/2026-09-23_inven_japan-study-marriage-story_C1.md` into `data/candidate_bundles/inven-2424028/`.
+- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo-convenience-store-customer-stories_C1.md` into `data/candidate_bundles/theqoo-425048627/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Exact public Inven source reverified. Long narrative body is readable and was segmented into BODY 01–14 covering Japan-study origin, military service, relationship/marriage, employment, home purchase/loan, and Q&A.
-- `content.txt` includes 9 natural CUT points and final PROGRAM_ASSEMBLY_ORDER.
-- Two inline body images are linked by the source. IMAGE:001 direct public asset resolved and identified as the 2023-05-24 loan transaction table; repository media bytes were not imported this pass. IMAGE:002 is positioned after the current-salary section, but its asset fetch timed out, so it remains BLOCKED.
-- Comment count 21 is visible but actual comment text is not exposed; `comments.txt` remains BLOCKED rather than invented.
-- Current page snapshot showed views 15,254 / recommendations 9 / comments 21; treat views as volatile.
+- Existing C1 record confirms exact public URL and that body was read on 2026-09-23; it preserves a summary and legacy metrics (views 6,430 / comments 7), but not full body wording.
+- Current source re-open on 2026-09-24 returned HTTP 403. Therefore body wording, episode boundaries/CUT_PLAN, and comments were not reconstructed from the summary.
+- Legacy candidate says commentsRead=false and no image/screenshot dependency observed. No media file was fabricated.
+- PROGRAM_ASSEMBLY_ORDER explicitly blocks body/comments/cuts that are not evidenced.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **9**.
+- Cumulative canonical bundles now: **10**.
 - Full deterministic legacy/raw candidate total is still not established; do not claim remaining count yet.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
@@ -34,6 +33,7 @@
 - `inven-4061413` — 회사 불륜/퇴사 썰; body verified, comments text blocked, no body-content media.
 - `inven-2727900` — 여친이 삐졌을때 하지말아야하는 행동; C1/PARTIAL, body image observed but exact asset/provenance blocked, comments text blocked.
 - `inven-2424028` — 일본 유학 및 결혼 썰; C1/PARTIAL, body verified, IMAGE:001 direct asset resolved, IMAGE:002 fetch blocked, comments text blocked.
+- `theqoo-425048627` — 편의점 알바 진상 후기; C1/PARTIAL, legacy body-read evidence but full wording not preserved; current source HTTP 403; comments blocked.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
