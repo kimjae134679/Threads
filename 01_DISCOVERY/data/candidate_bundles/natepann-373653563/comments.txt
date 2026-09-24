@@ -1,0 +1,25 @@
+COMMENT 01
+text: 샤워나 옷을 벗고 나온 모습까지 시부모에게 공개됐을 수 있다는 취지로, 남편의 행동이 아내를 몰카 피해자처럼 만들었다며 신뢰 문제를 지적한 반응.
+use_after: BODY 04
+purpose: 사생활 침해의 체감 강도 보강
+provenance: public reporting quoting an actual reaction
+
+COMMENT 02
+text: 이혼 사유로 볼 만큼 심각하고 항의해도 할 말 없는 상황이라는 반응.
+use_after: BODY 05
+purpose: 논쟁 포인트
+provenance: public reporting quoting an actual reaction
+
+COMMENT 03
+text: 알려주고 잊은 것이 아니라 숨기고 있었던 것 아니냐는 의심 반응.
+use_after: BODY 05
+purpose: 남편 해명에 대한 반론
+provenance: public reporting quoting an actual reaction
+
+COMMENT 04
+text: 상상만 해도 수치스럽다는 반응.
+use_after: BODY 04
+purpose: 공감 반응
+provenance: public reporting quoting an actual reaction
+
+BLOCKER: 원 Nate Pann 댓글 660개 전체는 직접 읽지 못했으므로 위 공개 인용 범위를 넘어 추가하지 않는다.
