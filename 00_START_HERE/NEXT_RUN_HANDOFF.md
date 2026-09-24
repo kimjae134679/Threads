@@ -10,16 +10,16 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 21:17 KST — Existing-corpus normalization
+## 2026-09-24 22:16 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 `data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md` into `01_DISCOVERY/data/candidate_bundles/blind-ftu7d1tv/`.
-- Exact original Blind URL/body and publicly exposed comments reverified.
-- BODY 01~08 / CUT_PLAN 8 / PROGRAM_ASSEMBLY_ORDER written.
-- Current observed metrics: 5,821 views / 55 comments / 14 likes; legacy observation 2,096 views / 39 comments retained separately.
-- Five actually exposed/read comments selected; full 55-comment set not claimed as read.
-- No source-body content media observed; avatar/ads/UI excluded.
+- Reconciled existing candidate `data/candidates/2026-09-22_inven-dad-company-implant.md` with the previously handoff-listed but missing canonical path `01_DISCOVERY/data/candidate_bundles/inven-3290621/`.
+- Created/filled canonical `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`; this is a repair/completion of an already-counted bundle, not a newly discovered lead.
+- Exact original Inven URL/body reverified. BODY 01~05 / CUT_PLAN 6 / PROGRAM_ASSEMBLY_ORDER written.
+- Current public observation: 828 views / 0 recommendations / 3 comments; legacy 2026-09-22 observation 779 / 0 / 3 retained separately.
+- Individual comment text was not exposed in current extraction, so selected comments remain 0.
+- One source-body explanatory image is present after BODY 05; original bytes were not acquired, so IMAGE:001 is explicitly BLOCKED and no substitute/UI image was stored.
 - `publicationAllowed=false`; no downstream work.
-- Cumulative canonical bundles now: **18**.
+- Cumulative canonical count remains **18** because `inven-3290621` was already included in the prior handoff count/list; this run repaired its missing canonical files rather than adding a new counted candidate.
 - Existing Jev batch snapshot: 1,273 candidates; current repo candidate Markdown count was previously observed higher, so deterministic full-corpus denominator still needs reconciliation before claiming remaining count.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
