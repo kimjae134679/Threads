@@ -1,0 +1,4 @@
+[COMMENTS]
+댓글 미확인/접근 불가
+
+Legacy C1 candidate recorded 댓글 7, but commentsRead=false and no actual comment text is preserved. Current source re-open returned HTTP 403. Do not synthesize comments.
