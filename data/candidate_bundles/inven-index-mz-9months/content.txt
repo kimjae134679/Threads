@@ -1,0 +1,42 @@
+[TITLE]
+MZ신입이랑 같이 일한지 9개월차 느낀점
+PROGRAM_TITLE: MZ신입이랑 같이 일한지 9개월차 느낀점
+
+[BODY_SEQUENCE]
+본문 미확인
+- legacy discovery 기록에서도 bodyRead=false였음.
+- 본문 내용을 제목/주제만 보고 채워 넣지 말 것.
+- 정확한 개별 post URL을 찾은 뒤 실제 본문을 확인해야 BODY 01부터 작성 가능.
+
+[IMAGE:001 BLOCKED]
+legacy discovery에는 sourceImagesExist=true, sourceImageLinksVisible=true로 기록되어 있으나 실제 이미지 원본/순서/본문 위치/bytes는 현재 bundle 근거에서 확인되지 않음.
+USE_AT: 미확정 — 본문 확인 후 원문 위치 기준으로 지정
+
+[CUT_PLAN]
+CUT BLOCKED: 본문 미확인 상태이므로 장면·문단·반전 기준 절단 지점을 만들지 않음.
+후속 검증 시 실제 본문 문단 경계와 이미지 전후를 기준으로 순차 작성할 것.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+- legacy snapshot에는 댓글 46 표기만 존재.
+- 실제 댓글 문구를 읽지 않았으므로 COMMENT 01 등을 생성하지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE
+→ BODY BLOCKED
+→ IMAGE:001 BLOCKED
+→ COMMENTS BLOCKED
+
+SKIP: 제목 외 본문/이미지/댓글의 실제 조립은 증거가 확보될 때까지 프로그램 입력에서 제외.
+
+[SOURCE_STATUS]
+source: Inven index
+sourceUrl: https://www.inven.co.kr/board/webzine/2097?my=chu&stype=nickname&svalue=%EB%91%90%EB%A3%A8%EB%93%9C%EB%A3%A8&vtype=pc
+stage: C0
+bodyRead: false
+commentsRead: false
+imageObservedInLegacy: true
+imageBytesAcquired: false
+directPostResolved: false
+blocker: 정확한 개별 URL, 본문, 실제 댓글, 이미지 원본/순서/위치가 미확인
+publicationAllowed=false
