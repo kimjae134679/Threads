@@ -10,18 +10,19 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 11:14 KST — Existing-corpus normalization
+## 2026-09-24 12:14 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing raw-batch candidate `260916_C1_A0_P0_여친이삐졌을때하지말아야하는행동` from `data/_raw_batches/260916_C1_A0_P0_discovery_0333.json` into `data/candidate_bundles/inven-2727900/`.
+- Converted existing candidate `01_DISCOVERY/data/candidates/2026-09-23_inven_japan-study-marriage-story_C1.md` into `data/candidate_bundles/inven-2424028/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Exact public Inven source reverified: title `여친이 삐졌을때 하지말아야하는 행동`; body image exists; visible author text is `😂😂`; recommendations 2 / comments 11. Do not merge volatile view snapshots.
-- Program structure recorded as TITLE → IMAGE:001(BLOCKED) → BODY 01. Added CUT_PLAN around title/image/reaction.
-- Exact body image bytes/direct asset URL and original provenance/rights remain unresolved; no fake `media/` asset was created and UI/profile images were excluded.
-- Actual comment text was not exposed in this verification; only count 11 verified. `comments.txt` is explicit BLOCKED rather than invented.
+- Exact public Inven source reverified. Long narrative body is readable and was segmented into BODY 01–14 covering Japan-study origin, military service, relationship/marriage, employment, home purchase/loan, and Q&A.
+- `content.txt` includes 9 natural CUT points and final PROGRAM_ASSEMBLY_ORDER.
+- Two inline body images are linked by the source. IMAGE:001 direct public asset resolved and identified as the 2023-05-24 loan transaction table; repository media bytes were not imported this pass. IMAGE:002 is positioned after the current-salary section, but its asset fetch timed out, so it remains BLOCKED.
+- Comment count 21 is visible but actual comment text is not exposed; `comments.txt` remains BLOCKED rather than invented.
+- Current page snapshot showed views 15,254 / recommendations 9 / comments 21; treat views as volatile.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **8**.
+- Cumulative canonical bundles now: **9**.
 - Full deterministic legacy/raw candidate total is still not established; do not claim remaining count yet.
-- Next: continue another already-existing raw/Jev candidate only. No new-material discovery.
+- Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
 ## Prior normalized bundles
 - `blind-cn6hnlfx` — 25살 연애 불가능할까; PARTIAL, source re-open blocked.
@@ -32,6 +33,7 @@
 - `inven-index-mz-9months` — MZ신입 9개월; C0/PARTIAL, direct URL/body/comments/media unresolved.
 - `inven-4061413` — 회사 불륜/퇴사 썰; body verified, comments text blocked, no body-content media.
 - `inven-2727900` — 여친이 삐졌을때 하지말아야하는 행동; C1/PARTIAL, body image observed but exact asset/provenance blocked, comments text blocked.
+- `inven-2424028` — 일본 유학 및 결혼 썰; C1/PARTIAL, body verified, IMAGE:001 direct asset resolved, IMAGE:002 fetch blocked, comments text blocked.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
