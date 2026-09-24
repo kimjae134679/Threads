@@ -1,0 +1,10 @@
+[COMMENTS]
+status: BLOCKED
+observed_count: 21
+
+현재 공개 페이지에서 댓글 섹션과 댓글 수 21은 확인되지만 실제 댓글 문구는 추출되지 않았다.
+확인하지 않은 댓글을 생성하거나 요약하지 않는다.
+
+use_after: N/A
+purpose: N/A
+publicationAllowed=false
