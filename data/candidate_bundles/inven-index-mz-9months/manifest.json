@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "canonicalStatus": "PARTIAL",
+  "source": "Inven index",
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097?my=chu&stype=nickname&svalue=%EB%91%90%EB%A3%A8%EB%93%9C%EB%A3%A8&vtype=pc",
+  "directPostResolved": false,
+  "observedTitle": "MZ신입이랑 같이 일한지 9개월차 느낀점",
+  "observedAt": "2026-09-16T09:17:00+09:00",
+  "stage": "C0",
+  "observedMetrics": {
+    "views": 14217,
+    "recommendations": 14,
+    "comments": 46,
+    "provenance": "legacy discovery snapshot"
+  },
+  "body": {"read": false, "status": "본문 미확인"},
+  "comments": {"read": false, "status": "댓글 미확인/접근 불가"},
+  "media": {
+    "legacyExistenceObserved": true,
+    "legacyLinksVisible": true,
+    "bytesAcquired": false,
+    "sequenceVerified": false,
+    "bodyPlacementVerified": false
+  },
+  "jev": {
+    "file": "data/jev_results/260916_C0_A0_P0_MZ신입9개월느낀점.jev.json",
+    "model": "jev-1.13.0",
+    "overallScore": 0.94,
+    "finalStatus": "hold",
+    "contentType": "empathy",
+    "needsResearch": 0.95,
+    "assetImportance": 1.99,
+    "threadsFit": 0.17,
+    "needsImprovement": 0.95,
+    "improvementArea": "asset"
+  },
+  "acquisition": "Existing corpus normalization only; no new lead collected.",
+  "blockers": [
+    "exact direct post URL unresolved",
+    "body not read",
+    "comments not read",
+    "source image bytes/order/body placement not verified"
+  ],
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false
+}
