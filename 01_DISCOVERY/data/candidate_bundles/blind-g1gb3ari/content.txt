@@ -1,0 +1,30 @@
+[TITLE]
+청모에서 예랑이 관상보는 친구 손절
+
+[BODY_SEQUENCE]
+본문 미확인/재접근 불가.
+기존 2026-09-22 후보 기록에는 bodyRead=true가 남아 있으나 본문 전문·문단 순서가 저장되어 있지 않다.
+2026-09-24 정확한 원문 URL 재검증 시 HTTP 410 Gone.
+기존 요약을 실제 본문처럼 확장하거나 순서를 추정하지 않는다.
+
+[CUT_PLAN]
+작성 불가 — 실제 본문 전문과 문단/장면 순서가 현재 증거에 보존되지 않음.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+기존 관찰 당시 댓글 8 표기만 보존되어 있으며 commentsRead=false.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → BODY BLOCKED
+SKIP: BODY — 원문 410 및 retained candidate에 본문 전문/순서 없음
+SKIP: COMMENTS — 실제 읽은 댓글 없음
+SKIP: MEDIA — 기존 관찰 기록상 imageOrScreenshotPresent=false
+
+[SOURCE_STATUS]
+source URL: https://www.teamblind.com/kr/post/%EC%B2%AD%EB%AA%A8%EC%97%90%EC%84%9C-%EC%98%88%EB%9E%91%EC%9D%B4-%EA%B4%80%EC%83%81%EB%B3%B4%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%86%90%EC%A0%88-g1gb3ari
+본문 확인 여부: 과거 bodyRead=true 기록 / 현재 본문 재확인 불가(HTTP 410)
+댓글 확인 여부: 미확인
+이미지 확인/확보 여부: 과거 기록상 없음 / bytes 0
+stage: C1
+blocker: source HTTP 410; retained candidate has no verbatim body sequence; commentsRead=false
+publicationAllowed=false
