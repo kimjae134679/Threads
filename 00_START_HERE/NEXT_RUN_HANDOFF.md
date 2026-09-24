@@ -10,16 +10,15 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 19:19 KST — Existing-corpus normalization
+## 2026-09-24 20:18 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 candidate `01_DISCOVERY/candidates/2026-09-19-c1-natepann-homecam-mother-in-law.md` into `data/candidate_bundles/natepann-373653563/`.
-- Recovered exact original URL `https://pann.nate.com/talk/373653563#replyArea` from an existing-candidate-specific public repost.
-- Body sequence verified through public repost/corroboration and normalized as BODY 01~07; CUT_PLAN 7.
-- Selected usable comment reactions: 4, only from reactions explicitly quoted in public reporting; original 660-comment corpus was not directly read.
-- Historical metrics retained: 274,169 views / 1,969 recommendations / 660 comments.
-- Original-post body media existence/order/bytes not established; article/repost imagery excluded; no fabricated media.
-- `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **16**.
+- Converted existing C1 `01_DISCOVERY/data/candidates/2026-09-23_theqoo_2747645645.md` into `01_DISCOVERY/data/candidate_bundles/theqoo-2747645645/`.
+- Exact original URL and body sequence reverified on the already-known TheQoo page.
+- BODY 01~08 / CUT_PLAN 8 / PROGRAM_ASSEMBLY_ORDER written.
+- Current observed metrics: 5,026 views / 20 comments; individual comment text not exposed, so selected comments 0.
+- No source-body content media observed; share/UI images excluded.
+- `publicationAllowed=false`; no downstream work.
+- Cumulative canonical bundles now: **17**.
 - Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
@@ -40,6 +39,7 @@
 - `theqoo-2280791561`
 - `theqoo-263633450`
 - `natepann-373653563`
+- `theqoo-2747645645`
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
