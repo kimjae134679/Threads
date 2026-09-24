@@ -1,0 +1,27 @@
+[TITLE]
+유럽여행에서 만났던 그 남자 뭐 할까 궁금한 후기(엄청긴글주의)
+
+[BODY_SEQUENCE]
+BODY BLOCKED
+기존 C1 기록상 원문 본문을 실제 읽었으나 전문/정확한 문단 순서가 저장되지 않았다. 현재 원문 재접근은 HTTP 403이다. 기존 요약을 실제 본문처럼 재구성하지 않는다.
+
+[CUT_PLAN]
+CUT BLOCKED: 실제 본문 전문과 정확한 문단/장면 경계를 현재 확인할 수 없어 절단 지점을 추정하지 않는다.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE
+SKIP: BODY — 원문 전문/정확한 순서 미확보
+SKIP: COMMENTS — 실제 댓글 문구 미확인
+SKIP: MEDIA — 기존 관찰 범위에서 본문 콘텐츠 이미지 없음
+
+[SOURCE_STATUS]
+source URL: https://theqoo.net/review/263633450
+본문 확인 여부: 과거 확인됨(bodyRead=true), 현재 전문 미확보/재접근 HTTP 403
+댓글 확인 여부: 미확인
+이미지 확인/확보 여부: 기존 관찰 범위에서 본문 콘텐츠 이미지 없음
+stage: C1 / PARTIAL
+blocker: 현재 HTTP 403 + 기존 파일에 본문 전문/댓글 미보존
+publicationAllowed=false
