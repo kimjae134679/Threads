@@ -1,0 +1,28 @@
+{
+  "id": "inven-4061413",
+  "legacyId": "260916_C1_A0_P0_회사불륜썰",
+  "source": "Inven / 로스트아크 인벤 자유 게시판",
+  "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/4061413",
+  "observedTitle": "일하기 싫어서 푸는 우리 회사 썰",
+  "classification": "C1",
+  "publicationAllowed": false,
+  "body": {"verified": true, "sequenceParts": 6},
+  "comments": {"verified": false, "visibleCount": 6, "selected": 0},
+  "media": {"verified": true, "contentMediaCount": 0, "captured": 0},
+  "cutPlanCount": 6,
+  "programAssemblyOrder": ["TITLE","BODY 01","BODY 02","BODY 03","BODY 04","BODY 05","BODY 06"],
+  "originalObservation": {
+    "timestamp": "2026-09-16T02:34:00+09:00",
+    "visibleMetrics": {"views": 52, "recommendations": 1, "comments": 2}
+  },
+  "recheck": {
+    "timestamp": "2026-09-24T10:15:00+09:00",
+    "visibleMetrics": {"views": 192, "recommendations": 2, "comments": 6}
+  },
+  "provenance": "Existing candidate from data/_raw_batches/260916_C1_A0_P0_discovery_0234.json; converted to canonical bundle after public source recheck. Not a newly discovered lead.",
+  "acquisitionState": "BODY_VERIFIED+NO_CONTENT_MEDIA+COMMENTS_TEXT_BLOCKED",
+  "blockers": ["Actual comment text was not exposed in the public extraction used for this recheck."],
+  "rightsState": "UNKNOWN",
+  "privacyReviewRequired": true,
+  "humanReviewRequired": true
+}
