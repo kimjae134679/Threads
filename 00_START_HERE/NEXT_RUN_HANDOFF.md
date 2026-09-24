@@ -10,6 +10,18 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing remain forbidden and `publicationAllowed=false`.
 
+## 2026-09-24 09:17 KST — Existing-corpus normalization run
+- New discovery: **0**.
+- Converted existing Jev-backed `260916_C0_A0_P0_MZ신입9개월느낀점.md` into `data/candidate_bundles/inven-index-mz-9months/`.
+- Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
+- Legacy evidence: Inven index URL; title `MZ신입이랑 같이 일한지 9개월차 느낀점`; snapshot views 14217 / recommendations 14 / comments 46; bodyRead=false; commentsRead=false; sourceImagesExist=true/sourceImageLinksVisible=true.
+- Jev: model `jev-1.13.0`, final=`hold`, overall=0.94, content_type=`empathy`, needs_research=0.95, asset_importance=1.99, threads_fit=0.17, improvement_area=`asset`.
+- Exact direct post URL/body/comments/media bytes/order/body placement remain unresolved. Bundle is **C0 / PARTIAL** and those fields were not invented.
+- `content.txt` has all required program sections with explicit BLOCKED/SKIP states. No fake CUT_PLAN, comment text, or media asset was created.
+- `publicationAllowed=false`; A1=false; P1=false. No downstream work.
+- Cumulative canonical bundles: at least 6. Full deterministic existing-corpus inventory remains to be established; do not claim remaining count yet.
+- Next: continue another existing Jev-backed item only; no new-material discovery.
+
 ## 2026-09-24 08:19 KST — Existing-corpus normalization run
 - New discovery: **0**.
 - Converted existing `data/candidates/2026-09-22_blind_L5aQCt8c.md` into `data/candidate_bundles/blind-L5aQCt8c/`.
