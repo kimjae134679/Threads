@@ -1,0 +1,35 @@
+[TITLE]
+여친이 삐졌을때 하지말아야하는 행동
+
+[BODY_SEQUENCE]
+BODY 01:
+😂😂
+
+[IMAGE:001 BLOCKED]
+USE_AT: BODY 01 직전/본문 핵심 시각자료 위치
+POSITION: 본문 시작부. 공개 페이지에서 본문 이미지 존재는 확인되지만 GitHub 작업 환경에서 원본 image bytes/direct asset URL을 확정하지 못함.
+BLOCKER: 정확한 본문 이미지 원본 URL/bytes와 최초 출처·권리 미확인. 페이지 UI/프로필 이미지를 콘텐츠 이미지로 오인하지 않기 위해 저장하지 않음.
+
+[CUT_PLAN]
+CUT 1: TITLE 뒤 — 제목 자체가 상황/훅 역할.
+CUT 2: IMAGE:001 직후 — 핵심 행동 reveal이 이미지에 의존하는 구조.
+CUT 3: BODY 01(😂😂) 뒤 — 원문 작성자 반응으로 마무리.
+
+[COMMENTS_TO_USE]
+댓글 미확인/접근 불가
+SKIP: 공개 페이지에서 댓글 수는 확인되지만 실제 댓글 문구를 이번 검증에서 읽지 못했으므로 생성하지 않음.
+
+[PROGRAM_ASSEMBLY_ORDER]
+TITLE → IMAGE:001(BLOCKED: asset 확보 전 사용 금지) → BODY 01
+SKIP: COMMENTS — 실제 댓글 문구 미확인.
+
+[SOURCE_STATUS]
+source_url: https://www.inven.co.kr/board/webzine/2097/2727900
+observed_title: 여친이 삐졌을때 하지말아야하는 행동
+body_verified: true
+comments_verified: false
+media_observed: true
+media_acquired: false
+classification: C1
+blocker: 본문 핵심 이미지 원본 bytes/direct URL/최초 출처·권리 및 실제 댓글 문구 미확인
+publicationAllowed=false
