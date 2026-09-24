@@ -10,16 +10,16 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 17:19 KST — Existing-corpus normalization
+## 2026-09-24 18:16 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo_2280791561.md` into `data/candidate_bundles/theqoo-2280791561/`.
+- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo_263633450.md` into `data/candidate_bundles/theqoo-263633450/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Exact source reverified. Body normalized into BODY 01–08, CUT_PLAN 8, PROGRAM_ASSEMBLY_ORDER completed.
-- Current public page shows views 259,938 / comments 633.
-- Individual comment text is not exposed in the accessible representation; 0 comments copied/invented.
-- No body-content media observed; share/site/UI images excluded.
+- Legacy record proves exact URL/title and historical body read; observed views 6,715 at 2026-09-23 15:19 KST.
+- Current source re-open is HTTP 403. Full body wording/order was not preserved, so no body reconstruction or CUT_PLAN guessing was performed.
+- Comments were never read; 0 copied/invented. Legacy observation recorded no body-content media.
+- PROGRAM_ASSEMBLY_ORDER records TITLE plus explicit SKIP blockers for body/comments/media.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **14**.
+- Cumulative canonical bundles now: **15**.
 - Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
@@ -38,6 +38,7 @@
 - `theqoo-1913908638` — 32살 무직/돈 없음/남친 없음; C1/PARTIAL, body verified and sequenced; comments count 24 visible but wording blocked; no body media observed.
 - `theqoo-1924192134` — 동거와 결혼은 다르구나; C1/PARTIAL, body verified and sequenced; comments count 91 visible but wording blocked; no body media observed.
 - `theqoo-2280791561` — 쿠팡 계약직 3주차 후기; C1/PARTIAL, body verified and sequenced; comments count 633 visible but wording blocked; no body media observed.
+- `theqoo-263633450` — 유럽여행에서 만난 남자 후기; C1/PARTIAL, historical body-read evidence but full wording/order not preserved; current source HTTP 403; comments blocked; no body media observed in legacy capture.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
