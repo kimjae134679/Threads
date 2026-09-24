@@ -1,0 +1,36 @@
+{
+  "id": "theqoo-425048627",
+  "source": "TheQoo",
+  "sourceUrl": "https://theqoo.net/review/425048627",
+  "observedTitle": "편의점 알바 진상 후기",
+  "observedAt": "2026-09-23T02:18:00+09:00",
+  "stage": "C1",
+  "normalizationStatus": "PARTIAL",
+  "body": {
+    "previouslyRead": true,
+    "exactTextPreserved": false,
+    "currentAccess": "HTTP_403"
+  },
+  "comments": {
+    "read": false,
+    "legacyObservedCount": 7,
+    "status": "BLOCKED"
+  },
+  "media": {
+    "legacyImageOrScreenshotObserved": false,
+    "filesAcquired": 0
+  },
+  "legacyObservedMetrics": {
+    "views": 6430,
+    "comments": 7
+  },
+  "provenance": "existing C1 candidate; no new discovery",
+  "blockers": [
+    "Current public source re-open returned HTTP 403",
+    "Legacy candidate does not preserve full body wording",
+    "Actual comments were not read/preserved"
+  ],
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false
+}
