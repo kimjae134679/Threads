@@ -1,0 +1,11 @@
+# COMMENTS
+
+status: BLOCKED
+source_comment_count_at_2026-09-24_reverify: 11
+
+실제 댓글 문구는 이번 공개 페이지 검증에서 읽지 못했다.
+댓글 수치만으로 댓글 내용을 추정하거나 생성하지 않는다.
+
+use_after: N/A
+purpose: N/A
+publicationAllowed=false
