@@ -1,0 +1,18 @@
+{
+  "sourceUrl": "https://theqoo.net/review/1913908638",
+  "observedTitle": "32살. 무직. 돈 없음. 남친 없음 ( 왠지 별로 없을 것 같은 후기",
+  "originalObservedAt": "2026-09-23T03:19:00+09:00",
+  "reverifiedDate": "2026-09-24",
+  "candidateStage": "C1",
+  "acquisitionStatus": "PARTIAL",
+  "provenance": "existing C1 candidate plus exact public source re-verification",
+  "body": {"verified": true, "sequenceSegments": 7},
+  "comments": {"countObserved": 24, "wordingVerified": false, "selected": 0, "blocker": "individual comment wording not exposed in accessible public page"},
+  "media": {"bodyContentObserved": false, "acquired": 0, "excluded": ["share buttons", "site UI/logo"]},
+  "observedMetrics": {"viewsCurrentAccessibleRepresentation": 4832, "comments": 24, "note": "legacy candidate separately recorded views 5451; values are observation-time dependent"},
+  "cutPlanCount": 6,
+  "programAssemblyOrder": true,
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false
+}
