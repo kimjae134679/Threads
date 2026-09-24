@@ -1,0 +1,9 @@
+[COMMENTS]
+댓글 미확인/접근 불가
+
+legacy discovery snapshot에서 댓글 수 46만 관찰되었으며 실제 댓글 본문은 읽지 않았다.
+닉네임/날짜/좋아요/댓글 내용을 추정하거나 생성하지 않는다.
+
+[PLACEMENT]
+use_after: 미확정 — 실제 본문과 실제 댓글을 확인한 뒤 결정
+purpose: 미확정
