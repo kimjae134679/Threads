@@ -10,17 +10,17 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 10:15 KST — Existing-corpus normalization
+## 2026-09-24 11:14 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing raw-batch candidate `260916_C1_A0_P0_회사불륜썰` from `data/_raw_batches/260916_C1_A0_P0_discovery_0234.json` into `data/candidate_bundles/inven-4061413/`.
+- Converted existing raw-batch candidate `260916_C1_A0_P0_여친이삐졌을때하지말아야하는행동` from `data/_raw_batches/260916_C1_A0_P0_discovery_0333.json` into `data/candidate_bundles/inven-2727900/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Exact public Inven source reverified: title `일하기 싫어서 푸는 우리 회사 썰`; body readable; current volatile values views 192 / recommendations 2 / comments 6. Original stored observation was 52 / 1 / 2.
-- Verified story normalized into BODY 01..06: employee backgrounds → relationship suspicion → work-behavior problems → divorce → dismissal/hand-off problems → another current couple mentioned at end.
-- Added 6 natural CUT_PLAN entries and final PROGRAM_ASSEMBLY_ORDER.
-- No body-content media observed; author/profile UI images are not treated as content media. No fake `media/` asset.
-- Actual comment text was not exposed by the public extraction; only count 6 verified. `comments.txt` is explicit SKIP/BLOCKED rather than invented.
-- `publicationAllowed=false`; C1; no downstream work.
-- Cumulative canonical bundles visible in `data/candidate_bundles/`: **7**. Full deterministic legacy/raw candidate total is still not established; do not claim remaining count yet.
+- Exact public Inven source reverified: title `여친이 삐졌을때 하지말아야하는 행동`; body image exists; visible author text is `😂😂`; recommendations 2 / comments 11. Do not merge volatile view snapshots.
+- Program structure recorded as TITLE → IMAGE:001(BLOCKED) → BODY 01. Added CUT_PLAN around title/image/reaction.
+- Exact body image bytes/direct asset URL and original provenance/rights remain unresolved; no fake `media/` asset was created and UI/profile images were excluded.
+- Actual comment text was not exposed in this verification; only count 11 verified. `comments.txt` is explicit BLOCKED rather than invented.
+- `publicationAllowed=false`; C1/PARTIAL; no downstream work.
+- Cumulative canonical bundles now: **8**.
+- Full deterministic legacy/raw candidate total is still not established; do not claim remaining count yet.
 - Next: continue another already-existing raw/Jev candidate only. No new-material discovery.
 
 ## Prior normalized bundles
@@ -31,6 +31,7 @@
 - `blind-L5aQCt8c` — 남자친구 화내는거 처음 봄; body + selected visible comments verified.
 - `inven-index-mz-9months` — MZ신입 9개월; C0/PARTIAL, direct URL/body/comments/media unresolved.
 - `inven-4061413` — 회사 불륜/퇴사 썰; body verified, comments text blocked, no body-content media.
+- `inven-2727900` — 여친이 삐졌을때 하지말아야하는 행동; C1/PARTIAL, body image observed but exact asset/provenance blocked, comments text blocked.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
