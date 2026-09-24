@@ -10,16 +10,17 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 20:18 KST — Existing-corpus normalization
+## 2026-09-24 21:17 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 `01_DISCOVERY/data/candidates/2026-09-23_theqoo_2747645645.md` into `01_DISCOVERY/data/candidate_bundles/theqoo-2747645645/`.
-- Exact original URL and body sequence reverified on the already-known TheQoo page.
+- Converted existing C1 `data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md` into `01_DISCOVERY/data/candidate_bundles/blind-ftu7d1tv/`.
+- Exact original Blind URL/body and publicly exposed comments reverified.
 - BODY 01~08 / CUT_PLAN 8 / PROGRAM_ASSEMBLY_ORDER written.
-- Current observed metrics: 5,026 views / 20 comments; individual comment text not exposed, so selected comments 0.
-- No source-body content media observed; share/UI images excluded.
+- Current observed metrics: 5,821 views / 55 comments / 14 likes; legacy observation 2,096 views / 39 comments retained separately.
+- Five actually exposed/read comments selected; full 55-comment set not claimed as read.
+- No source-body content media observed; avatar/ads/UI excluded.
 - `publicationAllowed=false`; no downstream work.
-- Cumulative canonical bundles now: **17**.
-- Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
+- Cumulative canonical bundles now: **18**.
+- Existing Jev batch snapshot: 1,273 candidates; current repo candidate Markdown count was previously observed higher, so deterministic full-corpus denominator still needs reconciliation before claiming remaining count.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
 ## Prior normalized bundles
