@@ -1,0 +1,28 @@
+{
+  "id": "blind-ftu7d1tv",
+  "source": "Blind",
+  "sourceUrl": "https://www.teamblind.com/kr/post/27%EC%82%B4-%EC%97%AC%EC%9E%90-%EC%98%A4%EB%8A%98-%ED%8C%8C%ED%98%BC%ED%96%88%EC%96%B4%EC%9A%94-%EB%88%88%EB%AC%BC%EB%82%98%EB%8A%94%EB%8D%B0-%EC%9E%98%ED%95%9C%EA%B1%B0-%EB%A7%9E%EC%A3%A0-ftu7d1tv",
+  "observedTitle": "27살 여자 오늘 파혼했어요 눈물나는데 잘한거 맞죠?",
+  "observedAt": "2026-09-24T21:17:00+09:00",
+  "stage": "C1",
+  "assetStage": "A0",
+  "publicationStage": "P0",
+  "publicationAllowed": false,
+  "body": {"confirmed": true, "sequenceParts": 8},
+  "comments": {"displayedCount": 55, "selectedReadCount": 5, "completeRead": false},
+  "media": {"sourceBodyMediaObserved": false, "acquiredCount": 0, "items": []},
+  "metrics": [
+    {"observedAt": "legacy candidate observation", "views": 2096, "comments": 39},
+    {"observedAt": "2026-09-24T21:17:00+09:00", "views": 5821, "comments": 55, "likes": 14}
+  ],
+  "provenance": {
+    "legacyCandidate": "data/candidates/260916_C0_A0_P0_27살여자오늘파혼.md",
+    "acquisition": "public source page re-verification; no access-control bypass"
+  },
+  "cutPlanCount": 8,
+  "programAssemblyOrderWritten": true,
+  "blockers": [
+    "all 55 comments were not exposed/read in the current public extraction",
+    "rights/privacy/defamation/human approval not completed"
+  ]
+}
