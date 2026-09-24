@@ -10,15 +10,16 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 14:14 KST — Existing-corpus normalization
+## 2026-09-24 15:15 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo-recruiting-interviewer-blame_C1.md` into `data/candidate_bundles/theqoo-3240588755/`.
+- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo_32-unemployed-no-money_C1.md` into `data/candidate_bundles/theqoo-1913908638/`.
 - Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Exact source reverified. Body is readable and was normalized into BODY 01–07, CUT_PLAN 5, and PROGRAM_ASSEMBLY_ORDER.
-- Current accessible source shows views 10,179 / comments 22. Individual comment text is not exposed, so comments remain blocked and none were invented.
-- No body-content media observed; site/share/UI images excluded.
+- Exact source reverified. Body normalized into BODY 01–07, CUT_PLAN 6, PROGRAM_ASSEMBLY_ORDER completed.
+- Current accessible representation shows views 4,832 / comments 24; legacy candidate separately recorded views 5,451 / comments 24, so metrics remain observation-time values rather than overwritten truth.
+- Individual comment text is not exposed; 0 comments copied/invented.
+- No body-content media observed; share/site/UI images excluded.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **11**.
+- Cumulative canonical bundles now: **12**.
 - Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
@@ -34,6 +35,7 @@
 - `inven-2424028` — 일본 유학 및 결혼 썰; C1/PARTIAL, body verified, IMAGE:001 direct asset resolved, IMAGE:002 fetch blocked, comments text blocked.
 - `theqoo-425048627` — 편의점 알바 진상 후기; C1/PARTIAL, legacy body-read evidence but full wording not preserved; current source HTTP 403; comments blocked.
 - `theqoo-3240588755` — 채용 관련 황당 후기; C1/PARTIAL, body verified and sequenced; comments count 22 visible but wording blocked; no body media observed.
+- `theqoo-1913908638` — 32살 무직/돈 없음/남친 없음; C1/PARTIAL, body verified and sequenced; comments count 24 visible but wording blocked; no body media observed.
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
