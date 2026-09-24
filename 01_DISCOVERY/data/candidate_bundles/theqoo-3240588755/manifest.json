@@ -1,0 +1,21 @@
+{
+  "bundleId": "theqoo-3240588755",
+  "sourceUrl": "https://theqoo.net/review/3240588755",
+  "observedTitle": "채용 관련 일 하면서 겪은 최근의 황당한 후기",
+  "source": "TheQoo 후기",
+  "originalObservedAt": "2026-09-23T02:18:00+09:00",
+  "reverifiedDate": "2026-09-24",
+  "stage": "C1",
+  "status": "PARTIAL",
+  "body": {"confirmed": true, "sequencePrepared": true},
+  "comments": {"confirmedCount": 22, "contentRead": false, "blocker": "individual comment text not exposed in currently accessible public page text"},
+  "media": {"bodyContentObserved": false, "files": [], "note": "share buttons, site chrome, avatars and UI assets excluded"},
+  "observedMetrics": {"viewsAtReverification": 10179, "comments": 22},
+  "provenance": {"type": "existing_candidate_reverification", "legacyCandidate": "01_DISCOVERY/data/candidates/2026-09-23_theqoo-recruiting-interviewer-blame_C1.md"},
+  "cutPlanCount": 5,
+  "programAssemblyOrderPrepared": true,
+  "blockers": ["individual comment wording unavailable"],
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false
+}
