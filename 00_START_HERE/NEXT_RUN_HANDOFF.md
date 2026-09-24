@@ -10,35 +10,36 @@
 - Do not infer missing body/comments/media. Record exact blockers.
 - Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
 
-## 2026-09-24 18:16 KST — Existing-corpus normalization
+## 2026-09-24 19:19 KST — Existing-corpus normalization
 - New discovery: **0**.
-- Converted existing C1 candidate `01_DISCOVERY/data/candidates/2026-09-23_theqoo_263633450.md` into `data/candidate_bundles/theqoo-263633450/`.
-- Created `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`.
-- Legacy record proves exact URL/title and historical body read; observed views 6,715 at 2026-09-23 15:19 KST.
-- Current source re-open is HTTP 403. Full body wording/order was not preserved, so no body reconstruction or CUT_PLAN guessing was performed.
-- Comments were never read; 0 copied/invented. Legacy observation recorded no body-content media.
-- PROGRAM_ASSEMBLY_ORDER records TITLE plus explicit SKIP blockers for body/comments/media.
+- Converted existing C1 candidate `01_DISCOVERY/candidates/2026-09-19-c1-natepann-homecam-mother-in-law.md` into `data/candidate_bundles/natepann-373653563/`.
+- Recovered exact original URL `https://pann.nate.com/talk/373653563#replyArea` from an existing-candidate-specific public repost.
+- Body sequence verified through public repost/corroboration and normalized as BODY 01~07; CUT_PLAN 7.
+- Selected usable comment reactions: 4, only from reactions explicitly quoted in public reporting; original 660-comment corpus was not directly read.
+- Historical metrics retained: 274,169 views / 1,969 recommendations / 660 comments.
+- Original-post body media existence/order/bytes not established; article/repost imagery excluded; no fabricated media.
 - `publicationAllowed=false`; C1/PARTIAL; no downstream work.
-- Cumulative canonical bundles now: **15**.
+- Cumulative canonical bundles now: **16**.
 - Full deterministic existing-corpus total / remaining count: not yet established; do not guess.
 - Next: continue another already-existing raw/Jev/candidate file only. No new-material discovery.
 
 ## Prior normalized bundles
-- `blind-cn6hnlfx` — 25살 연애 불가능할까; PARTIAL, source re-open blocked.
-- `blind-ftu7d1tv` — 27살 여자 오늘 파혼; body verified, selected visible comments.
-- `inven-2727679` — 41세 비혼녀; image-driven, body asset unresolved.
-- `inven-3290621` — 아버지 회사/임플란트 썰; body verified, image identity blocked.
-- `blind-L5aQCt8c` — 남자친구 화내는거 처음 봄; body + selected visible comments verified.
-- `inven-index-mz-9months` — MZ신입 9개월; C0/PARTIAL, direct URL/body/comments/media unresolved.
-- `inven-4061413` — 회사 불륜/퇴사 썰; body verified, comments text blocked, no body-content media.
-- `inven-2727900` — 여친이 삐졌을때 하지말아야하는 행동; C1/PARTIAL, body image observed but exact asset/provenance blocked, comments text blocked.
-- `inven-2424028` — 일본 유학 및 결혼 썰; C1/PARTIAL, body verified, IMAGE:001 direct asset resolved, IMAGE:002 fetch blocked, comments text blocked.
-- `theqoo-425048627` — 편의점 알바 진상 후기; C1/PARTIAL, legacy body-read evidence but full wording not preserved; current source HTTP 403; comments blocked.
-- `theqoo-3240588755` — 채용 관련 황당 후기; C1/PARTIAL, body verified and sequenced; comments count 22 visible but wording blocked; no body media observed.
-- `theqoo-1913908638` — 32살 무직/돈 없음/남친 없음; C1/PARTIAL, body verified and sequenced; comments count 24 visible but wording blocked; no body media observed.
-- `theqoo-1924192134` — 동거와 결혼은 다르구나; C1/PARTIAL, body verified and sequenced; comments count 91 visible but wording blocked; no body media observed.
-- `theqoo-2280791561` — 쿠팡 계약직 3주차 후기; C1/PARTIAL, body verified and sequenced; comments count 633 visible but wording blocked; no body media observed.
-- `theqoo-263633450` — 유럽여행에서 만난 남자 후기; C1/PARTIAL, historical body-read evidence but full wording/order not preserved; current source HTTP 403; comments blocked; no body media observed in legacy capture.
+- `blind-cn6hnlfx`
+- `blind-ftu7d1tv`
+- `inven-2727679`
+- `inven-3290621`
+- `blind-L5aQCt8c`
+- `inven-index-mz-9months`
+- `inven-4061413`
+- `inven-2727900`
+- `inven-2424028`
+- `theqoo-425048627`
+- `theqoo-3240588755`
+- `theqoo-1913908638`
+- `theqoo-1924192134`
+- `theqoo-2280791561`
+- `theqoo-263633450`
+- `natepann-373653563`
 
 ## Sequential candidate automation
 - Sequential work means existing-corpus normalization only. Do not rebuild a new-discovery queue.
