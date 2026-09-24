@@ -1,0 +1,44 @@
+{
+  "bundleId": "inven-2424028",
+  "source": "Inven 오픈이슈갤러리",
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2424028",
+  "observedTitle": "자체생산)본인 일본 유학 및 결혼 썰",
+  "existingCandidatePath": "01_DISCOVERY/data/candidates/2026-09-23_inven_japan-study-marriage-story_C1.md",
+  "confidence": "C1",
+  "status": "PARTIAL",
+  "bodyRead": true,
+  "comments": {
+    "countObserved": 21,
+    "textRead": false,
+    "blocker": "Public extraction exposes the comment section/count but not actual comment text."
+  },
+  "media": [
+    {
+      "id": "IMAGE:001",
+      "sourceOrder": 1,
+      "position": "after BODY 08 / loan approval result prompt",
+      "sourceAssetUrl": "https://upload3.inven.co.kr/upload/2025/03/24/bbs/i1487587364.jpg?MW=800",
+      "verified": true,
+      "bytesInRepository": false
+    },
+    {
+      "id": "IMAGE:002",
+      "sourceOrder": 2,
+      "position": "after BODY 12 / current salary statement",
+      "sourceAssetUrl": "https://upload3.inven.co.kr/upload/2025/03/24/bbs/i1613837339.png?MW=800",
+      "verifiedLinkInBody": true,
+      "bytesInRepository": false,
+      "blocker": "Asset fetch timed out during this pass."
+    }
+  ],
+  "observedMetrics": {
+    "views": 15254,
+    "recommendations": 9,
+    "comments": 21,
+    "note": "Current public-page snapshot; do not merge as immutable historical metrics."
+  },
+  "claimsCaveat": "Education, employment, marriage, salary, housing and loan details are the author's claims and were not independently verified.",
+  "A1": false,
+  "P1": false,
+  "publicationAllowed": false
+}
