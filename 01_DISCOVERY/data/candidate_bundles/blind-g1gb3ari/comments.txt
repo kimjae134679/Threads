@@ -1,0 +1,9 @@
+# COMMENTS
+
+댓글 미확인/접근 불가
+
+- legacy observed count: 8 (2026-09-22 06:19 KST)
+- commentsRead: false
+- current blocker: exact Blind source URL returns HTTP 410 Gone
+- selected comments: 0
+- 원문을 실제로 읽지 않은 댓글은 생성하거나 요약하지 않음.
