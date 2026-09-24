@@ -1,0 +1,43 @@
+{
+  "id": "natepann-373653563",
+  "source": "Nate Pann",
+  "sourceUrl": "https://pann.nate.com/talk/373653563#replyArea",
+  "observedTitle": "우리집 홈캠을 보고 계셨던 시어머니.",
+  "legacyObservedAt": "2026-09-19T02:16:00+09:00",
+  "status": "C1",
+  "completeness": "PARTIAL",
+  "body": {
+    "confirmed": true,
+    "acquisition": "existing-candidate-specific public repost/corroboration preserving body sequence",
+    "originalDirectReadThisRun": false
+  },
+  "comments": {
+    "confirmed": "partial",
+    "selectedUsableCount": 4,
+    "originalCorpusDirectlyRead": false,
+    "historicalVisibleCount": 660
+  },
+  "media": {
+    "confirmed": false,
+    "acquiredCount": 0,
+    "items": [],
+    "blocker": "Original-post body media existence/order/bytes not established; article/repost imagery excluded."
+  },
+  "historicalMetrics": {
+    "views": 274169,
+    "recommendations": 1969,
+    "comments": 660,
+    "provenance": "community-best index historical observation"
+  },
+  "provenance": [
+    "01_DISCOVERY/candidates/2026-09-19-c1-natepann-homecam-mother-in-law.md",
+    "https://theqoo.net/square/3533368320",
+    "https://www.moneys.co.kr/article/2024121715402825722",
+    "https://newsbalance.co.kr/news/view/1065576345259040"
+  ],
+  "blockers": [
+    "Original Nate Pann comment corpus not directly retrieved.",
+    "Original-post media not established/acquired."
+  ],
+  "publicationAllowed": false
+}
