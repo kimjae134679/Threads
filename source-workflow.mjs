@@ -4,7 +4,7 @@ import { spawn } from 'node:child_process';
 import { createHash, randomUUID } from 'node:crypto';
 import { acquisitionId } from './scripts/acquire-existing-sources.mjs';
 
-const RESULT_STATES = new Set(['converted','needs_verbatim_check','needs_media',
+const RESULT_STATES = new Set(['converted','needs_selection','needs_verbatim_check','needs_media',
   'needs_comment_check','needs_comment_ranking','needs_source','ready_to_render','excluded_severe','failed']);
 const mediaType = name => ({ '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg',
   '.webp':'image/webp', '.gif':'image/gif' })[path.extname(name).toLowerCase()] || 'application/octet-stream';
@@ -16,6 +16,43 @@ const names = async dir => { try { return new Set(await fs.readdir(dir)); } catc
 } };
 const heading = value => /^#\s+(.+)$/m.exec(value)?.[1]?.trim() ||
   /^-\s*exactObservedTitle:\s*(.+)$/m.exec(value)?.[1]?.trim() || '';
+function storedEntries(zip) {
+  const found=new Map(); let at=0;
+  while(at+30<=zip.length && zip.readUInt32LE(at)===0x04034b50) {
+    if(found.size>=200 || zip.readUInt16LE(at+8)!==0 || zip.readUInt16LE(at+6)&8)
+      throw Object.assign(new Error('지원하지 않는 ZIP 형식입니다.'),{status:400});
+    const size=zip.readUInt32LE(at+18),length=zip.readUInt16LE(at+26),extra=zip.readUInt16LE(at+28);
+    const end=at+30+length+extra+size;
+    if(end>zip.length || size!==zip.readUInt32LE(at+22))
+      throw Object.assign(new Error('ZIP 내용이 손상됐습니다.'),{status:400});
+    const name=zip.toString('utf8',at+30,at+30+length);
+    if(!name || name.includes('..') || name.includes('\\') || found.has(name))
+      throw Object.assign(new Error('ZIP 경로가 잘못됐습니다.'),{status:400});
+    found.set(name,zip.subarray(at+30+length+extra,end));at=end;
+  }
+  if(!found.size) throw Object.assign(new Error('빈 ZIP입니다.'),{status:400});
+  return found;
+}
+function checkCuratedOutput(zip,pages) {
+  const files=storedEntries(zip), manifest=JSON.parse(files.get('manifest.json')?.toString('utf8')||'null');
+  const source=files.get('source-bundle.zip');
+  if(manifest?.schema!=='threads-curated-output-v1' || manifest.publicationAllowed!==false ||
+    !Number.isInteger(pages) || pages<2 || manifest.renderedPages!==pages || !source ||
+    createHash('sha256').update(source).digest('hex')!==manifest.sourceSha256)
+    throw Object.assign(new Error('선별 ZIP 기반 이미지 결과만 완료로 기록합니다.'),{status:400});
+  const bundle=storedEntries(source),plan=JSON.parse(bundle.get('bundle.json')?.toString('utf8')||'null');
+  if(plan?.schema!=='threads-curated-source-v1' || plan.publicationAllowed!==false ||
+    !plan.coverTitle?.trim() || !plan.review?.bodyVerified || !plan.review?.mediaVerified ||
+    !plan.review?.commentsVerified || !plan.segments?.some(s=>s.selected) ||
+    !plan.coverTitleEvidence?.trim() || ![plan.originalTitle,...plan.segments.filter(s=>s.selected&&s.kind==='text').map(s=>s.text)]
+      .some(text=>text?.includes(plan.coverTitleEvidence.trim())))
+    throw Object.assign(new Error('원문 ZIP의 선별·확인 기록이 부족합니다.'),{status:400});
+  for(let i=1;i<=pages;i++) {
+    const name=`rendered/slide-${String(i).padStart(3,'0')}.png`;
+    if(!files.get(name)?.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])))
+      throw Object.assign(new Error('제작 이미지가 누락됐습니다.'),{status:400});
+  }
+}
 
 export class SourceWorkflow {
   constructor(root, options = {}) {
@@ -61,8 +98,9 @@ export class SourceWorkflow {
         const [acquisition,result]=await Promise.all([
           acquiredNames.has(e.id)?readJson(path.join(this.acquired,e.id,'acquisition.json')):null,
           resultNames.has(e.id+'.json')?readJson(path.join(this.results,e.id+'.json')):null]);
+        const previous=result?.state==='converted' && result.workflowVersion!=='curation-v1';
         return {candidate:e.candidate,id:e.id,title:e.title,acquisition:acquisition?.state || 'queued',
-          conversion:result?.state || 'not_converted',pages:result?.pages || 0,
+          sourceUrl:acquisition?.url||null,conversion:previous?'needs_selection':result?.state || 'not_converted',pages:previous?0:result?.pages || 0,
           resultFile:result?.file || null,note:result?.note || acquisition?.reason || '',
           mediaFiles:acquisition?.media?.map(m=>m.file).filter(Boolean) || []};
       })));
@@ -119,6 +157,7 @@ export class SourceWorkflow {
     if (!RESULT_STATES.has(state)) throw Object.assign(new Error('잘못된 변환 상태입니다.'),{status:400});
     if (zip && (state==='excluded_severe' || state==='failed')) throw Object.assign(new Error('제외 항목에 결과 ZIP을 저장할 수 없습니다.'),{status:400});
     if (!zip && !['excluded_severe','failed'].includes(state)) throw Object.assign(new Error('ZIP 결과가 필요합니다.'),{status:400});
+    if(state==='converted') checkCuratedOutput(zip,pages);
     await fs.mkdir(this.results,{recursive:true});
     let file=null;
     if (zip) {
@@ -127,7 +166,7 @@ export class SourceWorkflow {
       const target=path.join(this.results,file);
       try { await fs.access(target); } catch { await fs.writeFile(target,zip,{flag:'wx'}); }
     }
-    const record={candidate,state,pages:Number.isInteger(pages)?pages:0,file,
+    const record={candidate,state,pages:Number.isInteger(pages)?pages:0,file,workflowVersion:'curation-v1',
       note:String(note).slice(0,500),savedAt:new Date().toISOString(),publicationAllowed:false};
     const target=path.join(this.results,e.id+'.json');
     const tmp=target+'.tmp-'+randomUUID();

@@ -45,6 +45,11 @@ test('loads all candidates, confines source files, and retains conversion result
     assert.equal(after.counts.excluded,1);
     assert.equal(after.counts.needsReview,1);
     await assert.rejects(service.save(candidates[1],'converted',1,null),{status:400});
+    await assert.rejects(service.save(candidates[0],'converted',2,Buffer.from('ZIP')),{status:400});
+    await service.save(candidates[0],'needs_selection',0,Buffer.from('SOURCE ZIP'),'원문 선별 필요');
+    const waiting=await service.status();
+    assert.equal(waiting.entries[0].conversion,'needs_selection');
+    assert.equal(waiting.entries[0].pages,0);
     let selected;
     const withOpener=new SourceWorkflow(root,{queuePath,spawn:(command,args)=>{
       selected={command,args};const child=new EventEmitter();child.unref=()=>{};
@@ -52,9 +57,9 @@ test('loads all candidates, confines source files, and retains conversion result
     }});
     const opened=await withOpener.openItem(candidates[0]);
     assert.equal(opened.kind,'result');
-    assert.equal(path.basename(opened.file),after.entries[0].resultFile);
+    assert.equal(path.basename(opened.file),waiting.entries[0].resultFile);
     assert.ok(selected.args.join(' ').includes(process.platform==='win32'?
-      after.entries[0].resultFile:path.dirname(opened.file)));
+      waiting.entries[0].resultFile:path.dirname(opened.file)));
     assert.equal((await withOpener.openItem(candidates[1])).kind,'candidate');
     await assert.rejects(withOpener.openItem('../outside'),{status:404});
   } finally { await fs.rm(root,{recursive:true,force:true}); }
