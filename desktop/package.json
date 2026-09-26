@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -34,7 +34,8 @@
           "source-cut-*.html",
           "source-cut-*.css",
           "source-cut-*.js",
-          "fonts/**"
+          "fonts/**",
+          "source-community-*.js"
         ]
       }
     ],

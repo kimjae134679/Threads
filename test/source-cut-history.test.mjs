@@ -6,7 +6,7 @@ import vm from 'node:vm';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url),{createReferenceStore}=require('../desktop/reference-store.cjs');
 const window={};
-for(const name of ['source-cut-model.js','source-cut-composition.js','source-cut-history.js'])vm.runInNewContext(await fs.readFile(new URL('../app/'+name,import.meta.url),'utf8'),{window});
+for(const name of ['source-cut-model.js','source-community-template.js','source-cut-composition.js','source-cut-history.js'])vm.runInNewContext(await fs.readFile(new URL('../app/'+name,import.meta.url),'utf8'),{window});
 const m=window.ThreadsSourceCut,p=m.newProject();
 m.addAsset(p,{width:800,height:1600,name:'private source',dataUrl:'data:image/png;base64,AA=='});
 let baseline=m.recordEdit(p,null,'import');p.assets[0].body={x:80,y:160,width:640,height:800};
