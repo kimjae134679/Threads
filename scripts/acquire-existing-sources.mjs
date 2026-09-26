@@ -100,7 +100,7 @@ async function acquire(entry, opts) {
         const ext=/jpeg/.test(r.contentType)?'.jpg':/webp/.test(r.contentType)?'.webp':/gif/.test(r.contentType)?'.gif':'.png';
         const rawName=decodeURIComponent(new URL(mediaUrl).pathname.split('/').pop()||'');
         const filename=rawName.replace(/[<>:"/\\|?*\x00-\x1f]/g,'_').slice(0,150)||('image-'+String(i+1).padStart(3,'0')+ext);
-        const saved=filename.includes('.')?filename:filename+ext;
+        const saved=filename;
         if (media.some(x=>x.file === 'media/'+saved)) { media.push({url:mediaUrl,error:'파일명 중복 — 직접 원본 이미지를 확인하세요'}); continue; }
         await writeFile(join(folder,'media',saved),r.bytes);
         media.push({url:mediaUrl,file:'media/'+saved,sha256:hash(r.bytes),bytes:r.bytes.length});
