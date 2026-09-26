@@ -7,3 +7,6 @@ data/runtime/
 .DS_Store
 Thumbs.db
 desktop/dist/
+
+# Local Chromium capture profile (GitHub Desktop worktree hygiene)
+tmp_capture/
