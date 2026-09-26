@@ -196,7 +196,7 @@
         ranking: 'best marker then visible positive likes; unranked comments excluded' },
       media: media.map(x => ({ name: x.name, available: !!x.file, originalName: x.file?.name || null })),
       missingMedia: record.missingMedia, renderedPages: pages.length, conversionStatus: state,
-      publicationAllowed: false, originalFileSha256Prefix: id, capturedAt: new Date().toISOString() };
+      publicationAllowed: false, originalFileSha256Prefix: id, sourceFileModifiedAt: new Date(file.lastModified).toISOString() };
     const entries = [textFile('raw/title.txt',record.title), textFile('raw/body.txt',record.body),
       textFile('raw/comments.txt',record.popularComments.map(c => (c.best && !Number.isFinite(c.likes) ? '[BEST] ' : '[+' + c.likes + '] ') + c.text).join('\n')),
       { name:'raw/' + safe(file.name), data:new Uint8Array(await file.arrayBuffer()) },
@@ -207,27 +207,44 @@
     return { label, zip, manifest };
   }
   async function save(result) {
-    if (output) {
-      const handle = await output.getFileHandle(result.label + '.zip', { create:true });
-      const writer = await handle.createWritable(); await writer.write(result.zip); await writer.close();
-    } else {
-      const url = URL.createObjectURL(result.zip), a = document.createElement('a');
-      a.href = url; a.download = result.label + '.zip'; document.body.append(a); a.click(); a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 30000);
+    if (!output) throw new Error('결과 폴더를 먼저 선택하세요.');
+    let name = result.label + '.zip', existing = null;
+    try { existing = await output.getFileHandle(name); }
+    catch (error) { if (error.name !== 'NotFoundError') throw error; }
+    if (existing) {
+      const previous = await (await existing.getFile()).arrayBuffer();
+      const next = await result.zip.arrayBuffer();
+      const previousBytes = new Uint8Array(previous), nextBytes = new Uint8Array(next);
+      if (previous.byteLength === next.byteLength &&
+        previousBytes.every((value, i) => value === nextBytes[i])) {
+        result.savedAs = name; return;
+      }
+      name = result.label + '-rev-' + Date.now() + '.zip';
     }
+    const handle = await output.getFileHandle(name, { create:true });
+    const writer = await handle.createWritable();
+    try { await writer.write(result.zip); await writer.close(); result.savedAs = name; }
+    catch (error) { await writer.abort().catch(() => {}); throw error; }
   }
   $('sources').addEventListener('change', e => {
     selected = [...e.target.files]; $('rows').replaceChildren();
     const counts = new Map();
     for (const f of selected) counts.set(kind(filePath(f)), 1 + (counts.get(kind(filePath(f))) || 0));
     const inputs = selected.filter(sourceInput);
+    for (const f of selected) {
+      const p = filePath(f), k = kind(p);
+      if (k === 'legacy_candidate' && /\.md$/i.test(p) && !/\/README\.md$/i.test(p))
+        row(p, '기존 후보', 'needs_source', 0, '원문·인기 댓글·본문 이미지 확인 대기');
+      else if (k === 'canonical_or_legacy_bundle' && /\/manifest\.json$/i.test(p))
+        row(p, '기존 정리본', 'needs_verbatim_check', 0, '기존 요약을 원문으로 간주하지 않음');
+    }
     $('summary').textContent = '선택한 파일 ' + selected.length + '개 / 원문 입력 후보 ' + inputs.length +
       '개\n분류: ' + [...counts].map(([k,v]) => k + ' ' + v).join(', ');
-    $('start').disabled = !inputs.length;
+    $('start').disabled = !inputs.length || !output;
     $('progress').max = Math.max(1,inputs.length); $('progress').value = 0;
   });
   $('output').addEventListener('click', async () => {
-    try { output = await window.showDirectoryPicker({ mode:'readwrite' }); $('outputName').textContent = '결과 폴더: ' + output.name; }
+    try { output = await window.showDirectoryPicker({ mode:'readwrite' }); $('outputName').textContent = '결과 폴더: ' + output.name; $('start').disabled = !selected.some(sourceInput); }
     catch (e) { $('outputName').textContent = '폴더 선택 실패: ' + e.message; }
   });
   $('stop').addEventListener('click', () => { stopped = true; });
@@ -241,7 +258,7 @@
         const result = await handle(file,selected);
         await save(result);
         row(filePath(file), '원문', result.manifest.conversionStatus, result.manifest.renderedPages,
-          result.manifest.missingMedia.length ? '이미지 없음: '+result.manifest.missingMedia.join(', ') : result.manifest.extraction);
+          result.manifest.missingMedia.length ? '이미지 없음: '+result.manifest.missingMedia.join(', ') : result.manifest.extraction + ' · ' + result.savedAs);
         result.manifest.conversionStatus === 'converted' ? converted++ : blocked++;
       } catch (error) { blocked++; row(filePath(file),'원문','failed',0,error.message); }
       done++; $('progress').value=done;
