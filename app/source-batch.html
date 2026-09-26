@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>원문 일괄 수집·이미지 변환</title><link rel="stylesheet" href="./source-batch.css"></head>
+<body><main><h1>원문 일괄 수집·이미지 변환</h1>
+<p>저장한 원문 HTML 또는 원문 그대로의 TXT/JSON과 첨부 이미지를 폴더에서 선택하세요. 원본 글·줄바꿈을 보관하고 본문 순서대로 이미지 카드를 만듭니다.</p>
+<div class="controls"><label>원본 폴더 선택 <input id="sources" type="file" webkitdirectory multiple></label>
+<button id="output" type="button">결과 저장 폴더 선택</button><button id="start" type="button" disabled>일괄 변환 시작</button><button id="stop" type="button" disabled>중지</button></div>
+<p id="outputName">결과 저장 폴더를 선택하세요. Chrome·Edge의 로컬 앱 주소에서 사용합니다.</p>
+<progress id="progress" value="0" max="1"></progress><p id="summary" role="status"></p>
+<details><summary>원본 TXT 형식과 판정 기준</summary>
+<pre>[TITLE]
+원본 제목
+[BODY]
+원본 글 그대로. 줄바꿈과 공백을 변경하지 않습니다.
+[IMAGE:photo1.jpg]
+이미지가 놓인 원문 위치 바로 다음 문장
+[COMMENTS]
+[+123] 인기 댓글 원문
+[+45] 두 번째 댓글 원문</pre>
+<p>TXT는 파일 자체가 원문일 때만 사용하세요. 기존 <code>content.txt</code>의 BODY_SEQUENCE 요약은 원문으로 판정하지 않습니다. HTML은 구조에 따라 공백·줄바꿈이 달라질 수 있으므로 변환 후 원문 대조 상태를 남깁니다. 인기 순위 근거가 없으면 댓글을 임의로 고르지 않습니다.</p></details>
+<table><thead><tr><th>원본 파일</th><th>분류</th><th>상태</th><th>페이지</th><th>사유</th></tr></thead><tbody id="rows"></tbody></table>
+</main><script src="./source-batch-core.js"></script><script src="./source-cut-zip.js"></script><script src="./source-batch.js"></script></body></html>

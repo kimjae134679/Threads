@@ -1,3 +1,15 @@
+# 2026-09-27 — 원문 보존·일괄 변환 작업
+
+사용자 최신 지시: 제목과 본문 원문을 공백·줄바꿈까지 그대로, 본문 이미지 원래 위치·원본 파일, 인기 댓글만 확보하고 자동 이미지 변환한다. 변환 완료를 표시하며 많은 건을 처리한다. 과거 후보/Jev/임시 작업물을 전부 정리한다. 추가 소재 발견은 중단하고 기존 자료부터 처리한다.
+
+- 새 로컬 입력 화면 /app/source-batch.html: 저장된 HTML 또는 명시적인 원문 TXT/JSON과 같은 폴더의 이미지를 선택해 PNG와 ZIP을 순차 생성한다. 인기 댓글은 공개 좋아요 수 또는 best 표기가 있을 때만 고른다.
+- TXT 본문 원문은 공백·줄바꿈을 보관한다. HTML DOM 텍스트는 화면과 다를 수 있어 needs_verbatim_check로 표시한다. 없는 이미지는 needs_media. converted는 정확한 원문 TXT/JSON과 자산 확인 및 PNG 생성 후에만.
+- 기존 전 경로를 data/_system/source-material-inventory.json에 분류: 후보 MD 1570, Jev JSON 953, 묶음 13, 정리 폴더 12+9 (중복 ID 3개, 실제 고유 ID 18), 임시 제작 폴더 35, source package 1. 옛 handoff의 19 unique와 불일치. 기존 파일 삭제·이동·C/A/P 승격 없음.
+- 원문 전문·원본 이미지·변환 결과는 로컬 ZIP에 저장한다. 실제 URL 원클릭 수집·사이트별 댓글/이미지 확보·Windows 대량 실행·PR #1 UI 통합은 아직 완료됐다고 말하지 않는다.
+- 확인 순서: core 단위검사와 GitHub Actions, 실제 PNG 육안 검수, 요약 파일을 원문으로 잘못 판정하지 않는지 검증. docs/SOURCE_BATCH_PIPELINE.md.
+
+---
+
 # NEXT RUN HANDOFF
 
 ## 🔴 LATEST USER OVERRIDE — 2026-09-24
