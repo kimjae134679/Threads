@@ -7,7 +7,9 @@ function fail(message) { console.error(message); process.exit(1); }
 const [planFile, renderedDir, outFile] = process.argv.slice(2);
 if (!planFile || !renderedDir) fail('usage: node scripts/validate-rendered-source-carousel.mjs <carousel-plan.json> <rendered-dir> [out.json]');
 const plan = JSON.parse(fs.readFileSync(planFile, 'utf8'));
-if (plan.type !== 'SOURCE_BACKED_CAROUSEL_PLAN') fail('expected SOURCE_BACKED_CAROUSEL_PLAN');
+if (plan.type !== 'RENDERED_SOURCE_CAROUSEL_PLAN') fail('expected RENDERED_SOURCE_CAROUSEL_PLAN');
+if (!/^https?:\/\//.test(plan.sourceUrl || '')) fail('rendered plan requires sourceUrl');
+if (plan.slideCount !== plan.slides?.length) fail('slideCount mismatch');
 if (plan.publicationAllowed !== false || plan.publishOwner !== '04_REVIEW_PUBLISH') fail('carousel must remain review/publish gated');
 if (!Array.isArray(plan.slides) || plan.slides.length < 2) fail('carousel requires cover plus source-backed body');
 if (plan.slides[0].kind !== 'COVER_ONLY') fail('slide 1 must be COVER_ONLY');

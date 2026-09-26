@@ -389,6 +389,7 @@ function candidateCard(item) {
 }
 
 function renderDetail() {
+  document.dispatchEvent(new CustomEvent("threads:candidate-selected"));
   const item = state.items.find((x) => x.id === selectedId);
   els.detailEmpty.hidden = Boolean(item);
   els.detailContent.hidden = !item;
@@ -606,4 +607,16 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-window.ThreadsSourceIntakeContext = { getSelectedId: function(){ return selectedId; }, getCandidate: function(id){ return state.items.find(function(x){ return x.id === id; }) || null; } };
+window.ThreadsSourceIntakeContext = {
+  getSelectedId: () => selectedId,
+  getCandidate: (id) => state.items.find((item) => item.id === id) || null,
+  saveSourcePackage(id, sourcePackage) {
+    const item = state.items.find((candidate) => candidate.id === id);
+    if (!item) throw new Error("source_package_candidate_missing");
+    item.sourcePackage = sourcePackage;
+    item.updatedAt = new Date().toISOString();
+    delete item.publishApproval;
+    persist();
+    document.dispatchEvent(new CustomEvent("threads:content-revision-changed"));
+  },
+};

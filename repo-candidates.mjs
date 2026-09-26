@@ -129,6 +129,7 @@ export async function loadRepoCandidates(rootDir, options = {}) {
       relatedSources: [],
       sourceMeta: {
         provider: source,
+        productionNotes: section(text, "중간 문구 초안").slice(0, 6000),
         repoCandidatePath: repoPath,
         candidateStage,
         assetStage,

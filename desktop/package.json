@@ -1,0 +1,49 @@
+{
+  "name": "threads-cut-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Source screenshot and cut editor",
+  "author": "Threads project",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "pack:win": "electron-builder --win zip --x64 --publish never",
+    "smoke": "electron smoke.cjs"
+  },
+  "devDependencies": {
+    "electron": "44.4.3",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.threads.sourcecut",
+    "productName": "Threads Cut Editor",
+    "artifactName": "Threads-Cut-Editor-${version}-Windows-x64.zip",
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "capture.cjs",
+      "network.cjs",
+      "package.json",
+      "reference-store.cjs"
+    ],
+    "extraResources": [
+      {
+        "from": "../app",
+        "to": "editor",
+        "filter": [
+          "source-cut-*.html",
+          "source-cut-*.css",
+          "source-cut-*.js",
+          "fonts/**"
+        ]
+      }
+    ],
+    "win": {
+      "target": "zip",
+      "signAndEditExecutable": false
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

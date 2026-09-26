@@ -6,3 +6,4 @@ config/buffer.local.json
 data/runtime/
 .DS_Store
 Thumbs.db
+desktop/dist/

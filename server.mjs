@@ -1,4 +1,5 @@
 import http from "node:http";
+import { PublicationJournal } from "./publication-journal.mjs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,6 +34,8 @@ const RUNTIME_STARTED_AT = new Date().toISOString();
 const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || "127.0.0.1";
 const STATE_PATH = process.env.PERSISTENCE_STATE_PATH || path.join(ROOT, "data", "runtime", "state.json");
+const PUBLICATION_JOURNAL_PATH = path.join(path.dirname(STATE_PATH), "publication-journal");
+const publicationJournal = new PublicationJournal(PUBLICATION_JOURNAL_PATH);
 const SQLITE_PATH = process.env.PERSISTENCE_SQLITE_PATH || path.join(ROOT, "data", "runtime", "state.sqlite");
 const MEDIA_STAGING_PATH = process.env.MEDIA_STAGING_PATH || path.join(ROOT, "data", "runtime", "media-staging");
 const VERTICAL_VIDEO_ARTIFACT_PATH = process.env.VERTICAL_VIDEO_ARTIFACT_PATH || path.join(ROOT, "data", "runtime", "vertical-video");
@@ -55,11 +58,14 @@ const MIME = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".webp": "image/webp",
+  ".woff": "font/woff",
 };
 
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url || "/", `http://${req.headers.host || `${HOST}:${PORT}`}`);
+
+    if (url.pathname.startsWith("/api/")) validateLocalRequest(req, url);
 
     if (url.pathname === "/api/health") {
       return json(res, 200, { ok: true, service: "threads-trend-inbox", version: PACKAGE_VERSION, runtimeStartedAt: RUNTIME_STARTED_AT, now: new Date().toISOString() });
@@ -94,7 +100,10 @@ const server = http.createServer(async (req, res) => {
       if (req.method === "PUT") {
         const body = await readJsonBody(req);
         const snapshot = body?.snapshot || body;
-        const expectedRevision = body?.expectedRevision ?? null;
+        const expectedRevision = body?.expectedRevision;
+        if (!Number.isSafeInteger(expectedRevision) || expectedRevision < 0) {
+          throw requestError(400, "persistence_revision_required", "서버에서 읽은 revision이 필요합니다.");
+        }
         const record = await stateStore.write(snapshot, expectedRevision);
         return json(res, 200, { ok: true, namespace, backend: PERSISTENCE_BACKEND, ...record });
       }
@@ -253,8 +262,14 @@ const server = http.createServer(async (req, res) => {
       const candidate = body?.candidate || {};
       validateApprovedCandidate(candidate);
       const text = approvedThreadsText(candidate);
-      const result = await publishTextToThreads(text, { replyControl: body?.replyControl || "everyone" });
-      return json(res, 200, { ok: true, result });
+      const replyControl = body?.replyControl || "everyone";
+      if (!getThreadsStatus().configured) await publishTextToThreads(text, { replyControl });
+      const delivery = await publicationJournal.execute({
+        provider: "threads", candidateId: candidate.id, approvalBasis: candidate.publishApproval.basisUpdatedAt,
+        accountKey: process.env.THREADS_ACCESS_TOKEN.trim(), payload: { text, replyControl },
+        publish: () => publishTextToThreads(text, { replyControl }),
+      });
+      return json(res, 200, { ok: true, ...delivery });
     }
 
     if (url.pathname === "/api/threads/insights") {
@@ -283,12 +298,15 @@ const server = http.createServer(async (req, res) => {
       const candidate = body?.candidate || {};
       validateApprovedCandidate(candidate);
       const text = approvedThreadsText(candidate);
-      const result = await publishThreadsViaBuffer({
-        text,
-        mode: body?.mode || "addToQueue",
-        dueAt: body?.dueAt || null,
+      const bufferStatus = getBufferStatus();
+      const request = { text, mode: body?.mode || "addToQueue", dueAt: body?.dueAt || null, channelId: bufferStatus.channel?.id || null };
+      if (!bufferStatus.configured) await publishThreadsViaBuffer(request);
+      const delivery = await publicationJournal.execute({
+        provider: "buffer", candidateId: candidate.id, approvalBasis: candidate.publishApproval.basisUpdatedAt,
+        accountKey: process.env.BUFFER_API_KEY.trim(), payload: request,
+        publish: () => publishThreadsViaBuffer(request),
       });
-      return json(res, 200, { ok: true, result });
+      return json(res, 200, { ok: true, ...delivery });
     }
 
     if (url.pathname === "/") {
@@ -297,7 +315,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (req.method !== "GET" && req.method !== "HEAD") return methodNotAllowed(res, ["GET", "HEAD"]);
-    return serveStatic(url.pathname, res, req.method === "HEAD");
+    return await serveStatic(url.pathname, res, req.method === "HEAD");
   } catch (error) {
     console.error(error);
     if (Number.isInteger(error?.status)) {
@@ -447,18 +465,31 @@ async function handleYouTubeMostPopular(url, res) {
 function validateApprovedCandidate(candidate) {
   if (!candidate || typeof candidate !== "object") throw requestError(400, "candidate_required", "게시 후보 데이터가 필요합니다.");
   if (candidate.status !== "ready") throw requestError(409, "candidate_not_ready", "후보 상태가 제작 후보(ready)가 아닙니다.");
-  if (!Number.isFinite(Number(candidate.score))) throw requestError(409, "candidate_score_missing", "후보 점수 평가가 완료되지 않았습니다.");
+  if (typeof candidate.score !== "number" || !Number.isFinite(candidate.score) || candidate.score < 0 || candidate.score > 100) throw requestError(409, "candidate_score_missing", "후보 점수 평가가 완료되지 않았습니다.");
   if (candidate.researchBundle?.reviewStatus !== "reviewed") throw requestError(409, "research_review_required", "Research Bundle 사람 검토 완료가 필요합니다.");
   if (candidate.draftStudio?.reviewStatus !== "approved") throw requestError(409, "draft_approval_required", "Draft Studio 사람 승인이 필요합니다.");
 
   const gate = candidate.safetyGate || {};
   const gateStatuses = [gate.fact, gate.rights, gate.privacy, gate.defamation, gate.platform];
-  if (!gate.reviewedAt || gateStatuses.some((value) => !value || value === "unknown")) {
+  if (!gate.reviewedAt || gateStatuses.some((value) => !["pass", "warn", "block"].includes(value))) {
     throw requestError(409, "safety_gate_incomplete", "Rights/Safety Gate 검토가 완료되지 않았습니다.");
   }
   if (gateStatuses.includes("block")) throw requestError(409, "safety_gate_blocked", "Rights/Safety Gate에 BLOCK 항목이 있습니다.");
   if (gateStatuses.includes("warn") && !String(gate.notes || "").trim()) {
     throw requestError(409, "safety_gate_warning_unresolved", "WARN 항목의 대응 메모가 필요합니다.");
+  }
+
+  if (candidate.contentStrategy?.sourceAssetType === "A10") {
+    throw requestError(409, "asset_rights_unknown", "권리 미확인 자산은 게시할 수 없습니다.");
+  }
+  const captureIndexes = (candidate.cardFactory?.storyboard?.cards || [])
+    .flatMap((card, index) => card?.type === "capture-image" ? [index] : []);
+  if (captureIndexes.length) {
+    const privacy = candidate.cardFactory?.privacy;
+    if (privacy?.gate?.allowed !== true || captureIndexes.some((index) =>
+      privacy?.masks?.[index]?.reviewed !== true || privacy?.masks?.[index]?.identityMatch !== true)) {
+      throw requestError(409, "image_privacy_review_required", "이미지별 개인정보 검토가 필요합니다.");
+    }
   }
 
   const approval = candidate.publishApproval || {};
@@ -488,6 +519,21 @@ function approvedInstagramCaption(candidate) {
     .filter(Boolean)
     .join("\n\n");
   return text || approvedThreadsText(candidate);
+}
+
+function validateLocalRequest(req, url) {
+  const allowedHosts = new Set(["localhost", "127.0.0.1", "[::1]", HOST.toLowerCase()]);
+  if (!allowedHosts.has(url.hostname.toLowerCase()) || Number(url.port || 80) !== req.socket.localPort) {
+    throw requestError(403, "untrusted_host", "로컬 앱 주소를 사용하세요.");
+  }
+  const origin = req.headers.origin;
+  if ((origin && origin !== url.origin) || req.headers["sec-fetch-site"] === "cross-site") {
+    throw requestError(403, "cross_origin_request", "다른 웹사이트의 API 요청은 허용하지 않습니다.");
+  }
+  if (!["GET", "HEAD", "OPTIONS"].includes(req.method)) {
+    const contentType = String(req.headers["content-type"] || "").split(";", 1)[0].trim().toLowerCase();
+    if (contentType !== "application/json") throw requestError(415, "json_content_type_required", "application/json이 필요합니다.");
+  }
 }
 
 async function readJsonBody(req, maxBytes = 256 * 1024) {
@@ -561,7 +607,14 @@ function decodeXml(value) {
 }
 
 async function serveStatic(pathname, res, headOnly = false) {
-  let relative = decodeURIComponent(pathname).replace(/^\/+/, "");
+  let relative;
+  try { relative = decodeURIComponent(pathname).replace(/^\/+/, ""); }
+  catch { return json(res, 400, { ok: false, error: "invalid_path" }); }
+  const segments = relative.split(/[\\/]/);
+  if (!["app", "data", "docs"].includes(segments[0]) || segments.some((part) => part.startsWith(".")) ||
+      (segments[0] === "data" && segments[1] === "runtime")) {
+    return json(res, 404, { ok: false, error: "not_found" });
+  }
   if (pathname.endsWith("/")) relative += "index.html";
 
   const target = path.resolve(ROOT, relative);
@@ -570,7 +623,19 @@ async function serveStatic(pathname, res, headOnly = false) {
   }
 
   try {
-    const data = await fs.readFile(target);
+    const realTarget = await fs.realpath(target);
+    const realRoot = await fs.realpath(ROOT);
+    // Static assets must stay in the repository and must never expose runtime storage.
+    const runtimeRoots = [path.join(ROOT, "data", "runtime"), MEDIA_STAGING_PATH, VERTICAL_VIDEO_ARTIFACT_PATH, PUBLICATION_JOURNAL_PATH];
+    const stateFiles = [STATE_PATH, SQLITE_PATH].map((file) => path.resolve(file));
+    if (!realTarget.startsWith(`${realRoot}${path.sep}`) || realTarget !== target ||
+        runtimeRoots.some((dir) => realTarget === path.resolve(dir) || realTarget.startsWith(`${path.resolve(dir)}${path.sep}`)) ||
+        stateFiles.some((file) => realTarget === file || realTarget.startsWith(file + ".") || realTarget.startsWith(file + "-")) ||
+        (path.dirname(realTarget) === path.dirname(path.resolve(STATE_PATH)) &&
+         path.basename(realTarget).startsWith(path.parse(STATE_PATH).name + "."))) {
+      return json(res, 404, { ok: false, error: "not_found" });
+    }
+    const data = await fs.readFile(realTarget);
     const ext = path.extname(target).toLowerCase();
     res.writeHead(200, {
       "content-type": MIME[ext] || "application/octet-stream",

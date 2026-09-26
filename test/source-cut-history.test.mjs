@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import vm from 'node:vm';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{createReferenceStore}=require('../desktop/reference-store.cjs');
+const window={};
+for(const name of ['source-cut-model.js','source-cut-composition.js','source-cut-history.js'])vm.runInNewContext(await fs.readFile(new URL('../app/'+name,import.meta.url),'utf8'),{window});
+const m=window.ThreadsSourceCut,p=m.newProject();
+m.addAsset(p,{width:800,height:1600,name:'private source',dataUrl:'data:image/png;base64,AA=='});
+let baseline=m.recordEdit(p,null,'import');p.assets[0].body={x:80,y:160,width:640,height:800};
+baseline=m.recordEdit(p,baseline,'body','문단 끝에서 나눔');
+const event=p.editLog.at(-1);assert.equal(event.userReason,'문단 끝에서 나눔');
+const change=event.changes.find(c=>c.field.startsWith('asset:'));assert.equal(change.after.normalizedBody.y,.1);assert.equal(change.after.normalizedBody.height,.5);assert.equal(change.before.body.height,1600);
+assert.equal(JSON.stringify(p.editLog).includes('base64'),false);
+m.recordEdit(p,baseline,'no-change');assert.equal(p.editLog.length,2);
+assert.equal(m.reference(p).approvedExample,false);p.referenceApproved=true;assert.equal(m.reference(p).approvedExample,true);
+const restored=m.restore(JSON.parse(JSON.stringify(p)));assert.equal(restored.projectId,p.projectId);assert.equal(restored.editLog.length,2);
+const root=await fs.mkdtemp(path.join(os.tmpdir(),'cut-reference-'));
+try {
+ const store=createReferenceStore(root),payload={projectId:p.projectId,images:p.assets.map(a=>({uid:a.uid,dataUrl:a.dataUrl})),summary:m.reference(p),events:p.editLog};
+ const result=await store.save(payload);assert.equal(result.eventCount,2);
+ await store.save({...payload,images:[]});
+ const lines=(await fs.readFile(path.join(result.folder,'edits.jsonl'),'utf8')).trim().split('\n');assert.equal(lines.length,2);
+ const originals=JSON.parse(await fs.readFile(path.join(result.folder,'originals.json'),'utf8'));assert.match(originals[p.assets[0].uid].sha256,/^[a-f0-9]{64}$/);
+ assert.equal((await fs.readFile(path.join(result.folder,originals[p.assets[0].uid].file))).length,1);
+ await assert.rejects(store.save({...payload,projectId:'../escape'}));
+ await assert.rejects(store.save({...payload,images:[{uid:'../escape',dataUrl:'data:image/png;base64,AA=='}]}));
+}finally{await fs.rm(root,{recursive:true,force:true});}
+console.log('Before/after edit history, explicit criteria, original hashes, private reference persistence and path confinement: PASS');

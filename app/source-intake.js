@@ -1,25 +1,327 @@
 (function () {
   'use strict';
+
+  const sessions = new Map();
+  let activeId = null;
   let files = [];
   let packagePreview = null;
-  function $(s) { return document.querySelector(s); }
-  function escapeHtml(v) { return String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-  function inferKind(name) { return /media|attach|image|photo|첨부|사진/i.test(String(name || '')) ? 'media' : 'post'; }
-  function ensurePreviewRoot(){ let root=$('#sourceCarouselPreview'); if(root)return root; const status=$('#sourcePackageStatus'); if(!status)return null; root=document.createElement('div'); root.id='sourceCarouselPreview'; root.className='source-carousel-preview'; status.insertAdjacentElement('afterend',root); return root; }
-  function renderList(){ const root=$('#sourceAssetList'); if(!root)return; root.innerHTML=files.length?`<div class="source-asset-row"><div><strong>1. AUTO COVER</strong><small>이미지형은 첫 원문 자산을 무블러 배경으로 사용 · 글형은 생성 이미지 없이 텍스트 표지</small></div></div>`+files.map((entry,i)=>`<div class="source-asset-row" data-index="${i}"><img src="${entry.url}" alt="원문 자산 ${i+1}"/><div><strong>${i+2}. ${escapeHtml(entry.file.name)}</strong><small>원문 순서 ${i+1} · OCR/vision 미실행</small><select class="source-kind"><option value="post"${entry.kind==='post'?' selected':''}>원문 스크린샷</option><option value="media"${entry.kind==='media'?' selected':''}>원문 첨부 이미지/미디어</option></select></div><div class="source-order"><button type="button" data-move="up">↑</button><button type="button" data-move="down">↓</button></div></div>`).join(''):'<span class="muted-inline">원문 스크린샷/이미지를 선택하세요 · 글형 표지는 텍스트만, 이미지형 표지는 첫 원문 이미지를 무블러로 사용합니다.</span>'; }
-  function revokeAll(){ files.forEach(x=>URL.revokeObjectURL(x.url)); files=[]; packagePreview=null; renderList(); renderCarousel(); }
-  function selectedCandidate(){ const id=globalThis.ThreadsSourceIntakeContext?.getSelectedId?.(); return globalThis.ThreadsSourceIntakeContext?.getCandidate?.(id)||null; }
-  function buildPackage(){ const candidate=selectedCandidate(); if(!candidate)throw new Error('먼저 후보를 선택하세요.'); if(files.length<1)throw new Error('실제 원문 스크린샷/미디어 1장 이상이 필요합니다. 커버는 자동 생성됩니다.'); document.querySelectorAll('.source-asset-row[data-index]').forEach(row=>{const i=Number(row.dataset.index);files[i].kind=row.querySelector('.source-kind').value;}); const fullBodyCaptureStatus=$('#sourceBodyCaptureStatus')?.value||'pending'; const sourceProvenance=candidate.url||'browser-local user-selected screenshot'; const sourceFormat=$('#sourceFormatInput')?.value||candidate.sourceMeta?.format||'글'; const coverText=$('#sourceHookInput')?.value.trim()||candidate.title; const visualCover=sourceFormat!=='글'; const first=files[0]; packagePreview=window.ThreadsSourcePackage.build({sourceUrl:candidate.url||'',sourcePlatform:candidate.sourceType||'manual',sourceFormat,title:candidate.title,coverText,fullBodyCaptureStatus,rightsState:$('#sourceRightsInput').value,userProvidedProvenance:candidate.url?'':'browser-local user-selected screenshot',assets:[{id:'asset-cover-auto',name:visualCover?`AUTO_NO_BLUR_COVER_FROM_${first.file.name}`:'AUTO_TEXT_ONLY_COVER.png',mime:'image/png',kind:'cover',provenance:visualCover?`derived locally from ${sourceProvenance}; no-blur source media; title=${coverText}`:`text-only cover; no generated imagery; title=${coverText}`,verifiedByVision:false,verifiedByOcr:false},...files.map((entry,i)=>({id:`asset-${String(i+1).padStart(2,'0')}`,name:entry.file.name,mime:entry.file.type,kind:entry.kind,provenance:sourceProvenance,verifiedByVision:false,verifiedByOcr:false}))]}); $('#sourcePackageStatus').textContent=`SOURCE_PACKAGE 준비됨 · 자동 커버 1 + 원문 ${files.length}개\n전체 본문: ${packagePreview.fullBodyCaptureStatus} · ASSETS_PENDING: ${packagePreview.assetsPending?'YES':'NO'}\n커버: ${visualCover?'첫 원문 이미지 무블러 + 상단 큰 제목':'생성 이미지 없음 · 텍스트 전용 표지'}\n긴 원문 스크린샷: 글자 크기를 유지하며 여러 1080×1080 슬라이드로 자동 분할\n게시: 차단 · 권리: ${packagePreview.rightsState} · 개인정보: USER_REVIEW\nOCR/vision: 실행 안 함`; renderCarousel(); return packagePreview; }
-  function renderCarousel(){ const root=ensurePreviewRoot(); if(!root)return; if(!packagePreview||files.length<1){root.innerHTML='<span class="muted-inline">원문 전체 스크린샷을 순서대로 넣으면 글형은 텍스트 표지, 이미지형은 첫 원문 이미지 무블러 표지로 만들고 본문 순서는 그대로 유지합니다.</span>';return;} const title=escapeHtml(packagePreview.coverText||packagePreview.title||''); const visualCover=packagePreview.sourceFormat!=='글'; const coverMedia=visualCover?`<img class="source-slide-bg" src="${files[0].url}" alt="자동 커버 원문 배경"/><div class="source-slide-shade"></div>`:''; const slides=[`<article class="source-slide source-slide-hook${visualCover?'':' source-slide-text-only'}">${coverMedia}<div class="source-slide-copy"><small>01 · AUTO COVER</small><strong>${title}</strong></div></article>`]; files.forEach((entry,i)=>slides.push(`<article class="source-slide source-slide-evidence"><img class="source-slide-main" src="${entry.url}" alt="원문 자산 ${i+1}"/><span class="source-slide-badge">원문 ${i+1} · ${entry.kind==='media'?'첨부 이미지':'스크린샷'} · 긴 캡처는 PNG 출력 때 자동 분할</span></article>`)); root.innerHTML=`<div class="source-carousel-actions"><button type="button" id="exportSourceCarouselPngBtn"${packagePreview.fullBodyCaptureStatus!=='complete'?' disabled':''}>1080×1080 PNG 세트 받기</button><small>${packagePreview.fullBodyCaptureStatus==='complete'?'전체 본문 complete · 원문 순서 유지 · 게시 동작 없음':'전체 본문 complete 확인 전 export 차단 · ASSETS_PENDING'}</small></div>${slides.join('')}`; $('#exportSourceCarouselPngBtn')?.addEventListener('click', exportPngSet); }
-  function loadImage(url){ return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('이미지를 읽지 못했습니다.'));img.src=url;}); }
-  function cover(ctx,img,w,h){const s=Math.max(w/img.naturalWidth,h/img.naturalHeight),dw=img.naturalWidth*s,dh=img.naturalHeight*s;ctx.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);}
-  function contain(ctx,img,w,h,pad=54){const aw=w-pad*2,ah=h-pad*2,s=Math.min(aw/img.naturalWidth,ah/img.naturalHeight),dw=img.naturalWidth*s,dh=img.naturalHeight*s;ctx.drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);}
-  function sourceSlices(img,w=1080,h=1080,pad=48){const aw=w-pad*2,ah=h-pad*2;const scale=aw/img.naturalWidth;const visibleSourceHeight=ah/scale;if(img.naturalHeight<=visibleSourceHeight*1.08)return [{sy:0,sh:img.naturalHeight}];const overlapSource=72/scale,step=Math.max(1,visibleSourceHeight-overlapSource),slices=[];for(let sy=0;sy<img.naturalHeight;sy+=step){const sh=Math.min(visibleSourceHeight,img.naturalHeight-sy);slices.push({sy,sh});if(sy+sh>=img.naturalHeight)break;}return slices;}
-  function drawSourceSlice(ctx,img,slice,w=1080,h=1080,pad=48){const aw=w-pad*2,ah=h-pad*2,scale=aw/img.naturalWidth,dw=aw,dh=slice.sh*scale;ctx.drawImage(img,0,slice.sy,img.naturalWidth,slice.sh,pad,pad,dw,Math.min(dh,ah));}
-  function wrapTextOutlined(ctx,text,x,y,maxWidth,lineHeight,maxLines){const words=String(text).split(/\s+/);let line='',lines=[];for(const word of words){const test=line?`${line} ${word}`:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word;}else line=test;}if(line)lines.push(line);lines=lines.slice(0,maxLines);lines.forEach((v,i)=>{ctx.strokeText(v,x,y+i*lineHeight);ctx.fillText(v,x,y+i*lineHeight);});}
-  function wrapText(ctx,text,x,y,maxWidth,lineHeight,maxLines){const words=String(text).split(/\s+/);let line='',lines=[];for(const word of words){const test=line?`${line} ${word}`:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word;}else line=test;}if(line)lines.push(line);lines=lines.slice(0,maxLines);lines.forEach((v,i)=>ctx.fillText(v,x,y+i*lineHeight));}
-  function downloadCanvas(canvas,name){return new Promise((resolve,reject)=>canvas.toBlob(blob=>{if(!blob)return reject(new Error('PNG 생성 실패'));const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);resolve();},'image/png'));}
-  async function exportPngSet(){if(!packagePreview||files.length<1||packagePreview.fullBodyCaptureStatus!=='complete')return;const btn=$('#exportSourceCarouselPngBtn');if(btn){btn.disabled=true;btn.textContent='PNG 만드는 중…';}try{const W=1080,H=1080,images=await Promise.all(files.map(x=>loadImage(x.url)));let outputIndex=1;const coverCanvas=document.createElement('canvas');coverCanvas.width=W;coverCanvas.height=H;let ctx=coverCanvas.getContext('2d');ctx.fillStyle='#111';ctx.fillRect(0,0,W,H);const visualCover=packagePreview.sourceFormat!=='글';if(visualCover){cover(ctx,images[0],W,H);ctx.fillStyle='rgba(0,0,0,.38)';ctx.fillRect(0,0,W,H);}ctx.fillStyle='#fff';ctx.font='800 74px system-ui,sans-serif';ctx.textBaseline='top';ctx.lineWidth=2;ctx.strokeStyle='rgba(0,0,0,.78)';wrapTextOutlined(ctx,packagePreview.coverText||packagePreview.title||'',72,230,936,88,5);await downloadCanvas(coverCanvas,`source-carousel-${String(outputIndex++).padStart(2,'0')}.png`);let bodySlides=0;for(let i=0;i<images.length;i++){const img=images[i],entry=files[i];const slices=entry.kind==='post'?sourceSlices(img,W,H,48):[{sy:0,sh:img.naturalHeight}];for(const slice of slices){const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;ctx=canvas.getContext('2d');ctx.fillStyle='#111';ctx.fillRect(0,0,W,H);if(entry.kind==='post')drawSourceSlice(ctx,img,slice,W,H,48);else contain(ctx,img,W,H,48);await downloadCanvas(canvas,`source-carousel-${String(outputIndex++).padStart(2,'0')}.png`);bodySlides++;}}$('#sourcePackageStatus').textContent+=`\nPNG: ${outputIndex-1}장 브라우저 렌더 완료 · 자동 커버 1 + 원문 본문 ${bodySlides}장 · 긴 캡처 자동 분할 · 게시 동작 없음`;}catch(e){$('#sourcePackageStatus').textContent+=`\nPNG 생성 실패: ${e.message}`;}finally{if(btn){btn.disabled=false;btn.textContent='1080×1080 PNG 세트 받기';}}}
-  function bind(){ const input=$('#sourceAssetInput'); if(!input)return; input.addEventListener('change',()=>{revokeAll();files=[...input.files].map(file=>({file,url:URL.createObjectURL(file),kind:inferKind(file.name)}));renderList();}); $('#clearSourceAssetsBtn').addEventListener('click',()=>{input.value='';revokeAll();$('#sourcePackageStatus').textContent='';}); $('#buildSourcePackageBtn').addEventListener('click',()=>{try{buildPackage();}catch(e){$('#sourcePackageStatus').textContent=`생성 차단: ${e.message}`;}}); $('#sourceAssetList').addEventListener('click',e=>{const b=e.target.closest('button[data-move]');if(!b)return;const row=b.closest('.source-asset-row');const i=Number(row.dataset.index);const j=b.dataset.move==='up'?i-1:i+1;if(j<0||j>=files.length)return;[files[i],files[j]]=[files[j],files[i]];renderList();}); renderList();renderCarousel(); }
-  window.ThreadsSourceIntake=Object.freeze({bind,buildPackage,getPreview:()=>packagePreview,renderCarousel,exportPngSet,sourceSlices}); document.readyState==='loading'?document.addEventListener('DOMContentLoaded',bind):bind();
+  let previewBasis = '';
+  let previewCanvases = [];
+  let exporting = false;
+  let buildGeneration = 0;
+  const $ = (selector) => document.querySelector(selector);
+  const renderer = () => window.ThreadsSourceCarousel;
+  const context = () => window.ThreadsSourceIntakeContext;
+  const selectedCandidate = () => context()?.getCandidate?.(context()?.getSelectedId?.()) || null;
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[character]));
+  const fieldIds = { format: 'sourceFormatInput', body: 'sourceBodyCaptureStatus', rights: 'sourceRightsInput',
+    caption: 'sourceCaptionInput', hook: 'sourceHookInput', mode: 'sourceInputMode', text: 'sourceTextInput' };
+
+  function fields() {
+    return Object.fromEntries(Object.entries(fieldIds).map(([key, id]) => [key, $('#' + id).value]));
+  }
+
+  function renderMode() {
+    const textOnly = $('#sourceInputMode').value === 'text';
+    $('#sourceTextLabel').hidden = !textOnly;
+    $('#sourceImageLabel').hidden = textOnly;
+    $('#sourceAssetList').hidden = textOnly;
+    $('#sourceFormatInput').disabled = textOnly;
+    if (textOnly) $('#sourceFormatInput').value = '글';
+  }
+
+  function syncSelection() {
+    const candidate = selectedCandidate();
+    const id = candidate?.id || null;
+    if (id === activeId) return;
+    if (activeId) sessions.set(activeId, { files, fields: fields() });
+    activeId = id;
+    const session = sessions.get(id);
+    const saved = candidate?.sourcePackage;
+    files = session?.files || [];
+    const defaults = { format: saved?.sourceFormat || '글', body: saved?.fullBodyCaptureStatus || 'pending',
+      rights: saved?.rightsState || 'UNKNOWN', caption: saved?.captionDraft || '',
+      hook: saved?.coverText || candidate?.title || '', mode: saved?.inputMode || 'images', text: saved?.sourceText || '' };
+    const values = { ...defaults, ...session?.fields };
+    for (const [key, fieldId] of Object.entries(fieldIds)) $('#' + fieldId).value = values[key];
+    $('#sourceAssetInput').value = '';
+    renderMode();
+    invalidate(saved ? '저장된 제목과 원문을 복원했습니다. 이미지 모드에서는 원본 파일을 다시 선택하세요.'
+      : '원문 캡처를 선택하거나 텍스트 원문을 입력하세요.');
+    renderList();
+  }
+
+  function basis() {
+    const candidate = selectedCandidate();
+    return JSON.stringify({ id: candidate?.id, title: candidate?.title, url: candidate?.url, fields: fields(),
+      files: files.map((entry) => [entry.url, entry.kind]) });
+  }
+
+  function invalidate(message = '입력이 변경되었습니다. 미리보기를 다시 만들어주세요.') {
+    buildGeneration += 1;
+    packagePreview = null;
+    previewBasis = '';
+    previewCanvases = [];
+    $('#sourcePackageStatus').textContent = message;
+    renderCarousel();
+  }
+
+  function renderList() {
+    $('#sourceAssetList').innerHTML = files.length
+      ? '<p class="muted-inline">첫 번째 원문을 표지 배경으로 사용합니다.</p>' + files.map((entry, index) => `
+        <div class="source-asset-row" data-index="${index}"><img src="${entry.url}" alt="원문 자산 ${index + 1}"/>
+          <div><strong>${index + 1}. ${escapeHtml(entry.file.name)}</strong>
+            <select class="source-kind" aria-label="원문 ${index + 1} 종류">
+              <option value="post"${entry.kind === 'post' ? ' selected' : ''}>원문 스크린샷</option>
+              <option value="media"${entry.kind === 'media' ? ' selected' : ''}>원문 첨부 이미지</option>
+            </select></div>
+          <div class="source-order"><button type="button" data-move="up">위로</button><button type="button" data-move="down">아래로</button></div>
+        </div>`).join('') : '<span class="muted-inline">인스타 메뉴·버튼이 제외된 원문 캡처를 선택하세요.</span>';
+  }
+
+  function clearFiles() {
+    files.forEach((entry) => URL.revokeObjectURL(entry.url));
+    files = [];
+    $('#sourceAssetInput').value = '';
+    $('#sourceBodyCaptureStatus').value = 'pending';
+    invalidate('이미지 선택을 비웠습니다.');
+    renderList();
+  }
+
+  async function buildPackage() {
+    syncSelection();
+    invalidate('미리보기를 만드는 중입니다.');
+    const generation = buildGeneration;
+    const candidate = selectedCandidate();
+    if (!candidate) throw new Error('먼저 후보를 선택하세요.');
+    const values = fields();
+    const textOnly = values.mode === 'text';
+    if (!textOnly && !files.length) throw new Error('원문 스크린샷/이미지를 선택하거나 텍스트 원문 모드를 사용하세요.');
+    if (!values.hook.trim()) throw new Error('표지 제목을 입력하세요.');
+    const expectedBasis = basis();
+    const entries = textOnly ? [] : files.map((entry) => ({ ...entry }));
+    const images = await Promise.all(entries.map((entry) => loadImage(entry.url)));
+    if (document.fonts?.load) {
+      await Promise.all([document.fonts.load('900 116px \"Carousel Sans KR\"'), document.fonts.load('400 40px \"Carousel Sans KR\"')]);
+    }
+    if (document.fonts?.ready) await document.fonts.ready;
+    if (basis() !== expectedBasis || generation !== buildGeneration) throw new Error('선택한 후보나 입력이 변경되었습니다. 다시 만들어주세요.');
+    const provenance = candidate.url || (textOnly ? 'User-provided original text' : 'User-selected original screenshot/image');
+    const observedAt = new Date().toISOString();
+    const next = window.ThreadsSourcePackage.build({
+      inputMode: values.mode, sourceText: textOnly ? values.text : undefined,
+      sourceUrl: candidate.url || '', sourcePlatform: candidate.sourceType || 'manual',
+      sourceFormat: values.format, title: candidate.title, coverText: values.hook,
+      fullBodyCaptureStatus: values.body, rightsState: values.rights,
+      userProvidedProvenance: candidate.url ? '' : provenance,
+      assets: textOnly ? [] : [
+        { id: 'asset-cover-auto', name: `AUTO_COVER_FROM_${entries[0].file.name}`, mime: 'image/png', kind: 'cover',
+          provenance: 'Cover composed from the first original image and user headline' },
+        ...entries.map((entry, index) => ({
+          id: `asset-${String(index + 1).padStart(2, '0')}`, name: entry.file.name, mime: entry.file.type,
+          kind: entry.kind, sourceSequence: index + 1, acquisitionState: 'USER_PROVIDED',
+          sourceWidth: images[index].naturalWidth, sourceHeight: images[index].naturalHeight,
+          provenance, captureUrl: candidate.url || '', observedAt, verifiedByVision: false, verifiedByOcr: false,
+        })),
+      ],
+    });
+    next.candidateId = candidate.id;
+    next.captionDraft = values.caption;
+    next.originalImageBytesPersisted = false;
+    const measure = document.createElement('canvas').getContext('2d');
+    const slides = renderer().plan(measure, next, images, entries);
+    const { width, height } = slides[0];
+    next.coverStyle = { ...renderer().STYLE, width, height,
+      titleBottom: renderer().titleLayout(measure, next.coverText || next.title, { width, height }).bottom,
+      canvasSizing: textOnly ? 'text-default' : 'source-aspect',
+      backgroundBlur: 0, titleStroke: '#000', titleFill: '#fff' };
+    const canvases = slides.map((slide) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = slide.width;
+      canvas.height = slide.height;
+      canvas.setAttribute('role', 'img');
+      canvas.setAttribute('aria-label', slide.type === 'cover' ? `표지: ${next.coverText}` : '원문 본문');
+      renderer().render(canvas.getContext('2d'), slide);
+      return canvas;
+    });
+    next.output = { width, height, slideCount: slides.length,
+      bodyPagination: textOnly ? 'wrapped-original-text' : 'aspect-preserving-slices' };
+    if (next.renderPlan[0]) {
+      next.renderPlan[0].treatment = textOnly ? 'source-text-plus-headline' : 'source-image-plus-headline';
+      next.renderPlan[0].overlay = 'user-headline';
+    }
+    context()?.saveSourcePackage?.(candidate.id, next);
+    packagePreview = next;
+    previewBasis = expectedBasis;
+    previewCanvases = canvases;
+    $('#sourcePackageStatus').textContent = `표지 1장 + 본문 ${slides.length - 1}장 · ${width}×${height}\n${textOnly
+      ? '제목과 원문 텍스트 저장됨' : '제목과 이미지 정보 저장됨 · 원본 파일은 브라우저 세션에만 유지'}\n전체 본문: ${next.fullBodyCaptureStatus} · 실제 게시 없음`;
+    renderCarousel();
+    return next;
+  }
+
+  function ensurePreviewRoot() {
+    let root = $('#sourceCarouselPreview');
+    if (!root) {
+      root = document.createElement('div');
+      root.id = 'sourceCarouselPreview';
+      root.className = 'source-carousel-preview';
+      $('#sourcePackageStatus').insertAdjacentElement('afterend', root);
+    }
+    return root;
+  }
+
+  function renderCarousel() {
+    const root = ensurePreviewRoot();
+    root.innerHTML = '';
+    if (!packagePreview) {
+      root.innerHTML = '<span class="muted-inline">원문과 표지 제목을 입력한 뒤 미리보기를 만드세요.</span>';
+      return;
+    }
+    const actions = document.createElement('div');
+    actions.className = 'source-carousel-actions';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.id = 'exportSourceCarouselPngBtn';
+    button.textContent = `${packagePreview.output.width}×${packagePreview.output.height} PNG 세트 받기`;
+    button.disabled = packagePreview.assetsPending || exporting;
+    button.addEventListener('click', exportPngSet);
+    actions.appendChild(button);
+    const help = document.createElement('small');
+    help.textContent = packagePreview.assetsPending ? '전체 본문 포함 여부를 확인하면 다운로드할 수 있습니다.'
+      : '미리보기와 동일한 이미지가 저장됩니다. 게시 승인은 별도입니다.';
+    actions.appendChild(help);
+    root.appendChild(actions);
+    previewCanvases.forEach((canvas, index) => {
+      const figure = document.createElement('figure');
+      figure.className = 'source-slide';
+      figure.appendChild(canvas);
+      const caption = document.createElement('figcaption');
+      caption.textContent = index === 0 ? '표지' : `본문 ${index}`;
+      figure.appendChild(caption);
+      root.appendChild(figure);
+    });
+  }
+
+  function loadImage(url) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => image.naturalWidth > 0 && image.naturalHeight > 0
+        ? resolve(image) : reject(new Error('이미지 크기를 확인할 수 없습니다.'));
+      image.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'));
+      image.src = url;
+    });
+  }
+
+  function downloadCanvas(canvas, name, isCurrent) {
+    return new Promise((resolve, reject) => canvas.toBlob((blob) => {
+      if (!blob) return reject(new Error('PNG 생성 실패'));
+      if (!isCurrent()) return reject(new Error('제작 입력이 변경되어 출력을 중단했습니다.'));
+      const url = URL.createObjectURL(blob), link = document.createElement('a');
+      link.href = url; link.download = name; document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      resolve();
+    }, 'image/png'));
+  }
+
+  async function exportPngSet() {
+    syncSelection();
+    if (exporting || !packagePreview || packagePreview.assetsPending || basis() !== previewBasis) return;
+    exporting = true;
+    const expectedBasis = previewBasis;
+    const canvases = [...previewCanvases];
+    const isCurrent = () => basis() === expectedBasis && previewBasis === expectedBasis;
+    renderCarousel();
+    try {
+      for (let index = 0; index < canvases.length; index += 1) {
+        if (!isCurrent()) throw new Error('제작 입력이 변경되어 출력을 중단했습니다.');
+        await downloadCanvas(canvases[index], `source-carousel-${String(index + 1).padStart(2, '0')}.png`, isCurrent);
+      }
+      $('#sourcePackageStatus').textContent += `\nPNG ${canvases.length}장 다운로드 요청 완료. 브라우저 다운로드 목록에서 저장 여부를 확인하세요.`;
+    } catch (error) {
+      if (isCurrent()) $('#sourcePackageStatus').textContent += `\nPNG 출력 중단: ${error.message}`;
+    } finally {
+      exporting = false;
+      renderCarousel();
+    }
+  }
+
+  function bind() {
+    const input = $('#sourceAssetInput');
+    if (!input) return;
+    input.addEventListener('change', () => {
+      const selectedFiles = [...input.files];
+      syncSelection();
+      if (!selectedCandidate()) return invalidate('먼저 후보를 선택하세요.');
+      clearFiles();
+      files = selectedFiles.filter((file) => /^image\//.test(file.type)).map((file) => ({
+        file, url: URL.createObjectURL(file), kind: 'post',
+      }));
+      invalidate('선택한 원문의 순서와 전체 본문 포함 여부를 확인하세요.');
+      renderList();
+    });
+    $('#clearSourceAssetsBtn').addEventListener('click', clearFiles);
+    $('#buildSourcePackageBtn').addEventListener('click', async () => {
+      const pending = buildPackage();
+      const generation = buildGeneration;
+      try { await pending; }
+      catch (error) {
+        // Do not replace another candidate's state with a stale build error.
+        if (generation === buildGeneration && !packagePreview) $('#sourcePackageStatus').textContent = `생성 차단: ${error.message}`;
+      }
+    });
+    $('#openSourceCutEditorBtn')?.addEventListener('click', () => {
+      syncSelection();
+      const candidate = selectedCandidate(), values = fields();
+      if (!candidate) return invalidate('먼저 후보를 선택하세요.');
+      if (values.mode === 'images' && !files.length) return invalidate('원문 이미지를 먼저 선택하세요.');
+      if (values.mode === 'text' && !values.text.trim()) return invalidate('원문 본문을 먼저 입력하세요.');
+      const payload = { type: 'threads-cut-input', title: values.hook,
+        source: { candidateId: candidate.id, title: candidate.title, url: candidate.url || '', inputMode: values.mode, productionNotes: candidate.sourceMeta?.productionNotes || '' },
+        sourceText: values.mode === 'text' ? values.text : '', files: values.mode === 'text' ? [] : files.map((entry) => entry.file) };
+      const popup = window.open('./source-cut-editor.html#intake', '_blank');
+      if (!popup) return invalidate('팝업이 차단되었습니다. 이 사이트의 새 창 열기를 허용하세요.');
+      const onReady = (event) => {
+        if (event.source !== popup || event.origin !== location.origin || event.data?.type !== 'threads-cut-ready') return;
+        popup.postMessage(payload, location.origin);
+        window.removeEventListener('message', onReady);
+      };
+      window.addEventListener('message', onReady);
+      setTimeout(() => window.removeEventListener('message', onReady), 60000);
+    });
+    $('#sourceAssetList').addEventListener('change', (event) => {
+      const row = event.target.closest('.source-asset-row[data-index]');
+      if (!row) return;
+      files[Number(row.dataset.index)].kind = event.target.value;
+      invalidate();
+    });
+    $('#sourceAssetList').addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-move]');
+      if (!button) return;
+      const index = Number(button.closest('.source-asset-row').dataset.index);
+      const target = button.dataset.move === 'up' ? index - 1 : index + 1;
+      if (target < 0 || target >= files.length) return;
+      [files[index], files[target]] = [files[target], files[index]];
+      invalidate(); renderList();
+    });
+    for (const id of Object.values(fieldIds)) {
+      const onChange = () => {
+        if (id === 'sourceTextInput' || id === 'sourceInputMode' || id === 'sourceFormatInput') {
+          $('#sourceBodyCaptureStatus').value = 'pending';
+        }
+        renderMode();
+        invalidate();
+      };
+      $('#' + id).addEventListener('input', onChange);
+      $('#' + id).addEventListener('change', onChange);
+    }
+    document.addEventListener('threads:candidate-selected', syncSelection);
+    syncSelection(); renderList(); renderCarousel();
+  }
+
+  window.ThreadsSourceIntake = Object.freeze({ bind, buildPackage, getPreview: () => packagePreview,
+    renderCarousel, exportPngSet, sourceSlices: (...args) => renderer().sourceSlices(...args), syncSelection });
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', bind) : bind();
 })();

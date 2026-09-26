@@ -26,6 +26,9 @@ await fs.writeFile(path.join(dir, "260918_C1_A0_P0_test1.md"), `# C1 title
 ## 글 내용
 정확한 원문을 확인한 후보.
 
+## 중간 문구 초안
+위치: 마지막 장 / 작성 의견: 나라면 어떻게 했을까? / 근거: 원문 상황
+
 ## 정확한 링크
 https://www.reddit.com/r/test/comments/abc/post/
 
@@ -44,6 +47,7 @@ assert.equal(result.items[0].sourceMeta.processingStage, "provenance-verificatio
 assert.equal(result.items[1].url, "https://www.reddit.com/r/test/comments/abc/post/");
 assert.equal(result.items[1].sourceMeta.processingStage, "source-asset-acquisition");
 assert.equal(result.items[1].status, "research");
+assert.match(result.items[1].sourceMeta.productionNotes, /나라면 어떻게 했을까/);
 assert.equal(result.items[1].sourceMeta.publicationAllowed, false);
 
 await fs.rm(root, { recursive: true, force: true });

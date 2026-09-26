@@ -7,6 +7,7 @@
   const APP_KEY = "threads_trend_inbox_v1";
   const SCHEDULER_KEY = "threads_scheduler_control_v1";
   let serverRevision = 0;
+  let requestGeneration = 0;
   let preview = null;
   let previewSource = "";
 
@@ -49,6 +50,7 @@
     const option = document.createElement("option"); option.value = profile.id; option.textContent = profile.id; namespaceSelect.appendChild(option);
   }
   namespaceSelect.addEventListener("change", () => {
+    requestGeneration += 1;
     updateRevision(0); preview = null; applyButton.disabled = true; renderProfileEditor();
     setStatus(`저장 범위 변경: ${currentNamespace()}`, "info");
   });
@@ -75,8 +77,9 @@
   }
 
   function setPreview(input, source) {
-    preview = model.migrateSnapshot(input);
-    model.assertScope(preview, currentNamespace());
+    const nextPreview = model.migrateSnapshot(input);
+    model.assertScope(nextPreview, currentNamespace());
+    preview = nextPreview;
     previewSource = source;
     applyButton.disabled = false;
     const scopeText = preview.scope?.kind === "account"
@@ -147,7 +150,10 @@
     try {
       const file = event.target.files?.[0];
       if (!file) return;
-      setPreview(JSON.parse(await file.text()), `file:${file.name}`);
+      const generation = ++requestGeneration;
+      const contents = await file.text();
+      if (generation !== requestGeneration) return;
+      setPreview(JSON.parse(contents), `file:${file.name}`);
     } catch (error) {
       preview = null;
       applyButton.disabled = true;
@@ -158,8 +164,12 @@
   }
 
   async function readServer() {
+    const generation = ++requestGeneration;
+    preview = null;
+    applyButton.disabled = true;
     const response = await fetch(stateUrl(), { cache: "no-store" });
     const body = await response.json().catch(() => ({}));
+    if (generation !== requestGeneration) return;
     if (!response.ok || !body.ok) throw new Error(body.message || body.error || `HTTP ${response.status}`);
     updateRevision(body.revision);
     if (!body.snapshot) {
@@ -171,6 +181,7 @@
   }
 
   async function saveServer() {
+    const generation = ++requestGeneration;
     const snapshot = currentSnapshot();
     const response = await fetch(stateUrl(), {
       method: "PUT",
@@ -178,8 +189,9 @@
       body: JSON.stringify({ snapshot, expectedRevision: serverRevision }),
     });
     const body = await response.json().catch(() => ({}));
+    if (generation !== requestGeneration) return;
     if (response.status === 409) {
-      updateRevision(body.currentRevision ?? serverRevision);
+      // Keep the last observed revision until an explicit read resolves the conflict.
       throw new Error(`서버 revision 충돌. 서버를 다시 읽은 뒤 명시적으로 재저장하세요. (${body.message || "conflict"})`);
     }
     if (!response.ok || !body.ok) throw new Error(body.message || body.error || `HTTP ${response.status}`);

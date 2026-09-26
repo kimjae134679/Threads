@@ -1,5 +1,9 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
+
+// Serialize read/compare/write across store instances for the same file.
+const pendingWrites = new Map();
 
 export const STATE_SCHEMA_VERSION = 2;
 const FORBIDDEN_KEY = /(password|passwd|secret|access[_-]?token|refresh[_-]?token|api[_-]?key|authorization|cookie)/i;
@@ -99,6 +103,17 @@ export class JsonStateStore {
 
   async write(snapshot, expectedRevision = null) {
     const safe = normalizeEnvelope(snapshot);
+    const previous = pendingWrites.get(this.filePath) || Promise.resolve();
+    const operation = previous.catch(() => {}).then(() => this.writeSerialized(safe, expectedRevision));
+    pendingWrites.set(this.filePath, operation);
+    try {
+      return await operation;
+    } finally {
+      if (pendingWrites.get(this.filePath) === operation) pendingWrites.delete(this.filePath);
+    }
+  }
+
+  async writeSerialized(safe, expectedRevision) {
     const current = await this.read();
     if (expectedRevision != null && Number(expectedRevision) !== current.revision) {
       const error = new Error(`persistence_revision_conflict:${current.revision}`);
@@ -113,9 +128,13 @@ export class JsonStateStore {
       snapshot: safe,
     };
     await fs.mkdir(path.dirname(this.filePath), { recursive: true });
-    const tempPath = `${this.filePath}.${process.pid}.${Date.now()}.tmp`;
-    await fs.writeFile(tempPath, `${JSON.stringify(next, null, 2)}\n`, { encoding: "utf8", mode: 0o600 });
-    await fs.rename(tempPath, this.filePath);
+    const tempPath = `${this.filePath}.${process.pid}.${randomUUID()}.tmp`;
+    try {
+      await fs.writeFile(tempPath, `${JSON.stringify(next, null, 2)}\n`, { encoding: "utf8", mode: 0o600, flag: "wx" });
+      await fs.rename(tempPath, this.filePath);
+    } finally {
+      await fs.rm(tempPath, { force: true });
+    }
     return next;
   }
 }

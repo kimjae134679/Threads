@@ -22,13 +22,17 @@ const baseAsset = {
   sourceHeight: 2200,
   bodyPreservationRequired: true,
   privacyMasking: 'USER_DIRECTED_ONLY',
-  decision: 'KEEP_ORIGINAL'
+  decision: 'KEEP_ORIGINAL',
+  autoApplied: false,
+  suggestedCrop: null,
+  humanConfirmedBodyPreserved: true
 };
 const base = {
   type: 'UI_CHROME_CROP_SUGGESTIONS',
   sourceUrl: 'https://example.com/post/1',
   publicationAllowed: false,
   publishOwner: '04_REVIEW_PUBLISH',
+  policy: { cropScope: 'UI_CHROME_ONLY', bodyCropForbidden: true, autoCropForbidden: true, autoPrivacyMaskingForbidden: true, sourceOrderMutable: false },
   suggestions: [baseAsset]
 };
 
@@ -42,12 +46,19 @@ assert.equal(out.policy.automaticCropForbidden, true);
 assert.equal(out.policy.automaticPrivacyMaskingForbidden, true);
 assert.equal(out.assets[0].crop, null);
 
+r = run('missing-policy', { ...base, policy: undefined });
+assert.notEqual(r.status, 0);
+assert.match(r.stderr, /policy/);
+r = run('automatic-crop', { ...base, suggestions: [{ ...baseAsset, autoApplied: true }] });
+assert.notEqual(r.status, 0);
+assert.match(r.stderr, /automatic crop/);
+
 r = run('unreviewed', { ...base, suggestions: [{ ...baseAsset, decision: 'HUMAN_REVIEW_REQUIRED' }] });
 assert.notEqual(r.status, 0, 'unreviewed crop must be rejected');
 
 r = run('approved-without-body-confirmation', {
   ...base,
-  suggestions: [{ ...baseAsset, decision: 'HUMAN_APPROVED_UI_CHROME_CROP', suggestedCrop: { x: 0, y: 100, width: 1080, height: 2000 } }]
+  suggestions: [{ ...baseAsset, decision: 'HUMAN_APPROVED_UI_CHROME_CROP', humanConfirmedBodyPreserved: false, suggestedCrop: { x: 0, y: 100, width: 1080, height: 2000 } }]
 });
 assert.notEqual(r.status, 0, 'approved crop without explicit body-preservation confirmation must be rejected');
 
