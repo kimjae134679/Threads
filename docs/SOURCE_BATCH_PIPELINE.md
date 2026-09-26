@@ -39,7 +39,7 @@ data/_system/source-material-inventory.json은 2026-09-25 00:17 KST의 main 커�
 
 ## 검증 범위와 남은 연결
 
-핵심 분류·인기 댓글 순위·원문 TXT 파서 검사: node --test test/source-batch-core.test.mjs. 실제 Chrome/Edge 대량 폴더 저장과 사이트별 HTML 구조·첨부 이미지 다운로드는 사용자 환경에서 검수해야 합니다. 저장 HTML에 연결된 외부 이미지는 HTML만으로 확보하지 못하므로 같은 폴더에 넣어야 합니다. URL을 직접 넣는 단일 화면과 PR #1의 Windows 화면 통합은 아직 없습니다. 링크 저장 CLI의 실제 네트워크·사이트별 결과는 현재 실행 환경에서 검증하지 못했습니다. 새 경로는 페이지 스크린샷 대신 텍스트와 원본 이미지를 카드로 그립니다.
+핵심 분류·인기 댓글 순위·원문 TXT 파서 검사: node --test test/source-batch-core.test.mjs. 실제 Chrome/Edge 대량 폴더 저장과 사이트별 HTML 구조·첨부 이미지 다운로드는 사용자 환경에서 검수해야 합니다. 저장 HTML에 연결된 외부 이미지는 HTML만으로 확보하지 못하므로 같은 폴더에 넣어야 합니다. URL을 직접 넣는 단일 화면과 PR #1의 Windows 화면 통합은 아직 없습니다. Windows에서 앞 20건을 실제 실행한 결과 HTML 저장 11건, 정확한 URL 없음 7건, 원문 HTTP 410·404로 차단 2건입니다. HTML 저장은 원문 본문과 댓글·이미지 검증을 뜻하지 않으며 변환 완료 건수는 0입니다. 새 경로는 페이지 스크린샷 대신 텍스트와 원본 이미지를 카드로 그립니다.
 
 기존 후보·보조 메모 1,583개를 data/_system/source-work-queue.json에 대기열로 기록했습니다. Jev 파일명 연결은 953건, manifest의 명시적 legacyCandidate 경로로 연결된 정리 폴더 기록은 6/21건입니다. 나머지 15개 폴더가 무관하다는 뜻은 아니고 명시적 경로 연결이 없어 재대조가 필요합니다. 변환 완료로 확인된 건수는 0입니다. 대기열 확인: node scripts/build-source-work-queue.mjs. 갱신: node scripts/build-source-work-queue.mjs --write.
 

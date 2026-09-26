@@ -5,8 +5,8 @@
 - 새 로컬 입력 화면 /app/source-batch.html: 저장된 HTML 또는 명시적인 원문 TXT/JSON과 같은 폴더의 이미지를 선택해 PNG와 ZIP을 순차 생성한다. 인기 댓글은 공개 좋아요 수 또는 best 표기가 있을 때만 고른다.
 - TXT 본문 원문은 공백·줄바꿈을 보관한다. HTML DOM 텍스트는 화면과 다를 수 있어 needs_verbatim_check로 표시한다. 없는 이미지는 needs_media. converted는 정확한 원문 TXT/JSON과 자산 확인 및 PNG 생성 후에만.
 - 기존 전 경로를 data/_system/source-material-inventory.json에 분류: 후보 MD 1570, Jev JSON 953, 묶음 13, 정리 폴더 12+9 (중복 ID 3개, 실제 고유 ID 18), 임시 제작 폴더 35, source package 1, Discovery 보조 후보 13, raw batch 파일 31, demo/meta 5. 작업 대기열 1583개 중 Jev 연결 953, 명시적 정리 폴더 연결 6/21, 변환 완료 0. 옛 handoff의 19 unique와 불일치. 기존 파일 삭제·이동·C/A/P 승격 없음.
-- scripts/acquire-existing-sources.mjs --all 은 기존 후보의 공개 URL에서 HTML 원본 바이트와 연결 이미지 후보를 순차 보관한다. 실제 네트워크 실행·본문/댓글/이미지 정확성 검증·Windows 대량 실행·PR #1 UI 통합은 아직 완료됐다고 말하지 않는다. 원문·이미지는 로컬 runtime와 ZIP에만 보관한다.
-- 확인 순서: core 단위검사와 GitHub Actions, 실제 PNG 육안 검수, 요약 파일을 원문으로 잘못 판정하지 않는지 검증. docs/SOURCE_BATCH_PIPELINE.md.
+- scripts/acquire-existing-sources.mjs --all 은 기존 후보의 공개 URL에서 HTML 원본 바이트와 연결 이미지 후보를 순차 보관한다. Windows 실측 앞 20건: HTML 저장 11, 정확한 URL 없음 7, 원문 HTTP 410·404 차단 2. 저장된 HTML은 본문/댓글/이미지 정확성 검증 전이므로 변환 완료 0이다. 원문·이미지는 로컬 runtime와 ZIP에만 보관한다.
+- PR #1·#2·#3 및 최신 편집기 화면 브랜치를 main에 통합하고 병합된 원격 브랜치를 정리했다. Windows Node 24에서 53개 테스트, GitHub Actions check 성공. 심한 소재는 변환 전 excluded_severe로 제외하며 가벼운 논쟁은 남긴다. 남은 검증은 실제 원문 대조, 미디어 육안 검수, Chrome/Edge 대량 ZIP 저장이다. docs/SOURCE_BATCH_PIPELINE.md.
 
 ---
 
