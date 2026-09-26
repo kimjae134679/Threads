@@ -1,0 +1,30 @@
+name: source-batch
+on:
+  pull_request:
+    paths:
+      - 'app/source-batch*'
+      - 'app/source-cut-zip.js'
+      - 'scripts/inventory-existing-materials.mjs'
+      - 'scripts/build-source-work-queue.mjs'
+      - 'scripts/acquire-existing-sources.mjs'
+      - 'test/acquire-existing-sources.test.mjs'
+      - 'test/source-batch-core.test.mjs'
+      - '.github/workflows/source-batch.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --check app/source-batch-core.js
+      - run: node --check app/source-batch.js
+      - run: node --check app/source-cut-zip.js
+      - run: node --check scripts/inventory-existing-materials.mjs
+      - run: node --check scripts/build-source-work-queue.mjs
+      - run: node --check scripts/acquire-existing-sources.mjs
+      - run: node --test test/source-batch-core.test.mjs test/acquire-existing-sources.test.mjs
+      - run: node scripts/inventory-existing-materials.mjs
+      - run: node scripts/build-source-work-queue.mjs
