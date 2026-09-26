@@ -16,6 +16,15 @@
     if (/(^|\/)(manifest|comments|candidate|README|content)\.(txt|json|md)$/i.test(p)) return false;
     return /\.html?$/i.test(p) || /\.txt$/i.test(p) || /(?:source|article|post|verbatim)\.json$/i.test(f.name);
   };
+  async function sourceText(file) {
+    if (!/\.html?$/i.test(file.name)) return file.text();
+    const data = new Uint8Array(await file.arrayBuffer());
+    const prefix = String.fromCharCode(...data.subarray(0,4096));
+    const charset = /charset\s*=\s*["']?([\w-]+)/i.exec(file.type)?.[1] ||
+      /<meta[^>]+charset\s*=\s*["']?([\w-]+)/i.exec(prefix)?.[1] || 'utf-8';
+    try { return new TextDecoder(charset).decode(data); }
+    catch { return new TextDecoder('utf-8').decode(data); }
+  }
   function row(file, type, state, pages, note) {
     const tr = document.createElement('tr');
     for (const value of [file, type, state, pages, note]) {
@@ -30,7 +39,7 @@
     const want = base(normalized).toLowerCase();
     const sourceDir = filePath(source).split('/').slice(0, -1).join('/');
     const matches = files.filter(f => base(filePath(f)).toLowerCase() === want &&
-      /\.(png|jpe?g|webp|gif)$/i.test(f.name));
+      (/\.(png|jpe?g|webp|gif)$/i.test(f.name) || /^image\//i.test(f.type)));
     return matches.find(f => filePath(f).startsWith(sourceDir + '/')) || matches.length === 1 && matches[0] || null;
   }
   function imageName(src) {
@@ -174,7 +183,7 @@
       data: Uint8Array.from(atob(data.split(',')[1]), c => c.charCodeAt(0)) }));
   }
   async function handle(file, all) {
-    const raw = await file.text();
+    const raw = await sourceText(file);
     const ext = file.name.toLowerCase().split('.').pop();
     const record = ext === 'json' ? jsonRecord(raw) : ext === 'txt' ? txtRecord(raw) : htmlRecord(raw);
     record.popularComments = C.rankPopular(record.comments);
@@ -275,4 +284,5 @@
     }
     $('stop').disabled=true; $('start').disabled=false; running=false;
   });
+  window.ThreadsSourceBatch = Object.freeze({handle});
 })();

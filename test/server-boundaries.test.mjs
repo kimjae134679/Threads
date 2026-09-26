@@ -4,12 +4,25 @@ import os from "node:os";
 import http from "node:http";
 import path from "node:path";
 import { spawn } from "node:child_process";
+import { acquisitionId } from "../scripts/acquire-existing-sources.mjs";
 
 const runtime = await fs.mkdtemp(path.join(os.tmpdir(), "threads-boundaries-"));
+const workflowCandidate='data/candidates/source-workflow-example.md';
+const workflowQueue=path.join(runtime,'source-work-queue.json');
+const workflowAcquired=path.join(runtime,'acquired');
+const workflowResults=path.join(runtime,'results');
+const acquiredFolder=path.join(workflowAcquired,acquisitionId(workflowCandidate));
+await fs.mkdir(acquiredFolder,{recursive:true});
+await fs.writeFile(workflowQueue,JSON.stringify({entries:[{candidate:workflowCandidate}]}));
+await fs.writeFile(path.join(acquiredFolder,'source.html'),'<h1>원문</h1>');
+await fs.writeFile(path.join(acquiredFolder,'acquisition.json'),JSON.stringify({state:'saved_html',media:[]}));
 const base = "http://127.0.0.1:4281";
 const child = spawn(process.execPath, ["server.mjs"], {
   env: { ...process.env, PORT: "4281", HOST: "127.0.0.1", PERSISTENCE_BACKEND: "file",
     PERSISTENCE_STATE_PATH: path.join(runtime, "state.json"),
+    SOURCE_WORKFLOW_QUEUE_PATH: workflowQueue,
+    SOURCE_WORKFLOW_ACQUIRED_PATH: workflowAcquired,
+    SOURCE_WORKFLOW_RESULTS_PATH: workflowResults,
     THREADS_ACCESS_TOKEN: "", BUFFER_API_KEY: "", OPENAI_API_KEY: "" },
   stdio: ["ignore", "pipe", "pipe"],
 });
@@ -37,6 +50,19 @@ try {
   assert.equal((await fetch(base + "/app/%ZZ")).status, 400);
   assert.equal((await fetch(base + "/api/health")).status, 200, "Malformed paths must not crash the server");
   assert.equal((await fetch(base + "/app/")).status, 200);
+  const workflowStatus=await (await fetch(base+'/api/source-workflow/status')).json();
+  assert.equal(workflowStatus.counts.total,1);
+  assert.equal(workflowStatus.entries[0].acquisition,'saved_html');
+  const sourceQuery=new URLSearchParams({candidate:workflowCandidate,file:'source.html'});
+  assert.equal(await (await fetch(base+'/api/source-workflow/source?'+sourceQuery)).text(),'<h1>원문</h1>');
+  assert.equal((await fetch(base+'/api/source-workflow/source?'+new URLSearchParams({candidate:workflowCandidate,file:'../state.json'}))).status,404);
+  const resultQuery=new URLSearchParams({candidate:workflowCandidate,state:'needs_verbatim_check',pages:'2'});
+  const resultResponse=await fetch(base+'/api/source-workflow/result?'+resultQuery,{method:'POST',
+    headers:{'content-type':'application/zip'},body:Buffer.from('ZIP')});
+  assert.equal(resultResponse.status,200);
+  assert.equal((await (await fetch(base+'/api/source-workflow/status')).json()).entries[0].conversion,'needs_verbatim_check');
+  assert.equal((await fetch(base+'/api/source-workflow/result?'+resultQuery,{method:'POST',
+    headers:{'content-type':'text/plain'},body:'ZIP'})).status,415);
   assert.equal((await fetch(base + "/api/state", { headers: { origin: "https://untrusted.example" } })).status, 403);
   const foreignHostStatus = await new Promise((resolve, reject) => {
     http.get(base + "/api/state", { headers: { host: "untrusted.example:4281" } }, (response) => {

@@ -16,6 +16,7 @@ for (const [network,prefix] of [['::',96],['fc00::',7],['fe80::',10],['ff00::',8
 const delay = ms => new Promise(resolve => setTimeout(resolve,ms));
 const hash = value => createHash('sha256').update(value).digest('hex');
 const clean = value => String(value).replace(/[^a-zA-Z0-9._-]/g,'_').slice(0,100);
+const acquisitionId = candidate => clean(basename(candidate,'.md'))+'-'+hash(candidate).slice(0,8);
 function exactLink(candidateMarkdown) {
   const lines = String(candidateMarkdown).split(/\r?\n/);
   const hit = lines.map(line => /^-\s*(?:정확한 원문 링크|원문 링크|sourceUrl)\s*:\s*(https:\/\/\S+)/i.exec(line))
@@ -95,9 +96,13 @@ function imageLinks(html,baseUrl) {
 }
 async function acquire(entry, opts) {
   const markdown=await readFile(join(ROOT,entry.candidate),'utf8'), url=exactLink(markdown);
-  if (!url) return {state:'needs_exact_url',candidate:entry.candidate};
-  const name=clean(basename(entry.candidate,'.md'))+'-'+hash(entry.candidate).slice(0,8);
+  const name=acquisitionId(entry.candidate);
   const folder=join(OUT,name), statePath=join(folder,'acquisition.json');
+  if (!url) {
+    await mkdir(folder,{recursive:true});
+    const result={state:'needs_exact_url',candidate:entry.candidate,publicationAllowed:false};
+    await writeFile(statePath,JSON.stringify(result,null,2)+'\n');return result;
+  }
   if (!opts.refresh) {
     try { const prior=JSON.parse(await readFile(statePath,'utf8')); if(prior.state==='saved_html') return {...prior,skipped:true}; }
     catch {}
@@ -118,12 +123,12 @@ async function acquire(entry, opts) {
         const saved=filename;
         if (media.some(x=>x.file === 'media/'+saved)) { media.push({url:mediaUrl,error:'파일명 중복 — 직접 원본 이미지를 확인하세요'}); continue; }
         await writeFile(join(folder,'media',saved),r.bytes);
-        media.push({url:mediaUrl,file:'media/'+saved,sha256:hash(r.bytes),bytes:r.bytes.length});
+        media.push({url:mediaUrl,file:'media/'+saved,contentType:r.contentType,sha256:hash(r.bytes),bytes:r.bytes.length});
       } catch(e) { media.push({url:mediaUrl,error:String(e.message||e)}); }
     }
     const result={candidate:entry.candidate,url:page.url,state:'saved_html',textStatus:'needs_verbatim_check',
       commentStatus:'needs_comment_check',mediaStatus:'candidates_downloaded_not_body_verified',
-      htmlSha256:hash(page.bytes),htmlBytes:page.bytes.length,media,publicationAllowed:false};
+      htmlSha256:hash(page.bytes),htmlBytes:page.bytes.length,contentType:page.contentType,media,publicationAllowed:false};
     await writeFile(statePath,JSON.stringify(result,null,2)+'\n');
     return result;
   } catch(e) {
@@ -140,9 +145,9 @@ async function main() {
   for(const entry of entries) {
     const result=await acquire(entry,{refresh});done++;if(result.state==='saved_html')saved++;
     console.log('['+done+'/'+entries.length+'] '+result.state+' '+entry.candidate);
-    await delay(1200);
+    if (result.state!=='needs_exact_url' && !result.skipped) await delay(1200);
   }
   console.log(JSON.stringify({processed:done,savedHtml:saved,output:OUT}));
 }
 if(process.argv[1] && fileURLToPath(import.meta.url)===resolve(process.argv[1])) main().catch(e=>{console.error(e);process.exitCode=1});
-export {exactLink,imageLinks,decodeHtml,safeUrl,fetchPublic};
+export {acquisitionId,exactLink,imageLinks,decodeHtml,safeUrl,fetchPublic};

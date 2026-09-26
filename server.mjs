@@ -26,6 +26,7 @@ import { fetchSourceAsset, getSourceAssetCapabilities } from "./source-assets.mj
 import { handleMediaPublishRoute, getMediaConnectorSnapshot } from "./media-publish-routes.mjs";
 import { VerticalVideoArtifactStore, getVerticalVideoArtifactCapabilities } from "./vertical-video-artifacts.mjs";
 import { loadRepoCandidates } from "./repo-candidates.mjs";
+import { SourceWorkflow } from "./source-workflow.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.dirname(__filename);
@@ -40,6 +41,11 @@ const SQLITE_PATH = process.env.PERSISTENCE_SQLITE_PATH || path.join(ROOT, "data
 const MEDIA_STAGING_PATH = process.env.MEDIA_STAGING_PATH || path.join(ROOT, "data", "runtime", "media-staging");
 const VERTICAL_VIDEO_ARTIFACT_PATH = process.env.VERTICAL_VIDEO_ARTIFACT_PATH || path.join(ROOT, "data", "runtime", "vertical-video");
 const verticalVideoArtifacts = new VerticalVideoArtifactStore(VERTICAL_VIDEO_ARTIFACT_PATH);
+const sourceWorkflow = new SourceWorkflow(ROOT, {
+  queuePath: process.env.SOURCE_WORKFLOW_QUEUE_PATH,
+  acquired: process.env.SOURCE_WORKFLOW_ACQUIRED_PATH,
+  results: process.env.SOURCE_WORKFLOW_RESULTS_PATH,
+});
 const PERSISTENCE_BACKEND = String(process.env.PERSISTENCE_BACKEND || "file").trim().toLowerCase();
 if (!["file", "sqlite"].includes(PERSISTENCE_BACKEND)) throw new Error(`unsupported_persistence_backend:${PERSISTENCE_BACKEND}`);
 const stateStores = PERSISTENCE_BACKEND === "sqlite"
@@ -75,6 +81,47 @@ const server = http.createServer(async (req, res) => {
       if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
       const result = await loadRepoCandidates(ROOT);
       return json(res, 200, { ok: true, ...result });
+    }
+
+    if (url.pathname === "/api/source-workflow/status") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      return json(res, 200, {ok:true,...await sourceWorkflow.status()});
+    }
+    if (url.pathname === "/api/source-workflow/source") {
+      if (req.method !== "GET") return methodNotAllowed(res, ["GET"]);
+      const result=await sourceWorkflow.source(url.searchParams.get('candidate'),url.searchParams.get('file'));
+      res.writeHead(200,{"content-type":result.contentType,"content-length":String(result.data.length),
+        "cache-control":"no-store","x-content-type-options":"nosniff"});
+      return res.end(result.data);
+    }
+    if (url.pathname === "/api/source-workflow/start") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      await readJsonBody(req); return json(res, 200, {ok:true,...await sourceWorkflow.start()});
+    }
+    if (url.pathname === "/api/source-workflow/stop") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      await readJsonBody(req); return json(res, 200, {ok:true,...sourceWorkflow.stop()});
+    }
+    if (url.pathname === "/api/source-workflow/open-results") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      await readJsonBody(req); return json(res, 200, {ok:true,...await sourceWorkflow.openFolder()});
+    }
+    if (url.pathname === "/api/source-workflow/open-item") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body=await readJsonBody(req);
+      return json(res, 200, {ok:true,...await sourceWorkflow.openItem(body.candidate)});
+    }
+    if (url.pathname === "/api/source-workflow/record") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const body=await readJsonBody(req);
+      return json(res, 200, {ok:true,result:await sourceWorkflow.save(body.candidate,body.state,body.pages,null,body.note)});
+    }
+    if (url.pathname === "/api/source-workflow/result") {
+      if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+      const data=await readBinaryBody(req, 160*1024*1024);
+      if (!data.length) throw requestError(400,'empty_zip','빈 결과는 저장할 수 없습니다.');
+      const p=url.searchParams;
+      return json(res, 200, {ok:true,result:await sourceWorkflow.save(p.get('candidate'),p.get('state'),Number(p.get('pages')),data,p.get('note'))});
     }
 
     if (url.pathname === "/api/state/status") {
@@ -532,7 +579,8 @@ function validateLocalRequest(req, url) {
   }
   if (!["GET", "HEAD", "OPTIONS"].includes(req.method)) {
     const contentType = String(req.headers["content-type"] || "").split(";", 1)[0].trim().toLowerCase();
-    if (contentType !== "application/json") throw requestError(415, "json_content_type_required", "application/json이 필요합니다.");
+    if (contentType !== "application/json" && !(url.pathname === "/api/source-workflow/result" && contentType === "application/zip"))
+      throw requestError(415, "json_content_type_required", "application/json이 필요합니다.");
   }
 }
 
@@ -553,6 +601,16 @@ async function readJsonBody(req, maxBytes = 256 * 1024) {
   } catch (_) {
     throw requestError(400, "invalid_json", "JSON 요청 본문을 해석하지 못했습니다.");
   }
+}
+
+async function readBinaryBody(req,maxBytes) {
+  const chunks=[];let size=0;
+  for await (const chunk of req) {
+    size+=chunk.length;
+    if (size>maxBytes) throw requestError(413,'payload_too_large','결과 ZIP 용량 제한을 초과했습니다.');
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks);
 }
 
 function pickThumbnail(thumbnails = {}) {
