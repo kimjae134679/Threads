@@ -34,7 +34,7 @@
       id: "gross_unpleasant",
       label: "과도하게 불쾌한 소재",
       severity: "block",
-      patterns: [/구더기\s*(떼|가득|영상|사진)?/i, /토사물\s*(사진|영상)/i, /배설물\s*(사진|영상)/i, /썩은\s*시체/i, /maggot\s*(infestation|video|photo)/i, /vomit\s*(video|photo)/i, /feces\s*(video|photo)/i],
+      patterns: [/구더기\s*(떼|가득|영상|사진)/i, /토사물\s*(사진|영상)/i, /배설물\s*(사진|영상)/i, /썩은\s*시체/i, /maggot\s*(infestation|video|photo)/i, /vomit\s*(video|photo)/i, /feces\s*(video|photo)/i],
     },
     {
       id: "physical_violence",

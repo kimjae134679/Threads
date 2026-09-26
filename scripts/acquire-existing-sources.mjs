@@ -35,16 +35,22 @@ async function safeUrl(input) {
   return u;
 }
 async function fetchPublic(input, {maxBytes, mime, fetchImpl=fetch} = {}) {
-  let target = input;
+  let target = input, retries = 0;
   for (let hop=0;hop<4;hop++) {
     await safeUrl(target);
     const controller = new AbortController(), timer=setTimeout(()=>controller.abort(),25000);
     let response;
-    try { response = await fetchImpl(target,{redirect:'manual',signal:controller.signal,headers:{accept:mime==='html'?'text/html,*/*;q=0.1':'image/*', 'user-agent':'ThreadsSourceArchive/0.1'}}); }
+    try { response = await fetchImpl(target,{redirect:'manual',signal:controller.signal,headers:{accept:mime==='html'?'text/html,*/*;q=0.1':'image/*', 'accept-language':'ko-KR,ko;q=0.9,en;q=0.6', 'user-agent':'ThreadsSourceArchive/0.1'}}); }
     catch(e) { clearTimeout(timer); throw e; }
     if ([301,302,303,307,308].includes(response.status)) {
-      target = new URL(response.headers.get('location'),target).href;
+      target = new URL(response.headers.get('location'),target).href; retries = 0;
       await response.body?.cancel(); clearTimeout(timer); continue;
+    }
+    if ([429,502,503,504].includes(response.status) && retries < 2) {
+      const retryAfter = Number(response.headers.get('retry-after'));
+      await response.body?.cancel(); clearTimeout(timer);
+      await delay(Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 5000) : 700 * 2 ** retries);
+      retries++; hop--; continue;
     }
     if (!response.ok) { clearTimeout(timer); throw new Error('HTTP '+response.status); }
     const ct=(response.headers.get('content-type')||'').toLowerCase();
@@ -64,15 +70,24 @@ async function fetchPublic(input, {maxBytes, mime, fetchImpl=fetch} = {}) {
   }
   throw new Error('리다이렉트 횟수 초과');
 }
+function decodeHtml(bytes, contentType = '') {
+  const prefix = bytes.subarray(0, 4096).toString('latin1');
+  const label = /charset\s*=\s*["']?([\w-]+)/i.exec(contentType)?.[1] ||
+    /<meta[^>]+charset\s*=\s*["']?([\w-]+)/i.exec(prefix)?.[1] || 'utf-8';
+  try { return new TextDecoder(label).decode(bytes); }
+  catch { return new TextDecoder('utf-8').decode(bytes); }
+}
 function imageLinks(html,baseUrl) {
   const result = [], tags=String(html).match(/<img\b[^>]*>/gi)||[];
   for (const tag of tags) {
     if (/\b(?:width|height)\s*=\s*["']?(?:[1-9]|[12][0-9]|3[012])["'\s>]/i.test(tag)) continue;
     const attr = key => new RegExp("(?:^|\\s)" + key + "\\s*=\\s*(?:\"([^\"]+)\"|'([^']+)'|([^\\s>]+))", "i").exec(tag);
-    const m=attr('data-original')||attr('data-src')||attr('src');
+    const ordinary=attr('src');
+    const m=attr('data-original')||attr('data-src')||attr('data-lazy-src')||
+      (ordinary && !/^data:/i.test(ordinary[1]||ordinary[2]||ordinary[3]) ? ordinary : null)||attr('srcset');
     if (!m) continue;
     try {
-      const url=new URL((m[1]||m[2]||m[3]).replaceAll('&amp;','&'),baseUrl);
+      const url=new URL((m[1]||m[2]||m[3]).split(',')[0].trim().split(/\s+/)[0].replaceAll('&amp;','&'),baseUrl);
       if(url.protocol==='https:' && !result.includes(url.href)) result.push(url.href);
     } catch {}
   }
@@ -91,7 +106,7 @@ async function acquire(entry, opts) {
   try {
     const page=await fetchPublic(url,{maxBytes:5*1024*1024,mime:'html'});
     await writeFile(join(folder,'source.html'),page.bytes);
-    const html=page.bytes.toString('utf8'), mediaUrls=imageLinks(html,page.url);
+    const html=decodeHtml(page.bytes,page.contentType), mediaUrls=imageLinks(html,page.url);
     const media=[];
     await mkdir(join(folder,'media'),{recursive:true});
     for (const [i,mediaUrl] of mediaUrls.entries()) {
@@ -130,4 +145,4 @@ async function main() {
   console.log(JSON.stringify({processed:done,savedHtml:saved,output:OUT}));
 }
 if(process.argv[1] && fileURLToPath(import.meta.url)===resolve(process.argv[1])) main().catch(e=>{console.error(e);process.exitCode=1});
-export {exactLink,imageLinks,safeUrl,fetchPublic};
+export {exactLink,imageLinks,decodeHtml,safeUrl,fetchPublic};

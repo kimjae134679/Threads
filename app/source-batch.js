@@ -178,6 +178,8 @@
     const ext = file.name.toLowerCase().split('.').pop();
     const record = ext === 'json' ? jsonRecord(raw) : ext === 'txt' ? txtRecord(raw) : htmlRecord(raw);
     record.popularComments = C.rankPopular(record.comments);
+    const screen = C.severeScreen(record, window.ThreadsViralModel.comfortScan);
+    if (screen.excluded) return { excluded: true, reasons: screen.reasons };
     const imageRefs = C.splitBody(record.body).filter(p => p.type === 'image').map(p => p.value);
     const media = imageRefs.map(name => ({ name, file: nearby(all,file,name) }));
     record.missingMedia = media.filter(x => !x.file).map(x => x.name);
@@ -251,19 +253,24 @@
   $('start').addEventListener('click', async () => {
     if (running) return;
     running = true; stopped = false; $('start').disabled = true; $('stop').disabled = false;
-    const inputs = selected.filter(sourceInput); let done=0, converted=0, blocked=0;
+    const inputs = selected.filter(sourceInput); let done=0, converted=0, blocked=0, excluded=0;
     for (const file of inputs) {
       if (stopped) break;
       try {
         const result = await handle(file,selected);
-        await save(result);
-        row(filePath(file), '원문', result.manifest.conversionStatus, result.manifest.renderedPages,
-          result.manifest.missingMedia.length ? '이미지 없음: '+result.manifest.missingMedia.join(', ') : result.manifest.extraction + ' · ' + result.savedAs);
-        result.manifest.conversionStatus === 'converted' ? converted++ : blocked++;
+        if (result.excluded) {
+          excluded++;
+          row(filePath(file), '원문', 'excluded_severe', 0, result.reasons.join(', '));
+        } else {
+          await save(result);
+          row(filePath(file), '원문', result.manifest.conversionStatus, result.manifest.renderedPages,
+            result.manifest.missingMedia.length ? '이미지 없음: '+result.manifest.missingMedia.join(', ') : result.manifest.extraction + ' · ' + result.savedAs);
+          result.manifest.conversionStatus === 'converted' ? converted++ : blocked++;
+        }
       } catch (error) { blocked++; row(filePath(file),'원문','failed',0,error.message); }
       done++; $('progress').value=done;
       $('summary').textContent = '처리 ' + done + '/' + inputs.length + ' · 변환 완료 ' + converted +
-        ' · 확인·차단·실패 ' + blocked + (stopped ? ' · 중지 요청' : '');
+        ' · 심한 소재 제외 ' + excluded + ' · 확인·실패 ' + blocked + (stopped ? ' · 중지 요청' : '');
       await new Promise(resolve => setTimeout(resolve,0));
     }
     $('stop').disabled=true; $('start').disabled=false; running=false;

@@ -23,6 +23,7 @@
     return 'other';
   }
   function status(record) {
+    if (record?.excludedSevere) return 'excluded_severe';
     if (!record || !record.title || !record.body) return 'needs_source';
     if (!record.exactText) return 'needs_verbatim_check';
     if ((record.missingMedia || []).length) return 'needs_media';
@@ -30,6 +31,12 @@
     if (record.commentCount > 0 && !record.popularComments?.length) return 'needs_comment_ranking';
     if (!record.renderedPages || record.renderedPages < 1) return 'ready_to_render';
     return 'converted';
+  }
+  function severeScreen(record, comfortScan) {
+    const text = [record?.body || '', ...(record?.popularComments || []).map(c => c.text || '')].join('\n');
+    const scan = comfortScan({ title: record?.title || '', note: text });
+    const reasons = (scan.categories || []).filter(c => c.severity === 'block').map(c => c.label || c.id);
+    return { excluded: reasons.length > 0, reasons };
   }
   function splitBody(body) {
     const text = String(body);
@@ -54,5 +61,5 @@
       body: source.slice(body.lastIndex, c ? c.index : undefined),
       comments: c ? source.slice(comments.lastIndex) : '' };
   }
-  return Object.freeze({ rankPopular, classifyPath, status, splitBody, parseExactText });
+  return Object.freeze({ rankPopular, classifyPath, status, severeScreen, splitBody, parseExactText });
 });

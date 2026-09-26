@@ -55,6 +55,7 @@ assert.throws(() => m.render(canvas, {}, { type: 'body', rect: { x: 0, y: 0, wid
 const encoded = new TextEncoder().encode('123456789');
 assert.equal(window.ThreadsSourceCutZip.crc32(encoded), 0xcbf43926);
 const archive = window.ThreadsSourceCutZip.zip([{ name: 'cover.png', data: encoded }, { name: '본문.json', data: new TextEncoder().encode('{"한글":true}') }]);
-const verified = spawnSync('python3', ['-c', 'import sys,io,zipfile; z=zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read())); assert z.testzip() is None; assert z.read("cover.png")==b"123456789"; assert z.read("본문.json").decode()==\'{"한글":true}\'; print("ZIP verified")'], { input: Buffer.from(await archive.arrayBuffer()), encoding: 'utf8' });
+const python = process.platform === 'win32' ? ['py', '-3'] : ['python3'];
+const verified = spawnSync(python[0], [...python.slice(1), '-c', 'import sys,io,zipfile; z=zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read())); assert z.testzip() is None; assert z.read("cover.png")==b"123456789"; assert z.read("본문.json").decode()==\'{"한글":true}\'; print("ZIP verified")'], { input: Buffer.from(await archive.arrayBuffer()), encoding: 'utf8' });
 assert.equal(verified.status, 0, verified.stderr);
 console.log('Manual crop geometry, scrolling coordinates, colored outlines, project restore and independent ZIP reader: PASS');

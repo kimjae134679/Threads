@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
 import '../app/source-batch-core.js';
 const C = globalThis.ThreadsSourceBatchCore;
 
@@ -26,4 +28,14 @@ test('old metadata and incomplete records are not converted', () => {
   assert.equal(C.status({...a,missingMedia:['a.png']}),'needs_media');
   assert.equal(C.status({...a,commentStatus:'unknown'}),'needs_comment_check');
   assert.equal(C.status(a),'converted');
+});
+test('only severe content is excluded before conversion', () => {
+  const window = {};
+  vm.runInNewContext(fs.readFileSync(new URL('../app/viral-model.js', import.meta.url), 'utf8'), { window });
+  const scan = window.ThreadsViralModel.comfortScan;
+  assert.equal(C.severeScreen({title:'직장 상사와 다툼',body:'서로 말이 거칠어졌어요.'}, scan).excluded, false);
+  assert.equal(C.severeScreen({title:'폭행 사건',body:'뉴스를 보고 대화했습니다.'}, scan).excluded, false);
+  assert.equal(C.severeScreen({title:'구더기라는 표현',body:'비유일 뿐입니다.'}, scan).excluded, false);
+  assert.equal(C.severeScreen({title:'일상',body:'구더기 사진을 올렸습니다.'}, scan).excluded, true);
+  assert.equal(C.severeScreen({title:'일상',body:'평범한 글',popularComments:[{text:'신상 털어서 주소 공개'}]}, scan).excluded, true);
 });
