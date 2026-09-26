@@ -98,7 +98,13 @@
       if(s.kind==='text' && !s.text?.trim()) errors.push('빈 본문 조각은 사용할 수 없습니다.');
       if(s.kind==='image' && (!s.mediaName || !files.has(s.mediaName.toLowerCase())))
         errors.push('원문 이미지 파일 누락: '+(s.mediaName||'이름 없음'));
+      if(s.after && (!Number.isInteger(Number(s.after.gap)) || Number(s.after.gap)<0 || Number(s.after.gap)>400 ||
+        typeof s.after.note!=='string' || s.after.note.length>500))
+        errors.push('조각 뒤 여백은 0~400px, 작성 의견은 500자 이하로 입력하세요.');
     }
+    if(plan.style && (!['sans','gothic'].includes(plan.style.fontId) ||
+      !({sans:[400,900],gothic:[800]}[plan.style.fontId]||[]).includes(Number(plan.style.titleWeight))))
+      errors.push('동봉된 상업적 사용 허용 폰트와 실제 굵기를 선택하세요.');
     for(const c of plan.comments||[]) if(c.selected && (!c.text?.trim() || !c.location)) errors.push('댓글 원문·위치를 확인하세요.');
     if(plan.publicationAllowed!==false) errors.push('게시 승인을 이 화면에서 부여할 수 없습니다.');
     return errors;

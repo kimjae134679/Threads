@@ -7,6 +7,33 @@
   const bytes=s=>encoder.encode(String(s));
   let chosen=null, output=null, files=[], running=false;
   let previewUrls=[];
+  const presetKey='threads-curated-style-v1';
+  const family=id=>id==='gothic'?'"Cut Gothic"':'"Carousel Sans KR"';
+  function weights() {
+    const select=$('batchWeight'),before=select.value;select.replaceChildren();
+    for(const weight of $('batchFont').value==='gothic'?[800]:[400,900])
+      select.add(new Option(weight===400?'보통 · 400':'굵게 · '+weight,String(weight)));
+    if([...select.options].some(o=>o.value===before))select.value=before;
+  }
+  function presets() {try {return JSON.parse(localStorage.getItem(presetKey))||{};} catch {return {};}}
+  function refreshPresets() {
+    const select=$('batchPreset'),current=select.value;select.replaceChildren(new Option('저장된 프리셋 선택',''));
+    for(const name of Object.keys(presets()))select.add(new Option(name,name));select.value=current;
+  }
+  $('batchFont').addEventListener('change',weights);weights();refreshPresets();
+  $('saveBatchPreset').addEventListener('click',()=>{
+    const name=$('batchPresetName').value.trim();if(!name)return status('프리셋 이름을 입력하세요.');
+    const all=presets();if(!all[name]&&Object.keys(all).length>=20)return status('프리셋은 20개까지 저장할 수 있습니다.');
+    all[name]={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value)};
+    try {localStorage.setItem(presetKey,JSON.stringify(all));refreshPresets();$('batchPreset').value=name;
+      status('폰트·굵기 프리셋을 저장했습니다. 현재 원문 ZIP에도 선택 설정이 기록됩니다.');}
+    catch {status('프리셋을 브라우저에 저장하지 못했습니다. 원문 ZIP에는 스타일이 기록됩니다.');}
+  });
+  $('applyBatchPreset').addEventListener('click',()=>{
+    const p=presets()[$('batchPreset').value];if(!p)return status('프리셋을 먼저 선택하세요.');
+    $('batchFont').value=p.fontId;weights();$('batchWeight').value=String(p.titleWeight);
+    status('선택한 스타일 프리셋을 적용했습니다.');
+  });
   function clearUrls() {for(const url of previewUrls)URL.revokeObjectURL(url);previewUrls=[];}
   const filePath=f=>(f.webkitRelativePath||f.name).replaceAll('\\','/');
   function status(message) { $('summary').textContent=message; }
@@ -68,6 +95,7 @@
     $('bodyVerified').checked=p.review.bodyVerified;
     $('mediaVerified').checked=p.review.mediaVerified;
     $('commentsVerified').checked=p.review.commentsVerified;
+    $('batchFont').value=p.style?.fontId||'sans';weights();$('batchWeight').value=String(p.style?.titleWeight||900);
     const areas=$('segmentChoices');areas.replaceChildren();
     for(const part of p.segments) {
       const div=document.createElement('div');div.className='choice';
@@ -84,10 +112,20 @@
         const details=document.createElement('details'),title=document.createElement('summary'),body=document.createElement('p');
         title.textContent='원문 글 전체 보기';body.textContent=part.text;details.append(title,body);div.append(details);
       }
+      const after=document.createElement('div');after.className='editorial-controls';
+      const gapLabel=document.createElement('label'),gap=document.createElement('input');
+      gap.type='number';gap.min='0';gap.max='400';gap.step='10';gap.value=String(part.after?.gap??0);
+      gap.addEventListener('input',()=>{part.after={gap:Number(gap.value),note:part.after?.note||''};});
+      gapLabel.append('뒤 여백(px)',gap);
+      const noteLabel=document.createElement('label'),note=document.createElement('textarea');
+      note.maxLength=500;note.placeholder='직접 쓰는 중간 의견 (원문 댓글과 구분)';note.value=part.after?.note||'';
+      note.addEventListener('input',()=>{part.after={gap:Number(gap.value),note:note.value};});
+      noteLabel.append('조각 뒤 내 의견',note);after.append(gapLabel,noteLabel);div.append(after);
     }
     const comments=$('commentChoices');comments.replaceChildren();
     for(const c of p.comments) {
-      const div=document.createElement('div');div.className='choice',label=document.createElement('label'),check=document.createElement('input');
+      const div=document.createElement('div'),label=document.createElement('label'),check=document.createElement('input');
+      div.className='choice';
       check.type='checkbox';check.checked=c.selected;check.addEventListener('change',()=>{c.selected=check.checked;});
       label.append(check,document.createTextNode(' '+c.text.slice(0,200)));
       const loc=document.createElement('small');loc.textContent='원문 위치: '+c.location+' · 반응 '+(c.best?'BEST':c.likes??'미확인');
@@ -109,6 +147,7 @@
     p.coverTitleEvidence=$('coverTitleEvidence').value.trim();
     p.review={bodyVerified:$('bodyVerified').checked,mediaVerified:$('mediaVerified').checked,
       commentsVerified:$('commentsVerified').checked};
+    p.style={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value)};
     const s=p.segments.find(x=>x.id===$('coverSource').value);
     p.cover={kind:s?.kind||null,segmentId:s?.id||null};
     return p;
@@ -152,10 +191,13 @@
     }
     const errors=U.validate(plan,new Set(media.keys()));
     if(errors.length) throw new Error(errors.join(' · '));
+    const fontId=plan.style?.fontId||'sans',weight=plan.style?.titleWeight||900;
     const text=[plan.coverTitle,...plan.segments.filter(s=>s.selected&&s.kind==='text').map(s=>s.text),
+      ...plan.segments.filter(s=>s.selected&&s.after?.note).map(s=>s.after.note),
       ...plan.comments.filter(c=>c.selected).map(c=>c.text)].join('\n');
-    window.ThreadsSourceCut.assertFontText(text,'sans');
-    await Promise.all([document.fonts.load('400 43px "Carousel Sans KR"'),document.fonts.load('900 83px "Carousel Sans KR"')]);
+    window.ThreadsSourceCut.assertFontText(text,fontId);
+    await Promise.all([document.fonts.load((fontId==='gothic'?800:400)+' 43px '+family(fontId)),
+      document.fonts.load(weight+' 83px '+family(fontId))]);
     const screen=C.severeScreen({title:plan.coverTitle,body:plan.segments.filter(s=>s.selected&&s.kind==='text').map(s=>s.text).join('\n'),
       popularComments:plan.comments.filter(c=>c.selected)},window.ThreadsViralModel.comfortScan);
     if(screen.excluded) throw new Error('심한 소재 제외: '+screen.reasons.join(', '));
@@ -197,6 +239,8 @@
   }
   async function renderCurated(plan,media) {
     const pages=[],W=1080,H=1350,pad=65,canvas=document.createElement('canvas');
+    const fontId=plan.style?.fontId||'sans',font=family(fontId),weight=plan.style?.titleWeight||900;
+    const bodyFont=(fontId==='gothic'?800:400)+' 43px '+font;
     canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');
     const used=plan.segments.filter(s=>s.selected),cover=used.find(s=>s.id===plan.cover.segmentId);
     const imageCache=new Map();for(const item of used.filter(s=>s.kind==='image'))
@@ -208,21 +252,21 @@
       const shade=ctx.createLinearGradient(0,0,0,H);shade.addColorStop(0,'rgba(0,0,0,.68)');shade.addColorStop(.55,'rgba(0,0,0,.10)');shade.addColorStop(1,'rgba(0,0,0,.08)');ctx.fillStyle=shade;ctx.fillRect(0,0,W,H);
     } else {
       ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#dce4ec';ctx.fillRect(42,42,W-84,H-84);
-      ctx.fillStyle='#172237';ctx.font='48px "Carousel Sans KR"';ctx.textBaseline='top';
+      ctx.fillStyle='#172237';ctx.font=(fontId==='gothic'?800:400)+' 48px '+font;ctx.textBaseline='top';
       wrap(ctx,cover.text,W-180).slice(0,14).forEach((line,i)=>ctx.fillText(line,90,540+i*58));
       ctx.fillStyle='rgba(255,255,255,.93)';ctx.fillRect(48,48,W-96,460);
     }
-    ctx.textBaseline='top';ctx.font='900 83px "Carousel Sans KR"';
+    ctx.textBaseline='top';ctx.font=weight+' 83px '+font;
     const heading=wrap(ctx,plan.coverTitle,W-160);
     if(heading.length>4) throw new Error('대문 글씨가 길어 한눈에 들어오지 않습니다. 4줄 이하로 줄여주세요.');
     ctx.lineWidth=cover.kind==='image'?10:7;ctx.lineJoin='round';
     heading.forEach((line,i)=>{const x=80,y=130+i*103;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
-    function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font='43px "Carousel Sans KR"';ctx.textBaseline='top';}
+    function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font=bodyFont;ctx.textBaseline='top';}
     begin();let y=pad,has=false;
     function next() {if(has)finish();begin();y=pad;has=false;}
     for(const part of used) {
       if(part.kind==='text') {
-        ctx.font='43px "Carousel Sans KR"';
+        ctx.font=bodyFont;
         for(const line of wrap(ctx,part.text,W-2*pad)) {
           if(y+61>H-pad) next();
           if(line)ctx.fillText(line,pad,y);
@@ -236,13 +280,23 @@
         if(y+h>H-pad) next();
         ctx.drawImage(img,(W-w)/2,y,w,h);y+=h+34;has=true;
       }
+      const extra=part.after||{};
+      if(extra.gap) {if(y+Number(extra.gap)>H-pad)next();y+=Number(extra.gap);has=true;}
+      if(extra.note?.trim()) {
+        ctx.font=bodyFont;
+        for(const line of wrap(ctx,extra.note,W-2*pad-52)) {
+          if(y+62>H-pad)next();
+          ctx.fillStyle='#2470b6';if(line)ctx.fillText(line,pad+26,y);y+=62;has=true;
+        }
+        ctx.fillStyle='#171c26';y+=32;
+      }
       if(pages.length>60) throw new Error('본문이 너무 길어 원문 ZIP을 나눠야 합니다.');
     }
     if(has)finish();
     const comments=plan.comments.filter(c=>c.selected);
     if(comments.length) {begin();y=pad;has=false;
       for(const c of comments) {
-        ctx.font='900 39px "Carousel Sans KR"';
+        ctx.font=weight+' 39px '+font;
         for(const line of wrap(ctx,c.text,W-2*pad)) {
           if(y+60>H-pad) next();
           ctx.fillText(line,pad,y);y+=60;has=true;
@@ -259,6 +313,8 @@
     const manifest={schema:'threads-curated-output-v1',sourceZip:file.name,sourceSha256:await hash(await file.arrayBuffer()),
       sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,
+      style:plan.style||{fontId:'sans',titleWeight:900},editorialNotes:plan.segments.filter(s=>s.selected&&s.after?.note?.trim())
+        .map(s=>({afterSegment:s.id,note:s.after.note,gap:s.after.gap||0})),
       selectedSegments:plan.segments.filter(s=>s.selected).map(s=>({id:s.id,location:s.location,kind:s.kind})),
       selectedComments:plan.comments.filter(c=>c.selected).map(c=>({id:c.id,location:c.location})),
       renderedPages:pages.length,publicationAllowed:false};

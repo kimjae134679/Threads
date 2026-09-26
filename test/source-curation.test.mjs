@@ -27,6 +27,13 @@ test('image output requires chosen source background, verified positions and act
   assert.ok(C.validate(plan,new Set(['a.jpg'])).some(x=>x.includes('첫 장')));
   plan.cover={kind:'image',segmentId:'s1'};
   assert.deepEqual(C.validate(plan,new Set(['a.jpg'])),[]);
+  plan.style={fontId:'gothic',titleWeight:800};
+  plan.segments[0].after={gap:120,note:'이 부분은 편집자가 쓴 의견'};
+  assert.deepEqual(C.validate(plan,new Set(['a.jpg'])),[]);
+  plan.style.titleWeight=900;
+  assert.ok(C.validate(plan,new Set(['a.jpg'])).some(x=>x.includes('폰트')));
+  plan.style.titleWeight=800;plan.segments[0].after.gap=401;
+  assert.ok(C.validate(plan,new Set(['a.jpg'])).some(x=>x.includes('여백')));
 });
 
 test('source ZIP roundtrip verifies contents and rejects corrupted bytes and paths',async()=>{
