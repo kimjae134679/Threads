@@ -10,6 +10,10 @@ HTML은 저장된 게시글 본문 DOM에서 텍스트·이미지 위치와 인�
 
 이 단계의 변환은 로컬 파일 제작입니다. C/A/P 등급과 게시 승인·실제 게시를 변경하지 않습니다. 원문 전문과 이미지 바이트는 ZIP에만 두고 GitHub에는 업로드하지 않습니다. 파일에 없는 사실이나 댓글을 만들어 채우지 않습니다.
 
+## 기존 후보 링크에서 자동 확보
+
+Node 24에서 node scripts/acquire-existing-sources.mjs --all 을 실행하면 기존 작업 대기열의 후보만 순차 처리합니다. 공개된 정확한 HTTPS 원문 링크가 있는 후보의 HTML 원본 바이트와 페이지에 연결된 이미지 파일 후보를 data/runtime/source_pipeline/acquired/ 아래에 보관합니다. 중간에 끊겨도 이미 저장한 항목은 건너뛰며 --refresh로 다시 확인할 수 있습니다. 기본 실행은 앞의 20건이며 --limit N을 사용할 수 있습니다. 로그인·쿠키·접근 제한 우회는 수행하지 않습니다. 403·원문 URL 없음·이미지 누락은 건별 기록으로 남깁니다. 이 자동 저장 단계는 본문/댓글과 본문 이미지 여부를 검증한 것이 아니므로 이후 위의 폴더 선택 → PNG 변환 단계와 원문 대조가 필요합니다. 런타임 출력은 GitHub에 커밋하지 않습니다.
+
 ## 기존 저장소 정리
 
 data/_system/source-material-inventory.json은 2026-09-25 00:17 KST의 main 커밋 8f959cef의 경로를 기준으로 전부 분류한 경로 인덱스입니다. 본문 검증이나 변환 완료 목록이 아닙니다.
@@ -31,7 +35,7 @@ data/_system/source-material-inventory.json은 2026-09-25 00:17 KST의 main 커�
 
 ## 검증 범위와 남은 연결
 
-핵심 분류·인기 댓글 순위·원문 TXT 파서 검사: node --test test/source-batch-core.test.mjs. 실제 Chrome/Edge 대량 폴더 저장과 사이트별 HTML 구조·첨부 이미지 다운로드는 사용자 환경에서 검수해야 합니다. 저장 HTML에 연결된 외부 이미지는 HTML만으로 확보하지 못하므로 같은 폴더에 넣어야 합니다. URL만 넣으면 HTML·이미지·댓글을 자동으로 저장하는 연동과 PR #1의 Windows 화면 통합은 아직 없습니다. 새 경로는 페이지 스크린샷 대신 텍스트와 원본 이미지를 카드로 그립니다.
+핵심 분류·인기 댓글 순위·원문 TXT 파서 검사: node --test test/source-batch-core.test.mjs. 실제 Chrome/Edge 대량 폴더 저장과 사이트별 HTML 구조·첨부 이미지 다운로드는 사용자 환경에서 검수해야 합니다. 저장 HTML에 연결된 외부 이미지는 HTML만으로 확보하지 못하므로 같은 폴더에 넣어야 합니다. URL을 직접 넣는 단일 화면과 PR #1의 Windows 화면 통합은 아직 없습니다. 링크 저장 CLI의 실제 네트워크·사이트별 결과는 현재 실행 환경에서 검증하지 못했습니다. 새 경로는 페이지 스크린샷 대신 텍스트와 원본 이미지를 카드로 그립니다.
 
 기존 후보·보조 메모 1,583개를 data/_system/source-work-queue.json에 대기열로 기록했습니다. Jev 파일명 연결은 953건, manifest의 명시적 legacyCandidate 경로로 연결된 정리 폴더 기록은 6/21건입니다. 나머지 15개 폴더가 무관하다는 뜻은 아니고 명시적 경로 연결이 없어 재대조가 필요합니다. 변환 완료로 확인된 건수는 0입니다. 대기열 확인: node scripts/build-source-work-queue.mjs. 갱신: node scripts/build-source-work-queue.mjs --write.
 

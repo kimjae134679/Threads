@@ -49,7 +49,7 @@
       if (tag === 'img') {
         const w = Number(n.getAttribute('width')), h = Number(n.getAttribute('height'));
         if ((w && w <= 32) || (h && h <= 32)) return;
-        const src = n.getAttribute('data-src') || n.getAttribute('data-original') || n.getAttribute('src') || '';
+        const src = n.getAttribute('data-original') || n.getAttribute('data-src') || n.getAttribute('src') || n.getAttribute('srcset')?.split(',')[0].trim().split(/\s+/)[0] || '';
         if (src && !src.startsWith('data:image/svg')) s += '\n[IMAGE:' + imageName(src) + ']\n';
         return;
       }
