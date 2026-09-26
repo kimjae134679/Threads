@@ -549,6 +549,11 @@
     if (next.presets?.length) { const combined = new Map(presets.map(p => [p.name, p])); next.presets.forEach(p => combined.set(p.name, p)); presets = [...combined.values()].slice(-20); persistPresets(); }
     refreshAssets(); goStep(2);
   }
+  $('openBundleTool')?.addEventListener('click', async () => {
+    if(window.ThreadsCutDesktop?.openSourceBundle)
+      try {await window.ThreadsCutDesktop.openSourceBundle();}catch(error){message('원문 ZIP 창 열기 실패: '+error.message);}
+    else window.open('./source-batch.html','_blank');
+  });
   $('projectFile').addEventListener('change', async () => {
     const file = $('projectFile').files[0]; if (!file || busy) return;
     if (dirty && !window.confirm('현재 편집을 교체합니다. 필요한 경우 취소 후 편집 저장을 먼저 해주세요.')) return;

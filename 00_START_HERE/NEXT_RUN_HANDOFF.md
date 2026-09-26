@@ -1,3 +1,11 @@
+# 2026-09-27 — 원문 선별 ZIP과 게시 이미지 제작 재설계
+
+사용자 피드백: 기존 HTML 페이지 전체 텍스트를 본문으로 쓸 수 없고, 검은 단색 제목 표지는 목표 결과물이 아님. 제목/본문 글·이미지 및 위치/실제 댓글을 원문에서 선별하여 ZIP으로 묶고 그 ZIP을 읽어 제작. `docs/SOURCE_BUNDLE_GUIDE.md`가 선별 근거/파일 형식의 기준.
+
+현재 작업 브랜치 `codex/rebuild-source-curation-20260927` (main `2165279`에서 생성). 기존 작업 폴더의 무관한 PNG 수정은 건드리지 않고 별도 worktree에서 작업. `app/source-batch.html/js`, `source-workflow.js`, `source-workflow.mjs`, `app/source-curation.js`, `app/source-bundle-zip.js`, `docs/SOURCE_BATCH_PIPELINE.md`를 재설계 중. HTML 조각은 미선택으로 시작, 직접 확인한 제목/본문/이미지 위치/댓글과 첫 장의 실제 글/이미지 배경을 ZIP에 저장. 확인되지 않은 ZIP은 PNG 제작 및 converted 표시 불가. 실동작 검증·PR은 완료 후 기록.
+
+---
+
 # 2026-09-27 — 원문 보존·일괄 변환 작업
 
 ## 자동 목록·전체 처리 연결

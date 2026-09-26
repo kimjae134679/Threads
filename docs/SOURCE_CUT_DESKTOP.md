@@ -6,6 +6,12 @@ HTML 파일을 직접 여는 대신 Windows 앱 `Threads Cut Editor.exe`를 실�
 
 바탕화면 **원문 컷 편집기** 바로가기를 실행합니다. 설치된 앱은 `%LOCALAPPDATA%\Programs\ThreadsCutEditor\app\Threads Cut Editor.exe`입니다.
 
+## 원문 ZIP에서 게시 이미지 제작
+
+앱 상단 **원문 ZIP 제작** 버튼을 누르면 원문 선별 화면이 별도 창으로 열립니다. **원본 폴더 선택 → 원본 목록 열기 → 이 원문 선별**에서 사용할 제목·본문 글·이미지 위치·댓글을 고릅니다. **원본·선별 기준 ZIP 저장**을 누르고, 저장한 ZIP을 **원문 ZIP에서 이미지 만들기**로 다시 열어 PNG 세트를 받습니다. 이전의 원문 컷 편집 화면은 저장한 이미지에서 추가로 범위를 조정할 때 사용합니다. 입력 ZIP에 무엇을 넣을지: [원문 ZIP 작성 가이드](SOURCE_BUNDLE_GUIDE.md).
+
+앱의 원문 ZIP 창은 파일/폴더 직접 입력을 사용합니다. 저장소의 기존 후보 1,583건 대기열은 별도 `npm start`의 `/app/source-batch.html`에서 엽니다.
+
 ## 사용법
 
 1. 앱 위쪽 **게시글 링크**에 HTTPS 주소를 붙여 넣습니다.
@@ -37,7 +43,7 @@ npm start --prefix desktop
 npm run pack:win --prefix desktop
 ```
 
-빌드 결과: `desktop/dist/Threads-Cut-Editor-0.1.0-Windows-x64.zip`.
+빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.3-Windows-x64.zip`.
 앱은 기존 전체 운영 서버와 분리되어 있어 API 키나 SQLite 서버 없이 편집을 실행합니다.
 
 ## 검증

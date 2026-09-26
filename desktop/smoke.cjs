@@ -21,6 +21,17 @@ app.whenReady().then(async () => {
     }
     assert(editor, 'Editor window opened');
     assert(await editor.webContents.executeJavaScript('Boolean(window.ThreadsSourceCutEditor && window.ThreadsCutDesktop)'), 'Editor and secure bridge loaded');
+    await editor.webContents.executeJavaScript("document.getElementById('openBundleTool').click()");
+    let bundleWindow;
+    for(let i=0;i<60;i++) {
+      bundleWindow=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL()==='cut-editor://app/source-batch.html');
+      if(bundleWindow && await bundleWindow.webContents.executeJavaScript('Boolean(window.ThreadsSourceBatch && window.ThreadsSourceCuration)').catch(()=>false))break;
+      await wait(100);
+    }
+    assert(bundleWindow,'Curated source ZIP window opened');
+    assert(await bundleWindow.webContents.executeJavaScript('Boolean(window.ThreadsSourceBatch && window.ThreadsSourceCuration)'),
+      'Source ZIP editor and curation code loaded in Electron');
+    bundleWindow.destroy();
     const isolated = session.fromPartition('capture-smoke-fixture');
     isolated.protocol.handle('https', () => new Response('<!doctype html><meta charset="utf-8"><title>웹진 인벤 : 테스트 원문 - 오픈이슈갤러리</title><style>body{margin:0}section{height:6000px;font:32px sans-serif}.article-content{padding:40px;width:900px}.comment-list{padding:40px}.nickname,time{font-size:14px}section:nth-child(2){background:#ffdd22}section:nth-child(3){background:#22ddff}</style><section><article class="article-content"><h1>웹진 인벤 : 테스트 원문 - 오픈이슈갤러리</h1><p>첫 문단입니다.</p><img width="320" height="180" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22%3E%3Crect width=%22320%22 height=%22180%22 fill=%22%23ddd%22/%3E%3C/svg%3E"><p>둘째 문단입니다.</p></article><ul class="comment-list"><li><span class="nickname">닉네임</span><div class="comment-text">실제 댓글 하나</div><time>오늘</time></li></ul></section><section>Middle</section><section>Bottom</section>', { headers: { 'Content-Type': 'text/html; charset=utf-8' } }));
     fixture = new BrowserWindow({ show: true, width:1280, height:900, useContentSize:true, webPreferences:{session:isolated,nodeIntegration:false,contextIsolation:true,sandbox:true,backgroundThrottling:false} });
