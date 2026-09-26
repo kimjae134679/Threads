@@ -17,6 +17,9 @@ data/_system/source-material-inventory.json은 2026-09-25 00:17 KST의 main 커�
 | 구분 | 수 | 처리 |
 | --- | ---: | --- |
 | 기존 후보 Markdown | 1,570 | 원본/이력 보존, 원문 없는 것은 needs_source |
+| Discovery 보조 후보 메모 | 13 | 기존 후보와 중복 가능성 표시 후 대조 |
+| 과거 원자료 묶음 | 31개 파일 | 원본 이력으로 보존, 정리본의 대체 원문으로 사용 금지 |
+| Demo/field-test 메타 | 5개 파일 | 실제 후보·게시 성과와 분리 |
 | Jev 평가 JSON | 953 | 후보 판단 참고값으로만 유지 |
 | 100개 묶음 | 13 | 생성된 색인으로 유지, 원문 대체 금지 |
 | Discovery 정리 폴더 | 12 | 내용·이미지·댓글 실물 검증 필요 |
@@ -29,5 +32,7 @@ data/_system/source-material-inventory.json은 2026-09-25 00:17 KST의 main 커�
 ## 검증 범위와 남은 연결
 
 핵심 분류·인기 댓글 순위·원문 TXT 파서 검사: node --test test/source-batch-core.test.mjs. 실제 Chrome/Edge 대량 폴더 저장과 사이트별 HTML 구조·첨부 이미지 다운로드는 사용자 환경에서 검수해야 합니다. 저장 HTML에 연결된 외부 이미지는 HTML만으로 확보하지 못하므로 같은 폴더에 넣어야 합니다. URL만 넣으면 HTML·이미지·댓글을 자동으로 저장하는 연동과 PR #1의 Windows 화면 통합은 아직 없습니다. 새 경로는 페이지 스크린샷 대신 텍스트와 원본 이미지를 카드로 그립니다.
+
+기존 후보·보조 메모 1,583개를 data/_system/source-work-queue.json에 대기열로 기록했습니다. Jev 파일명 연결은 953건, manifest의 명시적 legacyCandidate 경로로 연결된 정리 폴더 기록은 6/21건입니다. 나머지 15개 폴더가 무관하다는 뜻은 아니고 명시적 경로 연결이 없어 재대조가 필요합니다. 변환 완료로 확인된 건수는 0입니다. 대기열 확인: node scripts/build-source-work-queue.mjs. 갱신: node scripts/build-source-work-queue.mjs --write.
 
 기존 1,570개 중 정확한 원문과 이미지·댓글 데이터가 없는 항목은 이 프로그램을 돌려도 converted가 되지 않습니다. 이미 수집한 후보를 순차 재확인해 원문 TXT/JSON과 원본 이미지를 채우고 ZIP 상태를 검수한 뒤에만 변환 완료 수로 셉니다.

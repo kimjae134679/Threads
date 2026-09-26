@@ -5,6 +5,7 @@ on:
       - 'app/source-batch*'
       - 'app/source-cut-zip.js'
       - 'scripts/inventory-existing-materials.mjs'
+      - 'scripts/build-source-work-queue.mjs'
       - 'test/source-batch-core.test.mjs'
       - '.github/workflows/source-batch.yml'
   workflow_dispatch:
@@ -20,5 +21,7 @@ jobs:
       - run: node --check app/source-batch.js
       - run: node --check app/source-cut-zip.js
       - run: node --check scripts/inventory-existing-materials.mjs
+      - run: node --check scripts/build-source-work-queue.mjs
       - run: node --test test/source-batch-core.test.mjs
       - run: node scripts/inventory-existing-materials.mjs
+      - run: node scripts/build-source-work-queue.mjs

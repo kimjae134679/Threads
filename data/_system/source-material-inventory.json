@@ -10,7 +10,10 @@
     "discoveryBundles": 12,
     "legacyBundles": 9,
     "testOnlyFolders": 35,
-    "sourcePackages": 1
+    "sourcePackages": 1,
+    "discoveryCandidateNotes": 13,
+    "rawBatches": 31,
+    "demoFiles": 5
   },
   "duplicateBundleIdsAcrossRoots": [
     "blind-cn6hnlfx",
@@ -2624,6 +2627,61 @@
     ],
     "sourcePackages": [
       "theqoo-3826792703"
+    ],
+    "discoveryCandidateNotes": [
+      "01_DISCOVERY/data/candidates/2026-09-23_inven_japan-study-marriage-story_C1.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo-convenience-store-customer-stories_C1.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo-recruiting-interviewer-blame_C1.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_1924192134.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_2280791561.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_263633450.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_2747645645.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_32-unemployed-no-money_C1.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_569909346.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_957980399.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_childcare-stranger-leaves-child_C1.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_fortune-telling-18-months-later_C1.md",
+      "01_DISCOVERY/data/candidates/2026-09-23_theqoo_friend-money-tone-deaf_C1.md"
+    ],
+    "rawBatches": [
+      "data/_raw_batches/260916_C1_A0_P0_asset-acquisition_0718.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0234.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0333.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0419.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0437.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0535.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0617.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0638.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0736.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0815.json",
+      "data/_raw_batches/260916_C1_A0_P0_discovery_0917.json",
+      "data/_raw_batches/260916_C1_A0_P0_hotel-cake-provenance_0516.json",
+      "data/_raw_batches/260916_C1_A0_P0_reverified-korean-leads_0316.json",
+      "data/_raw_batches/blind-curated-2026-09-15-2003.json",
+      "data/_raw_batches/discovery-2026-09-18-1814.md",
+      "data/_raw_batches/discovery-2026-09-18-2315.md",
+      "data/_raw_batches/discovery-batch-2026-09-15-1117.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1219.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1314.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1414.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1607.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1626.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1717.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1815.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-1917.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-2017.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-2114.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-2214.json",
+      "data/_raw_batches/discovery-batch-2026-09-15-2337.json",
+      "data/_raw_batches/discovery-batch-2026-09-16-0037.json",
+      "data/_raw_batches/high-volume-korean-candidates-2026-09-16-0128.json"
+    ],
+    "demoFiles": [
+      "data/demo-showcase-2026-09-14.json",
+      "data/demo-showcase-2026-09-15.json",
+      "data/field-test-showcase-2026-09-14-night.json",
+      "data/field-test-showcase-index.json",
+      "data/viral-discovery-latest.json"
     ]
   },
   "conversion": {

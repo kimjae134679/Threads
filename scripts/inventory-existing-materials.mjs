@@ -24,7 +24,10 @@ const groups = {
   discoveryBundles: folderIds('01_DISCOVERY/data/candidate_bundles/'),
   legacyBundles: folderIds('data/candidate_bundles/'),
   testOnlyFolders: folderIds('03_PRODUCTION/_TEMP_TEST_ONLY_DO_NOT_PUBLISH/'),
-  sourcePackages: folderIds('data/source-packages/')
+  sourcePackages: folderIds('data/source-packages/'),
+  discoveryCandidateNotes: prefix('01_DISCOVERY/data/candidates/').filter(p => p.endsWith('.md') && !p.endsWith('/README.md')),
+  rawBatches: prefix('data/_raw_batches/'),
+  demoFiles: files.filter(p => /^data\/(?:demo-|field-test-|viral-discovery)/.test(p))
 };
 const inventory = {
   schema: 'threads-source-material-inventory-v1', repo: 'kimjae134679/Threads',
