@@ -21,8 +21,10 @@
     const doc = new DOMParser().parseFromString(html,'text/html');
     const selector=['[itemprop="articleBody"]','#bo_v_con','.post-content','.article-content','.view_content','.xe_content','.rd_body','.se-main-container'];
     let body=null;
-    for (const s of selector) { const nodes=[...doc.querySelectorAll(s)]; if(nodes.length===1 && nodes[0].textContent.trim()) {body=nodes[0];break;} }
-    if (!body) { const articles=[...doc.querySelectorAll('article')].filter(n=>n.textContent.trim().length>80);
+    for (const s of selector) { const nodes=[...doc.querySelectorAll(s)]; if(nodes.length===1 &&
+      (nodes[0].textContent.trim() || nodes[0].querySelector('img'))) {body=nodes[0];break;} }
+    if (!body) { const articles=[...doc.querySelectorAll('article')].filter(n=>
+      n.textContent.trim().length>80 || n.querySelector('img'));
       if (articles.length===1) body=articles[0]; }
     if (!body) throw new Error('게시글 본문을 특정하지 못했습니다. 본문 선택 없이 제작할 수 없습니다.');
     const originalTitle=(doc.querySelector('meta[property="og:title"]')?.getAttribute('content') ||
