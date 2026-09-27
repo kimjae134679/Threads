@@ -32,3 +32,33 @@
 - 다만 심한 비인간화·위협·표적 괴롭힘·신상노출·명예훼손 위험 등은 별도 safety/privacy 검토한다.
 - `P1`은 04_REVIEW_PUBLISH가 실제 게시 성공을 확인한 경우만 사용한다.
 - 과거 묶음 JSON/기계용 스냅샷은 `_raw_batches/`로 이동해 감사 기록으로만 보존한다.
+
+## 프로그램 입력 라이브러리
+
+저장소 루트에서 아래 명령을 실행하면 기존 후보를 프로그램 입력 폴더로 정리한다.
+
+```sh
+node scripts/normalize-existing-candidates.mjs --write
+node scripts/normalize-existing-candidates.mjs --check
+```
+
+결과는 `data/runtime/program_inputs/`에 저장되며 Git에 올라가지 않는다. 후보별 `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`과 색인 `index.csv`, `index.json`을 만든다. 확인된 원문 미디어가 있을 때만 `media/`가 생긴다. 원본 후보·평가·감사 자료는 이동하거나 덮어쓰지 않는다.
+
+현재 앱에서 원문을 가져오는 경로는 기존 후보 목록에서 **이 글만 수집**하는 방식이다. 후보 입력 묶음의 `content.txt`는 기존 요약과 확인 상태를 담는 참고 파일이며 원문 전문 TXT가 아니다. 수동 원문 가져오기에 넣지 않는다. 실제 원문을 확보한 뒤 제목, 본문, 이미지 위치, 댓글을 대조한다.
+
+후보·Jev 평가는 원문 자체가 아니다. 기존 요약과 댓글 메모를 인용문으로 사용하지 않는다. 권리·개인정보 확인과 게시 승인은 별도이며 `publicationAllowed=false` 상태를 유지한다. Blind와 DCInside는 자동 수집하지 않는다. 새 후보를 추가하지 않고 기존 자료만 정리한다.
+
+## 폴더 지도
+
+| 경로 | 용도 |
+| --- | --- |
+| `candidates/` | 기존 후보 기록 원본 |
+| `jev_results/` | 기존 Jev 평가 JSON |
+| `candidate_batches/` | 후보 Markdown에서 만든 검토용 묶음 |
+| `candidate_bundles/` 및 `../01_DISCOVERY/data/candidate_bundles/` | 과거 정규화 결과 |
+| `source-packages/` | 출처 연결 이미지·수집 기록 |
+| `_raw_batches/` | 예전 탐색 원본과 감사 자료 |
+| `_system/` | 작업 큐·진행 상태·자료 인벤토리 |
+| `runtime/program_inputs/` | 현재 프로그램용 로컬 후보 묶음 |
+| `runtime/source_pipeline/` | 원문 수집과 이미지 제작의 로컬 결과 |
+
