@@ -175,7 +175,7 @@
     const url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);
   }
-  async function unpack(file) {
+  async function unpack(file,{preview=false}={}) {
     const entries=await window.ThreadsSourceBundleZip.read(file);
     const raw=entries.get('bundle.json');if(!raw) throw new Error('원문 ZIP에 bundle.json이 없습니다.');
     const plan=JSON.parse(decoder.decode(raw));
@@ -189,7 +189,8 @@
       if(media.has(m.name.toLowerCase())) throw new Error('이미지 이름 중복: '+m.name);
       media.set(m.name.toLowerCase(),{name:m.name,data,type:/\.png$/i.test(m.name)?'image/png':/\.webp$/i.test(m.name)?'image/webp':'image/jpeg'});
     }
-    const errors=U.validate(plan,new Set(media.keys()));
+    const errors=U.validate(plan,new Set(media.keys())).filter(error=>
+      !preview || error!=='본문·이미지·댓글 확인 표시가 모두 필요합니다.');
     if(errors.length) throw new Error(errors.join(' · '));
     const fontId=plan.style?.fontId||'sans',weight=plan.style?.titleWeight||900;
     const text=[plan.coverTitle,...plan.segments.filter(s=>s.selected&&s.kind==='text').map(s=>s.text),
@@ -197,7 +198,8 @@
       ...plan.comments.filter(c=>c.selected).map(c=>c.text)].join('\n');
     window.ThreadsSourceCut.assertFontText(text,fontId);
     await Promise.all([document.fonts.load((fontId==='gothic'?800:400)+' 43px '+family(fontId)),
-      document.fonts.load(weight+' 83px '+family(fontId))]);
+      document.fonts.load(weight+' 88px '+family(fontId)),
+      ...(preview?[document.fonts.load('900 26px "Carousel Sans KR"')]:[])]);
     const screen=C.severeScreen({title:plan.coverTitle,body:plan.segments.filter(s=>s.selected&&s.kind==='text').map(s=>s.text).join('\n'),
       popularComments:plan.comments.filter(c=>c.selected)},window.ThreadsViralModel.comfortScan);
     if(screen.excluded) throw new Error('심한 소재 제외: '+screen.reasons.join(', '));
@@ -237,15 +239,22 @@
     }
     return result;
   }
-  async function renderCurated(plan,media) {
-    const pages=[],W=1080,H=1350,pad=65,canvas=document.createElement('canvas');
+  async function renderCurated(plan,media,{preview=false}={}) {
+    const pages=[],W=1080,pad=65;
     const fontId=plan.style?.fontId||'sans',font=family(fontId),weight=plan.style?.titleWeight||900;
     const bodyFont=(fontId==='gothic'?800:400)+' 43px '+font;
-    canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');
     const used=plan.segments.filter(s=>s.selected),cover=used.find(s=>s.id===plan.cover.segmentId);
     const imageCache=new Map();for(const item of used.filter(s=>s.kind==='image'))
       imageCache.set(item.mediaName.toLowerCase(),await loadImage(media.get(item.mediaName.toLowerCase())));
-    const finish=()=>pages.push(canvas.toDataURL('image/png'));
+    const sourceImage=cover.kind==='image'?imageCache.get(cover.mediaName.toLowerCase()):null;
+    const H=sourceImage?U.coverHeight(sourceImage.naturalWidth,sourceImage.naturalHeight):1350;
+    const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');
+    const finish=()=>{
+      if(preview){ctx.save();ctx.fillStyle='rgba(255,255,255,.9)';ctx.fillRect(W-298,H-65,280,47);
+        ctx.fillStyle='#9f1239';ctx.font='900 26px "Carousel Sans KR"';ctx.textBaseline='middle';
+        ctx.fillText('검수 전 예시 · 게시 금지',W-284,H-40);ctx.restore();}
+      pages.push(canvas.toDataURL('image/png'));
+    };
     if(cover.kind==='image') {
       const img=imageCache.get(cover.mediaName.toLowerCase()),scale=Math.max(W/img.naturalWidth,H/img.naturalHeight);
       ctx.drawImage(img,(W-img.naturalWidth*scale)/2,(H-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
@@ -256,11 +265,11 @@
       wrap(ctx,cover.text,W-180).slice(0,14).forEach((line,i)=>ctx.fillText(line,90,540+i*58));
       ctx.fillStyle='rgba(255,255,255,.93)';ctx.fillRect(48,48,W-96,460);
     }
-    ctx.textBaseline='top';ctx.font=weight+' 83px '+font;
+    ctx.textBaseline='top';ctx.font=weight+' 88px '+font;
     const heading=wrap(ctx,plan.coverTitle,W-160);
     if(heading.length>4) throw new Error('대문 글씨가 길어 한눈에 들어오지 않습니다. 4줄 이하로 줄여주세요.');
-    ctx.lineWidth=cover.kind==='image'?10:7;ctx.lineJoin='round';
-    heading.forEach((line,i)=>{const x=80,y=130+i*103;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
+    ctx.lineWidth=4;ctx.lineJoin='round';
+    heading.forEach((line,i)=>{const x=67,y=104+i*109;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
     function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font=bodyFont;ctx.textBaseline='top';}
     begin();let y=pad,has=false;
     function next() {if(has)finish();begin();y=pad;has=false;}
@@ -275,13 +284,13 @@
         y+=24;
       } else {
         const img=imageCache.get(part.mediaName.toLowerCase());
-        const scale=Math.min((W-2*pad)/img.naturalWidth,(H-2*pad)/img.naturalHeight);
+        if(has)next();
+        const scale=Math.min(W/img.naturalWidth,H/img.naturalHeight);
         const w=Math.round(img.naturalWidth*scale),h=Math.round(img.naturalHeight*scale);
-        if(y+h>H-pad) next();
-        ctx.drawImage(img,(W-w)/2,y,w,h);y+=h+34;has=true;
+        ctx.drawImage(img,(W-w)/2,(H-h)/2,w,h);finish();begin();y=pad;has=false;
       }
       const extra=part.after||{};
-      if(extra.gap) {if(y+Number(extra.gap)>H-pad)next();y+=Number(extra.gap);has=true;}
+      if(extra.gap) {if(y+Number(extra.gap)>H-pad)next();y+=Number(extra.gap);if(part.kind==='text')has=true;}
       if(extra.note?.trim()) {
         ctx.font=bodyFont;
         for(const line of wrap(ctx,extra.note,W-2*pad-52)) {
@@ -307,17 +316,17 @@
     return pages.map((url,i)=>({name:'rendered/slide-'+String(i+1).padStart(3,'0')+'.png',
       data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))}));
   }
-  async function renderBundle(file) {
-    const {plan,media}=await unpack(file);
-    const pages=await renderCurated(plan,media);
-    const manifest={schema:'threads-curated-output-v1',sourceZip:file.name,sourceSha256:await hash(await file.arrayBuffer()),
+  async function renderBundle(file,{preview=false}={}) {
+    const {plan,media}=await unpack(file,{preview});
+    const pages=await renderCurated(plan,media,{preview});
+    const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:await hash(await file.arrayBuffer()),
       sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,
       style:plan.style||{fontId:'sans',titleWeight:900},editorialNotes:plan.segments.filter(s=>s.selected&&s.after?.note?.trim())
         .map(s=>({afterSegment:s.id,note:s.after.note,gap:s.after.gap||0})),
       selectedSegments:plan.segments.filter(s=>s.selected).map(s=>({id:s.id,location:s.location,kind:s.kind})),
       selectedComments:plan.comments.filter(c=>c.selected).map(c=>({id:c.id,location:c.location})),
-      renderedPages:pages.length,publicationAllowed:false};
+      renderedPages:pages.length,publicationAllowed:false,previewOnly:preview};
     return {pages:pages.length,images:pages,zip:Z.zip([...pages,{name:'manifest.json',data:bytes(JSON.stringify(manifest,null,2)+'\n')},
       {name:'source-bundle.zip',data:new Uint8Array(await file.arrayBuffer())}]),title:plan.coverTitle,plan};
   }
@@ -379,20 +388,24 @@
     try {await reopenBundle(file);status('저장한 원문 ZIP의 선별 기준을 열었습니다. 수정 후 새 ZIP으로 저장하세요.');}
     catch(error){status('원문 ZIP 열기 실패: '+error.message);}e.target.value='';
   });
-  $('renderBundle').addEventListener('change',async e=>{
-    const file=e.target.files[0];if(!file)return;
+  async function makeImages(file,preview) {
     try {status('원문 ZIP의 선별 근거와 파일을 검사하고 이미지를 제작하는 중입니다.');
-      const result=await renderBundle(file);
-      await saveFile(result.zip,safe(result.title)+'-images.zip');
-      await saveWorkflow(result.plan,result.zip,'converted',result.pages);
+      const result=await renderBundle(file,{preview});
+      await saveFile(result.zip,safe(result.title)+(preview?'-review-preview.zip':'-images.zip'));
+      if(!preview)await saveWorkflow(result.plan,result.zip,'converted',result.pages);
       clearUrls();const area=$('renderedPreview');area.replaceChildren();
       for(const [i,page] of result.images.entries()) {
         const fig=document.createElement('figure'),img=document.createElement('img'),caption=document.createElement('figcaption');
         const url=URL.createObjectURL(new Blob([page.data],{type:'image/png'}));previewUrls.push(url);
         img.src=url;img.alt='제작 이미지 '+(i+1)+'장';caption.textContent=(i+1)+'장';fig.append(img,caption);area.append(fig);
       }
-      status('게시용 PNG '+result.pages+'장 제작 완료. 원문 ZIP의 선별 근거도 결과에 포함했습니다.');
-    }catch(error){status('제작 중단: '+error.message);}e.target.value='';
-  });
+      status(preview?'검수 전 예시 '+result.pages+'장. 게시 금지 표시가 들어갔고 제작 완료로 기록하지 않았습니다.':
+        '게시용 PNG '+result.pages+'장 제작 완료. 원문 ZIP의 선별 근거도 결과에 포함했습니다.');
+    }catch(error){status('제작 중단: '+error.message);}
+  }
+  for(const [id,preview] of [['previewBundle',true],['renderBundle',false]])
+    $(id).addEventListener('change',async e=>{
+      const file=e.target.files[0];if(file)await makeImages(file,preview);e.target.value='';
+    });
   window.ThreadsSourceBatch=Object.freeze({prepare,sourceZip,renderBundle,review:renderReview});
 })();

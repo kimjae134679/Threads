@@ -49,6 +49,7 @@
 <button id="saveBundle" type="button">원본·선별 기준 ZIP 저장</button></section>
 <section aria-label="선별 ZIP으로 제작"><h2>원문 ZIP 읽고 이미지 제작</h2><p>저장한 원문 ZIP을 다시 열어 선별 기준을 확인하거나, 확인을 마친 ZIP에서 PNG 세트를 만듭니다.</p>
 <label>기존 원문 ZIP 수정 <input id="openBundle" type="file" accept=".zip,application/zip"></label>
+<label>검수 전 예시 보기 (미확인 댓글은 넣지 않고 예시 표시) <input id="previewBundle" type="file" accept=".zip,application/zip"></label>
 <label>원문 ZIP에서 이미지 만들기 <input id="renderBundle" type="file" accept=".zip,application/zip"></label></section>
 <section aria-label="제작 이미지 확인"><h2>제작 이미지 확인</h2><div id="renderedPreview" class="preview-grid"></div></section>
 </main><script src="./viral-model.js"></script><script src="./source-cut-model.js"></script><script src="./source-batch-core.js"></script><script src="./source-curation.js"></script><script src="./source-cut-zip.js"></script><script src="./source-bundle-zip.js"></script><script src="./source-batch.js"></script><script src="./source-workflow.js"></script></body></html>

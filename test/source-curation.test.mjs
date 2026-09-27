@@ -5,6 +5,12 @@ import vm from 'node:vm';
 import '../app/source-curation.js';
 const C=globalThis.ThreadsSourceCuration;
 
+test('wide source image determines a consistent cover and body canvas height',()=>{
+  assert.equal(C.coverHeight(1024,638),673);
+  assert.equal(C.coverHeight(1024,1500),1350);
+  assert.equal(C.coverHeight(1920,300),608);
+});
+
 test('curation keeps source order, image position and exact text',()=>{
   const body='첫 문단  \n\n[IMAGE:photo.jpg]\n두 번째 문단\n';
   const plan=C.exactDraft({title:'원문 제목',body,comments:[{text:'실제 댓글',likes:4}]});

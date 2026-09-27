@@ -16,6 +16,7 @@
     return parts.join(' > ');
   };
   const imageName = src => { try { return decodeURIComponent(new URL(src,'https://source.invalid/').pathname.split('/').pop()); } catch { return ''; } };
+  const coverHeight = (width,height) => Math.max(608,Math.min(1350,Math.round(1080*height/width)));
   function htmlDraft(html, available=[]) {
     const doc = new DOMParser().parseFromString(html,'text/html');
     const selector=['[itemprop="articleBody"]','#bo_v_con','.post-content','.article-content','.view_content','.xe_content','.rd_body','.se-main-container'];
@@ -109,5 +110,5 @@
     if(plan.publicationAllowed!==false) errors.push('게시 승인을 이 화면에서 부여할 수 없습니다.');
     return errors;
   }
-  return Object.freeze({schema,htmlDraft,exactDraft,validate});
+  return Object.freeze({schema,htmlDraft,exactDraft,validate,coverHeight});
 });
