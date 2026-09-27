@@ -1,10 +1,10 @@
-# 링크 캡처와 Windows 컷 편집기
+# 저장된 원문과 Windows 컷 편집기
 
-HTML 파일을 직접 여는 대신 Windows 앱 `Threads Cut Editor.exe`를 실행합니다. 기존 컷 편집 화면과 저장 파일 형식은 그대로 사용합니다.
+Windows 앱 `Threads Cut Editor.exe`는 이미 PC에 저장된 자료를 불러와 편집하는 것을 기본 흐름으로 사용합니다.
 
 ## 설치된 앱 열기
 
-자동 선별 초안과 현재 선택의 즉시 제작을 포함한 버전은 바탕화면 **Threads Cut Editor 0.2.4** 바로가기로 엽니다. 설치된 앱은 `%LOCALAPPDATA%\Programs\ThreadsCutEditor\app-0.2.4\Threads Cut Editor.exe`입니다. 이전 0.2.3은 별도 폴더에 보존했습니다. 바탕화면의 `Threads-Cut-Editor-0.2.4-Windows-x64.zip`도 압축을 모두 풀어 다른 Windows PC에서 사용할 수 있습니다.
+저장 원문 폴더 불러오기와 원문 ZIP 검수·제작을 포함한 최신 버전은 바탕화면 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.5-Windows-x64.zip`을 압축 풀어 실행합니다. 이전 0.2.4는 `이전 버전` 폴더에 보존했습니다. 저장소 빌드 결과는 `desktop/dist/Threads-Cut-Editor-0.2.5-Windows-x64.zip`입니다.
 
 ## 원문 ZIP에서 게시 이미지 제작
 
@@ -12,16 +12,21 @@ HTML 파일을 직접 여는 대신 Windows 앱 `Threads Cut Editor.exe`를 실�
 
 앱의 원문 ZIP 창은 파일/폴더 직접 입력을 사용합니다. 저장소의 기존 후보 1,583건 대기열은 별도 `npm start`의 `/app/source-batch.html`에서 엽니다.
 
-## 사용법
+## 저장된 자료 열기
 
-1. 앱 위쪽 **게시글 링크**에 HTTPS 주소를 붙여 넣습니다.
-2. **링크 캡처해서 열기**를 누릅니다. 진행 표시가 페이지 열기 → 아래쪽 본문 불러오기 → 이미지 생성 순서로 바뀝니다.
-3. 캡처가 자동으로 원문 목록에 들어갑니다. 아주 긴 페이지는 최대 8000px 높이의 연속 이미지로 나뉩니다. 각 원문에서 표지 범위와 본문 분할선을 지정합니다.
-4. 각 장을 선택해 위·아래·좌우 여백과 의견 문구를 넣습니다. 폰트와 실제 굵기를 고른 뒤 스타일 프리셋으로 저장할 수 있습니다.
-5. 편집 이유를 적고 마음에 드는 결과를 기준 예시로 표시합니다. 자른 좌표·비율·분할선·스타일 변경 전후가 원본과 함께 PC에 자동 기록됩니다. **PC 레퍼런스 폴더 열기**에서 원본, `edits.jsonl`, `reference.json`을 확인합니다. 이유는 사용자가 입력한 내용만 기록하며 자동으로 추측하지 않습니다.
-6. 편집 저장으로 원본과 설정을 보관하고, 본문 확인 후 PNG ZIP으로 내보냅니다. ZIP에도 편집 로그와 레퍼런스 요약이 포함됩니다. 기준 예시는 향후 자동화용 기록이며 지금 자동 학습을 실행하지는 않습니다.
+1. 첫 화면에서 **저장된 원문 폴더 불러오기**를 누릅니다.
+2. 기존 Source Package 폴더를 고릅니다. 안에 `original` 폴더가 있으면 해당 원본 이미지만 자연스러운 파일명 순서로 읽습니다. 일반 이미지 폴더를 골라도 됩니다.
+3. `SOURCE.md`에 기록된 정확한 관찰 제목이 있으면 가져옵니다. 파일에 없는 본문과 댓글은 만들어 넣지 않으며, 사용자가 원문과 대조해 확인해야 합니다.
+4. 저장된 편집을 이어가려면 위쪽 **편집 파일 열기**에서 이전에 **편집 파일 저장**으로 받은 JSON을 선택합니다. 원본 이미지·제목·범위·분할선·스타일이 복원됩니다.
+5. 폴더에서 읽을 수 없으면 **이미지 파일 직접 추가** 또는 **브라우저에서 폴더 선택**을 사용합니다. PNG/JPG/WebP, 최대 30장입니다.
 
-기존 편집을 바꾸기 전에 교체 확인을 합니다. 취소·실패 시 기존 편집은 보존합니다. 캡처 취소 버튼도 제공합니다. URL을 붙여 넣는 것만으로 자동 실행하지 않습니다.
+## 편집과 저장
+
+각 원문에서 표지 범위와 본문 분할선을 정합니다. 장별 여백·의견·폰트·굵기·색상을 조절하고 프리셋으로 저장할 수 있습니다. 편집 이유와 좌표·분할선·스타일 변경 전후는 데스크톱에 자동 기록됩니다. **PC 레퍼런스 폴더 열기**에서 `originals.json`, `edits.jsonl`, `reference.json`을 확인합니다.
+
+편집 파일 JSON은 수정 가능한 전체 작업본입니다. PNG ZIP은 이미지 결과물이며 게시 승인과 별개입니다. ZIP에도 편집 로그와 레퍼런스 요약이 들어갑니다.
+
+**새 공개 링크에서 캡처하기**는 필요한 경우에만 펼쳐 쓰는 보조 기능입니다. 링크를 입력하기만 해도 자동 실행하지 않습니다. 기존 편집이 있을 때 교체 확인을 하며, 취소·실패 시 기존 자료를 보존합니다.
 
 ## 범위
 
@@ -43,7 +48,7 @@ npm start --prefix desktop
 npm run pack:win --prefix desktop
 ```
 
-빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.4-Windows-x64.zip`.
+빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.5-Windows-x64.zip`.
 앱은 기존 전체 운영 서버와 분리되어 있어 API 키나 SQLite 서버 없이 편집을 실행합니다.
 
 ## 검증
@@ -52,6 +57,6 @@ npm run pack:win --prefix desktop
 
 원문 선별 브라우저 검사: `npm run smoke:curation --prefix desktop`. 메뉴 제외, 문단·이미지 순서, 근거가 있는 댓글 추천, 검수 전 최종 제작 차단을 확인합니다. 저장소의 실제 원문 이미지 8장으로 9장짜리 검수 전 예시 ZIP도 `desktop/dist/real-source-review-preview.zip`에 생성합니다. 이 예시는 실제 게시 가능 상태가 아닙니다.
 
-기존 컷 편집기 검사: `npm run smoke --prefix desktop`. 긴 페이지 연속 캡처와 편집 화면을 확인합니다. 이 검사는 별도 실행이 필요하며, 이전 0.2.3 결과를 이번 0.2.4 검증으로 간주하지 않습니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
+기존 컷 편집기 검사: `npm run smoke --prefix desktop`. 긴 페이지 연속 캡처와 편집 화면을 확인합니다. 이 검사는 별도 실행이 필요하며, 이전 0.2.3·0.2.4 결과를 이번 0.2.5 검증으로 간주하지 않습니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
 
 보안 구현 근거: [Electron security](https://www.electronjs.org/docs/latest/tutorial/security), [Chrome DevTools Page.captureScreenshot](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureScreenshot). 원격 페이지에는 Node·preload를 노출하지 않고 별도 세션을 사용합니다. 앱의 파일 저장은 사용자 저장 대화상자를 사용합니다.

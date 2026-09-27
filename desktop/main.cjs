@@ -6,6 +6,7 @@ const dns = require('node:dns/promises');
 const { captureUrl, capturePage, WIDTH } = require('./capture.cjs');
 const { publicAddress } = require('./network.cjs');
 const { createReferenceStore } = require('./reference-store.cjs');
+const { loadSavedMaterials } = require('./saved-materials.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
 let editor, bundleWindow, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
@@ -57,6 +58,12 @@ async function start() {
     bundleWindow.webContents.on('will-navigate', navigation => navigation.preventDefault());
     bundleWindow.on('closed',()=>{bundleWindow=null;});
     await bundleWindow.loadURL(bundleUrl);
+  });
+  ipcMain.handle('source-cut:open-saved-materials', async (event) => {
+    trusted(event);
+    const picked = await dialog.showOpenDialog(editor, { title:'이미 저장된 원문 자료 폴더 선택', properties:['openDirectory'] });
+    if (picked.canceled || !picked.filePaths[0]) return { canceled:true };
+    return loadSavedMaterials(picked.filePaths[0]);
   });
   ipcMain.handle('source-cut:cancel', (event) => { trusted(event); if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   ipcMain.handle('source-cut:capture', async (event, input) => {

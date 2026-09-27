@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+const require=createRequire(import.meta.url);
+const { loadSavedMaterials }=require('../desktop/saved-materials.cjs');
+const root=await fs.mkdtemp(path.join(os.tmpdir(),'threads-saved-'));
+try {
+  await fs.mkdir(path.join(root,'original'));
+  await fs.mkdir(path.join(root,'rendered'));
+  await fs.writeFile(path.join(root,'SOURCE.md'),'# Source\n- exact observed title: `실제 제목`\n- source URL: https://example.com/post\n');
+  await fs.writeFile(path.join(root,'original','02.jpg'),Buffer.from('second'));
+  await fs.writeFile(path.join(root,'original','01.jpg'),Buffer.from('first'));
+  await fs.writeFile(path.join(root,'original','03.png'),Buffer.from('third'));
+  await fs.writeFile(path.join(root,'rendered','cover.png'),Buffer.from('generated'));
+  const result=await loadSavedMaterials(root);
+  assert.deepEqual(result.files.map(file=>file.name),['01.jpg','02.jpg','03.png']);
+  assert.deepEqual(result.files.map(file=>Buffer.from(file.data,'base64').toString()),['first','second','third']);
+  assert.equal(result.metadata.title,'실제 제목');
+  assert.equal(result.metadata.sourceUrl,'https://example.com/post');
+  assert.equal(result.metadata.count,3);
+  await fs.mkdir(path.join(root,'empty'));
+  await assert.rejects(loadSavedMaterials(path.join(root,'empty')),/원문 이미지를 찾지 못했습니다/);
+  const actual=await loadSavedMaterials(path.resolve('data/source-packages/theqoo-3826792703'));
+  assert.equal(actual.files.length,8);
+  assert.equal(actual.files[0].name,'01.jpg');
+  assert.equal(actual.metadata.title,'결혼 승낙 받자마자 탈모인거 밝힌 남편..');
+  console.log('Saved source folder import, original ordering, and metadata extraction: PASS');
+} finally { await fs.rm(root,{recursive:true,force:true}); }

@@ -295,33 +295,41 @@
   async function decode(dataUrl) {
     return new Promise((resolve, reject) => { const image = new Image(); image.onload = () => resolve(image); image.onerror = () => reject(new Error('이미지를 읽지 못했습니다.')); image.src = dataUrl; });
   }
-  async function acquire(files, metadata = null) {
-    if (busy) return; setBusy(true);
+  async function acquire(files, metadata = null, replace = false) {
+    if (busy) return false; setBusy(true);
     try {
-      if (!files.length || files.length + project.assets.length > 30) throw new Error('원문 이미지는 한 편집에 1~30장까지 넣으세요.');
-      if (project.assets.reduce((n, a) => n + a.dataUrl.length, 0) + files.reduce((n, f) => n + f.size * 1.34, 0) > 80 * 1024 * 1024) throw new Error('원문 용량 합계가 너무 큽니다. 새 편집에서 나눠주세요.');
+      const target = replace ? M.newProject() : project, targetImages = replace ? [] : images;
+      if (!files.length || files.length + target.assets.length > 30) throw new Error('원문 이미지는 한 편집에 1~30장까지 넣으세요.');
+      if (target.assets.reduce((n, a) => n + a.dataUrl.length, 0) + files.reduce((n, f) => n + f.size * 1.34, 0) > 80 * 1024 * 1024) throw new Error('원문 용량 합계가 너무 큽니다. 새 편집에서 나눠주세요.');
       const prepared = [];
       for (const file of files) {
         if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type) || file.size > 25 * 1024 * 1024) throw new Error('PNG/JPEG/WebP 이미지, 파일당 25MB 이하를 사용하세요.');
         const dataUrl = await readFile(file), image = await decode(dataUrl);
-        if (project.assets.reduce((n, a) => n + a.width * a.height, 0)
+        if (target.assets.reduce((n, a) => n + a.width * a.height, 0)
           + prepared.reduce((n, p) => n + p.asset.width * p.asset.height, 0)
           + image.naturalWidth * image.naturalHeight > 80000000) throw new Error('원본이 너무 큽니다. 새 편집에서 나눠 넣으세요.');
         prepared.push({ image, asset: { name: file.name, width: image.naturalWidth, height: image.naturalHeight, dataUrl, kind: 'image' } });
       }
-      for (const item of prepared) { M.addAsset(project, item.asset); images.push(item.image); }
+      for (const item of prepared) { M.addAsset(target, item.asset); targetImages.push(item.image); }
       if (metadata) {
-        project.source = metadata.source; project.title = String(metadata.title || '').slice(0, 240);
-        project.community ||= M.defaultCommunity(project.source);
-        if (!project.community.title) project.community.title = project.source.title || project.title;
-        if (!project.community.body && project.source.sourceText) project.community.body = project.source.sourceText;
-        if (!project.community.comments && project.source.commentsText) project.community.comments = project.source.commentsText;
-        if (!project.community.bodyMedia?.length && Array.isArray(project.source.bodyMedia)) project.community.bodyMedia = project.source.bodyMedia;
+        target.source = metadata.source; target.title = String(metadata.title || '').slice(0, 240);
+        target.community ||= M.defaultCommunity(target.source);
+        if (!target.community.title) target.community.title = target.source.title || target.title;
+        if (!target.community.body && target.source.sourceText) target.community.body = target.source.sourceText;
+        if (!target.community.comments && target.source.commentsText) target.community.comments = target.source.commentsText;
+        if (!target.community.bodyMedia?.length && Array.isArray(target.source.bodyMedia)) target.community.bodyMedia = target.source.bodyMedia;
       }
-      project.complete = false; dirty = true; refreshAssets(); goStep(2);
-      message('원문을 불러왔습니다. 표지는 기존처럼 잡고, 오른쪽에서 본문/실제 댓글 텍스트를 새 게시판 양식으로 확인하세요.');
-    } catch (error) { message(error.message); }
-    finally { setBusy(false); $('files').value = ''; }
+      target.complete = false;
+      if (replace) {
+        if (project.assets.length) await flushAudit('before-open');
+        project = target; images = targetImages; selected = 0;
+        historyBefore = null; historyProject = ''; savedOriginals = new Set();
+      }
+      dirty = true; refreshAssets(); goStep(2);
+      message('저장된 원문 이미지 ' + files.length + '장을 불러왔습니다. 원문과 대조한 뒤 본문·댓글 확인을 표시하세요.');
+      return true;
+    } catch (error) { message(error.message); return false; }
+    finally { setBusy(false); $('files').value = ''; $('savedFolderFiles').value = ''; }
   }
   function download(blob, name) {
     const url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(url), 10000);
@@ -498,6 +506,55 @@
       });
     }
   }
+  async function openSavedFolder() {
+    if (busy) return;
+    if (project.assets.length && !window.confirm('현재 편집을 저장된 폴더의 원문으로 바꿉니다. 계속할까요?')) return;
+    const button = $('loadSavedFolder'); button.disabled = true;
+    try {
+      if (!window.ThreadsCutDesktop?.openSavedMaterials) {
+        $('savedFolderFiles').click(); return;
+      }
+      const result = await window.ThreadsCutDesktop.openSavedMaterials();
+      if (result.canceled) return;
+      const files = result.files.map(item => new File([
+        Uint8Array.from(atob(item.data), ch => ch.charCodeAt(0))
+      ], item.name, { type:item.type }));
+      const title = result.metadata.title || '';
+      const source = {
+        title, url:result.metadata.sourceUrl || '', inputMode:'images',
+        sourceText:'', commentsText:'', bodyMedia:[], productionNotes:'',
+        extraction:{ method:'existing_local_source_folder', reviewRequired:true, confidence:'none' },
+      };
+      const loaded = await acquire(files, { title, source }, true);
+      if (loaded) $('savedFolderStatus').textContent =
+        result.metadata.count + '장 불러옴 · ' + result.metadata.imageDirectory + ' 폴더 · 제목 ' +
+        (title ? '불러옴' : '없음') + ' · 본문/댓글 검수 필요';
+    } catch (error) {
+      message('저장 폴더를 불러오지 못했습니다: ' + error.message);
+    } finally { button.disabled = false; }
+  }
+  $('loadSavedFolder').addEventListener('click', openSavedFolder);
+  $('savedFolderFiles').addEventListener('change', async () => {
+    const all = [...$('savedFolderFiles').files];
+    const sourceDir = all.some(file => /[\\/]original[\\/]/i.test(file.webkitRelativePath || ''));
+    const files = all.filter(file => ['image/png','image/jpeg','image/webp'].includes(file.type) &&
+      (sourceDir ? /[\\/]original[\\/][^\\/]+$/i.test(file.webkitRelativePath || '') :
+        (file.webkitRelativePath || '').split(/[\\/]/).length <= 2))
+      .sort((a,b) => a.name.localeCompare(b.name, 'ko', { numeric:true, sensitivity:'base' }));
+    if (!files.length) { $('savedFolderStatus').textContent = '선택 폴더에서 불러올 원본 이미지가 없습니다.'; return; }
+    if (project.assets.length && !window.confirm('현재 편집을 저장된 폴더의 원문으로 바꿉니다. 계속할까요?')) return;
+    let title = '';
+    const note = all.find(file => /(^|[\\/])SOURCE[.]md$/i.test(file.webkitRelativePath || file.name));
+    if (note) {
+      const content = await note.text();
+      title = (/^- exact observed title: (.+)$/m.exec(content)?.[1] || '').replace(/^`|`$/g, '');
+    }
+    const source = { title, url:'', inputMode:'images', sourceText:'', commentsText:'', bodyMedia:[],
+      productionNotes:'', extraction:{ method:'existing_local_source_folder', reviewRequired:true, confidence:'none' } };
+    const loaded = await acquire(files, { title, source }, true);
+    if (loaded) $('savedFolderStatus').textContent =
+      files.length + '장 불러옴 · 제목 ' + (title ? '불러옴' : '없음') + ' · 본문/댓글 검수 필요';
+  });
   $('files').addEventListener('change', () => acquire([...$('files').files]));
   $('filesMirror')?.addEventListener('change', async () => {
     await acquire([...$('filesMirror').files]);

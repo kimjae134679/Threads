@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -25,7 +25,8 @@
       "capture.cjs",
       "network.cjs",
       "package.json",
-      "reference-store.cjs"
+      "reference-store.cjs",
+      "saved-materials.cjs"
     ],
     "extraResources": [
       {

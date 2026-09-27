@@ -13,15 +13,15 @@
       <div><h1>원문 컷 에디터</h1><p id="sourceInfo">원문 그대로, 필요한 부분만 깔끔하게</p></div>
     </div>
     <nav class="stepper" aria-label="작업 단계">
-      <button class="step active" data-step-target="1" type="button"><span>1</span>원문 가져오기</button>
+      <button class="step active" data-step-target="1" type="button"><span>1</span>저장 자료 불러오기</button>
       <button class="step" data-step-target="2" type="button"><span>2</span>컷 편집하기</button>
       <button class="step" data-step-target="3" type="button"><span>3</span>미리보기</button>
       <button class="step" data-step-target="4" type="button"><span>4</span>저장하기</button>
     </nav>
     <div class="top-actions">
       <button id="openBundleTool" type="button" class="subtle">원문 ZIP 제작</button>
-      <label class="file-button subtle">불러오기<input id="projectFile" type="file" accept="application/json,.json"></label>
-      <button id="saveProject" type="button" class="subtle">임시 저장</button>
+      <label class="file-button subtle">편집 파일 열기<input id="projectFile" type="file" accept="application/json,.json"></label>
+      <button id="saveProject" type="button" class="subtle">편집 파일 저장</button>
     </div>
   </header>
 
@@ -29,25 +29,35 @@
     <div class="import-shell">
       <div class="import-copy">
         <span class="eyebrow">STEP 1</span>
-        <h2>원문을 가져오세요</h2>
-        <p>공개 링크를 캡처하거나, 직접 찍은 PNG/JPG/WebP 이미지를 추가합니다.</p>
+        <h2>저장된 원문을 불러오세요</h2>
+        <p>PC에 이미 저장한 원문 폴더나 편집 파일을 열어 이어서 작업합니다. 새 링크 수집은 필요할 때만 선택하세요.</p>
       </div>
-      <section class="capture-panel" aria-label="링크에서 원문 가져오기">
+      <section class="saved-material-panel" aria-label="저장된 원문 불러오기">
+        <h3>이미 저장된 자료</h3>
+        <p>Source Package 폴더를 고르면 <code>original</code> 안의 원본 이미지를 파일명 순서대로 불러옵니다. <code>SOURCE.md</code>의 확인된 제목도 함께 가져옵니다.</p>
+        <button id="loadSavedFolder" class="primary" type="button">저장된 원문 폴더 불러오기</button>
+        <label class="file-button subtle folder-fallback">브라우저에서 폴더 선택
+          <input id="savedFolderFiles" type="file" accept="image/png,image/jpeg,image/webp" webkitdirectory multiple>
+        </label>
+        <p id="savedFolderStatus" class="small" role="status">원본 자료를 선택하면 원문 목록에 불러옵니다. 본문·댓글 확인 상태는 자동으로 완료 처리하지 않습니다.</p>
+      </section>
+      <div class="or"><span>또는</span></div>
+      <label class="dropzone file-button">
+        <strong>이미지 파일 직접 추가</strong>
+        <span>이미 저장된 PNG/JPG/WebP 원문을 여러 장 고를 수 있습니다.</span>
+        <input id="files" type="file" accept="image/png,image/jpeg,image/webp" multiple>
+      </label>
+      <details class="capture-panel capture-secondary">
+        <summary>새 공개 링크에서 캡처하기 (선택 기능)</summary>
         <label for="captureUrl">게시글 링크</label>
         <div class="capture-row">
           <input id="captureUrl" type="url" placeholder="https://… 게시글 주소" maxlength="4096">
           <button id="captureUrlButton" class="primary" type="button">링크 캡처해서 열기</button>
           <button id="cancelCapture" type="button" hidden>취소</button>
         </div>
-        <p id="captureHelp" class="small">로그인·보안확인·접근제한은 우회하지 않습니다.</p>
+        <p id="captureHelp" class="small">저장 자료를 불러오는 데 링크는 쓰지 않습니다. 로그인·보안확인·접근제한은 우회하지 않습니다.</p>
         <progress id="captureProgress" value="0" max="100" hidden aria-label="원문 캡처 진행"></progress>
-      </section>
-      <div class="or"><span>또는</span></div>
-      <label class="dropzone file-button">
-        <strong>원문 이미지 추가</strong>
-        <span>여러 장을 한 번에 선택할 수 있습니다.</span>
-        <input id="files" type="file" accept="image/png,image/jpeg,image/webp" multiple>
-      </label>
+      </details>
     </div>
   </section>
 

@@ -5,6 +5,7 @@ contextBridge.exposeInMainWorld('ThreadsCutDesktop', Object.freeze({
   saveReference: (payload) => ipcRenderer.invoke('source-cut:save-reference', payload),
   openReferences: () => ipcRenderer.invoke('source-cut:open-references'),
   openSourceBundle: () => ipcRenderer.invoke('source-cut:open-bundle'),
+  openSavedMaterials: () => ipcRenderer.invoke('source-cut:open-saved-materials'),
   cancel: () => ipcRenderer.invoke('source-cut:cancel'),
   onProgress: (handler) => {
     const listener = (_event, value) => handler(value);

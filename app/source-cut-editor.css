@@ -21,6 +21,7 @@ label{display:block;color:#374151;font-weight:700}.small{font-size:12px;color:va
 .eyebrow{display:inline-flex;color:var(--blue);font-weight:900;font-size:12px;letter-spacing:.08em;margin-bottom:8px}
 .import-shell{max-width:920px;margin:40px auto;padding:34px}.import-copy{text-align:center;margin-bottom:26px}.import-copy h2{font-size:28px;margin-bottom:6px}.import-copy p{color:var(--muted)}
 .capture-panel{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px}.capture-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;margin-top:8px}.capture-panel progress{width:100%;margin-top:8px}
+.saved-material-panel{display:grid;gap:12px;background:#f2f8f4;border:1px solid #cfe7d7;border-radius:14px;padding:22px}.saved-material-panel h3,.saved-material-panel p{margin:0}.saved-material-panel .primary{justify-self:start}.folder-fallback{justify-self:start}.capture-secondary{margin-top:20px}.capture-secondary summary{cursor:pointer;font-weight:700;margin-bottom:12px}
 .or{display:flex;align-items:center;gap:10px;color:#94a3b8;margin:18px 0}.or:before,.or:after{content:"";height:1px;background:var(--line);flex:1}
 .dropzone{display:grid;place-items:center;text-align:center;min-height:150px;border:2px dashed #cbd5e1;background:#fbfdff}.dropzone strong{font-size:18px}.dropzone span{color:var(--muted);font-size:13px;margin-top:4px}
 .status-bar{max-width:1480px;margin:0 auto 12px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:11px;color:#334155}
