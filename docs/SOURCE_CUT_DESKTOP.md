@@ -4,7 +4,7 @@ HTML 파일을 직접 여는 대신 Windows 앱 `Threads Cut Editor.exe`를 실�
 
 ## 설치된 앱 열기
 
-바탕화면 **원문 컷 편집기** 바로가기를 실행합니다. 설치된 앱은 `%LOCALAPPDATA%\Programs\ThreadsCutEditor\app\Threads Cut Editor.exe`입니다.
+이번 선별 ZIP 버전은 바탕화면 **Threads Cut Editor 0.2.3** 바로가기로 엽니다. 설치된 앱은 `%LOCALAPPDATA%\Programs\ThreadsCutEditor\app-0.2.3\Threads Cut Editor.exe`입니다. 이전 버전은 별도 폴더에 보존했습니다. 같은 바탕화면의 `Threads-Cut-Editor-0.2.3-Windows-x64.zip`도 압축을 모두 풀어 다른 Windows PC에서 사용할 수 있습니다.
 
 ## 원문 ZIP에서 게시 이미지 제작
 
@@ -50,6 +50,6 @@ npm run pack:win --prefix desktop
 
 `npm run check`는 URL/네트워크 주소 제한, 누락 없는 긴 이미지 분할, 실패 후 창 정리, 최소 IPC 공개 범위와 기존 기능을 검사합니다.
 
-실제 데스크톱 검사: `npm run smoke --prefix desktop`. 18000px 테스트 페이지의 연속 3장 캡처, 실제 example.com 캡처, 앱 버튼으로 캡처 후 편집기에 열린 결과를 확인합니다. 결과는 `desktop/dist/smoke/report.json`에 기록합니다. 실행 성공 여부는 최신 handoff를 확인합니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
+실제 데스크톱 검사: `npm run smoke --prefix desktop`. 원문 ZIP 제작 버튼의 새 창, 18000px 테스트 페이지의 연속 3장 캡처, 실제 example.com 캡처, 앱 버튼으로 캡처 후 편집기에 열린 결과를 확인합니다. 결과는 `desktop/dist/smoke/report.json`에 기록합니다. 0.2.3 패키지 자체를 실행해 새 창/스크립트 로딩도 확인했습니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
 
 보안 구현 근거: [Electron security](https://www.electronjs.org/docs/latest/tutorial/security), [Chrome DevTools Page.captureScreenshot](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureScreenshot). 원격 페이지에는 Node·preload를 노출하지 않고 별도 세션을 사용합니다. 앱의 파일 저장은 사용자 저장 대화상자를 사용합니다.
