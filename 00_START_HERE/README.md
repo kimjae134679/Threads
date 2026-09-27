@@ -10,7 +10,7 @@
 3) project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/ 최신 순차 note
 4) 이전 실행의 미완료 concrete task
 5) 관련 역할 README/계약
-6) Discovery 작업이면 data/README.md + data/candidates/README.md
+6) 기존 후보 정리 작업이면 data/README.md + PROGRAM_INPUTS.md; Discovery 작업이면 data/candidates/README.md
 7) 계획만 쓰지 말고 실제 작업
 ```
 
@@ -143,6 +143,9 @@ DCInside/Blind 등 제한 소스는 bulk crawl, 로그인/anti-bot 우회 금지
 - grouped/raw 역사자료는 `_raw_batches/`에 보존하고 사람용 후보는 `candidates/`로 한 건씩 풀어 쓴다.
 
 ## 9. 어디를 보면 되는가
+
+- 프로그램 입력 자료: [PROGRAM_INPUTS.md](./PROGRAM_INPUTS.md)
+- 후보 데이터 폴더: [data/README.md](../data/README.md)
 
 - 현재 상태/다음 일: [`NEXT_RUN_HANDOFF.md`](./NEXT_RUN_HANDOFF.md)
 - 후보 목록: [`../data/candidates/`](../data/candidates/)
