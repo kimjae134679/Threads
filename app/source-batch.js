@@ -81,6 +81,7 @@
     const available=all.filter(f=>/\.(png|jpe?g|webp|gif)$/i.test(f.name)||
       /^image\/(png|jpeg|webp|gif)/i.test(f.type)).map(f=>f.name);
     const plan=/^html?$/.test(ext)?U.htmlDraft(raw,available):U.exactDraft(parseExact(raw,ext));
+    U.suggest(plan,available);
     plan.input={name:source.name,path:filePath(source),sha256:await hash(await source.arrayBuffer())};
     plan.media=[];
     return {plan,source,all};
@@ -91,7 +92,11 @@
     $('originalTitle').value=p.originalTitle||'';
     $('coverTitle').value=p.coverTitle||'';
     $('coverTitleEvidence').value=p.coverTitleEvidence||p.originalTitle||'';
-    $('sourceName').textContent='원본: '+p.input.name+' · 후보 본문 '+p.segments.length+'개 · 댓글 '+p.comments.length+'개';
+    $('sourceName').textContent='원본: '+p.input.name+' · 본문 '+p.segments.length+'개 · 댓글 '+p.comments.length+'개';
+    const suggestion=p.suggestion;
+    $('suggestionStatus').textContent=suggestion?
+      `자동 초안: 본문 ${suggestion.body}개, 실제 파일이 있는 이미지 ${suggestion.images}개, 반응 근거가 있는 댓글 ${suggestion.comments}개 선택 · 이미지 파일 미확보 ${suggestion.missing}개. 원문과 대조해 불필요한 부분을 빼고 누락을 확인하세요.`:
+      '저장한 선별 결과를 열었습니다. 원문과 대조한 뒤 확인 표시를 해 주세요.';
     $('bodyVerified').checked=p.review.bodyVerified;
     $('mediaVerified').checked=p.review.mediaVerified;
     $('commentsVerified').checked=p.review.commentsVerified;
@@ -375,6 +380,25 @@
     $('progress').max=Math.max(1,sources.length);$('progress').value=sources.length;
     status('원문 후보 '+sources.length+'건을 표시했습니다. 각 행의 선별 버튼으로 검토하세요.');
     running=false;$('start').disabled=false;
+  });
+  $('applySuggestion').addEventListener('click',()=>{
+    if(!chosen)return;
+    U.suggest(chosen.plan,chosen.all.filter(file=>/\.(png|jpe?g|webp|gif)$/i.test(file.name)).map(file=>file.name));
+    renderReview(chosen);status('자동 초안을 다시 적용했습니다. 기존 선택과 확인 표시는 초기화됐습니다.');
+  });
+  $('previewCurrent').addEventListener('click',async()=>{
+    if(!chosen)return;
+    try {const {bundle,plan}=await sourceZip(chosen);
+      await makeImages(new File([bundle],safe(plan.originalTitle)+'-source.zip'),true);
+    }catch(e){status('미리보기 실패: '+e.message);}
+  });
+  $('renderCurrent').addEventListener('click',async()=>{
+    if(!chosen)return;
+    try {const {bundle,plan}=await sourceZip(chosen);
+      const name=safe(plan.originalTitle)+'-source.zip';
+      await saveFile(bundle,name);
+      await makeImages(new File([bundle],name),false);
+    }catch(e){status('제작 실패: '+e.message);}
   });
   $('saveBundle').addEventListener('click',async()=>{
     if(!chosen)return;

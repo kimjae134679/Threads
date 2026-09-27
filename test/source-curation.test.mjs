@@ -42,6 +42,23 @@ test('image output requires chosen source background, verified positions and act
   assert.ok(C.validate(plan,new Set(['a.jpg'])).some(x=>x.includes('여백')));
 });
 
+test('automatic curation keeps article order, uses available media and leaves human review pending',()=>{
+  const plan=C.exactDraft({title:'실제 글 제목',body:'첫 문단\n[IMAGE:photo.jpg]\n마지막 문단',comments:[
+    {text:'반응이 있는 댓글',likes:32},{text:'일반 댓글',likes:null},{text:'다른 반응',likes:2}]});
+  const suggestion=C.suggest(plan,['photo.jpg']);
+  assert.deepEqual(suggestion,{body:2,images:1,missing:0,comments:2});
+  assert.deepEqual(plan.segments.map(s=>s.selected),[true,true,true]);
+  assert.deepEqual(plan.comments.map(c=>c.selected),[true,false,true]);
+  assert.deepEqual(plan.cover,{kind:'image',segmentId:'s1'});
+  assert.equal(plan.coverTitle,'실제 글 제목');
+  assert.deepEqual(plan.review,{bodyVerified:false,mediaVerified:false,commentsVerified:false});
+  assert.ok(C.validate(plan,new Set(['photo.jpg'])).some(message=>message.includes('확인 표시')));
+  C.suggest(plan,[]);
+  assert.equal(plan.segments[1].selected,true);
+  assert.equal(plan.suggestion.missing,1);
+  assert.ok(C.validate(plan,new Set()).some(message=>message.includes('이미지 파일 누락')));
+});
+
 test('source ZIP roundtrip verifies contents and rejects corrupted bytes and paths',async()=>{
   const sandbox={TextEncoder,TextDecoder,DataView,Uint8Array,Blob};
   sandbox.window=sandbox;vm.createContext(sandbox);

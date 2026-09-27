@@ -8,7 +8,8 @@
   "scripts": {
     "start": "electron .",
     "pack:win": "electron-builder --win zip --x64 --publish never",
-    "smoke": "electron smoke.cjs"
+    "smoke": "electron smoke.cjs",
+    "smoke:curation": "electron curation-smoke.cjs"
   },
   "devDependencies": {
     "electron": "44.4.3",

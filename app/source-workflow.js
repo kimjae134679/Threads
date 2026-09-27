@@ -49,21 +49,30 @@
       for (let i=0;i<6;i++) tr.append(document.createElement('td'));
       const button=document.createElement('button');button.type='button';button.className='open-item';
       button.addEventListener('click',async()=>{
+        const current=tr._entry;
         try {
-          if(item.acquisition==='saved_html') {
-            const names=['source.html',...item.mediaFiles];
-            const files=await Promise.all(names.map(name=>sourceFile(item,name)));
+          if(current.acquisition==='saved_html') {
+            const names=['source.html',...current.mediaFiles];
+            const files=await Promise.all(names.map(name=>sourceFile(current,name)));
             const draft=await window.ThreadsSourceBatch.prepare(files[0],files);
-            draft.plan.candidate=item.candidate;
-            draft.plan.sourceUrl=draft.plan.sourceUrl||item.sourceUrl||null;
+            draft.plan.candidate=current.candidate;
+            draft.plan.sourceUrl=draft.plan.sourceUrl||current.sourceUrl||null;
             window.ThreadsSourceBatch.review(draft);
-            $('jobStatus').textContent='원본을 열었습니다. 글·이미지·댓글을 고르고 원문 ZIP을 저장하세요.';
-          } else await post('open-item',{candidate:item.candidate});
-        } catch(e) { $('jobStatus').textContent='원본 열기 실패: '+e.message; }
+            $('jobStatus').textContent='원문 초안을 열었습니다. 선택 항목을 대조하고 바로 미리보거나 제작하세요.';
+          } else if(current.acquisition==='queued'||current.acquisition==='blocked') {
+            const result=await post('start',{candidate:current.candidate});
+            $('jobStatus').textContent=result.started?'이 글의 원문만 수집합니다: '+(current.title||relative(current.candidate)):'다른 수집 작업이 진행 중입니다.';
+            await reload();
+          } else {
+            await post('open-item',{candidate:current.candidate});
+            $('jobStatus').textContent='정확한 원문 링크를 확인해 주세요: '+(current.title||relative(current.candidate));
+          }
+        } catch(e) { $('jobStatus').textContent='원문 작업 실패: '+e.message; }
       });
       tr.children[5].append(button);
       rows.set(item.candidate,tr);$('queueRows').append(tr);
     }
+    tr._entry=item;
     const title=item.title||relative(item.candidate);
     if (tr.children[0].firstChild?.nodeType!==3) tr.children[0].prepend(document.createTextNode(''));
     if (tr.children[0].firstChild.nodeValue!==title) tr.children[0].firstChild.nodeValue=title;
@@ -76,7 +85,8 @@
     cell(tr,3,item.pages ? item.pages+'장' : '—');
     cell(tr,4,note(item));
     tr.children[4].title=item.note||'';
-    tr.children[5].firstChild.textContent=item.acquisition==='saved_html'?'원문 선별':'후보 열기';
+    tr.children[5].firstChild.textContent=item.acquisition==='saved_html'?'원문 선별':
+      item.acquisition==='queued'||item.acquisition==='blocked'?'이 글만 수집':'주소 확인';
     tr.children[2].className=item.conversion==='converted'?'converted':
       item.conversion==='not_converted'?'muted':'blocked';
     const search=$('queueFilter').value.trim().toLowerCase();

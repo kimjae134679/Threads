@@ -116,11 +116,13 @@ export class SourceWorkflow {
     }
     return {entries:rows,counts,job:{...this.job},resultsFolder:this.results};
   }
-  async start() {
+  async start(candidate=null) {
     if (this.child) return {started:false,job:{...this.job}};
-    const total=(await this.entries()).length;
-    this.job={running:true,processed:0,total,current:null,error:null};
-    const child=this.spawn(process.execPath,['scripts/acquire-existing-sources.mjs','--all'],
+    if(candidate)await this.entry(candidate);
+    const total=candidate?1:(await this.entries()).length;
+    this.job={running:true,processed:0,total,current:candidate||null,error:null};
+    const args=['scripts/acquire-existing-sources.mjs',...(candidate?['--candidate',candidate]:['--all'])];
+    const child=this.spawn(process.execPath,args,
       {cwd:this.root,stdio:['ignore','pipe','pipe'],windowsHide:true});
     this.child=child;
     let buffer='';

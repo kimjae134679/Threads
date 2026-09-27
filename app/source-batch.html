@@ -29,10 +29,11 @@
 <p>TXT는 파일 자체가 원문일 때만 사용하세요. 기존 <code>content.txt</code>의 BODY_SEQUENCE 요약은 원문으로 판정하지 않습니다. HTML은 구조에 따라 공백·줄바꿈이 달라질 수 있으므로 변환 후 원문 대조 상태를 남깁니다. 인기 순위 근거가 없으면 댓글을 임의로 고르지 않습니다.</p></details>
 <table><thead><tr><th>원본 파일</th><th>분류</th><th>상태</th><th>페이지</th><th>사유</th></tr></thead><tbody id="rows"></tbody></table></details>
 <section id="curation" hidden aria-label="원문 선별"><h2>사용할 원문 선별</h2><p id="sourceName"></p>
+<p id="suggestionStatus" class="help" role="status"></p><button id="applySuggestion" type="button">원문 기준 자동 초안 다시 채우기</button>
 <label>원문 제목 <input id="originalTitle" type="text" maxlength="300"></label>
 <label>첫 장의 큰 제목 <textarea id="coverTitle" rows="2" maxlength="120" placeholder="원문 근거를 바탕으로 짧게 · Enter로 줄바꿈"></textarea></label>
 <label>첫 장 문구의 근거 (원문 제목 또는 선택한 본문에서 그대로 인용) <input id="coverTitleEvidence" type="text" maxlength="300"></label>
-<p class="help">본문에 들어갈 조각만 고릅니다. 각 조각에 원문 위치를 남기고, 이미지 파일이 있는지 확인하세요. 글을 찾는 단계에서 조각 뒤 여백과 직접 쓸 의견도 기록하세요. 의견은 원문 댓글과 구분하여 표시됩니다.</p>
+<p class="help">본문 영역의 글과 실제 파일이 있는 이미지를 순서대로 추천합니다. 페이지의 메뉴·광고·댓글이 섞이지 않았는지 원문과 대조하세요. 조각 뒤 여백과 직접 쓰는 의견은 별도로 기록됩니다.</p>
 <div id="segmentChoices" class="choices"></div>
 <label>첫 장 배경에 사용할 원문 <select id="coverSource"><option value="">원문 글/이미지 선택</option></select></label>
 <fieldset class="style-settings"><legend>게시 이미지 글씨 스타일</legend>
@@ -46,8 +47,8 @@
 <div class="review-checks"><label><input id="bodyVerified" type="checkbox"> 원문과 본문 글자·순서 대조 완료</label>
 <label><input id="mediaVerified" type="checkbox"> 본문 이미지 위치·파일 대조 완료</label>
 <label><input id="commentsVerified" type="checkbox"> 댓글 내용·선택 여부 확인 완료</label></div>
-<button id="saveBundle" type="button">원본·선별 기준 ZIP 저장</button></section>
-<section aria-label="선별 ZIP으로 제작"><h2>원문 ZIP 읽고 이미지 제작</h2><p>저장한 원문 ZIP을 다시 열어 선별 기준을 확인하거나, 확인을 마친 ZIP에서 PNG 세트를 만듭니다.</p>
+<div class="controls"><button id="previewCurrent" type="button">현재 선택으로 미리보기</button><button id="renderCurrent" type="button">확인 후 ZIP 저장·이미지 제작</button><button id="saveBundle" type="button">원본·선별 기준 ZIP만 저장</button></div></section>
+<section aria-label="선별 ZIP으로 제작"><h2>기존 원문 ZIP 다시 사용</h2><p>이미 저장한 ZIP을 다시 열어 수정하거나 이미지를 다시 만듭니다. 현재 열린 원문은 위 버튼에서 바로 제작할 수 있습니다.</p>
 <label>기존 원문 ZIP 수정 <input id="openBundle" type="file" accept=".zip,application/zip"></label>
 <label>검수 전 예시 보기 (미확인 댓글은 넣지 않고 예시 표시) <input id="previewBundle" type="file" accept=".zip,application/zip"></label>
 <label>원문 ZIP에서 이미지 만들기 <input id="renderBundle" type="file" accept=".zip,application/zip"></label></section>

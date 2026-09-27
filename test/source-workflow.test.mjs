@@ -62,5 +62,15 @@ test('loads all candidates, confines source files, and retains conversion result
       waiting.entries[0].resultFile:path.dirname(opened.file)));
     assert.equal((await withOpener.openItem(candidates[1])).kind,'candidate');
     await assert.rejects(withOpener.openItem('../outside'),{status:404});
+    let acquisitionArgs;
+    const acquireOne=new SourceWorkflow(root,{queuePath,spawn:(_command,args)=>{
+      acquisitionArgs=args;const child=new EventEmitter();child.stdout=new EventEmitter();child.stderr=new EventEmitter();
+      child.kill=()=>child.emit('exit',0);return child;
+    }});
+    await assert.rejects(acquireOne.start('../outside'),{status:404});
+    assert.equal((await acquireOne.start(candidates[0])).started,true);
+    assert.deepEqual(acquisitionArgs,['scripts/acquire-existing-sources.mjs','--candidate',candidates[0]]);
+    assert.equal(acquireOne.job.total,1);
+    acquireOne.stop();
   } finally { await fs.rm(root,{recursive:true,force:true}); }
 });

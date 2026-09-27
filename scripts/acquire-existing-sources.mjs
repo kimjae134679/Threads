@@ -138,10 +138,13 @@ async function acquire(entry, opts) {
 }
 async function main() {
   const args=process.argv.slice(2), all=args.includes('--all'), refresh=args.includes('--refresh');
+  const candidate=args.includes('--candidate')?args[args.indexOf('--candidate')+1]:null;
   const n=Number(args[args.indexOf('--limit')+1]);
   const limit=all?Infinity:Number.isInteger(n)&&n>0?n:20;
   const queue=JSON.parse(await readFile(join(ROOT,'data/_system/source-work-queue.json'),'utf8'));
-  const entries=queue.entries.slice(0,limit);let done=0, saved=0;
+  const entries=candidate?queue.entries.filter(entry=>entry.candidate===candidate):queue.entries.slice(0,limit);
+  if(candidate&&!entries.length)throw new Error('목록에 없는 후보입니다.');
+  let done=0, saved=0;
   for(const entry of entries) {
     const result=await acquire(entry,{refresh});done++;if(result.state==='saved_html')saved++;
     console.log('['+done+'/'+entries.length+'] '+result.state+' '+entry.candidate);

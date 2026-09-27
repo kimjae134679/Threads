@@ -96,7 +96,7 @@ const server = http.createServer(async (req, res) => {
     }
     if (url.pathname === "/api/source-workflow/start") {
       if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
-      await readJsonBody(req); return json(res, 200, {ok:true,...await sourceWorkflow.start()});
+      const body=await readJsonBody(req); return json(res, 200, {ok:true,...await sourceWorkflow.start(body.candidate||null)});
     }
     if (url.pathname === "/api/source-workflow/stop") {
       if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);

@@ -32,9 +32,16 @@
       titleNodes.find(node=>node.textContent.trim())?.textContent || '').trim();
     const segments=[];
     const mediaNames = new Set(available.map(x=>String(x).replaceAll('\\','/').split('/').pop().toLowerCase()));
+    const blocks=new Set(['P','DIV','SECTION','ARTICLE','UL','OL','LI','BLOCKQUOTE','H2','H3','H4','PRE','TABLE','TR']);
+    let textBuffer='',textLocation='';
+    function flushText() {
+      const value=textBuffer.replace(/\r\n?/g,'\n').replace(/[ \t]+/g,' ').trim();
+      if(value) segments.push({id:'s'+segments.length,kind:'text',text:value,location:textLocation,selected:false});
+      textBuffer='';textLocation='';
+    }
     function addText(text,node) {
-      const value=String(text).replace(/\r\n?/g,'\n').trim();
-      if (value) segments.push({id:'s'+segments.length,kind:'text',text:value,location:sourcePath(node),selected:false});
+      if(!textLocation)textLocation=sourcePath(node);
+      textBuffer+=String(text);
     }
     function walk(node) {
       if (segments.length>=400) return;
@@ -42,7 +49,9 @@
       if (node.nodeType!==1 || skipTags.has(node.tagName) || node.hidden || node.getAttribute('aria-hidden')==='true' ||
         excluded.test(String(node.className||'')+' '+(node.id||'')) ||
         node.matches?.('.comment,.comment-item,.comment-list,.reply,.reply-item,[data-comment-id]')) return;
+      if(blocks.has(node.tagName)&&textBuffer.trim()) flushText();
       if (node.tagName==='IMG') {
+        flushText();
         const w=Number(node.getAttribute('width')),h=Number(node.getAttribute('height'));
         if (w&&w<=32 || h&&h<=32) return;
         const src=node.getAttribute('data-original')||node.getAttribute('data-src')||node.getAttribute('src')||'';
@@ -53,12 +62,14 @@
       }
       if (node.tagName==='BR') { addText('\n',node);return; }
       for (const child of node.childNodes) walk(child);
+      if(blocks.has(node.tagName)) flushText();
     }
-    walk(body);
+    walk(body);flushText();
     const commentSelectors='[data-comment-id],.comment-item,.reply-item,li.comment,.comment-list > li';
     const comments=[...doc.querySelectorAll(commentSelectors)].filter(n=>!n.parentElement?.closest(commentSelectors))
       .slice(0,100).map((n,i)=>{
-        const text=(n.querySelector('.comment-content,.comment-text,.text,.content')||n).textContent?.trim()||'';
+        const content=n.querySelector('.comment-content,.comment-text,.reply-text,.reply-body');
+        const text=(content?.textContent||[...n.childNodes].filter(child=>child.nodeType===3).map(child=>child.nodeValue).join('')).trim();
         const likesText=n.getAttribute('data-likes')||n.querySelector('.like-count,.vote-count,.likes')?.textContent||'';
         const m=String(likesText).replaceAll(',','').match(/\d+/);
         return {id:'c'+i,text,likes:m?Number(m[0]):null,best:n.classList.contains('best')||n.classList.contains('popular'),
@@ -81,6 +92,30 @@
       comments:(record.comments||[]).map((c,i)=>({id:'c'+i,text:c.text,likes:c.likes??null,best:c.best===true,
         location:'comments:'+i,selected:false})),review:{bodyVerified:true,mediaVerified:false,commentsVerified:false},
       sourceUrl:record.sourceUrl||null,publicationAllowed:false};
+  }
+  function suggest(plan,available=[]) {
+    const media=new Set(available.map(name=>String(name).replaceAll('\\','/').split('/').pop().toLowerCase()));
+    const boilerplate=/^(?:댓글|목록|이전글|다음글|추천|공유|로그인|신고|스크랩|작성자|게시글)$/i;
+    let body=0,images=0,missing=0;
+    for(const segment of plan.segments||[]) {
+      if(segment.kind==='text') segment.selected=!!segment.text?.trim()&&!boilerplate.test(segment.text.trim());
+      else if(segment.kind==='image') {
+        segment.selected=true;
+        if(media.has(segment.mediaName?.toLowerCase())) images++; else missing++;
+      }
+      if(segment.kind==='text'&&segment.selected) body++;
+    }
+    const ranked=(plan.comments||[]).filter(c=>c.text?.trim()&&(c.best||Number(c.likes)>0))
+      .sort((a,b)=>Number(b.best)-Number(a.best)||(b.likes||0)-(a.likes||0));
+    for(const comment of plan.comments||[]) comment.selected=ranked.slice(0,3).includes(comment);
+    const cover=plan.segments.find(s=>s.selected&&s.kind==='image'&&media.has(s.mediaName?.toLowerCase()))||
+      plan.segments.find(s=>s.selected&&s.kind==='text')||plan.segments.find(s=>s.selected);
+    plan.cover={kind:cover?.kind||null,segmentId:cover?.id||null};
+    plan.coverTitle=plan.originalTitle?.trim().slice(0,48).trim()||'';
+    plan.coverTitleEvidence=plan.originalTitle?.trim()||'';
+    plan.review={bodyVerified:false,mediaVerified:false,commentsVerified:false};
+    plan.suggestion={body,images,missing,comments:ranked.slice(0,3).length};
+    return plan.suggestion;
   }
   function validate(plan, files) {
     const errors=[];
@@ -113,5 +148,5 @@
     if(plan.publicationAllowed!==false) errors.push('게시 승인을 이 화면에서 부여할 수 없습니다.');
     return errors;
   }
-  return Object.freeze({schema,htmlDraft,exactDraft,validate,coverHeight});
+  return Object.freeze({schema,htmlDraft,exactDraft,suggest,validate,coverHeight});
 });
