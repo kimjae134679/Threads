@@ -27,8 +27,9 @@
       n.textContent.trim().length>80 || n.querySelector('img'));
       if (articles.length===1) body=articles[0]; }
     if (!body) throw new Error('게시글 본문을 특정하지 못했습니다. 본문 선택 없이 제작할 수 없습니다.');
+    const titleNodes=[...doc.querySelectorAll('.rd_hd .title,.post-title,.article-title,.view_title,h1')];
     const originalTitle=(doc.querySelector('meta[property="og:title"]')?.getAttribute('content') ||
-      doc.querySelector('.post-title,.article-title,.view_title,h1')?.textContent || '').trim();
+      titleNodes.find(node=>node.textContent.trim())?.textContent || '').trim();
     const segments=[];
     const mediaNames = new Set(available.map(x=>String(x).replaceAll('\\','/').split('/').pop().toLowerCase()));
     function addText(text,node) {
