@@ -54,6 +54,8 @@ CTA
 
 `A10 Unknown rights` 자산은 앱에서도 실제 게시가 차단되며, 권리를 확인한 뒤 올바른 자산 분류와 Safety Gate 재검토가 필요하다.
 
+선별한 원문과 정확한 이미지 위치/댓글 근거를 받은 뒤 제작합니다. `docs/SOURCE_BUNDLE_GUIDE.md`의 원문 ZIP을 입력으로 사용하며, 실제 본문 글·이미지 없는 단색 표지는 만들지 않습니다. 입력 ZIP의 선별 위치와 원본 파일 해시를 결과 ZIP에도 보존합니다.
+
 ## 출력 — Draft Package
 
 ```text

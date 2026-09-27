@@ -7,8 +7,9 @@ const { captureUrl, capturePage, WIDTH } = require('./capture.cjs');
 const { publicAddress } = require('./network.cjs');
 const { createReferenceStore } = require('./reference-store.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
-let editor, activeCapture = null;
+let editor, bundleWindow, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
+const bundleUrl = 'cut-editor://app/source-batch.html';
 const preferences = { nodeIntegration: false, contextIsolation: true, sandbox: true, webSecurity: true, allowRunningInsecureContent: false };
 function trusted(event) {
   if (!editor || event.sender !== editor.webContents || event.senderFrame !== editor.webContents.mainFrame || event.senderFrame.url !== editorUrl) throw new Error('허용되지 않은 요청입니다.');
@@ -20,7 +21,7 @@ function denyPermissions(ses) {
 async function start() {
   const root = app.isPackaged ? path.join(process.resourcesPath, 'editor') : path.join(__dirname, '..', 'app');
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
-  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
+  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
   protocol.handle('cut-editor', async (request) => {
     const url = new URL(request.url), name = url.pathname.slice(1);
     if (url.host !== 'app' || !allowed.has(name) || request.method !== 'GET') return new Response('Not found', { status: 404 });
@@ -47,6 +48,16 @@ async function start() {
   const referenceStore = createReferenceStore(path.join(app.getPath('userData'), 'references'));
   ipcMain.handle('source-cut:save-reference', (event, payload) => { trusted(event); return referenceStore.save(payload); });
   ipcMain.handle('source-cut:open-references', async (event) => { trusted(event); await fs.mkdir(referenceStore.root, { recursive: true }); const error = await shell.openPath(referenceStore.root); if(error) throw new Error(error); });
+  ipcMain.handle('source-cut:open-bundle', async event => {
+    trusted(event);
+    if(bundleWindow && !bundleWindow.isDestroyed()) {bundleWindow.focus();return;}
+    bundleWindow=new BrowserWindow({width:1350,height:950,minWidth:760,minHeight:650,title:'원문 ZIP 제작',autoHideMenuBar:true,
+      webPreferences:{...preferences}});
+    bundleWindow.webContents.setWindowOpenHandler(() => ({action:'deny'}));
+    bundleWindow.webContents.on('will-navigate', navigation => navigation.preventDefault());
+    bundleWindow.on('closed',()=>{bundleWindow=null;});
+    await bundleWindow.loadURL(bundleUrl);
+  });
   ipcMain.handle('source-cut:cancel', (event) => { trusted(event); if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   ipcMain.handle('source-cut:capture', async (event, input) => {
     trusted(event);

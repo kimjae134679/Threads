@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -8,7 +8,8 @@
   "scripts": {
     "start": "electron .",
     "pack:win": "electron-builder --win zip --x64 --publish never",
-    "smoke": "electron smoke.cjs"
+    "smoke": "electron smoke.cjs",
+    "smoke:curation": "electron curation-smoke.cjs"
   },
   "devDependencies": {
     "electron": "44.4.3",
@@ -35,7 +36,14 @@
           "source-cut-*.css",
           "source-cut-*.js",
           "fonts/**",
-          "source-community-*.js"
+          "source-community-*.js",
+          "source-batch*.html",
+          "source-batch*.css",
+          "source-batch*.js",
+          "source-curation.js",
+          "source-bundle-zip.js",
+          "source-workflow.js",
+          "viral-model.js"
         ]
       }
     ],
