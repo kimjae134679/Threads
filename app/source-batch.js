@@ -429,6 +429,7 @@
     if(!response.ok||!data.ok)throw new Error('결과 폴더 기록 실패: '+(data.message||data.error||response.status));
   }
   $('savedSourceFolder').addEventListener('change',async e=>{
+    $('savedPreview').disabled=true;chosen=null;$('curation').hidden=true;
     try {await loadSavedFolder([...e.target.files]);}
     catch(error) {$('savedSourceStatus').textContent='불러오기 실패: '+error.message;}
     e.target.value='';
