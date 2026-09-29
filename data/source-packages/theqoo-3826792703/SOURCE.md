@@ -8,6 +8,8 @@
 - source body: eight source-linked JPEG images, in page order
 - acquisition: direct download of the eight public `img-cdn.theqoo.net` media URLs exposed by the post page
 - local ordered bytes: `original/01.jpg` … `original/08.jpg`
+- page recheck: 2026-09-29; the publicly readable post lists eight media links in this order, with no separate body paragraph visible in the extracted page text
+- comments: count 391 is visible, but comment text was not available in that page extraction; no comment copy is included
 - total source bytes: 534,020
 - OCR: not run
 - automated privacy masking: not run
