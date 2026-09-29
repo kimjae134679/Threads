@@ -26,5 +26,15 @@ try {
   assert.equal(actual.files.length,8);
   assert.equal(actual.files[0].name,'01.jpg');
   assert.equal(actual.metadata.title,'결혼 승낙 받자마자 탈모인거 밝힌 남편..');
-  console.log('Saved source folder import, original ordering, and metadata extraction: PASS');
+  const candidate=path.join(root,'candidate');
+  await fs.mkdir(path.join(candidate,'media'),{recursive:true});
+  await fs.writeFile(path.join(candidate,'media','02.jpg'),Buffer.from('second'));
+  await fs.writeFile(path.join(candidate,'media','01.jpg'),Buffer.from('first'));
+  await fs.writeFile(path.join(candidate,'manifest.json'),JSON.stringify({schema:'threads-program-input-v1',title:'후보 제목',sourceUrl:'https://example.com/candidate',sourceReview:{bodyVerified:false,publicationAllowed:false}}));
+  const imported=await loadSavedMaterials(candidate);
+  assert.deepEqual(imported.files.map(file=>file.name),['01.jpg','02.jpg']);
+  assert.equal(imported.metadata.title,'후보 제목');
+  assert.equal(imported.metadata.sourceUrl,'https://example.com/candidate');
+  assert.equal(imported.metadata.review.publicationAllowed,false);
+  console.log('Saved Source Package and candidate media import: PASS');
 } finally { await fs.rm(root,{recursive:true,force:true}); }

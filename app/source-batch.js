@@ -263,18 +263,28 @@
     if(cover.kind==='image') {
       const img=imageCache.get(cover.mediaName.toLowerCase()),scale=Math.max(W/img.naturalWidth,H/img.naturalHeight);
       ctx.drawImage(img,(W-img.naturalWidth*scale)/2,(H-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
-      const shade=ctx.createLinearGradient(0,0,0,H);shade.addColorStop(0,'rgba(0,0,0,.68)');shade.addColorStop(.55,'rgba(0,0,0,.10)');shade.addColorStop(1,'rgba(0,0,0,.08)');ctx.fillStyle=shade;ctx.fillRect(0,0,W,H);
+      const shade=ctx.createLinearGradient(0,0,0,H);shade.addColorStop(0,'rgba(0,0,0,.68)');shade.addColorStop(.32,'rgba(0,0,0,.30)');shade.addColorStop(.62,'rgba(0,0,0,.02)');shade.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=shade;ctx.fillRect(0,0,W,H);
     } else {
       ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#dce4ec';ctx.fillRect(42,42,W-84,H-84);
       ctx.fillStyle='#172237';ctx.font=(fontId==='gothic'?800:400)+' 48px '+font;ctx.textBaseline='top';
       wrap(ctx,cover.text,W-180).slice(0,14).forEach((line,i)=>ctx.fillText(line,90,540+i*58));
       ctx.fillStyle='rgba(255,255,255,.93)';ctx.fillRect(48,48,W-96,460);
     }
-    ctx.textBaseline='top';ctx.font=weight+' 88px '+font;
-    const heading=wrap(ctx,plan.coverTitle,W-160);
-    if(heading.length>4) throw new Error('대문 글씨가 길어 한눈에 들어오지 않습니다. 4줄 이하로 줄여주세요.');
-    ctx.lineWidth=4;ctx.lineJoin='round';
-    heading.forEach((line,i)=>{const x=67,y=104+i*109;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
+    ctx.textBaseline='top';
+    const titleSize=Math.min(88,Math.max(58,Math.floor(H*.105)));
+    ctx.font=weight+' '+titleSize+'px '+font;
+    const heading=[];
+    for(const word of String(plan.coverTitle).trim().split(/\s+/)) {
+      const last=heading.length-1, next=last>=0?heading[last]+' '+word:word;
+      if(last>=0 && ctx.measureText(next).width<=W-240) heading[last]=next;
+      else heading.push(word);
+    }
+    if(heading.length>4 || heading.some(line=>ctx.measureText(line).width>W-134))
+      throw new Error('대문 글씨가 길어 한눈에 들어오지 않습니다. 제목을 짧게 편집하세요.');
+    const lineHeight=Math.round(titleSize*1.18),titleTop=Math.max(36,Math.round(H*.065));
+    if(titleTop+heading.length*lineHeight>H*.56) throw new Error('대문 글씨가 사진을 너무 많이 가립니다. 짧게 편집하세요.');
+    ctx.lineWidth=3;ctx.lineJoin='round';
+    heading.forEach((line,i)=>{const x=67,y=titleTop+i*lineHeight;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
     function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font=bodyFont;ctx.textBaseline='top';}
     begin();let y=pad,has=false;
     function next() {if(has)finish();begin();y=pad;has=false;}

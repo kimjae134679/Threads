@@ -528,7 +528,7 @@
       const loaded = await acquire(files, { title, source }, true);
       if (loaded) $('savedFolderStatus').textContent =
         result.metadata.count + '장 불러옴 · ' + result.metadata.imageDirectory + ' 폴더 · 제목 ' +
-        (title ? '불러옴' : '없음') + ' · 본문/댓글 검수 필요';
+        (title ? '불러옴' : '없음') + ' · 본문/댓글/이미지 위치 검수 필요 · 게시 가능 자동 승인 없음';
     } catch (error) {
       message('저장 폴더를 불러오지 못했습니다: ' + error.message);
     } finally { button.disabled = false; }
@@ -536,20 +536,30 @@
   $('loadSavedFolder').addEventListener('click', openSavedFolder);
   $('savedFolderFiles').addEventListener('change', async () => {
     const all = [...$('savedFolderFiles').files];
-    const sourceDir = all.some(file => /[\\/]original[\\/]/i.test(file.webkitRelativePath || ''));
+    const sourceDir = all.some(file => /[\\/]original[\\/]/i.test(file.webkitRelativePath || '')) ? 'original' :
+      all.some(file => /[\\/]media[\\/]/i.test(file.webkitRelativePath || '')) ? 'media' : '';
     const files = all.filter(file => ['image/png','image/jpeg','image/webp'].includes(file.type) &&
-      (sourceDir ? /[\\/]original[\\/][^\\/]+$/i.test(file.webkitRelativePath || '') :
+      (sourceDir ? new RegExp('[\\\\/]' + sourceDir + '[\\\\/][^\\\\/]+$', 'i').test(file.webkitRelativePath || '') :
         (file.webkitRelativePath || '').split(/[\\/]/).length <= 2))
       .sort((a,b) => a.name.localeCompare(b.name, 'ko', { numeric:true, sensitivity:'base' }));
     if (!files.length) { $('savedFolderStatus').textContent = '선택 폴더에서 불러올 원본 이미지가 없습니다.'; return; }
     if (project.assets.length && !window.confirm('현재 편집을 저장된 폴더의 원문으로 바꿉니다. 계속할까요?')) return;
-    let title = '';
+    let title = '', sourceUrl = '';
     const note = all.find(file => /(^|[\\/])SOURCE[.]md$/i.test(file.webkitRelativePath || file.name));
     if (note) {
       const content = await note.text();
       title = (/^- exact observed title: (.+)$/m.exec(content)?.[1] || '').replace(/^`|`$/g, '');
+      sourceUrl = /^- source URL: (https:\/\/\S+)/m.exec(content)?.[1] || '';
     }
-    const source = { title, url:'', inputMode:'images', sourceText:'', commentsText:'', bodyMedia:[],
+    const manifestFile = all.find(file => /(^|[\\/])manifest[.]json$/i.test(file.webkitRelativePath || file.name));
+    if (manifestFile) {
+      try { const manifest = JSON.parse(await manifestFile.text());
+        if (manifest.schema === 'threads-program-input-v1') {
+          title ||= String(manifest.title || ''); sourceUrl ||= String(manifest.sourceUrl || '');
+        }
+      } catch (_) { /* Image-only folder still works. */ }
+    }
+    const source = { title, url:sourceUrl, inputMode:'images', sourceText:'', commentsText:'', bodyMedia:[],
       productionNotes:'', extraction:{ method:'existing_local_source_folder', reviewRequired:true, confidence:'none' } };
     const loaded = await acquire(files, { title, source }, true);
     if (loaded) $('savedFolderStatus').textContent =

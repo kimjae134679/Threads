@@ -4,7 +4,7 @@ Windows 앱 `Threads Cut Editor.exe`는 이미 PC에 저장된 자료를 불러�
 
 ## 설치된 앱 열기
 
-저장 원문 폴더 불러오기와 원문 ZIP 검수·제작을 포함한 최신 버전은 바탕화면 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.5-Windows-x64.zip`을 압축 풀어 실행합니다. 이전 0.2.4는 `이전 버전` 폴더에 보존했습니다. 저장소 빌드 결과는 `desktop/dist/Threads-Cut-Editor-0.2.5-Windows-x64.zip`입니다.
+저장 원문 폴더 불러오기와 원문 ZIP 검수·제작을 포함한 최신 버전은 바탕화면 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.6-Windows-x64.zip`을 압축 풀어 실행합니다. 이전 0.2.5는 `이전 버전` 폴더에 보존했습니다. 저장소 빌드 결과는 `desktop/dist/Threads-Cut-Editor-0.2.6-Windows-x64.zip`입니다.
 
 ## 원문 ZIP에서 게시 이미지 제작
 
@@ -14,9 +14,9 @@ Windows 앱 `Threads Cut Editor.exe`는 이미 PC에 저장된 자료를 불러�
 
 ## 저장된 자료 열기
 
-1. 첫 화면에서 **저장된 원문 폴더 불러오기**를 누릅니다.
-2. 기존 Source Package 폴더를 고릅니다. 안에 `original` 폴더가 있으면 해당 원본 이미지만 자연스러운 파일명 순서로 읽습니다. 일반 이미지 폴더를 골라도 됩니다.
-3. `SOURCE.md`에 기록된 정확한 관찰 제목이 있으면 가져옵니다. 파일에 없는 본문과 댓글은 만들어 넣지 않으며, 사용자가 원문과 대조해 확인해야 합니다.
+1. 첫 화면에서 **저장된 원문 폴더 불러오기**를 누릅니다. 바탕화면 `Threads Cut Editor 자료/02_프로그램 입력`이 있으면 폴더 선택 창이 그 위치에서 시작합니다.
+2. 기존 Source Package 폴더 또는 바탕화면 `02_프로그램 입력`의 개별 후보 폴더를 고릅니다. `original` 또는 `media`의 원본 이미지를 자연스러운 파일명 순서로 읽습니다. 일반 이미지 폴더도 됩니다. 플랫폼 상위 폴더 전체는 선택하지 않습니다.
+3. `SOURCE.md`의 정확한 관찰 제목 또는 후보 `manifest.json`의 제목·원문 주소를 가져옵니다. 파일에 없는 본문과 댓글은 만들어 넣지 않으며, 사용자가 원문과 대조해 확인해야 합니다. 바탕화면 후보 1,084건 중 저장 이미지가 있는 것은 현재 1건뿐입니다.
 4. 저장된 편집을 이어가려면 위쪽 **편집 파일 열기**에서 이전에 **편집 파일 저장**으로 받은 JSON을 선택합니다. 원본 이미지·제목·범위·분할선·스타일이 복원됩니다.
 5. 폴더에서 읽을 수 없으면 **이미지 파일 직접 추가** 또는 **브라우저에서 폴더 선택**을 사용합니다. PNG/JPG/WebP, 최대 30장입니다.
 
@@ -48,7 +48,7 @@ npm start --prefix desktop
 npm run pack:win --prefix desktop
 ```
 
-빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.5-Windows-x64.zip`.
+빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.6-Windows-x64.zip`.
 앱은 기존 전체 운영 서버와 분리되어 있어 API 키나 SQLite 서버 없이 편집을 실행합니다.
 
 ## 검증
@@ -57,6 +57,6 @@ npm run pack:win --prefix desktop
 
 원문 선별 브라우저 검사: `npm run smoke:curation --prefix desktop`. 메뉴 제외, 문단·이미지 순서, 근거가 있는 댓글 추천, 검수 전 최종 제작 차단을 확인합니다. 저장소의 실제 원문 이미지 8장으로 9장짜리 검수 전 예시 ZIP도 `desktop/dist/real-source-review-preview.zip`에 생성합니다. 이 예시는 실제 게시 가능 상태가 아닙니다.
 
-기존 컷 편집기 검사: `npm run smoke --prefix desktop`. 긴 페이지 연속 캡처와 편집 화면을 확인합니다. 이 검사는 별도 실행이 필요하며, 이전 0.2.3·0.2.4 결과를 이번 0.2.5 검증으로 간주하지 않습니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
+기존 컷 편집기 검사: `npm run smoke --prefix desktop`. 긴 페이지 연속 캡처와 편집 화면을 확인합니다. 이 검사는 별도 실행이 필요하며, 이전 0.2.3·0.2.4 결과를 이번 0.2.6 검증으로 간주하지 않습니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
 
 보안 구현 근거: [Electron security](https://www.electronjs.org/docs/latest/tutorial/security), [Chrome DevTools Page.captureScreenshot](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureScreenshot). 원격 페이지에는 Node·preload를 노출하지 않고 별도 세션을 사용합니다. 앱의 파일 저장은 사용자 저장 대화상자를 사용합니다.

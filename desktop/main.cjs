@@ -59,11 +59,19 @@ async function start() {
     bundleWindow.on('closed',()=>{bundleWindow=null;});
     await bundleWindow.loadURL(bundleUrl);
   });
+  let lastSavedFolder = '';
   ipcMain.handle('source-cut:open-saved-materials', async (event) => {
     trusted(event);
-    const picked = await dialog.showOpenDialog(editor, { title:'이미 저장된 원문 자료 폴더 선택', properties:['openDirectory'] });
+    const desktopInput = path.join(app.getPath('desktop'), 'Threads Cut Editor 자료', '02_프로그램 입력');
+    let defaultPath = lastSavedFolder || desktopInput;
+    try { if (!(await fs.stat(defaultPath)).isDirectory()) defaultPath = app.getPath('desktop'); }
+    catch (_) { defaultPath = app.getPath('desktop'); }
+    const picked = await dialog.showOpenDialog(editor, {
+      title:'이미 저장된 원문 자료 폴더 선택', defaultPath, properties:['openDirectory'] });
     if (picked.canceled || !picked.filePaths[0]) return { canceled:true };
-    return loadSavedMaterials(picked.filePaths[0]);
+    const result = await loadSavedMaterials(picked.filePaths[0]);
+    lastSavedFolder = picked.filePaths[0];
+    return result;
   });
   ipcMain.handle('source-cut:cancel', (event) => { trusted(event); if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   ipcMain.handle('source-cut:capture', async (event, input) => {
