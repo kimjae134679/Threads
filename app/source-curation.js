@@ -93,6 +93,16 @@
         location:'comments:'+i,selected:false})),review:{bodyVerified:true,mediaVerified:false,commentsVerified:false},
       sourceUrl:record.sourceUrl||null,publicationAllowed:false};
   }
+  function savedMediaDraft({title,sourceUrl,mediaNames}) {
+    if(!String(title||'').trim()) throw new Error('저장 자료에 확인된 원문 제목이 없습니다.');
+    if(!Array.isArray(mediaNames)||!mediaNames.length) throw new Error('원문 이미지가 없습니다.');
+    const segments=mediaNames.map((name,i)=>({id:'s'+i,kind:'image',mediaName:name,
+      location:'stored-image:'+String(i+1),selected:true}));
+    return {schema,sourceType:'saved-media',originalTitle:String(title).trim(),coverTitle:'',
+      coverTitleEvidence:String(title).trim(),cover:{kind:null,segmentId:null},segments,comments:[],
+      review:{bodyVerified:false,mediaVerified:false,commentsVerified:false},
+      sourceUrl:sourceUrl||null,publicationAllowed:false};
+  }
   function suggest(plan,available=[]) {
     const media=new Set(available.map(name=>String(name).replaceAll('\\','/').split('/').pop().toLowerCase()));
     const boilerplate=/^(?:댓글|목록|이전글|다음글|추천|공유|로그인|신고|스크랩|작성자|게시글)$/i;
@@ -144,9 +154,15 @@
     if(plan.style && (!['sans','gothic'].includes(plan.style.fontId) ||
       !({sans:[400,900],gothic:[800]}[plan.style.fontId]||[]).includes(Number(plan.style.titleWeight))))
       errors.push('동봉된 상업적 사용 허용 폰트와 실제 굵기를 선택하세요.');
+    if(plan.style?.coverSize!==undefined && (!Number.isInteger(Number(plan.style.coverSize)) ||
+      Number(plan.style.coverSize)<48 || Number(plan.style.coverSize)>88)) errors.push('첫 장 글씨 크기는 48~88px로 정하세요.');
+    if(plan.style?.coverTop!==undefined && (!Number.isInteger(Number(plan.style.coverTop)) ||
+      Number(plan.style.coverTop)<16 || Number(plan.style.coverTop)>280)) errors.push('첫 장 위쪽 여백은 16~280px로 정하세요.');
+    if(plan.style?.coverLeft!==undefined && (!Number.isInteger(Number(plan.style.coverLeft)) ||
+      Number(plan.style.coverLeft)<40 || Number(plan.style.coverLeft)>320)) errors.push('첫 장 왼쪽 여백은 40~320px로 정하세요.');
     for(const c of plan.comments||[]) if(c.selected && (!c.text?.trim() || !c.location)) errors.push('댓글 원문·위치를 확인하세요.');
     if(plan.publicationAllowed!==false) errors.push('게시 승인을 이 화면에서 부여할 수 없습니다.');
     return errors;
   }
-  return Object.freeze({schema,htmlDraft,exactDraft,suggest,validate,coverHeight});
+  return Object.freeze({schema,htmlDraft,exactDraft,savedMediaDraft,suggest,validate,coverHeight});
 });

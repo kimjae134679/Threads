@@ -59,10 +59,58 @@ app.whenReady().then(async () => {
       return {pages:preview.pages,selected:item.plan.segments.length,zipBase64:btoa(raw)};
     })()`);
     assert.equal(actual.pages,9);
+    const saved=await bundle.webContents.executeJavaScript(`(async()=>{
+      const title='결혼 승낙 받자마자 탈모인거 밝힌 남편..';
+      const raw=${JSON.stringify(Array.from({length:8},(_,i)=>originals[i].toString('base64')))};
+      const files=raw.map((data,i)=>{const name=String(i+1).padStart(2,'0')+'.jpg';
+        const file=new File([Uint8Array.from(atob(data),c=>c.charCodeAt(0))],name,{type:'image/jpeg'});
+        Object.defineProperty(file,'webkitRelativePath',{value:'candidate/media/'+name});return file;});
+      const media=await Promise.all(files.map(async(file,i)=>{const digest=await crypto.subtle.digest('SHA-256',await file.arrayBuffer());
+        return {file:'media/'+file.name,sequence:i+1,sha256:[...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join('')};}));
+      const manifest=new File([JSON.stringify({schema:'threads-program-input-v1',title,sourceUrl:'https://theqoo.net/square/3826792703',media})],
+        'manifest.json',{type:'application/json'});
+      Object.defineProperty(manifest,'webkitRelativePath',{value:'candidate/manifest.json'});
+      const item=await window.ThreadsSourceBatch.loadSavedFolder([manifest,...files]);
+      document.getElementById('coverTitle').value='결혼 승낙 후 탈모 고백';
+      document.getElementById('coverSize').value='64';
+      document.getElementById('coverTop').value='24';
+      document.getElementById('coverLeft').value='300';
+      const damaged=new File([new Uint8Array([1,2,3])],files[0].name,{type:'image/jpeg'});
+      Object.defineProperty(damaged,'webkitRelativePath',{value:files[0].webkitRelativePath});
+      let rejected=false;
+      try {await window.ThreadsSourceBatch.loadSavedFolder([manifest,damaged,...files.slice(1)]);}
+      catch(error) {rejected=/원문 이미지 누락 또는 변경/.test(error.message);}
+      const {bundle:zip}=await window.ThreadsSourceBatch.sourceZip(item);
+      const preview=await window.ThreadsSourceBatch.renderBundle(new File([zip],'saved.zip'),{preview:true});
+      const entries=await window.ThreadsSourceBundleZip.read(new File([preview.zip],'preview.zip'));
+      const output=JSON.parse(new TextDecoder().decode(entries.get('manifest.json')));
+      const bytes=new Uint8Array(await preview.zip.arrayBuffer());
+      let packed='';for(let i=0;i<bytes.length;i+=16384)packed+=String.fromCharCode(...bytes.subarray(i,i+16384));
+      const originals=files.map((file,i)=>{const name=String(i+1).padStart(2,'0')+'.jpg';
+        const copy=new File([file],name,{type:'image/jpeg'});
+        Object.defineProperty(copy,'webkitRelativePath',{value:'package/original/'+name});return copy;});
+      const note=new File(['- exact observed title: '+String.fromCharCode(96)+title+String.fromCharCode(96)+'\\n- source URL: https://theqoo.net/square/3826792703\\n'],
+        'SOURCE.md',{type:'text/plain'});
+      Object.defineProperty(note,'webkitRelativePath',{value:'package/SOURCE.md'});
+      const intake=new File([JSON.stringify({type:'SCREENSHOT_INTAKE_MANIFEST',assets:media.map((entry,i)=>({
+        name:originals[i].name,sha256:entry.sha256}))})],'intake-manifest.json',{type:'application/json'});
+      Object.defineProperty(intake,'webkitRelativePath',{value:'package/intake-manifest.json'});
+      const packageItem=await window.ThreadsSourceBatch.loadSavedFolder([note,intake,...originals]);
+      return {count:item.plan.segments.length,kind:item.plan.sourceType,body:item.plan.segments.filter(x=>x.kind==='text').length,
+        title:item.plan.originalTitle,review:item.plan.review,previewPages:preview.pages,
+        previewOnly:output.previewOnly,publicationAllowed:output.publicationAllowed,rejected,
+        sourcePackageCount:packageItem.plan.segments.length,zipBase64:btoa(packed)};
+    })()`);
+    assert.equal(saved.count,8);assert.equal(saved.kind,'saved-media');assert.equal(saved.body,0);
+    assert.equal(saved.review.bodyVerified,false);assert.equal(saved.previewPages,9);
+    assert.equal(saved.previewOnly,true);assert.equal(saved.publicationAllowed,false);assert.equal(saved.rejected,true);
+    assert.equal(saved.sourcePackageCount,8);
     const samplePath=path.join(__dirname,'dist','real-source-review-preview.zip');
     await fs.mkdir(path.dirname(samplePath),{recursive:true});
-    await fs.writeFile(samplePath,Buffer.from(actual.zipBase64,'base64'));
-    console.log('Curated source browser smoke PASS',JSON.stringify({fixture:result,actual:{pages:actual.pages,selected:actual.selected,samplePath}}));
+    await fs.writeFile(samplePath,Buffer.from(saved.zipBase64,'base64'));
+    console.log('Curated source browser smoke PASS',JSON.stringify({fixture:result,
+      actual:{pages:actual.pages,selected:actual.selected},saved:{count:saved.count,previewPages:saved.previewPages,
+        rejected:saved.rejected,previewOnly:saved.previewOnly,publicationAllowed:saved.publicationAllowed,samplePath}}));
     app.exit(0);
   } catch(error) { console.error(error.stack);app.exit(1); }
 });

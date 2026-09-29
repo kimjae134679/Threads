@@ -2,7 +2,12 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>원문 선별·이미지 제작</title><link rel="stylesheet" href="./source-batch.css"></head>
 <body><main><h1>원문 선별·이미지 제작</h1>
-<p>기존 링크에서 원본 파일을 모은 다음 제목·본문 조각·이미지 위치·댓글을 확인하세요. 원문 ZIP을 저장하고, 그 ZIP을 열어 첫 장과 본문 이미지를 만듭니다.</p>
+<p>PC에 저장된 원문 폴더를 열어 제목과 이미지 순서를 확인하고, 검수 전 미리보기부터 만드세요.</p>
+<section class="saved-start" aria-labelledby="savedStartTitle"><h2 id="savedStartTitle">저장된 원문으로 시작</h2>
+<p>이미지가 있는 개별 후보 폴더(<code>manifest.json + media</code>) 또는 Source Package(<code>SOURCE.md + original</code>)를 선택합니다. 후보 요약 <code>content.txt</code>는 본문으로 사용하지 않습니다.</p>
+<label class="folder-button">저장된 원문 폴더 선택 <input id="savedSourceFolder" type="file" webkitdirectory multiple></label>
+<button id="savedPreview" type="button" disabled>검수 전 이미지 만들기</button>
+<p id="savedSourceStatus" role="status">제목과 이미지만 불러옵니다. 본문·댓글·이미지 위치는 확인 전이며 게시용 제작은 잠겨 있습니다.</p></section>
 <section aria-labelledby="autoTitle"><h2 id="autoTitle">기존 파일 전체 작업</h2>
 <div class="controls"><button id="autoStart" type="button">기존 원문 모으기</button><button id="autoStop" type="button" disabled>중지</button>
 <button id="reloadQueue" type="button">목록 새로고침</button><button id="openResults" type="button">결과 폴더 열기</button></div>
@@ -39,6 +44,9 @@
 <fieldset class="style-settings"><legend>게시 이미지 글씨 스타일</legend>
 <label>동봉된 상업적 사용 허용 폰트 <select id="batchFont"><option value="sans">Noto Sans KR 기반</option><option value="gothic">나눔고딕 기반</option></select></label>
 <label>첫 장 글씨 굵기 <select id="batchWeight"></select></label>
+<label>첫 장 제목 크기(px) <input id="coverSize" type="number" min="48" max="88" value="70"></label>
+<label>첫 장 제목 위쪽 여백(px) <input id="coverTop" type="number" min="16" max="280" value="44"></label>
+<label>첫 장 제목 왼쪽 여백(px) <input id="coverLeft" type="number" min="40" max="320" value="67"></label>
 <label>스타일 프리셋 <select id="batchPreset"><option value="">저장된 프리셋 선택</option></select></label>
 <label>새 프리셋 이름 <input id="batchPresetName" maxlength="40" placeholder="예: 내 채널 기본형"></label>
 <button id="saveBatchPreset" type="button">폰트·굵기 프리셋 저장</button><button id="applyBatchPreset" type="button">선택한 프리셋 적용</button></fieldset>

@@ -24,7 +24,9 @@
   $('saveBatchPreset').addEventListener('click',()=>{
     const name=$('batchPresetName').value.trim();if(!name)return status('프리셋 이름을 입력하세요.');
     const all=presets();if(!all[name]&&Object.keys(all).length>=20)return status('프리셋은 20개까지 저장할 수 있습니다.');
-    all[name]={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value)};
+    all[name]={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),
+      coverSize:Number($('coverSize').value),coverTop:Number($('coverTop').value),
+      coverLeft:Number($('coverLeft').value)};
     try {localStorage.setItem(presetKey,JSON.stringify(all));refreshPresets();$('batchPreset').value=name;
       status('폰트·굵기 프리셋을 저장했습니다. 현재 원문 ZIP에도 선택 설정이 기록됩니다.');}
     catch {status('프리셋을 브라우저에 저장하지 못했습니다. 원문 ZIP에는 스타일이 기록됩니다.');}
@@ -32,6 +34,8 @@
   $('applyBatchPreset').addEventListener('click',()=>{
     const p=presets()[$('batchPreset').value];if(!p)return status('프리셋을 먼저 선택하세요.');
     $('batchFont').value=p.fontId;weights();$('batchWeight').value=String(p.titleWeight);
+    $('coverSize').value=String(p.coverSize||70);$('coverTop').value=String(p.coverTop??44);
+    $('coverLeft').value=String(p.coverLeft??67);
     status('선택한 스타일 프리셋을 적용했습니다.');
   });
   function clearUrls() {for(const url of previewUrls)URL.revokeObjectURL(url);previewUrls=[];}
@@ -86,21 +90,78 @@
     plan.media=[];
     return {plan,source,all};
   }
+  async function loadSavedFolder(all) {
+    const roots=all.filter(file=>filePath(file).split('/').length===2);
+    const manifestFile=roots.find(file=>file.name==='manifest.json');
+    const noteFile=roots.find(file=>file.name==='SOURCE.md');
+    if(!manifestFile&&!noteFile) throw new Error('개별 후보 폴더(manifest.json) 또는 Source Package(SOURCE.md)를 선택하세요.');
+    let metadata, directory, listed=null;
+    if(manifestFile) {
+      const data=JSON.parse(await manifestFile.text());
+      if(data.schema!=='threads-program-input-v1') throw new Error('지원하지 않는 후보 manifest.json입니다.');
+      if(!Array.isArray(data.media)||!data.media.length) throw new Error('후보 manifest.json에 검증 가능한 원본 이미지 목록이 없습니다.');
+      metadata={title:data.title,sourceUrl:data.sourceUrl};directory='media';listed=data.media;
+    } else {
+      const note=await noteFile.text();
+      metadata={title:/^- exact observed title: `([^`\r\n]*)`/m.exec(note)?.[1]||'',
+        sourceUrl:/^- source URL: (https:\/\/\S+)/m.exec(note)?.[1]||''};directory='original';
+      const intake=roots.find(file=>file.name==='intake-manifest.json');
+      if(intake) {
+        const data=JSON.parse(await intake.text());
+        if(data.type!=='SCREENSHOT_INTAKE_MANIFEST'||!Array.isArray(data.assets))
+          throw new Error('원본 이미지 검증 목록을 읽을 수 없습니다.');
+        listed=data.assets.map(asset=>({file:'original/'+asset.name,sha256:asset.sha256}));
+      }
+    }
+    const source=manifestFile||noteFile;
+    const images=all.filter(file=>filePath(file).split('/').length===3 &&
+      filePath(file).split('/')[1]===directory && /\.(png|jpe?g|webp)$/i.test(file.name));
+    if(!images.length) throw new Error(directory+' 폴더에 원문 이미지가 없습니다. 후보 요약만으로 제작할 수 없습니다.');
+    if(images.length>30 || images.some(file=>file.size>25*1024*1024) ||
+      images.reduce((n,file)=>n+file.size,0)>60*1024*1024) throw new Error('이미지는 30장, 각 25MB, 합계 60MB 이하여야 합니다.');
+    const names=new Set(images.map(file=>file.name.toLowerCase()));
+    if(names.size!==images.length) throw new Error('원문 이미지 파일명이 중복됩니다.');
+    let ordered=images.sort((a,b)=>a.name.localeCompare(b.name,'ko',{numeric:true,sensitivity:'base'}));
+    if(listed?.length) {
+      if(listed.length!==images.length || new Set(listed.map(entry=>base(entry.file).toLowerCase())).size!==listed.length)
+        throw new Error('원문 이미지 목록과 저장 파일의 개수 또는 이름이 다릅니다.');
+      ordered=[];
+      for(const entry of listed) {
+        const file=images.find(item=>item.name.toLowerCase()===base(entry.file).toLowerCase());
+        if(!file || !entry.sha256 || await hash(await file.arrayBuffer())!==entry.sha256)
+          throw new Error('원문 이미지 누락 또는 변경: '+entry.file);
+        ordered.push(file);
+      }
+    }
+    const plan=U.savedMediaDraft({...metadata,mediaNames:ordered.map(file=>file.name)});
+    U.suggest(plan,ordered.map(file=>file.name));
+    plan.input={name:source.name,path:filePath(source),sha256:await hash(await source.arrayBuffer())};
+    const item={plan,source,all:[source,...ordered]};renderReview(item);
+    $('savedPreview').disabled=false;
+    $('savedSourceStatus').textContent=`${ordered.length}장 불러옴 · 제목 확인 · 본문 글/댓글/이미지 위치 미확인 · 검수 전 미리보기 가능`;
+    status('저장된 원문을 열었습니다. 이미지 순서를 확인하고 검수 전 미리보기를 만드세요.');
+    return item;
+  }
   function renderReview(item) {
     clearUrls();chosen=item;const p=item.plan;
     $('curation').hidden=false;
     $('originalTitle').value=p.originalTitle||'';
     $('coverTitle').value=p.coverTitle||'';
     $('coverTitleEvidence').value=p.coverTitleEvidence||p.originalTitle||'';
-    $('sourceName').textContent='원본: '+p.input.name+' · 본문 '+p.segments.length+'개 · 댓글 '+p.comments.length+'개';
+    $('sourceName').textContent=p.sourceType==='saved-media'?
+      '저장 자료: '+p.input.name+' · 원본 이미지 '+p.segments.length+'장 · 본문 글·댓글 원문 없음':
+      '원본: '+p.input.name+' · 본문 '+p.segments.length+'개 · 댓글 '+p.comments.length+'개';
     const suggestion=p.suggestion;
-    $('suggestionStatus').textContent=suggestion?
+    $('suggestionStatus').textContent=p.sourceType==='saved-media'?
+      '저장된 이미지 파일명 순서만 임시로 표시했습니다. 본문 안의 실제 위치와 글·댓글은 확인되지 않았습니다. 이미지 순서와 내용을 원문과 대조하세요.':suggestion?
       `자동 초안: 본문 ${suggestion.body}개, 실제 파일이 있는 이미지 ${suggestion.images}개, 반응 근거가 있는 댓글 ${suggestion.comments}개 선택 · 이미지 파일 미확보 ${suggestion.missing}개. 원문과 대조해 불필요한 부분을 빼고 누락을 확인하세요.`:
       '저장한 선별 결과를 열었습니다. 원문과 대조한 뒤 확인 표시를 해 주세요.';
     $('bodyVerified').checked=p.review.bodyVerified;
     $('mediaVerified').checked=p.review.mediaVerified;
     $('commentsVerified').checked=p.review.commentsVerified;
     $('batchFont').value=p.style?.fontId||'sans';weights();$('batchWeight').value=String(p.style?.titleWeight||900);
+    $('coverSize').value=String(p.style?.coverSize||70);$('coverTop').value=String(p.style?.coverTop??44);
+    $('coverLeft').value=String(p.style?.coverLeft??67);
     const areas=$('segmentChoices');areas.replaceChildren();
     for(const part of p.segments) {
       const div=document.createElement('div');div.className='choice';
@@ -152,7 +213,9 @@
     p.coverTitleEvidence=$('coverTitleEvidence').value.trim();
     p.review={bodyVerified:$('bodyVerified').checked,mediaVerified:$('mediaVerified').checked,
       commentsVerified:$('commentsVerified').checked};
-    p.style={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value)};
+    p.style={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),
+      coverSize:Number($('coverSize').value),coverTop:Number($('coverTop').value),
+      coverLeft:Number($('coverLeft').value)};
     const s=p.segments.find(x=>x.id===$('coverSource').value);
     p.cover={kind:s?.kind||null,segmentId:s?.id||null};
     return p;
@@ -271,7 +334,7 @@
       ctx.fillStyle='rgba(255,255,255,.93)';ctx.fillRect(48,48,W-96,460);
     }
     ctx.textBaseline='top';
-    const titleSize=Math.min(88,Math.max(58,Math.floor(H*.105)));
+    const titleSize=Number(plan.style?.coverSize)||Math.min(88,Math.max(58,Math.floor(H*.105)));
     ctx.font=weight+' '+titleSize+'px '+font;
     const heading=[];
     for(const word of String(plan.coverTitle).trim().split(/\s+/)) {
@@ -279,12 +342,13 @@
       if(last>=0 && ctx.measureText(next).width<=W-240) heading[last]=next;
       else heading.push(word);
     }
-    if(heading.length>4 || heading.some(line=>ctx.measureText(line).width>W-134))
+    const titleLeft=Number(plan.style?.coverLeft??67);
+    if(heading.length>4 || heading.some(line=>ctx.measureText(line).width>W-titleLeft-40))
       throw new Error('대문 글씨가 길어 한눈에 들어오지 않습니다. 제목을 짧게 편집하세요.');
-    const lineHeight=Math.round(titleSize*1.18),titleTop=Math.max(36,Math.round(H*.065));
-    if(titleTop+heading.length*lineHeight>H*.56) throw new Error('대문 글씨가 사진을 너무 많이 가립니다. 짧게 편집하세요.');
+    const lineHeight=Math.round(titleSize*1.18),titleTop=Number(plan.style?.coverTop??Math.max(36,Math.round(H*.065)));
+    if(titleTop+heading.length*lineHeight>H-70) throw new Error('첫 장 글씨가 사진 밖으로 나갑니다. 제목을 줄이거나 위쪽 여백을 낮추세요.');
     ctx.lineWidth=3;ctx.lineJoin='round';
-    heading.forEach((line,i)=>{const x=67,y=titleTop+i*lineHeight;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
+    heading.forEach((line,i)=>{const x=titleLeft,y=titleTop+i*lineHeight;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
     function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font=bodyFont;ctx.textBaseline='top';}
     begin();let y=pad,has=false;
     function next() {if(has)finish();begin();y=pad;has=false;}
@@ -364,6 +428,12 @@
     const data=await response.json();
     if(!response.ok||!data.ok)throw new Error('결과 폴더 기록 실패: '+(data.message||data.error||response.status));
   }
+  $('savedSourceFolder').addEventListener('change',async e=>{
+    try {await loadSavedFolder([...e.target.files]);}
+    catch(error) {$('savedSourceStatus').textContent='불러오기 실패: '+error.message;}
+    e.target.value='';
+  });
+  $('savedPreview').addEventListener('click',()=>$('previewCurrent').click());
   $('sources').addEventListener('change',e=>{
     files=[...e.target.files];$('rows').replaceChildren();
     $('start').disabled=!files.some(sourceInput);
@@ -434,12 +504,12 @@
         img.src=url;img.alt='제작 이미지 '+(i+1)+'장';caption.textContent=(i+1)+'장';fig.append(img,caption);area.append(fig);
       }
       status(preview?'검수 전 예시 '+result.pages+'장. 게시 금지 표시가 들어갔고 제작 완료로 기록하지 않았습니다.':
-        '게시용 PNG '+result.pages+'장 제작 완료. 원문 ZIP의 선별 근거도 결과에 포함했습니다.');
+        '검수 표시된 PNG '+result.pages+'장 제작 완료. 게시 승인과 권리·개인정보 확인은 별도입니다.');
     }catch(error){status('제작 중단: '+error.message);}
   }
   for(const [id,preview] of [['previewBundle',true],['renderBundle',false]])
     $(id).addEventListener('change',async e=>{
       const file=e.target.files[0];if(file)await makeImages(file,preview);e.target.value='';
     });
-  window.ThreadsSourceBatch=Object.freeze({prepare,sourceZip,renderBundle,review:renderReview});
+  window.ThreadsSourceBatch=Object.freeze({prepare,loadSavedFolder,sourceZip,renderBundle,review:renderReview});
 })();

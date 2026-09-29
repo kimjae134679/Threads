@@ -4,11 +4,11 @@ Windows 앱 `Threads Cut Editor.exe`는 이미 PC에 저장된 자료를 불러�
 
 ## 설치된 앱 열기
 
-저장 원문 폴더 불러오기와 원문 ZIP 검수·제작을 포함한 최신 버전은 바탕화면 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.6-Windows-x64.zip`을 압축 풀어 실행합니다. 이전 0.2.5는 `이전 버전` 폴더에 보존했습니다. 저장소 빌드 결과는 `desktop/dist/Threads-Cut-Editor-0.2.6-Windows-x64.zip`입니다.
+저장 원문 폴더 불러오기와 원문 ZIP 검수·제작을 포함한 최신 버전은 바탕화면 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.7-Windows-x64.zip`을 압축 풀어 실행합니다. 이전 0.2.6과 0.2.5는 `이전 버전` 폴더에 보존했습니다. 저장소 빌드 결과는 `desktop/dist/Threads-Cut-Editor-0.2.7-Windows-x64.zip`입니다.
 
-## 원문 ZIP에서 게시 이미지 제작
+## 원문 ZIP에서 컷 이미지 제작
 
-앱 상단 **원문 ZIP 제작** 버튼을 누르면 원문 선별 화면이 별도 창으로 열립니다. **원본 폴더 선택 → 원본 목록 열기 → 이 원문 선별**에서 원문 기준 자동 초안을 확인합니다. 본문 글·이미지 위치·댓글을 원문과 대조하고 세 가지 확인 표시를 직접 체크합니다. **현재 선택으로 미리보기**는 검수 전 표시가 있는 예시를 만들고, **확인 후 ZIP 저장·이미지 제작**은 현재 선택으로 원문 ZIP과 PNG 세트를 바로 저장합니다. 저장된 ZIP은 **기존 원문 ZIP 수정**으로 다시 열 수 있습니다. 이전의 원문 컷 편집 화면은 저장한 이미지에서 추가로 범위를 조정할 때 사용합니다. 입력 ZIP에 무엇을 넣을지: [원문 ZIP 작성 가이드](SOURCE_BUNDLE_GUIDE.md).
+앱 상단 **원문 ZIP 제작** 버튼을 누르면 원문 선별 화면이 별도 창으로 열립니다. 맨 위 **저장된 원문 폴더 선택**에서 바탕화면의 이미지가 있는 개별 후보 폴더 또는 Source Package를 고릅니다. 제목과 원본 이미지를 해시로 대조하고 이미지 순서를 표시합니다. 이어 **검수 전 이미지 만들기**로 게시 금지 표기가 있는 예시 ZIP을 저장하고 화면에서 확인합니다. 원문 HTML/TXT는 아래의 별도 폴더 입력에서 선택할 수 있습니다. 본문 글·이미지 위치·댓글을 원문과 대조하고 세 가지 확인 표시를 직접 체크합니다. **현재 선택으로 미리보기**는 검수 전 표시가 있는 예시를 만들고, **확인 후 ZIP 저장·이미지 제작**은 현재 선택으로 원문 ZIP과 PNG 세트를 바로 저장합니다. 저장된 ZIP은 **기존 원문 ZIP 수정**으로 다시 열 수 있습니다. 이전의 원문 컷 편집 화면은 저장한 이미지에서 추가로 범위를 조정할 때 사용합니다. 입력 ZIP에 무엇을 넣을지: [원문 ZIP 작성 가이드](SOURCE_BUNDLE_GUIDE.md).
 
 앱의 원문 ZIP 창은 파일/폴더 직접 입력을 사용합니다. 저장소의 기존 후보 1,583건 대기열은 별도 `npm start`의 `/app/source-batch.html`에서 엽니다.
 
@@ -48,7 +48,7 @@ npm start --prefix desktop
 npm run pack:win --prefix desktop
 ```
 
-빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.6-Windows-x64.zip`.
+빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.7-Windows-x64.zip`.
 앱은 기존 전체 운영 서버와 분리되어 있어 API 키나 SQLite 서버 없이 편집을 실행합니다.
 
 ## 검증
@@ -57,6 +57,6 @@ npm run pack:win --prefix desktop
 
 원문 선별 브라우저 검사: `npm run smoke:curation --prefix desktop`. 메뉴 제외, 문단·이미지 순서, 근거가 있는 댓글 추천, 검수 전 최종 제작 차단을 확인합니다. 저장소의 실제 원문 이미지 8장으로 9장짜리 검수 전 예시 ZIP도 `desktop/dist/real-source-review-preview.zip`에 생성합니다. 이 예시는 실제 게시 가능 상태가 아닙니다.
 
-기존 컷 편집기 검사: `npm run smoke --prefix desktop`. 긴 페이지 연속 캡처와 편집 화면을 확인합니다. 이 검사는 별도 실행이 필요하며, 이전 0.2.3·0.2.4 결과를 이번 0.2.6 검증으로 간주하지 않습니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
+기존 컷 편집기 검사: `npm run smoke --prefix desktop`. 긴 페이지 연속 캡처와 편집 화면을 확인합니다. 0.2.7에서는 저장 폴더 제작 창의 브라우저 검사와 함께 실행합니다. 테스트 산출물은 공개 GitHub에 올리지 않습니다.
 
 보안 구현 근거: [Electron security](https://www.electronjs.org/docs/latest/tutorial/security), [Chrome DevTools Page.captureScreenshot](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-captureScreenshot). 원격 페이지에는 Node·preload를 노출하지 않고 별도 세션을 사용합니다. 앱의 파일 저장은 사용자 저장 대화상자를 사용합니다.
