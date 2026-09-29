@@ -19,7 +19,7 @@
       <button class="step" data-step-target="4" type="button"><span>4</span>저장하기</button>
     </nav>
     <div class="top-actions">
-      <button id="openBundleTool" type="button" class="subtle">원문 ZIP 제작</button>
+      <button id="openBundleTool" type="button" class="subtle">원문 선별·이미지 제작</button>
       <label class="file-button subtle">편집 파일 열기<input id="projectFile" type="file" accept="application/json,.json"></label>
       <button id="saveProject" type="button" class="subtle">편집 파일 저장</button>
     </div>
@@ -35,11 +35,12 @@
       <section class="saved-material-panel" aria-label="저장된 원문 불러오기">
         <h3>이미 저장된 자료</h3>
         <p>저장된 원문 묶음은 <code>original</code>, 후보 자료는 이미지가 있는 개별 후보 폴더의 <code>media</code>를 선택하세요. 이미지는 파일명 순서대로, 제목은 <code>SOURCE.md</code> 또는 <code>manifest.json</code>에서 가져옵니다. 이미지 없는 후보는 아직 컷을 만들 수 없습니다.</p>
-        <button id="loadSavedFolder" class="primary" type="button">저장된 원문 폴더 불러오기</button>
+        <button id="loadSavedFolder" class="primary" type="button">폴더 불러와 컷 편집</button>
+        <button id="openBundleQuick" type="button">원본 그대로 검수 이미지 만들기</button>
         <label class="file-button subtle folder-fallback">브라우저에서 폴더 선택
           <input id="savedFolderFiles" type="file" accept="image/png,image/jpeg,image/webp" webkitdirectory multiple>
         </label>
-        <p id="savedFolderStatus" class="small" role="status">원본 자료를 선택하면 원문 목록에 불러옵니다. 본문·댓글 확인 상태는 자동으로 완료 처리하지 않습니다.</p>
+        <p id="savedFolderStatus" class="small" role="status">컷 편집은 원본 영역을 직접 자릅니다. 검수 이미지는 별도 창에서 같은 저장 폴더를 선택해 바로 만듭니다. 본문·댓글 확인은 자동 완료되지 않습니다.</p>
       </section>
       <div class="or"><span>또는</span></div>
       <label class="dropzone file-button">
@@ -193,12 +194,12 @@
     <div class="save-shell panel">
       <span class="eyebrow">STEP 4</span>
       <h2>저장하기</h2>
-      <p>최종 이미지에는 표지 제목과 새 커뮤니티 양식의 본문/댓글만 포함됩니다.</p>
+      <p>저장 폴더의 검수되지 않은 자료는 이미지에 검수 표시를 넣습니다. 실제 게시 승인은 별도입니다.</p>
       <div class="save-checklist">
-        <label class="check big"><input id="complete" type="checkbox"> 본문·댓글 내용과 순서를 확인했습니다.</label>
+        <label class="check big"><input id="complete" type="checkbox"> 선택한 이미지와 입력한 글의 순서를 확인했습니다.</label>
         <div class="save-note">실제 게시 승인과는 별개입니다. 이 단계는 이미지 ZIP만 만듭니다.</div>
       </div>
-      <button id="exportZip" class="primary export" type="button" disabled>전체 PNG를 ZIP으로 받기</button>
+      <button id="exportZip" class="primary export" type="button" disabled>이미지 ZIP 받기</button>
       <p id="exportReason" class="export-reason"></p>
       <button data-step-target="3" class="back-link" type="button">← 미리보기로 돌아가기</button>
     </div>

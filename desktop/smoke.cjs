@@ -104,7 +104,7 @@ app.whenReady().then(async () => {
     assert.equal(community.previewError,'');
     assert(community.previewCanvases >= 3);
     assert.equal(community.exportDisabled,false,community.exportReason);
-    assert.match(community.exportReason,/준비 완료/);
+    assert.match(community.exportReason,/검수 전 표시/);
     console.log('SMOKE screenshot fallback, text reconstruction, preview and ZIP enablement PASS');
     console.log('SMOKE editor state verified; screenshot capture skipped on this Electron build');
     console.log('SMOKE live capture start');

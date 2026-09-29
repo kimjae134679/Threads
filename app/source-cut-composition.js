@@ -156,6 +156,9 @@
     p.source.extraction = {
       selector: String(value.source?.extraction?.selector || '').slice(0, 200),
       confidence: String(value.source?.extraction?.confidence || 'none').slice(0, 20),
+      method: String(value.source?.extraction?.method || '').slice(0, 80),
+      integrity: ['sha256-verified','unverified-image-only'].includes(value.source?.extraction?.integrity) ?
+        value.source.extraction.integrity : 'unknown',
       reviewRequired: value.source?.extraction?.reviewRequired !== false,
     };
     p.community = C().settings(value.community || defaultCommunity(p.source));

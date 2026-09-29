@@ -102,7 +102,7 @@ app.whenReady().then(async () => {
         sourcePackageCount:packageItem.plan.segments.length,zipBase64:btoa(packed)};
     })()`);
     assert.equal(saved.count,8);assert.equal(saved.kind,'saved-media');assert.equal(saved.body,0);
-    assert.equal(saved.review.bodyVerified,false);assert.equal(saved.previewPages,9);
+    assert.equal(saved.review.bodyVerified,false);assert.equal(saved.previewPages,5);
     assert.equal(saved.previewOnly,true);assert.equal(saved.publicationAllowed,false);assert.equal(saved.rejected,true);
     assert.equal(saved.sourcePackageCount,8);
     const samplePath=path.join(__dirname,'dist','real-source-review-preview.zip');

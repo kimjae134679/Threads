@@ -64,6 +64,11 @@ async function start() {
     trusted(event);
     const desktopInput = path.join(app.getPath('desktop'), 'Threads Cut Editor 자료', '02_프로그램 입력');
     let defaultPath = lastSavedFolder || desktopInput;
+    if (!lastSavedFolder) {
+      const entries = await fs.readdir(desktopInput, { withFileTypes:true }).catch(() => []);
+      const folders = entries.filter(entry => entry.isDirectory());
+      if (folders.length === 1) defaultPath = path.join(desktopInput, folders[0].name);
+    }
     try { if (!(await fs.stat(defaultPath)).isDirectory()) defaultPath = app.getPath('desktop'); }
     catch (_) { defaultPath = app.getPath('desktop'); }
     const picked = await dialog.showOpenDialog(editor, {

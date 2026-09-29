@@ -135,10 +135,19 @@
     if ($('captureUrlButton')) $('captureUrlButton').disabled = value || !window.ThreadsCutDesktop;
     if ($('openReferences')) $('openReferences').disabled = value || !window.ThreadsCutDesktop;
   }
+  function stampReview(canvas) {
+    const ctx=canvas.getContext('2d'),size=Math.max(19,Math.round(canvas.width*.023));
+    const label='검수 전 예시 · 게시 금지';
+    ctx.save();ctx.font='900 '+size+'px "Carousel Sans KR", sans-serif';
+    const width=Math.ceil(ctx.measureText(label).width)+28;
+    ctx.fillStyle='rgba(255,255,255,.94)';ctx.fillRect(canvas.width-width-18,canvas.height-size-42,width,size+23);
+    ctx.fillStyle='#9f1239';ctx.textBaseline='top';ctx.fillText(label,canvas.width-width-4,canvas.height-size-31);
+    ctx.restore();
+  }
   function exportBlockReason() {
     if (busy) return '이미지 생성 작업이 진행 중입니다.';
     if (!previewReady) return '먼저 미리보기에서 결과를 확인하세요.';
-    if (!project.complete) return '“본문·댓글 내용과 순서를 확인했습니다”를 체크하세요.';
+    if (!project.complete) return '“선택한 이미지와 입력한 글의 순서를 확인했습니다”를 체크하세요.';
     const community = window.ThreadsCommunityTemplate.settings(project.community || {});
     if (community.enabled && community.bodyMode === 'text' && !community.body.trim() && !community.bodyMedia.length) {
       return '본문이 “글·이미지로 재구성”인데 본문 글/이미지가 없습니다. 글을 입력하거나 스크린샷 방식으로 바꾸세요.';
@@ -148,7 +157,8 @@
   function syncExport() {
     const reason = exportBlockReason();
     $('exportZip').disabled = Boolean(reason);
-    if ($('exportReason')) $('exportReason').textContent = reason || 'ZIP 생성 준비 완료';
+    if ($('exportReason')) $('exportReason').textContent = reason ||
+      (project.source?.extraction?.reviewRequired ? '검수 전 표시가 들어간 ZIP을 만듭니다.' : 'ZIP 생성 준비 완료');
   }
   function changed(body = false) {
     dirty = true;
@@ -279,6 +289,7 @@
       slides.forEach((slide, index) => {
         const figure = document.createElement('figure'), c = document.createElement('canvas'), caption = document.createElement('figcaption');
         M.render(c, images[slide.assetIndex], slide, project, true, $('raw').checked);
+        if (project.source?.extraction?.reviewRequired) stampReview(c);
         const r = slide.rect, outputHeight = Math.round(M.pageGeometry(c.getContext('2d'), slide, project).height);
         c.setAttribute('role', 'img'); c.setAttribute('aria-label', index ? `본문 ${index}` : '표지');
         caption.textContent = `${index ? '본문 ' + index : '표지'} · 원문 ${slide.assetIndex + 1} · ${Math.round(r.y)}–${Math.round(r.y + r.height)}px · 출력 1080×${outputHeight}`;
@@ -346,16 +357,21 @@
       for (let i = 0; i < slides.length; i++) {
         message(`PNG 생성 중 ${i + 1}/${slides.length}`);
         const c = document.createElement('canvas'); M.render(c, snapshotImages[slides[i].assetIndex], slides[i], snapshot, false, raw);
+        if (snapshot.source?.extraction?.reviewRequired) stampReview(c);
         const blob = await new Promise((resolve) => c.toBlob(resolve, 'image/png'));
         if (!blob) throw new Error('PNG 생성에 실패했습니다.');
         entries.push({ name: i ? `body-${String(i).padStart(2, '0')}.png` : 'cover.png', data: new Uint8Array(await blob.arrayBuffer()) });
         c.width = 1; c.height = 1;
       }
-      const manifest = { ...snapshot, assets: snapshot.assets.map(({ dataUrl, ...a }) => a), rawCover: raw, slides };
+      const manifest = { ...snapshot, assets: snapshot.assets.map(({ dataUrl, ...a }) => a), rawCover: raw, slides,
+        previewOnly:Boolean(snapshot.source?.extraction?.reviewRequired), publicationAllowed:false };
       entries.push({ name: 'edit-log.json', data: new TextEncoder().encode(JSON.stringify(snapshot.editLog || [], null, 2)) });
       entries.push({ name: 'reference-summary.json', data: new TextEncoder().encode(JSON.stringify(M.reference(snapshot), null, 2)) });
       entries.push({ name: 'cut-manifest.json', data: new TextEncoder().encode(JSON.stringify(manifest, null, 2)) });
-      download(window.ThreadsSourceCutZip.zip(entries), 'source-cut-images.zip'); message('ZIP 다운로드를 요청했습니다. 브라우저 다운로드 목록에서 확인하세요.');
+      const review=Boolean(snapshot.source?.extraction?.reviewRequired);
+      download(window.ThreadsSourceCutZip.zip(entries), review?'source-cut-review-preview.zip':'source-cut-images.zip');
+      message(review?'검수 전 표시가 있는 ZIP을 다운로드했습니다. 원문과 대조하기 전에는 게시하지 마세요.':
+        'ZIP 다운로드를 요청했습니다. 브라우저 다운로드 목록에서 확인하세요.');
     } catch (error) { message(error.message); }
     finally { setBusy(false); }
   }
@@ -523,12 +539,15 @@
       const source = {
         title, url:result.metadata.sourceUrl || '', inputMode:'images',
         sourceText:'', commentsText:'', bodyMedia:[], productionNotes:'',
-        extraction:{ method:'existing_local_source_folder', reviewRequired:true, confidence:'none' },
+        extraction:{ method:'existing_local_source_folder', reviewRequired:true, confidence:'none',
+          integrity:result.metadata.integrity },
       };
       const loaded = await acquire(files, { title, source }, true);
       if (loaded) $('savedFolderStatus').textContent =
         result.metadata.count + '장 불러옴 · ' + result.metadata.imageDirectory + ' 폴더 · 제목 ' +
-        (title ? '불러옴' : '없음') + ' · 본문/댓글/이미지 위치 검수 필요 · 게시 가능 자동 승인 없음';
+        (title ? '불러옴' : '없음') + ' · ' +
+        (result.metadata.integrity === 'sha256-verified' ? '원본 해시 일치' : '이미지 원본 검증 기록 없음') +
+        ' · 본문/댓글/이미지 위치 검수 필요 · 게시 가능 자동 승인 없음';
     } catch (error) {
       message('저장 폴더를 불러오지 못했습니다: ' + error.message);
     } finally { button.disabled = false; }
@@ -616,6 +635,7 @@
     if (next.presets?.length) { const combined = new Map(presets.map(p => [p.name, p])); next.presets.forEach(p => combined.set(p.name, p)); presets = [...combined.values()].slice(-20); persistPresets(); }
     refreshAssets(); goStep(2);
   }
+  $('openBundleQuick')?.addEventListener('click', () => $('openBundleTool').click());
   $('openBundleTool')?.addEventListener('click', async () => {
     if(window.ThreadsCutDesktop?.openSourceBundle)
       try {await window.ThreadsCutDesktop.openSourceBundle();}catch(error){message('원문 ZIP 창 열기 실패: '+error.message);}

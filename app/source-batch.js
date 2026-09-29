@@ -315,7 +315,8 @@
     const imageCache=new Map();for(const item of used.filter(s=>s.kind==='image'))
       imageCache.set(item.mediaName.toLowerCase(),await loadImage(media.get(item.mediaName.toLowerCase())));
     const sourceImage=cover.kind==='image'?imageCache.get(cover.mediaName.toLowerCase()):null;
-    const H=sourceImage?U.coverHeight(sourceImage.naturalWidth,sourceImage.naturalHeight):1350;
+    const H=plan.sourceType==='saved-media'?1350:
+      sourceImage?U.coverHeight(sourceImage.naturalWidth,sourceImage.naturalHeight):1350;
     const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');
     const finish=()=>{
       if(preview){ctx.save();ctx.fillStyle='rgba(255,255,255,.9)';ctx.fillRect(W-298,H-65,280,47);
@@ -326,7 +327,22 @@
     if(cover.kind==='image') {
       const img=imageCache.get(cover.mediaName.toLowerCase()),scale=Math.max(W/img.naturalWidth,H/img.naturalHeight);
       ctx.drawImage(img,(W-img.naturalWidth*scale)/2,(H-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
-      const shade=ctx.createLinearGradient(0,0,0,H);shade.addColorStop(0,'rgba(0,0,0,.68)');shade.addColorStop(.32,'rgba(0,0,0,.30)');shade.addColorStop(.62,'rgba(0,0,0,.02)');shade.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=shade;ctx.fillRect(0,0,W,H);
+      if(plan.sourceType==='saved-media') {
+        ctx.fillStyle='rgba(7,12,22,.52)';ctx.fillRect(0,0,W,H);
+        ctx.save();ctx.filter='blur(34px) brightness(.65)';
+        ctx.drawImage(img,(W-img.naturalWidth*scale)/2,(H-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
+        ctx.restore();
+        const fit=Math.min((W-64)/img.naturalWidth,720/img.naturalHeight);
+        const iw=Math.round(img.naturalWidth*fit),ih=Math.round(img.naturalHeight*fit);
+        const ix=Math.round((W-iw)/2),iy=Math.round((H-ih)/2+65);
+        ctx.fillStyle='#111827';ctx.fillRect(ix-5,iy-5,iw+10,ih+10);
+        ctx.drawImage(img,ix,iy,iw,ih);
+        const titleShade=ctx.createLinearGradient(0,0,0,360);
+        titleShade.addColorStop(0,'rgba(7,12,22,.92)');titleShade.addColorStop(1,'rgba(7,12,22,0)');
+        ctx.fillStyle=titleShade;ctx.fillRect(0,0,W,360);
+      } else {
+        const shade=ctx.createLinearGradient(0,0,0,H);shade.addColorStop(0,'rgba(0,0,0,.68)');shade.addColorStop(.32,'rgba(0,0,0,.30)');shade.addColorStop(.62,'rgba(0,0,0,.02)');shade.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=shade;ctx.fillRect(0,0,W,H);
+      }
     } else {
       ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#dce4ec';ctx.fillRect(42,42,W-84,H-84);
       ctx.fillStyle='#172237';ctx.font=(fontId==='gothic'?800:400)+' 48px '+font;ctx.textBaseline='top';
@@ -349,6 +365,24 @@
     if(titleTop+heading.length*lineHeight>H-70) throw new Error('첫 장 글씨가 사진 밖으로 나갑니다. 제목을 줄이거나 위쪽 여백을 낮추세요.');
     ctx.lineWidth=3;ctx.lineJoin='round';
     heading.forEach((line,i)=>{const x=titleLeft,y=titleTop+i*lineHeight;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
+    if(plan.sourceType==='saved-media' && used.every(part=>part.kind==='image' && !part.after?.gap && !part.after?.note?.trim()) &&
+      !plan.comments.some(comment=>comment.selected)) {
+      const slotHeight=610,marginTop=30,gap=18;
+      for(let i=0;i<used.length;i+=2) {
+        ctx.fillStyle='#edf0f4';ctx.fillRect(0,0,W,H);
+        for(let j=0;j<2 && i+j<used.length;j++) {
+          const img=imageCache.get(used[i+j].mediaName.toLowerCase());
+          const fit=Math.min((W-56)/img.naturalWidth,slotHeight/img.naturalHeight);
+          const iw=Math.round(img.naturalWidth*fit),ih=Math.round(img.naturalHeight*fit);
+          const x=Math.round((W-iw)/2),y=marginTop+j*(slotHeight+gap)+Math.round((slotHeight-ih)/2);
+          ctx.fillStyle='#d0d7e2';ctx.fillRect(x-3,y-3,iw+6,ih+6);
+          ctx.drawImage(img,x,y,iw,ih);
+        }
+        finish();
+      }
+      return pages.map((url,i)=>({name:'rendered/slide-'+String(i+1).padStart(3,'0')+'.png',
+        data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))}));
+    }
     function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font=bodyFont;ctx.textBaseline='top';}
     begin();let y=pad,has=false;
     function next() {if(has)finish();begin();y=pad;has=false;}
@@ -366,6 +400,10 @@
         if(has)next();
         const scale=Math.min(W/img.naturalWidth,H/img.naturalHeight);
         const w=Math.round(img.naturalWidth*scale),h=Math.round(img.naturalHeight*scale);
+        if(plan.sourceType==='saved-media') {
+          ctx.fillStyle='#edf0f4';ctx.fillRect(0,0,W,H);
+          ctx.fillStyle='#d3d9e2';ctx.fillRect((W-w)/2-3,(H-h)/2-3,w+6,h+6);
+        }
         ctx.drawImage(img,(W-w)/2,(H-h)/2,w,h);finish();begin();y=pad;has=false;
       }
       const extra=part.after||{};
