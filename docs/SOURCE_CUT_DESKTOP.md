@@ -4,7 +4,13 @@ Windows 앱 `Threads Cut Editor.exe`는 이미 PC에 저장된 자료를 불러�
 
 ## 설치된 앱 열기
 
-저장 원문 폴더 불러오기와 원문 ZIP 검수·제작을 포함한 최신 버전은 바탕화면 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.8-Windows-x64.zip`을 압축 풀어 실행합니다. 이전 0.2.6과 0.2.5는 `이전 버전` 폴더에 보존했습니다. 저장소 빌드 결과는 `desktop/dist/Threads-Cut-Editor-0.2.8-Windows-x64.zip`입니다.
+바탕화면 `Threads Cut Editor` 바로가기로 0.2.9 앱을 엽니다. 배포 ZIP은 `Threads Cut Editor 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.2.9-Windows-x64.zip`에 있습니다. 이전 버전은 옆의 `이전 버전`에 보존합니다.
+
+## 폴더 전체 자동 제작
+
+첫 화면의 **폴더 전체 자동 제작**을 누르고 기본으로 열린 `01_후보 기록` 폴더를 선택하면 모든 후보를 순서대로 확인합니다. 각 후보의 이미지 해시와 저장된 제목을 확인하고, 가능한 후보는 검수 전 1080×1350 PNG 다섯 장과 `review-preview.zip`을 `06_자동 제작 결과/<후보 ID>/`에 저장합니다. `status.csv`에서 `generated`(이번에 제작), `already_done`(원본과 결과의 해시가 같아 건너뜀), `needs_source`(원본 이미지 없음), `failed`(검증 또는 렌더링 실패)를 볼 수 있습니다. `status.json`에는 같은 정보와 결과 이미지 해시가 있습니다. 중간에 멈추면 처리된 후보까지 기록하고 다음 실행에서 이어집니다.
+
+현재 자료 1,084건 중 이미지가 있는 1건만 제작할 수 있으며 1,083건은 `needs_source`입니다. 자료를 추가한 뒤 같은 버튼을 누르면 이미 정상적으로 만든 결과는 건너뜁니다. ZIP과 펼친 PNG는 검수 전 자료이며 자동 게시 승인은 아닙니다.
 
 ## 원문 ZIP에서 컷 이미지 제작
 
@@ -48,12 +54,12 @@ npm start --prefix desktop
 npm run pack:win --prefix desktop
 ```
 
-빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.8-Windows-x64.zip`.
+빌드 결과: `desktop/dist/Threads-Cut-Editor-0.2.9-Windows-x64.zip`.
 앱은 기존 전체 운영 서버와 분리되어 있어 API 키나 SQLite 서버 없이 편집을 실행합니다.
 
 ## 검증
 
-`npm run check`는 URL/네트워크 주소 제한, 누락 없는 긴 이미지 분할, 실패 후 창 정리, 최소 IPC 공개 범위와 기존 기능을 검사합니다.
+`npm run check`는 URL/네트워크 주소 제한, 누락 없는 긴 이미지 분할, 실패 후 창 정리, 최소 IPC 공개 범위와 기존 기능을 검사합니다. `npm run smoke:auto --prefix desktop`은 바탕화면의 실제 1,084건을 처리하고 다시 실행해 건너뛰기 상태와 결과 PNG를 검증합니다.
 
 원문 선별 브라우저 검사: `npm run smoke:curation --prefix desktop`. 메뉴 제외, 문단·이미지 순서, 근거가 있는 댓글 추천, 검수 전 최종 제작 차단을 확인합니다. 저장소의 실제 원문 이미지 8장을 원본 순서로 두 장씩 배치해 표지 포함 5장짜리 1080×1350 검수 전 ZIP을 `desktop/dist/real-source-review-preview.zip`에 생성합니다. 이 예시는 실제 게시 가능 상태가 아닙니다.
 

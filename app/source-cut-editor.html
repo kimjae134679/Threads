@@ -32,6 +32,15 @@
         <h2>저장된 원문을 불러오세요</h2>
         <p>PC에 이미 저장한 원문 폴더나 편집 파일을 열어 이어서 작업합니다. 새 링크 수집은 필요할 때만 선택하세요.</p>
       </div>
+      <section class="saved-material-panel" aria-label="폴더 전체 자동 제작">
+        <h3>폴더 전체 자동 제작</h3>
+        <p>후보 폴더를 한 번 선택하면 하위 후보를 순서대로 검사합니다. 원본 이미지가 있는 건 검수용 이미지 ZIP을 만들고, 없는 건 보류 사유를 기록합니다. 같은 원본으로 이미 만든 건 건너뜁니다.</p>
+        <button id="runFolderBatch" class="primary" type="button">폴더 선택하고 전체 자동 제작</button>
+        <button id="stopFolderBatch" type="button" hidden>작업 중지</button>
+        <button id="openBatchResults" type="button">제작 결과 폴더 열기</button>
+        <progress id="folderBatchProgress" value="0" max="1" hidden></progress>
+        <p id="folderBatchStatus" class="small" role="status">결과 목록은 바탕화면 Threads Cut Editor 자료/06_자동 제작 결과에 저장됩니다.</p>
+      </section>
       <section class="saved-material-panel" aria-label="저장된 원문 불러오기">
         <h3>이미 저장된 자료</h3>
         <p>저장된 원문 묶음은 <code>original</code>, 후보 자료는 이미지가 있는 개별 후보 폴더의 <code>media</code>를 선택하세요. 이미지는 파일명 순서대로, 제목은 <code>SOURCE.md</code> 또는 <code>manifest.json</code>에서 가져옵니다. 이미지 없는 후보는 아직 컷을 만들 수 없습니다.</p>

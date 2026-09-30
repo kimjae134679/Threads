@@ -465,6 +465,31 @@
   });
   refreshFontControls(); refreshPresetList();
   const desktop = window.ThreadsCutDesktop;
+  $('runFolderBatch').disabled = !desktop?.runFolderBatch;
+  $('openBatchResults').disabled = !desktop?.openBatchResults;
+  desktop?.onBatchProgress?.(({phase,done,total,status,title,reason}) => {
+    const progress=$('folderBatchProgress');progress.hidden=false;progress.max=Math.max(total,1);progress.value=done;
+    $('folderBatchStatus').textContent=phase==='scan' ? `후보 ${total}건을 찾았습니다. 원본과 이전 결과를 확인합니다.` :
+      `${done}/${total} · ${status==='generated'?'검수 이미지 제작':status==='already_done'?'이미 제작되어 건너뜀':
+        status==='needs_source'?'원본 이미지 없어 보류':'처리 실패'} · ${title||reason||''}`;
+  });
+  $('runFolderBatch').addEventListener('click',async () => {
+    if(!desktop?.runFolderBatch)return;
+    $('runFolderBatch').disabled=true;$('stopFolderBatch').hidden=false;
+    $('folderBatchStatus').textContent='폴더를 선택하면 전체 후보를 순서대로 처리합니다.';
+    try {
+      const result=await desktop.runFolderBatch();
+      if(result.canceled) { $('folderBatchStatus').textContent='폴더 선택을 취소했습니다.';return; }
+      const c=result.counts;
+      $('folderBatchStatus').textContent=`${result.total}건 중 검수 이미지 ${c.generated}건 제작 · 기존 결과 ${c.already_done}건 건너뜀 · 원본 없음 ${c.needs_source}건 · 실패 ${c.failed}건${result.cancelled?' · 중지됨':''}. 결과 폴더의 status.csv에서 항목별 사유를 확인하세요.`;
+    } catch(error) { $('folderBatchStatus').textContent='자동 제작 실패: '+error.message; }
+    finally { $('runFolderBatch').disabled=false;$('stopFolderBatch').hidden=true; }
+  });
+  $('stopFolderBatch').addEventListener('click',() => {
+    desktop?.cancelFolderBatch?.();$('folderBatchStatus').textContent='현재 작업이 끝나면 중지합니다.';
+  });
+  $('openBatchResults').addEventListener('click',() =>
+    desktop?.openBatchResults?.().catch(error => { $('folderBatchStatus').textContent=error.message; }));
   if ($('captureUrlButton')) {
     $('captureUrlButton').disabled = !desktop;
     if (desktop) {
