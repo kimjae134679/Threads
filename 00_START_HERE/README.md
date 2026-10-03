@@ -30,13 +30,15 @@
 
 ## 2. 현재 최우선 목표
 
+현재 Windows 폴더 자동 제작의 실행·검증 상태는 [SOURCE_CUT_DESKTOP.md](../docs/SOURCE_CUT_DESKTOP.md)에 있습니다. 레퍼런스 관찰과 다음 이미지 제작 기획은 [INSTAGRAM_REFERENCE_GUIDE.md](../docs/INSTAGRAM_REFERENCE_GUIDE.md)를 봅니다. 바탕화면의 01_후보 기록을 입력으로 쓰고 06_자동 제작 결과에서 최신 결과와 보류 사유를 확인합니다.
+
 검은 배경 text-only Demo Showcase는 개발/회귀 자료일 뿐 사용자 결과물이 아니다.
 
 1. 한국 커뮤니티 중심 고볼륨 Discovery
 2. 정확한 제목 + 정확한 원문 URL 검증
 3. 실제 source screenshot/image/media 확보
 4. screenshot intake → Source Package
-5. 원문 비율에 맞춘 Instagram/Threads carousel (폭 1080, 높이 608~1350; 텍스트 원문은 1080×1350)
+5. 원문 비율과 실제 내용량에 맞춘 Instagram/Threads 검수 전 카드 (폭 1080, 높이 608~1350; 텍스트도 내용에 맞춘 높이)
 6. Chrome에서 실제 파일/크기/가독성 검증
 7. 같은 Source Package로 별도 1080×1920 Reels/Shorts MP4
 8. 이후 live provider/publisher

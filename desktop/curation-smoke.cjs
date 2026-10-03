@@ -56,9 +56,10 @@ app.whenReady().then(async () => {
       const preview=await window.ThreadsSourceBatch.renderBundle(new File([input],'original.zip'),{preview:true});
       const bytes=new Uint8Array(await preview.zip.arrayBuffer());
       let raw='';for(let i=0;i<bytes.length;i+=16384)raw+=String.fromCharCode(...bytes.subarray(i,i+16384));
-      return {pages:preview.pages,selected:item.plan.segments.length,zipBase64:btoa(raw)};
+      return {pages:preview.pages,selected:item.plan.segments.length,
+        imageNames:[...new Set(preview.plan.productionPlan.pages.flatMap(page=>page.operations).filter(op=>op.kind==='image').map(op=>op.name))],zipBase64:btoa(raw)};
     })()`);
-    assert.equal(actual.pages,9);
+    assert.equal(actual.imageNames.length,8);assert(actual.pages>=1&&actual.pages<=9);
     const saved=await bundle.webContents.executeJavaScript(`(async()=>{
       const title='결혼 승낙 받자마자 탈모인거 밝힌 남편..';
       const raw=${JSON.stringify(Array.from({length:8},(_,i)=>originals[i].toString('base64')))};
@@ -99,10 +100,13 @@ app.whenReady().then(async () => {
       return {count:item.plan.segments.length,kind:item.plan.sourceType,body:item.plan.segments.filter(x=>x.kind==='text').length,
         title:item.plan.originalTitle,review:item.plan.review,previewPages:preview.pages,
         previewOnly:output.previewOnly,publicationAllowed:output.publicationAllowed,rejected,
-        sourcePackageCount:packageItem.plan.segments.length,zipBase64:btoa(packed)};
+        sourcePackageCount:packageItem.plan.segments.length,
+        imageNames:[...new Set(output.productionPlan.pages.flatMap(page=>page.operations).filter(op=>op.kind==='image').map(op=>op.name))],
+        blank:output.productionPlan.pages.filter(page=>page.role==='body').map(page=>page.bottomWhitespace),zipBase64:btoa(packed)};
     })()`);
     assert.equal(saved.count,8);assert.equal(saved.kind,'saved-media');assert.equal(saved.body,0);
-    assert.equal(saved.review.bodyVerified,false);assert.equal(saved.previewPages,5);
+    assert.equal(saved.review.bodyVerified,false);assert(saved.previewPages>=1&&saved.previewPages<=8);
+    assert.equal(saved.imageNames.length,8);assert(saved.blank.every(value=>value<=120));
     assert.equal(saved.previewOnly,true);assert.equal(saved.publicationAllowed,false);assert.equal(saved.rejected,true);
     assert.equal(saved.sourcePackageCount,8);
     const samplePath=path.join(__dirname,'dist','real-source-review-preview.zip');

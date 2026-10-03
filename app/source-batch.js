@@ -8,7 +8,7 @@
   let chosen=null, output=null, files=[], running=false;
   let previewUrls=[];
   const presetKey='threads-curated-style-v1';
-  const family=id=>id==='gothic'?'"Cut Gothic"':'"Carousel Sans KR"';
+  const family=(id,fallback=false)=>(id==='gothic'?'"Cut Gothic"':'"Carousel Sans KR"')+(fallback?', "Malgun Gothic", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif':'');
   function weights() {
     const select=$('batchWeight'),before=select.value;select.replaceChildren();
     for(const weight of $('batchFont').value==='gothic'?[800]:[400,900])
@@ -215,7 +215,7 @@
       commentsVerified:$('commentsVerified').checked};
     p.style={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),
       coverSize:Number($('coverSize').value),coverTop:Number($('coverTop').value),
-      coverLeft:Number($('coverLeft').value)};
+      coverLeft:Number($('coverLeft').value),allowSystemFallback:p.style?.allowSystemFallback===true};
     const s=p.segments.find(x=>x.id===$('coverSource').value);
     p.cover={kind:s?.kind||null,segmentId:s?.id||null};
     return p;
@@ -264,7 +264,10 @@
     const text=[plan.coverTitle,...plan.segments.filter(s=>s.selected&&s.kind==='text').map(s=>s.text),
       ...plan.segments.filter(s=>s.selected&&s.after?.note).map(s=>s.after.note),
       ...plan.comments.filter(c=>c.selected).map(c=>c.text)].join('\n');
-    window.ThreadsSourceCut.assertFontText(text,fontId);
+    try {window.ThreadsSourceCut.assertFontText(text,fontId);} catch(error) {
+      if(!plan.style?.allowSystemFallback)throw error;
+      plan.fontFallback='unsupported source glyphs use local system fonts';
+    }
     await Promise.all([document.fonts.load((fontId==='gothic'?800:400)+' 43px '+family(fontId)),
       document.fonts.load(weight+' 88px '+family(fontId)),
       ...(preview?[document.fonts.load('900 26px "Carousel Sans KR"')]:[])]);
@@ -307,135 +310,52 @@
     }
     return result;
   }
-  async function renderCurated(plan,media,{preview=false}={}) {
-    const pages=[],W=1080,pad=65;
-    const fontId=plan.style?.fontId||'sans',font=family(fontId),weight=plan.style?.titleWeight||900;
-    const bodyFont=(fontId==='gothic'?800:400)+' 43px '+font;
-    const used=plan.segments.filter(s=>s.selected),cover=used.find(s=>s.id===plan.cover.segmentId);
-    const imageCache=new Map();for(const item of used.filter(s=>s.kind==='image'))
-      imageCache.set(item.mediaName.toLowerCase(),await loadImage(media.get(item.mediaName.toLowerCase())));
-    const sourceImage=cover.kind==='image'?imageCache.get(cover.mediaName.toLowerCase()):null;
-    const H=plan.sourceType==='saved-media'?1350:
-      sourceImage?U.coverHeight(sourceImage.naturalWidth,sourceImage.naturalHeight):1350;
-    const canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');
-    const finish=()=>{
-      if(preview){ctx.save();ctx.fillStyle='rgba(255,255,255,.9)';ctx.fillRect(W-298,H-65,280,47);
-        ctx.fillStyle='#9f1239';ctx.font='900 26px "Carousel Sans KR"';ctx.textBaseline='middle';
-        ctx.fillText('검수 전 예시 · 게시 금지',W-284,H-40);ctx.restore();}
-      pages.push(canvas.toDataURL('image/png'));
-    };
-    if(cover.kind==='image') {
-      const img=imageCache.get(cover.mediaName.toLowerCase()),scale=Math.max(W/img.naturalWidth,H/img.naturalHeight);
-      ctx.drawImage(img,(W-img.naturalWidth*scale)/2,(H-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
-      if(plan.sourceType==='saved-media') {
-        ctx.fillStyle='rgba(7,12,22,.52)';ctx.fillRect(0,0,W,H);
-        ctx.save();ctx.filter='blur(34px) brightness(.65)';
-        ctx.drawImage(img,(W-img.naturalWidth*scale)/2,(H-img.naturalHeight*scale)/2,img.naturalWidth*scale,img.naturalHeight*scale);
-        ctx.restore();
-        const fit=Math.min((W-64)/img.naturalWidth,720/img.naturalHeight);
-        const iw=Math.round(img.naturalWidth*fit),ih=Math.round(img.naturalHeight*fit);
-        const ix=Math.round((W-iw)/2),iy=Math.round((H-ih)/2+65);
-        ctx.fillStyle='#111827';ctx.fillRect(ix-5,iy-5,iw+10,ih+10);
-        ctx.drawImage(img,ix,iy,iw,ih);
-        const titleShade=ctx.createLinearGradient(0,0,0,360);
-        titleShade.addColorStop(0,'rgba(7,12,22,.92)');titleShade.addColorStop(1,'rgba(7,12,22,0)');
-        ctx.fillStyle=titleShade;ctx.fillRect(0,0,W,360);
-      } else {
-        const shade=ctx.createLinearGradient(0,0,0,H);shade.addColorStop(0,'rgba(0,0,0,.68)');shade.addColorStop(.32,'rgba(0,0,0,.30)');shade.addColorStop(.62,'rgba(0,0,0,.02)');shade.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=shade;ctx.fillRect(0,0,W,H);
-      }
-    } else {
-      ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#dce4ec';ctx.fillRect(42,42,W-84,H-84);
-      ctx.fillStyle='#172237';ctx.font=(fontId==='gothic'?800:400)+' 48px '+font;ctx.textBaseline='top';
-      wrap(ctx,cover.text,W-180).slice(0,14).forEach((line,i)=>ctx.fillText(line,90,540+i*58));
-      ctx.fillStyle='rgba(255,255,255,.93)';ctx.fillRect(48,48,W-96,460);
+  async function layoutFor(plan,media) {
+    const images=new Map(),dimensions={};
+    for(const item of plan.segments.filter(s=>s.selected&&s.kind==='image')) {
+      const name=item.mediaName.toLowerCase();if(images.has(name))continue;
+      const img=await loadImage(media.get(name));images.set(name,img);
+      dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:plan.media?.find(m=>m.name?.toLowerCase()===name)?.sha256};
     }
-    ctx.textBaseline='top';
-    const titleSize=Number(plan.style?.coverSize)||Math.min(88,Math.max(58,Math.floor(H*.105)));
-    ctx.font=weight+' '+titleSize+'px '+font;
-    const heading=[];
-    for(const word of String(plan.coverTitle).trim().split(/\s+/)) {
-      const last=heading.length-1, next=last>=0?heading[last]+' '+word:word;
-      if(last>=0 && ctx.measureText(next).width<=W-240) heading[last]=next;
-      else heading.push(word);
-    }
-    const titleLeft=Number(plan.style?.coverLeft??67);
-    if(heading.length>4 || heading.some(line=>ctx.measureText(line).width>W-titleLeft-40))
-      throw new Error('대문 글씨가 길어 한눈에 들어오지 않습니다. 제목을 짧게 편집하세요.');
-    const lineHeight=Math.round(titleSize*1.18),titleTop=Number(plan.style?.coverTop??Math.max(36,Math.round(H*.065)));
-    if(titleTop+heading.length*lineHeight>H-70) throw new Error('첫 장 글씨가 사진 밖으로 나갑니다. 제목을 줄이거나 위쪽 여백을 낮추세요.');
-    ctx.lineWidth=3;ctx.lineJoin='round';
-    heading.forEach((line,i)=>{const x=titleLeft,y=titleTop+i*lineHeight;ctx.strokeStyle=cover.kind==='image'?'#111827':'#fff';ctx.fillStyle=cover.kind==='image'?'#fff':'#172237';ctx.strokeText(line,x,y);ctx.fillText(line,x,y);});finish();
-    if(plan.sourceType==='saved-media' && used.every(part=>part.kind==='image' && !part.after?.gap && !part.after?.note?.trim()) &&
-      !plan.comments.some(comment=>comment.selected)) {
-      const slotHeight=610,marginTop=30,gap=18;
-      for(let i=0;i<used.length;i+=2) {
-        ctx.fillStyle='#edf0f4';ctx.fillRect(0,0,W,H);
-        for(let j=0;j<2 && i+j<used.length;j++) {
-          const img=imageCache.get(used[i+j].mediaName.toLowerCase());
-          const fit=Math.min((W-56)/img.naturalWidth,slotHeight/img.naturalHeight);
-          const iw=Math.round(img.naturalWidth*fit),ih=Math.round(img.naturalHeight*fit);
-          const x=Math.round((W-iw)/2),y=marginTop+j*(slotHeight+gap)+Math.round((slotHeight-ih)/2);
-          ctx.fillStyle='#d0d7e2';ctx.fillRect(x-3,y-3,iw+6,ih+6);
-          ctx.drawImage(img,x,y,iw,ih);
-        }
-        finish();
-      }
-      return pages.map((url,i)=>({name:'rendered/slide-'+String(i+1).padStart(3,'0')+'.png',
-        data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))}));
-    }
-    function begin() {ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);ctx.fillStyle='#171c26';ctx.font=bodyFont;ctx.textBaseline='top';}
-    begin();let y=pad,has=false;
-    function next() {if(has)finish();begin();y=pad;has=false;}
-    for(const part of used) {
-      if(part.kind==='text') {
-        ctx.font=bodyFont;
-        for(const line of wrap(ctx,part.text,W-2*pad)) {
-          if(y+61>H-pad) next();
-          if(line)ctx.fillText(line,pad,y);
-          y+=61;has=true;
-        }
-        y+=24;
-      } else {
-        const img=imageCache.get(part.mediaName.toLowerCase());
-        if(has)next();
-        const scale=Math.min(W/img.naturalWidth,H/img.naturalHeight);
-        const w=Math.round(img.naturalWidth*scale),h=Math.round(img.naturalHeight*scale);
-        if(plan.sourceType==='saved-media') {
-          ctx.fillStyle='#edf0f4';ctx.fillRect(0,0,W,H);
-          ctx.fillStyle='#d3d9e2';ctx.fillRect((W-w)/2-3,(H-h)/2-3,w+6,h+6);
-        }
-        ctx.drawImage(img,(W-w)/2,(H-h)/2,w,h);finish();begin();y=pad;has=false;
-      }
-      const extra=part.after||{};
-      if(extra.gap) {if(y+Number(extra.gap)>H-pad)next();y+=Number(extra.gap);if(part.kind==='text')has=true;}
-      if(extra.note?.trim()) {
-        ctx.font=bodyFont;
-        for(const line of wrap(ctx,extra.note,W-2*pad-52)) {
-          if(y+62>H-pad)next();
-          ctx.fillStyle='#2470b6';if(line)ctx.fillText(line,pad+26,y);y+=62;has=true;
-        }
-        ctx.fillStyle='#171c26';y+=32;
-      }
-      if(pages.length>60) throw new Error('본문이 너무 길어 원문 ZIP을 나눠야 합니다.');
-    }
-    if(has)finish();
-    const comments=plan.comments.filter(c=>c.selected);
-    if(comments.length) {begin();y=pad;has=false;
-      for(const c of comments) {
-        ctx.font=weight+' 39px '+font;
-        for(const line of wrap(ctx,c.text,W-2*pad)) {
-          if(y+60>H-pad) next();
-          ctx.fillText(line,pad,y);y+=60;has=true;
-        }y+=75;
-      }
-      if(has)finish();
-    }
-    return pages.map((url,i)=>({name:'rendered/slide-'+String(i+1).padStart(3,'0')+'.png',
-      data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))}));
+    const ctx=document.createElement('canvas').getContext('2d'),font=family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback);
+    const layout=window.ThreadsPagePlan.compile(plan,dimensions,(text,size)=>{ctx.font='900 '+size+'px '+font;return ctx.measureText(text).width;});
+    return {layout,images,font};
   }
-  async function renderBundle(file,{preview=false}={}) {
+  async function planBundle(file,{preview=false}={}) {
+    const {plan,media}=await unpack(file,{preview}),{layout}=await layoutFor(plan,media);
+    layout.bundleSha256=await hash(await file.arrayBuffer());return layout;
+  }
+  async function renderCurated(plan,media,{preview=false,productionPlan=null}={}) {
+    const prepared=await layoutFor(plan,media),layout=productionPlan||prepared.layout;
+    const {images,font}=prepared;
+    if(layout.ruleVersion!==window.ThreadsPagePlan.VERSION)throw new Error('제작 계획의 기준 버전이 오래되었습니다. 다시 계획하세요.');
+    plan.productionPlan=layout;
+    const output=[];
+    for(const page of layout.pages) {
+      const canvas=document.createElement('canvas');canvas.width=page.width;canvas.height=page.height;
+      const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,page.width,page.height);
+      if(page.role==='cover'){ctx.fillStyle='#111827';ctx.fillRect(0,page.titleBoxY,page.width,page.height-page.titleBoxY);}
+      ctx.textBaseline='top';
+      for(const op of page.operations) {
+        if(op.kind==='image'){
+          const img=images.get(op.name);
+          if(op.sourceHeight)ctx.drawImage(img,0,op.sourceY,img.naturalWidth,op.sourceHeight,op.x,op.y,op.width,op.height);
+          else ctx.drawImage(img,op.x,op.y,op.width,op.height);
+        }else{
+          ctx.font=op.weight+' '+op.size+'px '+font;ctx.fillStyle=op.color||'#171c26';ctx.fillText(op.text,op.x,op.y);
+        }
+      }
+      if(preview){ctx.fillStyle='#9f1239';ctx.font='900 20px "Carousel Sans KR"';ctx.textAlign='right';
+        ctx.fillText('검수 전 · 게시 금지',page.width-24,page.height-32);}
+      const url=canvas.toDataURL('image/png');
+      output.push({name:'rendered/slide-'+String(page.number).padStart(3,'0')+'.png',data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))});
+    }
+    return output;
+  }
+  async function renderBundle(file,{preview=false,productionPlan=null}={}) {
     const {plan,media}=await unpack(file,{preview});
-    const pages=await renderCurated(plan,media,{preview});
+    if(productionPlan&&productionPlan.bundleSha256!==await hash(await file.arrayBuffer()))throw new Error('제작 계획과 원문 ZIP이 다릅니다.');
+    const pages=await renderCurated(plan,media,{preview,productionPlan});
     const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:await hash(await file.arrayBuffer()),
       sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,
@@ -443,7 +363,7 @@
         .map(s=>({afterSegment:s.id,note:s.after.note,gap:s.after.gap||0})),
       selectedSegments:plan.segments.filter(s=>s.selected).map(s=>({id:s.id,location:s.location,kind:s.kind})),
       selectedComments:plan.comments.filter(c=>c.selected).map(c=>({id:c.id,location:c.location})),
-      renderedPages:pages.length,publicationAllowed:false,previewOnly:preview};
+      productionPlan:plan.productionPlan,renderedPages:pages.length,fontFallback:plan.fontFallback||null,publicationAllowed:false,previewOnly:preview};
     return {pages:pages.length,images:pages,zip:Z.zip([...pages,{name:'manifest.json',data:bytes(JSON.stringify(manifest,null,2)+'\n')},
       {name:'source-bundle.zip',data:new Uint8Array(await file.arrayBuffer())}]),title:plan.coverTitle,plan};
   }
@@ -550,5 +470,5 @@
     $(id).addEventListener('change',async e=>{
       const file=e.target.files[0];if(file)await makeImages(file,preview);e.target.value='';
     });
-  window.ThreadsSourceBatch=Object.freeze({prepare,loadSavedFolder,sourceZip,renderBundle,review:renderReview});
+  window.ThreadsSourceBatch=Object.freeze({prepare,loadSavedFolder,sourceZip,planBundle,renderBundle,review:renderReview});
 })();

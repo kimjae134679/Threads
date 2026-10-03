@@ -7,9 +7,9 @@ const { captureUrl, capturePage, WIDTH } = require('./capture.cjs');
 const { publicAddress } = require('./network.cjs');
 const { createReferenceStore } = require('./reference-store.cjs');
 const { loadSavedMaterials } = require('./saved-materials.cjs');
-const { runFolderBatch } = require('./folder-batch.cjs');
+const { registerFolderBatch } = require('./batch-service.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
-let editor, bundleWindow, activeCapture = null, activeBatch = null;
+let editor, bundleWindow, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
 const bundleUrl = 'cut-editor://app/source-batch.html';
 const preferences = { nodeIntegration: false, contextIsolation: true, sandbox: true, webSecurity: true, allowRunningInsecureContent: false };
@@ -23,7 +23,7 @@ function denyPermissions(ses) {
 async function start() {
   const root = app.isPackaged ? path.join(process.resourcesPath, 'editor') : path.join(__dirname, '..', 'app');
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
-  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
+  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-automation.js', 'source-cut-automation.css', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-page-plan.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
   protocol.handle('cut-editor', async (request) => {
     const url = new URL(request.url), name = url.pathname.slice(1);
     if (url.host !== 'app' || !allowed.has(name) || request.method !== 'GET') return new Response('Not found', { status: 404 });
@@ -63,7 +63,7 @@ async function start() {
   let lastSavedFolder = '';
   ipcMain.handle('source-cut:open-saved-materials', async (event) => {
     trusted(event);
-    const desktopInput = path.join(app.getPath('desktop'), 'Threads Cut Editor 자료', '02_프로그램 입력');
+    const desktopInput = path.join(app.getPath('desktop'), 'Threads Cut Editor 자료', '01_후보 기록');
     let defaultPath = lastSavedFolder || desktopInput;
     if (!lastSavedFolder) {
       const entries = await fs.readdir(desktopInput, { withFileTypes:true }).catch(() => []);
@@ -79,78 +79,7 @@ async function start() {
     lastSavedFolder = picked.filePaths[0];
     return result;
   });
-  ipcMain.handle('source-cut:run-folder-batch', async event => {
-    trusted(event);
-    if (activeBatch) throw new Error('이미 폴더 자동 제작을 진행 중입니다.');
-    const materialRoot = path.join(app.getPath('desktop'), 'Threads Cut Editor 자료');
-    const catalog = path.join(materialRoot, '01_후보 기록');
-    const ready = path.join(materialRoot, '02_프로그램 입력');
-    const defaultPath = await fs.stat(catalog).then(() => catalog).catch(() => ready);
-    const picked = await dialog.showOpenDialog(editor, {
-      title:'전체 후보를 자동 처리할 폴더 선택', defaultPath, properties:['openDirectory'] });
-    if (picked.canceled || !picked.filePaths[0]) return { canceled:true };
-    const output = path.join(materialRoot, '06_자동 제작 결과');
-    const state = { cancelled:false, window:null };
-    activeBatch = state;
-    try {
-      const render = async job => {
-        if (state.cancelled) throw new Error('사용자가 작업을 중지했습니다.');
-        if (!state.window || state.window.isDestroyed()) {
-          state.window = new BrowserWindow({ show:false, webPreferences:{ ...preferences } });
-          state.window.webContents.setWindowOpenHandler(() => ({ action:'deny' }));
-          state.window.webContents.on('will-navigate', navigation => navigation.preventDefault());
-          await state.window.loadURL(bundleUrl);
-        }
-        const data = JSON.stringify(job);
-        const result = await state.window.webContents.executeJavaScript(`(async()=>{
-          const input=${data}, prefix='candidate/';
-          const source=new File([input.sourceText],input.sourceName,{type:'text/plain'});
-          Object.defineProperty(source,'webkitRelativePath',{value:prefix+input.sourceName});
-          const all=[source];
-          if(input.intakeText) {
-            const intake=new File([input.intakeText],'intake-manifest.json',{type:'application/json'});
-            Object.defineProperty(intake,'webkitRelativePath',{value:prefix+'intake-manifest.json'});
-            all.push(intake);
-          }
-          for(const file of input.files) {
-            const bytes=Uint8Array.from(atob(file.data),c=>c.charCodeAt(0));
-            const image=new File([bytes],file.name,{type:file.type});
-            Object.defineProperty(image,'webkitRelativePath',{value:prefix+input.imageDirectory+'/'+file.name});
-            all.push(image);
-          }
-          const item=await window.ThreadsSourceBatch.loadSavedFolder(all);
-          document.getElementById('coverTitle').value=Array.from(input.title).slice(0,28).join('').trim();
-          document.getElementById('coverSize').value='64';
-          document.getElementById('coverTop').value='48';
-          document.getElementById('coverLeft').value='70';
-          const {bundle}=await window.ThreadsSourceBatch.sourceZip(item);
-          const preview=await window.ThreadsSourceBatch.renderBundle(new File([bundle],'source.zip'),{preview:true});
-          const buffer=new Uint8Array(await preview.zip.arrayBuffer());
-          const encodeBytes=bytes=>{let raw='';for(let i=0;i<bytes.length;i+=16384)raw+=String.fromCharCode(...bytes.subarray(i,i+16384));return btoa(raw);};
-          return {pages:preview.pages,zipBase64:encodeBytes(buffer),
-            images:preview.images.map(image=>({name:image.name,data:encodeBytes(image.data)}))};
-        })()`);
-        if (!result.pages || !result.zipBase64 || result.images?.length !== result.pages) throw new Error('검수용 이미지를 만들지 못했습니다.');
-        return {zip:Buffer.from(result.zipBase64, 'base64'),
-          images:result.images.map(image=>({name:image.name,data:Buffer.from(image.data,'base64')}))};
-      };
-      return await runFolderBatch({ folder:picked.filePaths[0], output, render,
-        cancelled:() => state.cancelled,
-        onProgress:value => { if (editor && !editor.isDestroyed())
-          editor.webContents.send('source-cut:batch-progress', value); } });
-    } finally {
-      if (state.window && !state.window.isDestroyed()) state.window.destroy();
-      activeBatch = null;
-    }
-  });
-  ipcMain.handle('source-cut:cancel-folder-batch', event => { trusted(event); if(activeBatch) activeBatch.cancelled=true; });
-  ipcMain.handle('source-cut:open-batch-results', async event => {
-    trusted(event);
-    const output=path.join(app.getPath('desktop'), 'Threads Cut Editor 자료', '06_자동 제작 결과');
-    await fs.mkdir(output, { recursive:true });
-    const error=await shell.openPath(output);
-    if(error) throw new Error(error);
-  });
+  registerFolderBatch({app,getEditor:()=>editor,trusted,preferences,bundleUrl});
   ipcMain.handle('source-cut:cancel', (event) => { trusted(event); if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   ipcMain.handle('source-cut:capture', async (event, input) => {
     trusted(event);

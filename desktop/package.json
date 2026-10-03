@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.2.9",
+  "version": "0.3.1",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -28,7 +28,13 @@
       "package.json",
       "reference-store.cjs",
       "saved-materials.cjs",
-      "folder-batch.cjs"
+      "folder-batch.cjs",
+      "source-access.cjs",
+      "public-source.cjs",
+      "batch-input.cjs",
+      "batch-service.cjs",
+      "batch-catalog.cjs",
+      "atomic-file.cjs"
     ],
     "extraResources": [
       {
@@ -44,6 +50,7 @@
           "source-batch*.css",
           "source-batch*.js",
           "source-curation.js",
+          "source-page-plan.js",
           "source-bundle-zip.js",
           "source-workflow.js",
           "viral-model.js"

@@ -1,106 +1,63 @@
-# 2026-09-27 — 기존 후보 프로그램 입력 정리 및 AAA 레퍼런스 구성
+# 다음 작업 인수인계
 
-- 기존 작업 대기열 1,583건을 원문 URL 기준으로 1,084개 프로그램 입력 폴더로 정규화했다. 1,081개는 기존 후보 URL/개별 기록, 3개는 기존 번들에만 있던 기록이다. 56개 후보는 정확한 개별 공개 URL을 찾지 못해 별도 미확인 상태로 남겼다.
-- 출력: `data/runtime/program_inputs/` (로컬 전용, Git 미추적). Desktop의 `Threads Cut Editor 자료/02_프로그램 입력`은 해당 폴더를 가리킨다. 각 건은 `candidate.md` + `content.txt` + `comments.txt` + `manifest.json`로 구성되고, 확인된 실제 원본 미디어만 `media/`에 둔다.
-- 기존 Jev 평가 953건, 기존 정리 번들 21개를 출처/해시와 함께 연결했다. TheQoo 원본 이미지 8장은 원래 패키지의 SHA-256·바이트 수와 대조한 뒤 복사했다. AAA 스타일 레퍼런스 22장은 Desktop 자료 폴더에 원본 ZIP·원본 이미지·목록 CSV·한눈에보기·분석 노트로 정리했다. 같은 이미지 22장이 든 중복 ZIP은 삭제하지 않고 `99_중복 원본`에 보관했다.
-- 모든 매니페스트의 `publicationAllowed=false`. 기존 요약/JeV 결과는 원문 본문이나 댓글로 승격하지 않았다. `content.txt`는 프로그램의 원문 가져오기 파일이 아니다. 앱에서 한 건씩 수집한 뒤 실제 원문을 대조해야 한다.
-- 확인: 생성 폴더 1,084개와 이미지 해시 8개 검증, `npm run check`에서 문법 검사 171개 및 전체 56 테스트 suite 통과. UI 변경은 없으며 프로그램 입력 정리 스크립트와 안내를 저장소 변경으로 준비했다.
+업데이트: 2026-10-04 KST. 현재 저장소와 실제 PC 상태를 먼저 확인합니다. 과거 작업 과정은 Git 이력에 있습니다.
 
----
+## 사용자 목표와 현재 범위
 
-# 2026-09-27 — 원문 선별 프로그램 0.2.4 실사용 흐름
+바탕화면 자료를 사람이 일일이 편집하지 않아도 폴더 한 번으로 처리하는 프로그램입니다. 저장된 원문을 먼저 읽고, 기존 공개 주소의 누락 자료를 보완하며, 제작 전에 제목·본문·이미지·댓글의 장별 배치를 기록합니다. 레퍼런스와 실제 결과의 가독성·여백·중복·비율을 기준으로 개선합니다. 원본 자료는 유지하고 이전 파생 결과·예시·구버전 설치파일을 정리했습니다.
 
-- 작업 기준: PR #4 `codex/rebuild-source-curation-20260927`, 구현 커밋 `f82485a`. 무관한 `Threads` 메인 작업 폴더의 미커밋 변경은 건드리지 않고 별도 worktree에서 수정했다.
-- 자동 초안: 신뢰 가능한 게시글 본문 영역의 연속 글자를 문단으로 묶고, 원문 내 이미지 순서와 미확보 파일을 표시한다. BEST/반응 수가 보이는 실제 댓글 최대 3개를 추천한다. 제목은 원문 제목을 기반으로 시작한다. 자동 초안은 검수 완료를 뜻하지 않으며 대조 체크는 사람이 한다.
-- 사용 흐름: 기존 후보는 `이 글만 수집`으로 한 건씩 HTML/미디어를 확보할 수 있다. 원문 선별 화면의 현재 선택에서 곧바로 검수 전 미리보기 또는 원문 ZIP 저장·이미지 제작까지 진행한다. ZIP 재선택은 나중에 수정할 때만 필요하다.
-- 검증: `npm run check`에서 JS 169개 문법 검사와 55개 테스트 suite 통과. Electron 렌더러에서 메뉴 문구 제외, 본문·이미지 순서, 근거 있는 댓글, 검수 전 최종 출력 차단을 확인했다. 저장소의 기존 실제 원문 이미지 8장으로 검수 전 예시 9장 ZIP을 만들고 첫 표지를 확인했다.
-- Windows: 0.2.4 x64 ZIP을 빌드하고 `%LOCALAPPDATA%\Programs\ThreadsCutEditor\app-0.2.4`에 설치했다. 바탕화면에 `Threads Cut Editor 0.2.4` 바로가기, `Threads-Cut-Editor-0.2.4-Windows-x64.zip`, `Threads-real-source-review-preview.zip`을 제공했다. 배포 ZIP SHA-256: `63D3BA913BCEF335B22E3C92E665CF606580FF73D7E4E285591CD7717C2DC93B`. 0.2.3은 보존했다.
-- 확인 범위: 기존 1,583건을 실제 원문 대조·변환 완료한 것으로 기록하지 않는다. 이번 예시는 실자료지만 검수 전 상태이며 권리·개인정보·게시 승인 및 실제 게시는 없었다. 다음 작업은 실제 후보 한 건을 선택해 원문/이미지/댓글을 육안 대조하고 04 검수로 전달하는 것이다.
+새 소재의 무분별한 발견과 실제 게시를 완료로 취급하지 않습니다. Instagram 레퍼런스 7개 계정에서 각 6건, 총 42게시물·원본 이미지 200파일(서로 다른 SHA 193개)을 확보·분석했습니다. 40게시물은 전체 장 확보, humor_ssul 2건은 영상 원본/긴 사연 일부 장이 빠진 부분 자료입니다. 관찰용 영상 화면 1장은 원본 수에서 제외합니다. humor_saul은 일반 프로필 페이지 사용 불가, 사용자 브라우저의 나머지 1개 탭 주소는 미전달입니다. [레퍼런스 기획](../docs/INSTAGRAM_REFERENCE_GUIDE.md)과 제안 규칙 reference-production-rules.json에 확인 근거·형식 선택·수집 단계 계획·검수 기준을 기록했습니다. 사진/민트/흰 바탕/설명형 템플릿 선택과 Instagram 일정 비율 조판은 추가 구현 명세이며 현재 앱이 자동 적용한 것으로 표현하지 않습니다.
 
----
+## 실행과 저장 위치
 
-# 2026-09-27 — 원문 선별 ZIP과 게시 이미지 제작 재설계
+- 코드: `C:\KJ\Github\Threads`, main. 작업 시작 기준 SHA: `02564d29d2fdd2e3ecfd5cdfb9583c09e4d1b085`.
+- 실행: 바탕화면 `Threads Cut Editor.lnk` → 자료 폴더 `03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.3.1-Windows-x64\Threads Cut Editor.exe`.
+- 원문 입력: `C:\Users\user\Desktop\Threads Cut Editor 자료\01_후보 기록`.
+- 같은 입력의 실제 저장 위치: `C:\Users\user\source\repos\Threads-program-inputs\data\runtime\program_inputs`. 바탕화면 연결을 삭제하면서 실제 원본까지 지우지 않습니다.
+- 결과: 자료 폴더 `06_자동 제작 결과\자료 목록.html`과 `현재 결과\제목__ID`.
+- AAA: 자료 폴더 `01_스타일 레퍼런스\AAA`의 원본 ZIP과 22장 이미지.
+- 설치 위치 예외: 기존 사용자 바탕화면 작업 동선과 바로가기를 유지하기 위해 `C:\Program Files\_My\AI`로 일괄 이동하지 않았습니다. 새 설치 도구는 없습니다.
+- 데이터·원문·참조 이미지·로그인 정보는 공개 GitHub에 커밋하지 않습니다.
 
-사용자 피드백: 기존 HTML 페이지 전체 텍스트를 본문으로 쓸 수 없고, 검은 단색 제목 표지는 목표 결과물이 아님. 제목/본문 글·이미지 및 위치/실제 댓글을 원문에서 선별하여 ZIP으로 묶고 그 ZIP을 읽어 제작. `docs/SOURCE_BUNDLE_GUIDE.md`가 선별 근거/파일 형식의 기준.
+## 실제 프로그램 동작
 
-현재 작업 브랜치 `codex/rebuild-source-curation-20260927` (main `2165279`에서 생성). 기존 작업 폴더의 무관한 PNG 수정은 건드리지 않고 별도 worktree에서 작업. `app/source-batch.html/js`, `source-workflow.js`, `source-workflow.mjs`, `app/source-curation.js`, `app/source-bundle-zip.js`, `docs/SOURCE_BATCH_PIPELINE.md`를 재설계 중. HTML 조각은 미선택으로 시작, 직접 확인한 제목/본문/이미지 위치/댓글과 첫 장의 실제 글/이미지 배경을 ZIP에 저장. 확인되지 않은 ZIP은 PNG 제작 및 converted 표시 불가. 실동작 검증·PR은 완료 후 기록.
+`전체 자동 제작`은 기본 입력 폴더를 직접 사용합니다. 다른 자료만 별도 폴더를 선택합니다. 저장 HTML/명시적 원문 TXT·JSON/연결 이미지/기존 Source Package를 읽습니다. 요약 파일은 원문으로 쓰지 않습니다. 공개 보완은 더쿠·인벤·네이트판의 기존 주소에 한정하며 블라인드·DC·폐쇄형 카페는 별도 접근/원문 확보 상태로 남깁니다.
 
----
+후보별 `자료 안내.txt`, `제작 계획.md`, `작업 정보/`, `참고 기록/`, `source/`를 구분합니다. 앱과 HTML 목록에서 제목·사유·다음 조치·제작일·기준 버전·검수·게시 상태를 확인합니다. 확인된 게시 URL·시각이 있는 항목은 재제작에서 제외하며 증거가 없으면 게시 여부는 미확인입니다.
 
-# 2026-09-27 — 원문 보존·일괄 변환 작업
+제작 기준 `2026-10-04.1`: 폭 1080, 내용에 따라 높이 608~1350, 안전 여백 64, 제목 64~84px, 본문 46px. 사진 비율 유지, 긴 원본 전체 분할, 표지와 본문의 불필요한 반복 제거, 표시 URL·완전 중복·구분선 제외 근거 보관. 원제·본문·URL 원본은 원문 ZIP에 보존합니다. 제작 계획을 PNG보다 먼저 저장합니다.
 
-## 자동 목록·전체 처리 연결
+원문·기준·원문 ZIP·각 PNG 해시가 같으면 건너뜁니다. 누락 PNG/변경 원문은 재제작합니다. 중지·재실행과 동시 실행 잠금을 제공합니다. Windows 일시적 파일 잠금은 고유 임시파일과 제한된 재시도로 대응하며 지속 오류는 실패로 남깁니다.
 
-- `/app/source-batch.html`이 기존 작업 대기열 1,583건의 수집/변환/차단 상태를 자동 표시한다. `전체 자동 처리`는 CLI 수집을 실행하고 확보한 원문을 브라우저에서 순차 변환해 로컬 `data/runtime/source_pipeline/results/`에 ZIP을 저장한다. 결과 폴더 열기·중지·재시작 후 상태 복원을 제공한다.
-- 확보한 HTML은 공백·줄바꿈과 댓글·이미지의 원문 대조 전이면 `needs_verbatim_check` 등으로 남긴다. 원문 없음·404/410·심한 소재는 자동 완료로 승격하지 않는다. 사용자 PC Chrome/Edge에서 대량 실동작 확인이 필요하다.
+## 2026-10-04 실제 확인 결과
 
-사용자 최신 지시: 제목과 본문 원문을 공백·줄바꿈까지 그대로, 본문 이미지 원래 위치·원본 파일, 인기 댓글만 확보하고 자동 이미지 변환한다. 변환 완료를 표시하며 많은 건을 처리한다. 과거 후보/Jev/임시 작업물을 전부 정리한다. 추가 소재 발견은 중단하고 기존 자료부터 처리한다.
+| 상태 | 건수 |
+|---|---:|
+| 전체 검사 | 1084 |
+| 제작 결과 / 재실행 건너뜀 | 417 |
+| 원문 필요 | 154 |
+| 접근 확인 필요 | 422 |
+| 정확한 주소 필요 | 56 |
+| 이미지 필요 | 4 |
+| 원문 선별 필요 | 12 |
+| 원문 없음/접속 불가 | 14 |
+| 심한 소재 제외 | 5 |
+| 처리 실패 | 0 |
+| 실제 게시 확인 | 0 |
 
-- 새 로컬 입력 화면 /app/source-batch.html: 저장된 HTML 또는 명시적인 원문 TXT/JSON과 같은 폴더의 이미지를 선택해 PNG와 ZIP을 순차 생성한다. 인기 댓글은 공개 좋아요 수 또는 best 표기가 있을 때만 고른다.
-- TXT 본문 원문은 공백·줄바꿈을 보관한다. HTML DOM 텍스트는 화면과 다를 수 있어 needs_verbatim_check로 표시한다. 없는 이미지는 needs_media. converted는 정확한 원문 TXT/JSON과 자산 확인 및 PNG 생성 후에만.
-- 기존 전 경로를 data/_system/source-material-inventory.json에 분류: 후보 MD 1570, Jev JSON 953, 묶음 13, 정리 폴더 12+9 (중복 ID 3개, 실제 고유 ID 18), 임시 제작 폴더 35, source package 1, Discovery 보조 후보 13, raw batch 파일 31, demo/meta 5. 작업 대기열 1583개 중 Jev 연결 953, 명시적 정리 폴더 연결 6/21, 변환 완료 0. 옛 handoff의 19 unique와 불일치. 기존 파일 삭제·이동·C/A/P 승격 없음.
-- scripts/acquire-existing-sources.mjs --all 은 기존 후보의 공개 URL에서 HTML 원본 바이트와 연결 이미지 후보를 순차 보관한다. Windows 실측 앞 20건: HTML 저장 11, 정확한 URL 없음 7, 원문 HTTP 410·404 차단 2. 저장된 HTML은 본문/댓글/이미지 정확성 검증 전이므로 변환 완료 0이다. 원문·이미지는 로컬 runtime와 ZIP에만 보관한다.
-- PR #1·#2·#3 및 최신 편집기 화면 브랜치를 main에 통합하고 병합된 원격 브랜치를 정리했다. Windows Node 24에서 53개 테스트, GitHub Actions check 성공. 심한 소재는 변환 전 excluded_severe로 제외하며 가벼운 논쟁은 남긴다. 남은 검증은 실제 원문 대조, 미디어 육안 검수, Chrome/Edge 대량 ZIP 저장이다. docs/SOURCE_BATCH_PIPELINE.md.
+417건의 검수 전 PNG는 2,886장입니다. 모든 결과의 ZIP·PNG 해시, 기준 버전, 계획과 실제 PNG 크기, 안전 여백, 표지 겹침, URL 표시를 검사해 문제 0건을 확인했습니다. 재실행은 새 제작 0건·417건 건너뜀·오류 0건이었습니다. 일부 실제 결과를 육안 확인했으며 2,886장 전체를 사람이 읽었다는 뜻은 아닙니다.
 
----
+검증: `npm run check`의 61개 suite와 JS 문법 검사, Electron 자동 제작 UI smoke, 원문 선별 smoke, 실제 자료 일괄 처리 및 재실행. 설치된 0.3.1의 ASAR 주요 모듈과 렌더러 파일은 검증 소스와 바이트 일치하며 실행 프로세스를 확인했습니다. GitHub CI 상태는 해당 push의 Actions에서 별도 확인합니다.
 
-# NEXT RUN HANDOFF
+## 정리와 다음 확인
 
-## 🔴 LATEST USER OVERRIDE — 2026-09-24
-- Do not collect any new material for now. No new raw leads or retained candidates until the existing discovery corpus is fully normalized.
-- Current job is only to inventory and modify/merge all existing discovery TXT/Markdown/legacy candidates/bundles.
-- Use existing Jev results where present and convert candidates into program-ready canonical bundles.
-- Canonical target: `candidate.md` + `content.txt` + `comments.txt` + `manifest.json` + `media/` only when actual source media can be acquired.
-- `content.txt`: `[TITLE]`, `[BODY_SEQUENCE]`, `[CUT_PLAN]`, `[COMMENTS_TO_USE]`, `[PROGRAM_ASSEMBLY_ORDER]`, `[SOURCE_STATUS]`.
-- Search/web access only for re-verification/evidence filling of an already-existing candidate. Never use it to discover a new candidate during this phase.
-- Do not infer missing body/comments/media. Record exact blockers.
-- Scope remains `01_DISCOVERY`; A1/P1/publishing forbidden; `publicationAllowed=false`.
+- 예전 평면 결과 416폴더, 이전 검수/예시 2폴더, 구버전 설치파일을 정리했습니다. 후보 원본 1,084건은 유지했습니다.
+- 과거 요약 3,252파일은 후보별 참고 기록으로 이동했습니다. 예전 루트 메타 2,982파일·상태 안내 1,084파일은 최신 기록 확인 후 제거했습니다.
+- 수동 입력의 중복 이미지 8장은 원본 SHA 비교 후 제거했습니다. 최신 결과·원문·제작 계획은 현재 경로에만 남깁니다.
+- 자료가 없는 667건을 완료로 승격하지 않습니다. 접근 제한을 우회하거나 없는 내용을 만들지 않습니다.
+- 검수 전 결과는 `publicationAllowed=false`. 권리·개인정보·사실 확인 및 실제 게시 승인과 구분합니다.
+- 다음 작업자는 레퍼런스 기획의 확인된 샘플과 후보의 production-plan을 비교하여 개별 실패 사례를 고칩니다. 기준을 바꾸면 버전을 갱신하고 실제 대표 결과를 다시 확인합니다.
 
-## 2026-09-25 00:16 KST — Existing-corpus normalization
-- New discovery: **0**.
-- Rebuilt/filled existing Jev [0001] candidate `data/candidates/260916_C0_A0_P0_25살연애불가능할까.md` as canonical `01_DISCOVERY/data/candidate_bundles/blind-cn6hnlfx/`.
-- Public Blind source reverified: full visible body; page displays 43 comments; 6 actually-read comments selected; body-content media observed: 0.
-- BODY_SEQUENCE 7 / CUT_PLAN 7 / PROGRAM_ASSEMBLY_ORDER 1.
-- Current observations kept separately: main display views 243/comments 43; same-page recommendation card views 175/likes 1. No metric normalization/inference.
-- `publicationAllowed=false`; no downstream work.
-- This ID was already present in the prior-normalized list, so cumulative unique canonical count remains **19** rather than double-counting it.
-- Existing Jev batch snapshot: 1,273 candidates; deterministic current full-corpus denominator reconciliation remains pending.
+상세: [Windows 실행](../docs/SOURCE_CUT_DESKTOP.md), [커뮤니티 입력](../docs/COMMUNITY_SOURCE_INPUT.md), [원문 ZIP 형식](../docs/SOURCE_BUNDLE_GUIDE.md).
 
-## Progress summary
-- 전체 기존 대상 수: final deterministic denominator unresolved; Jev snapshot 1,273.
-- 이번 실행 수정·통합 수: 1.
-- 누적 완료 수: 19 unique canonical IDs tracked (this run repaired an already-counted ID).
-- 남은 수: final denominator unresolved; Jev-snapshot arithmetic alone is not a proven all-corpus remaining count.
-- Jev 통합 수: 1 existing Jev item repaired/consumed this run.
-- 새 canonical bundle 수: 0 unique (bundle files were missing/incomplete and were filled for an already-counted ID).
-- 본문·댓글·이미지: body verified / 6 selected from publicly visible comments / body media 0 observed.
-- CUT_PLAN·PROGRAM_ASSEMBLY_ORDER: 7 / 1.
-- blocker: final all-existing inventory denominator unresolved; full 43-comment set not exhaustively read; rights/privacy/defamation/human review incomplete.
-
-## Prior normalized bundles
-- `blind-cn6hnlfx`
-- `blind-ftu7d1tv`
-- `blind-g1gb3ari`
-- `inven-2727679`
-- `inven-3290621`
-- `blind-L5aQCt8c`
-- `inven-index-mz-9months`
-- `inven-4061413`
-- `inven-2727900`
-- `inven-2424028`
-- `theqoo-425048627`
-- `theqoo-3240588755`
-- `theqoo-1913908638`
-- `theqoo-1924192134`
-- `theqoo-2280791561`
-- `theqoo-263633450`
-- `natepann-373653563`
-- `theqoo-2747645645`
-
-## Sequential candidate automation
-- Continue another already-existing raw/Jev/candidate file only. No new-material discovery.
-- Prefer deterministic inventory reconciliation alongside conversion so the true denominator can be reported without guessing.
-
-## TEMP TEST ONLY conversion lane
-- Existing production/test state remains untouched. This automation must not enter `03_PRODUCTION`.
-- REAL publishing/metrics remains disabled. Only `04_REVIEW_PUBLISH` may publish after human rights/privacy/safety approval.
+최종 배포 ZIP SHA-256: `378fef93f282adbf5f6e00c273833f73459bf3b1a307da3eb25f1dad1865d611`. 저장소 dist에는 최종 ZIP만 유지하고 작업 프로필·중간 빌드·예전 ZIP·probe를 제거했습니다. 02의 잔여 안내/바로가기 폴더도 제거했습니다. 99의 ZIP은 AAA와 22개 payload SHA가 완전히 일치하는 것을 확인한 뒤 중복 폴더를 제거했으며 AAA 원본은 유지했습니다.

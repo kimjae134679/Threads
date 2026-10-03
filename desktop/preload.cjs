@@ -6,7 +6,10 @@ contextBridge.exposeInMainWorld('ThreadsCutDesktop', Object.freeze({
   openReferences: () => ipcRenderer.invoke('source-cut:open-references'),
   openSourceBundle: () => ipcRenderer.invoke('source-cut:open-bundle'),
   openSavedMaterials: () => ipcRenderer.invoke('source-cut:open-saved-materials'),
-  runFolderBatch: () => ipcRenderer.invoke('source-cut:run-folder-batch'),
+  runFolderBatch: (options) => ipcRenderer.invoke('source-cut:run-folder-batch', options),
+  batchReport: () => ipcRenderer.invoke('source-cut:batch-report'),
+  openBatchEntry: (id,kind) => ipcRenderer.invoke('source-cut:open-batch-entry',id,kind),
+  batchPreview: (id) => ipcRenderer.invoke('source-cut:batch-preview',id),
   cancelFolderBatch: () => ipcRenderer.invoke('source-cut:cancel-folder-batch'),
   openBatchResults: () => ipcRenderer.invoke('source-cut:open-batch-results'),
   onBatchProgress: (handler) => {

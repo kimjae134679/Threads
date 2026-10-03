@@ -27,24 +27,31 @@ try {
     rendered++;
     assert.equal(files.length, 1);
     assert.equal(title, '원문 제목');
-    return {zip:Buffer.from('preview zip fixture'),
+    return {zip:Buffer.from('preview zip fixture'),sourceZip:Buffer.from('source zip fixture'),
       images:[{name:'rendered/slide-001.png',data:Buffer.from('png fixture')}]};
   };
   const first = await runFolderBatch({ folder:input, output, render });
   assert.equal(first.counts.generated, 1);
-  assert.equal(first.counts.needs_source, 1);
+  assert.equal(first.counts.needs_exact_url, 1);
   assert.equal(rendered, 1);
   const second = await runFolderBatch({ folder:input, output, render });
   assert.equal(second.counts.already_done, 1);
-  assert.equal(second.counts.needs_source, 1);
+  assert.equal(second.counts.needs_exact_url, 1);
   assert.equal(rendered, 1);
-  await fs.rm(path.join(output, 'ready-id', 'rendered', 'slide-001.png'));
+  await fs.rm(path.join(output, first.entries.find(entry=>entry.id==='ready-id').outputFolder, 'rendered', 'slide-001.png'));
   const repaired = await runFolderBatch({ folder:input, output, render });
   assert.equal(repaired.counts.generated, 1);
   assert.equal(rendered, 2);
   const ledger = JSON.parse(await fs.readFile(path.join(output, 'status.json'), 'utf8'));
   assert.equal(ledger.entries.length, 2);
   assert.equal((await fs.readFile(path.join(output, 'status.csv'), 'utf8')).charCodeAt(0), 0xfeff);
+  let stop=false;
+  const interrupted=await runFolderBatch({folder:input,output,render,cancelled:()=>stop,
+    onProgress:value=>{if(value.done===1)stop=true;}});
+  assert.equal(interrupted.cancelled,true);
+  const resumed=await runFolderBatch({folder:input,output,render});
+  assert.equal(resumed.counts.already_done,1);
+  assert.equal(rendered,2);
   await fs.writeFile(path.join(input, 'ready', 'media', '01.jpg'), Buffer.from('damaged'));
   const changed = await runFolderBatch({ folder:input, output, render });
   assert.equal(changed.counts.failed, 1);

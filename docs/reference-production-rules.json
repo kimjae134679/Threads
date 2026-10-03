@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "reference-plan-2026-10-04.1",
+  "createdAt": "2026-10-04T02:03:58+09:00",
+  "status": "proposed",
+  "implementationBaseline": "2026-10-04.1",
+  "currentAppVersion": "0.3.1",
+  "intendedConsumer": "Threads Cut Editor future template dispatcher",
+  "currentAppAutomaticallyImportsThisFile": false,
+  "observations": {
+    "humor_ssul": {
+      "format": "민트색 제목 표지",
+      "evidence": "첫 장은 큰 검정 제목, 이후 장은 방송 캡처나 원문 자료로 전환한다."
+    },
+    "ikpann.co.kr": {
+      "format": "사진 표지와 원문 캡처",
+      "evidence": "사진 표지와 하단 검정 제목 띠 뒤에 커뮤니티 원문 캡처를 이어 붙인다. 확인한 사례에는 마지막 광고 장과 원문 겹침이 있어 제작 대상에서 구분한다."
+    },
+    "humor_saul": {
+      "format": "AAA 보관 이미지",
+      "evidence": "현재 프로필에는 페이지를 사용할 수 없다는 화면이 보인다. AAA의 20~22번 이미지로 민트색 표지와 본문 방식만 분석한다."
+    },
+    "ddoz_ddoz": {
+      "format": "사진 표지와 원문 캡처",
+      "evidence": "라면 게시물은 사진 아래쪽에 어두운 그라데이션을 겹쳐 흰 제목을 읽게 한다. 스터디카페 사례는 대화 캡처를 이어 붙인다."
+    },
+    "baeggopbox": {
+      "format": "흰 바탕 외곽선 제목",
+      "evidence": "월급 사례의 첫 장은 사진 없이 큰 제목으로 상황을 제시한다. 흰 글자에 굵은 검정 외곽선을 쓴다."
+    },
+    "humor_yonggari": {
+      "format": "사진과 강조 제목",
+      "evidence": "내부고발 사례는 흐린 사진 배경과 노랑 및 흰 제목을 함께 쓴다. 제목 외곽선이 강하다."
+    },
+    "history.me_me": {
+      "format": "원문과 설명 이미지",
+      "evidence": "조선 항의 사례는 커뮤니티 문단과 삽화를 이어 보여준다. 바둑 이야기와 도쿄대 의혹 사례도 원문 설명의 순서를 유지해 여러 장으로 전개한다. 의혹이나 원작성자의 주장을 확정된 역사 사실로 바꾸지 않는다."
+    },
+    "choi_20223": {
+      "format": "사진과 방송 대화",
+      "evidence": "새 수집은 사진 위 하단 검정 그라데이션과 왼쪽 흰 제목, 방송 프레임을 세로로 쌓은 본문, 긴 캡션을 사용한다. 기존 AAA에는 인물 사진 비교와 기사 문단도 있어 자료 종류에 맞춰 구성을 바꾼다."
+    }
+  },
+  "canvas": {
+    "width": 1080,
+    "safeMargin": 64,
+    "threads": {
+      "heightMode": "content",
+      "minHeight": 608,
+      "maxHeight": 1350,
+      "maxTrailingBlank": 120
+    },
+    "instagram": {
+      "heightMode": "fixed_per_post",
+      "defaultHeight": 1350,
+      "recommendedHeights": [
+        1350,
+        1440
+      ],
+      "recommendedRatioOptions": [
+        "4:5",
+        "3:4"
+      ],
+      "chooseRatioBy": "source_type_and_reference_observation",
+      "preserveImageAspectRatio": true,
+      "recomposeInsteadOfStretching": true
+    }
+  },
+  "typography": {
+    "valuesAre": "recommended_initial_values_not_measured_reference_fonts",
+    "photoCover": {
+      "fontMin": 64,
+      "fontMax": 84,
+      "maxLines": 3,
+      "maxTitleChars": 42
+    },
+    "plainCover": {
+      "fontMin": 84,
+      "fontMax": 120,
+      "maxLines": 4
+    },
+    "body": {
+      "fontMin": 46,
+      "fontMax": 54,
+      "lineHeightRatio": [
+        1.4,
+        1.5
+      ]
+    }
+  },
+  "templateSelection": [
+    {
+      "id": "photo_cover",
+      "when": "relevant_original_photo_explains_event",
+      "cover": "photo_with_legible_title_region",
+      "body": "ordered_photos_and_source_paragraphs"
+    },
+    {
+      "id": "mint_text",
+      "when": "text_story_without_relevant_original_photo",
+      "cover": "mint_background_black_title",
+      "body": "source_story_in_reading_units"
+    },
+    {
+      "id": "white_title",
+      "when": "short_personal_story_or_plain_text",
+      "cover": "white_background_large_title",
+      "body": "source_story_in_reading_units",
+      "outline": "optional_keep_readable"
+    },
+    {
+      "id": "screenshot",
+      "when": "dialogue_wording_or_original_screen_is_evidence",
+      "cover": "short_context_title",
+      "body": "privacy_reviewed_screenshots_in_order"
+    },
+    {
+      "id": "explainer",
+      "when": "sequential_information_with_relevant_images",
+      "cover": "topic_with_relevant_image_if_available",
+      "body": "paragraph_image_pairs"
+    }
+  ],
+  "editorialRequiredFields": [
+    "sourceId",
+    "sourceUrl",
+    "sourcePublishedAt",
+    "sourceCheckedAt",
+    "collectedAt",
+    "sourceHash",
+    "originalTitle",
+    "coverTitle",
+    "titleEvidenceIds",
+    "templateId",
+    "selectionReason",
+    "sourceParagraphs",
+    "sourceComments",
+    "assets",
+    "pages",
+    "omissions",
+    "privacyRedactions",
+    "rulesVersion",
+    "generationStatus",
+    "reviewStatus",
+    "publicationStatus",
+    "publishedUrl",
+    "publishedAt"
+  ],
+  "collectionAcceptance": {
+    "postsAre": "saved_metadata_records_not_necessarily_complete",
+    "imageCountsAre": "existing_decodable_original_non_avatar_files_excluding_observation_screenshots",
+    "completePostRequires": [
+      "exact_post_url",
+      "caption_recorded",
+      "all_slide_orders_unique",
+      "terminal_slide_verified",
+      "every_planned_image_exists"
+    ],
+    "unavailableAccount": "preserve_prior_supplied_references_separately",
+    "unknownNinthAccount": true
+  },
+  "guards": {
+    "inventUnsupportedFacts": false,
+    "attributeUnverifiedClaims": true,
+    "displayRawUrls": false,
+    "preserveOriginalSource": true,
+    "reuseReferenceArtworkAsPrimaryAsset": false,
+    "requireHashIntegrity": true,
+    "requireNoEmptyPages": true,
+    "requireStoryConclusionOrExplicitMissingConclusion": true,
+    "requirePrivacyReviewBeforePublicOutput": true,
+    "neverAutoInsertReferenceAds": true,
+    "referenceAdsAreArchivedForAnalysis": true,
+    "unknownPublicationMeans": "unknown",
+    "autoPublish": false
+  },
+  "pageRequiredFields": [
+    "order",
+    "purpose",
+    "sourceIds",
+    "contentRole",
+    "assetIds",
+    "cropOrSplitRegions",
+    "layout",
+    "carryOver",
+    "endState"
+  ],
+  "contentRoles": [
+    "verified_fact",
+    "reported_claim",
+    "primary_source_opinion",
+    "quoted_comment",
+    "editor_note"
+  ],
+  "referenceCorpus": {
+    "knownAccounts": 8,
+    "liveCollectedAccounts": 7,
+    "posts": 42,
+    "originalImages": 200,
+    "uniqueOriginalHashes": 193,
+    "completePosts": 40,
+    "partialPosts": 2,
+    "observationScreenshotsExcludedFromOriginalCount": 1,
+    "unavailableAccount": "humor_saul",
+    "archivalSaulImages": 3,
+    "unknownBrowserTabUrls": 1
+  },
+  "qualityGates": [
+    "safe_margin_pass",
+    "no_text_clipping",
+    "360px_title_readable",
+    "360px_body_readable_or_split",
+    "no_unplanned_duplicates",
+    "all_required_source_regions_covered",
+    "source_fact_support",
+    "ordered_story_units",
+    "privacy_review",
+    "no_empty_or_url_only_pages",
+    "current_plan_and_output_version_match"
+  ],
+  "exampleEditorialPlan": {
+    "sourceId": "instagram:ddoz_ddoz:Dd_-JEVE9i2",
+    "sourceUrl": "https://www.instagram.com/ddoz_ddoz/p/Dd_-JEVE9i2/",
+    "contentOrigin": "reference_post",
+    "sourcePublishedAt": null,
+    "sourceCheckedAt": "2026-10-04T02:03:58+09:00",
+    "collectedAt": "2026-10-04T02:03:58+09:00",
+    "sourceHash": null,
+    "originalTitle": null,
+    "coverTitle": "면을 말려 먹는 라면 취향",
+    "titleEvidenceIds": [
+      "reference-caption:preference-description"
+    ],
+    "templateId": "photo_cover",
+    "implementationStatus": "proposed_not_available_in_current_app",
+    "selectionReason": "두 방식의 면 사진이 실제 취향 차이를 설명함",
+    "sourceParagraphs": [],
+    "sourceComments": [],
+    "assets": [
+      {
+        "assetId": "reference:ddoz_ddoz:Dd_-JEVE9i2:1",
+        "file": "ddoz_ddoz/Dd_-JEVE9i2/01.jpg",
+        "usage": "reference_only",
+        "renderAllowed": false
+      }
+    ],
+    "pages": [
+      {
+        "order": 1,
+        "purpose": "상황 이해",
+        "needs": "original_primary_photo",
+        "title": "면을 말려 먹는 라면 취향"
+      },
+      {
+        "order": 2,
+        "purpose": "방식 설명",
+        "needs": "verbatim_primary_source_paragraphs"
+      },
+      {
+        "order": 3,
+        "purpose": "반응과 끝맺음",
+        "needs": "selected_primary_source_comments"
+      }
+    ],
+    "omissions": [],
+    "privacyRedactions": [],
+    "rulesVersion": "reference-plan-2026-10-04.1",
+    "generationStatus": "needs_primary_source",
+    "reviewStatus": "needs_review",
+    "publicationStatus": "unknown",
+    "publishedUrl": null,
+    "publishedAt": null,
+    "autoPublish": false
+  }
+}
