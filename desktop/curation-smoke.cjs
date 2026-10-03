@@ -19,6 +19,8 @@ app.whenReady().then(async () => {
     const encoded=sourceImage.toString('base64');
     const result=await bundle.webContents.executeJavaScript(`(async()=>{
       const html='<html><head><meta property="og:title" content="원문에 있는 제목"></head><body><nav>메뉴 광고</nav><article class="article-content"><p>첫 문단의 실제 내용입니다.</p><p>두 번째 문단의 실제 내용입니다.</p><img src="photo.png"><p>마지막 문단의 실제 내용입니다.</p></article><ul class="comment-list"><li class="comment-item" data-likes="12"><span class="nickname">작성자</span><p class="comment-text">재미있는 실제 댓글</p></li></ul></body></html>';
+      const video=window.ThreadsSourceCuration.htmlDraft(html.replace('<img src="photo.png">','<video data-src="actual.mp4"></video>'),[]);
+      if(video.unsupportedMedia.length!==1||!window.ThreadsSourceCuration.validate(video,new Set()).some(message=>message.includes('원문 영상·임베드')))throw new Error('Source video must block incomplete cards.');
       const source=new File([html],'source.html',{type:'text/html'});
       const data=Uint8Array.from(atob(${JSON.stringify(encoded)}),char=>char.charCodeAt(0));
       const picture=new File([data],'photo.png',{type:'image/png'});

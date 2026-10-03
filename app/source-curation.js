@@ -33,6 +33,8 @@
     const titleNodes=[...doc.querySelectorAll('.rd_hd .title,.post-title,.article-title,.view_title,.title_subject,.articleSubject,h1')];
     const originalTitle=(doc.querySelector('meta[property="og:title"]')?.getAttribute('content') ||
       titleNodes.find(node=>node.textContent.trim())?.textContent || '').trim();
+    const unsupportedMedia=[...body.querySelectorAll('video,audio,iframe,embed,object')].map(node=>({
+      kind:node.tagName.toLowerCase(),location:sourcePath(node),url:node.getAttribute('data-src')||node.getAttribute('src')||node.getAttribute('data')||node.querySelector('source')?.getAttribute('src')||null}));
     const segments=[];
     const mediaNames = new Set(available.map(x=>String(x).replaceAll('\\','/').split('/').pop().toLowerCase()));
     const blocks=new Set(['P','DIV','SECTION','ARTICLE','UL','OL','LI','BLOCKQUOTE','H2','H3','H4','PRE','TABLE','TR']);
@@ -81,7 +83,7 @@
           location:sourcePath(n),selected:false};
       }).filter(c=>c.text);
     return {schema,sourceType:'html',originalTitle,coverTitle:'',coverTitleEvidence:originalTitle,cover:{kind:null,segmentId:null},
-      segments,comments,review:{bodyVerified:false,mediaVerified:false,commentsVerified:false},
+      segments,comments,unsupportedMedia,review:{bodyVerified:false,mediaVerified:false,commentsVerified:false},
       sourceUrl:doc.querySelector('link[rel="canonical"]')?.href||null,publicationAllowed:false};
   }
   function exactDraft(record) {
@@ -141,6 +143,7 @@
       errors.push('첫 장 문구의 근거 문장을 원문 제목 또는 선택한 본문 그대로 적으세요.');
     if(!plan.review?.bodyVerified || !plan.review?.mediaVerified || !plan.review?.commentsVerified)
       errors.push('본문·이미지·댓글 확인 표시가 모두 필요합니다.');
+    if(plan.unsupportedMedia?.length) errors.push('원문 영상·임베드가 포함되어 정지 이미지 자동 제작을 보류합니다. 원본 전체 내용을 확인하세요.');
     const chosen=(plan.segments||[]).filter(s=>s.selected);
     if(!chosen.length) errors.push('사용할 본문 글 또는 이미지를 고르세요.');
     const ids=new Set(chosen.map(x=>x.id));
@@ -160,7 +163,7 @@
       !({sans:[400,900],gothic:[800]}[plan.style.fontId]||[]).includes(Number(plan.style.titleWeight))))
       errors.push('동봉된 상업적 사용 허용 폰트와 실제 굵기를 선택하세요.');
     if(plan.style?.coverSize!==undefined && (!Number.isInteger(Number(plan.style.coverSize)) ||
-      Number(plan.style.coverSize)<48 || Number(plan.style.coverSize)>88)) errors.push('첫 장 글씨 크기는 48~88px로 정하세요.');
+      Number(plan.style.coverSize)<48 || Number(plan.style.coverSize)>120)) errors.push('첫 장 글씨 크기는 48~120px로 정하세요.');
     if(plan.style?.coverTop!==undefined && (!Number.isInteger(Number(plan.style.coverTop)) ||
       Number(plan.style.coverTop)<16 || Number(plan.style.coverTop)>280)) errors.push('첫 장 위쪽 여백은 16~280px로 정하세요.');
     if(plan.style?.coverLeft!==undefined && (!Number.isInteger(Number(plan.style.coverLeft)) ||

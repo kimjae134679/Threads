@@ -9,7 +9,7 @@ const {writeAtomic}=require('./atomic-file.cjs');
 const digest=data=>createHash('sha256').update(data).digest('hex');
 const safe=value=>String(value||'source').replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,80);
 const label=value=>String(value||'원문').normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,' ').replace(/\s+/g,' ').trim().slice(0,42).replace(/[. ]+$/,'')||'원문';
-const RULE_VERSION='2026-10-04.1';
+const RULE_VERSION='2026-10-04.3';
 const statuses=['published','generated','already_done','needs_source','needs_access','needs_exact_url','needs_media','needs_selection','unavailable','excluded_severe','failed'];
 const inside=(root,target)=>{const relative=path.relative(root,target);return relative===''||relative!=='..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative);};
 async function exists(file) {try{await fs.access(file);return true;}catch{return false;}}
@@ -43,7 +43,7 @@ async function discoverCandidates(folder) {
 function counts(entries) {return Object.fromEntries(statuses.map(status=>[status,entries.filter(entry=>entry.status===status).length]));}
 function csv(rows) {
   const quote=value=>'"'+String(value??'').replaceAll('"','""')+'"';
-  const fields=['id','title','status','reason','nextAction','site','sourceUrl','relativePath','outputFolder','previewZip','renderedPages','ruleVersion','sourceCheckedAt','generatedAt','reviewStatus','publicationStatus','updatedAt'];
+  const fields=['id','title','status','reason','nextAction','site','sourceUrl','relativePath','outputFolder','previewZip','renderedPages','ruleVersion','sourcePublishedAt','collectedAt','sourceCheckedAt','generatedAt','templateId','reviewStatus','publicationStatus','updatedAt'];
   return '\ufeff'+fields.join(',')+'\r\n'+rows.map(row=>fields.map(field=>quote(row[field])).join(',')).join('\r\n')+'\r\n';
 }
 async function saveReport(output,report) {
@@ -105,7 +105,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
         generatedAt:lifecycle.generatedAt||null,sourceCheckedAt:lifecycle.sourceCheckedAt||null});
       const intakePlan={schema:'threads-capture-plan-v1',ruleVersion:RULE_VERSION,preparedAt:entry.updatedAt,title:entry.title,sourceUrl:entry.sourceUrl,
         titleRule:'원제 보존. 표지는 원제 앞부분 42자 이내에서 선택하고 근거 없는 문구는 만들지 않음.',
-        layoutRule:'안전 여백 64px. 표지 하단 고대비 제목. 실제 내용에 맞춘 1080×608~1350.',
+        layoutRule:'사진·글·원문 화면에 맞게 표지 선택. 안전 여백 72px, 본문 52px. 원문 문단과 빈 줄 경계로 분할.',
         bodyRule:'원문 문단·이미지 순서 보존. URL 문자열·완전 중복은 표시에서 제외하고 원문과 제외 근거를 보존.',
         commentsRule:'실제로 확인한 BEST 또는 반응수 댓글만 사용. 미확보 댓글은 추정하지 않음.',
         reviewStatus:lifecycle.reviewStatus,publicationStatus:lifecycle.publicationStatus,publicationAllowed:false};
@@ -129,7 +129,8 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
         entry.reason=entry.reason==='저장 원문이 없습니다.'?access.nextAction:entry.reason;
       } else {
         entry.inputKind=job.inputKind;entry.sourceUrl=job.sourceUrl||entry.sourceUrl;entry.title=job.title||entry.title;
-        let fingerprint=digest('folder-recipe-2026-10-04.1|'+JSON.stringify(job));
+        Object.assign(entry,{sourceCheckedAt:job.sourceCheckedAt||null,sourcePublishedAt:job.sourcePublishedAt||null,collectedAt:job.collectedAt||null});
+        let fingerprint=digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job));
         const old=outputs[entry.id];
         let outputFolder=path.posix.join('현재 결과',label(entry.title)+'__'+entry.id);
         if(await intactOutput(destination,old,fingerprint)) {
@@ -142,7 +143,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
             onProgress({phase:'acquiring',done:index,total:candidates.length,title:entry.title});
             await acquire({folder:candidate.folder,sourceUrl:entry.sourceUrl,title:entry.title});
             job=await loadBatchInput(candidate.folder,entry);if(!job)throw error;
-            fingerprint=digest('folder-recipe-2026-10-04.1|'+JSON.stringify(job));
+            fingerprint=digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job));
             result=await render(job,{folder:candidate.folder,id:entry.id});
           }
           if(!Buffer.isBuffer(result?.zip)||!Buffer.isBuffer(result.sourceZip)||!result.sourceZip.length||
@@ -164,6 +165,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
           await fs.writeFile(path.join(target,'source-bundle.zip'),result.sourceZip);
           if(result.productionPlan)await fs.writeFile(path.join(target,'production-plan.json'),JSON.stringify(result.productionPlan,null,2)+'\n','utf8');
           entry.generatedAt=new Date().toISOString();entry.plannedAt=result.productionPlan?.preparedAt||entry.generatedAt;
+          entry.templateId=result.productionPlan?.templateId||null;
           entry.reviewStatus='needs_review';entry.publicationStatus=lifecycle.publicationStatus;
           Object.assign(entry,{title:result.title||entry.title,status:'generated',reason:'검수 전 이미지 제작 완료',outputFolder,
             previewZip:path.posix.join(outputFolder,'review-preview.zip'),sourceFingerprint:fingerprint,
@@ -173,14 +175,15 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
         outputs[entry.id]={...entry};
         await fs.writeFile(lifecyclePath,JSON.stringify({...lifecycle,ruleVersion:RULE_VERSION,generatedAt:entry.generatedAt,
           plannedAt:entry.plannedAt,reviewStatus:entry.reviewStatus,publicationStatus:entry.publicationStatus,
+          sourceCheckedAt:entry.sourceCheckedAt,sourcePublishedAt:entry.sourcePublishedAt,collectedAt:entry.collectedAt,
           outputFolder:entry.outputFolder,sourceFingerprint:entry.sourceFingerprint},null,2)+'\n','utf8');
       }
     } catch(error) {
       entry.reason=String(error.message).slice(0,400);
       entry.status=error.published?'published':/첫 장의 실제 원문 조각/.test(entry.reason)?'needs_selection':/심한 소재 제외/.test(entry.reason)?'excluded_severe':
-        /원문 이미지 파일 누락/.test(entry.reason)?'needs_media':
+        /원문 이미지 파일 누락|원문 영상·임베드/.test(entry.reason)?'needs_media':
         /본문을 특정|본문 조각|대문 글씨|제목|60장|폰트/.test(entry.reason)?'needs_selection':'failed';
-      entry.nextAction=entry.status==='needs_media'?'본문에 연결된 실제 이미지 파일을 추가하세요.':'자료와 사유를 확인한 뒤 같은 작업을 다시 실행하세요.';
+      entry.nextAction=entry.status==='needs_media'?'누락된 원본 이미지 또는 영상·임베드의 전체 내용을 확인하세요.':'자료와 사유를 확인한 뒤 같은 작업을 다시 실행하세요.';
     }
     await fs.mkdir(path.join(candidate.folder,'작업 정보'),{recursive:true});
     await fs.writeFile(path.join(candidate.folder,'작업 정보','automation-status.json'),JSON.stringify({...entry,

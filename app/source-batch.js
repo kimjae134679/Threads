@@ -24,9 +24,9 @@
   $('saveBatchPreset').addEventListener('click',()=>{
     const name=$('batchPresetName').value.trim();if(!name)return status('프리셋 이름을 입력하세요.');
     const all=presets();if(!all[name]&&Object.keys(all).length>=20)return status('프리셋은 20개까지 저장할 수 있습니다.');
-    all[name]={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),
+    all[name]={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),templateId:$('batchTemplate').value,canvas:$('batchCanvas').value,
       coverSize:Number($('coverSize').value),coverTop:Number($('coverTop').value),
-      coverLeft:Number($('coverLeft').value)};
+      coverLeft:Number($('coverLeft').value),manualTitleLayout:$('manualTitleLayout').checked};
     try {localStorage.setItem(presetKey,JSON.stringify(all));refreshPresets();$('batchPreset').value=name;
       status('폰트·굵기 프리셋을 저장했습니다. 현재 원문 ZIP에도 선택 설정이 기록됩니다.');}
     catch {status('프리셋을 브라우저에 저장하지 못했습니다. 원문 ZIP에는 스타일이 기록됩니다.');}
@@ -34,8 +34,10 @@
   $('applyBatchPreset').addEventListener('click',()=>{
     const p=presets()[$('batchPreset').value];if(!p)return status('프리셋을 먼저 선택하세요.');
     $('batchFont').value=p.fontId;weights();$('batchWeight').value=String(p.titleWeight);
+    $('batchTemplate').value=p.templateId||'auto';$('batchCanvas').value=p.canvas||'threads';
     $('coverSize').value=String(p.coverSize||70);$('coverTop').value=String(p.coverTop??44);
     $('coverLeft').value=String(p.coverLeft??67);
+    $('manualTitleLayout').checked=p.manualTitleLayout===true;
     status('선택한 스타일 프리셋을 적용했습니다.');
   });
   function clearUrls() {for(const url of previewUrls)URL.revokeObjectURL(url);previewUrls=[];}
@@ -160,8 +162,10 @@
     $('mediaVerified').checked=p.review.mediaVerified;
     $('commentsVerified').checked=p.review.commentsVerified;
     $('batchFont').value=p.style?.fontId||'sans';weights();$('batchWeight').value=String(p.style?.titleWeight||900);
+    $('batchTemplate').value=p.style?.templateId||'auto';$('batchCanvas').value=p.style?.canvasMode==='instagram'?(p.style.aspectRatio||'4:5'):'threads';
     $('coverSize').value=String(p.style?.coverSize||70);$('coverTop').value=String(p.style?.coverTop??44);
     $('coverLeft').value=String(p.style?.coverLeft??67);
+    $('manualTitleLayout').checked=p.style?.manualTitleLayout===true;
     const areas=$('segmentChoices');areas.replaceChildren();
     for(const part of p.segments) {
       const div=document.createElement('div');div.className='choice';
@@ -213,9 +217,10 @@
     p.coverTitleEvidence=$('coverTitleEvidence').value.trim();
     p.review={bodyVerified:$('bodyVerified').checked,mediaVerified:$('mediaVerified').checked,
       commentsVerified:$('commentsVerified').checked};
-    p.style={fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),
+    p.style={...p.style,fontId:$('batchFont').value,titleWeight:Number($('batchWeight').value),
+      templateId:$('batchTemplate').value,canvasMode:$('batchCanvas').value==='threads'?'threads':'instagram',aspectRatio:$('batchCanvas').value==='threads'?null:$('batchCanvas').value,
       coverSize:Number($('coverSize').value),coverTop:Number($('coverTop').value),
-      coverLeft:Number($('coverLeft').value),allowSystemFallback:p.style?.allowSystemFallback===true};
+      coverLeft:Number($('coverLeft').value),manualTitleLayout:$('manualTitleLayout').checked,allowSystemFallback:p.style?.allowSystemFallback===true};
     const s=p.segments.find(x=>x.id===$('coverSource').value);
     p.cover={kind:s?.kind||null,segmentId:s?.id||null};
     return p;
@@ -315,10 +320,12 @@
     for(const item of plan.segments.filter(s=>s.selected&&s.kind==='image')) {
       const name=item.mediaName.toLowerCase();if(images.has(name))continue;
       const img=await loadImage(media.get(name));images.set(name,img);
-      dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:plan.media?.find(m=>m.name?.toLowerCase()===name)?.sha256};
+      dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:plan.media?.find(m=>m.name?.toLowerCase()===name)?.sha256,
+        analysis:window.ThreadsImageAnalysis.inspect(img)};
     }
     const ctx=document.createElement('canvas').getContext('2d'),font=family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback);
-    const layout=window.ThreadsPagePlan.compile(plan,dimensions,(text,size)=>{ctx.font='900 '+size+'px '+font;return ctx.measureText(text).width;});
+    const layout=window.ThreadsPagePlan.compile(plan,dimensions,(text,size,weight=400)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;});
+    layout.imageAnalysis=dimensions;
     return {layout,images,font};
   }
   async function planBundle(file,{preview=false}={}) {
@@ -333,16 +340,21 @@
     const output=[];
     for(const page of layout.pages) {
       const canvas=document.createElement('canvas');canvas.width=page.width;canvas.height=page.height;
-      const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,page.width,page.height);
-      if(page.role==='cover'){ctx.fillStyle='#111827';ctx.fillRect(0,page.titleBoxY,page.width,page.height-page.titleBoxY);}
+      const ctx=canvas.getContext('2d');ctx.fillStyle=page.background||'#fff';ctx.fillRect(0,0,page.width,page.height);
       ctx.textBaseline='top';
       for(const op of page.operations) {
         if(op.kind==='image'){
           const img=images.get(op.name);
-          if(op.sourceHeight)ctx.drawImage(img,0,op.sourceY,img.naturalWidth,op.sourceHeight,op.x,op.y,op.width,op.height);
+          if(op.sourceHeight)ctx.drawImage(img,op.sourceX||0,op.sourceY,op.sourceWidth||img.naturalWidth,op.sourceHeight,op.x,op.y,op.width,op.height);
           else ctx.drawImage(img,op.x,op.y,op.width,op.height);
+        }else if(op.kind==='gradient'){
+          const gradient=ctx.createLinearGradient(0,op.y,0,op.y+op.height);
+          gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(0.4,'rgba(0,0,0,0.6)');gradient.addColorStop(1,'rgba(0,0,0,0.9)');
+          ctx.fillStyle=gradient;ctx.fillRect(op.x,op.y,op.width,op.height);
         }else{
-          ctx.font=op.weight+' '+op.size+'px '+font;ctx.fillStyle=op.color||'#171c26';ctx.fillText(op.text,op.x,op.y);
+          ctx.textAlign=op.align||'left';ctx.font=op.weight+' '+op.size+'px '+font;ctx.fillStyle=op.color||'#171c26';
+          if(op.stroke){ctx.strokeStyle=op.stroke;ctx.lineWidth=op.strokeWidth||2;ctx.lineJoin='round';ctx.strokeText(op.text,op.x,op.y);}
+          ctx.fillText(op.text,op.x,op.y);
         }
       }
       if(preview){ctx.fillStyle='#9f1239';ctx.font='900 20px "Carousel Sans KR"';ctx.textAlign='right';

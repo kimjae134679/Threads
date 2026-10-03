@@ -14,6 +14,12 @@ async function bounded(file,max) {
 }
 async function loadBatchInput(folder,metadata={}) {
   const root=path.resolve(folder);
+  let editorial=null;
+  const editorialPath=path.join(root,'작업 정보','editorial-plan.json');
+  if(await exists(editorialPath)){
+    editorial=JSON.parse((await bounded(editorialPath,256*1024)).toString('utf8'));
+    if(editorial.schema!=='threads-editorial-plan-v1')throw new Error('제작 전 편집 계획 형식을 확인하세요.');
+  }
   for(const directory of [root,path.join(root,'source')]) {
     const names=await fs.readdir(directory).catch(()=>[]);
     const html=names.filter(name=>/\.html?$/i.test(name));
@@ -47,7 +53,9 @@ async function loadBatchInput(folder,metadata={}) {
         if(files.some(file=>file.name.toLowerCase()===item.name.toLowerCase()))throw new Error('첨부 이미지 파일명이 중복됩니다: '+item.name);
         files.push({name:item.name,type:mime[path.extname(item.name).toLowerCase()],data:data.toString('base64')});
       }
-      return {sourceName:name,sourceText,files,imageDirectory:'media',intakeText:'',
+      const dates={sourceCheckedAt:acquisition?.checkedAt||null,collectedAt:acquisition?.collectedAt||acquisition?.checkedAt||null,
+        sourcePublishedAt:acquisition?.sourcePublishedAt||null};
+      return {sourceName:name,sourceText,files,imageDirectory:'media',intakeText:'',editorial,...dates,
         title:metadata.title||'',sourceUrl:metadata.sourceUrl||acquisition?.url||'',inputKind:/\.html?$/i.test(name)?'html':'exact'};
     }
   }
@@ -61,6 +69,7 @@ async function loadBatchInput(folder,metadata={}) {
   const intake=path.join(root,'intake-manifest.json');
   return {sourceName,sourceText,files:images.files,imageDirectory:images.metadata.imageDirectory,
     intakeText:await exists(intake)?await fs.readFile(intake,'utf8'):'',
-    title:images.metadata.title,sourceUrl:images.metadata.sourceUrl,inputKind:'saved-media'};
+    title:images.metadata.title,sourceUrl:images.metadata.sourceUrl,inputKind:'saved-media',editorial,
+    sourceCheckedAt:metadata.sourceCheckedAt||null,sourcePublishedAt:metadata.sourcePublishedAt||null,collectedAt:metadata.collectedAt||null};
 }
 module.exports={loadBatchInput};

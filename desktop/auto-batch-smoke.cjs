@@ -22,7 +22,7 @@ const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 app.whenReady().then(async()=>{
   try {
     let win;
-    for(let i=0;i<100;i++){win=BrowserWindow.getAllWindows().find(w=>w.isVisible());if(win&&!win.webContents.isLoading())break;await wait(100);}
+    for(let i=0;i<100;i++){win=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL()==='cut-editor://app/source-cut-editor.html');if(win&&!win.webContents.isLoading())break;await wait(100);}
     assert(win&&!win.webContents.isLoading());
     const first=await win.webContents.executeJavaScript('window.ThreadsCutDesktop.runFolderBatch({fillSources:false})');
     assert.equal(first.total,4);assert.equal(first.counts.generated,3);assert.equal(first.counts.needs_access,1);assert.equal(first.counts.failed,0);

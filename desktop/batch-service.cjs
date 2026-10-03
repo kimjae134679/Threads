@@ -11,8 +11,8 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
   const progress=value=>{const editor=getEditor();if(editor&&!editor.isDestroyed())editor.webContents.send('source-cut:batch-progress',value);};
   const publicReport=report=>report?{inputFolder:report.inputFolder,lastRunAt:report.lastRunAt,total:report.total,
     processed:report.processed??report.entries.length,cancelled:report.cancelled,counts:report.counts,active:!!active,
-    entries:report.entries.map(({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,reviewStatus,publicationStatus})=>
-      ({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,reviewStatus,publicationStatus}))}:{entries:[],active:!!active};
+    entries:report.entries.map(({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus})=>
+      ({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus}))}:{entries:[],active:!!active};
   async function renderWindow(state) {
     if(!state.window||state.window.isDestroyed()) {
       state.window=new BrowserWindow({show:false,webPreferences:{...preferences,backgroundThrottling:false}});
@@ -106,9 +106,13 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
         await window.ThreadsSourceBatch.prepare(source,all);
       if(input.inputKind!=='saved-media')window.ThreadsSourceBatch.review(item);
       item.plan.sourceUrl=item.plan.sourceUrl||input.sourceUrl||null;
+      item.plan.sourceCheckedAt=input.sourceCheckedAt||null;item.plan.sourcePublishedAt=input.sourcePublishedAt||null;item.plan.collectedAt=input.collectedAt||null;
+      item.plan.editorial=input.editorial||null;
       item.plan.style={...item.plan.style,allowSystemFallback:true};
+      document.getElementById('batchTemplate').value=input.editorial?.templateId||'auto';
+      document.getElementById('batchCanvas').value=input.editorial?.aspectRatio||'threads';
       const title=item.plan.originalTitle||input.title;
-      const coverTitle=window.ThreadsPagePlan.headline(title);
+      const coverTitle=input.editorial?.coverTitle||window.ThreadsPagePlan.headline(title);
       document.getElementById('coverTitle').value=coverTitle;
       document.getElementById('coverSize').value='64';
       document.getElementById('coverTop').value='48';
@@ -123,7 +127,8 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
       await fs.mkdir(path.join(context.folder,'작업 정보'),{recursive:true});
       await fs.writeFile(path.join(context.folder,'작업 정보','production-plan.json'),JSON.stringify(result.productionPlan,null,2)+'\n','utf8');
       const p=result.productionPlan;
-      const note=['# 제작 계획',p.originalTitle,'','기준: '+p.ruleVersion,'계획 갱신: '+p.preparedAt,
+      const note=['# 제작 계획',p.originalTitle,'','기준: '+p.ruleVersion,'계획 갱신: '+p.preparedAt,'표지 형식: '+p.templateId,'선택 이유: '+p.selectionReason,
+        '원문 게시: '+(p.sourcePublishedAt||'미확인'),'원문 확인: '+(p.sourceCheckedAt||'미확인'),'수집: '+(p.collectedAt||'미확인'),
         '표지 제목: '+p.coverTitle,'원문 제목: '+p.originalTitle,'검수: 미확인','게시: 확인 기록 없음',
         '','장별 구성',...p.pages.map(page=>page.number+'장 / '+page.role+' / '+page.width+'×'+page.height+' / '+page.elements.map(e=>e.sourceId+':'+e.kind).join(', ')),
         '','제외 기록',...p.omitted.map(o=>o.sourceId+' / '+o.reason),'','주의',...p.warnings];

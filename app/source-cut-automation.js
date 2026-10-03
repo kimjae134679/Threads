@@ -30,7 +30,8 @@
       const reason=document.createElement('small');reason.textContent=row.reason||'';state.append(reason);
       const next=document.createElement('small');next.textContent=row.nextAction||'';state.append(next);
       const version=document.createElement('small');version.textContent='기준 '+(row.ruleVersion||'이전 기준')+' · 제작 '+(row.generatedAt?new Date(row.generatedAt).toLocaleString('ko-KR'):'없음');
-      const lifecycle=document.createElement('small');lifecycle.textContent='검수 '+(row.reviewStatus==='approved'?'확인 완료':'미확인')+' · 게시 '+(row.publicationStatus==='published'?'완료':'확인 기록 없음');state.append(version,lifecycle);
+        const lifecycle=document.createElement('small');lifecycle.textContent='검수 '+(row.reviewStatus==='approved'?'확인 완료':'미확인')+' · 게시 '+(row.publicationStatus==='published'?'완료':'확인 기록 없음');state.append(version,lifecycle);
+        const dates=document.createElement('small');dates.textContent='원문 게시 '+(row.sourcePublishedAt?new Date(row.sourcePublishedAt).toLocaleString('ko-KR'):'미확인')+' · 원문 확인 '+(row.sourceCheckedAt?new Date(row.sourceCheckedAt).toLocaleString('ko-KR'):'미확인');state.append(dates);
       const open=document.createElement('button');open.type='button';open.textContent=row.outputFolder?'결과 폴더':'자료 폴더';
       open.addEventListener('click',()=>api.openBatchEntry(row.id,row.outputFolder?'result':'source').catch(error=>{$('folderBatchStatus').textContent=error.message;}));
       action.append(open);

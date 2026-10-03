@@ -44,7 +44,10 @@
 <fieldset class="style-settings"><legend>게시 이미지 글씨 스타일</legend>
 <label>동봉된 상업적 사용 허용 폰트 <select id="batchFont"><option value="sans">Noto Sans KR 기반</option><option value="gothic">나눔고딕 기반</option></select></label>
 <label>첫 장 글씨 굵기 <select id="batchWeight"></select></label>
-<label>첫 장 제목 크기(px) <input id="coverSize" type="number" min="48" max="88" value="70"></label>
+<label>표지 형식 <select id="batchTemplate"><option value="auto">자료에 맞게 자동 선택</option><option value="photo_cover">사진과 큰 제목</option><option value="mint_text">민트색 제목</option><option value="white_title">흰 바탕 제목과 본문</option><option value="screenshot">제목 뒤 원문 캡처</option><option value="explainer">설명과 이미지</option></select></label>
+<label>이미지 크기 <select id="batchCanvas"><option value="threads">내용에 맞춰 높이 조절</option><option value="4:5">Instagram 4:5</option><option value="3:4">Instagram 3:4</option></select></label>
+<label><input id="manualTitleLayout" type="checkbox"> 제목 크기·위치를 직접 조절</label>
+<label>첫 장 제목 크기(px) <input id="coverSize" type="number" min="48" max="120" value="88"></label>
 <label>첫 장 제목 위쪽 여백(px) <input id="coverTop" type="number" min="16" max="280" value="44"></label>
 <label>첫 장 제목 왼쪽 여백(px) <input id="coverLeft" type="number" min="40" max="320" value="67"></label>
 <label>스타일 프리셋 <select id="batchPreset"><option value="">저장된 프리셋 선택</option></select></label>
@@ -61,5 +64,5 @@
 <label>검수 전 예시 보기 (미확인 댓글은 넣지 않고 예시 표시) <input id="previewBundle" type="file" accept=".zip,application/zip"></label>
 <label>원문 ZIP에서 이미지 만들기 <input id="renderBundle" type="file" accept=".zip,application/zip"></label></section>
 <section aria-label="제작 이미지 확인"><h2>제작 이미지 확인</h2><div id="renderedPreview" class="preview-grid"></div></section>
-</main><script src="./viral-model.js"></script><script src="./source-cut-model.js"></script><script src="./source-batch-core.js"></script><script src="./source-curation.js"></script><script src="./source-cut-zip.js"></script><script src="./source-bundle-zip.js"></script><script src="./source-page-plan.js"></script>
+</main><script src="./viral-model.js"></script><script src="./source-cut-model.js"></script><script src="./source-batch-core.js"></script><script src="./source-curation.js"></script><script src="./source-cut-zip.js"></script><script src="./source-bundle-zip.js"></script><script src="./source-batch-image-analysis.js"></script><script src="./source-page-plan.js"></script>
   <script src="./source-batch.js"></script><script src="./source-workflow.js"></script></body></html>

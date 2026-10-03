@@ -13,7 +13,7 @@ async function writeCatalog(output,report){
   return '<details data-title="'+escape(row.title.toLocaleLowerCase())+'" data-ready="'+(row.outputFolder?'1':'0')+'"><summary><b>'+
    escape(row.title||'제목 미확인')+'</b><span>'+escape(labels[row.status]||row.status)+'</span></summary><div class="body">'+
    (result?'<img loading="lazy" src="'+result+'" alt="검수 전 표지">':'')+
-   '<p>'+escape(row.reason)+'</p><p>기준 '+escape(row.ruleVersion||'이전 기준')+' · 제작 '+escape(row.generatedAt||'없음')+
+   '<p>'+escape(row.reason)+'</p><p>원문 게시 '+escape(row.sourcePublishedAt||'미확인')+' · 원문 확인 '+escape(row.sourceCheckedAt||'미확인')+' · 수집 '+escape(row.collectedAt||'미확인')+'</p><p>기준 '+escape(row.ruleVersion||'이전 기준')+' · 제작 '+escape(row.generatedAt||'없음')+
    ' · 검수 '+escape(row.reviewStatus==='approved'?'확인 완료':'미확인')+' · 게시 '+escape(row.publicationStatus==='published'?'완료':'확인 기록 없음')+
    '</p><p>'+escape(row.nextAction)+'</p><a href="'+href(input)+'">자료 안내</a> '+
    (row.outputFolder?'<a href="'+href(row.outputFolder+'/review-preview.zip')+'">결과 ZIP</a> <a href="'+href(row.outputFolder+'/source-bundle.zip')+'">원문 ZIP</a>':'')+'</div></details>';
