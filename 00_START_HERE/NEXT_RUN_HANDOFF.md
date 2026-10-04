@@ -73,3 +73,15 @@ reference-production-rules.json은 분석 때의 제안 문서이며 런타임 �
 후속 작업은 실제 생성 이미지에서 읽기 순서·모바일 크기·마지막 장을 확인하고, 보류 자료의 원본과 사용 영역을 확보하는 것입니다. 원본 좌표를 실제로 읽어 editorial-plan.json에 근거를 남깁니다. 실제 게시·권리·개인정보·성과는 04_REVIEW_PUBLISH와 05_EXPERIMENTS_ACCOUNTS에서 별도 승인·기록합니다. 자동 게시하거나 P1을 올리지 않습니다.
 
 검정 배경·노란 말풍선 원본에서 사진 오인을 확인하고 평탄 배경과 반복 글줄 근거가 있을 때 캡처로 분류하도록 고쳤습니다. 픽셀 분석 버전은 2026-10-04.4입니다. 바깥 여백도 행·열 전체가 공백일 때만 줄여 희미한 끝 문자를 보존합니다. 원문 ZIP·PNG 해시·본문 전체·이미지 연속성·가로 경계·PNG 높이를 실제 파일로 검사합니다.
+
+
+## 대화와 자료의 비공개 백업
+
+2026-10-05 KST, 사용자가 다른 대화 백업을 요청해 제공한 9개 링크의 추출 텍스트를 보존했습니다. 이 중 게시글 수익화_02와 _03은 아래 파일로 바로 읽을 수 있습니다.
+
+- [게시글 수익화_02 추출본](https://github.com/kimjae134679/KimJae-Project-Backups/blob/main/conversations/05-threads-02.md)
+- [게시글 수익화_03 추출본](https://github.com/kimjae134679/KimJae-Project-Backups/blob/main/conversations/07-threads-03.md)
+- [대화별 상황·전체 백업 범위](https://github.com/kimjae134679/KimJae-Project-Backups/blob/main/BACKUP_STATUS.md)
+- [원래 전달한 대화·레퍼런스 ZIP과 관련 파일 백업](https://github.com/kimjae134679/KimJae-Project-Backups/releases/tag/snapshot-20261005-remaining)
+
+비공개 계정 권한이 필요합니다. 키·토큰을 제외했으며 대화 원문을 공개 Threads 저장소에 복제하지 않았습니다. 공유 추출본은 실제 모든 채팅 첨부나 미제공 대화의 전체 내보내기와 같지 않습니다. 게시글 수익화_01의 별도 원문은 제공 목록에 없으므로 전문 보존 여부는 미확인입니다. 이번 백업 정리에서 앱 기능·원본 자료·제작 결과를 변경하거나 실제 게시하지 않았습니다.
