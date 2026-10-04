@@ -26,7 +26,7 @@ try{
  }
  assert(ready,'Installed editor and bridge loaded');
  const check=await evaluate(`(async()=>{const e=require('electron'),w=e.BrowserWindow.getAllWindows().find(w=>w.webContents.getURL()==='cut-editor://app/source-cut-editor.html');await w.webContents.executeJavaScript('document.getElementById("openBundleTool").click()');await new Promise(r=>setTimeout(r,800));const b=e.BrowserWindow.getAllWindows().find(w=>w.webContents.getURL()==='cut-editor://app/source-batch.html');return {version:e.app.getVersion(),packaged:e.app.isPackaged,layout:await b.webContents.executeJavaScript('({version:window.ThreadsPagePlan.VERSION,analysis:!!window.ThreadsImageAnalysis,templates:document.getElementById("batchTemplate").options.length,manual:!!document.getElementById("manualTitleLayout")})')};})()`);
- assert.equal(check.version,'0.3.3');assert.equal(check.packaged,true);assert.equal(check.layout.version,'2026-10-04.3');assert.equal(check.layout.analysis,true);assert.equal(check.layout.templates,6);assert.equal(check.layout.manual,true);
+ assert.equal(check.version,'0.3.4');assert.equal(check.packaged,true);assert.equal(check.layout.version,'2026-10-05.3');assert.equal(check.layout.analysis,true);assert.equal(check.layout.templates,6);assert.equal(check.layout.manual,true);
  const shot=await evaluate(`(async()=>{const w=require('electron').BrowserWindow.getAllWindows().find(w=>w.webContents.getURL()==='cut-editor://app/source-cut-editor.html');w.show();await new Promise(r=>setTimeout(r,1000));return (await w.webContents.capturePage()).toPNG().toString('base64');})()`);
  await fs.writeFile(path.join(destination,'installed-app.png'),Buffer.from(shot,'base64'));
  await fs.writeFile(path.join(destination,'installed-check.json'),JSON.stringify(check,null,2));

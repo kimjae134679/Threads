@@ -37,7 +37,7 @@ app.whenReady().then(async()=>{
   }
   assert.equal(first.counts.failed,0);
   const second=await editor.webContents.executeJavaScript('window.ThreadsCutDesktop.runFolderBatch({fillSources:false})');
-  assert.equal(second.counts.generated,0);assert.equal(second.counts.already_done,first.counts.generated);
+  assert.equal(second.counts.generated,0);assert.equal(second.counts.already_done,first.counts.generated+first.counts.already_done);
   fs.writeFileSync(path.join(destination,'review-report.json'),JSON.stringify({first,second},null,2));
   console.log('REVIEW RESTART PASS',second.counts.already_done);app.exit(0);
  }catch(error){console.error(error.stack);app.exit(1);}

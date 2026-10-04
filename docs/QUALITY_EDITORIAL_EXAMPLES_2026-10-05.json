@@ -1,0 +1,420 @@
+{
+  "schema": "threads-quality-examples-v1",
+  "createdAt": "2026-10-05",
+  "reviewStatus": "needs_review",
+  "publicationAllowed": false,
+  "examples": [
+    {
+      "id": "source-b3c0ae54265490",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "담배 5갑 훔친 손님 알바가 찾아낸 방법",
+      "coverLines": [
+        "담배 5갑 훔친 손님",
+        "알바가 찾아낸 방법"
+      ],
+      "titleHighlights": [
+        "담배 5갑"
+      ],
+      "titleEvidence": "그 아재가 갑자기 전시 중인 담배를 다섯갑 훔쳐서 튀는거임",
+      "selectionReason": "가게 사진은 '우리 가게 아님'이라고 명시돼 사건 현장처럼 표지에 사용하지 않음",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "담배 다섯갑을 훔쳐 도망친 손님의 문 고장 발언을 단서로 119·114·열쇠방에 문의해 찾아갔다는 원문"
+    },
+    {
+      "id": "source-b12910061b1456",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "screenshot",
+      "coverTitle": "12년차 차장입니다. 회사에서 넵 쓰지마세요",
+      "coverLines": [
+        "12년차 차장입니다.",
+        "회사에서 넵",
+        "쓰지마세요"
+      ],
+      "titleHighlights": [
+        "넵"
+      ],
+      "titleEvidence": "12년차 차장입니다. 회사에서 넵 쓰지마세요",
+      "selectionReason": "원문 두 화면을 본문에 보존하고 당부의 핵심 단어를 강조",
+      "referenceAccount": "baeggopbox",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목 전체",
+      "regions": {
+        "s0": {
+          "x": 16,
+          "y": 240,
+          "width": 445,
+          "height": 296
+        }
+      },
+      "regionEvidence": "첫 원본 800×595를 직접 확인. 제목·본문 전체를 포함한 x16..461,y240..536; 상단 탐색·프로필과 하단 반응 UI 제외. 원본 ZIP 보존."
+    },
+    {
+      "id": "source-77b1297958e212",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "screenshot",
+      "coverTitle": "20년지기 여사친 하고 결국 결혼했다",
+      "coverLines": [
+        "20년지기 여사친",
+        "하고 결국 결혼했다"
+      ],
+      "titleHighlights": [
+        "20년지기"
+      ],
+      "titleEvidence": "20년지기 여사친 하고 결국 결혼했다",
+      "selectionReason": "결혼으로 이어진 관계를 두 의미 단위로 표현; 캡처 본문 보존",
+      "referenceAccount": "baeggopbox",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목 전체"
+    },
+    {
+      "id": "source-2a9823cc067575",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "photo_cover",
+      "coverTitle": "7,000원 돈까스 세트",
+      "coverLines": [
+        "7,000원",
+        "돈까스 세트"
+      ],
+      "titleHighlights": [
+        "7,000원"
+      ],
+      "titleEvidence": "7,000원 돈까스 세트",
+      "selectionReason": "메뉴판인 첫 이미지를 표지로 쓰지 않고 실제 돈까스 세트가 보이는 두 번째 원본 사진 선택",
+      "coverSegmentId": "s1",
+      "referenceAccount": "choi_20223",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목과 원본 음식 사진"
+    },
+    {
+      "id": "source-208fc2ac2bf245",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "결벽증 새언니가 명절에 온 뒤 벌어진 일",
+      "coverLines": [
+        "결벽증 새언니가",
+        "명절에 온 뒤",
+        "벌어진 일"
+      ],
+      "titleHighlights": [
+        "명절"
+      ],
+      "titleEvidence": "명절 일주일 전에 새언니2가 캐리어 두개 끌고내려옴",
+      "selectionReason": "청소와 가족 갈등을 예고하고 사건 전개와 결말은 원문에서 보존",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "명절 일주일 전에 새언니가 캐리어 두 개를 끌고 와 집을 청소했다는 원문"
+    },
+    {
+      "id": "source-47ec687ab31ecb",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "결혼 정보회사에 다녀온 썰",
+      "coverLines": [
+        "결혼 정보회사에",
+        "다녀온 썰"
+      ],
+      "titleHighlights": [
+        "결혼 정보회사"
+      ],
+      "titleEvidence": "결혼 정보회사에 다녀온 썰.txt",
+      "selectionReason": "본문 예시 사진을 당사자 결혼 사진처럼 보이게 쓰지 않음",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목"
+    },
+    {
+      "id": "source-aa03605099bb64",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "screenshot",
+      "coverTitle": "결혼식에 오지도 않고 5만원 내는 사람 많더라",
+      "coverLines": [
+        "결혼식에 오지도 않고",
+        "5만원 내는 사람",
+        "많더라"
+      ],
+      "titleHighlights": [
+        "5만원"
+      ],
+      "titleEvidence": "결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라",
+      "selectionReason": "축의금 금액과 참석 여부를 함께 전달; 원문 화면 보존",
+      "referenceAccount": "baeggopbox",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목 전체",
+      "regions": {
+        "s0": {
+          "x": 12,
+          "y": 420,
+          "width": 455,
+          "height": 70
+        }
+      },
+      "regionEvidence": "원본 800×558 직접 확인. 원문 제목은 표지에서 표현하고, 본문 '안올거면 성의라도 더 보이던가' 영역 전체를 사용. 작성자·날짜·반응 UI 제외. 원본 ZIP 보존."
+    },
+    {
+      "id": "source-cd60dcc8790a64",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "screenshot",
+      "coverTitle": "결혼하면 의견 갈리는 돈관리 유형",
+      "coverLines": [
+        "결혼하면 의견 갈리는",
+        "돈관리 유형"
+      ],
+      "titleHighlights": [
+        "돈관리"
+      ],
+      "titleEvidence": "결혼하면 은근히 의견 갈린다는 돈관리 유형",
+      "selectionReason": "글이 들어간 설명 이미지를 표지 제목으로 가리지 않고 본문에 보존",
+      "referenceAccount": "baeggopbox",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목과 돈관리 유형 원본 설명 이미지"
+    },
+    {
+      "id": "source-8fa9d77668e97c",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "곤충친구가 생긴 식물갤러",
+      "coverLines": [
+        "곤충친구가 생긴",
+        "식물갤러"
+      ],
+      "titleHighlights": [
+        "곤충친구"
+      ],
+      "titleEvidence": "곤충친구가 생긴 식물갤러",
+      "selectionReason": "앞의 인물 사진은 곤충 이야기와 관련성이 확인되지 않아 표지로 쓰지 않음",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목",
+      "exclusions": {
+        "s0": "곤충과 식물 이야기와 무관한 앞의 인물 사진. 원본 ZIP에는 보존."
+      }
+    },
+    {
+      "id": "source-1b38d44a793e89",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "photo_cover",
+      "coverTitle": "교토 아라시야마역 근황",
+      "coverLines": [
+        "교토 아라시야마역",
+        "근황"
+      ],
+      "titleHighlights": [
+        "아라시야마역"
+      ],
+      "titleEvidence": "교토 아라시야마역 근황",
+      "selectionReason": "원문 첫 역 사진 사용; 장소와 상황을 나눠 배치",
+      "coverSegmentId": "s0",
+      "referenceAccount": "choi_20223",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목과 원본 역사 사진"
+    },
+    {
+      "id": "source-c17a46580b99ba",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "photo_cover",
+      "coverTitle": "군대 신교대에 노브랜드가 생겼다",
+      "coverLines": [
+        "군대 신교대에",
+        "노브랜드가 생겼다"
+      ],
+      "titleHighlights": [
+        "노브랜드"
+      ],
+      "titleEvidence": "35사단 신교대에 시범적으로 노브랜드 생김",
+      "selectionReason": "실제 매장 사진과 원문 설명을 연결",
+      "coverSegmentId": "s1",
+      "referenceAccount": "choi_20223",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "35사단 신교대에 시범적으로 노브랜드 생김",
+      "exclusions": {
+        "s0": "미방이라고 쓰인 151×86 장식 이미지. 원문 내용과 무관하며 원본 ZIP에는 보존."
+      }
+    },
+    {
+      "id": "source-48349a44ba86af",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "white_title",
+      "coverTitle": "임플란트 7개 한 날 술 마신 상사",
+      "coverLines": [
+        "임플란트 7개 한 날",
+        "술 마신 상사"
+      ],
+      "titleHighlights": [
+        "임플란트 7개"
+      ],
+      "titleEvidence": "임플란트를 당일 점심에 7개 하고 회사에 복귀한 상사",
+      "selectionReason": "비유용 개불 사진을 사건 사진처럼 쓰지 않고 글의 상황으로 표지 구성",
+      "referenceAccount": "baeggopbox",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "임플란트를 당일 점심에 7개 하고 회사에 복귀한 상사가 술을 마시러 갔다는 원문"
+    },
+    {
+      "id": "source-f53a22681379a8",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "롯데리아 알바 2주차 후기",
+      "coverLines": [
+        "롯데리아 알바",
+        "2주차 후기"
+      ],
+      "titleHighlights": [
+        "2주차"
+      ],
+      "titleEvidence": "롯데리아 알바 2주차 후기",
+      "selectionReason": "업무 강도와 실제 장단점 모두 본문에 보존",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목"
+    },
+    {
+      "id": "source-6658f8a3a73f43",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "월세 970만원 게임만 하는 남편",
+      "coverLines": [
+        "월세 970만원",
+        "게임만 하는 남편"
+      ],
+      "titleHighlights": [
+        "970만원"
+      ],
+      "titleEvidence": "이것저것 낼꺼 다내고 매달 순수하게 남편 명의로 들어오는 월세가 970, 본인 월급은 세후 340",
+      "selectionReason": "월세와 생활 방식의 갈등을 분명하게 표현; 재산과 가치관 반전 보존",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "매달 순수하게 남편 명의로 들어오는 월세가 970, 집에서 게임만 하고 놈"
+    },
+    {
+      "id": "source-fdc33d33205242",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "너무 생생했던 로또 1등 당첨 꿈",
+      "coverLines": [
+        "너무 생생했던",
+        "로또 1등 당첨 꿈"
+      ],
+      "titleHighlights": [
+        "당첨 꿈"
+      ],
+      "titleEvidence": "지난 주에 로또 사는 거 깜빡해서 어제 자기 전에 찜찜했는데 그래서 그런지 바로 꿈에 나오더라.. 꿈 내용 까먹을까봐 적음",
+      "selectionReason": "실제 당첨 후기처럼 오해시키지 않도록 꿈임을 표지에 명시; 전체 결말 보존",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "꿈 내용 까먹을까봐 적음, 꿈이 하도 생생해서 눈 떴을 때 심장 두근거리고 있었음"
+    },
+    {
+      "id": "source-5c95f771262b17",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "초5 딸 미용실 보냈더니 59.4만원 결제",
+      "coverLines": [
+        "초5 딸 미용실",
+        "보냈더니",
+        "59.4만원 결제"
+      ],
+      "titleHighlights": [
+        "59.4만원"
+      ],
+      "titleEvidence": "정확히 60만은 아니고 59.4만원입니다.",
+      "selectionReason": "추가 후기의 정확한 금액으로 표지 작성; 재결제 협의와 원문 모두 보존",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "정확히 60만은 아니고 59.4만원입니다. 초5 딸내미가 개학앞두고 볼륨매직 한다고 해서"
+    },
+    {
+      "id": "source-7f7eb08a668bd4",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "10년 넘은 친구와 미용실 일로 손절",
+      "coverLines": [
+        "10년 넘은 친구와",
+        "미용실 일로 손절"
+      ],
+      "titleHighlights": [
+        "10년 넘은"
+      ],
+      "titleEvidence": "원덬은 미용사덬인데 디자이너로 일하고있고 지금 있는 매장에서",
+      "selectionReason": "머리 시술 후 불만과 예약 취소에서 시작된 갈등으로 표지 구성",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원덬은 미용사덬인데, 그친구 머리를 하겠다고 왔어, 결국 해결 안나고 말싸움만 하다가 손절"
+    },
+    {
+      "id": "source-391612b0f8a771",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "35살 딩크 부부 살아보니 어땠을까",
+      "coverLines": [
+        "35살 딩크 부부",
+        "살아보니 어땠을까"
+      ],
+      "titleHighlights": [
+        "딩크 부부"
+      ],
+      "titleEvidence": "35살 딩크 후기",
+      "selectionReason": "당사자가 설명한 생활과 아쉬움 모두 보존",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "35살 딩크 후기. 동갑 부부임."
+    },
+    {
+      "id": "source-5debc8c9d75196",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "32살 무직 돈도 남친도 없는 나만 이런 걸까",
+      "coverLines": [
+        "32살 무직",
+        "돈도 남친도 없는",
+        "나만 이런 걸까"
+      ],
+      "titleHighlights": [
+        "32살 무직"
+      ],
+      "titleEvidence": "32살. 무직. 돈 없음. 남친 없음 ( 왠지 별로 없을 것 같은 후기",
+      "selectionReason": "불안과 노력 중인 상황을 원문 근거로 표현; 조롱을 추가하지 않음",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "원제목과 이 세상에서 나만 이러고 있을 것 같은 그런 생각"
+    },
+    {
+      "id": "source-21c3c33773feee",
+      "schema": "threads-editorial-plan-v1",
+      "templateId": "mint_text",
+      "coverTitle": "연봉협상 도와준 상사에게 줄 선물",
+      "coverLines": [
+        "연봉협상 도와준",
+        "상사에게 줄 선물"
+      ],
+      "titleHighlights": [
+        "연봉협상"
+      ],
+      "titleEvidence": "이번에 연봉협상에 많은 도움 주셔서",
+      "selectionReason": "감사의 이유와 선물 선택 고민을 함께 전달",
+      "referenceAccount": "humor_ssul",
+      "reviewStatus": "needs_review",
+      "publicationAllowed": false,
+      "titleEvidenceNotes": "이번에 연봉협상에 많은 도움 주셔서 마음 표현하려고 하거든"
+    }
+  ]
+}

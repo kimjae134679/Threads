@@ -2,7 +2,7 @@
 const {BrowserWindow,dialog,ipcMain,shell}=require('electron');
 const fs=require('node:fs/promises');
 const path=require('node:path');
-const {runFolderBatch,readReport,inside}=require('./folder-batch.cjs');
+const {runFolderBatch,readReport,discoverCandidates,inside}=require('./folder-batch.cjs');
 const {fetchPublic,decodeHtml,hash}=require('./public-source.cjs');
 function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
   const materialRoot=path.join(app.getPath('desktop'),'Threads Cut Editor 자료');
@@ -13,6 +13,25 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
     processed:report.processed??report.entries.length,cancelled:report.cancelled,counts:report.counts,active:!!active,
     entries:report.entries.map(({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus})=>
       ({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus}))}:{entries:[],active:!!active};
+  async function currentReport(){
+    const saved=await readReport(output),inputFolder=saved?.inputFolder||path.join(materialRoot,'01_후보 기록');
+    let candidates;
+    try{candidates=await discoverCandidates(inputFolder);}catch(error){if(error.code==='ENOENT')return saved;throw error;}
+    const prior=new Map((saved?.entries||[]).map(row=>[row.id,row]));
+    const entries=[];
+    for(const candidate of candidates){
+      const id=String(candidate.id||hash(candidate.folder).slice(0,16)).replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,80);
+      let row=prior.get(id)||{id,title:candidate.title||'제목 미확인',relativePath:candidate.relativePath,sourceUrl:candidate.sourceUrl,
+        status:'waiting',reason:'저장 자료를 확인하고 이미지를 만들 준비가 됐어요.',nextAction:'전체 이미지 만들기를 누르세요.'};
+      if(row.outputFolder){
+        const folder=path.resolve(output,row.outputFolder);
+        const present=inside(output,folder)&&await fs.stat(path.join(folder,'rendered','slide-001.png')).then(s=>s.isFile()).catch(()=>false);
+        if(!present)row={...row,outputFolder:null,renderedPages:0,status:'waiting',reason:'기록된 결과 파일이 없어요. 다시 만들기를 누르세요.'};
+      }
+      entries.push(row);
+    }
+    return {...saved,inputFolder,total:candidates.length,processed:saved?.processed||0,entries};
+  }
   async function renderWindow(state) {
     if(!state.window||state.window.isDestroyed()) {
       state.window=new BrowserWindow({show:false,webPreferences:{...preferences,backgroundThrottling:false}});
@@ -113,7 +132,9 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
       document.getElementById('batchCanvas').value=input.editorial?.aspectRatio||'threads';
       const title=item.plan.originalTitle||input.title;
       const coverTitle=input.editorial?.coverTitle||window.ThreadsPagePlan.headline(title);
-      document.getElementById('coverTitle').value=coverTitle;
+      document.getElementById('coverTitle').value=input.editorial?.coverLines?.join('\\n')||coverTitle;
+      document.getElementById('titleHighlights').value=(input.editorial?.titleHighlights||[]).join(', ');
+      document.getElementById('coverTitleEvidence').value=input.editorial?.titleEvidence||title;
       document.getElementById('coverSize').value='64';
       document.getElementById('coverTop').value='48';
       document.getElementById('coverLeft').value='70';
@@ -164,20 +185,21 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
     } finally {if(state.window&&!state.window.isDestroyed())state.window.destroy();active=null;progress({phase:'finished'});}
   });
   ipcMain.handle('source-cut:cancel-folder-batch',event=>{trusted(event);if(active){active.cancelled=true;active.abort.abort();}});
-  ipcMain.handle('source-cut:batch-report',async event=>{trusted(event);return publicReport(await readReport(output));});
+  ipcMain.handle('source-cut:batch-report',async event=>{trusted(event);return publicReport(await currentReport());});
   ipcMain.handle('source-cut:open-batch-results',async event=>{trusted(event);await fs.mkdir(output,{recursive:true});const error=await shell.openPath(output);if(error)throw new Error(error);});
   async function findEntry(id) {
     if(typeof id!=='string'||!/^[-a-zA-Z0-9_]{1,80}$/.test(id))throw new Error('후보 ID를 확인하세요.');
-    const report=await readReport(output),entry=report?.entries.find(item=>item.id===id);
+    const report=await currentReport(),entry=report?.entries.find(item=>item.id===id);
     if(!entry)throw new Error('기록에서 후보를 찾지 못했습니다.');
     return {entry,report};
   }
   ipcMain.handle('source-cut:open-batch-entry',async(event,id,kind)=>{
-    trusted(event);const {entry,report}=await findEntry(id);
+    trusted(event);if(!['source','result','images'].includes(kind))throw new Error('열기 종류를 확인하세요.');const {entry,report}=await findEntry(id);
     const root=kind==='source'?report.inputFolder:output;
     const folder=path.resolve(root,kind==='source'?entry.relativePath:entry.outputFolder||'');
     if(folder===root||!inside(root,folder))throw new Error('해당 후보 폴더가 없습니다.');
-    const error=await shell.openPath(folder);if(error)throw new Error(error);
+    const target=kind==='images'?path.join(folder,'이미지 전체 보기.html'):folder;
+    const error=await shell.openPath(target);if(error)throw new Error(error);
   });
   ipcMain.handle('source-cut:batch-preview',async(event,id)=>{
     trusted(event);const {entry}=await findEntry(id);

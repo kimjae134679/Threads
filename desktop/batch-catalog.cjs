@@ -16,7 +16,7 @@ async function writeCatalog(output,report){
    '<p>'+escape(row.reason)+'</p><p>원문 게시 '+escape(row.sourcePublishedAt||'미확인')+' · 원문 확인 '+escape(row.sourceCheckedAt||'미확인')+' · 수집 '+escape(row.collectedAt||'미확인')+'</p><p>기준 '+escape(row.ruleVersion||'이전 기준')+' · 제작 '+escape(row.generatedAt||'없음')+
    ' · 검수 '+escape(row.reviewStatus==='approved'?'확인 완료':'미확인')+' · 게시 '+escape(row.publicationStatus==='published'?'완료':'확인 기록 없음')+
    '</p><p>'+escape(row.nextAction)+'</p><a href="'+href(input)+'">자료 안내</a> '+
-   (row.outputFolder?'<a href="'+href(row.outputFolder+'/review-preview.zip')+'">결과 ZIP</a> <a href="'+href(row.outputFolder+'/source-bundle.zip')+'">원문 ZIP</a>':'')+'</div></details>';
+   (row.outputFolder?'<a href="'+href(row.outputFolder+'/이미지 전체 보기.html')+'">이미지 전체 보기</a> <a href="'+href(row.outputFolder+'/review-preview.zip')+'">결과 ZIP</a> <a href="'+href(row.outputFolder+'/source-bundle.zip')+'">원문 ZIP</a>':'')+'</div></details>';
  }).join('\n');
  const ready=report.entries.filter(row=>row.outputFolder).length;
  const html='<!doctype html><html lang="ko"><meta charset="utf-8"><title>Threads 최신 자료 목록</title><style>'+
@@ -28,4 +28,8 @@ async function writeCatalog(output,report){
   rows+'<script>function paint(){const q=document.getElementById("search").value.toLocaleLowerCase(),f=document.getElementById("filter").value;document.querySelectorAll("details").forEach(r=>{r.hidden=!(r.dataset.title.includes(q)&&(f==="all"||f==="ready"&&r.dataset.ready==="1"||f==="blocked"&&r.dataset.ready==="0"));});}document.getElementById("search").oninput=paint;document.getElementById("filter").onchange=paint;paint();</script></html>';
  await writeAtomic(path.join(output,'자료 목록.html'),html);
 }
-module.exports={writeCatalog};
+async function writeResultGallery(folder,entry){
+ const images=entry.images.map((image,i)=>'<figure><img loading="lazy" src="'+href(image.name)+'" alt="'+(i+1)+'번째 이미지"><figcaption>'+(i+1)+' / '+entry.images.length+'</figcaption></figure>').join('');
+ await writeAtomic(path.join(folder,'이미지 전체 보기.html'),'<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(entry.title)+'</title><style>body{margin:0;background:#edf0f4;color:#16212b;font:16px system-ui,sans-serif}header{padding:24px;max-width:1080px;margin:auto}h1{font-size:24px}main{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;padding:0 16px 40px}figure{margin:0;width:360px;max-width:100%}img{width:100%;height:auto;display:block;box-shadow:0 2px 14px #0001}figcaption{text-align:center;padding:12px;color:#66717d}a{display:inline-block;margin-right:16px;color:#176351}</style><header><h1>'+escape(entry.title)+'</h1><p>'+entry.images.length+'장 · 검수 전 결과</p><a href="review-preview.zip">이미지 ZIP 받기</a><a href="source-bundle.zip">원문 ZIP 받기</a></header><main>'+images+'</main></html>');
+}
+module.exports={writeCatalog,writeResultGallery};

@@ -156,7 +156,8 @@
     clearUrls();chosen=item;const p=item.plan;
     $('curation').hidden=false;
     $('originalTitle').value=p.originalTitle||'';
-    $('coverTitle').value=p.coverTitle||'';
+    $('coverTitle').value=p.editorial?.coverLines?.join('\n')||p.coverTitle||'';
+    $('titleHighlights').value=(p.editorial?.titleHighlights||[]).join(', ');
     $('coverTitleEvidence').value=p.coverTitleEvidence||p.originalTitle||'';
     $('sourceName').textContent=p.sourceType==='saved-media'?
       '저장 자료: '+p.input.name+' · 원본 이미지 '+p.segments.length+'장 · 본문 글·댓글 원문 없음':
@@ -230,6 +231,9 @@
       templateId:$('batchTemplate').value,canvasMode:$('batchCanvas').value==='threads'?'threads':'instagram',aspectRatio:$('batchCanvas').value==='threads'?null:$('batchCanvas').value,
       coverSize:Number($('coverSize').value),coverTop:Number($('coverTop').value),
       coverLeft:Number($('coverLeft').value),manualTitleLayout:$('manualTitleLayout').checked,allowSystemFallback:p.style?.allowSystemFallback===true};
+    p.editorial={...p.editorial,coverTitle:p.coverTitle,titleEvidence:p.coverTitleEvidence,templateId:p.style.templateId,
+      coverLines:p.coverTitle.includes('\n')?p.coverTitle.split('\n').filter(line=>line.trim()):null,
+      titleHighlights:$('titleHighlights').value.split(',').map(word=>word.trim()).filter(Boolean)};
     const s=p.segments.find(x=>x.id===$('coverSource').value);
     p.cover={kind:s?.kind||null,segmentId:s?.id||null};
     return p;
@@ -396,6 +400,13 @@
           ctx.textAlign=op.align||'left';ctx.font=op.weight+' '+op.size+'px '+font;ctx.fillStyle=op.color||'#171c26';
           if(op.stroke){ctx.strokeStyle=op.stroke;ctx.lineWidth=op.strokeWidth||2;ctx.lineJoin='round';ctx.strokeText(op.text,op.x,op.y);}
           ctx.fillText(op.text,op.x,op.y);
+          if(op.highlights?.length){
+            const width=ctx.measureText(op.text).width,left=op.align==='center'?op.x-width/2:op.x;
+            ctx.textAlign='left';ctx.fillStyle=op.highlightColor;
+            for(const word of op.highlights){let at=op.text.indexOf(word);while(at>=0){
+              ctx.fillText(word,left+ctx.measureText(op.text.slice(0,at)).width,op.y);at=op.text.indexOf(word,at+word.length);
+            }}
+          }
         }
       }
       if(preview){ctx.fillStyle='#9f1239';ctx.font='900 20px "Carousel Sans KR"';ctx.textAlign='right';

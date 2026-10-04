@@ -9,7 +9,7 @@ for(const row of report.entries.filter(row=>row.outputFolder)){
  try{
   const folder=path.resolve(root,row.outputFolder);assert(folder.startsWith(root+path.sep));
   const plan=JSON.parse(fs.readFileSync(path.join(folder,'production-plan.json'),'utf8'));
-  assert.equal(plan.ruleVersion,'2026-10-04.3');assert.equal(plan.publicationAllowed,false);
+  assert.equal(plan.ruleVersion,'2026-10-05.3');assert.equal(plan.publicationAllowed,false);
   assert.equal(plan.pages.length,row.images.length);
   const ops=plan.pages.flatMap(p=>p.operations),omitted=new Map(plan.omitted.map(o=>[o.sourceId,o]));
   for(const unit of plan.sourceUnits){

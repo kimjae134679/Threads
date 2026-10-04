@@ -1,10 +1,10 @@
 (function(){
   'use strict';
   const $=id=>document.getElementById(id),api=window.ThreadsCutDesktop;
-  const labels={published:'게시 완료 기록 있음',generated:'이번에 제작',already_done:'이미 제작됨',needs_source:'원문 부족',needs_access:'접근·제공 권한 필요',
+  const labels={waiting:'이미지 제작 대기',published:'게시 완료 기록 있음',generated:'이번에 제작',already_done:'이미 제작됨',needs_source:'원문 부족',needs_access:'접근·제공 권한 필요',
     needs_exact_url:'정확한 주소 필요',needs_media:'본문 이미지 누락',needs_selection:'원문 선별 필요',
     unavailable:'삭제·없는 글',excluded_severe:'소재 제외',failed:'처리 오류'};
-  let snapshot={entries:[]},limit=20,running=false,previewed='',refreshTimer=0;
+  let snapshot={entries:[]},limit=20,running=false,previewed='',refreshTimer=0,requested=false;
   function setRunning(value) {
     running=value;$('runFolderBatch').disabled=value||!api?.runFolderBatch;
     $('chooseFolderBatch').disabled=value||!api?.runFolderBatch;
@@ -21,20 +21,18 @@
     const term=$('batchSearch').value.trim().toLocaleLowerCase(),filter=$('batchFilter').value;
     const rows=all.filter(row=>(filter==='all'||filter==='ready'&&row.outputFolder||filter==='blocked'&&!row.outputFolder)&&
       (!term||[row.title,row.site,row.reason,labels[row.status]].some(value=>String(value||'').toLocaleLowerCase().includes(term))));
+    rows.sort((a,b)=>Number(Boolean(b.outputFolder))-Number(Boolean(a.outputFolder)));
     const body=$('batchRows');body.replaceChildren();
     for(const row of rows.slice(0,limit)) {
       const tr=document.createElement('tr'),title=document.createElement('td'),state=document.createElement('td'),action=document.createElement('td');
       const strong=document.createElement('strong');strong.textContent=row.title||'제목 미확인';
       const site=document.createElement('small');site.textContent=row.site||'저장 자료';title.append(strong,site);
       state.textContent=(labels[row.status]||row.status)+(row.renderedPages?' · '+row.renderedPages+'장':'');
-      const reason=document.createElement('small');reason.textContent=row.reason||'';state.append(reason);
-      const next=document.createElement('small');next.textContent=row.nextAction||'';state.append(next);
-      const version=document.createElement('small');version.textContent='기준 '+(row.ruleVersion||'이전 기준')+' · 제작 '+(row.generatedAt?new Date(row.generatedAt).toLocaleString('ko-KR'):'없음');
-        const lifecycle=document.createElement('small');lifecycle.textContent='검수 '+(row.reviewStatus==='approved'?'확인 완료':'미확인')+' · 게시 '+(row.publicationStatus==='published'?'완료':'확인 기록 없음');state.append(version,lifecycle);
-        const dates=document.createElement('small');dates.textContent='원문 게시 '+(row.sourcePublishedAt?new Date(row.sourcePublishedAt).toLocaleString('ko-KR'):'미확인')+' · 원문 확인 '+(row.sourceCheckedAt?new Date(row.sourceCheckedAt).toLocaleString('ko-KR'):'미확인');state.append(dates);
-      const open=document.createElement('button');open.type='button';open.textContent=row.outputFolder?'결과 폴더':'자료 폴더';
-      open.addEventListener('click',()=>api.openBatchEntry(row.id,row.outputFolder?'result':'source').catch(error=>{$('folderBatchStatus').textContent=error.message;}));
-      action.append(open);
+      const reason=document.createElement('small');reason.textContent=row.outputFolder?(row.renderedPages+'장의 이미지가 준비됐어요.'):(row.reason||'');state.append(reason);
+      const lifecycle=document.createElement('small');lifecycle.textContent=row.outputFolder?'이미지를 만들었어요. 내용 확인이 필요해요.':row.nextAction||'';state.append(lifecycle);
+      const button=(text,kind)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',()=>api.openBatchEntry(row.id,kind).catch(error=>{$('folderBatchStatus').textContent=error.message;}));action.append(b);};
+      button('원본 자료 열기','source');
+      if(row.outputFolder){button('이미지 전체 보기','images');button('결과 폴더 열기','result');}
       if(row.outputFolder) {
         const view=document.createElement('button');view.type='button';view.textContent='표지 보기';
         view.addEventListener('click',()=>preview(row));action.append(view);
@@ -58,13 +56,13 @@
     if(!api?.batchReport)return;
     try {
       snapshot=await api.batchReport();paint();
-      if(snapshot.active)setRunning(true);
+      if(!requested)setRunning(Boolean(snapshot.active));
       if(!previewed) {const row=snapshot.entries.find(item=>item.outputFolder);if(row)await preview(row);}
     } catch(error) {$('folderBatchStatus').textContent='결과 기록 열기 실패: '+error.message;}
   }
   async function run(chooseFolder) {
     if(running||!api?.runFolderBatch)return;
-    setRunning(true);limit=20;
+    requested=true;setRunning(true);limit=20;
     $('folderBatchProgress').hidden=false;$('folderBatchProgress').removeAttribute('value');
     $('folderBatchStatus').textContent=chooseFolder?'자료 폴더를 선택하세요.':'저장 자료를 검사하고 필요한 후보만 처리합니다.';
     try {
@@ -78,7 +76,7 @@
       $('batchFilter').value=ready?'ready':'blocked';paint();
       previewed='';await refresh();
     } catch(error) {$('folderBatchStatus').textContent='자동 제작 오류: '+error.message;await refresh();}
-    finally {setRunning(false);}
+    finally {requested=false;setRunning(false);}
   }
   $('runFolderBatch').addEventListener('click',()=>run(false));
   $('chooseFolderBatch').addEventListener('click',()=>run(true));
@@ -91,6 +89,7 @@
   $('closeBatchPreview').addEventListener('click',()=>{$('batchPreviewPanel').hidden=true;});
   api?.onBatchProgress?.(value=>{
     if(value.phase==='finished'){clearTimeout(refreshTimer);refresh();return;}
+    if(!running)return;
     const progress=$('folderBatchProgress');progress.hidden=false;progress.max=Math.max(value.total||1,1);progress.value=value.done||0;
     $('folderBatchStatus').textContent=(value.phase==='acquiring'?'공개 원문 보완 중':value.phase==='scan'?'저장 자료 검사 중':labels[value.status]||'처리 중')+
       ' · '+(value.done||0)+'/'+(value.total||0)+' · '+(value.title||'');
