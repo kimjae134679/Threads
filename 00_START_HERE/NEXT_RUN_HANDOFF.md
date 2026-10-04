@@ -45,7 +45,7 @@ sourcePublishedAt, sourceCheckedAt, collectedAt, generatedAt을 구분합니다.
 | 실제 입력 | C:\Users\user\source\repos\Threads-program-inputs\data\runtime\program_inputs |
 | 최신 결과 | 자료\06_자동 제작 결과\현재 결과\제목__ID |
 | 상태 목록 | 자료\06_자동 제작 결과\status.json·status.csv·자료 목록.html |
-| 이전 Known-Good | 자료\06_자동 제작 결과\이전결과_0.3.1 및 기존 0.3.1 실행본 |
+| 이전 Known-Good 실행본 | 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.3.1-Windows-x64 |
 | 주 소통 기록 | project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/THREAD.md |
 
 01_후보 기록은 Junction입니다. 실제 원본을 삭제하거나 이동하지 않습니다. 원본 1,084건과 AAA 레퍼런스는 보존했습니다. runtime·제3자 이미지·캡션·로그인 정보는 공개 Git에 넣지 않습니다. 입력 checkout은 별도 저장소가 아니라 Threads의 다른 checkout입니다.
