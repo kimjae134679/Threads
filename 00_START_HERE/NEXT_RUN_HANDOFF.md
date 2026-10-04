@@ -4,7 +4,7 @@
 
 ## 현재 결과
 
-Windows 프로그램 0.3.2, 제작 규칙 2026-10-04.3을 구현·빌드·설치했습니다. 입력 1,084건 중 검수 전 결과 398건·3,211 PNG, 보류·제외 686건, 처리 실패 0입니다. 실제 게시 확인은 0입니다. 재실행은 새 제작 0·건너뜀 398입니다.
+Windows 프로그램 0.3.3, 제작 규칙 2026-10-04.3을 구현·빌드·설치했습니다. 입력 1,084건 중 검수 전 결과 398건·3,209 PNG, 보류·제외 686건, 처리 실패 0입니다. 실제 게시 확인은 0입니다. 재실행은 새 제작 0·건너뜀 398입니다.
 
 레퍼런스 수준을 사용자가 만족했다고 확인한 상태는 아닙니다. 사진·민트·흰 바탕·캡처·설명형 형식과 일정 비율 조판을 구현했고 대표 결과를 직접 확인했습니다. 398건 전체의 파일·원문 연속성 감사는 통과했지만 전 장의 의미·권리·표현을 사람이 검수한 상태는 아닙니다.
 
@@ -20,6 +20,8 @@ Windows 프로그램 0.3.2, 제작 규칙 2026-10-04.3을 구현·빌드·설치
 - 원본과 Known-Good를 보존하고 최신 결과·실행 위치·검수·게시 여부를 분명히 표시합니다.
 
 ## 이번 변경
+
+0.3.3은 계획 단계에서 읽은 이미지를 렌더 단계에서 재사용합니다. 한 번의 제작에서 픽셀 분석과 레이아웃 계산을 반복하지 않습니다. 보관은 한 계획·3,200만 픽셀 이내이며 렌더 후 해제합니다. 원문 ZIP 해시, 제작 계획 버전, 검수 조건은 매번 확인합니다. 이미지 분석 변경은 이미지 첨부 후보의 캐시만 무효화하므로 텍스트 후보를 불필요하게 재생성하지 않습니다. 제목 수동 조절을 선택해야 위치·크기 입력이 활성화됩니다.
 
 app/source-page-plan.js는 본문 52px·안전 여백 72px, 문단·문장 단위 배치, 질문과 답변의 동반 배치, 빈 줄 기준의 전체 캡처 분할을 수행합니다. 일반 세로 사진은 한 장에 담습니다. 실제 경계가 없으면 선별 필요로 보류합니다. 사진 표지에는 하단 그라데이션을 사용하며 캡처는 별도 제목 표지 뒤에 원본을 표시합니다.
 
@@ -39,7 +41,7 @@ sourcePublishedAt, sourceCheckedAt, collectedAt, generatedAt을 구분합니다.
 | 안정 코드 폴더 | C:\KJ\Github\Threads |
 | 사용자 전체 자료 | C:\Users\user\Desktop\Threads Cut Editor 자료 |
 | 바탕화면 바로가기 | C:\Users\user\Desktop\Threads Cut Editor.lnk |
-| 현재 실행본 | 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.3.2-Windows-x64\Threads Cut Editor.exe |
+| 현재 실행본 | 자료\03_배포 설치파일\현재 버전\Threads-Cut-Editor-0.3.3-Windows-x64\Threads Cut Editor.exe |
 | 실제 입력 | C:\Users\user\source\repos\Threads-program-inputs\data\runtime\program_inputs |
 | 최신 결과 | 자료\06_자동 제작 결과\현재 결과\제목__ID |
 | 상태 목록 | 자료\06_자동 제작 결과\status.json·status.csv·자료 목록.html |
@@ -54,11 +56,11 @@ sourcePublishedAt, sourceCheckedAt, collectedAt, generatedAt을 구분합니다.
 
 ## 검증과 한계
 
-62개 회귀 suite, 실제 Electron 원문 선별·자동 제작 UI smoke, 설치 실행본의 version=0.3.2 / rule=2026-10-04.3 / 이미지 분석·형식 선택·수동 제목 조절 로딩이 통과했습니다. 전체 398건·3,211장의 텍스트 보존·이미지 연속성·크기·범위·URL 제외·PNG 해시 감사 오류 0입니다.
+64개 회귀 suite, 실제 Electron 원문 선별·자동 제작 UI smoke, 설치 실행본의 version=0.3.3 / rule=2026-10-04.3 / 이미지 분석·형식 선택·수동 제목 조절 로딩이 통과했습니다. 전체 398건·3,209장의 텍스트 보존·이미지 연속성·크기·범위·URL 제외·PNG 해시 감사 오류 0입니다.
 
 보류는 원문 176, 접근 422, 주소 56, 이미지·영상 15, 선별 12, 소재 제외 5입니다. 이번 전체 처리는 저장 원문만 사용했으며 네트워크 보완을 새로 수행하지 않았습니다. 안전한 분할 경계를 찾지 못한 6건은 선별 12건에 포함됩니다. 이런 자료를 임의로 잘라 제작 완료로 처리하지 않습니다.
 
-최종 ZIP SHA-256: ecb103ba99eaf66aed0ed0d0ad39effe59deeb04671988ea64990f680091f2e8. 배포 앱의 주요 ASAR 코드와 렌더러는 검증 코드와 바이트 일치합니다. root 웹 앱 버전과 desktop 실행본 버전은 별개입니다.
+최종 ZIP SHA-256: 44958d6d97cc1bfe9a8d909a26b33cd34febb897b7b4948253389fc0acdf45b4. 배포 앱의 주요 ASAR 코드와 렌더러는 검증 코드와 바이트 일치합니다. root 웹 앱 버전과 desktop 실행본 버전은 별개입니다.
 
 로컬 sandbox의 py 런처는 설치 Python을 찾지 못했습니다. 연결된 실제 Windows 사용자 환경에서 전체 suite를 실행해 통과했습니다. PowerShell 파일에 한글 경로가 있으면 Windows PowerShell 5용 UTF-8 BOM을 사용합니다. GUI 실행본은 Start-Process -Wait로 종료 코드를 확인합니다. 숨긴 창의 capturePage는 UnknownVizError가 날 수 있어 실제 창을 표시한 뒤 캡처했습니다.
 
@@ -69,3 +71,5 @@ sourcePublishedAt, sourceCheckedAt, collectedAt, generatedAt을 구분합니다.
 reference-production-rules.json은 분석 때의 제안 문서이며 런타임 설정 파일이 아닙니다. 구현된 규칙은 실제 app/source-page-plan.js와 desktop/folder-batch.cjs입니다.
 
 후속 작업은 실제 생성 이미지에서 읽기 순서·모바일 크기·마지막 장을 확인하고, 보류 자료의 원본과 사용 영역을 확보하는 것입니다. 원본 좌표를 실제로 읽어 editorial-plan.json에 근거를 남깁니다. 실제 게시·권리·개인정보·성과는 04_REVIEW_PUBLISH와 05_EXPERIMENTS_ACCOUNTS에서 별도 승인·기록합니다. 자동 게시하거나 P1을 올리지 않습니다.
+
+검정 배경·노란 말풍선 원본에서 사진 오인을 확인하고 평탄 배경과 반복 글줄 근거가 있을 때 캡처로 분류하도록 고쳤습니다. 픽셀 분석 버전은 2026-10-04.4입니다. 바깥 여백도 행·열 전체가 공백일 때만 줄여 희미한 끝 문자를 보존합니다. 원문 ZIP·PNG 해시·본문 전체·이미지 연속성·가로 경계·PNG 높이를 실제 파일로 검사합니다.

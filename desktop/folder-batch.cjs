@@ -10,6 +10,8 @@ const digest=data=>createHash('sha256').update(data).digest('hex');
 const safe=value=>String(value||'source').replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,80);
 const label=value=>String(value||'원문').normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,' ').replace(/\s+/g,' ').trim().slice(0,42).replace(/[. ]+$/,'')||'원문';
 const RULE_VERSION='2026-10-04.3';
+// Text-only layouts keep their existing fingerprint when pixel analysis changes.
+const fingerprintFor=job=>digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job)+(job.files?.length?'|image-analysis-2026-10-04.4':''));
 const statuses=['published','generated','already_done','needs_source','needs_access','needs_exact_url','needs_media','needs_selection','unavailable','excluded_severe','failed'];
 const inside=(root,target)=>{const relative=path.relative(root,target);return relative===''||relative!=='..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative);};
 async function exists(file) {try{await fs.access(file);return true;}catch{return false;}}
@@ -130,7 +132,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
       } else {
         entry.inputKind=job.inputKind;entry.sourceUrl=job.sourceUrl||entry.sourceUrl;entry.title=job.title||entry.title;
         Object.assign(entry,{sourceCheckedAt:job.sourceCheckedAt||null,sourcePublishedAt:job.sourcePublishedAt||null,collectedAt:job.collectedAt||null});
-        let fingerprint=digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job));
+        let fingerprint=fingerprintFor(job);
         const old=outputs[entry.id];
         let outputFolder=path.posix.join('현재 결과',label(entry.title)+'__'+entry.id);
         if(await intactOutput(destination,old,fingerprint)) {
@@ -143,7 +145,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
             onProgress({phase:'acquiring',done:index,total:candidates.length,title:entry.title});
             await acquire({folder:candidate.folder,sourceUrl:entry.sourceUrl,title:entry.title});
             job=await loadBatchInput(candidate.folder,entry);if(!job)throw error;
-            fingerprint=digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job));
+            fingerprint=fingerprintFor(job);
             result=await render(job,{folder:candidate.folder,id:entry.id});
           }
           if(!Buffer.isBuffer(result?.zip)||!Buffer.isBuffer(result.sourceZip)||!result.sourceZip.length||

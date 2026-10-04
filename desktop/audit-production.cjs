@@ -27,12 +27,18 @@ for(const row of report.entries.filter(row=>row.outputFolder)){
   for(const p of plan.pages){
    assert(p.width===1080&&p.height>=240&&p.height<=1440);
    assert(p.operations.length);
-   for(const op of p.operations){assert(op.y>=0&&op.y+(op.kind==='text'?op.lineHeight:op.height)<=p.height+1);if(op.kind==='text')assert(!/https?:\/\//.test(op.text));}
+   for(const op of p.operations){
+    assert(op.y>=0&&op.y+(op.kind==='text'?op.lineHeight:op.height)<=p.height+1);
+    assert(Number.isFinite(op.x)&&op.x>=0&&op.x+(op.width||0)<=p.width+1,'Horizontal content bounds');
+    if(op.kind==='text')assert(!/https?:\/\//.test(op.text));
+   }
   }
   for(const image of row.images){
    const file=path.resolve(folder,image.name);assert(file.startsWith(folder+path.sep));
    const data=fs.readFileSync(file);assert.equal(crypto.createHash('sha256').update(data).digest('hex'),image.sha256);
    assert.equal(data.readUInt32BE(16),1080);
+   const pageNumber=Number(path.basename(image.name).match(/slide-(\d+)/)?.[1])-1;
+   assert.equal(data.readUInt32BE(20),plan.pages[pageNumber].height,'PNG height must match saved plan');
   }
   result.outputs++;result.pages+=plan.pages.length;result.templates[plan.templateId]=(result.templates[plan.templateId]||0)+1;
   if(plan.warnings.length)result.warnings.push({id:row.id,warnings:plan.warnings});

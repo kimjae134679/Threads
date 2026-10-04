@@ -7,6 +7,9 @@
   const bytes=s=>encoder.encode(String(s));
   let chosen=null, output=null, files=[], running=false;
   let previewUrls=[];
+  // Keep at most one plan's decoded assets, and consume them after rendering.
+  const pendingPixelLimit=32000000;
+  let pendingAssets=null;
   const presetKey='threads-curated-style-v1';
   const family=(id,fallback=false)=>(id==='gothic'?'"Cut Gothic"':'"Carousel Sans KR"')+(fallback?', "Malgun Gothic", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif':'');
   function weights() {
@@ -20,6 +23,10 @@
     const select=$('batchPreset'),current=select.value;select.replaceChildren(new Option('저장된 프리셋 선택',''));
     for(const name of Object.keys(presets()))select.add(new Option(name,name));select.value=current;
   }
+  function titleControls() {
+    for(const id of ['coverSize','coverTop','coverLeft']) $(id).disabled=!$('manualTitleLayout').checked;
+  }
+  $('manualTitleLayout').addEventListener('change',titleControls);titleControls();
   $('batchFont').addEventListener('change',weights);weights();refreshPresets();
   $('saveBatchPreset').addEventListener('click',()=>{
     const name=$('batchPresetName').value.trim();if(!name)return status('프리셋 이름을 입력하세요.');
@@ -38,6 +45,7 @@
     $('coverSize').value=String(p.coverSize||70);$('coverTop').value=String(p.coverTop??44);
     $('coverLeft').value=String(p.coverLeft??67);
     $('manualTitleLayout').checked=p.manualTitleLayout===true;
+    titleControls();
     status('선택한 스타일 프리셋을 적용했습니다.');
   });
   function clearUrls() {for(const url of previewUrls)URL.revokeObjectURL(url);previewUrls=[];}
@@ -166,6 +174,7 @@
     $('coverSize').value=String(p.style?.coverSize||70);$('coverTop').value=String(p.style?.coverTop??44);
     $('coverLeft').value=String(p.style?.coverLeft??67);
     $('manualTitleLayout').checked=p.style?.manualTitleLayout===true;
+    titleControls();
     const areas=$('segmentChoices');areas.replaceChildren();
     for(const part of p.segments) {
       const div=document.createElement('div');div.className='choice';
@@ -317,7 +326,7 @@
   }
   async function layoutFor(plan,media) {
     const images=new Map(),dimensions={};
-    for(const item of plan.segments.filter(s=>s.selected&&s.kind==='image')) {
+    try {for(const item of plan.segments.filter(s=>s.selected&&s.kind==='image')) {
       const name=item.mediaName.toLowerCase();if(images.has(name))continue;
       const img=await loadImage(media.get(name));images.set(name,img);
       dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:plan.media?.find(m=>m.name?.toLowerCase()===name)?.sha256,
@@ -327,18 +336,50 @@
     const layout=window.ThreadsPagePlan.compile(plan,dimensions,(text,size,weight=400)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;});
     layout.imageAnalysis=dimensions;
     return {layout,images,font};
+    }catch(error){releaseImages(images);throw error;}
+  }
+  function releaseImages(images) {for(const image of images.values())image.src='';images.clear();}
+  function releasePending() {
+    if(pendingAssets)releaseImages(pendingAssets.images);
+    pendingAssets=null;
   }
   async function planBundle(file,{preview=false}={}) {
-    const {plan,media}=await unpack(file,{preview}),{layout}=await layoutFor(plan,media);
-    layout.bundleSha256=await hash(await file.arrayBuffer());return layout;
+    releasePending();
+    const {plan,media}=await unpack(file,{preview}),prepared=await layoutFor(plan,media);
+    try {prepared.layout.bundleSha256=await hash(await file.arrayBuffer());}
+    catch(error){releaseImages(prepared.images);throw error;}
+    const pixels=[...prepared.images.values()].reduce((sum,image)=>sum+image.naturalWidth*image.naturalHeight,0);
+    releasePending();
+    if(pixels<=pendingPixelLimit)pendingAssets={...prepared,file};
+    else releaseImages(prepared.images);
+    return prepared.layout;
   }
-  async function renderCurated(plan,media,{preview=false,productionPlan=null}={}) {
-    const prepared=await layoutFor(plan,media),layout=productionPlan||prepared.layout;
+  async function renderAssets(plan,media,productionPlan,file) {
+    if(pendingAssets?.file===file&&pendingAssets.layout===productionPlan) {
+      const prepared=pendingAssets;pendingAssets=null;return prepared;
+    }
+    releasePending();
+    if(!productionPlan)return layoutFor(plan,media);
+    const images=new Map();
+    try {
+      for(const page of productionPlan.pages)for(const op of page.operations) {
+        if(op.kind!=='image'||images.has(op.name))continue;
+        const source=media.get(op.name);
+        if(!source)throw new Error('제작 계획의 원본 이미지가 없습니다: '+op.name);
+        images.set(op.name,await loadImage(source));
+      }
+      return {layout:productionPlan,images,font:family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback)};
+    }catch(error){releaseImages(images);throw error;}
+  }
+  async function renderCurated(plan,media,{preview=false,productionPlan=null,file=null}={}) {
+    if(productionPlan&&productionPlan.ruleVersion!==window.ThreadsPagePlan.VERSION)
+      throw new Error('제작 계획의 처리 규칙이 변경되었습니다. 다시 계획하세요.');
+    const prepared=await renderAssets(plan,media,productionPlan,file),layout=prepared.layout;
     const {images,font}=prepared;
     if(layout.ruleVersion!==window.ThreadsPagePlan.VERSION)throw new Error('제작 계획의 기준 버전이 오래되었습니다. 다시 계획하세요.');
     plan.productionPlan=layout;
     const output=[];
-    for(const page of layout.pages) {
+    try {for(const page of layout.pages) {
       const canvas=document.createElement('canvas');canvas.width=page.width;canvas.height=page.height;
       const ctx=canvas.getContext('2d');ctx.fillStyle=page.background||'#fff';ctx.fillRect(0,0,page.width,page.height);
       ctx.textBaseline='top';
@@ -362,13 +403,16 @@
       const url=canvas.toDataURL('image/png');
       output.push({name:'rendered/slide-'+String(page.number).padStart(3,'0')+'.png',data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))});
     }
+    }finally{releaseImages(images);}
     return output;
   }
   async function renderBundle(file,{preview=false,productionPlan=null}={}) {
+    try {
     const {plan,media}=await unpack(file,{preview});
-    if(productionPlan&&productionPlan.bundleSha256!==await hash(await file.arrayBuffer()))throw new Error('제작 계획과 원문 ZIP이 다릅니다.');
-    const pages=await renderCurated(plan,media,{preview,productionPlan});
-    const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:await hash(await file.arrayBuffer()),
+    const bundleData=await file.arrayBuffer(),bundleSha256=await hash(bundleData);
+    if(productionPlan&&productionPlan.bundleSha256!==bundleSha256)throw new Error('제작 계획과 원문 ZIP이 다릅니다.');
+    const pages=await renderCurated(plan,media,{preview,productionPlan,file});
+    const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:bundleSha256,
       sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,
       style:plan.style||{fontId:'sans',titleWeight:900},editorialNotes:plan.segments.filter(s=>s.selected&&s.after?.note?.trim())
@@ -377,7 +421,8 @@
       selectedComments:plan.comments.filter(c=>c.selected).map(c=>({id:c.id,location:c.location})),
       productionPlan:plan.productionPlan,renderedPages:pages.length,fontFallback:plan.fontFallback||null,publicationAllowed:false,previewOnly:preview};
     return {pages:pages.length,images:pages,zip:Z.zip([...pages,{name:'manifest.json',data:bytes(JSON.stringify(manifest,null,2)+'\n')},
-      {name:'source-bundle.zip',data:new Uint8Array(await file.arrayBuffer())}]),title:plan.coverTitle,plan};
+      {name:'source-bundle.zip',data:new Uint8Array(bundleData)}]),title:plan.coverTitle,plan};
+    }catch(error){releasePending();throw error;}
   }
   async function saveFile(blob,name) {
     if(output) {
