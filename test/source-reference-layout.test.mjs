@@ -56,6 +56,6 @@ assert.equal(crop.sourceX,100);assert.equal(crop.sourceY,200);assert.equal(crop.
 assert.equal(plan.editorial,undefined);
 const manual=P.compile({...plan,style:{manualTitleLayout:true,coverSize:64,coverLeft:120,coverTop:90,titleWeight:400}},
  {'screen.png':{width:1000,height:1000,analysis:{kind:'screenshot'}}},measure);
-assert.equal(manual.pages[0].operations[0].x,120);assert.equal(manual.pages[0].operations[0].y,90);
-assert.equal(manual.pages[0].operations[0].size,64);assert.equal(manual.pages[0].operations[0].weight,400);
+assert.equal(manual.pages[0].operations.find(o=>o.role==='title').x,120);assert.equal(manual.pages[0].operations.find(o=>o.role==='title').y,90);
+assert.equal(manual.pages[0].operations.find(o=>o.role==='title').size,64);assert.equal(manual.pages[0].operations.find(o=>o.role==='title').weight,400);
 console.log('Reference layouts: screenshot readability, complete safe splits, photo selection, exact story preservation, fixed Instagram ratio, audited crop PASS');

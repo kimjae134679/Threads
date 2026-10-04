@@ -3,6 +3,7 @@ const {BrowserWindow,dialog,ipcMain,shell}=require('electron');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const {runFolderBatch,readReport,discoverCandidates,inside}=require('./folder-batch.cjs');
+const {importSavedSource}=require('./source-import.cjs');
 const {fetchPublic,decodeHtml,hash}=require('./public-source.cjs');
 function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
   const materialRoot=path.join(app.getPath('desktop'),'Threads Cut Editor 자료');
@@ -41,6 +42,17 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
     }
     return state.window;
   }
+  ipcMain.handle('source-cut:import-saved-source',async(event)=>{
+    trusted(event);if(active)throw new Error('이미지 제작이 끝난 뒤 가져오세요.');
+    const selected=await dialog.showOpenDialog(getEditor(),{title:'저장한 웹 글 가져오기',properties:['openFile','multiSelections'],filters:[{name:'웹 글 · 원문 파일',extensions:['html','htm','json','txt']}]});
+    if(selected.canceled)return {canceled:true};
+    if(selected.filePaths.length>50)throw new Error('한 번에 50개까지 가져올 수 있습니다.');
+    const report=await currentReport(),root=report?.inputFolder||path.join(materialRoot,'01_후보 기록'),state={},results=[];
+    try{const win=await renderWindow(state);
+      for(const file of selected.filePaths){try{results.push(await importSavedSource({file,root,parseHtml:html=>win.webContents.executeJavaScript('window.ThreadsSourceCuration.htmlDraft('+JSON.stringify(html)+',[])')}));}catch(error){results.push({file:path.basename(file),error:error.message});}}
+      return {results};
+    }finally{state.window?.destroy();}
+  });
   async function acquire(job,state) {
     const target=path.join(job.folder,'source'),recordPath=path.join(target,'acquisition.json');
     try {
@@ -100,7 +112,8 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
     const win=await renderWindow(state);
     const result=await win.webContents.executeJavaScript(`(async()=>{try{
       const input=${JSON.stringify(job)},prefix='candidate/';
-      const source=new File([input.sourceText],input.sourceName,{type:'text/plain'});
+      const sourceBytes=input.sourceData?Uint8Array.from(atob(input.sourceData),c=>c.charCodeAt(0)):input.sourceText;
+      const source=new File([sourceBytes],input.sourceName,{type:input.sourceMime||'text/plain;charset=utf-8'});
       Object.defineProperty(source,'webkitRelativePath',{value:prefix+input.sourceName});
       const all=[source];
       if(input.intakeText) {

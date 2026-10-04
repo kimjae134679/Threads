@@ -6,7 +6,7 @@
     unavailable:'삭제·없는 글',excluded_severe:'소재 제외',failed:'처리 오류'};
   let snapshot={entries:[]},limit=20,running=false,previewed='',refreshTimer=0,requested=false;
   function setRunning(value) {
-    running=value;$('runFolderBatch').disabled=value||!api?.runFolderBatch;
+    running=value;if($('importWebFiles'))$('importWebFiles').disabled=value||!api?.importSavedSource;$('runFolderBatch').disabled=value||!api?.runFolderBatch;
     $('chooseFolderBatch').disabled=value||!api?.runFolderBatch;
     $('fillBatchSources').disabled=value;
     $('stopFolderBatch').hidden=!value;
@@ -78,6 +78,16 @@
     } catch(error) {$('folderBatchStatus').textContent='자동 제작 오류: '+error.message;await refresh();}
     finally {requested=false;setRunning(false);}
   }
+  $('importWebFiles').disabled=!api?.importSavedSource;
+  $('importWebFiles').title='디시·뽐뿌·블라인드 등의 저장 HTML과 본문 이미지를 함께 가져옵니다. 여러 파일을 선택할 수 있어요.';
+  $('importWebFiles').addEventListener('click',async()=>{
+    if(running)return;const button=$('importWebFiles');requested=true;setRunning(true);
+    try{const result=await api.importSavedSource();if(result.canceled)return;
+      const added=result.results.filter(r=>!r.error&&!r.alreadyPresent).length,duplicates=result.results.filter(r=>r.alreadyPresent).length,errors=result.results.filter(r=>r.error);
+      $('folderBatchStatus').textContent='가져온 글 '+added+'건 · 이미 있는 글 '+duplicates+'건'+(errors.length?' · 확인 필요 '+errors.length+'건: '+errors.map(r=>r.file+' — '+r.error).join(' / '):' · 전체 이미지 만들기를 누르세요.');
+      await refresh();
+    }catch(error){$('folderBatchStatus').textContent='가져오기 실패: '+error.message;}finally{requested=false;setRunning(false);}
+  });
   $('runFolderBatch').addEventListener('click',()=>run(false));
   $('chooseFolderBatch').addEventListener('click',()=>run(true));
   $('stopFolderBatch').addEventListener('click',()=>{api.cancelFolderBatch();$('folderBatchStatus').textContent='진행 중인 요청을 취소하고 완료 기록을 저장합니다.';});

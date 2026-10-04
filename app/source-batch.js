@@ -392,6 +392,7 @@
           const img=images.get(op.name);
           if(op.sourceHeight)ctx.drawImage(img,op.sourceX||0,op.sourceY,op.sourceWidth||img.naturalWidth,op.sourceHeight,op.x,op.y,op.width,op.height);
           else ctx.drawImage(img,op.x,op.y,op.width,op.height);
+        }else if(op.kind==='rect'){ctx.fillStyle=op.color;ctx.fillRect(op.x,op.y,op.width,op.height);
         }else if(op.kind==='gradient'){
           const gradient=ctx.createLinearGradient(0,op.y,0,op.y+op.height);
           gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(0.4,'rgba(0,0,0,0.6)');gradient.addColorStop(1,'rgba(0,0,0,0.9)');

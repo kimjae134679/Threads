@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-05.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-05.5',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -43,14 +43,15 @@
     if(!used.length)throw new Error('첫 장의 실제 원문 조각이 없습니다.');
     const imageParts=used.filter(s=>s.kind==='image');
     for(const part of imageParts)if(!dimensions[part.mediaName.toLowerCase()])throw new Error('원문 이미지 파일 누락: '+part.mediaName);
-    const photographs=imageParts.filter(s=>dimensions[s.mediaName.toLowerCase()].analysis?.kind!=='screenshot'&&(dimensions[s.mediaName.toLowerCase()].analysis?.textBands||0)<3&&
+    const photographs=imageParts.filter(s=>dimensions[s.mediaName.toLowerCase()].analysis?.kind!=='screenshot'&&
       dimensions[s.mediaName.toLowerCase()].height/dimensions[s.mediaName.toLowerCase()].width<2.1);
+    const visualCovers=imageParts.filter(s=>{const image=dimensions[s.mediaName.toLowerCase()];return image.width>=160&&image.height>=90&&image.height/image.width<2.1&&!editorial.regions?.[s.id];});
     const manualCover=used.find(s=>s.id===editorial.coverSegmentId);
     const cover=manualCover||photographs.slice().sort((a,b)=>(dimensions[b.mediaName.toLowerCase()].analysis?.photoScore||0)-
-      (dimensions[a.mediaName.toLowerCase()].analysis?.photoScore||0))[0]||used.find(s=>s.id===plan.cover?.segmentId)||used[0];
+      (dimensions[a.mediaName.toLowerCase()].analysis?.photoScore||0))[0]||visualCovers[0]||used.find(s=>s.id===plan.cover?.segmentId)||used[0];
     const requested=editorial.templateId||style.templateId||'auto';
     const totalText=used.filter(s=>s.kind==='text').reduce((n,s)=>n+s.text.length,0);
-    const templateId=requested==='auto'?(photographs.length?'photo_cover':imageParts.length?'screenshot':totalText<=260?'white_title':'mint_text'):requested;
+    const templateId=requested==='auto'?(photographs.length||visualCovers.length&&!style.manualTitleLayout?'photo_cover':imageParts.length?'screenshot':totalText<=260?'white_title':'mint_text'):requested;
     if(!['photo_cover','screenshot','white_title','mint_text','explainer'].includes(templateId))throw new Error('제작 형식을 확인하세요.');
     if(templateId==='photo_cover'&&cover.kind!=='image')throw new Error('사진 표지에는 실제 원본 사진이 필요합니다.');
     const selectionReason=editorial.selectionReason||(templateId==='photo_cover'?'원문 첨부 중 사진으로 분석된 이미지를 표지로 선택':
@@ -61,7 +62,7 @@
     const specified=editorial.coverLines;
     if(specified&&(!Array.isArray(specified)||!specified.length||specified.some(line=>typeof line!=='string'||!line.trim())||
       specified.join(' ').replace(/\s+/g,' ').trim()!==title.replace(/\s+/g,' ').trim()))throw new Error('표지 줄바꿈은 표지 제목의 모든 글자를 그대로 포함해야 합니다.');
-    const highlights=editorial.titleHighlights||[];
+    const highlights=editorial.titleHighlights?.length?editorial.titleHighlights:[...new Set([...(title.match(/[0-9][0-9,.]*\s*(?:만원|천원|원|년|살|개|갑|등)/g)||[]),...(title.match(/(?:결벽증 새언니|명절|군데리아|군대리아|딩크|돈관리|손절|임플란트|게임만|담배|홍콩|결혼|미용실|여직원)/g)||[])])].slice(0,3);
     if(!Array.isArray(highlights)||highlights.some(word=>typeof word!=='string'||!word.trim()||!title.includes(word)))throw new Error('강조할 문구는 표지 제목 안에서 선택하세요.');
     const titleOp=(text,x,y,t,color,extra={})=>({kind:'text',role:'title',text,x,y,size:t.size,weight:titleWeight,color,lineHeight:t.lineHeight,sourceId:'title',
       highlights:highlights.filter(word=>text.includes(word)),highlightColor:color==='#fff'?'#FFE36D':'#176B57',...extra});
@@ -77,7 +78,7 @@
       if(!ops.length)return;
       const contentBottom=Math.max(...ops.map(op=>op.y+(op.kind==='text'?op.lineHeight||op.size*1.35:op.height)));
       const height=fixed?MAXH:Math.min(MAXH,Math.max(MIN,Math.ceil(contentBottom+PAD)));
-      pages.push({number:pages.length+1,role:pageRole,width:W,height,background:pageRole==='cover'&&templateId==='mint_text'?'#B8DCD4':'#fff',contentBottom,operations:ops});
+      pages.push({number:pages.length+1,role:pageRole,width:W,height,background:pageRole==='cover'?(templateId==='photo_cover'?'#152623':'#B8DCD4'):'#fff',contentBottom,operations:ops});
       ops=[];y=PAD;pageRole='body';
     }
     function addText(text,sourceId,role='body',size=BODY) {
@@ -102,6 +103,16 @@
     let photoName=null,photoConsumed=false;
     if(templateId==='photo_cover') {
       const image=dimensions[cover.mediaName.toLowerCase()];
+      const panel=editorial.coverPresentation==='panel'||image.analysis?.kind==='screenshot'||(image.analysis?.textBands||0)>=3;
+      if(panel){
+        const t=fitTitle(W-2*PAD,60,100,5),titleHeight=t.lines.length*t.lineHeight;
+        const scale=Math.min((W-2*PAD)/image.width,(MAXH-titleHeight-3*PAD)/image.height),iw=Math.round(image.width*scale),ih=Math.round(image.height*scale);
+        photoName=cover.mediaName.toLowerCase();
+        ops=[{kind:'image',name:photoName,x:(W-iw)/2,y:PAD,width:iw,height:ih,sourceId:cover.id}];
+        const start=PAD+ih+48;
+        for(const [i,text] of t.lines.entries())ops.push(titleOp(text,PAD,start+i*t.lineHeight,t,'#fff'));
+        pageRole='cover';finishPage();photoConsumed=true;
+      }else{
       const scale=Math.min(W/image.width,(MAXH-2*PAD)/image.height),iw=Math.round(image.width*scale),ih=Math.round(image.height*scale);
       const t=fitTitle(iw-2*PAD,60,96,4);
       const height=fixed?MAXH:Math.max(608,ih+PAD),imageY=fixed?Math.max(0,(height-ih)/2):0;
@@ -109,19 +120,21 @@
       ops=[{kind:'image',name:photoName,x:(W-iw)/2,y:imageY,width:iw,height:ih,sourceId:cover.id}];
       const titleY=manual?Number(style.coverTop):imageY+ih-t.lines.length*t.lineHeight-40;
       if(titleY<PAD+40){warnings.push('사진 높이가 짧아 제목을 별도 영역에 배치했습니다.');
-        const separateY=manual?titleY:imageY+ih+30;for(const [i,text] of t.lines.entries())ops.push(titleOp(text,titleX,separateY+i*t.lineHeight,t,'#171717'));
+        const separateY=manual?titleY:imageY+ih+30;for(const [i,text] of t.lines.entries())ops.push(titleOp(text,titleX,separateY+i*t.lineHeight,t,'#fff'));
       }else{
         const gradientY=Math.max(imageY,titleY-100);
         ops.push({kind:'gradient',x:(W-iw)/2,y:gradientY,width:iw,height:imageY+ih-gradientY});
         for(const [i,text] of t.lines.entries())ops.push(titleOp(text,manual?titleX:(W-iw)/2+PAD,titleY+i*t.lineHeight,t,'#fff',{stroke:'#111',strokeWidth:2}));
       }
       pageRole='cover';finishPage();photoConsumed=true;
+      }
     }else if(templateId==='mint_text'||templateId==='screenshot') {
       const t=fitTitle(W-2*PAD,60,116,6),height=fixed?MAXH:1080,start=manual?Number(style.coverTop):(height-t.lines.length*t.lineHeight)/2;
-      const titleOps=t.lines.map((text,i)=>titleOp(text,manual?titleX:W/2,start+i*t.lineHeight,t,'#111',{align:manual?'left':'center'}));
-      pages.push({number:1,role:'cover',width:W,height,background:templateId==='mint_text'?'#B8DCD4':'#fff',contentBottom:start+t.lines.length*t.lineHeight,operations:titleOps});
+      const titleOps=[{kind:'rect',x:72,y:64,width:120,height:12,color:'#176B57'}, {kind:'rect',x:W-132,y:height-132,width:60,height:60,color:'#92C7B9'},...t.lines.map((text,i)=>titleOp(text,manual?titleX:W/2,start+i*t.lineHeight,t,'#111',{align:manual?'left':'center'}))];
+      pages.push({number:1,role:'cover',width:W,height,background:'#B8DCD4',contentBottom:start+t.lines.length*t.lineHeight,operations:titleOps});
     }else {
       const t=fitTitle(W-2*PAD,60,92,6);
+      ops.push({kind:'rect',x:PAD,y:24,width:120,height:12,color:'#176B57'});
       const top=manual?Number(style.coverTop):PAD;
       for(const [i,text] of t.lines.entries())ops.push(titleOp(text,titleX,top+i*t.lineHeight,t,'#111'));
       y=top+t.lines.length*t.lineHeight+52;pageRole='cover';

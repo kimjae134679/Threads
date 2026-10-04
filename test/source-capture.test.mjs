@@ -23,7 +23,7 @@ assert.equal(destroyed,true);
 const scripts = [];
 const exposed = {};
 vm.runInNewContext(fs.readFileSync(new URL('../desktop/preload.cjs',import.meta.url),'utf8'), { require:()=>({contextBridge:{exposeInMainWorld:(key,value)=>{exposed[key]=value;}},ipcRenderer:{invoke:(...args)=>scripts.push(args),on(){},removeListener(){}}}),Object });
-assert.deepEqual(Object.keys(exposed.ThreadsCutDesktop).sort(), ['batchPreview','batchReport','cancel','cancelFolderBatch','capture','onBatchProgress','onProgress','openBatchEntry','openBatchResults','openReferences','openSavedMaterials','openSourceBundle','runFolderBatch','saveReference']);
+assert.deepEqual(Object.keys(exposed.ThreadsCutDesktop).sort(), ['batchPreview','batchReport','cancel','cancelFolderBatch','capture','importSavedSource','onBatchProgress','onProgress','openBatchEntry','openBatchResults','openReferences','openSavedMaterials','openSourceBundle','runFolderBatch','saveReference']);
 exposed.ThreadsCutDesktop.capture('https://example.com');
 exposed.ThreadsCutDesktop.openSourceBundle();
 exposed.ThreadsCutDesktop.openSavedMaterials();

@@ -29,7 +29,7 @@ async function writeCatalog(output,report){
  await writeAtomic(path.join(output,'자료 목록.html'),html);
 }
 async function writeResultGallery(folder,entry){
- const images=entry.images.map((image,i)=>'<figure><img loading="lazy" src="'+href(image.name)+'" alt="'+(i+1)+'번째 이미지"><figcaption>'+(i+1)+' / '+entry.images.length+'</figcaption></figure>').join('');
+ const images=entry.images.map((image,i)=>'<figure><a href="'+href(image.name)+'" target="_blank"><img loading="lazy" src="'+href(image.name)+'" alt="'+(i+1)+'번째 이미지"></a><figcaption>'+(i+1)+' / '+entry.images.length+'</figcaption></figure>').join('');
  await writeAtomic(path.join(folder,'이미지 전체 보기.html'),'<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(entry.title)+'</title><style>body{margin:0;background:#edf0f4;color:#16212b;font:16px system-ui,sans-serif}header{padding:24px;max-width:1080px;margin:auto}h1{font-size:24px}main{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;padding:0 16px 40px}figure{margin:0;width:360px;max-width:100%}img{width:100%;height:auto;display:block;box-shadow:0 2px 14px #0001}figcaption{text-align:center;padding:12px;color:#66717d}a{display:inline-block;margin-right:16px;color:#176351}</style><header><h1>'+escape(entry.title)+'</h1><p>'+entry.images.length+'장 · 검수 전 결과</p><a href="review-preview.zip">이미지 ZIP 받기</a><a href="source-bundle.zip">원문 ZIP 받기</a></header><main>'+images+'</main></html>');
 }
 module.exports={writeCatalog,writeResultGallery};

@@ -14,4 +14,7 @@ assert.equal(sourceAccess('').mode,'needs_exact_url');
 assert.equal(sourceAccess('https://theqoo.net/square/3826792703').automatic,true);
 assert.equal(sourceAccess('https://www.inven.co.kr/board/1').automatic,true);
 assert.equal(sourceAccess('https://theqoo.net.evil.example/post').automatic,false);
+assert.equal(sourceAccess('https://www.ppomppu.co.kr/zboard/view.php?id=freeboard&no=123').automatic,true);
+assert.equal(sourceAccess('https://www.ppomppu.co.kr/zboard/view.php?id=myboard&no=123').blockAutomatic,true);
+assert.equal(sourceAccess('https://www.ppomppu.co.kr/search_bbs.php').blockAutomatic,true);
 console.log('Community access routing and pre-request restriction: PASS');

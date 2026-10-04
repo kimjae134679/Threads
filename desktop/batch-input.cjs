@@ -55,7 +55,7 @@ async function loadBatchInput(folder,metadata={}) {
       }
       const dates={sourceCheckedAt:acquisition?.checkedAt||null,collectedAt:acquisition?.collectedAt||acquisition?.checkedAt||null,
         sourcePublishedAt:acquisition?.sourcePublishedAt||null};
-      return {sourceName:name,sourceText,files,imageDirectory:'media',intakeText:'',editorial,...dates,
+      return {sourceName:name,sourceText,sourceData:/\.html?$/i.test(name)?raw.toString('base64'):null,sourceMime:/\.html?$/i.test(name)?acquisition?.contentType||'text/html':null,files,imageDirectory:'media',intakeText:'',editorial,...dates,
         title:metadata.title||'',sourceUrl:metadata.sourceUrl||acquisition?.url||'',inputKind:/\.html?$/i.test(name)?'html':'exact'};
     }
   }

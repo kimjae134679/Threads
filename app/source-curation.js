@@ -22,7 +22,7 @@
   const coverHeight = (width,height) => Math.max(608,Math.min(1350,Math.round(1080*height/width)));
   function htmlDraft(html, available=[]) {
     const doc = new DOMParser().parseFromString(html,'text/html');
-    const selector=['[itemprop="articleBody"]','#bo_v_con','#powerbbsContent','.contentBody','.write_div','.viewArea','.viewarea','.post-content','.article-content','.view_content','.xe_content','.rd_body','.se-main-container'];
+    const selector=['[itemprop="articleBody"]','#bo_v_con','#powerbbsContent','.contentBody','.write_div','.board-contents','.board-contents-view','.board-contents__body','.article-view-content','.articleView','.viewArea','.viewarea','.post-content','.article-content','.view_content','.xe_content','.rd_body','.se-main-container'];
     let body=null;
     for (const s of selector) { const nodes=[...doc.querySelectorAll(s)]; if(nodes.length===1 &&
       (nodes[0].textContent.trim() || nodes[0].querySelector('img'))) {body=nodes[0];break;} }
@@ -30,9 +30,10 @@
       n.textContent.trim().length>80 || n.querySelector('img'));
       if (articles.length===1) body=articles[0]; }
     if (!body) throw new Error('게시글 본문을 특정하지 못했습니다. 본문 선택 없이 제작할 수 없습니다.');
-    const titleNodes=[...doc.querySelectorAll('.rd_hd .title,.post-title,.article-title,.view_title,.title_subject,.articleSubject,h1')];
+    const titleNodes=[...doc.querySelectorAll('.rd_hd .title,.post-title,.article-title,.view_title,.title_subject,.articleSubject,.board-title,.view_title,.tit,h1')];
     const originalTitle=(doc.querySelector('meta[property="og:title"]')?.getAttribute('content') ||
       titleNodes.find(node=>node.textContent.trim())?.textContent || '').trim();
+    if(originalTitle.includes('�'))throw new Error('제목의 문자 인코딩이 깨졌습니다. 원본 파일을 확인하세요.');
     const unsupportedMedia=[...body.querySelectorAll('video,audio,iframe,embed,object')].map(node=>({
       kind:node.tagName.toLowerCase(),location:sourcePath(node),url:node.getAttribute('data-src')||node.getAttribute('src')||node.getAttribute('data')||node.querySelector('source')?.getAttribute('src')||null}));
     const segments=[];
@@ -40,7 +41,7 @@
     const blocks=new Set(['P','DIV','SECTION','ARTICLE','UL','OL','LI','BLOCKQUOTE','H2','H3','H4','PRE','TABLE','TR']);
     let textBuffer='',textLocation='';
     function flushText() {
-      const value=textBuffer.replace(/\r\n?/g,'\n').replace(/[ \t]+/g,' ').trim();
+      const value=textBuffer.replace(/\r\n?/g,'\n').trim();
       if(value) segments.push({id:'s'+segments.length,kind:'text',text:value,location:textLocation,selected:false});
       textBuffer='';textLocation='';
     }
@@ -72,12 +73,12 @@
       if(blocks.has(node.tagName)) flushText();
     }
     walk(body);flushText();
-    const commentSelectors='[data-comment-id],.comment-item,.reply-item,li.comment,.comment-list > li';
+    const commentSelectors='[data-comment-id],.comment-item,.reply-item,li.comment,.comment-list > li,.comment_line,.reply_list > li,.cmt_info';
     const comments=[...doc.querySelectorAll(commentSelectors)].filter(n=>!n.parentElement?.closest(commentSelectors))
       .slice(0,100).map((n,i)=>{
-        const content=n.querySelector('.comment-content,.comment-text,.reply-text,.reply-body');
+        const content=n.querySelector('.comment-content,.comment-text,.reply-text,.reply-body,.comment,.cmt_txt,.memo');
         const text=(content?.textContent||[...n.childNodes].filter(child=>child.nodeType===3).map(child=>child.nodeValue).join('')).trim();
-        const likesText=n.getAttribute('data-likes')||n.querySelector('.like-count,.vote-count,.likes')?.textContent||'';
+        const likesText=n.getAttribute('data-likes')||n.querySelector('.like-count,.vote-count,.likes,.comment_vote,.recommend,.up_num')?.textContent||'';
         const m=String(likesText).replaceAll(',','').match(/\d+/);
         return {id:'c'+i,text,likes:m?Number(m[0]):null,best:n.classList.contains('best')||n.classList.contains('popular'),
           location:sourcePath(n),selected:false};
@@ -128,7 +129,7 @@
     const cover=plan.segments.find(s=>s.selected&&s.kind==='image'&&media.has(s.mediaName?.toLowerCase()))||
       plan.segments.find(s=>s.selected&&s.kind==='text')||plan.segments.find(s=>s.selected);
     plan.cover={kind:cover?.kind||null,segmentId:cover?.id||null};
-    plan.coverTitle=plan.originalTitle?.trim().slice(0,48).trim()||'';
+    plan.coverTitle=plan.originalTitle?.trim()||'';
     plan.coverTitleEvidence=plan.originalTitle?.trim()||'';
     plan.review={bodyVerified:false,mediaVerified:false,commentsVerified:false};
     plan.suggestion={body,images,missing,comments:ranked.slice(0,3).length};
