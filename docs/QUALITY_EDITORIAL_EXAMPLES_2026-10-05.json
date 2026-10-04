@@ -399,21 +399,21 @@
       "id": "source-391612b0f8a771",
       "schema": "threads-editorial-plan-v1",
       "templateId": "mint_text",
-      "coverTitle": "35살 딩크 부부 애 안 낳고 살아보니",
+      "coverTitle": "35살 딩크 부부 사실 조금 아쉽긴 함",
       "coverLines": [
         "35살 딩크 부부",
-        "애 안 낳고 살아보니"
+        "사실 조금 아쉽긴 함"
       ],
       "titleHighlights": [
         "딩크 부부",
-        "애 안 낳고"
+        "아쉽긴 함"
       ],
       "titleEvidence": "35살 딩크 후기",
       "selectionReason": "당사자가 설명한 생활과 아쉬움 모두 보존",
       "referenceAccount": "humor_ssul",
       "reviewStatus": "needs_review",
       "publicationAllowed": false,
-      "titleEvidenceNotes": "35살 딩크 후기. 동갑 부부임.",
+      "titleEvidenceNotes": "원문 작성자가 사실 난 조금 아쉽긴 함이라고 적은 부분을 제목으로 사용. 전체 본문에 편한 생활과 양육 부담에 대한 생각도 보존.",
       "userFeedbackApplied": true
     },
     {
