@@ -1,5 +1,6 @@
 'use strict';
 const { app, BrowserWindow, dialog, ipcMain, protocol, session, shell } = require('electron');
+const {getMaterialRoot}=require('./material-paths.cjs');
 const path = require('node:path');
 const fs = require('node:fs/promises');
 const dns = require('node:dns/promises');
@@ -37,7 +38,7 @@ async function start() {
   session.defaultSession.on('will-download', (_event, item) => {
     item.setSaveDialogOptions({ title: '편집 결과 저장', defaultPath: path.join(app.getPath('downloads'), path.basename(item.getFilename())) });
   });
-  editor = new BrowserWindow({ width: 1450, height: 960, minWidth: 760, minHeight: 650, title: '원문 컷 편집기', autoHideMenuBar: true,
+  editor = new BrowserWindow({ show:!process.argv.includes('--background-worker'),width: 1450, height: 960, minWidth: 760, minHeight: 650, title: '원문 컷 편집기', autoHideMenuBar: true,
     webPreferences: { ...preferences, preload: path.join(__dirname, 'preload.cjs') } });
   editor.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
   editor.webContents.on('will-navigate', (event) => event.preventDefault());
@@ -64,7 +65,7 @@ async function start() {
   let lastSavedFolder = '';
   ipcMain.handle('source-cut:open-saved-materials', async (event) => {
     trusted(event);
-    const desktopInput = path.join(app.getPath('desktop'), 'Threads Cut Editor 자료', '01_후보 기록');
+    const desktopInput = path.join(getMaterialRoot(app), '01_후보 기록');
     let defaultPath = lastSavedFolder || desktopInput;
     if (!lastSavedFolder) {
       const entries = await fs.readdir(desktopInput, { withFileTypes:true }).catch(() => []);

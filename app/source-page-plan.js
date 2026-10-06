@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-06.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-06.4',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -27,7 +27,12 @@
     const display=(text,sourceId)=>{
       const original=clean(text),urls=original.match(/https?:\/\/[^\s<>]+/gi)||[];
       if(urls.length)omitted.push({sourceId,reason:'source_urls_in_metadata',urls});
-      return clean(original.replace(/https?:\/\/[^\s<>]+/gi,'').replace(/^\s*(?:출처|원문|링크|주소)\s*[:：]?\s*$/gm,''));
+      const withoutMeta=original.split('\n').filter(line=>{
+        const value=line.trim();
+        const meta=/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
+        if(meta)omitted.push({sourceId,reason:'display_metadata',text:value});return !meta;
+      }).join('\n');
+      return clean(withoutMeta.replace(/https?:\/\/[^\s<>]+/gi,'').replace(/^\s*(?:출처|원문|링크|주소)\s*[:：]?\s*$/gm,''));
     };
     const excluded=editorial.exclusions||{};
     for(const [id,reason] of Object.entries(excluded)){
@@ -47,7 +52,8 @@
     if(!used.some(s=>!s.coverOnly))throw new Error('첫 장의 실제 원문 조각이 없습니다.');
     const imageParts=used.filter(s=>s.kind==='image');
     for(const part of imageParts)if(!dimensions[part.mediaName.toLowerCase()])throw new Error('원문 이미지 파일 누락: '+part.mediaName);
-    const photographs=imageParts.filter(s=>dimensions[s.mediaName.toLowerCase()].analysis?.kind!=='screenshot'&&
+    const isReadingImage=s=>{const d=dimensions[s.mediaName.toLowerCase()];return d.analysis?.kind==='screenshot'||d.height/d.width>=1.85||(d.analysis?.textBands||0)>=3;};
+    const photographs=imageParts.filter(s=>!isReadingImage(s)&&
       dimensions[s.mediaName.toLowerCase()].height/dimensions[s.mediaName.toLowerCase()].width<2.1);
     const visualCovers=imageParts.filter(s=>{const image=dimensions[s.mediaName.toLowerCase()];return image.width>=160&&image.height>=90&&image.height/image.width<2.1&&!editorial.regions?.[s.id];});
     const manualCover=used.find(s=>s.id===editorial.coverSegmentId);
@@ -55,7 +61,10 @@
       (dimensions[a.mediaName.toLowerCase()].analysis?.photoScore||0))[0]||visualCovers[0]||used.find(s=>s.id===plan.cover?.segmentId)||used[0];
     const requested=editorial.templateId||style.templateId||'auto';
     const totalText=used.filter(s=>s.kind==='text').reduce((n,s)=>n+s.text.length,0);
-    const templateId=requested==='auto'?(photographs.length||visualCovers.length&&!style.manualTitleLayout?'photo_cover':imageParts.length?'screenshot':totalText<=260?'white_title':'mint_text'):requested;
+    let templateId=requested==='auto'?(photographs.length?'photo_cover':imageParts.length?'screenshot':totalText<=260?'white_title':'mint_text'):requested;
+    if(templateId==='photo_cover'&&cover.kind==='image'&&!cover.coverOnly&&isReadingImage(cover)){
+      templateId='screenshot';warnings.push('글·도표 캡처는 제목 다음 본문에서 전체 내용을 표시합니다.');
+    }
     if(!['photo_cover','screenshot','white_title','mint_text','explainer'].includes(templateId))throw new Error('제작 형식을 확인하세요.');
     if(templateId==='photo_cover'&&cover.kind!=='image')throw new Error('사진 표지에는 실제 원본 사진이 필요합니다.');
     const selectionReason=editorial.selectionReason||(templateId==='photo_cover'?'원문 첨부 중 사진으로 분석된 이미지를 표지로 선택':
@@ -144,7 +153,7 @@
       pageRole='cover';finishPage();photoConsumed=true;
       }
     }else if(templateId==='mint_text'||templateId==='screenshot') {
-      const t=fitTitle(W-2*PAD,60,116,6),height=fixed?MAXH:1080,start=manual?Number(style.coverTop):(height-t.lines.length*t.lineHeight)/2;
+      const t=fitTitle(W-2*PAD,48,116,6),height=fixed?MAXH:1080,start=manual?Number(style.coverTop):(height-t.lines.length*t.lineHeight)/2;
       const titleOps=[{kind:'rect',x:72,y:64,width:120,height:12,color:'#176B57'}, {kind:'rect',x:W-132,y:height-132,width:60,height:60,color:'#92C7B9'},...t.lines.map((text,i)=>titleOp(text,manual?titleX:W/2,start+i*t.lineHeight,t,'#111',{align:manual?'left':'center'}))];
       pages.push({number:1,role:'cover',width:W,height,background:'#B8DCD4',contentBottom:start+t.lines.length*t.lineHeight,operations:titleOps});
     }else {
@@ -195,7 +204,11 @@
     for(const [index,part] of used.entries()) {
       if(part.coverOnly){omitted.push({sourceId:part.id,reason:'supplementary_cover_only',name:part.mediaName});continue;}
       if(part.kind==='text') {
-        const text=clean(part.text);if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}seenText.add(text);addText(text,part.id);
+        const text=clean(part.text);
+        if(imageParts.some(s=>!s.coverOnly)&&/^(?:[.!,…\s]+|[ㅋㅎㅠㅜㄷ😂🤣😭😮😱\s]+|(?:헉|이야|오|와|ㅗㅜㅑ)[.!,…\s]*)$/u.test(text)){
+          omitted.push({sourceId:part.id,reason:'isolated_filler_reaction',text});if(part.after?.note?.trim())addText(part.after.note,part.id,'note');continue;
+        }
+        if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}seenText.add(text);addText(text,part.id);
       }else {
         const next=used[index+1],lines=next?.kind==='text'&&next.text.length<=80?wrap(next.text,W-2*PAD,BODY,measure).length:0;
         addImage(part,lines&&lines<=2?lines*LINE+28:0);
@@ -203,6 +216,9 @@
       if(part.after?.note?.trim())addText(part.after.note,part.id,'note');
       if(part.after?.gap)y+=Math.min(100,Math.max(0,Number(part.after.gap)||0));
     }
+    const annotations=editorial.annotations||[];
+    if(!Array.isArray(annotations)||annotations.length>5||annotations.some(a=>!['explanation','commentary'].includes(a.kind)||typeof a.text!=='string'||!a.text.trim()||a.text.length>500||a.kind==='explanation'&&!/^https:\/\//.test(a.evidenceUrl||'')))throw new Error('편집 설명·반응의 내용과 근거를 확인하세요.');
+    for(const [i,a] of annotations.entries())addText(a.text,'editorial-annotation-'+i,'note');
     const comments=(plan.comments||[]).filter(c=>c.selected),includedComments=[];
     for(const comment of comments) {
       const text=display(comment.text,comment.id);if(!text||seenText.has(text)){omitted.push({sourceId:comment.id,reason:'duplicate_or_link_comment'});continue;}
@@ -237,6 +253,8 @@
       sourceUrl:plan.sourceUrl,sourceSha256:plan.input?.sha256||null,sourcePublishedAt:plan.sourcePublishedAt||null,
       sourceCheckedAt:plan.sourceCheckedAt||null,collectedAt:plan.collectedAt||null,bodyFontSize:BODY,safeMargin:PAD,
       coverAsset:coverAsset?{...coverAsset,actualScene:false,coverOnly:true}:null,
+      editorialAnnotations:annotations.map(a=>({...a,actualSourceComment:false})),
+      imageRegions:Object.fromEntries(imageParts.map(s=>{const d=dimensions[s.mediaName.toLowerCase()];return [s.id,editorial.regions?.[s.id]||d.analysis?.bounds||{x:0,y:0,width:d.width,height:d.height}];})),
       sourceUnits:used.filter(s=>!s.coverOnly).map(s=>({id:s.id,kind:s.kind,location:s.location||null,role:s.contentRole||'primary_source',text:s.kind==='text'?s.text:null,mediaName:s.mediaName||null})),
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};

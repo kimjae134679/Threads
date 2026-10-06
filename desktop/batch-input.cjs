@@ -23,6 +23,12 @@ async function loadBatchInput(folder,metadata={}) {
     editorial=JSON.parse((await bounded(editorialPath,256*1024)).toString('utf8'));
     if(editorial.schema!=='threads-editorial-plan-v1')throw new Error('제작 전 편집 계획 형식을 확인하세요.');
   }
+  const revisionPath=path.join(root,'작업 정보','feedback-revision-plan.json');
+  if(await exists(revisionPath)){
+    const revision=JSON.parse((await bounded(revisionPath,256*1024)).toString('utf8'));
+    if(revision.schema!=='threads-feedback-revision-v1'||!revision.editorial)throw new Error('평가 반영 편집 계획 형식을 확인하세요.');
+    editorial={...editorial,...revision.editorial,schema:'threads-editorial-plan-v1'};
+  }
   for(const directory of [root,path.join(root,'source')]) {
     const names=await fs.readdir(directory).catch(()=>[]);
     const html=names.filter(name=>/\.html?$/i.test(name));

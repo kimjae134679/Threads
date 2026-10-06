@@ -52,6 +52,13 @@ try {
   const resumed=await runFolderBatch({folder:input,output,render});
   assert.equal(resumed.counts.already_done,1);
   assert.equal(rendered,2);
+  const work=path.join(input,'ready','작업 정보');await fs.mkdir(work,{recursive:true});
+  const revisionFile=path.join(work,'feedback-revision-plan.json');
+  await fs.writeFile(revisionFile,JSON.stringify({schema:'threads-feedback-revision-v1',editorial:{templateId:'screenshot',exclusions:{s0:'사용자가 지적한 미방'}}}));
+  const {loadBatchInput}=require('../desktop/batch-input.cjs');
+  assert.equal((await loadBatchInput(path.join(input,'ready'))).editorial.exclusions.s0,'사용자가 지적한 미방');
+  await fs.writeFile(revisionFile,JSON.stringify({schema:'wrong',editorial:{}}));await assert.rejects(loadBatchInput(path.join(input,'ready')),/평가 반영/);
+  await fs.rm(revisionFile);
   await fs.writeFile(path.join(input, 'ready', 'media', '01.jpg'), Buffer.from('damaged'));
   const changed = await runFolderBatch({ folder:input, output, render });
   assert.equal(changed.counts.failed, 1);

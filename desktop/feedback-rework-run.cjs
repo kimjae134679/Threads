@@ -1,0 +1,12 @@
+'use strict';
+const path=require('node:path'),fs=require('node:fs');
+const {app}=require('electron');
+app.disableHardwareAcceleration();
+const materialRoot=path.resolve(__dirname,'../data/runtime/feedback-rework/materials');
+fs.mkdirSync(path.join(materialRoot,'06_자동 제작 결과'),{recursive:true});
+app.setPath('userData',path.join(materialRoot,'app-state'));
+process.env.THREADS_TEST_MATERIAL_ROOT=materialRoot;
+const status=path.join(materialRoot,'06_자동 제작 결과/status.json');
+if(!fs.existsSync(status))fs.writeFileSync(status,JSON.stringify({schema:'threads-auto-batch-v1',inputFolder:path.resolve(__dirname,'../data/runtime/feedback-rework/inputs'),entries:[]}));
+process.argv.push('--background-worker','--saved-only');
+require('./run-saved-batch.cjs');

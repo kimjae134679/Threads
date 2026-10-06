@@ -9,16 +9,16 @@ for(const row of report.entries.filter(row=>row.outputFolder)){
  try{
   const folder=path.resolve(root,row.outputFolder);assert(folder.startsWith(root+path.sep));
   const plan=JSON.parse(fs.readFileSync(path.join(folder,'production-plan.json'),'utf8'));
-  assert.equal(plan.ruleVersion,'2026-10-06.3');assert.equal(plan.publicationAllowed,false);
+  assert.equal(plan.ruleVersion,require('../app/source-page-plan.js').VERSION||globalThis.ThreadsPagePlan.VERSION);assert.equal(plan.publicationAllowed,false);
   assert.equal(plan.pages.length,row.images.length);
   const ops=plan.pages.flatMap(p=>p.operations),omitted=new Map(plan.omitted.map(o=>[o.sourceId,o]));
   for(const unit of plan.sourceUnits){
-   if(unit.kind==='text'&&!['duplicate_text'].includes(omitted.get(unit.id)?.reason)){
+   if(unit.kind==='text'&&!['duplicate_text','isolated_filler_reaction'].includes(omitted.get(unit.id)?.reason)){
     assert.equal(normalize(ops.filter(o=>o.sourceId===unit.id&&o.role==='body').map(o=>o.text).join('')),normalize(unit.text),'Original text must be complete: '+unit.id);
    }else if(unit.kind==='image'&&!['duplicate_image'].includes(omitted.get(unit.id)?.reason)){
     const slices=ops.filter(o=>o.kind==='image'&&o.sourceId===unit.id);assert(slices.length,'Original image must be present: '+unit.id);
     if(slices[0].sourceHeight){
-     const name=unit.mediaName.toLowerCase(),region=omitted.get(unit.id)?.region||plan.imageAnalysis[name].analysis.bounds;
+     const name=unit.mediaName.toLowerCase(),region=plan.imageRegions?.[unit.id]||omitted.get(unit.id)?.region||plan.imageAnalysis[name].analysis.bounds;
      let end=region.y;for(const slice of slices){assert(Math.abs(slice.sourceY-end)<0.01);end+=slice.sourceHeight;}
      assert(Math.abs(end-region.y-region.height)<0.01,'Image ending must be complete: '+unit.id);
     }

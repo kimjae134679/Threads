@@ -1,9 +1,11 @@
 'use strict';
 const {BrowserWindow,ipcMain,shell,dialog}=require('electron'),path=require('node:path'),fs=require('node:fs/promises');
+const {getMaterialRoot}=require('./material-paths.cjs');
 const {createPostReviewStore}=require('./post-review-store.cjs');
 const url='cut-editor://app/source-cut-post-review.html';
-function registerPostReview({app,trusted,preferences}){
- const store=createPostReviewStore(path.join(app.getPath('desktop'),'Threads Cut Editor 자료'));let window=null,closing=false;
+function registerPostReview({app,trusted,preferences,materialRoot=getMaterialRoot(app)}){
+ const legacyFeedbackFile=!app.isPackaged&&process.env.THREADS_TEST_MATERIAL_ROOT?null:path.join(app.getPath('desktop'),'Threads Cut Editor 자료','07_사용자 평가','평가 기록.json');
+ const store=createPostReviewStore(materialRoot,{legacyFeedbackFile});let window=null,closing=false;
  const guard=e=>{if(!window||e.sender!==window.webContents||e.senderFrame!==window.webContents.mainFrame||e.senderFrame.url!==url)throw Error('허용되지 않은 평가 요청입니다.');};
  async function open(id){
   if(window&&!window.isDestroyed()){window.show();window.focus();if(id)window.webContents.send('post-review:select',id);return;}
