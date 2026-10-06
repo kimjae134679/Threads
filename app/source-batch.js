@@ -247,7 +247,7 @@
       seenMedia.add(s.mediaName.toLowerCase());
       const file=nearby(item.all,item.source,s.mediaName);
       if(!file) continue;
-      const name='raw/media/'+s.id+'-'+safe(file.name),data=new Uint8Array(await file.arrayBuffer());
+      const name=(s.coverOnly?'supplementary/':'raw/media/')+s.id+'-'+safe(file.name),data=new Uint8Array(await file.arrayBuffer());
       p.media.push({segmentId:s.id,name:s.mediaName,file:name,sha256:await hash(data)});
       packed.push({name,data});
     }
@@ -375,7 +375,7 @@
       return {layout:productionPlan,images,font:family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback)};
     }catch(error){releaseImages(images);throw error;}
   }
-  async function renderCurated(plan,media,{preview=false,productionPlan=null,file=null}={}) {
+  async function renderCurated(plan,media,{preview=false,watermark=true,productionPlan=null,file=null}={}) {
     if(productionPlan&&productionPlan.ruleVersion!==window.ThreadsPagePlan.VERSION)
       throw new Error('제작 계획의 처리 규칙이 변경되었습니다. 다시 계획하세요.');
     const prepared=await renderAssets(plan,media,productionPlan,file),layout=prepared.layout;
@@ -410,7 +410,7 @@
           }
         }
       }
-      if(preview){ctx.fillStyle='#9f1239';ctx.font='900 20px "Carousel Sans KR"';ctx.textAlign='right';
+      if(preview&&watermark){ctx.fillStyle='#9f1239';ctx.font='900 20px "Carousel Sans KR"';ctx.textAlign='right';
         ctx.fillText('검수 전 · 게시 금지',page.width-24,page.height-32);}
       const url=canvas.toDataURL('image/png');
       output.push({name:'rendered/slide-'+String(page.number).padStart(3,'0')+'.png',data:Uint8Array.from(atob(url.split(',')[1]),c=>c.charCodeAt(0))});
@@ -418,12 +418,12 @@
     }finally{releaseImages(images);}
     return output;
   }
-  async function renderBundle(file,{preview=false,productionPlan=null}={}) {
+  async function renderBundle(file,{preview=false,watermark=true,productionPlan=null}={}) {
     try {
     const {plan,media}=await unpack(file,{preview});
     const bundleData=await file.arrayBuffer(),bundleSha256=await hash(bundleData);
     if(productionPlan&&productionPlan.bundleSha256!==bundleSha256)throw new Error('제작 계획과 원문 ZIP이 다릅니다.');
-    const pages=await renderCurated(plan,media,{preview,productionPlan,file});
+    const pages=await renderCurated(plan,media,{preview,watermark,productionPlan,file});
     const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:bundleSha256,
       sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,

@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-05.5',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-06.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -40,7 +40,11 @@
         /^(?:그냥\s*솔직하게.*글\s*내용\s*불편|불펌|무단\s*전재|퍼가(?:지|실))/s.test(text)?'editorial_preface':null;
       if(reason)omitted.push({sourceId:s.id,reason,text});return !reason;
     });
-    if(!used.length)throw new Error('첫 장의 실제 원문 조각이 없습니다.');
+    const supplement=used.find(s=>s.coverOnly===true),coverAsset=plan.coverAsset||null;
+    if(supplement&&(!coverAsset||coverAsset.name!==supplement.mediaName||!['related','ai_generated'].includes(coverAsset.kind)||
+      coverAsset.actualScene!==false||coverAsset.coverOnly!==true||!coverAsset.relevance?.trim()||!coverAsset.attribution?.trim()))
+      throw new Error('표지 보완 이미지의 출처·내용 근거가 없습니다.');
+    if(!used.some(s=>!s.coverOnly))throw new Error('첫 장의 실제 원문 조각이 없습니다.');
     const imageParts=used.filter(s=>s.kind==='image');
     for(const part of imageParts)if(!dimensions[part.mediaName.toLowerCase()])throw new Error('원문 이미지 파일 누락: '+part.mediaName);
     const photographs=imageParts.filter(s=>dimensions[s.mediaName.toLowerCase()].analysis?.kind!=='screenshot'&&
@@ -78,26 +82,37 @@
       if(!ops.length)return;
       const contentBottom=Math.max(...ops.map(op=>op.y+(op.kind==='text'?op.lineHeight||op.size*1.35:op.height)));
       const height=fixed?MAXH:Math.min(MAXH,Math.max(MIN,Math.ceil(contentBottom+PAD)));
+      if(pageRole==='cover'&&coverAsset){
+        const label=(coverAsset.kind==='ai_generated'?'AI 생성 이미지':'참고 사진')+' · '+coverAsset.attribution+' · '+coverAsset.license;
+        const size=Math.min(18,Math.floor((W-2*PAD-24)/Math.max(1,measure(label,1,400))));
+        const creditWidth=Math.min(W-2*PAD,Math.ceil(measure(label,size,400))+24);
+        ops.push({kind:'rect',x:PAD,y:24,width:creditWidth,height:32,color:'rgba(0,0,0,.7)'});
+        ops.push({kind:'text',role:'attribution',text:label,x:PAD+12,y:30,size,weight:400,color:'#fff',lineHeight:22,sourceId:'cover-attribution'});
+      }
       pages.push({number:pages.length+1,role:pageRole,width:W,height,background:pageRole==='cover'?(templateId==='photo_cover'?'#152623':'#B8DCD4'):'#fff',contentBottom,operations:ops});
       ops=[];y=PAD;pageRole='body';
     }
     function addText(text,sourceId,role='body',size=BODY) {
-      const weight=role==='comment'?titleWeight:style.fontId==='gothic'?800:400;
+      const weight=style.fontId==='gothic'?800:400,lineHeight=role==='comment'?72:LINE;
+      const nextPage=()=>{finishPage();if(role==='comment')pageRole='comments';};
       const paragraphs=clean(text).split(/\n\s*\n/);
       for(let p=0;p<paragraphs.length;p++) {
         let paragraph=paragraphs[p];
-        if(/[?？]$/.test(paragraph)&&paragraphs[p+1]&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*LINE<=MAXH-2*PAD)
+        if(/[?？]$/.test(paragraph)&&paragraphs[p+1]&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*lineHeight<=MAXH-2*PAD)
           paragraph+='\n'+paragraphs[++p];
         if(!paragraph)continue;
         // Keep complete sentences together when a paragraph exceeds one page.
-        const full=wrap(paragraph,W-2*PAD,size,measure,weight),fits=full.length*LINE<=MAXH-2*PAD;
+        const full=wrap(paragraph,W-2*PAD,size,measure,weight),fits=full.length*lineHeight<=MAXH-2*PAD;
         const units=fits?[paragraph]:paragraph.split(/(?<=[.!?。])\s+(?=\S)/);
         for(const unit of units) {
           const lines=wrap(unit.trim(),W-2*PAD,size,measure,weight);
-          if(ops.length&&lines.length*LINE<=MAXH-2*PAD&&y+lines.length*LINE>MAXH-PAD)finishPage();
-          for(const line of lines){if(y+LINE>MAXH-PAD)finishPage();if(line)ops.push({kind:'text',role,text:line,x:PAD,y,size,weight,color:'#171717',lineHeight:LINE,sourceId});y+=LINE;}
+          if(ops.length&&lines.length*lineHeight<=MAXH-2*PAD&&y+lines.length*lineHeight>MAXH-PAD)nextPage();
+          for(const [i,line] of lines.entries()){
+            if(y+lineHeight>MAXH-PAD||i===0&&lines.length>1&&y+lineHeight*2>MAXH-PAD)nextPage();
+            if(line)ops.push({kind:'text',role,text:line,x:PAD,y,size,weight,color:'#171717',lineHeight,sourceId});y+=lineHeight;
+          }
         }
-        y+=28;
+        y+=32;
       }
     }
     let photoName=null,photoConsumed=false;
@@ -178,6 +193,7 @@
       }
     }
     for(const [index,part] of used.entries()) {
+      if(part.coverOnly){omitted.push({sourceId:part.id,reason:'supplementary_cover_only',name:part.mediaName});continue;}
       if(part.kind==='text') {
         const text=clean(part.text);if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}seenText.add(text);addText(text,part.id);
       }else {
@@ -190,7 +206,14 @@
     const comments=(plan.comments||[]).filter(c=>c.selected),includedComments=[];
     for(const comment of comments) {
       const text=display(comment.text,comment.id);if(!text||seenText.has(text)){omitted.push({sourceId:comment.id,reason:'duplicate_or_link_comment'});continue;}
-      if(!includedComments.length){if(y+LINE*3>MAXH-PAD)finishPage();ops.push({kind:'text',role:'section',text:'원문 댓글',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=64;}
+      if(!includedComments.length){
+        finishPage();pageRole='comments';
+        ops.push({kind:'rect',x:PAD,y:PAD,width:96,height:8,color:'#176B57'});y+=32;
+        ops.push({kind:'text',role:'section',text:'원문 댓글',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=80;
+      }else{
+        if(y+172>MAXH-PAD){finishPage();pageRole='comments';}
+        else{ops.push({kind:'rect',x:PAD,y,width:W-2*PAD,height:2,color:'#DCE4E0'});y+=36;}
+      }
       seenText.add(text);includedComments.push(comment.id);addText(text,comment.id,'comment',48);
     }
     finishPage();
@@ -199,15 +222,22 @@
       page.bottomWhitespace=Math.round(page.height-page.contentBottom);
       page.purpose=page.role==='cover'?'제목으로 상황 소개':page.operations.some(o=>o.role==='comment')?'원문 반응과 끝맺음':'원문 순서와 사건 전개';
       page.elements=page.operations.filter(o=>o.kind!=='gradient').map(op=>({sourceId:op.sourceId,kind:op.kind,role:op.role||'image',name:op.name||null}));
-      page.sourceIds=[...new Set(page.elements.map(e=>e.sourceId).filter(id=>!['title','comments-heading'].includes(id)))];
+      page.sourceIds=[...new Set(page.elements.map(e=>e.sourceId).filter(id=>!['title','comments-heading','cover-attribution'].includes(id)))];
       if(page.operations.some(op=>op.y<0||op.kind==='text'&&op.y+(op.lineHeight||op.size)>page.height-PAD+2))throw new Error('제작 계획의 안전 여백 검증 실패');
     }
+    const evidence=clean(editorial.titleEvidence||plan.coverTitleEvidence||plan.originalTitle);
+    const normalized=text=>clean(text).replace(/\s/g,'');
+    const evidenceSources=[{id:'original-title',text:plan.originalTitle},...used.filter(s=>s.kind==='text'&&!s.coverOnly)].filter(s=>evidence&&normalized(s.text).includes(normalized(evidence))).map(s=>s.id);
+    if(!evidenceSources.length)warnings.push('제목 근거 문구를 원문에서 직접 확인하세요.');
+    if(pages.length>10)warnings.push('10장이 넘는 글: 사건 흐름과 장별 읽기 부담을 검수하세요.');
     return {schema:'threads-production-plan-v1',ruleVersion:VERSION,preparedAt:new Date().toISOString(),
-      originalTitle:plan.originalTitle,coverTitle:title,titleEvidence:editorial.titleEvidence||plan.coverTitleEvidence||plan.originalTitle,
+      originalTitle:plan.originalTitle,coverTitle:title,titleEvidence:evidence,titleEvidenceStatus:evidenceSources.length?'matched_source':'needs_review',titleEvidenceSourceIds:evidenceSources,
+      typography:{width:W,safeMargin:PAD,bodySize:BODY,bodyLineHeight:LINE,paragraphGap:32,commentSize:48,commentLineHeight:72,titleWeight,highlightLimit:3},
       templateId,selectionReason,canvasMode:fixed?'instagram':'threads',aspectRatio:fixed?(style.aspectRatio||'4:5'):null,
       sourceUrl:plan.sourceUrl,sourceSha256:plan.input?.sha256||null,sourcePublishedAt:plan.sourcePublishedAt||null,
       sourceCheckedAt:plan.sourceCheckedAt||null,collectedAt:plan.collectedAt||null,bodyFontSize:BODY,safeMargin:PAD,
-      sourceUnits:used.map(s=>({id:s.id,kind:s.kind,location:s.location||null,role:s.contentRole||'primary_source',text:s.kind==='text'?s.text:null,mediaName:s.mediaName||null})),
+      coverAsset:coverAsset?{...coverAsset,actualScene:false,coverOnly:true}:null,
+      sourceUnits:used.filter(s=>!s.coverOnly).map(s=>({id:s.id,kind:s.kind,location:s.location||null,role:s.contentRole||'primary_source',text:s.kind==='text'?s.text:null,mediaName:s.mediaName||null})),
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};
   }

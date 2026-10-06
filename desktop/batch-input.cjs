@@ -3,6 +3,7 @@ const fs=require('node:fs/promises');
 const path=require('node:path');
 const {createHash}=require('node:crypto');
 const {loadSavedMaterials}=require('./saved-materials.cjs');
+const {loadCoverAsset}=require('./cover-asset.cjs');
 const {decodeHtml}=require('./public-source.cjs');
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const mime={'.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.gif':'image/gif'};
@@ -14,6 +15,8 @@ async function bounded(file,max) {
 }
 async function loadBatchInput(folder,metadata={}) {
   const root=path.resolve(folder);
+  const supplement=await loadCoverAsset(root);
+  const attach=job=>{if(!job||!supplement)return job;if(job.files.some(file=>file.name.toLowerCase()===supplement.file.name.toLowerCase()))throw new Error('표지 보완 이미지 이름이 원본과 겹칩니다.');return {...job,coverAsset:supplement.asset,files:[...job.files,supplement.file]};};
   let editorial=null;
   const editorialPath=path.join(root,'작업 정보','editorial-plan.json');
   if(await exists(editorialPath)){
@@ -55,8 +58,8 @@ async function loadBatchInput(folder,metadata={}) {
       }
       const dates={sourceCheckedAt:acquisition?.checkedAt||null,collectedAt:acquisition?.collectedAt||acquisition?.checkedAt||null,
         sourcePublishedAt:acquisition?.sourcePublishedAt||null};
-      return {sourceName:name,sourceText,sourceData:/\.html?$/i.test(name)?raw.toString('base64'):null,sourceMime:/\.html?$/i.test(name)?acquisition?.contentType||'text/html':null,files,imageDirectory:'media',intakeText:'',editorial,...dates,
-        title:metadata.title||'',sourceUrl:metadata.sourceUrl||acquisition?.url||'',inputKind:/\.html?$/i.test(name)?'html':'exact'};
+      return attach({sourceName:name,sourceText,sourceData:/\.html?$/i.test(name)?raw.toString('base64'):null,sourceMime:/\.html?$/i.test(name)?acquisition?.contentType||'text/html':null,files,imageDirectory:'media',intakeText:'',editorial,...dates,
+        title:metadata.title||'',sourceUrl:metadata.sourceUrl||acquisition?.url||'',inputKind:/\.html?$/i.test(name)?'html':'exact'});
     }
   }
   const images=await loadSavedMaterials(root).catch(error=>{
@@ -67,9 +70,9 @@ async function loadBatchInput(folder,metadata={}) {
   const sourceName=await exists(path.join(root,'manifest.json'))?'manifest.json':'SOURCE.md';
   const sourceText=await fs.readFile(path.join(root,sourceName),'utf8');
   const intake=path.join(root,'intake-manifest.json');
-  return {sourceName,sourceText,files:images.files,imageDirectory:images.metadata.imageDirectory,
+  return attach({sourceName,sourceText,files:images.files,imageDirectory:images.metadata.imageDirectory,
     intakeText:await exists(intake)?await fs.readFile(intake,'utf8'):'',
     title:images.metadata.title,sourceUrl:images.metadata.sourceUrl,inputKind:'saved-media',editorial,
-    sourceCheckedAt:metadata.sourceCheckedAt||null,sourcePublishedAt:metadata.sourcePublishedAt||null,collectedAt:metadata.collectedAt||null};
+    sourceCheckedAt:metadata.sourceCheckedAt||null,sourcePublishedAt:metadata.sourcePublishedAt||null,collectedAt:metadata.collectedAt||null});
 }
 module.exports={loadBatchInput};

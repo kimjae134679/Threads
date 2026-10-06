@@ -9,7 +9,7 @@ const {writeAtomic}=require('./atomic-file.cjs');
 const digest=data=>createHash('sha256').update(data).digest('hex');
 const safe=value=>String(value||'source').replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,80);
 const label=value=>String(value||'원문').normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,' ').replace(/\s+/g,' ').trim().slice(0,42).replace(/[. ]+$/,'')||'원문';
-const RULE_VERSION='2026-10-05.5';
+const RULE_VERSION='2026-10-06.3';
 // Text-only layouts keep their existing fingerprint when pixel analysis changes.
 const fingerprintFor=job=>digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job)+(job.files?.length?'|image-analysis-2026-10-04.4':''));
 const statuses=['published','generated','already_done','needs_source','needs_access','needs_exact_url','needs_media','needs_selection','unavailable','excluded_severe','failed'];
@@ -53,7 +53,7 @@ async function saveReport(output,report) {
   report.counts=counts(report.entries);
   await writeAtomic(path.join(output,'status.json'),JSON.stringify(report,null,2)+'\n');
   await writeAtomic(path.join(output,'status.csv'),csv(report.entries));
-  if(report.processed===report.total||report.processed%25===0)await writeCatalog(output,report);
+  if(report.processed===report.total||report.processed%20===0)await writeCatalog(output,report);
 }
 async function readReport(output) {
   try{return JSON.parse(await fs.readFile(path.join(output,'status.json'),'utf8'));}
@@ -108,7 +108,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
       const intakePlan={schema:'threads-capture-plan-v1',ruleVersion:RULE_VERSION,preparedAt:entry.updatedAt,title:entry.title,sourceUrl:entry.sourceUrl,
         titleRule:'원제 보존. 표지는 원제 전체 또는 원문 근거를 기록한 별도 문구 사용하고 근거 없는 문구는 만들지 않음.',
         layoutRule:'사진·글·원문 화면에 맞게 표지 선택. 안전 여백 72px, 본문 52px. 원문 문단과 빈 줄 경계로 분할.',
-        bodyRule:'원문 문단·이미지 순서 보존. URL 문자열·완전 중복은 표시에서 제외하고 원문과 제외 근거를 보존.',
+        bodyRule:'원문 문단·이미지 순서 보존. 댓글은 본문 뒤 별도 구역에서 같은 순서로 표시. URL 문자열·완전 중복은 표시에서 제외하고 원문과 제외 근거를 보존.',
         commentsRule:'실제로 확인한 BEST 또는 반응수 댓글만 사용. 미확보 댓글은 추정하지 않음.',
         reviewStatus:lifecycle.reviewStatus,publicationStatus:lifecycle.publicationStatus,publicationAllowed:false};
       await fs.writeFile(path.join(work,'capture-plan.json'),JSON.stringify(intakePlan,null,2)+'\n','utf8');
@@ -165,12 +165,14 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
               await fs.rm(path.join(target,'rendered',oldFile));
           await fs.writeFile(path.join(target,'review-preview.zip'),result.zip);
           await fs.writeFile(path.join(target,'source-bundle.zip'),result.sourceZip);
+          if(result.productionPlan?.coverAsset)await fs.writeFile(path.join(target,'표지 이미지 출처.json'),JSON.stringify(result.productionPlan.coverAsset,null,2)+'\n','utf8');
           if(result.productionPlan)await fs.writeFile(path.join(target,'production-plan.json'),JSON.stringify(result.productionPlan,null,2)+'\n','utf8');
           entry.generatedAt=new Date().toISOString();entry.plannedAt=result.productionPlan?.preparedAt||entry.generatedAt;
           entry.templateId=result.productionPlan?.templateId||null;
           entry.reviewStatus='needs_review';entry.publicationStatus=lifecycle.publicationStatus;
           Object.assign(entry,{title:result.title||entry.title,status:'generated',reason:'검수 전 이미지 제작 완료',outputFolder,
             previewZip:path.posix.join(outputFolder,'review-preview.zip'),sourceFingerprint:fingerprint,
+            coverAsset:result.productionPlan?.coverAsset||null,
             outputSha256:digest(result.zip),sourceZipSha256:digest(result.sourceZip),images:imageRecords,renderedPages:imageRecords.length});
         }
         await writeResultGallery(path.join(destination,entry.outputFolder),entry);
@@ -195,7 +197,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
       (entry.title||'제목 미확인')+'\n\n상태: '+entry.status+'\n사유: '+entry.reason+'\n다음 조치: '+(entry.nextAction||'')+
       '\n기준 버전: '+(entry.ruleVersion||RULE_VERSION)+'\n제작일: '+(entry.generatedAt||'없음')+'\n검수: '+(entry.reviewStatus||'미확인')+'\n게시: '+(entry.publicationStatus||'확인 기록 없음')+'\n결과: '+(entry.outputFolder?path.join(destination,entry.outputFolder):'없음')+'\n게시 승인: 없음\n','utf8');
     report.entries.push(entry);report.processed=index+1;
-    if(entry.status==='generated'||(index+1)%25===0)await saveReport(destination,report);
+    if(entry.status==='generated'||(index+1)%20===0)await saveReport(destination,report);
     onProgress({phase:'processing',done:index+1,total:candidates.length,status:entry.status,title:entry.title,reason:entry.reason});
   }
   report.cancelled=report.processed<candidates.length;

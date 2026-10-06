@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.3.5",
+  "version": "0.3.7",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -35,7 +35,8 @@
       "batch-input.cjs",
       "batch-service.cjs",
       "batch-catalog.cjs",
-      "atomic-file.cjs"
+      "atomic-file.cjs",
+      "cover-asset.cjs"
     ],
     "extraResources": [
       {

@@ -10,3 +10,7 @@ desktop/dist/
 
 # Local Chromium capture profile (GitHub Desktop worktree hygiene)
 tmp_capture/
+
+_통합소통/보낼자료/
+_통합소통/확인기록/
+_통합소통/.communication-imports.json

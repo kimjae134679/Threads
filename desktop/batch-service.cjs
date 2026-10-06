@@ -140,8 +140,16 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
       item.plan.sourceUrl=item.plan.sourceUrl||input.sourceUrl||null;
       item.plan.sourceCheckedAt=input.sourceCheckedAt||null;item.plan.sourcePublishedAt=input.sourcePublishedAt||null;item.plan.collectedAt=input.collectedAt||null;
       item.plan.editorial=input.editorial||null;
+      if(input.coverAsset){
+        const a=input.coverAsset,id='supplementary-cover';
+        item.plan.segments.push({id,kind:'image',mediaName:a.name,selected:true,coverOnly:true,
+          contentRole:'illustrative_cover',location:'supplementary:'+a.kind});
+        item.plan.coverAsset=a;item.plan.cover={kind:'image',segmentId:id};
+        item.plan.editorial={...item.plan.editorial,templateId:'photo_cover',coverSegmentId:id,
+          selectionReason:a.relevance};
+      }
       item.plan.style={...item.plan.style,allowSystemFallback:true};
-      document.getElementById('batchTemplate').value=input.editorial?.templateId||'auto';
+      document.getElementById('batchTemplate').value=item.plan.editorial?.templateId||'auto';
       document.getElementById('batchCanvas').value=input.editorial?.aspectRatio||'threads';
       const title=item.plan.originalTitle||input.title;
       const coverTitle=input.editorial?.coverTitle||window.ThreadsPagePlan.headline(title);
@@ -169,7 +177,7 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
       await fs.writeFile(path.join(context.folder,'제작 계획.md'),note.join('\n')+'\n','utf8');
     }
     const rendered=await win.webContents.executeJavaScript(`(async()=>{try{
-      const preview=await window.ThreadsSourceBatch.renderBundle(window.__batchFile,{preview:true,productionPlan:window.__batchPlan});
+      const preview=await window.ThreadsSourceBatch.renderBundle(window.__batchFile,{preview:true,watermark:false,productionPlan:window.__batchPlan});
       const bundle=window.__batchFile,title=${JSON.stringify(result.title)};
       const encode=bytes=>{let raw='';for(let i=0;i<bytes.length;i+=16384)raw+=String.fromCharCode(...bytes.subarray(i,i+16384));return btoa(raw);};
       return {pages:preview.pages,title,zip:encode(new Uint8Array(await preview.zip.arrayBuffer())),
