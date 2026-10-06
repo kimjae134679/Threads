@@ -5,10 +5,11 @@
 ## 가장 먼저 읽을 것
 
 1. 현재 채팅의 사용자 최신 지시
-2. `00_START_HERE/README.md`
-3. 현재 맡은 역할 폴더의 README
-4. `docs/HANDOFF_CONTRACTS.md`
-5. 필요한 세부 문서
+2. `프로젝트_사용안내.md`
+3. `00_START_HERE/README.md`
+4. 현재 맡은 역할 폴더의 README
+5. `docs/HANDOFF_CONTRACTS.md`
+6. 필요한 세부 문서
 
 운영 허브를 함께 쓸 때는 `kimjae134679/project-operations-hub`의 최신 Governance/User Policies도 따른다.
 
