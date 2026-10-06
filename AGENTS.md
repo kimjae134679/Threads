@@ -86,6 +86,10 @@ npm run check
 
 `npm run check`는 JavaScript 문법과 전체 회귀 테스트를 수행한다. GitHub Actions는 실제 로컬 서버 기동, 주요 브라우저 script 로드, keyless connector fail-closed까지 smoke test한다.
 
+## 사용자 제작물 평가 읽기
+
+게시글 품질 작업을 시작할 때 C:\\Users\\user\\Desktop\\Threads Cut Editor 자료\\07_사용자 평가\\평가 기록.json을 먼저 읽는다. 사용자 점수(1~10)와 메모, 글 ID, outputVersion을 기준으로 개선한다. 이전 제작 버전 평가는 현재 버전의 점수로 옮기지 않는다. 실제 평가가 없으면 사용자가 평가했다고 기록하지 않는다.
+
 ## 작업 완료와 GitHub 동기화
 
 사용자가 작업 완료를 요청했거나 실제 변경 작업을 마무리할 때는, 로컬 파일만 수정한 상태로 끝내지 않는다. 검증이 끝난 변경은 다음 순서로 정리한다.

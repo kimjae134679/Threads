@@ -1,0 +1,42 @@
+'use strict';
+const {app,BrowserWindow,protocol}=require('electron');
+const fs=require('node:fs/promises'),path=require('node:path'),assert=require('node:assert/strict');
+const {registerPostReview}=require('./post-review-service.cjs'),{createPostReviewStore}=require('./post-review-store.cjs');
+app.disableHardwareAcceleration();
+app.on('window-all-closed',()=>{});
+const qa=process.argv[2];if(!qa)throw Error('Specify QA directory');
+protocol.registerSchemesAsPrivileged([{scheme:'cut-editor',privileges:{standard:true,secure:true,supportFetchAPI:true}}]);
+const pause=ms=>new Promise(r=>setTimeout(r,ms));
+async function wait(fn){for(let n=0;n<100;n++){if(await fn())return;await pause(100);}throw Error('UI wait timed out');}
+app.whenReady().then(async()=>{
+ await fs.mkdir(qa,{recursive:true});const fixture=await fs.mkdtemp(path.join(qa,'fixture-')),materials=path.join(fixture,'Threads Cut Editor 자료'),output=path.join(materials,'06_자동 제작 결과');
+ const actual=path.join(app.getPath('desktop'),'Threads Cut Editor 자료','06_자동 제작 결과');
+ const report=JSON.parse(await fs.readFile(path.join(actual,'status.json'),'utf8')),rows=report.entries.filter(r=>r.outputFolder).slice(0,2);
+ for(let i=0;i<rows.length;i++){const old=path.join(actual,rows[i].outputFolder);rows[i]={...rows[i],outputFolder:'현재 결과/fixture-'+i};const folder=path.join(output,rows[i].outputFolder);await fs.mkdir(path.join(folder,'rendered'),{recursive:true});for(const image of rows[i].images)await fs.copyFile(path.join(old,image.name),path.join(folder,image.name));await fs.copyFile(path.join(old,'production-plan.json'),path.join(folder,'production-plan.json'));}
+ await fs.writeFile(path.join(output,'status.json'),JSON.stringify({entries:rows}));const store=createPostReviewStore(materials);
+ const appRoot=path.join(__dirname,'..','app'),allowed=new Set(['source-cut-post-review.html','source-cut-post-review.js','source-cut-post-review.css']),mime={'.html':'text/html','.css':'text/css','.js':'text/javascript'};
+ protocol.handle('cut-editor',async req=>{const u=new URL(req.url),name=u.pathname.slice(1);if(u.host!=='app'||!allowed.has(name))return new Response('',{status:404});return new Response(await fs.readFile(path.join(appRoot,name)),{headers:{'Content-Type':mime[path.extname(name)],'Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self'; img-src data:; connect-src 'none'"}});});
+ const service=registerPostReview({app:{getPath:()=>fixture},trusted:()=>{throw Error('Not editor');},preferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true}});
+ await service.open();let win=BrowserWindow.getAllWindows()[0];const run=s=>{require('node:fs').appendFileSync(path.join(qa,'viewer-steps.log'),s+'\n');return win.webContents.executeJavaScript(s.includes('const n=')?'(async()=>{'+s+';await window.ThreadsPostReviewUI.flush();})()':s);};
+ await wait(()=>run("!!document.getElementById('pageImage').naturalWidth"));
+ assert.equal(await run("document.querySelectorAll('.post-card').length"),2);
+ await run("document.getElementById('next').click()");await wait(()=>run("document.getElementById('pageSelect').value==='2'&&document.getElementById('pageImage').naturalWidth>0"));
+ await run("document.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true}))");assert.equal(await run("document.getElementById('pageSelect').value"),'1');
+ await run("document.getElementById('pageImage').dispatchEvent(new PointerEvent('pointerdown',{clientX:200,bubbles:true}));document.getElementById('stage').dispatchEvent(new PointerEvent('pointerup',{clientX:100,bubbles:true}))");assert.equal(await run("document.getElementById('pageSelect').value"),'2');
+ await run("document.querySelector('[data-score=\"1\"]').click();window.ThreadsPostReviewUI.flush()");assert.equal((await store.list()).entries[0].current.score,1);
+ await run("document.querySelector('[data-score=\"10\"]').click();const n=document.getElementById('note');n.value='한글 메모\\n글씨와 장 흐름 수정 <script>문자 그대로';n.dispatchEvent(new Event('input'));window.ThreadsPostReviewUI.flush()");
+ let saved=(await store.list()).entries[0].current;assert.equal(saved.score,10);assert(saved.note.includes('<script>'));assert(saved.note.includes('\n'));
+ await run("document.querySelector('[data-score=\"1\"]').click();document.querySelector('[data-score=\"10\"]').click();const n=document.getElementById('note');n.value='빠른 클릭 후 최종 메모';n.dispatchEvent(new Event('input'));window.ThreadsPostReviewUI.flush()");
+ saved=(await store.list()).entries[0].current;assert.equal(saved.score,10);assert.equal(saved.note,'빠른 클릭 후 최종 메모');
+ await run("document.getElementById('vertical').click()");assert.equal(await run("document.querySelectorAll('#verticalPages figure').length"),rows[0].images.length);
+ await run("document.getElementById('single').click();document.getElementById('note').value='다른 글 이동 전 메모';document.getElementById('note').dispatchEvent(new Event('input'));window.ThreadsPostReviewUI.select("+JSON.stringify(rows[1].id)+")");
+ assert.equal((await store.list()).entries[0].current.note,'다른 글 이동 전 메모');
+ await run("window.ThreadsPostReviewUI.select("+JSON.stringify(rows[0].id)+")");
+ assert.equal(await run("document.getElementById('note').value"),'다른 글 이동 전 메모');
+ await run("document.getElementById('note').value='닫기 직전 메모';document.getElementById('note').dispatchEvent(new Event('input'))");
+ win.close();await wait(()=>win.isDestroyed());await service.open();win=BrowserWindow.getAllWindows()[0];await wait(()=>run("!!document.getElementById('pageImage').naturalWidth"));
+ assert.equal(await run("document.getElementById('note').value"),'닫기 직전 메모');assert.equal(await run("document.querySelector('[data-score=\"10\"]').getAttribute('aria-pressed')"),'true');
+ await run("document.querySelector('.feedback').scrollIntoView({block:'end'})");win.show();win.focus();await pause(1200);await fs.writeFile(path.join(qa,'rating-viewer-fixture.png'),(await win.webContents.capturePage()).toPNG());
+ await fs.writeFile(path.join(qa,'viewer-fixture-check.json'),JSON.stringify({pass:true,fixtureOnly:true,pages:rows[0].images.length,checks:['prev-next','keyboard','swipe','vertical','score1','score10','rapid clicks','Unicode note','navigation flush','close flush','reopen readback'],feedbackFile:store.file},null,2));
+ console.log('POST REVIEW REAL ELECTRON UI PASS');app.exit(0);
+}).catch(async error=>{console.error(error);await fs.mkdir(qa,{recursive:true});await fs.writeFile(path.join(qa,'viewer-error.txt'),error.stack);app.exit(1);});

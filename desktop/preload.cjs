@@ -1,6 +1,7 @@
 'use strict';
 const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('ThreadsCutDesktop', Object.freeze({
+  openPostReview: (id) => ipcRenderer.invoke('source-cut:open-post-review',id),
   importSavedSource: () => ipcRenderer.invoke('source-cut:import-saved-source'),
   capture: (url) => ipcRenderer.invoke('source-cut:capture', url),
   saveReference: (payload) => ipcRenderer.invoke('source-cut:save-reference', payload),

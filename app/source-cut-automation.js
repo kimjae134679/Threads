@@ -32,7 +32,7 @@
       const lifecycle=document.createElement('small');lifecycle.textContent=row.outputFolder?'이미지를 만들었어요. 내용 확인이 필요해요.':row.nextAction||'';state.append(lifecycle);
       const button=(text,kind)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',()=>api.openBatchEntry(row.id,kind).catch(error=>{$('folderBatchStatus').textContent=error.message;}));action.append(b);};
       button('원본 자료 열기','source');
-      if(row.outputFolder){button('이미지 전체 보기','images');button('결과 폴더 열기','result');}
+      if(row.outputFolder){const review=document.createElement('button');review.type='button';review.textContent='넘겨 보기 · 평가';review.addEventListener('click',()=>api.openPostReview(row.id).catch(error=>{$('folderBatchStatus').textContent=error.message;}));action.append(review);button('이미지 전체 보기','images');button('결과 폴더 열기','result');}
       if(row.outputFolder) {
         const view=document.createElement('button');view.type='button';view.textContent='표지 보기';
         view.addEventListener('click',()=>preview(row));action.append(view);
@@ -91,6 +91,8 @@
   $('runFolderBatch').addEventListener('click',()=>run(false));
   $('chooseFolderBatch').addEventListener('click',()=>run(true));
   $('stopFolderBatch').addEventListener('click',()=>{api.cancelFolderBatch();$('folderBatchStatus').textContent='진행 중인 요청을 취소하고 완료 기록을 저장합니다.';});
+  $('openPostReview').disabled=!api?.openPostReview;
+  $('openPostReview').addEventListener('click',()=>api.openPostReview().catch(error=>{$('folderBatchStatus').textContent=error.message;}));
   $('openBatchResults').disabled=!api?.openBatchResults;
   $('openBatchResults').addEventListener('click',()=>api.openBatchResults().catch(error=>{$('folderBatchStatus').textContent=error.message;}));
   $('batchFilter').addEventListener('change',()=>{limit=20;paint();});

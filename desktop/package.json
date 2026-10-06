@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -10,7 +10,8 @@
     "pack:win": "electron-builder --win zip --x64 --publish never",
     "smoke": "electron smoke.cjs",
     "smoke:curation": "electron curation-smoke.cjs",
-    "smoke:auto": "electron auto-batch-smoke.cjs"
+    "smoke:auto": "electron auto-batch-smoke.cjs",
+    "smoke:review": "electron post-review-smoke.cjs"
   },
   "devDependencies": {
     "electron": "44.4.3",
@@ -36,7 +37,10 @@
       "batch-service.cjs",
       "batch-catalog.cjs",
       "atomic-file.cjs",
-      "cover-asset.cjs"
+      "cover-asset.cjs",
+      "post-review-store.cjs",
+      "post-review-service.cjs",
+      "post-review-preload.cjs"
     ],
     "extraResources": [
       {

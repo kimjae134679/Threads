@@ -8,8 +8,9 @@ const { publicAddress } = require('./network.cjs');
 const { createReferenceStore } = require('./reference-store.cjs');
 const { loadSavedMaterials } = require('./saved-materials.cjs');
 const { registerFolderBatch } = require('./batch-service.cjs');
+const {registerPostReview}=require('./post-review-service.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
-let editor, bundleWindow, activeCapture = null;
+let editor, bundleWindow, postReview, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
 const bundleUrl = 'cut-editor://app/source-batch.html';
 const preferences = { nodeIntegration: false, contextIsolation: true, sandbox: true, webSecurity: true, allowRunningInsecureContent: false };
@@ -23,7 +24,7 @@ function denyPermissions(ses) {
 async function start() {
   const root = app.isPackaged ? path.join(process.resourcesPath, 'editor') : path.join(__dirname, '..', 'app');
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
-  const allowed = new Set(['source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-automation.js', 'source-cut-automation.css', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-batch-image-analysis.js', 'source-page-plan.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
+  const allowed = new Set(['source-cut-post-review.html','source-cut-post-review.css','source-cut-post-review.js','source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-automation.js', 'source-cut-automation.css', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-batch-image-analysis.js', 'source-page-plan.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
   protocol.handle('cut-editor', async (request) => {
     const url = new URL(request.url), name = url.pathname.slice(1);
     if (url.host !== 'app' || !allowed.has(name) || request.method !== 'GET') return new Response('Not found', { status: 404 });
@@ -80,6 +81,7 @@ async function start() {
     return result;
   });
   registerFolderBatch({app,getEditor:()=>editor,trusted,preferences,bundleUrl});
+  postReview=registerPostReview({app,trusted,preferences});
   ipcMain.handle('source-cut:cancel', (event) => { trusted(event); if (activeCapture && !activeCapture.isDestroyed()) activeCapture.destroy(); });
   ipcMain.handle('source-cut:capture', async (event, input) => {
     trusted(event);
@@ -119,6 +121,11 @@ async function start() {
     }
   });
   await editor.loadURL(editorUrl);
+  if(process.argv.includes('--review'))await postReview.open();
 }
-app.whenReady().then(start).catch((error) => { dialog.showErrorBox('컷 편집기 실행 실패', error.message); app.quit(); });
+if(!app.requestSingleInstanceLock())app.quit();
+else {
+ app.on('second-instance',(_event,args)=>{if(args.includes('--review')&&postReview)postReview.open().catch(error=>dialog.showErrorBox('평가 창 열기 실패',error.message));else if(editor){if(editor.isMinimized())editor.restore();editor.show();editor.focus();}});
+ app.whenReady().then(start).catch((error) => { dialog.showErrorBox('컷 편집기 실행 실패', error.message); app.quit(); });
+}
 app.on('window-all-closed', () => app.quit());
