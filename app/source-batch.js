@@ -233,7 +233,7 @@
       coverLeft:Number($('coverLeft').value),manualTitleLayout:$('manualTitleLayout').checked,allowSystemFallback:p.style?.allowSystemFallback===true};
     p.editorial={...p.editorial,coverTitle:p.coverTitle,titleEvidence:p.coverTitleEvidence,templateId:p.style.templateId,
       coverLines:p.coverTitle.includes('\n')?p.coverTitle.split('\n').filter(line=>line.trim()):null,
-      titleHighlights:$('titleHighlights').value.split(',').map(word=>word.trim()).filter(Boolean)};
+        titleHighlights:$('titleHighlights').value.split(/(?<!\d),|,(?!\d)|[;\n]/).map(word=>word.trim()).filter(Boolean)};
     const s=p.segments.find(x=>x.id===$('coverSource').value);
     p.cover={kind:s?.kind||null,segmentId:s?.id||null};
     return p;

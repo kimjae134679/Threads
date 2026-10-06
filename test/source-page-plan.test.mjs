@@ -43,7 +43,7 @@ assert.throws(()=>P.compile({...textPlan,editorial:{titleHighlights:['없는 사
 const longTitle='아주 긴 원문 제목의 뒷부분에도 중요한 반전이 있어서 이 부분을 마음대로 자르면 안 됩니다';
 assert.equal(P.headline(longTitle),longTitle);
 const chart=P.compile({...base,coverTitle:'돈관리 유형'},{'a.jpg':{width:700,height:467,analysis:{kind:'photo',textBands:4}}},measure);
-assert.equal(chart.templateId,'photo_cover');assert(!chart.pages[0].operations.some(o=>o.kind==='gradient'));assert(chart.pages.flatMap(p=>p.operations).some(o=>o.kind==='image'));
+assert.equal(chart.templateId,'screenshot');assert(chart.pages[0].operations.every(o=>o.kind!=='image'));assert(chart.pages.slice(1).flatMap(p=>p.operations).some(o=>o.kind==='image'));assert(!chart.omitted.some(o=>o.reason==='already_shown_in_cover'));
 
 const caption=P.compile({...base,segments:[photo,{...photo,id:'second',mediaName:'b.jpg'},{id:'caption',kind:'text',text:'원문 사진 설명',selected:true}]},{'a.jpg':{width:800,height:600,analysis:{kind:'photo'}},'b.jpg':{width:800,height:1067,analysis:{kind:'photo'}}},measure);
 assert.equal(caption.pages.length,2);assert(caption.pages[1].operations.some(o=>o.sourceId==='caption'));
@@ -52,6 +52,11 @@ assert(excluded.omitted.some(o=>o.sourceId==='duplicate'&&o.reason==='explicit_e
 assert.throws(()=>P.compile({...textPlan,editorial:{exclusions:{absent:'없는 이미지'}}},{},measure),/제외할 원문/);
 
 const panel=P.compile({...base,editorial:{templateId:"photo_cover",coverPresentation:"panel",titleHighlights:["담배"]}},{"a.jpg":{width:700,height:467,analysis:{kind:"screenshot",textBands:4}}},measure);
-assert.equal(panel.pages[0].background,"#152623");
-assert(panel.pages[0].operations.filter(o=>o.role==="title").every(o=>o.y>=panel.pages[0].operations[0].y+panel.pages[0].operations[0].height));
+assert.equal(panel.templateId,'screenshot');assert.equal(panel.pages[0].background,"#B8DCD4");
+assert(panel.pages.slice(1).flatMap(p=>p.operations).some(o=>o.sourceId==='photo'&&o.sourceHeight===467));
+const noFiller=P.compile({...base,segments:[photo,{id:'filler',kind:'text',selected:true,text:'헉'},{id:'real',kind:'text',selected:true,text:'본문에 실제로 있는 설명을 그대로 보존합니다.\n원문 출처(삭제됨): https://example.com'}]}, {'a.jpg':{width:800,height:753,analysis:{kind:'screenshot',textBands:4}}},measure);
+assert(noFiller.omitted.some(o=>o.reason==='isolated_filler_reaction'));assert(noFiller.pages.flatMap(p=>p.operations).some(o=>o.text?.includes('실제로 있는 설명')));
+const explained=P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'독자를 위한 용어 설명',evidenceUrl:'https://example.com/official'}]}},{},measure);
+assert(explained.pages.flatMap(p=>p.operations).some(o=>o.role==='note'&&o.text.includes('용어 설명')));assert.equal(explained.editorialAnnotations[0].actualSourceComment,false);
+assert.throws(()=>P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'근거 없는 설명'}]}},{},measure),/근거/);
 assert.equal(text.pages[0].background,"#B8DCD4");

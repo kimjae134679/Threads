@@ -10,13 +10,13 @@ const pause=ms=>new Promise(r=>setTimeout(r,ms));
 async function wait(fn){for(let n=0;n<100;n++){if(await fn())return;await pause(100);}throw Error('UI wait timed out');}
 app.whenReady().then(async()=>{
  await fs.mkdir(qa,{recursive:true});const fixture=await fs.mkdtemp(path.join(qa,'fixture-')),materials=path.join(fixture,'Threads Cut Editor 자료'),output=path.join(materials,'06_자동 제작 결과');
- const actual=path.join(app.getPath('desktop'),'Threads Cut Editor 자료','06_자동 제작 결과');
+ const actual=path.join(require('./material-paths.cjs').getMaterialRoot(app),'06_자동 제작 결과');
  const report=JSON.parse(await fs.readFile(path.join(actual,'status.json'),'utf8')),rows=report.entries.filter(r=>r.outputFolder).slice(0,2);
  for(let i=0;i<rows.length;i++){const old=path.join(actual,rows[i].outputFolder);rows[i]={...rows[i],outputFolder:'현재 결과/fixture-'+i};const folder=path.join(output,rows[i].outputFolder);await fs.mkdir(path.join(folder,'rendered'),{recursive:true});for(const image of rows[i].images)await fs.copyFile(path.join(old,image.name),path.join(folder,image.name));await fs.copyFile(path.join(old,'production-plan.json'),path.join(folder,'production-plan.json'));}
  await fs.writeFile(path.join(output,'status.json'),JSON.stringify({entries:rows}));const store=createPostReviewStore(materials);
  const appRoot=path.join(__dirname,'..','app'),allowed=new Set(['source-cut-post-review.html','source-cut-post-review.js','source-cut-post-review.css']),mime={'.html':'text/html','.css':'text/css','.js':'text/javascript'};
  protocol.handle('cut-editor',async req=>{const u=new URL(req.url),name=u.pathname.slice(1);if(u.host!=='app'||!allowed.has(name))return new Response('',{status:404});return new Response(await fs.readFile(path.join(appRoot,name)),{headers:{'Content-Type':mime[path.extname(name)],'Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self'; img-src data:; connect-src 'none'"}});});
- const service=registerPostReview({app:{getPath:()=>fixture},trusted:()=>{throw Error('Not editor');},preferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true}});
+ const service=registerPostReview({app:{getPath:()=>fixture},trusted:()=>{throw Error('Not editor');},materialRoot:materials,preferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true}});
  await service.open();let win=BrowserWindow.getAllWindows()[0];const run=s=>{require('node:fs').appendFileSync(path.join(qa,'viewer-steps.log'),s+'\n');return win.webContents.executeJavaScript(s.includes('const n=')?'(async()=>{'+s+';await window.ThreadsPostReviewUI.flush();})()':s);};
  await wait(()=>run("!!document.getElementById('pageImage').naturalWidth"));
  assert.equal(await run("document.querySelectorAll('.post-card').length"),2);

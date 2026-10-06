@@ -1,4 +1,5 @@
 'use strict';
+const {getMaterialRoot}=require('./material-paths.cjs');
 const {BrowserWindow,dialog,ipcMain,shell}=require('electron');
 const fs=require('node:fs/promises');
 const path=require('node:path');
@@ -6,7 +7,7 @@ const {runFolderBatch,readReport,discoverCandidates,inside}=require('./folder-ba
 const {importSavedSource}=require('./source-import.cjs');
 const {fetchPublic,decodeHtml,hash}=require('./public-source.cjs');
 function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
-  const materialRoot=path.join(app.getPath('desktop'),'Threads Cut Editor 자료');
+  const materialRoot=getMaterialRoot(app);
   const output=path.join(materialRoot,'06_자동 제작 결과');
   let active=null;
   const progress=value=>{const editor=getEditor();if(editor&&!editor.isDestroyed())editor.webContents.send('source-cut:batch-progress',value);};

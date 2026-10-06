@@ -1,13 +1,18 @@
 'use strict';
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
 const {writeAtomic}=require('./atomic-file.cjs');
+const {migrateFeedback}=require('./feedback-migration.cjs');
 function contained(root,file){const rel=path.relative(root,file);if(!rel||rel==='..'||rel.startsWith('..'+path.sep)||path.isAbsolute(rel))throw Error('허용되지 않은 자료 경로입니다.');return file;}
 function version(row){return crypto.createHash('sha256').update(JSON.stringify([row.sourceFingerprint,row.outputSha256,row.ruleVersion,row.images?.map(i=>i.sha256)])).digest('hex');}
-function createPostReviewStore(materialRoot){
+function createPostReviewStore(materialRoot,{legacyFeedbackFile=null}={}){
  const root=path.resolve(materialRoot),output=path.join(root,'06_자동 제작 결과'),folder=path.join(root,'07_사용자 평가'),file=path.join(folder,'평가 기록.json');
- let queue=Promise.resolve();
+ let queue=Promise.resolve(),migration=null;
  async function report(){try{const data=JSON.parse(await fs.readFile(path.join(output,'status.json'),'utf8'));if(!Array.isArray(data.entries))throw Error('제작 목록 형식을 확인하세요.');return data.entries.filter(r=>r.outputFolder&&Array.isArray(r.images)&&r.images.length);}catch(e){if(e.code==='ENOENT')return [];throw e;}}
- async function feedback(){try{const data=JSON.parse(await fs.readFile(file,'utf8'));if(data.schemaVersion!==1||!Array.isArray(data.evaluations))throw Error('평가 기록 형식을 확인하세요. 기존 파일은 덮어쓰지 않습니다.');return data;}catch(e){if(e.code==='ENOENT')return {schemaVersion:1,recordType:'user_post_quality_feedback',evaluations:[]};throw e;}}
+ async function feedback(){
+  migration??=migrateFeedback(file,legacyFeedbackFile);const initial=await migration;
+  try{const data=JSON.parse(await fs.readFile(file,'utf8'));if(data.schemaVersion!==1||!Array.isArray(data.evaluations))throw Error('평가 기록 형식을 확인하세요. 기존 기록을 보존합니다.');return data;}
+  catch(e){if(e.code==='ENOENT')return initial;throw e;}
+ }
  async function find(id){if(typeof id!=='string'||id.length>200)throw Error('글을 확인하세요.');const row=(await report()).find(r=>r.id===id);if(!row)throw Error('현재 제작 결과에 없는 글입니다.');return row;}
  async function safeFile(row,name){
   const base=contained(output,path.resolve(output,row.outputFolder)),candidate=contained(base,path.resolve(base,name));
@@ -16,12 +21,14 @@ function createPostReviewStore(materialRoot){
  }
  async function list(){
   await queue;const [rows,data]=await Promise.all([report(),feedback()]);
+  let queueRows=[];try{queueRows=JSON.parse(await fs.readFile(path.join(root,'08_제작 정리','제작 순서.json'),'utf8')).entries||[];}catch(e){if(e.code!=='ENOENT')throw e;}
   const entries=await Promise.all(rows.map(async row=>{
+   const order=queueRows.find(q=>q.id===row.id)||{};
    const outputVersion=version(row);let plan={};
    try{plan=JSON.parse(await fs.readFile(await safeFile(row,'production-plan.json'),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
    const current=data.evaluations.find(e=>e.id===row.id&&e.outputVersion===outputVersion)||null;
    const previous=data.evaluations.filter(e=>e.id===row.id&&e.outputVersion!==outputVersion).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0]||null;
-   return {id:row.id,title:row.title,coverTitle:plan.coverTitle||row.title,outputVersion,pages:row.images.length,ruleVersion:row.ruleVersion,current,previous,
+   return {category:order.category||'all',categoryLabel:order.categoryLabel||'',rank:order.rank||9999,productionNote:order.reason||'',id:row.id,title:row.title,coverTitle:plan.coverTitle||row.title,outputVersion,pages:row.images.length,ruleVersion:row.ruleVersion,current,previous,
     pageLabels:row.images.map((_,i)=>plan.pages?.[i]?.role==='cover'?'표지':plan.pages?.[i]?.role==='comments'?'원문 댓글':'본문')};
   }));
   return {entries,feedbackFile:file};
