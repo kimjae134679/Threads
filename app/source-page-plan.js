@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-07.5',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-08.1',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -17,7 +17,7 @@
     return lines;
   }
   function headline(original) {
-    let title=clean(original).replace(/^(?:\((?:장문|초?스압|사진|펌|끌올)[^)]*\)|\[(?:장문|초?스압|사진|펌|끌올)[^\]]*\])\s*/,'').replace(/\.(?:jpg|jpeg|png|txt)$/i,'');
+    let title=clean(original).replace(/^\[\s*네이트판\s*\]\s*/,'').replace(/^(?:\((?:장문|초?스압|사진|펌|끌올)[^)]*\)|\[(?:장문|초?스압|사진|펌|끌올)[^\]]*\])\s*/,'').replace(/\.(?:jpg|jpeg|png|txt)$/i,'');
     if(title.length>30&&/^.*?원덬이\s+/.test(title))title=title.replace(/^.*?원덬이\s+/,'');
     return title;
   }
@@ -333,20 +333,52 @@
       if(!includedComments.length){
         finishPage();pageRole='comments';
         ops.push({kind:'rect',x:PAD,y:PAD,width:96,height:8,color:'#176B57'});y+=32;
-        ops.push({kind:'text',role:'section',text:'원문 댓글',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=80;
+        ops.push({kind:'text',role:'section',text:'댓글',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=80;
       }else{
         if(y+172>MAXH-PAD){finishPage();pageRole='comments';}
         else{ops.push({kind:'rect',x:PAD,y,width:W-2*PAD,height:2,color:'#DCE4E0'});y+=36;}
       }
       if(comment.contentRole==='author_reply'){
         if(y+128>MAXH-PAD){finishPage();pageRole='comments';}
-        ops.push({kind:'text',role:'section',text:'작성자 답글',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=64;
+        ops.push({kind:'text',role:'section',text:'글쓴이',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=64;
       }
       seenText.add(text);includedComments.push(comment.id);addText(text,comment.id,'comment',48);
     }
     if(annotations.length&&includedComments.length)finishPage();
     for(const [i,a] of annotations.entries())addText(a.text,'editorial-annotation-'+i,'note');
     finishPage();
+
+    // Keep short trailing paragraphs attached or balance the preceding text page.
+    const bottom=op=>op.y+(op.kind==='text'?op.lineHeight||op.size*1.35:op.height);
+    const refresh=page=>{page.contentBottom=Math.max(...page.operations.map(bottom));page.height=fixed?MAXH:Math.min(MAXH,Math.max(MIN,Math.ceil(page.contentBottom+PAD)));};
+    for(let i=pages.length-1;i>0;i--){
+      const tail=pages[i],before=pages[i-1];
+      if(tail.role!=='body'||before.role!=='body'||tail.operations.length>3||!tail.operations.every(o=>o.kind==='text'&&o.role==='body'))continue;
+      const gap=32,tailTop=tail.operations[0].y,tailHeight=tail.contentBottom-tailTop;
+      let nextY=before.contentBottom+gap;
+      const last=before.operations.at(-1),dimension=last?.kind==='image'?dimensions[last.name]:null;
+      const needed=nextY+tailHeight-(MAXH-PAD);
+      if(needed>0&&last?.kind==='image'&&editorial.imageFit?.[last.sourceId]==='contain'&&dimension?.analysis?.kind==='photo'&&(dimension.analysis.textBands||0)<=1&&needed+16<=last.height*.15){
+        const ratio=(last.height-needed-16)/last.height;last.height*=ratio;last.width*=ratio;last.x=(W-last.width)/2;refresh(before);nextY=before.contentBottom+gap;
+      }
+      if(nextY+tailHeight<=MAXH-PAD){
+        for(const op of tail.operations)op.y=nextY+op.y-tailTop;
+        before.operations.push(...tail.operations);refresh(before);pages.splice(i,1);continue;
+      }
+      if(!before.operations.every(o=>o.kind==='text'&&o.role==='body'))continue;
+      const length=before.operations.length,count=Math.min(length-4,Math.ceil((length+tail.operations.length)/2)-tail.operations.length);
+      if(count<=0)continue;
+      let start=length-count;
+      if(start>0&&isHeading(before.operations[start-1].text))start--;
+      if(start<4)continue;
+      const moved=before.operations.splice(start),origin=moved[0].y;
+      for(const op of moved)op.y=PAD+op.y-origin;
+      const shift=Math.max(...moved.map(bottom))+gap-tailTop;
+      for(const op of tail.operations)op.y+=shift;
+      tail.operations=[...moved,...tail.operations];refresh(before);refresh(tail);
+    }
+    pages.forEach((page,i)=>{page.number=i+1;});
+
     if(pages.length>60)throw new Error('원문이 길어 60장 제한을 넘습니다. 원문을 나눠 주세요.');
     for(const page of pages) {
       page.bottomWhitespace=Math.round(page.height-page.contentBottom);

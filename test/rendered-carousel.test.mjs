@@ -5,7 +5,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 const fixture = 'data/source-packages/theqoo-3826792703';
-const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'threads-rendered-plan-'));
+const directory = fs.mkdtempSync(path.join(path.dirname(path.resolve(fixture)), '.threads-rendered-plan-'));
 const planPath = path.join(directory, 'plan.json');
 const run = (script, args) => spawnSync(process.execPath, ['scripts/' + script, ...args], { encoding: 'utf8' });
 try {

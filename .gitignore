@@ -14,3 +14,6 @@ tmp_capture/
 _통합소통/보낼자료/
 _통합소통/확인기록/
 _통합소통/.communication-imports.json
+
+# Local private review data, rendered QA and installed smoke evidence
+/qa-local/

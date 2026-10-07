@@ -28,7 +28,7 @@ const verified=P.compile(verifiedInput,verifiedDimensions,measure),verifiedOps=v
 assert.equal(verified.selectedComments.length,2);
 assert.equal(verified.selectedComments[1].contentRole,'author_reply');
 assert.equal(verified.selectedComments[0].location.sha256,sourceSha);
-assert(verifiedOps.some(o=>o.text==='작성자 답글'));
+assert(verifiedOps.some(o=>o.text==='글쓴이'));
 assert(verifiedOps.findIndex(o=>o.text?.includes('원본 마지막 문단'))<verifiedOps.findIndex(o=>o.text==='실제 댓글 내용'));
 assert(!verifiedOps.some(o=>o.kind==='image'),'Verified body is typeset without captured metadata');
 assert.throws(()=>P.compile(verifiedInput,{'source.jpg':{...verifiedDimensions['source.jpg'],sha256:'b'.repeat(64)}},measure),/전사 원본 이미지/);

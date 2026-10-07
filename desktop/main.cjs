@@ -11,6 +11,10 @@ const { loadSavedMaterials } = require('./saved-materials.cjs');
 const { registerFolderBatch } = require('./batch-service.cjs');
 const {registerPostReview}=require('./post-review-service.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
+const reviewAudit=process.argv.find(a=>a.startsWith('--review-audit='));
+const reviewOnly=process.argv.includes('--review-only')||!!reviewAudit;
+if(reviewAudit)app.disableHardwareAcceleration();
+if(reviewOnly)app.setPath('userData',path.join(app.getPath('appData'),'ThreadsReview','0.3.16'));
 let editor, bundleWindow, postReview, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
 const bundleUrl = 'cut-editor://app/source-batch.html';
@@ -38,6 +42,7 @@ async function start() {
   session.defaultSession.on('will-download', (_event, item) => {
     item.setSaveDialogOptions({ title: '편집 결과 저장', defaultPath: path.join(app.getPath('downloads'), path.basename(item.getFilename())) });
   });
+  if(reviewOnly){postReview=registerPostReview({app,trusted,preferences});await postReview.open();if(reviewAudit)await require('./review-installed-audit.cjs')({app,window:postReview.getWindow(),store:postReview.store,directory:reviewAudit.slice('--review-audit='.length)});return;}
   editor = new BrowserWindow({ show:!process.argv.includes('--background-worker'),width: 1450, height: 960, minWidth: 760, minHeight: 650, title: '원문 컷 편집기', autoHideMenuBar: true,
     webPreferences: { ...preferences, preload: path.join(__dirname, 'preload.cjs') } });
   editor.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
@@ -126,7 +131,7 @@ async function start() {
 }
 if(!app.requestSingleInstanceLock())app.quit();
 else {
- app.on('second-instance',(_event,args)=>{if(args.includes('--review')&&postReview)postReview.open().catch(error=>dialog.showErrorBox('평가 창 열기 실패',error.message));else if(editor){if(editor.isMinimized())editor.restore();editor.show();editor.focus();}});
- app.whenReady().then(start).catch((error) => { dialog.showErrorBox('컷 편집기 실행 실패', error.message); app.quit(); });
+ app.on('second-instance',(_event,args)=>{if((args.includes('--review')||args.includes('--review-only'))&&postReview)postReview.open(undefined,args.find(a=>a.startsWith('--review-status='))?.slice('--review-status='.length)).catch(error=>dialog.showErrorBox('평가 창 열기 실패',error.message));else if(editor){if(editor.isMinimized())editor.restore();editor.show();editor.focus();}});
+ app.whenReady().then(start).catch(async error=>{if(reviewAudit){const directory=reviewAudit.slice('--review-audit='.length);await fs.mkdir(directory,{recursive:true});await fs.writeFile(path.join(directory,'audit-error.txt'),error.stack);console.error(error);app.exit(1);return;}dialog.showErrorBox('컷 편집기 실행 실패',error.message);app.quit();});
 }
 app.on('window-all-closed', () => app.quit());
