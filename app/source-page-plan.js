@@ -138,13 +138,20 @@
       const paragraphs=clean(text).split(/\n\s*\n/);
       for(let p=0;p<paragraphs.length;p++) {
         let paragraph=paragraphs[p];
-        const heading=paragraph.length<=60&&/^(?:\d+[.)]\s*\S.*|후기\s*\d*|대박\s*\d+사건|.{1,12}\s왈)$/.test(paragraph);
+        const heading=paragraph.length<=60&&/^(?:\d+[.)]\s*\S.*|후기\s*\d*|대박\s*\d+사건|세\s*줄\s*요약|.{1,12}\s왈)$/.test(paragraph);
+        if(heading&&editorial.keepLongHeadingsWithNext===true&&paragraphs[p+1]){
+          const following=paragraphs[p+1],firstSentence=following.split(/(?<=[^\d][.!?。])\s+(?=\S)/)[0];
+          paragraph+='\n'+firstSentence;
+          const remainder=following.slice(firstSentence.length).trim();
+          if(remainder)paragraphs[p+1]=remainder;else p++;
+          if(ops.length&&y+wrap(paragraph,W-2*PAD,size,measure,weight).length*lineHeight>MAXH-PAD)nextPage();
+        }
         if((/[?？]$/.test(paragraph)||heading)&&paragraphs[p+1]&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*lineHeight<=MAXH-2*PAD)
           paragraph+='\n'+paragraphs[++p];
         if(!paragraph)continue;
         // Keep complete sentences together when a paragraph exceeds one page.
         const full=wrap(paragraph,W-2*PAD,size,measure,weight),fits=full.length*lineHeight<=MAXH-2*PAD;
-        const units=fits?[paragraph]:paragraph.split(/(?<=[.!?。])\s+(?=\S)/);
+        const units=fits?[paragraph]:paragraph.split(editorial.keepLongHeadingsWithNext===true?/(?<=[^\d][.!?。])\s+(?=\S)/:/(?<=[.!?。])\s+(?=\S)/);
         for(const unit of units) {
           const lines=wrap(unit.trim(),W-2*PAD,size,measure,weight);
           if(ops.length&&lines.length*lineHeight<=MAXH-2*PAD&&y+lines.length*lineHeight>MAXH-PAD)nextPage();
@@ -244,9 +251,14 @@
         if(keepWithNext.includes(part.id)&&used[index+1]?.kind==='text'){
           const weight=style.fontId==='gothic'?800:400;
           const headingLines=wrap(text,W-2*PAD,BODY,measure,weight).length;
-          const nextLines=wrap(clean(used[index+1].text).split(/\n\s*\n/)[0],W-2*PAD,BODY,measure,weight).length;
+          let nextLines=0,followingParts=0;
+          for(let look=index+1;look<Math.min(index+4,used.length)&&used[look].kind==='text';look++){
+            const nextText=clean(used[look].text).split(/\n\s*\n/)[0];
+            nextLines+=wrap(nextText,W-2*PAD,BODY,measure,weight).length;followingParts++;
+            if(nextText.length>18||/[.!?。？！]$/.test(nextText))break;
+          }
           const reserve=Math.min(nextLines,Math.max(2,Math.floor((MAXH-2*PAD-32)/LINE)-headingLines));
-          if(ops.length&&y+(headingLines+reserve)*LINE+32>MAXH-PAD)finishPage();
+          if(ops.length&&y+(headingLines+reserve)*LINE+32*followingParts>MAXH-PAD)finishPage();
         }
         seenText.add(text);addText(text,part.id);
       }else {

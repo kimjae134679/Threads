@@ -29,6 +29,10 @@ const numbered=P.compile({originalTitle:'번호가 있는 원문',segments:[{id:
 const headingPage=numbered.pages.find(p=>p.operations.some(o=>o.text==='1. 다음 사건'));
 assert(headingPage.operations.filter(o=>o.text).map(o=>o.text).join('').includes('이어지는 실제본문'),'Short numbered heading stays with its following paragraph');
 const photo={id:'photo',kind:'image',mediaName:'a.jpg',selected:true};
+const longFollowing=P.compile({originalTitle:'긴 문단 소제목',segments:[{id:'body',kind:'text',selected:true,text:'서론입니다.\n'.repeat(13)+'\n5. 학벌이 중요하다\n\n첫 문장을 함께 보존합니다. '+('뒤의 긴 본문입니다. '.repeat(100))}],comments:[],editorial:{templateId:'mint_text',keepLongHeadingsWithNext:true}},{},measure);
+const longHeadingPage=longFollowing.pages.find(p=>p.operations.some(o=>o.text==='5. 학벌이 중요하다'));
+assert(longHeadingPage.operations.filter(o=>o.text).map(o=>o.text).join('').replace(/\s/g,'').includes('첫문장을함께보존합니다.'),'Long paragraph heading stays with its first sentence');
+assert.equal(longFollowing.pages.flatMap(p=>p.operations).filter(o=>o.text?.includes('뒤의')).length>0,true,'Remaining body survives heading grouping');
 const base={originalTitle:'야간 편돌이 담배 도둑맞은 썰',coverTitle:'야간 편돌이 담배 도둑맞은 썰',cover:{segmentId:'photo'},segments:[photo],comments:[]};
 const wide=P.compile(base,{'a.jpg':{width:1600,height:600}},measure);
 assert.equal(wide.pages.length,1);
