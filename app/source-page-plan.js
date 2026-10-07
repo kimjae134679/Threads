@@ -39,9 +39,9 @@
         const id=original.id+'-transcribed-'+index;
         const location={originalSourceId:original.id,mediaName:original.mediaName,sha256:replacement.sha256,region:part.location||null};
         if(part.kind==='comment'||part.kind==='author_reply'){
-          if(typeof part.text!=='string'||!part.text.trim()||!Number.isInteger(part.visibleLikes)||part.visibleLikes<0)
-            throw new Error('전사 댓글의 실제 반응수와 본문을 확인하세요.');
-          transcribedComments.push({id,text:part.text,selected:true,contentRole:part.kind,visibleLikes:part.visibleLikes,location,verifiedBy:replacement.verifiedBy});return [];
+          if(typeof part.text!=='string'||!part.text.trim()||!(Number.isInteger(part.visibleLikes)&&part.visibleLikes>=0||part.visibleBest===true&&part.visibleLikes==null))
+            throw new Error('전사 댓글의 실제 반응수 또는 베플 표시와 본문을 확인하세요.');
+          transcribedComments.push({id,text:part.text,selected:true,contentRole:part.kind,visibleLikes:part.visibleLikes??null,visibleBest:part.visibleBest===true,location,verifiedBy:replacement.verifiedBy});return [];
         }
         if(part.kind==='image'){
           if(part.mediaName!==original.mediaName)throw new Error('전사 사진은 확인한 원본을 사용하세요.');
@@ -84,6 +84,8 @@
     const imageParts=used.filter(s=>s.kind==='image');
     const keepWithNext=editorial.keepWithNext||[];
     if(!Array.isArray(keepWithNext)||keepWithNext.length>30||keepWithNext.some(id=>!used.some(s=>s.id===id&&s.kind==='text')))throw new Error('소제목과 다음 본문 연결 대상을 확인하세요.');
+    const sourceLabels=editorial.sourceLabels||{};
+    for(const [id,label] of Object.entries(sourceLabels))if(!used.some(u=>u.id===id&&u.kind==='text')||label!=='원문 덧붙임')throw new Error('원문 덧붙임 표시 대상을 확인하세요.');
     const headingTexts=editorial.keepHeadingTexts||[];
     if(!Array.isArray(headingTexts)||headingTexts.length>40||headingTexts.some(t=>typeof t!=='string'||!t.trim()||t.length>180))throw new Error('본문과 연결할 소제목 문구를 확인하세요.');
     const isHeading=text=>{
@@ -273,6 +275,13 @@
           if(ops.length&&y+(headingLines+reserve)*LINE+32>MAXH-PAD)finishPage();
           leadingContinuation.set(nextPart.id,opening);
         }
+        const label=sourceLabels[part.id];
+        if(label){
+          const firstLines=wrap(firstSentence(text.split(/\n\s*\n/)[0]),W-2*PAD,BODY,measure).length;
+          const reserve=Math.min(firstLines,Math.floor((MAXH-2*PAD-64)/LINE));
+          if(ops.length&&y+64+reserve*LINE>MAXH-PAD)finishPage();
+          ops.push({kind:'text',role:'editorial_label',text:label,x:PAD,y,size:34,weight:800,color:'#596168',lineHeight:48,sourceId:part.id});y+=64;
+        }
         seenText.add(text);
         const opening=leadingContinuation.get(part.id);
         if(opening&&text.startsWith(opening)){
@@ -328,7 +337,7 @@
       sourceUrl:plan.sourceUrl,sourceSha256:plan.input?.sha256||null,sourcePublishedAt:plan.sourcePublishedAt||null,
       sourceCheckedAt:plan.sourceCheckedAt||null,collectedAt:plan.collectedAt||null,bodyFontSize:BODY,safeMargin:PAD,
       coverAsset:coverAsset?{...coverAsset,actualScene:false,coverOnly:true}:null,
-      editorialAnnotations:annotations.map(a=>({...a,actualSourceComment:false})),
+      sourceLabels:{...sourceLabels},editorialAnnotations:annotations.map(a=>({...a,actualSourceComment:false})),
       imageRegions:Object.fromEntries(imageParts.map(s=>{const d=dimensions[s.mediaName.toLowerCase()];return [s.id,editorial.regions?.[s.id]||d.analysis?.bounds||{x:0,y:0,width:d.width,height:d.height}];})),
       sourceUnits:used.filter(s=>!s.coverOnly).map(s=>({id:s.id,kind:s.kind,location:s.location||null,role:s.contentRole||'primary_source',text:s.kind==='text'?s.text:null,mediaName:s.mediaName||null})),
       verifiedTranscriptions:transcriptions,imageFit:editorial.imageFit||{},selectedComments:comments.filter(c=>includedComments.includes(c.id)),sourceIssues:editorial.sourceIssues||[],

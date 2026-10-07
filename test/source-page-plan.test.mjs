@@ -124,3 +124,15 @@ assert.throws(()=>P.compile({originalTitle:'검수',segments:[{id:'a',kind:'text
 const commentUi=P.compile({originalTitle:'댓글 사례',segments:[{id:'header',kind:'text',selected:true,text:'38. 무명의 더쿠 2025-12-08 23:51:19'},{id:'body',kind:'text',selected:true,text:'실제 댓글의 본문만 남깁니다.'}],comments:[]},{},measure);
 assert(commentUi.omitted.some(o=>o.sourceId==='header'&&o.reason==='display_metadata'));
 assert(commentUi.sourceUnits.some(o=>o.id==='body'));
+
+const extraLabel=P.compile({originalTitle:'캡처와 웹 덧붙임',segments:[{id:'capture',kind:'text',selected:true,text:'캡처 속 원문 본문'},{id:'extra',kind:'text',selected:true,text:'웹 원문에 실제 있는 덧붙임'}],editorial:{sourceLabels:{extra:'원문 덧붙임'}}},{},measure);
+assert.equal(extraLabel.sourceUnits.find(u=>u.id==='extra').text,'웹 원문에 실제 있는 덧붙임');
+const labelledPage=extraLabel.pages.find(p=>p.operations.some(o=>o.role==='editorial_label'));
+assert(labelledPage.operations.some(o=>o.sourceId==='extra'&&o.role==='body'),'A source label must share its page with its actual body');
+assert.throws(()=>P.compile({originalTitle:'캡처',segments:[{id:'a',kind:'text',selected:true,text:'본문'}],editorial:{sourceLabels:{a:'가짜 인기 댓글'}}},{},measure),/덧붙임/);
+
+const bestWithoutCount=P.compile({...verifiedInput,editorial:{...verifiedEditorial,transcriptions:{capture:{...verifiedEditorial.transcriptions.capture,segments:[{kind:'text',text:'실제 본문'},{kind:'comment',text:'원본에 베플 표시가 있고 숫자는 없는 실제 댓글',visibleBest:true,visibleLikes:null}]}}}},verifiedDimensions,measure);
+assert(bestWithoutCount.pages.flatMap(p=>p.operations).some(o=>o.role==='comment'));
+const bestMeta=bestWithoutCount.selectedComments.find(c=>c.text.includes('원본에 베플'));
+assert.equal(bestMeta.visibleLikes,null);assert.equal(bestMeta.visibleBest,true);
+assert.throws(()=>P.compile({...verifiedInput,editorial:{...verifiedEditorial,transcriptions:{capture:{...verifiedEditorial.transcriptions.capture,segments:[{kind:'comment',text:'근거 없는 인기 댓글',visibleLikes:null}]}}}},verifiedDimensions,measure),/베플/);
