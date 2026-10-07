@@ -347,9 +347,11 @@
     if(pendingAssets)releaseImages(pendingAssets.images);
     pendingAssets=null;
   }
-  async function planBundle(file,{preview=false}={}) {
+  async function planBundle(file,{preview=false,universalCover=false}={}) {
     releasePending();
-    const {plan,media}=await unpack(file,{preview}),prepared=await layoutFor(plan,media);
+    const {plan,media}=await unpack(file,{preview});
+    const productionSource=universalCover?window.ThreadsUniversalProductionModel.preparePlan(plan):plan;
+    const prepared=await layoutFor(productionSource,media);
     try {prepared.layout.bundleSha256=await hash(await file.arrayBuffer());}
     catch(error){releaseImages(prepared.images);throw error;}
     const pixels=[...prepared.images.values()].reduce((sum,image)=>sum+image.naturalWidth*image.naturalHeight,0);

@@ -156,3 +156,11 @@ assert(cropCover.pages.slice(1).flatMap(p=>p.operations).some(o=>o.kind==='image
 const headingPicture=P.compile({originalTitle:'결말',segments:[{id:'lead',kind:'text',selected:true,text:('앞 문장입니다. ').repeat(22)},{id:'head',kind:'text',selected:true,text:'결말'},{id:'image',kind:'image',mediaName:'source.jpg',selected:true}],editorial:{templateId:'mint_text',keepHeadingTexts:['결말'],imageRoles:{image:'reading'},imageFit:{image:'contain'}}},verifiedDimensions,measure);
 const pictureHead=headingPicture.pages.find(p=>p.operations.some(o=>o.sourceId==='head'));
 assert(pictureHead.operations.some(o=>o.kind==='image'&&o.sourceId==='image'),'Heading and contained source picture must share a page');
+
+// Heading protection must consume the opening sentence in the original paragraph's coordinate system.
+for(const indentation of ['   ','\t','    \t']){
+ const originalText='1. Heading\n\n'+indentation+'Opening sentence ends here. Remaining sentence must appear once.';
+ const indented=P.compile({originalTitle:'Heading indentation',segments:[{id:'indented',kind:'text',selected:true,text:originalText}],comments:[],editorial:{templateId:'mint_text'}},{},measure);
+ const rendered=indented.pages.flatMap(page=>page.operations).filter(op=>op.role==='body'&&op.sourceId==='indented').map(op=>op.text).join('');
+ assert.equal(rendered.replace(/\s/g,''),originalText.replace(/\s/g,''),'Protecting an indented opening sentence must not duplicate its final characters');
+}

@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-08.1',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-08.2',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -167,7 +167,8 @@
           }
           const following=paragraphs[nextIndex],opening=firstSentence(following);
           paragraph+='\n'+opening;
-          const remainder=following.slice(opening.length).trim();
+          const openingEnd=following.indexOf(opening)+opening.length;
+          const remainder=following.slice(openingEnd).trim();
           if(remainder){paragraphs[nextIndex]=remainder;p=nextIndex-1;}else p=nextIndex;
           const required=wrap(paragraph,W-2*PAD,size,measure,weight).length;
           const minimum=Math.min(required,Math.max(headingLineCount+2,Math.floor((MAXH-2*PAD)/lineHeight)));

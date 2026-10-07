@@ -1,3 +1,12 @@
+# 최신 전체 제작 상태 — 2026-10-08
+
+365글·3073장 전체 재제작/본문·댓글·PNG 무결성 검증 완료. 기존399글3232장과86평가 보존 확인. 새 미리보기는 점수0·메모0·본 글0이며, 청첩장 배경1개 연결 후 실제 회차 전환 예정입니다. 현재 설치 뷰어의 활성 자료는 이전399글입니다. 선배 청첩장 사연은 대학 선배의 모바일 초대이며 입사이틀 직장동료 글과 다릅니다.
+
+새 결과: D:\A_KJ\AI\Workspace\Threads\review-20261008-universal-temporary\reproduction-source\06_자동 제작 결과\자료 목록.html
+상세: D:\A_KJ\AI\Workspace\Threads\review-improvements-20261008-Sol\docs\FULL_UNIVERSAL_REPRODUCTION_2026-10-08.md
+
+---
+
 # Threads 현재 사용 안내 — 2026-10-08
 
 게시글 평가 프로그램: D:\A_KJ\AI\Launchers\Threads 게시글 평가.lnk

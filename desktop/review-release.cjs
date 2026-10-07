@@ -14,6 +14,12 @@ async function prepareReviewRelease(sourceRoot,stagingRoot,{reviewRound,expected
  const rows=report.entries?.filter(e=>e.outputFolder&&e.images?.length)||[];
  if(rows.length!==expectedPosts||new Set(rows.map(r=>r.id)).size!==expectedPosts||report.entries.some(e=>e.status==='failed')||report.processed!==report.entries.length)throw Error('전체 제작 완료와 오류를 확인하세요.');
  if(rows.some(r=>r.status!=='generated'))throw Error('전체를 새 제작한 결과만 전달할 수 있습니다.');
+ if(report.reproductionContract==='universal-reproduction-v1'){
+  const proofBytes=await bytes(path.join(sourceRoot,'reproduction-complete.json')),fatal=await bytes(path.join(sourceRoot,'reproduction-fatal.json'));
+  if(!proofBytes||fatal||report.reviewRound!==reviewRound||report.deliveryStatus!=='complete'||report.wholeCollectionRegenerated!==true)throw Error('전체 재제작 완료 증거를 확인하세요.');
+  const proof=JSON.parse(proofBytes);
+  if(proof.reviewRound!==reviewRound||proof.generated!==rows.length||!Number.isInteger(proof.held)||proof.held<0||proof.planned!==proof.generated+proof.held||proof.sourceBytesUnchanged!==true)throw Error('전체 재제작 완료 증거를 확인하세요.');
+ }
  const output=path.join(stagingRoot,'06_자동 제작 결과');await fs.mkdir(output,{recursive:true});const changed=structuredClone(report),audited=[];let pages=0;
  for(const row of rows){
   const source=inside(sourceOut,row.outputFolder),destination=inside(output,row.outputFolder);await noLinks(source);
@@ -27,15 +33,19 @@ async function prepareReviewRelease(sourceRoot,stagingRoot,{reviewRound,expected
  changed.reviewRound=reviewRound;changed.preparedAt=new Date().toISOString();changed.deliveryStatus='complete';
  await writeAtomic(path.join(output,'status.json'),JSON.stringify(changed,null,2)+'\n');
  const ratings=path.join(stagingRoot,'07_사용자 평가');await fs.mkdir(ratings,{recursive:true});await writeAtomic(path.join(ratings,'평가 기록.json'),JSON.stringify({schemaVersion:1,recordType:'user_post_quality_feedback',reviewRound,evaluations:[]},null,2)+'\n');
+ await writeAtomic(path.join(ratings,'검토 진행.json'),JSON.stringify({schemaVersion:1,recordType:'user_review_workflow',reviewRound,entries:[]},null,2)+'\n');
  const ready={schemaVersion:1,reviewRound,posts:rows.length,pages,sourceStatusSha256:hash(raw),preparedAt:changed.preparedAt,wholeCollectionRegenerated:true,newScores:0,newMemos:0,audited};
  await writeAtomic(path.join(stagingRoot,'release-ready.json'),JSON.stringify(ready,null,2)+'\n');return ready;
 }
-async function activateReviewRelease(materialRoot,stagingRoot,{expectedStatusSha256,expectedFeedbackSha256}){
- const root=path.resolve(materialRoot),stage=path.resolve(stagingRoot),ready=JSON.parse(await fs.readFile(path.join(stage,'release-ready.json'))),output=path.join(root,'06_자동 제작 결과'),feedback=path.join(root,'07_사용자 평가'),status=path.join(output,'status.json'),ratings=path.join(feedback,'평가 기록.json'),pointer=path.join(root,'review-current.json');
- await noLinks(root);await noLinks(stage);const marker=await bytes(pointer);if(marker&&JSON.parse(marker).reviewRound===ready.reviewRound)return {alreadyActive:true,...ready};
+async function activateReviewRelease(materialRoot,stagingRoot,{expectedStatusSha256,expectedFeedbackSha256,expectedWorkflowSha256,expectedPointerSha256}){
+ const root=path.resolve(materialRoot),stage=path.resolve(stagingRoot),ready=JSON.parse(await fs.readFile(path.join(stage,'release-ready.json'))),output=path.join(root,'06_자동 제작 결과'),feedback=path.join(root,'07_사용자 평가'),status=path.join(output,'status.json'),ratings=path.join(feedback,'평가 기록.json'),workflow=path.join(feedback,'검토 진행.json'),pointer=path.join(root,'review-current.json');
+ await noLinks(root);await noLinks(stage);const marker=await bytes(pointer),oldPointerSha256=marker?hash(marker):null;if(marker&&JSON.parse(marker).reviewRound===ready.reviewRound)return {alreadyActive:true,...ready};
+ if(expectedPointerSha256!==undefined&&oldPointerSha256!==expectedPointerSha256)throw Error('검토 회차가 변경됐습니다. 다시 확인한 뒤 적용하세요.');
  await equalCurrent(status,expectedStatusSha256);await equalCurrent(ratings,expectedFeedbackSha256);
+ const workflowBytes=await bytes(workflow),oldWorkflowSha256=workflowBytes?hash(workflowBytes):null;
+ if(expectedWorkflowSha256!==undefined&&oldWorkflowSha256!==expectedWorkflowSha256)throw Error('검토 진행이 변경됐습니다. 다시 확인한 뒤 적용하세요.');
  const archive=inside(root,'05_이전 작업/리뷰 과거/before-'+ready.reviewRound);await noLinks(archive);try{await fs.stat(archive);throw Error('과거 보관 경로가 이미 있습니다.');}catch(e){if(e.code!=='ENOENT')throw e;}
- await fs.mkdir(archive,{recursive:true});await writeAtomic(path.join(archive,'archive-before.json'),JSON.stringify({archivedAt:new Date().toISOString(),replacedBy:ready.reviewRound,oldStatusSha256:expectedStatusSha256,oldFeedbackSha256:expectedFeedbackSha256},null,2)+'\n');
+ await fs.mkdir(archive,{recursive:true});await writeAtomic(path.join(archive,'archive-before.json'),JSON.stringify({archivedAt:new Date().toISOString(),replacedBy:ready.reviewRound,oldStatusSha256:expectedStatusSha256,oldFeedbackSha256:expectedFeedbackSha256,oldWorkflowSha256,oldPointerSha256},null,2)+'\n');
  const journal=path.join(root,'review-delivery-in-progress.json');await writeAtomic(journal,JSON.stringify({reviewRound:ready.reviewRound,archive,stagingRoot:stage},null,2)+'\n');
  const moved=[];let installedOutput=false,installedFeedback=false,pointerWritten=false;
  try{
@@ -44,9 +54,12 @@ async function activateReviewRelease(materialRoot,stagingRoot,{expectedStatusSha
    try{await fs.lstat(from);}catch(e){if(e.code==='ENOENT')continue;throw e;}await fs.rename(from,to);moved.push(name);
   }
   await fs.rename(path.join(stage,'06_자동 제작 결과'),output);installedOutput=true;await fs.rename(path.join(stage,'07_사용자 평가'),feedback);installedFeedback=true;
+  if(marker)await writeAtomic(path.join(archive,'review-current.json'),marker);
   await writeAtomic(pointer,JSON.stringify({...ready,archiveRelative:path.relative(root,archive),active:true},null,2)+'\n');pointerWritten=true;
   await equalCurrent(path.join(archive,'06_자동 제작 결과/status.json'),expectedStatusSha256);
   await equalCurrent(path.join(archive,'07_사용자 평가/평가 기록.json'),expectedFeedbackSha256);
+  await equalCurrent(path.join(archive,'07_사용자 평가/검토 진행.json'),oldWorkflowSha256);
+  await equalCurrent(path.join(archive,'review-current.json'),oldPointerSha256);
   await writeAtomic(journal,JSON.stringify({reviewRound:ready.reviewRound,complete:true,archive},null,2)+'\n');
   return {reviewRound:ready.reviewRound,posts:ready.posts,pages:ready.pages,archive,moved,activeFeedbackCount:0,oldBytesPreserved:true};
  }catch(error){

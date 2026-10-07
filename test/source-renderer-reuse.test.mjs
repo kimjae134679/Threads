@@ -15,7 +15,7 @@ class TestFile extends Blob {
   constructor(data,name){super(data);this.name=name;}
   async arrayBuffer(){counts.reads++;return super.arrayBuffer();}
 }
-let imageSize=100,throwDraw=false;
+let imageSize=100,throwDraw=false,lastCompiledPlan=null;
 class TestImage {
   constructor(){this.naturalWidth=imageSize;this.naturalHeight=imageSize;}
   set src(value){if(value==='')counts.released++;}
@@ -47,9 +47,11 @@ const sandbox={TextEncoder,TextDecoder,Uint8Array,Uint8ClampedArray,Blob,File:Te
     ThreadsSourceCutZip:{zip:()=>new Blob(['zip'])},ThreadsSourceBundleZip:{read:async file=>new Map([
       ['bundle.json',new TextEncoder().encode(JSON.stringify(plans.get(file)))],['source.txt',source],['photo.png',image]])},
     ThreadsSourceCut:{assertFontText(){}},ThreadsViralModel:{comfortScan(){}},ThreadsImageAnalysis:{inspect(){counts.analyze++;return {}; }},
-    ThreadsPagePlan:{VERSION:'test-rule',compile(){counts.compile++;return {ruleVersion:'test-rule',pages:[
+    ThreadsPagePlan:{VERSION:'test-rule',compile(plan){lastCompiledPlan=plan;counts.compile++;return {ruleVersion:'test-rule',pages:[
       {number:1,width:1080,height:1350,operations:[{kind:'image',name:'photo.png',x:0,y:0,width:100,height:100}]}]};}}}
 };
+vm.runInNewContext(await fs.readFile(new URL('../app/universal-production-model.js',import.meta.url),'utf8'),sandbox);
+sandbox.window.ThreadsUniversalProductionModel=sandbox.ThreadsUniversalProductionModel;
 vm.runInNewContext(await fs.readFile(new URL('../app/source-batch.js',import.meta.url),'utf8'),sandbox);
 const api=sandbox.window.ThreadsSourceBatch;
 const delta=async fn=>{const before={...counts};await fn();return Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-before[key]]));};
@@ -114,3 +116,19 @@ presetData={automatic:{fontId:'sans',titleWeight:900,manualTitleLayout:false}};
 getElement('batchPreset').value='automatic';getElement('applyBatchPreset').events.click();
 for(const id of ['coverSize','coverTop','coverLeft'])assert.equal(getElement(id).disabled,true);
 console.log('source renderer asset reuse, cache bounds, review gate, and manual controls passed');
+
+const universalFile=createFile('universal');
+const rawUniversal=plans.get(universalFile);
+rawUniversal.editorial={templateId:'photo_cover',transcriptions:{}};
+rawUniversal.style.manualTitleLayout=true;
+rawUniversal.coverTitle='[네이트판] universal';
+const originalUniversal=JSON.stringify(rawUniversal);
+const universalLayout=await api.planBundle(universalFile,{preview:true,universalCover:true});
+assert.equal(lastCompiledPlan.editorial.templateId,'mint_text','universal planning compiles a dedicated cover rather than the stored template');
+assert.equal(lastCompiledPlan.style.manualTitleLayout,false);
+assert.equal(lastCompiledPlan.coverTitle,'universal');
+assert.equal(JSON.stringify(rawUniversal),originalUniversal,'universal planning preserves source ZIP plan');
+const universalOutput=await api.renderBundle(universalFile,{preview:true,watermark:false,productionPlan:universalLayout});
+assert.equal(universalOutput.plan.productionPlan,universalLayout);
+assert.equal(JSON.stringify(rawUniversal),originalUniversal,'prepared render preserves original source plan');
+console.log('universal planBundle and prepared render integration passed');
