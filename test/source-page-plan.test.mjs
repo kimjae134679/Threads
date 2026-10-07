@@ -2,6 +2,32 @@ import assert from 'node:assert/strict';
 import '../app/source-page-plan.js';
 const P=globalThis.ThreadsPagePlan;
 const measure=(text,size)=>Array.from(text).length*size;
+const sourceSha='a'.repeat(64),readingSource={id:'capture',kind:'image',mediaName:'source.jpg',selected:true};
+const verifiedEditorial={templateId:'mint_text',transcriptions:{capture:{mediaName:'source.jpg',sha256:sourceSha,verifiedBy:'manual_visual_two_pass',segments:[
+ {kind:'text',text:'원본 첫 문단입니다.\n\n원본 마지막 문단입니다.'},
+ {kind:'comment',text:'실제 댓글 내용',visibleLikes:19},
+ {kind:'author_reply',text:'작성자의 후속 답변',visibleLikes:10}]}}};
+const verifiedInput={originalTitle:'원본 제목',segments:[readingSource],comments:[],editorial:verifiedEditorial};
+const verifiedDimensions={'source.jpg':{width:800,height:1200,sha256:sourceSha}};
+const verified=P.compile(verifiedInput,verifiedDimensions,measure),verifiedOps=verified.pages.flatMap(p=>p.operations);
+assert.equal(verified.selectedComments.length,2);
+assert.equal(verified.selectedComments[1].contentRole,'author_reply');
+assert.equal(verified.selectedComments[0].location.sha256,sourceSha);
+assert(verifiedOps.some(o=>o.text==='작성자 답글'));
+assert(verifiedOps.findIndex(o=>o.text?.includes('원본 마지막 문단'))<verifiedOps.findIndex(o=>o.text==='실제 댓글 내용'));
+assert(!verifiedOps.some(o=>o.kind==='image'),'Verified body is typeset without captured metadata');
+assert.throws(()=>P.compile(verifiedInput,{'source.jpg':{...verifiedDimensions['source.jpg'],sha256:'b'.repeat(64)}},measure),/전사 원본 이미지/);
+assert.throws(()=>P.compile({...verifiedInput,editorial:{transcriptions:{missing:verifiedEditorial.transcriptions.capture}}},verifiedDimensions,measure),/전사 대상/);
+const unselected=P.compile({...verifiedInput,segments:[{...readingSource,selected:false},{id:'body',kind:'text',selected:true,text:'선택한 본문만 표시'}]},verifiedDimensions,measure);
+assert.equal(unselected.selectedComments.length,0,'Unselected image never supplies selected comments');
+const roleOverride=P.compile({originalTitle:'설명 그림',segments:[readingSource,{id:'emoji',kind:'text',selected:true,text:'👀..'}],comments:[],editorial:{imageRoles:{capture:'reading'},templateId:'white_title'}},verifiedDimensions,measure);
+assert.equal(roleOverride.templateId,'white_title');
+assert.equal(roleOverride.pages[0].background,'#fff');
+assert(roleOverride.omitted.some(o=>o.sourceId==='emoji'&&o.reason==='isolated_filler_reaction'));
+assert(roleOverride.pages.flatMap(p=>p.operations).some(o=>o.kind==='image'),'Reading image remains in the story');
+const numbered=P.compile({originalTitle:'번호가 있는 원문',segments:[{id:'long',kind:'text',selected:true,text:'서론 문장입니다.\n'.repeat(13)+'\n1. 다음 사건\n\n이 소제목에 이어지는 실제 본문입니다.'}],comments:[],editorial:{templateId:'mint_text'}},{},measure);
+const headingPage=numbered.pages.find(p=>p.operations.some(o=>o.text==='1. 다음 사건'));
+assert(headingPage.operations.filter(o=>o.text).map(o=>o.text).join('').includes('이어지는 실제본문'),'Short numbered heading stays with its following paragraph');
 const photo={id:'photo',kind:'image',mediaName:'a.jpg',selected:true};
 const base={originalTitle:'야간 편돌이 담배 도둑맞은 썰',coverTitle:'야간 편돌이 담배 도둑맞은 썰',cover:{segmentId:'photo'},segments:[photo],comments:[]};
 const wide=P.compile(base,{'a.jpg':{width:1600,height:600}},measure);
@@ -59,4 +85,4 @@ assert(noFiller.omitted.some(o=>o.reason==='isolated_filler_reaction'));assert(n
 const explained=P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'독자를 위한 용어 설명',evidenceUrl:'https://example.com/official'}]}},{},measure);
 assert(explained.pages.flatMap(p=>p.operations).some(o=>o.role==='note'&&o.text.includes('용어 설명')));assert.equal(explained.editorialAnnotations[0].actualSourceComment,false);
 assert.throws(()=>P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'근거 없는 설명'}]}},{},measure),/근거/);
-assert.equal(text.pages[0].background,"#B8DCD4");
+assert.equal(text.pages[0].background,"#fff");

@@ -2,11 +2,12 @@
 const path=require('node:path'),fs=require('node:fs');
 const {app}=require('electron');
 app.disableHardwareAcceleration();
-const materialRoot=path.resolve(__dirname,'../data/runtime/feedback-rework/materials');
+const materialRoot=path.resolve(process.argv[2]||path.resolve(__dirname,'../data/runtime/feedback-rework/materials'));
+const inputRoot=path.resolve(process.argv[3]||path.resolve(__dirname,'../data/runtime/feedback-rework/inputs'));
 fs.mkdirSync(path.join(materialRoot,'06_자동 제작 결과'),{recursive:true});
 app.setPath('userData',path.join(materialRoot,'app-state'));
 process.env.THREADS_TEST_MATERIAL_ROOT=materialRoot;
 const status=path.join(materialRoot,'06_자동 제작 결과/status.json');
-if(!fs.existsSync(status))fs.writeFileSync(status,JSON.stringify({schema:'threads-auto-batch-v1',inputFolder:path.resolve(__dirname,'../data/runtime/feedback-rework/inputs'),entries:[]}));
+if(!fs.existsSync(status))fs.writeFileSync(status,JSON.stringify({schema:'threads-auto-batch-v1',inputFolder:inputRoot,entries:[]}));
 process.argv.push('--background-worker','--saved-only');
 require('./run-saved-batch.cjs');

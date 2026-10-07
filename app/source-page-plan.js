@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-06.4',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-07.2',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -24,6 +24,34 @@
   function compile(plan,dimensions,measure) {
     const omitted=[],warnings=[],pages=[],editorial=plan.editorial||{},style=plan.style||{};
     const fixed=style.canvasMode==='instagram',MAXH=fixed&&style.aspectRatio==='3:4'?1440:MAX;
+    const transcriptions=editorial.transcriptions||{},transcribedComments=[];
+    const segments=(plan.segments||[]).flatMap(original=>{
+      const replacement=transcriptions[original.id];if(!replacement)return [original];
+      if(!original.selected)return [original];
+      const image=dimensions[original.mediaName?.toLowerCase()];
+      if(original.kind!=='image'||!image||replacement.mediaName!==original.mediaName||
+        !/^[a-f0-9]{64}$/.test(replacement.sha256||'')||image.sha256!==replacement.sha256||
+        replacement.verifiedBy!=='manual_visual_two_pass'||!Array.isArray(replacement.segments)||
+        !replacement.segments.length||replacement.segments.length>30)
+        throw new Error('전사 원본 이미지와 검수 근거를 확인하세요.');
+      omitted.push({sourceId:original.id,reason:'verified_image_transcription',mediaName:original.mediaName,sha256:replacement.sha256});
+      return replacement.segments.flatMap((part,index)=>{
+        const id=original.id+'-transcribed-'+index;
+        const location={originalSourceId:original.id,mediaName:original.mediaName,sha256:replacement.sha256,region:part.location||null};
+        if(part.kind==='comment'||part.kind==='author_reply'){
+          if(typeof part.text!=='string'||!part.text.trim()||!Number.isInteger(part.visibleLikes)||part.visibleLikes<0)
+            throw new Error('전사 댓글의 실제 반응수와 본문을 확인하세요.');
+          transcribedComments.push({id,text:part.text,selected:true,contentRole:part.kind,visibleLikes:part.visibleLikes,location,verifiedBy:replacement.verifiedBy});return [];
+        }
+        if(part.kind==='image'){
+          if(part.mediaName!==original.mediaName)throw new Error('전사 사진은 확인한 원본을 사용하세요.');
+          return [{...original,id,location,contentRole:'photo'}];
+        }
+        if(part.kind!=='text'||typeof part.text!=='string'||!part.text.trim())throw new Error('전사 본문 조각을 확인하세요.');
+        return [{id,kind:'text',selected:original.selected,text:part.text,location,contentRole:part.contentRole||'primary_source'}];
+      });
+    });
+    if(Object.keys(transcriptions).some(id=>!(plan.segments||[]).some(s=>s.id===id)))throw new Error('전사 대상 원문 조각이 없습니다.');
     const display=(text,sourceId)=>{
       const original=clean(text),urls=original.match(/https?:\/\/[^\s<>]+/gi)||[];
       if(urls.length)omitted.push({sourceId,reason:'source_urls_in_metadata',urls});
@@ -36,10 +64,10 @@
     };
     const excluded=editorial.exclusions||{};
     for(const [id,reason] of Object.entries(excluded)){
-      if(!plan.segments?.some(s=>s.id===id)||typeof reason!=='string'||!reason.trim())throw new Error('제외할 원문 조각과 이유를 확인하세요.');
+      if(!segments.some(s=>s.id===id)||typeof reason!=='string'||!reason.trim())throw new Error('제외할 원문 조각과 이유를 확인하세요.');
       omitted.push({sourceId:id,reason:'explicit_editorial_exclusion',explanation:reason});
     }
-    const used=(plan.segments||[]).filter(s=>s.selected&&!Object.hasOwn(excluded,s.id)).map(s=>s.kind==='text'?{...s,text:display(s.text,s.id)}:s).filter(s=>{
+    const used=segments.filter(s=>s.selected&&!Object.hasOwn(excluded,s.id)).map(s=>s.kind==='text'?{...s,text:display(s.text,s.id)}:s).filter(s=>{
       if(s.kind!=='text')return true;
       const text=clean(s.text),reason=!text?'empty_or_url_only':/^[-_=]{2,}$/.test(text)?'separator':
         /^(?:그냥\s*솔직하게.*글\s*내용\s*불편|불펌|무단\s*전재|퍼가(?:지|실))/s.test(text)?'editorial_preface':null;
@@ -51,8 +79,11 @@
       throw new Error('표지 보완 이미지의 출처·내용 근거가 없습니다.');
     if(!used.some(s=>!s.coverOnly))throw new Error('첫 장의 실제 원문 조각이 없습니다.');
     const imageParts=used.filter(s=>s.kind==='image');
+    const keepWithNext=editorial.keepWithNext||[];
+    if(!Array.isArray(keepWithNext)||keepWithNext.length>30||keepWithNext.some(id=>!used.some(s=>s.id===id&&s.kind==='text')))throw new Error('소제목과 다음 본문 연결 대상을 확인하세요.');
     for(const part of imageParts)if(!dimensions[part.mediaName.toLowerCase()])throw new Error('원문 이미지 파일 누락: '+part.mediaName);
-    const isReadingImage=s=>{const d=dimensions[s.mediaName.toLowerCase()];return d.analysis?.kind==='screenshot'||d.height/d.width>=1.85||(d.analysis?.textBands||0)>=3;};
+    for(const [id,role] of Object.entries(editorial.imageRoles||{}))if(!imageParts.some(s=>s.id===id)||!['reading','photo'].includes(role))throw new Error('이미지의 본문·사진 역할을 확인하세요.');
+    const isReadingImage=s=>{const role=editorial.imageRoles?.[s.id];if(role)return role==='reading';const d=dimensions[s.mediaName.toLowerCase()];return d.analysis?.kind==='screenshot'||d.height/d.width>=1.85||(d.analysis?.textBands||0)>=3;};
     const photographs=imageParts.filter(s=>!isReadingImage(s)&&
       dimensions[s.mediaName.toLowerCase()].height/dimensions[s.mediaName.toLowerCase()].width<2.1);
     const visualCovers=imageParts.filter(s=>{const image=dimensions[s.mediaName.toLowerCase()];return image.width>=160&&image.height>=90&&image.height/image.width<2.1&&!editorial.regions?.[s.id];});
@@ -98,7 +129,7 @@
         ops.push({kind:'rect',x:PAD,y:24,width:creditWidth,height:32,color:'rgba(0,0,0,.7)'});
         ops.push({kind:'text',role:'attribution',text:label,x:PAD+12,y:30,size,weight:400,color:'#fff',lineHeight:22,sourceId:'cover-attribution'});
       }
-      pages.push({number:pages.length+1,role:pageRole,width:W,height,background:pageRole==='cover'?(templateId==='photo_cover'?'#152623':'#B8DCD4'):'#fff',contentBottom,operations:ops});
+      pages.push({number:pages.length+1,role:pageRole,width:W,height,background:pageRole==='cover'?(templateId==='photo_cover'?'#152623':templateId==='white_title'||templateId==='explainer'?'#fff':'#B8DCD4'):'#fff',contentBottom,operations:ops});
       ops=[];y=PAD;pageRole='body';
     }
     function addText(text,sourceId,role='body',size=BODY) {
@@ -107,7 +138,8 @@
       const paragraphs=clean(text).split(/\n\s*\n/);
       for(let p=0;p<paragraphs.length;p++) {
         let paragraph=paragraphs[p];
-        if(/[?？]$/.test(paragraph)&&paragraphs[p+1]&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*lineHeight<=MAXH-2*PAD)
+        const heading=paragraph.length<=60&&/^(?:\d+[.)]\s*\S.*|후기\s*\d*|대박\s*\d+사건|.{1,12}\s왈)$/.test(paragraph);
+        if((/[?？]$/.test(paragraph)||heading)&&paragraphs[p+1]&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*lineHeight<=MAXH-2*PAD)
           paragraph+='\n'+paragraphs[++p];
         if(!paragraph)continue;
         // Keep complete sentences together when a paragraph exceeds one page.
@@ -205,10 +237,18 @@
       if(part.coverOnly){omitted.push({sourceId:part.id,reason:'supplementary_cover_only',name:part.mediaName});continue;}
       if(part.kind==='text') {
         const text=clean(part.text);
-        if(imageParts.some(s=>!s.coverOnly)&&/^(?:[.!,…\s]+|[ㅋㅎㅠㅜㄷ😂🤣😭😮😱\s]+|(?:헉|이야|오|와|ㅗㅜㅑ)[.!,…\s]*)$/u.test(text)){
+        if((plan.segments||[]).some(s=>s.kind==='image'&&!s.coverOnly)&&(/^(?:[.!,…\s]+|[ㅋㅎㅠㅜㄷ😂🤣😭😮😱\s]+|(?:헉|이야|오|와|ㅗㅜㅑ)[.!,…\s]*)$/u.test(text)||/^(?:\p{Extended_Pictographic}|\p{Emoji_Modifier}|[\u200d\ufe0f\s.!?,…])+$/u.test(text))){
           omitted.push({sourceId:part.id,reason:'isolated_filler_reaction',text});if(part.after?.note?.trim())addText(part.after.note,part.id,'note');continue;
         }
-        if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}seenText.add(text);addText(text,part.id);
+        if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}
+        if(keepWithNext.includes(part.id)&&used[index+1]?.kind==='text'){
+          const weight=style.fontId==='gothic'?800:400;
+          const headingLines=wrap(text,W-2*PAD,BODY,measure,weight).length;
+          const nextLines=wrap(clean(used[index+1].text).split(/\n\s*\n/)[0],W-2*PAD,BODY,measure,weight).length;
+          const reserve=Math.min(nextLines,Math.max(2,Math.floor((MAXH-2*PAD-32)/LINE)-headingLines));
+          if(ops.length&&y+(headingLines+reserve)*LINE+32>MAXH-PAD)finishPage();
+        }
+        seenText.add(text);addText(text,part.id);
       }else {
         const next=used[index+1],lines=next?.kind==='text'&&next.text.length<=80?wrap(next.text,W-2*PAD,BODY,measure).length:0;
         addImage(part,lines&&lines<=2?lines*LINE+28:0);
@@ -218,8 +258,7 @@
     }
     const annotations=editorial.annotations||[];
     if(!Array.isArray(annotations)||annotations.length>5||annotations.some(a=>!['explanation','commentary'].includes(a.kind)||typeof a.text!=='string'||!a.text.trim()||a.text.length>500||a.kind==='explanation'&&!/^https:\/\//.test(a.evidenceUrl||'')))throw new Error('편집 설명·반응의 내용과 근거를 확인하세요.');
-    for(const [i,a] of annotations.entries())addText(a.text,'editorial-annotation-'+i,'note');
-    const comments=(plan.comments||[]).filter(c=>c.selected),includedComments=[];
+    const comments=[...(plan.comments||[]).filter(c=>c.selected),...transcribedComments],includedComments=[];
     for(const comment of comments) {
       const text=display(comment.text,comment.id);if(!text||seenText.has(text)){omitted.push({sourceId:comment.id,reason:'duplicate_or_link_comment'});continue;}
       if(!includedComments.length){
@@ -230,8 +269,14 @@
         if(y+172>MAXH-PAD){finishPage();pageRole='comments';}
         else{ops.push({kind:'rect',x:PAD,y,width:W-2*PAD,height:2,color:'#DCE4E0'});y+=36;}
       }
+      if(comment.contentRole==='author_reply'){
+        if(y+128>MAXH-PAD){finishPage();pageRole='comments';}
+        ops.push({kind:'text',role:'section',text:'작성자 답글',x:PAD,y,size:34,weight:900,color:'#596168',lineHeight:48,sourceId:'comments-heading'});y+=64;
+      }
       seenText.add(text);includedComments.push(comment.id);addText(text,comment.id,'comment',48);
     }
+    if(annotations.length&&includedComments.length)finishPage();
+    for(const [i,a] of annotations.entries())addText(a.text,'editorial-annotation-'+i,'note');
     finishPage();
     if(pages.length>60)throw new Error('원문이 길어 60장 제한을 넘습니다. 원문을 나눠 주세요.');
     for(const page of pages) {
@@ -256,6 +301,7 @@
       editorialAnnotations:annotations.map(a=>({...a,actualSourceComment:false})),
       imageRegions:Object.fromEntries(imageParts.map(s=>{const d=dimensions[s.mediaName.toLowerCase()];return [s.id,editorial.regions?.[s.id]||d.analysis?.bounds||{x:0,y:0,width:d.width,height:d.height}];})),
       sourceUnits:used.filter(s=>!s.coverOnly).map(s=>({id:s.id,kind:s.kind,location:s.location||null,role:s.contentRole||'primary_source',text:s.kind==='text'?s.text:null,mediaName:s.mediaName||null})),
+      verifiedTranscriptions:transcriptions,selectedComments:comments.filter(c=>includedComments.includes(c.id)),sourceIssues:editorial.sourceIssues||[],
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};
   }

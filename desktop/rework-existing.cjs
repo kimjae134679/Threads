@@ -7,6 +7,9 @@ const sourceRoot=path.resolve(process.argv[3]||path.resolve(__dirname,'../data/r
 const oldRoot=process.argv[2];if(!oldRoot)throw Error('Specify previous output folder.');
 const status=JSON.parse(fs.readFileSync(path.join(oldRoot,'status.json')));
 const feedback=JSON.parse(fs.readFileSync(process.argv[4]||path.resolve(__dirname,'../data/runtime/feedback-rework/user-feedback-original.json')));
+const overridePath=process.argv[6]&&!process.argv[6].startsWith('--')?process.argv[6]:null;
+const overrides=overridePath?JSON.parse(fs.readFileSync(overridePath,'utf8')):{};
+const planOnly=process.argv.includes('--plan-only');
 const edits={
  'source-b92a4114494690':{s0:'사용자가 지적한 미방 이미지 제외'},
  'source-68991bdbe3eeef':{s0:'사용자가 지적한 미방 이미지 제외'},
@@ -28,7 +31,7 @@ for(const row of status.entries){
   const coverImage=old.pages[0].operations.find(o=>o.kind==='image'&&o.sourceId);
   const plan={originalTitle:old.originalTitle,coverTitle:old.coverTitle,sourceUrl:old.sourceUrl,sourceCheckedAt:old.sourceCheckedAt,sourcePublishedAt:old.sourcePublishedAt,collectedAt:old.collectedAt,
    segments:old.sourceUnits.map(u=>({...u,selected:true})),comments:[],style:{},
-   editorial:{coverTitle:old.coverTitle,templateId:coverImage&&!exclusions[coverImage.sourceId]?'auto':old.templateId==='photo_cover'?'auto':old.templateId,coverSegmentId:exclusions[coverImage?.sourceId]?undefined:coverImage?.sourceId,exclusions,regions,titleEvidence:old.titleEvidence,
+   editorial:{coverTitle:P.headline(old.coverTitle),templateId:coverImage&&!exclusions[coverImage.sourceId]?'auto':old.templateId==='photo_cover'?'auto':old.templateId,coverSegmentId:exclusions[coverImage?.sourceId]?undefined:coverImage?.sourceId,exclusions,regions,titleEvidence:old.titleEvidence,
    titleHighlights:[...new Set(old.pages[0].operations.filter(o=>o.role==='title').flatMap(o=>o.highlights||[]))]}};
   if(row.id==='source-dfea21ce25ea8f')plan.editorial.regions.s0={x:31,y:284,width:730,height:429};
   if(row.id==='source-aa03605099bb64')plan.editorial.regions.s0={x:12,y:420,width:773,height:70};
@@ -39,6 +42,12 @@ for(const row of status.entries){
   if(row.id==='source-dc43bfc5a51ea7'){
    plan.editorial.annotations=[{kind:'commentary',text:'솔로 입장에서는 이런 이유로 늦는다는 게 더 얄밉게 느껴질 수도 있겠다.'}];
   }
+  if(overrides[row.id]){
+   const revision=overrides[row.id];
+   plan.editorial={...plan.editorial,...revision.editorial,
+    exclusions:{...plan.editorial.exclusions,...revision.editorial?.exclusions},regions:{...plan.editorial.regions,...revision.editorial?.regions}};
+   plan.style={...plan.style,...revision.style};
+  }
   const compiled=P.compile(plan,old.imageAnalysis,metric);compiled.imageAnalysis=old.imageAnalysis;
   compiled.proofOnly=true;compiled.typographyVerification='approximate_metrics_visual_review_pending';
   if(row.id==='source-5f2f5c55e6e80d')compiled.editorialSources=[{purpose:'이니 용어 설명',url:'https://imart.inven.co.kr/faq/?faqType=1',checkedAt:'2026-10-06'}];
@@ -48,7 +57,7 @@ for(const row of status.entries){
   const work=path.join(sourceRoot,row.relativePath,'작업 정보');fs.mkdirSync(work,{recursive:true});
   fs.writeFileSync(path.join(work,'feedback-revision-plan.json'),JSON.stringify({schema:'threads-feedback-revision-v1',id:row.id,priorVersions:evaluations.map(e=>e.outputVersion),editorial:plan.editorial,segments:plan.segments,appliedToInstalledApp:false},null,2));
   // SVG proofs are a separate review artifact, never advertised as the installed PNG output.
-  for(const page of compiled.pages){
+  for(const page of planOnly?[]:compiled.pages){
    let svg='<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="'+page.height+'" viewBox="0 0 1080 '+page.height+'"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111" stop-opacity="0"/><stop offset="1" stop-color="#111" stop-opacity=".85"/></linearGradient></defs><rect width="1080" height="'+page.height+'" fill="'+page.background+'"/>';
    for(const op of page.operations){
     if(op.kind==='image'){
@@ -67,12 +76,12 @@ for(const row of status.entries){
    fs.writeFileSync(path.join(folder,'slide-'+String(page.number).padStart(3,'0')+'.svg'),svg+'</svg>');
   }
   const html='<meta charset="utf-8"><title>'+xml(row.title)+'</title><style>body{background:#eee;margin:24px}img{display:block;max-width:100%;width:720px;margin:16px auto}h1,p{text-align:center}</style><h1>'+xml(row.title)+'</h1><p>재편집 SVG 검토본 · 실제 앱 PNG 재제작·최종 검수 대기</p>'+compiled.pages.map(p=>'<img src="slide-'+String(p.number).padStart(3,'0')+'.svg">').join('');
-  fs.writeFileSync(path.join(folder,'review.html'),html.replace('실제 앱 PNG 재제작·최종 검수 대기','이전 PNG 버전 평가를 반영한 검토본. 실제 앱 PNG 재제작·최종 검수 대기'));
+  if(!planOnly)fs.writeFileSync(path.join(folder,'review.html'),html.replace('실제 앱 PNG 재제작·최종 검수 대기','이전 PNG 버전 평가를 반영한 검토본. 실제 앱 PNG 재제작·최종 검수 대기'));
   const follow=[];if(missing.has(row.id))follow.push('본문·후속 내용 추가 확보 필요');if(evaluations.some(e=>e.score!==null&&e.score<=3))follow.push('소재와 마무리 재선정 필요');if(evaluations.some(e=>e.note))follow.push('사용자 메모 개별 시각 검수 필요');if(compiled.pages.length>10)follow.push('긴 글: 사건 흐름 유지하며 압축 여부 검토');
-  rows.push({...row,reworkStatus:'svg_proof_created',newRuleVersion:P.VERSION,newPages:compiled.pages.length,proofFolder:row.id,followUp:follow,evaluations,omitted:compiled.omitted});
+  rows.push({...row,reworkStatus:planOnly?'production_plan_created':'svg_proof_created',newRuleVersion:P.VERSION,newPages:compiled.pages.length,proofFolder:planOnly?null:row.id,planFolder:row.id,followUp:follow,evaluations,omitted:compiled.omitted,editorialHold:overrides[row.id]?.hold||null});
  }catch(e){rows.push({...row,reworkStatus:'blocked',reworkError:e.message,evaluations});}
 }
-const summary={createdAt:new Date().toISOString(),oldOutputUntouched:true,installed:false,publicationAllowed:false,total:rows.length,svgProofs:rows.filter(r=>r.reworkStatus==='svg_proof_created').length,svgPages:rows.reduce((n,r)=>n+(r.newPages||0),0),feedbackEntries:feedback.evaluations.length,entries:rows};
+const summary={createdAt:new Date().toISOString(),oldOutputUntouched:true,installed:false,publicationAllowed:false,total:rows.length,productionPlans:rows.filter(r=>r.planFolder).length,plannedPages:rows.reduce((n,r)=>n+(r.newPages||0),0),svgProofs:rows.filter(r=>r.reworkStatus==='svg_proof_created').length,svgPages:rows.filter(r=>r.reworkStatus==='svg_proof_created').reduce((n,r)=>n+(r.newPages||0),0),feedbackEntries:feedback.evaluations.length,entries:rows};
 fs.writeFileSync(path.join(output,'status.json'),JSON.stringify(summary,null,2));
 fs.writeFileSync(path.join(output,'index.html'),'<meta charset="utf-8"><title>평가 반영 재검토</title><style>body{font:18px sans-serif;padding:30px}li{margin:18px}</style><h1>평가 반영 재검토</h1><p>SVG 검토본 '+summary.svgProofs+'건. 설치 앱 PNG 결과와 구분됩니다. 아래 점수·메모는 이전 PNG 제작 버전의 평가이며 새 검토본의 평가가 아닙니다.</p><ul>'+rows.filter(r=>r.proofFolder).sort((a,b)=>Number(!!b.evaluations.length)-Number(!!a.evaluations.length)).map(r=>'<li><a href="'+r.proofFolder+'/review.html">'+xml(r.title)+'</a> ('+r.newPages+'장) '+r.evaluations.map(e=>xml(e.score+'점 '+e.note)).join(' / ')+'<br>'+xml(r.followUp.join(' / '))+'</li>').join('')+'</ul>');
-console.log(JSON.stringify({total:summary.total,svgProofs:summary.svgProofs,svgPages:summary.svgPages,feedbackEntries:summary.feedbackEntries,blockedOutputs:rows.filter(r=>r.outputFolder&&r.reworkStatus==='blocked').map(r=>({id:r.id,error:r.reworkError}))},null,2));
+console.log(JSON.stringify({total:summary.total,productionPlans:summary.productionPlans,plannedPages:summary.plannedPages,svgProofs:summary.svgProofs,svgPages:summary.svgPages,feedbackEntries:summary.feedbackEntries,blockedOutputs:rows.filter(r=>r.outputFolder&&r.reworkStatus==='blocked').map(r=>({id:r.id,error:r.reworkError}))},null,2));
