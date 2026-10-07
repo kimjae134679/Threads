@@ -30,6 +30,8 @@
 
 ## 2. 현재 최우선 목표
 
+**2026-10-07 최신 요청·평가·재작업 상태:** [통합 기록](../docs/FEEDBACK_REWORK_2026-10-06.md)을 먼저 본다. 399건 SVG 검토본과 70suite 코드 검증은 준비됐지만 표지7개 수정·전체 화면 검수·실제 PNG·설치 교체는 미완료다. 아래 내용 중 과거 수집·Desktop 위치 설명은 최신 평가 반영과 D 기본 위치 정책을 덮어쓰지 않는다.
+
 현재 Windows 폴더 자동 제작의 실행·검증 상태는 [SOURCE_CUT_DESKTOP.md](../docs/SOURCE_CUT_DESKTOP.md)에 있습니다. 레퍼런스 관찰과 다음 이미지 제작 기획은 [INSTAGRAM_REFERENCE_GUIDE.md](../docs/INSTAGRAM_REFERENCE_GUIDE.md)를 봅니다. 바탕화면의 01_후보 기록을 입력으로 쓰고 06_자동 제작 결과에서 최신 결과와 보류 사유를 확인합니다.
 
 검은 배경 text-only Demo Showcase는 개발/회귀 자료일 뿐 사용자 결과물이 아니다.
