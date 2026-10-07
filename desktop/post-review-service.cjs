@@ -25,6 +25,7 @@ function registerPostReview({app,trusted,preferences,materialRoot=getMaterialRoo
  ipcMain.handle('post-review:image',(e,id,page,version)=>{guard(e);return store.image(id,page,version);});
  ipcMain.handle('post-review:save',(e,payload)=>{guard(e);return store.save(payload);});
  ipcMain.handle('post-review:open-folder',async e=>{guard(e);await fs.mkdir(store.folder,{recursive:true});const error=await shell.openPath(store.folder);if(error)throw Error(error);});
+ ipcMain.handle('post-review:open-history',async e=>{guard(e);await fs.mkdir(store.historyFolder,{recursive:true});const error=await shell.openPath(store.historyFolder);if(error)throw Error(error);});
  return {open};
 }
 module.exports={registerPostReview};
