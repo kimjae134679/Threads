@@ -43,7 +43,8 @@
       "post-review-preload.cjs",
       "material-paths.cjs",
       "production-triage.cjs",
-      "feedback-migration.cjs"
+      "feedback-migration.cjs",
+      "review-release.cjs"
     ],
     "extraResources": [
       {
