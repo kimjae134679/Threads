@@ -8,10 +8,11 @@
 <p id="error" role="alert" hidden></p>
 <section id="reader" hidden><div class="reader-tools"><div class="segments"><button id="single" type="button" aria-pressed="true">한 장씩 넘기기</button><button id="vertical" type="button" aria-pressed="false">아래로 읽기</button></div><label><input id="zoom" type="checkbox">크게 보기</label></div>
 <div id="stage" class="stage"><button id="prev" class="arrow" aria-label="이전 장" type="button">‹</button><figure><img id="pageImage" alt=""><figcaption id="pageLabel"></figcaption></figure><button id="next" class="arrow" aria-label="다음 장" type="button">›</button></div>
-<div id="pages" class="page-nav"><label>페이지 <select id="pageSelect" aria-label="페이지 선택"></select></label><span>← → 키 · 이미지 좌우로 밀기</span></div>
+<div id="pages" class="page-nav"><label>페이지 <select id="pageSelect" aria-label="페이지 선택"></select></label><span>← → 장 넘기기 · ↑ ↓ 다른 글 · 좌우 스와이프</span></div>
 <div id="verticalPages" hidden></div>
 <section class="feedback" aria-label="이 글 전체 평가"><div class="feedback-heading"><h3>이 글 전체는 몇 점인가요?</h3><strong id="scoreText">아직 평가하지 않았어요</strong></div>
 <div id="scores" class="scores" role="group" aria-label="1점부터 10점까지 선택"></div>
 <label for="note">평가 메모</label><textarea id="note" maxlength="10000" rows="4" placeholder="제목, 글씨, 디자인, 내용, 장 사이 흐름… 좋았던 점과 고칠 점을 적어주세요."></textarea>
-<div class="save-row"><span id="saveStatus" role="status" aria-live="polite"></span><button id="save" type="button">평가 저장</button></div><p id="previous" hidden></p><p class="hint">점수 선택과 메모는 자동 저장됩니다. 다시 열어도 그대로 남습니다.</p></section></section>
+<div class="save-row"><span id="saveStatus" role="status" aria-live="polite"></span><button id="save" type="button">평가 저장</button></div><p id="previous" hidden></p><p class="hint">점수 선택과 메모는 자동 저장됩니다. 다시 열어도 그대로 남습니다.</p></section>
+<nav class="review-dock" aria-label="글과 장 이동"><div class="post-navigation"><button id="prevPost" type="button" aria-label="이전 글">↑ 이전 글</button><span id="postPosition" role="status" aria-live="polite"></span><button id="nextPost" type="button" aria-label="다음 글">다음 글 ↓</button></div><div id="dockPages" class="dock-pages"><button id="dockPrev" type="button" aria-label="이전 장">‹</button><span id="dockPage" aria-live="polite"></span><button id="dockNext" type="button" aria-label="다음 장">›</button></div><button id="jumpFeedback" type="button">★ 평가·메모</button></nav></section>
 </main><script src="./source-cut-post-review.js"></script></body></html>
