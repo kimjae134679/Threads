@@ -71,6 +71,17 @@ for trusted-local-baseline requirements, history, stale/conflict and receipt rul
 Publish/export and mobile review must advance the dedicated Git branch with
 non-force transactions. A PC release publisher is prepared with an injected API and synthetic tests; no live publisher/import scheduler was deployed here.
 
+The remaining callable PC wiring is now prepared: completed active-round selection,
+verified content-hash incremental supply, durable publication recovery, pinned
+transport and atomic canonical feedback transaction with exact-byte backup and
+receipts/decisions in the same JSON commit. `review-pipeline.mjs` remains default-off
+and creates no scheduler or actual file binding. See PC_PIPELINE.md,
+PC_RELEASE_FEED.md and PC_FEEDBACK_TRANSACTION.md. Real activation is not solely
+a permissions switch: it still requires the reviewed PC credential/snapshot/
+journal bindings, and a PC-wide writer barrier shared by desktop saves and round
+activation. Existing desktop source was not modified to install that barrier.
+No original ratings were merged and no actual canonical caller was deployed.
+
 ## Verification distinction
 
 JVM auth tests use fake endpoints, fake token strings and an in-memory vault;

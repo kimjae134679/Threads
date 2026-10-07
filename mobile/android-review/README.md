@@ -20,6 +20,7 @@ GitHub 글 수신·평가 동기화·PC 학습은 미검증입니다. 실제 자
 - GitHub 준비 경로: [GITHUB_SYNC_PREPARATION.md](GITHUB_SYNC_PREPARATION.md)
 - 서비스·버전 계약: [SERVICE_CONTRACT.md](SERVICE_CONTRACT.md)
 - PC 교환과 trusted snapshot: [PC_EXCHANGE.md](PC_EXCHANGE.md)
+- PC 기본 비활성 공급·평가 트랜잭션 연결: [PC_PIPELINE.md](PC_PIPELINE.md)
 - 검증 기록: [VALIDATION.md](VALIDATION.md)
 
 Android8(API26)+/targetSDK36. 설치된 JDK21/SDK36.0.0만 사용합니다. 새 도구/계정/키 없이

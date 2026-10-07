@@ -66,3 +66,28 @@ APK: 37,394 bytes; SHA256
 `e4ff01cfdfd08ebd6d1acb31818f60f87a5574f1b9af83f966cb59596f0cc77b`.
 The source ZIP is separately extracted and tested before private delivery;
 its result and the final source/remote commit are recorded in the delivery receipt.
+
+## PC-only completion follow-up
+
+Fresh full run:146/146 passed =29 mobile/native mock +24 exchange +20publisher
++28completed-round feed +25atomic feedback transaction +13PC transport
++4synthetic pipeline integration +3desktop baseline suites. Independent
+transport/pipeline/transaction/feed reviews found no remaining Critical/Important
+findings after wire-body mutation and safe precommit/checkpoint retry regressions.
+All new tests use synthetic fixtures or in-memory APIs; process-crash recovery
+uses an isolated fixture child process. No real account, source, evaluation or
+network was accessed by this follow-up. All mobile JS syntax checks passed.
+
+The APK is unchanged0.1.2 with the same SHA/signature and Library version2.
+PC additions are source-only and are not packaged into the Android APK.
+Default-disabled one-shot pipeline exposes no timer/scheduler/daemon/CLI.
+Remote review schema remains1; future canonical feedback adds mobileImport
+receipts/revisions/separate decisions within the same atomic JSON commit.
+
+Remaining live integration is explicit in PC_PIPELINE.md: approved credential,
+coherent source snapshot/store, durable journal/lock bindings, and a PC-wide
+writer barrier covering existing desktop saves and round activation. No actual
+canonical binding was deployed. Therefore approval alone is insufficient;
+those hooks must be implemented/reviewed before device/online/canonical pilots.
+Final ZIP extracted-test result, commit/remote and Library source version are
+recorded in the external delivery receipt after packaging.

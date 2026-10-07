@@ -15,3 +15,10 @@ existing signing identity, let user personally authenticate on github.com/login/
 then perform actual Android/Keystore/online/conflict pilot. PC fixture exporters,
 trusted local provenance and import proposals are in PC_EXCHANGE.md. Approve and
 verify canonical merging separately; no actual posting is enabled.
+
+PC callable completion is prepared in PC_PIPELINE.md: complete-round selection,
+hash delta, durable non-force retry, pinned transport, atomic feedback/receipts
+and backup/recovery. It is default-disabled with no deployed scheduler/file binding.
+Actual PC credential/snapshot/journal bindings and a writer barrier shared with
+all desktop saves and round activation still need implementation/review before
+a real canonical pilot. Permission approval alone does not install those hooks.
