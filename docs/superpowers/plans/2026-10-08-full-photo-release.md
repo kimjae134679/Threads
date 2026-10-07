@@ -12,3 +12,5 @@ Baseline: branch codex/review-workflow-20261008, HEAD887eb1abffa378f7d7156bc8d0e
 6. Verify actual installed review, counts, retained archive hashes, restart and stale-save protections; commit only own files/push/remoteSHA and refresh local communications and guides.
 
 AI pending: source-ebb6fbcbb2efac exact title 선배 청첩장\n읽씹했다가\n뒤늦게 후회한 이유. Actual relation university senior/junior, sex unspecified. Oneadult phone, reserved regret; no literal text/logos/envelope/cash/weddingaction,1080x1920 upper person lower half title room. Parent can generate. Other pipeline work proceeds independently.
+
+Completion: all365 eligible posts3073pages regenerated and activated; packaged0.3.17 verified twice, scores/memos/seen zero. Source399ZIP/3232oldPNGs/86eval/current pointer preserved; older67eval located unchanged. AI bitmap unavailable; parent explicitly approved paper fallback for ebb6 so no whole-release blocker remains. Title/body exact. Hub registration/install/button validation remains separate owner work.

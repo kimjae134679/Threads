@@ -17,3 +17,6 @@ _통합소통/.communication-imports.json
 
 # Local private review data, rendered QA and installed smoke evidence
 /qa-local/
+
+# Versioned local Electron build outputs
+/desktop/dist-*/

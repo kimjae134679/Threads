@@ -14,7 +14,7 @@ protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { stan
 const reviewAudit=process.argv.find(a=>a.startsWith('--review-audit='));
 const reviewOnly=process.argv.includes('--review-only')||!!reviewAudit;
 if(reviewAudit)app.disableHardwareAcceleration();
-if(reviewOnly)app.setPath('userData',path.join(app.getPath('appData'),'ThreadsReview','0.3.16'));
+if(reviewOnly)app.setPath('userData',path.join(app.getPath('appData'),'ThreadsReview','0.3.17'));
 let editor, bundleWindow, postReview, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
 const bundleUrl = 'cut-editor://app/source-batch.html';

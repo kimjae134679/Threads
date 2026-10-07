@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.3.16",
+  "version": "0.3.17",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -66,7 +66,8 @@
           "source-page-plan.js",
           "source-bundle-zip.js",
           "source-workflow.js",
-          "viral-model.js"
+          "viral-model.js",
+          "universal-production-model.js"
         ]
       }
     ],
