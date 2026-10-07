@@ -1,32 +1,38 @@
-# Threads Android 리뷰 준비판 0.1.1
+# Threads Android 리뷰 준비판 0.1.2
 
-사용자 설치용 준비 APK이며 자동 수신이 완성된 앱은 아닙니다. Android 8(API26) 이상, target SDK36. **기존에 승인된 인터넷 리뷰 서비스 URL과 사용자 인증 경로가 확인되지 않아 실제 자동 수신·서버 동기화는 미연결입니다.** 앱을 설치해도 실제 게시글 목록은 빈 상태입니다. 일반 Android `INTERNET` 선언은 사용자 요청 범위에서 포함했으며, 이 선언 자체가 금지돼 막힌 것은 아닙니다. 사용자에게 파일 넣기나 새 계정·토큰 만들기를 요구하지 않습니다.
+빌드·서명 가능한 설치용 준비 APK입니다. 아직 실제 인터넷 동기화가 연결되지 않았습니다.
+브릿지/PC 명령 저장소와 분리된 전용 비공개 리뷰 저장소 및 GitHub App 등록·설치·사용자
+공식 로그인이 필요합니다. 현재 public 연결 설정은 비어 있고 승인 flag는 false여서
+로그인·키/토큰 생성·업로드가 비활성입니다. 실제 게시 기능은 없습니다.
 
-승인된 서비스를 연결하기 위한 HTTPS 연동 코드와 제작본별 점수(1–10)·메모·버전된 기준 체크·수정 필요/보류/게시 승인 기록, IndexedDB 오프라인 큐·명시적 충돌 선택을 구현했습니다. 서버 반영 확인은 응답을 받아 operationId/revision을 검증한 경우에만 표시합니다. 실제 게시 API는 없습니다.
+구현: 기존 PC0.3.16의 글ID/outputVersion/round 저장모델, PNG 렌더링과 카테고리 계약,
+별점1–10/메모/기준 체크/수정필요·보류·게시승인, IndexedDB 오프라인 큐와 명시적 충돌
+처리, 새 제작본의 이전 평가 격리. Native 공식 device-flow 화면/HTTPS/Keystore 보호,
+credential-free review bridge와 GitHub adapter를 포함합니다. PC export/import는
+read-only store + 새 명시적 출력 + trusted local baseline + 적용 제안만 제공합니다.
 
-## 검증 및 설치 구분
+검증 구분: JVM/Node 계약 테스트와 합성 브라우저 화면390/800, 설치된 SDK/JDK 빌드·기존
+debug key 서명은 검증합니다. Android 실제 설치/실행, 실제 Keystore/공식 로그인/실제
+GitHub 글 수신·평가 동기화·PC 학습은 미검증입니다. 실제 자료·평가·PC 소스는 바꾸지
+않았고 repo/app/key/token/permission도 생성하지 않았습니다.
 
-- 소스/계약: PC0.3.16 SHA `887eb1abffa378f7d7156bc8d0ecdb7126316686`에서 분리.
-- APK 빌드: 기존 JDK21, SDK36.0.0/Android36 도구만 사용. Gradle 다운로드나 추가 설치 없음.
-- 서명: 이미 있던 Android debug 서명키 재사용, 새 key/keystore 생성 없음. 키 파일은 APK/소스 전달본에 없음. 검토용 서명이며 Play Store 배포용 서명은 아님.
-- 계약/단위 테스트: `node --test mobile/android-review/test/*.test.mjs`.
-- 화면: 임시 127.0.0.1 서버 + 전용 pipe headless Chrome + 격리 프로필. 실제 앱 UI와 IndexedDB를 사용하며 합성 fixture만 사용.
-- Android 실제 설치/기기 화면: 연결 기기·AVD 이미지가 없어 미검증.
-- 실제 인터넷 수신/서버 평가 동기화: 미실행·차단.
-- 실제 게시: 미구현·비활성.
+- 정확한 사용자 승인·설정: [CONNECTION_ACTIVATION.md](CONNECTION_ACTIVATION.md)
+- GitHub 준비 경로: [GITHUB_SYNC_PREPARATION.md](GITHUB_SYNC_PREPARATION.md)
+- 서비스·버전 계약: [SERVICE_CONTRACT.md](SERVICE_CONTRACT.md)
+- PC 교환과 trusted snapshot: [PC_EXCHANGE.md](PC_EXCHANGE.md)
+- 검증 기록: [VALIDATION.md](VALIDATION.md)
 
-## 로컬 빌드
+Android8(API26)+/targetSDK36. 설치된 JDK21/SDK36.0.0만 사용합니다. 새 도구/계정/키 없이
+기존 debug keystore가 있을 때만 빌드합니다. 키는 전달 묶음에 포함하지 않습니다.
 
-저장소 루트에서 `& .\mobile\android-review\build.ps1`. 출력은 `mobile/android-review/build/Threads-Review-0.1.1.apk`. 기존 `$env:USERPROFILE\.android\debug.keystore`가 없으면 키를 만들지 않고 중단합니다. Java SDK, Android SDK 경로가 다른 PC에서는 `-Sdk`와 `-ExistingKey`를 지정합니다.
+```powershell
+node --test mobile/android-review/test/*.test.mjs
+node mobile/android-review/build-assets.mjs
+node --check mobile/android-review/build/assets/bundle.js
+& .\mobile\android-review\build.ps1
+```
 
-`build-assets.mjs`는 검증된 `desktop/review-workflow-model.cjs`를 그대로 읽어 자동 카테고리 함수를 번들에 넣습니다. UI 테마는 시스템 명암 설정을 따릅니다. 실제 PNG 렌더링은 PC가 만든 이미지 원본을 순서대로 표시하고 해시를 검사합니다. 모바일에서 원본을 재제작하지 않습니다.
-
-## 다음 단계
-
-기존 승인된 인터넷 서비스·사용자 인증이 먼저 필요합니다. 서비스가 준비되면 `SERVICE_CONTRACT.md`에 따라 서버 adapter와 기존 인증을 검증하고 serviceConfig/CSP/Android network allowlist를 같은 서비스로 제한해 연결해야 합니다. 일반 INTERNET 선언은 이미 포함했지만 현재 serviceConfig는 미설정이며 WebView 네트워크 로드도 비활성입니다. 인증값과 endpoint 설정 UI는 포함하지 않습니다. 백그라운드 동기화는 구현하지 않았고, 준비 코드는 앱을 연 동안 및 재연결 시 확인합니다. 가장 작은 선택지와 사용자 조치는 `CONNECTION_HANDOFF.md`에 있습니다.
-
-PC 뷰어·원본·사용자 평가·제작 목록·공유 bridge는 이번 변경 대상이 아닙니다. 모바일 평가는 서버 adapter가 PC canonical 평가/진행 저장 계약으로 연결하기 전까지 실제 PC 학습 데이터에 반영되지 않습니다.
-
-## Private GitHub follow-up (source only)
-
-See [GITHUB_SYNC_PREPARATION.md](GITHUB_SYNC_PREPARATION.md) for the officially checked GitHub App/device-flow design, injected-API adapter and mock tests. It is excluded from APK 0.1.1. No real login, repository data write, new app registration, token creation or permission grant has happened. Activation and native auth/PC integration remain pending.
+결과: `mobile/android-review/build/Threads-Review-0.1.2.apk`. 일반 INTERNET 선언은 포함하며
+WebView의 직접 외부 네트워크 로드는 계속 차단됩니다. Native GitHub 통신도 승인·설정
+없는 현재 빌드에서 차단됩니다. 활성화하려면 사용자 승인 후 public config를 지정하고
+현재 소스를 재빌드합니다. 인증값을 채팅·APK·소스·웹 저장소에 넣지 않습니다.

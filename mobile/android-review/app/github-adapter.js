@@ -1,5 +1,5 @@
-// Source-only preparation. Not bundled, configured, authenticated, or enabled in APK.
-// api is an injected authenticated native HTTPS JSON transport; this module never
+// Packaged connection preparation; shipped native approval/configuration is off.
+// api is an injected native HTTPS JSON transport; this module never
 // obtains, stores, logs, embeds, or falls back to any token or bridge credential.
 import {validateManifest,key} from './core.js';
 const clone=value=>JSON.parse(JSON.stringify(value));
@@ -32,13 +32,13 @@ function validateOperation(op){
  const p=op.payload;
  if(!p||Object.keys(p).length!==4||!['score','note','checks','decision'].every(f=>Object.hasOwn(p,f))||!(p.score===null||Number.isInteger(p.score)&&p.score>=1&&p.score<=10)||typeof p.note!=='string'||p.note.length>10000||!['unreviewed','needs_revision','held','publish_approved'].includes(p.decision)||!p.checks||typeof p.checks!=='object'||Array.isArray(p.checks)||Object.values(p.checks).some(v=>typeof v!=='boolean'))throw Error('Invalid review payload');
 }
-export function createGithubAdapter({approved=false,owner,repo,repositoryId,branch,api}){
+export function createGithubAdapter({approved=false,dedicatedReviewRepository=false,owner,repo,repositoryId,branch,api}){
  if(typeof owner!=='string'||!/^[A-Za-z0-9-]+$/.test(owner)||typeof repo!=='string'||!/^[A-Za-z0-9_.-]+$/.test(repo)||!Number.isSafeInteger(repositoryId)||repositoryId<=0||typeof api!=='function')throw Error('Explicit repository identity and native API required');
  // An isolated pre-existing branch, never the bridge, default branch or source.
  if(typeof branch!=='string'||!/^mobile-review\/[A-Za-z0-9_-]+$/.test(branch))throw Error('Isolated mobile-review branch required');
  const prefix='/repos/'+owner+'/'+repo, ref='heads/'+branch;
  let knownAssets=null;
- async function call(path,init){if(approved!==true)throw Error('GitHub activation requires separate approval');return api(prefix+path,init);}
+ async function call(path,init){if(approved!==true||dedicatedReviewRepository!==true)throw Error('GitHub activation requires separate dedicated-review-repository approval');return api(prefix+path,init);}
  async function checkRepository(){
   const r=await call('');if(r.private!==true)throw Error('Only a private repository is allowed');
   if(r.id!==repositoryId||r.owner?.login?.toLowerCase()!==owner.toLowerCase()||r.name?.toLowerCase()!==repo.toLowerCase())throw Error('Repository identity mismatch');
@@ -76,7 +76,7 @@ export function createGithubAdapter({approved=false,owner,repo,repositoryId,bran
     if(entry.revision!==op.baseRevision)result={operationId:op.operationId,status:'conflict',revision:entry.revision,review:clone(entry.review||null)};
     else{entry.review=clone(op.payload);entry.revision++;result={operationId:op.operationId,status:'applied',revision:entry.revision};}
    }
-   Object.defineProperty(state.operations,op.operationId,{value:{requestHash,result},enumerable:true,writable:true,configurable:true});
+   Object.defineProperty(state.operations,op.operationId,{value:{requestHash,request:clone(op),result},enumerable:true,writable:true,configurable:true});
    if(await save(base,state))return clone(result);
   }
   throw Error('Concurrent repository updates; leave review pending and retry later');

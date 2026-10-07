@@ -1,6 +1,3 @@
+local-connection*.json
 build/
 qa/
-*.apk
-*.keystore
-*.jks
-local.properties

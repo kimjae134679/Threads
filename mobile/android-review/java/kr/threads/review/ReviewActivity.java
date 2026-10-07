@@ -23,6 +23,7 @@ public final class ReviewActivity extends Activity {
    }
    @Override public boolean shouldOverrideUrlLoading(WebView v,WebResourceRequest r){return true;}
   });
+  view.addJavascriptInterface(new ReviewNativeBridge(this),"ReviewNative");
   view.loadUrl("https://review.local.invalid/index.html");
  }
  @Override public void onDestroy(){view.destroy();super.onDestroy();}

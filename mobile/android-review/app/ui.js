@@ -2,6 +2,7 @@ import {initial,key,applyManifest,queueEdit,currentReview,acceptResult,resolveCo
 import {openStore,readStore,writeStore} from './storage.js';
 import {serviceConfig,requestJson,downloadAsset} from './transport.js';
 import {syncReviews} from './sync-engine.js';
+import {nativeGithub,openNativeConnection} from './native-api.js';
 // classifyTopic is generated from verified desktop/review-workflow-model.cjs.
 let db,state,selected=null,score=null,decision='unreviewed',syncing=false,serial=Promise.resolve(),objectUrls=[];
 const $=id=>document.getElementById(id);
@@ -40,12 +41,12 @@ function renderQueue(){
 function tab(name){for(const n of ['posts','queue','about'])$(n).hidden=n!==name;}
 function error(e){message(e.message||String(e));}
 async function sync(){
- if(syncing)return;if(!serviceConfig.approved){$('connection').textContent='인터넷 동기화 차단 · 승인된 리뷰 서버 없음';return;}
+ if(syncing)return;const github=nativeGithub();if(!github&&!serviceConfig.approved){$('connection').textContent='인터넷 동기화 차단 · 승인된 리뷰 서버 없음';return;}
  syncing=true;try{
-  await syncReviews({getState:()=>state,commit,request:(path,init)=>requestJson(serviceConfig,path,init)});
-  for(const e of state.manifest.entries)for(const img of e.images)if(!await readStore(db,'assets',img.sha256))await writeStore(db,'assets',img.sha256,await downloadAsset(serviceConfig,img));
+  await syncReviews({getState:()=>state,commit,request:github?github.request:(path,init)=>requestJson(serviceConfig,path,init)});
+  for(const e of state.manifest.entries)for(const img of e.images)if(!await readStore(db,'assets',img.sha256))await writeStore(db,'assets',img.sha256,await (github?github.downloadAsset(img):downloadAsset(serviceConfig,img)));
   $('connection').textContent='서버 확인 · '+new Date().toLocaleTimeString();if(selected&&!state.manifest.entries.some(e=>key(e)===key(selected))){$('saveReview').disabled=true;message('새 제작본이 도착했습니다. 목록에서 다시 열어 주세요.');}
  }catch(e){$('connection').textContent='동기화 실패 · 로컬 평가 보존';error(e);}finally{syncing=false;}
 }
-async function boot(){db=await openStore();state=await readStore(db,'state','current')||initial();if(state.schemaVersion!==1)throw Error('로컬 데이터 버전 오류 · 기존 자료 보존');renderList();renderQueue();$('search').oninput=renderList;$('topic').onchange=renderList;$('postsTab').onclick=()=>tab('posts');$('queueTab').onclick=()=>tab('queue');$('aboutTab').onclick=()=>tab('about');$('approveNo').onclick=()=>$('approve').close();$('refresh').onclick=()=>{sync();if(!serviceConfig.approved)message('인터넷 동기화 차단 · 승인된 리뷰 서버 없음');};window.addEventListener('online',sync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync();});setInterval(()=>{if(!document.hidden)sync();},60000);await sync();}
+async function boot(){db=await openStore();state=await readStore(db,'state','current')||initial();if(state.schemaVersion!==1)throw Error('로컬 데이터 버전 오류 · 기존 자료 보존');renderList();renderQueue();$('connectGithub').onclick=()=>{if(!openNativeConnection())message('연결 준비 화면은 Android APK에서 열 수 있습니다. 실제 연결은 아직 승인·설정되지 않았습니다.');};$('search').oninput=renderList;$('topic').onchange=renderList;$('postsTab').onclick=()=>tab('posts');$('queueTab').onclick=()=>tab('queue');$('aboutTab').onclick=()=>tab('about');$('approveNo').onclick=()=>$('approve').close();$('refresh').onclick=()=>{sync();if(!nativeGithub()&&!serviceConfig.approved)message('인터넷 동기화 차단 · 승인된 리뷰 서버 없음');};window.addEventListener('online',sync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync();});setInterval(()=>{if(!document.hidden)sync();},60000);await sync();}
 boot().catch(error);

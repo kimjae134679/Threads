@@ -2,11 +2,12 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {createGithubAdapter} from '../app/github-adapter.js';
 import {initial,applyManifest,queueEdit} from '../app/core.js';import {syncReviews} from '../app/sync-engine.js';
 import {mockGithub,operation,png} from './github-fixture.mjs';
-const config={approved:true,owner:'fixture-owner',repo:'private-review-fixture',repositoryId:123,branch:'mobile-review/data'};
+const config={approved:true,dedicatedReviewRepository:true,owner:'fixture-owner',repo:'private-review-fixture',repositoryId:123,branch:'mobile-review/data'};
 const adapter=(m,extra={})=>createGithubAdapter({...config,api:m.api,...extra});
 const send=(a,op)=>a.request('/v1/review/operations',{method:'POST',body:JSON.stringify(op)});
 test('disabled adapter makes zero calls; public, wrong-ID and bridge branches fail closed',async()=>{
  const m=mockGithub();await assert.rejects(adapter(m,{approved:false}).request('/v1/review/manifest'),/approval/);assert.equal(m.calls.length,0);
+ await assert.rejects(adapter(m,{dedicatedReviewRepository:false}).request('/v1/review/manifest'),/approval/);assert.equal(m.calls.length,0);
  assert.throws(()=>adapter(m,{branch:'remote/pc-bridge'}),/branch/);
  m.private=false;await assert.rejects(adapter(m).request('/v1/review/manifest'),/private/);assert.equal(m.writeCount,0);
  m.private=true;m.repositoryId=456;await assert.rejects(adapter(m).request('/v1/review/manifest'),/identity/);
@@ -21,6 +22,7 @@ test('read pinned snapshot and SHA256-checked private blob without raw URLs',asy
 test('atomic review commits, stable duplicate, and reused ID with changed content rejected',async()=>{
  const m=mockGithub(),a=adapter(m);assert.deepEqual(await send(a,operation()),{operationId:'fixture-operation',status:'applied',revision:1});
  assert.equal(m.state().manifest.entries[0].review.score,8);assert.equal((await send(a,operation())).status,'duplicate');assert.equal(m.writeCount,1);
+ assert.deepEqual(m.state().operations['fixture-operation'].request,operation());
  await assert.rejects(send(a,operation({payload:{...operation().payload,score:2}})),/operationId/);assert.equal(m.writeCount,1);
  const patch=m.calls.find(c=>c.method==='PATCH');assert.equal(patch.body.force,false);
  const tree=m.calls.find(c=>c.path.endsWith('/git/trees'));assert.equal(tree.body.tree.length,1);assert.equal(tree.body.tree[0].path,'mobile-review/state.json');
