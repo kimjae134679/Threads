@@ -7,3 +7,5 @@
 .seen-filter{display:flex;gap:8px;align-items:center;padding:8px 0}.triage-tools{border:1px solid #ddd;border-radius:12px;padding:12px;margin:12px 0}.triage-tools input{min-width:180px}.triage-tools button,.triage-tools select{margin:4px}.triage-tools p{margin:5px 0}.triage-tools #sourceReason{color:#6d5260}.reader-tools{flex-wrap:wrap}
 
 .seen-filter input{width:auto;margin:0}.seen-filter{justify-content:flex-start}.triage-tools input{width:min(100%,340px)}
+
+.stage.cover-page figure{display:flex;flex-direction:column;align-items:center}.stage.cover-page img{width:auto;max-width:100%;max-height:var(--cover-height);object-fit:contain}#reader.zoom .stage.cover-page img{width:100%;max-height:none}
