@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-07.2',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-07.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -57,6 +57,7 @@
       if(urls.length)omitted.push({sourceId,reason:'source_urls_in_metadata',urls});
       const withoutMeta=original.split('\n').filter(line=>{
         const value=line.trim();
+        if(/^(?:원문\s*출처|출처)\s*\((?:삭제됨|삭제|비공개)\)\s*$/.test(value)){omitted.push({sourceId,reason:'display_metadata',text:value});return false;}
         const meta=/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
         if(meta)omitted.push({sourceId,reason:'display_metadata',text:value});return !meta;
       }).join('\n');
@@ -69,7 +70,7 @@
     }
     const used=segments.filter(s=>s.selected&&!Object.hasOwn(excluded,s.id)).map(s=>s.kind==='text'?{...s,text:display(s.text,s.id)}:s).filter(s=>{
       if(s.kind!=='text')return true;
-      const text=clean(s.text),reason=!text?'empty_or_url_only':/^[-_=]{2,}$/.test(text)?'separator':
+      const text=clean(s.text),reason=!text?'empty_or_url_only':/^[•●▪·\s]+$/.test(text)?'empty_bullets':/^[-_=]{2,}$/.test(text)?'separator':
         /^(?:그냥\s*솔직하게.*글\s*내용\s*불편|불펌|무단\s*전재|퍼가(?:지|실))/s.test(text)?'editorial_preface':null;
       if(reason)omitted.push({sourceId:s.id,reason,text});return !reason;
     });
@@ -83,6 +84,7 @@
     if(!Array.isArray(keepWithNext)||keepWithNext.length>30||keepWithNext.some(id=>!used.some(s=>s.id===id&&s.kind==='text')))throw new Error('소제목과 다음 본문 연결 대상을 확인하세요.');
     for(const part of imageParts)if(!dimensions[part.mediaName.toLowerCase()])throw new Error('원문 이미지 파일 누락: '+part.mediaName);
     for(const [id,role] of Object.entries(editorial.imageRoles||{}))if(!imageParts.some(s=>s.id===id)||!['reading','photo'].includes(role))throw new Error('이미지의 본문·사진 역할을 확인하세요.');
+    for(const [id,fit] of Object.entries(editorial.imageFit||{}))if(!imageParts.some(s=>s.id===id)||fit!=='contain')throw new Error('원본 이미지의 전체 표시 대상을 확인하세요.');
     const isReadingImage=s=>{const role=editorial.imageRoles?.[s.id];if(role)return role==='reading';const d=dimensions[s.mediaName.toLowerCase()];return d.analysis?.kind==='screenshot'||d.height/d.width>=1.85||(d.analysis?.textBands||0)>=3;};
     const photographs=imageParts.filter(s=>!isReadingImage(s)&&
       dimensions[s.mediaName.toLowerCase()].height/dimensions[s.mediaName.toLowerCase()].width<2.1);
@@ -203,15 +205,16 @@
       y=top+t.lines.length*t.lineHeight+52;pageRole='cover';
     }
     function addImage(part,tailReserve=0) {
-      const name=part.mediaName.toLowerCase(),image=dimensions[name],identity=image.sha256||name;
-      if(seenImages.has(identity)&&part.allowRepeat!==true){omitted.push({sourceId:part.id,reason:'duplicate_image',name});return;}
-      seenImages.add(identity);
+      const name=part.mediaName.toLowerCase(),image=dimensions[name];
       if(name===photoName&&photoConsumed){omitted.push({sourceId:part.id,reason:'already_shown_in_cover',name});return;}
       const custom=editorial.regions?.[part.id],auto=image.analysis?.bounds;
       const region=custom||auto||{x:0,y:0,width:image.width,height:image.height};
       if(![region.x,region.y,region.width,region.height].every(Number.isFinite)||region.x<0||region.y<0||region.width<=0||region.height<=0||region.x+region.width>image.width+1||region.y+region.height>image.height+1)throw new Error('원문 이미지 사용 영역을 확인하세요.');
-      const ordinaryPhoto=image.analysis?.kind==='photo'&&region.height/region.width<2.1;
-      const scale=ordinaryPhoto?Math.min((W-2*PAD)/region.width,(MAXH-2*PAD-tailReserve)/region.height):(W-2*PAD)/region.width;
+      const identity=(image.sha256||name)+'|'+[region.x,region.y,region.width,region.height].join(',');
+      if(seenImages.has(identity)&&part.allowRepeat!==true){omitted.push({sourceId:part.id,reason:'duplicate_image',name,region});return;}
+      seenImages.add(identity);
+      const containImage=editorial.imageFit?.[part.id]==='contain'||(editorial.imageRoles?.[part.id]==='photo'||image.analysis?.kind==='photo')&&region.height/region.width<2.1;
+      const scale=containImage?Math.min((W-2*PAD)/region.width,(MAXH-2*PAD-tailReserve)/region.height):(W-2*PAD)/region.width;
       const capacity=(MAXH-2*PAD)/scale;
       if(region.y>0||region.height<image.height||region.x>0||region.width<image.width)omitted.push({sourceId:part.id,reason:custom?'explicit_editorial_crop':'outer_blank_margin',region});
       if(region.height*scale<=MAXH-2*PAD) {
@@ -313,7 +316,7 @@
       editorialAnnotations:annotations.map(a=>({...a,actualSourceComment:false})),
       imageRegions:Object.fromEntries(imageParts.map(s=>{const d=dimensions[s.mediaName.toLowerCase()];return [s.id,editorial.regions?.[s.id]||d.analysis?.bounds||{x:0,y:0,width:d.width,height:d.height}];})),
       sourceUnits:used.filter(s=>!s.coverOnly).map(s=>({id:s.id,kind:s.kind,location:s.location||null,role:s.contentRole||'primary_source',text:s.kind==='text'?s.text:null,mediaName:s.mediaName||null})),
-      verifiedTranscriptions:transcriptions,selectedComments:comments.filter(c=>includedComments.includes(c.id)),sourceIssues:editorial.sourceIssues||[],
+      verifiedTranscriptions:transcriptions,imageFit:editorial.imageFit||{},selectedComments:comments.filter(c=>includedComments.includes(c.id)),sourceIssues:editorial.sourceIssues||[],
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};
   }

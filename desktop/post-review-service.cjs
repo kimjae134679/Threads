@@ -8,8 +8,9 @@ function registerPostReview({app,trusted,preferences,materialRoot=getMaterialRoo
  const store=createPostReviewStore(materialRoot,{legacyFeedbackFile});let window=null,closing=false;
  const guard=e=>{if(!window||e.sender!==window.webContents||e.senderFrame!==window.webContents.mainFrame||e.senderFrame.url!==url)throw Error('허용되지 않은 평가 요청입니다.');};
  async function open(id){
-  if(window&&!window.isDestroyed()){window.show();window.focus();if(id)window.webContents.send('post-review:select',id);return;}
-  window=new BrowserWindow({width:1250,height:1000,minWidth:760,minHeight:650,title:'Threads 게시글 평가',autoHideMenuBar:true,webPreferences:{...preferences,preload:path.join(__dirname,'post-review-preload.cjs')}});
+  const background=process.argv.includes('--background-worker');
+  if(window&&!window.isDestroyed()){if(!background){window.show();window.focus();}if(id)window.webContents.send('post-review:select',id);return;}
+  window=new BrowserWindow({show:!background,width:1250,height:1000,minWidth:760,minHeight:650,title:'Threads 게시글 평가',autoHideMenuBar:true,webPreferences:{...preferences,preload:path.join(__dirname,'post-review-preload.cjs')}});
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));window.webContents.on('will-navigate',e=>e.preventDefault());
   window.on('close',e=>{
    if(closing)return;e.preventDefault();const current=window;
