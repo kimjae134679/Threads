@@ -51,7 +51,23 @@
     }
     function walk(node) {
       if (segments.length>=400) return;
-      if (node.nodeType===3) { addText(node.nodeValue,node.parentElement);return; }
+      if (node.nodeType===3) {
+        const text=String(node.nodeValue||''),pattern=/\[img=(https?:\/\/[^\]\s]+)\]/gi;
+        let cursor=0,match;
+        while((match=pattern.exec(text))) {
+          let url;
+          try { url=new URL(match[1]); } catch { continue; }
+          if(!/\.(png|jpe?g|webp|gif)$/i.test(url.pathname)) continue;
+          addText(text.slice(cursor,match.index),node.parentElement);
+          flushText();
+          const name=imageName(url.href);
+          segments.push({id:'s'+segments.length,kind:'image',mediaName:name,
+            location:sourcePath(node.parentElement)+' > bbcode:'+match.index,
+            mediaUrl:url.href,available:mediaNames.has(name.toLowerCase()),selected:false});
+          cursor=pattern.lastIndex;
+        }
+        addText(text.slice(cursor),node.parentElement);return;
+      }
       if (node.nodeType!==1 || skipTags.has(node.tagName) || node.hidden || node.getAttribute('aria-hidden')==='true' ||
         excluded.test(String(node.className||'')+' '+(node.id||'')) ||
         node.matches?.('.comment,.comment-item,.comment-list,.reply,.reply-item,[data-comment-id]')) return;

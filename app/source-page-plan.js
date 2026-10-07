@@ -55,12 +55,14 @@
     const display=(text,sourceId)=>{
       const original=clean(text),urls=original.match(/https?:\/\/[^\s<>]+/gi)||[];
       if(urls.length)omitted.push({sourceId,reason:'source_urls_in_metadata',urls});
-      const withoutMeta=original.split('\n').filter(line=>{
+      const byline=original.match(/^\([^\n()]{1,30}=[^\n()]{1,30}\)\s*[가-힣]{2,4}\s*기자\s*=\s*/u);
+      if(byline)omitted.push({sourceId,reason:'display_news_byline',text:byline[0]});
+      const withoutMeta=(byline?original.slice(byline[0].length):original).split('\n').filter(line=>{
         const hadUrl=/https?:\/\/[^\s<>]+/i.test(line),value=line.replace(/https?:\/\/[^\s<>]+/gi,'').trim();
         const emptyLinkedLabel=hadUrl&&/^[([][^()[\]]{1,24}[:：]\s*[)\]]?$/.test(value);
         const deletedSource=/^(?:원문\s*출처|출처)\s*\((?:삭제됨|삭제|비공개)\)\s*$/.test(value);
         const commentHeader=/^\d+\.\s*무명의\s*더쿠(?:\s*=\s*\d+덬)?\s+\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}$/.test(value);
-        const meta=emptyLinkedLabel||deletedSource||commentHeader||/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
+        const meta=/^ㅊㅊ\s*(?:판|더쿠|인스티즈)\s*$/.test(value)||emptyLinkedLabel||deletedSource||commentHeader||/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
         if(meta)omitted.push({sourceId,reason:'display_metadata',text:line.trim()});return !meta;
       }).join('\n');
       return clean(withoutMeta.replace(/https?:\/\/[^\s<>]+/gi,'').replace(/^\s*(?:출처|원문|링크|주소)\s*[:：]?\s*$/gm,''));
