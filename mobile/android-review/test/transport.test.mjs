@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {serviceConfig,serviceUrl,requestJson,downloadAsset} from '../app/transport.js';
+test('shipped service is fail closed and makes zero network calls',async()=>{let calls=0;const original=globalThis.fetch;globalThis.fetch=()=>{calls++;throw Error('unexpected call');};try{await assert.rejects(requestJson(serviceConfig,'/v1/review/manifest'),/차단/);await assert.rejects(downloadAsset(serviceConfig,{url:'/asset.png'}),/차단/);assert.equal(calls,0);}finally{globalThis.fetch=original;}});
+test('only approved same-origin HTTPS root accepts review endpoints',()=>{assert.equal(serviceUrl({approved:true,baseUrl:'https://review.example/'},'/v1/review/manifest'),'https://review.example/v1/review/manifest');for(const baseUrl of ['http://localhost/','https://user:secret@example/','https://review.example/sub/','https://review.example/?key=secret'])assert.throws(()=>serviceUrl({approved:true,baseUrl},'/v1/review/manifest'));for(const path of ['https://other.example/','//other.example/'])assert.throws(()=>serviceUrl({approved:true,baseUrl:'https://review.example/'},path));});

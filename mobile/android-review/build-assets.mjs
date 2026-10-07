@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const out=path.join(root,'build','assets');fs.mkdirSync(out,{recursive:true});
+const shared=fs.readFileSync(path.join(root,'../../desktop/review-workflow-model.cjs'),'utf8').replace(/module\.exports=\{[^}]+\};/,'');
+const sources=['core.js','storage.js','transport.js','sync-engine.js','ui.js'].map(f=>fs.readFileSync(path.join(root,'app',f),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,''));
+fs.writeFileSync(path.join(out,'bundle.js'),`(()=>{\n${shared}\n${sources.join('\n')}\n})();\n`);
+for(const f of ['index.html','style.css'])fs.copyFileSync(path.join(root,'app',f),path.join(out,f));
+console.log(out);
