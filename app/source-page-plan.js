@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-07.4',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-07.5',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -59,10 +59,12 @@
       if(byline)omitted.push({sourceId,reason:'display_news_byline',text:byline[0]});
       const withoutMeta=(byline?original.slice(byline[0].length):original).split('\n').filter(line=>{
         const hadUrl=/https?:\/\/[^\s<>]+/i.test(line),value=line.replace(/https?:\/\/[^\s<>]+/gi,'').trim();
+        const bareSourceUrl=/^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:com|net|org|co\.kr|kr)\/\S+$/i.test(line.trim());
+        if(bareSourceUrl)omitted.push({sourceId,reason:'source_urls_in_metadata',urls:[line.trim()]});
         const emptyLinkedLabel=hadUrl&&/^[([][^()[\]]{1,24}[:：]\s*[)\]]?$/.test(value);
         const deletedSource=/^(?:원문\s*출처|출처)\s*\((?:삭제됨|삭제|비공개)\)\s*$/.test(value);
         const commentHeader=/^\d+\.\s*무명의\s*더쿠(?:\s*=\s*\d+덬)?\s+\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}$/.test(value);
-        const meta=/^ㅊㅊ\s*(?:판|더쿠|인스티즈)\s*$/.test(value)||emptyLinkedLabel||deletedSource||commentHeader||/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
+        const meta=bareSourceUrl||/^ㅊㅊ\s*(?:판|더쿠|인스티즈|ㄷㅁㅌㄹ)\s*$/.test(value)||emptyLinkedLabel||deletedSource||commentHeader||/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
         if(meta)omitted.push({sourceId,reason:'display_metadata',text:line.trim()});return !meta;
       }).join('\n');
       return clean(withoutMeta.replace(/https?:\/\/[^\s<>]+/gi,'').replace(/^\s*(?:출처|원문|링크|주소)\s*[:：]?\s*$/gm,''));
@@ -92,7 +94,7 @@
     if(!Array.isArray(headingTexts)||headingTexts.length>40||headingTexts.some(t=>typeof t!=='string'||!t.trim()||t.length>180))throw new Error('본문과 연결할 소제목 문구를 확인하세요.');
     const isHeading=text=>{
       const t=clean(text);
-      if(headingTexts.includes(t))return true;
+      if(headingTexts.some(heading=>clean(heading)===t))return true;
       if(t.length>160||t.includes('\n'))return false;
       return /^(?:\d+(?:[-.]\d+)*[.)]\s*\S*.*|[AQ]\d+(?:[.)]\s*.*)?|후기\s*\d*|대박\s*\d+사건|세\s*줄\s*요약|.{1,12}\s왈|\[[^\]]{1,50}\]|<[^>]{1,100}>|>\s*.{1,100}|■\s*.{1,155}|\+{2,}\s*추가.*)$/.test(t);
     };
@@ -157,14 +159,21 @@
       for(let p=0;p<paragraphs.length;p++) {
         let paragraph=paragraphs[p];
         const heading=isHeading(paragraph);
+        const headingLineCount=heading?wrap(paragraph,W-2*PAD,size,measure,weight).length:0;
         if(heading&&paragraphs[p+1]){
-          const following=paragraphs[p+1],opening=firstSentence(following);
+          let nextIndex=p+1;
+          while(isHeading(paragraphs[nextIndex])&&paragraphs[nextIndex+1]){
+            paragraph+='\n'+paragraphs[nextIndex++];
+          }
+          const following=paragraphs[nextIndex],opening=firstSentence(following);
           paragraph+='\n'+opening;
           const remainder=following.slice(opening.length).trim();
-          if(remainder)paragraphs[p+1]=remainder;else p++;
-          if(ops.length&&y+wrap(paragraph,W-2*PAD,size,measure,weight).length*lineHeight>MAXH-PAD)nextPage();
+          if(remainder){paragraphs[nextIndex]=remainder;p=nextIndex-1;}else p=nextIndex;
+          const required=wrap(paragraph,W-2*PAD,size,measure,weight).length;
+          const minimum=Math.min(required,Math.max(headingLineCount+2,Math.floor((MAXH-2*PAD)/lineHeight)));
+          if(ops.length&&y+minimum*lineHeight>MAXH-PAD)nextPage();
         }
-        if((/[?？]$/.test(paragraph)||heading)&&paragraphs[p+1]&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*lineHeight<=MAXH-2*PAD)
+        if(!heading&&/[?？]$/.test(paragraph)&&paragraphs[p+1]&&!isHeading(paragraphs[p+1])&&wrap(paragraph+'\n'+paragraphs[p+1],W-2*PAD,size,measure,weight).length*lineHeight<=MAXH-2*PAD)
           paragraph+='\n'+paragraphs[++p];
         if(!paragraph)continue;
         // Keep complete sentences together when a paragraph exceeds one page.
@@ -181,15 +190,21 @@
         y+=32;
       }
     }
-    let photoName=null,photoConsumed=false;
+    let photoName=null,photoConsumed=false,photoRegion=null;
+    const imageHeadingReserve=new Map();
     if(templateId==='photo_cover') {
-      const image=dimensions[cover.mediaName.toLowerCase()];
+      const rawImage=dimensions[cover.mediaName.toLowerCase()];
+      const coverRegion=editorial.regions?.[cover.id]||{x:0,y:0,width:rawImage.width,height:rawImage.height};
+      if(![coverRegion.x,coverRegion.y,coverRegion.width,coverRegion.height].every(Number.isFinite)||coverRegion.x<0||coverRegion.y<0||coverRegion.width<=0||coverRegion.height<=0||coverRegion.x+coverRegion.width>rawImage.width||coverRegion.y+coverRegion.height>rawImage.height)throw new Error('표지 이미지 영역을 확인하세요.');
+      const image={...rawImage,width:coverRegion.width,height:coverRegion.height};
+      photoRegion=coverRegion;
+      const cropFields={sourceX:coverRegion.x,sourceY:coverRegion.y,sourceWidth:coverRegion.width,sourceHeight:coverRegion.height};
       const panel=editorial.coverPresentation==='panel'||image.analysis?.kind==='screenshot'||(image.analysis?.textBands||0)>=3;
       if(panel){
         const t=fitTitle(W-2*PAD,60,100,5),titleHeight=t.lines.length*t.lineHeight;
         const scale=Math.min((W-2*PAD)/image.width,(MAXH-titleHeight-3*PAD)/image.height),iw=Math.round(image.width*scale),ih=Math.round(image.height*scale);
         photoName=cover.mediaName.toLowerCase();
-        ops=[{kind:'image',name:photoName,x:(W-iw)/2,y:PAD,width:iw,height:ih,sourceId:cover.id}];
+        ops=[{kind:'image',name:photoName,x:(W-iw)/2,y:PAD,width:iw,height:ih,sourceId:cover.id,...cropFields}];
         const start=PAD+ih+48;
         for(const [i,text] of t.lines.entries())ops.push(titleOp(text,PAD,start+i*t.lineHeight,t,'#fff'));
         pageRole='cover';finishPage();photoConsumed=true;
@@ -198,7 +213,7 @@
       const t=fitTitle(iw-2*PAD,60,96,4);
       const height=fixed?MAXH:Math.max(608,ih+PAD),imageY=fixed?Math.max(0,(height-ih)/2):0;
       photoName=cover.mediaName.toLowerCase();
-      ops=[{kind:'image',name:photoName,x:(W-iw)/2,y:imageY,width:iw,height:ih,sourceId:cover.id}];
+      ops=[{kind:'image',name:photoName,x:(W-iw)/2,y:imageY,width:iw,height:ih,sourceId:cover.id,...cropFields}];
       const titleY=manual?Number(style.coverTop):imageY+ih-t.lines.length*t.lineHeight-40;
       if(titleY<PAD+40){warnings.push('사진 높이가 짧아 제목을 별도 영역에 배치했습니다.');
         const separateY=manual?titleY:imageY+ih+30;for(const [i,text] of t.lines.entries())ops.push(titleOp(text,titleX,separateY+i*t.lineHeight,t,'#fff'));
@@ -222,19 +237,19 @@
     }
     function addImage(part,tailReserve=0) {
       const name=part.mediaName.toLowerCase(),image=dimensions[name];
-      if(name===photoName&&photoConsumed){omitted.push({sourceId:part.id,reason:'already_shown_in_cover',name});return;}
       const custom=editorial.regions?.[part.id],auto=image.analysis?.bounds;
       const region=custom||auto||{x:0,y:0,width:image.width,height:image.height};
       if(![region.x,region.y,region.width,region.height].every(Number.isFinite)||region.x<0||region.y<0||region.width<=0||region.height<=0||region.x+region.width>image.width+1||region.y+region.height>image.height+1)throw new Error('원문 이미지 사용 영역을 확인하세요.');
+      if(name===photoName&&photoConsumed&&photoRegion&&['x','y','width','height'].every(key=>region[key]===photoRegion[key])){omitted.push({sourceId:part.id,reason:'already_shown_in_cover',name,region});return;}
       const identity=(image.sha256||name)+'|'+[region.x,region.y,region.width,region.height].join(',');
       if(seenImages.has(identity)&&part.allowRepeat!==true){omitted.push({sourceId:part.id,reason:'duplicate_image',name,region});return;}
       seenImages.add(identity);
       const containImage=editorial.imageFit?.[part.id]==='contain'||(editorial.imageRoles?.[part.id]==='photo'||image.analysis?.kind==='photo')&&region.height/region.width<2.1;
-      const scale=containImage?Math.min((W-2*PAD)/region.width,(MAXH-2*PAD-tailReserve)/region.height):(W-2*PAD)/region.width;
+      const scale=containImage?Math.min((W-2*PAD)/region.width,(MAXH-2*PAD-tailReserve-(imageHeadingReserve.get(part.id)||0))/region.height):(W-2*PAD)/region.width;
       const capacity=(MAXH-2*PAD)/scale;
       if(region.y>0||region.height<image.height||region.x>0||region.width<image.width)omitted.push({sourceId:part.id,reason:custom?'explicit_editorial_crop':'outer_blank_margin',region});
       if(region.height*scale<=MAXH-2*PAD) {
-        if(y+region.height*scale>MAXH-PAD)finishPage();
+        if(y+region.height*scale>MAXH-PAD+0.5)finishPage();
         const width=region.width*scale;
         ops.push({kind:'image',name,x:(W-width)/2,y,width,height:region.height*scale,sourceX:region.x,sourceY:region.y,sourceWidth:region.width,sourceHeight:region.height,sourceId:part.id});y+=region.height*scale+28;return;
       }
@@ -269,13 +284,26 @@
         if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}
         if((keepWithNext.includes(part.id)||isHeading(text))&&used[index+1]?.kind==='text'){
           const weight=style.fontId==='gothic'?800:400,nextPart=used[index+1];
-          const following=clean(nextPart.text).split(/\n\s*\n/)[0],opening=firstSentence(following);
-          const headingLines=wrap(text,W-2*PAD,BODY,measure,weight).length;
+          let bodyIndex=index+1,additionalHeadingLines=0;
+          while(used[bodyIndex]?.kind==='text'&&isHeading(used[bodyIndex].text)&&used[bodyIndex+1]?.kind==='text'){
+            additionalHeadingLines+=wrap(clean(used[bodyIndex].text),W-2*PAD,BODY,measure,weight).length;bodyIndex++;
+          }
+          const following=clean(used[bodyIndex].text).split(/\n\s*\n/)[0],opening=firstSentence(following);
+          const headingLines=wrap(text,W-2*PAD,BODY,measure,weight).length+additionalHeadingLines;
           const openingLines=wrap(opening,W-2*PAD,BODY,measure,weight).length;
           const availableLines=Math.floor((MAXH-2*PAD-32)/LINE);
           const reserve=headingLines+openingLines<=availableLines?openingLines:Math.min(openingLines,Math.max(2,availableLines-headingLines));
           if(ops.length&&y+(headingLines+reserve)*LINE+32>MAXH-PAD)finishPage();
-          leadingContinuation.set(nextPart.id,opening);
+          leadingContinuation.set(used[bodyIndex].id,opening);
+        }
+        if((keepWithNext.includes(part.id)||isHeading(text))&&used[index+1]?.kind==='image'){
+          const nextImage=used[index+1],d=dimensions[nextImage.mediaName.toLowerCase()],region=editorial.regions?.[nextImage.id]||d.analysis?.bounds||{x:0,y:0,width:d.width,height:d.height};
+          const headHeight=wrap(text,W-2*PAD,BODY,measure).length*LINE+32;
+          if(editorial.imageFit?.[nextImage.id]==='contain'){
+            const scale=Math.min((W-2*PAD)/region.width,(MAXH-2*PAD-headHeight)/region.height);
+            if(ops.length&&y+headHeight+scale*region.height>MAXH-PAD)finishPage();
+            imageHeadingReserve.set(nextImage.id,headHeight);
+          }
         }
         const label=sourceLabels[part.id];
         if(label){

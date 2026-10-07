@@ -102,7 +102,7 @@ assert(panel.pages.slice(1).flatMap(p=>p.operations).some(o=>o.sourceId==='photo
 const noFiller=P.compile({...base,segments:[photo,{id:'filler',kind:'text',selected:true,text:'헉'},{id:'real',kind:'text',selected:true,text:'본문에 실제로 있는 설명을 그대로 보존합니다.\n원문 출처(삭제됨): https://example.com'}]}, {'a.jpg':{width:800,height:753,analysis:{kind:'screenshot',textBands:4}}},measure);
 assert(noFiller.omitted.some(o=>o.reason==='isolated_filler_reaction'));assert(noFiller.pages.flatMap(p=>p.operations).some(o=>o.text?.includes('실제로 있는 설명')));
 const explained=P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'독자를 위한 용어 설명',evidenceUrl:'https://example.com/official'}]}},{},measure);
-assert(explained.pages.flatMap(p=>p.operations).some(o=>o.role==='note'&&o.text.includes('용어 설명')));assert.equal(explained.editorialAnnotations[0].actualSourceComment,false);
+assert(explained.pages.flatMap(p=>p.operations).some(o=>o.role==='note'&&o.text?.includes('용어 설명')));assert.equal(explained.editorialAnnotations[0].actualSourceComment,false);
 assert.throws(()=>P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'근거 없는 설명'}]}},{},measure),/근거/);
 assert.equal(text.pages[0].background,"#fff");
 
@@ -136,3 +136,23 @@ assert(bestWithoutCount.pages.flatMap(p=>p.operations).some(o=>o.role==='comment
 const bestMeta=bestWithoutCount.selectedComments.find(c=>c.text.includes('원본에 베플'));
 assert.equal(bestMeta.visibleLikes,null);assert.equal(bestMeta.visibleBest,true);
 assert.throws(()=>P.compile({...verifiedInput,editorial:{...verifiedEditorial,transcriptions:{capture:{...verifiedEditorial.transcriptions.capture,segments:[{kind:'comment',text:'근거 없는 인기 댓글',visibleLikes:null}]}}}},verifiedDimensions,measure),/베플/);
+
+const spacedHead=P.compile({originalTitle:'공백 소제목',segments:[{id:'story',kind:'text',selected:true,text:('앞 문장입니다. ').repeat(24)+'\n\n그외의 남자들\n\n진지하게 만날려고 하는 사람들도 있음'}],editorial:{keepHeadingTexts:['그외의 남자들 ']}},{},measure);
+const headPage=spacedHead.pages.find(p=>p.operations.some(o=>o.text==='그외의 남자들'));
+assert(headPage.operations.some(o=>o.text?.includes('진지하게')),'Trailing source whitespace must not defeat heading protection');
+for(let n=3;n<18;n++){
+ const bodyA=('첫 항목 내용 '.repeat(n))+'끝';
+ const grouped=P.compile({originalTitle:'번호 항목',segments:[{id:'story',kind:'text',selected:true,text:'1. 첫 항목\n\n'+bodyA+'\n\n2. 둘째 항목\n\n둘째 항목 실제 설명입니다. 더 긴 설명을 잇습니다.'}]},{},measure);
+ const second=grouped.pages.find(p=>p.operations.some(o=>o.text==='2. 둘째 항목'));
+ assert(second.operations.some(o=>o.text?.includes('둘째 항목 실제 설명')),'The previous protected item must not absorb the next heading');
+}
+const bareLink=P.compile({originalTitle:'출처 보존',segments:[{id:'url',kind:'text',selected:true,text:'pann.nate.com/talk/338179867'},{id:'body',kind:'text',selected:true,text:'시누이가 개사이다'},{id:'domain',kind:'text',selected:true,text:'example.com은 실제 서비스 이름입니다.'}]},{},measure);
+assert(!bareLink.sourceUnits.some(u=>u.id==='url'));
+assert(bareLink.omitted.some(o=>o.sourceId==='url'&&o.reason==='source_urls_in_metadata'));
+assert(bareLink.sourceUnits.some(u=>u.text==='시누이가 개사이다')&&bareLink.sourceUnits.some(u=>u.id==='domain'));
+const cropCover=P.compile({...cropInput,editorial:{...cropInput.editorial,templateId:'photo_cover',coverPresentation:'panel',coverSegmentId:'capture-transcribed-0',imageRoles:{'capture-transcribed-0':'photo'},regions:{'capture-transcribed-0':{x:0,y:0,width:800,height:300},'capture-transcribed-1':{x:0,y:400,width:800,height:300},'capture-transcribed-2':{x:0,y:400,width:800,height:300}}}},verifiedDimensions,measure);
+assert.equal(cropCover.pages[0].operations.find(o=>o.kind==='image').sourceHeight,300,'Cover must use the verified photo region');
+assert(cropCover.pages.slice(1).flatMap(p=>p.operations).some(o=>o.kind==='image'&&o.sourceY===400),'Another verified region of the same file must survive cover dedup');
+const headingPicture=P.compile({originalTitle:'결말',segments:[{id:'lead',kind:'text',selected:true,text:('앞 문장입니다. ').repeat(22)},{id:'head',kind:'text',selected:true,text:'결말'},{id:'image',kind:'image',mediaName:'source.jpg',selected:true}],editorial:{templateId:'mint_text',keepHeadingTexts:['결말'],imageRoles:{image:'reading'},imageFit:{image:'contain'}}},verifiedDimensions,measure);
+const pictureHead=headingPicture.pages.find(p=>p.operations.some(o=>o.sourceId==='head'));
+assert(pictureHead.operations.some(o=>o.kind==='image'&&o.sourceId==='image'),'Heading and contained source picture must share a page');
