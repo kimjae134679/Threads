@@ -105,3 +105,22 @@ const explained=P.compile({...textPlan,editorial:{annotations:[{kind:'explanatio
 assert(explained.pages.flatMap(p=>p.operations).some(o=>o.role==='note'&&o.text.includes('용어 설명')));assert.equal(explained.editorialAnnotations[0].actualSourceComment,false);
 assert.throws(()=>P.compile({...textPlan,editorial:{annotations:[{kind:'explanation',text:'근거 없는 설명'}]}},{},measure),/근거/);
 assert.equal(text.pages[0].background,"#fff");
+
+const linkMetadata=P.compile({originalTitle:'검수 제목',segments:[{id:'links',kind:'text',selected:true,text:'보존할 여행 본문입니다.\n(런던 : https://example.com/travel)\n원문 출처 https://example.com/old (삭제됨)'}],comments:[]},{},measure);
+const visibleLinkText=linkMetadata.pages.flatMap(p=>p.operations).filter(o=>o.kind==='text').map(o=>o.text).join('');
+assert(visibleLinkText.includes('보존할 여행 본문입니다.'));
+assert(!visibleLinkText.includes('런던 :')&&!visibleLinkText.includes('(삭제됨)'),'Remove empty linked labels and deleted-source footers after URL stripping');
+for(const heading of ['1-5. 촬영','A2','[추가 후기]','<구매 팁>','>발단','++추가','6.','■ 시간도 돈도 반반인 계약 부부의 일상']){
+ const grouped=P.compile({originalTitle:'검수 제목',segments:[
+ {id:'lead',kind:'text',selected:true,text:('앞쪽 본문입니다. ').repeat(14)},
+ {id:'heading',kind:'text',selected:true,text:heading},
+ {id:'body',kind:'text',selected:true,text:'이어지는 첫 문장을 보존합니다. '+('다음 내용은 원문에서 왔습니다. ').repeat(12)}],comments:[]},{},measure);
+ const page=grouped.pages.find(p=>p.operations.some(o=>o.sourceId==='heading'));
+ assert(page.operations.some(o=>o.sourceId==='body'),'Heading must share a page with its actual next source unit: '+heading);
+ assert(grouped.sourceUnits.some(u=>u.id==='heading')&&grouped.sourceUnits.some(u=>u.id==='body'),'Keep original source IDs separate');
+}
+assert.throws(()=>P.compile({originalTitle:'검수',segments:[{id:'a',kind:'text',selected:true,text:'본문'}],editorial:{keepHeadingTexts:['x'.repeat(181)]}},{},measure),/소제목/);
+
+const commentUi=P.compile({originalTitle:'댓글 사례',segments:[{id:'header',kind:'text',selected:true,text:'38. 무명의 더쿠 2025-12-08 23:51:19'},{id:'body',kind:'text',selected:true,text:'실제 댓글의 본문만 남깁니다.'}],comments:[]},{},measure);
+assert(commentUi.omitted.some(o=>o.sourceId==='header'&&o.reason==='display_metadata'));
+assert(commentUi.sourceUnits.some(o=>o.id==='body'));

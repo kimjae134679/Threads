@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-07.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-07.4',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -56,10 +56,12 @@
       const original=clean(text),urls=original.match(/https?:\/\/[^\s<>]+/gi)||[];
       if(urls.length)omitted.push({sourceId,reason:'source_urls_in_metadata',urls});
       const withoutMeta=original.split('\n').filter(line=>{
-        const value=line.trim();
-        if(/^(?:원문\s*출처|출처)\s*\((?:삭제됨|삭제|비공개)\)\s*$/.test(value)){omitted.push({sourceId,reason:'display_metadata',text:value});return false;}
-        const meta=/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
-        if(meta)omitted.push({sourceId,reason:'display_metadata',text:value});return !meta;
+        const hadUrl=/https?:\/\/[^\s<>]+/i.test(line),value=line.replace(/https?:\/\/[^\s<>]+/gi,'').trim();
+        const emptyLinkedLabel=hadUrl&&/^[([][^()[\]]{1,24}[:：]\s*[)\]]?$/.test(value);
+        const deletedSource=/^(?:원문\s*출처|출처)\s*\((?:삭제됨|삭제|비공개)\)\s*$/.test(value);
+        const commentHeader=/^\d+\.\s*무명의\s*더쿠(?:\s*=\s*\d+덬)?\s+\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}$/.test(value);
+        const meta=emptyLinkedLabel||deletedSource||commentHeader||/^(?:원문\s*출처|출처|링크|주소)\s*[:：]/.test(value)||/^개드립\s*[-–]/.test(value)||/^이\s*내용은\s*ChatGPT\s*로?\s*생성/.test(value)||/^(?:조회(?:수)?|추천(?:수)?|댓글(?:수)?)\s*[:：]?\s*[\d,]+\s*$/.test(value);
+        if(meta)omitted.push({sourceId,reason:'display_metadata',text:line.trim()});return !meta;
       }).join('\n');
       return clean(withoutMeta.replace(/https?:\/\/[^\s<>]+/gi,'').replace(/^\s*(?:출처|원문|링크|주소)\s*[:：]?\s*$/gm,''));
     };
@@ -82,6 +84,16 @@
     const imageParts=used.filter(s=>s.kind==='image');
     const keepWithNext=editorial.keepWithNext||[];
     if(!Array.isArray(keepWithNext)||keepWithNext.length>30||keepWithNext.some(id=>!used.some(s=>s.id===id&&s.kind==='text')))throw new Error('소제목과 다음 본문 연결 대상을 확인하세요.');
+    const headingTexts=editorial.keepHeadingTexts||[];
+    if(!Array.isArray(headingTexts)||headingTexts.length>40||headingTexts.some(t=>typeof t!=='string'||!t.trim()||t.length>180))throw new Error('본문과 연결할 소제목 문구를 확인하세요.');
+    const isHeading=text=>{
+      const t=clean(text);
+      if(headingTexts.includes(t))return true;
+      if(t.length>160||t.includes('\n'))return false;
+      return /^(?:\d+(?:[-.]\d+)*[.)]\s*\S*.*|[AQ]\d+(?:[.)]\s*.*)?|후기\s*\d*|대박\s*\d+사건|세\s*줄\s*요약|.{1,12}\s왈|\[[^\]]{1,50}\]|<[^>]{1,100}>|>\s*.{1,100}|■\s*.{1,155}|\+{2,}\s*추가.*)$/.test(t);
+    };
+    const firstSentence=text=>clean(text).split(/(?<=[^\d][.!?。])\s+(?=\S)/)[0];
+    const leadingContinuation=new Map();
     for(const part of imageParts)if(!dimensions[part.mediaName.toLowerCase()])throw new Error('원문 이미지 파일 누락: '+part.mediaName);
     for(const [id,role] of Object.entries(editorial.imageRoles||{}))if(!imageParts.some(s=>s.id===id)||!['reading','photo'].includes(role))throw new Error('이미지의 본문·사진 역할을 확인하세요.');
     for(const [id,fit] of Object.entries(editorial.imageFit||{}))if(!imageParts.some(s=>s.id===id)||fit!=='contain')throw new Error('원본 이미지의 전체 표시 대상을 확인하세요.');
@@ -140,11 +152,11 @@
       const paragraphs=clean(text).split(/\n\s*\n/);
       for(let p=0;p<paragraphs.length;p++) {
         let paragraph=paragraphs[p];
-        const heading=paragraph.length<=60&&/^(?:\d+[.)]\s*\S.*|후기\s*\d*|대박\s*\d+사건|세\s*줄\s*요약|.{1,12}\s왈)$/.test(paragraph);
-        if(heading&&editorial.keepLongHeadingsWithNext===true&&paragraphs[p+1]){
-          const following=paragraphs[p+1],firstSentence=following.split(/(?<=[^\d][.!?。])\s+(?=\S)/)[0];
-          paragraph+='\n'+firstSentence;
-          const remainder=following.slice(firstSentence.length).trim();
+        const heading=isHeading(paragraph);
+        if(heading&&paragraphs[p+1]){
+          const following=paragraphs[p+1],opening=firstSentence(following);
+          paragraph+='\n'+opening;
+          const remainder=following.slice(opening.length).trim();
           if(remainder)paragraphs[p+1]=remainder;else p++;
           if(ops.length&&y+wrap(paragraph,W-2*PAD,size,measure,weight).length*lineHeight>MAXH-PAD)nextPage();
         }
@@ -153,7 +165,7 @@
         if(!paragraph)continue;
         // Keep complete sentences together when a paragraph exceeds one page.
         const full=wrap(paragraph,W-2*PAD,size,measure,weight),fits=full.length*lineHeight<=MAXH-2*PAD;
-        const units=fits?[paragraph]:paragraph.split(editorial.keepLongHeadingsWithNext===true?/(?<=[^\d][.!?。])\s+(?=\S)/:/(?<=[.!?。])\s+(?=\S)/);
+        const units=fits?[paragraph]:paragraph.split(/(?<=[^\d][.!?。])\s+(?=\S)/);
         for(const unit of units) {
           const lines=wrap(unit.trim(),W-2*PAD,size,measure,weight);
           if(ops.length&&lines.length*lineHeight<=MAXH-2*PAD&&y+lines.length*lineHeight>MAXH-PAD)nextPage();
@@ -251,19 +263,22 @@
           omitted.push({sourceId:part.id,reason:'isolated_filler_reaction',text});if(part.after?.note?.trim())addText(part.after.note,part.id,'note');continue;
         }
         if(seenText.has(text)){omitted.push({sourceId:part.id,reason:'duplicate_text'});continue;}
-        if(keepWithNext.includes(part.id)&&used[index+1]?.kind==='text'){
-          const weight=style.fontId==='gothic'?800:400;
+        if((keepWithNext.includes(part.id)||isHeading(text))&&used[index+1]?.kind==='text'){
+          const weight=style.fontId==='gothic'?800:400,nextPart=used[index+1];
+          const following=clean(nextPart.text).split(/\n\s*\n/)[0],opening=firstSentence(following);
           const headingLines=wrap(text,W-2*PAD,BODY,measure,weight).length;
-          let nextLines=0,followingParts=0;
-          for(let look=index+1;look<Math.min(index+4,used.length)&&used[look].kind==='text';look++){
-            const nextText=clean(used[look].text).split(/\n\s*\n/)[0];
-            nextLines+=wrap(nextText,W-2*PAD,BODY,measure,weight).length;followingParts++;
-            if(nextText.length>18||/[.!?。？！]$/.test(nextText))break;
-          }
-          const reserve=Math.min(nextLines,Math.max(2,Math.floor((MAXH-2*PAD-32)/LINE)-headingLines));
-          if(ops.length&&y+(headingLines+reserve)*LINE+32*followingParts>MAXH-PAD)finishPage();
+          const openingLines=wrap(opening,W-2*PAD,BODY,measure,weight).length;
+          const availableLines=Math.floor((MAXH-2*PAD-32)/LINE);
+          const reserve=headingLines+openingLines<=availableLines?openingLines:Math.min(openingLines,Math.max(2,availableLines-headingLines));
+          if(ops.length&&y+(headingLines+reserve)*LINE+32>MAXH-PAD)finishPage();
+          leadingContinuation.set(nextPart.id,opening);
         }
-        seenText.add(text);addText(text,part.id);
+        seenText.add(text);
+        const opening=leadingContinuation.get(part.id);
+        if(opening&&text.startsWith(opening)){
+          addText(opening,part.id);
+          const remainder=text.slice(opening.length).trim();if(remainder)addText(remainder,part.id);
+        }else addText(text,part.id);
       }else {
         const next=used[index+1],lines=next?.kind==='text'&&next.text.length<=80?wrap(next.text,W-2*PAD,BODY,measure).length:0;
         addImage(part,lines&&lines<=2?lines*LINE+28:0);
