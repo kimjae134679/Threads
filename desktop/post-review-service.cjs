@@ -1,13 +1,16 @@
 'use strict';
 const {BrowserWindow,ipcMain,shell,dialog}=require('electron'),path=require('node:path'),fs=require('node:fs/promises');
+const {getMaterialRoot}=require('./material-paths.cjs');
 const {createPostReviewStore}=require('./post-review-store.cjs');
 const url='cut-editor://app/source-cut-post-review.html';
-function registerPostReview({app,trusted,preferences}){
- const store=createPostReviewStore(path.join(app.getPath('desktop'),'Threads Cut Editor 자료'));let window=null,closing=false;
+function registerPostReview({app,trusted,preferences,materialRoot=getMaterialRoot(app)}){
+ const legacyFeedbackFile=!app.isPackaged&&process.env.THREADS_TEST_MATERIAL_ROOT?null:path.join(app.getPath('desktop'),'Threads Cut Editor 자료','07_사용자 평가','평가 기록.json');
+ const store=createPostReviewStore(materialRoot,{legacyFeedbackFile});let window=null,closing=false;
  const guard=e=>{if(!window||e.sender!==window.webContents||e.senderFrame!==window.webContents.mainFrame||e.senderFrame.url!==url)throw Error('허용되지 않은 평가 요청입니다.');};
  async function open(id){
-  if(window&&!window.isDestroyed()){window.show();window.focus();if(id)window.webContents.send('post-review:select',id);return;}
-  window=new BrowserWindow({width:1250,height:1000,minWidth:760,minHeight:650,title:'Threads 게시글 평가',autoHideMenuBar:true,webPreferences:{...preferences,preload:path.join(__dirname,'post-review-preload.cjs')}});
+  const background=process.argv.includes('--background-worker');
+  if(window&&!window.isDestroyed()){if(!background){window.show();window.focus();}if(id)window.webContents.send('post-review:select',id);return;}
+  window=new BrowserWindow({show:!background,width:1250,height:1000,minWidth:760,minHeight:650,title:'Threads 게시글 평가',autoHideMenuBar:true,webPreferences:{...preferences,preload:path.join(__dirname,'post-review-preload.cjs')}});
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));window.webContents.on('will-navigate',e=>e.preventDefault());
   window.on('close',e=>{
    if(closing)return;e.preventDefault();const current=window;

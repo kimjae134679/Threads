@@ -9,7 +9,7 @@ const {writeAtomic}=require('./atomic-file.cjs');
 const digest=data=>createHash('sha256').update(data).digest('hex');
 const safe=value=>String(value||'source').replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,80);
 const label=value=>String(value||'원문').normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,' ').replace(/\s+/g,' ').trim().slice(0,42).replace(/[. ]+$/,'')||'원문';
-const RULE_VERSION='2026-10-06.3';
+const RULE_VERSION='2026-10-07.4';
 // Text-only layouts keep their existing fingerprint when pixel analysis changes.
 const fingerprintFor=job=>digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job)+(job.files?.length?'|image-analysis-2026-10-04.4':''));
 const statuses=['published','generated','already_done','needs_source','needs_access','needs_exact_url','needs_media','needs_selection','unavailable','excluded_severe','failed'];

@@ -56,6 +56,10 @@ const encoded = new TextEncoder().encode('123456789');
 assert.equal(window.ThreadsSourceCutZip.crc32(encoded), 0xcbf43926);
 const archive = window.ThreadsSourceCutZip.zip([{ name: 'cover.png', data: encoded }, { name: '본문.json', data: new TextEncoder().encode('{"한글":true}') }]);
 const python = process.platform === 'win32' ? ['py', '-3'] : ['python3'];
-const verified = spawnSync(python[0], [...python.slice(1), '-c', 'import sys,io,zipfile; z=zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read())); assert z.testzip() is None; assert z.read("cover.png")==b"123456789"; assert z.read("본문.json").decode()==\'{"한글":true}\'; print("ZIP verified")'], { input: Buffer.from(await archive.arrayBuffer()), encoding: 'utf8' });
+let verified = spawnSync(python[0], [...python.slice(1), '-c', 'import sys,io,zipfile; z=zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read())); assert z.testzip() is None; assert z.read("cover.png")==b"123456789"; assert z.read("본문.json").decode()==\'{"한글":true}\'; print("ZIP verified")'], { input: Buffer.from(await archive.arrayBuffer()), encoding: 'utf8' });
+if(process.platform==='win32'&&(verified.error?.code==='ENOENT'||/No installed Python found/.test(verified.stderr||''))){
+ const script=`$ErrorActionPreference='Stop'; Add-Type -AssemblyName System.IO.Compression; $m=[System.IO.MemoryStream]::new(); [Console]::OpenStandardInput().CopyTo($m); $m.Position=0; $z=[System.IO.Compression.ZipArchive]::new($m,[System.IO.Compression.ZipArchiveMode]::Read); if($z.Entries.Count -ne 2){throw 'ZIP entry count'}; foreach($pair in @(@('cover.png','123456789'),@('본문.json','{"한글":true}'))){$reader=[System.IO.StreamReader]::new($z.GetEntry($pair[0]).Open(),[System.Text.Encoding]::UTF8); try{if($reader.ReadToEnd() -cne $pair[1]){throw 'ZIP payload mismatch'}}finally{$reader.Dispose()}}; $z.Dispose(); $m.Dispose(); Write-Output 'ZIP verified with .NET'`;
+ verified=spawnSync('pwsh',['-NoProfile','-EncodedCommand',Buffer.from(script,'utf16le').toString('base64')],{input:Buffer.from(await archive.arrayBuffer()),encoding:'utf8'});
+}
 assert.equal(verified.status, 0, verified.stderr);
 console.log('Manual crop geometry, scrolling coordinates, colored outlines, project restore and independent ZIP reader: PASS');

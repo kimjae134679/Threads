@@ -10,12 +10,13 @@
  let verticalObserver=null;
  function paintList(){
   const scrollTop=$('posts').scrollTop;thumbs.disconnect();$('posts').replaceChildren();const q=$('search').value.toLocaleLowerCase(),f=$('filter').value;
-  const rows=entries.filter(r=>(r.title+' '+r.coverTitle).toLocaleLowerCase().includes(q)&&(f==='all'||f==='unrated'&&r.current?.score==null||f==='rated'&&r.current?.score!=null||f==='low'&&r.current?.score!=null&&r.current.score<=5));
+  const rows=entries.filter(r=>(r.title+' '+r.coverTitle).toLocaleLowerCase().includes(q)&&(f==='all'||r.category===f||f==='unrated'&&r.current?.score==null||f==='rated'&&r.current?.score!=null||f==='low'&&r.current?.score!=null&&r.current.score<=5));
+  rows.sort((a,b)=>a.rank-b.rank);
   $('count').textContent=entries.length+'개 글 · '+entries.filter(r=>r.current?.score!=null).length+'개 평가 · 표시 '+rows.length+'개';
   for(const row of rows){
    const b=document.createElement('button');b.type='button';b.className='post-card'+(current?.id===row.id?' active':'');b.dataset.id=row.id;b.setAttribute('aria-pressed',String(current?.id===row.id));
    const img=document.createElement('img');img.alt='';img.dataset.id=row.id;thumbs.observe(img);
-   const text=document.createElement('div'),title=document.createElement('b'),meta=document.createElement('small');title.textContent=row.coverTitle;meta.textContent=row.pages+'장 · '+(row.current?.score!=null?'★ '+row.current.score+'/10':'미평가');text.append(title,meta);b.append(img,text);b.onclick=()=>select(row.id).catch(showError);$('posts').append(b);
+   const text=document.createElement('div'),title=document.createElement('b'),meta=document.createElement('small');title.textContent=row.coverTitle;meta.textContent=row.pages+'장 · '+(row.current?.score!=null?'★ '+row.current.score+'/10':'미평가');if(row.categoryLabel){const category=document.createElement('small');category.textContent=row.categoryLabel;text.append(category);}text.append(title,meta);b.append(img,text);b.onclick=()=>select(row.id).catch(showError);$('posts').append(b);
   }
   $('posts').scrollTop=scrollTop;
  }
@@ -46,7 +47,7 @@
  }
  async function select(id){
   await flush();const row=entries.find(r=>r.id===id);if(!row)return;current=row;page=1;selection++;$('reader').hidden=false;$('error').hidden=true;
-  $('title').textContent=row.coverTitle;$('original').textContent=row.title===row.coverTitle?'':'원제 · '+row.title;$('postMeta').textContent=row.pages+'장 · 현재 제작 결과';
+  $('title').textContent=row.coverTitle;$('original').textContent=row.title===row.coverTitle?'':'원제 · '+row.title;$('postMeta').textContent=row.pages+'장 · '+(row.categoryLabel||'현재 제작 결과');
   $('note').value=row.current?.note||'';paintScore();status(row.current?'저장된 평가를 불러왔어요':'점수나 메모를 남겨주세요');
   $('previous').hidden=!row.previous;$('previous').textContent=row.previous?'이전 제작 버전 평가 · '+(row.previous.score??'점수 없음')+' / 10\n'+row.previous.note:'';
   $('pageSelect').replaceChildren();for(let n=1;n<=row.pages;n++){const option=document.createElement('option');option.value=n;option.textContent=n+' / '+row.pages;$('pageSelect').append(option);}
@@ -64,5 +65,5 @@
  window.ThreadsPostReviewUI=Object.freeze({flush,select});
  if(!api){showError(Error('설치된 Threads 게시글 평가 프로그램에서 여세요.'));return;}
  api.onSelect(id=>{requestedId=id;if(entries.length)select(id).catch(showError);});
- api.list().then(result=>{entries=result.entries;paintList();if(entries.length)return select(requestedId||entries[0].id);$('title').textContent='아직 제작된 글이 없습니다.';}).catch(showError);
+ api.list().then(result=>{entries=result.entries;paintList();if(entries.length)return select(requestedId||[...entries].sort((a,b)=>a.rank-b.rank)[0].id);$('title').textContent='아직 제작된 글이 없습니다.';}).catch(showError);
 })();

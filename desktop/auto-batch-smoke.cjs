@@ -8,7 +8,7 @@ const {app,BrowserWindow}=require('electron');
 const scratch=fs.mkdtempSync(path.join(os.tmpdir(),'threads-auto-smoke-'));
 const material=path.join(scratch,'Threads Cut Editor 자료');
 const input=path.join(material,'01_후보 기록');
-fs.mkdirSync(input,{recursive:true});app.setPath('desktop',scratch);
+fs.mkdirSync(input,{recursive:true});process.env.THREADS_TEST_MATERIAL_ROOT=material;
 fs.mkdirSync(path.join(__dirname,'dist','auto-batch-profile'),{recursive:true});
 app.setPath('userData',path.join(__dirname,'dist','auto-batch-profile'));
 function source(folder,name,data){fs.mkdirSync(path.join(input,folder),{recursive:true});fs.writeFileSync(path.join(input,folder,name),data);}
