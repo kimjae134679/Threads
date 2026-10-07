@@ -11,3 +11,5 @@ Architecture: Java WebView shell, packaged local UI, IndexedDB atomic state/outb
 5. Run Node contracts, isolated browser UI fixture at narrow/wide widths, record actual coverage and blockers. Test fixtures stay outside APK. Commit only mobile/android-review; push its own branch and compare remote HEAD.
 
 Future service requires versioned manifest/criteria, same-origin HTTPS PNG assets with SHA256, operationId idempotency, baseRevision CAS and stale reviewRound rejection. It must adapt canonical desktop evaluations/progress without moving old scores to fresh outputVersion.
+
+Follow-up: officially verify own private GitHub storage/device login; test-first independent injected-API adapter with synthetic REST only. No app registration, keys/tokens, grants or actual data upload. Enforce explicit private identity/isolated branch, pinned reads, non-force Git transactions, version/criteria/revision guards and durable replay IDs. Record pending user setup, native authentication and PC integration. Keep preparation code excluded from APK until authorized activation and actual connection testing.

@@ -26,3 +26,7 @@
 기존 승인된 인터넷 서비스·사용자 인증이 먼저 필요합니다. 서비스가 준비되면 `SERVICE_CONTRACT.md`에 따라 서버 adapter와 기존 인증을 검증하고 serviceConfig/CSP/Android network allowlist를 같은 서비스로 제한해 연결해야 합니다. 일반 INTERNET 선언은 이미 포함했지만 현재 serviceConfig는 미설정이며 WebView 네트워크 로드도 비활성입니다. 인증값과 endpoint 설정 UI는 포함하지 않습니다. 백그라운드 동기화는 구현하지 않았고, 준비 코드는 앱을 연 동안 및 재연결 시 확인합니다. 가장 작은 선택지와 사용자 조치는 `CONNECTION_HANDOFF.md`에 있습니다.
 
 PC 뷰어·원본·사용자 평가·제작 목록·공유 bridge는 이번 변경 대상이 아닙니다. 모바일 평가는 서버 adapter가 PC canonical 평가/진행 저장 계약으로 연결하기 전까지 실제 PC 학습 데이터에 반영되지 않습니다.
+
+## Private GitHub follow-up (source only)
+
+See [GITHUB_SYNC_PREPARATION.md](GITHUB_SYNC_PREPARATION.md) for the officially checked GitHub App/device-flow design, injected-API adapter and mock tests. It is excluded from APK 0.1.1. No real login, repository data write, new app registration, token creation or permission grant has happened. Activation and native auth/PC integration remain pending.

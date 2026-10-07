@@ -42,3 +42,7 @@ node mobile/android-review/test/browser-qa.mjs http://127.0.0.1:PORT
 & .\mobile\android-review\build.ps1
 git diff --check
 ```
+
+## GitHub adapter follow-up
+
+11 synthetic GitHub REST contract tests pass; mobile total is now 26. Independent review identified default-branch isolation missing; reproduced red, added metadata guard and zero-write regression, then green. Source-only module excluded from APK; no Android rebuild/UI change or real GitHub authentication/sync evidence is claimed. Existing APK and 390/800 browser evidence remain from 0.1.1. Exact pending user setup/native auth/PC import/export is documented in GITHUB_SYNC_PREPARATION.md.
