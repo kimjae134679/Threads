@@ -46,16 +46,67 @@ async function providerFor(c,deps){
  if(provider?.contract!=='pc-review-credential-provider-v1'||typeof provider.getAccessToken!=='function')fail('provider_not_configured');
  return provider;
 }
+// Parse Windows arguments in memory; never expose command lines or profiles.
+function windowsArgs(line){
+ if(typeof line!=='string'||!line.trim()||line.length>128*1024)return null;
+ const args=[];let i=0;
+ while(i<line.length){
+  while(/[ \t]/.test(line[i]||'')&&i<line.length)i++;if(i===line.length)break;
+  let value='',quoted=false;
+  while(i<line.length&&(quoted||!/[ \t]/.test(line[i]))){
+   if(line[i]==='\\'){
+    let count=0;while(line[i]==='\\'){count++;i++;}
+    if(line[i]==='"'){value+='\\'.repeat(Math.floor(count/2));if(count%2){value+='"';i++;}else if(quoted&&line[i+1]==='"'){value+='"';i+=2;}else{quoted=!quoted;i++;}}
+    else value+='\\'.repeat(count);
+   }else if(line[i]==='"'){if(quoted&&line[i+1]==='"'){value+='"';i+=2;}else{quoted=!quoted;i++;}}
+   else value+=line[i++];
+  }
+  if(quoted)return null;args.push(value);
+ }
+ return args;
+}
+export function classifyInstalledReviewWriters(records){
+ if(!Array.isArray(records))fail('writer_fleet_unverified');
+ const byId=new Map(),duplicateIds=new Set();
+ for(const record of records){if(byId.has(record?.processId))duplicateIds.add(record.processId);byId.set(record?.processId,record);}
+ const identity=p=>typeof p==='string'&&path.isAbsolute(p)?path.resolve(p).toLowerCase():null;
+ function role(record,chain=new Set()){
+  if(!record||!Number.isSafeInteger(record.processId)||record.processId<1||duplicateIds.has(record.processId)||chain.has(record.processId)||chain.size>=64)return 'unknown';
+  const exe=identity(record.executablePath),args=windowsArgs(record.commandLine);if(!exe||!args?.length||identity(args[0])!==exe)return 'unknown';
+  const flags=args.slice(1),types=flags.filter(a=>a.startsWith('--type=')),review=flags.includes('--review-only'),audit=flags.some(a=>a.startsWith('--review-audit=')),runner=flags.includes('--pc-review-run');
+  if(types.length){
+   if(types.length!==1||types[0]==='--type='||review||audit||runner||!Number.isSafeInteger(record.parentProcessId)||record.parentProcessId<1)return 'unknown';
+   const parent=byId.get(record.parentProcessId);if(!parent||identity(parent.executablePath)!==exe)return 'unknown';
+   const next=new Set(chain);next.add(record.processId);return role(parent,next);
+  }
+  if(runner&&(review||audit))return 'unknown';
+  return runner?'pc-review-run':audit?'review-audit':review?'review-only':'editor';
+ }
+ return records.map(record=>({processId:record?.processId,executablePath:record?.executablePath,role:role(record)}));
+}
+export function decodeInstalledReviewWriterProbe(result){
+ if(result?.status!==0||result.error||result.signal||typeof result.stderr!=='string'||result.stderr.trim()||typeof result.stdout!=='string'||!result.stdout.trim()||result.stdout.length>1000000)fail('writer_fleet_unverified');
+ let envelope;try{envelope=JSON.parse(result.stdout);}catch{fail('writer_fleet_unverified');}
+ const fields=['schemaVersion','probe','ok','records'];
+ if(!plain(envelope)||Object.keys(envelope).length!==fields.length||Object.keys(envelope).some(k=>!fields.includes(k))||envelope.schemaVersion!==1||envelope.probe!=='threads-review-writers-v1'||envelope.ok!==true||!Array.isArray(envelope.records)||envelope.records.length>10000)fail('writer_fleet_unverified');
+ if(envelope.records.some(p=>!plain(p)||Object.keys(p).length!==4||Object.keys(p).some(k=>!['ProcessId','ParentProcessId','ExecutablePath','CommandLine'].includes(k))))fail('writer_fleet_unverified');
+ return classifyInstalledReviewWriters(envelope.records.map(p=>({processId:p.ProcessId,parentProcessId:p.ParentProcessId,executablePath:p.ExecutablePath,commandLine:p.CommandLine})));
+}
 export async function inspectInstalledReviewWriters(){
  if(process.platform!=='win32')fail('writer_fleet_unverified');
- const r=spawnSync('powershell',['-NoProfile','-NonInteractive','-Command',"@(Get-CimInstance Win32_Process -Filter \"Name='Threads Cut Editor.exe'\" | Select-Object ProcessId,ExecutablePath) | ConvertTo-Json -Compress"],{windowsHide:true,encoding:'utf8',timeout:15000,maxBuffer:1000000});
- if(r.status!==0)fail('writer_fleet_unverified');const records=JSON.parse(r.stdout.trim()||'[]');return (Array.isArray(records)?records:[records]).map(p=>({executablePath:p.ExecutablePath}));
+ // A failed CIM query must never masquerade as a successfully empty fleet.
+ // Raw command lines are consumed only in memory and omitted from the result.
+ const command="$ErrorActionPreference='Stop';try{$records=@(Get-CimInstance Win32_Process -Filter \"Name='Threads Cut Editor.exe'\" -ErrorAction Stop | Select-Object ProcessId,ParentProcessId,ExecutablePath,CommandLine);[pscustomobject]@{schemaVersion=1;probe='threads-review-writers-v1';ok=$true;records=$records} | ConvertTo-Json -Depth 4 -Compress}catch{[Console]::Error.WriteLine('Writer probe failed.');exit 1}";
+ const result=spawnSync('powershell',['-NoProfile','-NonInteractive','-Command',command],{windowsHide:true,encoding:'utf8',timeout:15000,maxBuffer:1000000});
+ return decodeInstalledReviewWriterProbe(result);
 }
 async function verifyFleet(c,inspect){
  if(!c.canonicalMergeApproved)return;
  const expected=hash(await fs.readFile(new URL('../../../desktop/review-canonical-writer.cjs',import.meta.url)));
  if(expected!==c.writerFleet.canonicalWriterSha256)fail('writer_fleet_unverified');
  const running=await inspect();if(!Array.isArray(running))fail('writer_fleet_unverified');
+ // A module fingerprint alone does not authorize ordinary editor batch writes.
+ if(running.some(app=>!Number.isSafeInteger(app?.processId)||app.processId<1||!['review-only','review-audit','pc-review-run'].includes(app.role)))fail('writer_fleet_unverified');
  for(const app of running){const executable=absolute(app.executablePath),w=c.writerFleet.writers.find(w=>absolute(w.executablePath).toLowerCase()===executable.toLowerCase());if(!w)fail('writer_fleet_unverified');const resources=path.join(path.dirname(executable),'resources'),asar=path.join(resources,'app.asar');if(hash(await fs.readFile(asar))!==w.asarSha256||hash(await fs.readFile(path.join(asar,'review-canonical-writer.cjs')))!==expected)fail('writer_fleet_unverified');}
 }
 async function saveResult(root,result){

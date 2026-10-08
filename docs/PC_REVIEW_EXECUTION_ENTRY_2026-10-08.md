@@ -14,7 +14,7 @@ Adapter는 createPcCredentialProvider({repository,providerId})를 export하고 {
 
 API 시험은 createPcReviewRunner({providers,fetchImpl,inspectWriters}).runOnce({config,action:'cycle'})의 registered provider를 주입한다. 배포 명령에는 registry를 자동 채우지 않는다. missing provider는 blocked로 처리한다. 출처가 확인되지 않은 key/token 대체 방법을 사용하지 않는다.
 
-실제 merge 설정은 writerFleet={materialRoot,canonicalWriterSha256,writers:[{executablePath,asarSha256}]}를 요구한다. 현재 실행 중인 Threads Cut Editor.exe만 경로와 ASAR·공동 writer 지문을 확인한다. 현재0.3.15처럼 공동 writer가 없는 앱은 block한다. 이 점검은 미래에 legacy 앱을 다시 실행하는 것을 막지 않으므로 운영 전에 모든 writer를 통합 앱으로 전환해야 한다. 외부 adapter 실행이나 원격 호출 전에 material/state/export 경계와 fleet를 점검한다.
+실제 merge 설정은 writerFleet={materialRoot,canonicalWriterSha256,writers:[{executablePath,asarSha256}]}를 요구한다. 현재 실행 중인 Threads Cut Editor.exe만 경로와 ASAR·공동 writer 지문을 확인한다. 현재0.3.15처럼 공동 writer가 없는 앱은 block한다. 같은0.3.19라도 일반편집 모드는 batch/status writer가 공동 평가 잠금을 쓰지 않으므로 block한다. 명시 review-only(읽기 감사 포함)·pc-review-run 역할만 허용하고 Electron 자식은 동일 실행 경로의 확인된 부모 역할을 상속한다. 역할 미확인·부모 불명·순환은 block한다. Threads 프로세스의 command line은 역할 판별 중에만 메모리에서 읽으며 원문·경로 인수·개인 프로필을 기록하지 않는다. 프로세스 조회 오류·빈 출력·성공 envelope 누락도 빈 fleet으로 인정하지 않고 차단한다. 이 점검은 미래에 legacy 앱을 다시 실행하는 것을 막지 않으므로 운영 전에 모든 writer를 검증된 역할로 전환해야 한다. 기존 편집의 미저장 작업을 저장하고 정상 종료한 뒤0.3.19 --review-only를 사용한다. 일반편집·제작은 모바일 교환을 끈 별도 단계에서 진행하고, 새 결과는 격리 제작/완료 회차 활성화 절차로 전달한다. 강제 종료·자동 작업 복구·프로필 마이그레이션은 수행하지 않는다. 외부 adapter 실행이나 원격 호출 전에 material/state/export 경계와 fleet를 점검한다.
 
 ## 짧은 원본 잠금과 공급
 

@@ -46,3 +46,43 @@ test('failed started cycle leaves a sanitized durable report without hiding sour
  const f=await fixture(t),m=await load(),mock=mockReviewGithub(repository),row=f.rows[0];await fs.writeFile(path.join(f.root,'06_자동 제작 결과',row.outputFolder,row.images[0].name),'synthetic damaged image');
  const result=await m.createPcReviewRunner({providers:{fixture:{contract:'pc-review-credential-provider-v1',getAccessToken:()=> 'SYNTHETIC_SECRET_ACCESS'}},inspectWriters:async()=>[],fetchImpl:mock.fetch}).runOnce({config:f.config});assert.equal(result.status,'blocked');assert.equal(typeof result.reportFile,'string');const record=await fs.readFile(result.reportFile,'utf8');assert.equal(JSON.parse(record).status,'blocked');assert(!record.includes('SYNTHETIC_SECRET_ACCESS'));assert.equal(mock.calls.length,0);
 });
+
+test('exact installed fingerprints cannot authorize editor or unknown writer roles',async t=>{
+ const f=await fixture(t),m=await load(),mock=mockReviewGithub(repository),exe=path.join(f.base,'approved-install','Threads Cut Editor.exe'),asar=path.join(path.dirname(exe),'resources','app.asar'),virtual=path.join(asar,'review-canonical-writer.cjs');
+ const canonical=await fs.readFile(new URL('../desktop/review-canonical-writer.cjs',import.meta.url)),asarBytes=Buffer.from('synthetic-exact-approved-archive');
+ const originalRead=fs.readFile;fs.readFile=async(file,...args)=>String(file)===asar?asarBytes:String(file)===virtual?canonical:originalRead(file,...args);t.after(()=>{fs.readFile=originalRead;});
+ const config={...f.config,writerFleet:{...f.config.writerFleet,writers:[{executablePath:exe,asarSha256:createHash('sha256').update(asarBytes).digest('hex')}]}};
+ let providers=0,transport=0;
+ for(const role of ['editor','unknown',undefined]){
+  const deps={providers:{get fixture(){providers++;return {contract:'pc-review-credential-provider-v1',getAccessToken:()=> 'synthetic-role-token'};}},inspectWriters:async()=>[{processId:101,executablePath:exe,...(role?{role}:{})}],fetchImpl:async(...args)=>{transport++;return mock.fetch(...args);}};
+  const result=await m.createPcReviewRunner(deps).runOnce({config});assert.equal(result.status,'blocked');assert.equal(result.reason,'writer_fleet_unverified');assert.equal(JSON.parse(await fs.readFile(result.reportFile)).reason,'writer_fleet_unverified');
+ }
+ assert.equal(providers,0);assert.equal(transport,0);
+ const safe=m.classifyInstalledReviewWriters([{processId:101,parentProcessId:999,executablePath:exe,commandLine:'"'+exe+'" --review-only'},{processId:102,parentProcessId:101,executablePath:exe,commandLine:'"'+exe+'" --type=renderer'}]);
+ const accepted=await m.createPcReviewRunner({providers:{fixture:{contract:'pc-review-credential-provider-v1',getAccessToken:()=> 'synthetic-role-token'}},inspectWriters:async()=>safe,fetchImpl:mock.fetch}).runOnce({config});assert.equal(accepted.status,'completed');assert.equal(accepted.supply.status,'confirmed');
+});
+test('installed role classifier inherits safe main roles only through identical-executable parent chains',async()=>{
+ const m=await load(),exe=path.resolve('C:/synthetic/Threads Cut Editor.exe'),other=path.resolve('C:/other/Threads Cut Editor.exe');
+ const row=(processId,parentProcessId,args,executablePath=exe)=>({processId,parentProcessId,executablePath,commandLine:'"'+executablePath+'" '+args});
+ const result=m.classifyInstalledReviewWriters([row(1,999,'--review-only'),row(2,1,'--type=renderer'),row(3,2,'--type=utility'),row(4,999,'--pc-review-run'),row(5,4,'--type=gpu-process'),row(6,999,'--review-audit=C:/synthetic/audit'),row(7,6,'--type=renderer'),row(8,999,''),row(9,8,'--type=renderer'),row(10,1,'--type=renderer',other)]);
+ assert.deepEqual(result.map(x=>x.role),['review-only','review-only','review-only','pc-review-run','pc-review-run','review-audit','review-audit','editor','editor','unknown']);
+ assert(result.every(x=>Object.keys(x).sort().join(',')==='executablePath,processId,role'));assert(!JSON.stringify(result).includes('commandLine'));
+});
+test('installed role classifier fails closed for missing, ambiguous, quoted-pseudo-role and cyclic parents',async()=>{
+ const m=await load(),exe=path.resolve('C:/synthetic/Threads Cut Editor.exe'),row=(processId,parentProcessId,args)=>({processId,parentProcessId,executablePath:exe,commandLine:'"'+exe+'" '+args});
+ const records=[row(11,999,'--type=renderer'),row(12,13,'--type=renderer'),row(13,12,'--type=utility'),{processId:14,parentProcessId:999,executablePath:exe,commandLine:null},row(15,999,'--review-only --pc-review-run'),row(16,999,'"--review-only fake"'),row(17,999,'"unclosed --review-only'),row(18,999,'--type=renderer --review-only')];
+ assert.deepEqual(m.classifyInstalledReviewWriters(records).map(x=>x.role),['unknown','unknown','unknown','unknown','unknown','editor','unknown','unknown']);
+});
+
+test('writer probe requires explicit success envelope and never treats failed or empty output as empty fleet',async t=>{
+ const f=await fixture(t),m=await load(),success={schemaVersion:1,probe:'threads-review-writers-v1',ok:true,records:[]};
+ const wire=body=>({status:0,stdout:JSON.stringify(body),stderr:''});
+ assert.deepEqual(m.decodeInstalledReviewWriterProbe(wire(success)),[]);
+ let providers=0,transport=0;
+ for(const probe of [{...wire(success),stderr:'synthetic CIM error'}, {...wire(success),stdout:''},wire([]),wire({}),wire({...success,ok:false}),{...wire(success),status:1},{...wire(success),error:Error('synthetic failed spawn')},{...wire(success),signal:'SIGTERM'}]){
+  const result=await m.createPcReviewRunner({providers:{get fixture(){providers++;throw Error('probe failure must precede provider');}},inspectWriters:async()=>m.decodeInstalledReviewWriterProbe(probe),fetchImpl:()=>{transport++;throw Error('unused');}}).runOnce({config:f.config});
+  assert.equal(result.status,'blocked');assert.equal(result.reason,'writer_fleet_unverified');assert.equal(JSON.parse(await fs.readFile(result.reportFile)).reason,'writer_fleet_unverified');
+ }
+ assert.equal(providers,0);assert.equal(transport,0);
+ const mock=mockReviewGithub(repository),result=await m.createPcReviewRunner({providers:{fixture:{contract:'pc-review-credential-provider-v1',getAccessToken:()=> 'synthetic-probe-token'}},inspectWriters:async()=>m.decodeInstalledReviewWriterProbe(wire(success)),fetchImpl:mock.fetch}).runOnce({config:f.config});assert.equal(result.status,'completed');
+});

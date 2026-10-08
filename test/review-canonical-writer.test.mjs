@@ -154,3 +154,20 @@ test('activation inside an owned barrier checks CAS after earlier owned saves fi
  fs.rename=async(from,to)=>{if(to===store.file&&first){first=false;entered();await gate;}return originalRename(from,to);};
  try{await store.withCanonicalWriter(async()=>{const saving=store.save({id:rows[0].id,outputVersion:version(rows[0]),score:7,note:'synthetic PC'});await ready;const activating=activateReviewRelease(root,stage,expected);let settled=false;activating.then(()=>settled=true,()=>settled=true);await pause(30);try{assert.equal(settled,false);}finally{release();await Promise.allSettled([saving,activating]);}await assert.rejects(activating);assert.equal((await store.list()).entries[0].current.score,7);});}finally{fs.rename=originalRename;release();}
 });
+
+test('transient Windows exclusive-create denial retries only exclusive creation before work',async t=>{
+ const root=await fixture(t),file=path.join(root,'review-canonical-writer.lock'),original=fs.open;let attempts=0,work=0;
+ fs.open=async(p,flags,...args)=>{if(p===file&&flags==='wx'&&attempts++<2)throw Object.assign(Error('Synthetic Windows delete-pending create'),{code:'EPERM'});return original(p,flags,...args);};
+ try{assert.equal(await api().withCanonicalWriter(root,()=>{work++;return 3;}),3);assert.equal(work,1);assert.ok(attempts>=3);}finally{fs.open=original;}
+});
+test('persistent Windows exclusive-create denial is bounded and preserves another exact identity',async t=>{
+ const root=await fixture(t),file=path.join(root,'review-canonical-writer.lock'),owner=JSON.stringify({pid:process.pid,host:os.hostname(),nonce:'preserved-live-owner'});await fs.writeFile(file,owner);
+ const original=fs.open,originalUnlink=fs.unlink;let work=0,attempts=0,unlinks=0;const started=Date.now();
+ fs.open=async(p,flags,...args)=>{if(p===file&&flags==='wx'){attempts++;throw Object.assign(Error('Synthetic persistent create denial'),{code:'EACCES'});}return original(p,flags,...args);};fs.unlink=async(...args)=>{unlinks++;return originalUnlink(...args);};
+ try{await assert.rejects(api().withCanonicalWriter(root,()=>work++),{code:'EACCES'});assert.equal(work,0);assert.equal(unlinks,0);assert.ok(attempts>1);assert.equal(await fs.readFile(file,'utf8'),owner);assert.ok(Date.now()-started>=900&&Date.now()-started<5000);}finally{fs.open=original;fs.unlink=originalUnlink;}
+});
+test('Windows delete-pending reclaimer creation retries with exact dead-owner checks intact',async t=>{
+ const root=await fixture(t),file=path.join(root,'review-canonical-writer.lock'),guard=file+'.reclaim',departed=spawn(process.execPath,['-e',''],{windowsHide:true,stdio:'ignore'});await once(departed,'exit');await fs.writeFile(file,JSON.stringify({pid:departed.pid,host:os.hostname(),nonce:'known-dead-owner'}));
+ const original=fs.open;let attempts=0;fs.open=async(p,flags,...args)=>{if(p===guard&&flags==='wx'&&attempts++<2)throw Object.assign(Error('Synthetic busy reclaimer create'),{code:'EBUSY'});return original(p,flags,...args);};
+ try{assert.equal(await api().withCanonicalWriter(root,()=>7),7);assert.ok(attempts>=3);}finally{fs.open=original;}
+});
