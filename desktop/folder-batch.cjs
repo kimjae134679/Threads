@@ -6,6 +6,7 @@ const {loadBatchInput}=require('./batch-input.cjs');
 const {sourceAccess}=require('./source-access.cjs');
 const {writeCatalog,writeResultGallery}=require('./batch-catalog.cjs');
 const {writeAtomic}=require('./atomic-file.cjs');
+const {isInfrastructureFailure}=require('./universal-reproduction.cjs');
 const digest=data=>createHash('sha256').update(data).digest('hex');
 const safe=value=>String(value||'source').replace(/[^a-zA-Z0-9_-]/g,'_').slice(0,80);
 const label=value=>String(value||'원문').normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,' ').replace(/\s+/g,' ').trim().slice(0,42).replace(/[. ]+$/,'')||'원문';
@@ -71,7 +72,7 @@ async function intactOutput(destination,entry,fingerprint) {
   }
   return true;
 }
-async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{},cancelled=()=>false}) {
+async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{},cancelled=()=>false,preserveReplacedOutputs=false}) {
   const root=path.resolve(folder),destination=path.resolve(output);
   if(inside(root,destination))throw new Error('결과 폴더는 입력 폴더 바깥에 두세요.');
   const candidates=await discoverCandidates(root);
@@ -153,6 +154,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
           entry.title=result.title||entry.title;
           outputFolder=path.posix.join('현재 결과',label(entry.title)+'__'+entry.id);
           const target=path.join(destination,outputFolder);
+          if(preserveReplacedOutputs&&await exists(target)){const history=path.join(destination,'이전 캐시 결과');await fs.mkdir(history,{recursive:true});await fs.rename(target,path.join(history,path.basename(target)+'-'+Date.now()));}
           await fs.mkdir(path.join(target,'rendered'),{recursive:true});
           const imageRecords=[];
           for(const image of result.images) {
@@ -169,6 +171,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
           if(result.productionPlan)await fs.writeFile(path.join(target,'production-plan.json'),JSON.stringify(result.productionPlan,null,2)+'\n','utf8');
           entry.generatedAt=new Date().toISOString();entry.plannedAt=result.productionPlan?.preparedAt||entry.generatedAt;
           entry.templateId=result.productionPlan?.templateId||null;
+          if(result.intakeAudit?.rawBodyAndCommentsExact===true)entry.ruleVersion=result.productionPlan.ruleVersion;
           entry.reviewStatus='needs_review';entry.publicationStatus=lifecycle.publicationStatus;
           Object.assign(entry,{title:result.title||entry.title,status:'generated',reason:'검수 전 이미지 제작 완료',outputFolder,
             previewZip:path.posix.join(outputFolder,'review-preview.zip'),sourceFingerprint:fingerprint,
@@ -184,6 +187,7 @@ async function processFolderBatch({folder,output,render,acquire,onProgress=()=>{
           outputFolder:entry.outputFolder,sourceFingerprint:entry.sourceFingerprint},null,2)+'\n','utf8');
       }
     } catch(error) {
+      if(error.infrastructureFatal||isInfrastructureFailure(error))throw error;
       entry.reason=String(error.message).slice(0,400);
       entry.status=error.published?'published':/첫 장의 실제 원문 조각/.test(entry.reason)?'needs_selection':/심한 소재 제외/.test(entry.reason)?'excluded_severe':
         /원문 이미지 파일 누락|원문 영상·임베드/.test(entry.reason)?'needs_media':
@@ -208,6 +212,7 @@ async function runFolderBatch(options) {
   const output=path.resolve(options.output);
   if(inside(path.resolve(options.folder),output))throw new Error('결과 폴더는 입력 폴더 바깥에 두세요.');
   await fs.mkdir(output,{recursive:true});
+  for(const guard of ['intake.lock','review-delivery.lock']){const gate=path.join(path.dirname(output),guard);if(await exists(gate)){const owner=JSON.parse(await fs.readFile(gate,'utf8'));let live=true;try{process.kill(owner.pid,0);}catch(e){if(e.code==='ESRCH')live=false;else throw e;}if(live)throw Error('이 자료에서 다른 자동 정리·리뷰 전환이 실행 중입니다.');}}
   const file=path.join(output,'batch.lock');
   let handle;
   for(let attempt=0;attempt<2;attempt++) {

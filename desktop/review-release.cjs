@@ -11,14 +11,21 @@ async function prepareReviewRelease(sourceRoot,stagingRoot,{reviewRound,expected
  if(!/^[a-zA-Z0-9_-]{1,80}$/.test(reviewRound)||!Number.isInteger(expectedPosts)||expectedPosts<1)throw Error('검토 회차와 전체 글 수를 지정하세요.');
  sourceRoot=path.resolve(sourceRoot);stagingRoot=path.resolve(stagingRoot);await noLinks(stagingRoot);if(await bytes(path.join(stagingRoot,'release-ready.json')))throw Error('이미 준비된 회차입니다.');
  const sourceOut=path.join(sourceRoot,'06_자동 제작 결과'),statusFile=path.join(sourceOut,'status.json'),raw=await fs.readFile(statusFile),report=JSON.parse(raw);
- const rows=report.entries?.filter(e=>e.outputFolder&&e.images?.length)||[];
+ const rows=report.entries?.filter(e=>e.outputFolder&&e.images?.length)||[],intake=report.intakeContract==='verified-intake-v1';
  if(rows.length!==expectedPosts||new Set(rows.map(r=>r.id)).size!==expectedPosts||report.entries.some(e=>e.status==='failed')||report.processed!==report.entries.length)throw Error('전체 제작 완료와 오류를 확인하세요.');
- if(rows.some(r=>r.status!=='generated'))throw Error('전체를 새 제작한 결과만 전달할 수 있습니다.');
+ if(rows.some(r=>r.status!=='generated'&&!(intake&&report.reproductionContract!=='universal-reproduction-v1'&&r.status==='already_done')))throw Error('전체를 새 제작한 결과만 전달할 수 있습니다.');
  if(report.reproductionContract==='universal-reproduction-v1'){
   const proofBytes=await bytes(path.join(sourceRoot,'reproduction-complete.json')),fatal=await bytes(path.join(sourceRoot,'reproduction-fatal.json'));
   if(!proofBytes||fatal||report.reviewRound!==reviewRound||report.deliveryStatus!=='complete'||report.wholeCollectionRegenerated!==true)throw Error('전체 재제작 완료 증거를 확인하세요.');
   const proof=JSON.parse(proofBytes);
   if(proof.reviewRound!==reviewRound||proof.generated!==rows.length||!Number.isInteger(proof.held)||proof.held<0||proof.planned!==proof.generated+proof.held||proof.sourceBytesUnchanged!==true)throw Error('전체 재제작 완료 증거를 확인하세요.');
+ }
+ if(intake){
+  const proofBytes=await bytes(path.join(sourceRoot,'intake-complete.json')),fatal=await bytes(path.join(sourceRoot,'intake-fatal.json'));
+  if(!proofBytes||fatal||report.reviewRound!==reviewRound||report.deliveryStatus!=='complete'||rows.some(r=>r.intakeAuditPassed!==true&&r.preservedCurrent!==true))throw Error('신규 자료 등록 완료 증거와 제작 검증을 확인하세요.');
+  const proof=JSON.parse(proofBytes),ids=proof.registeredIds,outputIds=new Set(rows.map(r=>r.id));
+  const exactIds=Array.isArray(ids)&&ids.length===rows.length&&new Set(ids).size===ids.length&&ids.every(id=>typeof id==='string'&&id.length>0&&outputIds.has(id));
+  if(proof.reviewRound!==reviewRound||proof.completed!==true||proof.sourceBytesUnchanged!==true||!exactIds||proof.posts!==rows.length||proof.pages!==rows.reduce((sum,row)=>sum+row.images.length,0))throw Error('신규 자료 등록 완료 증거를 확인하세요.');
  }
  const output=path.join(stagingRoot,'06_자동 제작 결과');await fs.mkdir(output,{recursive:true});const changed=structuredClone(report),audited=[];let pages=0;
  for(const row of rows){
@@ -34,10 +41,10 @@ async function prepareReviewRelease(sourceRoot,stagingRoot,{reviewRound,expected
  await writeAtomic(path.join(output,'status.json'),JSON.stringify(changed,null,2)+'\n');
  const ratings=path.join(stagingRoot,'07_사용자 평가');await fs.mkdir(ratings,{recursive:true});await writeAtomic(path.join(ratings,'평가 기록.json'),JSON.stringify({schemaVersion:1,recordType:'user_post_quality_feedback',reviewRound,evaluations:[]},null,2)+'\n');
  await writeAtomic(path.join(ratings,'검토 진행.json'),JSON.stringify({schemaVersion:1,recordType:'user_review_workflow',reviewRound,entries:[]},null,2)+'\n');
- const ready={schemaVersion:1,reviewRound,posts:rows.length,pages,sourceStatusSha256:hash(raw),preparedAt:changed.preparedAt,wholeCollectionRegenerated:true,newScores:0,newMemos:0,audited};
+ const ready={schemaVersion:1,reviewRound,posts:rows.length,pages,sourceStatusSha256:hash(raw),preparedAt:changed.preparedAt,wholeCollectionRegenerated:!intake,newScores:0,newMemos:0,audited};
  await writeAtomic(path.join(stagingRoot,'release-ready.json'),JSON.stringify(ready,null,2)+'\n');return ready;
 }
-async function activateReviewRelease(materialRoot,stagingRoot,{expectedStatusSha256,expectedFeedbackSha256,expectedWorkflowSha256,expectedPointerSha256}){
+async function activateReviewReleaseUnlocked(materialRoot,stagingRoot,{expectedStatusSha256,expectedFeedbackSha256,expectedWorkflowSha256,expectedPointerSha256}){
  const root=path.resolve(materialRoot),stage=path.resolve(stagingRoot),ready=JSON.parse(await fs.readFile(path.join(stage,'release-ready.json'))),output=path.join(root,'06_자동 제작 결과'),feedback=path.join(root,'07_사용자 평가'),status=path.join(output,'status.json'),ratings=path.join(feedback,'평가 기록.json'),workflow=path.join(feedback,'검토 진행.json'),pointer=path.join(root,'review-current.json');
  await noLinks(root);await noLinks(stage);const marker=await bytes(pointer),oldPointerSha256=marker?hash(marker):null;if(marker&&JSON.parse(marker).reviewRound===ready.reviewRound)return {alreadyActive:true,...ready};
  if(expectedPointerSha256!==undefined&&oldPointerSha256!==expectedPointerSha256)throw Error('검토 회차가 변경됐습니다. 다시 확인한 뒤 적용하세요.');
@@ -64,5 +71,13 @@ async function activateReviewRelease(materialRoot,stagingRoot,{expectedStatusSha
   return {reviewRound:ready.reviewRound,posts:ready.posts,pages:ready.pages,archive,moved,activeFeedbackCount:0,oldBytesPreserved:true};
  }catch(error){
   try{if(installedFeedback)await fs.rename(feedback,path.join(stage,'07_사용자 평가'));if(installedOutput)await fs.rename(output,path.join(stage,'06_자동 제작 결과'));for(const name of [...moved].reverse())await fs.rename(inside(archive,name),inside(root,name));if(pointerWritten){if(marker)await writeAtomic(pointer,marker.toString('utf8'));else await fs.rm(pointer,{force:true});}await writeAtomic(journal,JSON.stringify({reviewRound:ready.reviewRound,complete:true,rolledBack:true,archive,error:error.message},null,2)+'\n');}catch(rollbackError){await writeAtomic(journal,JSON.stringify({reviewRound:ready.reviewRound,complete:false,archive,moved,error:error.message,rollbackError:rollbackError.message},null,2)+'\n');}throw error;}
+}
+async function activateReviewRelease(materialRoot,stagingRoot,options){
+ const root=path.resolve(materialRoot);await noLinks(root);await fs.mkdir(root,{recursive:true});
+ const alive=pid=>{if(!Number.isInteger(pid)||pid<1)return false;try{process.kill(pid,0);return true;}catch(e){return e.code==='EPERM';}};
+ for(const relative of ['06_자동 제작 결과/batch.lock','intake.lock']){const b=await bytes(path.join(root,relative));if(b){let lock;try{lock=JSON.parse(b);}catch{throw Error('실행 중 잠금 형식을 확인하세요: '+relative);}if(alive(lock.pid)&&(relative!=='intake.lock'||lock.pid!==process.pid))throw Error('제작 작업이 실행 중입니다: '+relative);}}
+ const lockFile=path.join(root,'review-delivery.lock');await noLinks(lockFile);let handle;
+ try{handle=await fs.open(lockFile,'wx');}catch(e){if(e.code!=='EEXIST')throw e;let lock;try{lock=JSON.parse(await fs.readFile(lockFile));}catch{throw Error('리뷰 교체가 실행 중입니다. 잠금을 확인하세요.');}if(alive(lock.pid))throw Error('리뷰 교체가 실행 중입니다.');await fs.rename(lockFile,lockFile+'.stale-'+Date.now());handle=await fs.open(lockFile,'wx');}
+ try{await handle.writeFile(JSON.stringify({pid:process.pid,startedAt:new Date().toISOString()}));return await activateReviewReleaseUnlocked(materialRoot,stagingRoot,options);}finally{await handle.close();await fs.rm(lockFile,{force:true});}
 }
 module.exports={prepareReviewRelease,activateReviewRelease};

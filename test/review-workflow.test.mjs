@@ -56,3 +56,30 @@ try{
  assert.equal(await fs.readFile(store.workflowFile,'utf8'),'invalid');
  console.log('Review workflow: durable actual views, version separation, topic classification, eligible unseen random, reversible triage and original ratings preserved PASS');
 }finally{await fs.rm(root,{recursive:true,force:true});}
+
+const preservedRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'threads-preserved-triage-'));
+try {
+ const out = path.join(preservedRoot, '06_자동 제작 결과'), folder = path.join(out, 'current');
+ await fs.mkdir(folder, {recursive:true});
+ await fs.writeFile(path.join(folder,'production-plan.json'), JSON.stringify({coverTitle:'Fixture',sourceUnits:[],pages:[{role:'cover'}]}));
+ const base = {title:'Fixture',outputFolder:'current',sourceFingerprint:'fixture',outputSha256:'fixture',ruleVersion:'fixture',reviewRound:'fresh-round',images:[{name:'rendered/slide-001.png',sha256:'fixture'}]};
+ const rows = [{...base,id:'held',disposition:'held',reasonCode:'source_insufficient'},{...base,id:'rejected',disposition:'rejected',reasonCode:'material_unsuitable'}];
+ await fs.writeFile(path.join(out,'status.json'), JSON.stringify({reviewRound:'fresh-round',entries:rows}));
+ await fs.writeFile(path.join(preservedRoot,'review-current.json'), JSON.stringify({reviewRound:'fresh-round'}));
+ const freshStore = createPostReviewStore(preservedRoot, {readOnly:true});
+ let fresh = await freshStore.list();
+ assert.equal(fresh.entries.find(e=>e.id==='held').disposition,'held');
+ assert.equal(fresh.entries.find(e=>e.id==='rejected').disposition,'rejected');
+ assert(fresh.entries.every(e=>e.progress===null && e.current===null));
+ assert.equal(await freshStore.random({}),null,'preserved held and rejected rows must remain outside random review');
+ rows.push({...base,id:'eligible',disposition:'eligible'});
+ await fs.writeFile(path.join(out,'status.json'), JSON.stringify({reviewRound:'fresh-round',entries:rows}));
+ assert.equal((await freshStore.random({})).id,'eligible');
+ const {initialDisposition} = require('../desktop/review-workflow-model.cjs');
+ assert.equal(initialDisposition({...base,disposition:'invalid'}),'eligible','invalid explicit disposition must fall back to output eligibility');
+ console.log('Preserved row triage remains held/rejected in fresh store and random review excludes both: PASS');
+} finally {
+ assert(path.resolve(preservedRoot).startsWith(path.resolve(os.tmpdir()) + path.sep));
+ assert(path.basename(preservedRoot).startsWith('threads-preserved-triage-'));
+ await fs.rm(preservedRoot,{recursive:true,force:true});
+}

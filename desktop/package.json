@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -47,7 +47,16 @@
       "feedback-migration.cjs",
       "review-release.cjs",
       "review-workflow-model.cjs",
-      "review-installed-audit.cjs"
+      "review-installed-audit.cjs",
+      "batch-render.cjs",
+      "universal-reproduction.cjs",
+      "universal-cover.cjs",
+      "universal-cover-canvas.cjs",
+      "intake-policy.cjs",
+      "intake-pipeline.cjs",
+      "intake-pipeline-cli.cjs",
+      "intake-pipeline-run.cjs",
+      "reflow-review-covers-run.cjs"
     ],
     "extraResources": [
       {

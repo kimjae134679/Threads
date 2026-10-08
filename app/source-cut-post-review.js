@@ -45,7 +45,7 @@
   for(const row of rows){
    const b=document.createElement('button');b.type='button';b.className='post-card'+(current?.id===row.id?' active':'');b.dataset.id=row.id;b.setAttribute('aria-pressed',String(current?.id===row.id));
    const img=document.createElement('img');img.alt='';img.dataset.id=row.id;if(row.hasOutput)thumbs.observe(img);
-   const text=document.createElement('div'),title=document.createElement('b'),meta=document.createElement('small');title.textContent=row.coverTitle;meta.textContent=(row.hasOutput?row.pages+'장':'제작물 없음')+' · '+(row.progress?.seenAt?'본 글':'안 본 글')+' · '+(row.current?.score!=null?'★ '+row.current.score+'/10':'미평가');if(row.categoryLabel){const category=document.createElement('small');category.textContent=row.categoryLabel;text.append(category);}text.append(title,meta);b.append(img,text);b.onclick=()=>select(row.id).catch(showError);$('posts').append(b);
+   const text=document.createElement('div'),title=document.createElement('b'),meta=document.createElement('small');title.textContent=row.coverTitle;title.title=row.coverTitle;meta.textContent=(row.hasOutput?row.pages+'장':'제작물 없음')+' · '+(row.progress?.seenAt?'본 글':'안 본 글')+' · '+(row.current?.score!=null?'★ '+row.current.score+'/10':'미평가');if(row.categoryLabel){const category=document.createElement('small');category.textContent=row.categoryLabel;text.append(category);}text.append(title,meta);b.append(img,text);b.onclick=()=>select(row.id).catch(showError);$('posts').append(b);
   }
   $('posts').scrollTop=scrollTop;paintNavigation();
  }

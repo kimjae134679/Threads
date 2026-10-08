@@ -8,7 +8,7 @@ const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&
 const href=relative=>relative.replaceAll('\\','/').split('/').map(encodeURIComponent).join('/');
 async function writeCatalog(output,report){
  const rows=report.entries.map(row=>{
-  const input=path.relative(output,path.join(report.inputFolder,row.relativePath||'.','자료 안내.txt'));
+  const input=path.relative(output,path.join(row.originalInputFolder||report.inputFolder,row.relativePath||'.',row.sourceReferenceFile||'자료 안내.txt'));
   const result=row.outputFolder?href(row.outputFolder+'/rendered/slide-001.png'):null;
   return '<details data-title="'+escape(row.title.toLocaleLowerCase())+'" data-ready="'+(row.outputFolder?'1':'0')+'"><summary><b>'+
    escape(row.title||'제목 미확인')+'</b><span>'+escape(labels[row.status]||row.status)+'</span></summary><div class="body">'+

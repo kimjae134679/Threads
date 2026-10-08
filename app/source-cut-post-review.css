@@ -9,3 +9,8 @@
 .seen-filter input{width:auto;margin:0}.seen-filter{justify-content:flex-start}.triage-tools input{width:min(100%,340px)}
 
 .stage.cover-page figure{display:flex;flex-direction:column;align-items:center}.stage.cover-page img{width:auto;max-width:100%;max-height:var(--cover-height);object-fit:contain}#reader.zoom .stage.cover-page img{width:100%;max-height:none}
+
+.post-card img{object-fit:contain}.post-card b{font-size:14px;-webkit-line-clamp:3;white-space:pre-line}
+@media(max-height:760px){.library{padding:12px 10px;gap:5px}.library h1{font-size:21px;margin:4px 0}.library header p{margin:3px 0}.library #roundLabel{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.library input,.library select{padding:7px}.library>button,.review-cycle-actions button{font-size:13px;padding:7px}.seen-filter{padding:3px 0}.posts{min-height:110px}.post-card{padding:7px;gap:8px}}
+
+.post-card{flex-shrink:0}

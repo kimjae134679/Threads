@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);let P={};try{P=require('../desktop/intake-policy.cjs');}catch{}
+assert.equal(typeof P.inspectRecord,'function','intake input policy must exist');
+const raw={schema:'threads-verbatim-source-v1',verbatim:true,title:'원문 제목',body:'첫 문단\n[IMAGE:photo.png]\n마지막 문단',comments:[{text:'먼저 댓글',likes:1},{text:'나중 댓글',likes:9}],sourceUrl:'https://example.com/post/1?utm_source=test',intake:{schema:'threads-offline-intake-v1',id:'sample',provenance:{kind:'user_provided',reference:'사용자 저장 원문'},rights:{status:'user_owned',evidence:'직접 작성'},safety:{status:'reviewable',reviewedBy:'사용자'},bodyStatus:'complete',commentsStatus:'provided_subset',media:[{name:'photo.png',sha256:'a'.repeat(64),rightsStatus:'user_owned',evidence:'직접 촬영'}]}};
+assert.equal(P.inspectRecord(raw).disposition,'ready');
+assert.equal(P.canonicalUrl(raw.sourceUrl),'https://example.com/post/1');
+assert.equal(P.canonicalUrl('https://EXAMPLE.com/post/1#reply'),'https://example.com/post/1');
+assert.throws(()=>P.canonicalUrl('https://user:password@example.com/a'),/인증/);
+assert.equal(P.inspectRecord({...raw,body:''}).reasonCode,'source_insufficient');
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,rights:{status:'unknown'}}}).disposition,'research');
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,safety:{status:'held',reason:'사람 확인'}}}).reasonCode,'safety_hold');
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,media:[]}}).reasonCode,'source_insufficient');
+assert.equal(P.inspectRecord({...raw,body:'[IMAGE:../photo.png]'}).reasonCode,'source_insufficient');
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,rights:{status:'test_fixture',evidence:'TEST_ONLY_DO_NOT_PUBLISH'}}}).disposition,'research');
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,rights:{status:'test_fixture',evidence:'TEST_ONLY_DO_NOT_PUBLISH'}}},{allowTestFixtures:true}).disposition,'ready');
+assert.deepEqual(P.inspectRecord(raw).imageNames,['photo.png']);
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,bodyStatus:'partial'}}).reasonCode,'source_insufficient');
+assert.equal(P.inspectRecord({...raw,intake:{...raw.intake,media:[...raw.intake.media,{name:'../private.png',sha256:'b'.repeat(64),rightsStatus:'user_owned',evidence:'fixture'}]}}).reasonCode,'source_insufficient');
+console.log('Offline intake fields, source preservation, image positions, unknown rights and safety holds: PASS');
