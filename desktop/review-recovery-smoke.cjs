@@ -196,6 +196,22 @@ app.whenReady().then(async()=>{
   assert.equal(saveCount,1,'The rejected pending old-round save must never be replayed into the new round');
   checks.push('pending rejected old-round save settles once and its draft survives without replay');store.save=save;
  }
+ if(['all','viewport'].includes(scenario)){
+  await run("document.getElementById('single').click()");await select(first.id);await loaded();
+  await run("window.qaNativeObserver=IntersectionObserver;window.qaDelayVerticalObserver=true;window.IntersectionObserver=class extends window.qaNativeObserver{constructor(callback,options){super((records,observer)=>{if(options?.rootMargin==='350px'&&window.qaDelayVerticalObserver)return;callback(records,observer);},options)}};document.getElementById('vertical').click();document.querySelector('#verticalPages img[data-page=\"10\"]').scrollIntoView({block:'center'});window.dispatchEvent(new Event('scroll'));void 0;");
+  await pause(300);
+  assert.equal(await run("document.querySelector('#verticalPages img[data-page=\"10\"]').naturalWidth"),1080,'Viewport scroll must load the requested page while IntersectionObserver is delayed');
+  await run("document.querySelector('#verticalPages img[data-page=\"1\"]').scrollIntoView({block:'center'});window.dispatchEvent(new Event('scroll'));void 0;");await pause(300);
+  assert.equal(await run("document.querySelector('#verticalPages img[data-page=\"1\"]').naturalWidth"),1080,'Returning to an evicted page must load without observer delay');
+  assert.equal(await run("document.querySelector('#verticalPages img[data-page=\"10\"]').naturalWidth"),1080,'Recently read far pages must remain ready within the bounded recent-page cache');
+  for(const p of [4,7,13,16]){await run("document.querySelector('#verticalPages img[data-page=\""+p+"\"]').scrollIntoView({block:'center'});window.dispatchEvent(new Event('scroll'));void 0;");await pause(150);}
+  assert.equal(await run("document.querySelector('#verticalPages img[data-page=\"10\"]').getAttribute('src')"),null,'Older far pages must be evicted when the recent-page cache fills');
+  const retained=await run("[...document.querySelectorAll('#verticalPages img')].filter(i=>i.getAttribute('src')&&(i.getBoundingClientRect().bottom < -350 || i.getBoundingClientRect().top > innerHeight+350)).map(i=>({pixels:i.naturalWidth*i.naturalHeight}))");
+  assert(retained.length<=3,'At most three recently read far pages may stay decoded');assert(retained.reduce((sum,i)=>sum+i.pixels*4,0)<=16*1024*1024,'Retained decoded pages must stay within16MiB');
+  await run("window.qaRetainedPages=[...document.querySelectorAll('#verticalPages img')].filter(i=>i.getAttribute('src'));window.qaDelayVerticalObserver=false;window.IntersectionObserver=window.qaNativeObserver;document.getElementById('single').click();void 0;");await loaded();
+  assert.equal(await run("window.qaRetainedPages.every(i=>!i.getAttribute('src'))"),true,'Leaving vertical mode must release every retained image source');
+  checks.push('scroll loads and revisits vertical pages without delayed observer; far image sources stay released');
+ }
  if(['all','thumbnail'].includes(scenario)){
   await select(first.id);await loaded();await run("document.getElementById('search').value='NO MATCH THUMBNAIL QA';document.getElementById('search').dispatchEvent(new Event('input'))");await run('window.ThreadsPostReviewUI.reload()');
   let failed=false,attempts=0,rejectOld;const delayedThumb=new Promise((_resolve,reject)=>{rejectOld=reject;});store.image=(id,p,v)=>{if(id===other.id&&p===1){attempts++;if(attempts===1){failed=true;throw Error('표지 썸네일 읽기 실패 — fixture');}if(attempts===2)return delayedThumb;}return image(id,p,v);};

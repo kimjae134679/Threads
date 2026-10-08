@@ -68,7 +68,7 @@
  $('closeTitleDialog').onclick=()=>$('titleDialog').close();
  setLibraryCollapsed(compactLayout);
  function scheduleView(){if(!viewFrame)viewFrame=requestAnimationFrame(()=>{viewFrame=0;recordVisiblePage();});}
- window.addEventListener('scroll',scheduleView,{passive:true});window.addEventListener('resize',()=>{const compact=innerWidth<=900;if(compact!==compactLayout){compactLayout=compact;setLibraryCollapsed(compact);}updateCoverFit();scheduleCoverFit();scheduleView();});document.addEventListener('visibilitychange',scheduleView);
+ window.addEventListener('scroll',()=>{syncVertical?.();scheduleView();},{passive:true});window.addEventListener('resize',()=>{const compact=innerWidth<=900;if(compact!==compactLayout){compactLayout=compact;setLibraryCollapsed(compact);}updateCoverFit();syncVertical?.();scheduleCoverFit();scheduleView();});document.addEventListener('visibilitychange',scheduleView);
 
  function paintProgress(){if(!current)return;const p=current.progress;$('progressLabel').textContent=(p?.seenAt?'본 글 · '+(p.complete?'모든 장 표시':(p.pagesSeen?.length||0)+'/'+current.pages+'장 열람'):'아직 안 본 글')+' · '+(current.current?.score!=null||current.current?.note?.trim()?'평가 기록 있음':'평가 기록 없음')+' · '+({eligible:'검토 대상',held:'보류',rejected:'탈락'}[current.disposition]);}
  function recordVisit(row,p){const token=selection;const operation=visitQueue.catch(()=>{}).then(async()=>{const saved=await api.visit({id:row.id,outputVersion:row.outputVersion,page:p});row.progress=saved;if(current===row){paintProgress();rememberPosition();}if(entries.includes(row))paintList();});visitQueue=operation;operation.catch(error=>{if(current===row&&token===selection)showLoadFailure(error,row,token,p);});return operation;}
@@ -93,7 +93,7 @@
  const thumbRequests=new WeakMap();
  function thumbnailFailure(img){if(!img.isConnected)return;img.alt='표지 오류';img.title='표지를 불러오지 못했습니다. 글을 눌러 재시도하세요.';const card=postCards.get(img.dataset.id);if(card?.img===img)card.b.title=img.title;}
  const thumbs=new IntersectionObserver(records=>{for(const r of records){const img=r.target,ticket=(thumbRequests.get(img)||0)+1;thumbRequests.set(img,ticket);img.dataset.visible=String(r.isIntersecting);if(!r.isIntersecting){img.removeAttribute('src');continue;}const row=entries.find(e=>e.id===img.dataset.id&&e.outputVersion===img.dataset.version);if(!row)continue;getImage(row,1).then(src=>{if(img.isConnected&&thumbRequests.get(img)===ticket&&img.dataset.version===row.outputVersion)img.src=src;}).catch(error=>{if(img.isConnected&&thumbRequests.get(img)===ticket&&entries.includes(row)){thumbnailFailure(img);if(isStale(error)&&current)showLoadFailure(error,current,selection,page);}});}}, {root:$('posts'),rootMargin:'150px'});
- let verticalObserver=null;
+ let verticalObserver=null,syncVertical=null;
  function paintList(){
   const posts=$('posts'),scrollTop=posts.scrollTop,rows=visibleEntries(),ids=new Set(rows.map(r=>r.id));
   for(const [id,card]of postCards)if(!ids.has(id)){thumbs.unobserve(card.img);card.b.remove();postCards.delete(id);}
@@ -142,21 +142,32 @@
   }catch(e){if(ticket===pageRequest&&mode==='single')showLoadFailure(e,row,token,p);}
  }
  function renderVertical(){
-  verticalObserver?.disconnect();visibleObserver?.disconnect();$('verticalPages').replaceChildren();if(mode!=='vertical'||!current)return;
-  const row=current,token=selection,requests=new WeakMap();
+  syncVertical=null;verticalObserver?.disconnect();verticalObserver=null;visibleObserver?.disconnect();visibleObserver=null;for(const img of $('verticalPages').querySelectorAll('img'))img.removeAttribute('src');$('verticalPages').replaceChildren();if(mode!=='vertical'||!current)return;
+  const row=current,token=selection,requests=new WeakMap(),pending=new WeakSet(),recent=new Map();let recentBytes=0;
   if(!row.hasOutput)return;
   visibleObserver=new IntersectionObserver(()=>{if(token===selection)scheduleView();}, {threshold:0.15});
   async function load(img,{retry=false}={}){
+   if(pending.has(img)&&!retry)return;pending.add(img);
    const p=Number(img.dataset.page),figure=img.parentElement,errorBox=figure.querySelector('.vertical-page-error'),ticket=(requests.get(img)||0)+1;requests.set(img,ticket);errorBox.hidden=true;
    try{const src=await getImage(row,p,{refresh:retry});if(token!==selection||row!==current||mode!=='vertical'||!img.isConnected||requests.get(img)!==ticket)return;await decodeImage(src);if(token!==selection||row!==current||mode!=='vertical'||!img.isConnected||requests.get(img)!==ticket)return;
-      img.onload=()=>{if(token!==selection||row!==current||mode!=='vertical'||requests.get(img)!==ticket)return;img.style.aspectRatio=img.naturalWidth+' / '+img.naturalHeight;visibleObserver.observe(img);scheduleView();};img.src=src;verticalFailures.delete(p);
+      img.onload=()=>{if(token!==selection||row!==current||mode!=='vertical'||requests.get(img)!==ticket)return;img.style.aspectRatio=img.naturalWidth+' / '+img.naturalHeight;visibleObserver.observe(img);syncVertical?.();scheduleView();};img.src=src;verticalFailures.delete(p);
     if(!verticalFailures.size&&!loadFailure?.stale){clearLoadFailure();reviewReady(true);}
    }catch(error){if(token!==selection||row!==current||mode!=='vertical'||!img.isConnected||requests.get(img)!==ticket)return;
     verticalFailures.set(p,error);errorBox.hidden=false;showLoadFailure(error,row,token,p);
-   }
+   }finally{if(requests.get(img)===ticket)pending.delete(img);}
   }
-  verticalObserver=new IntersectionObserver(records=>{for(const r of records){const img=r.target;if(r.isIntersecting){if(!img.getAttribute('src'))load(img);}else{requests.set(img,(requests.get(img)||0)+1);visibleObserver.unobserve(img);img.removeAttribute('src');}}}, {rootMargin:'350px'});
+  syncVertical=()=>{
+   if(token!==selection||row!==current||mode!=='vertical'||loadFailure?.stale)return;
+   const images=[...$('verticalPages').querySelectorAll('img')].map(img=>({img,bounds:img.getBoundingClientRect()})),visible=images.filter(({img,bounds:b})=>img.complete&&img.naturalWidth>0&&b.bottom>0&&b.top<innerHeight&&b.right>0&&b.left<innerWidth).sort((a,b)=>Math.abs((a.bounds.top+a.bounds.bottom)/2-innerHeight/2)-Math.abs((b.bounds.top+b.bounds.bottom)/2-innerHeight/2))[0]?.img;
+   if(visible){const bytes=visible.naturalWidth*visible.naturalHeight*4;if(recent.has(visible)){recentBytes-=recent.get(visible);recent.delete(visible);}if(bytes<=16*1024*1024){recent.set(visible,bytes);recentBytes+=bytes;}while(recent.size>3||recentBytes>16*1024*1024){const oldest=recent.keys().next().value;recentBytes-=recent.get(oldest);recent.delete(oldest);}}
+   for(const {img,bounds}of images){const near=bounds.bottom>=-350&&bounds.top<=innerHeight+350&&bounds.right>0&&bounds.left<innerWidth;
+    if(near){if(!img.getAttribute('src')&&img.parentElement.querySelector('.vertical-page-error').hidden)load(img);else if(img.complete&&img.naturalWidth>0)visibleObserver.observe(img);}
+    else if(img.getAttribute('src')||pending.has(img)){requests.set(img,(requests.get(img)||0)+1);pending.delete(img);visibleObserver.unobserve(img);if(!recent.has(img))img.removeAttribute('src');}
+   }
+  };
+  verticalObserver=new IntersectionObserver(()=>syncVertical?.(), {rootMargin:'350px'});
   for(let p=1;p<=row.pages;p++){const figure=document.createElement('figure'),img=document.createElement('img'),caption=document.createElement('figcaption'),errorBox=document.createElement('div'),retry=document.createElement('button');img.alt=row.pageLabels[p-1]+' '+p+'장';img.dataset.page=p;const size=row.pageSizes?.[p-1];if(Number.isFinite(size?.width)&&size.width>0&&Number.isFinite(size?.height)&&size.height>0)img.style.aspectRatio=size.width+' / '+size.height;caption.textContent=row.pageLabels[p-1]+' · '+p+' / '+row.pages;errorBox.className='vertical-page-error';errorBox.hidden=true;errorBox.append(document.createTextNode(p+'장을 불러오지 못했습니다. 최신 회차를 확인하거나 다시 시도하세요.'));retry.type='button';retry.dataset.retryPage=p;retry.textContent=p+'장 다시 불러오기';retry.onclick=()=>{if(loadFailure?.stale)return;load(img,{retry:true});};errorBox.append(retry);figure.append(img,caption,errorBox);$('verticalPages').append(figure);verticalObserver.observe(img);}
+  syncVertical();
  }
  async function select(id,options={}){
   const request=++navigation;rememberPosition();if(loadFailure?.stale){keepDraft(pendingSaves.has(current));await saveQueue.catch(()=>{});if(request!==navigation)return;keepDraft();dirty=false;saveQueue=Promise.resolve();}do{await flush();if(request!==navigation)return;}while(dirty&&!loadFailure?.stale);

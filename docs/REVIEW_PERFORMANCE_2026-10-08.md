@@ -30,3 +30,16 @@
 검수 근거는 작업 폴더 task-8의 performance-final-qa/{baseline,improved}-result.json, performance-qa/{baseline,improved}-result.json, performance-recovery-qa/recovery-check.json, performance-image-integrity.json, performance-installed-package.json, performance-launchers.json, performance-installed-023-audit-{first,restart}/installed-review.json, performance-reopen-check.json, performance-materials-preserved-final.json에 있다. 최종 설치의 ASAR SHA-256은571ba0f56ec8eea4aaddf058aa884c34c3052f37e8d9bb2ac0de300bc7bce5f4이다.
 
 이 변경은 로컬 커밋으로 정리한다. 앞선 QA 커밋2e20bd2의 공개 원격 전송은 자동 승인 검토가 정확한 변경 파일의 공개 전송 승인을 요구하며 거절했다. 그 커밋을 포함하는 성능 커밋도 부모의 지시에 따라 전송하지 않았다. 마지막 확인된 원격 codex/review-integration-20261008은ba8e75e였으며 이 작업에서 push를 시도하지 않았다.
+
+재방문 개선 후보는 기본 설치0.3.23을 유지한 채 복사본에서 검증했다. 화면 관찰·스크롤 전달까지795~998ms, 실제 이미지 읽기는24~91ms였다. 스크롤 즉시 로딩만으로는 숨긴 창의 이벤트 전달 지연을 해결하지 못했다. 기존16MiB/60개 문자열 캐시에 더해 실제 화면 중심에서 읽힌 최근 최대3장을 픽셀당4바이트 기준16MiB 안에서 유지하고, 나머지 먼 이미지와 포스트/모드 변경 때의 보존 이미지는 해제한다. 화면과 인접350px는 스크롤·리사이즈·이미지 로드 시 즉시 동기화하며 현재 요청을 중복 시작하지 않는다.
+
+| 동일 숨긴 창·365글/3073장 복사본 검사 | 0.3.20 | 설치0.3.23 | 재방문 후보 |
+|---|---:|---:|---:|
+| 1·26·52장 첫 재방문 합계 | 1ms | 2887ms | 633ms |
+| 1·26·52장 3회 반복, 총9번(마지막120ms 대기 포함) | 136ms | 9003ms | 831ms |
+| 이후 두 회 반복, 총6번 | 1ms | 5990ms | 65ms |
+| 세로18회 빠른 이동(마지막120ms 대기 포함) | 122ms | 1003ms | 121ms |
+| 12개 글 빠른 전환(마지막120ms 대기 포함) | 152ms | 168ms | 166ms |
+| 반복 방문 뒤 이미지 소스 / renderer working set | 53 / 652.8MiB | 8 / 551.9MiB | 10 / 472.1MiB |
+
+위 수치는 전경 창 체감 시간이나 전체 Chromium 메모리 상한이 아니다. 첫 미보존1장 재방문에는507ms가 남았으며 페이지 수·화면 크기에 따른 현재/인접 이미지는 최근3장 상한 밖에 있다. 지연된 관찰에서 즉시 로딩·최근 페이지 유지·오래된 페이지 제거를 실제 Electron의 RED→GREEN 검사로 확인했다. viewport·vertical·vertical-race·reload·stale 시나리오의9개 핵심 검사와 독립 프로세스의 복사본9점·메모·2페이지 보존을 통과했다. 기존 전체92개 회귀·3073장 무결성 근거는 재사용했다. 측정은 task-8/performance-reentry-qa/{baseline,current,candidate}-result.json에 있고 설치·바로가기·자료·원격은 이번 후보로 변경하지 않았다.
