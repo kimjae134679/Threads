@@ -7,6 +7,7 @@
 // Rerun exactly the same arguments plus --verify-process-restore for independent-process persistence QA.
 const {app,protocol,session,BrowserWindow,nativeTheme}=require('electron');
 const fs=require('node:fs/promises'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {finishQa,reportAndFinishQa}=require('./qa-electron-lifecycle.cjs');
 const args=process.argv.slice(2),qa=args[0],source=args[1],baseline=args[2]?.startsWith('--')?source:(args[2]||source);
 const option=key=>args.find(a=>a.startsWith('--'+key+'='))?.slice(key.length+3);
 const moduleRoot=option('installed-modules')||__dirname,assetRoot=option('assets')||path.join(__dirname,'..','app');
@@ -94,7 +95,20 @@ async function validateCollection(){
  return {square,portrait,photos,body,plans,sourcePhotos,aiAssets};
 }
 app.whenReady().then(async()=>{
- await fs.mkdir(qa,{recursive:true});sourceHead=await head(source);baselineHead=await head(baseline);
+ await fs.mkdir(qa,{recursive:true});
+ await fs.writeFile(path.join(qa,'qa-process.json'),JSON.stringify({pid:process.pid,parentPid:process.ppid,executable:process.execPath,argv:process.argv,observedAtUtc:new Date().toISOString(),startedAtApproxUtc:new Date(Date.now()-process.uptime()*1000).toISOString(),electron:process.versions.electron,fixtureOnly:true},null,2));
+ if(option('qa-lifecycle-self-test')){
+  const outcome=option('qa-lifecycle-self-test');assert(['success','failure','report-failure'].includes(outcome));
+  win=new BrowserWindow({show:false,width:760,height:650,webPreferences:{sandbox:true,contextIsolation:true,nodeIntegration:false,offscreen:true}});
+  let closeRequests=0;win.on('close',event=>{closeRequests++;event.preventDefault();});
+  win.once('closed',()=>require('node:fs').writeFileSync(path.join(qa,'qa-lifecycle-closed.json'),JSON.stringify({pid:process.pid,fixtureOnly:true,windowDestroyed:win.isDestroyed(),remainingWindows:BrowserWindow.getAllWindows().length,closeRequests},null,2)));
+  await win.loadURL('data:text/html;charset=utf-8,'+encodeURIComponent('<!doctype html><title>QA lifecycle fixture only</title><h1>Isolated QA exit verification</h1>'));
+  assert(!win.isVisible());if(outcome==='report-failure'){await fs.mkdir(path.join(qa,'compact-round-error.json'));throw Error('Intentional diagnostic write failure fixture');}
+  if(outcome==='failure')assert.equal(355,364,'Intentional QA assertion failure fixture');
+  await fs.writeFile(path.join(qa,'qa-lifecycle-check.json'),JSON.stringify({pass:true,pid:process.pid,parentPid:process.ppid,fixtureOnly:true,outcome,closeRequests,hidden:!win.isVisible()},null,2));
+  finishQa({app,BrowserWindow,exitCode:0});return;
+ }
+ sourceHead=await head(source);baselineHead=await head(baseline);
  if(restoreOnly){const request=await json(path.join(qa,'process-restore-request.json'));fixture=request.fixture;assert(inside(qa,fixture)&&fixture!==path.resolve(qa),'Restore fixture must belong to the QA directory');}
  else{fixture=await fs.mkdtemp(path.join(qa,'fixture-'));await copyReviewInputs();}
  process.env.THREADS_TEST_MATERIAL_ROOT=fixture;
@@ -126,7 +140,7 @@ app.whenReady().then(async()=>{
   await select(request.id,request.page);assert.equal(await run("document.getElementById('note').value"),request.note);assert.equal(await run("document.querySelector('[data-score=\""+request.score+"\"]').getAttribute('aria-pressed')"),'true');
   assert.deepEqual(await head(source),sourceHead);assert.deepEqual(await head(baseline),baselineHead);
   await fs.writeFile(path.join(qa,'process-restore-check.json'),JSON.stringify({pass:true,fixtureOnly:true,independentProcess:true,pid:process.pid,seedPid:request.createdPid,moduleRoot,assetRoot,servicePreloadPath:preloadPath,realPreloadBridge:true,fixture,id:request.id,reviewRound:request.reviewRound,score:request.score,note:request.note,allWindowsHidden:true,sourceStateUnchanged:true},null,2));
-  console.log('INDEPENDENT PROCESS RESTORE PASS');for(const w of BrowserWindow.getAllWindows())w.destroy();app.exit(0);return;
+  console.log('INDEPENDENT PROCESS RESTORE PASS');finishQa({app,BrowserWindow,exitCode:0});return;
  }
  if(!allowExisting){assert.equal(await run("document.querySelectorAll('#scores [aria-pressed=true]').length"),0);assert.equal(await run("document.getElementById('note').value"),'');assert.equal(await run("document.getElementById('previous').hidden"),true);}
  checks.push('default UI shows exactly 365 current complete posts; new-round scores/memos/history are blank when required');
@@ -206,5 +220,13 @@ app.whenReady().then(async()=>{
  for(const name of allowed)provenance.assets[name]=digest(await fs.readFile(path.join(assetRoot,name)));
  const result={pass:true,compactCoverPass:!legacy,legacyUiOnly:legacy,checkedAt:new Date().toISOString(),fixtureOnly:true,copiedOnlyReviewFiles:true,sourceReadOnly:source,baselineReadOnly:baseline,fixture,reviewRound:savedRound,posts:365,pages:3073,covers:{square:contract.square,portrait:contract.portrait,photosContained:legacy?null:contract.photos,originalSourcePhotos:contract.sourcePhotos,aiAssetsUsed:contract.aiAssets},bodyUnchanged:2708,initialEvaluations,requireBlank:!allowExisting,provenance,copied,checks,geometry,allWindowsHidden:true,sourceStateUnchanged:true};
  await fs.writeFile(path.join(qa,'compact-round-check.json'),JSON.stringify(result,null,2));console.log('COMPACT REVIEW ROUND PASS '+JSON.stringify({...result,geometry:undefined,checks:checks.length,copied:{files:copied.files,bytes:copied.bytes,skippedLinks:copied.skippedLinks.length}}));
- for(const w of BrowserWindow.getAllWindows())w.destroy();app.exit(0);
-}).catch(async error=>{console.error(error.stack);await fs.mkdir(qa,{recursive:true});if(win&&!win.isDestroyed())await snapshot('failure').catch(()=>{});await fs.writeFile(path.join(qa,'compact-round-error.json'),JSON.stringify({pass:false,fixture,checks,geometry,copied,lastJavaScript,rendererMessages,error:error.stack},null,2));app.exit(1);});
+ finishQa({app,BrowserWindow,exitCode:0});
+}).catch(async error=>{
+ console.error(error.stack);
+ await reportAndFinishQa({app,BrowserWindow,exitCode:1,report:async()=>{
+  await fs.mkdir(qa,{recursive:true});
+  await fs.writeFile(path.join(qa,'compact-round-error.json'),JSON.stringify({pass:false,pid:process.pid,parentPid:process.ppid,fixtureOnly:true,fixture,checks,geometry,copied,lastJavaScript,rendererMessages,error:error.stack},null,2));
+  // Error evidence is already durable; a blocked capture must not strand the QA process.
+  if(win&&!win.isDestroyed()){let timeout;try{await Promise.race([snapshot('failure').catch(()=>{}),new Promise(resolve=>{timeout=setTimeout(resolve,1500);})]);}finally{clearTimeout(timeout);}}
+ }});
+});

@@ -1,5 +1,6 @@
 'use strict';
-const {app,protocol,nativeTheme}=require('electron');
+const {app,protocol,nativeTheme,BrowserWindow}=require('electron');
+const {finishQa,reportAndFinishQa}=require('./qa-electron-lifecycle.cjs');
 const fs=require('node:fs/promises'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const moduleRoot=process.argv.find(a=>a.startsWith('--installed-modules='))?.slice('--installed-modules='.length)||__dirname;
 const assetRoot=process.argv.find(a=>a.startsWith('--assets='))?.slice('--assets='.length)||path.join(__dirname,'..','app');
@@ -13,6 +14,7 @@ const digest=value=>crypto.createHash('sha256').update(value).digest('hex');
 async function until(fn,label){for(let i=0;i<150;i++){if(await fn())return;await pause(40);}throw Error('Timed out: '+label);}
 app.whenReady().then(async()=>{
  await fs.mkdir(qa,{recursive:true});fixture=await fs.mkdtemp(path.join(qa,'fixture-'));process.env.THREADS_TEST_MATERIAL_ROOT=fixture;
+ await fs.writeFile(path.join(qa,'qa-process.json'),JSON.stringify({pid:process.pid,parentPid:process.ppid,executable:process.execPath,argv:process.argv,observedAtUtc:new Date().toISOString(),startedAtApproxUtc:new Date(Date.now()-process.uptime()*1000).toISOString(),electron:process.versions.electron,fixtureOnly:true},null,2));
  const report=JSON.parse(await fs.readFile(path.join(source,'06_자동 제작 결과','status.json'),'utf8')),generated=report.entries.filter(e=>e.outputFolder&&e.images.length>=3);
  const first={...generated.find(e=>e.images.length>=19)},other={...generated.find(e=>e.id!==first.id&&(scenario!=='layout'||e.coverAsset))},missing={...report.entries.find(e=>!e.outputFolder)};
  const longest={...generated.reduce((a,b)=>Array.from(a.coverTitle||a.title).length>=Array.from(b.coverTitle||b.title).length?a:b)};
@@ -70,7 +72,7 @@ app.whenReady().then(async()=>{
    await run("document.getElementById('single').click()");
   }
   await fs.writeFile(path.join(qa,'layout-check.json'),JSON.stringify({pass:true,fixtureOnly:true,sourceReadOnly:source,moduleRoot,assetRoot,geometry,checks:['default unzoomed covers >=340px at both window sizes','complete title/photo/long title screenshots','body paging and vertical reading','fixture score and memo save','score memo and triage accessibility'],hidden:!win.isVisible()},null,2));
-  console.log('REVIEW LAYOUT PASS');app.exit(0);return;
+  console.log('REVIEW LAYOUT PASS');finishQa({app,BrowserWindow,exitCode:0});return;
  }
  if(['all','stale'].includes(scenario)){
   const previous=await run("document.getElementById('pageImage').src");await advanceRound();
@@ -194,5 +196,5 @@ app.whenReady().then(async()=>{
   assert.equal(saveCount,1,'The rejected pending old-round save must never be replayed into the new round');
   checks.push('pending rejected old-round save settles once and its draft survives without replay');store.save=save;
  }
- await run('window.ThreadsPostReviewUI.flush()');await fs.writeFile(path.join(qa,'recovery-check.json'),JSON.stringify({pass:true,fixtureOnly:true,sourceReadOnly:source,fixture,scenario,checks,hidden:!win.isVisible()},null,2));console.log('REVIEW RECOVERY PASS '+JSON.stringify({scenario,checks}));app.exit(0);
-}).catch(async error=>{console.error(error);await fs.mkdir(qa,{recursive:true});await fs.writeFile(path.join(qa,'recovery-error.json'),JSON.stringify({pass:false,scenario,fixture,checks,error:error.stack},null,2));app.exit(1);});
+ await run('window.ThreadsPostReviewUI.flush()');await fs.writeFile(path.join(qa,'recovery-check.json'),JSON.stringify({pass:true,fixtureOnly:true,sourceReadOnly:source,fixture,scenario,checks,hidden:!win.isVisible()},null,2));console.log('REVIEW RECOVERY PASS '+JSON.stringify({scenario,checks}));finishQa({app,BrowserWindow,exitCode:0});
+}).catch(async error=>{console.error(error);await reportAndFinishQa({app,BrowserWindow,exitCode:1,report:async()=>{await fs.mkdir(qa,{recursive:true});await fs.writeFile(path.join(qa,'recovery-error.json'),JSON.stringify({pass:false,pid:process.pid,parentPid:process.ppid,fixtureOnly:true,scenario,fixture,checks,error:error.stack},null,2));}});});
