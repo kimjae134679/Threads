@@ -3,7 +3,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('n
 const {classifyTopic,hasOutput,initialDisposition}=require('./review-workflow-model.cjs');
 const {writeAtomic}=require('./atomic-file.cjs');
 const {migrateFeedback}=require('./feedback-migration.cjs');
-const {withCanonicalWriter,bindCanonicalWriter,readCanonicalFile}=require('./review-canonical-writer.cjs');
+const {withCanonicalWriter,bindCanonicalWriter,createCanonicalReader}=require('./review-canonical-writer.cjs');
 function contained(root,file){const rel=path.relative(root,file);if(!rel||rel==='..'||rel.startsWith('..'+path.sep)||path.isAbsolute(rel))throw Error('허용되지 않은 자료 경로입니다.');return file;}
 function version(row){return crypto.createHash('sha256').update(JSON.stringify([row.sourceFingerprint,row.outputSha256,row.ruleVersion,row.images?.map(i=>i.sha256),...(row.reviewRound?[row.reviewRound]:[])])).digest('hex');}
 function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=false}={}){
@@ -11,7 +11,7 @@ function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=fa
  const workflowFile=path.join(folder,'검토 진행.json');
  const historyFolder=path.join(root,'05_이전 작업','리뷰 과거');
  let migration=null;
- const readFile=(candidate,encoding)=>readCanonicalFile(root,candidate,{encoding});
+ const readFile=createCanonicalReader(root);
  async function round(){try{return JSON.parse(await readFile(path.join(root,'review-current.json'),'utf8'));}catch(e){if(e.code==='ENOENT')return null;throw e;}}
  async function deliveryReady(){try{const j=JSON.parse(await readFile(path.join(root,'review-delivery-in-progress.json'),'utf8'));if(!j.complete)throw Error('새 수정본을 적용 중입니다. 완료 후 새로 보기를 눌러주세요.');}catch(e){if(e.code!=='ENOENT')throw e;}}
  async function report(){try{const data=JSON.parse(await readFile(path.join(output,'status.json'),'utf8'));if(!Array.isArray(data.entries))throw Error('제작 목록 형식을 확인하세요.');await deliveryReady();const active=await round();if(active&&(data.reviewRound!==active.reviewRound||data.entries.some(e=>e.outputFolder&&e.reviewRound!==active.reviewRound)))throw Error('현재 수정본 회차가 일치하지 않습니다.');return data.entries;}catch(e){if(e.code==='ENOENT')return [];throw e;}}
@@ -39,7 +39,7 @@ function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=fa
    const previous=row.reviewRound?null:data.evaluations.filter(e=>e.id===row.id&&e.outputVersion!==outputVersion).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0]||null;
    const progress=flow.entries.find(e=>e.id===row.id&&e.outputVersion===outputVersion)||null;
    return {...classifyTopic(row,plan),hasOutput:hasOutput(row),progress,disposition:progress?.disposition||initialDisposition(row),sourceStatus:row.status||'',sourceReason:row.reason||'',category:order.category||'all',categoryLabel:order.categoryLabel||'',rank:order.rank||9999,productionNote:order.reason||'',id:row.id,title:row.title,coverTitle:plan.coverTitle||row.title,outputVersion,pages:row.images?.length||0,ruleVersion:row.ruleVersion,current,previous,
-    pageLabels:(row.images||[]).map((_,i)=>plan.pages?.[i]?.role==='cover'?'표지':plan.pages?.[i]?.role==='comments'?'댓글':'본문')};
+    pageSizes:(row.images||[]).map(i=>({width:i.width,height:i.height})),pageLabels:(row.images||[]).map((_,i)=>plan.pages?.[i]?.role==='cover'?'표지':plan.pages?.[i]?.role==='comments'?'댓글':'본문')};
   }));
   const active=await round();return {entries,workflowFile,feedbackFile:file,reviewRound:active?.reviewRound||null,historyFolder};
  }

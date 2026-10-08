@@ -196,5 +196,17 @@ app.whenReady().then(async()=>{
   assert.equal(saveCount,1,'The rejected pending old-round save must never be replayed into the new round');
   checks.push('pending rejected old-round save settles once and its draft survives without replay');store.save=save;
  }
+ if(['all','thumbnail'].includes(scenario)){
+  await select(first.id);await loaded();await run("document.getElementById('search').value='NO MATCH THUMBNAIL QA';document.getElementById('search').dispatchEvent(new Event('input'))");await run('window.ThreadsPostReviewUI.reload()');
+  let failed=false,attempts=0,rejectOld;const delayedThumb=new Promise((_resolve,reject)=>{rejectOld=reject;});store.image=(id,p,v)=>{if(id===other.id&&p===1){attempts++;if(attempts===1){failed=true;throw Error('표지 썸네일 읽기 실패 — fixture');}if(attempts===2)return delayedThumb;}return image(id,p,v);};
+  await run("document.getElementById('search').value='';document.getElementById('search').dispatchEvent(new Event('input'))");
+  const cardSelector='.post-card[data-id="'+other.id+'"]';await until(()=>failed,'thumbnail failure request');
+  await until(()=>run("document.querySelector("+JSON.stringify(cardSelector+' img')+").alt==='표지 오류'"),'thumbnail explains failure');
+  assert((await run("document.querySelector("+JSON.stringify(cardSelector)+").title")).includes('재시도'));
+  await run("document.querySelector("+JSON.stringify(cardSelector)+").click()");await until(()=>attempts>=2,'stalled thumbnail retry');await run("document.querySelector("+JSON.stringify(cardSelector)+").click()");await loaded();
+  await until(()=>run("document.querySelector("+JSON.stringify(cardSelector+' img')+").naturalWidth>0&&document.querySelector("+JSON.stringify(cardSelector+' img')+").alt===''"),'thumbnail retries on post selection');
+  rejectOld(Error('이전 썸네일 재시도의 늦은 실패'));await pause(100);assert.equal(await run("document.querySelector("+JSON.stringify(cardSelector+' img')+").alt"),'','Late thumbnail retry failure cannot overwrite the newer success');assert.equal(await run("document.getElementById('error').hidden"),true);
+  checks.push('thumbnail failure is explicit; post selection retries reader/thumbnail and late failed retry is ignored');store.image=image;
+ }
  await run('window.ThreadsPostReviewUI.flush()');await fs.writeFile(path.join(qa,'recovery-check.json'),JSON.stringify({pass:true,fixtureOnly:true,sourceReadOnly:source,fixture,scenario,checks,hidden:!win.isVisible()},null,2));console.log('REVIEW RECOVERY PASS '+JSON.stringify({scenario,checks}));finishQa({app,BrowserWindow,exitCode:0});
 }).catch(async error=>{console.error(error);await reportAndFinishQa({app,BrowserWindow,exitCode:1,report:async()=>{await fs.mkdir(qa,{recursive:true});await fs.writeFile(path.join(qa,'recovery-error.json'),JSON.stringify({pass:false,pid:process.pid,parentPid:process.ppid,fixtureOnly:true,scenario,fixture,checks,error:error.stack},null,2));}});});

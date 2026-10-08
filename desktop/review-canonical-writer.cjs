@@ -73,7 +73,7 @@ function withCanonicalWriter(root,work,{serializeReentry=false}={}){
  const settled=operation.catch(()=>{});queues.set(id,settled);settled.then(()=>{if(queues.get(id)===settled)queues.delete(id);});return operation;
 }
 function bindCanonicalWriter(root){return work=>withCanonicalWriter(root,work);}
-async function readCanonicalFile(root,file,{encoding=null,maxBytes=32*1024*1024}={}){
+async function readCanonicalFile(root,file,{encoding=null,maxBytes=32*1024*1024,cache=null}={}){
  const candidate=path.resolve(file),relative=path.relative(path.resolve(root),candidate);
  if(!relative||relative==='..'||relative.startsWith('..'+path.sep)||path.isAbsolute(relative))throw Error('Canonical read is outside its root boundary.');
  if(!Number.isSafeInteger(maxBytes)||maxBytes<1)throw TypeError('Canonical read requires a finite byte bound.');
@@ -85,11 +85,23 @@ async function readCanonicalFile(root,file,{encoding=null,maxBytes=32*1024*1024}
  const handle=await fs.open(candidate,constants.O_RDONLY|(constants.O_NOFOLLOW||0));
  try{
   const opened=await handle.stat({bigint:true});valid(opened);if(!same(before,opened))throw Error('Canonical file identity changed before read.');
-  const chunks=[];let size=0;
-  for(;;){const buffer=Buffer.alloc(Math.min(65536,maxBytes-size+1)),{bytesRead}=await handle.read(buffer,0,buffer.length,null);if(!bytesRead)break;size+=bytesRead;if(size>maxBytes)throw Error('Canonical read exceeded its byte bound.');chunks.push(buffer.subarray(0,bytesRead));}
+  const cached=encoding&&cache?.entries.get(candidate),hit=cached&&same(cached.stat,opened);
+  const chunks=[];let size=hit?cached.bytes.length:0;
+  if(!hit)for(;;){const buffer=Buffer.alloc(Math.min(65536,maxBytes-size+1)),{bytesRead}=await handle.read(buffer,0,buffer.length,null);if(!bytesRead)break;size+=bytesRead;if(size>maxBytes)throw Error('Canonical read exceeded its byte bound.');chunks.push(buffer.subarray(0,bytesRead));}
   const after=await handle.stat({bigint:true});valid(after);await noLinks(candidate);const named=await fs.lstat(candidate,{bigint:true});valid(named);
   if(!same(opened,after)||!same(after,named)||BigInt(size)!==after.size)throw Error('Canonical file identity, size or timestamps changed during read.');
-  const bytes=Buffer.concat(chunks,size);return encoding?bytes.toString(encoding):bytes;
+  const bytes=hit?cached.bytes:Buffer.concat(chunks,size);
+  if(encoding&&cache){
+   const current=cache.entries.get(candidate);if(current){cache.entries.delete(candidate);cache.bytes-=current.bytes.length;}
+   if(bytes.length<=cache.maxBytes){cache.entries.set(candidate,{stat:after,bytes});cache.bytes+=bytes.length;}
+   while(cache.entries.size>cache.maxEntries||cache.bytes>cache.maxBytes){const first=cache.entries.keys().next().value;cache.bytes-=cache.entries.get(first).bytes.length;cache.entries.delete(first);}
+  }
+  return encoding?bytes.toString(encoding):bytes;
  }finally{await handle.close();}
 }
-module.exports={withCanonicalWriter,bindCanonicalWriter,isCanonicalWriterHeld,readCanonicalFile};
+function createCanonicalReader(root,{maxEntries=400,maxBytes=16*1024*1024}={}){
+ if(!Number.isSafeInteger(maxEntries)||maxEntries<1||!Number.isSafeInteger(maxBytes)||maxBytes<1)throw TypeError('Canonical cache requires finite bounds.');
+ const cache={entries:new Map(),bytes:0,maxEntries,maxBytes};
+ return (file,encoding)=>readCanonicalFile(root,file,{encoding,cache});
+}
+module.exports={withCanonicalWriter,bindCanonicalWriter,isCanonicalWriterHeld,readCanonicalFile,createCanonicalReader};
