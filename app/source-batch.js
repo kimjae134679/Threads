@@ -239,7 +239,7 @@
     return p;
   }
   async function sourceZip(item) {
-    const p=readReview(), raw=new Uint8Array(await item.source.arrayBuffer()), packed=[];
+    const p=JSON.parse(JSON.stringify(readReview())), raw=new Uint8Array(await item.source.arrayBuffer()), packed=[];
     p.media=[];
     const seenMedia=new Set();
     for(const s of p.segments.filter(s=>s.selected&&s.kind==='image')) {
@@ -252,6 +252,16 @@
       packed.push({name,data});
     }
     const original='raw/'+safe(item.source.name);
+    if(p.imageComposition){
+      const assets=[];
+      for(const asset of p.imageComposition.assets){
+        const data=Uint8Array.from(atob(asset.data),c=>c.charCodeAt(0)),file='composition/'+asset.name;
+        if(await hash(data)!==asset.sha256)throw new Error('합성 자산 hash mismatch');
+        const {data:encoded,...metadata}=asset;
+        assets.push({...metadata,file});packed.push({name:file,data});
+      }
+      p.imageComposition={...p.imageComposition,assets};
+    }
     p.input.file=original;
     const bundle=Z.zip([{name:'bundle.json',data:bytes(JSON.stringify(p,null,2)+'\n')},
       {name:original,data:raw},...packed]);
@@ -269,6 +279,11 @@
       throw new Error('원문/목록이 없는 ZIP입니다.');
     if(await hash(entries.get(plan.input.file))!==plan.input.sha256) throw new Error('원본 파일이 수정되었습니다.');
     const media=new Map();
+    for(const asset of plan.imageComposition?.assets||[]){
+      const data=entries.get(asset.file);
+      if(!data||await hash(data)!==asset.sha256)throw new Error('합성 이미지 파일 hash mismatch: '+asset.name);
+      media.set(asset.name.toLowerCase(),{name:asset.name,data,type:asset.type});
+    }
     for(const m of plan.media||[]) {
       const data=entries.get(m.file);
       if(!data || await hash(data)!==m.sha256) throw new Error('선별 이미지 파일이 없거나 수정되었습니다: '+m.name);
@@ -308,6 +323,10 @@
       if(!media || await hash(media)!==item.sha256) throw new Error('원본 이미지가 변경되었습니다: '+item.name);
       all.push(new File([media],item.name));
     }
+    if(plan.imageComposition)for(const asset of plan.imageComposition.assets){
+      const data=entries.get(asset.file);if(!data||await hash(data)!==asset.sha256)throw new Error('합성 이미지 hash mismatch');
+      let raw='';for(let i=0;i<data.length;i+=16384)raw+=String.fromCharCode(...data.subarray(i,i+16384));asset.data=btoa(raw);
+    }
     renderReview({plan,source,all});
   }
   async function loadImage(media) {
@@ -328,16 +347,22 @@
     }
     return result;
   }
-  async function layoutFor(plan,media) {
+  async function layoutFor(plan,media,{preserveBodyPlan=null}={}) {
     const images=new Map(),dimensions={};
-    try {for(const item of plan.segments.filter(s=>s.selected&&s.kind==='image')) {
+    try {for(const item of plan.segments.filter(s=>!preserveBodyPlan&&s.selected&&s.kind==='image')) {
       const name=item.mediaName.toLowerCase();if(images.has(name))continue;
       const img=await loadImage(media.get(name));images.set(name,img);
       dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:plan.media?.find(m=>m.name?.toLowerCase()===name)?.sha256,
         analysis:window.ThreadsImageAnalysis.inspect(img)};
     }
     const ctx=document.createElement('canvas').getContext('2d'),font=family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback);
-    const layout=window.ThreadsPagePlan.compile(plan,dimensions,(text,size,weight=400)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;});
+    const layout=preserveBodyPlan?JSON.parse(JSON.stringify(preserveBodyPlan)):window.ThreadsPagePlan.compile(plan,dimensions,(text,size,weight=400)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;});
+    if(preserveBodyPlan){layout.bodyRuleVersion=layout.ruleVersion;layout.ruleVersion=window.ThreadsPagePlan.VERSION;layout.bodyPreserved=true;}
+    for(const asset of plan.imageComposition?.assets||[]){
+      const name=asset.name.toLowerCase(),img=await loadImage(media.get(name));images.set(name,img);
+      dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:asset.sha256};
+    }
+    if(plan.imageComposition||plan.completeCover)window.ThreadsImageComposition.applyComposition(layout,plan,dimensions,(text,size,weight=900)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;},window.ThreadsPagePlan);
     layout.imageAnalysis=dimensions;
     return {layout,images,font};
     }catch(error){releaseImages(images);throw error;}
@@ -347,11 +372,11 @@
     if(pendingAssets)releaseImages(pendingAssets.images);
     pendingAssets=null;
   }
-  async function planBundle(file,{preview=false,universalCover=false}={}) {
+  async function planBundle(file,{preview=false,universalCover=false,preserveBodyPlan=null}={}) {
     releasePending();
     const {plan,media}=await unpack(file,{preview});
     const productionSource=universalCover?window.ThreadsUniversalProductionModel.preparePlan(plan):plan;
-    const prepared=await layoutFor(productionSource,media);
+    const prepared=await layoutFor(productionSource,media,{preserveBodyPlan});
     try {prepared.layout.bundleSha256=await hash(await file.arrayBuffer());}
     catch(error){releaseImages(prepared.images);throw error;}
     const pixels=[...prepared.images.values()].reduce((sum,image)=>sum+image.naturalWidth*image.naturalHeight,0);
@@ -360,7 +385,7 @@
     else releaseImages(prepared.images);
     return prepared.layout;
   }
-  async function renderAssets(plan,media,productionPlan,file) {
+  async function renderAssets(plan,media,productionPlan,file,coverOnly=false) {
     if(pendingAssets?.file===file&&pendingAssets.layout===productionPlan) {
       const prepared=pendingAssets;pendingAssets=null;return prepared;
     }
@@ -368,7 +393,7 @@
     if(!productionPlan)return layoutFor(plan,media);
     const images=new Map();
     try {
-      for(const page of productionPlan.pages)for(const op of page.operations) {
+      for(const page of coverOnly?productionPlan.pages.slice(0,1):productionPlan.pages)for(const op of page.operations) {
         if(op.kind!=='image'||images.has(op.name))continue;
         const source=media.get(op.name);
         if(!source)throw new Error('제작 계획의 원본 이미지가 없습니다: '+op.name);
@@ -377,15 +402,15 @@
       return {layout:productionPlan,images,font:family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback)};
     }catch(error){releaseImages(images);throw error;}
   }
-  async function renderCurated(plan,media,{preview=false,watermark=true,productionPlan=null,file=null}={}) {
+  async function renderCurated(plan,media,{preview=false,watermark=true,productionPlan=null,file=null,coverOnly=false}={}) {
     if(productionPlan&&productionPlan.ruleVersion!==window.ThreadsPagePlan.VERSION)
       throw new Error('제작 계획의 처리 규칙이 변경되었습니다. 다시 계획하세요.');
-    const prepared=await renderAssets(plan,media,productionPlan,file),layout=prepared.layout;
+    const prepared=await renderAssets(plan,media,productionPlan,file,coverOnly),layout=prepared.layout;
     const {images,font}=prepared;
     if(layout.ruleVersion!==window.ThreadsPagePlan.VERSION)throw new Error('제작 계획의 기준 버전이 오래되었습니다. 다시 계획하세요.');
     plan.productionPlan=layout;
     const output=[];
-    try {for(const page of layout.pages) {
+    try {for(const page of coverOnly?layout.pages.slice(0,1):layout.pages) {
       const canvas=document.createElement('canvas');canvas.width=page.width;canvas.height=page.height;
       const ctx=canvas.getContext('2d');ctx.fillStyle=page.background||'#fff';ctx.fillRect(0,0,page.width,page.height);
       ctx.textBaseline='top';
@@ -420,12 +445,12 @@
     }finally{releaseImages(images);}
     return output;
   }
-  async function renderBundle(file,{preview=false,watermark=true,productionPlan=null}={}) {
+  async function renderBundle(file,{preview=false,watermark=true,productionPlan=null,coverOnly=false}={}) {
     try {
     const {plan,media}=await unpack(file,{preview});
     const bundleData=await file.arrayBuffer(),bundleSha256=await hash(bundleData);
     if(productionPlan&&productionPlan.bundleSha256!==bundleSha256)throw new Error('제작 계획과 원문 ZIP이 다릅니다.');
-    const pages=await renderCurated(plan,media,{preview,watermark,productionPlan,file});
+    const pages=await renderCurated(plan,media,{preview,watermark,productionPlan,file,coverOnly});
     const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:bundleSha256,
       sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,
@@ -433,6 +458,7 @@
         .map(s=>({afterSegment:s.id,note:s.after.note,gap:s.after.gap||0})),
       selectedSegments:plan.segments.filter(s=>s.selected).map(s=>({id:s.id,location:s.location,kind:s.kind})),
       selectedComments:plan.comments.filter(c=>c.selected).map(c=>({id:c.id,location:c.location})),
+      imageComposition:plan.productionPlan?.imageComposition||null,
       productionPlan:plan.productionPlan,renderedPages:pages.length,fontFallback:plan.fontFallback||null,publicationAllowed:false,previewOnly:preview};
     return {pages:pages.length,images:pages,zip:Z.zip([...pages,{name:'manifest.json',data:bytes(JSON.stringify(manifest,null,2)+'\n')},
       {name:'source-bundle.zip',data:new Uint8Array(bundleData)}]),title:plan.coverTitle,plan};

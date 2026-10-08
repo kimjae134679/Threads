@@ -1,0 +1,47 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createRequire} from 'node:module';
+import fs from 'node:fs/promises';import path from 'node:path';import os from 'node:os';import {createHash} from 'node:crypto';
+const require=createRequire(import.meta.url);
+test('ready gate requires evidence; a claim locks; held checkpoints stop repeats; latest seen records exclude',async t=>{
+ const {prepare,claim,finish}=require('../desktop/image-work-queue.cjs'),hash=b=>createHash('sha256').update(b).digest('hex');
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'cover-queue-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const material=path.join(root,'material'),work=path.join(root,'work'),repo=path.join(root,'repo'),inputs=path.join(root,'inputs'),output=path.join(material,'06_자동 제작 결과','single');
+ for(const dir of [output,path.join(material,'07_사용자 평가'),inputs,path.join(repo,'docs'),path.join(repo,'desktop'),path.join(repo,'app')])await fs.mkdir(dir,{recursive:true});
+ const write=(p,v)=>fs.writeFile(p,JSON.stringify(v));
+ await write(path.join(material,'06_자동 제작 결과/status.json'),{inputFolder:inputs,entries:[{id:'source-one',sourceUrl:'https://example.com/story',title:'전개 이야기',sourceFingerprint:'current-source',relativePath:'.',outputFolder:'single',images:[{name:'rendered/slide-001.png'}]}]});
+ await write(path.join(material,'07_사용자 평가/평가 기록.json'),{evaluations:[]});const progress=path.join(material,'07_사용자 평가/검토 진행.json'),flow=entries=>({schemaVersion:1,recordType:'user_review_workflow',entries});await write(progress,flow([]));
+ await write(path.join(output,'production-plan.json'),{sourceUnits:[{id:'s1',kind:'text',text:'다음날 확인하니 짧지만 완전한 글이었다.'}]});
+ for(const file of ['docs/COVER_COMPOSITION_2026-10-08.md','desktop/image-production-run.cjs','app/source-batch-image-composition.js'])await fs.writeFile(path.join(repo,file),'fixture');
+ const proof=path.join(root,'parent-complete.json');await fs.writeFile(proof,'actual local test proof');
+ const config={materialRoot:material,workRoot:work,repositoryRoot:repo,attestations:[]};
+ assert.equal((await claim(config)).state,'waiting_for_ready_gate');
+ config.attestations=['parent_work_complete','documents_integrated','supported_gpt_save_verified','cover_consumer_integrated'].map(name=>({name,file:proof,sha256:hash(Buffer.from('actual local test proof'))}));
+ const first=await claim(config);assert.equal(first.state,'claimed');assert.equal(first.generationAllowed,false);assert.equal((await claim(config)).state,'skipped_running');
+ await assert.rejects(finish(config,{postId:first.lease.postId,claimToken:'wrong',state:'held',reason:'test'}),/lease/);
+ const fake=path.join(root,'fake-checkpoint.json');await write(fake,{postId:first.lease.postId,state:'complete',representativeOnly:true,bodyPngPreserved:true});
+ await assert.rejects(finish(config,{...first.lease,state:'complete',productionCheckpoint:fake}),/체크포인트/);
+ await assert.rejects(finish(config,{...first.lease,state:'held'}),/사유/);
+ await finish(config,{...first.lease,state:'held',reason:'장면 계획 미검토'});assert.equal((await claim(config)).state,'exhausted');
+ await fs.mkdir(path.join(first.article.stagingInput,'작업 정보'),{recursive:true});const editorial=path.join(first.article.stagingInput,'작업 정보/editorial-plan.json');await write(editorial,{schema:'threads-editorial-plan-v1',reviewedRevision:1});
+ await write(path.join(first.article.stagingInput,'source.json'),{schema:'threads-verbatim-source-v1',verbatim:true,title:'전개 이야기',body:'원문 그대로인 짧은 본문'});
+ const retry=await claim(config);assert.equal(retry.state,'claimed');assert.notEqual(retry.lease.workFingerprint,first.lease.workFingerprint);
+ const jobA=await require('../desktop/batch-input.cjs').loadBatchInput(first.article.stagingInput,{id:retry.lease.postId,title:retry.lease.title,sourceUrl:retry.lease.sourceUrl,coverOnly:true});
+ await write(fake,{postId:retry.lease.postId,state:'complete',representativeOnly:false,bodyPngPreserved:true,existingOutput:retry.lease.existingOutput,input:retry.lease.stagingInput,target:path.join(work,'results/source-one/A'),bodyImages:0,images:[{file:'rendered/slide-001.png'}],consumedInputFingerprint:require('../desktop/folder-batch.cjs').fingerprintFor(jobA)});
+ await write(editorial,{schema:'threads-editorial-plan-v1',reviewedRevision:2});
+ await assert.rejects(finish(config,{...retry.lease,state:'complete',productionCheckpoint:fake}),/소비 입력 fingerprint/);
+ await finish(config,{...retry.lease,state:'held',reason:'수정 근거 재검토'});assert.equal((await claim(config)).state,'exhausted');
+ await write(progress,{});await assert.rejects(prepare(config),/진행 기록 형식/);await write(progress,flow([]));
+ const history=path.join(material,'05_이전 작업/리뷰 과거/previous/07_사용자 평가');await fs.mkdir(history,{recursive:true});await write(path.join(history,'검토 진행.json'),flow([{id:'source-one',seenAt:'before',outputVersion:'old-round-version'}]));
+ const fresh=await prepare(config);assert.equal(fresh.queue.entries.length,0);assert.equal(fresh.queue.excluded[0].reason,'already_seen');assert.equal(fresh.gate.evidence.reviewHistory.length,1);
+});
+test('story interest prioritizes documented action and turns over a simple paid-service notice',()=>{
+ const {interestSignals}=require('../desktop/image-work-queue.cjs');
+ const story=interestSignals('직장 이야기','처음에는 상사가 화를 내며 싸웠다. 다음날 카드가 발견됐다. 알고보니 계약서를 확인하고 돌려줬다.');
+ const notice=interestSignals('서비스 유료화 안내','이제 서비스가 유료화됩니다. 구독 요금 안내입니다.');
+ assert(story.priority>notice.priority);assert.equal(story.evidenceBasis,'local_source_units');assert(notice.reasons.some(r=>r.includes('안내')));
+});
+test('fresh supply excludes every seen version, current holds, duplicate source URLs and missing source',()=>{
+ const {filterEligible}=require('../desktop/image-work-queue.cjs');
+ const rows=[{id:'seen',sourceUrl:'https://example.com/a',hasSource:true},{id:'other-id-same-seen-source',sourceUrl:'https://example.com/a?utm_source=test',hasSource:true},{id:'held',sourceUrl:'https://example.com/b',hasSource:true},{id:'first',sourceUrl:'https://example.com/c',hasSource:true},{id:'duplicate',sourceUrl:'https://example.com/c',hasSource:true},{id:'missing',sourceUrl:'https://example.com/d',hasSource:false}];
+ const {eligible,excluded}=filterEligible(rows,[{id:'seen',outputVersion:'old',seenAt:'2026-01-01',pagesSeen:[1]},{id:'held',disposition:'held'}]);
+ assert.deepEqual(eligible.map(r=>r.id),['first']);assert.equal(excluded.length,5);assert.equal(excluded[1].reason,'already_seen');
+});

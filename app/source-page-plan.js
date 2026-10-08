@@ -21,6 +21,39 @@
     if(title.length>30&&/^.*?원덬이\s+/.test(title))title=title.replace(/^.*?원덬이\s+/,'');
     return title;
   }
+  function titleInfo(original) {
+    const originalTitle=String(original??''),sourceLabels=[];
+    const label='(?:네이트\\s*판|판|더쿠|인스티즈|블라인드|루리웹)';
+    const prefix=new RegExp('^\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*','u');
+    const suffix=new RegExp('\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*$','u');
+    let displayTitle=originalTitle,match;
+    while((match=displayTitle.match(prefix)||displayTitle.match(/^\s*(?:\{\s*)?판\s*\}\s*/u))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(match[0].length);}
+    while((match=displayTitle.match(suffix)||displayTitle.match(/\s+(?:\{\s*)?판\s*\}\s*$/u))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(0,-match[0].length);}
+    return {originalTitle,displayTitle:displayTitle.trim(),sourceLabels};
+  }
+  function wrapTitle(text,width,measure) {
+    const result=[],paragraphs=String(text).replace(/\r\n?/g,'\n').split('\n');
+    // Old editorial line breaks are hints, never a reason to isolate a glyph.
+    for(let i=paragraphs.length-1;i>0;i--)if(Array.from(paragraphs[i].trim()).length===1&&paragraphs[i-1].trim()){
+      paragraphs[i-1]+=' '+paragraphs[i];paragraphs.splice(i,1);
+    }
+    for(const paragraph of paragraphs){
+      const words=paragraph.match(/\S+/gu)||[];
+      if(!words.length){result.push('');continue;}
+      if(words.some(word=>measure(word)>width))return null;
+      const best=Array(words.length+1).fill(null);best[words.length]={cost:0,lines:[]};
+      for(let i=words.length-1;i>=0;i--)for(let j=i+1;j<=words.length;j++){
+        const line=words.slice(i,j).join(' '),w=measure(line);if(w>width)break;
+        if(!best[j])continue;
+        const orphan=j===words.length&&i>0&&Array.from(line).length<=1;
+        const cost=100000+(width-w)**2*.07+(orphan?1e9:0)+best[j].cost;
+        if(!best[i]||cost<best[i].cost)best[i]={cost,lines:[line,...best[j].lines]};
+      }
+      if(!best[0]||best[0].lines.length>1&&Array.from(best[0].lines.at(-1)).length<=1)return null;
+      result.push(...best[0].lines);
+    }
+    return result;
+  }
   function compile(plan,dimensions,measure) {
     const omitted=[],warnings=[],pages=[],editorial=plan.editorial||{},style=plan.style||{};
     const fixed=style.canvasMode==='instagram',MAXH=fixed&&style.aspectRatio==='3:4'?1440:MAX;
@@ -407,5 +440,5 @@
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};
   }
-  return Object.freeze({VERSION,compile,wrap,plainLink,headline});
+  return Object.freeze({VERSION,compile,wrap,plainLink,headline,titleInfo,wrapTitle});
 });

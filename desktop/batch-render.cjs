@@ -2,6 +2,7 @@
 const fs=require('node:fs/promises'),path=require('node:path');
 const modelModule={exports:{}};require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(__dirname,'../app/universal-production-model.js'),'utf8'),{module:modelModule});
 const {auditLayout,normalize}=modelModule.exports;
+const {prepareImageComposition}=require('./image-composition.cjs');
 function assertExactIntake(source,layout){
  const audit=auditLayout(layout);if(!audit.ok)throw Error('본문·이미지·댓글 무결성 검증 실패: '+JSON.stringify(audit.issues));
  const ops=layout.pages.flatMap(p=>p.operations||[]);
@@ -9,9 +10,12 @@ function assertExactIntake(source,layout){
  const expectedImages=source.segments.filter(s=>s.kind==='image').map(s=>s.mediaName.toLowerCase());const actualImages=audit.images.filter(s=>!s.omitted&&s.exact).map(s=>s.mediaName.toLowerCase());if(JSON.stringify(expectedImages)!==JSON.stringify(actualImages))throw Error('원문 전체 이미지 위치 검증 실패');
  return {...audit,rawBodyAndCommentsExact:true};
 }
-async function renderBatchInput(job,{getWindow,context={},universalCover=false,strict=false}={}) {
+async function renderBatchInput(job,{getWindow,context={},universalCover=false,strict=false,preserveBodyPlan=null}={}) {
     if(job.imageHandoff?.generationRequests?.length)throw new Error('image generation consumer is not connected; required imagery remains pending');
-    if(job.imageHandoff?.requiresCompositionSupport)throw new Error('image composition consumer is not connected; provenance must be preserved');
+    if(job.imageHandoff?.requiresCompositionSupport){
+      const imageComposition=await prepareImageComposition(job.imageHandoff);
+      job={...job,imageComposition};
+    }
     const win=await getWindow();
     const result=await win.webContents.executeJavaScript(`(async()=>{try{
       const input=${JSON.stringify(job)},prefix='candidate/';
@@ -44,6 +48,13 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       item.plan.sourceUrl=item.plan.sourceUrl||input.sourceUrl||null;
       item.plan.sourceCheckedAt=input.sourceCheckedAt||null;item.plan.sourcePublishedAt=input.sourcePublishedAt||null;item.plan.collectedAt=input.collectedAt||null;
       item.plan.editorial=input.editorial||null;
+      item.plan.completeCover=${!!preserveBodyPlan||job.imageHandoff?.selection?.choice==='text'&&!job.imageHandoff.held.length};
+      const emphasis=input.editorial?.titleHighlights?.[0],accent=input.editorial?.titleAccent||'#ffe34d';
+      if(emphasis)item.plan.coverTitleStyle={emphasis,accent};
+      if(input.imageComposition){
+        item.plan.imageComposition=input.imageComposition;
+        if(emphasis)item.plan.imageComposition.titleStyle={emphasis,accent};
+      }
       if(input.coverAsset){
         const a=input.coverAsset,id='supplementary-cover';
         item.plan.segments.push({id,kind:'image',mediaName:a.name,selected:true,coverOnly:true,
@@ -56,7 +67,7 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       document.getElementById('batchTemplate').value=item.plan.editorial?.templateId||'auto';
       document.getElementById('batchCanvas').value=input.editorial?.aspectRatio||'threads';
       const title=item.plan.originalTitle||input.title;
-      const coverTitle=input.editorial?.coverTitle||window.ThreadsPagePlan.headline(title);
+      const coverTitle=input.imageComposition?window.ThreadsPagePlan.headline(title):input.editorial?.coverTitle||window.ThreadsPagePlan.headline(title);
       document.getElementById('coverTitle').value=input.editorial?.coverLines?.join('\\n')||coverTitle;
       document.getElementById('titleHighlights').value=(input.editorial?.titleHighlights||[]).join(', ');
       document.getElementById('coverTitleEvidence').value=input.editorial?.titleEvidence||title;
@@ -65,11 +76,11 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       document.getElementById('coverLeft').value='70';
       const {bundle}=await window.ThreadsSourceBatch.sourceZip(item);
       window.__batchFile=new File([bundle],'source-bundle.zip');
-      window.__batchPlan=await window.ThreadsSourceBatch.planBundle(window.__batchFile,{preview:true,universalCover:${universalCover}});
+      window.__batchPlan=await window.ThreadsSourceBatch.planBundle(window.__batchFile,{preview:true,universalCover:${universalCover},preserveBodyPlan:${JSON.stringify(preserveBodyPlan)}});
       return {productionPlan:window.__batchPlan,title,sourcePlan:JSON.parse(JSON.stringify(item.plan))};
     }catch(error){return {error:error.message};}})()`);
     if(result.error)throw new Error(result.error);
-    const intakeAudit=strict?assertExactIntake(result.sourcePlan,result.productionPlan):null;
+    const intakeAudit=strict&&!preserveBodyPlan?assertExactIntake(result.sourcePlan,result.productionPlan):null;
     if(intakeAudit)result.productionPlan.intakeIntegrity=intakeAudit;
     if(context.folder) {
       await fs.mkdir(path.join(context.folder,'작업 정보'),{recursive:true});
@@ -83,7 +94,7 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       await fs.writeFile(path.join(context.folder,'제작 계획.md'),note.join('\n')+'\n','utf8');
     }
     const rendered=await win.webContents.executeJavaScript(`(async()=>{try{
-      const preview=await window.ThreadsSourceBatch.renderBundle(window.__batchFile,{preview:true,watermark:false,productionPlan:window.__batchPlan});
+      const preview=await window.ThreadsSourceBatch.renderBundle(window.__batchFile,{preview:true,watermark:false,productionPlan:window.__batchPlan,coverOnly:${!!preserveBodyPlan}});
       const bundle=window.__batchFile,title=${JSON.stringify(result.title)};
       const encode=bytes=>{let raw='';for(let i=0;i<bytes.length;i+=16384)raw+=String.fromCharCode(...bytes.subarray(i,i+16384));return btoa(raw);};
       return {pages:preview.pages,title,zip:encode(new Uint8Array(await preview.zip.arrayBuffer())),

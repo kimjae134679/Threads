@@ -61,7 +61,10 @@
       "intake-pipeline-run.cjs",
       "reflow-review-covers-run.cjs",
       "review-canonical-writer.cjs",
-      "pc-review-entry.cjs"
+      "pc-review-entry.cjs",
+      "image-requirements.cjs",
+      "image-requirements-schema.json",
+      "image-composition.cjs"
     ],
     "extraResources": [
       {

@@ -6,6 +6,7 @@ const {loadSavedMaterials}=require('./saved-materials.cjs');
 const {loadCoverAsset}=require('./cover-asset.cjs');
 const {decodeHtml}=require('./public-source.cjs');
 const {loadImageRequirements}=require('./image-requirements.cjs');
+const {prepareImageComposition}=require('./image-composition.cjs');
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const mime={'.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.gif':'image/gif'};
 async function exists(file) { try {return (await fs.lstat(file)).isFile();} catch {return false;} }
@@ -19,10 +20,13 @@ async function loadBatchInput(folder,metadata={}) {
   const supplement=await loadCoverAsset(root);
   const attach=async job=>{
     if(!job)return job;
-    const imageHandoff=await loadImageRequirements(root,{postId:metadata.id,sourceUrl:job.sourceUrl,productionVersion:metadata.outputVersion});
+    const imageHandoff=await loadImageRequirements(root,{postId:metadata.id,sourceUrl:job.sourceUrl,productionVersion:metadata.outputVersion},{representativeOnly:metadata.representativeOnly===true});
     if(imageHandoff?.generationRequests.length)throw new Error('image generation consumer is not connected; required imagery remains pending before cache lookup');
-    if(imageHandoff?.requiresCompositionSupport)throw new Error('AI 생성 이력 보존 합성기 연결 필요: ready 자산을 기존 렌더러로 출고하지 않습니다.');
+    const imageComposition=await prepareImageComposition(imageHandoff);
+    if(metadata.coverOnly||imageComposition||imageHandoff?.selection.choice==='text'&&!imageHandoff.held.length)job={...job,coverRecipeVersion:'2026-10-08-composition-1'};
     if(imageHandoff)job={...job,imageHandoff};
+    if(imageComposition)job={...job,imageComposition};
+    if(imageComposition&&supplement)throw new Error('새 이미지 계약과 이전 표지 보완을 동시에 선택할 수 없습니다.');
     if(!supplement)return job;
     if(job.files.some(file=>file.name.toLowerCase()===supplement.file.name.toLowerCase()))throw new Error('표지 보완 이미지 이름이 원본과 겹칩니다.');
     return {...job,coverAsset:supplement.asset,files:[...job.files,supplement.file]};

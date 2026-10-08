@@ -2,7 +2,7 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const {createHash} = require('node:crypto');
-const schema = require('../docs/schemas/image-requirements-v1.schema.json');
+const schema = require('./image-requirements-schema.json');
 const hash = data => createHash('sha256').update(data).digest('hex');
 const VERSION = 'threads-image-prompt-v1';
 const provenance = () => ({kind:'ai_generated',displayText:false,persistInManifest:true,actualScene:false});
@@ -129,7 +129,10 @@ function validateImageRequirements(record, identity={}) {
     const a=i.asset;
     if(a){
       if(a.postId!==r.postId||a.productionVersion!==r.productionLink.productionVersion)errors.push('asset: post/production binding mismatch');
-      if(a.promptVersion!==i.prompt?.version||a.promptSha256!==hash(i.prompt?.text||''))errors.push('asset: prompt binding mismatch');
+      if(a.receiptOriginalSha256){
+        const receipts=(r.generationReceipts||[]).filter(receipt=>receipt.originalFile.sha256===a.receiptOriginalSha256),receipt=receipts[0];
+        if(receipts.length!==1||!receipt.originalFile.textFree||receipt.originalFile.sha256!==a.sha256||receipt.prompt.sha256!==a.promptSha256||receipt.prompt.version!==a.promptVersion||receipt.generatedAt!==a.generatedAt||JSON.stringify(receipt.tool)!==JSON.stringify(a.tool))errors.push('asset: receipt binding mismatch');
+      }else if(a.generatedAt===null||a.promptVersion!==i.prompt?.version||a.promptSha256!==hash(i.prompt?.text||''))errors.push('asset: prompt binding mismatch');
       if(a.tool.model!==null && !a.tool.modelEvidence || a.tool.model===null && a.tool.modelEvidence!==null)errors.push('model: confirmed value/evidence pair required');
       if(!/^[\w-]+\.(png|jpe?g|webp)$/i.test(a.file))errors.push('asset.file: local basename only');
       if(!['user_owned','licensed_commercial'].includes(a.rights.status)||!a.rights.evidence)errors.push('asset: commercial rights evidence required');
@@ -144,12 +147,12 @@ async function boundedRead(file,max=5*1024*1024) {
   return fs.readFile(file);
 }
 function textValues(value){return typeof value==='string'?[value]:value&&typeof value==='object'?Object.values(value).flatMap(textValues):[];}
-async function buildImageHandoff(record,{root,identity={}}={}) {
+async function buildImageHandoff(record,{root,identity={},representativeOnly=false}={}) {
   const errors=validateImageRequirements(record,identity);if(errors.length)throw Error(errors.join('\n'));
   if(record===undefined)return null;
   const r=record,out={schema:'threads-image-handoff-v1',postId:r.postId,sourceUrl:r.sourceUrl,productionVersion:r.productionLink.productionVersion,
     identity:r.identity,selection:r.selection,excludeFromRediscovery:r.identity.seenBefore.status==='seen',
-    generationReceipts:r.generationReceipts||[],provenancePolicy:provenance(),
+    generationReceipts:r.generationReceipts||[],provenancePolicy:provenance(),representativeOnly,
     publicationAllowed:false,generationRequests:[],compositionAssets:[],selectedCoverAsset:null,held:[],requiresCompositionSupport:false};
   if(root)for(const receipt of r.generationReceipts||[]){
     for(const evidence of [receipt.recordFile,receipt.originalFile]){
@@ -173,7 +176,7 @@ async function buildImageHandoff(record,{root,identity={}}={}) {
     const versions=[...new Set(progress.entries.filter(e=>e.id===r.postId&&e.seenAt&&e.pagesSeen?.length!==0).map(e=>e.outputVersion))].sort();
     if((versions.length?'seen':'unseen')!==seen.status||JSON.stringify(versions)!==JSON.stringify([...seen.matchedOutputVersions].sort()))throw Error('seen progress mismatch');
   }
-  if(r.selection.selectedAsset&&!out.excludeFromRediscovery){
+  if(r.selection.selectedAsset&&(!out.excludeFromRediscovery||representativeOnly)){
     if(!root)throw Error('root required for selectedAsset validation');
     const selected=r.selection.selectedAsset,file=path.join(root,...selected.file.split('/'));
     const realRoot=await fs.realpath(root),realFile=await fs.realpath(file);
@@ -184,7 +187,7 @@ async function buildImageHandoff(record,{root,identity={}}={}) {
   for(const i of r.items){
     const base={itemId:i.id,postId:r.postId,productionVersion:r.productionLink.productionVersion,placement:i.placement,composition:i.composition,
       titleBy:'program',provenance:provenance(),actualScene:false};
-    if(out.excludeFromRediscovery){out.held.push({itemId:i.id,status:'already_seen',reasons:['sourceId already viewed; suppress repeat delivery']});continue;}
+    if(out.excludeFromRediscovery&&!(representativeOnly&&i.status==='ready')){out.held.push({itemId:i.id,status:'already_seen',reasons:['sourceId already viewed; suppress repeat delivery']});continue;}
     if(i.status==='generation_needed')out.generationRequests.push({...base,prompt:i.prompt,scene:i.scene,mustNotInvent:i.mustNotInvent,
       evidence:i.scene.evidenceIds.map(id=>r.read.excerpts.find(e=>e.id===id)),sourceRead:r.read,
       tool:{name:null,model:null,modelEvidence:null}});
@@ -199,14 +202,14 @@ async function buildImageHandoff(record,{root,identity={}}={}) {
       const png=bytes.subarray(0,8).toString('hex')==='89504e470d0a1a0a',jpg=bytes[0]===255&&bytes[1]===216&&bytes[2]===255,
         webp=bytes.toString('ascii',0,4)==='RIFF'&&bytes.toString('ascii',8,12)==='WEBP';
       if(!( /\.png$/i.test(file)?png:/\.webp$/i.test(file)?webp:jpg))throw Error('asset type mismatch');
-      out.compositionAssets.push({...base,asset:i.asset,file,overlays:[]});
+      out.compositionAssets.push({...base,asset:i.asset,file,anchorText:i.placement.position==='body'?r.read.excerpts.find(e=>e.id===i.placement.afterSourceId)?.text:null,overlays:[]});
     }else out.held.push({itemId:i.id,status:i.status,reasons:i.holdReasons});
   }
   if(r.status==='source_hold'&&!r.items.length)out.held.push({itemId:null,status:r.status,reasons:r.holdReasons});
   out.requiresCompositionSupport=out.compositionAssets.length>0||out.selectedCoverAsset!==null;
   return out;
 }
-async function loadImageRequirements(root,identity={}) {
+async function loadImageRequirements(root,identity={},options={}) {
   let manifest=null,sidecar=null;
   const read=async file=>{try{return JSON.parse((await boundedRead(file,256*1024)).toString('utf8').replace(/^\ufeff/,''));}catch(e){if(e.code==='ENOENT')return null;throw e;}};
   manifest=await read(path.join(root,'manifest.json'));
@@ -214,7 +217,7 @@ async function loadImageRequirements(root,identity={}) {
   const embedded=manifest?.imageRequirements;
   if(embedded&&sidecar&&JSON.stringify(embedded)!==JSON.stringify(sidecar))throw Error('imageRequirements: manifest/sidecar conflict');
   const record=sidecar||embedded;
-  return buildImageHandoff(record,{root,identity:{...identity,postId:identity.postId||manifest?.id,sourceUrl:identity.sourceUrl||manifest?.sourceUrl}});
+  return buildImageHandoff(record,{root,representativeOnly:options.representativeOnly===true,identity:{...identity,postId:identity.postId||manifest?.id,sourceUrl:identity.sourceUrl||manifest?.sourceUrl}});
 }
 // Remove only a top-level metadata property, preserving all other JSON bytes.
 // This retains the old production fingerprint even for embedded contracts.
@@ -239,6 +242,11 @@ function stripEmbeddedContract(text){
 }
 function renderingJob(job){
   const {imageHandoff,...render}=job;
+  if(render.imageComposition){
+    const c=render.imageComposition;
+    render.imageComposition={schema:c.schema,rendererVersion:c.rendererVersion,postId:c.postId,productionVersion:c.productionVersion,
+      assets:c.assets.map(({data,...asset})=>asset)};
+  }
   if(render.sourceName==='manifest.json'&&typeof render.sourceText==='string')render.sourceText=stripEmbeddedContract(render.sourceText);
   return render;
 }

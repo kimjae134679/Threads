@@ -97,6 +97,19 @@ test('ready asset needs real file/hash/prompt binding and preserves internal AI 
   i.asset.tool.model='guessed-model';assert.ok(api().validateImageRequirements(r).length);i.asset.tool.model=null;
   i.asset.file='../outside.png';assert.ok(api().validateImageRequirements(r).length);
 });
+test('reviewed existing receipt keeps unknown generation fields and seen-source QA cannot dispatch generation',async t=>{
+ const dir=await fs.mkdtemp(path.join(os.tmpdir(),'threads-receipt-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
+ const r=withPrompt(),i=r.items[0],bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aIZkAAAAASUVORK5CYII=','base64');
+ await fs.writeFile(path.join(dir,'body.txt'),r.read.excerpts[0].text);await fs.writeFile(path.join(dir,'raw.png'),bytes);await fs.writeFile(path.join(dir,'receipt.json'),'{}');
+ const receipt={schema:'threads-generation-receipt-v1',sourcePostId:r.postId,productionVersion:null,applicationStatus:'not_applied',disposition:'review_required',recordedAt:stamp,generatedAt:null,tool:{name:'TEST_ONLY existing generator',model:null,modelEvidence:null},recordFile:{reference:'receipt.json',sha256:hash('{}')},originalFile:{reference:'raw.png',sha256:hash(bytes),textFree:true},prompt:{version:null,text:'exact previous prompt',sha256:hash('exact previous prompt')}};
+ r.generationReceipts=[receipt];r.status=i.status='ready';i.asset={file:'raw.png',sha256:hash(bytes),receiptOriginalSha256:hash(bytes),promptSha256:receipt.prompt.sha256,promptVersion:null,postId:r.postId,productionVersion:r.productionLink.productionVersion,generatedAt:null,tool:receipt.tool,rights:{status:'user_owned',evidence:'TEST_ONLY owned pixels'},reviewedBy:'TEST_ONLY explicit adoption review'};
+ const progress=JSON.stringify({entries:[{id:r.postId,outputVersion:'old',seenAt:stamp}]});await fs.writeFile(path.join(dir,'progress.json'),progress);r.identity.seenBefore={status:'seen',checkedAt:stamp,reference:'progress.json',sha256:hash(progress),matchedOutputVersions:['old']};
+ assert.deepEqual(api().validateImageRequirements(r),[]);
+ assert.equal((await api().buildImageHandoff(r,{root:dir})).compositionAssets.length,0);
+ const qa=await api().buildImageHandoff(r,{root:dir,representativeOnly:true});assert.equal(qa.compositionAssets.length,1);assert.equal(qa.excludeFromRediscovery,true);assert.equal(qa.compositionAssets[0].asset.generatedAt,null);
+ i.asset.promptSha256=hash(i.prompt.text);assert(api().validateImageRequirements(r).some(e=>e.includes('receipt')));i.asset.promptSha256=receipt.prompt.sha256;
+ i.asset=null;r.status=i.status='generation_needed';assert.equal((await api().buildImageHandoff(r,{root:dir,representativeOnly:true})).generationRequests.length,0);
+});
 test('legacy loader preserves base source and rejects pending imagery before cache lookup', async t => {
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'threads-images-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
   const r=withPrompt();await fs.writeFile(path.join(dir,'body.txt'),r.read.excerpts[0].text);
@@ -104,6 +117,7 @@ test('legacy loader preserves base source and rejects pending imagery before cac
   const legacy={schema:'threads-program-input-v1',id:r.postId,sourceUrl:r.sourceUrl,sourceReview:{publicationAllowed:false},media:[]};
   await fs.writeFile(path.join(dir,'manifest.json'),JSON.stringify(legacy));
   const {loadBatchInput}=require('../desktop/batch-input.cjs');const before=await loadBatchInput(dir,{id:r.postId,sourceUrl:r.sourceUrl});
+  assert.equal(before.coverRecipeVersion,undefined);
   await fs.writeFile(path.join(dir,'manifest.json'),JSON.stringify({...legacy,imageRequirements:r}));
   await assert.rejects(loadBatchInput(dir,{id:r.postId,sourceUrl:r.sourceUrl}),/image generation consumer/);
   r.status=r.items[0].status='rights_hold';r.items[0].holdReasons=['TEST_ONLY permission pending'];r.clearance={status:'unknown',evidence:null,reviewedBy:null};
