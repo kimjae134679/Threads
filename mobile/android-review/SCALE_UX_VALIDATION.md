@@ -86,3 +86,21 @@ regressions with synthetic data, not the actual full PC collection. No scheduler
 was deployed. Legacy
 unknown guards remain preserved, and arbitrary Windows power-loss durability is
 not established by process-crash tests.
+
+## Additional isolated shared-writer correction
+
+The first freshly extracted235-test parallel run exposed Windows exclusive
+`fs.open(lock,'wx')` occasionally returning`EPERM` during real cross-process
+contention. This was a source-code failure, not missing packaged dependencies.
+The isolated shared module now retries exclusive creation for at most one second
+for`EPERM`/`EACCES`/`EBUSY`, rechecking link guards before each new attempt. It
+never infers missing/dead/owned state from denial, runs no work without successful
+exclusive creation and retains exact owner checks. Persistent denial remains
+blocked and preserves the other owner's bytes. Three deterministic red/green
+regressions cover transient creation, persistent denial and reclaimer creation.
+
+This small `desktop/review-canonical-writer.cjs` source delta is beyond confirmed
+PC865afa8. It is not installed into the actual PC viewer and needs reconciliation
+by the PC integration owner. Existing desktop UI/entry files, original materials
+and actual reviews remain untouched. This module is outside the APK bundle, so
+no second Android build or credential action is needed.

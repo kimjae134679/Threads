@@ -26,11 +26,20 @@ async function claim(file,deadline,depth=0){
  if(depth>8)throw Error('Canonical reclamation nesting is unknown; refusing further recovery.');
  await noLinks(file);
  const identity=JSON.stringify({schemaVersion:1,pid:process.pid,host:os.hostname(),nonce:crypto.randomUUID(),startedAt:new Date().toISOString()});
- let emptySince=null;
+ let emptySince=null,createBusyUntil=null;
  for(;;){
   if(Date.now()>deadline)throw Error('Canonical writer lock is busy or its owner is unknown.');
   let handle;
-  try{handle=await fs.open(file,'wx');}catch(e){if(e.code!=='EEXIST')throw e;}
+  try{handle=await fs.open(file,'wx');createBusyUntil=null;}catch(e){
+   if(e.code==='EEXIST')createBusyUntil=null;
+   else if(['EPERM','EACCES','EBUSY'].includes(e.code)){
+    // Windows delete-pending handles can deny exclusive creation briefly.
+    // Retry exclusive creation only: denial never proves absence or ownership.
+    createBusyUntil??=Math.min(deadline,Date.now()+1000);
+    if(Date.now()>=createBusyUntil)throw e;
+    await pause(Math.min(15,Math.max(1,createBusyUntil-Date.now())));await noLinks(file);continue;
+   }else throw e;
+  }
   if(handle){
    try{await handle.writeFile(identity);await handle.sync();}catch(e){await handle.close();await fs.rm(file,{force:true});throw e;}
    return async()=>{await handle.close();if(await read(file)!==identity)throw Error('Canonical writer lock ownership changed; refusing release.');await fs.unlink(file);};
