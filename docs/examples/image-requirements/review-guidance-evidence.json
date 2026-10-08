@@ -1,0 +1,50 @@
+{
+  "origin": {
+    "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\07_사용자 평가\\평가 기록.json",
+    "sha256": "aa8ec2106c59e4dbd07c30d490cc0c99e920db4bad116e03fe0869a09522b07a",
+    "checkedAt": "2026-10-08T13:40:12.911Z"
+  },
+  "reviewRound": "review-20261008-square-complete",
+  "evaluations": [
+    {
+      "id": "source-375b2390ef5922",
+      "title": "신점 보고 엄마한테 커밍아웃한 후기",
+      "outputVersion": "ef4d74ccab090800370ba3a2dbfc4cf6fe27d6f096a220bdd981375174a09a12",
+      "score": 7,
+      "note": "커밍아웃이 좀더 중요한 글씨같아\n\n",
+      "updatedAt": "2026-10-08T13:25:27.979Z"
+    },
+    {
+      "id": "source-73015d7dcc8114",
+      "title": "신랑 먹을 음식 1인분만 딱 남기는 시어머니",
+      "outputVersion": "7e09626b46cd03a2a8a1a90248610c4ad6f76d3d144b5728c12690ba15ea84c5",
+      "score": 8,
+      "note": "신랑  하고 1인분 으로 강조해야하지않을까",
+      "updatedAt": "2026-10-08T13:24:49.735Z"
+    },
+    {
+      "id": "source-95d0ca45c7a3cc",
+      "title": "시댁으로 휴가가잔 남편이 이제 집가자고 하네요ㅋㅋ  (사이다!)",
+      "outputVersion": "2ec65ada6febab8ba6aa619ea8a8ddea6c1e1a1511d92de50f52f2a62c1745cf",
+      "score": 7,
+      "note": "(사이다!) 이거 원문에있던거니? 없으면 이딴거 쓰지마라",
+      "updatedAt": "2026-10-08T13:24:29.283Z"
+    },
+    {
+      "id": "source-c56d7f927b34d9",
+      "title": "시댁이 다 E인데 며느리만 I라 미치겠는 후기",
+      "outputVersion": "a408341883bbf550621be885dffa50ec8b894b692aec7e07ad499993bc29e6fa",
+      "score": 7,
+      "note": "시댁이 다E 나만I   이;런식으로 도 같이강조하는게좋지않을까",
+      "updatedAt": "2026-10-08T13:24:16.708Z"
+    },
+    {
+      "id": "source-284ac09a545713",
+      "title": "10명만 부르려던 결혼식\n어쩌다 100명 넘는\n스몰웨딩이 됐나",
+      "outputVersion": "47e15a691e576367c08fe1bdde69545e1d7e991ace3826678fb6917942649e42",
+      "score": 7,
+      "note": "10명 했으면 100명 도 같이 강조해주면좋ㄷ읋듯",
+      "updatedAt": "2026-10-08T13:23:55.960Z"
+    }
+  ]
+}

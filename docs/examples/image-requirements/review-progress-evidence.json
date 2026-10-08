@@ -1,0 +1,497 @@
+{
+  "origin": {
+    "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\07_사용자 평가\\검토 진행.json",
+    "sha256": "8ced6a8da0de2c81ad0437956f85054070d31eb9bb68e6c6af704155a80d1fcd",
+    "checkedAt": "2026-10-08T13:40:12.911Z"
+  },
+  "reviewRound": "review-20261008-square-complete",
+  "entries": [
+    {
+      "id": "source-47ec687ab31ecb",
+      "outputVersion": "f254dc025613382ff3e1b4d5a16a29951c2df8ed8cd8a5f369dde66dcbd26455",
+      "seenAt": "2026-10-08T10:27:38.391Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "source-bdbeec3c1d7aec",
+      "outputVersion": "8ce43dc7e1ef494e68eb3f8927c4ccdbfd2a508d7e0d0e1d3a6405f229b21f76",
+      "seenAt": "2026-10-08T10:27:47.761Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-7a5b9115b8dc8f",
+      "outputVersion": "81e1bce70addde78d8a330e32d394b24dc46ca55ebd183b0279b255830693044",
+      "seenAt": "2026-10-08T10:27:51.594Z",
+      "pagesSeen": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "source-8250759636e0f1",
+      "outputVersion": "5661d82c4ad23274bb380bd80fec4e9a774ad3defba67e4a2dd98f15b9ed9e8f",
+      "seenAt": "2026-10-08T10:28:40.630Z",
+      "pagesSeen": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "source-ed420158856958",
+      "outputVersion": "2103a597d0241438b2d6af8e66a4599b788513a855a2f97bea1197c060f01ec2",
+      "seenAt": "2026-10-08T10:28:41.231Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "source-a62b4c36468800",
+      "outputVersion": "76c7015d9614f3e92f081cba364428465e7d1e999cf42643196166d7208879f3",
+      "seenAt": "2026-10-08T10:28:41.848Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-68991bdbe3eeef",
+      "outputVersion": "67b83f61b4e4ae56ea9013ed21fbac7823a39a1ba6059614f82933cfc7865779",
+      "seenAt": "2026-10-08T10:28:43.529Z",
+      "pagesSeen": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "source-2b2b603a2d502c",
+      "outputVersion": "dc85bb09560c3d5c6bc63bb8f4df73d72b18668063a120054660a26915a66182",
+      "seenAt": "2026-10-08T10:28:44.335Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-b1b88265050b8f",
+      "outputVersion": "08b6aa4810ad807aed6d622cf095a2a4e937a47b0be4a0008793fe28401b3c89",
+      "seenAt": "2026-10-08T10:29:32.033Z",
+      "pagesSeen": [
+        1
+      ]
+    },
+    {
+      "id": "source-010abe357e9105",
+      "outputVersion": "983fadaad7f0eeb72f8e742b5a50f2cb119f292d0e089ff12b254e690ab26954",
+      "seenAt": "2026-10-08T10:29:32.183Z",
+      "pagesSeen": [
+        1
+      ]
+    },
+    {
+      "id": "source-dc43bfc5a51ea7",
+      "outputVersion": "764922b6e2cbb00225ff394ebcea2dc2ed1ac94001533ef091a121a9401975a2",
+      "seenAt": "2026-10-08T10:29:32.295Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "source-c17d392921074a",
+      "outputVersion": "70e79b7542b33ba64b7289feb4a44ad0f7787fed675bc5c3c463ead6e185a703",
+      "seenAt": "2026-10-08T10:29:32.570Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-a3fa564acaad73",
+      "outputVersion": "f9b0ac84fa02e8c68e43d88da982485cfdbca2bf0fdf40aa408bfb327ce36d81",
+      "seenAt": "2026-10-08T10:57:54.011Z",
+      "pagesSeen": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "source-b3ef1d2ea05e73",
+      "outputVersion": "4f2154ef4a5bf9649f80d72e86f3931cc2e0d4829bfc772571b3f47be6709ec0",
+      "seenAt": "2026-10-08T10:57:57.651Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-168cfba54accff",
+      "outputVersion": "a3a57c979c2a4504df32f40b1830308c5d0f5c2162cb795877f13328a31f3c70",
+      "seenAt": "2026-10-08T13:20:42.485Z",
+      "pagesSeen": [
+        1
+      ]
+    },
+    {
+      "id": "source-8fa9d77668e97c",
+      "outputVersion": "c287a0d7072c71c1d7462e7d21d65bda981e2353ac5650a6e893142e8deb45cf",
+      "seenAt": "2026-10-08T13:21:07.934Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "source-1b38d44a793e89",
+      "outputVersion": "202b1f50ba24ee2c79e811c36b2f7b804d2e5aed5233c22827dc2c10e694c18d",
+      "seenAt": "2026-10-08T13:21:11.733Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-045a7e7d477412",
+      "outputVersion": "d889fadfb7bab0feb2b6bf997256abbe9bf049e35bc1b12661a921b12b82d932",
+      "seenAt": "2026-10-08T13:22:04.002Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-65cf595ab26005",
+      "outputVersion": "a303c940ef1709dbcecf6b2d1ef7da2f654dc92c7d629bb1533e453f8bfc6602",
+      "seenAt": "2026-10-08T13:22:05.792Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-36bac6407575c8",
+      "outputVersion": "53a31b5554a4ea3f9cc97f43e19d7d9de2ebbcfef5c8cb9c50374a96b403ae7d",
+      "seenAt": "2026-10-08T13:22:08.579Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-4fd4eabf6d7b1c",
+      "outputVersion": "186fddc0220a8e59c2724d158518ac8ded40e1fcf4ea1da66a52300a28d47e20",
+      "seenAt": "2026-10-08T13:22:11.207Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-ea281a867a852a",
+      "outputVersion": "00767ff556b1d9308871b23f274455ada82f7d56b123d8154b625472b8aa5cad",
+      "seenAt": "2026-10-08T13:22:25.244Z",
+      "pagesSeen": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "source-b0ada7acfec56a",
+      "outputVersion": "5639c035883d8102fd8288f847331ea8debda7515174607830349d0cbde681c2",
+      "seenAt": "2026-10-08T13:22:28.487Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "source-342717b9be75a4",
+      "outputVersion": "61463c49c4a15169757bc78fc1df418e7fc790f0e7ae5f12075c0babb048d489",
+      "seenAt": "2026-10-08T13:22:30.797Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "source-09bdd1a68bb058",
+      "outputVersion": "127b480196f13c158b4bd85c5c20e798e5615947d55600790282fef2af7d8e12",
+      "seenAt": "2026-10-08T13:22:33.956Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "id": "source-ac6fc8b1f1829c",
+      "outputVersion": "e2822a9945510f8dc7914d149007004ee5a47f475367e0eb3c8d0a742bf10748",
+      "seenAt": "2026-10-08T13:22:38.149Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "source-56c2941cdb557f",
+      "outputVersion": "ba2f03740394c404175df13119544d167e16cd1c1bc9fc8f4db0adf45a493c40",
+      "seenAt": "2026-10-08T13:22:53.941Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "source-80ff8e745aa9c8",
+      "outputVersion": "dd751f5e8e4d59db8fd6475a47eace529ece2faecc70f30aefb8a176df4a9ace",
+      "seenAt": "2026-10-08T13:22:58.537Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "source-842a63b3d248fb",
+      "outputVersion": "1450720908641daaf549519f65ad2844bee699f716aa6ef133bcedc46a7daeea",
+      "seenAt": "2026-10-08T13:23:02.060Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "source-ebb6fbcbb2efac",
+      "outputVersion": "7560aa9d478c21bf69953d84f5bf320524dc4cdb2c14c2347880a957336fde1a",
+      "seenAt": "2026-10-08T13:23:36.611Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "source-dda9e273d6df72",
+      "outputVersion": "b3b7784028d0222555b55b2a49135d44c4dff882d789a0a44bf6edbd46659347",
+      "seenAt": "2026-10-08T13:23:40.916Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "source-284ac09a545713",
+      "outputVersion": "47e15a691e576367c08fe1bdde69545e1d7e991ace3826678fb6917942649e42",
+      "seenAt": "2026-10-08T13:23:43.411Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "id": "source-edbab8ed54f293",
+      "outputVersion": "4a069a7afae959b47fbe095d8700172c827aa756eac8e1edf2f4c039b4699329",
+      "seenAt": "2026-10-08T13:23:56.930Z",
+      "pagesSeen": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "source-c56d7f927b34d9",
+      "outputVersion": "a408341883bbf550621be885dffa50ec8b894b692aec7e07ad499993bc29e6fa",
+      "seenAt": "2026-10-08T13:24:00.561Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "source-95d0ca45c7a3cc",
+      "outputVersion": "2ec65ada6febab8ba6aa619ea8a8ddea6c1e1a1511d92de50f52f2a62c1745cf",
+      "seenAt": "2026-10-08T13:24:17.860Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "source-5fee1e354ef4c7",
+      "outputVersion": "48088de79420118b020387f8c2cacaeb272e7b42c995f1a8038bfb5099db02eb",
+      "seenAt": "2026-10-08T13:24:30.364Z",
+      "pagesSeen": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "source-73015d7dcc8114",
+      "outputVersion": "7e09626b46cd03a2a8a1a90248610c4ad6f76d3d144b5728c12690ba15ea84c5",
+      "seenAt": "2026-10-08T13:24:38.875Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "source-b522524f807f44",
+      "outputVersion": "15ada927af9e435ef97a38f33caf680d3b03a08fb543122b4ac76494ba4d315a",
+      "seenAt": "2026-10-08T13:24:50.869Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "source-375b2390ef5922",
+      "outputVersion": "ef4d74ccab090800370ba3a2dbfc4cf6fe27d6f096a220bdd981375174a09a12",
+      "seenAt": "2026-10-08T13:24:54.778Z",
+      "pagesSeen": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ]
+}

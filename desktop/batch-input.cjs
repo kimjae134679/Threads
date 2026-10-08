@@ -5,6 +5,7 @@ const {createHash}=require('node:crypto');
 const {loadSavedMaterials}=require('./saved-materials.cjs');
 const {loadCoverAsset}=require('./cover-asset.cjs');
 const {decodeHtml}=require('./public-source.cjs');
+const {loadImageRequirements}=require('./image-requirements.cjs');
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const mime={'.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.gif':'image/gif'};
 async function exists(file) { try {return (await fs.lstat(file)).isFile();} catch {return false;} }
@@ -16,7 +17,16 @@ async function bounded(file,max) {
 async function loadBatchInput(folder,metadata={}) {
   const root=path.resolve(folder);
   const supplement=await loadCoverAsset(root);
-  const attach=job=>{if(!job||!supplement)return job;if(job.files.some(file=>file.name.toLowerCase()===supplement.file.name.toLowerCase()))throw new Error('표지 보완 이미지 이름이 원본과 겹칩니다.');return {...job,coverAsset:supplement.asset,files:[...job.files,supplement.file]};};
+  const attach=async job=>{
+    if(!job)return job;
+    const imageHandoff=await loadImageRequirements(root,{postId:metadata.id,sourceUrl:job.sourceUrl,productionVersion:metadata.outputVersion});
+    if(imageHandoff?.generationRequests.length)throw new Error('image generation consumer is not connected; required imagery remains pending before cache lookup');
+    if(imageHandoff?.requiresCompositionSupport)throw new Error('AI 생성 이력 보존 합성기 연결 필요: ready 자산을 기존 렌더러로 출고하지 않습니다.');
+    if(imageHandoff)job={...job,imageHandoff};
+    if(!supplement)return job;
+    if(job.files.some(file=>file.name.toLowerCase()===supplement.file.name.toLowerCase()))throw new Error('표지 보완 이미지 이름이 원본과 겹칩니다.');
+    return {...job,coverAsset:supplement.asset,files:[...job.files,supplement.file]};
+  };
   let editorial=null;
   const editorialPath=path.join(root,'작업 정보','editorial-plan.json');
   if(await exists(editorialPath)){

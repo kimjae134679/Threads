@@ -1,0 +1,59 @@
+{
+  "schema": "threads-image-example-evidence-v1",
+  "checkedAt": "2026-10-08T13:40:12.911Z",
+  "sourceBaseCommit": "251ae0bec27040fecef774a7438b836a8c8a7106",
+  "files": [
+    {
+      "reference": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\엄청난-신입사원이-두달만에-짤린-썰-후기--source-c17d392921074a\\source\\source.html",
+      "sha256": "acca3f4c72a01e95aec9026c19e73d70e5060cfb70d43bb1376aa183a52c334c"
+    },
+    {
+      "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\06_자동 제작 결과\\현재 결과\\엄청난 신입사원이 두달만에 짤린 썰 후기__source-c17d392921074a\\production-plan.json",
+      "sha256": "e52318a916bfb423caf237949adde9b1cfd3ae95e9c85cf6ce3868b2be03834a"
+    },
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\generation-record.json",
+      "sha256": "9024b8f4f2ca247b23579a790fc58d8062d8a52785612bcd92733798e8f1daae"
+    },
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\generated-assets\\newhire-A-ai-original.png",
+      "sha256": "3d1c229c65c1930ae1b038f7dc42a4fc5c8d618b95692557892cb70289b1637a"
+    },
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\generated-assets\\newhire-B-ai-original.png",
+      "sha256": "3c1ffd363eb3685c541270d72d5fc8f9835a9a004f99e99b753b1b0869701243"
+    },
+    {
+      "reference": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\엄청난-신입사원이-두달만에-짤린-썰-후기--source-c17d392921074a\\manifest.json",
+      "sha256": "698986a04206fd5f387b38c621a7095816df176dd234a4ae8830330773df9f90"
+    },
+    {
+      "reference": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\12년차-차장입니다.-회사에서-넵-쓰지마세요--source-b12910061b1456\\source\\source.html",
+      "sha256": "68395e636d5c5699436be10843d7e8079a3ece87ae39797335bf3cd1fe0ad04d"
+    },
+    {
+      "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\06_자동 제작 결과\\현재 결과\\12년차 차장입니다. 회사에서 넵 쓰지마세요__source-b12910061b1456\\production-plan.json",
+      "sha256": "3f1ef11c502e053a0efef313ee6392da02baea84a03bbab4c88ed26dddcb523b"
+    },
+    {
+      "reference": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\12년차-차장입니다.-회사에서-넵-쓰지마세요--source-b12910061b1456\\manifest.json",
+      "sha256": "ff2f3e68ce30a53acafe986d0a56fa0199b48f3784a117f2c7dd2d98d7b4ae15"
+    },
+    {
+      "reference": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\blind\\2026년-회사별-느낌-NEW-ver.--source-acca0574adb063\\manifest.json",
+      "sha256": "be2f042e7a03f400a9cf0247672d04b2086be38f1ae0f3eaefec93c877911753"
+    },
+    {
+      "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\07_사용자 평가\\검토 진행.json",
+      "sha256": "8ced6a8da0de2c81ad0437956f85054070d31eb9bb68e6c6af704155a80d1fcd"
+    },
+    {
+      "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\07_사용자 평가\\평가 기록.json",
+      "sha256": "aa8ec2106c59e4dbd07c30d490cc0c99e920db4bad116e03fe0869a09522b07a"
+    },
+    {
+      "reference": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\06_자동 제작 결과\\status.json",
+      "sha256": "208dba8773064c9ba8b948b89b89b19270b1a2433c43e6b94c5f2cb88d25051d"
+    }
+  ]
+}

@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Evidence snapshots are byte-hashed by the image requirements validator.
+docs/examples/image-requirements/** text eol=lf

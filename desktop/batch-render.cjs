@@ -10,6 +10,8 @@ function assertExactIntake(source,layout){
  return {...audit,rawBodyAndCommentsExact:true};
 }
 async function renderBatchInput(job,{getWindow,context={},universalCover=false,strict=false}={}) {
+    if(job.imageHandoff?.generationRequests?.length)throw new Error('image generation consumer is not connected; required imagery remains pending');
+    if(job.imageHandoff?.requiresCompositionSupport)throw new Error('image composition consumer is not connected; provenance must be preserved');
     const win=await getWindow();
     const result=await win.webContents.executeJavaScript(`(async()=>{try{
       const input=${JSON.stringify(job)},prefix='candidate/';

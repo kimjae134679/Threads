@@ -1,0 +1,258 @@
+{
+  "schema": "threads-program-input-v1",
+  "id": "source-b12910061b1456",
+  "title": "12년차 차장입니다. 회사에서 넵 쓰지마세요",
+  "platform": "inven",
+  "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2724463?iskin=webzine",
+  "generatedAt": "2026-09-27T10:39:50.678Z",
+  "status": "needs_verbatim_review",
+  "stages": [
+    "C1 / A0 / P0"
+  ],
+  "sourceReview": {
+    "verbatimBodyAvailable": false,
+    "bodyVerified": false,
+    "commentsVerified": false,
+    "mediaPositionVerified": false,
+    "rightsReviewed": false,
+    "privacyReviewed": false,
+    "publicationAllowed": false
+  },
+  "candidateRecords": [
+    {
+      "path": "data/candidates/260916_C1_A0_P0_12년차차장넵쓰지마세요.md",
+      "sha256": "bad3f52ad5ab877fa6586adef2141e6da2375b660522a7ee2d6c5ff23df3bc47",
+      "title": "12년차 차장입니다. 회사에서 넵 쓰지마세요",
+      "stage": "C1 / A0 / P0",
+      "bodyRead": null,
+      "commentsRead": null,
+      "imagePresent": null,
+      "sourceStatus": "needs_verbatim_source",
+      "conversionStatus": "not_converted"
+    }
+  ],
+  "jevAssessments": [
+    {
+      "path": "data/jev_results/260916_C1_A0_P0_12년차차장넵쓰지마세요.jev.json",
+      "sha256": "eae26ec469f3f15e0c544846fb0788b93b9c890123ea74b9c9f96d6ff59d446d",
+      "schemaVersion": 2,
+      "model": "jev-1.13.0",
+      "answers": {
+        "overall_score": {
+          "type": "score",
+          "score": 1.45,
+          "confidence": 0.52,
+          "legend": {
+            "0": "버림",
+            "1": "보류",
+            "2": "쓸만함",
+            "3": "우선 제작"
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.62,
+            "2": 0.29,
+            "3": 0.08
+          }
+        },
+        "final_status": {
+          "type": "choice",
+          "choice": "hold",
+          "confidence": 0.5,
+          "probabilities": {
+            "discard": 0.01,
+            "hold": 0.62,
+            "usable": 0.07,
+            "priority": 0.3
+          }
+        },
+        "content_type": {
+          "type": "choice",
+          "choice": "empathy",
+          "confidence": 0.47,
+          "probabilities": {
+            "empathy": 0.58,
+            "skip": 0.05,
+            "humor": 0.33,
+            "info": 0,
+            "issue": 0.04
+          }
+        },
+        "hook_strength": {
+          "type": "noul",
+          "noul": 0.76
+        },
+        "needs_research": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "asset_importance": {
+          "type": "score",
+          "score": 1.99,
+          "confidence": 0.99,
+          "legend": {
+            "0": "낮음",
+            "1": "보통",
+            "2": "높음"
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0,
+            "2": 1
+          }
+        },
+        "threads_fit": {
+          "type": "noul",
+          "noul": 0.36
+        },
+        "needs_improvement": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "improvement_area": {
+          "type": "choice",
+          "choice": "asset",
+          "confidence": 0.69,
+          "probabilities": {
+            "asset": 0.74,
+            "hook": 0,
+            "safety": 0.22,
+            "none": 0,
+            "source": 0.03,
+            "story": 0.01
+          }
+        },
+        "improvement_level": {
+          "type": "score",
+          "score": 1.98,
+          "confidence": 0.98,
+          "legend": {
+            "0": "낮음",
+            "1": "보통",
+            "2": "높음"
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.01,
+            "2": 0.99
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 6572,
+        "output_tokens": 292
+      }
+    }
+  ],
+  "priorBundles": [],
+  "sourcePackage": null,
+  "media": [],
+  "blockers": [
+    "원문 본문 전문이 없거나 줄바꿈까지 대조되지 않음",
+    "댓글의 실제 문구와 인기 근거가 대조되지 않음",
+    "권리·개인정보·게시 검수가 끝나지 않음"
+  ],
+  "imageRequirements": {
+    "schema": "threads-image-requirements-v1",
+    "postId": "source-b12910061b1456",
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2724463?iskin=webzine",
+    "status": "not_needed",
+    "holdReasons": [],
+    "identity": {
+      "sourceId": "source-b12910061b1456",
+      "canonicalSourceUrl": "https://www.inven.co.kr/board/webzine/2097/2724463?iskin=webzine",
+      "sourceContentHash": null,
+      "sourceFingerprint": "7b55570d77295be7780fdcb8e23f52158b13bf2646e80c511806a67146ce25a8",
+      "seenBefore": {
+        "status": "unseen",
+        "checkedAt": "2026-10-08T13:40:12.911Z",
+        "reference": "../review-progress-evidence.json",
+        "sha256": "e72134e110c7a94985e8d516e716c68c5836e01104e997707447702c6008a227",
+        "matchedOutputVersions": []
+      }
+    },
+    "selection": {
+      "priority": [
+        "source_image",
+        "external_image",
+        "ai_illustration",
+        "text"
+      ],
+      "choice": "text",
+      "reason": "짧은 글과 후속 답글 자체가 소재의 핵심. 별도 원본사진·외부사진·AI 연출 없이 글씨형 표지로 충분함.",
+      "originalDecision": "not_needed",
+      "externalDecision": "not_needed",
+      "fallback": "text"
+    },
+    "collection": {
+      "discoveredOn": "inven",
+      "originalSourceUrl": null,
+      "sourceChain": [
+        "https://www.inven.co.kr/board/webzine/2097/2724463?iskin=webzine"
+      ],
+      "checkedAt": "2026-10-08T13:40:12.911Z",
+      "metrics": [],
+      "qualityBasis": "body_and_review",
+      "reviewReference": "../review-guidance-evidence.json",
+      "reviewSha256": "6df4cd229a571898fe43113288a135b3ae92557aeecc7c2c8044e07531dc95c8"
+    },
+    "read": {
+      "status": "body_read",
+      "readAt": "2026-10-08T13:40:12.931Z",
+      "reference": "evidence.json",
+      "sha256": "17851ea5d9f5e68e49a785217d2d66c23a8a342e69310f32ac45f02ac6b1ae8e",
+      "excerpts": [
+        {
+          "id": "s0-transcribed-0",
+          "locator": {
+            "originalSourceId": "s0",
+            "mediaName": "i1887056819956392.jpg",
+            "sha256": "7659bc23fb99684505fa6fef7213ef71dea386ab84219c2f6a594d2ab25d19a5",
+            "region": "원본 전체 본문. 부모와 독립 검수자의 두 번 직접 판독. 닉·시각·조회·화면 버튼 제외."
+          },
+          "text": "12년차 차장입니다.\n\n입사하시고 채팅이나 이메일에서 \"넵\", \"넴\", \"엡\", \"옛\", \"앙\"으로 답변하지 마세요.\n\n회사에서는 정신 똑바로 차려야 합니다.\n\n업무에 참고 바랍니다."
+        },
+        {
+          "id": "s1-transcribed-0",
+          "locator": {
+            "originalSourceId": "s1",
+            "mediaName": "i1966680339251020.jpg",
+            "sha256": "76f59a003e246c1deca39225836c5be2a7371754d0400e32d4076d6954bfa255",
+            "region": "원본 전체 본문. 부모와 독립 검수자의 두 번 직접 판독. 닉·시각·조회·화면 버튼 제외."
+          },
+          "text": "'넵'도 쓰세용.\n\n편하게들 쓰세욘.......\n\n난리네요... 제가 졌습니다람쥐...\n\n뭐든 편하게 맘껏 쓰삼들요..."
+        }
+      ]
+    },
+    "shortage": {
+      "insufficient": false,
+      "reason": "사진 부족이 아니라 글 자체로 전달할 소재: 억지 AI 생성 금지. 원본 스크린샷의 상업 재사용 권리는 별도 미확인.",
+      "originals": [
+        {
+          "file": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\12년차-차장입니다.-회사에서-넵-쓰지마세요--source-b12910061b1456\\source\\media\\i1887056819956392.jpg",
+          "sha256": "7659bc23fb99684505fa6fef7213ef71dea386ab84219c2f6a594d2ab25d19a5",
+          "rightsStatus": "unknown",
+          "evidence": null,
+          "relevance": "실제 글과 후속 답글 스크린샷: 새 연출 이미지 불필요"
+        },
+        {
+          "file": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\12년차-차장입니다.-회사에서-넵-쓰지마세요--source-b12910061b1456\\source\\media\\i1966680339251020.jpg",
+          "sha256": "76f59a003e246c1deca39225836c5be2a7371754d0400e32d4076d6954bfa255",
+          "rightsStatus": "unknown",
+          "evidence": null,
+          "relevance": "실제 글과 후속 답글 스크린샷: 새 연출 이미지 불필요"
+        }
+      ]
+    },
+    "clearance": {
+      "status": "unknown",
+      "evidence": null,
+      "reviewedBy": null
+    },
+    "productionLink": {
+      "postId": "source-b12910061b1456",
+      "productionVersion": "5fdc79f61da446a4ea1a774761905eb7572dc1d9b71d77af0f2b3389bc31aa41"
+    },
+    "items": []
+  }
+}

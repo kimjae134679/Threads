@@ -1,0 +1,33 @@
+{
+  "origin": {
+    "productionPlan": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\06_자동 제작 결과\\현재 결과\\12년차 차장입니다. 회사에서 넵 쓰지마세요__source-b12910061b1456\\production-plan.json",
+    "productionPlanSha256": "3f1ef11c502e053a0efef313ee6392da02baea84a03bbab4c88ed26dddcb523b",
+    "sourceFile": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\12년차-차장입니다.-회사에서-넵-쓰지마세요--source-b12910061b1456\\source\\source.html",
+    "sourceSha256": "68395e636d5c5699436be10843d7e8079a3ece87ae39797335bf3cd1fe0ad04d",
+    "sourceCheckedAt": "2026-10-03T13:47:43.026Z"
+  },
+  "readAt": "2026-10-08T13:40:12.931Z",
+  "note": "기존 이미지 두 장을 실제로 육안 확인하고 전사된 본문과 대조함; 댓글의 반응값은 이 계약에 옮기지 않음",
+  "sourceUnits": [
+    {
+      "id": "s0-transcribed-0",
+      "locator": {
+        "originalSourceId": "s0",
+        "mediaName": "i1887056819956392.jpg",
+        "sha256": "7659bc23fb99684505fa6fef7213ef71dea386ab84219c2f6a594d2ab25d19a5",
+        "region": "원본 전체 본문. 부모와 독립 검수자의 두 번 직접 판독. 닉·시각·조회·화면 버튼 제외."
+      },
+      "text": "12년차 차장입니다.\n\n입사하시고 채팅이나 이메일에서 \"넵\", \"넴\", \"엡\", \"옛\", \"앙\"으로 답변하지 마세요.\n\n회사에서는 정신 똑바로 차려야 합니다.\n\n업무에 참고 바랍니다."
+    },
+    {
+      "id": "s1-transcribed-0",
+      "locator": {
+        "originalSourceId": "s1",
+        "mediaName": "i1966680339251020.jpg",
+        "sha256": "76f59a003e246c1deca39225836c5be2a7371754d0400e32d4076d6954bfa255",
+        "region": "원본 전체 본문. 부모와 독립 검수자의 두 번 직접 판독. 닉·시각·조회·화면 버튼 제외."
+      },
+      "text": "'넵'도 쓰세용.\n\n편하게들 쓰세욘.......\n\n난리네요... 제가 졌습니다람쥐...\n\n뭐든 편하게 맘껏 쓰삼들요..."
+    }
+  ]
+}

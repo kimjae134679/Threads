@@ -1,0 +1,18 @@
+{
+  "origin": {
+    "productionPlan": "D:\\A_KJ\\AI\\Projects\\Threads\\자료\\06_자동 제작 결과\\현재 결과\\엄청난 신입사원이 두달만에 짤린 썰 후기__source-c17d392921074a\\production-plan.json",
+    "productionPlanSha256": "e52318a916bfb423caf237949adde9b1cfd3ae95e9c85cf6ce3868b2be03834a",
+    "sourceFile": "C:\\Users\\user\\source\\repos\\Threads-program-inputs\\data\\runtime\\program_inputs\\inven\\엄청난-신입사원이-두달만에-짤린-썰-후기--source-c17d392921074a\\source\\source.html",
+    "sourceSha256": "acca3f4c72a01e95aec9026c19e73d70e5060cfb70d43bb1376aa183a52c334c",
+    "sourceCheckedAt": "2026-10-03T13:50:05.427Z"
+  },
+  "readAt": "2026-10-08T13:40:12.922Z",
+  "note": "저장 HTML 본문과 제작 계획의 해당 문장을 읽고 대조함; 사연 진위를 사실로 확정하지 않음",
+  "sourceUnits": [
+    {
+      "id": "s11",
+      "locator": "tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(14)",
+      "text": "입사 3일차 - 경리 담당자 신입 사원 호출 카드 사용 용도 추긍 - 영업거래처 상담아닌 여친과의 식사 (지들 나름대로 입사 축하)"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "threads-generation-compatibility-report-v1",
+  "checkedAt": "2026-10-08T13:58:00.373Z",
+  "sourcePostId": "source-c17d392921074a",
+  "generator": {
+    "name": "image_gen.imagegen",
+    "model": null,
+    "reason": "default model not exposed"
+  },
+  "promptVersion": null,
+  "generatedAt": null,
+  "recordedAt": "2026-10-08T13:27:16Z",
+  "applicationStatus": "not_applied",
+  "current365Updated": false,
+  "currentPixelPolicy": "title composed by code; no AI-staging wording; raw generated originals text-free; provenance internal",
+  "originals": [
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\generated-assets\\newhire-A-ai-original.png",
+      "recordedSha256": "3d1c229c65c1930ae1b038f7dc42a4fc5c8d618b95692557892cb70289b1637a",
+      "actualSha256": "3d1c229c65c1930ae1b038f7dc42a4fc5c8d618b95692557892cb70289b1637a",
+      "hashMatches": true,
+      "width": 1254,
+      "height": 1254,
+      "textFreeRecorded": true,
+      "visuallyChecked": true
+    },
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\generated-assets\\newhire-B-ai-original.png",
+      "recordedSha256": "3c1ffd363eb3685c541270d72d5fc8f9835a9a004f99e99b753b1b0869701243",
+      "actualSha256": "3c1ffd363eb3685c541270d72d5fc8f9835a9a004f99e99b753b1b0869701243",
+      "hashMatches": true,
+      "width": 1254,
+      "height": 1254,
+      "textFreeRecorded": true,
+      "visuallyChecked": true
+    }
+  ],
+  "composites": [
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\A.png",
+      "sha256": "dd158f3d4e8ace64a8ffd62a17ab89b55b862cf6f4ba73cbbdb9d0f6472563b1",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\B.png",
+      "sha256": "31afa834780c436542745ce76eafb3fc4bf99d00f843cd81debc2954aa14e0b6",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "reference": "C:\\Users\\user\\Documents\\Codex\\2026-10-08\\task-10\\comparison.png",
+      "sha256": "5d78b0baf9c717dde8ceb0ee450d516c0de5dfd3bf734ebabde685e89b94027b",
+      "width": 2160,
+      "height": 1080
+    }
+  ],
+  "compatibleAs": "generationReceipts only; not ready composition assets",
+  "remaining": [
+    "Source rights/safety and grounded scene review",
+    "Original prompts include unverified colleague age/sex; retain as staged choices, never source facts",
+    "Assign actual prompt version and target productionVersion on reviewed application",
+    "Connect generation consumer and provenance-preserving composition consumer"
+  ],
+  "preservedRejectedOrOld": "First text-bearing unread-source version and task-9 rejected assets are not reused"
+}

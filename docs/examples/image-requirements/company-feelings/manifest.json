@@ -1,0 +1,224 @@
+{
+  "schema": "threads-program-input-v1",
+  "id": "source-acca0574adb063",
+  "title": "2026년 회사별 느낌 NEW ver.",
+  "platform": "blind",
+  "sourceUrl": "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco",
+  "generatedAt": "2026-09-27T10:39:49.252Z",
+  "status": "needs_verbatim_review",
+  "stages": [
+    "C1 / A0 / P0"
+  ],
+  "sourceReview": {
+    "verbatimBodyAvailable": false,
+    "bodyVerified": false,
+    "commentsVerified": false,
+    "mediaPositionVerified": false,
+    "rightsReviewed": false,
+    "privacyReviewed": false,
+    "publicationAllowed": false
+  },
+  "candidateRecords": [
+    {
+      "path": "data/candidates/260916_C1_A0_P0_2026회사별느낌.md",
+      "sha256": "fd8bf2122194770cdeaf4f8ced01a2f1cf63e3a840590ac5ad090df828d9027a",
+      "title": "2026년 회사별 느낌 NEW ver.",
+      "stage": "C1 / A0 / P0",
+      "bodyRead": null,
+      "commentsRead": null,
+      "imagePresent": null,
+      "sourceStatus": "needs_verbatim_source",
+      "conversionStatus": "not_converted"
+    }
+  ],
+  "jevAssessments": [
+    {
+      "path": "data/jev_results/260916_C1_A0_P0_2026회사별느낌.jev.json",
+      "sha256": "5d63d26da8bf0c7b0c7e079c4a5a414030508c51a075f1944f68b842b421727e",
+      "schemaVersion": 2,
+      "model": "jev-1.13.0",
+      "answers": {
+        "overall_score": {
+          "type": "score",
+          "score": 1.04,
+          "confidence": 0.78,
+          "legend": {
+            "0": "버림",
+            "1": "보류",
+            "2": "쓸만함",
+            "3": "우선 제작"
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.79,
+            "2": 0.11,
+            "3": 0.01
+          }
+        },
+        "final_status": {
+          "type": "choice",
+          "choice": "hold",
+          "confidence": 0.83,
+          "probabilities": {
+            "priority": 0.01,
+            "hold": 0.87,
+            "discard": 0.11,
+            "usable": 0.01
+          }
+        },
+        "content_type": {
+          "type": "choice",
+          "choice": "humor",
+          "confidence": 0.89,
+          "probabilities": {
+            "info": 0,
+            "skip": 0.07,
+            "empathy": 0.01,
+            "humor": 0.92,
+            "issue": 0
+          }
+        },
+        "hook_strength": {
+          "type": "noul",
+          "noul": 0.73
+        },
+        "needs_research": {
+          "type": "noul",
+          "noul": 0.89
+        },
+        "asset_importance": {
+          "type": "score",
+          "score": 1.9,
+          "confidence": 0.85,
+          "legend": {
+            "0": "낮음",
+            "1": "보통",
+            "2": "높음"
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.05,
+            "2": 0.92
+          }
+        },
+        "threads_fit": {
+          "type": "noul",
+          "noul": 0.18
+        },
+        "needs_improvement": {
+          "type": "noul",
+          "noul": 0.96
+        },
+        "improvement_area": {
+          "type": "choice",
+          "choice": "safety",
+          "confidence": 0.98,
+          "probabilities": {
+            "source": 0,
+            "asset": 0.01,
+            "story": 0,
+            "hook": 0,
+            "none": 0,
+            "safety": 0.99
+          }
+        },
+        "improvement_level": {
+          "type": "score",
+          "score": 1.78,
+          "confidence": 0.67,
+          "legend": {
+            "0": "낮음",
+            "1": "보통",
+            "2": "높음"
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.09,
+            "2": 0.85
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 9822,
+        "output_tokens": 294
+      }
+    }
+  ],
+  "priorBundles": [],
+  "sourcePackage": null,
+  "media": [],
+  "blockers": [
+    "원문 본문 전문이 없거나 줄바꿈까지 대조되지 않음",
+    "댓글의 실제 문구와 인기 근거가 대조되지 않음",
+    "권리·개인정보·게시 검수가 끝나지 않음"
+  ],
+  "imageRequirements": {
+    "schema": "threads-image-requirements-v1",
+    "postId": "source-acca0574adb063",
+    "sourceUrl": "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco",
+    "status": "source_hold",
+    "holdReasons": [
+      "manifest와 참고 기록에 본문 전문/실제 장면 근거가 없음. 제목만으로 회사별 장면을 만들지 않음."
+    ],
+    "identity": {
+      "sourceId": "source-acca0574adb063",
+      "canonicalSourceUrl": "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco",
+      "sourceContentHash": null,
+      "sourceFingerprint": null,
+      "seenBefore": {
+        "status": "unseen",
+        "checkedAt": "2026-10-08T13:40:12.911Z",
+        "reference": "../review-progress-evidence.json",
+        "sha256": "e72134e110c7a94985e8d516e716c68c5836e01104e997707447702c6008a227",
+        "matchedOutputVersions": []
+      }
+    },
+    "selection": {
+      "priority": [
+        "source_image",
+        "external_image",
+        "ai_illustration",
+        "text"
+      ],
+      "choice": "pending",
+      "reason": "본문 확인 전에는 이미지 유형을 고르지 않음. 확인 후 원본→외부→AI 순으로 판단하고 부적절하면 글씨형 표지.",
+      "originalDecision": "unknown",
+      "externalDecision": "unknown",
+      "fallback": "text"
+    },
+    "collection": {
+      "discoveredOn": "blind",
+      "originalSourceUrl": null,
+      "sourceChain": [
+        "https://www.teamblind.com/kr/post/2026%EB%85%84-%ED%9A%8C%EC%82%AC%EB%B3%84-%EB%8A%90%EB%82%8C-NEW-ver-bb05egco"
+      ],
+      "checkedAt": "2026-10-08T13:40:12.911Z",
+      "metrics": [],
+      "qualityBasis": "body_and_review",
+      "reviewReference": "../review-guidance-evidence.json",
+      "reviewSha256": "6df4cd229a571898fe43113288a135b3ae92557aeecc7c2c8044e07531dc95c8"
+    },
+    "read": {
+      "status": "metadata_only",
+      "readAt": null,
+      "reference": null,
+      "sha256": null,
+      "excerpts": []
+    },
+    "shortage": {
+      "insufficient": null,
+      "reason": "원문 미확인으로 사진 필요성·장면 판단 불가.",
+      "originals": []
+    },
+    "clearance": {
+      "status": "unknown",
+      "evidence": null,
+      "reviewedBy": null
+    },
+    "productionLink": {
+      "postId": "source-acca0574adb063",
+      "productionVersion": null
+    },
+    "items": []
+  }
+}

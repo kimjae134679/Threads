@@ -3,6 +3,7 @@ const fs=require('node:fs/promises');
 const path=require('node:path');
 const {createHash}=require('node:crypto');
 const {loadBatchInput}=require('./batch-input.cjs');
+const {renderingJob}=require('./image-requirements.cjs');
 const {sourceAccess}=require('./source-access.cjs');
 const {writeCatalog,writeResultGallery}=require('./batch-catalog.cjs');
 const {writeAtomic}=require('./atomic-file.cjs');
@@ -12,7 +13,7 @@ const safe=value=>String(value||'source').replace(/[^a-zA-Z0-9_-]/g,'_').slice(0
 const label=value=>String(value||'원문').normalize('NFKC').replace(/[<>:"/\\|?*\x00-\x1f]/g,' ').replace(/\s+/g,' ').trim().slice(0,42).replace(/[. ]+$/,'')||'원문';
 const RULE_VERSION='2026-10-07.5';
 // Text-only layouts keep their existing fingerprint when pixel analysis changes.
-const fingerprintFor=job=>digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(job)+(job.files?.length?'|image-analysis-2026-10-04.4':''));
+const fingerprintFor=job=>digest('folder-recipe-'+RULE_VERSION+'|'+JSON.stringify(renderingJob(job))+(job.files?.length?'|image-analysis-2026-10-04.4':''));
 const statuses=['published','generated','already_done','needs_source','needs_access','needs_exact_url','needs_media','needs_selection','unavailable','excluded_severe','failed'];
 const inside=(root,target)=>{const relative=path.relative(root,target);return relative===''||relative!=='..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative);};
 async function exists(file) {try{await fs.access(file);return true;}catch{return false;}}
@@ -230,4 +231,4 @@ async function runFolderBatch(options) {
   try {return await processFolderBatch(options);}
   finally {await handle.close();await fs.rm(file,{force:true});}
 }
-module.exports={discoverCandidates,runFolderBatch,readReport,inside};
+module.exports={discoverCandidates,runFolderBatch,readReport,inside,fingerprintFor};
