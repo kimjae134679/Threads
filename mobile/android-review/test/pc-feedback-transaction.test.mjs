@@ -80,6 +80,13 @@ test('exclusive lock prevents concurrent import and is released after failure',a
  const first=tx.importFeedback(f.request);await entered;await assert.rejects(api.createFixtureFeedbackTransaction(f.config).importFeedback(f.request),/lock|busy/i);release();await first;
  assert.equal((await api.createFixtureFeedbackTransaction(f.config).importFeedback(f.request)).status,'unchanged');
 });
+test('known-dead transaction reclaimer is recoverable while unknown guard remains intact',async t=>{
+ const f=await fixture(t),api=await load(),lock=f.feedbackFile+'.mobile-import.lock',guard=lock+'.reclaim';
+ const dead={schemaVersion:1,pid:2147483647,host:os.hostname(),token:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'};
+ await fs.writeFile(lock,JSON.stringify(dead));await fs.writeFile(guard,JSON.stringify({...dead,token:'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb'}));
+ assert.equal((await api.createFixtureFeedbackTransaction(f.config).recover()).status,'recovered');assert.equal(await fs.stat(lock).catch(e=>e.code),'ENOENT');assert.equal(await fs.stat(guard).catch(e=>e.code),'ENOENT');
+ await fs.writeFile(lock,JSON.stringify(dead));await fs.writeFile(guard,'{}');await assert.rejects(api.createFixtureFeedbackTransaction(f.config).recover(),/unknown|invalid|busy/i);assert.equal(await fs.readFile(guard,'utf8'),'{}');assert.deepEqual(await fs.readFile(f.feedbackFile),f.before);
+});
 test('CAS detects an intervening canonical edit without restoring over it',async t=>{
  const f=await fixture(t),api=await load(),external=Buffer.from(JSON.stringify({...f.initial,external:'preserve'}));
  const tx=api.createFixtureFeedbackTransaction({...f.config,failpoint:async stage=>{if(stage==='beforeCas')await fs.writeFile(f.feedbackFile,external);}});

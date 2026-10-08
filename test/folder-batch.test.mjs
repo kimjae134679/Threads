@@ -28,10 +28,11 @@ try {
     assert.equal(files.length, 1);
     assert.equal(title, '원문 제목');
     return {zip:Buffer.from('preview zip fixture'),sourceZip:Buffer.from('source zip fixture'),
-      images:[{name:'rendered/slide-001.png',data:Buffer.from('png fixture')}]};
+      images:[{name:'rendered/slide-001.png',data:Buffer.from('png fixture')}],productionPlan:{ruleVersion:'fixture-intake-layout',pages:[],warnings:[],omitted:[]},intakeAudit:{rawBodyAndCommentsExact:true}};
   };
   const first = await runFolderBatch({ folder:input, output, render });
   assert.equal(first.counts.generated, 1);
+  assert.equal(first.entries.find(e=>e.outputFolder).ruleVersion,'fixture-intake-layout');
   assert.equal(first.counts.needs_exact_url, 1);
   assert.equal(rendered, 1);
   const second = await runFolderBatch({ folder:input, output, render });
@@ -68,3 +69,32 @@ try {
 } finally {
   await fs.rm(root, { recursive:true, force:true });
 }
+import test from 'node:test';
+
+test('batch-owned output I/O failure is fatal after a successful renderer', async () => {
+ const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'threads-batch-fatal-'));
+ const candidate = path.join(fixture, 'input', 'one'), destination = path.join(fixture, 'output');
+ try {
+  await fs.mkdir(candidate, {recursive:true});
+  await fs.writeFile(path.join(candidate, 'source.json'), JSON.stringify({schema:'threads-verbatim-source-v1',verbatim:true,title:'Fixture',body:'Complete original body.',comments:[]}));
+  const originalWrite = fs.writeFile;
+  for (const code of ['EIO','ENOSPC','EACCES']) {
+   let injected = false;
+   fs.writeFile = async function(file, ...args) {
+    if (String(file).startsWith(destination + path.sep) && /slide-001[.]png$/.test(String(file))) {
+     injected = true; throw Object.assign(Error('Fixture output write failure: ' + code), {code});
+    }
+    return originalWrite.call(this, file, ...args);
+   };
+   try {
+    await assert.rejects(runFolderBatch({folder:path.join(fixture,'input'),output:destination,render:async()=>({title:'Fixture',zip:Buffer.from('result'),sourceZip:Buffer.from('source'),images:[{name:'rendered/slide-001.png',data:Buffer.from('pixels')} ]})}), error => error.code === code);
+    assert.equal(injected, true);
+   } finally { fs.writeFile = originalWrite; }
+   await assert.rejects(fs.stat(path.join(destination,'batch.lock')), {code:'ENOENT'});
+  }
+ } finally {
+  assert(path.resolve(fixture).startsWith(path.resolve(os.tmpdir()) + path.sep));
+  assert(path.basename(fixture).startsWith('threads-batch-fatal-'));
+  await fs.rm(fixture, {recursive:true,force:true});
+ }
+});

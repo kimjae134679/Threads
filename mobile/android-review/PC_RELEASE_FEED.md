@@ -1,6 +1,6 @@
 # Callable PC release feed
 
-`pc/release-feed.mjs` completes the source-only PC producer for the verified 0.3.16 exporter and publisher. It has no CLI, process startup, recurring timer, daemon, scheduling, token acquisition or canonical feedback writes. `enabled` defaults to false; disabled calls perform zero source reads, exports, journal saves or transport calls.
+`pc/release-feed.mjs` completes the source-only PC producer for the verified 0.3.16 and 0.3.18 exporter and publisher. It has no CLI, process startup, recurring timer, daemon, scheduling, token acquisition or canonical feedback writes. `enabled` defaults to false; disabled calls perform zero source reads, exports, journal saves or transport calls.
 
 ## API
 
@@ -9,7 +9,8 @@ import {runReleaseFeed, selectCompletedRound} from './pc/release-feed.mjs';
 
 const result = await runReleaseFeed({
   enabled: explicitlyEnabled,
-  readSnapshots,          // async () => {pointer, report, deliveryJournal}
+  readSnapshots,          // async () => {pointer, report, deliveryJournal, intakeProof, intakeFatal}
+  completionPolicy: 'regenerated-only', // explicit 'verified-intake' opts in
   store,                  // explicit read-only store; list() and image()
   criteria,
   repository,             // dedicated private identity + isolated review branch
@@ -26,11 +27,15 @@ const result = await runReleaseFeed({
 
 `repository` uses the existing `dedicatedRepositoryMetadata` contract: owner, repo, numeric repositoryId, private=true, dedicatedReviewRepository=true, branch=`mobile-review/<name>`, and explicit excludedRepositories. The default pinned reader authenticates repository identity, privacy, branch separation, commit/tree identity and the exact state Git blob hash through the injected API. A replacement reader is a trusted read-only dependency and must provide the same guarantees. No real transport or credential source is configured by this module.
 
-`selectCompletedRound(snapshot)` returns `{reviewRound, posts, pages, rows, sourceStatusSha256}` or null. `runReleaseFeed` returns `disabled`, `waiting`, `noop`, `confirmed`, `pending`, `stale` or `blocked`, with reasons and caller-persistable journal evidence where relevant. Prepared calls include `exported`, the existing exporter result with `state`, `trustedLocalSnapshot`, `assetDirectory`, `outputDirectory`, `stateFile` and `snapshotFile`. Recovery returns the confirmed head and journal without making another export.
+selectCompletedRound(snapshot, {completionPolicy = 'regenerated-only'} = {}) returns {reviewRound, posts, pages, rows, sourceStatusSha256, wholeCollectionRegenerated} or null. Unknown policies fail closed. `runReleaseFeed` returns `disabled`, `waiting`, `noop`, `confirmed`, `pending`, `stale` or `blocked`, with reasons and caller-persistable journal evidence where relevant. Prepared calls include `exported`, the existing exporter result with `state`, `trustedLocalSnapshot`, `assetDirectory`, `outputDirectory`, `stateFile` and `snapshotFile`. Recovery returns the confirmed head and journal without making another export.
 
 ## Selection and preservation
 
 Selection requires the current pointer to be active and wholeCollectionRegenerated=true. The report must have the same round, deliveryStatus=complete, processed exactly equal to entries.length, no failed entry, and every output row generated with nonempty images. Pointer post/page counts must exactly match unique output rows and images. The delivery journal must have the same round and complete=true; rollback/error markers refuse selection. Optional delivery counts and pointer audit rows are cross-checked. There is no previous-round lookup or fallback.
+
+An explicit completionPolicy: 'verified-intake' also permits an incremental collection. Pointer and report must both retain wholeCollectionRegenerated=false, report must declare intakeContract='verified-intake-v1', and a universal-reproduction contract cannot use this path. Every output row must be generated or already_done and carry exact boolean intakeAuditPassed=true or preservedCurrent=true. The same active pointer, completed nonrollback journal, exact unique IDs, posts, pages and optional audit checks still apply.
+
+The trusted snapshot binding supplies intakeProof parsed from the current round's source intake-complete.json: {reviewRound, completed:true, sourceBytesUnchanged:true, registeredIds, posts, pages}. Proof IDs must be unique and exactly equal the entire output collection, including preserved rows. Missing, malformed or mismatched proof refuses selection. intakeFatal must be null or absent; any present fatal evidence refuses selection. The binding must check both source-round and intake-work fatal files and bind the source status bytes to pointer.sourceStatusSha256 under its coherent source-read barrier. This module consumes the supplied proof and does not find or infer evidence paths. Default calls continue to require whole regeneration. Incremental completion is returned as false and is never relabeled as whole regeneration.
 
 The completion snapshot is read again after export and before commit/ref requests. A changed current collection prevents publication. Caller snapshot bindings should read a coherent snapshot and bind to the approved PC source only when a real pilot is authorized.
 
@@ -60,7 +65,7 @@ The tests use a new temporary directory per fixture, two small synthetic PNGs, r
 
 ```text
 node --test mobile/android-review/test/pc-release-feed.test.mjs
-28 tests passed
+36 tests passed
 
 node --test mobile/android-review/test/pc-release-feed.test.mjs \
   mobile/android-review/test/pc-exchange.test.mjs \

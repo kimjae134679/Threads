@@ -45,19 +45,23 @@ Redirects, size excesses, malformed responses and unauthorized paths fail;
 error text is sanitized. The pinned reader checks private owner/name/numeric ID,
 non-default branch, exact commit and state Git blob SHA before returning data.
 
-## What is still required after permission
+## PC 0.3.18 source-copy binding and remaining activation
 
-The callable algorithm and synthetic wiring are prepared. It is **not yet only
-repository settings plus a device test**: actual PC binding is undeployed.
-Activation still requires a reviewed approved credential provider, coherent
-read-only PC snapshot paths/store and durable journal/lock binding. Canonical
-merge additionally needs a shared writer adapter covering ALL desktop saves
-and round activation. The existing desktop private queue does not use this new
-barrier; a standalone filesystem lock does not protect against it. Generic
-transactions reject activation without the explicit all-writers/round contract.
-PC source changes, any actual rating binding and scheduling are outside this task.
-No new API/data change is required remotely; canonical JSON adds `mobileImport`
-receipts/revisions/separate decisions and preserves its original0.3.16 fields.
+The source copy now includes the shared writer barrier used by PC saves,
+visits, decisions, migration, coherent reads and complete round activation.
+`pc/pc-binding.mjs` supplies explicit real PC paths/store, durable independent
+journal and shared feed/canonical locks. It also passes the optional validated
+`completionPolicy: 'verified-intake'`; the default remains full regeneration.
+See PC_0318_BINDING.md for exact configuration, proof paths, ownership and
+synthetic tests. The installed PC application and actual ratings were untouched.
+
+Activation still requires a reviewed approved credential provider and explicit
+actual path/repository/criteria configuration, deployment of this source with
+all participating writers, and separate transfer/canonical pilot approvals.
+The binding is default-disabled and has no scheduler. Generic transactions
+continue to reject undeclared writer contracts. No new remote API/data schema
+is required; canonical JSON adds `mobileImport` receipts/revisions/separate
+decisions and preserves verified0.3.16/0.3.18 fields.
 
 After those bindings and approvals are reviewed, perform real Android install,
 native Keystore/login/TLS, small private supply/review/conflict/reconnect pilot,

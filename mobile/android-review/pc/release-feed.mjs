@@ -15,23 +15,30 @@ const blob=bytes=>createHash('sha1').update(Buffer.concat([Buffer.from('blob '+b
 const fail=code=>{throw Object.assign(Error(code),{code});};
 const statePath='mobile-review/state.json';
 
-/** No fallback: null means the current pointer is not a complete collection. */
-export function selectCompletedRound(snapshot){
- if(!plain(snapshot))return null;
- const {pointer:p,report:r,deliveryJournal:j}=snapshot;
- if(!plain(p)||p.active!==true||p.wholeCollectionRegenerated!==true||typeof p.reviewRound!=='string'||!p.reviewRound||p.reviewRound.length>200||!Number.isSafeInteger(p.posts)||p.posts<1||!Number.isSafeInteger(p.pages)||p.pages<p.posts)return null;
+/** No fallback: null means the current pointer is not a proven complete collection. */
+export function selectCompletedRound(snapshot,{completionPolicy='regenerated-only'}={}){
+ if(!['regenerated-only','verified-intake'].includes(completionPolicy)||!plain(snapshot))return null;
+ const {pointer:p,report:r,deliveryJournal:j,intakeProof:proof,intakeFatal}=snapshot;
+ if(!plain(p)||p.active!==true||typeof p.reviewRound!=='string'||!p.reviewRound||p.reviewRound.length>200||!Number.isSafeInteger(p.posts)||p.posts<1||!Number.isSafeInteger(p.pages)||p.pages<p.posts)return null;
  if(!plain(r)||r.reviewRound!==p.reviewRound||r.deliveryStatus!=='complete'||!Array.isArray(r.entries)||r.entries.length>10000||r.processed!==r.entries.length)return null;
+ const intake=completionPolicy==='verified-intake'&&p.wholeCollectionRegenerated===false&&r.wholeCollectionRegenerated===false&&r.intakeContract==='verified-intake-v1'&&r.reproductionContract!=='universal-reproduction-v1';
+ if(p.wholeCollectionRegenerated!==true&&!intake||p.wholeCollectionRegenerated===true&&r.wholeCollectionRegenerated===false)return null;
  if(!plain(j)||j.reviewRound!==p.reviewRound||j.complete!==true||j.rolledBack===true||j.error||j.rollbackError)return null;
  if(r.entries.some(e=>!plain(e)||e.status==='failed'))return null;
  const rows=r.entries.filter(e=>e.outputFolder&&Array.isArray(e.images)&&e.images.length);
- if(rows.length!==p.posts||new Set(rows.map(e=>e.id)).size!==p.posts||rows.some(e=>e.status!=='generated'||e.reviewRound!==p.reviewRound||typeof e.id!=='string'||!e.id||typeof e.outputFolder!=='string'))return null;
- // A generated output with missing pages is also an incomplete collection.
- if(r.entries.some(e=>(e.outputFolder||e.status==='generated')&&!rows.includes(e)))return null;
+ if(rows.length!==p.posts||new Set(rows.map(e=>e.id)).size!==p.posts||rows.some(e=>(e.status!=='generated'&&!(intake&&e.status==='already_done'))||e.reviewRound!==p.reviewRound||typeof e.id!=='string'||!e.id||typeof e.outputFolder!=='string'))return null;
+ // Every claimed output must have actual pages, including preserved intake rows.
+ if(r.entries.some(e=>(e.outputFolder||e.status==='generated'||intake&&e.status==='already_done')&&!rows.includes(e)))return null;
  const pages=rows.reduce((n,e)=>n+e.images.length,0);
  if(pages!==p.pages||j.posts!==undefined&&j.posts!==p.posts||j.pages!==undefined&&j.pages!==pages)return null;
  if(p.audited!==undefined&&(!Array.isArray(p.audited)||p.audited.length!==rows.length||rows.some(e=>p.audited.filter(a=>a?.id===e.id&&a.pages===e.images.length&&a.ruleVersion===e.ruleVersion).length!==1)))return null;
  if(p.sourceStatusSha256!==undefined&&!hash.test(p.sourceStatusSha256))return null;
- return {reviewRound:p.reviewRound,posts:rows.length,pages,rows:clone(rows),sourceStatusSha256:p.sourceStatusSha256||null};
+ if(intake){
+  if(intakeFatal!==undefined&&intakeFatal!==null||!plain(proof)||proof.reviewRound!==p.reviewRound||proof.completed!==true||proof.sourceBytesUnchanged!==true||proof.posts!==rows.length||proof.pages!==pages||rows.some(e=>e.intakeAuditPassed!==true&&e.preservedCurrent!==true))return null;
+  const ids=proof.registeredIds,outputIds=new Set(rows.map(e=>e.id));
+  if(!Array.isArray(ids)||ids.length!==rows.length||new Set(ids).size!==ids.length||ids.some(id=>typeof id!=='string'||!id||!outputIds.has(id)))return null;
+ }
+ return {reviewRound:p.reviewRound,posts:rows.length,pages,rows:clone(rows),sourceStatusSha256:p.sourceStatusSha256||null,wholeCollectionRegenerated:p.wholeCollectionRegenerated};
 }
 function contentFingerprint(selected,criteria){
  return requestHash({reviewRound:selected.reviewRound,criteria,sourceStatusSha256:selected.sourceStatusSha256,rows:selected.rows.map(r=>({id:r.id,title:r.title,sourceFingerprint:r.sourceFingerprint,outputSha256:r.outputSha256,ruleVersion:r.ruleVersion,images:r.images})).sort((a,b)=>a.id.localeCompare(b.id))});
@@ -100,16 +107,16 @@ async function resumeExport(p,{allowedOutputRoot,outputDirectory,store,selected,
  * persistJournal must durably save its JSON input before resolving. Callers must
  * serialize runs for one journal/repository; this function creates no lock/timer.
  */
-export async function runReleaseFeed({enabled=false,readSnapshots,readRemoteSnapshot=readPinnedReviewState,store,criteria,repository,api,allowedOutputRoot,outputDirectory,journal:inputJournal={},persistJournal}={}){
+export async function runReleaseFeed({enabled=false,completionPolicy='regenerated-only',readSnapshots,readRemoteSnapshot=readPinnedReviewState,store,criteria,repository,api,allowedOutputRoot,outputDirectory,journal:inputJournal={},persistJournal}={}){
  if(enabled!==true)return {status:'disabled'};
  if(typeof readSnapshots!=='function'||typeof readRemoteSnapshot!=='function'||typeof api!=='function')throw Error('Injected read-only completion/pinned remote snapshots and API required');
  if(typeof persistJournal!=='function')throw Error('Durable persistJournal callback required before publication');
  if(store?.readOnly!==true)throw Error('Explicit read-only PC store required');
  const metadata=dedicatedRepositoryMetadata(repository),repositoryIdentity=requestHash({...metadata,excludedRepositories:repository.excludedRepositories}),journal=initialJournal(inputJournal,repositoryIdentity);
- const selected=selectCompletedRound(await readSnapshots());if(!selected)return {status:'waiting',reason:'current_collection_incomplete',journal};
+ const selected=selectCompletedRound(await readSnapshots(),{completionPolicy});if(!selected)return {status:'waiting',reason:'current_collection_incomplete',journal};
  const fingerprint=contentFingerprint(selected,criteria),prefix='/repos/'+metadata.owner+'/'+metadata.repo;
  const persist=async()=>{await persistJournal(clone(journal));};
- const current=async()=>{const next=selectCompletedRound(await readSnapshots());return next&&contentFingerprint(next,criteria)===fingerprint;};
+ const current=async()=>{const next=selectCompletedRound(await readSnapshots(),{completionPolicy});return next&&contentFingerprint(next,criteria)===fingerprint;};
  const remote=await readRemoteSnapshot({enabled:true,repository,api,allowAbsent:true});
  if(!plain(remote)||!git.test(remote.head)||!git.test(remote.tree)||remote.state!==null&&!plain(remote.state))throw Error('Authenticated pinned remote snapshot required');
 

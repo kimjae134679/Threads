@@ -64,7 +64,7 @@ browser. Current 0.1.2 deliberately cannot activate merely by pressing a button.
   config and protected session exist. Existing offline queue/revision/conflict
   logic reused. Real asset/login/online verification is still pending.
 
-PC export/import is a separate local adapter with read-only 0.3.16 store and
+PC export/import is a separate local adapter with read-only 0.3.16/0.3.18 store and
 new explicit output paths. Imports produce proposals plus separate checks and
 human decision records; they never call PC save or publish. See `PC_EXCHANGE.md`
 for trusted-local-baseline requirements, history, stale/conflict and receipt rules.
@@ -74,13 +74,14 @@ non-force transactions. A PC release publisher is prepared with an injected API 
 The remaining callable PC wiring is now prepared: completed active-round selection,
 verified content-hash incremental supply, durable publication recovery, pinned
 transport and atomic canonical feedback transaction with exact-byte backup and
-receipts/decisions in the same JSON commit. `review-pipeline.mjs` remains default-off
-and creates no scheduler or actual file binding. See PC_PIPELINE.md,
-PC_RELEASE_FEED.md and PC_FEEDBACK_TRANSACTION.md. Real activation is not solely
-a permissions switch: it still requires the reviewed PC credential/snapshot/
-journal bindings, and a PC-wide writer barrier shared by desktop saves and round
-activation. Existing desktop source was not modified to install that barrier.
-No original ratings were merged and no actual canonical caller was deployed.
+receipts/decisions in the same JSON commit. The isolated PC0.3.18 source copy now
+includes shared writer hooks and `pc-binding.mjs` for explicit paths/store,
+durable journal and validated intake proof. It remains default-off, creates no
+scheduler and is not installed in the actual PC application. See PC_PIPELINE.md,
+PC_0318_BINDING.md, PC_RELEASE_FEED.md and PC_FEEDBACK_TRANSACTION.md.
+Real activation still needs an approved credential provider, explicit actual
+configuration, source deployment and separately approved device/online/canonical
+pilots. No original ratings were merged or actual canonical caller deployed.
 
 ## Verification distinction
 

@@ -11,7 +11,7 @@ export function createPcReviewPipeline(options={}){
    if(!active)return {status:'disabled'};
    if(typeof options.withSupplyLock!=='function'||options.supplyLockContract?.allFeedWriters!==true)throw Error('Declared shared feed-journal writer lock required');
    if(typeof options.readJournal!=='function')throw Error('Caller-preserved durable feed journal required');
-   return options.withSupplyLock(async()=>runReleaseFeed({enabled:true,repository:options.repository,api,readRemoteSnapshot:readPinnedReviewState,readSnapshots:options.readSnapshots,store:options.store,criteria:options.criteria,allowedOutputRoot:options.allowedOutputRoot,outputDirectory,journal:await options.readJournal(),persistJournal:options.persistJournal}));
+   return options.withSupplyLock(async()=>runReleaseFeed({enabled:true,repository:options.repository,api,readRemoteSnapshot:readPinnedReviewState,readSnapshots:options.readSnapshots,completionPolicy:options.completionPolicy,store:options.store,criteria:options.criteria,allowedOutputRoot:options.allowedOutputRoot,outputDirectory,journal:await options.readJournal(),persistJournal:options.persistJournal}));
   },
   async importOnce(){
    if(!merge)return {status:'disabled'};

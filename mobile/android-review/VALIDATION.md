@@ -91,3 +91,37 @@ canonical binding was deployed. Therefore approval alone is insufficient;
 those hooks must be implemented/reviewed before device/online/canonical pilots.
 Final ZIP extracted-test result, commit/remote and Library source version are
 recorded in the external delivery receipt after packaging.
+
+## PC 0.3.18 integrated source and APK 0.1.3 (current)
+
+This section supersedes earlier statements that shared PC writer/path/journal
+hooks remained unimplemented. Verified PC source
+`f22b0319fefa375f224a9bdc89edc072e0f5b73a` is merged into the isolated Android
+branch. The installed viewer, original materials and actual evaluations were
+not changed. Shared root writer/ordered reentry, complete activation archive/CAS,
+bounded no-link source reads, exact0.3.16/0.3.18 compatibility, opt-in verified
+intake and `pc-binding.mjs` are now implemented. See PC_0318_BINDING.md.
+
+Fresh final runs: `npm run check` passed all84 PC test suites; all165 mobile,
+native mock, exchange, transport, feed, transaction and binding tests passed.
+Independent current-snapshot reviews passed88/88 binding-related and106/106
+writer/compatibility tests, with no remaining Critical/Important findings.
+Resolved regressions include multi-store lost updates, queued reentry ordering,
+linked feedback leaking into supply, and interrupted reclamation guards.
+
+APK0.1.3 (versionCode4) rebuilt with installedSDK36/JDK21 and the existing debug
+identity only. V2/V3 signature verification passed. SHA256:
+`44e30dd8d58c94bdff478a39ca919b9baf7e01dbde865844d14e59508ca1c3ad`.
+The private delivery receipt records size, final source/remote SHA, ZIP hash and
+extracted verification. Browser QA reran against these exact bundled assets:
+390/800px, durable IndexedDB, ten scores, memo/checks/decision, conflict rebase,
+blank new version, and explicit disconnected UI. Those are synthetic Chrome
+screens, not Android native/device or actual online synchronization tests.
+
+No App/repository registration, key/token generation, grant, real login/upload,
+canonical pilot, scheduler deployment or actual publishing happened. Before
+activation, approved real configuration/credential provider and installation of
+the writer-integrated PC source are required, followed by an Android/online and
+separately approved canonical pilot. Unknown/legacy ownerless lock guards remain
+intact for operator inspection. File-fsync/rename tests do not prove arbitrary
+power-loss durability on Windows.

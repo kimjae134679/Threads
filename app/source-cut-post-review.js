@@ -18,8 +18,14 @@
   if(key===scheduledView&&!newPages.length)return;scheduledView=key;page=p;paintNavigation();
   for(const n of [...newPages.filter(n=>n!==p),p]){const seenKey=row.id+':'+row.outputVersion+':'+n;pendingSeen.add(seenKey);recordVisit(row,n).catch(()=>{scheduledView=null;}).finally(()=>pendingSeen.delete(seenKey));}
  }
+ function updateCoverFit(){
+  const stage=$('stage'),cover=mode==='single'&&current?.hasOutput&&current.pageLabels?.[page-1]==='표지';
+  stage.classList.toggle('cover-page',!!cover);
+  if(cover){const top=Math.max(0,stage.getBoundingClientRect().top),dock=document.querySelector('.review-dock').getBoundingClientRect().height;stage.style.setProperty('--cover-height',Math.max(120,innerHeight-top-dock-64)+'px');}
+  else stage.style.removeProperty('--cover-height');
+ }
  function scheduleView(){if(!viewFrame)viewFrame=requestAnimationFrame(()=>{viewFrame=0;recordVisiblePage();});}
- window.addEventListener('scroll',scheduleView,{passive:true});window.addEventListener('resize',scheduleView);document.addEventListener('visibilitychange',scheduleView);
+ window.addEventListener('scroll',scheduleView,{passive:true});window.addEventListener('resize',()=>{updateCoverFit();scheduleView();});document.addEventListener('visibilitychange',scheduleView);
 
  function paintProgress(){if(!current)return;const p=current.progress;$('progressLabel').textContent=(p?.seenAt?'본 글 · '+(p.complete?'모든 장 표시':(p.pagesSeen?.length||0)+'/'+current.pages+'장 열람'):'아직 안 본 글')+' · '+(current.current?.score!=null||current.current?.note?.trim()?'평가 기록 있음':'평가 기록 없음')+' · '+({eligible:'검토 대상',held:'보류',rejected:'탈락'}[current.disposition]);}
  function recordVisit(row,p){const operation=visitQueue.catch(()=>{}).then(async()=>{const saved=await api.visit({id:row.id,outputVersion:row.outputVersion,page:p});row.progress=saved;if(current===row){paintProgress();rememberPosition();}paintList();});visitQueue=operation;operation.catch(showError);return operation;}
@@ -39,7 +45,7 @@
   for(const row of rows){
    const b=document.createElement('button');b.type='button';b.className='post-card'+(current?.id===row.id?' active':'');b.dataset.id=row.id;b.setAttribute('aria-pressed',String(current?.id===row.id));
    const img=document.createElement('img');img.alt='';img.dataset.id=row.id;if(row.hasOutput)thumbs.observe(img);
-   const text=document.createElement('div'),title=document.createElement('b'),meta=document.createElement('small');title.textContent=row.coverTitle;meta.textContent=(row.hasOutput?row.pages+'장':'제작물 없음')+' · '+(row.progress?.seenAt?'본 글':'안 본 글')+' · '+(row.current?.score!=null?'★ '+row.current.score+'/10':'미평가');if(row.categoryLabel){const category=document.createElement('small');category.textContent=row.categoryLabel;text.append(category);}text.append(title,meta);b.append(img,text);b.onclick=()=>select(row.id).catch(showError);$('posts').append(b);
+   const text=document.createElement('div'),title=document.createElement('b'),meta=document.createElement('small');title.textContent=row.coverTitle;title.title=row.coverTitle;meta.textContent=(row.hasOutput?row.pages+'장':'제작물 없음')+' · '+(row.progress?.seenAt?'본 글':'안 본 글')+' · '+(row.current?.score!=null?'★ '+row.current.score+'/10':'미평가');if(row.categoryLabel){const category=document.createElement('small');category.textContent=row.categoryLabel;text.append(category);}text.append(title,meta);b.append(img,text);b.onclick=()=>select(row.id).catch(showError);$('posts').append(b);
   }
   $('posts').scrollTop=scrollTop;paintNavigation();
  }
@@ -57,10 +63,10 @@
   }else await saveQueue;
  }
  async function renderPage(){
-  const row=current,token=selection,p=page;if(!row||!row.hasOutput)return;paintNavigation();rememberPosition();
+  const row=current,token=selection,p=page;if(!row||!row.hasOutput)return;paintNavigation();rememberPosition();updateCoverFit();
   $('prev').disabled=p===1;$('next').disabled=p===row.pages;$('pageSelect').value=String(p);$('pageLabel').textContent=row.pageLabels[p-1]+' · '+p+' / '+row.pages;
   $('pageImage').removeAttribute('src');$('pageImage').alt='불러오는 중 · '+p+'장';
-  try{const src=await getImage(row,p);if(token!==selection||row!==current||page!==p)return;$('pageImage').onload=()=>{if(token===selection&&row===current&&page===p&&mode==='single')scheduleView();};$('pageImage').src=src;$('pageImage').alt=row.pageLabels[p-1]+' '+p+'장';prefetch(row,p);}catch(e){showError(e);}
+  try{const src=await getImage(row,p);if(token!==selection||row!==current||page!==p)return;$('pageImage').onload=()=>{if(token===selection&&row===current&&page===p&&mode==='single'){updateCoverFit();scheduleView();}};$('pageImage').src=src;$('pageImage').alt=row.pageLabels[p-1]+' '+p+'장';prefetch(row,p);}catch(e){showError(e);}
  }
  function renderVertical(){
   verticalObserver?.disconnect();visibleObserver?.disconnect();$('verticalPages').replaceChildren();if(mode!=='vertical'||!current)return;
@@ -76,14 +82,14 @@
   $('note').value=row.current?.note||'';paintScore();status(row.current?'저장된 평가를 불러왔어요':'점수나 메모를 남겨주세요');
   $('previous').hidden=!row.previous;$('previous').textContent=row.previous?'이전 제작 버전 평가 · '+(row.previous.score??'점수 없음')+' / 10\n'+row.previous.note:'';
   $('pageSelect').replaceChildren();for(let n=1;n<=row.pages;n++){const option=document.createElement('option');option.value=n;option.textContent=n+' / '+row.pages;$('pageSelect').append(option);}
-  paintList();renderVertical();await renderPage();window.scrollTo(0,0);
+  paintList();renderVertical();await renderPage();window.scrollTo(0,0);updateCoverFit();
  }
- function turn(delta){if(!current?.hasOutput||mode!=='single')return;const next=Math.max(1,Math.min(current.pages,page+delta));if(next===page)return;page=next;renderPage();$('stage').scrollIntoView({block:'start',behavior:'instant'});}
+ function turn(delta){if(!current?.hasOutput||mode!=='single')return;const next=Math.max(1,Math.min(current.pages,page+delta));if(next===page)return;page=next;renderPage();$('stage').scrollIntoView({block:'start',behavior:'instant'});updateCoverFit();}
  for(let n=1;n<=10;n++){const b=document.createElement('button');b.type='button';b.dataset.score=n;b.setAttribute('aria-label',n+'점');b.setAttribute('aria-pressed','false');const star=document.createElement('span');star.textContent='★';star.setAttribute('aria-hidden','true');b.append(star,document.createTextNode(n));b.onclick=()=>{if(!current)return;current.current={...current.current,score:n,note:$('note').value};paintScore();schedule();flush().catch(showError);};$('scores').append(b);}
  $('note').oninput=schedule;$('save').onclick=()=>flush().catch(showError);$('prev').onclick=()=>turn(-1);$('next').onclick=()=>turn(1);$('pageSelect').onchange=()=>{page=Number($('pageSelect').value);renderPage();};
- $('topic').onchange=paintList;$('workflow').onchange=paintList;$('excludeSeen').onchange=paintList;$('randomPost').onclick=async()=>{try{await flush();await visitQueue;const row=await api.random({topic:$('topic').value,search:$('search').value});if(row){$('workflow').value='eligible';$('filter').value='all';await select(row.id);}else showError(Error('안 본 적격 제작물이 없습니다. 주제·검색 조건을 확인하세요.'));}catch(e){showError(e);}};$('holdPost').onclick=()=>decide('held').catch(showError);$('rejectPost').onclick=()=>decide('rejected').catch(showError);$('restorePost').onclick=()=>decide('eligible').catch(showError);$('fromCover').onclick=()=>{page=1;setMode('single');renderPage();$('stage').scrollIntoView({block:'start'});};
- $('search').oninput=paintList;$('filter').onchange=paintList;$('zoom').onchange=()=>{$('reader').classList.toggle('zoom',$('zoom').checked);};
- function setMode(value){mode=value;$('stage').hidden=value!=='single';$('pages').hidden=value!=='single';$('verticalPages').hidden=value!=='vertical';$('single').setAttribute('aria-pressed',String(value==='single'));$('vertical').setAttribute('aria-pressed',String(value==='vertical'));renderVertical();paintNavigation();}
+ $('topic').onchange=paintList;$('workflow').onchange=paintList;$('excludeSeen').onchange=paintList;$('randomPost').onclick=async()=>{try{await flush();await visitQueue;const row=await api.random({topic:$('topic').value,search:$('search').value});if(row){$('workflow').value='eligible';$('filter').value='all';await select(row.id);}else showError(Error('안 본 적격 제작물이 없습니다. 주제·검색 조건을 확인하세요.'));}catch(e){showError(e);}};$('holdPost').onclick=()=>decide('held').catch(showError);$('rejectPost').onclick=()=>decide('rejected').catch(showError);$('restorePost').onclick=()=>decide('eligible').catch(showError);$('fromCover').onclick=()=>{page=1;setMode('single');renderPage();$('stage').scrollIntoView({block:'start'});updateCoverFit();};
+ $('search').oninput=paintList;$('filter').onchange=paintList;$('zoom').onchange=()=>{$('reader').classList.toggle('zoom',$('zoom').checked);updateCoverFit();scheduleView();};
+ function setMode(value){mode=value;$('stage').hidden=value!=='single';$('pages').hidden=value!=='single';$('verticalPages').hidden=value!=='vertical';$('single').setAttribute('aria-pressed',String(value==='single'));$('vertical').setAttribute('aria-pressed',String(value==='vertical'));renderVertical();paintNavigation();updateCoverFit();}
  $('single').onclick=()=>{setMode('single');renderPage();};$('vertical').onclick=()=>setMode('vertical');
  document.addEventListener('keydown',e=>{if(e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)||e.target.isContentEditable)return;if(mode==='single'&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){e.preventDefault();turn(e.key==='ArrowRight'?1:-1);}else if((e.key==='ArrowDown'||e.key==='ArrowUp')&&!e.repeat){e.preventDefault();movePost(e.key==='ArrowDown'?1:-1).catch(showError);}});
  let gesture=null;$('stage').addEventListener('pointerdown',e=>{if(e.target.tagName!=='IMG'||e.button!==0)return;gesture={x:e.clientX,y:e.clientY,id:e.pointerId,time:performance.now()};if(e.isTrusted)$('stage').setPointerCapture(e.pointerId);});$('stage').addEventListener('pointerup',e=>{const g=gesture;gesture=null;if(!g||g.id!==e.pointerId)return;const dx=e.clientX-g.x,dy=e.clientY-g.y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4&&performance.now()-g.time<1500)turn(dx<0?1:-1);});for(const event of ['pointercancel','lostpointercapture'])$('stage').addEventListener(event,()=>{gesture=null;});$('pageImage').ondragstart=e=>e.preventDefault();

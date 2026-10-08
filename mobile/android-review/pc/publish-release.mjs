@@ -5,7 +5,7 @@ import {constants} from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {validateManifest,key} from '../app/core.js';
-import {dedicatedRepositoryMetadata,requestHash} from './exchange.mjs';
+import {dedicatedRepositoryMetadata,requestHash,isVerifiedPcVersion} from './exchange.mjs';
 
 const gitShaPattern=/^[a-f0-9]{40}$/,hashPattern=/^[a-f0-9]{64}$/;
 const maxStateBytes=1000000,maxAssetBytes=25*1024*1024,maxAssets=5000,maxTotalAssetBytes=128*1024*1024;
@@ -47,7 +47,7 @@ function validateState(state,prepared=true){
  const manifests=[state.manifest,...(state.history||[]).map(h=>{if(!plain(h))throw Error('Invalid historical state');return validateManifest(h.manifest);})];
  if(manifests.some(m=>m.entries.some(e=>!Number.isSafeInteger(e.revision))))throw Error('Invalid manifest revision');
  if(state.pcExport!==undefined){
-  if(!plain(state.pcExport)||state.pcExport.pcVersion!=='0.3.16'||!plain(state.pcExport.entries))throw Error('Invalid prepared export baseline');
+  if(!plain(state.pcExport)||!isVerifiedPcVersion(state.pcExport.pcVersion)||!plain(state.pcExport.entries))throw Error('Invalid prepared export baseline');
   if(requestHash(Object.keys(state.pcExport.entries).sort())!==requestHash(state.manifest.entries.map(key).sort()))throw Error('Prepared export baseline keys mismatch');
   for(const baseline of Object.values(state.pcExport.entries))if(!plain(baseline)||!hashPattern.test(baseline.canonicalEvaluationHash)||!Number.isSafeInteger(baseline.baseRevision)||baseline.baseRevision<0)throw Error('Invalid prepared export baseline');
  }

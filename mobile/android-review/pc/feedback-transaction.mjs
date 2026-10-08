@@ -1,5 +1,6 @@
 // Source-only transaction core. No CLI, scheduler, store.save, or deployed binding.
 import fs from 'node:fs/promises';
+import {constants} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {createHash,randomUUID} from 'node:crypto';
@@ -30,8 +31,8 @@ async function safePath(file,{missing=false,directory=false}={}){
 }
 async function safeRead(file){
  const before=await safePath(file);if(before.size>maxBytes)throw Error('Canonical or journal file exceeds size limit');
- const handle=await fs.open(file,'r');
- try{const stat=await handle.stat();if(!stat.isFile()||stat.nlink!==1||stat.dev!==before.dev||stat.ino!==before.ino)throw Error('File identity changed during read');const bytes=await handle.readFile();if(bytes.length>maxBytes)throw Error('File exceeds size limit');await safePath(file);return bytes;}finally{await handle.close();}
+ const handle=await fs.open(file,constants.O_RDONLY|(constants.O_NOFOLLOW||0));
+ try{const stat=await handle.stat();if(!stat.isFile()||stat.nlink!==1||stat.dev!==before.dev||stat.ino!==before.ino||stat.size>maxBytes)throw Error('File identity or size changed during read');const buffer=Buffer.alloc(stat.size+1);let offset=0;while(offset<buffer.length){const {bytesRead}=await handle.read(buffer,offset,buffer.length-offset,null);if(!bytesRead)break;offset+=bytesRead;}const after=await handle.stat(),final=await safePath(file);if(offset!==stat.size||after.size!==stat.size||after.mtimeMs!==stat.mtimeMs||final.dev!==stat.dev||final.ino!==stat.ino)throw Error('File changed during bounded read');return buffer.subarray(0,offset);}finally{await handle.close();}
 }
 async function syncDirectory(directory){
  let handle;try{handle=await fs.open(directory,'r');await handle.sync();return true;}
@@ -51,30 +52,31 @@ function validateCanonical(data,reviewRound){
  return data;
 }
 function alive(pid){try{process.kill(pid,0);return true;}catch(e){if(e.code==='ESRCH')return false;throw Error('Cannot prove lock owner is absent');}}
-async function acquireLock(file){
- const guard=file+'.reclaim',token=randomUUID();
- await safePath(guard,{missing:true,directory:true}).then(stat=>{if(stat)throw Error('Feedback lock busy: reclamation in progress');});
- await safePath(file,{missing:true});
- let handle;
- try{handle=await fs.open(file,'wx',0o600);}
- catch(e){
-  if(e.code!=='EEXIST')throw e;
-  // Serialize dead-owner recovery. Every writer checks this guard before AND
-  // after claiming the lock. Live or indeterminate owners are never evicted.
-  try{await fs.mkdir(guard);}catch(error){if(error.code==='EEXIST')throw Error('Feedback lock busy');throw error;}
-  try{
-   const original=await safeRead(file),owner=JSON.parse(original);
-   if(!Number.isSafeInteger(owner.pid)||owner.pid<=0||!uuidPattern.test(owner.token)||alive(owner.pid))throw Error('Feedback lock busy: live or invalid owner');
-   if(!(await safeRead(file)).equals(original))throw Error('Feedback lock changed during recovery');
-   await fs.unlink(file);await syncDirectory(path.dirname(file));
-  }finally{await fs.rmdir(guard);}
-  try{handle=await fs.open(file,'wx',0o600);}catch(error){if(error.code==='EEXIST')throw Error('Feedback lock busy');throw error;}
+async function acquireLock(file,depth=0){
+ if(depth>8)throw Error('Feedback lock reclamation nesting unknown');
+ const token=randomUUID(),identity=Buffer.from(JSON.stringify({schemaVersion:1,pid:process.pid,host:os.hostname(),token})+'\n');
+ const guard=file+'.reclaim';
+ // An old ownerless directory cannot prove a reclaimer dead. It remains intact
+ // for operator inspection; this version never creates ownerless guards.
+ try{const s=await fs.lstat(guard);if(s.isDirectory())throw Error('Feedback lock busy: legacy ownerless reclaim guard requires inspection');}catch(e){if(e.code!=='ENOENT')throw e;}
+ function dead(bytes){let owner;try{owner=JSON.parse(bytes);}catch{throw Error('Feedback lock owner unknown');}if(!Number.isSafeInteger(owner.pid)||owner.pid<=0||!uuidPattern.test(owner.token)||owner.host!==undefined&&owner.host!==os.hostname())throw Error('Feedback lock owner invalid or unknown');return !alive(owner.pid);}
+ for(let attempt=0;attempt<8;attempt++){
+  await safePath(file,{missing:true});let handle;
+  try{handle=await fs.open(file,'wx',0o600);}catch(e){if(e.code!=='EEXIST')throw e;}
+  if(handle){
+   try{await handle.writeFile(identity);await handle.sync();await syncDirectory(path.dirname(file));}
+   catch(e){await handle.close();await fs.unlink(file).catch(()=>{});throw e;}
+   return async()=>{await handle.close();if(!(await safeRead(file)).equals(identity))throw Error('Feedback lock ownership changed');await fs.unlink(file);await syncDirectory(path.dirname(file));};
+  }
+  const original=await safeRead(file);if(!dead(original))throw Error('Feedback lock busy: live owner');
+  // The guard carries its own pid/host/nonce and uses the same protocol. A crash
+  // while reclaiming is recoverable, and a stale reader cannot remove a new
+  // claimant: it must match the complete old identity under the guard.
+  const release=await acquireLock(guard,depth+1);
+  try{const current=await safeRead(file).catch(e=>{if(e.code==='ENOENT')return null;throw e;});if(current&&current.equals(original)&&dead(current)){await fs.unlink(file);await syncDirectory(path.dirname(file));}}
+  finally{await release();}
  }
- try{
-  const guardStat=await safePath(guard,{missing:true,directory:true});if(guardStat)throw Error('Feedback lock busy');
-  await handle.writeFile(JSON.stringify({schemaVersion:1,pid:process.pid,token})+'\n');await handle.sync();await syncDirectory(path.dirname(file));
- }catch(e){await handle.close();await fs.unlink(file).catch(()=>{});throw e;}
- return async()=>{await handle.close();const owner=JSON.parse(await safeRead(file));if(owner.token!==token)throw Error('Feedback lock ownership changed');await fs.unlink(file);await syncDirectory(path.dirname(file));};
+ throw Error('Feedback lock busy: bounded reclamation exhausted');
 }
 function journalNames(directory,id){return {backupFile:path.join(directory,id+'.before.bin'),stageFile:path.join(directory,id+'.after.json'),journalFile:path.join(directory,id+'.journal.json'),resolutionFile:path.join(directory,id+'.resolved.json')};}
 async function recoverPending(directory,feedbackFile){

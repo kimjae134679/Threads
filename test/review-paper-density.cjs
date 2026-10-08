@@ -1,0 +1,42 @@
+'use strict';
+const {app,BrowserWindow,protocol}=require('electron');
+const fs=require('node:fs/promises'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),assert=require('node:assert/strict'),{pathToFileURL}=require('node:url');
+const {coverHtml}=require('../desktop/universal-cover.cjs');
+const baseline=process.argv.includes('--baseline'),directory=path.resolve('qa-local/cover-density-20261008'),phase=baseline?'before':'after';
+app.disableHardwareAcceleration();app.setPath('userData',path.join(os.tmpdir(),'threads-paper-density-'+process.pid));
+protocol.registerSchemesAsPrivileged([{scheme:'cut-editor',privileges:{standard:true,secure:true,supportFetchAPI:true}}]);
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),pause=ms=>new Promise(r=>setTimeout(r,ms));
+async function wait(fn){for(let n=0;n<150;n++){if(await fn())return;await pause(30);}throw Error('Density UI wait timed out');}
+app.whenReady().then(async()=>{
+ await fs.mkdir(directory,{recursive:true});const output='D:/A_KJ/AI/Projects/Threads/\uC790\uB8CC/06_\uC790\uB3D9 \uC81C\uC791 \uACB0\uACFC',report=JSON.parse(await fs.readFile(path.join(output,'status.json'))),papers=report.entries.filter(r=>r.templateId==='universal_paper');
+ const selected=[papers[0],papers.reduce((a,b)=>a.title.length>b.title.length?a:b),papers.find(r=>/[0-9]/.test(r.title))],labels=['short','long','numeric'],results=[],rows=[],images=[];
+ const win=new BrowserWindow({show:false,width:1080,height:1920,useContentSize:true,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,backgroundThrottling:false}}),run=s=>win.webContents.executeJavaScript(s);
+ const fontUrl=pathToFileURL(path.join(__dirname,'../app/fonts/CarouselSansKR-Black.woff')).href;
+ for(let i=0;i<selected.length;i++){
+  const row=selected[i],folder=path.join(output,row.outputFolder),plan=JSON.parse(await fs.readFile(path.join(folder,'production-plan.json'))),original=await fs.readFile(path.join(folder,row.images[0].name)),input={id:row.id,title:plan.coverTitle,context:plan.universalCover?.context||'',variant:'paper',fontUrl,emphasis:plan.universalCover?.emphasis||''};
+  if(baseline)await fs.writeFile(path.join(directory,labels[i]+'-current-before.png'),original);
+  const html=coverHtml(input),htmlFile=path.join(directory,labels[i]+'-'+phase+'.html');await fs.writeFile(htmlFile,html);await win.loadFile(htmlFile);const rendered=await run('window.coverPNG()'),bytes=Buffer.from(rendered.data.split(',')[1],'base64');await fs.writeFile(path.join(directory,labels[i]+'-'+phase+'.png'),bytes);
+  const dom=await run('window.coverReady');results.push({sample:labels[i],id:row.id,title:plan.coverTitle,sourcePNG:path.join(folder,row.images[0].name),sourceHash:hash(original),candidateHash:hash(bytes),geometry:rendered.geometry,dom,sourcePages:row.images.length});
+  rows.push({id:row.id,title:row.title,coverTitle:plan.coverTitle,hasOutput:true,outputVersion:'density-fixture-'+i,pages:row.images.length,pageLabels:row.images.map((_,n)=>n===0?'\uD45C\uC9C0':'\uBCF8\uBB38'),rank:i+1,topic:'life',topicLabel:'Life',disposition:'eligible',current:null,progress:null});images.push(rendered.data);
+ }
+ // Render the exact same synthetic photo input before/after; paper changes must not alter its bytes.
+ const photoInput={id:'photo-control',title:selected[0].title,variant:'photo',imageUrl:images[0],fontUrl};
+ const stableImage=baseline?images[0]:(JSON.parse(await fs.readFile(path.join(directory,'before.json'),'utf8'))).photoImage;
+ photoInput.imageUrl=stableImage;const photoFile=path.join(directory,'photo-'+phase+'.html');await fs.writeFile(photoFile,coverHtml(photoInput));await win.loadFile(photoFile);const photo=await run('window.coverPNG()'),photoBytes=Buffer.from(photo.data.split(',')[1],'base64');await fs.writeFile(path.join(directory,'photo-'+phase+'.png'),photoBytes);
+ const bootstrap='window.ThreadsPostReview={list:async()=>({entries:'+JSON.stringify(rows)+'}),image:async id=>('+JSON.stringify(Object.fromEntries(rows.map((r,i)=>[r.id,images[i]])))+')[id],visit:async()=>null,onSelect:()=>{},onFilter:()=>{}};';
+ const appRoot=path.join(__dirname,'../app'),mime={'.html':'text/html','.css':'text/css','.js':'text/javascript'};
+ protocol.handle('cut-editor',async req=>{const name=new URL(req.url).pathname.slice(1);if(!['source-cut-post-review.html','source-cut-post-review.css','source-cut-post-review.js'].includes(name))return new Response('',{status:404});let text=await fs.readFile(path.join(appRoot,name),'utf8');if(name.endsWith('.html'))text=text.replace('<script src="./source-cut-post-review.js">','<script>'+bootstrap+'</script><script src="./source-cut-post-review.js">');return new Response(text,{headers:{'Content-Type':mime[path.extname(name)]}});});
+ const windows=[];
+ for(const [w,h] of [[1250,1000],[760,650]]){
+  win.setContentSize(w,h);await win.loadURL('cut-editor://app/source-cut-post-review.html');await wait(()=>run("document.querySelector('.post-card img')?.naturalWidth===1080"));await pause(150);
+  const state=await run("(()=>{const b=document.querySelector('.post-card img').getBoundingClientRect(),p=document.getElementById('posts').getBoundingClientRect(),t=document.querySelector('.post-card b');return {thumbnail:{x:b.x,y:b.y,width:b.width,height:b.height},listHeight:p.height,title:t.textContent,fullTitle:t.title,metaFits:document.querySelector('.post-card small:last-child').getBoundingClientRect().bottom<=document.querySelector('.post-card').getBoundingClientRect().bottom,titleWidth:t.getBoundingClientRect().width,titleHeight:t.getBoundingClientRect().height,overflow:document.documentElement.scrollWidth>innerWidth};})()");
+  const thumbImage=await win.webContents.capturePage(state.thumbnail),thumb=thumbImage.toBitmap(),thumbWidth=thumbImage.getSize().width,thumbHeight=thumbImage.getSize().height;let dark=0,upperDark=0;for(let p=0;p<thumb.length;p+=4)if(thumb[p]<90&&thumb[p+1]<90&&thumb[p+2]<90){dark++;if(Math.floor(p/4/thumbWidth)<thumbHeight*.6)upperDark++;}state.thumbnailDarkPixels=dark;state.thumbnailUpperDarkPixels=upperDark;state.width=w;state.height=h;windows.push(state);await fs.writeFile(path.join(directory,'viewer-'+w+'x'+h+'-'+phase+'.png'),(await win.webContents.capturePage()).toPNG());
+ }
+ const summary={phase,currentOutputs:report.entries.filter(r=>r.outputFolder).length,currentPages:report.entries.filter(r=>r.outputFolder).reduce((n,r)=>n+r.images.length,0),paperCount:papers.length,photoCount:report.entries.filter(r=>r.templateId==='universal_photo').length,results,windows,photoHash:hash(photoBytes),photoImage:stableImage};await fs.writeFile(path.join(directory,phase+'.json'),JSON.stringify(summary,null,2));
+ if(!baseline){
+  for(const sample of process.argv.includes('--thumbs-only')?[]:results){assert(sample.geometry.box.y<=400,'Paper title must start near the top, not in the photo overlay zone: '+JSON.stringify(sample.geometry.box));assert(sample.geometry.box.y+sample.geometry.box.height<=1700);assert.equal(sample.geometry.lines.join('').replace(/\s/g,''),sample.title.replace(/\s/g,''));assert.equal(sample.geometry.width,1080);assert.equal(sample.geometry.height,1920);assert(sample.dom.box.y<=400,'HTML preview must match early paper title placement');}
+  for(const view of windows){assert(view.thumbnailUpperDarkPixels>5,'Thumbnail must show actual title pixels in its upper reading area: '+JSON.stringify(view));assert(view.listHeight>=110,'Small window must retain a usable scrollable article list: '+JSON.stringify(view));assert.equal(view.title,results[0].title);assert.equal(view.fullTitle,results[0].title);assert.equal(view.metaFits,true,'Card metadata must remain inside its scrolling card');assert.equal(view.overflow,false);}
+  const before=JSON.parse(await fs.readFile(path.join(directory,'before.json'),'utf8'));assert.equal(summary.photoHash,before.photoHash,'Photo pixels must stay unchanged');
+ }
+ console.log(JSON.stringify({pass:!baseline,phase,directory,paperCount:papers.length,windows:windows.map(w=>({width:w.width,height:w.height,listHeight:w.listHeight,thumbnailDarkPixels:w.thumbnailDarkPixels})),samples:results.map(r=>({sample:r.sample,id:r.id,sourceHash:r.sourceHash,candidateHash:r.candidateHash,y:r.geometry.box.y}))}));win.destroy();app.exit(0);
+}).catch(error=>{console.error(error);app.exit(1);});

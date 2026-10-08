@@ -19,11 +19,16 @@ export const requestHash=request=>sha256(Buffer.from(JSON.stringify(ordered(requ
 const evaluationHash=evaluation=>requestHash(evaluation||null);
 const gitBlobSha=bytes=>createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
 
+// These releases share the verified storage, output-version and evaluation contract.
+// Deliberately no semver/range acceptance for unreviewed PC releases.
+export const isVerifiedPcVersion=value=>value==='0.3.16'||value==='0.3.18';
+function installedPcVersion(){return JSON.parse(readFileSync(new URL('../../../package.json',import.meta.url),'utf8')).version;}
+function requireVerifiedPcVersion(value){if(!isVerifiedPcVersion(value))throw Error('Only verified PC versions 0.3.16 and 0.3.18 are supported');return value;}
+
 export function createReadOnlyPcStore(materialRoot){
- const pkg=JSON.parse(readFileSync(new URL('../../../package.json',import.meta.url),'utf8'));
- if(pkg.version!=='0.3.16')throw Error('Only verified PC version 0.3.16 is supported');
+ const pcVersion=requireVerifiedPcVersion(installedPcVersion());
  const store=createPostReviewStore(materialRoot,{readOnly:true});
- return Object.freeze({readOnly:true,pcVersion:pkg.version,root:store.root,list:store.list,image:store.image});
+ return Object.freeze({readOnly:true,pcVersion,root:store.root,list:store.list,image:store.image});
 }
 
 export function dedicatedRepositoryMetadata(input){
@@ -78,7 +83,7 @@ function releaseIdentityHash(manifest){
  return requestHash({schemaVersion:manifest.schemaVersion,reviewRound:manifest.reviewRound,criteria:manifest.criteria,entries:manifest.entries.map(entry=>({id:entry.id,title:entry.title,outputVersion:entry.outputVersion,reviewRound:entry.reviewRound,images:entry.images.map(image=>({url:image.url,sha256:image.sha256}))}))});
 }
 function requireTrustedLocalSnapshot(state,snapshot){
- if(!plain(snapshot)||snapshot.pcExchangeProvenanceSchema!==1||!hashPattern.test(snapshot.releaseIdentityHash)||!plain(snapshot.pcExport)||snapshot.pcExport.pcVersion!=='0.3.16'||!plain(snapshot.pcExport.entries))throw Error('Independently preserved trusted local export snapshot required');
+ if(!plain(snapshot)||snapshot.pcExchangeProvenanceSchema!==1||!hashPattern.test(snapshot.releaseIdentityHash)||!plain(snapshot.pcExport)||!isVerifiedPcVersion(snapshot.pcExport.pcVersion)||!plain(snapshot.pcExport.entries))throw Error('Independently preserved trusted local export snapshot required');
  const expectedKeys=state.manifest.entries.map(key).sort(),actualKeys=Object.keys(snapshot.pcExport.entries).sort();
  if(requestHash(expectedKeys)!==requestHash(actualKeys))throw Error('Trusted local snapshot release identity mismatch');
  for(const baseline of Object.values(snapshot.pcExport.entries))if(!plain(baseline)||!hashPattern.test(baseline.canonicalEvaluationHash)||!Number.isSafeInteger(baseline.baseRevision)||baseline.baseRevision<0)throw Error('Invalid trusted local snapshot baseline');
@@ -108,11 +113,12 @@ async function checkOutputNamespace(root,directory,source){
 
 export async function exportRelease({store,rows,criteria,reviewRound,allowedOutputRoot,outputDirectory,previousState=null,previousTrustedLocalSnapshot=null,previousAssetDirectory=null,repository=null}){
  if(store?.readOnly!==true||typeof store.list!=='function'||typeof store.image!=='function')throw Error('Explicit read-only PC store required');
+ const pcVersion=requireVerifiedPcVersion(store.pcVersion===undefined?installedPcVersion():store.pcVersion);
  validateRows(rows,reviewRound);
  const target=await checkOutputNamespace(allowedOutputRoot,outputDirectory,store.root);
  if(previousState){validateState(previousState);requireTrustedLocalSnapshot(previousState,previousTrustedLocalSnapshot);}
  const listing=await store.list();if(listing.reviewRound!==reviewRound||!Array.isArray(listing.entries))throw Error('Store review round mismatch');
- const buffers=new Map(),entries=[],provenance={pcVersion:'0.3.16',entries:{}};
+ const buffers=new Map(),entries=[],provenance={pcVersion,entries:{}};
  for(const row of rows){
   const outputVersion=version(row),listed=listing.entries.find(e=>e.id===row.id);
   if(!listed||listed.outputVersion!==outputVersion)throw Error('Store canonical output version mismatch');
@@ -130,6 +136,9 @@ export async function exportRelease({store,rows,criteria,reviewRound,allowedOutp
   Object.defineProperty(provenance.entries,key(entry),{value:clone(baseline),enumerable:true});
  }
  const manifest={schemaVersion:1,reviewRound,criteria:clone(criteria),entries};validateManifest(manifest);
+ // A runtime upgrade alone must not replace the remote baseline during a feed
+ // noop: retained local provenance must still match the exact remote pcExport.
+ if(previousState&&releaseIdentityHash(previousState.manifest)===releaseIdentityHash(manifest))provenance.pcVersion=previousTrustedLocalSnapshot.pcExport.pcVersion;
  const history=clone(previousState?.history||[]);
  if(previousState&&requestHash(previousState.manifest)!==requestHash(manifest))history.push({manifest:clone(previousState.manifest),pcExport:clone(previousTrustedLocalSnapshot.pcExport)});
  const assets=clone(previousState?.assets||{});

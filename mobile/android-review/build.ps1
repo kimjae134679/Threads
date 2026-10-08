@@ -31,7 +31,7 @@ Push-Location $dex
 try { Run (Join-Path $tools 'aapt.exe') @('add',(Join-Path $build 'unsigned.apk'),'classes.dex') } finally {Pop-Location}
 Run (Join-Path $tools 'zipalign.exe') @('-f','-p','4',(Join-Path $build 'unsigned.apk'),(Join-Path $build 'aligned.apk'))
 # Reuse the pre-existing Android debug identity, never generate keys.
-Run (Join-Path $tools 'apksigner.bat') @('sign','--ks',$ExistingKey,'--ks-key-alias','androiddebugkey','--ks-pass','pass:android','--key-pass','pass:android','--out',(Join-Path $build 'Threads-Review-0.1.2.apk'),(Join-Path $build 'aligned.apk'))
-Run (Join-Path $tools 'apksigner.bat') @('verify','--verbose',(Join-Path $build 'Threads-Review-0.1.2.apk'))
-Run (Join-Path $tools 'aapt.exe') @('dump','badging',(Join-Path $build 'Threads-Review-0.1.2.apk'))
-Get-FileHash -LiteralPath (Join-Path $build 'Threads-Review-0.1.2.apk') -Algorithm SHA256
+Run (Join-Path $tools 'apksigner.bat') @('sign','--ks',$ExistingKey,'--ks-key-alias','androiddebugkey','--ks-pass','pass:android','--key-pass','pass:android','--out',(Join-Path $build 'Threads-Review-0.1.3.apk'),(Join-Path $build 'aligned.apk'))
+Run (Join-Path $tools 'apksigner.bat') @('verify','--verbose',(Join-Path $build 'Threads-Review-0.1.3.apk'))
+Run (Join-Path $tools 'aapt.exe') @('dump','badging',(Join-Path $build 'Threads-Review-0.1.3.apk'))
+Get-FileHash -LiteralPath (Join-Path $build 'Threads-Review-0.1.3.apk') -Algorithm SHA256

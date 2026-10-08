@@ -1,0 +1,16 @@
+# Full temporary cover release — 2026-10-08
+
+User approval: parent continuation explicitly authorizes applying the temporary photo layout, whole eligible regeneration, integrity audit, blank new review round and preserving every previous output/evaluation. Do not wait for final design selection. Where a related photo is absent, use the already requested photo-free universal form with the same restrained title typography. Preserve uncertainty and publishing approval stays false.
+
+Baseline: branch codex/review-workflow-20261008, HEAD887eb1abffa378f7d7156bc8d0ecdb7126316686, clean. Current399outputs3232pages,1084inputs,86evaluation rows. Current383eligible/13held(9source_insufficient,4production_error)/3rejected. Those counts are input eligibility, not final QA or shipping count.
+
+1. Freeze all399 source-bundle/plan hashes, versions, ratings/workflow hashes and eligibility. Audit all383 eligible for evidenced press reproduction/missing original; no blanket permission claims.
+2. Recompile preserved source ZIPs with current source-page-plan body rules and real Electron canvas. No cache reuse of old PNG. Body stays exact, fonts52/78 and source photo regions unchanged unless explicit validated final-tail fix. Preserve all original files and ZIPbytes.
+3. Render universal1080x1920 photo cover when verified relevant original or approved natural AI background is available. Paper fallback when no appropriate photo. Full title retained, only exact source-title substring emphasis, no new facts. Existing overstated AI backgrounds remain preserved but are not chosen. Title and gradient rendered incode. Imported new AI assets require prompt/tool/file/hash/id provenance.
+4. Audit every generated page bounds, text source IDs/order/no loss, image regions/full tall slices, PNG actual dimensions/hash, final title geometry/fonts/assets. Keep per-ID repair/hold/reject reasons; good-score memo fixes still matter. Report whole manifest completion versus rejected/held explicitly.
+5. After complete eligible pipeline, prepareReviewRelease expected shipped count, archive active399PNG/86eval/whole workflow and old pointer. Include blank workflow for newround; preserve old triage metadata for excluded rows separately. CAS validate status+feedback+workflow to refuse concurrent edits; installed viewer fresh round shows no old score or seen. No publishing.
+6. Verify actual installed review, counts, retained archive hashes, restart and stale-save protections; commit only own files/push/remoteSHA and refresh local communications and guides.
+
+AI pending: source-ebb6fbcbb2efac exact title 선배 청첩장\n읽씹했다가\n뒤늦게 후회한 이유. Actual relation university senior/junior, sex unspecified. Oneadult phone, reserved regret; no literal text/logos/envelope/cash/weddingaction,1080x1920 upper person lower half title room. Parent can generate. Other pipeline work proceeds independently.
+
+Completion: all365 eligible posts3073pages regenerated and activated; packaged0.3.17 verified twice, scores/memos/seen zero. Source399ZIP/3232oldPNGs/86eval/current pointer preserved; older67eval located unchanged. AI bitmap unavailable; parent explicitly approved paper fallback for ebb6 so no whole-release blocker remains. Title/body exact. Hub registration/install/button validation remains separate owner work.
