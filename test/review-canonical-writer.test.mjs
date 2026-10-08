@@ -42,6 +42,31 @@ test('interruption during reclamation recovers the known-dead reclamation guard 
  const jobs=Array.from({length:3},()=>child(root,`withCanonicalWriter(root,async()=>{await fs.appendFile(root+'/recovery','x');}).catch(e=>{console.error(e);process.exitCode=1;});`));
  await Promise.all(jobs.map(done));assert.equal(await fs.readFile(path.join(root,'recovery'),'utf8'),'xxx');
 });
+test('transient Windows busy guard reads retry and still reclaim only the dead owner',async t=>{
+ const root=await fixture(t),departed=spawn(process.execPath,['-e',''],{stdio:'ignore'});await once(departed,'exit');const lock=path.join(root,'review-canonical-writer.lock'),guard=lock+'.reclaim',dead=JSON.stringify({pid:departed.pid,host:os.hostname(),nonce:'synthetic-dead'});await fs.writeFile(lock,dead);await fs.writeFile(guard,dead);
+ const originalRead=fs.readFile;let failures=0,calls=0;
+ fs.readFile=async(file,...args)=>{if(file===guard){calls++;if(failures++<2)throw Object.assign(Error('synthetic delete-pending guard'),{code:'EPERM'});}return originalRead(file,...args);};
+ try{assert.equal(await api().withCanonicalWriter(root,async()=>73),73);assert.ok(calls>=3);}finally{fs.readFile=originalRead;}
+ await assert.rejects(fs.stat(lock),{code:'ENOENT'});
+});
+test('transient Windows busy ownership reads retry during release',async t=>{
+ const root=await fixture(t),lock=path.join(root,'review-canonical-writer.lock'),originalRead=fs.readFile;let failures=0,workCalls=0;
+ fs.readFile=async(file,...args)=>{if(file===lock&&failures++<2)throw Object.assign(Error('synthetic busy release read'),{code:'EPERM'});return originalRead(file,...args);};
+ try{await api().withCanonicalWriter(root,async()=>{workCalls++;});assert.equal(workCalls,1);assert.ok(failures>=3);}finally{fs.readFile=originalRead;}
+ await assert.rejects(fs.stat(lock),{code:'ENOENT'});
+});
+test('persistent busy lock reads are bounded and never authorize work or remove the lock',async t=>{
+ const root=await fixture(t),departed=spawn(process.execPath,['-e',''],{stdio:'ignore'});await once(departed,'exit');const lock=path.join(root,'review-canonical-writer.lock'),before=JSON.stringify({pid:departed.pid,host:os.hostname(),nonce:'synthetic-denied'});await fs.writeFile(lock,before);
+ const originalRead=fs.readFile;let attempts=0,workCalls=0;fs.readFile=async(file,...args)=>{if(file===lock){attempts++;throw Object.assign(Error('synthetic persistent denial'),{code:'EPERM'});}return originalRead(file,...args);};const started=Date.now();
+ try{await assert.rejects(api().withCanonicalWriter(root,async()=>{workCalls++;}),{code:'EPERM'});assert.equal(workCalls,0);assert.ok(attempts>1);assert.ok(Date.now()-started<2500);}finally{fs.readFile=originalRead;}
+ assert.equal(await fs.readFile(lock,'utf8'),before);
+});
+test('busy-read retries recheck ownership and preserve a replacement owner on release',async t=>{
+ const root=await fixture(t),lock=path.join(root,'review-canonical-writer.lock'),replacement=JSON.stringify({pid:process.pid,host:os.hostname(),nonce:'synthetic-replacement'}),originalRead=fs.readFile;let injected=false;
+ fs.readFile=async(file,...args)=>{if(file===lock&&!injected){injected=true;await fs.writeFile(lock,replacement);throw Object.assign(Error('synthetic busy replaced lock'),{code:'EPERM'});}return originalRead(file,...args);};
+ try{await assert.rejects(api().withCanonicalWriter(root,async()=>{}),/ownership changed/);}finally{fs.readFile=originalRead;}
+ assert.equal(await fs.readFile(lock,'utf8'),replacement);
+});
 test('malformed owners and uncertain reclamation fail closed without touching lock',async t=>{
  const root=await fixture(t),lock=path.join(root,'review-canonical-writer.lock');await fs.writeFile(lock,JSON.stringify({pid:0}));const before=await fs.readFile(lock);
  await assert.rejects(api().withCanonicalWriter(root,async()=>assert.fail('must not execute')),/owner|lock|canonical/i);assert.deepEqual(await fs.readFile(lock),before);

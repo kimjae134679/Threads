@@ -8,7 +8,12 @@ function key(root){const resolved=path.resolve(root);return process.platform==='
 function ownerFor(root){const owner=owners.getStore()?.get(key(root));return owner?.active?owner:null;}
 function isCanonicalWriterHeld(root){return Boolean(ownerFor(root));}
 async function noLinks(file){let p=path.resolve(file);for(;;){try{if((await fs.lstat(p)).isSymbolicLink())throw Error('Canonical writer paths must not contain symbolic links.');}catch(e){if(e.code!=='ENOENT')throw e;}const parent=path.dirname(p);if(parent===p)break;p=parent;}}
-async function read(file){try{return await fs.readFile(file,'utf8');}catch(e){if(e.code==='ENOENT')return null;throw e;}}
+async function read(file,deadline=Date.now()+1000){
+ // Windows may deny opening an unlinked/delete-pending lock briefly. Retry
+ // reading fresh bytes; denial never means missing, dead, or owned by us.
+ const limit=Math.min(deadline,Date.now()+1000);
+ for(;;){try{return await fs.readFile(file,'utf8');}catch(e){if(e.code==='ENOENT')return null;if(!['EPERM','EACCES','EBUSY'].includes(e.code)||Date.now()>=limit)throw e;await pause(Math.min(15,Math.max(1,limit-Date.now())));}}
+}
 function deadOwner(raw){let owner;try{owner=JSON.parse(raw);}catch{throw Error('Canonical lock owner is unknown; refusing reclamation.');}
  if(!Number.isInteger(owner.pid)||owner.pid<1||owner.host!==os.hostname())throw Error('Canonical lock owner is unknown; refusing reclamation.');
  try{process.kill(owner.pid,0);return false;}catch(e){if(e.code==='ESRCH')return true;if(e.code==='EPERM')return false;throw Error('Canonical lock owner death is unknown; refusing reclamation.',{cause:e});}
@@ -30,7 +35,7 @@ async function claim(file,deadline,depth=0){
    try{await handle.writeFile(identity);await handle.sync();}catch(e){await handle.close();await fs.rm(file,{force:true});throw e;}
    return async()=>{await handle.close();if(await read(file)!==identity)throw Error('Canonical writer lock ownership changed; refusing release.');await fs.unlink(file);};
   }
-  const raw=await read(file);if(raw===null)continue;
+  const raw=await read(file,deadline);if(raw===null)continue;
   // Exclusive create precedes owner write; briefly tolerate that publication gap.
   if(raw===''){emptySince??=Date.now();if(Date.now()-emptySince>1000)throw Error('Canonical lock owner is unknown; refusing reclamation.');await pause(15);continue;}
   emptySince=null;if(!deadOwner(raw)){await pause(15);continue;}
@@ -38,7 +43,7 @@ async function claim(file,deadline,depth=0){
   // follows the same protocol so a reclaimer crash is also safely recoverable.
   const releaseGuard=await claim(file+'.reclaim',deadline,depth+1);
   try{
-   const current=await read(file);
+   const current=await read(file,deadline);
    // A second contender may already have recovered it. Never unlink its replacement.
    if(current===raw&&deadOwner(current))await fs.unlink(file);
   }finally{await releaseGuard();}

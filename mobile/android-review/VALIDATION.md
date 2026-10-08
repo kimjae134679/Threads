@@ -92,26 +92,30 @@ those hooks must be implemented/reviewed before device/online/canonical pilots.
 Final ZIP extracted-test result, commit/remote and Library source version are
 recorded in the external delivery receipt after packaging.
 
-## PC 0.3.18 integrated source and APK 0.1.3 (current)
+## PC 0.3.19 integrated source and APK 0.1.3 (current)
 
 This section supersedes earlier statements that shared PC writer/path/journal
 hooks remained unimplemented. Verified PC source
 `f22b0319fefa375f224a9bdc89edc072e0f5b73a` is merged into the isolated Android
-branch. The installed viewer, original materials and actual evaluations were
+branch, then PC0.3.19 `8ba9bab95047c148c187ed5a63a4ef29e0e354b4` was merged
+to retain its small-window UI. The installed viewer, original materials and actual evaluations were
 not changed. Shared root writer/ordered reentry, complete activation archive/CAS,
-bounded no-link source reads, exact0.3.16/0.3.18 compatibility, opt-in verified
+bounded no-link source reads, exact0.3.16/0.3.18/0.3.19 compatibility, opt-in verified
 intake and `pc-binding.mjs` are now implemented. See PC_0318_BINDING.md.
 
-Fresh final runs: `npm run check` passed all84 PC test suites; all165 mobile,
+Fresh final runs: `npm run check` passed all84 PC test suites; all168 mobile,
 native mock, exchange, transport, feed, transaction and binding tests passed.
 Independent current-snapshot reviews passed88/88 binding-related and106/106
 writer/compatibility tests, with no remaining Critical/Important findings.
+Latest PC0.3.19 and bounded Windows busy-read rereview passed110/110; twenty
+three-process dead-reclaimer races also passed. Persistent access denial remains
+blocked without interpreting it as missing data or ownership.
 Resolved regressions include multi-store lost updates, queued reentry ordering,
 linked feedback leaking into supply, and interrupted reclamation guards.
 
 APK0.1.3 (versionCode4) rebuilt with installedSDK36/JDK21 and the existing debug
 identity only. V2/V3 signature verification passed. SHA256:
-`44e30dd8d58c94bdff478a39ca919b9baf7e01dbde865844d14e59508ca1c3ad`.
+`85d80f96b8560d1dae8fd4857687778636c54846ad73ff67043bda89dafd4c76`.
 The private delivery receipt records size, final source/remote SHA, ZIP hash and
 extracted verification. Browser QA reran against these exact bundled assets:
 390/800px, durable IndexedDB, ten scores, memo/checks/decision, conflict rebase,

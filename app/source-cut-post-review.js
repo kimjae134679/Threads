@@ -3,11 +3,11 @@
  const $=id=>document.getElementById(id),api=window.ThreadsPostReview;
  let entries=[],current=null,page=1,mode='single',dirty=false,timer=0,saveQueue=Promise.resolve(),selection=0,requestedId=null,editRevision=0,reviewRound=null;
  const cache=new Map(),positions=new Map();
- let navigation=0,pendingFilter=null;
+ let navigation=0,pendingFilter=null,compactLayout=innerWidth<=900;
  function visibleEntries(){const q=$('search').value.toLocaleLowerCase(),f=$('filter').value,t=$('topic').value,w=$('workflow').value;return entries.filter(r=>(r.title+' '+r.coverTitle).toLocaleLowerCase().includes(q)&&(!t||r.topic===t)&&(w==='all'||r.disposition===w)&&(!$('excludeSeen').checked||!r.progress?.seenAt)&&(f==='all'||r.category===f||f==='unrated'&&r.current?.score==null||f==='rated'&&r.current?.score!=null||f==='low'&&r.current?.score!=null&&r.current.score<=5)).sort((a,b)=>a.rank-b.rank);}
  function paintTopics(){const value=$('topic').value;$('topic').replaceChildren(new Option('모든 주제',''));for(const [key,label] of new Map(entries.map(r=>[r.topic,r.topicLabel])))$('topic').append(new Option(label,key));$('topic').value=value;}
  let visitQueue=Promise.resolve(),visibleObserver=null;
- let scheduledView=null,viewFrame=0;const pendingSeen=new Set();
+ let scheduledView=null,viewFrame=0,coverFitFrame=0;const pendingSeen=new Set();
  function recordVisiblePage(){
   if(document.hidden||!current?.hasOutput)return;
   const images=mode==='single'?[$('pageImage')]:[...$('verticalPages').querySelectorAll('img')];
@@ -24,8 +24,15 @@
   if(cover){const top=Math.max(0,stage.getBoundingClientRect().top),dock=document.querySelector('.review-dock').getBoundingClientRect().height;stage.style.setProperty('--cover-height',Math.max(120,innerHeight-top-dock-64)+'px');}
   else stage.style.removeProperty('--cover-height');
  }
+ function scheduleCoverFit(){if(!coverFitFrame)coverFitFrame=requestAnimationFrame(()=>{coverFitFrame=0;updateCoverFit();scheduleView();});}
+ function setLibraryCollapsed(value){document.body.classList.toggle('library-collapsed',value);$('toggleLibrary').setAttribute('aria-expanded',String(!value));$('toggleLibrary').textContent=value?'글 목록 열기':'글 목록 접기';updateCoverFit();scheduleCoverFit();scheduleView();}
+ $('toggleLibrary').onclick=()=>setLibraryCollapsed(!document.body.classList.contains('library-collapsed'));
+ $('closeLibrary').onclick=()=>setLibraryCollapsed(true);
+ $('showFullTitle').onclick=()=>{if(current){$('fullTitle').textContent=current.title;$('titleDialog').showModal();}};
+ $('closeTitleDialog').onclick=()=>$('titleDialog').close();
+ setLibraryCollapsed(compactLayout);
  function scheduleView(){if(!viewFrame)viewFrame=requestAnimationFrame(()=>{viewFrame=0;recordVisiblePage();});}
- window.addEventListener('scroll',scheduleView,{passive:true});window.addEventListener('resize',()=>{updateCoverFit();scheduleView();});document.addEventListener('visibilitychange',scheduleView);
+ window.addEventListener('scroll',scheduleView,{passive:true});window.addEventListener('resize',()=>{const compact=innerWidth<=900;if(compact!==compactLayout){compactLayout=compact;setLibraryCollapsed(compact);}updateCoverFit();scheduleCoverFit();scheduleView();});document.addEventListener('visibilitychange',scheduleView);
 
  function paintProgress(){if(!current)return;const p=current.progress;$('progressLabel').textContent=(p?.seenAt?'본 글 · '+(p.complete?'모든 장 표시':(p.pagesSeen?.length||0)+'/'+current.pages+'장 열람'):'아직 안 본 글')+' · '+(current.current?.score!=null||current.current?.note?.trim()?'평가 기록 있음':'평가 기록 없음')+' · '+({eligible:'검토 대상',held:'보류',rejected:'탈락'}[current.disposition]);}
  function recordVisit(row,p){const operation=visitQueue.catch(()=>{}).then(async()=>{const saved=await api.visit({id:row.id,outputVersion:row.outputVersion,page:p});row.progress=saved;if(current===row){paintProgress();rememberPosition();}paintList();});visitQueue=operation;operation.catch(showError);return operation;}
@@ -77,7 +84,7 @@
   for(let p=1;p<=row.pages;p++){const figure=document.createElement('figure'),img=document.createElement('img'),caption=document.createElement('figcaption');img.alt=row.pageLabels[p-1]+' '+p+'장';img.dataset.page=p;caption.textContent=row.pageLabels[p-1]+' · '+p+' / '+row.pages;figure.append(img,caption);$('verticalPages').append(figure);verticalObserver.observe(img);}
  }
  async function select(id){
-  const request=++navigation;rememberPosition();do{await flush();if(request!==navigation)return;}while(dirty);const row=entries.find(r=>r.id===id);if(!row)return;current=row;page=Math.max(1,Math.min(row.pages,positions.get(row.id+':'+row.outputVersion)||row.progress?.lastPage||1));selection++;$('reader').hidden=!row.hasOutput;$('triage').hidden=false;$('reason').value=row.progress?.reasonCode||(!row.hasOutput?'source_insufficient':'material_unsuitable');$('triageNote').value=row.progress?.note||'';$('sourceReason').textContent=row.sourceReason||(!row.hasOutput?'원본과 과거 기록을 보존합니다. 원본 보완 또는 제작 후 다시 검토하세요.':'');paintProgress();$('error').hidden=true;
+  const request=++navigation;rememberPosition();do{await flush();if(request!==navigation)return;}while(dirty);const row=entries.find(r=>r.id===id);if(!row)return;current=row;page=Math.max(1,Math.min(row.pages,positions.get(row.id+':'+row.outputVersion)||row.progress?.lastPage||1));selection++;$('showFullTitle').disabled=false;if(compactLayout)setLibraryCollapsed(true);$('reader').hidden=!row.hasOutput;$('triage').hidden=false;$('reason').value=row.progress?.reasonCode||(!row.hasOutput?'source_insufficient':'material_unsuitable');$('triageNote').value=row.progress?.note||'';$('sourceReason').textContent=row.sourceReason||(!row.hasOutput?'원본과 과거 기록을 보존합니다. 원본 보완 또는 제작 후 다시 검토하세요.':'');paintProgress();$('error').hidden=true;
   $('title').textContent=row.coverTitle;$('original').textContent=row.title===row.coverTitle?'':'원제 · '+row.title;$('postMeta').textContent=row.pages+'장 · '+(row.categoryLabel||'현재 제작 결과');
   $('note').value=row.current?.note||'';paintScore();status(row.current?'저장된 평가를 불러왔어요':'점수나 메모를 남겨주세요');
   $('previous').hidden=!row.previous;$('previous').textContent=row.previous?'이전 제작 버전 평가 · '+(row.previous.score??'점수 없음')+' / 10\n'+row.previous.note:'';

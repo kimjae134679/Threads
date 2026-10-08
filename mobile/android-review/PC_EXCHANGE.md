@@ -1,4 +1,4 @@
-# PC exchange preparation (0.3.16 / 0.3.18, local only)
+# PC exchange preparation (0.3.16 / 0.3.18 / 0.3.19, local only)
 
 `pc/exchange.mjs` prepares exports and import proposals against the verified
 desktop `post-review-store.cjs` contract. Tests use synthetic PNGs, mock rows,
@@ -8,7 +8,7 @@ key/token creation, permission grant, learning run or publication was performed.
 
 ## Read-only export
 
-`createReadOnlyPcStore(materialRoot)` accepts exactly package versions `0.3.16` and `0.3.18`, invokes
+`createReadOnlyPcStore(materialRoot)` accepts exactly package versions `0.3.16`, `0.3.18` and `0.3.19`, invokes
 `createPostReviewStore(materialRoot,{readOnly:true})`, and exposes only `list`
 and `image`. It does not expose `save`, `visit` or `decide`. Calling this against
 real materials remains outside this preparation task. An injected test store
@@ -295,8 +295,8 @@ remain unresolved; no scheduler or real credential flow is implemented here.
 
 ## Verified PC contracts and upgrades
 
-isVerifiedPcVersion(value) accepts exactly 0.3.16 and 0.3.18. Store opening, export provenance, trusted-local import checks and prepared/pinned publisher baseline checks use that allowlist. No version ranges, later versions or prerelease strings are accepted. Both versions retain the same desktop version(row), PNG storage and score/note evaluation contract.
+isVerifiedPcVersion(value) accepts exactly 0.3.16, 0.3.18 and 0.3.19. Store opening, export provenance, trusted-local import checks and prepared/pinned publisher baseline checks use that allowlist. No version ranges, later versions or prerelease strings are accepted. These versions retain the same desktop version(row), PNG storage and score/note evaluation contract. PC0.3.19's small-window UI changes are preserved in the integrated branch; no installed viewer was changed.
 
-A new export records its verified store.pcVersion when supplied; otherwise it uses the installed source package version. Unsupported explicit versions fail before output writes. The read-only desktop wrapper supplies its checked installed version. Synthetic stores may declare either verified version without changing source package files.
+A new export records its verified store.pcVersion when supplied; otherwise it uses the installed source package version. Unsupported explicit versions fail before output writes. The read-only desktop wrapper supplies its checked installed version. Synthetic stores may declare a verified version without changing source package files.
 
 An unchanged release identity retains the exact independently trusted prior pcExport version and entry baselines across a runtime upgrade. For example, running PC 0.3.18 against an unchanged 0.3.16 remote release keeps the 0.3.16 baseline, allowing the feed's transport no-op to retain a local snapshot which still matches remote state exactly. Mobile operations, revisions and reviews remain importable. A new release identity uses the current verified runtime version and archives prior provenance with the exact old manifest. Trust still requires full remote/local equality; a runtime upgrade does not authorize rewriting a remote baseline or recapturing canonical evaluation hashes.

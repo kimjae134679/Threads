@@ -21,9 +21,9 @@ const gitBlobSha=bytes=>createHash('sha1').update(Buffer.concat([Buffer.from('bl
 
 // These releases share the verified storage, output-version and evaluation contract.
 // Deliberately no semver/range acceptance for unreviewed PC releases.
-export const isVerifiedPcVersion=value=>value==='0.3.16'||value==='0.3.18';
+export const isVerifiedPcVersion=value=>value==='0.3.16'||value==='0.3.18'||value==='0.3.19';
 function installedPcVersion(){return JSON.parse(readFileSync(new URL('../../../package.json',import.meta.url),'utf8')).version;}
-function requireVerifiedPcVersion(value){if(!isVerifiedPcVersion(value))throw Error('Only verified PC versions 0.3.16 and 0.3.18 are supported');return value;}
+function requireVerifiedPcVersion(value){if(!isVerifiedPcVersion(value))throw Error('Only verified PC versions 0.3.16, 0.3.18 and 0.3.19 are supported');return value;}
 
 export function createReadOnlyPcStore(materialRoot){
  const pcVersion=requireVerifiedPcVersion(installedPcVersion());

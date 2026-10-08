@@ -1,4 +1,4 @@
-# PC 0.3.18 source-copy integration
+# PC 0.3.18 writer integration / PC 0.3.19 UI compatibility
 
 The Android branch integrates verified PC source
 `f22b0319fefa375f224a9bdc89edc072e0f5b73a`. These changes are confined to this
@@ -6,6 +6,15 @@ isolated source copy. The installed PC viewer, original materials and actual
 ratings have not been modified. Remote review schema remains 1. Canonical
 feedback keeps schema 1 and additive `mobileImport` receipts, revisions and
 separate human decisions; no receipt or revision is invented by PC edits.
+
+Latest PC0.3.19 source `8ba9bab95047c148c187ed5a63a4ef29e0e354b4` is also
+integrated, preserving its small-window HTML/CSS/JS updates. Its store,
+migration, release and shared model files are byte-identical to the earlier
+PC source; the exact verified version allowlist now includes0.3.19. Tests retain
+unchanged0.3.18 remote baselines/operations across this upgrade and leave new
+versions blank. The actual installed0.3.19 viewer remains untouched and does
+not contain this branch's writer integration. Future integration installation
+is required before actual canonical import can safely be enabled.
 
 `desktop/review-canonical-writer.cjs` supplies one root queue and cross-process
 writer barrier, outside the archived `07` folder. PC saves, visits, decisions,
@@ -17,6 +26,9 @@ writer that is itself waiting for the barrier. Known-dead root/reclaimer owners
 are recovered using exclusive creation and exact owner identities. Unknown
 owners are preserved and blocked. Secure bounded PC reads reject links and
 check named/opened file identities and changes.
+Windows transient lock-read EPERM/EACCES/EBUSY retries read fresh bytes for at
+most one second (also capped by the acquisition deadline). Persistent denial
+throws; release still requires exact fresh owner identity before removing a lock.
 
 `pc/pc-binding.mjs` exports `createBoundPcReviewPipeline`. It lazily binds the
 actual PC store, fixed pointer/status/delivery/feedback/workflow paths and a
