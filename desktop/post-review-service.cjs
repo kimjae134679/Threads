@@ -1,5 +1,5 @@
 'use strict';
-const {BrowserWindow,ipcMain,shell,dialog}=require('electron'),path=require('node:path'),fs=require('node:fs/promises');
+const {BrowserWindow,ipcMain,shell,dialog,nativeImage}=require('electron'),path=require('node:path'),fs=require('node:fs/promises');
 const {getMaterialRoot}=require('./material-paths.cjs');
 const {createPostReviewStore}=require('./post-review-store.cjs');
 const url='cut-editor://app/source-cut-post-review.html';
@@ -21,11 +21,12 @@ function registerPostReview({app,trusted,preferences,materialRoot=getMaterialRoo
     if(!current.isDestroyed()){closing=true;current.close();}
    }).catch(error=>{dialog.showErrorBox('평가 저장 실패 — 창을 유지합니다',error.message);});
   });
-  window.on('closed',()=>{window=null;closing=false;});await window.loadURL(url);if(id)window.webContents.send('post-review:select',id);
+  window.on('closed',()=>{window=null;closing=false;});await window.loadURL(url);if(!background){window.show();window.focus();}if(id)window.webContents.send('post-review:select',id);
  }
  ipcMain.handle('source-cut:open-post-review',(e,id)=>{trusted(e);if(id!==undefined&&(typeof id!=='string'||id.length>200))throw Error('글 ID를 확인하세요.');return open(id);});
  ipcMain.handle('post-review:list',e=>{guard(e);return store.list().then(data=>({...data,initialFilter:activeFilter}));});
  ipcMain.handle('post-review:image',(e,id,page,version)=>{guard(e);return store.image(id,page,version);});
+ ipcMain.handle('post-review:thumbnail',async(e,id,version)=>{guard(e);const src=await store.image(id,1,version),image=nativeImage.createFromDataURL(src);if(image.isEmpty())throw Error('표지 이미지를 읽을 수 없습니다.');return image.resize({width:120}).toDataURL();});
  ipcMain.handle('post-review:save',(e,payload)=>{guard(e);if(readOnly)throw Error('읽기 전용 검증입니다.');return store.save(payload);});
  for(const name of ['visit','decide','random'])ipcMain.handle('post-review:'+name,(e,payload)=>{guard(e);if(readOnly){if(name==='visit')return null;if(name==='decide')throw Error('읽기 전용 검증입니다.');}return store[name](payload);});
  ipcMain.handle('post-review:open-folder',async e=>{guard(e);if(!readOnly)await fs.mkdir(store.folder,{recursive:true});const error=await shell.openPath(store.folder);if(error)throw Error(error);});

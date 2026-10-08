@@ -15,7 +15,7 @@ const pcReviewRun=process.argv.includes('--pc-review-run');
 if(pcReviewRun){app.disableHardwareAcceleration();app.setPath('userData',path.join(app.getPath('temp'),'ThreadsPcReviewRunner'));}
 const reviewAudit=process.argv.find(a=>a.startsWith('--review-audit='));
 const reviewOnly=!pcReviewRun&&(process.argv.includes('--review-only')||!!reviewAudit);
-if(reviewAudit)app.disableHardwareAcceleration();
+if(reviewAudit&&!process.argv.includes('--review-ui-stress'))app.disableHardwareAcceleration();
 if(reviewOnly)app.setPath('userData',path.join(app.getPath('appData'),'ThreadsReview',app.getVersion()));
 let editor, bundleWindow, postReview, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
@@ -32,6 +32,7 @@ async function start() {
   const root = app.isPackaged ? path.join(process.resourcesPath, 'editor') : path.join(__dirname, '..', 'app');
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
   const allowed = new Set(['source-cut-post-review.html','source-cut-post-review.css','source-cut-post-review.js','source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-automation.js', 'source-cut-automation.css', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-batch-image-analysis.js', 'source-page-plan.js', 'universal-production-model.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
+  allowed.add('source-cut-review-loader.js');
   protocol.handle('cut-editor', async (request) => {
     const url = new URL(request.url), name = url.pathname.slice(1);
     if (url.host !== 'app' || !allowed.has(name) || request.method !== 'GET') return new Response('Not found', { status: 404 });

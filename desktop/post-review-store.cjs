@@ -30,6 +30,14 @@ function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=fa
  function list(){return withCanonicalWriter(root,listOwned,{serializeReentry:true});}
  async function listOwned(){
   const [rows,data,flow]=await Promise.all([report(),feedback(),workflow()]);
+  const seen=new Map();
+  const addSeen=entries=>{for(const e of entries)if(typeof e.id==='string'&&typeof e.seenAt==='string'&&(!seen.has(e.id)||e.seenAt<seen.get(e.id)))seen.set(e.id,e.seenAt);};
+  addSeen(flow.entries);
+  try{for(const archive of await fs.readdir(historyFolder,{withFileTypes:true})){
+   if(!archive.isDirectory()||archive.isSymbolicLink())continue;
+   try{const old=JSON.parse(await readFile(path.join(historyFolder,archive.name,'07_사용자 평가','검토 진행.json'),'utf8'));if(old.schemaVersion===1&&old.recordType==='user_review_workflow'&&Array.isArray(old.entries))addSeen(old.entries);}
+   catch(e){if(e.code!=='ENOENT')throw e;}
+  }}catch(e){if(e.code!=='ENOENT')throw e;}
   let queueRows=[];try{queueRows=JSON.parse(await readFile(path.join(root,'08_제작 정리','제작 순서.json'),'utf8')).entries||[];}catch(e){if(e.code!=='ENOENT')throw e;}
   const entries=await Promise.all(rows.map(async row=>{
    const order=queueRows.find(q=>q.id===row.id)||{};
@@ -38,7 +46,7 @@ function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=fa
    const current=data.evaluations.find(e=>e.id===row.id&&e.outputVersion===outputVersion)||null;
    const previous=row.reviewRound?null:data.evaluations.filter(e=>e.id===row.id&&e.outputVersion!==outputVersion).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0]||null;
    const progress=flow.entries.find(e=>e.id===row.id&&e.outputVersion===outputVersion)||null;
-   return {...classifyTopic(row,plan),hasOutput:hasOutput(row),progress,disposition:progress?.disposition||initialDisposition(row),sourceStatus:row.status||'',sourceReason:row.reason||'',category:order.category||'all',categoryLabel:order.categoryLabel||'',rank:order.rank||9999,productionNote:order.reason||'',id:row.id,title:row.title,coverTitle:plan.coverTitle||row.title,outputVersion,pages:row.images?.length||0,ruleVersion:row.ruleVersion,current,previous,
+   return {...classifyTopic(row,plan),hasOutput:hasOutput(row),progress,seenAt:seen.get(row.id)||null,disposition:progress?.disposition||initialDisposition(row),sourceStatus:row.status||'',sourceReason:row.reason||'',category:order.category||'all',categoryLabel:order.categoryLabel||'',rank:order.rank||9999,productionNote:order.reason||'',id:row.id,title:row.title,coverTitle:plan.coverTitle||row.title,outputVersion,pages:row.images?.length||0,ruleVersion:row.ruleVersion,current,previous,
     pageSizes:(row.images||[]).map(i=>({width:i.width,height:i.height})),pageLabels:(row.images||[]).map((_,i)=>plan.pages?.[i]?.role==='cover'?'표지':plan.pages?.[i]?.role==='comments'?'댓글':'본문')};
   }));
   const active=await round();return {entries,workflowFile,feedbackFile:file,reviewRound:active?.reviewRound||null,historyFolder};
@@ -93,7 +101,7 @@ function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=fa
  }
  async function random({topic='',search=''}={}){
   if(typeof topic!=='string'||typeof search!=='string')throw Error('검색 조건을 확인하세요.');
-  const rows=(await list()).entries.filter(r=>r.hasOutput&&r.disposition==='eligible'&&!r.progress?.seenAt&&r.current?.score==null&&!r.current?.note?.trim()&&(!topic||r.topic===topic)&&(r.title+' '+r.coverTitle).toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+  const rows=(await list()).entries.filter(r=>r.hasOutput&&r.disposition==='eligible'&&!r.seenAt&&r.current?.score==null&&!r.current?.note?.trim()&&(!topic||r.topic===topic)&&(r.title+' '+r.coverTitle).toLocaleLowerCase().includes(search.toLocaleLowerCase()));
   return rows.length?rows[crypto.randomInt(rows.length)]:null;
  }
 

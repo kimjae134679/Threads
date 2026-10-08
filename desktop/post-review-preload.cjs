@@ -3,6 +3,7 @@ const {contextBridge,ipcRenderer}=require('electron');
 contextBridge.exposeInMainWorld('ThreadsPostReview',Object.freeze({
  list:()=>ipcRenderer.invoke('post-review:list'),
  image:(id,page,version)=>ipcRenderer.invoke('post-review:image',id,page,version),
+ thumbnail:(id,version)=>ipcRenderer.invoke('post-review:thumbnail',id,version),
  save:payload=>ipcRenderer.invoke('post-review:save',payload),
  visit:payload=>ipcRenderer.invoke('post-review:visit',payload),
  decide:payload=>ipcRenderer.invoke('post-review:decide',payload),
