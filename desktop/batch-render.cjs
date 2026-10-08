@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs/promises'),path=require('node:path');
-const modelModule={exports:{}};require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(__dirname,'../app/universal-production-model.js'),'utf8'),{module:modelModule});
+const {editorRoot}=require('./editor-assets.cjs');
+const modelModule={exports:{}};require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(editorRoot(),'universal-production-model.js'),'utf8'),{module:modelModule});
 const {auditLayout,normalize}=modelModule.exports;
 const {prepareImageComposition}=require('./image-composition.cjs');
 function assertExactIntake(source,layout){

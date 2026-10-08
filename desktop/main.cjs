@@ -1,5 +1,9 @@
 'use strict';
+if(process.argv.some(a=>a.startsWith('--image-production-request='))){
+ require('./image-production-run.cjs');
+}else{
 const { app, BrowserWindow, dialog, ipcMain, protocol, session, shell } = require('electron');
+const {editorRoot}=require('./editor-assets.cjs');
 const {getMaterialRoot}=require('./material-paths.cjs');
 const path = require('node:path');
 const fs = require('node:fs/promises');
@@ -29,10 +33,11 @@ function denyPermissions(ses) {
   ses.setPermissionCheckHandler(() => false);
 }
 async function start() {
-  const root = app.isPackaged ? path.join(process.resourcesPath, 'editor') : path.join(__dirname, '..', 'app');
+  const root = editorRoot();
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
   const allowed = new Set(['source-cut-post-review.html','source-cut-post-review.css','source-cut-post-review.js','source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-automation.js', 'source-cut-automation.css', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-batch-image-analysis.js', 'source-page-plan.js', 'universal-production-model.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
   allowed.add('source-cut-review-loader.js');
+  allowed.add('source-batch-image-composition.js');
   protocol.handle('cut-editor', async (request) => {
     const url = new URL(request.url), name = url.pathname.slice(1);
     if (url.host !== 'app' || !allowed.has(name) || request.method !== 'GET') return new Response('Not found', { status: 404 });
@@ -140,3 +145,4 @@ else {
  app.whenReady().then(start).catch(async error=>{if(reviewAudit){const directory=reviewAudit.slice('--review-audit='.length);await fs.mkdir(directory,{recursive:true});await fs.writeFile(path.join(directory,'audit-error.txt'),error.stack);console.error(error);app.exit(1);return;}dialog.showErrorBox('컷 편집기 실행 실패',error.message);app.quit();});
 }
 app.on('window-all-closed', () => app.quit());
+}

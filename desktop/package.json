@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.3.25",
+  "version": "0.3.26",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -64,7 +64,10 @@
       "pc-review-entry.cjs",
       "image-requirements.cjs",
       "image-requirements-schema.json",
-      "image-composition.cjs"
+      "image-composition.cjs",
+      "editor-assets.cjs",
+      "image-production-run.cjs",
+      "image-work-state.cjs"
     ],
     "extraResources": [
       {

@@ -28,7 +28,7 @@
 
 ## 한 글 제작 명령
 
-이 명령은 저장소 작업용이며 설치 앱 진입점이 아니다. Electron은 프로젝트의 기존 설치 런타임을 사용한다.
+아래 첫 명령은 저장소 작업용이다. 0.3.26에는 설치 실행파일의 `--image-production-request=ABS_REQUEST.json` 진입점도 연결됐다. 별도 설치·본문 보존·실제 실행 근거는 [설치 인계](PACKAGED_COVER_INSTALL_2026-10-09.md)를 따른다. Electron은 프로젝트의 기존 설치 런타임을 사용한다.
 
 ```powershell
 $process = Start-Process -FilePath 'C:\KJ\Github\Threads\desktop\node_modules\electron\dist\electron.exe' -ArgumentList @('REPO_ABS\desktop\image-production-run.cjs','REQUEST_ABS.json') -WindowStyle Hidden -Wait -PassThru

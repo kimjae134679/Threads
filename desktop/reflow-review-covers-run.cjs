@@ -1,5 +1,6 @@
 'use strict';
 const fs=require('node:fs/promises'),native=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const {editorRoot}=require('./editor-assets.cjs');
 const {sha256,pngSize,assertCoverGeometry}=require('./universal-reproduction.cjs'),{coverHtml}=require('./universal-cover.cjs');
 const {squareCoverHtml}=require('./square-cover.cjs');
 const repo=path.resolve(__dirname,'..'),json=p=>fs.readFile(p,'utf8').then(JSON.parse),write=async(p,v)=>{await fs.mkdir(path.dirname(p),{recursive:true});await fs.writeFile(p,JSON.stringify(v,null,2)+'\n');};
@@ -27,7 +28,7 @@ async function hashFile(file){const hash=require('node:crypto').createHash('sha2
 async function files(root){const list=[];async function visit(dir,rel=''){for(const e of await fs.readdir(dir,{withFileTypes:true})){if(e.isSymbolicLink())throw Error('연결 원본 파일 금지');const name=path.join(rel,e.name);if(e.isDirectory())await visit(path.join(dir,e.name),name);else if(e.isFile())list.push(name);}}await visit(root);return list.sort();}
 async function noLinks(file){let p=path.resolve(file);while(path.dirname(p)!==p){try{if((await fs.lstat(p)).isSymbolicLink())throw Error('연결 경로에 출력 금지');}catch(e){if(e.code!=='ENOENT')throw e;}p=path.dirname(p);}}
 async function optionalHash(file){try{return await hashFile(file);}catch(e){if(e.code==='ENOENT')return null;throw e;}}
-async function createZipTools(root=repo){const context=vm.createContext({window:{},Blob,File,TextEncoder,TextDecoder,Uint8Array,DataView});vm.runInContext(await fs.readFile(path.join(root,'app/source-cut-zip.js'),'utf8'),context);context.ThreadsSourceCutZip=context.window.ThreadsSourceCutZip;vm.runInContext(await fs.readFile(path.join(root,'app/source-bundle-zip.js'),'utf8'),context);return {zip:async items=>Buffer.from(await context.window.ThreadsSourceCutZip.zip(items).arrayBuffer()),read:async buffer=>context.ThreadsSourceBundleZip.read(new File([buffer],'preview.zip'))};}
+async function createZipTools(root){const assets=root?path.join(root,'app'):editorRoot(),context=vm.createContext({window:{},Blob,File,TextEncoder,TextDecoder,Uint8Array,DataView});vm.runInContext(await fs.readFile(path.join(assets,'source-cut-zip.js'),'utf8'),context);context.ThreadsSourceCutZip=context.window.ThreadsSourceCutZip;vm.runInContext(await fs.readFile(path.join(assets,'source-bundle-zip.js'),'utf8'),context);return {zip:async items=>Buffer.from(await context.window.ThreadsSourceCutZip.zip(items).arrayBuffer()),read:async buffer=>context.ThreadsSourceBundleZip.read(new File([buffer],'preview.zip'))};}
 async function freezeReflowInputs(config,{onProgress=()=>{}}={}){
  const sourceRoot=path.resolve(config.sourceRoot),sourceOutput=path.join(sourceRoot,'06_자동 제작 결과'),destination=path.resolve(config.destination);
  await noLinks(sourceRoot);await noLinks(destination);

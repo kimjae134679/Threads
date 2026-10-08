@@ -5,6 +5,7 @@ const {loadBatchInput}=require('./batch-input.cjs'),{renderBatchInput}=require('
 const {pngSize}=require('./universal-reproduction.cjs'),{writeAtomic}=require('./atomic-file.cjs');
 const {createZipTools}=require('./reflow-review-covers-run.cjs');
 const {readReviewProgress}=require('./image-work-state.cjs');
+const {editorRoot}=require('./editor-assets.cjs');
 const sha=b=>createHash('sha256').update(b).digest('hex'),inside=(a,b)=>b===a||b.startsWith(a+path.sep);
 async function assertUnread(request){
  if(request.representativeOnly===true)return;
@@ -16,7 +17,9 @@ async function assertUnread(request){
 }
 app.disableHardwareAcceleration();app.commandLine.appendSwitch('force-device-scale-factor','1');app.on('window-all-closed',()=>{});
 (async()=>{
- const request=JSON.parse(await fs.readFile(process.argv[2],'utf8'));
+ const requestFile=process.argv.find(a=>a.startsWith('--image-production-request='))?.slice('--image-production-request='.length)||process.argv[2];
+ if(!path.isAbsolute(requestFile||''))throw Error('단건 요청 JSON 절대 경로 필요');
+ const request=JSON.parse(await fs.readFile(requestFile,'utf8'));
  if(request.schema!=='threads-image-production-request-v1'||!['input','output','work'].every(k=>path.isAbsolute(request[k]||''))||!/^[\w-]+$/.test(request.postId||''))throw Error('단건 요청 형식·절대 경로·글 ID 확인 필요');
  const input=path.resolve(request.input),output=path.resolve(request.output),work=path.resolve(request.work);
  if(inside(input,output)||inside(output,input)||inside(input,work))throw Error('원본과 별도 결과·작업 폴더 필요');
@@ -46,7 +49,7 @@ app.disableHardwareAcceleration();app.commandLine.appendSwitch('force-device-sca
   await writeAtomic(checkpoint,JSON.stringify({state:'running',postId:request.postId,fingerprint,startedAt:new Date().toISOString(),representativeOnly:!!request.representativeOnly}));
   app.setPath('userData',path.join(work,'renderer-profile'));await app.whenReady();session.defaultSession.webRequest.onBeforeRequest({urls:['http://*/*','https://*/*']},(_d,cb)=>cb({cancel:true}));
   win=new BrowserWindow({show:false,width:1200,height:900,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,backgroundThrottling:false}});
-  await win.loadFile(path.join(__dirname,'../app/source-batch.html'));
+  await win.loadFile(path.join(editorRoot(),'source-batch.html'));
   await assertUnread(request);
   const result=await renderBatchInput(job,{getWindow:async()=>win,universalCover:true,preserveBodyPlan:priorPlan});
   if(result.sourcePlan.input.sha256!==sourcePlan.input.sha256)throw Error('기존 본문과 새 입력 원본 hash 불일치; 표지 교체 보류');
@@ -60,7 +63,8 @@ app.disableHardwareAcceleration();app.commandLine.appendSwitch('force-device-sca
   const planData=Buffer.from(JSON.stringify(result.productionPlan,null,2)+'\n');await fs.writeFile(path.join(target,'production-plan.json'),planData);
   await fs.writeFile(path.join(target,'source-bundle.zip'),result.sourceZip);await fs.writeFile(path.join(target,'review-preview.zip'),result.zip);
   const done={state:'complete',postId:request.postId,input,existingOutput:existing,consumedInputFingerprint:fingerprintFor(job),fingerprint,target,completedAt:new Date().toISOString(),representativeOnly:!!request.representativeOnly,
-   reviewRegistered:false,publicationAllowed:false,bodyPngPreserved:true,bodyImages:bodyImages.length,outputSha256:sha(result.zip),sourceZipSha256:sha(result.sourceZip),planSha256:sha(planData),images};
+   reviewRegistered:false,publicationAllowed:false,bodyPngPreserved:true,bodyImages:bodyImages.length,outputSha256:sha(result.zip),sourceZipSha256:sha(result.sourceZip),planSha256:sha(planData),images,
+   runtime:{packaged:app.isPackaged,version:app.getVersion(),executable:process.execPath,editorAssets:editorRoot()}};
   await writeAtomic(checkpoint,JSON.stringify(done,null,2)+'\n');console.log(JSON.stringify(done));
  }catch(error){await writeAtomic(checkpoint,JSON.stringify({state:'held',postId:request.postId,reason:error.message,failedAt:new Date().toISOString(),retry:'자료·권리·생성 준비를 수정한 뒤 같은 명령 실행',publicationAllowed:false},null,2)+'\n');throw error;}
  finally{win?.destroy();await lock.close();await fs.rm(lockFile,{force:true});}
