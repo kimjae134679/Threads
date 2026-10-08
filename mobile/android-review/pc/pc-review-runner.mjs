@@ -4,6 +4,8 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash,randomUUID} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+import {promisify} from 'node:util';
 import {readCanonicalFile,withCanonicalWriter} from '../../../desktop/review-canonical-writer.cjs';
 import {createBoundPcReviewPipeline} from './pc-binding.mjs';
 import {dedicatedRepositoryMetadata} from './exchange.mjs';
@@ -100,6 +102,13 @@ export async function inspectInstalledReviewWriters(){
  const result=spawnSync('powershell',['-NoProfile','-NonInteractive','-Command',command],{windowsHide:true,encoding:'utf8',timeout:15000,maxBuffer:1000000});
  return decodeInstalledReviewWriterProbe(result);
 }
+// Electron treats app.asar as a virtual directory; hash its physical bytes.
+// Keep virtual child module reads on the normal ASAR-aware filesystem.
+function readArchiveContainer(file){
+ if(!process.versions.electron)return fs.readFile(file);
+ const nativeFs=createRequire(import.meta.url)('original-fs');
+ return promisify(nativeFs.readFile.bind(nativeFs))(file);
+}
 async function verifyFleet(c,inspect){
  if(!c.canonicalMergeApproved)return;
  const expected=hash(await fs.readFile(new URL('../../../desktop/review-canonical-writer.cjs',import.meta.url)));
@@ -107,7 +116,7 @@ async function verifyFleet(c,inspect){
  const running=await inspect();if(!Array.isArray(running))fail('writer_fleet_unverified');
  // A module fingerprint alone does not authorize ordinary editor batch writes.
  if(running.some(app=>!Number.isSafeInteger(app?.processId)||app.processId<1||!['review-only','review-audit','pc-review-run'].includes(app.role)))fail('writer_fleet_unverified');
- for(const app of running){const executable=absolute(app.executablePath),w=c.writerFleet.writers.find(w=>absolute(w.executablePath).toLowerCase()===executable.toLowerCase());if(!w)fail('writer_fleet_unverified');const resources=path.join(path.dirname(executable),'resources'),asar=path.join(resources,'app.asar');if(hash(await fs.readFile(asar))!==w.asarSha256||hash(await fs.readFile(path.join(asar,'review-canonical-writer.cjs')))!==expected)fail('writer_fleet_unverified');}
+ for(const app of running){const executable=absolute(app.executablePath),w=c.writerFleet.writers.find(w=>absolute(w.executablePath).toLowerCase()===executable.toLowerCase());if(!w)fail('writer_fleet_unverified');const resources=path.join(path.dirname(executable),'resources'),asar=path.join(resources,'app.asar');if(hash(await readArchiveContainer(asar))!==w.asarSha256||hash(await fs.readFile(path.join(asar,'review-canonical-writer.cjs')))!==expected)fail('writer_fleet_unverified');}
 }
 async function saveResult(root,result){
  await directory(root);const folder=path.join(root,'pc-review-results');await fs.mkdir(folder,{recursive:true});await directory(folder);const reportFile=path.join(folder,randomUUID()+'.json'),bytes=Buffer.from(JSON.stringify({...result,reportFile},null,2)+'\n');
