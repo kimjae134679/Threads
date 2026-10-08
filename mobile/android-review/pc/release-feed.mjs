@@ -1,3 +1,4 @@
+import {maxReviewStateBytes,maxReviewTotalAssetBytes} from '../app/review-limits.js';
 // Default-disabled callable PC producer. Explicit read-only snapshots, transport,
 // scratch export namespace and durable journal callback are the only bindings.
 import fs from 'node:fs/promises';
@@ -7,7 +8,7 @@ import {version} from '../../../desktop/post-review-store.cjs';
 import {createHash} from 'node:crypto';
 import {exportRelease,prepareFeedbackImport,dedicatedRepositoryMetadata,requestHash} from './exchange.mjs';
 import {publishPreparedRelease} from './publish-release.mjs';
-import {readPinnedReviewState} from './github-transport.mjs';
+import {readPinnedReviewState,readReviewStateBlob} from './github-transport.mjs';
 const git=/^[a-f0-9]{40}$/,hash=/^[a-f0-9]{64}$/;
 const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&[Object.prototype,null].includes(Object.getPrototypeOf(x));
 const clone=x=>JSON.parse(JSON.stringify(x));
@@ -47,8 +48,9 @@ function releaseIdentity(manifest){
  return requestHash({schemaVersion:manifest.schemaVersion,reviewRound:manifest.reviewRound,criteria:manifest.criteria,entries:manifest.entries.map(e=>({id:e.id,title:e.title,outputVersion:e.outputVersion,reviewRound:e.reviewRound,images:e.images.map(i=>({url:i.url,sha256:i.sha256}))}))});
 }
 function decodeBlob(response,limit){
- if(!plain(response)||response.encoding!=='base64'||!Number.isSafeInteger(response.size)||response.size<1||response.size>limit||!git.test(response.sha)||typeof response.content!=='string'||response.content.length>Math.ceil(limit/3)*4+1000)fail('invalid_pinned_blob');
- const encoded=response.content.replace(/\s/g,'');if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(encoded))fail('invalid_pinned_blob');
+ const encodedLimit=Math.ceil(limit/3)*4;
+ if(!plain(response)||response.encoding!=='base64'||!Number.isSafeInteger(response.size)||response.size<1||response.size>limit||!git.test(response.sha)||typeof response.content!=='string'||response.content.length>2*encodedLimit+1000)fail('invalid_pinned_blob');
+ const encoded=response.content.replace(/\s/g,'');if((encoded.length>encodedLimit||encoded.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded)))fail('invalid_pinned_blob');
  const bytes=Buffer.from(encoded,'base64');if(bytes.length!==response.size||blob(bytes)!==response.sha)fail('pinned_blob_hash_mismatch');return bytes;
 }
 function preserves(before,after){
@@ -77,9 +79,9 @@ function confirm(journal,pending,head){
 function inside(root,target){const rel=path.relative(root,target);return !!rel&&!path.isAbsolute(rel)&&rel!=='..'&&!rel.startsWith('..'+path.sep);}
 async function localJson(file){
  const resolved=path.resolve(file),root=path.parse(resolved).root,parts=resolved.slice(root.length).split(path.sep).filter(Boolean);let current=root;
- for(let i=0;i<parts.length;i++){current=path.join(current,parts[i]);const stat=await fs.lstat(current);if(stat.isSymbolicLink()||i<parts.length-1&&!stat.isDirectory()||i===parts.length-1&&(!stat.isFile()||stat.nlink!==1||stat.size<1||stat.size>1000000))fail('invalid_prepared_local_file');}
+ for(let i=0;i<parts.length;i++){current=path.join(current,parts[i]);const stat=await fs.lstat(current);if(stat.isSymbolicLink()||i<parts.length-1&&!stat.isDirectory()||i===parts.length-1&&(!stat.isFile()||stat.nlink!==1||stat.size<1||stat.size>maxReviewStateBytes))fail('invalid_prepared_local_file');}
  const handle=await fs.open(resolved,constants.O_RDONLY|(constants.O_NOFOLLOW||0));
- try{const before=await handle.stat();if(!before.isFile()||before.nlink!==1||before.size<1||before.size>1000000)fail('invalid_prepared_local_file');const buffer=Buffer.alloc(before.size+1);let offset=0;while(offset<buffer.length){const {bytesRead}=await handle.read(buffer,offset,buffer.length-offset,null);if(!bytesRead)break;offset+=bytesRead;}const after=await handle.stat();if(offset!==before.size||after.size!==before.size||after.mtimeMs!==before.mtimeMs)fail('prepared_local_file_changed');const bytes=buffer.subarray(0,offset);return {bytes,value:JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes))};}finally{await handle.close();}
+ try{const before=await handle.stat();if(!before.isFile()||before.nlink!==1||before.size<1||before.size>maxReviewStateBytes)fail('invalid_prepared_local_file');const buffer=Buffer.alloc(before.size+1);let offset=0;while(offset<buffer.length){const {bytesRead}=await handle.read(buffer,offset,buffer.length-offset,null);if(!bytesRead)break;offset+=bytesRead;}const after=await handle.stat();if(offset!==before.size||after.size!==before.size||after.mtimeMs!==before.mtimeMs)fail('prepared_local_file_changed');const bytes=buffer.subarray(0,offset);return {bytes,value:JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes))};}finally{await handle.close();}
 }
 async function canonicalSnapshot(store,selected){
  if(typeof store.list!=='function')fail('read_only_store_listing_required');const listing=await store.list();if(listing?.reviewRound!==selected.reviewRound||!Array.isArray(listing.entries))fail('canonical_store_round_changed');
@@ -97,7 +99,8 @@ async function resumeExport(p,{allowedOutputRoot,outputDirectory,store,selected,
  if(typeof store.image!=='function')fail('read_only_source_image_required');
  for(const row of selected.rows)for(let index=0;index<row.images.length;index++){
   const image=await store.image(row.id,index+1,version(row)),max=25*1024*1024;
-  if(typeof image!=='string'||image.length>Math.ceil(max/3)*4+30||!/^data:image\/png;base64,(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(image))fail('prepared_resume_source_png_changed');
+  if(typeof image!=='string'||image.length>Math.ceil(max/3)*4+30||!image.startsWith('data:image/png;base64,'))fail('prepared_resume_source_png_changed');
+  const encoded=image.slice('data:image/png;base64,'.length);if(encoded.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded))fail('prepared_resume_source_png_changed');
   const bytes=Buffer.from(image.slice('data:image/png;base64,'.length),'base64');if(bytes.length<8||bytes.length>max||bytes.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||createHash('sha256').update(bytes).digest('hex')!==row.images[index].sha256)fail('prepared_resume_source_png_changed');
  }
  return {state:state.value,outputDirectory:root,stateFile,assetDirectory,trustedLocalSnapshot:clone(p.trustedLocalSnapshot),snapshotFile};
@@ -137,7 +140,7 @@ export async function runReleaseFeed({enabled=false,completionPolicy='regenerate
    // or re-sending the same non-force ref request. Never create another commit.
    const commit=await api(prefix+'/git/commits/'+p.candidateCommit);
    if(commit?.sha!==p.candidateCommit||commit.tree?.sha!==p.treeSha||commit.parents?.length!==1||commit.parents[0]?.sha!==p.expectedHead)fail('candidate_commit_identity_mismatch');
-   const response=await api(prefix+'/contents/'+statePath+'?ref='+p.candidateCommit),bytes=decodeBlob(response,1000000);
+   const response=await api(prefix+'/contents/'+statePath+'?ref='+p.candidateCommit),bytes=await readReviewStateBlob({api,prefix,response});
    if(response.sha!==p.stateBlobSha)fail('candidate_state_blob_mismatch');
    const candidateState=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));if(requestHash(candidateState)!==p.stateHash)fail('candidate_state_content_mismatch');
    prepareFeedbackImport({state:candidateState,trustedLocalSnapshot:p.trustedLocalSnapshot,rows:selected.rows,criteria,reviewRound:selected.reviewRound});

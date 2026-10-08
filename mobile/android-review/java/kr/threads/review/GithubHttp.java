@@ -6,14 +6,14 @@ public final class GithubHttp implements DeviceFlowController.Endpoint,DeviceFlo
  public static final class ApiException extends Exception{public final int status;ApiException(int s){super("GitHub request unavailable ("+s+")");status=s;}}
  private void allowed()throws Exception{if(!ConnectionConfig.approved())throw new DeviceFlowController.AuthException("Actual GitHub connection not approved");}
  private JSONObject request(String host,String path,String method,byte[] body,String contentType,String bearer)throws Exception{
-  allowed();if(host.equals("api.github.com")&&System.currentTimeMillis()<apiCooldownUntil)throw new ApiException(429);HttpsURLConnection c=(HttpsURLConnection)new URL("https://"+host+path).openConnection();c.setInstanceFollowRedirects(false);c.setConnectTimeout(15000);c.setReadTimeout(20000);c.setRequestMethod(method);c.setRequestProperty("Accept","application/vnd.github+json");c.setRequestProperty("User-Agent","Threads-Review-Android");c.setRequestProperty("X-GitHub-Api-Version","2026-03-10");
+  allowed();ReviewRequestBounds.body(host,path,body);if(host.equals("api.github.com")&&System.currentTimeMillis()<apiCooldownUntil)throw new ApiException(429);HttpsURLConnection c=(HttpsURLConnection)new URL("https://"+host+path).openConnection();c.setInstanceFollowRedirects(false);c.setConnectTimeout(15000);c.setReadTimeout(20000);c.setRequestMethod(method);c.setRequestProperty("Accept","application/vnd.github+json");c.setRequestProperty("User-Agent","Threads-Review-Android");c.setRequestProperty("X-GitHub-Api-Version","2026-03-10");
   if(bearer!=null)c.setRequestProperty("Authorization","Bearer "+bearer);
   try{
-   if(body!=null){if(body.length>1100000)throw new IOException("Request size limit");c.setDoOutput(true);c.setRequestProperty("Content-Type",contentType);c.setFixedLengthStreamingMode(body.length);try(OutputStream out=c.getOutputStream()){out.write(body);}}
+   if(body!=null){c.setDoOutput(true);c.setRequestProperty("Content-Type",contentType);c.setFixedLengthStreamingMode(body.length);try(OutputStream out=c.getOutputStream()){out.write(body);}}
    int status=c.getResponseCode();if(host.equals("api.github.com")&&(status==403||status==429||"0".equals(c.getHeaderField("x-ratelimit-remaining")))){
     long until=System.currentTimeMillis()+60000;try{String retry=c.getHeaderField("Retry-After"),reset=c.getHeaderField("x-ratelimit-reset");if(retry!=null)until=Math.max(until,System.currentTimeMillis()+Long.parseLong(retry)*1000);if(reset!=null&&"0".equals(c.getHeaderField("x-ratelimit-remaining")))until=Math.max(until,Long.parseLong(reset)*1000);}catch(NumberFormatException ignored){}apiCooldownUntil=until;
    }if(status<200||status>=300)throw new ApiException(status);
-   if(c.getContentLengthLong()>36L*1024*1024)throw new IOException("Response size limit");ByteArrayOutputStream bytes=new ByteArrayOutputStream();try(InputStream in=c.getInputStream()){byte[] buffer=new byte[8192];for(int n;(n=in.read(buffer))!=-1;){if(bytes.size()+n>36*1024*1024)throw new IOException("Response size limit");bytes.write(buffer,0,n);}}
+   if(c.getContentLengthLong()>ReviewRequestBounds.RESPONSE_BYTES)throw new IOException("Response size limit");ByteArrayOutputStream bytes=new ByteArrayOutputStream();try(InputStream in=c.getInputStream()){byte[] buffer=new byte[8192];for(int n;(n=in.read(buffer))!=-1;){if(bytes.size()+n>ReviewRequestBounds.RESPONSE_BYTES)throw new IOException("Response size limit");bytes.write(buffer,0,n);}}
    return new JSONObject(new String(bytes.toByteArray(),"UTF-8"));
   }finally{c.disconnect();}
  }
@@ -31,6 +31,7 @@ public final class GithubHttp implements DeviceFlowController.Endpoint,DeviceFlo
   boolean create=method.equals("POST")&&Arrays.asList("/git/blobs","/git/trees","/git/commits").contains(relative);
   boolean patch=method.equals("PATCH")&&relative.equals("/git/refs/"+ref)&&body!=null&&body.has("force")&&!body.getBoolean("force")&&body.getString("sha").matches("[a-f0-9]{40}");
   if(!read&&!create&&!patch)throw new IOException("Native API route not allowed");
+  if(create&&relative.equals("/git/blobs")){if(body==null)throw new IOException("Review body missing");ReviewRequestBounds.ledger(body.getString("content"),body.getString("encoding"));}
   if(create&&relative.equals("/git/trees")){JSONArray tree=body.getJSONArray("tree");if(tree.length()!=1||!tree.getJSONObject(0).getString("path").equals("mobile-review/state.json"))throw new IOException("Native write path not allowed");}
   return request("api.github.com",path,method,body==null?null:body.toString().getBytes("UTF-8"),"application/json",token);
  }

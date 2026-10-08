@@ -1,3 +1,4 @@
+import {maxReviewStateBytes,maxReviewTotalAssetBytes} from './review-limits.js';
 // Packaged connection preparation; shipped native approval/configuration is off.
 // api is an injected native HTTPS JSON transport; this module never
 // obtains, stores, logs, embeds, or falls back to any token or bridge credential.
@@ -5,15 +6,17 @@ import {validateManifest,key} from './core.js';
 const clone=value=>JSON.parse(JSON.stringify(value));
 const sha1=/^[a-f0-9]{40}$/;
 const statePath='mobile-review/state.json';
-const maxStateBytes=1000000, maxAssetBytes=25*1024*1024;
+const maxStateBytes=maxReviewStateBytes, maxAssetBytes=25*1024*1024;
 const utf8=new TextEncoder();
 const digest=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
 const ordered=value=>Array.isArray(value)?value.map(ordered):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(k=>[k,ordered(value[k])])):value;
 function identifier(value){return typeof value==='string'&&value.length>0&&value.length<=200;}
 function gitSha(value){if(!sha1.test(value))throw Error('Invalid Git SHA');return value;}
 function decode(response,limit){
- if(!response||response.encoding!=='base64'||!Number.isInteger(response.size)||response.size<0||response.size>limit||typeof response.content!=='string'||response.content.length>Math.ceil(limit/3)*4+1000)throw Error('Invalid or oversized Git blob');
- const text=response.content.replace(/\s/g,'');if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(text))throw Error('Invalid base64 blob');
+ const encodedLimit=Math.ceil(limit/3)*4;
+ // Bound raw formatting before allocation, then enforce the actual base64 cap.
+ if(!response||response.encoding!=='base64'||!Number.isInteger(response.size)||response.size<0||response.size>limit||typeof response.content!=='string'||response.content.length>2*encodedLimit+1000)throw Error('Invalid or oversized Git blob');
+ const text=response.content.replace(/\s/g,'');if((text.length>encodedLimit||text.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(text)))throw Error('Invalid base64 blob');
  const bytes=Uint8Array.from(atob(text),c=>c.charCodeAt(0));if(bytes.length!==response.size)throw Error('Git blob size mismatch');return bytes;
 }
 function validateState(state){
@@ -48,7 +51,17 @@ export function createGithubAdapter({approved=false,dedicatedReviewRepository=fa
   await checkRepository();const head=gitSha((await call('/git/ref/'+ref)).object?.sha);
   const commit=await call('/git/commits/'+head), tree=gitSha(commit?.tree?.sha);
   const file=await call('/contents/'+statePath+'?ref='+head);
-  const state=validateState(JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(decode(file,maxStateBytes))));
+  if(!file||!Number.isSafeInteger(file.size)||file.size<1||file.size>maxStateBytes||!sha1.test(file.sha))throw Error('Invalid or oversized review state');
+  const identity={sha:file.sha,size:file.size};let response=file;
+  if(file.encoding==='none'){
+   if(file.size<=1000000||file.content!=='')throw Error('Invalid review state metadata');
+   response=await call('/git/blobs/'+identity.sha);
+  }
+  if(response.sha!==identity.sha||response.size!==identity.size)throw Error('Review state blob identity mismatch');
+  const bytes=decode(response,maxStateBytes),header=utf8.encode('blob '+bytes.length+'\0'),wire=new Uint8Array(header.length+bytes.length);wire.set(header);wire.set(bytes,header.length);
+  const actual=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-1',wire)),b=>b.toString(16).padStart(2,'0')).join('');
+  if(actual!==identity.sha)throw Error('Review state blob hash mismatch');
+  const state=validateState(JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes)));
   return {head,tree,state};
  }
  async function save(base,state){

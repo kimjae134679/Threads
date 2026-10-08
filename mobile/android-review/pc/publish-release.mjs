@@ -1,3 +1,5 @@
+import {readReviewStateBlob} from './github-transport.mjs';
+import {maxReviewStateBytes,maxReviewTotalAssetBytes} from '../app/review-limits.js';
 // Source-only producer boundary: injected API only. No fetch, auth, scheduling,
 // repository creation or local/canonical file writes. Activation stays external.
 import fs from 'node:fs/promises';
@@ -8,7 +10,7 @@ import {validateManifest,key} from '../app/core.js';
 import {dedicatedRepositoryMetadata,requestHash,isVerifiedPcVersion} from './exchange.mjs';
 
 const gitShaPattern=/^[a-f0-9]{40}$/,hashPattern=/^[a-f0-9]{64}$/;
-const maxStateBytes=1000000,maxAssetBytes=25*1024*1024,maxAssets=5000,maxTotalAssetBytes=128*1024*1024;
+const maxStateBytes=maxReviewStateBytes,maxAssetBytes=25*1024*1024,maxAssets=5000,maxTotalAssetBytes=maxReviewTotalAssetBytes;
 const statePath='mobile-review/state.json';
 const signature=Buffer.from([137,80,78,71,13,10,26,10]);
 const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -89,9 +91,7 @@ async function preparedFiles(exportDirectory){
 }
 async function currentRemoteState(api,url){
  let response;try{response=await api(url);}catch(error){if(error?.status===404)return null;throw error;}
- if(!response||response.encoding!=='base64'||!Number.isInteger(response.size)||response.size<1||response.size>maxStateBytes||typeof response.content!=='string'||response.content.length>Math.ceil(maxStateBytes/3)*4+1000)fail('invalid_remote_state');
- const content=response.content.replace(/\s/g,'');if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(content))fail('invalid_remote_state');
- const bytes=Buffer.from(content,'base64');if(bytes.length!==response.size||response.sha!==blobSha(bytes))fail('remote_state_blob_hash_mismatch');
+ const prefix=url.slice(0,url.indexOf('/contents/')),bytes=await readReviewStateBlob({api,prefix,response});
  try{return validateState(JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes)),false);}catch{fail('invalid_remote_state');}
 }
 function preservationIssue(remote,local){

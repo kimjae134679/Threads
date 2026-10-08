@@ -1,3 +1,4 @@
+import {maxReviewStateBytes} from '../app/review-limits.js';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createGithubAdapter} from '../app/github-adapter.js';
 import {initial,applyManifest,queueEdit} from '../app/core.js';import {syncReviews} from '../app/sync-engine.js';
@@ -68,6 +69,6 @@ test('bounded Git races leave pending operation; no last-write-wins fallback',as
 test('corrupt asset, oversized state and malformed ledger fail without writes',async()=>{
  const m=mockGithub(),real=m.api;const a=adapter(m,{api:async(path,init)=>{const r=await real(path,init);return path.includes('/git/blobs/')?{...r,content:Buffer.alloc(png.length).toString('base64')}:r;}});
  const manifest=await a.request('/v1/review/manifest');await assert.rejects(a.downloadAsset(manifest.entries[0].images[0]),/hash|signature/);
- const n=mockGithub();n.advance(s=>{s.extra='x'.repeat(1000001);return s;});await assert.rejects(adapter(n).request('/v1/review/manifest'),/oversized/);assert.equal(n.writeCount,0);
+ const n=mockGithub();n.advance(s=>{s.extra='x'.repeat(maxReviewStateBytes+1);return s;});await assert.rejects(adapter(n).request('/v1/review/manifest'),/oversized/);assert.equal(n.writeCount,0);
  const p=mockGithub();p.advance(s=>{s.operations.bad={requestHash:'invalid',result:{}};return s;});await assert.rejects(send(adapter(p),operation()),/ledger/);assert.equal(p.writeCount,0);
 });

@@ -18,7 +18,7 @@ export function mockGithub(){
   const p=path.slice(prefix.length);
   if(p==='/git/ref/heads/mobile-review/data')return {object:{sha:mock.head}};
   if(p.startsWith('/git/commits/')&&method==='GET')return commits.get(p.split('/').at(-1));
-  if(p.startsWith('/contents/mobile-review/state.json?ref=')){const ref=p.split('ref=')[1],content=Buffer.from(JSON.stringify(states.get(ref)));return {encoding:'base64',size:content.length,content:content.toString('base64')};}
+  if(p.startsWith('/contents/mobile-review/state.json?ref=')){const ref=p.split('ref=')[1],content=Buffer.from(JSON.stringify(states.get(ref)));return {encoding:'base64',size:content.length,content:content.toString('base64'),sha:createHash('sha1').update(Buffer.concat([Buffer.from('blob '+content.length+'\0'),content])).digest('hex')};}
   if(p==='/git/blobs/'+imageBlob)return {encoding:'base64',size:png.length,content:png.toString('base64'),sha:imageBlob};
   if(p==='/git/blobs'&&method==='POST'){const id=sha();blobs.set(id,JSON.parse(body.content));return {sha:id};}
   if(p==='/git/trees'&&method==='POST'){const id=sha();trees.set(id,blobs.get(body.tree[0].sha));return {sha:id};}

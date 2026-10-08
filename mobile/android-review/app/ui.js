@@ -1,52 +1,95 @@
-import {initial,key,applyManifest,queueEdit,currentReview,acceptResult,resolveConflict} from './core.js';
+import {initial,key,queueEdit,currentReview,resolveConflict} from './core.js';
 import {openStore,readStore,writeStore} from './storage.js';
 import {serviceConfig,requestJson,downloadAsset} from './transport.js';
 import {syncReviews} from './sync-engine.js';
 import {nativeGithub,openNativeConnection} from './native-api.js';
-// classifyTopic is generated from verified desktop/review-workflow-model.cjs.
-let db,state,selected=null,score=null,decision='unreviewed',syncing=false,serial=Promise.resolve(),objectUrls=[];
+import {createAssetLoader} from './asset-loader.js';
+// classifyTopic is generated from the verified desktop review model at build.
+let db,state,selected=null,score=null,decision='unreviewed',syncing=false,serial=Promise.resolve();
+let selection=null,loader,provider=null,providerBridge=null,providerConfig=null,listDirty=false,queueDirty=false,syncAgain=false,messageTimer;
 const $=id=>document.getElementById(id);
 const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
-function message(text){$('message').textContent=text;$('message').style.display='block';}
-async function commit(change){const task=serial.then(async()=>{const next=change(state);await writeStore(db,'state','current',next);state=next;renderList();renderQueue();});serial=task.catch(()=>{});return task;}
-function renderList(){
- const entries=state.manifest?.entries||[],topics=new Map(entries.map(e=>[e.topic||classifyTopic(e,{}).topic,e.topicLabel||classifyTopic(e,{}).topicLabel]));
- const selectedTopic=$('topic').value;$('topic').replaceChildren(new Option('전체 카테고리',''));for(const [id,label] of topics)$('topic').add(new Option(label,id));$('topic').value=selectedTopic;
- $('list').replaceChildren();$('empty').hidden=entries.length>0;
- for(const e of entries.filter(e=>(!selectedTopic||(e.topic||classifyTopic(e,{}).topic)===selectedTopic)&&e.title.toLocaleLowerCase().includes($('search').value.toLocaleLowerCase()))){const r=currentReview(state,e),b=node('button',undefined,'post');b.append(node('span',e.topicLabel||classifyTopic(e,{}).topicLabel,'tag'),node('strong',e.title),node('small',r?`${r.score??'미평가'}점 · ${labels[r.decision]}`:'새 제작본 · 미평가'));b.onclick=()=>showPost(e).catch(error);$('list').append(b);}
- $('pending').textContent=String(state.outbox.filter(o=>['pending','conflict'].includes(o.status)).length);
+const labels={unreviewed:'미검토',needs_revision:'수정 필요',held:'보류',publish_approved:'게시 승인',pending:'기기에 저장 · 전송 대기',conflict:'충돌 · 확인 필요',stale:'이전 작업본',confirmed:'서버 저장 확인',resolved:'충돌 처리 완료'};
+const serviceProvider=serviceConfig.approved?{request:(path,init)=>requestJson(serviceConfig,path,init),downloadAsset:image=>downloadAsset(serviceConfig,image)}:null;
+function nativeConfig(){try{return globalThis.ReviewNative?.config()||'';}catch{return '';}}
+function currentProvider(){
+ const bridge=globalThis.ReviewNative,config=nativeConfig();
+ if(bridge!==providerBridge||config!==providerConfig){providerBridge=bridge;providerConfig=config;provider=nativeGithub()||serviceProvider;}
+ return provider;
 }
-const labels={unreviewed:'미검토',needs_revision:'수정 필요',held:'보류',publish_approved:'게시 승인',pending:'로컬 저장 · 서버 전송 대기',conflict:'충돌 · 선택 필요',stale:'옛 제작본 · 전송 차단',confirmed:'서버 반영 확인',resolved:'사용자 선택으로 처리'};
-async function showPost(entry){
- entry={...entry,revision:state.revisions[key(entry)]??entry.revision,criteriaVersion:state.manifest.criteria.version};
- selected=entry;const r=currentReview(state,entry)||{score:null,note:'',checks:{},decision:'unreviewed'};score=r.score;decision=r.decision;
- const target=$('reader');target.hidden=false;target.replaceChildren();for(const u of objectUrls)URL.revokeObjectURL(u);objectUrls=[];
- const back=node('button','목록으로');back.onclick=()=>{selected=null;target.hidden=true;$('list').hidden=false;};target.append(back,node('h2',entry.title),node('small',`${entry.topicLabel||classifyTopic(entry,{}).topicLabel} · ${entry.reviewRound} · 제작 ${entry.outputVersion.slice(0,10)}`));$('list').hidden=true;
- const pages=node('div',undefined,'pages');target.append(pages);
- for(const [index,img] of entry.images.entries()){const figure=node('figure');figure.style.margin='10px 0';const bytes=await readStore(db,'assets',img.sha256);if(bytes){const u=URL.createObjectURL(bytes);objectUrls.push(u);const i=node('img');i.src=u;i.alt=`${index+1} / ${entry.images.length} ${img.label||'본문'}`;figure.append(i);}else figure.append(node('div','이미지 미수신 · 연결 후 자동 받기','missing'));figure.append(node('small',`${index+1} / ${entry.images.length} · ${img.label||'본문'}`));pages.append(figure);}
- target.append(node('h3','별점 1–10'));const scores=node('div',undefined,'score-grid');for(let n=1;n<=10;n++){const b=node('button',String(n));b.classList.toggle('active',n===score);b.setAttribute('aria-label',`${n}점`);b.onclick=()=>{score=n;for(const child of scores.children)child.classList.toggle('active',child===b);};scores.append(b);}target.append(scores);
- const clear=node('button','점수 비우기');clear.onclick=()=>{score=null;for(const b of scores.children)b.classList.remove('active');};target.append(clear,node('h3','메모'));const memo=node('textarea');memo.id='memo';memo.maxLength=10000;memo.value=r.note;memo.placeholder='고칠 점, 좋았던 점을 남겨 주세요';target.append(memo,node('h3','기준점 체크'));
- const criteria=node('div');for(const c of state.manifest.criteria.items){const label=node('label',undefined,'criterion'),input=node('input');input.type='checkbox';input.dataset.criterion=c.id;input.checked=r.checks[c.id]===true;label.append(input,node('span',c.label));criteria.append(label);}target.append(criteria,node('small',`기준 버전 ${state.manifest.criteria.version}`),node('h3','검토 결정'));
- const decisionsBox=node('div',undefined,'decisions');const selectDecision=d=>{decision=d;for(const b of decisionsBox.children)b.classList.toggle('active',b.dataset.decision===d);};for(const d of ['unreviewed','needs_revision','held','publish_approved']){const b=node('button',labels[d]);b.dataset.decision=d;b.classList.toggle('active',decision===d);b.onclick=()=>{if(d==='publish_approved'){$('approve').showModal();$('approveYes').onclick=()=>{selectDecision(d);$('approve').close();};}else selectDecision(d);};decisionsBox.append(b);}target.append(decisionsBox,node('p','게시 승인은 검토 기록입니다. 실제 게시 기능은 비활성입니다.'));
- const save=node('button','이 기기에 저장','primary');save.id='saveReview';save.onclick=async()=>{save.disabled=true;try{const checks={};for(const c of criteria.querySelectorAll('input'))checks[c.dataset.criterion]=c.checked;await commit(s=>queueEdit(s,entry,{score,note:memo.value,checks,decision},crypto.randomUUID(),deviceId()));message('로컬 저장 완료 · 서버 전송 대기');}catch(e){error(e);}finally{save.disabled=false;}};target.append(save);
+function connectionUi(){
+ let config={};try{config=JSON.parse(nativeConfig()||'{}');}catch{}
+ const available=config.connectionAvailable===true&&typeof globalThis.ReviewNative?.openConnection==='function';$('connectGithub').hidden=!(available&&config.approved!==true);$('connectionAction').hidden=$('connectGithub').hidden;$('manageConnection').hidden=!available;
+ const entries=state.manifest?.entries||[];$('empty').hidden=entries.length>0;$('connection').hidden=entries.length===0;$('filters').hidden=entries.length===0||!!selected;
+ $('empty').querySelector('h2').textContent=config.connectionAvailable===true?'로그인하고 검토를 시작하세요':'아직 연결되지 않았어요';
+ $('empty').querySelector('p').textContent=config.connectionAvailable===true?'로그인하면 글이 자동으로 나타나요. 평가와 메모는 이 기기에 먼저 저장해요.':'연결을 준비 중이에요. 글이 도착하면 여기서 검토할 수 있어요.';
+ if(!currentProvider())$('connection').textContent='오프라인 · 기기에 저장된 글과 평가를 볼 수 있어요.';
+}
+function message(text){clearTimeout(messageTimer);$('message').textContent=text;$('message').style.display='block';messageTimer=setTimeout(()=>{$('message').style.display='none';},5000);}
+function pending(){ $('pending').textContent=String(state.outbox.filter(o=>['pending','conflict'].includes(o.status)).length); }
+function changed(){pending();connectionUi();if(!$('list').hidden)renderList();else listDirty=true;if(!$('queue').hidden)renderQueue();else queueDirty=true;}
+async function commit(change){const task=serial.then(async()=>{const next=change(state);await writeStore(db,'state','current',next);state=next;changed();});serial=task.catch(()=>{});return task;}
+function topic(entry){return {topic:entry.topic||classifyTopic(entry,{}).topic,topicLabel:entry.topicLabel||classifyTopic(entry,{}).topicLabel};}
+function renderList(){
+ const entries=state.manifest?.entries||[],topics=new Map(entries.map(e=>{const t=topic(e);return [t.topic,t.topicLabel];})),chosen=$('topic').value,search=$('search').value.toLocaleLowerCase();
+ $('topic').replaceChildren(new Option('전체 카테고리',''));for(const [id,label] of topics)$('topic').add(new Option(label,id));$('topic').value=topics.has(chosen)?chosen:'';
+ const fragment=document.createDocumentFragment();for(const entry of entries){const t=topic(entry);if(($('topic').value&&t.topic!==$('topic').value)||!entry.title.toLocaleLowerCase().includes(search))continue;
+  const review=currentReview(state,entry),button=node('button',undefined,'post');button.dataset.postId=entry.id;button.append(node('span',t.topicLabel,'tag'),node('strong',entry.title),node('small',review?`${review.score??'점수 없음'} · ${labels[review.decision]}`:'검토 대기'));button.onclick=()=>showPost(entry);fragment.append(button);
+ }
+ $('list').replaceChildren(fragment);$('count').textContent=`${$('list').children.length}개 글`;$('empty').hidden=entries.length>0;listDirty=false;pending();
+}
+function retire(){if(!selection)return;selection.controller.abort();selection.observer?.disconnect();for(const url of selection.urls)URL.revokeObjectURL(url);selection=null;}
+function backToList(){retire();selected=null;$('reader').hidden=true;$('list').hidden=false;$('filters').hidden=false;if(listDirty)renderList();}
+function startPages(view){
+ view.observer?.disconnect();view.observer=new IntersectionObserver(records=>{for(const record of records)if(record.isIntersecting)loadPage(view,view.pages.find(p=>p.figure===record.target));},{rootMargin:'100px 0px'});
+ for(const page of view.pages)if(!page.loaded)view.observer.observe(page.figure);
+}
+async function loadPage(view,page){
+ if(!page||page.loading||page.loaded||selection!==view||view.controller.signal.aborted)return;page.loading=true;page.status.textContent='이미지 받는 중…';page.retry.hidden=true;
+ try{
+  const blob=await loader.load(page.image,{signal:view.controller.signal});if(selection!==view||view.controller.signal.aborted||!page.figure.isConnected)return;
+  const url=URL.createObjectURL(blob);view.urls.push(url);const image=node('img');image.src=url;image.alt=`${page.index+1} / ${view.pages.length} ${page.image.label||'페이지'}`;image.dataset.sha256=page.image.sha256;image.loading='lazy';page.content.replaceChildren(image);page.loaded=true;view.observer?.unobserve(page.figure);
+ }catch(error){if(selection!==view||error.name==='AbortError')return;page.status.textContent='이미지를 아직 받지 못했어요. 연결 후 다시 시도해 주세요.';page.retry.hidden=false;}
+ finally{page.loading=false;}
+}
+function showPost(original){
+ const entry={...original,revision:state.revisions[key(original)]??original.revision,criteriaVersion:state.manifest.criteria.version};retire();selected=entry;
+ const review=currentReview(state,entry)||{score:null,note:'',checks:{},decision:'unreviewed'};score=review.score;decision=review.decision;
+ const target=$('reader');target.hidden=false;target.replaceChildren();$('list').hidden=true;$('filters').hidden=true;
+ const view={entry,controller:new AbortController(),observer:null,urls:[],pages:[]};selection=view;
+ const back=node('button','← 글 목록');back.onclick=backToList;target.append(back,node('h2',entry.title),node('small',`${topic(entry).topicLabel} · ${entry.images.length}페이지`));
+ // Build review controls synchronously before any cache or network awaits.
+ const controls=node('section',undefined,'review-controls');controls.append(node('h3','점수'));const scores=node('div',undefined,'score-grid');for(let n=1;n<=10;n++){const b=node('button',String(n));b.classList.toggle('active',n===score);b.setAttribute('aria-label',`${n}점`);b.onclick=()=>{score=n;for(const child of scores.children)child.classList.toggle('active',child===b);};scores.append(b);}controls.append(scores);
+ const clear=node('button','점수 지우기');clear.onclick=()=>{score=null;for(const b of scores.children)b.classList.remove('active');};controls.append(clear,node('h3','메모'));const memo=node('textarea');memo.id='memo';memo.maxLength=10000;memo.value=review.note;memo.placeholder='좋았던 점이나 수정할 점을 적어 주세요.';controls.append(memo,node('h3','검토 기준'));
+ const criteria=node('div');for(const criterion of state.manifest.criteria.items){const label=node('label',undefined,'criterion'),input=node('input');input.type='checkbox';input.dataset.criterion=criterion.id;input.checked=review.checks[criterion.id]===true;label.append(input,node('span',criterion.label));criteria.append(label);}controls.append(criteria,node('h3','게시 판단'));
+ const decisions=node('div',undefined,'decisions'),selectDecision=d=>{decision=d;for(const b of decisions.children)b.classList.toggle('active',b.dataset.decision===d);};for(const d of ['unreviewed','needs_revision','held','publish_approved']){const b=node('button',labels[d]);b.dataset.decision=d;b.classList.toggle('active',d===decision);b.onclick=()=>{if(d==='publish_approved'){$('approve').showModal();$('approveYes').onclick=()=>{if(selection===view)selectDecision(d);$('approve').close();};}else selectDecision(d);};decisions.append(b);}controls.append(decisions,node('small','게시 여부를 기록해요. 자동으로 게시되지 않아요.'));
+ const save=node('button','평가 저장','primary');save.id='saveReview';save.onclick=async()=>{save.disabled=true;try{const checks={};for(const c of criteria.querySelectorAll('input'))checks[c.dataset.criterion]=c.checked;const payload={score,note:memo.value,checks,decision};await commit(s=>queueEdit(s,entry,payload,crypto.randomUUID(),deviceId()));message('기기에 저장했어요. 연결되면 PC로 전송합니다.');sync();}catch(e){error(e);}finally{if(selection===view)save.disabled=false;}};controls.append(save);
+ const pages=node('div',undefined,'pages');for(const [index,image] of entry.images.entries()){const figure=node('figure'),content=node('div',undefined,'page-image'),status=node('p','화면에 보이는 페이지부터 받아요.','missing'),retry=node('button','다시 받기');retry.hidden=true;content.append(status,retry);figure.append(content,node('small',`${index+1} / ${entry.images.length} · ${image.label||'페이지'}`));const page={figure,content,status,retry,image,index,loading:false,loaded:false};retry.onclick=()=>loadPage(view,page);view.pages.push(page);pages.append(figure);}
+ const jump=node('button','평가하기');jump.id='reviewJump';jump.onclick=()=>controls.scrollIntoView({block:'start'});target.append(jump,pages,controls);target.scrollIntoView({block:'start'});startPages(view);
 }
 function deviceId(){let id=localStorage.getItem('threads-review-device');if(!id){id=crypto.randomUUID();localStorage.setItem('threads-review-device',id);}return id;}
 function renderQueue(){
- $('operations').replaceChildren();if(!state.outbox.length)$('operations').append(node('article','저장한 작업이 아직 없습니다.'));
- for(const op of [...state.outbox].reverse()){const box=node('article',undefined,'operation');box.append(node('h3',labels[op.status]),node('small',`${op.id} · 제작 ${op.outputVersion.slice(0,10)} · ${op.createdAt}`),node('pre',JSON.stringify(op.payload,null,2)));
-  if(op.status==='conflict'){box.append(node('p','서버 기록'),node('pre',JSON.stringify(op.serverReview,null,2)));for(const [choice,label] of [['use_server','서버 기록 사용'],['keep_local','내 기록 다시 보내기']]){const b=node('button',label);b.onclick=()=>commit(s=>resolveConflict(s,op.operationId,choice,crypto.randomUUID())).then(()=>{message('충돌 선택 저장');if(selected)showPost(selected).catch(error);}).catch(error);box.append(b);}}
-  $('operations').append(box);
+ const fragment=document.createDocumentFragment();if(!state.outbox.length)fragment.append(node('article','아직 저장한 평가가 없어요.'));
+ for(const op of [...state.outbox].reverse()){const box=node('article',undefined,'operation'),entry=state.manifest?.entries.find(e=>e.id===op.id);box.append(node('h3',entry?.title||op.id),node('p',labels[op.status]),node('pre',JSON.stringify(op.payload,null,2)));
+  if(op.status==='conflict'){box.append(node('p','서버에 저장된 평가'),node('pre',JSON.stringify(op.serverReview,null,2)));for(const [choice,label] of [['use_server','서버 평가 사용'],['keep_local','내 평가 다시 보내기']]){const b=node('button',label);b.onclick=()=>commit(s=>resolveConflict(s,op.operationId,choice,crypto.randomUUID())).then(()=>{message('충돌을 처리했어요.');if(selected)showPost(selected);}).catch(error);box.append(b);}}
+  const detail=node('details'),summary=node('summary','작업 정보');detail.append(summary,node('small',`${op.id} · ${op.outputVersion.slice(0,10)} · ${op.createdAt}`));box.append(detail);fragment.append(box);
  }
+ $('operations').replaceChildren(fragment);queueDirty=false;
 }
-function tab(name){for(const n of ['posts','queue','about'])$(n).hidden=n!==name;}
+function tab(name){for(const n of ['posts','queue','about'])$(n).hidden=n!==name;if(name==='queue'&&queueDirty)renderQueue();}
 function error(e){message(e.message||String(e));}
 async function sync(){
- if(syncing)return;const github=nativeGithub();if(!github&&!serviceConfig.approved){$('connection').textContent='인터넷 동기화 차단 · 승인된 리뷰 서버 없음';return;}
- syncing=true;try{
-  await syncReviews({getState:()=>state,commit,request:github?github.request:(path,init)=>requestJson(serviceConfig,path,init)});
-  for(const e of state.manifest.entries)for(const img of e.images)if(!await readStore(db,'assets',img.sha256))await writeStore(db,'assets',img.sha256,await (github?github.downloadAsset(img):downloadAsset(serviceConfig,img)));
-  $('connection').textContent='서버 확인 · '+new Date().toLocaleTimeString();if(selected&&!state.manifest.entries.some(e=>key(e)===key(selected))){$('saveReview').disabled=true;message('새 제작본이 도착했습니다. 목록에서 다시 열어 주세요.');}
- }catch(e){$('connection').textContent='동기화 실패 · 로컬 평가 보존';error(e);}finally{syncing=false;}
+ if(syncing){syncAgain=true;return;}const current=currentProvider();connectionUi();if(!current)return;syncing=true;syncAgain=false;
+ try{
+  const request=async(path,init)=>{if(currentProvider()!==current)throw Error('연결이 변경됐어요. 다시 받아 주세요.');const result=await current.request(path,init);if(currentProvider()!==current)throw Error('연결이 변경됐어요. 다시 받아 주세요.');return result;};
+  await syncReviews({getState:()=>state,commit,request});
+  $('connection').textContent='글 목록 최신 · 이미지는 열어 볼 때 받아요.';
+  if(selected&&(!state.manifest.entries.some(e=>key(e)===key(selected))||selected.criteriaVersion!==state.manifest.criteria.version)){selection?.controller.abort();$('saveReview').disabled=true;message('새 작업본이 도착했어요. 목록에서 다시 열어 주세요.');}
+  else if(selection){for(const page of selection.pages)if(!page.loaded&&!page.loading)selection.observer?.observe(page.figure);}
+ }catch(e){$('connection').textContent='연결 확인 필요 · 저장한 평가는 안전하게 대기 중이에요.';message('연결을 확인해 주세요. 저장한 평가는 그대로 남아 있어요.');}finally{syncing=false;if(syncAgain||currentProvider()!==current)queueMicrotask(sync);}
 }
-async function boot(){db=await openStore();state=await readStore(db,'state','current')||initial();if(state.schemaVersion!==1)throw Error('로컬 데이터 버전 오류 · 기존 자료 보존');renderList();renderQueue();$('connectGithub').onclick=()=>{if(!openNativeConnection())message('연결 준비 화면은 Android APK에서 열 수 있습니다. 실제 연결은 아직 승인·설정되지 않았습니다.');};$('search').oninput=renderList;$('topic').onchange=renderList;$('postsTab').onclick=()=>tab('posts');$('queueTab').onclick=()=>tab('queue');$('aboutTab').onclick=()=>tab('about');$('approveNo').onclick=()=>$('approve').close();$('refresh').onclick=()=>{sync();if(!nativeGithub()&&!serviceConfig.approved)message('인터넷 동기화 차단 · 승인된 리뷰 서버 없음');};window.addEventListener('online',sync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync();});setInterval(()=>{if(!document.hidden)sync();},60000);await sync();}
+async function boot(){
+ db=await openStore();state=await readStore(db,'state','current')||initial();if(state.schemaVersion!==1)throw Error('저장 데이터 버전을 확인해 주세요.');loader=createAssetLoader({read:h=>readStore(db,'assets',h),write:(h,b)=>writeStore(db,'assets',h,b),getProvider:currentProvider,concurrency:2});
+ renderList();pending();queueDirty=true;connectionUi();const connect=()=>{if(!openNativeConnection())message('현재 연결을 준비 중이에요.');};$('connectGithub').onclick=connect;$('manageConnection').onclick=connect;$('search').oninput=renderList;$('topic').onchange=renderList;$('postsTab').onclick=()=>tab('posts');$('queueTab').onclick=()=>tab('queue');$('aboutTab').onclick=()=>tab('about');$('approveNo').onclick=()=>$('approve').close();$('refresh').onclick=()=>sync();window.addEventListener('online',sync);window.addEventListener('review-connection-changed',sync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync();});setInterval(()=>{if(!document.hidden)sync();},60000);await sync();
+}
 boot().catch(error);

@@ -1,3 +1,5 @@
+import {readCanonicalFile} from '../../../desktop/review-canonical-writer.cjs';
+import {maxReviewStateBytes,maxReviewTotalAssetBytes} from '../app/review-limits.js';
 // Source-only, local PC preparation. No network, authentication, publishing or
 // canonical writes. Callers must explicitly supply approved read-only inputs.
 import fs from 'node:fs/promises';
@@ -8,7 +10,7 @@ import {createPostReviewStore,version} from '../../../desktop/post-review-store.
 import {validateManifest,key} from '../app/core.js';
 
 const hashPattern=/^[a-f0-9]{64}$/,gitPattern=/^[a-f0-9]{40}$/;
-const maxAssetBytes=25*1024*1024,maxStateBytes=1000000;
+const maxAssetBytes=25*1024*1024,maxStateBytes=maxReviewStateBytes;
 const signature=Buffer.from([137,80,78,71,13,10,26,10]);
 const clone=value=>JSON.parse(JSON.stringify(value));
 const plain=value=>value!==null&&typeof value==='object'&&!Array.isArray(value)&&[Object.prototype,null].includes(Object.getPrototypeOf(value));
@@ -97,8 +99,13 @@ function pngBytes(bytes,hash){
  return bytes;
 }
 function imageDataUrl(value,hash){
- if(typeof value!=='string'||value.length>Math.ceil(maxAssetBytes/3)*4+30||!/^data:image\/png;base64,(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(value))throw Error('Invalid PNG data URL');
- return pngBytes(Buffer.from(value.slice('data:image/png;base64,'.length),'base64'),hash);
+ const prefix='data:image/png;base64,';
+ if(typeof value!=='string'||value.length>Math.ceil(maxAssetBytes/3)*4+30||!value.startsWith(prefix))throw Error('Invalid PNG data URL');
+ const content=value.slice(prefix.length);
+ // A repeated four-character regex group can exhaust V8's stack on real PNGs.
+ // The alphabet/padding scan and quartet length check use constant stack space.
+ if(content.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(content))throw Error('Invalid PNG data URL');
+ return pngBytes(Buffer.from(content,'base64'),hash);
 }
 function inside(root,candidate){const rel=path.relative(root,candidate);return !!rel&&!path.isAbsolute(rel)&&rel!=='..'&&!rel.startsWith('..'+path.sep);}
 async function checkOutputNamespace(root,directory,source){
@@ -111,14 +118,16 @@ async function checkOutputNamespace(root,directory,source){
  return target;
 }
 
-export async function exportRelease({store,rows,criteria,reviewRound,allowedOutputRoot,outputDirectory,previousState=null,previousTrustedLocalSnapshot=null,previousAssetDirectory=null,repository=null}){
+export async function exportRelease({store,rows,criteria,reviewRound,allowedOutputRoot,outputDirectory,previousState=null,previousTrustedLocalSnapshot=null,previousAssetDirectory=null,repository=null,maxTotalAssetBytes=maxReviewTotalAssetBytes}){
  if(store?.readOnly!==true||typeof store.list!=='function'||typeof store.image!=='function')throw Error('Explicit read-only PC store required');
  const pcVersion=requireVerifiedPcVersion(store.pcVersion===undefined?installedPcVersion():store.pcVersion);
+ if(!Number.isSafeInteger(maxTotalAssetBytes)||maxTotalAssetBytes<1||maxTotalAssetBytes>maxReviewTotalAssetBytes)throw Error('Invalid aggregate asset budget');
  validateRows(rows,reviewRound);
  const target=await checkOutputNamespace(allowedOutputRoot,outputDirectory,store.root);
  if(previousState){validateState(previousState);requireTrustedLocalSnapshot(previousState,previousTrustedLocalSnapshot);}
  const listing=await store.list();if(listing.reviewRound!==reviewRound||!Array.isArray(listing.entries))throw Error('Store review round mismatch');
- const buffers=new Map(),entries=[],provenance={pcVersion,entries:{}};
+ const buffers=new Map(),entries=[],provenance={pcVersion,entries:{}};let totalAssetBytes=0;
+ const retain=(hash,bytes)=>{if(buffers.has(hash))return;if(totalAssetBytes+bytes.length>maxTotalAssetBytes)throw Error('Total PNG asset size budget exceeded');totalAssetBytes+=bytes.length;buffers.set(hash,bytes);};
  for(const row of rows){
   const outputVersion=version(row),listed=listing.entries.find(e=>e.id===row.id);
   if(!listed||listed.outputVersion!==outputVersion)throw Error('Store canonical output version mismatch');
@@ -128,7 +137,7 @@ export async function exportRelease({store,rows,criteria,reviewRound,allowedOutp
   const review=preserve?clone(previous.review):listed.current?{score:listed.current.score,note:listed.current.note,checks:{},decision:'unreviewed'}:null;
   if(review)validatePayload(review,criteria);
   const images=[];
-  for(let i=0;i<row.images.length;i++){const hash=row.images[i].sha256;buffers.set(hash,imageDataUrl(await store.image(row.id,i+1,outputVersion),hash));images.push({url:'/v1/review/assets/'+hash+'.png',sha256:hash,label:listed.pageLabels?.[i]||'Page '+(i+1)});}
+  for(let i=0;i<row.images.length;i++){const hash=row.images[i].sha256;retain(hash,imageDataUrl(await store.image(row.id,i+1,outputVersion),hash));images.push({url:'/v1/review/assets/'+hash+'.png',sha256:hash,label:listed.pageLabels?.[i]||'Page '+(i+1)});}
   const entry={id:row.id,title:row.title,outputVersion,reviewRound,revision:preserve?previous.revision:0,review,images};
   for(const field of ['topic','topicLabel','category'])if(typeof listed[field]==='string')entry[field]=listed[field];
   entries.push(entry);
@@ -144,7 +153,7 @@ export async function exportRelease({store,rows,criteria,reviewRound,allowedOutp
  const assets=clone(previousState?.assets||{});
  if(Object.keys(assets).length&&!previousAssetDirectory)throw Error('Preserved asset directory required for immutable prior PNGs');
  for(const asset of Object.values(assets)){
-  if(!buffers.has(asset.sha256))buffers.set(asset.sha256,pngBytes(await fs.readFile(path.join(previousAssetDirectory,asset.sha256+'.png')),asset.sha256));
+  if(!buffers.has(asset.sha256))retain(asset.sha256,pngBytes(await readCanonicalFile(previousAssetDirectory,path.join(previousAssetDirectory,asset.sha256+'.png'),{maxBytes:Math.min(maxAssetBytes,maxTotalAssetBytes-totalAssetBytes)}),asset.sha256));
   if(gitBlobSha(buffers.get(asset.sha256))!==asset.blobSha)throw Error('Preserved PNG Git blob SHA mismatch');
  }
  for(const [hash,bytes] of buffers)Object.defineProperty(assets,'/v1/review/assets/'+hash+'.png',{value:{sha256:hash,blobSha:gitBlobSha(bytes)},enumerable:true,writable:true,configurable:true});

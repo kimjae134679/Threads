@@ -4,7 +4,7 @@ import {fileURLToPath} from 'node:url';
 const root=path.dirname(fileURLToPath(import.meta.url));
 const out=path.join(root,'build','assets');fs.mkdirSync(out,{recursive:true});
 const shared=fs.readFileSync(path.join(root,'../../desktop/review-workflow-model.cjs'),'utf8').replace(/module\.exports=\{[^}]+\};/,'');
-const sources=['core.js','storage.js','transport.js','sync-engine.js','github-adapter.js','native-api.js','ui.js'].map(f=>{const source=fs.readFileSync(path.join(root,'app',f),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');return f==='github-adapter.js'?`const {createGithubAdapter}=(()=>{\n${source}\nreturn {createGithubAdapter};})();`:source;});
+const sources=['review-limits.js','core.js','storage.js','transport.js','sync-engine.js','github-adapter.js','native-api.js','asset-loader.js','ui.js'].map(f=>{const source=fs.readFileSync(path.join(root,'app',f),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');const exposed=f==='github-adapter.js'?'createGithubAdapter':f==='asset-loader.js'?'createAssetLoader':null;return exposed?`const {${exposed}}=(()=>{\n${source}\nreturn {${exposed}};})();`:source;});
 fs.writeFileSync(path.join(out,'bundle.js'),`(()=>{\n${shared}\n${sources.join('\n')}\n})();\n`);
 for(const f of ['index.html','style.css'])fs.copyFileSync(path.join(root,'app',f),path.join(out,f));
 console.log(out);

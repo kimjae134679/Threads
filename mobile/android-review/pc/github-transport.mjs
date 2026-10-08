@@ -1,9 +1,10 @@
+import {maxReviewStateBytes,maxReviewTotalAssetBytes} from '../app/review-limits.js';
 // Callable preparation only. No token acquisition, vault, timers or entry point.
 import {createHash} from 'node:crypto';
 import {dedicatedRepositoryMetadata,requestHash} from './exchange.mjs';
 import {validateManifest} from '../app/core.js';
 const sha=/^[a-f0-9]{40}$/,hash=/^[a-f0-9]{64}$/;
-const maxResponse=36*1024*1024,maxState=1000000;
+const maxResponse=36*1024*1024,maxState=maxReviewStateBytes;
 const gitBlob=bytes=>createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
 const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
 export class PcGithubError extends Error{constructor(code,status=0){super('PC GitHub '+code);this.code=code;this.status=status;}}
@@ -71,9 +72,24 @@ export async function readPinnedReviewState({enabled=false,repository,api,expect
  const head=(await api(m.prefix+'/git/ref/heads/'+m.branch)).object?.sha;if(!sha.test(head)||expectedHead!==null&&head!==expectedHead)fail('expected_head_mismatch');
  const c=await api(m.prefix+'/git/commits/'+head);if(c?.sha!==head||!sha.test(c.tree?.sha))fail('commit_identity_mismatch');
  let f;try{f=await api(m.prefix+'/contents/mobile-review/state.json?ref='+head);}catch(error){if(error?.status===404&&allowAbsent===true)return {head,tree:c.tree.sha,state:null,blobSha:null};throw error;}
- if(f?.encoding!=='base64'||!Number.isInteger(f.size)||f.size<1||f.size>maxState||typeof f.content!=='string'||f.content.length>Math.ceil(maxState/3)*4+1000)fail('invalid_state_response');
- const content=f.content.replace(/\s/g,'');if(!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(content))fail('invalid_state_response');
- const bytes=Buffer.from(content,'base64');if(bytes.length!==f.size||gitBlob(bytes)!==f.sha)fail('state_blob_hash_mismatch');
+ const bytes=await readReviewStateBlob({api,prefix:m.prefix,response:f});
  let state;try{state=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));}catch{fail('invalid_state_json');}
- return {head,tree:c.tree.sha,state:validateRemoteState(state),blobSha:f.sha};
+ return {head,tree:c.tree.sha,state:validateRemoteState(state),blobSha:gitBlob(bytes)};
+}
+
+// Contents metadata remains pinned to the requested commit. Larger ledgers are
+// fetched by that exact immutable blob SHA, never a moving branch or download URL.
+export async function readReviewStateBlob({api,prefix,response:f}){
+ if(!plain(f)||!Number.isSafeInteger(f.size)||f.size<1||f.size>maxState||!sha.test(f.sha))fail('invalid_state_response');
+ const identity={sha:f.sha,size:f.size};
+ if(f.encoding==='none'){
+  if(f.size<=1000000||f.content!=='')fail('invalid_state_response');
+  f=await api(prefix+'/git/blobs/'+identity.sha);
+ }
+ const encodedLimit=Math.ceil(maxState/3)*4;
+ // Formatting has a separate bounded allowance; decoded capacity is unchanged.
+ if(!plain(f)||f.encoding!=='base64'||f.sha!==identity.sha||f.size!==identity.size||typeof f.content!=='string'||f.content.length>2*encodedLimit+1000)fail('invalid_state_response');
+ const content=f.content.replace(/\s/g,'');if(content.length>encodedLimit||content.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(content))fail('invalid_state_response');
+ const bytes=Buffer.from(content,'base64');if(bytes.length!==identity.size||gitBlob(bytes)!==identity.sha)fail('state_blob_hash_mismatch');
+ return bytes;
 }

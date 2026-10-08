@@ -2,14 +2,18 @@ package kr.threads.review;
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.*;
+import android.widget.FrameLayout;
 import java.io.IOException;
 public final class ReviewActivity extends Activity {
  private WebView view;
  @Override public void onCreate(Bundle saved){
-  super.onCreate(saved);view=new WebView(this);setContentView(view);
+  NativeWindowInsets.setTheme(this);super.onCreate(saved);view=new WebView(this);FrameLayout root=new FrameLayout(this);root.addView(view);setContentView(root);NativeWindowInsets.apply(this,root);
+  view.setBackgroundColor(NativeWindowInsets.background(this));
   WebView.setWebContentsDebuggingEnabled(false);
   WebSettings s=view.getSettings();s.setJavaScriptEnabled(true);s.setDomStorageEnabled(true);
   s.setAllowFileAccess(false);s.setAllowContentAccess(false);s.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+  // CSS supplies both palettes; disable WebView's independent automatic recoloring.
+  if(android.os.Build.VERSION.SDK_INT>=33)s.setAlgorithmicDarkeningAllowed(false);
   // INTERNET is a normal declaration prepared for the user's requested feature.
   // Actual network loads remain disabled because no approved service/auth route exists.
   s.setBlockNetworkLoads(true);
@@ -26,5 +30,6 @@ public final class ReviewActivity extends Activity {
   view.addJavascriptInterface(new ReviewNativeBridge(this),"ReviewNative");
   view.loadUrl("https://review.local.invalid/index.html");
  }
- @Override public void onDestroy(){view.destroy();super.onDestroy();}
+ @Override public void onResume(){super.onResume();if(view!=null)view.evaluateJavascript("window.dispatchEvent(new CustomEvent('review-connection-changed'))",null);}
+ @Override public void onDestroy(){if(view!=null){view.destroy();view=null;}super.onDestroy();}
 }

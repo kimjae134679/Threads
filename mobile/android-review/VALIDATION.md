@@ -129,3 +129,14 @@ the writer-integrated PC source are required, followed by an Android/online and
 separately approved canonical pilot. Unknown/legacy ownerless lock guards remain
 intact for operator inspection. File-fsync/rename tests do not prove arbitrary
 power-loss durability on Windows.
+
+## Latest 0.1.4 scale/UX source follow-up
+
+The earlier0.1.3 UI and1MB bounds are superseded by
+[SCALE_UX_VALIDATION.md](SCALE_UX_VALIDATION.md). Common fixes were selectively
+copied from confirmed PC720978d; no later unconfirmed PC head or actual installed
+viewer/material/evaluation files were changed. Parent separately reports the
+PC integration installation; that report is not an Android worker device check.
+The0.1.4 build is internal verification only and must not be presented as a
+working connected final APK. Final private receipts distinguish source/browser/
+JVM/build evidence from absent Android device and actual Internet sync tests.

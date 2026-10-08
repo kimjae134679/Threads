@@ -21,7 +21,8 @@ Metadata read. Git data pinned snapshots + preserved base_tree + single-parent
 commits + force:false keep concurrent publisher/reviewer changes from overwriting.
 Durable operation request/hash/result permit retry and PC provenance verification.
 Images are private Git blobs validated by SHA256/full PNG signature. Small state
-limit is1,000,000bytes; assets25MiB; capacity overflow blocks instead of pruning IDs.
+limit is8MiB; >1MB Contents metadata selects the exact pinned Git blob;
+assets25MiB; capacity overflow blocks instead of pruning IDs.
 New outputVersion/round is blank; previous reviews/history retained separately.
 
 GitHub is practical for a small personal pilot without a separate paid backend.
