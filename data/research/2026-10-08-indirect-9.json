@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "recordType": "indirect_research_candidate_registry",
+  "registeredAt": "2026-10-08T02:20:38.777Z",
+  "sourceHandoffSha256": "752b7958df67806bd4e22f16d3bf109a01760af2788237de2a1af8f5bfc046ee",
+  "inspectionMethod": "Investigator reports web-tool individual body read to returned end, including caches; this receiver did not reread original pages.",
+  "globalLimits": [
+    "Author claims are not independent verification of events/dialogue/money.",
+    "Image pixels and comments not inspected, except investigator saw exposed comments for item9 and did not copy them.",
+    "Public reading does not authorize commercial reuse.",
+    "No full body or comments supplied/copied; summary is not the original.",
+    "Earlier six candidates reportedly have no URL overlap; full corpus was unverified at handoff."
+  ],
+  "rightsStatus": "rights_unverified",
+  "productionStatus": "production_hold",
+  "productionApproved": false,
+  "reviewApproved": false,
+  "publicationApproved": false,
+  "registrationScope": "metadata_only_separate_from_automatic_intake",
+  "receiverReadOriginal": false,
+  "priorSixRegistryStatus": "not_locally_available",
+  "priorSixNoUrlOverlapClaim": "indirect_handoff_claim_only_not_locally_verified",
+  "fullCorpusSemanticDuplicateStatus": "unknown",
+  "duplicateAuditSummary": {
+    "checkedAt": "2026-10-08T02:22:15.636Z",
+    "metadataFiles": 2692,
+    "metadataObjects": 14827,
+    "urlOccurrences": 12357,
+    "uniqueExactUrls": 1154,
+    "uniqueNormalizedKeys": 1150,
+    "scopes": {
+      "material01-index": {
+        "files": 1,
+        "objects": 1084,
+        "urlOccurrences": 1028
+      },
+      "material01-manifests": {
+        "files": 1084,
+        "objects": 2670,
+        "urlOccurrences": 1028
+      },
+      "current-whole-status": {
+        "files": 1,
+        "objects": 1473,
+        "urlOccurrences": 1425
+      },
+      "archive-metadata": {
+        "files": 7,
+        "objects": 7840,
+        "urlOccurrences": 7181
+      },
+      "repository-candidate-markdown": {
+        "files": 1570,
+        "objects": 1570,
+        "urlOccurrences": 1545
+      },
+      "repository-historical-metadata": {
+        "files": 29,
+        "objects": 190,
+        "urlOccurrences": 150
+      }
+    },
+    "originalBodyComparisonPerformed": false,
+    "newImportsExcluded": true,
+    "matchedCandidateCount": 1,
+    "unmatchedCandidateCount": 8,
+    "urlPatternScope": "Every string field of scoped JSON metadata and all URL patterns of stored candidate Markdown; the nine new imports are excluded."
+  },
+  "entries": [
+    {
+      "id": "indirect-research-20261008-01",
+      "url": "https://theqoo.net/review/580289057",
+      "originalTitle": "친구랑 여행갔다와서 쌩깐 후기 (스압, 넋두리주의)",
+      "investigatorCheckedAt": "2026-10-08T01:57:24Z",
+      "topics": [
+        "인간관계",
+        "여행",
+        "돈"
+      ],
+      "summary": "2017년 오랜 친구와 파리 동행 중 숙소·동선·사진·쇼핑 갈등 후 귀국 정산에서 관계 단절 주장.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "작성자 자기반성 보존 필수"
+      ],
+      "coverDraft": "20년 친구와 떠난 파리 여행, 정산 끝에 관계도 끝났다",
+      "priority": 1,
+      "candidate_id": "indirect-research-20261008-01",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 16,
+        "normalizedUrlOrSourceArticleOccurrences": 16,
+        "existingCandidateIds": [
+          "source-6d22951f710ed5"
+        ],
+        "exactTitleOccurrences": 15,
+        "possibleStoredTitleSummaryMatches": 5,
+        "additionalHoldReasons": [
+          "existing_source_url_match",
+          "duplicate_review_required"
+        ],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-02",
+      "url": "https://brunch.co.kr/@@dV0y/55",
+      "originalTitle": "잘 나가던 공무원 동기가 어느날 갑자기 사직서를 냈다",
+      "investigatorCheckedAt": "2026-10-08T01:56:34Z",
+      "topics": [
+        "직장",
+        "퇴사",
+        "인간관계"
+      ],
+      "summary": "2022년 동기 사직 후 자기도 퇴사, 2년 뒤 다른 직렬 재입직 회고.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "동료 건강 사생활 확대 금지",
+        "유보적 결론 보존"
+      ],
+      "coverDraft": "잘 적응한 줄 알았던 동기가 먼저 사직서를 냈다",
+      "priority": 2,
+      "candidate_id": "indirect-research-20261008-02",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "unknown_without_redirect_lookup"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-03",
+      "url": "https://theqoo.net/review/4365329620",
+      "originalTitle": "당근 후기 5.0인 입주청소 업체 이용해본 후기...",
+      "investigatorCheckedAt": "2026-10-08T01:57:02Z",
+      "topics": [
+        "돈",
+        "소비",
+        "이사"
+      ],
+      "summary": "2026-10-04 청소 범위·마무리 불만 후 후기 남기자 보완과 삭제 요청 주장.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "사진·예약 문자·업체 입장 미확인",
+        "평점 조작 확정 금지"
+      ],
+      "coverDraft": "입주청소 후기를 남겼더니 삭제를 부탁했다",
+      "priority": 3,
+      "candidate_id": "indirect-research-20261008-03",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-04",
+      "url": "https://theqoo.net/review/4309219637",
+      "originalTitle": "인천17센터로 쿠팡 알바 다녀온 후기. (엄청 긺",
+      "investigatorCheckedAt": "2026-10-08T01:56:54Z",
+      "topics": [
+        "직장",
+        "단기알바"
+      ],
+      "summary": "셔틀·교육·분류·포장·동료 도움·퇴근까지 서사, 출퇴근보다 맞는 업무 선택 결론.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "앞글4308053340 미열람",
+        "이미지4 링크 픽셀 미확인",
+        "전체 근무 조건 일반화 금지"
+      ],
+      "coverDraft": "셔틀은 가까웠지만, 일이 내게 맞지는 않았다",
+      "priority": 4,
+      "candidate_id": "indirect-research-20261008-04",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-05",
+      "url": "https://theqoo.net/review/4365045186",
+      "originalTitle": "많이들 쓰는 유우명한 공유숙박플랫폼 완전 비추하는 후기",
+      "investigatorCheckedAt": "2026-10-08T01:57:10Z",
+      "topics": [
+        "여행",
+        "돈",
+        "숙박분쟁"
+      ],
+      "summary": "해외 숙소 중도 퇴실 후 배상·환불·쿠폰 갈등 계속 주장.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "증빙·상대 입장·결말 미확인",
+        "플랫폼 추정 명명 금지"
+      ],
+      "coverDraft": "체크아웃 뒤에도 끝나지 않은 숙소 분쟁",
+      "priority": 5,
+      "candidate_id": "indirect-research-20261008-05",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-06",
+      "url": "https://theqoo.net/review/1221943041",
+      "originalTitle": "주부덬 일상의 습관이 중요하구나 매번 느끼는 후기 :D",
+      "investigatorCheckedAt": "2026-10-08T01:56:42Z",
+      "topics": [
+        "결혼",
+        "일상",
+        "생활습관"
+      ],
+      "summary": "2019년 결혼 후 가사 적응과 습관으로 자기 시간 확보 회고.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "이미지1 픽셀 미확인",
+        "삽입 영상 별도 권리",
+        "의무·건강 효과 일반화 금지"
+      ],
+      "coverDraft": "저녁 준비에 3시간 걸리던 새댁이 바꾼 일상",
+      "priority": 6,
+      "candidate_id": "indirect-research-20261008-06",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-07",
+      "url": "https://theqoo.net/review/4309661764",
+      "originalTitle": "자잘한 물욕 많은 거 꽤나 고친 후기",
+      "investigatorCheckedAt": "2026-10-08T01:56:54Z",
+      "topics": [
+        "돈",
+        "소비",
+        "정리"
+      ],
+      "summary": "정리 후 장식품 충동 구매 자제 경험.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "절약 금액·지속 기간 없음",
+        "인용 판단 기준 원출처 미확인",
+        "장문보다 후순위"
+      ],
+      "coverDraft": "작은 소비가 줄기 시작한 건 방을 뒤집은 뒤",
+      "priority": 7,
+      "candidate_id": "indirect-research-20261008-07",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-08",
+      "url": "https://theqoo.net/review/442642609",
+      "originalTitle": "혼자 일본여행 갔을 때 겪은 사소한 에피소드 후기 (스압)",
+      "investigatorCheckedAt": "2026-10-08T01:58:39Z",
+      "topics": [
+        "여행",
+        "따뜻한경험"
+      ],
+      "summary": "2017년 여러 여행 길 안내·사진·친절 일화 모음.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "별개 사건 합치지 말 것",
+        "원문8번 누락 창작 금지",
+        "미성년·장애 추정 인물 재현 제외"
+      ],
+      "coverDraft": "혼자 여행하다 사진을 11명이나 찍어준 사연",
+      "priority": 8,
+      "candidate_id": "indirect-research-20261008-08",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    },
+    {
+      "id": "indirect-research-20261008-09",
+      "url": "https://pann.nate.com/talk/346702475",
+      "originalTitle": "+))추가 후기입니다(베프결혼식....)",
+      "investigatorCheckedAt": "2026-10-08T01:56:49Z",
+      "topics": [
+        "결혼",
+        "친구",
+        "축의금"
+      ],
+      "summary": "소개해 준 커플 모바일 청첩장 받고 관계 놓겠다고 쓴 후속글.",
+      "holdReasons": [
+        "rights_unverified",
+        "source_evidence_required",
+        "context_hold",
+        "최초 글 미확보",
+        "결심이며 단절 완료·축의금 지급 확정 아님"
+      ],
+      "coverDraft": "소개해준 친구의 청첩장을 받고, 관계를 놓기로 했다",
+      "priority": 9,
+      "candidate_id": "indirect-research-20261008-09",
+      "found_at": null,
+      "found_by": "indirect_handoff",
+      "source_risk": "unknown",
+      "editorialStatus": "research",
+      "rightsStatus": "rights_unverified",
+      "productionStatus": "production_hold",
+      "productionApproved": false,
+      "reviewApproved": false,
+      "publicationApproved": false,
+      "receiverReadOriginal": false,
+      "sourceBodySupplied": false,
+      "sourceCommentsSupplied": false,
+      "sourceFactsIndependentlyVerified": false,
+      "sourceFormat": null,
+      "middlePhraseDraft": {
+        "status": "본문 확인 후 작성",
+        "drafts": []
+      },
+      "duplicateCheck": {
+        "exactUrlOccurrences": 0,
+        "normalizedUrlOrSourceArticleOccurrences": 0,
+        "existingCandidateIds": [],
+        "exactTitleOccurrences": 0,
+        "possibleStoredTitleSummaryMatches": 0,
+        "additionalHoldReasons": [],
+        "semanticFullCorpusStatus": "unknown",
+        "brunchWriterAliasStatus": "not_applicable"
+      }
+    }
+  ]
+}
