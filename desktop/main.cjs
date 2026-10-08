@@ -11,8 +11,10 @@ const { loadSavedMaterials } = require('./saved-materials.cjs');
 const { registerFolderBatch } = require('./batch-service.cjs');
 const {registerPostReview}=require('./post-review-service.cjs');
 protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
+const pcReviewRun=process.argv.includes('--pc-review-run');
+if(pcReviewRun){app.disableHardwareAcceleration();app.setPath('userData',path.join(app.getPath('temp'),'ThreadsPcReviewRunner'));}
 const reviewAudit=process.argv.find(a=>a.startsWith('--review-audit='));
-const reviewOnly=process.argv.includes('--review-only')||!!reviewAudit;
+const reviewOnly=!pcReviewRun&&(process.argv.includes('--review-only')||!!reviewAudit);
 if(reviewAudit)app.disableHardwareAcceleration();
 if(reviewOnly)app.setPath('userData',path.join(app.getPath('appData'),'ThreadsReview','0.3.18'));
 let editor, bundleWindow, postReview, activeCapture = null;
@@ -129,7 +131,9 @@ async function start() {
   await editor.loadURL(editorUrl);
   if(process.argv.includes('--review'))await postReview.open();
 }
-if(!app.requestSingleInstanceLock())app.quit();
+if(pcReviewRun){
+ app.whenReady().then(()=>require('./pc-review-entry.cjs').runPcReviewEntry({app})).then(result=>app.exit(['completed','disabled','conflict'].includes(result.status)?0:2)).catch(()=>{console.log(JSON.stringify({status:'blocked',reason:'entry_failed'}));app.exit(2);});
+}else if(!app.requestSingleInstanceLock())app.quit();
 else {
  app.on('second-instance',(_event,args)=>{if((args.includes('--review')||args.includes('--review-only'))&&postReview)postReview.open(undefined,args.find(a=>a.startsWith('--review-status='))?.slice('--review-status='.length)).catch(error=>dialog.showErrorBox('평가 창 열기 실패',error.message));else if(editor){if(editor.isMinimized())editor.restore();editor.show();editor.focus();}});
  app.whenReady().then(start).catch(async error=>{if(reviewAudit){const directory=reviewAudit.slice('--review-audit='.length);await fs.mkdir(directory,{recursive:true});await fs.writeFile(path.join(directory,'audit-error.txt'),error.stack);console.error(error);app.exit(1);return;}dialog.showErrorBox('컷 편집기 실행 실패',error.message);app.quit();});

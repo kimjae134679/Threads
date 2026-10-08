@@ -90,3 +90,101 @@ test('verified-intake binding reads exact local proof and refuses work fatal or 
  await fs.writeFile(path.join(sourceRoot,'reflow-fatal.json'),'{}');assert.equal((await p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'fatal')})).status,'waiting');await fs.rm(path.join(sourceRoot,'reflow-fatal.json'));await fs.writeFile(path.join(sourceOutput,'status.json'),JSON.stringify({...report,processed:2}));assert.equal((await p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'changed')})).status,'waiting');
  const outside=m.createBoundPcReviewPipeline({...options,intakeEvidence:{sourceRoot,allowedWorkspace:f.options.stateRoot}});await assert.rejects(outside.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'outside')}),/workspace/i);
  });
+
+function deferred(){let resolve;const promise=new Promise(r=>{resolve=r;});return {promise,resolve};}
+const finishedWithin=async promise=>Promise.race([promise.then(()=>true),new Promise(resolve=>setTimeout(()=>resolve(false),400))]);
+async function activateSyntheticRound(f,round){
+ const {withCanonicalWriter}=await import('../../../desktop/review-canonical-writer.cjs');
+ await withCanonicalWriter(f.options.materialRoot,async()=>{
+  const report=JSON.parse(await fs.readFile(path.join(f.output,'status.json')));
+  report.reviewRound=round;for(const row of report.entries)row.reviewRound=round;
+  await fs.writeFile(path.join(f.output,'status.json'),JSON.stringify(report));
+  await fs.writeFile(path.join(f.options.materialRoot,'review-current.json'),JSON.stringify({active:true,wholeCollectionRegenerated:true,reviewRound:round,posts:1,pages:1}));
+  await fs.writeFile(path.join(f.options.materialRoot,'review-delivery-in-progress.json'),JSON.stringify({reviewRound:round,complete:true}));
+  await fs.writeFile(f.store.file,JSON.stringify({schemaVersion:1,recordType:'user_post_quality_feedback',reviewRound:round,evaluations:[]}));
+ });
+}
+test('paused supply transport releases canonical writer and preserves the old score baseline for conflicts',async t=>{
+ const f=await fixture(t),m=await load(),entered=deferred(),resume=deferred();let paused=false;
+ const api=async(route,init={})=>{if(!paused&&route==='/repos/'+repository.owner+'/'+repository.repo){paused=true;entered.resolve();await resume.promise;}return f.api(route,init);};
+ const p=m.createBoundPcReviewPipeline({...f.options,api}),supply=p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'nonblocking')});
+ await entered.promise;const save=f.store.save({id:f.input.rows[0].id,outputVersion:version(f.input.rows[0]),score:3,note:'PC score while transport waits'});
+ let saved;try{saved=await finishedWithin(save);}finally{resume.resolve();}
+ const supplied=await supply;await save;assert.equal(saved,true,'PC save must finish while supply transport remains paused');assert.equal(supplied.status,'confirmed');
+ const mobile=createGithubAdapter({approved:true,dedicatedReviewRepository:true,...repository,api:f.api}),manifest=await mobile.request('/v1/review/manifest');
+ assert.equal(manifest.entries[0].review,null,'export reads the captured baseline, not the concurrent PC edit');
+ await mobile.request('/v1/review/operations',{method:'POST',body:JSON.stringify(operation(manifest,'paused-baseline'))});
+ const before=await fs.readFile(f.store.file);assert.equal((await p.importOnce()).status,'conflict');assert.deepEqual(await fs.readFile(f.store.file),before);
+});
+test('round activation while supply transport waits prevents old snapshot commit publication',async t=>{
+ const f=await fixture(t),m=await load(),entered=deferred(),resume=deferred();let paused=false;
+ const api=async(route,init={})=>{if(!paused&&route.endsWith('/git/trees')&&init.method==='POST'){paused=true;entered.resolve();await resume.promise;}return f.api(route,init);};
+ const p=m.createBoundPcReviewPipeline({...f.options,api}),supply=p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'stale-round')});
+ await entered.promise;const activation=activateSyntheticRound(f,'synthetic-next-round');let activated;try{activated=await finishedWithin(activation);}finally{resume.resolve();}
+ const result=await supply;await activation;assert.equal(activated,true,'round activation must not await transport');
+ assert.notEqual(result.status,'confirmed');assert.equal(f.remote.calls.filter(c=>c.method==='POST'&&c.route.endsWith('/git/commits')).length,0);
+ assert.equal(f.remote.calls.filter(c=>c.method==='PATCH').length,0);
+});
+test('round activation after ref dispatch preserves uncertain evidence without claiming confirmation',async t=>{
+ const f=await fixture(t),m=await load(),entered=deferred(),resume=deferred();
+ const api=async(route,init={})=>{if(init.method==='PATCH'){entered.resolve();await resume.promise;}return f.api(route,init);};
+ const p=m.createBoundPcReviewPipeline({...f.options,api}),supply=p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'inflight-round')});
+ await entered.promise;const activation=activateSyntheticRound(f,'synthetic-next-round');let activated;try{activated=await finishedWithin(activation);}finally{resume.resolve();}
+ const result=await supply;await activation;assert.equal(activated,true);assert.equal(result.status,'pending');
+ const journal=JSON.parse(await fs.readFile(path.join(f.stateRoot,'pc-release-feed.json')));
+ assert.equal(journal.confirmed,null);assert.equal(journal.pending.phase,'ref_update_in_flight');assert(journal.pending.candidateCommit);
+ await assert.rejects(p.importOnce(),/baseline|completion|round/i);
+});
+
+
+test('scratch source copy retains exact metadata and PNG bytes while transport waits and is cleaned afterward',async t=>{
+ const f=await fixture(t),m=await load(),entered=deferred(),resume=deferred();let paused=false;
+ const originalFeedback=await fs.readFile(f.store.file),sourceImage=path.join(f.output,f.input.rows[0].outputFolder,'rendered/slide-001.png'),originalImage=await fs.readFile(sourceImage);
+ const api=async(route,init={})=>{if(!paused&&route==='/repos/'+repository.owner+'/'+repository.repo){paused=true;entered.resolve();await resume.promise;}return f.api(route,init);};
+ const p=m.createBoundPcReviewPipeline({...f.options,api}),supply=p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'snapshot-bytes')});
+ await entered.promise;
+ try{
+  const names=(await fs.readdir(f.stateRoot)).filter(name=>name.startsWith('pc-source-snapshot-'));assert.equal(names.length,1);
+  const snapshot=path.join(f.stateRoot,names[0]);
+  assert.deepEqual(await fs.readFile(path.join(snapshot,path.relative(f.options.materialRoot,f.store.file))),originalFeedback);
+  assert.deepEqual(await fs.readFile(path.join(snapshot,path.relative(f.options.materialRoot,sourceImage))),originalImage);
+  const pointer=JSON.parse(await fs.readFile(path.join(snapshot,'review-current.json')));assert.equal(pointer.reviewRound,f.input.reviewRound);
+ }finally{resume.resolve();}
+ assert.equal((await supply).status,'confirmed');assert.deepEqual(await fs.readFile(sourceImage),originalImage);
+ assert.deepEqual((await fs.readdir(f.stateRoot)).filter(name=>name.startsWith('pc-source-snapshot-')),[]);
+});
+test('source PNG hash mismatch refuses immutable capture before any transport and leaves no scratch residue',async t=>{
+ const f=await fixture(t),m=await load();let calls=0;
+ await fs.writeFile(path.join(f.output,f.input.rows[0].outputFolder,'rendered/slide-001.png'),Buffer.concat([syntheticPng,Buffer.from('changed')]));
+ const p=m.createBoundPcReviewPipeline({...f.options,api:async()=>{calls++;assert.fail('source hash failure must precede transport');}});
+ await assert.rejects(p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'wrong-source')}),/PNG hash/);assert.equal(calls,0);
+ assert.deepEqual((await fs.readdir(f.stateRoot)).filter(name=>name.startsWith('pc-source-snapshot-')),[]);
+});
+
+async function preparedMobileImport(t){
+ const f=await fixture(t),m=await load(),p=m.createBoundPcReviewPipeline(f.options);
+ assert.equal((await p.supplyOnce({outputDirectory:path.join(f.options.allowedOutputRoot,'import-baseline')})).status,'confirmed');
+ const mobile=createGithubAdapter({approved:true,dedicatedReviewRepository:true,...repository,api:f.api}),manifest=await mobile.request('/v1/review/manifest');
+ await mobile.request('/v1/review/operations',{method:'POST',body:JSON.stringify(operation(manifest,'gated-import'))});
+ return {...f,m};
+}
+test('paused import network releases canonical writer and later merge refuses concurrent PC score overwrite',async t=>{
+ const f=await preparedMobileImport(t),entered=deferred(),resume=deferred();let paused=false;
+ const api=async(route,init={})=>{if(!paused){paused=true;entered.resolve();await resume.promise;}return f.api(route,init);};
+ const p=f.m.createBoundPcReviewPipeline({...f.options,api}),importing=p.importOnce();await entered.promise;
+ const save=f.store.save({id:f.input.rows[0].id,outputVersion:version(f.input.rows[0]),score:2,note:'PC save during imported remote wait'});
+ let saved,before;try{saved=await finishedWithin(save);if(saved)before=await fs.readFile(f.store.file);}finally{resume.resolve();}
+ const result=await importing;await save;assert.equal(saved,true,'PC save must finish while import network remains paused');
+ assert.equal(result.status,'conflict');assert.equal(result.canonicalWritePerformed,false);assert.deepEqual(await fs.readFile(f.store.file),before);
+});
+test('round activation during paused import network is rechecked before canonical merge and preserves new round bytes',async t=>{
+ const f=await preparedMobileImport(t),entered=deferred(),resume=deferred();let paused=false;
+ const api=async(route,init={})=>{if(!paused){paused=true;entered.resolve();await resume.promise;}return f.api(route,init);};
+ const p=f.m.createBoundPcReviewPipeline({...f.options,api}),importing=p.importOnce();await entered.promise;
+ const activation=activateSyntheticRound(f,'synthetic-import-next-round');let activated,before;
+ try{activated=await finishedWithin(activation);if(activated)before=await fs.readFile(f.store.file);}finally{resume.resolve();}
+ const result=await importing;await activation;assert.equal(activated,true,'round activation must finish while import network remains paused');
+ assert.notEqual(result.status,'committed');assert.equal(result.canonicalWritePerformed,false);
+ assert(result.proposal?.stale?.some(item=>item.reason==='version_round_or_criteria_changed'));
+ assert.deepEqual(await fs.readFile(f.store.file),before);
+});

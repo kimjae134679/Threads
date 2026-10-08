@@ -1,3 +1,9 @@
+# Latest explicit runner and short-lock supply
+
+PC0.3.19 now provides --pc-review-run/--pc-review-config with a default-off, strict nonsecret configuration and approved adapter-byte/hash interface. Cycle recovers, supplies, imports and preserves terminal conflict/error reports. Supply captures a coherent private snapshot and performs copy/export/network outside the canonical root lock. Commit/ref guards retain pending evidence after an in-flight round change. See docs/PC_REVIEW_EXECUTION_ENTRY_2026-10-08.md; historical long-lock/missing-entry statements below are superseded. No real credentials or remote connection are configured.
+
+---
+
 # Local PC0.3.19 integration update (2026-10-08)
 
 The selected writer/exchange changes from ee66964edf6d74723bc557469ae6a1f5d4ea1910

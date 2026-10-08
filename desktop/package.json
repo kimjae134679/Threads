@@ -57,7 +57,8 @@
       "intake-pipeline-cli.cjs",
       "intake-pipeline-run.cjs",
       "reflow-review-covers-run.cjs",
-      "review-canonical-writer.cjs"
+      "review-canonical-writer.cjs",
+      "pc-review-entry.cjs"
     ],
     "extraResources": [
       {
@@ -102,7 +103,9 @@
           "mobile/android-review/PC_0318_BINDING.md",
           "mobile/android-review/PC_FEEDBACK_TRANSACTION.md",
           "mobile/android-review/PC_RELEASE_FEED.md",
-          "mobile/android-review/app/review-limits.js"
+          "mobile/android-review/app/review-limits.js",
+          "mobile/android-review/pc/pc-review-runner.mjs",
+          "mobile/android-review/pc/pc-review-config.example.json"
         ]
       }
     ],
