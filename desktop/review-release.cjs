@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
 const {writeAtomic}=require('./atomic-file.cjs');
+const {withCanonicalWriter}=require('./review-canonical-writer.cjs');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 function inside(root,relative){if(typeof relative!=='string'||path.isAbsolute(relative))throw Error('상대 자료 경로를 확인하세요.');const p=path.resolve(root,relative),r=path.relative(root,p);if(!r||r==='..'||r.startsWith('..'+path.sep)||path.isAbsolute(r))throw Error('자료 경로가 작업 폴더 밖입니다.');return p;}
 async function noLinks(p){let current=path.resolve(p);while(path.dirname(current)!==current){try{if((await fs.lstat(current)).isSymbolicLink())throw Error('연결 폴더는 이동하지 않습니다.');}catch(e){if(e.code!=='ENOENT')throw e;}current=path.dirname(current);}}
@@ -73,6 +74,9 @@ async function activateReviewReleaseUnlocked(materialRoot,stagingRoot,{expectedS
   try{if(installedFeedback)await fs.rename(feedback,path.join(stage,'07_사용자 평가'));if(installedOutput)await fs.rename(output,path.join(stage,'06_자동 제작 결과'));for(const name of [...moved].reverse())await fs.rename(inside(archive,name),inside(root,name));if(pointerWritten){if(marker)await writeAtomic(pointer,marker.toString('utf8'));else await fs.rm(pointer,{force:true});}await writeAtomic(journal,JSON.stringify({reviewRound:ready.reviewRound,complete:true,rolledBack:true,archive,error:error.message},null,2)+'\n');}catch(rollbackError){await writeAtomic(journal,JSON.stringify({reviewRound:ready.reviewRound,complete:false,archive,moved,error:error.message,rollbackError:rollbackError.message},null,2)+'\n');}throw error;}
 }
 async function activateReviewRelease(materialRoot,stagingRoot,options){
+ return withCanonicalWriter(materialRoot,()=>activateReviewReleaseWithDeliveryLock(materialRoot,stagingRoot,options),{serializeReentry:true});
+}
+async function activateReviewReleaseWithDeliveryLock(materialRoot,stagingRoot,options){
  const root=path.resolve(materialRoot);await noLinks(root);await fs.mkdir(root,{recursive:true});
  const alive=pid=>{if(!Number.isInteger(pid)||pid<1)return false;try{process.kill(pid,0);return true;}catch(e){return e.code==='EPERM';}};
  for(const relative of ['06_자동 제작 결과/batch.lock','intake.lock']){const b=await bytes(path.join(root,relative));if(b){let lock;try{lock=JSON.parse(b);}catch{throw Error('실행 중 잠금 형식을 확인하세요: '+relative);}if(alive(lock.pid)&&(relative!=='intake.lock'||lock.pid!==process.pid))throw Error('제작 작업이 실행 중입니다: '+relative);}}

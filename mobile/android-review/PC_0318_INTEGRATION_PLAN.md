@@ -1,0 +1,10 @@
+# PC0.3.18 integration plan
+
+User authorizes integration against exact main-source f22b0319fefa375f224a9bdc89edc072e0f5b73a in this isolated branch only. Main source is merged without conflicts; originals/installations/actual ratings/accounts remain untouched.
+
+1. Shared canonical barrier: root-level cross-process lock, consistent queue->shared; activation->shared->delivery; mobile->shared->mobile-import order. Bind PC save, visit, decide, legacy migration, coherent list/image reads and whole activation CAS/archive/pointer/journal. Reentrant owned reads must not deadlock behind a queued writer. Preserve existing mobileImport and transaction artifacts; exact-old bytes archive/recovery. Test concurrent PC stores/mobile/activation and process interruption using synthetic roots.
+2. Mobile compatibility: allow explicitly supported0.3.18 contract without blanket version bypass; preserve old trusted snapshots. Keep universal whole-regeneration path strict. Add explicit opt-in verified-intake path with intake-complete proof, no fatal, matching round/IDs/counts, audited generated/preserved rows. Never relabel incremental as whole regenerated. Test positives and malformed proofs.
+3. Actual source-only binding: default-off factory derives canonical file and trusted snapshots from the PC copy, uses real shared barrier, independent journal/provenance and pinned transport contracts. No credentials/CLI/timer/actual sync deployed. Synthetic pipeline exercises PC edits after mobile merge, metadata persistence, content-hash conflicts and baseline policy.
+4. Independent reviews, appropriate full source/mobile tests, no secret or real data delivery; commit merge+integration, push isolated branch and verify SHA. Update private source Library identity; retain unchanged APK unless app code changes. Report remaining configuration/real device/online validation distinctly.
+
+No actual authentication, token/key/repository creation, original-file writer or installation action is authorized here. Test writes only temp marked fixtures. All writer declarations must correspond to implemented code paths; declaration alone is not evidence.

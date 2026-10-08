@@ -56,7 +56,8 @@
       "intake-pipeline.cjs",
       "intake-pipeline-cli.cjs",
       "intake-pipeline-run.cjs",
-      "reflow-review-covers-run.cjs"
+      "reflow-review-covers-run.cjs",
+      "review-canonical-writer.cjs"
     ],
     "extraResources": [
       {
@@ -77,6 +78,31 @@
           "source-workflow.js",
           "viral-model.js",
           "universal-production-model.js"
+        ]
+      },
+      {
+        "from": "..",
+        "to": "pc-review",
+        "filter": [
+          "package.json",
+          "desktop/post-review-store.cjs",
+          "desktop/review-workflow-model.cjs",
+          "desktop/atomic-file.cjs",
+          "desktop/feedback-migration.cjs",
+          "desktop/review-canonical-writer.cjs",
+          "desktop/review-release.cjs",
+          "mobile/android-review/pc/exchange.mjs",
+          "mobile/android-review/pc/feedback-transaction.mjs",
+          "mobile/android-review/pc/github-transport.mjs",
+          "mobile/android-review/pc/pc-binding.mjs",
+          "mobile/android-review/pc/publish-release.mjs",
+          "mobile/android-review/pc/release-feed.mjs",
+          "mobile/android-review/pc/review-pipeline.mjs",
+          "mobile/android-review/app/core.js",
+          "mobile/android-review/PC_0318_BINDING.md",
+          "mobile/android-review/PC_FEEDBACK_TRANSACTION.md",
+          "mobile/android-review/PC_RELEASE_FEED.md",
+          "mobile/android-review/app/review-limits.js"
         ]
       }
     ],
