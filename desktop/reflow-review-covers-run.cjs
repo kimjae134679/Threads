@@ -2,6 +2,7 @@
 const fs=require('node:fs/promises'),native=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {sha256,pngSize,assertCoverGeometry}=require('./universal-reproduction.cjs'),{coverHtml}=require('./universal-cover.cjs');
 const {squareCoverHtml}=require('./square-cover.cjs');
+const titleLayout=require('./title-layout.cjs');
 const repo=path.resolve(__dirname,'..'),json=p=>fs.readFile(p,'utf8').then(JSON.parse),write=async(p,v)=>{await fs.mkdir(path.dirname(p),{recursive:true});await fs.writeFile(p,JSON.stringify(v,null,2)+'\n');};
 function inside(root,relative){if(typeof relative!=='string'||path.isAbsolute(relative))throw Error('원본 상대 경로 오류');const p=path.resolve(root,relative),r=path.relative(root,p);if(!r||r==='..'||r.startsWith('..'+path.sep)||path.isAbsolute(r))throw Error('원본 범위 오류');return p;}
 function compactGeometry(g,title,size,requested,variant){
@@ -43,6 +44,7 @@ async function freezeReflowInputs(config,{onProgress=()=>{}}={}){
  for(const name of ['review-current.json','review-delivery-in-progress.json'])if(await optionalHash(path.join(sourceRoot,name))!==null)await add(path.join(sourceRoot,name));
  for(const root of config.rawSourceRoots||[report.inputFolder])if(root){for(const name of await files(root))await add(path.join(root,name));}
  for(const relative of ['desktop/universal-cover.cjs','desktop/universal-cover-canvas.cjs','desktop/square-cover.cjs','desktop/square-cover-canvas.cjs','desktop/universal-reproduction.cjs','desktop/reflow-review-covers-run.cjs','desktop/review-canonical-writer.cjs','app/source-cut-zip.js','app/source-bundle-zip.js','app/fonts/CarouselSansKR-Black.woff','app/fonts/OFL.txt','app/fonts/CutGothic-ExtraBold.woff','app/fonts/OFL-NanumGothic.txt'])state.recipe.push({file:path.join(repo,relative),sha256:await hashFile(path.join(repo,relative))});
+ state.recipe.push({file:path.join(repo,'desktop/title-layout.cjs'),sha256:await hashFile(path.join(repo,'desktop/title-layout.cjs'))});
  state.coverAssets=structuredClone(config.coverAssets||[]);
  if(!Array.isArray(state.coverAssets)||new Set(state.coverAssets.map(a=>a.sourceId)).size!==state.coverAssets.length)throw Error('AI 표지 자산 목록을 확인하세요.');
  for(const asset of state.coverAssets){
@@ -88,13 +90,15 @@ async function runCoverReflow(config,{renderCover,zipTools,onProgress=()=>{}}={}
     const credit=aiAsset?'AI 연출 이미지':variant==='photo'?(oldPlan.coverAsset.attribution?[oldPlan.coverAsset.attribution,oldPlan.coverAsset.license].filter(Boolean).join(' · '):'원문 첨부 사진 · 검수용'):'';
     const font=squareComplete?'CutGothic-ExtraBold.woff':'CarouselSansKR-Black.woff';
     if(squareComplete)for(const name of [font,'OFL-NanumGothic.txt']){const original=path.join(repo,'app/fonts',name),copy=path.join(target,'fonts',name),current=await optionalHash(copy),wanted=await hashFile(original);if(current!==null&&current!==wanted)throw Error('기존 폰트 자산은 변경하지 않습니다.');if(current===null)await fs.copyFile(original,copy);}
-    const coverInput={id:row.id,title:oldPlan.coverTitle,variant,context:compact?'':oldPlan.universalCover?.context||'',emphasis:oldPlan.universalCover?.emphasis||'',fontUrl:'fonts/'+font,aspectRatio:config.aspectRatio||'legacy',imageUrl,credit,imageKind:aiAsset?'ai-staging':'source'},html=squareComplete?squareCoverHtml(coverInput):coverHtml(coverInput);await fs.writeFile(path.join(target,'cover.html'),html);
+    const sourceTitle=oldPlan.originalTitle||oldPlan.coverTitle,requestedEmphasis=oldPlan.universalCover?.emphasis||'';
+    const display=titleLayout.titleInfo(sourceTitle);
+    const coverInput={id:row.id,title:sourceTitle,variant,context:compact?'':oldPlan.universalCover?.context||'',emphasis:display.displayTitle.includes(requestedEmphasis)?requestedEmphasis:'',fontUrl:'fonts/'+font,aspectRatio:config.aspectRatio||'legacy',imageUrl,credit,imageKind:aiAsset?'ai-staging':'source'},html=squareComplete?squareCoverHtml(coverInput):coverHtml(coverInput);await fs.writeFile(path.join(target,'cover.html'),html);
     const rendered=await renderCover({row,plan:oldPlan,html,file:path.join(target,'cover.html')}),cover=Buffer.from(rendered.data),size=pngSize(cover);
-    if(compact)compactGeometry(rendered.geometry,oldPlan.coverTitle,size,config.aspectRatio,rendered.geometry.photoFallback?'paper':variant);
-    else{assertCoverGeometry(rendered.geometry);if(size.height!==1920||rendered.geometry.box.y>400||rendered.geometry.title!==oldPlan.coverTitle)throw Error('표지 밀도/제목 geometry 오류: '+row.id);}
+    if(compact)compactGeometry(rendered.geometry,display.displayTitle,size,config.aspectRatio,rendered.geometry.photoFallback?'paper':variant);
+    else{assertCoverGeometry(rendered.geometry);if(size.height!==1920||rendered.geometry.box.y>400||rendered.geometry.title!==display.displayTitle)throw Error('표지 밀도/제목 geometry 오류: '+row.id);}
     if(aiAsset&&!rendered.geometry.photoFallback&&rendered.geometry.aiLabel!=='AI 연출 이미지')throw Error('AI 연출 표기가 필요합니다.');
     if(sha256(cover)===row.images[0].sha256)throw Error('표지 재배치가 반영되지 않음: '+row.id);
-    await fs.writeFile(inside(target,row.images[0].name),cover);const plan=structuredClone(oldPlan);plan.pages[0]={...plan.pages[0],width:size.width,height:size.height,geometry:rendered.geometry,contentBottom:rendered.geometry.box.y+rendered.geometry.box.height};plan.universalCover={...plan.universalCover,variant,temporary:compact?false:oldPlan.universalCover?.temporary,credit,geometry:rendered.geometry,html:'cover.html',aspectRatio:rendered.geometry.aspectRatio||'legacy'};
+    await fs.writeFile(inside(target,row.images[0].name),cover);const plan=structuredClone(oldPlan);plan.coverTitle=display.displayTitle;plan.titleSourceLabels=display.sourceLabels;plan.pages[0]={...plan.pages[0],width:size.width,height:size.height,geometry:rendered.geometry,contentBottom:rendered.geometry.box.y+rendered.geometry.box.height};plan.universalCover={...plan.universalCover,variant,title:display.displayTitle,temporary:compact?false:oldPlan.universalCover?.temporary,credit,geometry:rendered.geometry,html:'cover.html',aspectRatio:rendered.geometry.aspectRatio||'legacy'};
     plan.universalCover.renderer=squareComplete?'square-complete':'universal';if(rendered.geometry.photoFallback)plan.universalCover.variant='paper';
     if(aiAsset){const name='cover-assets/'+path.basename(aiAsset.file);await fs.mkdir(path.join(target,'cover-assets'),{recursive:true});await fs.writeFile(inside(target,name),aiBytes);plan.universalCover.aiAsset={...aiAsset,file:name};plan.universalCover.aiAssetUsed=!rendered.geometry.photoFallback;}
     if(JSON.stringify(plan.pages.slice(1))!==JSON.stringify(oldPlan.pages.slice(1)))throw Error('본문 계획 변경');await write(path.join(target,'production-plan.json'),plan);

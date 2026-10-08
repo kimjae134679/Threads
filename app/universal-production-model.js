@@ -1,14 +1,15 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsUniversalProductionModel=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
   const normalize=text=>String(text??'').replace(/[\s\u200b\ufeff]/gu,'');
-  const cleanTitle=text=>String(text??'').replace(/^\s*\[\s*네이트판\s*\]\s*/u,'').trim();
+  const cleanTitle=text=>String(text??'').replace(/^(?:\s*(?:\[\s*(?:네이트\s*판|판|더쿠|인스티즈|블라인드|루리웹)\s*\]|\(\s*(?:네이트\s*판|판|더쿠|인스티즈|블라인드|루리웹)\s*\))\s*)+/u,'').replace(/(?:\s*(?:\[\s*(?:네이트\s*판|판|더쿠|인스티즈|블라인드|루리웹)\s*\]|\(\s*(?:네이트\s*판|판|더쿠|인스티즈|블라인드|루리웹)\s*\))\s*)+$/u,'').trim();
   function preparePlan(rawPlan) {
     const plan=JSON.parse(JSON.stringify(rawPlan));
     plan.editorial={...(plan.editorial||{}),templateId:'mint_text'};
     plan.style={...(plan.style||{}),manualTitleLayout:false};
-    const title=cleanTitle(plan.editorial.coverTitle||plan.coverTitle||plan.originalTitle);
+    const title=cleanTitle(plan.originalTitle||plan.editorial.coverTitle||plan.coverTitle);
     plan.coverTitle=title;
     if(Object.hasOwn(plan.editorial,'coverTitle'))plan.editorial.coverTitle=title;
+    if(Array.isArray(plan.editorial.titleHighlights))plan.editorial.titleHighlights=plan.editorial.titleHighlights.filter(word=>title.includes(word));
     if(plan.editorial.coverLines&&plan.editorial.coverLines.join(' ').replace(/\s+/g,' ').trim()!==title.replace(/\s+/g,' ').trim())delete plan.editorial.coverLines;
     return plan;
   }

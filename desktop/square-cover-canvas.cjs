@@ -6,36 +6,12 @@ module.exports=async function renderSquareCover(){
  const ctx=canvas.getContext('2d'),family=getComputedStyle(document.querySelector('.title')).fontFamily;
  const photo=document.querySelector('.photo');
  function font(size){ctx.font='800 '+size+'px '+family;ctx.letterSpacing=(-size*.018)+'px';}
- // Balance each paragraph with character boundaries; prefer spaces and punctuation,
- // but allow Korean tokens to break when necessary. Never abbreviate the source.
+ // The shared title fitter uses complete words; font fitting handles overflow.
  function wrap(size){
-  font(size);const lines=[];
-  for(const paragraph of title.split('\n')){
-   const chars=Array.from(paragraph),n=chars.length;
-   if(!n){lines.push('');continue;}
-   const best=Array(n+1).fill(null);best[n]={cost:0,lines:[]};
-   for(let i=n-1;i>=0;i--){
-    for(let j=i+1;j<=n;j++){
-     const text=chars.slice(i,j).join('').trim(),w=ctx.measureText(text).width;
-     if(w>available)break;if(!best[j])continue;
-     if(j<n&&/^[,.)!?\]\u3001\u3002]/u.test(chars[j]))continue;
-     const midWord=j<n&&!/\s/u.test(chars[j-1])&&!/\s/u.test(chars[j])&&!/[,.)!?]/u.test(chars[j-1]);
-     // Do not split short Korean words such as 그만둔 or 키즈카페 just to
-     // keep a larger font. A short title can use another well-spaced line.
-     if(midWord&&/[\p{L}\p{N}]/u.test(chars[j-1])&&/[\p{L}\p{N}]/u.test(chars[j])){
-      let a=j-1,b=j;while(a>0&&/[\p{L}\p{N}]/u.test(chars[a-1]))a--;while(b<n&&/[\p{L}\p{N}]/u.test(chars[b]))b++;
-      if(b-a<=4)continue;
-     }
-     const cost=100000+(available-w)**2*.07+(midWord?10000:0)+best[j].cost;
-     if(!best[i]||cost<best[i].cost)best[i]={cost,lines:[text,...best[j].lines]};
-    }
-   }
-   if(!best[0])throw Error('제목이 안전 영역을 넘어서 보류합니다.');lines.push(...best[0].lines);
-  }
-  return lines;
+  font(size);return window.titleLayout.wrapTitle(title,available,text=>ctx.measureText(text).width);
  }
  let usePhoto=Boolean(imageUrl),size,lines,lineHeight,titleHeight;
- function fit(maxHeight){for(size=128;size>=80;size-=2){lines=wrap(size);lineHeight=size*1.10;titleHeight=lines.length*lineHeight;if(titleHeight<=maxHeight)return true;}return false;}
+ function fit(maxHeight){for(size=128;size>=80;size-=2){lines=wrap(size);if(!lines)continue;lineHeight=size*1.10;titleHeight=lines.length*lineHeight;if(titleHeight<=maxHeight)return true;}return false;}
  // A dense title gets a complete typographic square instead of a tiny photo title.
  if(usePhoto&&(!fit(480)||size<102||lines.length>4))usePhoto=false;
  if(!usePhoto&&!fit(928))throw Error('제목 전체가 최소 가독 크기를 넘어서 보류합니다.');

@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-08.2',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-08.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -16,10 +16,41 @@
     }
     return lines;
   }
-  function headline(original) {
-    let title=clean(original).replace(/^\[\s*네이트판\s*\]\s*/,'').replace(/^(?:\((?:장문|초?스압|사진|펌|끌올)[^)]*\)|\[(?:장문|초?스압|사진|펌|끌올)[^\]]*\])\s*/,'').replace(/\.(?:jpg|jpeg|png|txt)$/i,'');
-    if(title.length>30&&/^.*?원덬이\s+/.test(title))title=title.replace(/^.*?원덬이\s+/,'');
-    return title;
+  function titleInfo(original) {
+    const originalTitle=String(original??''),sourceLabels=[];
+    const label='(?:네이트\\s*판|판|더쿠|인스티즈|블라인드|루리웹)';
+    const prefix=new RegExp('^\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*','u');
+    const suffix=new RegExp('\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*$','u');
+    let displayTitle=originalTitle,match;
+    while((match=displayTitle.match(prefix))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(match[0].length);}
+    while((match=displayTitle.match(suffix))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(0,-match[0].length);}
+    return {originalTitle,displayTitle:displayTitle.trim(),sourceLabels};
+  }
+  const headline=original=>titleInfo(original).displayTitle;
+  // Only whitespace boundaries are legal for titles. A too-wide word requests
+  // a smaller font from the caller instead of breaking Korean syllables apart.
+  function wrapTitle(text,width,measure) {
+    const result=[],paragraphs=String(text).replace(/\r\n?/g,'\n').split('\n');
+    // Old editorial line breaks are hints, never a reason to isolate a glyph.
+    for(let i=paragraphs.length-1;i>0;i--)if(Array.from(paragraphs[i].trim()).length===1&&paragraphs[i-1].trim()){
+      paragraphs[i-1]+=' '+paragraphs[i];paragraphs.splice(i,1);
+    }
+    for(const paragraph of paragraphs){
+      const words=paragraph.match(/\S+/gu)||[];
+      if(!words.length){result.push('');continue;}
+      if(words.some(word=>measure(word)>width))return null;
+      const best=Array(words.length+1).fill(null);best[words.length]={cost:0,lines:[]};
+      for(let i=words.length-1;i>=0;i--)for(let j=i+1;j<=words.length;j++){
+        const line=words.slice(i,j).join(' '),w=measure(line);if(w>width)break;
+        if(!best[j])continue;
+        const orphan=j===words.length&&i>0&&Array.from(line).length<=1;
+        const cost=100000+(width-w)**2*.07+(orphan?1e9:0)+best[j].cost;
+        if(!best[i]||cost<best[i].cost)best[i]={cost,lines:[line,...best[j].lines]};
+      }
+      if(!best[0]||best[0].lines.length>1&&Array.from(best[0].lines.at(-1)).length<=1)return null;
+      result.push(...best[0].lines);
+    }
+    return result;
   }
   function compile(plan,dimensions,measure) {
     const omitted=[],warnings=[],pages=[],editorial=plan.editorial||{},style=plan.style||{};
@@ -121,20 +152,23 @@
     const selectionReason=editorial.selectionReason||(templateId==='photo_cover'?'원문 첨부 중 사진으로 분석된 이미지를 표지로 선택':
       templateId==='screenshot'?'대화·원문 화면을 축소 표지로 쓰지 않고 본문에서 읽히는 크기로 보존':
       templateId==='white_title'?'짧은 글은 흰 바탕의 제목과 원문을 한 흐름으로 배치':'긴 글은 큰 제목 표지 뒤에 원문 문단을 이어 배치');
-    const title=clean(editorial.coverTitle||plan.coverTitle||plan.originalTitle),manual=style.manualTitleLayout===true;
+    const displayTitleInfo=titleInfo(editorial.coverTitle||plan.coverTitle||plan.originalTitle);
+    const title=displayTitleInfo.displayTitle,manual=style.manualTitleLayout===true;
     const titleWeight=style.titleWeight||900,titleX=manual?Number(style.coverLeft):PAD;
-    const specified=editorial.coverLines;
+    let specified=editorial.coverLines;
+    if(specified&&displayTitleInfo.sourceLabels.length&&specified.join(' ').replace(/\s+/g,' ').trim()===displayTitleInfo.originalTitle.replace(/\s+/g,' ').trim())specified=null;
     if(specified&&(!Array.isArray(specified)||!specified.length||specified.some(line=>typeof line!=='string'||!line.trim())||
       specified.join(' ').replace(/\s+/g,' ').trim()!==title.replace(/\s+/g,' ').trim()))throw new Error('표지 줄바꿈은 표지 제목의 모든 글자를 그대로 포함해야 합니다.');
+    if(specified&&specified.length>1&&specified.some(line=>Array.from(line.trim()).length===1))specified=null;
     const highlights=editorial.titleHighlights?.length?editorial.titleHighlights:[...new Set([...(title.match(/[0-9][0-9,.]*\s*(?:만원|천원|원|년|살|개|갑|등)/g)||[]),...(title.match(/(?:결벽증 새언니|명절|군데리아|군대리아|딩크|돈관리|손절|임플란트|게임만|담배|홍콩|결혼|미용실|여직원)/g)||[])])].slice(0,3);
     if(!Array.isArray(highlights)||highlights.some(word=>typeof word!=='string'||!word.trim()||!title.includes(word)))throw new Error('강조할 문구는 표지 제목 안에서 선택하세요.');
     const titleOp=(text,x,y,t,color,extra={})=>({kind:'text',role:'title',text,x,y,size:t.size,weight:titleWeight,color,lineHeight:t.lineHeight,sourceId:'title',
       highlights:highlights.filter(word=>text.includes(word)),highlightColor:color==='#fff'?'#FFE36D':'#176B57',...extra});
     const fitTitle=(width,min,max,maxLines)=>{
       if(manual){min=max=Number(style.coverSize);width=W-titleX-PAD;}
-      let size=max,lines=specified||wrap(title,width,size,measure,titleWeight).filter(Boolean);
-      while((lines.length>maxLines||lines.some(line=>measure(line,size,titleWeight)>width)||!specified&&lines.length>1&&lines.at(-1).length<3)&&size>min){size-=2;lines=specified||wrap(title,width,size,measure,titleWeight).filter(Boolean);}
-      if(lines.length>maxLines||lines.some(line=>measure(line,size,titleWeight)>width))throw new Error('대문 제목을 원문 근거 안에서 더 짧게 정하세요.');
+      let size=max,lines=specified||wrapTitle(title,width,t=>measure(t,size,titleWeight));
+      while((!lines||lines.length>maxLines||lines.some(line=>measure(line,size,titleWeight)>width))&&size>min){size-=2;lines=specified||wrapTitle(title,width,t=>measure(t,size,titleWeight));}
+      if(!lines||lines.length>maxLines||lines.some(line=>measure(line,size,titleWeight)>width))throw new Error('제목 전체가 안전 영역을 넘어서 제작을 보류합니다.');
       return {size,lines,lineHeight:Math.round(size*1.23)};
     };
     let ops=[],y=PAD,pageRole='body';const seenText=new Set(),seenImages=new Set();
@@ -184,7 +218,7 @@
           const lines=wrap(unit.trim(),W-2*PAD,size,measure,weight);
           if(ops.length&&lines.length*lineHeight<=MAXH-2*PAD&&y+lines.length*lineHeight>MAXH-PAD)nextPage();
           for(const [i,line] of lines.entries()){
-            if(y+lineHeight>MAXH-PAD||i===0&&lines.length>1&&y+lineHeight*2>MAXH-PAD)nextPage();
+            if(y+lineHeight>MAXH-PAD||i===0&&lines.length>1&&y+lineHeight*2>MAXH-PAD||lines.length-i===2&&y+lineHeight*2>MAXH-PAD)nextPage();
             if(line)ops.push({kind:'text',role,text:line,x:PAD,y,size,weight,color:'#171717',lineHeight,sourceId});y+=lineHeight;
           }
         }
@@ -366,7 +400,22 @@
         for(const op of tail.operations)op.y=nextY+op.y-tailTop;
         before.operations.push(...tail.operations);refresh(before);pages.splice(i,1);continue;
       }
-      if(!before.operations.every(o=>o.kind==='text'&&o.role==='body'))continue;
+      if(!before.operations.every(o=>o.kind==='text'&&o.role==='body')){
+        // A reading image must retain its pixels. Move the text immediately
+        // after it together with the short continuation instead of cropping it.
+        let start=before.operations.length;
+        while(start>0&&before.operations[start-1].kind==='text'&&before.operations[start-1].role==='body')start--;
+        if(start>0&&before.operations[start-1].role==='editorial_label'&&before.operations[start-1].sourceId===before.operations[start]?.sourceId)start--;
+        const moved=before.operations.slice(start);
+        if(!moved.length||start===0)continue;
+        const origin=moved[0].y,combinedHeight=Math.max(...moved.map(bottom))-origin+gap+tailHeight;
+        if(combinedHeight>MAXH-2*PAD)continue;
+        before.operations.splice(start);
+        for(const op of moved)op.y=PAD+op.y-origin;
+        const shift=Math.max(...moved.map(bottom))+gap-tailTop;
+        for(const op of tail.operations)op.y+=shift;
+        tail.operations=[...moved,...tail.operations];refresh(before);refresh(tail);continue;
+      }
       const length=before.operations.length,count=Math.min(length-4,Math.ceil((length+tail.operations.length)/2)-tail.operations.length);
       if(count<=0)continue;
       let start=length-count;
@@ -394,7 +443,7 @@
     if(!evidenceSources.length)warnings.push('제목 근거 문구를 원문에서 직접 확인하세요.');
     if(pages.length>10)warnings.push('10장이 넘는 글: 사건 흐름과 장별 읽기 부담을 검수하세요.');
     return {schema:'threads-production-plan-v1',ruleVersion:VERSION,preparedAt:new Date().toISOString(),
-      originalTitle:plan.originalTitle,coverTitle:title,titleEvidence:evidence,titleEvidenceStatus:evidenceSources.length?'matched_source':'needs_review',titleEvidenceSourceIds:evidenceSources,
+      originalTitle:plan.originalTitle,coverTitle:title,titleSourceLabels:displayTitleInfo.sourceLabels,titleEvidence:evidence,titleEvidenceStatus:evidenceSources.length?'matched_source':'needs_review',titleEvidenceSourceIds:evidenceSources,
       typography:{width:W,safeMargin:PAD,bodySize:BODY,bodyLineHeight:LINE,paragraphGap:32,commentSize:48,commentLineHeight:72,titleWeight,highlightLimit:3},
       templateId,selectionReason,canvasMode:fixed?'instagram':'threads',aspectRatio:fixed?(style.aspectRatio||'4:5'):null,
       sourceUrl:plan.sourceUrl,sourceSha256:plan.input?.sha256||null,sourcePublishedAt:plan.sourcePublishedAt||null,
@@ -407,5 +456,5 @@
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};
   }
-  return Object.freeze({VERSION,compile,wrap,plainLink,headline});
+  return Object.freeze({VERSION,compile,wrap,wrapTitle,titleInfo,plainLink,headline});
 });

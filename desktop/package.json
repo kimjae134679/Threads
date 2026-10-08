@@ -55,6 +55,7 @@
       "universal-cover-canvas.cjs",
       "square-cover.cjs",
       "square-cover-canvas.cjs",
+      "title-layout.cjs",
       "intake-policy.cjs",
       "intake-pipeline.cjs",
       "intake-pipeline-cli.cjs",

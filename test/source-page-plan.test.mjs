@@ -76,7 +76,7 @@ assert(text.omitted.some(o=>o.reason==='duplicate_text'));
 assert(!text.pages.flatMap(p=>p.operations).some(o=>/https:/.test(o.text||'')));
 assert.equal(textPlan.segments[0].text,body);
 assert.equal(text.publicationAllowed,false);assert.equal(text.publicationStatus,'unknown');
-assert.equal(P.headline('개 한번도 안 키워본 원덬이 친구 강아지 일주일간 돌본 후기'),'친구 강아지 일주일간 돌본 후기');
+assert.equal(P.headline('개 한번도 안 키워본 원덬이 친구 강아지 일주일간 돌본 후기'),'개 한번도 안 키워본 원덬이 친구 강아지 일주일간 돌본 후기','Only site labels may be hidden; source title content survives');
 assert.throws(()=>P.compile(base,{},measure),/이미지 파일 누락/);
 console.log('Source page plan: safe title, adaptive wide image, complete tall slices, links, duplicate audit and source preservation PASS');
 

@@ -8,27 +8,31 @@ module.exports=async function renderCoverCanvas(){
   const margin=96,available=width-margin*2,photo=document.querySelector('img.photo');
   const color=variant==='paper'?'#242323':'#fff',accent=variant==='paper'?'#a34535':'#ead098';
   ctx.fillStyle=variant==='paper'?'#f4eee5':'#15171c';ctx.fillRect(0,0,width,height);
-  // Keep one layout for the preview and exported pixels. Preserve every character,
-  // split at words first, and only split a token when it cannot fit by itself.
+  // Preserve complete words. Too-wide tokens request a smaller title font.
   function wrap(text,fontSize,weight=900){
    ctx.font=weight+' '+fontSize+'px '+family;ctx.letterSpacing=(weight===900?-fontSize*.018:0)+'px';
    const lines=[];
    for(const paragraph of text.split('\n')){
     let line='';
     for(const token of paragraph.match(/\S+\s*|\s+/gu)||[]){
-     if(ctx.measureText(token.trimEnd()).width>available){
-      for(const character of token){if(line&&ctx.measureText((line+character).trimEnd()).width>available){lines.push(line.trimEnd());line='';}line+=character;}
-     }else{if(line&&ctx.measureText((line+token).trimEnd()).width>available){lines.push(line.trimEnd());line='';}line+=token;}
+     if(ctx.measureText(token.trimEnd()).width>available)return null;
+     if(line&&ctx.measureText((line+token).trimEnd()).width>available){lines.push(line.trimEnd());line='';}line+=token;
     }
     lines.push(line.trimEnd());
    }
+   if(lines.length>1&&Array.from(lines.at(-1)).length<=1){
+    const words=lines.at(-2).split(/\s+/u),last=words.pop();
+    if(!words.length||ctx.measureText(last+' '+lines.at(-1)).width>available)return null;
+    lines[lines.length-2]=words.join(' ');lines[lines.length-1]=last+' '+lines.at(-1);
+   }
    return lines;
   }
-  const contextLines=context?wrap(context,32,500):[],contextHeight=contextLines.length?contextLines.length*46+32:0;
+  const contextLines=context?wrap(context,32,500):[];if(!contextLines)throw Error('표지 맥락 전체가 안전 영역을 넘어서 보류합니다.');
+  const contextHeight=contextLines.length?contextLines.length*46+32:0;
   if(contextLines.length>3)throw Error('표지 맥락이 너무 깁니다. 내용을 자르지 않고 검토 보류합니다.');
   const maxHeight=photo?height*.54:height-216-contextHeight-(credit?48:0);
   let size=photo?104:128,lines;
-  for(;size>=64;size-=2){lines=wrap(title,size);if(lines.length*size*1.16<=maxHeight)break;}
+  for(;size>=64;size-=2){lines=wrap(title,size);if(lines&&lines.length*size*1.16<=maxHeight)break;}
   if(size<64)throw Error('원문 제목이 안전한 범위를 초과합니다. 제목을 자르지 않고 검토 보류합니다.');
   if(lines.join('').replace(/\s/gu,'')!==title.replace(/\s/gu,''))throw Error('제목 문자 손실');
   const lineHeight=size*1.16,titleHeight=lines.length*lineHeight;
@@ -77,10 +81,12 @@ module.exports=async function renderCoverCanvas(){
  const photo=document.querySelector('img.photo');
  if(photo){const scale=Math.max(1080/photo.naturalWidth,1920/photo.naturalHeight),w=photo.naturalWidth*scale,h=photo.naturalHeight*scale;ctx.drawImage(photo,(1080-w)/2,(1920-h)/2,w,h);const g=ctx.createLinearGradient(0,540,0,1920);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.35,'rgba(0,0,0,.45)');g.addColorStop(.7,'rgba(0,0,0,.88)');g.addColorStop(1,'#08090a');ctx.fillStyle=g;ctx.fillRect(0,0,1080,1920);}
  else{ctx.fillStyle=variant==='paper'?'#9f4436':'#ead098';ctx.fillRect(108,variant==='paper'?160:260,92,10);}
- function lines(text,size,font,spacing=0){ctx.font=font;ctx.letterSpacing=spacing+'px';const out=[];for(const paragraph of text.split('\n')){let line='';for(const word of paragraph.match(/\S+\s*|\s+/g)||[]){if(ctx.measureText(word.trimEnd()).width<=864){if(line&&ctx.measureText(line+word.trimEnd()).width>864){out.push(line.trimEnd());line='';}line+=word;}else for(const c of word){if(line&&ctx.measureText(line+c).width>864){out.push(line.trimEnd());line=c;}else line+=c;}}out.push(line.trimEnd());}return out;}
- let size=132,wrapped;do{wrapped=lines(title.textContent,size,'900 '+size+'px '+style.fontFamily,-3);if(wrapped.length*size*1.14<=1000)break;size-=2;}while(size>=64);
+ function lines(text,size,font,spacing=0){ctx.font=font;ctx.letterSpacing=spacing+'px';return window.titleLayout.wrapTitle(text,864,t=>ctx.measureText(t).width);}
+ let size=132,wrapped;do{wrapped=lines(title.textContent,size,'900 '+size+'px '+style.fontFamily,-3);if(wrapped&&wrapped.length*size*1.14<=1000)break;size-=2;}while(size>=64);
  if(size<64)throw Error('원문 제목이 안전한 범위를 초과합니다.');
- const context=document.querySelector('.context')?.textContent||'',clines=context?lines(context,37,'500 37px "Malgun Gothic"',0).slice(0,2):[],lh=size*1.14,contextHeight=clines.length*58,bottom=variant==='paper'?290:variant==='ink'?250:150;
+ const context=document.querySelector('.context')?.textContent||'',clines=context?lines(context,37,'500 37px "Malgun Gothic"',0):[];
+ if(!clines||clines.length>2)throw Error('표지 맥락 공간이 부족하여 보류합니다.');
+ const lh=size*1.14,contextHeight=clines.length*58,bottom=variant==='paper'?290:variant==='ink'?250:150;
  let y=variant==='paper'?280:1920-bottom-wrapped.length*lh-(contextHeight?44+contextHeight:0),top=y;
  ctx.textBaseline='top';ctx.font='900 '+size+'px '+style.fontFamily;ctx.letterSpacing='-3px';ctx.fillStyle=style.color;
  const emphasis=title.querySelector('mark')?.textContent||'';
