@@ -1,4 +1,4 @@
-# 리뷰 성능 개선 · 0.3.23
+# 리뷰 성능 개선 · 0.3.23 / 재방문 개선 0.3.24
 
 이미지마다 전체 status.json 바이트를 다시 읽고, 글 전환과 방문 기록마다 365개 목록 카드를 삭제·재생성하던 비용을 줄였다. 세로 읽기에서는 화면에서 멀어진 이미지 소스를 해제하고 페이지 비율을 유지하며 재진입 때 다시 불러온다. 명시적 재시도는 멈춘 요청을 교체한다.
 
@@ -43,3 +43,5 @@
 | 반복 방문 뒤 이미지 소스 / renderer working set | 53 / 652.8MiB | 8 / 551.9MiB | 10 / 472.1MiB |
 
 위 수치는 전경 창 체감 시간이나 전체 Chromium 메모리 상한이 아니다. 첫 미보존1장 재방문에는507ms가 남았으며 페이지 수·화면 크기에 따른 현재/인접 이미지는 최근3장 상한 밖에 있다. 지연된 관찰에서 즉시 로딩·최근 페이지 유지·오래된 페이지 제거를 실제 Electron의 RED→GREEN 검사로 확인했다. viewport·vertical·vertical-race·reload·stale 시나리오의9개 핵심 검사와 독립 프로세스의 복사본9점·메모·2페이지 보존을 통과했다. 기존 전체92개 회귀·3073장 무결성 근거는 재사용했다. 측정은 task-8/performance-reentry-qa/{baseline,current,candidate}-result.json에 있고 설치·바로가기·자료·원격은 이번 후보로 변경하지 않았다.
+
+후보 설치 승인 후0.3.24를 새 폴더 D:\A_KJ\AI\Applications\ThreadsReview\0.3.24에 설치했다.125개 설치 파일과 검증 후보·서비스 코드의 바이트 일치를 확인했고, 실제 D의 실행파일을 숨긴 읽기 전용 감사로 한 번 실행해 기존 자료1084항목/365출력과 회차 연결·정상 종료를 확인했다. 기본 평가·보류·탈락 링크를0.3.24로 연결하고 기존0.3.23 링크는 task-8/launcher-backup-before-0.3.24에 백업했다. 설치 전후 실제 평가·진행·회차5개 파일 해시와 평가0건·메모0건·진행14건이 같았다. 이전 설치·사용자 창·원격은 보존했다. 근거는 performance-installed-package-024.json, performance-installed-024-actual-process.json, performance-launchers-024.json, performance-install-024-preserved.json이며 전체 검사나 전체 이미지 해시는 반복하지 않았다.
