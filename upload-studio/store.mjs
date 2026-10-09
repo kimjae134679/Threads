@@ -15,6 +15,16 @@ export async function removeOwnerFile(file,unlink=fs.unlink,delay=()=>new Promis
   }
  }
 }
+// Windows can reject an open while a stale unique owner is being unlinked.
+// A vanished filename must return to acquisition; never substitute a fresh owner.
+export async function readOwnerFile(file,readFile=file=>fs.readFile(file,'utf8'),delay=()=>new Promise(r=>setTimeout(r,10))){
+ for(let attempt=0;attempt<12;attempt++){
+  try{return await readFile(file);}catch(e){
+   if(!['EPERM','EBUSY'].includes(e.code)||attempt===11)throw e;
+   await delay();
+  }
+ }
+}
 export async function removeEmptyLock(file,rmdir=fs.rmdir,delay=()=>new Promise(r=>setTimeout(r,10)),readdir=fs.readdir){
  for(let attempt=0;attempt<12;attempt++){
   try{await rmdir(file);return;}catch(e){
@@ -44,7 +54,7 @@ export class StateStore {
           const names=await fs.readdir(this.lock);
           if(!names.length){await removeEmptyLock(this.lock);continue;}
           if(names.length!==1||!/^owner(?:\.[a-f0-9-]{36})?\.json$/.test(names[0]))throw error('state_lock_invalid');
-          let owner;try{owner=JSON.parse(await fs.readFile(path.join(this.lock,names[0]),'utf8'));}catch(e){if(e.code==='ENOENT')continue;if(e instanceof SyntaxError)throw error('state_lock_invalid');throw e;}
+          let owner;try{owner=JSON.parse(await readOwnerFile(path.join(this.lock,names[0])));}catch(e){if(e.code==='ENOENT')continue;if(e instanceof SyntaxError)throw error('state_lock_invalid');throw e;}
           if(!Number.isInteger(owner.pid)||owner.pid<=0)throw error('state_lock_invalid');
           let dead=false;try{process.kill(owner.pid,0);}catch(e){if(e.code==='ESRCH')dead=true;else if(e.code!=='EPERM')throw e;}
           if(dead){

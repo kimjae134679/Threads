@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {removeOwnerFile,removeEmptyLock} from '../store.mjs';
+import {removeOwnerFile,removeEmptyLock,readOwnerFile} from '../store.mjs';
 test('Windows sharing violations retry the exact observed owner filename',async()=>{
  let calls=0;const paths=[];
  await removeOwnerFile('owner.unique.json',async file=>{paths.push(file);if(++calls<3)throw Object.assign(new Error('sharing'),{code:'EPERM'});},async()=>{});
@@ -50,4 +50,21 @@ test('Permanent empty-directory failures remain bounded and permission errors fa
  let calls=0;await assert.rejects(removeEmptyLock('.state-lock',async()=>{calls++;throw Object.assign(new Error('sharing'),{code:'EBUSY'});},async()=>{},async()=>[]),{code:'EBUSY'});
  assert.equal(calls,12);
  await assert.rejects(removeEmptyLock('.state-lock',async()=>{throw Object.assign(new Error('denied'),{code:'EACCES'});},async()=>{},async()=>[]),{code:'EACCES'});
+});
+
+test('Windows read sharing retries only the observed owner filename',async()=>{
+ let calls=0;const paths=[];
+ const value=await readOwnerFile('owner.observed.json',async file=>{paths.push(file);if(++calls<3)throw Object.assign(new Error('sharing'),{code:'EPERM'});return '{"pid":42}';},async()=>{});
+ assert.equal(value,'{"pid":42}');assert.equal(calls,3);assert.deepEqual(paths,Array(3).fill('owner.observed.json'));
+});
+test('A removed observed owner propagates ENOENT so acquisition checks the current lock again',async()=>{
+ let calls=0;
+ await assert.rejects(readOwnerFile('owner.observed.json',async()=>{throw Object.assign(new Error('race'),{code:++calls===1?'EBUSY':'ENOENT'});},async()=>{}),{code:'ENOENT'});
+ assert.equal(calls,2);
+});
+test('Permanent owner read sharing is bounded; permission errors stay closed',async()=>{
+ let calls=0;await assert.rejects(readOwnerFile('owner.observed.json',async()=>{calls++;throw Object.assign(new Error('blocked'),{code:'EPERM'});},async()=>{}),{code:'EPERM'});
+ assert.equal(calls,12);calls=0;
+ await assert.rejects(readOwnerFile('owner.observed.json',async()=>{calls++;throw Object.assign(new Error('denied'),{code:'EACCES'});},async()=>{}),{code:'EACCES'});
+ assert.equal(calls,1);
 });
