@@ -3,7 +3,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
 module.exports=async function audit({app,window,store,directory}){
  if(!path.isAbsolute(directory))throw Error('Absolute audit directory required');
  if(process.argv.includes('--review-ui-stress')){window.restore();window.show();window.focus();}
- const initial=await store.list(),first=initial.entries.find(row=>row.hasOutput&&row.imageEligible);assert(first,'A valid user-image production is required');
+ const initial=await store.list(),first=initial.entries.find(row=>row.hasOutput&&row.imageEligible&&row.disposition==='eligible');assert(first,'A currently reviewable user-image production is required');
  for(let i=0;i<300;i++){if(await window.webContents.executeJavaScript("!!window.ThreadsPostReviewUI&&document.querySelectorAll('.production-card').length>0"))break;if(i===299)throw Error('Production gallery boot timed out');await new Promise(resolve=>setTimeout(resolve,50));}
  await window.webContents.executeJavaScript(`window.ThreadsPostReviewUI.select(${JSON.stringify(first.id)},{page:1})`);
  for(let i=0;i<150;i++){if(await window.webContents.executeJavaScript("document.getElementById('pageImage').naturalWidth>0"))break;if(i===149)throw Error('Installed image load timed out: '+JSON.stringify(await window.webContents.executeJavaScript("({error:document.getElementById('error')?.textContent,title:document.getElementById('title')?.textContent,image:document.getElementById('pageImage')?.getAttribute('src')?.slice(0,30),api:!!window.ThreadsPostReview,posts:document.querySelectorAll('.post-card').length})")));await new Promise(r=>setTimeout(r,100));}
