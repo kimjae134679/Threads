@@ -23,9 +23,10 @@
   }
   function titleInfo(original) {
     const originalTitle=String(original??''),sourceLabels=[];
-    const label='(?:네이트\\s*판|판|더쿠|인스티즈|블라인드|루리웹)';
-    const prefix=new RegExp('^\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*','u');
-    const suffix=new RegExp('\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*$','u');
+    const label='(?:네이트\\s*판|판|더쿠|인스티즈|블라인드|루리웹|인벤|디시(?:인사이드)?|에펨코리아|펨코|뽐뿌|보배드림|클리앙|개드립|blind|pann|theqoo|instiz|inven|ruliweb|dcinside|fmkorea)';
+    const category='(?:장문|초?스압|사진|펌|끌올|후기\\s*추가|추가\\s*후기|후기|사이다)';
+    const prefix=new RegExp('^\\s*(?:\\[\\s*(?:'+label+'|'+category+')\\s*\\]|\\(\\s*(?:'+label+'|'+category+')\\s*\\))\\s*(?:[+|:：·]\\s*)?','iu');
+    const suffix=new RegExp('\\s*(?:\\[\\s*'+label+'\\s*\\]|\\(\\s*'+label+'\\s*\\))\\s*$','iu');
     let displayTitle=originalTitle,match;
     while((match=displayTitle.match(prefix)||displayTitle.match(/^\s*(?:\{\s*)?판\s*\}\s*/u))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(match[0].length);}
     while((match=displayTitle.match(suffix)||displayTitle.match(/\s+(?:\{\s*)?판\s*\}\s*$/u))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(0,-match[0].length);}

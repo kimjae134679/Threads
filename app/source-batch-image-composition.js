@@ -11,9 +11,10 @@
    x:box.x+(contain?(box.width-source.width*scale)*anchor[0]:0),y:box.y+(contain?(box.height-source.height*scale)*anchor[1]:0),
    width:contain?source.width*scale:box.width,height:contain?source.height*scale:box.height};
  }
- function titleOperations(title,box,measure,policy,color,maxSize=100,titleStyle=null){
+ function titleOperations(title,box,measure,policy,color,maxSize=100,titleStyle=null,originalTitle=title){
   const typography=globalThis.ThreadsCoverTypography;
   if(typography){
+   titleStyle=typography.cleanStyle(title,titleStyle,policy,originalTitle);
    const style=typography.style(title,{emphasis:titleStyle?.emphasis||'',accent:titleStyle?.accent||null,photo:color==='#fff',sizeEmphasis:titleStyle?.sizeEmphasis,sizeScale:titleStyle?.sizeScale??1.03,explicitEmphasis:!!titleStyle?.emphasis,lineBreaks:titleStyle?.lineBreaks||null}),fit=typography.fit(title,box,measure,policy,style,Math.min(maxSize,124),32),y=box.y+box.height-fit.height;
    return fit.lines.map((text,index)=>({kind:'text',role:'title',sourceId:'title',text,x:box.x,y:y+index*fit.lineHeight,size:fit.size,lineHeight:fit.lineHeight,weight:900,color:style.palette.ink,runs:fit.runs[index],stroke:color==='#fff'?'#101722':null,strokeWidth:2,typography:style}));
   }
@@ -35,12 +36,12 @@
   if(contract?.assets?.some(a=>a.placement.position!=='cover'))throw Error('body image composition held: current approved scope is cover only');
   if(plan.completeCover&&!contract?.assets?.some(a=>a.placement.position==='cover')){
    const info=policy.titleInfo(plan.originalTitle||plan.coverTitle),box={x:72,y:180,width:936,height:720};
-   const operations=titleOperations(info.displayTitle,box,measure,policy,globalThis.ThreadsCoverTypography?'#253039':'#fff',190,contract?.titleStyle||plan.coverTitleStyle);
+   const operations=titleOperations(info.displayTitle,box,measure,policy,globalThis.ThreadsCoverTypography?'#253039':'#fff',190,contract?.titleStyle||plan.coverTitleStyle,info.originalTitle);
    accentTitle(operations,info.displayTitle,contract?.titleStyle||plan.coverTitleStyle);
    const total=operations.length*operations[0].lineHeight;operations.forEach((o,index)=>{o.y=(1080-total)/2+index*o.lineHeight;});
    layout.pages[0]={number:1,role:'cover',width:1080,height:1080,background:operations[0].typography?.palette.background||'#151b26',operations,elements:[{kind:'text',sourceId:'title'}],contentBottom:operations.at(-1).y+operations.at(-1).lineHeight,
     geometry:{title:info.displayTitle,lines:operations.map(o=>o.text),titleBox:box}};
-   layout.coverTitle=info.displayTitle;layout.titleSourceLabels=info.sourceLabels;layout.templateId='complete_text';
+   layout.coverTitle=info.displayTitle;layout.captionInputTitle=info.displayTitle;layout.titleSourceLabels=info.sourceLabels;layout.templateId='complete_text';
   }
   if(!contract?.assets?.length)return layout;
   const records=[];
@@ -54,11 +55,11 @@
     const titleBox={x:region.x+margin,y:region.y+margin,width:region.width-2*margin,height:region.height-2*margin};
     const ops=[imageOperation(a,imageDimensions[a.name.toLowerCase()],{x:0,y:0,width:d.width,height:overlay?d.height:region.y})];
     if(overlay)ops.push({kind:edge==='bottom'?'gradient':'rect',...region,color:'rgba(5,10,17,.65)'});
-    ops.push(...titleOperations(info.displayTitle,titleBox,measure,policy,'#fff',100,contract.titleStyle));
+    ops.push(...titleOperations(info.displayTitle,titleBox,measure,policy,'#fff',100,contract.titleStyle,info.originalTitle));
     accentTitle(ops,info.displayTitle,contract.titleStyle);
     layout.pages[0]={number:1,role:'cover',...d,background:'#111720',operations:ops,elements:[{kind:'image',sourceId:'illustration:'+a.itemId},{kind:'text',sourceId:'title'}],
      contentBottom:d.height-margin,geometry:{title:info.displayTitle,lines:ops.filter(o=>o.role==='title').map(o=>o.text),titleBox,protectedImageRegion:overlay?edge:'separate_band'}};
-    layout.coverTitle=info.displayTitle;layout.titleSourceLabels=info.sourceLabels;layout.templateId='composed_photo';
+    layout.coverTitle=info.displayTitle;layout.captionInputTitle=info.displayTitle;layout.titleSourceLabels=info.sourceLabels;layout.templateId='composed_photo';
     record.renderedPage=1;record.titleBox=titleBox;record.crop=ops[0];
    }
    records.push(record);

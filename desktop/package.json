@@ -73,7 +73,8 @@
       "image-production-run.cjs",
       "image-file-receiver.cjs",
       "image-file-receive.cjs",
-      "image-work-state.cjs"
+      "image-work-state.cjs",
+      "production-title.cjs"
     ],
     "extraResources": [
       {

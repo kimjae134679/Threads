@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsCoverTypography=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
  'use strict';
- const VERSION='2026-10-09.9';
+ const VERSION='2026-10-09.10';
  const dark={background:'#101116',ink:'#ffffff',accent:'#f2e34c',line:'#34343d'};
  const palettes={warm:dark,cool:dark,calm:dark,photo:dark};
  function style(title,{emphasis='',accent=null,photo=false,sizeEmphasis,sizeScale=1.03,explicitEmphasis=false,lineBreaks=null}={}){
@@ -20,6 +20,15 @@
   if(lineBreaks!==null&&(!Array.isArray(lineBreaks)||!lineBreaks.length||lineBreaks.some(line=>typeof line!=='string'||!line.trim()||line.trim().replace(/\s/gu,'').length<2)||lineBreaks.map(line=>line.trim()).join(' ').replace(/\s+/gu,' ')!==title.trim().replace(/\s+/gu,' ')))throw Error('줄바꿈은 제목 전체와 단어 경계를 보존해야 합니다.');
   return{version:VERSION,mood,palette,emphasis,sizeEmphasis,explicitEmphasis,lineBreaks:lineBreaks?.map(line=>line.trim())||null,emphasisScale:sizeScale,secondaryScale:explicitEmphasis?1:.97,maxColors:2};
  }
+ function cleanStyle(title,manual,policy,originalTitle=title){
+  if(!manual||!policy.titleInfo(originalTitle).sourceLabels.length)return manual;
+  const result={...manual};let emphasis=policy.titleInfo(result.emphasis||'').displayTitle;
+  if(!emphasis||!title.includes(emphasis))emphasis=style(title).emphasis;
+  result.emphasis=emphasis;
+  if(result.sizeEmphasis!==''&&(!result.sizeEmphasis||!emphasis.includes(result.sizeEmphasis)))result.sizeEmphasis=emphasis.trim().split(/\s+/u).at(-1)||emphasis;
+  if(result.lineBreaks){const lines=result.lineBreaks.map(line=>policy.titleInfo(line).displayTitle).filter(Boolean);result.lineBreaks=lines.join(' ').replace(/\s+/gu,' ').trim()===title.replace(/\s+/gu,' ').trim()?lines:null;}
+  return result;
+ }
  function runs(line,size,style,index,count){
   const at=style.emphasis?line.indexOf(style.emphasis):-1,sized=style.sizeEmphasis===undefined?style.emphasis:style.sizeEmphasis,large=sized?line.indexOf(sized):-1,normal=Math.round(size*(index===count-1&&count>1?style.secondaryScale:1));
   const edges=[0,line.length];if(at>=0)edges.push(at,at+style.emphasis.length);if(large>=0)edges.push(large,large+sized.length);
@@ -37,5 +46,5 @@
    return runs(line,size,{...style,emphasis:start>=0&&to>from?line.slice(from-position,to-position):'',sizeEmphasis:sizeStart>=0&&sizeTo>sizeFrom?line.slice(sizeFrom-position,sizeTo-position):''},i,lines.length);});
   return{size,lines,lineHeight,height:lines.length*lineHeight,runs:lineRuns};
  }
- return Object.freeze({VERSION,style,runs,fit});
+ return Object.freeze({VERSION,style,cleanStyle,runs,fit});
 });

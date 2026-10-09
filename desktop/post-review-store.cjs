@@ -2,6 +2,7 @@
 const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto');
 const {classifyTopic,hasOutput,initialDisposition}=require('./review-workflow-model.cjs');
 const {writeAtomic}=require('./atomic-file.cjs');
+const {titleInfo}=require('./production-title.cjs');
 const {migrateFeedback}=require('./feedback-migration.cjs');
 const {withCanonicalWriter,bindCanonicalWriter,createCanonicalReader}=require('./review-canonical-writer.cjs');
 function contained(root,file){const rel=path.relative(root,file);if(!rel||rel==='..'||rel.startsWith('..'+path.sep)||path.isAbsolute(rel))throw Error('허용되지 않은 자료 경로입니다.');return file;}
@@ -48,7 +49,7 @@ function createPostReviewStore(materialRoot,{legacyFeedbackFile=null,readOnly=fa
    const current=data.evaluations.find(e=>e.id===row.id&&e.outputVersion===outputVersion)||null;
    const previous=row.reviewRound?null:data.evaluations.filter(e=>e.id===row.id&&e.outputVersion!==outputVersion).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0]||null;
    const progress=flow.entries.find(e=>e.id===row.id&&e.outputVersion===outputVersion)||null;
-   return {...classifyTopic(row,plan),hasOutput:hasOutput(row),progress,seenAt:progress?.seenAt||null,previousSeenAt:seen.get(row.id)||null,disposition:progress?.disposition||initialDisposition(row),sourceStatus:row.status||'',sourceReason:row.reason||'',category:order.category||'all',categoryLabel:order.categoryLabel||'',rank:order.rank||9999,productionNote:order.reason||'',id:row.id,title:row.title,coverTitle:plan.coverTitle||row.title,productionBatch:row.productionBatch||null,imageEligible:eligibleImage(row,plan),outputVersion,pages:row.images?.length||0,ruleVersion:row.ruleVersion,current,previous,
+   return {...classifyTopic(row,plan),hasOutput:hasOutput(row),progress,seenAt:progress?.seenAt||null,previousSeenAt:seen.get(row.id)||null,disposition:progress?.disposition||initialDisposition(row),sourceStatus:row.status||'',sourceReason:row.reason||'',category:order.category||'all',categoryLabel:order.categoryLabel||'',rank:order.rank||9999,productionNote:order.reason||'',id:row.id,title:titleInfo(plan.coverTitle||row.title).displayTitle,originalTitle:row.title,coverTitle:titleInfo(plan.coverTitle||row.title).displayTitle,productionBatch:row.productionBatch||null,imageEligible:eligibleImage(row,plan),outputVersion,pages:row.images?.length||0,ruleVersion:row.ruleVersion,current,previous,
     pageSizes:(row.images||[]).map(i=>({width:i.width,height:i.height})),pageLabels:(row.images||[]).map((_,i)=>plan.pages?.[i]?.role==='cover'?'표지':plan.pages?.[i]?.role==='comments'?'댓글':'본문')};
   }));
   const active=await round();return {entries,workflowFile,feedbackFile:file,reviewRound:active?.reviewRound||null,historyFolder};

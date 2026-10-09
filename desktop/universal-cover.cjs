@@ -4,6 +4,7 @@ const renderTypographyCover=require('./typography-cover-canvas.cjs');
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',fontUrl=null,emphasis='',aspectRatio='legacy',typography=false,accent:titleAccent=null,titleStyle=null}){
  if(typeof title!=='string'||!title.trim()||title.length>300)throw Error('원문 제목을 확인하세요.');
+ const normalized=require('./production-title.cjs').normalizeCoverInput(title,titleStyle,emphasis),originalTitle=normalized.originalTitle,sourceLabels=normalized.sourceLabels,captionInputTitle=normalized.captionInputTitle;title=normalized.title;titleStyle=normalized.titleStyle;emphasis=normalized.emphasis;
  if(!['paper','ink','photo'].includes(variant)||variant==='photo'&&!imageUrl)throw Error('사진 후보에는 관련 원본 이미지가 필요합니다.');
  if(emphasis&&(!title.includes(emphasis)||emphasis.length>24))throw Error('강조는 원래 제목 안의 짧은 한 구절만 사용하세요.');
  if(!['legacy','auto','square','4:5'].includes(aspectRatio))throw Error('표지 비율은 auto, square 또는 4:5를 선택하세요.');
@@ -12,7 +13,7 @@ function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',
  if(aspectRatio!=='legacy'){
   const height=aspectRatio==='square'?1080:1350;
   if(typography)fontUrl='fonts/SB_Aggro_B.ttf';const family=typography?'SB_Aggro_B':'Cover';
-  const data={id,title,context,imageUrl,variant,credit,emphasis,accent:titleAccent,titleStyle,aspectRatio,width:1080,height,typography,fontFamily:family};
+  const data={id,title,originalTitle,sourceLabels,captionInputTitle,context,imageUrl,variant,credit,emphasis,accent:titleAccent,titleStyle,aspectRatio,width:1080,height,typography,fontFamily:family};
   const scripts=typography?['source-page-plan.js','source-cover-typography.js'].map(name=>require('node:fs').readFileSync(require('node:path').join(require('./editor-assets.cjs').editorRoot(),name),'utf8')).join('\n'):'';
   return '<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>'+escape(title)+'</title><style>'+
    (fontUrl?'@font-face{font-family:'+family+';src:url("'+escape(fontUrl)+'");font-weight:900}':'')+
@@ -21,7 +22,7 @@ function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',
  }
  const headline=emphasis?escape(title.slice(0,title.indexOf(emphasis)))+'<mark>'+escape(emphasis)+'</mark>'+escape(title.slice(title.indexOf(emphasis)+emphasis.length)):escape(title);
  const background=variant==='paper'?'#f4eee5':variant==='ink'?'#15171c':'#17191d',color=variant==='paper'?'#242323':'#fff',accent=variant==='paper'?'#9f4436':'#ead098';
- const data={id,title,variant};
+ const data={id,title,originalTitle,sourceLabels,captionInputTitle,variant};
  return '<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=1080"><title>'+escape(title)+'</title><style>'+
  (fontUrl?'@font-face{font-family:Cover;src:url("'+escape(fontUrl)+'");font-weight:900}':'')+
  '*{box-sizing:border-box}html,body{margin:0;width:1080px;height:1920px;overflow:hidden}.cover{width:1080px;height:1920px;position:relative;background:'+background+';color:'+color+';font-family:Cover,"Malgun Gothic",sans-serif}.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(0,0,0,.14) 44%,rgba(0,0,0,.84) 70%,#08090a 100%)}.rule{position:absolute;left:108px;top:260px;width:92px;height:10px;background:'+accent+'}.text{position:absolute;left:108px;right:108px;bottom:150px}.title{margin:0;font-weight:900;font-size:132px;line-height:1.14;letter-spacing:-3px;word-break:keep-all;overflow-wrap:anywhere;white-space:pre-wrap}.context{font-family:"Malgun Gothic",sans-serif;font-weight:500;font-size:37px;line-height:1.55;margin:44px 0 0;opacity:.84;max-height:120px;overflow:hidden}.credit{position:absolute;left:108px;right:108px;top:76px;font-family:"Malgun Gothic",sans-serif;font-size:24px;color:inherit;opacity:.8}.photo~.credit{background:#0009;border-radius:8px;padding:12px 16px;width:max-content;max-width:864px}.paper .rule{top:160px}.paper .text{top:280px;bottom:auto}.ink .text{bottom:250px}mark{color:'+accent+';background:none}.paper .context{color:#615552}</style><body><main class="cover '+variant+'" data-id="'+escape(id)+'">'+
