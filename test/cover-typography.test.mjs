@@ -44,3 +44,19 @@ test('a selected phrase retains emphasis when it crosses a title line boundary',
  const title='가족여행 다신 안 간다고 벼르는 후기',style=typography.style(title,{emphasis:'다신 안'}),fit=typography.fit(title,{width:300,height:800},measure,policy,style,100,48);
  assert.equal(fit.runs.flat().filter(r=>r.emphasized).map(r=>r.text).join('').replace(/\s/g,''),'다신안');
 });
+
+test('reviewed titles emphasize the actual situation rather than a long filler word',()=>{
+ for(const [title,phrase,mood] of [
+  ['여직원 원룸 구한다고해서 방내어줌','방내어줌','cool'],
+  ['돈 빌려줬는데 받는 방법 없을까요?..','받는 방법','warm'],
+  ['롯데리아 알바 2주차 후기','알바 2주차','calm'],
+  ['난 아부지 회사 썰 듣는거 좋아함','아부지 회사 썰','cool'],
+  ['결벽증 새언니 썰','결벽증 새언니','warm'],
+  ['군대리아 최신 근황','군대리아','calm']
+ ]){const style=typography.style(title);assert.equal(style.emphasis,phrase);assert.equal(style.mood,mood);}
+});
+
+test('automatic situation phrases keep complete Korean word boundaries',()=>{
+ assert.notEqual(typography.style('시방내어줌이라는 표현을 들은 후기').emphasis,'방내어줌이라는');
+ assert.equal(typography.style('방내어줌이라는 표현을 들은 후기').emphasis,'방내어줌이라는');
+});

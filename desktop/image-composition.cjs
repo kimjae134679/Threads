@@ -21,7 +21,7 @@ async function prepareImageComposition(handoff){
   assets.push({itemId:i.itemId,name:'composition-'+index+ext,type,data:data.toString('base64'),sha256:i.asset.sha256,placement:i.placement,composition:i.composition,
    anchorText:i.anchorText||null,provenance:i.provenance,asset:metadata,overlays:[]});
  }
- return {schema:'threads-image-composition-v1',rendererVersion:'2026-10-09.1',postId:handoff.postId,productionVersion:handoff.productionVersion,
+ return {schema:'threads-image-composition-v1',rendererVersion:'2026-10-09.2',postId:handoff.postId,productionVersion:handoff.productionVersion,
   assets,generationReceipts:handoff.generationReceipts||[],representativeOnly:!!handoff.representativeOnly,publicationAllowed:false};
 }
 module.exports={prepareImageComposition};
