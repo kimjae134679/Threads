@@ -38,3 +38,12 @@ mixed=d.importBundle(mixed,{bundle_id:'mixed',posts:[{post_id:'both',output_vers
 const mixedPlan=previewQueueSchedule(mixed,config);assert.equal(mixedPlan.counts.instagram.assigned,18);assert.equal(mixedPlan.counts.threads.assigned,0);assert.equal(mixedPlan.overflow.length,2);const mixedApplied=applyQueueSchedule(mixed,config,mixed.revision);assert.equal(mixedApplied.jobs.at(-1).state,'waiting');assert.equal(mixedApplied.jobs.at(-1).planned_slots,undefined);
 
 console.log('Platform caption contract/preservation/dry-run and Seoul 18-slot schedules: passed');
+
+let roundTrip=d.importBundle(d.createState(),{bundle_id:'round-trip',posts:[{post_id:'schedule-review',output_version:'v1',caption:'검토한 글',local_settings:{targets:['instagram'],timing:{mode:'planned',local:'2026-10-10T08:00',offset_minutes:-540}}}]});
+roundTrip=queueReviewed(roundTrip,'schedule-review');
+assert.equal(d.finalReviewStatus(roundTrip.posts[0]).passed,true);
+roundTrip=applyQueueSchedule(roundTrip,{...DEFAULT_SCHEDULE,date:'2026-10-10',windows:[{start:'09:00',end:'10:00'}]},roundTrip.revision);
+assert.equal(d.finalReviewStatus(roundTrip.posts[0]).passed,false);assert.equal(roundTrip.posts[0].final_review,null);
+roundTrip=applyQueueSchedule(roundTrip,{...DEFAULT_SCHEDULE,date:'2026-10-10',windows:[{start:'08:00',end:'09:00'}]},roundTrip.revision);
+assert.equal(roundTrip.posts[0].timing.local,'2026-10-10T08:00');assert.equal(d.finalReviewStatus(roundTrip.posts[0]).passed,false);
+console.log('Schedule round trip never restores an invalidated final pass: passed');

@@ -45,8 +45,9 @@ check('discard revise and unreviewed cannot approve or execute dry run',()=>{
   let s=setFinalReview(checked(),'p',decision,2,now);assert.equal(finalReviewStatus(s.posts[0]).decision,decision);
   assert.equal(blocked(s.posts[0]),true);assert.equal(approvedReviewBundle(s).posts.length,0);
   assert.throws(()=>approveDryRun(s,'p',revision(s)),/review_required/);
-  s=queuePost(s,'p',revision(s));s.posts[0].approval={scope:'dry-run',basis:'forged'};
-  assert.throws(()=>startDryRun(s,s.jobs[0].id),/review_required/);
+  assert.throws(()=>queuePost(s,'p',revision(s)),/final_review_required/);
+  let queued=pass(checked());queued=queuePost(queued,'p',revision(queued));queued=setFinalReview(queued,'p',decision,revision(queued),now);
+  assert.throws(()=>startDryRun(queued,queued.jobs[0].id),/stale_job|review_required/);
  }
 });
 

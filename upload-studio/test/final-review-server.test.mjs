@@ -49,3 +49,15 @@ test('Whole-state backup recovery preserves text but requires a fresh final verd
   assert.equal(restored.state.posts[0].publication_approval,null);
  }finally{await app?.close();await fs.rm(root,{recursive:true,force:true});}
 });
+
+test('Explicit displayed version and content guards reject a newly synced review target',async()=>{
+ const root=await setup();let app;
+ try{
+  app=await createStudioServer({root,port:0,seedTags:false,materialRoot:path.join(root,'missing')});
+  const state=(await (await request(app,'/api/state')).json()).state;
+  const response=await request(app,'/api/final-review',{post_id:'p1',decision:'passed',expected_revision:state.posts[0].revision,expected_output_version:'older-version',expected_basis:'older-content'});
+  assert.equal(response.status,409);assert.equal((await response.json()).code,'review_form_version_changed');
+  const after=(await (await request(app,'/api/state')).json()).state;assert.equal(after.posts[0].final_review_status,'unreviewed');
+  assert.equal(after.revision,state.revision);assert.equal(after.jobs.length,0);
+ }finally{await app?.close();await fs.rm(root,{recursive:true,force:true});}
+});

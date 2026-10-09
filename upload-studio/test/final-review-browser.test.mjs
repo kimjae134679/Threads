@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 const root=await fs.mkdtemp(path.join(os.tmpdir(),'upload-studio-browser-'));
 const studioRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const out=path.join(studioRoot,'evidence');await fs.mkdir(out,{recursive:true});
-let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0;
+let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0;
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn){for(let i=0;i<300;i++){const x=await fn();if(x)return x;await wait(100);}throw Error('browser_condition_timeout');}
 function send(method,params={}){return new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{calls.delete(id);reject(Error('CDP timeout: '+method));},10000);calls.set(id,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});socket.send(JSON.stringify({id,method,params}));});}
@@ -29,7 +29,7 @@ try {
   socket.addEventListener('message',event=>{const msg=JSON.parse(String(event.data));if(msg.id){const c=calls.get(msg.id);if(c){calls.delete(msg.id);msg.error?c.reject(Error(msg.error.message)):c.resolve(msg.result);}}else events.get(msg.method)?.(msg.params);});
   await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
   await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Fetch.enable',{patterns:[{urlPattern:'*'}]});
-  events.set('Fetch.requestPaused',p=>{if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
+  events.set('Fetch.requestPaused',p=>{if(p.request.url===app.url+'/api/final-review')finalReviewRequests++;if(holdSync&&p.request.url===app.url+'/api/production/sync'){heldSync=p.requestId;return;}if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
   await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1400,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
   await send('Page.navigate',{url:app.url});await until(()=>evaluate('document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
 
@@ -87,6 +87,35 @@ try {
   await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요")'));
   await click('[data-final-review="passed"]');await until(async()=>(await api('/api/state')).state.posts[1].final_review_status==='passed');
   await click('#add-queue');await until(async()=>(await api('/api/state')).state.jobs.length===1);
+  // Hold a real browser sync before it reaches the server, then update the
+  // production row while the final-pass click waits behind that sync.
+  const material=path.join(root,'production-materials'),raceFolder=path.join(material,'06_자동 제작 결과','race','rendered');
+  await fs.mkdir(raceFolder,{recursive:true});
+  const raceBytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl2ol8AAAAASUVORK5CYII=','base64'),{createHash}=await import('node:crypto');
+  await fs.writeFile(path.join(raceFolder,'slide-001.png'),raceBytes);
+  await fs.writeFile(path.join(raceFolder,'..','production-plan.json'),JSON.stringify({publishCaption:'[ 동기화 검토 v1 ]\n\n표시된 제작 버전만 검토한다.'}));
+  const raceRow={id:'race-review',title:'동기화 중 최종 검토',sourceUrl:'https://example.invalid/race-review',sourceFingerprint:'race-source',outputSha256:'race-output',ruleVersion:'race-rule',reviewRound:'race-v1',outputFolder:'race',images:[{name:'rendered/slide-001.png',sha256:createHash('sha256').update(raceBytes).digest('hex')}]};
+  const raceStatus=path.join(material,'06_자동 제작 결과','status.json');
+  await fs.writeFile(raceStatus,JSON.stringify({entries:[raceRow]}));await api('/api/production/sync',{});
+  await evaluate('window.__beforeRaceReload=true');await send('Page.reload');await until(()=>evaluate('window.__beforeRaceReload!==true && !!document.querySelector(\'[data-post="race-review"]\') && document.querySelector("#production-sync-state").textContent.includes("활성")'));
+  await click('[data-post="race-review"]');await until(()=>evaluate('document.querySelector("#identity").textContent.includes("동기화 중 최종 검토")'));
+  const raceBefore=(await api('/api/state')).state.posts.find(p=>p.post_id==='race-review');
+  holdSync=true;raceRow.reviewRound='race-v2';await fs.writeFile(raceStatus,JSON.stringify({entries:[raceRow]}));
+  await until(()=>heldSync);
+  const requestsBefore=finalReviewRequests;
+  await click('[data-final-review="passed"]');
+  await until(()=>evaluate('document.querySelector(\'[data-final-review="passed"]\').disabled'));
+  holdSync=false;await send('Fetch.continueRequest',{requestId:heldSync});heldSync=null;
+  await until(()=>evaluate('document.querySelector("#status").classList.contains("error") && document.querySelector("#status").textContent.includes("현재 버전 검수를 다시 불러온")'));
+  const raceAfter=(await api('/api/state')).state.posts.find(p=>p.post_id==='race-review');
+  assert.notEqual(raceAfter.output_version,raceBefore.output_version);
+  assert.equal(raceAfter.final_review_status,'unreviewed');assert.equal(raceAfter.final_review,null);
+  assert.equal(finalReviewRequests,requestsBefore,'unseen synced version must never reach verdict POST');
+  assert.equal(await evaluate('document.querySelector("#add-queue").disabled'),true);
+  // A new explicit click after seeing the refreshed version may pass it.
+  await click('[data-final-review="passed"]');await until(async()=>(await api('/api/state')).state.posts.find(p=>p.post_id==='race-review').final_review_status==='passed');
+  assert.equal(finalReviewRequests,requestsBefore+1);
+  await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요")'));
   // A competing tab edit causes a visible CAS error, while the old pass is invalidated.
   post=(await api('/api/state')).state.posts[1];
   await api('/api/posts/'+encodeURIComponent(second),{expected_revision:post.revision,patch:{tags:'#다른창'}});
