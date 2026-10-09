@@ -2,7 +2,7 @@
 
 Observed provider snapshot: 2026-10-10 around 03:06 KST. Results below describe that checkpoint, not a continuous live monitor.
 
-Role: 04_REVIEW_PUBLISH. This is an operational checkpoint, not a completed live image integration.
+Role: 04_REVIEW_PUBLISH. The private image delivery test succeeded in the latest follow-up below. Production publishing still awaits a verified exact-version review handoff.
 
 ## Observed results
 
@@ -87,3 +87,17 @@ The resolved candidate was read through Library, and its fixed file reference wa
 The image read returned an image asset pointer and extracted caption/OCR; this execution environment did not receive renderable pixels. Original visual inspection has therefore not been completed here. No local file was created, and no unsupported PC access was attempted.
 
 Cloudinary's exposed upload schema supports URL input, so an original-byte remote ingestion route is a candidate without assuming the remote service can read a PC path. The URL has not been submitted to Cloudinary in this checkpoint. Library helper requirements still govern any local materialization. No successful upload, new asset URL, draft image edit or current-version production approval is claimed.
+
+## Private image delivery test succeeded — 2026-10-10 KST
+
+The parent execution environment materialized and visually inspected the same resolved Library candidate. It confirmed an actual finished cover image rather than a UI screenshot. This satisfied the requested original visual check. The older attachment remains test-only and is not an established current passed production version.
+
+A fresh Library transfer preparation returned a HTTPS GET download URL with no extra request headers. The official Cloudinary upload_asset tool successfully ingested that URL into the approved test storage group. The target public object was checked absent before upload, overwrite=false was supplied, and no transformation, conversion, OCR, analysis or new credential was requested. Neither a PC path nor the parent's cloud filesystem path was submitted as a remote-server-local file.
+
+An independent Cloudinary get_asset_details read confirmed the same asset and version: PNG, 1,615,694 bytes, 1080 by 1080 pixels, public upload delivery, zero derived assets. These match the Library source metadata. Cryptographic source-versus-delivery byte equality has not been independently checked; matching byte counts and dimensions are not a hash comparison.
+
+The existing Buffer test draft was then edited with the verified versioned HTTPS image URL, unchanged text, saveToDraft=true and no mode/dueAt. No duplicate post was created. An independent get_post read verified the same draft, exactly one image, unchanged text, matching media source URL, null dueAt/sentAt, sharedNow=false and isCustomScheduled=false. A complete scheduled/sending read for both intended channels still returned zero posts and hasNextPage=false.
+
+Exact source identifiers, Cloudinary asset/object/version references, image URL, and Buffer post ID are retained in the private task evidence. This public document contains no private title, image link, account identifier or credential. No payment, plan change, public social reservation or public social publication occurred.
+
+The one private test is complete. Production delivery remains held until the review producer supplies explicit user-passed immutable versions with exact captions/tags, ordered source image references/hashes, destination channels and duplicate fences. The test image must never enter the production refill queue.
