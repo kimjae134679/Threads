@@ -1,3 +1,5 @@
+import './title-edit-approval.test.mjs';
+import './handoff-performance.test.mjs';
 import './delivery-results.test.mjs';
 import './title-format.test.mjs';
 import './review-decisions.test.mjs';

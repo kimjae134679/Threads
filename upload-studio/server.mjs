@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import * as domain from './domain.mjs';
 import {StateStore} from './store.mjs';
-import {migrateTitleFormat} from './title-format.mjs';
+import {migrateTitleFormat,validateTitleEditApproval} from './title-format.mjs';
 import {readDeliveryResults,deliveryResultsProjection} from './delivery-results.mjs';
 import {seedReviewTags} from './review-tags.mjs';
 import {reviewDecisionProjection} from './review-decisions.mjs';
@@ -27,9 +27,33 @@ const fail=(code,status=400)=>{throw Object.assign(new Error(code),{code,status}
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8'};
 async function readBody(req){let bytes=0;const chunks=[];for await(const c of req){bytes+=c.length;if(bytes>16000000)fail('body_too_large',413);chunks.push(c);}try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{fail('invalid_json');}}
 function sendJson(res,status,value){if(value?.state?.posts)value={...value,state:{...value.state,posts:value.state.posts.map(p=>({...p,review_note:domain.reviewNote(p),review_note_updated_at:p.review_note_updated_at||null,final_review_status:domain.finalReviewStatus(p).decision}))}};res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
+// Private local edit authorization is never imported from requests or producer input.
+export async function readTitleEditApproval(root){
+  const file=path.join(root,'title-edit-approval.json'),limit=1048576;
+  let before;try{before=await fs.lstat(file);}catch(error){if(error.code==='ENOENT')return null;fail('title_edit_approval_invalid');}
+  if(!before.isFile()||before.isSymbolicLink()||before.size>limit)fail('title_edit_approval_invalid');
+  let handle;
+  try{
+    const [rootReal,fileReal]=await Promise.all([fs.realpath(root),fs.realpath(file)]);
+    if(path.relative(rootReal,fileReal)!=='title-edit-approval.json')fail('title_edit_approval_invalid');
+    handle=await fs.open(file,'r');
+    const actual=await handle.stat();
+    if(!actual.isFile()||actual.size>limit||actual.dev!==before.dev||actual.ino!==before.ino)fail('title_edit_approval_invalid');
+    const bytes=Buffer.alloc(limit+1);let length=0;
+    while(length<bytes.length){
+      const {bytesRead}=await handle.read(bytes,length,bytes.length-length,length);
+      if(!bytesRead)break;length+=bytesRead;
+    }
+    if(length>limit)fail('title_edit_approval_invalid');
+    const value=JSON.parse(bytes.subarray(0,length).toString('utf8'));
+    if(value===null)fail('title_edit_approval_invalid');
+    return validateTitleEditApproval(value);
+  }catch{fail('title_edit_approval_invalid');}
+  finally{if(handle)await handle.close();}
+}
 export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true}={}) {
   let lastDelivery={records:[],warnings:[]};
-  const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
+  const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records).filter(row=>Object.values(row.platforms||{}).some(platform=>platform.recordedAt!=null||platform.status==='error')),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
   let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
   let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
@@ -92,7 +116,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   const store=new StateStore(root,{onSaved:async state=>{await refreshDecisions(state);requestHandoff(state,true);}}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
   const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
-  await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s))).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
+  const titleEditApproval=await readTitleEditApproval(root);
+  await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
   // Recreate the small decision file under the existing state lock without changing any review.
   await store.mutate(async state=>{await refreshDecisions(state);requestHandoff(state,true);return state;});
   const server=http.createServer(async(req,res)=>{

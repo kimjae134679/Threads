@@ -17,10 +17,10 @@ let count=0;const check=async(name,run)=>{await run();count++;console.log('ok ha
 
 await check('verdict and notes persist while full export is blocked and stale exports never become latest',async()=>{
  const root=await fs.mkdtemp(path.join(os.tmpdir(),'studio-handoff-performance-'));let app,blockRevision=null,nextBlockRevision=null;
- const first=deferred(),firstStarted=deferred(),second=deferred(),secondStarted=deferred(),original=ReviewHandoff.prototype.write;
+ const first=deferred(),firstStarted=deferred(),second=deferred(),secondStarted=deferred(),snapshotRead=deferred(),resumeSnapshot=deferred(),original=ReviewHandoff.prototype.write,originalRead=StateStore.prototype.read;
  ReviewHandoff.prototype.write=async function(state,...args){
-  if(state.revision===blockRevision){firstStarted.resolve();await first.promise;}
-  if(state.revision===nextBlockRevision){secondStarted.resolve();await second.promise;}
+  if(this.root===root&&state.revision===blockRevision){firstStarted.resolve();await first.promise;}
+  if(this.root===root&&state.revision===nextBlockRevision){secondStarted.resolve();await second.promise;}
   return original.call(this,state,...args);
  };
  const request=async(route,body,status=200)=>{const response=await fetch(app.url+route,{method:body?'POST':'GET',headers:body?{'content-type':'application/json','x-studio-local':'1'}:{},body:body?JSON.stringify(body):undefined});const value=await response.json();assert.equal(response.status,status,JSON.stringify(value));return value;};
@@ -38,10 +38,17 @@ await check('verdict and notes persist while full export is blocked and stale ex
   assert.equal(durable.revision,verdict.state.revision);assert.equal(thin.revision,durable.revision);assert.equal(thin.posts[17].decision,'passed');
   await bounded(firstStarted.promise,'background export start');
   let latest=(await request('/api/final-review/handoff')).latest;assert.equal(latest.pending,true);assert.equal(latest.path,null);assert.equal(latest.state_revision,durable.revision);
+  // Freeze an explicit request after it has read the old snapshot, then save a
+  // newer state. The obsolete request must not replace the newer queued export.
+  let pauseSnapshot=true;
+  StateStore.prototype.read=async function(){const value=await originalRead.call(this);if(this.root===root&&pauseSnapshot){pauseSnapshot=false;snapshotRead.resolve(value.revision);await resumeSnapshot.promise;}return value;};
+  const obsolete=request('/api/final-review/handoff',{expected_revision:durable.revision},409);
+  assert.equal(await bounded(snapshotRead.promise,'old explicit snapshot read'),durable.revision);
   nextBlockRevision=durable.revision+1;
   const noteSaved=await bounded(request('/api/posts/p-17',{expected_revision:verdict.state.posts[17].revision,patch:{review_note:'빠른 저장 메모\n유지'}}),'note save');
   assert.equal(noteSaved.state.posts[17].final_review_status,'passed');
   assert.equal(JSON.parse(await fs.readFile(path.join(root,'final-review-decisions.json'),'utf8')).revision,noteSaved.state.revision);
+  resumeSnapshot.resolve();await bounded(obsolete,'obsolete explicit export rejection');StateStore.prototype.read=originalRead;
   first.resolve();await bounded(secondStarted.promise,'coalesced current export start');
   latest=(await request('/api/final-review/handoff')).latest;assert.equal(latest.pending,true);assert.equal(latest.path,null);assert.equal(latest.state_revision,noteSaved.state.revision);
   await request('/api/final-review/handoff',{expected_revision:durable.revision},409);
@@ -51,7 +58,7 @@ await check('verdict and notes persist while full export is blocked and stale ex
   const manifest=JSON.parse(await fs.readFile(ready.path,'utf8'));assert.equal(manifest.state_revision,noteSaved.state.revision);assert.equal(manifest.posts[0].images[0].sha256,asset.asset_id);
   console.log('Measured verdict API fixture latency with full export blocked: '+elapsed.toFixed(1)+' ms; fixture contains 54 image references.');
  }finally{
-  first.resolve();second.resolve();if(app)await app.close();ReviewHandoff.prototype.write=original;await fs.rm(root,{recursive:true,force:true});
+  resumeSnapshot.resolve();StateStore.prototype.read=originalRead;first.resolve();second.resolve();if(app)await app.close();ReviewHandoff.prototype.write=original;await fs.rm(root,{recursive:true,force:true});
  }
 });
 
@@ -87,8 +94,13 @@ await check('startup title migration invalidates only changed copies and deliver
   const receipt={schema:1,postId:post.post_id,outputVersion:post.output_version,fingerprint:deliveryFingerprint(post),platform:'instagram',providerPostId:'fixture-provider-id',status:'sent',externalUrl:'https://example.invalid/fixture-post',providerVerifiedAt:at,publishedAt:at,scheduledAt:null,recordedAt:at};
   await fs.writeFile(path.join(directory,'fixture.json'),JSON.stringify(receipt));await fs.writeFile(path.join(directory,'bad.json'),'{bad');
   result=await request();assert.equal(result.finalReview.deliveryResults.find(row=>row.postId==='unchanged').deliveryStatus,'partially_posted');assert.equal(result.finalReview.deliveryWarnings.length,1);assert.equal(result.state.revision,savedRevision);assert.equal(result.state.posts[1].final_review_status,'passed');
+  const postMutation=async patch=>{const response=await fetch(app.url+'/api/posts/unchanged',{method:'POST',headers:{'content-type':'application/json','x-studio-local':'1'},body:JSON.stringify({expected_revision:postRevision,patch})});assert.equal(response.status,200);const value=await response.json();postRevision=value.state.posts[1].revision;return value;};
+  let postRevision=result.state.posts[1].revision;
+  const noteResponse=await postMutation({review_note:'receipt cache note'});assert.equal(noteResponse.state.posts[1].final_review_status,'passed');assert.equal(noteResponse.finalReview.deliveryResults.find(row=>row.postId==='unchanged').deliveryStatus,'partially_posted');
+  const editResponse=await postMutation({caption:'new caption changes receipt fingerprint'});assert.equal(editResponse.state.posts[1].final_review_status,'unreviewed');assert.equal(editResponse.finalReview.deliveryResults.find(row=>row.postId==='unchanged'),undefined);
+  const expectedRestartRevision=editResponse.state.revision;
   const receiptBytes=await fs.readFile(path.join(directory,'fixture.json'));await app.close();app=null;
-  app=await createStudioServer({root,port:0,materialRoot:path.join(root,'no-production'),seedTags:false});result=await request();assert.equal(result.state.revision,savedRevision);assert.deepEqual(await fs.readFile(path.join(directory,'fixture.json')),receiptBytes);
+  app=await createStudioServer({root,port:0,materialRoot:path.join(root,'no-production'),seedTags:false});result=await request();assert.equal(result.state.revision,expectedRestartRevision);assert.deepEqual(await fs.readFile(path.join(directory,'fixture.json')),receiptBytes);
  }finally{if(app)await app.close();await fs.rm(root,{recursive:true,force:true});}
 });
 console.log('Deferred handoff save, stale export fence, asset integrity, migration and read-only delivery integration: '+count+' checks passed. External calls: 0.');

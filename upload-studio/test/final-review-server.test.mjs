@@ -32,7 +32,8 @@ test('HTTP current pass persists through restart and exports only current review
   assert.equal((await request(app,'/api/final-review/handoff',{expected_revision:state.revision-1})).status,409);
   response=await request(app,'/api/posts/p1',{expected_revision:state.posts[0].revision,patch:{platform_captions:{instagram:'수정한 현재 문안'}}});
   assert.equal(response.status,200);state=(await response.json()).state;assert.equal(state.posts[0].final_review_status,'unreviewed');
-  const preview=await (await request(app,'/api/final-review/handoff')).json();assert.equal(preview.count,0);assert.equal(preview.latest.count,0);
+  const preview=await (await request(app,'/api/final-review/handoff')).json();assert.equal(preview.count,0);assert.equal(preview.latest.count,0);assert.equal(preview.latest.state_revision,state.revision);if(preview.latest.pending)assert.equal(preview.latest.path,null);
+  const refreshed=await (await request(app,'/api/final-review/handoff',{expected_revision:state.revision})).json();assert.equal(refreshed.count,0);assert.equal(refreshed.state_revision,state.revision);
   assert.deepEqual(await fs.readFile(exported.path),original);assert.equal(state.jobs.length,0);assert.equal(state.publications.length,0);
   assert.equal((await request(app,'/api/publish',{})).status,405);
  }finally{await app?.close();await fs.rm(root,{recursive:true,force:true});}

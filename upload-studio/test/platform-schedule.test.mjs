@@ -15,7 +15,7 @@ let s=d.syncProductionBundle(d.createState(),{posts:[{post_id:'p',output_version
 s=d.editPost(s,'p',{platform_captions:{threads:'사용자 직접 수정'}},1);
 const changed=validateProductionCaptions(authored('v1','수정된 원문 본문'),row,'v1');
 s=d.syncProductionBundle(s,{posts:[{post_id:'p',output_version:'v1',...changed}]});
-assert.equal(s.posts[0].platform_captions.threads,'사용자 직접 수정');assert.equal(s.posts[0].platform_captions.instagram,changed.caption);assert.equal(s.posts[0].review,null);
+assert.equal(s.posts[0].platform_captions.threads,'사용자 직접 수정');assert.equal(s.posts[0].platform_captions.instagram,'게시 제목\n\n수정된 원문 본문\n\n본문 2\n\n실제 결말');assert.equal(s.posts[0].review,null);
 const revision=s.revision;s=d.syncProductionBundle(s,{posts:[{post_id:'p',output_version:'v1',...changed}]});assert.equal(s.revision,revision);
 s=d.syncProductionBundle(s,{posts:[{post_id:'p',output_version:'v2',...validateProductionCaptions(authored('v2','새 버전 본문'),row,'v2')}]});
 assert.equal(s.posts[0].platform_captions.threads,'사용자 직접 수정');assert.match(s.posts[0].platform_captions.instagram,/새 버전 본문/);assert.equal(s.jobs.length,0);assert.equal(s.posts[0].approval,null);
