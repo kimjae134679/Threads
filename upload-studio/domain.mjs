@@ -27,7 +27,7 @@ function normalizeReview(r){if(!r)return null;if(!Number.isInteger(r.score)||r.s
 export function platformCaption(post,platform='instagram'){return post.platform_captions?.[platform]??post.caption??'';}
 function captionsOf(post){return Object.fromEntries(['instagram','threads'].map(k=>[k,cleanCaptionFirstLine(str(post.platform_captions?.[k]??post.caption??''))]));}
 function normalizeCaptionEdits(value){if(value===undefined)return {instagram:false,threads:false};if(!value||Object.keys(value).some(k=>!has(PLATFORM_LIMITS,k))||['instagram','threads'].some(k=>typeof value[k]!=='boolean'))fail('invalid_caption_edits');return {...value};}
-function captionEdits(post){return post.platform_caption_edited||{instagram:!!post.caption,threads:!!post.caption};}
+function captionEdits(post){return post.platform_caption_edited||{instagram:!!post.caption||post.revision>1,threads:!!post.caption||post.revision>1};}
 function normalizePost(p) {
   const settings=p.local_settings||{};const targets=settings.targets||["instagram","threads"];
   if(!Array.isArray(targets)||targets.some(x=>!has(PLATFORM_LIMITS,x))||new Set(targets).size!==targets.length)fail("invalid_platform");
@@ -38,7 +38,7 @@ function postAt(s,postId){const p=s.posts.find(x=>x.post_id===postId);if(!p)fail
 function invalidate(s,postId){for(const job of s.jobs.filter(x=>x.post_id===postId&&!["cancelled","dry_run_complete"].includes(x.state))){job.stale=true;if(job.state!=="running"&&job.state!=="reconciliation")job.state="waiting";}}
 export function importBundle(state,bundle){
   rejectSecrets(bundle);if(!bundle||!Array.isArray(bundle.posts)||!bundle.posts.length||bundle.posts.length>1000)fail("bundle_invalid");str(bundle.bundle_id,200);
-  const s=clone(state),seen=new Set();for(const raw of bundle.posts){const p=normalizePost(raw);if(seen.has(p.post_id))fail("duplicate_post");seen.add(p.post_id);const existing=s.posts.findIndex(x=>x.post_id===p.post_id);if(existing<0)s.posts.push(p);else {const prev=s.posts[existing];if(prev.output_version===p.output_version)fail("same_version_import_conflict");s.archived_posts.push(prev);p.revision=prev.revision+1;s.posts[existing]=p;invalidate(s,p.post_id);}}
+  const s=clone(state),seen=new Set();for(const raw of bundle.posts){const p=normalizePost(raw);if(!has(raw,'platform_caption_edited'))p.platform_caption_edited={instagram:true,threads:true};if(seen.has(p.post_id))fail("duplicate_post");seen.add(p.post_id);const existing=s.posts.findIndex(x=>x.post_id===p.post_id);if(existing<0)s.posts.push(p);else {const prev=s.posts[existing];if(prev.output_version===p.output_version)fail("same_version_import_conflict");s.archived_posts.push(prev);p.revision=prev.revision+1;s.posts[existing]=p;invalidate(s,p.post_id);}}
   s.revision++;return s;
 }
 // Producer refresh never replaces local writing or creates publication jobs.

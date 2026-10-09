@@ -27,4 +27,13 @@ const config={...DEFAULT_SCHEDULE,date:'2026-10-10'},slots=dailySlots(config);as
 let queue=d.createState();for(let n=0;n<20;n++){queue=d.importBundle(queue,{bundle_id:'q',posts:[{post_id:'q'+n,output_version:'v1',caption:'문안'}]});queue=d.queuePost(queue,'q'+n,1);}
 const preview=previewQueueSchedule(queue,config);assert.equal(preview.counts.instagram.assigned,18);assert.equal(preview.counts.threads.assigned,18);assert.equal(preview.overflow.length,4);assert.equal(queue.jobs[0].state,'waiting');
 const assigned=applyQueueSchedule(queue,config,queue.revision);assert.equal(assigned.jobs[17].planned_slots.instagram.local,'2026-10-10T20:30');assert.equal(assigned.jobs[18].state,'waiting');assert.equal(assigned.publications.length,0);assert.equal(assigned.dry_runs.length,0);assert.equal(assigned.posts[0].approval,null);assert.throws(()=>applyQueueSchedule(assigned,config,queue.revision),/revision_conflict/);
+
+const userBundle=d.importBundle(d.createState(),{bundle_id:'user-export',posts:[{post_id:'p',output_version:'v1',caption:'사용자 가져온 문안'}]});assert.equal(d.syncProductionBundle(userBundle,{posts:[{post_id:'p',output_version:'v1',...fields}]}).posts[0].caption,'사용자 가져온 문안');
+const legacy=d.importBundle(d.createState(),{bundle_id:'legacy',posts:[{post_id:'p',output_version:'v1',caption:'old text'}]});
+delete legacy.posts[0].platform_captions;delete legacy.posts[0].platform_caption_edited;legacy.posts[0].caption='';legacy.posts[0].revision=2;
+const migrated=d.syncProductionBundle(legacy,{posts:[{post_id:'p',output_version:'v1',...fields}]});assert.equal(migrated.posts[0].platform_captions.instagram,'');assert.equal(migrated.posts[0].platform_captions.threads,'');assert.equal(migrated.posts[0].platform_caption_edited.instagram,true);
+let mixed=d.createState();for(let n=0;n<18;n++){mixed=d.importBundle(mixed,{bundle_id:'mixed',posts:[{post_id:'ig'+n,output_version:'v1',caption:'문안',local_settings:{targets:['instagram']}}]});mixed=d.queuePost(mixed,'ig'+n,1);}
+mixed=d.importBundle(mixed,{bundle_id:'mixed',posts:[{post_id:'both',output_version:'v1',caption:'문안'}]});mixed=d.queuePost(mixed,'both',1);
+const mixedPlan=previewQueueSchedule(mixed,config);assert.equal(mixedPlan.counts.instagram.assigned,18);assert.equal(mixedPlan.counts.threads.assigned,0);assert.equal(mixedPlan.overflow.length,2);const mixedApplied=applyQueueSchedule(mixed,config,mixed.revision);assert.equal(mixedApplied.jobs.at(-1).state,'waiting');assert.equal(mixedApplied.jobs.at(-1).planned_slots,undefined);
+
 console.log('Platform caption contract/preservation/dry-run and Seoul 18-slot schedules: passed');

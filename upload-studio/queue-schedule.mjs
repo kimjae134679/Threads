@@ -18,10 +18,11 @@ export function previewQueueSchedule(state,config){
  const slots=dailySlots(config),cursors={instagram:0,threads:0},assignments=[],overflow=[];
  const jobs=state.jobs.filter(j=>['waiting','scheduled'].includes(j.state)&&!j.stale);
  for(const job of jobs){const post=state.posts.find(p=>p.post_id===job.post_id);if(!post||job.output_version!==post.output_version||job.basis!==contentBasis(post))continue;const times={};
-  for(const target of job.targets){const i=cursors[target]++;if(i<slots.length)times[target]=slots[i];else overflow.push({job_id:job.id,post_id:job.post_id,platform:target});}
+  if(job.targets.every(target=>cursors[target]<slots.length)){for(const target of job.targets)times[target]=slots[cursors[target]++];}
+  else for(const target of job.targets)overflow.push({job_id:job.id,post_id:job.post_id,platform:target,reason:'combined_job_capacity_exceeded'});
   if(Object.keys(times).length)assignments.push({job_id:job.id,post_id:job.post_id,slots:times});
  }
- return {state_revision:state.revision,config:clone(config),capacity_per_platform:slots.length,counts:Object.fromEntries(Object.keys(cursors).map(k=>[k,{assigned:Math.min(cursors[k],slots.length),overflow:Math.max(0,cursors[k]-slots.length)}])),assignments,overflow,externalCalls:0};
+ return {state_revision:state.revision,config:clone(config),capacity_per_platform:slots.length,counts:Object.fromEntries(Object.keys(cursors).map(k=>[k,{assigned:cursors[k],overflow:overflow.filter(x=>x.platform===k).length}])),assignments,overflow,externalCalls:0};
 }
 export function applyQueueSchedule(state,config,expectedRevision){
  if(state.revision!==expectedRevision)fail('revision_conflict');
