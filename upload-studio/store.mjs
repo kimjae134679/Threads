@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {randomUUID} from 'node:crypto';
+import {captureHistory} from './history.mjs';
 import {createState,validateState} from './domain.mjs';
 const error=(code,status=500)=>Object.assign(new Error(code),{code,status});
 const ignoreGone=e=>{if(!['ENOENT','ENOTEMPTY','EEXIST'].includes(e.code))throw e;};
@@ -40,6 +41,6 @@ export class StateStore {
     }
   }
   async write(file,value){const temporary=path.join(this.root,'.'+path.basename(file)+'.'+randomUUID()+'.tmp');const handle=await fs.open(temporary,'wx',0o600);try{await handle.writeFile(JSON.stringify(value)+'\n');await handle.sync();}finally{await handle.close();}try{await fs.rename(temporary,file);}finally{await fs.rm(temporary,{force:true});}}
-  async mutate(fn){const lease=await this.acquire();try{const previous=await this.read(),next=validateState(await fn(previous));if(next.revision===previous.revision)return previous;await this.write(this.backup,previous);await this.write(this.file,next);return next;}finally{await this.release(lease);}}
+  async mutate(fn){const lease=await this.acquire();try{const previous=await this.read(),next=validateState(captureHistory(previous,validateState(await fn(previous)),new Date().toISOString()));if(next.revision===previous.revision)return previous;await this.write(this.backup,previous);await this.write(this.file,next);return next;}finally{await this.release(lease);}}
   async restoreBackup(){const lease=await this.acquire();try{let backup;try{backup=validateState(JSON.parse(await fs.readFile(this.backup,'utf8')));}catch{throw error('backup_unavailable');}try{await fs.rename(this.file,path.join(this.root,'state.corrupt.'+Date.now()+'.json'));}catch(e){if(e.code!=='ENOENT')throw e;}backup.revision++;await this.write(this.file,backup);return backup;}finally{await this.release(lease);}}
 }

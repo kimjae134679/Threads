@@ -1,3 +1,8 @@
+import './carousel-logic.test.mjs';
+import './oauth-callback.test.mjs';
+import './connection-tags.test.mjs';
+import './reels.test.mjs';
+import './history.test.mjs';
 import './platform-schedule.test.mjs';
 import './contract.test.mjs';
 import assert from 'node:assert/strict';

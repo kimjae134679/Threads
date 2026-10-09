@@ -1,4 +1,4 @@
-import {localTiming,contentBasis} from './domain.mjs';
+import {localTiming,contentBasis,isActivePost} from './domain.mjs';
 export const DEFAULT_WINDOWS=Object.freeze([{start:'08:00',end:'11:00'},{start:'12:00',end:'14:00'},{start:'17:00',end:'21:00'}]);
 export const DEFAULT_SCHEDULE=Object.freeze({timezone:'Asia/Seoul',interval_minutes:30,windows:DEFAULT_WINDOWS});
 const fail=code=>{throw Object.assign(new Error(code),{code,status:code==='revision_conflict'?409:400});};
@@ -17,7 +17,7 @@ export function dailySlots(config){
 export function previewQueueSchedule(state,config){
  const slots=dailySlots(config),cursors={instagram:0,threads:0},assignments=[],overflow=[];
  const jobs=state.jobs.filter(j=>['waiting','scheduled'].includes(j.state)&&!j.stale);
- for(const job of jobs){const post=state.posts.find(p=>p.post_id===job.post_id);if(!post||job.output_version!==post.output_version||job.basis!==contentBasis(post))continue;const times={};
+ for(const job of jobs){const post=state.posts.find(p=>p.post_id===job.post_id);if(!post||!isActivePost(post)||job.output_version!==post.output_version||job.basis!==contentBasis(post))continue;const times={};
   if(job.targets.every(target=>cursors[target]<slots.length)){for(const target of job.targets)times[target]=slots[cursors[target]++];}
   else for(const target of job.targets)overflow.push({job_id:job.id,post_id:job.post_id,platform:target,reason:'combined_job_capacity_exceeded'});
   if(Object.keys(times).length)assignments.push({job_id:job.id,post_id:job.post_id,slots:times});
