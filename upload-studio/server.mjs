@@ -15,6 +15,7 @@ import {ProductionSync} from './production-sync.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {historyFor,undoPost,redoPost,restorePostSnapshot} from './history.mjs';
 import {offlinePlan} from './adapter.mjs';
+import {previewBufferPost,recoverBufferAttempts} from './buffer.mjs';
 import {PublicationJournal} from './vendor/publication-journal.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url));
 const fail=(code,status=400)=>{throw Object.assign(new Error(code),{code,status});};
@@ -25,7 +26,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   const store=new StateStore(root),assets=new LocalAssets(root),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
   const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
-  await store.mutate(domain.recoverJobs);
+  await store.mutate(s=>recoverBufferAttempts(domain.recoverJobs(s)));
   const server=http.createServer(async(req,res)=>{
     try {
       const actualPort=server.address().port,hosts=['127.0.0.1:'+actualPort,'localhost:'+actualPort];
@@ -41,6 +42,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='POST'&&route==='/api/videos'){if(req.headers['x-studio-local']!=='1'||!['video/mp4','video/quicktime'].includes(req.headers['content-type']))fail('local_request_required',403);const asset=await videos.add({stream:req,mime:req.headers['content-type'],name:'local-video'});return send(res,200,{asset,externalCalls:0});}
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
+      if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
       if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
       if(req.method==='GET'&&route==='/api/schedule-defaults')return send(res,200,{defaults:(await store.read()).schedule_defaults||DEFAULT_SCHEDULE});
       if(req.method==='GET'&&route==='/api/state')return send(res,200,{state:await store.read(),mode:'offline-only',accountsConnected:false});
@@ -49,6 +51,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='POST'&&route.startsWith('/api/')){
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
         const body=await readBody(req);domain.rejectSecrets(body);let state;
+        if(route==='/api/buffer/preview'){const saved=await store.read(),post=saved.posts.find(p=>p.post_id===body.post_id);if(!post)fail('post_not_found');if(body.expected_revision!==post.revision)fail('revision_conflict',409);return send(res,200,previewBufferPost(post,body.options||{}));}
+        if(route.startsWith('/api/buffer/'))fail('live_operation_disabled',405);
         if(route==='/api/connection/prepare')return send(res,200,connections.prepare(body));
         if(route==='/api/common-tags')return send(res,200,{state:await store.mutate(s=>domain.setCommonTags(s,body.tags,body.expected_revision)),externalCalls:0});
         else if(route==='/api/queue/order')return send(res,200,{state:await store.mutate(s=>domain.moveQueueJob(s,body.job_id,body.direction,body.expected_revision)),externalCalls:0});
