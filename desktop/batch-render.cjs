@@ -69,7 +69,8 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       document.getElementById('batchTemplate').value=item.plan.editorial?.templateId||'auto';
       document.getElementById('batchCanvas').value=input.editorial?.aspectRatio||'threads';
       const title=item.plan.originalTitle||input.title;
-      const coverTitle=input.imageComposition?window.ThreadsPagePlan.headline(title):input.editorial?.coverTitle||window.ThreadsPagePlan.headline(title);
+      window.ThreadsSourceCuration.normalizeTitles(item.plan);
+      const coverTitle=window.ThreadsPagePlan.titleInfo(input.editorial?.coverTitle||item.plan.displayTitle||title).displayTitle;
       document.getElementById('coverTitle').value=input.editorial?.coverLines?.join('\\n')||coverTitle;
       document.getElementById('titleHighlights').value=(input.editorial?.titleHighlights||[]).join(', ');
       document.getElementById('coverTitleEvidence').value=input.editorial?.titleEvidence||title;

@@ -1,5 +1,6 @@
 'use strict';
 const path=require('node:path');
+const {titleInfo}=require('./production-title.cjs');
 const {writeAtomic}=require('./atomic-file.cjs');
 const labels={generated:'검수 전 제작',already_done:'이미 제작됨',needs_source:'원문 부족',needs_access:'접근·제공 권한 필요',
  needs_exact_url:'정확한 주소 필요',needs_media:'본문 이미지 누락',needs_selection:'원문 선별 필요',unavailable:'삭제·없는 글',
@@ -7,7 +8,8 @@ const labels={generated:'검수 전 제작',already_done:'이미 제작됨',need
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const href=relative=>relative.replaceAll('\\','/').split('/').map(encodeURIComponent).join('/');
 async function writeCatalog(output,report){
- const rows=report.entries.map(row=>{
+ const rows=report.entries.map(original=>{
+  const row={...original,title:titleInfo(original.displayTitle||original.title).displayTitle};
   const input=path.relative(output,path.join(row.originalInputFolder||report.inputFolder,row.relativePath||'.',row.sourceReferenceFile||'자료 안내.txt'));
   const result=row.outputFolder?href(row.outputFolder+'/rendered/slide-001.png'):null;
   return '<details data-title="'+escape(row.title.toLocaleLowerCase())+'" data-ready="'+(row.outputFolder?'1':'0')+'"><summary><b>'+
@@ -29,6 +31,7 @@ async function writeCatalog(output,report){
  await writeAtomic(path.join(output,'자료 목록.html'),html);
 }
 async function writeResultGallery(folder,entry){
+ entry={...entry,title:titleInfo(entry.displayTitle||entry.title).displayTitle};
  let plan=null;try{plan=JSON.parse(await require('node:fs/promises').readFile(path.join(folder,'production-plan.json'),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
  const asset=entry.coverAsset,credit=asset?'<p class="credit">표지 '+escape(asset.kind==='ai_generated'?'AI 생성 장면':'참고 사진')+' · 실제 사건·당사자 사진 아님 · '+escape(asset.attribution)+' · '+(asset.licenseUrl?'<a href="'+escape(asset.licenseUrl)+'">'+escape(asset.license)+'</a>':escape(asset.license))+(asset.sourceUrl?' · <a href="'+escape(asset.sourceUrl)+'">이미지 출처</a>':'')+'</p>':'';
  const label=p=>p?.role==='cover'?'표지':p?.role==='comments'?'원문 댓글':'본문';

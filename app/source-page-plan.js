@@ -155,7 +155,7 @@
     const selectionReason=editorial.selectionReason||(templateId==='photo_cover'?'원문 첨부 중 사진으로 분석된 이미지를 표지로 선택':
       templateId==='screenshot'?'대화·원문 화면을 축소 표지로 쓰지 않고 본문에서 읽히는 크기로 보존':
       templateId==='white_title'?'짧은 글은 흰 바탕의 제목과 원문을 한 흐름으로 배치':'긴 글은 큰 제목 표지 뒤에 원문 문단을 이어 배치');
-    const title=clean(editorial.coverTitle||plan.coverTitle||plan.originalTitle),manual=style.manualTitleLayout===true;
+    const title=titleInfo(editorial.coverTitle||plan.coverTitle||plan.displayTitle||plan.originalTitle).displayTitle,manual=style.manualTitleLayout===true;
     const titleWeight=style.titleWeight||900,titleX=manual?Number(style.coverLeft):PAD;
     const specified=editorial.coverLines;
     if(specified&&(!Array.isArray(specified)||!specified.length||specified.some(line=>typeof line!=='string'||!line.trim())||
@@ -428,7 +428,7 @@
     if(!evidenceSources.length)warnings.push('제목 근거 문구를 원문에서 직접 확인하세요.');
     if(pages.length>10)warnings.push('10장이 넘는 글: 사건 흐름과 장별 읽기 부담을 검수하세요.');
     return {schema:'threads-production-plan-v1',ruleVersion:VERSION,preparedAt:new Date().toISOString(),
-      originalTitle:plan.originalTitle,coverTitle:title,titleEvidence:evidence,titleEvidenceStatus:evidenceSources.length?'matched_source':'needs_review',titleEvidenceSourceIds:evidenceSources,
+      originalTitle:plan.originalTitle,displayTitle:titleInfo(plan.originalTitle).displayTitle,captionInputTitle:title,titleSourceLabels:titleInfo(plan.originalTitle).sourceLabels,coverTitle:title,titleEvidence:evidence,titleEvidenceStatus:evidenceSources.length?'matched_source':'needs_review',titleEvidenceSourceIds:evidenceSources,
       typography:{width:W,safeMargin:PAD,bodySize:BODY,bodyLineHeight:LINE,paragraphGap:32,commentSize:48,commentLineHeight:72,titleWeight,highlightLimit:3},
       templateId,selectionReason,canvasMode:fixed?'instagram':'threads',aspectRatio:fixed?(style.aspectRatio||'4:5'):null,
       sourceUrl:plan.sourceUrl,sourceSha256:plan.input?.sha256||null,sourcePublishedAt:plan.sourcePublishedAt||null,

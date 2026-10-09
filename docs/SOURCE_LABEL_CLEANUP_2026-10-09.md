@@ -15,3 +15,9 @@
 업로더의 기존 입력은 `자료/06_자동 제작 결과/status.json`과 글별 `production-plan.json`이다. 표시 및 캡션 생성에는 plan.coverTitle 또는 plan.captionInputTitle을 사용한다. raw row.title/plan.originalTitle은 정체성과 내부 근거로 보존한다. 기존 캡션이 없는 제작물에 캡션을 만들었다고 기록하지 않는다. 업로더의 버전 계약은 post-review-store.version(row)의 reviewRound 포함 해시와 일치해야 실제 버전 평가를 연결할 수 있다. 업로더 별도 작업자의 코드·계정·설치는 수정하지 않는다.
 
 관련 검증: production-display-title, cover-reproduction-request, cover-typography, image-composition, post-review-store. 공유 렌더러가 production-title.cjs를 패키지에 포함하는지도 검증한다.
+
+## 입력 정리 재발 방지
+
+사용자 정정에 따라 렌더 직전 제거뿐 아니라 원문 가져오기 manifest/index, 후보 읽기, HTML·정확한 텍스트·저장 이미지 초안, 원문 ZIP 작성, planBundle 입력에 originalTitle/displayTitle/captionInputTitle을 확정한다. 기존 준비자료199개에는 원본 manifest·본문·source ZIP을 수정하지 않고 작업 정보/title-input.json과 제목 입력 인덱스를 파생 계약으로 남긴다. 현재 status199개에도 동일한 표시/캡션 입력 필드를 추가하되 outputVersion 구성 요소는 그대로 유지한다. 새 자료를 수집하지 않는다.
+
+23개 실제 PNG는 `.37` 설치 런타임으로 생성했다. 입력 재발 방지를 포함한 최종 리뷰/제작 프로그램은 별도 `.38` 설치본이며 동일한 typography `.10`을 소비한다. 실제 출력 해시를 바꾸지 않는 입력 메타데이터 정리도 canonical writer 아래 백업·버전 보존 검사를 거친다.

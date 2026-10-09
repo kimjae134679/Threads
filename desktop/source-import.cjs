@@ -1,5 +1,6 @@
 'use strict';
 const fs=require('node:fs/promises'),path=require('node:path');
+const {titleInfo}=require('./production-title.cjs');
 const {hash,decodeHtml}=require('./public-source.cjs');
 const {discoverCandidates}=require('./folder-batch.cjs');
 const {writeAtomic}=require('./atomic-file.cjs');
@@ -28,6 +29,7 @@ async function importSavedSource({file,root,parseHtml}){
     draft={originalTitle:title,segments:[...sourceText.matchAll(/^\[IMAGE:([^\]\r\n]+)\]/gm)].map(m=>({kind:'image',mediaName:m[1]}))};sourceName='source.txt';
   }else throw new Error('HTML·원문 JSON·원문 TXT 파일을 선택하세요.');
   if(!draft.originalTitle?.trim())throw new Error('원문 제목을 찾지 못했습니다.');
+  const titles=titleInfo(draft.originalTitle);const titleFields={originalTitle:titles.originalTitle,displayTitle:titles.displayTitle,captionInputTitle:titles.displayTitle,titleSourceLabels:titles.sourceLabels,titleInputVersion:'2026-10-09-title-input-1'};
   const sourceUrl=draft.sourceUrl||'',id='import-'+hash(sourceUrl||bytes).slice(0,16);
   const indexPath=path.join(root,'index.json');
   let index;
@@ -67,9 +69,9 @@ async function importSavedSource({file,root,parseHtml}){
     await fs.writeFile(path.join(source,sourceName),bytes);
     for(const item of media)await fs.writeFile(path.join(source,'media',item.name),item.data);
     const collectedAt=new Date().toISOString();
-    await writeAtomic(path.join(target,'manifest.json'),JSON.stringify({schema:'threads-program-input-v1',id,title:draft.originalTitle,sourceUrl,platform:'저장 원문',collectedAt,publicationAllowed:false},null,2));
+    await writeAtomic(path.join(target,'manifest.json'),JSON.stringify({schema:'threads-program-input-v1',id,title:draft.originalTitle,...titleFields,sourceUrl,platform:'저장 원문',collectedAt,publicationAllowed:false},null,2));
     await writeAtomic(path.join(source,'import-record.json'),JSON.stringify({schema:'threads-local-import-v1',inputName:path.basename(file),sha256:hash(bytes),collectedAt,missingImages:draft.segments.filter(s=>s.kind==='image'&&!media.some(m=>m.name===s.mediaName)).map(s=>s.mediaName),publicationAllowed:false},null,2));
-    index.records.push({id,title:draft.originalTitle,sourceUrl,folder:relative});
+    index.records.push({id,title:draft.originalTitle,...titleFields,sourceUrl,folder:relative});
     await writeAtomic(indexPath,JSON.stringify(index,null,2));
     return {id,title:draft.originalTitle,images:media.length};
   }catch(error){await fs.rm(target,{recursive:true,force:true});throw error;}

@@ -1,4 +1,5 @@
 'use strict';
+const {titleInfo}=require('./production-title.cjs');
 const {getMaterialRoot}=require('./material-paths.cjs');
 const {BrowserWindow,dialog,ipcMain,shell}=require('electron');
 const fs=require('node:fs/promises');
@@ -14,7 +15,7 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
   const publicReport=report=>report?{inputFolder:report.inputFolder,lastRunAt:report.lastRunAt,total:report.total,
     processed:report.processed??report.entries.length,cancelled:report.cancelled,counts:report.counts,active:!!active,
     entries:report.entries.map(({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus})=>
-      ({id,title,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus}))}:{entries:[],active:!!active};
+      ({id,title:titleInfo(title).displayTitle,originalTitle:title,displayTitle:titleInfo(title).displayTitle,captionInputTitle:titleInfo(title).displayTitle,status,reason,nextAction,site,sourceUrl,renderedPages,outputFolder,inputKind,ruleVersion,plannedAt,generatedAt,sourceCheckedAt,sourcePublishedAt,collectedAt,templateId,reviewStatus,publicationStatus}))}:{entries:[],active:!!active};
   async function currentReport(){
     const saved=await readReport(output),inputFolder=saved?.inputFolder||path.join(materialRoot,'01_후보 기록');
     let candidates;
@@ -96,7 +97,7 @@ function registerFolderBatch({app,getEditor,trusted,preferences,bundleUrl}) {
           media.push({url,file:'media/'+filename,sha256:hash(image.bytes),contentType:image.contentType,bytes:image.bytes.length});
         } catch(error) {if(state.cancelled)throw error;media.push({url,error:String(error.message)});}
       }
-      record={...record,state:'saved_html',url:page.url,title:extracted.title,htmlSha256:hash(page.bytes),
+      record={...record,state:'saved_html',url:page.url,title:extracted.title,...titleInfo(extracted.title),captionInputTitle:titleInfo(extracted.title).displayTitle,titleInputVersion:'2026-10-09-title-input-1',htmlSha256:hash(page.bytes),
         contentType:page.contentType,media,textStatus:'needs_verbatim_check',commentsStatus:'visible_only_not_complete'};
       await fs.writeFile(recordPath,JSON.stringify(record,null,2)+'\n','utf8');
       return {status:'saved_html'};

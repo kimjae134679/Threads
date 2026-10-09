@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import '../app/source-page-plan.js';
 import '../app/source-curation.js';
 const C=globalThis.ThreadsSourceCuration;
 function htmlWithText(value) {

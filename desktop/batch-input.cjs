@@ -2,6 +2,7 @@
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const {createHash}=require('node:crypto');
+const {titleInfo,validatePreparedTitle}=require('./production-title.cjs');
 const {loadSavedMaterials}=require('./saved-materials.cjs');
 const {loadCoverAsset}=require('./cover-asset.cjs');
 const {decodeHtml}=require('./public-source.cjs');
@@ -19,7 +20,8 @@ async function loadBatchInput(folder,metadata={}) {
   const root=path.resolve(folder);
   const supplement=await loadCoverAsset(root);
   const attach=async job=>{
-    if(!job)return job;
+    if(!job)return job;const info=titleInfo(job.originalTitle||job.title);job={...job,title:info.originalTitle,originalTitle:info.originalTitle,displayTitle:info.displayTitle,captionInputTitle:info.displayTitle,titleSourceLabels:info.sourceLabels,titleInputVersion:'2026-10-09-title-input-1'};
+    const titleInput=path.join(root,'작업 정보','title-input.json');if(await exists(titleInput)){const record=validatePreparedTitle(JSON.parse((await bounded(titleInput,256*1024)).toString('utf8')),job.originalTitle,job.sourceUrl);job={...job,preparedTitleInput:{schema:record.schema,originalTitle:record.originalTitle,displayTitle:record.displayTitle,captionInputTitle:record.captionInputTitle,sourceUrl:record.sourceUrl,sourceLabels:record.sourceLabels}};}
     const imageHandoff=await loadImageRequirements(root,{postId:metadata.id,sourceUrl:job.sourceUrl,productionVersion:metadata.outputVersion},{representativeOnly:metadata.representativeOnly===true});
     if(imageHandoff?.generationRequests.length)throw new Error('image generation consumer is not connected; required imagery remains pending before cache lookup');
     const imageComposition=await prepareImageComposition(imageHandoff);
@@ -55,14 +57,17 @@ async function loadBatchInput(folder,metadata={}) {
       try {acquisition=JSON.parse(await fs.readFile(path.join(directory,'acquisition.json'),'utf8'));} catch(error) {if(error.code!=='ENOENT')throw error;}
       if(acquisition?.htmlSha256 && /\.html?$/i.test(name) && hash(raw)!==acquisition.htmlSha256)
         throw new Error('저장 원문 HTML이 검증 기록과 다릅니다.');
+      let inputTitle=metadata.originalTitle||metadata.title||'',inputSourceUrl=metadata.sourceUrl||acquisition?.url||'';
       const sourceText=/\.html?$/i.test(name)?decodeHtml(raw,acquisition?.contentType):raw.toString('utf8').replace(/^\ufeff/,'');
       if(name==='source.json') {
         const value=JSON.parse(sourceText);
         if(value.schema!=='threads-verbatim-source-v1'||value.verbatim!==true ||
           !value.title?.trim() || typeof value.body!=='string' || !value.body.trim())
           throw new Error('source.json은 원문 그대로의 제목·본문과 verbatim=true가 필요합니다.');
+        inputTitle=value.title;inputSourceUrl=value.sourceUrl||inputSourceUrl;
       } else if(name==='source.txt' && (!/^\[TITLE\]\r?\n/m.test(sourceText)||!/^\[BODY\]\r?\n/m.test(sourceText)))
         throw new Error('source.txt에 [TITLE]·[BODY] 원문 구역이 필요합니다.');
+      if(name==='source.txt')inputTitle=/^\[TITLE\]\r?\n([^\r\n]+)/m.exec(sourceText)?.[1]||inputTitle;
       const files=[];
       const imageDirs=[path.join(directory,'media'),path.join(directory,path.basename(name,path.extname(name))+'_files')];
       let total=0;
@@ -79,7 +84,7 @@ async function loadBatchInput(folder,metadata={}) {
       const dates={sourceCheckedAt:acquisition?.checkedAt||null,collectedAt:acquisition?.collectedAt||acquisition?.checkedAt||null,
         sourcePublishedAt:acquisition?.sourcePublishedAt||null};
       return attach({sourceName:name,sourceText,sourceData:/\.html?$/i.test(name)?raw.toString('base64'):null,sourceMime:/\.html?$/i.test(name)?acquisition?.contentType||'text/html':null,files,imageDirectory:'media',intakeText:'',editorial,...dates,
-        title:metadata.title||'',sourceUrl:metadata.sourceUrl||acquisition?.url||'',inputKind:/\.html?$/i.test(name)?'html':'exact'});
+        title:inputTitle,sourceUrl:inputSourceUrl,inputKind:/\.html?$/i.test(name)?'html':'exact'});
     }
   }
   const images=await loadSavedMaterials(root).catch(error=>{

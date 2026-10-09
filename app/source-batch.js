@@ -240,7 +240,7 @@
   }
   async function sourceZip(item) {
     const p=JSON.parse(JSON.stringify(readReview())), raw=new Uint8Array(await item.source.arrayBuffer()), packed=[];
-    p.media=[];
+    U.normalizeTitles(p);p.media=[];
     const seenMedia=new Set();
     for(const s of p.segments.filter(s=>s.selected&&s.kind==='image')) {
       if(seenMedia.has(s.mediaName.toLowerCase()))continue;
@@ -375,6 +375,7 @@
   async function planBundle(file,{preview=false,universalCover=false,preserveBodyPlan=null}={}) {
     releasePending();
     const {plan,media}=await unpack(file,{preview});
+    U.normalizeTitles(plan);
     const productionSource=universalCover?window.ThreadsUniversalProductionModel.preparePlan(plan):plan;
     const prepared=await layoutFor(productionSource,media,{preserveBodyPlan});
     try {prepared.layout.bundleSha256=await hash(await file.arrayBuffer());}
@@ -408,6 +409,7 @@
     const prepared=await renderAssets(plan,media,productionPlan,file,coverOnly),layout=prepared.layout;
     const {images,font}=prepared;
     if(layout.ruleVersion!==window.ThreadsPagePlan.VERSION)throw new Error('제작 계획의 기준 버전이 오래되었습니다. 다시 계획하세요.');
+    const titlePolicy=window.ThreadsPagePlan;if(titlePolicy.titleInfo&&titlePolicy.titleInfo(layout.coverTitle||plan.coverTitle).sourceLabels.length)throw new Error('제목 출처 정제가 누락되어 렌더를 보류합니다.');
     plan.productionPlan=layout;
     const output=[];
     try {for(const page of coverOnly?layout.pages.slice(0,1):layout.pages) {
@@ -458,7 +460,7 @@
     if(productionPlan&&productionPlan.bundleSha256!==bundleSha256)throw new Error('제작 계획과 원문 ZIP이 다릅니다.');
     const pages=await renderCurated(plan,media,{preview,watermark,productionPlan,file,coverOnly});
     const manifest={schema:preview?'threads-curated-preview-v1':'threads-curated-output-v1',sourceZip:file.name,sourceSha256:bundleSha256,
-      sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,cover:plan.cover,coverTitle:plan.coverTitle,
+      sourceUrl:plan.sourceUrl,originalTitle:plan.originalTitle,displayTitle:plan.displayTitle,captionInputTitle:plan.captionInputTitle,titleSourceLabels:plan.titleSourceLabels,cover:plan.cover,coverTitle:plan.coverTitle,
       coverTitleEvidence:plan.coverTitleEvidence,
       style:plan.style||{fontId:'sans',titleWeight:900},editorialNotes:plan.segments.filter(s=>s.selected&&s.after?.note?.trim())
         .map(s=>({afterSegment:s.id,note:s.after.note,gap:s.after.gap||0})),
