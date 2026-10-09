@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsCoverTypography=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
  'use strict';
- const VERSION='2026-10-09.8';
+ const VERSION='2026-10-09.9';
  const dark={background:'#101116',ink:'#ffffff',accent:'#f2e34c',line:'#34343d'};
  const palettes={warm:dark,cool:dark,calm:dark,photo:dark};
  function style(title,{emphasis='',accent=null,photo=false,sizeEmphasis,sizeScale=1.03,explicitEmphasis=false,lineBreaks=null}={}){
