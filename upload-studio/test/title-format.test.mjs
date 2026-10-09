@@ -30,7 +30,7 @@ test('title migration invalidates only affected posts and preserves user notes a
  const result=migrateTitleFormat(original);
  assert.equal(JSON.stringify(original),before);
  assert.deepEqual(result.summary.affected_post_ids,[changed.post_id]);
- assert.deepEqual(result.summary.previous_pass_post_ids,[changed.post_id]);
+ assert.deepEqual(result.summary.previous_pass_post_ids,[]); // The fixture lacks current review evidence.
  assert.equal(result.state.posts[0].caption,'제목\r\n본문 [의미 있는 괄호]\r\n끝');
  assert.equal(result.state.posts[0].source.cover_title,'제목');
  assert.equal(result.state.posts[0].source.original_title,changed.source.original_title);
