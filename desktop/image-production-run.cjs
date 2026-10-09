@@ -39,7 +39,9 @@ app.disableHardwareAcceleration();app.commandLine.appendSwitch('force-device-sca
   const zipTools=await createZipTools(),sourceArchive=await zipTools.read(priorSource),sourcePlan=JSON.parse(Buffer.from(sourceArchive.get('bundle.json')).toString('utf8'));
   const bodyImages=[];for(const name of (await fs.readdir(path.join(existing,'rendered'))).filter(n=>/^slide-\d{3}\.png$/.test(n)).sort().slice(1)){const data=await fs.readFile(path.join(existing,'rendered',name));bodyImages.push({name:'rendered/'+name,data,sha256:sha(data)});}
   if(bodyImages.length!==priorPlan.pages.length-1)throw Error('기존 본문 장수와 제작 계획 불일치');
-  const fingerprint=sha(fingerprintFor(job)+'|preserve-body-v1|'+sha(priorSource)+'|'+JSON.stringify(bodyImages.map(i=>({name:i.name,sha256:i.sha256})))+'|'+JSON.stringify(priorPlan.pages.slice(1))),target=path.join(output,request.postId,fingerprint);let old=null;
+  const portrait=request.layoutMode!=='cover_only_legacy';
+  if(request.layoutMode&&!['portrait','cover_only_legacy'].includes(request.layoutMode))throw Error('지원하지 않는 제작 레이아웃');
+  const fingerprint=sha(fingerprintFor(job)+(portrait?'|portrait-reflow-v1|':'|preserve-body-v1|')+sha(priorSource)+'|'+JSON.stringify(bodyImages.map(i=>({name:i.name,sha256:i.sha256})))+'|'+JSON.stringify(priorPlan.pages.slice(1))),target=path.join(output,request.postId,fingerprint);let old=null;
   try{old=JSON.parse(await fs.readFile(checkpoint,'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
   if(old?.state==='complete'&&old.fingerprint===fingerprint){
    const all=[{file:'review-preview.zip',sha256:old.outputSha256},{file:'source-bundle.zip',sha256:old.sourceZipSha256},{file:'production-plan.json',sha256:old.planSha256},...old.images];
@@ -54,16 +56,23 @@ app.disableHardwareAcceleration();app.commandLine.appendSwitch('force-device-sca
   const result=await renderBatchInput(job,{getWindow:async()=>win,universalCover:true,preserveBodyPlan:priorPlan});
   if(result.sourcePlan.input.sha256!==sourcePlan.input.sha256)throw Error('기존 본문과 새 입력 원본 hash 불일치; 표지 교체 보류');
   if(JSON.stringify(result.productionPlan.pages.slice(1))!==JSON.stringify(priorPlan.pages.slice(1)))throw Error('기존 본문 제작 계획 변경; 표지 교체 보류');
-  result.images=[result.images[0],...bodyImages];result.productionPlan.bodyPreservation={mode:'copy_existing_png',sourceOutput:existing,sourceBundleSha256:sha(priorSource),images:bodyImages.map(i=>({name:i.name,sha256:i.sha256}))};
+  if(portrait){
+   const reflow=await require('./cover-reproduction-run.cjs').reflowSourceBundle(win,priorSource,priorPlan);
+   result.productionPlan={...result.productionPlan,...reflow.plan,coverTitle:result.productionPlan.coverTitle,templateId:result.productionPlan.templateId,imageComposition:result.productionPlan.imageComposition,coverAsset:result.productionPlan.coverAsset,universalCover:result.productionPlan.universalCover,bundleSha256:result.productionPlan.bundleSha256,bodyPreserved:false,bodyRuleVersion:reflow.plan.ruleVersion,pages:[result.productionPlan.pages[0],...reflow.plan.pages.slice(1)]};
+   result.images=[result.images[0],...reflow.images.slice(1)];
+   result.productionPlan.layoutReviewContinuity={scope:'layout_only',sourceBundleSha256:sha(priorSource),oldPlanSha256:sha(Buffer.from(JSON.stringify(priorPlan))),oldOutputSha256:sha(await fs.readFile(path.join(existing,'review-preview.zip'))),contentOrderVerified:true,evaluationCarryForwardAllowed:true,approvalEvidence:'Sentinel_482ab1ebb4ac8191ba15812debde8188',reviewOwnerMustLinkVersions:true};
+  }else result.images=[result.images[0],...bodyImages];
+  for(const image of result.images){const size=pngSize(image.data);if(size.width!==1080||size.height!==1440)throw Error('혼합 비율 출력 보류: layoutMode portrait로 전체 장을 재배치하세요.');}
+  result.productionPlan.bodyPreservation={mode:portrait?'layout_only_reflow':'copy_existing_png',sourceOutput:existing,sourceBundleSha256:sha(priorSource),originalImages:bodyImages.map(i=>({name:i.name,sha256:i.sha256}))};
   const manifest={schema:'threads-curated-preview-v1',sourceSha256:sha(result.sourceZip),originalTitle:result.productionPlan.originalTitle,productionPlan:result.productionPlan,renderedPages:result.images.length,previewOnly:true,publicationAllowed:false,representativeOnly:!!request.representativeOnly};
   result.zip=await zipTools.zip([...result.images,{name:'manifest.json',data:Buffer.from(JSON.stringify(manifest,null,2)+'\n')},{name:'source-bundle.zip',data:result.sourceZip}]);
   await fs.mkdir(path.join(target,'rendered'),{recursive:true});const images=[];
   for(const image of result.images){const size=pngSize(image.data);if(size.width!==1080)throw Error('1080px 출력 검증 실패');await fs.writeFile(path.join(target,image.name),image.data);images.push({file:image.name,sha256:sha(image.data),...size});}
-  const coverSize=pngSize(result.images[0].data);if(!job.imageComposition&&coverSize.height!==1080)throw Error('기본 정사각형 표지 검증 실패');
+  const coverSize=pngSize(result.images[0].data);if(coverSize.height!==1440)throw Error('세로 표지 검증 실패');
   const planData=Buffer.from(JSON.stringify(result.productionPlan,null,2)+'\n');await fs.writeFile(path.join(target,'production-plan.json'),planData);
   await fs.writeFile(path.join(target,'source-bundle.zip'),result.sourceZip);await fs.writeFile(path.join(target,'review-preview.zip'),result.zip);
   const done={state:'complete',postId:request.postId,input,existingOutput:existing,consumedInputFingerprint:fingerprintFor(job),fingerprint,target,completedAt:new Date().toISOString(),representativeOnly:!!request.representativeOnly,
-   reviewRegistered:false,publicationAllowed:false,bodyPngPreserved:true,bodyImages:bodyImages.length,outputSha256:sha(result.zip),sourceZipSha256:sha(result.sourceZip),planSha256:sha(planData),images,
+   reviewRegistered:false,publicationAllowed:false,bodyPngPreserved:!portrait,bodyImages:result.images.length-1,layoutMode:portrait?'portrait':'cover_only_legacy',layoutReviewContinuity:result.productionPlan.layoutReviewContinuity||null,outputSha256:sha(result.zip),sourceZipSha256:sha(result.sourceZip),planSha256:sha(planData),images,
    runtime:{packaged:app.isPackaged,version:app.getVersion(),executable:process.execPath,editorAssets:editorRoot()}};
   await writeAtomic(checkpoint,JSON.stringify(done,null,2)+'\n');console.log(JSON.stringify(done));
  }catch(error){await writeAtomic(checkpoint,JSON.stringify({state:'held',postId:request.postId,reason:error.message,failedAt:new Date().toISOString(),retry:'자료·권리·생성 준비를 수정한 뒤 같은 명령 실행',publicationAllowed:false},null,2)+'\n');throw error;}

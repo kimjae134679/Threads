@@ -5,7 +5,7 @@ module.exports=async function renderCoverCanvas(){
   const input=window.coverInput,{width,height,title,variant,context,credit}=input;
   const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
   const ctx=canvas.getContext('2d'),family=getComputedStyle(document.querySelector('.title')).fontFamily;
-  const margin=96,available=width-margin*2,photo=document.querySelector('img.photo');
+  const portrait=input.aspectRatio==='3:4',safe=portrait?120:72,margin=portrait?132:96,available=width-margin*2,photo=document.querySelector('img.photo');
   const color=variant==='paper'?'#242323':'#fff',accent=variant==='paper'?'#a34535':'#ead098';
   ctx.fillStyle=variant==='paper'?'#f4eee5':'#15171c';ctx.fillRect(0,0,width,height);
   // Keep one layout for the preview and exported pixels. Preserve every character,
@@ -33,7 +33,7 @@ module.exports=async function renderCoverCanvas(){
   if(lines.join('').replace(/\s/gu,'')!==title.replace(/\s/gu,''))throw Error('제목 문자 손실');
   const lineHeight=size*1.16,titleHeight=lines.length*lineHeight;
   const y=photo?height-margin-titleHeight-contextHeight-(credit?48:0):(height-titleHeight-contextHeight)/2;
-  if(y<72||y+titleHeight+contextHeight>height-72)throw Error('표지 안전 여백 부족');
+  if(y<safe||y+titleHeight+contextHeight>height-safe)throw Error('표지 안전 여백 부족');
   let imageBox=null;
   if(photo){
    // Fit the photograph above the title, preserving the full source image.
@@ -66,10 +66,11 @@ module.exports=async function renderCoverCanvas(){
    if(index>=0)used=true;lineWidths.push(x-margin);
   }
   if(lineWidths.some(w=>w>available+.5))throw Error('제목 가로 넘침');
-  if(glyphBoxes.some(b=>b.x<72||b.x+b.width>width-72||b.y<72||b.y+b.height>height-72))throw Error('제목 픽셀 안전 영역 초과');
+  if(glyphBoxes.some(b=>b.x<safe||b.x+b.width>width-safe||b.y<safe||b.y+b.height>height-safe))throw Error('제목 픽셀 안전 영역 초과');
   if(contextLines.length){ctx.font='500 32px '+family;ctx.letterSpacing='0px';ctx.fillStyle=variant==='paper'?'#615552':'#dedede';for(let n=0;n<contextLines.length;n++)ctx.fillText(contextLines[n],margin,y+titleHeight+32+n*46);}
-  if(credit){ctx.font='24px "Malgun Gothic",sans-serif';ctx.letterSpacing='0px';if(ctx.measureText(credit).width>available)throw Error('출처 표기 공간 부족');ctx.fillStyle=variant==='paper'?'#615552':'#dedede';ctx.fillText(credit,margin,height-64);}
-  return {data:canvas.toDataURL('image/png'),geometry:{title,size,lines,emphasis:used?emphasis:'',box:{x:margin,y,width:available,height:titleHeight},glyphBoxes,lineWidths,imageBox,width,height,aspectRatio:input.aspectRatio,contextLines}};
+  let creditBox=null;
+  if(credit){ctx.font='24px "Malgun Gothic",sans-serif';ctx.letterSpacing='0px';const m=ctx.measureText(credit),cy=portrait?height-margin-32:height-64;if(m.width>available)throw Error('출처 표기 공간 부족');creditBox={x:margin-m.actualBoundingBoxLeft,y:cy-m.actualBoundingBoxAscent,width:m.actualBoundingBoxLeft+m.actualBoundingBoxRight,height:m.actualBoundingBoxAscent+m.actualBoundingBoxDescent};if(portrait&&(creditBox.x<safe||creditBox.x+creditBox.width>width-safe||creditBox.y<safe||creditBox.y+creditBox.height>height-safe))throw Error('출처 픽셀 안전 여백 초과');ctx.fillStyle=variant==='paper'?'#615552':'#dedede';ctx.fillText(credit,margin,cy);}
+  return {data:canvas.toDataURL('image/png'),geometry:{title,size,lines,emphasis:used?emphasis:'',box:{x:margin,y,width:available,height:titleHeight},glyphBoxes,creditBox,lineWidths,imageBox,width,height,aspectRatio:input.aspectRatio,contextLines}};
  }
  await window.coverReady;
  const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1920;const ctx=canvas.getContext('2d'),main=document.querySelector('.cover'),title=document.querySelector('.title'),style=getComputedStyle(title),variant=window.coverInput.variant;

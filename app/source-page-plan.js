@@ -1,6 +1,33 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsPagePlan=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
   'use strict';
-  const VERSION='2026-10-08.2',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const VERSION='2026-10-09.3',W=1080,PAD=72,MAX=1350,MIN=240,BODY=52,LINE=78;
+  const FEED=Object.freeze({target:'instagram_feed',width:1080,height:1440,aspectRatio:'3:4',safeMargin:120,layoutMargin:132});
+  function feedAspect(width,height,target=FEED.target) {
+    if(target!==FEED.target)throw Error('지원하지 않는 출력 대상: '+target);
+    if(![width,height].every(n=>Number.isSafeInteger(n)&&n>0))throw Error('이미지 크기는 양의 정수여야 합니다.');
+    const minimumHeight=Number((BigInt(width)*100n+190n)/191n),maximumHeight=Number(BigInt(width)*4n/3n);
+    return {target,width,height,minimumHeight,maximumHeight,ok:height>=minimumHeight&&height<=maximumHeight};
+  }
+  function prepareFeedPage(page,{portrait=false}={}) {
+    const bounds=feedAspect(page.width,page.height);
+    if(page.height>bounds.maximumHeight)throw Error('이미지 비율이 3:4 범위를 벗어납니다. 원문을 자르지 않고 다시 페이지를 나눠주세요.');
+    const height=portrait?bounds.maximumHeight:Math.max(page.height,bounds.minimumHeight);
+    if(height===page.height)return page;
+    const added=height-page.height,top=Math.floor(added/2),bottom=added-top;
+    return {...page,height,operations:page.operations.map(op=>({...op,y:op.y+top})),
+      ...(Number.isFinite(page.contentBottom)?{contentBottom:page.contentBottom+top}:{}),
+      ...(Number.isFinite(page.bottomWhitespace)?{bottomWhitespace:page.bottomWhitespace+bottom}:{}),
+      platformPadding:{target:FEED.target,originalHeight:page.height,top,bottom}};
+  }
+  function prepareFeedLayout(layout,{coverOnly=false,portrait=false}={}) {
+    let changed=false;
+    const pages=layout.pages.map((page,i)=>{if(coverOnly&&i>0)return page;const next=prepareFeedPage(page,{portrait});changed||=next!==page;return next;});
+    return changed?{...layout,pages}:layout;
+  }
+  function compileForFeed(plan,dimensions,measure) {
+    const layout=compile({...plan,style:{...plan.style,canvasMode:'instagram',aspectRatio:FEED.aspectRatio,feedSafeMargin:FEED.layoutMargin}},dimensions,measure);
+    return {...layout,feedSpec:FEED};
+  }
   const clean=text=>String(text||'').replace(/[\u200b\ufeff]/g,'').replace(/\n{3,}/g,'\n\n').trim();
   const plainLink=text=>/^(?:https?:\/\/\S+\s*)+$/i.test(clean(text));
   function wrap(text,width,size,measure,weight=400) {
@@ -57,6 +84,7 @@
   }
   function compile(plan,dimensions,measure) {
     const omitted=[],warnings=[],pages=[],editorial=plan.editorial||{},style=plan.style||{};
+    const PAD=style.feedSafeMargin===FEED.layoutMargin?FEED.layoutMargin:72;
     const fixed=style.canvasMode==='instagram',MAXH=fixed&&style.aspectRatio==='3:4'?1440:MAX;
     const transcriptions=editorial.transcriptions||{},transcribedComments=[];
     const segments=(plan.segments||[]).flatMap(original=>{
@@ -441,5 +469,5 @@
       selectedCommentIds:includedComments,commentsPolicy:'visible_likes_or_best_only',reviewStatus:'needs_review',publicationStatus:'unknown',
       publicationAllowed:false,omitted,warnings:[...new Set(warnings)],pages};
   }
-  return Object.freeze({VERSION,compile,wrap,plainLink,headline,titleInfo,wrapTitle});
+  return Object.freeze({VERSION,FEED,feedAspect,prepareFeedPage,prepareFeedLayout,compileForFeed,compile,wrap,plainLink,headline,titleInfo,wrapTitle});
 });

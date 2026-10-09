@@ -26,7 +26,7 @@ test('flattened package loads batch model and ZIP tools from resources/editor',a
  const app=path.join(dir,'resources','app'),editor=path.join(dir,'resources','editor');
  await fs.mkdir(path.join(app,'node_modules','electron'),{recursive:true});await fs.mkdir(editor,{recursive:true});
  for(const name of pkg.build.files.filter(n=>n.endsWith('.cjs')))await fs.copyFile(new URL('desktop/'+name,root),path.join(app,name));
- for(const name of ['universal-production-model.js','source-cut-zip.js','source-bundle-zip.js'])await fs.copyFile(new URL('app/'+name,root),path.join(editor,name));
+ for(const name of ['universal-production-model.js','source-cut-zip.js','source-bundle-zip.js','source-page-plan.js'])await fs.copyFile(new URL('app/'+name,root),path.join(editor,name));
  await fs.writeFile(path.join(app,'node_modules','electron','index.js'),'module.exports={app:{isPackaged:true}};');
  const script=`Object.defineProperty(process.versions,'electron',{value:'test'});process.resourcesPath=${JSON.stringify(path.join(dir,'resources'))};const assert=require('node:assert/strict');const batch=require(${JSON.stringify(path.join(app,'batch-render.cjs'))});assert.equal(typeof batch.renderBatchInput,'function');(async()=>{const tools=await require(${JSON.stringify(path.join(app,'reflow-review-covers-run.cjs'))}).createZipTools();const entries=await tools.read(await tools.zip([{name:'proof.txt',data:Buffer.from('cover')}])) ;assert.equal(Buffer.from(entries.get('proof.txt')).toString(),'cover');console.log('PACKAGED_PATHS_PASS');})().catch(e=>{console.error(e);process.exitCode=1;});`;
  assert.match(execFileSync(process.execPath,['-e',script],{encoding:'utf8'}),/PACKAGED_PATHS_PASS/);

@@ -2,16 +2,16 @@
 const renderCoverCanvas=require('./universal-cover-canvas.cjs');
 const renderTypographyCover=require('./typography-cover-canvas.cjs');
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',fontUrl=null,emphasis='',aspectRatio='legacy',typography=false,accent:titleAccent=null,titleStyle=null}){
+function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',fontUrl=null,emphasis='',aspectRatio='3:4',typography=false,accent:titleAccent=null,titleStyle=null}){
  if(typeof title!=='string'||!title.trim()||title.length>300)throw Error('원문 제목을 확인하세요.');
  const normalized=require('./production-title.cjs').normalizeCoverInput(title,titleStyle,emphasis),originalTitle=normalized.originalTitle,sourceLabels=normalized.sourceLabels,captionInputTitle=normalized.captionInputTitle;title=normalized.title;titleStyle=normalized.titleStyle;emphasis=normalized.emphasis;
  if(!['paper','ink','photo'].includes(variant)||variant==='photo'&&!imageUrl)throw Error('사진 후보에는 관련 원본 이미지가 필요합니다.');
  if(emphasis&&(!title.includes(emphasis)||emphasis.length>24))throw Error('강조는 원래 제목 안의 짧은 한 구절만 사용하세요.');
- if(!['legacy','auto','square','4:5'].includes(aspectRatio))throw Error('표지 비율은 auto, square 또는 4:5를 선택하세요.');
+ if(!['legacy','auto','square','4:5','3:4'].includes(aspectRatio))throw Error('표지 비율은 auto, square, 4:5 또는 3:4를 선택하세요.');
  // Opt in once, then replace only the title. The existing release stays legacy.
- if(aspectRatio==='auto')aspectRatio=title.replace(/\s/gu,'').length>70?'4:5':'square';
+ if(aspectRatio==='auto')aspectRatio='3:4';
  if(aspectRatio!=='legacy'){
-  const height=aspectRatio==='square'?1080:1350;
+  const height=aspectRatio==='square'?1080:aspectRatio==='3:4'?1440:1350;
   if(typography)fontUrl='fonts/SB_Aggro_B.ttf';const family=typography?'SB_Aggro_B':'Cover';
   const data={id,title,originalTitle,sourceLabels,captionInputTitle,context,imageUrl,variant,credit,emphasis,accent:titleAccent,titleStyle,aspectRatio,width:1080,height,typography,fontFamily:family};
   const scripts=typography?['source-page-plan.js','source-cover-typography.js'].map(name=>require('node:fs').readFileSync(require('node:path').join(require('./editor-assets.cjs').editorRoot(),name),'utf8')).join('\n'):'';

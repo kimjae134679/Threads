@@ -19,10 +19,10 @@ test('ordinary legacy image covers stay unchanged without explicit complete-cove
 test('ready cover composes exact Korean title below protected action, keeping body unchanged',()=>{
  const api=globalThis.ThreadsImageComposition,p=plan(),l=layout(),body=structuredClone(l.pages[1]);
  api.applyComposition(l,p,{'composition-cover.png':{width:1024,height:1024}},measure,globalThis.ThreadsPagePlan);
- assert.deepEqual(l.pages[1],body);assert.equal(l.pages[0].width,1080);assert.equal(l.pages[0].height,1080);
+ assert.deepEqual(l.pages[1],body);assert.equal(l.pages[0].width,1080);assert.equal(l.pages[0].height,1440);
  const titles=l.pages[0].operations.filter(o=>o.role==='title');
  assert.equal(titles.map(o=>o.text).join(' ').replace(/\s/g,''),p.originalTitle.replace(/\s/g,''));
- assert(titles.every(o=>o.y>=734&&o.y+o.lineHeight<=1024));
+ assert(titles.every(o=>o.x>=132&&o.y>=720&&o.y+o.lineHeight<=1308));
  assert(l.pages[0].operations.every(o=>!String(o.text||'').includes('AI 연출')));
  assert.equal(l.imageComposition.assets[0].sha256,'a'.repeat(64));
 });
@@ -55,10 +55,10 @@ test('title without a safe image region uses a separate band and oversized title
  const image=l.pages[0].operations.find(o=>o.kind==='image'),title=l.pages[0].operations.find(o=>o.role==='title');assert(image.y+image.height<=title.y);
  p.originalTitle='가'.repeat(400);assert.throws(()=>api.applyComposition(layout(),p,{'composition-cover.png':{width:1024,height:1024}},measure,globalThis.ThreadsPagePlan),/제목|보류/);
 });
-test('an image-unnecessary article receives a complete square text cover with full title',()=>{
+test('an image-unnecessary article receives a complete portrait text cover with full title',()=>{
  const p=plan(),l=layout();delete p.imageComposition;p.completeCover=true;p.coverTitleStyle={emphasis:'두달만에',accent:'#ffe34d'};
  globalThis.ThreadsImageComposition.applyComposition(l,p,{},measure,globalThis.ThreadsPagePlan);
- assert.equal(l.pages[0].height,1080);assert.equal(l.pages[0].width,1080);
+ assert.equal(l.pages[0].height,1440);assert.equal(l.pages[0].width,1080);
  assert.equal(l.pages[0].operations.filter(o=>o.role==='title').map(o=>o.text).join(' ').replace(/\s/g,''),p.originalTitle.replace(/\s/g,''));assert(!l.pages[0].operations.some(o=>o.kind==='image'));
  assert.deepEqual(l.pages[0].operations.flatMap(o=>o.highlights||[]),['두달만에']);
 });

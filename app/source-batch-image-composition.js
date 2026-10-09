@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ThreadsImageComposition=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
  'use strict';
- const dimensions=ratio=>({width:1080,height:({'1:1':1080,'4:5':1350,'9:16':1920,'16:9':608})[ratio]||1080});
+ const dimensions=()=>({width:1080,height:1440});
  function imageOperation(asset,source,box){
   if(!source?.width||!source?.height)throw Error('합성 이미지 크기 누락');
   const c=asset.composition,contain=c.crop==='contain',scale=(contain?Math.min:Math.max)(box.width/source.width,box.height/source.height);
@@ -15,7 +15,7 @@
   const typography=globalThis.ThreadsCoverTypography;
   if(typography){
    titleStyle=typography.cleanStyle(title,titleStyle,policy,originalTitle);
-   const style=typography.style(title,{emphasis:titleStyle?.emphasis||'',accent:titleStyle?.accent||null,photo:color==='#fff',sizeEmphasis:titleStyle?.sizeEmphasis,sizeScale:titleStyle?.sizeScale??1.03,explicitEmphasis:!!titleStyle?.emphasis,lineBreaks:titleStyle?.lineBreaks||null}),fit=typography.fit(title,box,measure,policy,style,Math.min(maxSize,124),32),y=box.y+box.height-fit.height;
+   const style=typography.style(title,{emphasis:titleStyle?.emphasis||'',accent:titleStyle?.accent||null,photo:color==='#fff',sizeEmphasis:titleStyle?.sizeEmphasis,sizeScale:titleStyle?.sizeScale??1.03,explicitEmphasis:!!titleStyle?.emphasis,lineBreaks:titleStyle?.lineBreaks||null}),fit=typography.fit(title,box,measure,policy,style,Math.min(maxSize,124),48),y=box.y+box.height-fit.height;
    return fit.lines.map((text,index)=>({kind:'text',role:'title',sourceId:'title',text,x:box.x,y:y+index*fit.lineHeight,size:fit.size,lineHeight:fit.lineHeight,weight:900,color:style.palette.ink,runs:fit.runs[index],stroke:color==='#fff'?'#101722':null,strokeWidth:2,typography:style}));
   }
   let lines=null,size=maxSize,lineHeight;
@@ -35,11 +35,11 @@
   const contract=plan.imageComposition;
   if(contract?.assets?.some(a=>a.placement.position!=='cover'))throw Error('body image composition held: current approved scope is cover only');
   if(plan.completeCover&&!contract?.assets?.some(a=>a.placement.position==='cover')){
-   const info=policy.titleInfo(plan.originalTitle||plan.coverTitle),box={x:72,y:180,width:936,height:720};
+   const info=policy.titleInfo(plan.originalTitle||plan.coverTitle),box={x:132,y:240,width:816,height:960};
    const operations=titleOperations(info.displayTitle,box,measure,policy,globalThis.ThreadsCoverTypography?'#253039':'#fff',190,contract?.titleStyle||plan.coverTitleStyle,info.originalTitle);
    accentTitle(operations,info.displayTitle,contract?.titleStyle||plan.coverTitleStyle);
-   const total=operations.length*operations[0].lineHeight;operations.forEach((o,index)=>{o.y=(1080-total)/2+index*o.lineHeight;});
-   layout.pages[0]={number:1,role:'cover',width:1080,height:1080,background:operations[0].typography?.palette.background||'#151b26',operations,elements:[{kind:'text',sourceId:'title'}],contentBottom:operations.at(-1).y+operations.at(-1).lineHeight,
+   const total=operations.length*operations[0].lineHeight;operations.forEach((o,index)=>{o.y=(1440-total)/2+index*o.lineHeight;});
+   layout.pages[0]={number:1,role:'cover',width:1080,height:1440,background:operations[0].typography?.palette.background||'#151b26',operations,elements:[{kind:'text',sourceId:'title'}],contentBottom:operations.at(-1).y+operations.at(-1).lineHeight,
     geometry:{title:info.displayTitle,lines:operations.map(o=>o.text),titleBox:box}};
    layout.coverTitle=info.displayTitle;layout.captionInputTitle=info.displayTitle;layout.titleSourceLabels=info.sourceLabels;layout.templateId='complete_text';
   }
@@ -50,8 +50,8 @@
    if(a.placement.position==='cover'){
     const info=policy.titleInfo(plan.originalTitle||plan.coverTitle),safe=a.composition.safeArea;
     const edges=[['bottom',safe.bottom],['top',safe.top],['left',safe.left],['right',safe.right]].sort((a,b)=>b[1]-a[1]);
-    const [edge,space]=edges[0],overlay=space>=.2,margin=56;
-    const region=overlay?(edge==='bottom'?{x:0,y:d.height*(1-space),width:d.width,height:d.height*space}:edge==='top'?{x:0,y:0,width:d.width,height:d.height*space}:edge==='left'?{x:0,y:0,width:d.width*space,height:d.height}:{x:d.width*(1-space),y:0,width:d.width*space,height:d.height}):{x:0,y:d.height*.66,width:d.width,height:d.height*.34};
+    const [edge,space]=edges[0],margin=132,overlay=space>=.32&&(!['left','right'].includes(edge)||d.width*space-2*margin>=500);
+    const region=overlay?(edge==='bottom'?{x:0,y:d.height*(1-space),width:d.width,height:d.height*space}:edge==='top'?{x:0,y:0,width:d.width,height:d.height*space}:edge==='left'?{x:0,y:0,width:d.width*space,height:d.height}:{x:d.width*(1-space),y:0,width:d.width*space,height:d.height}):{x:0,y:d.height*.55,width:d.width,height:d.height*.45};
     const titleBox={x:region.x+margin,y:region.y+margin,width:region.width-2*margin,height:region.height-2*margin};
     const ops=[imageOperation(a,imageDimensions[a.name.toLowerCase()],{x:0,y:0,width:d.width,height:overlay?d.height:region.y})];
     if(overlay)ops.push({kind:edge==='bottom'?'gradient':'rect',...region,color:'rgba(5,10,17,.65)'});

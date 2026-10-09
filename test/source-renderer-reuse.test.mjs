@@ -48,9 +48,10 @@ const sandbox={TextEncoder,TextDecoder,Uint8Array,Uint8ClampedArray,Blob,File:Te
       ['bundle.json',new TextEncoder().encode(JSON.stringify(plans.get(file)))],['source.txt',source],['photo.png',image]])},
     ThreadsSourceCut:{assertFontText(){}},ThreadsViralModel:{comfortScan(){}},ThreadsImageAnalysis:{inspect(){counts.analyze++;return {}; }},
     ThreadsPagePlan:{VERSION:'test-rule',compile(plan){lastCompiledPlan=plan;counts.compile++;return {ruleVersion:'test-rule',pages:[
-      {number:1,width:1080,height:1350,operations:[{kind:'image',name:'photo.png',x:0,y:0,width:100,height:100}]}]};}}}
+      {number:1,width:1080,height:1440,operations:[{kind:'image',name:'photo.png',x:0,y:0,width:100,height:100}]}]};}}}
 };
 const titleContext={};for(const name of ['source-page-plan.js','source-curation.js'])vm.runInNewContext(await fs.readFile(new URL('../app/'+name,import.meta.url),'utf8'),titleContext);
+Object.assign(sandbox.window.ThreadsPagePlan,{FEED:titleContext.ThreadsPagePlan.FEED,feedAspect:titleContext.ThreadsPagePlan.feedAspect,prepareFeedLayout:titleContext.ThreadsPagePlan.prepareFeedLayout,compileForFeed:sandbox.window.ThreadsPagePlan.compile});
 sandbox.window.ThreadsSourceCuration.normalizeTitles=titleContext.ThreadsSourceCuration.normalizeTitles;
 vm.runInNewContext(await fs.readFile(new URL('../app/universal-production-model.js',import.meta.url),'utf8'),sandbox);
 sandbox.window.ThreadsUniversalProductionModel=sandbox.ThreadsUniversalProductionModel;

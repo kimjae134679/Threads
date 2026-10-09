@@ -4,6 +4,9 @@ const {editorRoot}=require('./editor-assets.cjs');
 const modelModule={exports:{}};require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(editorRoot(),'universal-production-model.js'),'utf8'),{module:modelModule});
 const {auditLayout,normalize}=modelModule.exports;
 const {prepareImageComposition}=require('./image-composition.cjs');
+const feedModule={exports:{}};
+require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(editorRoot(),'source-page-plan.js'),'utf8'),{module:feedModule});
+const feedPolicy=feedModule.exports;
 function assertExactIntake(source,layout){
  const audit=auditLayout(layout);if(!audit.ok)throw Error('본문·이미지·댓글 무결성 검증 실패: '+JSON.stringify(audit.issues));
  const ops=layout.pages.flatMap(p=>p.operations||[]);
@@ -106,8 +109,21 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
     }catch(error){return {error:error.message};}})()`);
     if(rendered.error)throw new Error(rendered.error);
     if(!rendered.pages||rendered.images?.length!==rendered.pages)throw new Error('결과 이미지 수를 확인할 수 없습니다.');
+    const expectedPages=preserveBodyPlan?result.productionPlan.pages.slice(0,1):result.productionPlan.pages;
+    if(expectedPages.length!==rendered.pages)throw Error('제작 계획의 페이지 수가 결과와 다릅니다.');
+    const images=rendered.images.map((image,index)=>{
+      const data=Buffer.from(image.data,'base64'),page=expectedPages[index];
+      if(image.name!=='rendered/slide-'+String(page.number).padStart(3,'0')+'.png')throw Error('결과 이미지 페이지 순서가 제작 계획과 다릅니다.');
+      if(data.length<33||data.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||data.readUInt32BE(8)!==13||data.toString('ascii',12,16)!=='IHDR')throw Error('결과 PNG 크기 정보를 확인할 수 없습니다.');
+      const width=data.readUInt32BE(16),height=data.readUInt32BE(20);
+      if(!feedPolicy.feedAspect(width,height).ok)throw Error('결과 PNG 비율이 게시 허용 범위를 벗어납니다.');
+      if(width!==page.width||height!==page.height)throw Error('결과 PNG 크기가 제작 계획과 다릅니다.');
+      if(width!==feedPolicy.FEED.width||height!==feedPolicy.FEED.height)throw Error('결과 PNG는 동일 세로 규격 1080×1440이어야 합니다.');
+      if(data.length>8*1024*1024)throw Error('결과 PNG가 8MB를 초과합니다. 재출력 전 검토가 필요합니다.');
+      return {name:image.name,data};
+    });
     return {title:rendered.title,productionPlan:result.productionPlan,sourcePlan:result.sourcePlan,intakeAudit,zip:Buffer.from(rendered.zip,'base64'),sourceZip:Buffer.from(rendered.sourceZip,'base64'),
-      images:rendered.images.map(image=>({name:image.name,data:Buffer.from(image.data,'base64')}))};
+      images};
   }
 
 module.exports={renderBatchInput,assertExactIntake};

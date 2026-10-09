@@ -356,13 +356,14 @@
         analysis:window.ThreadsImageAnalysis.inspect(img)};
     }
     const ctx=document.createElement('canvas').getContext('2d'),font=family(plan.style?.fontId||'sans',plan.style?.allowSystemFallback);
-    const layout=preserveBodyPlan?JSON.parse(JSON.stringify(preserveBodyPlan)):window.ThreadsPagePlan.compile(plan,dimensions,(text,size,weight=400)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;});
+    let layout=preserveBodyPlan?JSON.parse(JSON.stringify(preserveBodyPlan)):window.ThreadsPagePlan.compileForFeed(plan,dimensions,(text,size,weight=400)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;});
     if(preserveBodyPlan){layout.bodyRuleVersion=layout.ruleVersion;layout.ruleVersion=window.ThreadsPagePlan.VERSION;layout.bodyPreserved=true;}
     for(const asset of plan.imageComposition?.assets||[]){
       const name=asset.name.toLowerCase(),img=await loadImage(media.get(name));images.set(name,img);
       dimensions[name]={width:img.naturalWidth,height:img.naturalHeight,sha256:asset.sha256};
     }
     if(plan.imageComposition||plan.completeCover)window.ThreadsImageComposition.applyComposition(layout,plan,dimensions,(text,size,weight=900)=>{ctx.font=weight+' '+size+'px '+font;return ctx.measureText(text).width;},window.ThreadsPagePlan);
+    layout=window.ThreadsPagePlan.prepareFeedLayout(layout,{portrait:true,coverOnly:!!preserveBodyPlan});
     layout.imageAnalysis=dimensions;
     return {layout,images,font};
     }catch(error){releaseImages(images);throw error;}
@@ -406,13 +407,16 @@
   async function renderCurated(plan,media,{preview=false,watermark=true,productionPlan=null,file=null,coverOnly=false}={}) {
     if(productionPlan&&productionPlan.ruleVersion!==window.ThreadsPagePlan.VERSION)
       throw new Error('제작 계획의 처리 규칙이 변경되었습니다. 다시 계획하세요.');
-    const prepared=await renderAssets(plan,media,productionPlan,file,coverOnly),layout=prepared.layout;
+    const prepared=await renderAssets(plan,media,productionPlan,file,coverOnly);
+    const layout=window.ThreadsPagePlan.prepareFeedLayout(prepared.layout,{portrait:true,coverOnly});
     const {images,font}=prepared;
     if(layout.ruleVersion!==window.ThreadsPagePlan.VERSION)throw new Error('제작 계획의 기준 버전이 오래되었습니다. 다시 계획하세요.');
     const titlePolicy=window.ThreadsPagePlan;if(titlePolicy.titleInfo&&titlePolicy.titleInfo(layout.coverTitle||plan.coverTitle).sourceLabels.length)throw new Error('제목 출처 정제가 누락되어 렌더를 보류합니다.');
     plan.productionPlan=layout;
     const output=[];
     try {for(const page of coverOnly?layout.pages.slice(0,1):layout.pages) {
+      const policy=window.ThreadsPagePlan;
+      if(page.width!==policy.FEED.width||page.height!==policy.FEED.height||!policy.feedAspect(page.width,page.height).ok)throw Error('출력 비율: 모든 장은 1080×1440이어야 합니다.');
       const canvas=document.createElement('canvas');canvas.width=page.width;canvas.height=page.height;
       const ctx=canvas.getContext('2d');ctx.fillStyle=page.background||'#fff';ctx.fillRect(0,0,page.width,page.height);
       ctx.textBaseline='top';
@@ -427,6 +431,12 @@
           gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(0.4,'rgba(0,0,0,0.6)');gradient.addColorStop(1,'rgba(0,0,0,0.9)');
           ctx.fillStyle=gradient;ctx.fillRect(op.x,op.y,op.width,op.height);
         }else{
+          const safe=policy.FEED.safeMargin;let advance=0;
+          const parts=op.runs||[{text:op.text,size:op.size,weight:op.weight}];
+          for(const run of parts){ctx.font=run.weight+' '+run.size+'px '+font;advance+=ctx.measureText(run.text).width;}
+          const left=op.align==='center'?op.x-advance/2:op.align==='right'?op.x-advance:op.x;
+          if(left<safe||left+advance>page.width-safe+.5||op.y<safe||op.y+(op.lineHeight||op.size*1.35)>page.height-safe+.5)
+            throw Error('글씨 안전 여백 초과: 원문을 생략하지 않고 세로 제작 계획을 다시 만드세요.');
           if(op.runs){
             ctx.textAlign='left';let x=op.x;
             for(const run of op.runs){ctx.font=run.weight+' '+run.size+'px '+font;ctx.fillStyle=run.color;const y=op.y+Math.max(0,op.size*1.06-run.size)*.8;
