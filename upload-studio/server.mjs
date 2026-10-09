@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import * as domain from './domain.mjs';
 import {StateStore} from './store.mjs';
 import {LocalAssets} from './local-assets.mjs';
+import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
 import {offlinePlan} from './adapter.mjs';
 import {PublicationJournal} from './vendor/publication-journal.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url));
@@ -13,8 +14,9 @@ const fail=(code,status=400)=>{throw Object.assign(new Error(code),{code,status}
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8'};
 async function readBody(req){let bytes=0;const chunks=[];for await(const c of req){bytes+=c.length;if(bytes>16000000)fail('body_too_large',413);chunks.push(c);}try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{fail('invalid_json');}}
 function send(res,status,value){res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
-export async function createStudioServer({root=path.join(here,'.local'),port=4387}={}) {
+export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT}={}) {
   const store=new StateStore(root),assets=new LocalAssets(root),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
+  const production=new ProductionInput(materialRoot,assets);
   await store.mutate(domain.recoverJobs);
   const server=http.createServer(async(req,res)=>{
     try {
@@ -24,6 +26,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       res.setHeader('content-security-policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'");
       const url=new URL(req.url,'http://127.0.0.1:'+actualPort),route=url.pathname;
       if(route==='/api/publish'||route==='/api/schedule'||route==='/api/connect')fail('live_operation_disabled',405);
+      if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/state')return send(res,200,{state:await store.read(),mode:'offline-only',accountsConnected:false});
       if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,caption:p.caption,tags:p.tags,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
@@ -31,7 +34,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
         const body=await readBody(req);domain.rejectSecrets(body);let state;
         if(route==='/api/assets')return send(res,200,{asset:await assets.add(body),externalCalls:0});
-        if(route==='/api/bundles'){await assets.verifyPosts(body.posts||[]);state=await store.mutate(s=>domain.importBundle(s,body));}
+        if(route==='/api/production/import'){const bundle=await production.bundle(body.selection);state=await store.mutate(s=>{const fresh=bundle.posts.filter(p=>!s.posts.some(x=>x.post_id===p.post_id&&x.output_version===p.output_version));return fresh.length?domain.importBundle(s,{...bundle,posts:fresh}):s;});}
+        else if(route==='/api/bundles'){await assets.verifyPosts(body.posts||[]);state=await store.mutate(s=>domain.importBundle(s,body));}
         else if(route.startsWith('/api/posts/')){const postId=decodeURIComponent(route.slice('/api/posts/'.length));if(body.patch?.images)await assets.verifyPosts([{images:body.patch.images}]);state=await store.mutate(s=>domain.editPost(s,postId,body.patch||{},body.expected_revision));}
         else if(route==='/api/approve')state=await store.mutate(s=>domain.approveDryRun(s,body.post_id,body.expected_revision));
         else if(route==='/api/queue')state=await store.mutate(s=>domain.queuePost(s,body.post_id,body.expected_revision));
@@ -63,5 +67,6 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const portArg=process.argv.indexOf('--port');const port=portArg<0?4387:Number(process.argv[portArg+1]);
   if(!Number.isInteger(port)||port<1024||port>65535)throw Error('invalid_local_port');
-  const app=await createStudioServer({port});console.log('Upload Studio (offline only): '+app.url);for(const signal of ['SIGINT','SIGTERM'])process.once(signal,async()=>{await app.close();process.exit(0);});
+  const materialArg=process.argv.indexOf('--material-root');const materialRoot=materialArg<0?DEFAULT_MATERIAL_ROOT:process.argv[materialArg+1];if(!materialRoot)throw Error('invalid_material_root');
+  const app=await createStudioServer({port,materialRoot});console.log('Upload Studio (offline only): '+app.url);for(const signal of ['SIGINT','SIGTERM'])process.once(signal,async()=>{await app.close();process.exit(0);});
 }

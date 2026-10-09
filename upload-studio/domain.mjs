@@ -15,7 +15,7 @@ export function localTiming(t={mode:"now"}) {
   return {mode:"planned",local:t.local,offset_minutes:t.offset_minutes,due_at:new Date(stamp+t.offset_minutes*60000).toISOString()};
 }
 function normalizeImages(images=[]) {
-  if(!Array.isArray(images)||images.length>20)fail("image_count_invalid");
+  if(!Array.isArray(images)||images.length>200)fail("image_count_invalid");
   return images.map((im,i)=>{if(im.order!==i+1||!/^([a-f0-9]{64})$/.test(im.asset_id||"")||!["image/jpeg","image/png","image/webp"].includes(im.mime))fail("image_order_invalid");return {asset_id:im.asset_id,order:i+1,mime:im.mime};});
 }
 function normalizeSource(s={}){return {url:str(s.url||"",2048),verified:s.verified===true,label:str(s.label||"",300)};}

@@ -6,7 +6,7 @@ export class LocalAssets {
   constructor(root){this.root=path.join(path.resolve(root),'assets');}
   async add({name,mime,base64}) {
     if(typeof base64!=='string'||base64.length>15000000||!/^[A-Za-z0-9+/]*={0,2}$/.test(base64))fail('asset_invalid');
-    const bytes=Buffer.from(base64,'base64');if(!bytes.length||bytes.length>10000000)fail('asset_size_limit');
+    const bytes=Buffer.from(base64,'base64');if(!bytes.length||bytes.length>25*1024*1024)fail('asset_size_limit');
     const valid=mime==='image/jpeg'?bytes.subarray(0,3).equals(Buffer.from([255,216,255])):mime==='image/png'?bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])):mime==='image/webp'?bytes.subarray(0,4).toString()==='RIFF'&&bytes.subarray(8,12).toString()==='WEBP':false;
     if(!valid)fail('asset_format_invalid');
     const asset_id=createHash('sha256').update(bytes).digest('hex'),asset={asset_id,mime,bytes:bytes.length,name:String(name||'image').replace(/[\\/\0]/g,'_').slice(0,200)};

@@ -10,7 +10,15 @@ node upload-studio/server.mjs
 ```
 브라우저에서 http://127.0.0.1:4387 을 엽니다. 서버는 127.0.0.1에만 연결되며 원격 접속·다른 Origin 요청·실제 게시/예약/연결 API를 거부합니다.
 
-Windows 편의 실행은 `upload-studio/START.ps1`, 중단은 `STOP.ps1`입니다. 실행 정책을 바꾸거나 우회하지 않습니다. 실행 정책이 허용하지 않으면 위 Node 명령을 씁니다. 기존 앱·4173 서버·원본 자료에는 연결하거나 덮어쓰지 않습니다.
+Windows 편의 실행은 `upload-studio/START.ps1`, 중단은 `STOP.ps1`입니다. 실행 정책을 바꾸거나 우회하지 않습니다. 실행 정책이 허용하지 않으면 위 Node 명령을 씁니다. 기존 앱·4173 서버를 변경하지 않습니다. 제작 자료는 아래 고정 계약만 읽으며 원본을 덮어쓰지 않습니다.
+
+## 현재 제작 결과 연결
+
+'현재 제작글 불러오기'에서 글을 선택합니다. 기본 자료 경로는 `D:\\A_KJ\\AI\\Projects\\Threads\\자료`이며 다른 경로는 `START.ps1 -MaterialRoot '실제 자료 폴더'` 또는 `node upload-studio/server.mjs --material-root "실제 자료 폴더"`로 지정합니다. 브라우저가 임의 파일 경로를 서버에 넘기는 API는 없습니다.
+
+기존 `desktop/post-review-store.cjs`의 계약을 확인했습니다. `06_자동 제작 결과/status.json`의 글 ID와 `sourceFingerprint/outputSha256/ruleVersion/이미지 SHA-256`으로 동일한 제작 버전을 계산합니다. manifest 순서대로 rendered/slide-*.png의 실제 해시를 확인하고 선택한 글의 이미지 사본만 .local/assets에 저장합니다. 상대경로·realpath·심볼릭 링크 탈출을 차단합니다. 가져오는 동안 버전이 바뀌면 중단합니다. 모든 제작 페이지(최대200장)를 보존하고 Instagram10/Threads20 범위를 넘으면 준비를 보류합니다.
+
+기존 제작 계획에 명시적 `publishCaption` 또는 `caption` 문자열이 있을 때만 그대로 사용합니다. 기존 제작기는 게시 본문을 제공하는 보장된 계약이 없으므로 이미지 본문을 임의 기사화하지 않습니다. 본문이 없으면 빈 공통 문안 편집창에 직접 입력합니다. 같은 글·같은 버전의 재가져오기는 사용자 편집을 보존합니다. 새 버전은 이전 문안을 archive에 보존하고 검수·승인 없이 새 제작 버전으로 교체하며 대기를 자동 생성하지 않습니다. 기존 07_사용자 평가 파일은 읽거나 수정하지 않습니다.
 
 ## 작성과 저장
 
