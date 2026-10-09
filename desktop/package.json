@@ -67,6 +67,8 @@
       "image-composition.cjs",
       "editor-assets.cjs",
       "image-production-run.cjs",
+      "image-file-receiver.cjs",
+      "image-file-receive.cjs",
       "image-work-state.cjs"
     ],
     "extraResources": [
