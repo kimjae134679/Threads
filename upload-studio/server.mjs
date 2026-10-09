@@ -7,6 +7,7 @@ import * as domain from './domain.mjs';
 import {StateStore} from './store.mjs';
 import {LocalAssets} from './local-assets.mjs';
 import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
+import {ProductionSync} from './production-sync.mjs';
 import {offlinePlan} from './adapter.mjs';
 import {PublicationJournal} from './vendor/publication-journal.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url));
@@ -16,7 +17,7 @@ async function readBody(req){let bytes=0;const chunks=[];for await(const c of re
 function send(res,status,value){res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
 export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT}={}) {
   const store=new StateStore(root),assets=new LocalAssets(root),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
-  const production=new ProductionInput(materialRoot,assets);
+  const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
   await store.mutate(domain.recoverJobs);
   const server=http.createServer(async(req,res)=>{
     try {
@@ -27,6 +28,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       const url=new URL(req.url,'http://127.0.0.1:'+actualPort),route=url.pathname;
       if(route==='/api/publish'||route==='/api/schedule'||route==='/api/connect')fail('live_operation_disabled',405);
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
+      if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
       if(req.method==='GET'&&route==='/api/state')return send(res,200,{state:await store.read(),mode:'offline-only',accountsConnected:false});
       if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,caption:p.caption,tags:p.tags,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
@@ -34,7 +36,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
         const body=await readBody(req);domain.rejectSecrets(body);let state;
         if(route==='/api/assets')return send(res,200,{asset:await assets.add(body),externalCalls:0});
-        if(route==='/api/production/import'){const bundle=await production.bundle(body.selection);state=await store.mutate(s=>{const fresh=bundle.posts.filter(p=>!s.posts.some(x=>x.post_id===p.post_id&&x.output_version===p.output_version));const next=fresh.length?domain.importBundle(s,{...bundle,posts:fresh}):s;return domain.refreshProductionFeedback(next,bundle.posts);});}
+        if(route==='/api/production/sync')return send(res,200,await productionSync.run());
+        else if(route==='/api/production/import')return send(res,200,await productionSync.run(body.selection));
         else if(route==='/api/bundles'){await assets.verifyPosts(body.posts||[]);state=await store.mutate(s=>domain.importBundle(s,body));}
         else if(route.startsWith('/api/posts/')){const postId=decodeURIComponent(route.slice('/api/posts/'.length));if(body.patch?.images)await assets.verifyPosts([{images:body.patch.images}]);state=await store.mutate(s=>domain.editPost(s,postId,body.patch||{},body.expected_revision));}
         else if(route==='/api/approve')state=await store.mutate(s=>domain.approveDryRun(s,body.post_id,body.expected_revision));

@@ -37,6 +37,36 @@ export function importBundle(state,bundle){
   const s=clone(state),seen=new Set();for(const raw of bundle.posts){const p=normalizePost(raw);if(seen.has(p.post_id))fail("duplicate_post");seen.add(p.post_id);const existing=s.posts.findIndex(x=>x.post_id===p.post_id);if(existing<0)s.posts.push(p);else {const prev=s.posts[existing];if(prev.output_version===p.output_version)fail("same_version_import_conflict");s.archived_posts.push(prev);p.revision=prev.revision+1;s.posts[existing]=p;invalidate(s,p.post_id);}}
   s.revision++;return s;
 }
+// Producer refresh never replaces local writing or creates publication jobs.
+export function syncProductionBundle(state,bundle){
+  rejectSecrets(bundle);if(!bundle||!Array.isArray(bundle.posts)||bundle.posts.length>1000)fail("bundle_invalid");
+  const s=clone(state),seen=new Set();let changed=false;
+  for(const raw of bundle.posts){
+    if(seen.has(raw.post_id))fail("duplicate_post");seen.add(raw.post_id);
+    const index=s.posts.findIndex(p=>p.post_id===raw.post_id);
+    if(index<0){s.posts.push(normalizePost(raw));changed=true;continue;}
+    const previous=s.posts[index];
+    if(previous.output_version!==raw.output_version){
+      const next=normalizePost(raw);
+      // Even a deliberately blank edited caption survives new production.
+      for(const key of ["caption","tags","targets","timing"])next[key]=clone(previous[key]);
+      next.revision=previous.revision+1;s.archived_posts.push(previous);s.posts[index]=next;
+      invalidate(s,next.post_id);changed=true;continue;
+    }
+    const incoming=normalizeSource(raw.source),nextSource={...previous.source,
+      label:incoming.label,display_title:incoming.display_title,
+      caption_input_title:incoming.caption_input_title,original_title:incoming.original_title};
+    if(JSON.stringify(previous.source)!==JSON.stringify(nextSource)){
+      previous.source=nextSource;previous.revision++;previous.approval=null;
+      previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;
+    }
+    const feedback=normalizeProductionFeedback(raw.production_feedback);
+    if(JSON.stringify(previous.production_feedback||null)!==JSON.stringify(feedback)){
+      previous.production_feedback=feedback;changed=true;
+    }
+  }
+  if(changed)s.revision++;return s;
+}
 export function editPost(state,postId,patch,expectedRevision) {
   rejectSecrets(patch);const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");
   if(Object.keys(patch).some(k=>!["caption","tags","images","targets","timing","source","safety","review"].includes(k)))fail("unknown_edit_field");

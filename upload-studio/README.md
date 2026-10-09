@@ -71,3 +71,8 @@ UI 참고: https://about.fb.com/news/2025/04/new-features-threads-web-experience
 ## .38 제작/리뷰 계약 일치
 
 version(row)는 기존 리뷰의 JSON 배열 순서·undefined/null 직렬화를 그대로 따르고, 값이 있는 reviewRound만 이미지 SHA 배열 뒤에 추가합니다. titleInfo는 생산자의 공유 app/source-page-plan.js(f85b072) 함수를 그대로 복사해 사용합니다. catalog는 production-plan.json의 coverTitle을 리뷰와 같은 규칙으로 정리하며 행/계획의 displayTitle·captionInputTitle이 존재하면 같은지 확인하고 다르면 보류합니다. bundle.source.label/display_title/caption_input_title은 정제 제목이고 original_title은 원문 행의 title입니다. URL/ID/제작 해시 입력/본문과 원본 파일은 수정하지 않습니다. 명시된 캡션이 없으면 빈 상태를 유지합니다. test/contract.test.mjs가 현재 생산자 reviewRound 직렬화·정제/보류·원문 보존을 검사합니다.
+
+## 자동 연결과 일괄 선택
+기본 제작 자료 폴더는 `D:\\A_KJ\\AI\\Projects\\Threads\\자료`입니다. 시작 시 현재 결과 전체를 연결하고 15초마다 새 제작 버전을 확인합니다. 경로나 글별 가져오기를 먼저 입력할 필요가 없습니다. 동일 글·버전은 중복되지 않으며, 새 버전에서도 사용자가 편집한 캡션·플랫폼·계획 시각을 유지합니다. 제작 파일과 평가 기록은 읽기만 합니다.
+제작 결과 선택 창은 여러 체크박스, 전체 선택, 선택 해제, 선택 개수와 일괄 동기화를 지원합니다. 기존 제작 계획의 명시적인 게시 캡션이 없으면 빈 문안을 유지합니다. 자동 동기화는 게시 대기 작업을 생성하거나 실행하지 않습니다.
+추가 검증: `node upload-studio/test/autoload-browser.mjs` (별도 브라우저 프로필의 로컬 시험 자료만 사용).
