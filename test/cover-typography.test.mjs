@@ -97,7 +97,7 @@ test('explicit ranges fail closed instead of silently selecting another word',()
 
 test('regular composition consumes full color range and nested size range from input',()=>{
  const title='내 방 달라는 딸 대처법.jpg',body={number:2,role:'body',operations:[{kind:'text',text:'본문 유지'}]},layout={pages:[{},structuredClone(body)]};
- globalThis.ThreadsCoverTypography=typography;globalThis.ThreadsImageComposition.applyComposition(layout,{completeCover:true,originalTitle:title,coverTitleStyle:{emphasis:'내 방 달라는 딸',sizeEmphasis:'달라는',accent:'#a44532'}},{},measure,policy);
+ globalThis.ThreadsCoverTypography=typography;globalThis.ThreadsImageComposition.applyComposition(layout,{completeCover:true,originalTitle:title,coverTitleStyle:{emphasis:'내 방 달라는 딸',sizeEmphasis:'달라는'}},{},measure,policy);
  const runs=layout.pages[0].operations.flatMap(o=>o.runs);
  assert.equal(runs.filter(r=>r.emphasized).map(r=>r.text).join('').replace(/\s/g,''),'내방달라는딸');
  assert.equal(runs.filter(r=>r.sizeEmphasized).map(r=>r.text).join('').replace(/\s/g,''),'달라는');

@@ -25,6 +25,8 @@
  }
  function accentTitle(operations,title,style){
   if(!style?.emphasis)return;
+  // Typography already validates the ranges and applies the chosen palette to runs.
+  if(operations.filter(o=>o.role==='title').every(o=>o.typography&&o.runs))return;
   if(!title.includes(style.emphasis)||style.emphasis.length>24||!/^#[a-f0-9]{6}$/i.test(style.accent||''))throw Error('강조는 원제 안의 한 구절과 단일 포인트색만 허용됩니다.');
   for(const op of operations.filter(o=>o.role==='title'))if(op.text.includes(style.emphasis)){op.highlights=[style.emphasis];op.highlightColor=style.accent;}
  }
