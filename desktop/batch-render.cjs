@@ -51,10 +51,11 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       item.plan.editorial=input.editorial||null;
       item.plan.completeCover=${!!preserveBodyPlan||job.imageHandoff?.selection?.choice==='text'&&!job.imageHandoff.held.length};
       const emphasis=input.editorial?.titleHighlights?.[0],accent=input.editorial?.titleAccent||'#ffe34d';
-      if(emphasis)item.plan.coverTitleStyle={emphasis,accent};
+      const titleStyle=input.editorial?.titleStyle||(emphasis?{emphasis,accent}:null);
+      if(titleStyle)item.plan.coverTitleStyle={...titleStyle};
       if(input.imageComposition){
         item.plan.imageComposition=input.imageComposition;
-        if(emphasis)item.plan.imageComposition.titleStyle={emphasis,accent};
+        if(titleStyle)item.plan.imageComposition.titleStyle={...titleStyle};
       }
       if(input.coverAsset){
         const a=input.coverAsset,id='supplementary-cover';

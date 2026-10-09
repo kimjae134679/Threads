@@ -2,7 +2,7 @@
 const renderCoverCanvas=require('./universal-cover-canvas.cjs');
 const renderTypographyCover=require('./typography-cover-canvas.cjs');
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',fontUrl=null,emphasis='',aspectRatio='legacy',typography=false,accent:titleAccent=null}){
+function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',fontUrl=null,emphasis='',aspectRatio='legacy',typography=false,accent:titleAccent=null,titleStyle=null}){
  if(typeof title!=='string'||!title.trim()||title.length>300)throw Error('원문 제목을 확인하세요.');
  if(!['paper','ink','photo'].includes(variant)||variant==='photo'&&!imageUrl)throw Error('사진 후보에는 관련 원본 이미지가 필요합니다.');
  if(emphasis&&(!title.includes(emphasis)||emphasis.length>24))throw Error('강조는 원래 제목 안의 짧은 한 구절만 사용하세요.');
@@ -11,7 +11,7 @@ function coverHtml({id,title,context='',imageUrl=null,variant='paper',credit='',
  if(aspectRatio==='auto')aspectRatio=title.replace(/\s/gu,'').length>70?'4:5':'square';
  if(aspectRatio!=='legacy'){
   const height=aspectRatio==='square'?1080:1350;
-  const data={id,title,context,imageUrl,variant,credit,emphasis,accent:titleAccent,aspectRatio,width:1080,height};
+  const data={id,title,context,imageUrl,variant,credit,emphasis,accent:titleAccent,titleStyle,aspectRatio,width:1080,height};
   const scripts=typography?['source-page-plan.js','source-cover-typography.js'].map(name=>require('node:fs').readFileSync(require('node:path').join(require('./editor-assets.cjs').editorRoot(),name),'utf8')).join('\n'):'';
   return '<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>'+escape(title)+'</title><style>'+
    (fontUrl?'@font-face{font-family:Cover;src:url("'+escape(fontUrl)+'");font-weight:900}':'')+

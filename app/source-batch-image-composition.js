@@ -14,7 +14,7 @@
  function titleOperations(title,box,measure,policy,color,maxSize=100,titleStyle=null){
   const typography=globalThis.ThreadsCoverTypography;
   if(typography){
-   const style=typography.style(title,{emphasis:titleStyle?.emphasis||'',accent:titleStyle?.accent||null,photo:color==='#fff'}),fit=typography.fit(title,box,measure,policy,style,Math.min(maxSize,124),32),y=box.y+box.height-fit.height;
+   const style=typography.style(title,{emphasis:titleStyle?.emphasis||'',accent:titleStyle?.accent||null,photo:color==='#fff',sizeEmphasis:titleStyle?.sizeEmphasis,sizeScale:titleStyle?.sizeScale??1.06,explicitEmphasis:!!titleStyle?.emphasis}),fit=typography.fit(title,box,measure,policy,style,Math.min(maxSize,124),32),y=box.y+box.height-fit.height;
    return fit.lines.map((text,index)=>({kind:'text',role:'title',sourceId:'title',text,x:box.x,y:y+index*fit.lineHeight,size:fit.size,lineHeight:fit.lineHeight,weight:900,color:style.palette.ink,runs:fit.runs[index],stroke:color==='#fff'?'#101722':null,strokeWidth:2,typography:style}));
   }
   let lines=null,size=maxSize,lineHeight;

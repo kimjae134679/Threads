@@ -3,7 +3,7 @@ module.exports=async function renderTypographyCover(){
  await window.coverResourcesReady;
  const input=window.coverInput,{width,height,title,credit}=input,photo=document.querySelector('img.photo');
  const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const ctx=canvas.getContext('2d'),family=getComputedStyle(document.querySelector('.title')).fontFamily;
- const typography=window.ThreadsCoverTypography,policy=window.ThreadsPagePlan,style=typography.style(title,{emphasis:input.emphasis,accent:input.accent||null,photo:!!photo}),margin=84,available=width-margin*2;
+ const typography=window.ThreadsCoverTypography,policy=window.ThreadsPagePlan,manual=input.titleStyle,style=typography.style(title,{emphasis:manual?.emphasis||input.emphasis,accent:manual?.accent||input.accent||null,photo:!!photo,sizeEmphasis:manual?.sizeEmphasis,sizeScale:manual?.sizeScale??1.06,explicitEmphasis:!!manual?.emphasis}),margin=84,available=width-margin*2;
  const measure=(text,size,weight)=>{ctx.font=weight+' '+size+'px '+family;ctx.letterSpacing=(-size*.015)+'px';return ctx.measureText(text).width;};
  const box={x:margin,y:margin,width:available,height:photo?height*.52:height-2*margin-80-(credit?56:0)};
  const fit=typography.fit(title,box,measure,policy,style,photo?104:124,48),top=photo?height-margin-fit.height-(credit?52:0):Math.max(150,(height-fit.height)/2-20);
