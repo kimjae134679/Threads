@@ -101,3 +101,25 @@ The existing Buffer test draft was then edited with the verified versioned HTTPS
 Exact source identifiers, Cloudinary asset/object/version references, image URL, and Buffer post ID are retained in the private task evidence. This public document contains no private title, image link, account identifier or credential. No payment, plan change, public social reservation or public social publication occurred.
 
 The one private test is complete. Production delivery remains held until the review producer supplies explicit user-passed immutable versions with exact captions/tags, ordered source image references/hashes, destination channels and duplicate fences. The test image must never enter the production refill queue.
+
+## Production export contract located; live input pending — 2026-10-10 KST
+
+The existing FINAL_REVIEW_HANDOFF.md, final-review.mjs and review-handoff.mjs were read at commit cfd612387f34ab691c1bdf7e31c34578ada8bdc2. The producer contract is now concrete; this task did not implement a new parser or modify the review application. A review-task read failed with a Codex app request error. No actual latest passed manifest, its media bytes or supported live-state read path was supplied to this task, so no production upload or reservation was attempted.
+
+Review owns <studio-root>/.local/final-review-handoff/handoff.<revision>.<id>.json and exposes GET /api/final-review/handoff for current preview. POST /api/final-review/handoff with expected_revision writes the immutable manifest in the review program. The actual installed studio root and accessible transfer route must be reported by that owner; a Windows local_file is not readable merely because a cloud service accepts path syntax.
+
+The required existing manifest fields are:
+- schema, type, state_revision, handoff_id, generated_at, review_statuses and eligible_post_ids.
+- posts[].postId, outputVersion, approval.status=passed, approval.reviewedAt and approval.fingerprint.
+- Exact posts[].captions by platform; tags.common/topic/legacy/threads_topic; platforms, media_format and media_contract.
+- Ordered posts[].images with order, sha256, mime, local_file and approved_image_url. Null URLs require delivery of the original image bytes through an accessible approved route.
+- Source/safety/review/blockers sufficient to evaluate the independent constraints. These private payloads must not be committed to the public repository or uploaded to image storage.
+- consumer_contract with state_file, require_live_revision_and_fingerprint, require_asset_hash_and_mime, results_directory and revalidation requirements.
+
+Before each production upload or provider write, the uploader must have a supported fresh read of the actual state revision, handoff identity, eligible IDs/current approval fingerprints, and the original ordered image SHA-256/MIME. A stale immutable export or historical pass is insufficient. Do not concatenate exported tags onto captions that already contain the final hashtags or silently rewrite caption content.
+
+Transfer the manifest and every referenced original image through a private supported file/Library route, retaining fixed file identities/versions and their mapping to each ordered hash. Separately supply the accessible read-only current-state route and the review-owned installation/export root. Public GitHub is for sanitized operational documentation, not production captions, review records, image bytes or account identifiers.
+
+Uploader results belong to <studio-root>/.local/final-review-results/; they must not modify review state or immutable manifests. Result persistence needs an accessible owned destination before live execution. Keep the provider ID, object version/hash mapping, planned KST time, status, failure cause and verified link there. The existing direct user consent already covers approved Cloudinary Free delivery and the agreed Buffer scheduling scope; the pending requirement is verifiable data/access, not another consent request.
+
+The private single-PNG Threads test remains complete and excluded from production. Multi-image delivery, Instagram delivery and production sequential scheduling have not yet been tested or completed.
