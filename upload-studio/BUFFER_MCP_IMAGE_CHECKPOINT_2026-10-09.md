@@ -1,3 +1,92 @@
+# Buffer 게시 운영 결과와 재개 규칙 — 2026-10-10 KST
+
+이 문서는 04_REVIEW_PUBLISH의 외부 전달 담당이 실제 조회·파일 검사·전송 결과를 정리한 공개 운영 기록이다. 아래 과거 체크포인트의 접근 불가·생산 전송 대기 상태는 해당 시점의 이력이다. 현재 재개는 이 상단의 최신 확인과 비공개 원장을 우선한다. 개별 문안, 이미지, 계정·채널 식별자, 게시 링크, 원본 URL, 개인 평가 내용 및 비밀값은 공개하지 않는다.
+
+## 완료 범위와 현재 확인
+
+2026-10-10 약 06:20 KST까지 확인한 상태이며 상시 최신 현황이 아니다.
+
+| 구분 | 실제 확인 |
+|---|---|
+| 공개 테스트 | 같은 원본 5건을 대상으로 Instagram 5건 sent, Threads 4건 sent·1건 error |
+| 기존 예약 | 플랫폼별 10건, 합계 20건 유지. 13개 원본에 해당 |
+| 전송 중·현재 보류·삭제 | 각각 0건. 기존 테스트용 비공개 초안 1건 보존 |
+| 일시 초안 전환 | 중단 지시 때 13건 전환. 후속 유지 지시에 따라 같은 ID·원래 미래 시각으로 모두 복원 |
+| 현재 통과본 | state revision 120의 현재 버전·지문과 일치한 활성 통과 60건 |
+| 완료·남은 원본 | 양쪽 sent 4건, 양쪽 완료 전 56건 = 예약이 있는 13건 + 완전 대기 42건 + 한쪽 sent·한쪽 error 1건 |
+| 플랫폼별 미완료 | Instagram 55건·Threads 56건. 이 중 기존 예약 제외 대기 45건·46건 |
+| 자동 예약 보충 | 부모 운영 담당의 재활성화 후 실제 설정 true 확인. 외부 전달 담당은 설정을 변경하지 않음 |
+
+9개 실제 공개 결과는 provider ID, HTTPS 게시 링크, providerVerifiedAt, publishedAt을 독립 조회로 확인했다. 예약을 완료로 표시하지 않았으며 consumer 최신 결과 30건(예약20·sent9·error1)을 저장 파일과 대조했다. 새 사람 판정 생성·기존 판정 덮어쓰기는 0건이다.
+
+## 사용자 요구와 실제 적용
+
+- Cloudinary Free에는 승인된 완성 테스트와 정확한 통과 버전의 게시용 이미지만 보관한다. 공개 URL 접근은 승인 범위다. 원문·평가·미검토 자료, 결제·플랜 변경·새 비밀값 생성은 제외한다.
+- 최종 통과 감사 기록과 원본을 보존한다. 장식 제목 대괄호 제거는 명시 승인된 제한 변환이며 몸통·태그·이미지 순서·원본 bytes를 몰래 바꾸지 않는다.
+- 새 전송은 Instagram과 Threads에 같은 원본 글·버전·순서로 한 쌍을 사용한다. 새 예약 쌍은 같은 미래 시각을 사용하며 한쪽 제한에 다른 소재를 대신 짝짓지 않는다.
+- 이미 공개된 글은 유지한다. 최신 지시에 따라 기존 예약20건도 유지한다. 삭제·재게시·임의 교체를 실행하지 않는다.
+- 세로 캔버스·여백·글씨 배치 보정은 프로그램 제작 담당이 수행한다. 사용자는 내용·순서가 유지되는 해당 보정에 기존 평가 보존을 명시했다. 이는 새로운 사람 통과 판정을 자동 생성하거나 source/rights/safety를 verified로 바꾸는 승인이 아니다. 새 자산 해시·버전 연결과 명시 승인 연결은 별도로 보존한다.
+- 한 건의 가로 과다 이미지에는 앞서 승인된 최소 패딩 예외를 적용했다. 1080×552 원본을 1080×568 사본으로 만들고 위·아래8px씩 추가했다. 원본 영역596,160pixel의 동일성을 독립 디코딩 비교로 확인했다. 해당 Instagram의 기존 실패 ID에서만 재전송했고, 이미 sent인 Threads 원본은 유지했다. 이 패딩은 전체 캐러셀 잘림 해결이 아니다.
+
+## 확인된 원인·해결과 미확인 사항
+
+| 현상 | 확인 근거와 조치 |
+|---|---|
+| Library 원본 다운로드403 | 정상 PNG에도 발생. MIME 누락 때문이라고 단정하지 않음. 차단 다운로드·다른 브리지·credential-protection 경로를 재시도하지 않음 |
+| PC 원본 접근 | 이후 지원된 Windows 실행 환경에서 원본을 직접 읽을 수 있었음. 접근 가능 상태와 당시 원격 Library 실패는 별개 |
+| 전송 데이터 누락·명령 길이 | 큰 base64는 제한된 조각으로 읽고 전체 길이·해시를 확인. 긴 문서는 구조화된 파일 쓰기 사용. PowerShell 문자열은 ASCII escape로 처리 |
+| 비동기 프로세스 | session_id가 반환되면 완료와 exit code까지 기다림. 파일 쓰기가 끝나기 전 후속 업로드를 실행하지 않음 |
+| Instagram 가로 비율 오류 | 실패 자산은 약1.9565:1로1.91:1 상한 밖. 위의 승인 패딩 후 같은 ID sent 확인 |
+| Instagram 본문 잘림 | 공식 가이드상 캐러셀은 첫 이미지 비율로 나머지를 crop. 정사각형 표지와 다른 비율의 본문 혼합이 잘림 원인과 일치. 모든 장의 동일 비율·안전 여백 보정은 제작 담당 후속 범위 |
+| Buffer429 | 안내된 Retry-After를 기다린 뒤 요청과 중복 상태를 다시 확인. 접수된 전송을 재생성하지 않음 |
+| 마지막 Threads 제한 | Meta community guidelines 제한을 실제 get_post에서 확인. 어떤 문장·이미지가 원인인지는 응답에 없음. 자동 재시도·우회·새 소재 대체 없음 |
+| 이미 공개된 글 수정 | 현재 Buffer 공식 가이드는 published post edit/delete를 지원하지 않음. Instagram 자체의 모든 수정 가능성을 검증한 것으로 확대 해석하지 않음 |
+
+마지막 Threads의 오류 메시지:
+> This post has been restricted by Meta for violating community guidelines. Please review the guidelines, edit your post, and try again.
+
+사용자 승인만으로 Meta 제한을 해제할 수 없다. 정확한 거절 자료와 공식 사유를 검토한 뒤 허용되는 수정 범위와 검토를 정해야 한다. 이 기록에서는 원인을 추측하거나 기존 판정을 취소하지 않았다.
+
+## 예약 제약과 남은 일
+
+- 기존 예약13개 원본 중 양쪽 예약이 있는 것은7쌍이다. 같은 시각은1쌍, 다른 시각은6쌍이다. 한쪽에만 예약된 원본6건도 있다. 최신 유지 지시 때문에 기존 시각은 변경하지 않았다.
+- 기존 한 쌍은 두 플랫폼 제목·소재 의미가 다르다. 이미지 본문 근거와 제목 불일치는 확인했지만 사용자가 각각 의도한 것인지는 파일만으로 확정할 수 없다. 문안·표지 의미를 바꾸는 일은 단순 괄호 제거를 넘어선다.
+- 완전 대기42개 원본 중 이미지 개수만으로 양쪽에 맞는 것은23건이고,19건은 현재 Instagram10장 제한을 초과한다. 개수 통과가 비율·파일·정책 검증 완료를 뜻하지 않는다. 임의 분할·삭제·순서 변경으로 우회하지 않는다.
+- 실제 무료 예약 한도는 현재 채널별10건이며 빈칸0이다. 다음 새 쌍은 양쪽 공통 미래 빈칸이 있어야 한다.
+- 슬롯은 Asia/Seoul, [08:00,11:00), [12:00,14:00), [17:00,21:00),30분 간격이다. 과거·점유 시각과 provider 실제 한도를 제외한다.
+- 시각 변경 승인안: “기존 미게시 예약 중 시각이 다른6쌍을 제안된 같은 미래 시각으로 재배치하세요. 기존 ID·문안·이미지를 보존하고 삭제하지 마세요.” 비공개 원장에는 당일17:00–19:30의30분 간격으로 충돌을 피하는 구체안을 기록했으며 미적용이다.
+- 소재 수정 승인안: “불일치한 한 쌍을 확인된 이미지 본문 소재로 통일하고 상대 플랫폼 제목·표지도 수정하세요.” 정확한 수정본과 승인 연결은 제작·검토 담당이 확정한다.
+- 외부 전달 담당은 프로그램 코드·배포·다른 담당 문서를 수정하지 않는다. 프로그램 보정·새 자산 전달 완료는 아직 이 작업의 검증 결과가 아니다.
+
+## 파일 계약·소유권과 재발 방지
+
+| 담당 | 소유 범위 |
+|---|---|
+| 제작·프로그램 담당 | 원문 근거, 실제 렌더러·세로 출력, 원본과 파생 자산, 배포 |
+| 검토 앱 담당 | 현재 state와 별도 final-review 결정 파일, 사용자 판정 감사, 결과 consumer |
+| 외부 전달 담당 | 승인 버전 비교, 공식 MCP 외부 쓰기, provider 결과·오류·중복 확인, 이 운영 문서 |
+| 통합 담당 | 공통 목차·정책·프로젝트 지도와 후속 승인 전달 |
+
+확인된 비공개 파일은 .local/state.json, .local/final-review-decisions.json, .local/final-review-handoff/, .local/assets/, .local/final-review-results/, .local/provider-delivery-log/ 및 .local/provider-delivery-media/ 아래에 있다. 실제 PC 절대 경로, 원본 manifest 참조, 게시 링크·계정·개별 hash와 승인 연결은 비공개 원장에만 남긴다. 기준 공개 소스는 기존 feature/upload-studio-offline-20261009의 upload-studio/다. 이 문서 커밋은 실행 코드·배포 변경이 아니다.
+
+consumer는 파일당 schema:1 결과 객체 하나를 읽는다. 필드는 postId, outputVersion, fingerprint, platform, providerPostId, status, externalUrl, providerVerifiedAt, publishedAt, scheduledAt, recordedAt이다. 누락 값은 null, 시각은 ISO8601이다. 같은 글·버전·지문·플랫폼의 최신 recordedAt을 사용한다. sent+providerPostId+HTTPS게시링크+providerVerifiedAt+publishedAt이 모두 유효해야 완료로 인정한다. 이전 버전 결과는 현재에 자동 승계하지 않는다. 상세 계약은 [DELIVERY_RESULTS_CONTRACT](DELIVERY_RESULTS_CONTRACT.md)을 따른다.
+
+단일 외부 작성자 잠금을 먼저 확인한다. 쓰기 전 시도·원본 연결을 저장하고, 모호한 응답은 조회 후 조정한다. 라이브 목록은 모든 페이지를 확인한다. 원본 전송은 SHA/MIME/순서와 provider object·bytes·PNG metadata를 검증해 재사용한다. 이미 확인한609장 원본 전체를 이유 없이 다시 검사하지 않는다. 원본 검증과 승인 패딩 사본 검증은 구분한다.
+
+상태·오류 원장과 비공개 Library 체크포인트는 같은 고정 참조를 갱신한다. 그 참조와 실제 버전은 공개하지 않는다. 이번 확인에서 원격 보관본은 v2로 교체·재조회됐고 writer guard는 해제됐다. 자동화 활성 여부는 과거 로그로 추정하지 않고 실제 설정을 읽는다. 이번 담당은 자동화 create/update를 호출하지 않았다.
+
+검증 범위는 실제 provider 조회, 현재60건의 판정·버전·지문 비교, consumer최신30결과 비교, 원본 파일/선택 자산·패딩 검사 및 비공개 체크포인트 재조회다. 앱 빌드·렌더러 배포·전체 품질 재검수는 이 문서 작업에서 실행하지 않는다. 공개 문서 검증은 변경된 텍스트의 비공개정보 제외, 링크·UTF-8·공백 및 원격 커밋/본문 재조회로 수행한다. GitHub connector로 쓴 문서 커밋은 PC checkout HEAD/origin 동기화 증거가 아니다.
+
+## 공식 근거
+
+- [Buffer 이미지 규격·캐러셀 crop](https://support.buffer.com/articles/ideal-image-sizes-and-formats-for-your-buffer-posts-JxHNGZFvf9)
+- [Buffer 예약과 published edit/delete 제한](https://support.buffer.com/articles/scheduling-posts-4Qdld7giAZ)
+- [Buffer 미디어 호스팅](https://developers.buffer.com/guides/hosting-media.html)
+
+---
+
+## 아래는 이전 단계의 보존 기록
+
 # Buffer MCP image delivery checkpoint — 2026-10-10 (KST)
 
 Observed provider snapshot: 2026-10-10 around 03:06 KST. Results below describe that checkpoint, not a continuous live monitor.
