@@ -63,6 +63,7 @@
       "reflow-review-covers-run.cjs",
       "cover-reproduction-run.cjs",
       "user-generated-cover.cjs",
+      "production-batch.cjs",
       "review-canonical-writer.cjs",
       "pc-review-entry.cjs",
       "image-requirements.cjs",

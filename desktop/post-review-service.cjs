@@ -26,7 +26,7 @@ function registerPostReview({app,trusted,preferences,materialRoot=getMaterialRoo
  ipcMain.handle('source-cut:open-post-review',(e,id)=>{trusted(e);if(id!==undefined&&(typeof id!=='string'||id.length>200))throw Error('글 ID를 확인하세요.');return open(id);});
  ipcMain.handle('post-review:list',e=>{guard(e);return store.list().then(data=>({...data,initialFilter:activeFilter}));});
  ipcMain.handle('post-review:image',(e,id,page,version)=>{guard(e);return store.image(id,page,version);});
- ipcMain.handle('post-review:thumbnail',async(e,id,version)=>{guard(e);const src=await store.image(id,1,version),image=nativeImage.createFromDataURL(src);if(image.isEmpty())throw Error('표지 이미지를 읽을 수 없습니다.');return image.resize({width:120}).toDataURL();});
+ ipcMain.handle('post-review:thumbnail',async(e,id,version,width=120)=>{guard(e);if(![120,320].includes(width))throw Error('썸네일 크기를 확인하세요.');const src=await store.image(id,1,version),image=nativeImage.createFromDataURL(src);if(image.isEmpty())throw Error('표지 이미지를 읽을 수 없습니다.');return image.resize({width}).toDataURL();});
  ipcMain.handle('post-review:save',(e,payload)=>{guard(e);if(readOnly)throw Error('읽기 전용 검증입니다.');return store.save(payload);});
  for(const name of ['visit','decide','random'])ipcMain.handle('post-review:'+name,(e,payload)=>{guard(e);if(readOnly){if(name==='visit')return null;if(name==='decide')throw Error('읽기 전용 검증입니다.');}return store[name](payload);});
  ipcMain.handle('post-review:open-folder',async e=>{guard(e);if(!readOnly)await fs.mkdir(store.folder,{recursive:true});const error=await shell.openPath(store.folder);if(error)throw Error(error);});
