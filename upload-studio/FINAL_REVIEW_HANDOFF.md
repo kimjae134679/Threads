@@ -1,55 +1,111 @@
-# Final review and approved-input handoff
-This program handles last manual review and local handoff. Collection, caption
-writing and blank-image generation belong to upstream work. Buffer scheduling
-belongs to a separate uploader task. No network publishing route is enabled.
+# 최종 검토·Upload Studio 운영 인계
 
-## Review screen
-The post list is on the left, image preview in the centre and caption editing
-on the right. Internal hashes/IDs are hidden from visible headings and rows.
-Use the current image controls to move earlier/later, exclude from composition
-or undo. Producer files and local image bytes are never deleted by these actions.
+작성: 검토/Upload Studio 담당 Codex. 기록 기준: 2026-10-09 21:19 UTC.
+이 문서는 확인된 작업 결과와 다음 실행 계약이다. 원문·최종 문안 전문·이미지·개인 평가 내용·비밀값을 포함하지 않는다.
 
-Discard (폐기), revise (수정), and pass (통과) are saved with the current output
-version, exact content/configuration basis, timestamp and revision. Legacy scores
-never create final passes. Caption, tags, image order/composition, version or
-settings changes invalidate pass. History and full backup recovery also require
-a fresh final verdict. Existing producer evaluations remain separate metadata.
+## 현재 결과와 배포 구분
 
-Existing missing tags receive conservative common/topic suggestions once.
-User tags and deliberate topic edits are preserved. Future upstream bundles
-carry their prepared captions, common tags, two topic tags and Threads topic;
-review does not rewrite incoming article content or generate new source media.
+- 코드: `feature/upload-studio-offline-20261009`, [Draft PR #10](https://github.com/kimjae134679/Threads/pull/10).
+- 검증된 코드 커밋: [4b2fbbe](https://github.com/kimjae134679/Threads/commit/4b2fbbea604da37115f23c340a0e39138bd7b3e3).
+- 운영 앱: `D:\A_KJ\AI\Workspace\Threads\upload-studio-20261009`, `http://127.0.0.1:4387`. 마지막 확인한 설치 코드: `ab3528cdbaeaf53d878ba0a3504fa38fe78f6350`.
+- 최신 후속 코드의 운영 적용은 미완료다. 문서 커밋이나 CI 성공을 PC 설치 성공으로 표시하지 않는다.
+- 최초 업로드 모듈은 계정 연결 없이 미리보기·mock/dry-run을 구현했다. 이 앱의 실제 게시 경로는 활성화하지 않았다. 별도 Buffer 담당의 사용자 승인 게시·예약은 해당 담당의 실제 provider 기록으로 확인한다.
 
-## Local HTTP contract
-POST /api/final-review {post_id, decision, expected_revision} uses post revision.
-GET /api/state projects final_review_status for filters and current list badges.
-GET /api/final-review/handoff previews only current valid passes.
-POST /api/final-review/handoff {expected_revision} uses state revision and writes
-an immutable manifest. Save operations refresh a local snapshot while holding
-the store lock; startup reconciles after a crash. Handoff errors do not undo saved
-user text. Do not consume an older manifest when current state is newer.
+초기 [HANDOFF.md](HANDOFF.md)와 [README.md](README.md)의 대괄호 제목 및 초기 환경 제한 설명은 당시 기록이다. 현재 제목 변경과 인계 동작은 이 문서 및 현행 소스가 기준이며, 미설치 코드를 운영 동작으로 읽지 않는다.
 
-## Dedicated filesystem boundary
-Review owns <studio-root>/.local/final-review-handoff/handoff.<revision>.<id>.json.
-Manifests are append-only. They contain postId/outputVersion, final approval
-time and fingerprint, exact platform captions/tags, ordered asset hashes,
-absolute local asset paths, selected platforms and independent safety blockers.
-Approved public image URL is null when none exists; local paths are not public
-URLs. No new storage service or public media upload is created here.
+## 구현 이력과 사용자 요구 반영
 
-The separate uploader writes its own results under
-<studio-root>/.local/final-review-results/ and must never alter review state,
-producer files or approved manifests. It must read the highest current revision,
-compare .local/state.json revision and final review fingerprint immediately
-before acting, and rehash local images. Missing/stale/revoked/nonpassed content
-is blocked. A final review pass is not new public hosting or scheduling consent.
-Source, rights, platform constraints and the uploader's explicit approval remain
-independent checks. Provider result IDs/URLs belong to uploader result files.
+1. 기존 `threads.mjs`, `instagram.mjs`, `publication-journal.mjs`의 공식 API 경로를 찾았다. 브라우저 자동 게시 도구로 추정하지 않았다. `vendor/provenance.json`에 원본 blob을 고정하고 별도 모듈의 격리 dry-run에서 재사용했다. 자격정보 없는 worker와 요청 차단으로 외부 전송 없이 계약을 검증했다.
+2. 글 ID·제작 버전·순서별 이미지 해시·플랫폼별 문안·선택 플랫폼을 연결했다. 글별 미리보기, 로컬 대기/승인/취소/중단/재시도/재시작 복구를 구현했다. 새 제작 버전 생성만으로 대기나 게시를 시작하지 않는다. 원본 제작·평가 파일은 읽기 전용이며 이미지 제외/순서 변경은 검토 구성만 바꾼다.
+3. 수동 최종 판정을 현재 버전과 정확한 내용·설정 기준에 묶었다. 과거 점수는 현재 통과를 만들지 않는다. 통과/수정/폐기 및 메모를 저장하고, 본문·태그·이미지 구성·설정 변경과 전체 복원은 새 판정을 요구한다. 보류는 현재 통과 전달본에 포함하지 않는다.
+4. 화면 이동/재로드 후 메모와 판정 저장을 보존했다. 명시적 빈 메모도 저장한다. 판정 저장 중 표시·중복 저장 방지·미저장 편집 먼저 저장·오래된 응답 무시를 구현했다. 이미지 디코딩 완료 후 미리보기를 교체하고 기존 이미지 노드를 재사용해 넘김 중 빈 화면을 줄였다.
+5. 사용자의 제목 장식 `[ ]` 제거 지시를 반영했다. 첫 줄의 균형 잡힌 장식 괄호만 제거하며 다음 줄 이후의 본문·태그·이미지 바이트·순서는 보존한다. 의미 있는 본문 괄호와 출처 접두 경계는 별도 계약을 따른다.
+6. 제목만 편집한 기존 통과본은 정확한 사용자 편집 승인과 현재 버전/지문 일치 시에만 판정을 연결한다. 원래 판정 시각/리비전, 점수와 메모를 보존하고 이전 판정 및 편집 승인 이력을 남긴다. 오래된 저장 기준은 현재 내용으로 독립 재계산해 일치 여부를 확인한다. 무승인·오래된 내용·미통과 항목에 새 통과를 만들지 않는다.
+7. 작은 판정 파일은 저장 잠금 안에서 원자적으로 갱신한다. 전체 이미지 해시를 읽는 큰 manifest 생성은 저장 잠금 밖에서 합쳐 실행하고 마지막 리비전을 다시 확인한다. 생성 중에는 이전 파일을 최신으로 광고하지 않는다. 시작/재시작 시 작은 판정 파일을 복구하며 실패를 사용자 텍스트 저장 실패로 바꾸지 않는다.
+8. Buffer 결과를 판정과 분리해 읽는 consumer를 구현했다. 정확한 현재 버전/지문/플랫폼의 기록만 표시하며 예약·초안·전송 중을 게시완료로 표시하지 않는다. 읽기 계약은 통합 담당에게 전달됐으며 수신 후 구현 완료 여부는 해당 담당의 증거로 확인한다.
 
-## Verification
-New domain tests cover invalidation, version changes and history recovery.
-HTTP tests cover refresh/restart, current export, stale CAS and full backup restore.
-Real Chromium tests cover visible layout, buttons, image exclusion/undo, filters,
-navigation/reload and blocked nonpassed queue input. Windows CI covers bounded
-sharing retries and concurrent stale-lock CAS. CI must pass on the exact commit
-before applying a new PC build. The installed PC build is reported separately.
+## 파일과 담당 소유권
+
+| 대상 | 쓰기 담당 | 다른 담당의 행동 |
+|---|---|---|
+| 제작 원본·렌더·제작 버전 | 제작 담당 | 검토/업로더는 읽기·해시 확인만 한다 |
+| `upload-studio/domain.mjs`, `final-review.mjs`, `server.mjs`, `title-format.mjs`, `public/`, 관련 테스트 | 검토/Upload Studio 담당 | 통합·Buffer가 동시에 수정하지 않는다 |
+| `.local/state.json`, 메모·최종 판정 | 검토 프로그램 | 통합은 읽기 등록만 하며 덮어쓰지 않는다 |
+| `.local/final-review-decisions.json`, `.local/final-review-handoff/` | 검토 프로그램 | 최신성 대조 후 읽는다. 고정 manifest는 수정하지 않는다 |
+| `.local/final-review-results/*.json` | Buffer 담당 | 검토는 읽기 투영, 통합은 읽기 등록만 한다 |
+| 통합 공통 목차·외부 등록 계약 | 통합 담당 | 이 문서 링크와 본인 요약을 전달한다 |
+
+원본 자료는 `D:\A_KJ\AI\Projects\Threads\자료\06_자동 제작 결과`에 보존한다. 검토 앱의 `.local/assets/`는 로컬 원본 사본이다. Windows 경로를 원격 Cloudinary/Meta에서 읽을 수 있는 URL로 취급하지 않는다. 비공개 전달본과 실제 이미지 바이트는 공개 GitHub에 넣지 않는다.
+
+## 최신 판정·입력 계약
+
+- `GET /api/state`: 현재 state revision, posts와 final review.
+- `GET /api/final-review/handoff`: 현재 state revision/handoff 식별자 및 최신 준비 상태. 새 코드에서 `latest.pending=true`이면 이전 경로를 소비하지 않는다. 설치된 이전 코드에 필드가 없다는 사실만으로 생성 완료를 추론하지 않는다.
+- `POST /api/final-review {post_id,decision,expected_revision}`: 글 리비전 CAS.
+- `POST /api/final-review/handoff {expected_revision}`: state 리비전 CAS.
+- 작은 파일: `.local/final-review-decisions.json`, schema 1, `revision`과 `posts[]`의 `postId/outputVersion/fingerprint/decision/reviewedAt/note/noteUpdatedAt`.
+- 고정 파일: `.local/final-review-handoff/handoff.<revision>.<handoffId>.json`. 글 ID/제작 버전/최종 승인 지문·시각/플랫폼별 문안·태그/선택 플랫폼/순서별 자산 해시·MIME·로컬 경로/독립 준비 차단 사유를 가진다.
+- 소비 직전 state를 앞뒤로 읽어 state revision, thin revision, manifest revision과 현재 판정/버전/지문이 일치하는지 확인하고 실제 이미지 해시를 검증한다. 누락·오래됨·철회·미통과는 전달하지 않는다. 스냅샷은 자동 게시 승인이 아니다.
+- 사용자 통과와 source/safety/rights, 계정 연결, 공개 이미지 접근성, 플랫폼 제약, 실제 게시 승인은 독립이다. 로컬 계정 미연결 표시는 별도 MCP의 실제 연결 상태와 구분한다. 확인하지 않은 독립 조건을 통과로 바꾸지 않는다.
+
+제목 편집 승인 활성 파일 `.local/title-edit-approval.json`은 schema/kind/approvalId/approvedAt/entries만 허용한다. 각 entry는 정확한 postId/outputVersion/fingerprint다. 준비 파일의 설명 메타데이터를 활성 파일에 그대로 복사하지 않는다. 읽기는 크기 제한·일반 파일·자기 루트·심볼릭 링크/파일 교체 검사로 보호한다. 잘못된 승인 파일은 초기 변경 전에 실패하며 조용히 사용자 통과를 삭제하지 않는다. 적용 후 `final_review.prior_final_review`와 `edit_approval`에서 연결 이력을 읽는다.
+
+## 플랫폼 결과 consumer 계약
+
+상세 원본: [DELIVERY_RESULTS_CONTRACT.md](DELIVERY_RESULTS_CONTRACT.md).
+
+schema 1 필드: `postId,outputVersion,fingerprint,platform,providerPostId,status,externalUrl,providerVerifiedAt,publishedAt,scheduledAt,recordedAt`.
+platform은 instagram 또는 threads. status는 draft/scheduled/sending/sent/error.
+
+- Buffer가 provider를 다시 조회해 확인한 실제 기록만 쓴다. 생산 응답이 없으면 성공/실패 파일을 꾸며 만들지 않는다.
+- sent는 provider ID, 검증된 일반 HTTPS 게시 링크, 확인 시각과 실제 게시 시각을 요구한다. 선택 플랫폼 모두 sent면 게시완료, 일부만 sent면 일부게시다.
+- scheduled는 예약됨이며 draft/sending도 게시완료가 아니다. 기존 사용자 통과 감사기록을 보존한다.
+- 서로 다른 버전/지문 기록은 현재 판정에 붙이지 않는다. 파일 수/크기 제한, 경로·링크 검사와 충돌 검사를 통과한 기록만 사용한다.
+
+## 검증 결과와 실패에서 확인한 원인
+
+2026-10-09 21:19 UTC에 원격으로 세 실행의 commit/status/conclusion을 재조회했다. 모두 정확한 `4b2fbbe`의 completed/success다.
+
+| 환경·범위 | 결과·근거 |
+|---|---|
+| Linux 전체 Node/check 및 로컬 smoke | [37990979994](https://github.com/kimjae134679/Threads/actions/runs/37990979994) 성공 |
+| Windows 저장 잠금 복구·동시 CAS | [37990979922](https://github.com/kimjae134679/Threads/actions/runs/37990979922) 성공 |
+| Linux 실제 Chromium 일반 편집·최종 검토·자동 불러오기 | [37990979875](https://github.com/kimjae134679/Threads/actions/runs/37990979875) 성공 |
+| PC 격리 시험 46 | 소스 사전 해시 불일치로 중단. 로컬 파일 작성 때 추가 LF가 생긴 원인을 수정했으며 Node/Chrome 성공 증거가 아니다 |
+| PC 격리 시험 47, 기준 `5cfccaab` | 실제 소스 3개 해시 확인, 하위 테스트 75개 pass. 기존 domain-suite의 대괄호 기대값 오류로 전체 exit 1. 브라우저 단계 미실행. 운영 코드/state 변경 없음 |
+| 최종 코드 PC 전체 시험 48 및 적용 | 미제출·미실행. CI 성공으로 대신하지 않는다 |
+
+PC47은 2026-10-09 20:46:05 UTC의 ProjectBridge result에서 outcome=failed/returnCode=1을 확인했다. 이미 끝난 실패 작업을 성공으로 수정하거나 다시 실행한 것으로 기록하지 않는다.
+
+확인된 수정:
+- 테스트 fixture/기대값을 사용자가 승인한 괄호 제거 계약에 맞췄다. 본문 공백·줄바꿈 및 원문 metadata 기대값은 유지했다.
+- 실제 이미지 치수 검사는 이미지 decode와 저장 완료 뒤 수행한다.
+- 자동 불러오기 테스트의 `[data-platform]`은 미리보기 헤더와 버튼을 함께 선택했다. 실제 선택 버튼 `button[data-platform]`을 지정해 오선택을 수정했다. 프로그램의 플랫폼 선택 동작을 오류로 단정해 바꾸지 않았다.
+- 로컬 소스 전달은 내용상 동등함 대신 정확한 UTF-8 바이트 해시를 검증한다. 텍스트 파일 쓰기 과정의 추가 LF도 차이로 잡는다.
+- 저장 임계구역의 큰 이미지 해시 작업을 분리하고 리비전/CAS 검증은 유지했다. 무거운 전달 생성 때문에 판정 저장 응답을 기다리지 않게 했다.
+
+개별 이미지의 글자 누락 사례는 제작 PNG 자체와 사본의 바이트가 같았다는 것까지만 확인됐다. 글꼴 glyph 원인 전체를 확정하거나 이 검토 모듈이 원본을 수정했다고 기록하지 않는다. 제작 담당이 별도로 검증한다.
+
+## 남은 일과 정확한 승인 대상
+
+승인된 추가 격리 재시험 1회는 PC47에서 사용됐고 실패했다. 같은 작업을 재개할 지원 API가 없어 새로운 큐 항목은 추가 승인 범위다. 현재 PC48과 조건부 적용을 제출하지 않았다.
+
+필요한 최소 승인 문구:
+
+> 기존 ProjectBridge 큐의 모든 항목을 보존하고 최신 SHA로 충돌을 확인하여, 최종 커밋4b2fbbe의 동일 범위 PC 격리 재시험 48번 1건을 추가하고, 통과하면 이미 승인된 upload-studio-20261009 폴더 백업·적용 1건을 진행하도록 승인한다.
+
+승인 후 순서: 최신 소스/테스트 바이트 고정 → 별도 stage에서 실제 PC Node+Chromium 모두 통과 → 성공 proof/전체 파일 해시 확인 → 지정 앱 및 사용자 상태를 백업 → 소유 앱만 중지/적용/재시작 → 현재 판정·메모·본문·태그·자산·별도 provider 기록 보존과 HTTP 상태 확인. 최신 사용자 편집 위에 과거 state 백업을 복원하지 않는다. 실패하면 기존 코드와 최신 사용자 자료를 보존한다. 이 문서 작성은 그 실행을 허가하거나 완료한 것이 아니다.
+
+레이아웃만 바꾼 재렌더는 사용자가 기존 평가 승계를 승인했다. 제작 담당의 실제 검증된 산출물 매핑을 받은 뒤 이전 content/output 버전·지문, 별도 renderVersion/producerBuild, 의미 불변 증거, 순서별 이전↔새 자산 고정 참조/SHA-256/MIME/바이트 수/규격/검증 시각과 승인 사유를 연결한다. 그 계약은 기록 시점 미수신이며 추측으로 현재 자산·판정을 바꾸지 않는다. 의미가 달라지면 재검토한다. 기존 게시·예약·원본을 삭제하거나 이 연동을 이유로 임의 차단하지 않는다.
+
+## 재발 방지와 재개 규칙
+
+1. 프로젝트 코드, CI, PC 설치, 사용자 검토, 외부 provider 성공을 별도 상태로 기록한다.
+2. 글/버전/지문과 자산 순서·해시를 함께 고정한다. 과거 통과나 파일 존재만으로 현재 통과를 추론하지 않는다.
+3. 각 파일의 쓰기 담당을 한 명으로 두고 다른 담당은 지원된 읽기 계약을 소비한다.
+4. 공유 큐와 문서는 기존 내용을 보존하고 최신 SHA를 확인해 수정한다. 충돌은 원본을 다시 읽고 합치며 강제 덮어쓰지 않는다.
+5. 승인 횟수·대상·조건을 지킨다. 종료된 시험을 자동으로 새 작업으로 바꾸거나 막힌 도구를 다른 경로로 우회하지 않는다.
+6. 문서/상태 공유 성공을 다른 담당의 읽음·구현·실제 운영 성공으로 바꾸지 않는다.
+7. 원문·문안 전문·자산·평가·토큰은 공개 기록에서 제외한다. 필요한 근거는 일반 소스/테스트/커밋/집계 및 상태 계약으로 남긴다.
+
+통합 허브에는 기존 T-0008 소통 스레드에 본인 요약과 이 문서 링크만 추가한다. 공통 목차와 통합 adapter 문서는 통합 담당이 관리한다.
