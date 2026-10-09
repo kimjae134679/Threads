@@ -6,7 +6,14 @@ module.exports=async function renderTypographyCover(){
  const typography=window.ThreadsCoverTypography,policy=window.ThreadsPagePlan,manual=input.titleStyle,style=typography.style(title,{emphasis:manual?.emphasis||input.emphasis,accent:manual?.accent||input.accent||null,photo:!!photo,sizeEmphasis:manual?.sizeEmphasis,sizeScale:manual?.sizeScale??1.03,explicitEmphasis:!!manual?.emphasis,lineBreaks:manual?.lineBreaks||null}),margin=84,available=width-margin*2;
  const measure=(text,size,weight)=>{ctx.font=weight+' '+size+'px '+family;ctx.letterSpacing=(-size*.04)+'px';return ctx.measureText(text).width;};
  const box={x:margin,y:margin,width:available,height:photo?height*.20:height-2*margin-80-(credit?56:0)};
- const fit=typography.fit(title,box,measure,policy,style,140,photo?36:48),top=photo?height-margin-20-fit.height-(credit?52:0):Math.max(150,(height-fit.height)/2-20);
+ const baseFit=typography.fit(title,box,measure,policy,style,140,photo?36:48);let fit=baseFit;
+ for(let size=Math.round(baseFit.size*1.05);size>baseFit.size;size--){
+  if(!baseFit.lines.every(line=>measure(line,Math.round(size*style.emphasisScale),900)<=available))continue;
+  const lineHeight=Math.ceil(size*Math.max(1.24,style.emphasisScale+.12));
+  if(!photo&&baseFit.lines.length*lineHeight>box.height)continue;
+  fit=typography.fit(title,{...box,height:Math.max(box.height,baseFit.lines.length*lineHeight)},measure,policy,{...style,lineBreaks:baseFit.lines},size,size);break;
+ }
+ const top=photo?height-margin-20-fit.height-(credit?52:0):Math.max(150,(height-fit.height)/2-20);
  ctx.textBaseline='alphabetic';ctx.textAlign='left';const glyphBoxes=[],lineWidths=[],renderedRuns=[];
  for(let i=0;i<fit.lines.length;i++){
   let x=margin;const lineY=top+i*fit.lineHeight;
@@ -39,5 +46,5 @@ module.exports=async function renderTypographyCover(){
  }
  for(const run of renderedRuns){measure(run.text,run.size,run.weight);ctx.fillStyle=run.color;ctx.fillText(run.text,run.x,run.y);}
  if(credit){ctx.font='24px "Malgun Gothic",sans-serif';ctx.letterSpacing='0px';ctx.fillStyle=photo?'#d3dae3':'#5b625f';if(ctx.measureText(credit).width>available)throw Error('출처 표기 공간 부족');ctx.fillText(credit,margin,height-56);}
- return{data:canvas.toDataURL('image/png'),geometry:{title,size:fit.size,lines:fit.lines,lineWidths,glyphBoxes,box:{x:margin,y:top,width:available,height:fit.height},imageBox,width,height,aspectRatio:input.aspectRatio,typography:style,renderedRuns,emphasis:style.emphasis,contextLines:[],gradient:imageBox?{...gradientGeometry,shadeSamples}:null,protectedImageRegion:imageBox?'upper_half':null}};
+ return{data:canvas.toDataURL('image/png'),geometry:{title,size:fit.size,baseTitleSize:baseFit.size,requestedTitleScale:1.05,appliedTitleScale:fit.size/baseFit.size,lines:fit.lines,lineWidths,glyphBoxes,box:{x:margin,y:top,width:available,height:fit.height},imageBox,width,height,aspectRatio:input.aspectRatio,typography:style,renderedRuns,emphasis:style.emphasis,contextLines:[],gradient:imageBox?{...gradientGeometry,shadeSamples}:null,protectedImageRegion:imageBox?'upper_half':null}};
 };
