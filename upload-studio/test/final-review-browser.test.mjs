@@ -15,7 +15,7 @@ function send(method,params={}){return new Promise((resolve,reject)=>{const id=+
 const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.text);return r.result.value;};
 async function click(selector){const rect=await evaluate('(()=>{const e=document.querySelector('+JSON.stringify(selector)+');if(!e)throw Error("missing element");e.scrollIntoView({block:"center"});const r=e.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()');await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});}
 async function fill(selector,text){await click(selector);await send('Input.dispatchKeyEvent',{type:'rawKeyDown',key:'a',code:'KeyA',windowsVirtualKeyCode:65,modifiers:2});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'a',code:'KeyA',windowsVirtualKeyCode:65,modifiers:2});await send('Input.insertText',{text});}
-async function shot(name){await evaluate('window.scrollTo(0,0)');const {data}=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await fs.writeFile(path.join(out,name),Buffer.from(data,'base64'));console.log('SCREENSHOT_BASE64 '+name+' '+data);}
+async function shot(name){await evaluate('window.scrollTo(0,0)');const {data}=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await fs.writeFile(path.join(out,name),Buffer.from(data,'base64'));console.log('SCREENSHOT '+path.join(out,name));}
 async function api(route,body){const r=await fetch(app.url+route,{method:body?'POST':'GET',headers:body?{'content-type':'application/json','x-studio-local':'1'}:{},body:body?JSON.stringify(body):undefined});const v=await r.json();assert.equal(r.status,200,JSON.stringify(v));return v;}
 try {
   for(const file of ['domain.mjs','store.mjs','server.mjs','adapter.mjs','planner-worker.mjs','local-assets.mjs','public/studio.js','public/icons.mjs','public/draft-backups.mjs','production-input.mjs','production-sync.mjs','title-normalization.mjs']){const r=spawnSync(process.execPath,['--check',path.join(studioRoot,file)],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);}
@@ -116,12 +116,16 @@ try {
   await click('[data-final-review="passed"]');await until(async()=>(await api('/api/state')).state.posts.find(p=>p.post_id==='race-review').final_review_status==='passed');
   assert.equal(finalReviewRequests,requestsBefore+1);
   await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요")'));
-  // A competing tab edit causes a visible CAS error, while the old pass is invalidated.
+  // A competing edit changes the review intent while this click settles.
+  // The client guard must reject it without passing any unseen content.
   post=(await api('/api/state')).state.posts[1];
   await api('/api/posts/'+encodeURIComponent(second),{expected_revision:post.revision,patch:{tags:'#다른창'}});
-  await click('[data-final-review="passed"]');await until(()=>evaluate('document.querySelector("#status").classList.contains("error") && document.querySelector("#status").textContent.includes("다른 창")'));
-  assert.equal((await api('/api/state')).state.posts[1].final_review_status,'unreviewed');
+  const competingRequestsBefore=finalReviewRequests;
+  await click('[data-final-review="passed"]');await until(()=>evaluate('document.querySelector("#status").classList.contains("error") && document.querySelector("#status").textContent.includes("현재 버전 검수를 다시 불러온")'));
+  const competingAfter=(await api('/api/state')).state.posts.find(p=>p.post_id===second);
+  assert.equal(competingAfter.tags,'#다른창');assert.equal(competingAfter.final_review_status,'unreviewed');assert.equal(competingAfter.final_review,null);
+  assert.equal(finalReviewRequests,competingRequestsBefore,'changed unseen content must never reach verdict POST');
   assert.equal((await api('/api/state')).state.publications.length,0);assert.equal(external,0);
   await shot('final-review-layout.png');
-  console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, flushed verdicts, navigation/reload, pass invalidation and CAS conflict. External requests: 0.');
+  console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, flushed verdicts, navigation/reload, pass invalidation and competing edit intent rejection. External requests: 0.');
 }catch(error){if(socket?.readyState===1){console.log("FAILURE_DOM",JSON.stringify(await evaluate('({save:document.querySelector("#save-state")?.textContent,status:document.querySelector("#status")?.textContent})')));await shot("final-review-failure.png");}throw error;}finally {socket?.close();chrome?.kill('SIGTERM');if(app)await app.close();await fs.rm(root,{recursive:true,force:true,maxRetries:20,retryDelay:100});}

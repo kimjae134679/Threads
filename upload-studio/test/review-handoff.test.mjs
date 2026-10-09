@@ -21,7 +21,7 @@ async function fixture(t){
  const second=await assets.add({name:'second.png',mime:'image/png',base64:png.toString('base64')});
  let state=importBundle(createState(),{bundle_id:'fixture',posts:[{
   post_id:'p',output_version:'v1',platform_captions:{instagram:'원문 그대로\n두 번째 줄',threads:'Threads 원문\n마지막 줄'},
-  tags:'#legacy',topic_tags:['주제'],threads_topic_tag:'직장',images:[
+  tags:'#legacy',topic_tags:['주제','직장'],threads_topic_tag:'직장',images:[
    {asset_id:second.asset_id,mime:second.mime,order:1},{asset_id:first.asset_id,mime:first.mime,order:2}
   ],source:{url:'https://example.invalid/source'}
  }]});
