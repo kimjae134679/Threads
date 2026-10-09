@@ -66,16 +66,24 @@ The user explicitly authorized Cloudinary Free storage and public URL delivery f
 
 The official Cloudinary plugin is now exposed in this session. Read-only get_usage_details succeeded and reported Free with a 25-credit limit. Its zero usage/resource figures were last updated on 2026-10-08, so they do not establish current storage emptiness. A current list_images read succeeded with 60 image records and no continuation cursor, including main-sample. No listed asset was established as the authorized finished test image or a currently passed production version. Samples and screenshots must not substitute for the actual finished file.
 
-The current official upload_asset tool accepts upload_request.file as a URL, local path or base64 string. The older hosted server's URL-only description does not constrain this plugin schema. This is supported input syntax, not proof that a particular PC path or chat attachment is accessible to the upload runtime. No file reference or actual finished PNG/JPG bytes have been received here. PC access remains unavailable and the exhausted connector must not be retried, reconnected or bypassed.
+The current official upload_asset tool accepts upload_request.file as a URL, local path or base64 string. The older hosted server's URL-only description does not constrain this plugin schema. This is supported input syntax, not proof that a particular PC path or chat attachment is accessible to the upload runtime. A later handoff resolved an existing user-attached PNG as a candidate for the one private test. It is not established as the latest passed production version. PC access remains unavailable and the exhausted connector must not be retried, reconnected or bypassed.
 
 Proposed storage grouping remains buffer-delivery/test and buffer-delivery/passed. When the real file becomes accessible, preserve original bytes, format and order; use an opaque object identifier with overwrite=false, no transformation, no conversion and no automatic analysis. Verify the resulting versioned HTTPS delivery URL and original-byte equality before attaching it. Retain object/version/hash references privately; do not put source bytes, private titles, channel identifiers or credentials in this public note. Oversized assets or exhausted free capacity remain held without a paid upgrade.
 
 A fresh Buffer read verified the existing test post as draft with zero assets, null dueAt/sentAt and sharedNow=false. Both intended channels remain connected and unlocked. A complete scheduled/sending read returned zero posts with hasNextPage=false. No image upload, draft edit, new draft, reservation or publication occurred in this follow-up.
 
-Once the actual test image is accessible, upload that file under the existing consent, edit the existing Threads test draft with saveToDraft=true, preserve its exact text and required metadata, and omit mode/dueAt. Fetch the same provider ID afterwards and verify draft status, unchanged exact text, null dueAt/sentAt, expected image count/order and the verified media reference. The test remains excluded from public publishing.
+Once the original candidate image is visually verified and a supported transfer is completed, upload that file under the existing consent, edit the existing Threads test draft with saveToDraft=true, preserve its exact text and required metadata, and omit mode/dueAt. Fetch the same provider ID afterwards and verify draft status, unchanged exact text, null dueAt/sentAt, expected image count/order and the verified media reference. The test remains excluded from public publishing.
 
 Production delivery still requires the producer's frozen exact-version pass and ordered media/content handoff. Only those versions may enter the already-authorized KST slots, within actual provider limits and after reservation/duplicate checks. A connection, sample asset or text-only draft does not prove successful image delivery.
 
 Sources:
 - https://cloudinary.com/documentation/cloudinary_llm_mcp
 - https://cloudinary.com/pricing
+
+## Existing attachment transfer check — 2026-10-10 KST
+
+The resolved candidate was read through Library, and its fixed file reference was passed to prepare_materialize. The preparation succeeded but returned workspace_path=null and a short-lived HTTPS GET download URL with no extra request headers. The exact private Library/file identifiers and transfer URL are retained privately and are omitted here.
+
+The image read returned an image asset pointer and extracted caption/OCR; this execution environment did not receive renderable pixels. Original visual inspection has therefore not been completed here. No local file was created, and no unsupported PC access was attempted.
+
+Cloudinary's exposed upload schema supports URL input, so an original-byte remote ingestion route is a candidate without assuming the remote service can read a PC path. The URL has not been submitted to Cloudinary in this checkpoint. Library helper requirements still govern any local materialization. No successful upload, new asset URL, draft image edit or current-version production approval is claimed.
