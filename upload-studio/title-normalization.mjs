@@ -11,11 +11,27 @@ export function titleInfo(original) {
     while((match=displayTitle.match(suffix)||displayTitle.match(/\s+(?:\{\s*)?판\s*\}\s*$/u))){sourceLabels.push(match[0].trim());displayTitle=displayTitle.slice(0,-match[0].length);}
     return {originalTitle,displayTitle:displayTitle.trim(),sourceLabels};
   }
-export function cleanDisplayTitle(value){return titleInfo(value).displayTitle;}
+// Remove balanced decorative brackets only when they enclose the entire title line.
+// Inline title brackets and every byte after the first line remain untouched.
+export function plainTitleWrapper(value){
+ let title=String(value??'');
+ for(;;){
+  const candidate=title.trim();
+  if(!candidate.startsWith('[')||!candidate.endsWith(']'))return title;
+  let depth=0,whole=true;
+  for(let i=0;i<candidate.length;i++){
+   if(candidate[i]==='[')depth++;
+   else if(candidate[i]===']')depth--;
+   if(depth<0||(depth===0&&i<candidate.length-1)){whole=false;break;}
+  }
+  if(!whole||depth!==0)return title;
+  title=candidate.slice(1,-1).trim();
+ }
+}
+export function cleanDisplayTitle(value){return plainTitleWrapper(titleInfo(value).displayTitle);}
 export function cleanCaptionFirstLine(value){
  const text=String(value??''),at=text.indexOf('\n'),line=at<0?text:text.slice(0,at),cr=line.endsWith('\r')?'\r':'',first=cr?line.slice(0,-1):line,rest=at<0?'':text.slice(at);
- const outer=/^\s*\[\s+([\s\S]*?)\s+\]\s*$/.exec(first),candidate=outer?outer[1]:first,info=titleInfo(candidate);
- if(!info.sourceLabels.length)return text;
- const existingTitle=/^\[\s+([\s\S]*?)\s+\]$/.exec(info.displayTitle),title=existingTitle?existingTitle[1]:info.displayTitle;
- return (title?'[ '+title+' ]':'')+cr+rest;
+ const candidate=plainTitleWrapper(first),info=titleInfo(candidate);
+ if(candidate===first&&!info.sourceLabels.length)return text;
+ return plainTitleWrapper(info.displayTitle)+cr+rest;
 }

@@ -5,7 +5,10 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import * as domain from './domain.mjs';
 import {StateStore} from './store.mjs';
+import {migrateTitleFormat} from './title-format.mjs';
+import {readDeliveryResults,deliveryResultsProjection} from './delivery-results.mjs';
 import {seedReviewTags} from './review-tags.mjs';
+import {reviewDecisionProjection} from './review-decisions.mjs';
 import {ReviewHandoff,reviewHandoffProjection} from './review-handoff.mjs';
 import {OfflineConnectionPreparation} from './connection-preparation.mjs';
 import {WindowsCredentialVault} from './credential-vault.mjs';
@@ -23,15 +26,75 @@ const here=path.dirname(fileURLToPath(import.meta.url));
 const fail=(code,status=400)=>{throw Object.assign(new Error(code),{code,status});};
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8'};
 async function readBody(req){let bytes=0;const chunks=[];for await(const c of req){bytes+=c.length;if(bytes>16000000)fail('body_too_large',413);chunks.push(c);}try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{fail('invalid_json');}}
-function send(res,status,value){if(value?.state?.posts)value={...value,state:{...value.state,posts:value.state.posts.map(p=>({...p,final_review_status:domain.finalReviewStatus(p).decision}))}};res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
+function sendJson(res,status,value){if(value?.state?.posts)value={...value,state:{...value.state,posts:value.state.posts.map(p=>({...p,review_note:domain.reviewNote(p),review_note_updated_at:p.review_note_updated_at||null,final_review_status:domain.finalReviewStatus(p).decision}))}};res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
 export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true}={}) {
-  const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);let handoffStatus={path:null,count:0,state_revision:null,code:null};
-  const refreshHandoff=async state=>{try{handoffStatus={...await handoff.write(state),code:null};}catch(e){handoffStatus={path:null,count:0,state_revision:state.revision,code:e.code||'handoff_write_failed'};}};
-  const store=new StateStore(root,{onSaved:refreshHandoff}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
+  let lastDelivery={records:[],warnings:[]};
+  const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
+  const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
+  let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
+  let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
+  const handoffWaiters=new Map(),clone=value=>JSON.parse(JSON.stringify(value));
+  const handoffError=(code,status=400)=>Object.assign(new Error(code),{code,status});
+  const handoffKey=projection=>projection.state_revision+':'+projection.handoff_id;
+  const pendingStatus=projection=>({path:null,count:projection.count,state_revision:projection.state_revision,handoff_id:projection.handoff_id,pending:true,code:'handoff_pending'});
+  const currentHandoffStatus=(state,projection=reviewHandoffProjection(state))=>handoffStatus.state_revision===state.revision&&handoffStatus.handoff_id===projection.handoff_id?{...handoffStatus}:pendingStatus(projection);
+  function settleHandoff(key,error,result){
+    const waiting=handoffWaiters.get(key)||[];handoffWaiters.delete(key);
+    for(const waiter of waiting)if(error)waiter.reject(error);else waiter.resolve(result);
+  }
+  function scheduleHandoff(){
+    if(closing||handoffTask||handoffScheduled||!pendingHandoff)return;
+    handoffScheduled=setImmediate(()=>{
+      handoffScheduled=null;
+      handoffTask=runHandoffs().finally(()=>{handoffTask=null;scheduleHandoff();});
+    });
+  }
+  function requestHandoff(state,authoritative=false){
+    if(closing)throw handoffError('server_closing',503);
+    const snapshot=clone(state),projection=reviewHandoffProjection(snapshot),key=handoffKey(projection);
+    if(!authoritative&&desiredHandoffRevision!==null&&(projection.state_revision<desiredHandoffRevision||projection.state_revision===desiredHandoffRevision&&key!==desiredHandoffKey))throw handoffError('revision_conflict',409);
+    desiredHandoffRevision=projection.state_revision;desiredHandoffKey=key;handoffStatus=pendingStatus(projection);
+    for(const oldKey of handoffWaiters.keys())if(oldKey!==key)settleHandoff(oldKey,handoffError('revision_conflict',409));
+    // Coalesce repeated requests for the active or already pending snapshot.
+    if(activeHandoff?.key!==key&&pendingHandoff?.key!==key)pendingHandoff={state:snapshot,projection,key};
+    scheduleHandoff();
+    return key;
+  }
+  function waitForHandoff(state){
+    const projection=reviewHandoffProjection(state),key=handoffKey(projection);
+    const promise=new Promise((resolve,reject)=>{const waiting=handoffWaiters.get(key)||[];waiting.push({resolve,reject});handoffWaiters.set(key,waiting);});
+    try{requestHandoff(state);}catch(error){settleHandoff(key,error);}
+    return promise;
+  }
+  async function runHandoffs(){
+    while(pendingHandoff&&!closing){
+      const task=pendingHandoff;pendingHandoff=null;activeHandoff=task;
+      try{
+        // Wait for the save lease to finish, then release it before any image I/O.
+        const before=await store.mutate(state=>state);
+        if(before.revision!==task.state.revision||handoffKey(reviewHandoffProjection(before))!==task.key)throw handoffError('revision_conflict',409);
+        const result=await handoff.write(task.state);
+        // Hash/MIME validation stays in the full exporter. Only a matching live
+        // revision and fingerprint set may become the advertised latest export.
+        await store.mutate(state=>{
+          if(closing||desiredHandoffKey!==task.key||state.revision!==task.state.revision||handoffKey(reviewHandoffProjection(state))!==task.key)throw handoffError('revision_conflict',409);
+          handoffStatus={...result,pending:false,code:null};return state;
+        });
+        settleHandoff(task.key,null,result);
+      }catch(error){
+        if(desiredHandoffKey===task.key)handoffStatus={...pendingStatus(task.projection),pending:false,code:/^[a-z0-9_]+$/.test(error.code||'')?error.code:'handoff_write_failed'};
+        settleHandoff(task.key,error);
+      }finally{activeHandoff=null;}
+    }
+  }
+  const decisionFile=path.join(root,'final-review-decisions.json');
+  const refreshDecisions=state=>store.write(decisionFile,reviewDecisionProjection(state));
+  const store=new StateStore(root,{onSaved:async state=>{await refreshDecisions(state);requestHandoff(state,true);}}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
   const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
-  await store.mutate(s=>{const next=recoverBufferAttempts(domain.recoverJobs(s));if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
-  await refreshHandoff(await store.read());
+  await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s))).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
+  // Recreate the small decision file under the existing state lock without changing any review.
+  await store.mutate(async state=>{await refreshDecisions(state);requestHandoff(state,true);return state;});
   const server=http.createServer(async(req,res)=>{
     try {
       const actualPort=server.address().port,hosts=['127.0.0.1:'+actualPort,'localhost:'+actualPort];
@@ -47,12 +110,12 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='POST'&&route==='/api/videos'){if(req.headers['x-studio-local']!=='1'||!['video/mp4','video/quicktime'].includes(req.headers['content-type']))fail('local_request_required',403);const asset=await videos.add({stream:req,mime:req.headers['content-type'],name:'local-video'});return send(res,200,{asset,externalCalls:0});}
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
-      if(req.method==='GET'&&route==='/api/final-review/handoff')return send(res,200,{...reviewHandoffProjection(await store.read()),latest:handoffStatus});
+      if(req.method==='GET'&&route==='/api/final-review/handoff'){const state=await store.read(),projection=reviewHandoffProjection(state);return send(res,200,{...projection,latest:currentHandoffStatus(state,projection)});}
       if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
       if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
       if(req.method==='GET'&&route==='/api/schedule-defaults')return send(res,200,{defaults:(await store.read()).schedule_defaults||DEFAULT_SCHEDULE});
-      if(req.method==='GET'&&route==='/api/state')return send(res,200,{state:await store.read(),mode:'offline-only',accountsConnected:false});
-      if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,threads_title_only:p.threads_title_only,caption:p.caption,platform_captions:p.platform_captions,platform_caption_edited:p.platform_caption_edited,publication_title:p.publication_title,production_caption_version:p.production_caption_version,production_caption_status:p.production_caption_status,tags:p.tags,topic_tags:p.topic_tags,topic_tags_edited:p.topic_tags_edited,threads_topic_tag:p.threads_topic_tag,common_tags:p.common_tags,media_format:p.media_format,reel_video:p.reel_video,music:p.music,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
+      if(req.method==='GET'&&route==='/api/state'){const state=await store.read();lastDelivery=await readDeliveryResults(root);return send(res,200,{state,mode:'offline-only',accountsConnected:false});}
+      if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,review_note:domain.reviewNote(p),review_note_updated_at:p.review_note_updated_at||null,threads_title_only:p.threads_title_only,caption:p.caption,platform_captions:p.platform_captions,platform_caption_edited:p.platform_caption_edited,publication_title:p.publication_title,production_caption_version:p.production_caption_version,production_caption_status:p.production_caption_status,tags:p.tags,topic_tags:p.topic_tags,topic_tags_edited:p.topic_tags_edited,threads_topic_tag:p.threads_topic_tag,common_tags:p.common_tags,media_format:p.media_format,reel_video:p.reel_video,music:p.music,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
       if(req.method==='POST'&&route.startsWith('/api/')){
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
@@ -60,8 +123,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         if(route==='/api/buffer/preview'){const saved=await store.read(),post=saved.posts.find(p=>p.post_id===body.post_id);if(!post)fail('post_not_found');if(body.expected_revision!==post.revision)fail('revision_conflict',409);return send(res,200,previewBufferPost(post,body.options||{}));}
         if(route.startsWith('/api/buffer/'))fail('live_operation_disabled',405);
         if(route==='/api/connection/prepare')return send(res,200,connections.prepare(body));
-        if(route==='/api/final-review/handoff'){let result;await store.mutate(async s=>{if(s.revision!==body.expected_revision)fail('revision_conflict',409);result=await handoff.write(s);return s;});handoffStatus={...result,code:null};return send(res,200,result);}
-        if(route==='/api/final-review')return send(res,200,{state:await store.mutate(s=>{const p=s.posts.find(p=>p.post_id===body.post_id);if(p&&(body.expected_output_version!==undefined&&body.expected_output_version!==p.output_version||body.expected_basis!==undefined&&body.expected_basis!==domain.finalReviewStatus(p).basis))fail('review_form_version_changed',409);return domain.setFinalReview(s,body.post_id,body.decision,body.expected_revision,Date.now());}),handoff:handoffStatus,externalCalls:0});
+        if(route==='/api/final-review/handoff'){const snapshot=await store.read(),projection=reviewHandoffProjection(snapshot);if(snapshot.revision!==body.expected_revision)fail('revision_conflict',409);let completion;await store.mutate(async s=>{if(s.revision!==snapshot.revision||handoffKey(reviewHandoffProjection(s))!==handoffKey(projection))fail('revision_conflict',409);await refreshDecisions(s);completion=waitForHandoff(snapshot).then(value=>({value}),error=>({error}));return s;});const outcome=await completion;if(outcome.error)throw outcome.error;const result=outcome.value;await store.mutate(s=>{if(s.revision!==snapshot.revision||handoffKey(reviewHandoffProjection(s))!==handoffKey(projection))fail('revision_conflict',409);return s;});return send(res,200,result);}
+        if(route==='/api/final-review'){const saved=await store.mutate(s=>{const p=s.posts.find(p=>p.post_id===body.post_id);if(p&&(body.expected_output_version!==undefined&&body.expected_output_version!==p.output_version||body.expected_basis!==undefined&&body.expected_basis!==domain.finalReviewStatus(p).basis))fail('review_form_version_changed',409);return domain.setFinalReview(s,body.post_id,body.decision,body.expected_revision,Date.now());});return send(res,200,{state:saved,handoff:currentHandoffStatus(saved),externalCalls:0});}
         if(route==='/api/common-tags')return send(res,200,{state:await store.mutate(s=>domain.setCommonTags(s,body.tags,body.expected_revision)),externalCalls:0});
         else if(route==='/api/queue/order')return send(res,200,{state:await store.mutate(s=>domain.moveQueueJob(s,body.job_id,body.direction,body.expected_revision)),externalCalls:0});
         else if(route==='/api/reels/stop'){const controller=active.get('reel-'+body.post_id);if(!controller)fail('job_not_running');controller.abort();return send(res,200,{stopping:true,externalCalls:0});}
@@ -70,7 +133,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         if(route==='/api/production/sync')return send(res,200,await productionSync.run());
         else if(route==='/api/production/import')return send(res,200,await productionSync.run(body.selection));
         else if(route==='/api/bundles'){await assets.verifyPosts(body.posts||[]);for(const p of body.posts||[])if(p.reel_video)await videos.verify(p.reel_video);state=await store.mutate(s=>domain.importBundle(s,body));}
-        else if(route.startsWith('/api/posts/')){const postId=decodeURIComponent(route.slice('/api/posts/'.length));if(body.patch?.images)await assets.verifyPosts([{images:body.patch.images}]);if(body.patch?.reel_video)body.patch.reel_video=await videos.verify(body.patch.reel_video);state=await store.mutate(s=>domain.editPost(s,postId,body.patch||{},body.expected_revision));}
+        else if(route.startsWith('/api/posts/')){const postId=decodeURIComponent(route.slice('/api/posts/'.length));if(body.patch?.images)await assets.verifyPosts([{images:body.patch.images}]);if(body.patch?.reel_video)body.patch.reel_video=await videos.verify(body.patch.reel_video);state=await store.mutate(s=>{const patch={...(body.patch||{})};if(Object.hasOwn(patch,'review_note'))patch.review_note_updated_at=new Date().toISOString();return domain.editPost(s,postId,patch,body.expected_revision);});}
         else if(route==='/api/approve')state=await store.mutate(s=>domain.approveDryRun(s,body.post_id,body.expected_revision));
         else if(route==='/api/queue-schedule/preview')return send(res,200,previewQueueSchedule(await store.read(),body.config));
         else if(route==='/api/queue-schedule/apply')state=await store.mutate(s=>applyQueueSchedule(s,body.config,body.expected_revision));
@@ -101,7 +164,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   });
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve);});
   const url='http://127.0.0.1:'+server.address().port;
-  return {server,url,close:async()=>{for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}};
+  return {server,url,close:async()=>{closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const portArg=process.argv.indexOf('--port');const port=portArg<0?4387:Number(process.argv[portArg+1]);

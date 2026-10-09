@@ -1,7 +1,7 @@
 // Persisted local final review only. No scheduling, publishing, I/O or clock reads.
 import {contentBasis,isActivePost} from './domain.mjs';
 const clone=value=>JSON.parse(JSON.stringify(value));
-const decisions=new Set(['unreviewed','discard','revise','passed']);
+const decisions=new Set(['unreviewed','hold','discard','revise','passed']);
 const fail=code=>{throw Object.assign(new Error(code),{code,status:code==='revision_conflict'?409:400});};
 const basisOf=post=>JSON.stringify([contentBasis(post),isActivePost(post)]);
 function reviewTime(now){

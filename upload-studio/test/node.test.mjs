@@ -1,3 +1,7 @@
+import './delivery-results.test.mjs';
+import './title-format.test.mjs';
+import './review-decisions.test.mjs';
+import './hold-review.test.mjs';
 import './review-tags.test.mjs';
 import './review-handoff.test.mjs';
 import './final-review-server.test.mjs';

@@ -36,3 +36,11 @@ dialog{width:min(760px,90vw);max-height:80vh;overflow:auto;border:1px solid var(
 @media(max-width:1200px){.layout{grid-template-columns:210px minmax(300px,.95fr) minmax(330px,1fr);gap:14px}.writing{padding-inline:14px}.prepare-actions{flex-wrap:wrap}}
 @media(max-width:1000px){.layout{grid-template-columns:210px minmax(0,1fr)}.layout>.library{grid-column:1;grid-row:1 / span 2}.compose-right{grid-column:2;position:static;max-width:none}.editor-work{grid-column:2}.writing #caption{min-height:350px}}
 @media(max-width:750px){.layout{display:flex;flex-direction:column}.layout>.library{position:static;width:100%}.compose-right,.editor-work{width:100%}#post-list{display:flex;max-height:170px}.post-item{min-width:190px}.image-actions button{flex:1;white-space:nowrap}.library>select{width:calc(100% - 26px)}}
+
+#post-review-note{min-height:96px;margin-top:7px;line-height:1.7}.final-review>.field-label{margin-top:12px}#review-note-save-status{min-height:17px}#preview-loading{min-height:16px}#preview[aria-busy=true]{cursor:progress}
+
+.final-review-buttons{flex-wrap:wrap}#final-review-status[data-status=hold]{color:var(--amber)}
+
+.ig-dots{height:16px;align-items:center;gap:0}.ig-dots button{width:16px;height:16px;padding:0;border:0;background:transparent;border-radius:50%}.ig-dots button span{width:5px;height:5px;border-radius:50%;background:#d7d7d7}.ig-dots button[aria-current=true] span{background:#0095f6}.local-heart{padding:0;border:0;background:transparent;color:#080808;line-height:1;border-radius:4px}.local-heart[aria-pressed=true]{color:#ed4956}.local-heart[aria-pressed=true] svg{fill:currentColor}.feed-actions .local-heart{display:flex;width:23px;height:23px}.thread-actions .local-heart{display:flex;width:21px;height:21px}
+
+#final-review-save-status{min-height:18px;color:var(--accent);margin-top:10px}.delivery-status{border-top:1px solid var(--line);margin-top:14px;padding-top:12px;font-size:12px}.delivery-summary{font-weight:600;margin:7px 0}.delivery-platform{display:flex;align-items:center;flex-wrap:wrap;gap:7px 12px;padding:6px 0}.delivery-platform a{color:var(--accent);font-size:12px}.delivery-time{width:100%;font-size:11px;color:var(--muted)}
