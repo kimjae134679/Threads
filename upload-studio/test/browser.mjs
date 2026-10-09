@@ -28,7 +28,7 @@ try {
   await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
   await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Fetch.enable',{patterns:[{urlPattern:'*'}]});
   events.set('Fetch.requestPaused',p=>{if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
-  await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1100,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
+  await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1400,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
   await send('Page.navigate',{url:app.url});await until(()=>evaluate('document.querySelector("#empty-new")?.textContent==="새 글 작성"'));
   await click('#empty-new');await until(()=>evaluate('!document.querySelector("#composer").hidden'));
   const long='[ 화면 검증용 로컬 글 ]\n\n작성자에 따르면 아래 문안은 저장과 미리보기 검증을 위한 자료다. 실제 사건이나 발행 콘텐츠가 아니다.\n\n'+'줄바꿈과 긴 문장을 보존하는지 확인했다. '.repeat(40)+'\n\n마지막 문단과 끝 공백을 보존했다.  ';
