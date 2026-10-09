@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {suggestReviewTags,seedReviewTags} from '../upload-studio/review-tags.mjs';
+import {suggestReviewTags,seedReviewTags} from '../review-tags.mjs';
 
 const post = (patch={}) => ({
   post_id:'p1',revision:3,output_version:'v1',caption:'고양이의 하루',
