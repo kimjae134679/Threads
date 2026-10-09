@@ -1,3 +1,4 @@
+import './store-lock.test.mjs';
 import './buffer.test.mjs';
 import './carousel-logic.test.mjs';
 import './oauth-callback.test.mjs';

@@ -13,7 +13,7 @@ The Buffer API uses GraphQL at https://api.buffer.com with Bearer authentication
 Its stable CreatePostInput supports ordered assets, automatic scheduling and
 customScheduled/dueAt. Instagram metadata type is post or reel (carousel is an
 ordered asset array under post, not an invented carousel type). The returned
-Post exposes status, dueAt and externalLink. Draft/awaiting approval, scheduled,
+Post exposes status, dueAt and externalLink. The official statuses draft, needs_approval, scheduled, sending,
 sent and error are distinct; an accepted scheduled post is not publication.
 
 ## Public media is a separate approval
@@ -55,7 +55,16 @@ success never retry blindly. No documented provider idempotency guarantee was
 found; a local key is not sent as an invented API field or header.
 Known provider IDs, statuses and valid destination URLs are retained; raw
 upstream messages, headers, captions and credentials are not journaled.
-Provider drafts requiring approval cannot be reported as scheduled or sent.
+Provider drafts and approval waits cannot be reported as scheduled or sent.
+refreshBufferStatus accepts only a read of the stored provider ID and channel.
+Confirmed sent frees its capacity slot while retaining its duplicate fence;
+absence from a queue, partial errors, mismatched IDs and unknown statuses keep
+a reconciliation hold. Status reads older than the stored observation are rejected.
+Published is terminal and cannot reopen a slot from a delayed status read.
+Reservation rechecks the current source/rights/user review, production hold,
+selected platform and future due time immediately before durable reservation.
+HTTP status reports this local offline adapter; a separately connected Buffer
+MCP session does not install credentials or enable the local send routes.
 Rejected/failed records remain held for human resolution; no auto retry is
 enabled.
 

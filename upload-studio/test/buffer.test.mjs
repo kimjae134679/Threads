@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {previewBufferPost,approveBufferPlan,refillBufferPlans,reserveBufferPlan,finishBufferAttempt,recoverBufferAttempts,bufferRequestBudget,bufferQueueSnapshot,BUFFER_CREATE_QUERY} from '../buffer.mjs';
+import {previewBufferPost,approveBufferPlan,refillBufferPlans,reserveBufferPlan,finishBufferAttempt,recoverBufferAttempts,bufferRequestBudget,bufferQueueSnapshot,refreshBufferStatus,BUFFER_CREATE_QUERY} from '../buffer.mjs';
 import {createState,importBundle,editPost} from '../domain.mjs';
 const now=Date.parse('2026-10-09T17:00:00Z'),due='2026-10-09T23:00:00.000Z';
 function fixture(id='p1'){
@@ -65,7 +65,7 @@ test('Ambiguous create and interrupted restart hold reconciliation without raw e
 });
 test('Confirmed scheduled, draft, sent URL and failed publishing remain distinct',()=>{
  const a=approved(fixture()),r=reserveBufferPlan(a.s,a.plan,snap,a.s.revision,now);
- for(const [status,want] of [['scheduled','scheduled'],['draft','awaiting_provider_approval'],['sent','published'],['error','publication_failed']]){
+ for(const [status,want] of [['scheduled','scheduled'],['draft','provider_draft'],['sent','published'],['error','publication_failed']]){
   const f=finishBufferAttempt(r,a.plan.key,{data:{createPost:{__typename:'PostActionSuccess',post:{id:'buffer1',channelId:'ig1',status,dueAt:due,externalLink:status==='sent'?'https://www.instagram.com/p/example/':null}}}},now);
   assert.equal(f.buffer_attempts[0].state,want);assert.equal(f.buffer_attempts[0].success_url,status==='sent'?'https://www.instagram.com/p/example/':null);
  }
@@ -118,4 +118,50 @@ test('Local HTTP Buffer preview is readable but approval and execution routes st
   assert.equal((await request('/api/buffer/send',{})).status,405);
   assert.equal((await request('/api/buffer/preview',{post_id:'p1',expected_revision:0})).status,409);
  }finally{await app?.close();await fs.rm(root,{recursive:true,force:true});}
+});
+
+test('Reservation rechecks future date and current source/review/production gates',()=>{
+ const a=approved(fixture());
+ assert.throws(()=>reserveBufferPlan(a.s,a.plan,{...snap,observed_at:now+86400000},a.s.revision,now+86400000),/buffer_review_required/);
+ for(const change of [p=>p.inactive_for_this_batch=true,p=>p.production_caption_status='held-version-mismatch',p=>p.source.verified=false,p=>p.safety.rights='UNKNOWN',p=>p.review=null,p=>p.targets=['threads']]){
+  const changed=JSON.parse(JSON.stringify(a.s));change(changed.posts[0]);
+  assert.throws(()=>reserveBufferPlan(changed,a.plan,snap,changed.revision,now),/buffer_review_required/);
+ }
+});
+test('Official sending and needs_approval statuses hold capacity without marking sent',()=>{
+ const a=approved(fixture()),r=reserveBufferPlan(a.s,a.plan,snap,a.s.revision,now);
+ for(const [status,want] of [['sending','sending'],['needs_approval','awaiting_provider_approval']]){
+  const f=finishBufferAttempt(r,a.plan.key,{data:{createPost:{post:{id:'b1',channelId:'ig1',status}}}},now);
+  assert.equal(f.buffer_attempts[0].state,want);assert.equal(f.buffer_attempts[0].success_url,null);
+ }
+ const edges=['draft','error','needs_approval','scheduled','sending','sent'].map((status,i)=>({node:{id:'remote'+i,channelId:'ig1',status}}));
+ const f=bufferQueueSnapshot([{data:{posts:{edges,pageInfo:{hasNextPage:false}}}}],['ig1'],now);
+ assert.equal(f.complete,true);assert.equal(f.channels.ig1,5);assert.equal(f.provider_ids.includes('remote5'),false);
+ assert.equal(bufferQueueSnapshot([{data:{posts:{edges:[{node:{id:'bad',channelId:'ig1',status:'processing'}}],pageInfo:{hasNextPage:false}}}}],['ig1'],now).complete,false);
+});
+test('Verified provider status frees a sent slot while retaining durable duplicate fence',()=>{
+ const a=approved(fixture()),local=JSON.parse(JSON.stringify(a.s));
+ local.buffer_attempts=Array.from({length:10},(_,i)=>({key:'k'+i,post_id:'old'+i,channel_id:'ig1',platform:'instagram',provider_id:'b'+i,state:'scheduled',retry_allowed:false}));
+ const empty={complete:true,observed_at:now,channels:{ig1:0},provider_ids:[]};
+ assert.equal(refillBufferPlans([a.plan],empty,local,now).selected.length,0);
+ const sent=refreshBufferStatus(local,'k0',{data:{post:{id:'b0',channelId:'ig1',status:'sent',externalLink:'https://www.instagram.com/p/result/'}}},now);
+ assert.equal(sent.buffer_attempts[0].state,'published');
+ assert.equal(sent.buffer_attempts[0].success_url,'https://www.instagram.com/p/result/');
+ const restart=JSON.parse(JSON.stringify(sent));
+ assert.equal(refillBufferPlans([a.plan],empty,restart,now).selected.length,1);
+ assert.equal(refillBufferPlans([{...a.plan,post_id:'old0'}],empty,restart,now).held[0].reason,'duplicate_buffer_handoff');
+ const remote={...empty,channels:{ig1:9},provider_ids:Array.from({length:9},(_,i)=>'b'+(i+1))};
+ assert.equal(refillBufferPlans([a.plan],remote,restart,now).occupied.ig1,10);
+});
+test('Unknown, partial, mismatched and out-of-order status reads never free a held slot',()=>{
+ const a=approved(fixture()),r=reserveBufferPlan(a.s,a.plan,snap,a.s.revision,now);
+ const scheduled=finishBufferAttempt(r,a.plan.key,{data:{createPost:{post:{id:'b1',channelId:'ig1',status:'scheduled'}}}},now);
+ for(const response of [{},{errors:[{message:'private credential'}],data:{post:{id:'b1',channelId:'ig1',status:'sent'}}},{data:{post:{id:'wrong',channelId:'ig1',status:'sent'}}},{data:{post:{id:'b1',channelId:'wrong',status:'sent'}}},{data:{post:{id:'b1',channelId:'ig1',status:'processing'}}}]){
+  const f=refreshBufferStatus(scheduled,a.plan.key,response,now+1);
+  assert.equal(f.buffer_attempts[0].state,'reconciliation');assert.equal(f.buffer_attempts[0].provider_id,'b1');assert.equal(f.buffer_attempts[0].retry_allowed,false);
+  assert.equal(JSON.stringify(f).includes('private credential'),false);
+ }
+ const sent=refreshBufferStatus(scheduled,a.plan.key,{data:{post:{id:'b1',channelId:'ig1',status:'sent'}}},now+2);
+ assert.throws(()=>refreshBufferStatus(sent,a.plan.key,{data:{post:{id:'b1',channelId:'ig1',status:'scheduled'}}},now+1),/buffer_status_stale/);
+ assert.equal(refreshBufferStatus(sent,a.plan.key,{data:{post:{id:'b1',channelId:'ig1',status:'scheduled'}}},now+3).buffer_attempts[0].state,'published');
 });

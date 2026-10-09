@@ -7,7 +7,8 @@ const digest=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 export const BUFFER_CREATE_QUERY='mutation StudioCreate($input: CreatePostInput!) { createPost(input: $input) { __typename ... on PostActionSuccess { post { id channelId status dueAt externalLink } } ... on MutationError { message } } }';
 export const BUFFER_QUEUE_QUERY='query StudioQueue($input: PostsInput!, $after: String) { posts(first: 100, after: $after, input: $input) { edges { node { id channelId status } } pageInfo { hasNextPage endCursor } } }';
 export const BUFFER_STATUS_QUERY='query StudioStatus($input: PostInput!) { post(input: $input) { id channelId status dueAt externalLink } }';
-const heldStates=new Set(['reserved','reconciliation','scheduled','awaiting_provider_approval','published','publication_failed','rejected']);
+const providerStates={draft:'provider_draft',error:'publication_failed',needs_approval:'awaiting_provider_approval',scheduled:'scheduled',sending:'sending',sent:'published'};
+const heldStates=new Set(['reserved','reconciliation',...Object.values(providerStates),'rejected']);
 function publicMedia(record){
  if(!record?.public_verified||!record.stable)return null;
  try{
@@ -91,7 +92,10 @@ export function reserveBufferPlan(state,plan,snapshot,expectedRevision,now=Date.
  if(state.revision!==expectedRevision)fail('revision_conflict');
  if(duplicate(state,plan))fail('duplicate_buffer_handoff');
  const post=state.posts.find(p=>p.post_id===plan.post_id),a=post?.publication_approval;
- if(!plan.ready||!post||post.output_version!==plan.output_version||a?.scope!=='buffer-schedule'||a.basis!==plan.approval_basis)fail('buffer_stale_plan');
+ if(!post||post.output_version!==plan.output_version||a?.scope!=='buffer-schedule'||a.basis!==plan.approval_basis||a.output_version!==post.output_version)fail('buffer_stale_plan');
+ const due=Date.parse(plan.input?.dueAt),currentBlocks=readiness({...post,targets:[plan.platform]}).filter(r=>!['account_unconnected','public_media_required'].includes(r.code));
+ if(!['instagram','threads'].includes(plan.platform)||!isActivePost(post)||!post.targets.includes(plan.platform)||currentBlocks.length||!Number.isFinite(due)||due<=now)fail('buffer_review_required');
+ if(!plan.ready)fail('buffer_stale_plan');
  const expected=digest([contentBasis(post),plan.platform,plan.input]);
  if(expected!==plan.approval_basis||plan.channel_id!==plan.input.channelId)fail('buffer_stale_plan');
  if(!refillBufferPlans([plan],snapshot,state,now).selected.length)fail('buffer_queue_full');
@@ -111,15 +115,31 @@ export function finishBufferAttempt(state,key,response,now=Date.now()){
  if(!['reserved','reconciliation'].includes(a.state))fail('buffer_attempt_already_finished');
  const result=response?.data?.createPost,post=result?.post;
  a.updated_at=new Date(now).toISOString();a.retry_allowed=false;a.success_url=null;
- if(post?.id&&post.channelId===a.channel_id){
-  a.provider_id=post.id;a.provider_status=post.status;a.due_at=post.dueAt||null;
-  a.state=response.errors?.length?'reconciliation':({scheduled:'scheduled',draft:'awaiting_provider_approval',sent:'published',error:'publication_failed'}[post.status]||'reconciliation');
+ if(typeof post?.id==='string'&&/^[\w-]{1,200}$/.test(post.id)&&post.channelId===a.channel_id){
+  a.provider_id=post.id;a.provider_status=Object.hasOwn(providerStates,post.status)?post.status:null;a.due_at=post.dueAt||null;
+  a.state=response.errors?.length?'reconciliation':(providerStates[post.status]||'reconciliation');
   if(a.state==='published')a.success_url=safeSuccessUrl(post.externalLink,a.platform);
-  a.failure_code=a.state==='publication_failed'?'provider_publication_failed':null;
+  a.failure_code=a.state==='publication_failed'?'provider_publication_failed':a.state==='reconciliation'?'provider_outcome_unknown':null;
  }else if(!response?.errors?.length&&['InvalidInputError','LimitReachedError','ChannelRefreshRequired','NotAllowedError'].includes(result?.__typename)){
   a.state='rejected';a.failure_code=result.__typename;
  }else{a.state='reconciliation';a.failure_code='provider_outcome_unknown';}
  // Raw GraphQL messages, headers and request bodies are deliberately not persisted.
+ s.revision++;return s;
+}
+export function refreshBufferStatus(state,key,response,now=Date.now()){
+ const s=clone(state),a=s.buffer_attempts?.find(x=>x.key===key);
+ if(!a?.provider_id)fail('buffer_provider_id_required');
+ if(!Number.isFinite(now)||now<Date.parse(a.updated_at||a.attempted_at||''))fail('buffer_status_stale');
+ // Published is a terminal fact. Delayed reads cannot reopen its slot or retry fence.
+ if(a.state==='published')return s;
+ const post=response?.data?.post;
+ a.updated_at=new Date(now).toISOString();a.retry_allowed=false;a.success_url=null;
+ if(!response?.errors?.length&&post?.id===a.provider_id&&post.channelId===a.channel_id&&Object.hasOwn(providerStates,post.status)){
+  a.provider_status=post.status;a.state=providerStates[post.status];a.due_at=post.dueAt||null;
+  a.failure_code=a.state==='publication_failed'?'provider_publication_failed':null;
+  if(a.state==='published')a.success_url=safeSuccessUrl(post.externalLink,a.platform);
+ }else{a.state='reconciliation';a.failure_code='provider_outcome_unknown';}
+ // A queue's absence is never evidence of publication. Refresh the known ID only.
  s.revision++;return s;
 }
 export function recoverBufferAttempts(state){
@@ -133,9 +153,10 @@ export function bufferQueueSnapshot(pages,channelIds,now=Date.now()){
   const page=pages[i]?.data?.posts;
   if(pages[i]?.errors?.length||!Array.isArray(page?.edges)||!page.pageInfo){complete=false;continue;}
   if(i===pages.length-1&&page.pageInfo.hasNextPage)complete=false;
-  for(const {node} of page.edges){
-   if(!node?.id||!Object.hasOwn(channels,node.channelId)||!['scheduled','pending','processing'].includes(node.status)){complete=false;continue;}
-   if(!ids.has(node.id)){ids.add(node.id);channels[node.channelId]++;}
+  for(const edge of page.edges){
+   const node=edge?.node;
+   if(!node?.id||!Object.hasOwn(channels,node.channelId)||!Object.hasOwn(providerStates,node.status)){complete=false;continue;}
+   if(node.status!=='sent'&&!ids.has(node.id)){ids.add(node.id);channels[node.channelId]++;}
   }
  }
  return {complete,observed_at:now,channels,provider_ids:[...ids]};
