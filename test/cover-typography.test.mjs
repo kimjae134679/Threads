@@ -83,7 +83,7 @@ test('nested size phrase is independent of the full color phrase across title li
   const style=typography.style(title,{emphasis,sizeEmphasis,explicitEmphasis:true}),fit=typography.fit(title,{width:300,height:800},measure,policy,style,100,48),runs=fit.runs.flat();
   assert.equal(runs.filter(r=>r.emphasized).map(r=>r.text).join('').replace(/\s/g,''),emphasis.replace(/\s/g,''));
   assert.equal(runs.filter(r=>r.sizeEmphasized).map(r=>r.text).join('').replace(/\s/g,''),sizeEmphasis.replace(/\s/g,''));
-  assert(runs.filter(r=>r.sizeEmphasized).every(r=>r.emphasized&&r.size===Math.round(fit.size*1.06)));
+  assert(runs.filter(r=>r.sizeEmphasized).every(r=>r.emphasized&&r.size===Math.round(fit.size*1.03)));
   assert(runs.filter(r=>!r.sizeEmphasized).every(r=>r.size===fit.size));
   assert.equal(runs.map(r=>r.text).join('').replace(/\s/g,''),title.replace(/\s/g,''));
  }
