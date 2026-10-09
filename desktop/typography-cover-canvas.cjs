@@ -24,12 +24,13 @@ module.exports=async function renderTypographyCover(){
   const scale=Math.max(width/photo.naturalWidth,height/photo.naturalHeight),sw=width/scale,sh=height/scale;
   const crop={x:(photo.naturalWidth-sw)/2,y:(photo.naturalHeight-sh)/2,width:sw,height:sh};
   imageBox={x:0,y:0,width,height,fit:'cover',crop};ctx.drawImage(photo,crop.x,crop.y,crop.width,crop.height,0,0,width,height);
-  const inkTop=Math.min(...glyphBoxes.map(b=>b.y)),inkBottom=Math.max(...glyphBoxes.map(b=>b.y+b.height)),plateauStart=inkTop-8,plateauEnd=inkBottom+8,start=Math.max(height*.64,plateauStart-height*.055);
-  if(plateauEnd-plateauStart>height*.22)throw Error('제목 뒤 어두운 구간이 너무 넓음');
-  const opacityAt=y=>y<=start?0:y<plateauStart ? .85*(y-start)/(plateauStart-start):y<=plateauEnd ? .85:.85-(.85-.20)*(y-plateauEnd)/(height-plateauEnd);
-  shadeSamples=[.55,.65,.70,.8,.95].map(at=>{const x=24,y=Math.round(height*at);return{x,y,opacity:opacityAt(y+.5),before:[...ctx.getImageData(x,y,1,1).data].slice(0,3)};});
-  const gradient=ctx.createLinearGradient(0,start,0,height);gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop((plateauStart-start)/(height-start),'rgba(0,0,0,.85)');gradient.addColorStop((plateauEnd-start)/(height-start),'rgba(0,0,0,.85)');gradient.addColorStop(1,'rgba(0,0,0,.20)');ctx.fillStyle=gradient;ctx.fillRect(0,start,width,height-start);
-  gradientGeometry={start,plateauStart,plateauEnd,end:height,peakOpacity:.85,bottomOpacity:.20,opaqueBandHeight:plateauEnd-plateauStart,inkTop,inkBottom,recipe:'title-local-shade-v2'};
+  const inkTop=Math.min(...glyphBoxes.map(b=>b.y)),inkBottom=Math.max(...glyphBoxes.map(b=>b.y+b.height)),plateauStart=inkTop-8,plateauEnd=height,start=Math.max(height*.52,plateauStart-height*.20),transitionHeight=plateauStart-start;
+  if(height-plateauStart>height*.34||transitionHeight<height*.16)throw Error('제목 음영이 사진을 과도하게 가림');
+  const stops=Array.from({length:17},(_,i)=>{const t=i/16;return{y:start+transitionHeight*t,opacity:.85*t*t*(3-2*t)};}).concat({y:height,opacity:.85});
+  const opacityAt=y=>{if(y<=start)return 0;for(let i=1;i<stops.length;i++){const left=stops[i-1],right=stops[i];if(y<=right.y)return left.opacity+(right.opacity-left.opacity)*(y-left.y)/(right.y-left.y);}return .85;};
+  shadeSamples=[.45,.55,.60,.65,.70,.8,.95,.999].map(at=>{const x=24,y=Math.min(height-1,Math.round(height*at));return{x,y,opacity:opacityAt(y+.5),before:[...ctx.getImageData(x,y,1,1).data].slice(0,3)};});
+  const gradient=ctx.createLinearGradient(0,start,0,height);for(const stop of stops)gradient.addColorStop((stop.y-start)/(height-start),'rgba(0,0,0,'+stop.opacity+')');ctx.fillStyle=gradient;ctx.fillRect(0,start,width,height-start);
+  gradientGeometry={start,plateauStart,plateauEnd,end:height,peakOpacity:.85,bottomOpacity:.85,opaqueBandHeight:height-plateauStart,transitionHeight,stops,inkTop,inkBottom,recipe:'title-monotonic-shade-v3'};
   shadeSamples=shadeSamples.map(sample=>({...sample,after:[...ctx.getImageData(sample.x,sample.y,1,1).data].slice(0,3)}));
  }else{
   ctx.strokeStyle=style.palette.line;ctx.lineWidth=2;ctx.strokeRect(38,38,width-76,height-76);
@@ -38,5 +39,5 @@ module.exports=async function renderTypographyCover(){
  }
  for(const run of renderedRuns){measure(run.text,run.size,run.weight);ctx.fillStyle=run.color;ctx.fillText(run.text,run.x,run.y);}
  if(credit){ctx.font='24px "Malgun Gothic",sans-serif';ctx.letterSpacing='0px';ctx.fillStyle=photo?'#d3dae3':'#5b625f';if(ctx.measureText(credit).width>available)throw Error('출처 표기 공간 부족');ctx.fillText(credit,margin,height-56);}
- return{data:canvas.toDataURL('image/png'),geometry:{title,size:fit.size,lines:fit.lines,lineWidths,glyphBoxes,box:{x:margin,y:top,width:available,height:fit.height},imageBox,width,height,aspectRatio:input.aspectRatio,typography:style,renderedRuns,emphasis:style.emphasis,contextLines:[],gradient:imageBox?{...gradientGeometry,shadeSamples}:null,protectedImageRegion:imageBox?'upper_two_thirds':null}};
+ return{data:canvas.toDataURL('image/png'),geometry:{title,size:fit.size,lines:fit.lines,lineWidths,glyphBoxes,box:{x:margin,y:top,width:available,height:fit.height},imageBox,width,height,aspectRatio:input.aspectRatio,typography:style,renderedRuns,emphasis:style.emphasis,contextLines:[],gradient:imageBox?{...gradientGeometry,shadeSamples}:null,protectedImageRegion:imageBox?'upper_half':null}};
 };

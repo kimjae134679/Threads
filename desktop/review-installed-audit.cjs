@@ -11,6 +11,25 @@ module.exports=async function audit({app,window,store,directory}){
  const workflowBefore=await fs.readFile(store.workflowFile,'utf8').catch(e=>{if(e.code==='ENOENT')return null;throw e;});
  const data=await store.list();const controls=await window.webContents.executeJavaScript("Object.fromEntries(['randomPost','topic','excludeSeen','holdPost','rejectPost','restorePost','fromCover','vertical','note','scores'].map(id=>[id,!!document.getElementById(id)]))");
  assert(Object.values(controls).every(Boolean));assert(data.entries.some(e=>e.hasOutput));
+ let readerCheck=null;
+ if(process.argv.includes('--review-reader-check')){
+  const run=s=>window.webContents.executeJavaScript(s),pause=ms=>new Promise(r=>setTimeout(r,ms));
+  await run('window.ThreadsPostReviewUI.viewer()');
+  await run(`document.querySelector('.production-card[data-id="${first.id}"] .evaluate-card').click();void 0`);
+  for(let i=0;i<200;i++){if(await run(`!document.getElementById('reviewSurface').hidden&&document.getElementById('pageImage').dataset.postId===${JSON.stringify(first.id)}&&document.getElementById('pageImage').naturalWidth===1080`))break;if(i===199)throw Error('Card did not open full reader');await pause(50);}
+  await run("document.getElementById('vertical').click();void 0");
+  assert.equal(await run("document.querySelectorAll('#verticalPages img').length"),first.pages);
+  const loaded=[];
+  for(let p=1;p<=first.pages;p++){
+   await run(`document.querySelector('#verticalPages img[data-page="${p}"]').scrollIntoView({block:'center'});void 0`);
+   for(let i=0;i<200;i++){if(await run(`document.querySelector('#verticalPages img[data-page="${p}"]').naturalWidth===1080`))break;if(i===199)throw Error('Whole-body page not loaded: '+p);await pause(50);}
+   loaded.push(p);
+  }
+  await run("document.getElementById('single').click();void 0");await run('window.ThreadsPostReviewUI.flush()');await run("document.getElementById('returnToViewer').click();void 0");
+  for(let i=0;i<200;i++){if(await run("document.body.classList.contains('viewer-mode')"))break;if(i===199)throw Error('Return from reader failed');await pause(50);}
+  const state=await run('window.ThreadsPostReviewUI.viewerState()');assert.equal(state.selected,first.id+':'+first.outputVersion);
+  readerCheck={id:first.id,pages:first.pages,allPagesLoaded:loaded,cardOpenedReader:true,verticalButton:'아래로 읽기',returnedToViewer:true,selectionPreserved:true};
+ }
  let stress=null,focusedImages=[];
  if(process.argv.includes('--review-ui-stress')){
   const run=s=>window.webContents.executeJavaScript(s),pause=ms=>new Promise(r=>setTimeout(r,ms));
@@ -34,7 +53,7 @@ module.exports=async function audit({app,window,store,directory}){
  assert.equal(before,await fs.readFile(store.file,'utf8'),'Audit must not alter actual ratings');
  assert.equal(workflowBefore,await fs.readFile(store.workflowFile,'utf8').catch(e=>{if(e.code==='ENOENT')return null;throw e;}),'Audit must not alter workflow');
  await fs.mkdir(directory,{recursive:true});
- const result={pass:true,checkedAt:new Date().toISOString(),version:app.getVersion(),packaged:app.isPackaged,executable:process.execPath,nativeWindow:{visible:window.isVisible(),minimized:window.isMinimized(),focused:window.isFocused(),bounds:window.getBounds()},readOnlyActualData:true,entries:data.entries.length,outputs:data.entries.filter(e=>e.hasOutput).length,ratings:data.entries.filter(e=>e.current?.score!=null).length,memos:data.entries.filter(e=>e.current?.note?.trim()).length,reviewRound:data.reviewRound,controls,coveredPages,validImageOutputs:data.entries.filter(e=>e.hasOutput&&e.imageEligible).length,withoutImageOutputs:data.entries.filter(e=>e.hasOutput&&!e.imageEligible).length,focusedImages,stress,feedbackUnchanged:true,workflowUnchanged:true};
+ const result={pass:true,checkedAt:new Date().toISOString(),version:app.getVersion(),packaged:app.isPackaged,executable:process.execPath,nativeWindow:{visible:window.isVisible(),minimized:window.isMinimized(),focused:window.isFocused(),bounds:window.getBounds()},readOnlyActualData:true,entries:data.entries.length,outputs:data.entries.filter(e=>e.hasOutput).length,ratings:data.entries.filter(e=>e.current?.score!=null).length,memos:data.entries.filter(e=>e.current?.note?.trim()).length,reviewRound:data.reviewRound,controls,coveredPages,validImageOutputs:data.entries.filter(e=>e.hasOutput&&e.imageEligible).length,withoutImageOutputs:data.entries.filter(e=>e.hasOutput&&!e.imageEligible).length,focusedImages,stress,readerCheck,feedbackUnchanged:true,workflowUnchanged:true};
  await fs.writeFile(path.join(directory,'installed-review.json'),JSON.stringify({...result,screenshot:'pending'},null,2));
  await fs.writeFile(path.join(directory,'installed-review.png'),(await window.webContents.capturePage()).toPNG());
  await fs.writeFile(path.join(directory,'installed-review.json'),JSON.stringify({...result,screenshot:'captured'},null,2));console.log(JSON.stringify(result));app.exit(0);
