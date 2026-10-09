@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 const root=await fs.mkdtemp(path.join(os.tmpdir(),'upload-studio-browser-'));
 const studioRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const out=path.join(studioRoot,'evidence');await fs.mkdir(out,{recursive:true});
-let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0;
+let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0;const finalReviewResponses=[];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn){for(let i=0;i<300;i++){const x=await fn();if(x)return x;await wait(100);}throw Error('browser_condition_timeout');}
 function send(method,params={}){return new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{calls.delete(id);reject(Error('CDP timeout: '+method));},10000);calls.set(id,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});socket.send(JSON.stringify({id,method,params}));});}
@@ -30,6 +30,7 @@ try {
   await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
   await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Fetch.enable',{patterns:[{urlPattern:'*'}]});
   events.set('Fetch.requestPaused',p=>{if(p.request.url===app.url+'/api/final-review')finalReviewRequests++;if(holdSync&&p.request.url===app.url+'/api/production/sync'){heldSync=p.requestId;return;}if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
+  events.set('Network.responseReceived',p=>{if(p.response.url===app.url+'/api/final-review')finalReviewResponses.push({status:p.response.status,requestId:p.requestId});});
   await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1400,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
   await send('Page.navigate',{url:app.url});await until(()=>evaluate('document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
 
@@ -116,15 +117,20 @@ try {
   await click('[data-final-review="passed"]');await until(async()=>(await api('/api/state')).state.posts.find(p=>p.post_id==='race-review').final_review_status==='passed');
   assert.equal(finalReviewRequests,requestsBefore+1);
   await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요")'));
-  // A competing edit changes the review intent while this click settles.
-  // The client guard must reject it without passing any unseen content.
+  // A direct competing server edit leaves this browser's cached intent unchanged.
+  // Its one verdict request must be rejected by the server's exact-basis guard.
   post=(await api('/api/state')).state.posts[1];
   await api('/api/posts/'+encodeURIComponent(second),{expected_revision:post.revision,patch:{tags:'#다른창'}});
-  const competingRequestsBefore=finalReviewRequests;
+  const competingRequestsBefore=finalReviewRequests,competingResponsesBefore=finalReviewResponses.length;
   await click('[data-final-review="passed"]');await until(()=>evaluate('document.querySelector("#status").classList.contains("error") && document.querySelector("#status").textContent.includes("현재 버전 검수를 다시 불러온")'));
   const competingAfter=(await api('/api/state')).state.posts.find(p=>p.post_id===second);
   assert.equal(competingAfter.tags,'#다른창');assert.equal(competingAfter.final_review_status,'unreviewed');assert.equal(competingAfter.final_review,null);
-  assert.equal(finalReviewRequests,competingRequestsBefore,'changed unseen content must never reach verdict POST');
+  assert.equal(finalReviewRequests,competingRequestsBefore+1,'cached intent sends one request for the server to validate');
+  await until(()=>finalReviewResponses.length===competingResponsesBefore+1);
+  const rejectedReview=finalReviewResponses.at(-1);
+  assert.equal(rejectedReview.status,409,'server must reject the stale review basis');
+  const rejectedBody=await send('Network.getResponseBody',{requestId:rejectedReview.requestId});
+  assert.equal(JSON.parse(rejectedBody.body).code,'review_form_version_changed');
   assert.equal((await api('/api/state')).state.publications.length,0);assert.equal(external,0);
   await shot('final-review-layout.png');
   console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, flushed verdicts, navigation/reload, pass invalidation and competing edit intent rejection. External requests: 0.');
