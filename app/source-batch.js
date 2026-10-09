@@ -425,6 +425,12 @@
           gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(0.4,'rgba(0,0,0,0.6)');gradient.addColorStop(1,'rgba(0,0,0,0.9)');
           ctx.fillStyle=gradient;ctx.fillRect(op.x,op.y,op.width,op.height);
         }else{
+          if(op.runs){
+            ctx.textAlign='left';let x=op.x;
+            for(const run of op.runs){ctx.font=run.weight+' '+run.size+'px '+font;ctx.fillStyle=run.color;const y=op.y+Math.max(0,op.size*1.06-run.size)*.8;
+              if(op.stroke){ctx.strokeStyle=op.stroke;ctx.lineWidth=op.strokeWidth||2;ctx.lineJoin='round';ctx.strokeText(run.text,x,y);}ctx.fillText(run.text,x,y);x+=ctx.measureText(run.text).width;}
+            continue;
+          }
           ctx.textAlign=op.align||'left';ctx.font=op.weight+' '+op.size+'px '+font;ctx.fillStyle=op.color||'#171c26';
           if(op.stroke){ctx.strokeStyle=op.stroke;ctx.lineWidth=op.strokeWidth||2;ctx.lineJoin='round';ctx.strokeText(op.text,op.x,op.y);}
           ctx.fillText(op.text,op.x,op.y);
