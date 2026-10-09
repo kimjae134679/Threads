@@ -27,7 +27,7 @@
     for(const [index,page] of pages.entries()) {
       if(!Number.isFinite(page.width)||page.width<=0||!Number.isFinite(page.height)||page.height<=0)fail('invalid_page_bounds',{page:index+1});
       for(const op of page.operations||[]) {
-        if(op.kind==='text'&&['body','comment'].includes(op.role)||op.kind==='image'&&page.role!=='cover') {
+        if(op.kind==='text'&&['body','comment'].includes(op.role)||op.kind==='image'&&page.role!=='cover'&&page.role!=='ending-card') {
           records.push({op,page:index+1});
           const height=op.kind==='text'?(op.lineHeight||op.size):op.height;
           const bottom=page.height-(op.kind==='text'?safeMargin:0);

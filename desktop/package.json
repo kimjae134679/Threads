@@ -50,6 +50,7 @@
       "review-workflow-model.cjs",
       "review-installed-audit.cjs",
       "batch-render.cjs",
+      "ending-card.cjs",
       "universal-reproduction.cjs",
       "universal-cover.cjs",
       "universal-cover-canvas.cjs",

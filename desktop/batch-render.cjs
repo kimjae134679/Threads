@@ -4,6 +4,7 @@ const {editorRoot}=require('./editor-assets.cjs');
 const modelModule={exports:{}};require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(editorRoot(),'universal-production-model.js'),'utf8'),{module:modelModule});
 const {auditLayout,normalize}=modelModule.exports;
 const {prepareImageComposition}=require('./image-composition.cjs');
+const {loadEndingCard,appendEndingCard}=require('./ending-card.cjs');
 const feedModule={exports:{}};
 require('node:vm').runInNewContext(require('node:fs').readFileSync(path.join(editorRoot(),'source-page-plan.js'),'utf8'),{module:feedModule});
 const feedPolicy=feedModule.exports;
@@ -14,7 +15,16 @@ function assertExactIntake(source,layout){
  const expectedImages=source.segments.filter(s=>s.kind==='image').map(s=>s.mediaName.toLowerCase());const actualImages=audit.images.filter(s=>!s.omitted&&s.exact).map(s=>s.mediaName.toLowerCase());if(JSON.stringify(expectedImages)!==JSON.stringify(actualImages))throw Error('원문 전체 이미지 위치 검증 실패');
  return {...audit,rawBodyAndCommentsExact:true};
 }
-async function renderBatchInput(job,{getWindow,context={},universalCover=false,strict=false,preserveBodyPlan=null}={}) {
+// Stage the authoritative body layout; the final producer rebuilds its ZIP next.
+function mergeReflowedBody(result,reflow){
+ const current=result.productionPlan;
+ const productionPlan={...current,...reflow.plan,coverTitle:current.coverTitle,templateId:current.templateId,imageComposition:current.imageComposition,coverAsset:current.coverAsset,universalCover:current.universalCover,bundleSha256:current.bundleSha256,bodyPreserved:false,bodyRuleVersion:reflow.plan.ruleVersion,pages:[current.pages[0],...reflow.plan.pages.slice(1)]};
+ delete productionPlan.endingCard;
+ return {...result,productionPlan,images:[result.images[0],...reflow.images.slice(1)]};
+}
+async function renderBatchInput(job,{getWindow,context={},universalCover=false,strict=false,preserveBodyPlan=null,endingCard=job.endingCard}={}) {
+    if(endingCard?.enabled&&preserveBodyPlan)throw Error('Ending-card requires final full-body output; cover-only export is held');
+    await loadEndingCard(endingCard);
     if(job.imageHandoff?.generationRequests?.length)throw new Error('image generation consumer is not connected; required imagery remains pending');
     if(job.imageHandoff?.requiresCompositionSupport){
       const imageComposition=await prepareImageComposition(job.imageHandoff);
@@ -122,8 +132,8 @@ async function renderBatchInput(job,{getWindow,context={},universalCover=false,s
       if(data.length>8*1024*1024)throw Error('결과 PNG가 8MB를 초과합니다. 재출력 전 검토가 필요합니다.');
       return {name:image.name,data};
     });
-    return {title:rendered.title,productionPlan:result.productionPlan,sourcePlan:result.sourcePlan,intakeAudit,zip:Buffer.from(rendered.zip,'base64'),sourceZip:Buffer.from(rendered.sourceZip,'base64'),
-      images};
+    return appendEndingCard({title:rendered.title,productionPlan:result.productionPlan,sourcePlan:result.sourcePlan,intakeAudit,zip:Buffer.from(rendered.zip,'base64'),sourceZip:Buffer.from(rendered.sourceZip,'base64'),
+      images},endingCard);
   }
 
-module.exports={renderBatchInput,assertExactIntake};
+module.exports={renderBatchInput,assertExactIntake,mergeReflowedBody,loadEndingCard,appendEndingCard};
