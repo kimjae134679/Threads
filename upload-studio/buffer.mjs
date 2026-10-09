@@ -1,6 +1,6 @@
 // Buffer contract and durable local transitions only. No HTTP, credentials or timers.
 import {createHash} from 'node:crypto';
-import {contentBasis,finalCaption,readiness,isActivePost,rejectSecrets} from './domain.mjs';
+import {contentBasis,finalCaption,readiness,isActivePost,rejectSecrets,finalReviewStatus} from './domain.mjs';
 const clone=x=>JSON.parse(JSON.stringify(x));
 const fail=code=>{throw Object.assign(new Error(code),{code,status:code==='revision_conflict'?409:400});};
 const digest=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
@@ -25,8 +25,9 @@ function publicMedia(record){
 export function previewBufferPost(post,{platform='instagram',channel_id='',due_at='',media={},now=Date.now()}={}){
  rejectSecrets({platform,channel_id,due_at,media});
  if(!['instagram','threads'].includes(platform))fail('invalid_platform');
- const blockers=readiness({...post,targets:[platform]}).filter(r=>!['account_unconnected','public_media_required'].includes(r.code)).map(r=>r.code);
+ const blockers=readiness({...post,targets:[platform]}).filter(r=>!['account_unconnected','public_media_required','final_review_required'].includes(r.code)).map(r=>r.code);
  if(!isActivePost(post))blockers.push('inactive_post');
+ if(!finalReviewStatus(post).passed)blockers.push('final_review_required');
  if(!post.targets.includes(platform))blockers.push('platform_not_selected');
  if(typeof channel_id!=='string'||!channel_id.trim()||channel_id.length>200)blockers.push('buffer_channel_required');
  const due=Date.parse(due_at);
@@ -52,8 +53,8 @@ export function approveBufferPlan(state,plan,expectedRevision,now=Date.now()){
  if(plan.blockers.some(c=>c!=='buffer_publication_approval_required'))fail('buffer_review_required');
  const s=clone(state),p=s.posts.find(p=>p.post_id===plan.post_id);
  if(!p||p.output_version!==plan.output_version||!isActivePost(p))fail('buffer_stale_plan');
- const currentBlocks=readiness({...p,targets:[plan.platform]}).filter(r=>!['account_unconnected','public_media_required'].includes(r.code));
- if(currentBlocks.length||!p.targets.includes(plan.platform))fail('buffer_review_required');
+ const currentBlocks=readiness({...p,targets:[plan.platform]}).filter(r=>!['account_unconnected','public_media_required','final_review_required'].includes(r.code));
+ if(currentBlocks.length||!finalReviewStatus(p).passed||!p.targets.includes(plan.platform))fail('buffer_review_required');
  if(digest([contentBasis(p),plan.platform,plan.input])!==plan.approval_basis||plan.input.channelId!==plan.channel_id)fail('buffer_stale_plan');
  // This transition is not exposed by the offline HTTP server. Future callers must
  // show this exact account, caption, images and date before explicit user approval.
@@ -93,8 +94,8 @@ export function reserveBufferPlan(state,plan,snapshot,expectedRevision,now=Date.
  if(duplicate(state,plan))fail('duplicate_buffer_handoff');
  const post=state.posts.find(p=>p.post_id===plan.post_id),a=post?.publication_approval;
  if(!post||post.output_version!==plan.output_version||a?.scope!=='buffer-schedule'||a.basis!==plan.approval_basis||a.output_version!==post.output_version)fail('buffer_stale_plan');
- const due=Date.parse(plan.input?.dueAt),currentBlocks=readiness({...post,targets:[plan.platform]}).filter(r=>!['account_unconnected','public_media_required'].includes(r.code));
- if(!['instagram','threads'].includes(plan.platform)||!isActivePost(post)||!post.targets.includes(plan.platform)||currentBlocks.length||!Number.isFinite(due)||due<=now)fail('buffer_review_required');
+ const due=Date.parse(plan.input?.dueAt),currentBlocks=readiness({...post,targets:[plan.platform]}).filter(r=>!['account_unconnected','public_media_required','final_review_required'].includes(r.code));
+ if(!['instagram','threads'].includes(plan.platform)||!isActivePost(post)||!finalReviewStatus(post).passed||!post.targets.includes(plan.platform)||currentBlocks.length||!Number.isFinite(due)||due<=now)fail('buffer_review_required');
  if(!plan.ready)fail('buffer_stale_plan');
  const expected=digest([contentBasis(post),plan.platform,plan.input]);
  if(expected!==plan.approval_basis||plan.channel_id!==plan.input.channelId)fail('buffer_stale_plan');

@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {previewBufferPost,approveBufferPlan,refillBufferPlans,reserveBufferPlan,finishBufferAttempt,recoverBufferAttempts,bufferRequestBudget,bufferQueueSnapshot,refreshBufferStatus,BUFFER_CREATE_QUERY} from '../buffer.mjs';
-import {createState,importBundle,editPost} from '../domain.mjs';
+import {createState,importBundle,editPost,setFinalReview} from '../domain.mjs';
 const now=Date.parse('2026-10-09T17:00:00Z'),due='2026-10-09T23:00:00.000Z';
 function fixture(id='p1'){
  let s=importBundle(createState(),{bundle_id:'mock',posts:[{post_id:id,output_version:'v1',caption:'기사 제목\n\n원문에서 확인한 내용입니다.',source:{url:'https://example.org/article',label:'제목',cover_title:'표지 제목',verified:true},images:[{asset_id:'a'.repeat(64),order:1,mime:'image/jpeg'},{asset_id:'b'.repeat(64),order:2,mime:'image/jpeg'}],local_settings:{targets:['instagram','threads']},threads_title_only:true}]});
  s=editPost(s,id,{safety:{fact:'PASS',rights:'PASS',privacy:'PASS',defamation:'PASS',platform_policy:'PASS'},review:{output_version:'v1',score:8,decision:'approved'}},1);
- return s;
+ return setFinalReview(s,id,'passed',s.posts[0].revision,now);
 }
 const media={['a'.repeat(64)]:{url:'https://media.example.org/01.jpg',public_verified:true,stable:true},['b'.repeat(64)]:{url:'https://media.example.org/02.jpg',public_verified:true,stable:true}};
 const options={platform:'instagram',channel_id:'ig1',due_at:due,media,now};

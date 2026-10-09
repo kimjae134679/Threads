@@ -61,7 +61,7 @@ check('concurrent reviews reject stale post revisions and invalid decisions',()=
 check('each publication input edit invalidates the pass',()=>{
  const patches=[
  {platform_captions:{instagram:'수정 Instagram'}},{platform_captions:{threads:'수정 Threads'}},{caption:'새 공통 문안'},
- {tags:'#edited'},{topic_tags:['생활']},{threads_topic_tag:'직장'},
+ {tags:'#edited'},{topic_tags:['생활','직장']},{threads_topic_tag:'직장'},
  {images:[{...images[1],order:1},{...images[0],order:2}]},{images:[images[0]]},
  {targets:['threads']},{timing:{mode:'planned',local:'2026-10-12T18:00',offset_minutes:-540}},
  {music:{mode:'manual-app'}},{media_format:'reel'},{reel_playback_reviewed:true},
@@ -70,7 +70,7 @@ check('each publication input edit invalidates the pass',()=>{
  {review:{output_version:'v1',score:9,decision:'approved'}}
  ];
  for(const patch of patches){const s=pass(checked()),next=editPost(s,'p',patch,revision(s));assert.equal(finalReviewStatus(next.posts[0]).passed,false,JSON.stringify(patch));assert.equal(blocked(next.posts[0]),true);assert.equal(approvedReviewBundle(next).posts.length,0);}
- const s=pass(checked()),common=setCommonTags(s,['공통'],s.revision);assert.equal(finalReviewStatus(common.posts[0]).decision,'unreviewed');
+ const s=pass(checked()),common=setCommonTags(s,['이야기'],s.revision);assert.equal(finalReviewStatus(common.posts[0]).decision,'unreviewed');
  const tampered=JSON.parse(JSON.stringify(s));tampered.posts[0].images.reverse();assert.equal(finalReviewStatus(tampered.posts[0]).passed,false);
 });
 

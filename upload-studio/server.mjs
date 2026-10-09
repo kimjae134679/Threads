@@ -5,6 +5,8 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import * as domain from './domain.mjs';
 import {StateStore} from './store.mjs';
+import {seedReviewTags} from './review-tags.mjs';
+import {ReviewHandoff,reviewHandoffProjection} from './review-handoff.mjs';
 import {OfflineConnectionPreparation} from './connection-preparation.mjs';
 import {WindowsCredentialVault} from './credential-vault.mjs';
 import {OAuthCallbackBroker} from './oauth-callback.mjs';
@@ -21,12 +23,15 @@ const here=path.dirname(fileURLToPath(import.meta.url));
 const fail=(code,status=400)=>{throw Object.assign(new Error(code),{code,status});};
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8'};
 async function readBody(req){let bytes=0;const chunks=[];for await(const c of req){bytes+=c.length;if(bytes>16000000)fail('body_too_large',413);chunks.push(c);}try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{fail('invalid_json');}}
-function send(res,status,value){res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
-export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT}={}) {
-  const store=new StateStore(root),assets=new LocalAssets(root),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
+function send(res,status,value){if(value?.state?.posts)value={...value,state:{...value.state,posts:value.state.posts.map(p=>({...p,final_review_status:domain.finalReviewStatus(p).decision}))}};res.writeHead(status,{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(value));}
+export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true}={}) {
+  const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);let handoffStatus={path:null,count:0,state_revision:null,code:null};
+  const refreshHandoff=async state=>{try{handoffStatus={...await handoff.write(state),code:null};}catch(e){handoffStatus={path:null,count:0,state_revision:state.revision,code:e.code||'handoff_write_failed'};}};
+  const store=new StateStore(root,{onSaved:refreshHandoff}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
   const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
-  await store.mutate(s=>recoverBufferAttempts(domain.recoverJobs(s)));
+  await store.mutate(s=>{const next=recoverBufferAttempts(domain.recoverJobs(s));if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
+  await refreshHandoff(await store.read());
   const server=http.createServer(async(req,res)=>{
     try {
       const actualPort=server.address().port,hosts=['127.0.0.1:'+actualPort,'localhost:'+actualPort];
@@ -42,6 +47,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='POST'&&route==='/api/videos'){if(req.headers['x-studio-local']!=='1'||!['video/mp4','video/quicktime'].includes(req.headers['content-type']))fail('local_request_required',403);const asset=await videos.add({stream:req,mime:req.headers['content-type'],name:'local-video'});return send(res,200,{asset,externalCalls:0});}
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
+      if(req.method==='GET'&&route==='/api/final-review/handoff')return send(res,200,{...reviewHandoffProjection(await store.read()),latest:handoffStatus});
       if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
       if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
       if(req.method==='GET'&&route==='/api/schedule-defaults')return send(res,200,{defaults:(await store.read()).schedule_defaults||DEFAULT_SCHEDULE});
@@ -54,6 +60,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         if(route==='/api/buffer/preview'){const saved=await store.read(),post=saved.posts.find(p=>p.post_id===body.post_id);if(!post)fail('post_not_found');if(body.expected_revision!==post.revision)fail('revision_conflict',409);return send(res,200,previewBufferPost(post,body.options||{}));}
         if(route.startsWith('/api/buffer/'))fail('live_operation_disabled',405);
         if(route==='/api/connection/prepare')return send(res,200,connections.prepare(body));
+        if(route==='/api/final-review/handoff'){let result;await store.mutate(async s=>{if(s.revision!==body.expected_revision)fail('revision_conflict',409);result=await handoff.write(s);return s;});handoffStatus={...result,code:null};return send(res,200,result);}
+        if(route==='/api/final-review')return send(res,200,{state:await store.mutate(s=>domain.setFinalReview(s,body.post_id,body.decision,body.expected_revision,Date.now())),handoff:handoffStatus,externalCalls:0});
         if(route==='/api/common-tags')return send(res,200,{state:await store.mutate(s=>domain.setCommonTags(s,body.tags,body.expected_revision)),externalCalls:0});
         else if(route==='/api/queue/order')return send(res,200,{state:await store.mutate(s=>domain.moveQueueJob(s,body.job_id,body.direction,body.expected_revision)),externalCalls:0});
         else if(route==='/api/reels/stop'){const controller=active.get('reel-'+body.post_id);if(!controller)fail('job_not_running');controller.abort();return send(res,200,{stopping:true,externalCalls:0});}
@@ -86,7 +94,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         return send(res,200,{state,externalCalls:0});
       }
       if(req.method!=='GET')fail('method_not_allowed',405);
-      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/domain.mjs':'domain.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
+      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
       if(!files[route])fail('route_not_found',404);
       const file=path.join(here,files[route]),data=await fs.readFile(file);res.writeHead(200,{'content-type':mime[path.extname(file)],'cache-control':'no-store','x-content-type-options':'nosniff'});res.end(data);
     }catch(e){const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}

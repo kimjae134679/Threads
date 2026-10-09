@@ -1,0 +1,51 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {StateStore} from '../store.mjs';
+import {LocalAssets} from '../local-assets.mjs';
+import {importBundle} from '../domain.mjs';
+import {createStudioServer} from '../server.mjs';
+const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl2ol8AAAAASUVORK5CYII=','base64');
+async function setup(){
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'studio-review-http-'));
+ const asset=await new LocalAssets(root).add({name:'fixture.png',mime:'image/png',base64:png.toString('base64')});
+ await new StateStore(root).mutate(s=>importBundle(s,{bundle_id:'fixture',posts:[{post_id:'p1',output_version:'v1',caption:'확인한 문안',source:{label:'검토 제목',cover_title:'검토 제목'},images:[{...asset,order:1}]}]}));
+ return root;
+}
+const request=(app,route,body)=>fetch(app.url+route,{method:body?'POST':'GET',headers:body?{'content-type':'application/json','x-studio-local':'1'}:{},body:body?JSON.stringify(body):undefined});
+test('HTTP current pass persists through restart and exports only current reviewed content',async()=>{
+ const root=await setup();let app;
+ try{
+  app=await createStudioServer({root,port:0,seedTags:false,materialRoot:path.join(root,'missing')});
+  let state=(await (await request(app,'/api/state')).json()).state;
+  assert.equal(state.posts[0].final_review_status,'unreviewed');
+  assert.equal((await request(app,'/api/queue',{post_id:'p1',expected_revision:state.posts[0].revision})).status,400);
+  let response=await request(app,'/api/final-review',{post_id:'p1',decision:'passed',expected_revision:state.posts[0].revision});
+  assert.equal(response.status,200);state=(await response.json()).state;assert.equal(state.posts[0].final_review_status,'passed');
+  await app.close();app=await createStudioServer({root,port:0,seedTags:false,materialRoot:path.join(root,'missing')});
+  state=(await (await request(app,'/api/state')).json()).state;assert.equal(state.posts[0].final_review_status,'passed');
+  const exported=await (await request(app,'/api/final-review/handoff',{expected_revision:state.revision})).json();
+  assert.equal(exported.count,1);assert.ok(exported.path.startsWith(path.join(root,'final-review-handoff')));
+  const original=await fs.readFile(exported.path);const manifest=JSON.parse(original);assert.equal(manifest.posts.length,1);
+  assert.equal((await request(app,'/api/final-review/handoff',{expected_revision:state.revision-1})).status,409);
+  response=await request(app,'/api/posts/p1',{expected_revision:state.posts[0].revision,patch:{platform_captions:{instagram:'수정한 현재 문안'}}});
+  assert.equal(response.status,200);state=(await response.json()).state;assert.equal(state.posts[0].final_review_status,'unreviewed');
+  const preview=await (await request(app,'/api/final-review/handoff')).json();assert.equal(preview.count,0);assert.equal(preview.latest.count,0);
+  assert.deepEqual(await fs.readFile(exported.path),original);assert.equal(state.jobs.length,0);assert.equal(state.publications.length,0);
+  assert.equal((await request(app,'/api/publish',{})).status,405);
+ }finally{await app?.close();await fs.rm(root,{recursive:true,force:true});}
+});
+test('Whole-state backup recovery preserves text but requires a fresh final verdict',async()=>{
+ const root=await setup();let app;
+ try{
+  app=await createStudioServer({root,port:0,seedTags:false,materialRoot:path.join(root,'missing')});
+  let state=(await (await request(app,'/api/state')).json()).state;
+  state=(await (await request(app,'/api/final-review',{post_id:'p1',decision:'passed',expected_revision:state.posts[0].revision})).json()).state;
+  await request(app,'/api/posts/p1',{expected_revision:state.posts[0].revision,patch:{caption:'별도 수정'}});
+  const restored=await (await request(app,'/api/restore-backup',{})).json();
+  assert.equal(restored.state.posts[0].caption,'확인한 문안');assert.equal(restored.state.posts[0].final_review_status,'unreviewed');
+  assert.equal(restored.state.posts[0].publication_approval,null);
+ }finally{await app?.close();await fs.rm(root,{recursive:true,force:true});}
+});

@@ -1,4 +1,6 @@
 // Credential-free domain model. No I/O, clocks, timers, or platform transports.
+import {finalReviewStatus} from './final-review.mjs';
+export {setFinalReview,finalReviewStatus,approvedReviewBundle} from './final-review.mjs';
 import {cleanCaptionFirstLine,cleanDisplayTitle} from './title-normalization.mjs';
 import {normalizeCommonTags,normalizeTopicTags,normalizeThreadsTopic,instagramTaggedCaption} from './tags.mjs';
 export const PLATFORM_LIMITS = Object.freeze({instagram:{text:2200,images:10},threads:{text:500,images:20}});
@@ -32,14 +34,14 @@ function captionEdits(post){return post.platform_caption_edited||{instagram:!!po
 function normalizePost(p) {
   const settings=p.local_settings||{};const targets=settings.targets||["instagram","threads"];
   if(!Array.isArray(targets)||targets.some(x=>!has(PLATFORM_LIMITS,x))||new Set(targets).size!==targets.length)fail("invalid_platform");
-  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,inactive_for_this_batch:p.inactive_for_this_batch===true||(p.post_id.startsWith('source-')&&p.production_caption_status!=='authored'),threads_title_only:p.threads_title_only===true,caption:cleanCaptionFirstLine(str(p.platform_captions?.instagram??p.caption??"")),platform_captions:captionsOf(p),platform_caption_edited:normalizeCaptionEdits(p.platform_caption_edited),publication_title:str(p.publication_title||"",300),production_caption_version:p.production_caption_version||null,production_caption_status:str(p.production_caption_status||"local",100),production_feedback:normalizeProductionFeedback(p.production_feedback),tags:str(p.tags||"",10000),topic_tags:normalizeTopicTags(p.topic_tags),topic_tags_edited:p.topic_tags_edited===true,threads_topic_tag:normalizeThreadsTopic(p.threads_topic_tag),common_tags:normalizeCommonTags(p.common_tags),media_format:p.media_format==='reel'?'reel':'images',reel_video:p.reel_video||null,reel_playback_reviewed:false,music:{mode:p.music?.mode==='manual-app'?'manual-app':'silent'},source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
+  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,inactive_for_this_batch:p.inactive_for_this_batch===true||(p.post_id.startsWith('source-')&&p.production_caption_status!=='authored'),threads_title_only:p.threads_title_only===true,caption:cleanCaptionFirstLine(str(p.platform_captions?.instagram??p.caption??"")),platform_captions:captionsOf(p),platform_caption_edited:normalizeCaptionEdits(p.platform_caption_edited),publication_title:str(p.publication_title||"",300),production_caption_version:p.production_caption_version||null,production_caption_status:str(p.production_caption_status||"local",100),production_feedback:normalizeProductionFeedback(p.production_feedback),tags:str(p.tags||"",10000),topic_tags:normalizeTopicTags(p.topic_tags),topic_tags_edited:p.topic_tags_edited===true,threads_topic_tag:normalizeThreadsTopic(p.threads_topic_tag),common_tags:normalizeCommonTags(p.common_tags),media_format:p.media_format==='reel'?'reel':'images',reel_video:p.reel_video||null,reel_playback_reviewed:false,music:{mode:p.music?.mode==='manual-app'?'manual-app':'silent'},source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,final_review:null,approval:null,publication_approval:null};
 }
 export function contentBasis(p){return JSON.stringify([p.post_id,p.output_version,p.caption,captionsOf(p),p.threads_title_only,p.tags,p.common_tags,p.topic_tags,p.threads_topic_tag,p.media_format,p.reel_video,p.reel_playback_reviewed,p.music,p.images,p.targets,p.accounts,p.timing,p.source,p.safety,p.review]);}
 function postAt(s,postId){const p=s.posts.find(x=>x.post_id===postId);if(!p)fail("post_not_found");return p;}
 function invalidate(s,postId){for(const job of s.jobs.filter(x=>x.post_id===postId&&!["cancelled","dry_run_complete"].includes(x.state))){job.stale=true;if(job.state!=="running"&&job.state!=="reconciliation")job.state="waiting";}}
 export function importBundle(state,bundle){
   rejectSecrets(bundle);if(!bundle||!Array.isArray(bundle.posts)||!bundle.posts.length||bundle.posts.length>1000)fail("bundle_invalid");str(bundle.bundle_id,200);
-  const s=clone(state),seen=new Set();for(const raw of bundle.posts){const p=normalizePost({...raw,common_tags:s.common_tags||[]});if(!has(raw,'platform_caption_edited'))p.platform_caption_edited={instagram:true,threads:true};if(seen.has(p.post_id))fail("duplicate_post");seen.add(p.post_id);const existing=s.posts.findIndex(x=>x.post_id===p.post_id);if(existing<0)s.posts.push(p);else {const prev=s.posts[existing];if(prev.output_version===p.output_version)fail("same_version_import_conflict");s.archived_posts.push(prev);p.revision=prev.revision+1;s.posts[existing]=p;invalidate(s,p.post_id);}}
+  const s=clone(state),seen=new Set();for(const raw of bundle.posts){const p=normalizePost({...raw,common_tags:has(raw,'common_tags')?raw.common_tags:s.common_tags||[]});if(!has(raw,'platform_caption_edited'))p.platform_caption_edited={instagram:true,threads:true};if(seen.has(p.post_id))fail("duplicate_post");seen.add(p.post_id);const existing=s.posts.findIndex(x=>x.post_id===p.post_id);if(existing<0)s.posts.push(p);else {const prev=s.posts[existing];if(prev.output_version===p.output_version)fail("same_version_import_conflict");s.archived_posts.push(prev);p.revision=prev.revision+1;s.posts[existing]=p;invalidate(s,p.post_id);}}
   s.revision++;return s;
 }
 // Producer refresh never replaces local writing or creates publication jobs.
@@ -49,12 +51,12 @@ export function syncProductionBundle(state,bundle){
   for(const raw of bundle.posts){
     if(seen.has(raw.post_id))fail("duplicate_post");seen.add(raw.post_id);
     const index=s.posts.findIndex(p=>p.post_id===raw.post_id);
-    if(index<0){const added=normalizePost({...raw,common_tags:s.common_tags||[]});s.posts.push(added);changed=true;continue;}
+    if(index<0){const added=normalizePost({...raw,common_tags:has(raw,'common_tags')?raw.common_tags:s.common_tags||[]});s.posts.push(added);changed=true;continue;}
     const previous=s.posts[index];
     if(previous.inactive_for_this_batch===undefined){previous.inactive_for_this_batch=previous.post_id.startsWith('source-')&&previous.production_caption_status!=='authored';changed=true;}
-    if(!previous.topic_tags_edited&&raw.topic_tags!==undefined){const topics=normalizeTopicTags(raw.topic_tags),threadTopic=normalizeThreadsTopic(raw.threads_topic_tag);if(JSON.stringify(previous.topic_tags||[])!==JSON.stringify(topics)||(previous.threads_topic_tag||'')!==threadTopic){previous.topic_tags=topics;previous.threads_topic_tag=threadTopic;previous.revision++;previous.review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;}}
+    if(!previous.topic_tags_edited&&raw.topic_tags!==undefined){const topics=normalizeTopicTags(raw.topic_tags),threadTopic=normalizeThreadsTopic(raw.threads_topic_tag);if(JSON.stringify(previous.topic_tags||[])!==JSON.stringify(topics)||(previous.threads_topic_tag||'')!==threadTopic){previous.topic_tags=topics;previous.threads_topic_tag=threadTopic;previous.revision++;previous.review=null;previous.final_review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;}}
     if(previous.output_version!==raw.output_version){
-      const next=normalizePost({...raw,common_tags:s.common_tags||[]});
+      const next=normalizePost({...raw,common_tags:has(raw,'common_tags')?raw.common_tags:s.common_tags||[]});
       // Even a deliberately blank edited caption survives new production.
       for(const key of ["tags","targets","timing","common_tags","media_format","reel_video","music","topic_tags","topic_tags_edited","threads_topic_tag"])if(previous[key]!==undefined)next[key]=clone(previous[key]);
       next.platform_caption_edited=clone(captionEdits(previous));
@@ -67,10 +69,10 @@ export function syncProductionBundle(state,bundle){
       label:incoming.label,display_title:incoming.display_title,
       caption_input_title:incoming.caption_input_title,original_title:incoming.original_title,cover_title:incoming.cover_title};
     if(JSON.stringify(previous.source)!==JSON.stringify(nextSource)){
-      previous.source=nextSource;previous.revision++;previous.review=null;previous.approval=null;
+      previous.source=nextSource;previous.revision++;previous.review=null;previous.final_review=null;previous.approval=null;
       previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;
     }
-    if(raw.threads_title_only===true&&!previous.threads_title_only){previous.threads_title_only=true;previous.revision++;previous.review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;}
+    if(raw.threads_title_only===true&&!previous.threads_title_only){previous.threads_title_only=true;previous.revision++;previous.review=null;previous.final_review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;}
     if(has(raw,'platform_captions')||has(raw,'caption')||has(raw,'production_caption_status')){
     const oldBasis=contentBasis(previous),oldOrigin=previous.production_caption_version||null;
     const edits=captionEdits(previous),captions=captionsOf(previous),incomingCaptions=captionsOf(raw);
@@ -78,7 +80,7 @@ export function syncProductionBundle(state,bundle){
     const fieldChange=JSON.stringify(previous.platform_captions)!==JSON.stringify(captions)||JSON.stringify(previous.platform_caption_edited)!==JSON.stringify(edits)||previous.production_caption_version!==(raw.production_caption_version||null)||previous.production_caption_status!==(raw.production_caption_status||'local');
     previous.platform_captions=captions;previous.platform_caption_edited=edits;previous.caption=captions.instagram;
     previous.production_caption_version=raw.production_caption_version||null;previous.production_caption_status=raw.production_caption_status||'local';previous.publication_title=raw.publication_title||previous.publication_title||'';
-    if(fieldChange){changed=true;if(contentBasis(previous)!==oldBasis||oldOrigin!==previous.production_caption_version){previous.revision++;previous.review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);}}
+    if(fieldChange){changed=true;if(contentBasis(previous)!==oldBasis||oldOrigin!==previous.production_caption_version){previous.revision++;previous.review=null;previous.final_review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);}}
     }
     const feedback=normalizeProductionFeedback(raw.production_feedback);
     if(JSON.stringify(previous.production_feedback||null)!==JSON.stringify(feedback)){
@@ -109,10 +111,11 @@ export function editPost(state,postId,patch,expectedRevision) {
   if(has(patch,"review"))p.review=normalizeReview(patch.review);
   if(contentBasis(p)===contentBasis(postAt(state,postId))){if(JSON.stringify(p.platform_caption_edited)!==JSON.stringify(postAt(state,postId).platform_caption_edited)||oldTopicEdited!==(p.topic_tags_edited===true))s.revision++;return s;}
   if(["caption","platform_captions","tags","topic_tags","threads_topic_tag","images","media_format","reel_video","reel_playback_reviewed","music"].some(k=>has(patch,k)))p.review=null;
-  p.revision++;p.approval=null;p.publication_approval=null;invalidate(s,postId);s.revision++;return s;
+  p.revision++;p.final_review=null;p.approval=null;p.publication_approval=null;invalidate(s,postId);s.revision++;return s;
 }
 export function readiness(post) {
   const reasons=[];const add=(code,label)=>reasons.push({code,label});
+  if(!finalReviewStatus(post).passed)add("final_review_required","현재 문안·태그·이미지 순서·설정의 최종 검수가 필요합니다.");
   const sourceOk=/^https:\/\/[a-zA-Z0-9][a-zA-Z0-9.:-]*(?:[/?#][^\s]*)?$/.test(post.source.url);
   if(!post.source.verified||!sourceOk)add("source_unverified","원문·출처 확인이 필요합니다.");
   for(const [k,v]of Object.entries(post.safety)){if(k==="warn_note")continue;if(v==="UNKNOWN"||v==="BLOCK"||(v==="WARN"&&!post.safety.warn_note.trim()))add("safety_"+k,({fact:"사실 일치",rights:"권리",privacy:"개인정보·초상",defamation:"명예훼손",platform_policy:"플랫폼 원본성"}[k]||"검수 항목")+" 확인이 필요합니다.");}
@@ -130,7 +133,7 @@ export function finalCaption(post,platform='instagram'){const body=cleanCaptionF
 function reviewReady(p){return readiness(p).filter(x=>!["account_unconnected","public_media_required","instagram_jpeg_required"].includes(x.code));}
 export function approveDryRun(state,postId,expectedRevision){const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(!isActivePost(p))fail('post_out_of_active_scope');if(reviewReady(p).length)fail("review_required");p.approval={scope:"dry-run",basis:contentBasis(p),output_version:p.output_version};s.revision++;return s;}
 export function queuePost(state,postId,expectedRevision){
-  const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(!isActivePost(p))fail("post_out_of_active_scope");if(!p.targets.length)fail("platform_required");
+  const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(!isActivePost(p))fail("post_out_of_active_scope");if(!finalReviewStatus(p).passed)fail("final_review_required");if(!p.targets.length)fail("platform_required");
   const key=JSON.stringify([p.post_id,p.output_version,p.revision,p.targets,p.accounts,p.timing]);if(s.jobs.some(x=>x.key===key&&x.state!=="cancelled"))return s;
   const n=s.jobs.length+1;s.jobs.push({id:"local-job-"+n,key,post_id:postId,output_version:p.output_version,post_revision:p.revision,basis:contentBasis(p),targets:[...p.targets],timing:clone(p.timing),state:p.timing.mode==="planned"?"scheduled":"waiting",stale:false,attempts:0,error:null,result_id:null,publication_url:null});s.revision++;return s;
 }
@@ -146,7 +149,7 @@ export function retryJob(state,jobId){const s=clone(state),j=jobAt(s,jobId);if(j
 export function recoverJobs(state){const s=clone(state);let changed=false;for(const j of s.jobs){if(j.state==="running"){j.state="reconciliation";j.error={code:"restart_reconciliation_required",retryable:false};changed=true;}}if(changed)s.revision++;return s;}
 export function validateState(value){if(!value||value.schema!==1||!Number.isInteger(value.revision)||!Array.isArray(value.posts)||!Array.isArray(value.jobs)||!Array.isArray(value.dry_runs)||!Array.isArray(value.publications)||!Array.isArray(value.archived_posts))fail("state_invalid");rejectSecrets(value);return value;}
 
-export function setCommonTags(state,tags,expectedRevision){if(state.revision!==expectedRevision)fail('revision_conflict');const s=clone(state),value=normalizeCommonTags(tags);if(JSON.stringify(value)===JSON.stringify(s.common_tags||[]))return s;s.common_tags=value;for(const p of s.posts){p.common_tags=[...value];p.revision++;p.review=null;p.approval=null;p.publication_approval=null;invalidate(s,p.post_id);}s.revision++;return s;}
+export function setCommonTags(state,tags,expectedRevision){if(state.revision!==expectedRevision)fail('revision_conflict');const s=clone(state),value=normalizeCommonTags(tags);if(JSON.stringify(value)===JSON.stringify(s.common_tags||[]))return s;s.common_tags=value;for(const p of s.posts){p.common_tags=[...value];p.revision++;p.review=null;p.final_review=null;p.approval=null;p.publication_approval=null;invalidate(s,p.post_id);}s.revision++;return s;}
 export function moveQueueJob(state,jobId,direction,expectedRevision){if(state.revision!==expectedRevision)fail('revision_conflict');if(![-1,1].includes(direction))fail('invalid_queue_order');const s=clone(state),i=s.jobs.findIndex(j=>j.id===jobId),j=i+direction;if(i<0||j<0||j>=s.jobs.length)fail('invalid_queue_order');if([s.jobs[i],s.jobs[j]].some(j=>['running','reconciliation'].includes(j.state)))fail('running_stop_required');[s.jobs[i],s.jobs[j]]=[s.jobs[j],s.jobs[i]];s.revision++;return s;}
 
 export function isActivePost(post){return !!post&&!post.inactive_for_this_batch&&(!post.post_id.startsWith('source-')||post.production_caption_status==='authored');}
