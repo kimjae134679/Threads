@@ -117,7 +117,7 @@ export function finishBufferAttempt(state,key,response,now=Date.now()){
  a.updated_at=new Date(now).toISOString();a.retry_allowed=false;a.success_url=null;
  if(typeof post?.id==='string'&&/^[\w-]{1,200}$/.test(post.id)&&post.channelId===a.channel_id){
   a.provider_id=post.id;a.provider_status=Object.hasOwn(providerStates,post.status)?post.status:null;a.due_at=post.dueAt||null;
-  a.state=response.errors?.length?'reconciliation':(providerStates[post.status]||'reconciliation');
+  a.state=!response.errors?.length&&Object.hasOwn(providerStates,post.status)?providerStates[post.status]:'reconciliation';
   if(a.state==='published')a.success_url=safeSuccessUrl(post.externalLink,a.platform);
   a.failure_code=a.state==='publication_failed'?'provider_publication_failed':a.state==='reconciliation'?'provider_outcome_unknown':null;
  }else if(!response?.errors?.length&&['InvalidInputError','LimitReachedError','ChannelRefreshRequired','NotAllowedError'].includes(result?.__typename)){

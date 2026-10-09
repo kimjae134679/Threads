@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {removeOwnerFile} from '../store.mjs';
+import {removeOwnerFile,removeEmptyLock} from '../store.mjs';
 test('Windows sharing violations retry the exact observed owner filename',async()=>{
  let calls=0;const paths=[];
  await removeOwnerFile('owner.unique.json',async file=>{paths.push(file);if(++calls<3)throw Object.assign(new Error('sharing'),{code:'EPERM'});},async()=>{});
@@ -37,4 +37,17 @@ test('Concurrent stale-owner recovery preserves CAS on the actual filesystem',as
    await assert.rejects(fs.stat(path.join(root,'.state-lock')),{code:'ENOENT'});
   }finally{await fs.rm(root,{recursive:true,force:true});}
  }
+});
+
+test('Empty-directory sharing retry never removes a fresh nonempty owner',async()=>{
+ let calls=0;
+ await removeEmptyLock('.state-lock',async()=>{calls++;throw Object.assign(new Error('sharing'),{code:'EPERM'});},async()=>{},async()=>['owner.fresh.json']);
+ assert.equal(calls,1);
+ let retry=0;await removeEmptyLock('.state-lock',async()=>{if(++retry<3)throw Object.assign(new Error('sharing'),{code:'EPERM'});},async()=>{},async()=>[]);
+ assert.equal(retry,3);
+});
+test('Permanent empty-directory failures remain bounded and permission errors fail closed',async()=>{
+ let calls=0;await assert.rejects(removeEmptyLock('.state-lock',async()=>{calls++;throw Object.assign(new Error('sharing'),{code:'EBUSY'});},async()=>{},async()=>[]),{code:'EBUSY'});
+ assert.equal(calls,12);
+ await assert.rejects(removeEmptyLock('.state-lock',async()=>{throw Object.assign(new Error('denied'),{code:'EACCES'});},async()=>{},async()=>[]),{code:'EACCES'});
 });

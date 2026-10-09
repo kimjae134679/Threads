@@ -1,3 +1,4 @@
+import './final-review.test.mjs';
 import './store-lock.test.mjs';
 import './buffer.test.mjs';
 import './carousel-logic.test.mjs';

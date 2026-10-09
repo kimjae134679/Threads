@@ -165,3 +165,12 @@ test('Unknown, partial, mismatched and out-of-order status reads never free a he
  assert.throws(()=>refreshBufferStatus(sent,a.plan.key,{data:{post:{id:'b1',channelId:'ig1',status:'scheduled'}}},now+1),/buffer_status_stale/);
  assert.equal(refreshBufferStatus(sent,a.plan.key,{data:{post:{id:'b1',channelId:'ig1',status:'scheduled'}}},now+3).buffer_attempts[0].state,'published');
 });
+
+test('Prototype-shaped unknown statuses retain the duplicate fence through restart',()=>{
+ const a=approved(fixture()),r=reserveBufferPlan(a.s,a.plan,snap,a.s.revision,now);
+ for(const status of ['constructor','toString','__proto__']){
+  const f=JSON.parse(JSON.stringify(finishBufferAttempt(r,a.plan.key,{data:{createPost:{post:{id:'b1',channelId:'ig1',status}}}},now)));
+  assert.equal(f.buffer_attempts[0].state,'reconciliation');assert.equal(f.buffer_attempts[0].provider_status,null);
+  assert.equal(refillBufferPlans([a.plan],snap,f,now).selected.length,0);
+ }
+});
