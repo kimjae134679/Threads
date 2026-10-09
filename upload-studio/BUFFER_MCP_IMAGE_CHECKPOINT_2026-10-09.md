@@ -21,7 +21,7 @@ The local execution tool failed during process setup. The authorized Desktop Com
 
 The review task read also failed, so the actual frozen approved-version handoff has not been received. Generated output, historical scores, imported files and offline preview approval must not be substituted for the user's current exact-version pass.
 
-No image upload, new host, bucket, key, security change, public reservation, public publication or recurring executor was performed. Existing hosting availability is unknown; it was not proved absent.
+No image upload, key creation, security change, public reservation, public publication or recurring executor was performed by this task. The later authorized Cloudinary connection is now verified below.
 
 ## Supported next transfer
 
@@ -60,21 +60,21 @@ This checkpoint changes documentation only. No local code or producer data was m
 - https://support.buffer.com/articles/attaching-images-videos-and-other-media-to-your-posts-eudySt0TnS
 - https://support.buffer.com/articles/saving-and-scheduling-draft-posts-CBLXg1yFXp
 
-## Cloudinary connection preparation — 2026-10-10 KST
+## Cloudinary connection verified — 2026-10-10 KST
 
-The authorized choice is Cloudinary Free Image and Video APIs: $0, no card required, 25 monthly shared credits. No account, environment, OAuth grant, upload or billing change has been created by this task.
+The user explicitly authorized Cloudinary Free storage and public URL delivery for the existing finished test item and exact image versions personally passed in review. Paid plans, billing changes, original inputs, review records and unreviewed material remain excluded. No further authorization is needed for this agreed scope.
 
-Preferred connection: install the official Cloudinary plugin from the ChatGPT/Codex plugins directory and authenticate with OAuth, selecting the intended Free product environment. Official documentation says this plugin exposes Asset Management without handling API keys.
+The official Cloudinary plugin is now exposed in this session. Read-only get_usage_details succeeded and reported Free with a 25-credit limit. Its zero usage/resource figures were last updated on 2026-10-08, so they do not establish current storage emptiness. A current list_images read succeeded with 60 image records and no continuation cursor, including main-sample. No listed asset was established as the authorized finished test image or a currently passed production version. Samples and screenshots must not substitute for the actual finished file.
 
-If the official plugin is not visible in the user's directory, the vendor documents the existing Asset Management remote MCP endpoint https://asset-management.mcp.cloudinary.com/mcp with Streamable HTTP and OAuth. Do not register additional configuration, analysis or automation servers for this upload-only workflow.
+The current official upload_asset tool accepts upload_request.file as a URL, local path or base64 string. The older hosted server's URL-only description does not constrain this plugin schema. This is supported input syntax, not proof that a particular PC path or chat attachment is accessible to the upload runtime. No file reference or actual finished PNG/JPG bytes have been received here. PC access remains unavailable and the exhausted connector must not be retried, reconnected or bypassed.
 
-This session currently exposes no Cloudinary tool, plugin-search action or connector-install action. The user must complete the app's connection/login UI before provider reads or uploads can run. Do not request credentials in chat, alter permission defaults, or reuse a stopped browser credential flow.
+Proposed storage grouping remains buffer-delivery/test and buffer-delivery/passed. When the real file becomes accessible, preserve original bytes, format and order; use an opaque object identifier with overwrite=false, no transformation, no conversion and no automatic analysis. Verify the resulting versioned HTTPS delivery URL and original-byte equality before attaching it. Retain object/version/hash references privately; do not put source bytes, private titles, channel identifiers or credentials in this public note. Oversized assets or exhausted free capacity remain held without a paid upgrade.
 
-After connection, first verify the environment and Free usage read-only. Proposed storage grouping: buffer-delivery/test for the one test, and buffer-delivery/passed for exact passed versions. Final object references must be tied to the producer's actual output version and ordered SHA-256 image list, using opaque identifiers rather than private content titles. Preserve original bytes, format and order; no cropping, conversion or optimization is authorized. Oversized assets or exhausted free capacity remain held, with no paid upgrade.
+A fresh Buffer read verified the existing test post as draft with zero assets, null dueAt/sentAt and sharedNow=false. Both intended channels remain connected and unlocked. A complete scheduled/sending read returned zero posts with hasNextPage=false. No image upload, draft edit, new draft, reservation or publication occurred in this follow-up.
 
-The reviewed producer reported no public delivery URL or storage path in its existing media metadata. This task did not repeat that full inventory inspection. PC image bytes and the final approved-version handoff are still unavailable here.
+Once the actual test image is accessible, upload that file under the existing consent, edit the existing Threads test draft with saveToDraft=true, preserve its exact text and required metadata, and omit mode/dueAt. Fetch the same provider ID afterwards and verify draft status, unchanged exact text, null dueAt/sentAt, expected image count/order and the verified media reference. The test remains excluded from public publishing.
 
-For the test, edit the existing provider draft after verified image transfer; do not create a duplicate or set mode/dueAt. Fetch the same provider ID afterwards and verify draft status, exact text, null dueAt/sentAt and expected media count/order. A successful text draft is not an image-upload result.
+Production delivery still requires the producer's frozen exact-version pass and ordered media/content handoff. Only those versions may enter the already-authorized KST slots, within actual provider limits and after reservation/duplicate checks. A connection, sample asset or text-only draft does not prove successful image delivery.
 
 Sources:
 - https://cloudinary.com/documentation/cloudinary_llm_mcp
