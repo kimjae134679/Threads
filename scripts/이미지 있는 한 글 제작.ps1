@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$요청파일)
+﻿param([Parameter(Mandatory=$true)][string]$요청파일)
 $ErrorActionPreference='Stop'
 [Console]::OutputEncoding=[Text.Encoding]::UTF8
 $programPath='D:\A_KJ\AI\Applications\ThreadsProduction\0.3.31-cover.20261009.6\Threads Cut Editor.exe'
@@ -16,6 +16,8 @@ $worker.WaitForExit()
 $progressPath=Join-Path $request.work 'progress.json'
 if(-not (Test-Path -LiteralPath $progressPath)){throw '완료 체크포인트가 없습니다. 현재 결과에 등록하지 않습니다.'}
 $progress=Get-Content -LiteralPath $progressPath -Encoding UTF8 -Raw | ConvertFrom-Json
+$requestHash=(Get-FileHash -LiteralPath $requestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+if($progress.requestSha256 -ne $requestHash -or -not $progress.runtime.packaged -or $progress.runtime.version -ne '0.3.31-cover.20261009.6'){throw '요청 해시 또는 실제 설치 런타임이 다릅니다. 이전 완료 기록을 재사용하지 않습니다.'}
 if($worker.ExitCode -ne 0 -or $progress.state -ne 'complete' -or @($progress.completed).Count -ne 1){$progress | ConvertTo-Json -Depth 15;throw '제작이 보류되었거나 실패했습니다. 현재 결과에 등록하지 않습니다.'}
 $progress | ConvertTo-Json -Depth 15
 '제작 완료. 체크포인트와 실제 출력 해시를 확인한 뒤 canonical writer로 현재 결과에 등록하세요.'
