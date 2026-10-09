@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {createHash} from 'node:crypto';
+import * as crypto from 'node:crypto';
 import {ProductionInput,productionVersion} from '../production-input.mjs';
 import {cleanDisplayTitle,cleanCaptionFirstLine} from '../title-normalization.mjs';
 import {createState,importBundle} from '../domain.mjs';
