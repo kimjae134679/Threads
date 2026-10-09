@@ -6,5 +6,6 @@ export function cleanCaptionFirstLine(value){
  const outer=/^\s*\[\s+([\s\S]*?)\s+\]\s*$/.exec(first),candidate=outer?outer[1]:first,cleaned=cleanDisplayTitle(candidate);
  // Exact ordinary first lines and all remaining bytes are retained.
  if(!SOURCE_PREFIX.test(candidate))return text;
- return (cleaned?'[ '+cleaned+' ]':'')+cr+rest;
+ const existingTitle=/^\[\s+([\s\S]*?)\s+\]$/.exec(cleaned),title=existingTitle?existingTitle[1]:cleaned;
+ return (title?'[ '+title+' ]':'')+cr+rest;
 }
