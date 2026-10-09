@@ -47,6 +47,11 @@ try{
  assert.equal((await store.list()).entries.find(e=>e.id==='a').current.note,'유지할 실제 평가');
  assert.equal(JSON.parse(await fs.readFile(store.file,'utf8')).evaluations[0].score,9);
  a.outputSha256='changed';await report();
+ const workflowBeforeVersionRead=await fs.readFile(store.workflowFile,'utf8');
+ const renewed=(await store.list()).entries.find(e=>e.id==='a');
+ assert.equal(renewed.seenAt,null,'수정된 출력 버전은 안읽음');
+ assert(renewed.previousSeenAt,'이전 버전의 실제 열람 이력은 별도로 유지');
+ assert.equal(await fs.readFile(store.workflowFile,'utf8'),workflowBeforeVersionRead,'조회가 열람 이력을 변경하지 않음');
  row=(await store.list()).entries.find(e=>e.id==='a');assert.equal(row.progress,null);assert.equal(row.current,null);assert.equal(row.disposition,'eligible');
  await assert.rejects(store.visit({id:'a',outputVersion:v,page:1}));
  const saved=JSON.parse(await fs.readFile(store.workflowFile,'utf8'));assert.equal(saved.entries.filter(e=>e.id==='a').length,1);assert.equal(saved.recordType,'user_review_workflow');

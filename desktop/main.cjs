@@ -1,5 +1,7 @@
 'use strict';
-if(process.argv.some(a=>a.startsWith('--image-production-request='))){
+if(process.argv.some(a=>a.startsWith('--cover-reproduction-request='))){
+ require('./cover-reproduction-run.cjs').run();
+}else if(process.argv.some(a=>a.startsWith('--image-production-request='))){
  require('./image-production-run.cjs');
 }else{
 const { app, BrowserWindow, dialog, ipcMain, protocol, session, shell } = require('electron');
@@ -18,7 +20,7 @@ protocol.registerSchemesAsPrivileged([{ scheme: 'cut-editor', privileges: { stan
 const pcReviewRun=process.argv.includes('--pc-review-run');
 if(pcReviewRun){app.disableHardwareAcceleration();app.setPath('userData',path.join(app.getPath('temp'),'ThreadsPcReviewRunner'));}
 const reviewAudit=process.argv.find(a=>a.startsWith('--review-audit='));
-const reviewOnly=!pcReviewRun&&(process.argv.includes('--review-only')||!!reviewAudit);
+const reviewOnly=!pcReviewRun&&(process.argv.includes('--review-only')||!!reviewAudit||!process.argv.includes('--editor')&&!process.argv.includes('--background-worker'));
 if(reviewAudit&&!process.argv.includes('--review-ui-stress'))app.disableHardwareAcceleration();
 if(reviewOnly)app.setPath('userData',path.join(app.getPath('appData'),'ThreadsReview',app.getVersion()));
 let editor, bundleWindow, postReview, activeCapture = null;

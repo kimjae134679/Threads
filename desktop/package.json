@@ -61,6 +61,7 @@
       "intake-pipeline-cli.cjs",
       "intake-pipeline-run.cjs",
       "reflow-review-covers-run.cjs",
+      "cover-reproduction-run.cjs",
       "review-canonical-writer.cjs",
       "pc-review-entry.cjs",
       "image-requirements.cjs",
