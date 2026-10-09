@@ -8,3 +8,5 @@ upload-desktop-mockup.html은 단일 파일이며 로컬 브라우저에서 열 
 작성한 core와 테스트는 보존하고 사용자 도안 확인 전 기능 구현은 보류합니다.
 PC 초기화 오류·Desktop Commander 월 한도로 D드라이브와 로컬 .agents/skills는 미확인입니다.
 로컬 파일 브라우저 열기는 보안 정책이 차단하여 우회하지 않았습니다. 실제 화면 캡처와 PC 적용은 미완료입니다.
+
+정적 PNG 시안: upload-desktop-design.png. ImageGen으로 만든 시각 방향 제안이며 HTML 실제 화면 캡처가 아닙니다. HTML과 이미지 사이에 세부 차이가 있습니다. 실제 캡처는 로컬 브라우저 렌더링 경로가 복구된 뒤 확인해야 합니다.
