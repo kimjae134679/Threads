@@ -23,3 +23,5 @@ AI 자산은 사용자가 지정한 `자료/AI 생성 원본`의 활성 `생성 
 실제 후속 제작 등록과 전체 과거 배치의 동일 글 이전 버전 탐색은 별도 등록 경로에서 생산 배치와 아카이브 위치를 연결해야 한다. 현재 뷰어는 현재 status에 등록된 유효 이미지 제작 묶음을 제공한다. 일반 source-batch/이미지 생성 큐, 자동 업로드, 예약은 이번 작업에서 새로 실행하지 않았다.
 
 .7 대표 실제 출력은 글자 크기 58~86px, 그라데이션 시작 701~709px(높이 약65%), 85% 구간 높이 200~223px를 확인했다. 대표 출력은 task-16/title-local-shade-20261009/representatives/proof.json에 원본/출력/폰트 해시와 실제 픽셀 검증을 기록한다. 전체 199개는 별도 request/work/checkpoint와 새로운 제작 묶음으로 실행하며 이전 .6 완료 기록을 사용하지 않는다.
+
+실제 설치 .33 전체199건의 범위: 제목 글꼴 58~136px, 그라데이션 시작 700.366~810.176px, 85% 어둠 구간 높이 100~224px. 하단 끝 불투명도는20%다. 전 대상 실제 PNG 검증과 현재 교체/이전 파일 해시 보존 증거는 task-16/title-local-shade-20261009-pixel-center/{work/progress.json,activation-progress.json,final-current-proof.json,review-audit/installed-review.json}이다. 뷰어·평가 왕복 관련 UI5개 파일은 이전 .31 설치본과 동일한 해시를 확인했다.
