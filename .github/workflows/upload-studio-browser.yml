@@ -1,0 +1,27 @@
+name: upload-studio-browser
+on:
+  pull_request:
+    paths:
+      - 'upload-studio/**'
+      - 'test/upload-studio.test.mjs'
+      - '.github/workflows/upload-studio-browser.yml'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Actual Chromium offline editor test
+        run: node upload-studio/test/browser.mjs
+      - name: Keep actual browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-studio-actual-browser
+          path: upload-studio/evidence/*.png
+          if-no-files-found: ignore

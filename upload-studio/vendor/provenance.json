@@ -1,0 +1,26 @@
+{
+  "source_repository": "kimjae134679/Threads",
+  "source_commit": "661924a6a3257b8109c4e57e6f60fcb55856cb9b",
+  "files": [
+    {
+      "path": "threads.mjs",
+      "blob_sha": "890d73e1fcf206b4a48d220cabc11f88ec4ab6b9",
+      "local_copy": "vendor/threads.mjs",
+      "modified": false
+    },
+    {
+      "path": "instagram.mjs",
+      "blob_sha": "4e332d358ee34229354d8da846a4429789dd2574",
+      "local_copy": "vendor/instagram.mjs",
+      "modified": false
+    },
+    {
+      "path": "publication-journal.mjs",
+      "blob_sha": "816db11f6a3058a1cc8002423e32c7d04938d72d",
+      "local_copy": "vendor/publication-journal.mjs",
+      "modified": false
+    }
+  ],
+  "scope": "official dry-run planners and existing journal; no live functions invoked",
+  "worker_environment": "empty"
+}

@@ -22,7 +22,9 @@ function normalizeSource(s={}){return {url:str(s.url||"",2048),verified:s.verifi
 function normalizeSafety(s={}){const result={};for(const k of ["fact","rights","privacy","defamation","platform_policy"]){const v=s[k]||"UNKNOWN";if(!["PASS","WARN","BLOCK","UNKNOWN"].includes(v))fail("invalid_safety");result[k]=v;}result.warn_note=str(s.warn_note||"",5000);return result;}
 function normalizeReview(r){if(!r)return null;if(!Number.isInteger(r.score)||r.score<1||r.score>10||!["approved","pending","rejected"].includes(r.decision))fail("invalid_review");return {output_version:str(r.output_version,100),score:r.score,decision:r.decision,note:str(r.note||"",10000)};}
 function normalizePost(p) {
-  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,caption:str(p.caption||""),tags:str(p.tags||"",10000),source:normalizeSource(p.source),images:normalizeImages(p.images),targets:["instagram","threads"],accounts:{instagram:"",threads:""},timing:localTiming(),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
+  const settings=p.local_settings||{};const targets=settings.targets||["instagram","threads"];
+  if(!Array.isArray(targets)||targets.some(x=>!has(PLATFORM_LIMITS,x))||new Set(targets).size!==targets.length)fail("invalid_platform");
+  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,caption:str(p.caption||""),tags:str(p.tags||"",10000),source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
 }
 export function contentBasis(p){return JSON.stringify([p.post_id,p.output_version,p.caption,p.tags,p.images,p.targets,p.accounts,p.timing,p.source,p.safety,p.review]);}
 function postAt(s,postId){const p=s.posts.find(x=>x.post_id===postId);if(!p)fail("post_not_found");return p;}
@@ -54,11 +56,12 @@ export function readiness(post) {
   if(!post.review||post.review.output_version!==post.output_version||post.review.decision!=="approved")add("current_review_required","현재 제작 버전의 사용자 평가·검수가 필요합니다.");
   if(!post.caption.trim()&&!post.images.length)add("empty_content","문안 또는 이미지가 필요합니다.");
   if(!post.targets.length)add("platform_required","플랫폼을 선택해 주세요.");
-  const combined=finalCaption(post),length=[...combined].length;
-  for(const target of post.targets){if(length>PLATFORM_LIMITS[target].text)add(target==="instagram"?"instagram_caption_limit":"threads_text_limit",target+" 문안 길이 초과 · 원문은 그대로 보존됩니다.");if(!post.images.length)add(target+"_images_required","이미지를 먼저 선택해 주세요.");if(post.images.length>PLATFORM_LIMITS[target].images)add(target+"_image_limit",target+"의 현재 어댑터 이미지 범위를 넘었습니다.");if(target==="instagram"&&post.images.some(x=>x.mime!=="image/jpeg"))add("instagram_jpeg_required","실제 Instagram 연결 전 JPEG 자산 준비가 필요합니다.");}
+  const combined=finalCaption(post);
+  for(const target of post.targets){if(platformTextLength(combined,target)>PLATFORM_LIMITS[target].text)add(target==="instagram"?"instagram_caption_limit":"threads_text_limit",target+" 문안 길이 초과 · 원문은 그대로 보존됩니다.");if(!post.images.length)add(target+"_images_required","이미지를 먼저 선택해 주세요.");if(post.images.length>PLATFORM_LIMITS[target].images)add(target+"_image_limit",target+"의 현재 어댑터 이미지 범위를 넘었습니다.");if(target==="instagram"&&post.images.some(x=>x.mime!=="image/jpeg"))add("instagram_jpeg_required","실제 Instagram 연결 전 JPEG 자산 준비가 필요합니다.");}
   add("account_unconnected","계정 미연결 · 실제 게시 불가");add("public_media_required","공개 이미지 접근·권한 확인 전 · 외부 전송 없음");
   return reasons;
 }
+export function platformTextLength(text,platform){return [...text].reduce((n,c)=>{if(platform!=="threads"||!/[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F\u200D]/u.test(c))return n+1;const cp=c.codePointAt(0);return n+(cp>65535?4:cp>2047?3:cp>127?2:1);},0);}
 export function finalCaption(post){return post.caption+(post.tags?"\n\n"+post.tags:"");}
 function reviewReady(p){return readiness(p).filter(x=>!["account_unconnected","public_media_required","instagram_jpeg_required"].includes(x.code));}
 export function approveDryRun(state,postId,expectedRevision){const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(reviewReady(p).length)fail("review_required");p.approval={scope:"dry-run",basis:contentBasis(p),output_version:p.output_version};s.revision++;return s;}

@@ -1,0 +1,54 @@
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {spawn,spawnSync} from 'node:child_process';
+import {createStudioServer} from '../server.mjs';
+import assert from 'node:assert/strict';
+const root=await fs.mkdtemp(path.join(os.tmpdir(),'upload-studio-browser-'));
+const out=path.resolve('upload-studio/evidence');await fs.mkdir(out,{recursive:true});
+let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0;
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function until(fn){for(let i=0;i<100;i++){const x=await fn();if(x)return x;await wait(100);}throw Error('browser_condition_timeout');}
+function send(method,params={}){return new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{calls.delete(id);reject(Error('CDP timeout: '+method));},10000);calls.set(id,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});socket.send(JSON.stringify({id,method,params}));});}
+const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.text);return r.result.value;};
+async function click(selector){const rect=await evaluate('(()=>{const e=document.querySelector('+JSON.stringify(selector)+');if(!e)throw Error("missing element");e.scrollIntoView({block:"center"});const r=e.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()');await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});}
+async function fill(selector,text){await click(selector);await send('Input.dispatchKeyEvent',{type:'rawKeyDown',key:'a',code:'KeyA',windowsVirtualKeyCode:65,modifiers:2});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'a',code:'KeyA',windowsVirtualKeyCode:65,modifiers:2});await send('Input.insertText',{text});}
+async function shot(name){await evaluate('window.scrollTo(0,0)');const {data}=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await fs.writeFile(path.join(out,name),Buffer.from(data,'base64'));console.log('SCREENSHOT_BASE64 '+name+' '+data);}
+async function api(route,body){const r=await fetch(app.url+route,{method:body?'POST':'GET',headers:body?{'content-type':'application/json','x-studio-local':'1'}:{},body:body?JSON.stringify(body):undefined});const v=await r.json();assert.equal(r.status,200,JSON.stringify(v));return v;}
+try {
+  for(const file of ['domain.mjs','store.mjs','server.mjs','adapter.mjs','planner-worker.mjs','local-assets.mjs','public/studio.js','public/icons.mjs']){const r=spawnSync(process.execPath,['--check','upload-studio/'+file],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);}
+  let executable;for(const p of ['/usr/bin/google-chrome','/usr/bin/google-chrome-stable','/usr/bin/chromium','/usr/bin/chromium-browser']){try{await fs.access(p);executable=p;break;}catch{}}
+  if(!executable)throw Error('actual_browser_unavailable');
+  app=await createStudioServer({root:path.join(root,'data'),port:0});
+  chrome=spawn(executable,['--headless=new','--disable-gpu','--disable-background-networking','--disable-component-update','--disable-sync','--disable-default-apps','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1','--user-data-dir='+path.join(root,'chrome'),'about:blank'],{stdio:['ignore','ignore','pipe']});
+  let errors='';chrome.stderr.on('data',c=>errors+=String(c));chrome.on('error',e=>errors+=e.message);
+  const port=await until(async()=>{try{return (await fs.readFile(path.join(root,'chrome','DevToolsActivePort'),'utf8')).split('\n')[0];}catch{if(chrome.exitCode!==null)throw Error('Chrome exited: '+errors.slice(-1200));return null;}});
+  const pages=await fetch('http://127.0.0.1:'+port+'/json/list').then(r=>r.json());socket=new WebSocket(pages.find(x=>x.type==='page').webSocketDebuggerUrl);
+  socket.addEventListener('message',event=>{const msg=JSON.parse(String(event.data));if(msg.id){const c=calls.get(msg.id);if(c){calls.delete(msg.id);msg.error?c.reject(Error(msg.error.message)):c.resolve(msg.result);}}else events.get(msg.method)?.(msg.params);});
+  await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
+  await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Fetch.enable',{patterns:[{urlPattern:'*'}]});
+  events.set('Fetch.requestPaused',p=>{if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
+  await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1100,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
+  await send('Page.navigate',{url:app.url});await until(()=>evaluate('document.querySelector("#empty-new")?.textContent==="새 글 작성"'));
+  await click('#empty-new');await until(()=>evaluate('!document.querySelector("#composer").hidden'));
+  const long='[ 화면 검증용 로컬 글 ]\n\n작성자에 따르면 아래 문안은 저장과 미리보기 검증을 위한 자료다. 실제 사건이나 발행 콘텐츠가 아니다.\n\n'+'줄바꿈과 긴 문장을 보존하는지 확인했다. '.repeat(40)+'\n\n마지막 문단과 끝 공백을 보존했다.  ';
+  await fill('#caption',long);await until(()=>evaluate('document.querySelector("#save-state").textContent==="로컬 저장 완료"'));
+  let s=(await api('/api/state')).state;const first=s.posts[0].post_id;assert.equal(s.posts[0].caption,long);assert.ok(await evaluate('document.querySelector("#text-limit").textContent.includes("초과")'));assert.equal(await evaluate('document.querySelectorAll("input[id*=timezone],select[id*=timezone],input[name=title]").length'),0);
+  const assets=[];
+  for(let i=0;i<3;i++){const data=await evaluate('(()=>{const c=document.createElement("canvas");c.width=1080;c.height=1080;const x=c.getContext("2d");x.fillStyle='+JSON.stringify(['#1d513b','#ded5bd','#c5d8d2'][i])+';x.fillRect(0,0,1080,1080);x.fillStyle='+JSON.stringify(i===0?'#fff':'#244336')+';x.font="bold 80px sans-serif";x.fillText("화면 검증용",110,400);x.fillText("로컬 이미지 '+(i+1)+'",110,520);return c.toDataURL("image/jpeg").split(",")[1];})()');const r=await api('/api/assets',{name:'fixture-'+i+'.jpg',mime:'image/jpeg',base64:data});assets.push({...r.asset,order:i+1});}
+  await api('/api/posts/'+encodeURIComponent(first),{expected_revision:s.posts[0].revision,patch:{images:assets}});
+  await send('Page.reload');await until(()=>evaluate('document.querySelector("#caption")?.value.startsWith("[ 화면 검증용")'));assert.equal(await evaluate('document.querySelector("#caption").value'),long);
+  await click('[data-preview="instagram"]');await shot('01-writing-instagram.png');
+  await click('[data-preview="threads"]');await until(()=>evaluate('!!document.querySelector(".thread-caption")'));assert.ok(await evaluate('document.querySelector(".thread-caption").textContent.includes("마지막 문단")'));await shot('02-writing-threads.png');
+  await click('[data-platform="threads"]');await until(async()=>{const p=(await api('/api/state')).state.posts[0];return p.targets.length===1;});
+  await click('#add-queue');await until(async()=>(await api('/api/state')).state.jobs.length===1);
+  await click('#new-post');await until(()=>evaluate('document.querySelector("#caption").value===""'));await fill('#caption','[ 두 번째 글 ]\n\n독립적으로 편집한 문안이다.');
+  await until(()=>evaluate('document.querySelector("#save-state").textContent==="로컬 저장 완료"'));s=(await api('/api/state')).state;assert.equal(s.posts.find(p=>p.post_id===first).caption,long);assert.deepEqual(s.posts[1].targets,['instagram','threads']);
+  await click('[name="timing"][value="planned"]');await evaluate('(()=>{const x=document.querySelector("#local-time");x.value="2026-10-12T18:00";x.dispatchEvent(new Event("change",{bubbles:true}));})()');
+  await until(async()=>{const p=(await api('/api/state')).state.posts[1];return p.timing.due_at==='2026-10-12T09:00:00.000Z';});
+  await click('#add-queue');await until(async()=>(await api('/api/state')).state.jobs.length===2);
+  await click('[data-view="queue"]');await until(()=>evaluate('!document.querySelector("#queue").hidden'));await shot('03-queue.png');await fill('#queue-search','두 번째');await until(()=>evaluate('document.querySelectorAll("#queue-rows tr").length===1'));
+  await click('#select-all');await click('#bulk-cancel');await until(async()=>(await api('/api/state')).state.jobs[1].state==='cancelled');
+  await click('[data-view="history"]');await until(()=>evaluate('!document.querySelector("#history").hidden'));assert.ok(await evaluate('document.querySelector(".history-empty").textContent.includes("실제 게시 기록 없음")'));assert.equal((await api('/api/state')).state.publications.length,0);assert.equal(external,0);
+  console.log('Actual Chromium UI: native caption entry, multiline reload, adjacent IG/Threads views, independent per-post targets/timing, queue search/bulk cancel, no fabricated publication. External browser requests: 0.');
+}finally {socket?.close();chrome?.kill('SIGTERM');if(app)await app.close();await fs.rm(root,{recursive:true,force:true});}
