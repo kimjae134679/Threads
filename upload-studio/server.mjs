@@ -8,6 +8,7 @@ import {StateStore} from './store.mjs';
 import {LocalAssets} from './local-assets.mjs';
 import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
 import {ProductionSync} from './production-sync.mjs';
+import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {offlinePlan} from './adapter.mjs';
 import {PublicationJournal} from './vendor/publication-journal.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url));
@@ -29,8 +30,10 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(route==='/api/publish'||route==='/api/schedule'||route==='/api/connect')fail('live_operation_disabled',405);
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
+      if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
+      if(req.method==='GET'&&route==='/api/schedule-defaults')return send(res,200,{defaults:(await store.read()).schedule_defaults||DEFAULT_SCHEDULE});
       if(req.method==='GET'&&route==='/api/state')return send(res,200,{state:await store.read(),mode:'offline-only',accountsConnected:false});
-      if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,caption:p.caption,tags:p.tags,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
+      if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,caption:p.caption,platform_captions:p.platform_captions,platform_caption_edited:p.platform_caption_edited,publication_title:p.publication_title,production_caption_version:p.production_caption_version,production_caption_status:p.production_caption_status,tags:p.tags,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
       if(req.method==='POST'&&route.startsWith('/api/')){
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
@@ -41,6 +44,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         else if(route==='/api/bundles'){await assets.verifyPosts(body.posts||[]);state=await store.mutate(s=>domain.importBundle(s,body));}
         else if(route.startsWith('/api/posts/')){const postId=decodeURIComponent(route.slice('/api/posts/'.length));if(body.patch?.images)await assets.verifyPosts([{images:body.patch.images}]);state=await store.mutate(s=>domain.editPost(s,postId,body.patch||{},body.expected_revision));}
         else if(route==='/api/approve')state=await store.mutate(s=>domain.approveDryRun(s,body.post_id,body.expected_revision));
+        else if(route==='/api/queue-schedule/preview')return send(res,200,previewQueueSchedule(await store.read(),body.config));
+        else if(route==='/api/queue-schedule/apply')state=await store.mutate(s=>applyQueueSchedule(s,body.config,body.expected_revision));
         else if(route==='/api/queue')state=await store.mutate(s=>domain.queuePost(s,body.post_id,body.expected_revision));
         else if(route==='/api/cancel')state=await store.mutate(s=>domain.cancelJobs(s,body.job_ids));
         else if(route==='/api/retry')state=await store.mutate(s=>domain.retryJob(s,body.job_id));
@@ -50,7 +55,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
           state=await store.mutate(s=>domain.startDryRun(s,body.job_id));const job=state.jobs.find(j=>j.id===body.job_id),post=state.posts.find(p=>p.post_id===job.post_id),controller=new AbortController();active.set(job.id,controller);
           try {
             const key=createHash('sha256').update(job.key).digest('hex');
-            const out=await journal.execute({provider:'offline-preview',candidateId:post.post_id,approvalBasis:key,accountKey:JSON.stringify(job.targets.map(t=>'unconnected-'+t)),payload:{caption:domain.finalCaption(post),images:post.images,targets:job.targets},publish:async()=>({plans:await offlinePlan(post,{signal:controller.signal}),externalCalls:0,dryRun:true})});
+            const out=await journal.execute({provider:'offline-preview',candidateId:post.post_id,approvalBasis:key,accountKey:JSON.stringify(job.targets.map(t=>'unconnected-'+t)),payload:{caption:domain.finalCaption(post),platform_captions:post.platform_captions,images:post.images,targets:job.targets},publish:async()=>({plans:await offlinePlan(post,{signal:controller.signal}),externalCalls:0,dryRun:true})});
             state=await store.mutate(s=>domain.finishDryRun(s,job.id,out.result));
           }catch(e){state=await store.mutate(s=>domain.failDryRun(s,job.id,typeof e.code==='string'?e.code:'offline_plan_failed',true));}
           finally {active.delete(job.id);}

@@ -24,12 +24,16 @@ export function refreshProductionFeedback(state,posts){const s=clone(state);let 
 function normalizeSource(s={}){const label=cleanDisplayTitle(str(s.label||s.display_title||"",300));return {url:str(s.url||"",2048),verified:s.verified===true,label,display_title:str(s.display_title||label,300),caption_input_title:str(s.caption_input_title||label,300),original_title:str(s.original_title||s.label||"",300)};}
 function normalizeSafety(s={}){const result={};for(const k of ["fact","rights","privacy","defamation","platform_policy"]){const v=s[k]||"UNKNOWN";if(!["PASS","WARN","BLOCK","UNKNOWN"].includes(v))fail("invalid_safety");result[k]=v;}result.warn_note=str(s.warn_note||"",5000);return result;}
 function normalizeReview(r){if(!r)return null;if(!Number.isInteger(r.score)||r.score<1||r.score>10||!["approved","pending","rejected"].includes(r.decision))fail("invalid_review");return {output_version:str(r.output_version,100),score:r.score,decision:r.decision,note:str(r.note||"",10000)};}
+export function platformCaption(post,platform='instagram'){return post.platform_captions?.[platform]??post.caption??'';}
+function captionsOf(post){return Object.fromEntries(['instagram','threads'].map(k=>[k,cleanCaptionFirstLine(str(post.platform_captions?.[k]??post.caption??''))]));}
+function normalizeCaptionEdits(value){if(value===undefined)return {instagram:false,threads:false};if(!value||Object.keys(value).some(k=>!has(PLATFORM_LIMITS,k))||['instagram','threads'].some(k=>typeof value[k]!=='boolean'))fail('invalid_caption_edits');return {...value};}
+function captionEdits(post){return post.platform_caption_edited||{instagram:!!post.caption,threads:!!post.caption};}
 function normalizePost(p) {
   const settings=p.local_settings||{};const targets=settings.targets||["instagram","threads"];
   if(!Array.isArray(targets)||targets.some(x=>!has(PLATFORM_LIMITS,x))||new Set(targets).size!==targets.length)fail("invalid_platform");
-  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,caption:cleanCaptionFirstLine(str(p.caption||"")),production_feedback:normalizeProductionFeedback(p.production_feedback),tags:str(p.tags||"",10000),source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
+  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,caption:cleanCaptionFirstLine(str(p.platform_captions?.instagram??p.caption??"")),platform_captions:captionsOf(p),platform_caption_edited:normalizeCaptionEdits(p.platform_caption_edited),publication_title:str(p.publication_title||"",300),production_caption_version:p.production_caption_version||null,production_caption_status:str(p.production_caption_status||"local",100),production_feedback:normalizeProductionFeedback(p.production_feedback),tags:str(p.tags||"",10000),source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
 }
-export function contentBasis(p){return JSON.stringify([p.post_id,p.output_version,p.caption,p.tags,p.images,p.targets,p.accounts,p.timing,p.source,p.safety,p.review]);}
+export function contentBasis(p){return JSON.stringify([p.post_id,p.output_version,p.caption,captionsOf(p),p.tags,p.images,p.targets,p.accounts,p.timing,p.source,p.safety,p.review]);}
 function postAt(s,postId){const p=s.posts.find(x=>x.post_id===postId);if(!p)fail("post_not_found");return p;}
 function invalidate(s,postId){for(const job of s.jobs.filter(x=>x.post_id===postId&&!["cancelled","dry_run_complete"].includes(x.state))){job.stale=true;if(job.state!=="running"&&job.state!=="reconciliation")job.state="waiting";}}
 export function importBundle(state,bundle){
@@ -49,7 +53,10 @@ export function syncProductionBundle(state,bundle){
     if(previous.output_version!==raw.output_version){
       const next=normalizePost(raw);
       // Even a deliberately blank edited caption survives new production.
-      for(const key of ["caption","tags","targets","timing"])next[key]=clone(previous[key]);
+      for(const key of ["tags","targets","timing"])next[key]=clone(previous[key]);
+      next.platform_caption_edited=clone(captionEdits(previous));
+      for(const platform of ['instagram','threads'])if(next.platform_caption_edited[platform])next.platform_captions[platform]=platformCaption(previous,platform);
+      next.caption=next.platform_captions.instagram;
       next.revision=previous.revision+1;s.archived_posts.push(previous);s.posts[index]=next;
       invalidate(s,next.post_id);changed=true;continue;
     }
@@ -60,6 +67,15 @@ export function syncProductionBundle(state,bundle){
       previous.source=nextSource;previous.revision++;previous.approval=null;
       previous.publication_approval=null;invalidate(s,previous.post_id);changed=true;
     }
+    if(has(raw,'platform_captions')||has(raw,'caption')||has(raw,'production_caption_status')){
+    const oldBasis=contentBasis(previous),oldOrigin=previous.production_caption_version||null;
+    const edits=captionEdits(previous),captions=captionsOf(previous),incomingCaptions=captionsOf(raw);
+    for(const platform of ['instagram','threads'])if(!edits[platform])captions[platform]=incomingCaptions[platform];
+    const fieldChange=JSON.stringify(previous.platform_captions)!==JSON.stringify(captions)||JSON.stringify(previous.platform_caption_edited)!==JSON.stringify(edits)||previous.production_caption_version!==(raw.production_caption_version||null)||previous.production_caption_status!==(raw.production_caption_status||'local');
+    previous.platform_captions=captions;previous.platform_caption_edited=edits;previous.caption=captions.instagram;
+    previous.production_caption_version=raw.production_caption_version||null;previous.production_caption_status=raw.production_caption_status||'local';previous.publication_title=raw.publication_title||previous.publication_title||'';
+    if(fieldChange){changed=true;if(contentBasis(previous)!==oldBasis||oldOrigin!==previous.production_caption_version){previous.revision++;previous.review=null;previous.approval=null;previous.publication_approval=null;invalidate(s,previous.post_id);}}
+    }
     const feedback=normalizeProductionFeedback(raw.production_feedback);
     if(JSON.stringify(previous.production_feedback||null)!==JSON.stringify(feedback)){
       previous.production_feedback=feedback;changed=true;
@@ -69,16 +85,19 @@ export function syncProductionBundle(state,bundle){
 }
 export function editPost(state,postId,patch,expectedRevision) {
   rejectSecrets(patch);const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");
-  if(Object.keys(patch).some(k=>!["caption","tags","images","targets","timing","source","safety","review"].includes(k)))fail("unknown_edit_field");
-  for(const key of ["caption","tags"])if(has(patch,key))p[key]=key==="caption"?cleanCaptionFirstLine(str(patch[key])):str(patch[key],10000);
+  if(Object.keys(patch).some(k=>!["caption","platform_captions","tags","images","targets","timing","source","safety","review"].includes(k)))fail("unknown_edit_field");
+  p.platform_captions=captionsOf(p);p.platform_caption_edited=captionEdits(p);
+  if(has(patch,'caption')){const text=cleanCaptionFirstLine(str(patch.caption));p.caption=text;for(const k of ['instagram','threads']){p.platform_captions[k]=text;p.platform_caption_edited[k]=true;}}
+  if(has(patch,'platform_captions')){if(!patch.platform_captions||Object.keys(patch.platform_captions).some(k=>!has(PLATFORM_LIMITS,k)))fail('invalid_platform_caption');for(const[k,text]of Object.entries(patch.platform_captions)){p.platform_captions[k]=cleanCaptionFirstLine(str(text));p.platform_caption_edited[k]=true;}p.caption=p.platform_captions.instagram;}
+  if(has(patch,'tags'))p.tags=str(patch.tags,10000);
   if(has(patch,"images"))p.images=normalizeImages(patch.images);
   if(has(patch,"targets")){if(!Array.isArray(patch.targets)||new Set(patch.targets).size!==patch.targets.length||patch.targets.some(x=>!has(PLATFORM_LIMITS,x)))fail("invalid_platform");p.targets=["instagram","threads"].filter(x=>patch.targets.includes(x));}
   if(has(patch,"timing"))p.timing=localTiming(patch.timing);
   if(has(patch,"source"))p.source=normalizeSource(patch.source);
   if(has(patch,"safety"))p.safety=normalizeSafety(patch.safety);
   if(has(patch,"review"))p.review=normalizeReview(patch.review);
-  if(contentBasis(p)===contentBasis(postAt(state,postId)))return s;
-  if(["caption","tags","images"].some(k=>has(patch,k)))p.review=null;
+  if(contentBasis(p)===contentBasis(postAt(state,postId))){if(JSON.stringify(p.platform_caption_edited)!==JSON.stringify(postAt(state,postId).platform_caption_edited))s.revision++;return s;}
+  if(["caption","platform_captions","tags","images"].some(k=>has(patch,k)))p.review=null;
   p.revision++;p.approval=null;p.publication_approval=null;invalidate(s,postId);s.revision++;return s;
 }
 export function readiness(post) {
@@ -88,14 +107,14 @@ export function readiness(post) {
   for(const [k,v]of Object.entries(post.safety)){if(k==="warn_note")continue;if(v==="UNKNOWN"||v==="BLOCK"||(v==="WARN"&&!post.safety.warn_note.trim()))add("safety_"+k,"검수 항목 "+k+" 확인이 필요합니다.");}
   if(!post.review||post.review.output_version!==post.output_version||post.review.decision!=="approved")add("current_review_required","현재 제작 버전의 사용자 평가·검수가 필요합니다.");
   if(!post.caption.trim()&&!post.images.length)add("empty_content","문안 또는 이미지가 필요합니다.");
+  if(post.production_caption_status?.startsWith('held-'))add('production_caption_hold','현재 제작 버전과 문안 입력 계약을 확인할 때까지 게시 보류');
   if(!post.targets.length)add("platform_required","플랫폼을 선택해 주세요.");
-  const combined=finalCaption(post);
-  for(const target of post.targets){if(platformTextLength(combined,target)>PLATFORM_LIMITS[target].text)add(target==="instagram"?"instagram_caption_limit":"threads_text_limit",target+" 문안 길이 초과 · 원문은 그대로 보존됩니다.");if(!post.images.length)add(target+"_images_required","이미지를 먼저 선택해 주세요.");if(post.images.length>PLATFORM_LIMITS[target].images)add(target+"_image_limit",target+"의 현재 어댑터 이미지 범위를 넘었습니다.");if(target==="instagram"&&post.images.some(x=>x.mime!=="image/jpeg"))add("instagram_jpeg_required","실제 Instagram 연결 전 JPEG 자산 준비가 필요합니다.");}
+  for(const target of post.targets){const combined=finalCaption(post,target);if(!platformCaption(post,target).trim())add(target+'_caption_required',target+' 원문 기반 게시 문안 작성 대기');if(platformTextLength(combined,target)>PLATFORM_LIMITS[target].text)add(target==="instagram"?"instagram_caption_limit":"threads_text_limit",target+" 문안 길이 초과 · 원문은 그대로 보존됩니다.");if(!post.images.length)add(target+"_images_required","이미지를 먼저 선택해 주세요.");if(post.images.length>PLATFORM_LIMITS[target].images)add(target+"_image_limit",target+"의 현재 어댑터 이미지 범위를 넘었습니다.");if(target==="instagram"&&post.images.some(x=>x.mime!=="image/jpeg"))add("instagram_jpeg_required","실제 Instagram 연결 전 JPEG 자산 준비가 필요합니다.");}
   add("account_unconnected","계정 미연결 · 실제 게시 불가");add("public_media_required","공개 이미지 접근·권한 확인 전 · 외부 전송 없음");
   return reasons;
 }
 export function platformTextLength(text,platform){return [...text].reduce((n,c)=>{if(platform!=="threads"||!/[\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F\u200D]/u.test(c))return n+1;const cp=c.codePointAt(0);return n+(cp>65535?4:cp>2047?3:cp>127?2:1);},0);}
-export function finalCaption(post){return cleanCaptionFirstLine(post.caption)+(post.tags?"\n\n"+post.tags:"");}
+export function finalCaption(post,platform='instagram'){return cleanCaptionFirstLine(platformCaption(post,platform))+(post.tags?"\n\n"+post.tags:"");}
 function reviewReady(p){return readiness(p).filter(x=>!["account_unconnected","public_media_required","instagram_jpeg_required"].includes(x.code));}
 export function approveDryRun(state,postId,expectedRevision){const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(reviewReady(p).length)fail("review_required");p.approval={scope:"dry-run",basis:contentBasis(p),output_version:p.output_version};s.revision++;return s;}
 export function queuePost(state,postId,expectedRevision){

@@ -1,3 +1,4 @@
+import './platform-schedule.test.mjs';
 import './contract.test.mjs';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';

@@ -2,7 +2,7 @@ import {Worker} from 'node:worker_threads';
 import {finalCaption} from './domain.mjs';
 export function offlinePlan(post,{signal}={}) {
   return new Promise((resolve,reject)=>{
-    const worker=new Worker(new URL('./planner-worker.mjs',import.meta.url),{env:{},workerData:{caption:finalCaption(post),images:post.images,targets:post.targets},execArgv:[]});
+    const worker=new Worker(new URL('./planner-worker.mjs',import.meta.url),{env:{},workerData:{caption:finalCaption(post),captions:Object.fromEntries(post.targets.map(t=>[t,finalCaption(post,t)])),images:post.images,targets:post.targets},execArgv:[]});
     let done=false;
     const finish=(error,value)=>{if(done)return;done=true;clearTimeout(timer);signal?.removeEventListener('abort',abort);worker.terminate();error?reject(error):resolve(value);};
     const abort=()=>finish(Object.assign(new Error('dry_run_interrupted'),{code:'dry_run_interrupted'}));
