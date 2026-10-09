@@ -27,7 +27,7 @@ module.exports=async function renderTypographyCover(){
   const inkTop=Math.min(...glyphBoxes.map(b=>b.y)),inkBottom=Math.max(...glyphBoxes.map(b=>b.y+b.height)),plateauStart=inkTop-8,plateauEnd=inkBottom+8,start=Math.max(height*.64,plateauStart-height*.055);
   if(plateauEnd-plateauStart>height*.22)throw Error('제목 뒤 어두운 구간이 너무 넓음');
   const opacityAt=y=>y<=start?0:y<plateauStart ? .85*(y-start)/(plateauStart-start):y<=plateauEnd ? .85:.85-(.85-.20)*(y-plateauEnd)/(height-plateauEnd);
-  shadeSamples=[.55,.65,.70,.8,.95].map(at=>{const x=24,y=Math.round(height*at);return{x,y,opacity:opacityAt(y),before:[...ctx.getImageData(x,y,1,1).data].slice(0,3)};});
+  shadeSamples=[.55,.65,.70,.8,.95].map(at=>{const x=24,y=Math.round(height*at);return{x,y,opacity:opacityAt(y+.5),before:[...ctx.getImageData(x,y,1,1).data].slice(0,3)};});
   const gradient=ctx.createLinearGradient(0,start,0,height);gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop((plateauStart-start)/(height-start),'rgba(0,0,0,.85)');gradient.addColorStop((plateauEnd-start)/(height-start),'rgba(0,0,0,.85)');gradient.addColorStop(1,'rgba(0,0,0,.20)');ctx.fillStyle=gradient;ctx.fillRect(0,start,width,height-start);
   gradientGeometry={start,plateauStart,plateauEnd,end:height,peakOpacity:.85,bottomOpacity:.20,opaqueBandHeight:plateauEnd-plateauStart,inkTop,inkBottom,recipe:'title-local-shade-v2'};
   shadeSamples=shadeSamples.map(sample=>({...sample,after:[...ctx.getImageData(sample.x,sample.y,1,1).data].slice(0,3)}));
