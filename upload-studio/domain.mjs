@@ -18,13 +18,15 @@ function normalizeImages(images=[]) {
   if(!Array.isArray(images)||images.length>200)fail("image_count_invalid");
   return images.map((im,i)=>{if(im.order!==i+1||!/^([a-f0-9]{64})$/.test(im.asset_id||"")||!["image/jpeg","image/png","image/webp"].includes(im.mime))fail("image_order_invalid");return {asset_id:im.asset_id,order:i+1,mime:im.mime};});
 }
+function normalizeProductionFeedback(f){if(!f)return null;const result={};for(const key of ['current','previous']){const value=f[key];if(!value){result[key]=null;continue;}if(!(value.score===null||Number.isInteger(value.score)&&value.score>=1&&value.score<=10))fail('invalid_production_feedback');result[key]={output_version:str(value.output_version,100),score:value.score,note:str(value.note||'',10000),updated_at:str(value.updated_at||'',100)};}return result;}
+export function refreshProductionFeedback(state,posts){const s=clone(state);let changed=false;for(const item of posts){const p=s.posts.find(x=>x.post_id===item.post_id&&x.output_version===item.output_version);if(!p)continue;const feedback=normalizeProductionFeedback(item.production_feedback);if(JSON.stringify(p.production_feedback||null)!==JSON.stringify(feedback)){p.production_feedback=feedback;changed=true;}}if(changed)s.revision++;return s;}
 function normalizeSource(s={}){return {url:str(s.url||"",2048),verified:s.verified===true,label:str(s.label||"",300)};}
 function normalizeSafety(s={}){const result={};for(const k of ["fact","rights","privacy","defamation","platform_policy"]){const v=s[k]||"UNKNOWN";if(!["PASS","WARN","BLOCK","UNKNOWN"].includes(v))fail("invalid_safety");result[k]=v;}result.warn_note=str(s.warn_note||"",5000);return result;}
 function normalizeReview(r){if(!r)return null;if(!Number.isInteger(r.score)||r.score<1||r.score>10||!["approved","pending","rejected"].includes(r.decision))fail("invalid_review");return {output_version:str(r.output_version,100),score:r.score,decision:r.decision,note:str(r.note||"",10000)};}
 function normalizePost(p) {
   const settings=p.local_settings||{};const targets=settings.targets||["instagram","threads"];
   if(!Array.isArray(targets)||targets.some(x=>!has(PLATFORM_LIMITS,x))||new Set(targets).size!==targets.length)fail("invalid_platform");
-  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,caption:str(p.caption||""),tags:str(p.tags||"",10000),source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
+  return {post_id:id(p.post_id),output_version:str(p.output_version,100),revision:1,caption:str(p.caption||""),production_feedback:normalizeProductionFeedback(p.production_feedback),tags:str(p.tags||"",10000),source:normalizeSource(p.source),images:normalizeImages(p.images),targets:[...targets],accounts:{instagram:"",threads:""},timing:localTiming(settings.timing),safety:normalizeSafety(),review:null,approval:null,publication_approval:null};
 }
 export function contentBasis(p){return JSON.stringify([p.post_id,p.output_version,p.caption,p.tags,p.images,p.targets,p.accounts,p.timing,p.source,p.safety,p.review]);}
 function postAt(s,postId){const p=s.posts.find(x=>x.post_id===postId);if(!p)fail("post_not_found");return p;}
@@ -67,7 +69,7 @@ function reviewReady(p){return readiness(p).filter(x=>!["account_unconnected","p
 export function approveDryRun(state,postId,expectedRevision){const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(reviewReady(p).length)fail("review_required");p.approval={scope:"dry-run",basis:contentBasis(p),output_version:p.output_version};s.revision++;return s;}
 export function queuePost(state,postId,expectedRevision){
   const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");if(!p.targets.length)fail("platform_required");
-  const key=JSON.stringify([p.post_id,p.output_version,p.revision,p.targets,p.accounts,p.timing]);if(s.jobs.some(x=>x.key===key))return s;
+  const key=JSON.stringify([p.post_id,p.output_version,p.revision,p.targets,p.accounts,p.timing]);if(s.jobs.some(x=>x.key===key&&x.state!=="cancelled"))return s;
   const n=s.jobs.length+1;s.jobs.push({id:"local-job-"+n,key,post_id:postId,output_version:p.output_version,post_revision:p.revision,basis:contentBasis(p),targets:[...p.targets],timing:clone(p.timing),state:p.timing.mode==="planned"?"scheduled":"waiting",stale:false,attempts:0,error:null,result_id:null,publication_url:null});s.revision++;return s;
 }
 function jobAt(s,id){const j=s.jobs.find(x=>x.id===id);if(!j)fail("job_not_found");return j;}

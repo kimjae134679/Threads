@@ -28,13 +28,13 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(route==='/api/publish'||route==='/api/schedule'||route==='/api/connect')fail('live_operation_disabled',405);
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/state')return send(res,200,{state:await store.read(),mode:'offline-only',accountsConnected:false});
-      if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,caption:p.caption,tags:p.tags,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
+      if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,caption:p.caption,tags:p.tags,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
       if(req.method==='POST'&&route.startsWith('/api/')){
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
         const body=await readBody(req);domain.rejectSecrets(body);let state;
         if(route==='/api/assets')return send(res,200,{asset:await assets.add(body),externalCalls:0});
-        if(route==='/api/production/import'){const bundle=await production.bundle(body.selection);state=await store.mutate(s=>{const fresh=bundle.posts.filter(p=>!s.posts.some(x=>x.post_id===p.post_id&&x.output_version===p.output_version));return fresh.length?domain.importBundle(s,{...bundle,posts:fresh}):s;});}
+        if(route==='/api/production/import'){const bundle=await production.bundle(body.selection);state=await store.mutate(s=>{const fresh=bundle.posts.filter(p=>!s.posts.some(x=>x.post_id===p.post_id&&x.output_version===p.output_version));const next=fresh.length?domain.importBundle(s,{...bundle,posts:fresh}):s;return domain.refreshProductionFeedback(next,bundle.posts);});}
         else if(route==='/api/bundles'){await assets.verifyPosts(body.posts||[]);state=await store.mutate(s=>domain.importBundle(s,body));}
         else if(route.startsWith('/api/posts/')){const postId=decodeURIComponent(route.slice('/api/posts/'.length));if(body.patch?.images)await assets.verifyPosts([{images:body.patch.images}]);state=await store.mutate(s=>domain.editPost(s,postId,body.patch||{},body.expected_revision));}
         else if(route==='/api/approve')state=await store.mutate(s=>domain.approveDryRun(s,body.post_id,body.expected_revision));
@@ -55,7 +55,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         return send(res,200,{state,externalCalls:0});
       }
       if(req.method!=='GET')fail('method_not_allowed',405);
-      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/domain.mjs':'domain.mjs'};
+      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/domain.mjs':'domain.mjs'};
       if(!files[route])fail('route_not_found',404);
       const file=path.join(here,files[route]),data=await fs.readFile(file);res.writeHead(200,{'content-type':mime[path.extname(file)],'cache-control':'no-store','x-content-type-options':'nosniff'});res.end(data);
     }catch(e){const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}
