@@ -1,5 +1,5 @@
 // Credential-free domain model. No I/O, clocks, timers, or platform transports.
-import {cleanCaptionFirstLine} from './title-normalization.mjs';
+import {cleanCaptionFirstLine,cleanDisplayTitle} from './title-normalization.mjs';
 export const PLATFORM_LIMITS = Object.freeze({instagram:{text:2200,images:10},threads:{text:500,images:20}});
 const clone=x=>JSON.parse(JSON.stringify(x));
 const fail=(code)=>{throw Object.assign(new Error(code),{code,status:code==="revision_conflict"?409:400});};
@@ -21,7 +21,7 @@ function normalizeImages(images=[]) {
 }
 function normalizeProductionFeedback(f){if(!f)return null;const result={};for(const key of ['current','previous']){const value=f[key];if(!value){result[key]=null;continue;}if(!(value.score===null||Number.isInteger(value.score)&&value.score>=1&&value.score<=10))fail('invalid_production_feedback');result[key]={output_version:str(value.output_version,100),score:value.score,note:str(value.note||'',10000),updated_at:str(value.updated_at||'',100)};}return result;}
 export function refreshProductionFeedback(state,posts){const s=clone(state);let changed=false;for(const item of posts){const p=s.posts.find(x=>x.post_id===item.post_id&&x.output_version===item.output_version);if(!p)continue;const feedback=normalizeProductionFeedback(item.production_feedback);if(JSON.stringify(p.production_feedback||null)!==JSON.stringify(feedback)){p.production_feedback=feedback;changed=true;}}if(changed)s.revision++;return s;}
-function normalizeSource(s={}){return {url:str(s.url||"",2048),verified:s.verified===true,label:str(s.label||"",300),original_title:str(s.original_title||s.label||"",300)};}
+function normalizeSource(s={}){const label=cleanDisplayTitle(str(s.label||s.display_title||"",300));return {url:str(s.url||"",2048),verified:s.verified===true,label,display_title:str(s.display_title||label,300),caption_input_title:str(s.caption_input_title||label,300),original_title:str(s.original_title||s.label||"",300)};}
 function normalizeSafety(s={}){const result={};for(const k of ["fact","rights","privacy","defamation","platform_policy"]){const v=s[k]||"UNKNOWN";if(!["PASS","WARN","BLOCK","UNKNOWN"].includes(v))fail("invalid_safety");result[k]=v;}result.warn_note=str(s.warn_note||"",5000);return result;}
 function normalizeReview(r){if(!r)return null;if(!Number.isInteger(r.score)||r.score<1||r.score>10||!["approved","pending","rejected"].includes(r.decision))fail("invalid_review");return {output_version:str(r.output_version,100),score:r.score,decision:r.decision,note:str(r.note||"",10000)};}
 function normalizePost(p) {

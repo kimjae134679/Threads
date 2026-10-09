@@ -16,7 +16,7 @@ Windows 편의 실행은 `upload-studio/START.ps1`, 중단은 `STOP.ps1`입니�
 
 '현재 제작글 불러오기'에서 글을 선택합니다. 기본 자료 경로는 `D:\\A_KJ\\AI\\Projects\\Threads\\자료`이며 다른 경로는 `START.ps1 -MaterialRoot '실제 자료 폴더'` 또는 `node upload-studio/server.mjs --material-root "실제 자료 폴더"`로 지정합니다. 브라우저가 임의 파일 경로를 서버에 넘기는 API는 없습니다.
 
-기존 `desktop/post-review-store.cjs`의 계약을 확인했습니다. `06_자동 제작 결과/status.json`의 글 ID와 `sourceFingerprint/outputSha256/ruleVersion/이미지 SHA-256`으로 동일한 제작 버전을 계산합니다. manifest 순서대로 rendered/slide-*.png의 실제 해시를 확인하고 선택한 글의 이미지 사본만 .local/assets에 저장합니다. 상대경로·realpath·심볼릭 링크 탈출을 차단합니다. 가져오는 동안 버전이 바뀌면 중단합니다. 모든 제작 페이지(최대200장)를 보존하고 Instagram10/Threads20 범위를 넘으면 준비를 보류합니다.
+기존 `desktop/post-review-store.cjs`의 계약을 확인했습니다. `06_자동 제작 결과/status.json`의 글 ID와 `sourceFingerprint/outputSha256/ruleVersion/이미지 SHA-256 및 값이 있는 reviewRound`으로 동일한 제작 버전을 계산합니다. manifest 순서대로 rendered/slide-*.png의 실제 해시를 확인하고 선택한 글의 이미지 사본만 .local/assets에 저장합니다. 상대경로·realpath·심볼릭 링크 탈출을 차단합니다. 가져오는 동안 버전이 바뀌면 중단합니다. 모든 제작 페이지(최대200장)를 보존하고 Instagram10/Threads20 범위를 넘으면 준비를 보류합니다.
 
 기존 제작 계획에 명시적 `publishCaption` 또는 `caption` 문자열이 있을 때만 그대로 사용합니다. 기존 제작기는 게시 본문을 제공하는 보장된 계약이 없으므로 이미지 본문을 임의 기사화하지 않습니다. 본문이 없으면 빈 공통 문안 편집창에 직접 입력합니다. 같은 글·같은 버전의 재가져오기는 사용자 편집을 보존합니다. 새 버전은 이전 문안을 archive에 보존하고 검수·승인 없이 새 제작 버전으로 교체하며 대기를 자동 생성하지 않습니다. 기존 07_사용자 평가/평가 기록.json의 현재 글 ID·제작 버전과 일치하는 점수/메모 및 다른 버전의 이전 점수는 읽기 전용 참고로 표시합니다. 같은 버전 재가져오기는 평가 정보만 갱신하며 작성한 문안을 보존합니다. 이 평가는 현재 게시 문안 검수/권리 확인/게시 승인을 대신하지 않습니다. 원본 평가 파일에는 쓰지 않습니다.
 
@@ -66,4 +66,8 @@ UI 참고: https://about.fb.com/news/2025/04/new-features-threads-web-experience
 
 `node upload-studio/test/node.test.mjs`는 실제 임시 파일·충돌·손상 복구·노드 worker·기존 저널·로컬 HTTP·서버 재시작·창별 백업·동시 잠금 복구·기존 평가 메타정보를 검증합니다. 저장 잠금은 완성된 고유 owner 디렉터리만 원자적으로 공개하고, 관측한 owner 파일만 해제하여 다른 창/프로세스의 새 잠금을 지우지 않습니다. 이전 버전의 손상된 잠금은 안전을 위해 자동 강제 삭제하지 않습니다. 저장소 `npm run check`에도 연결됩니다.
 `node upload-studio/test/browser.mjs`는 CI의 실제 Chromium에서 긴 문안 입력/재열기/나란한 플랫폼 미리보기/대상·시각 분리/검색/일괄취소를 확인하고 실제 스크린샷을 저장합니다. 테스트 자료만 쓰며 외부 요청을 차단합니다. 생성한 디자인 PNG는 앱 화면 증거로 쓰지 않습니다.
-PC의 실행 도구가 응답하지 않아 D자료 연결·설치·실제 PC 실행 및 .agents/skills 읽기는 아직 확인할 수 없습니다. 현재 경로는 Codex의 별도 작업영역이고 원본 체크아웃/설치가 아닙니다. 원격 AGENTS/04/contracts/실행 지침을 읽었습니다.
+2026-10-09 기존 승인된 ProjectBridge로 PC Node24.16.0, D자료199개 및1719장 해시를 확인했고, 별도 D:\\A_KJ\\AI\\Workspace\\Threads\\upload-studio-20261009에서 실제 Chrome 창을 열었습니다. 최초 실행 전후 제작·평가4529파일의 해시는 동일했습니다. 이후 .38 리뷰 계약 인계에서 reviewRound 누락 및 제목6개의 차이를 확인하여 업로더 계약을 수정했습니다. 현재 수정 코드의 PC 반영·199개 재대조는 추가 공유 큐 변경 승인이 필요합니다. 기존 전송 승인으로 모든 추가 PC 명령이 승인됐다고 보지 않습니다.
+
+## .38 제작/리뷰 계약 일치
+
+version(row)는 기존 리뷰의 JSON 배열 순서·undefined/null 직렬화를 그대로 따르고, 값이 있는 reviewRound만 이미지 SHA 배열 뒤에 추가합니다. titleInfo는 생산자의 공유 app/source-page-plan.js(f85b072) 함수를 그대로 복사해 사용합니다. catalog는 production-plan.json의 coverTitle을 리뷰와 같은 규칙으로 정리하며 행/계획의 displayTitle·captionInputTitle이 존재하면 같은지 확인하고 다르면 보류합니다. bundle.source.label/display_title/caption_input_title은 정제 제목이고 original_title은 원문 행의 title입니다. URL/ID/제작 해시 입력/본문과 원본 파일은 수정하지 않습니다. 명시된 캡션이 없으면 빈 상태를 유지합니다. test/contract.test.mjs가 현재 생산자 reviewRound 직렬화·정제/보류·원문 보존을 검사합니다.
