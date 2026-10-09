@@ -83,6 +83,7 @@
           "source-cut-*.html",
           "source-cut-*.css",
           "source-cut-*.js",
+          "source-review-*.js",
           "fonts/**",
           "source-community-*.js",
           "source-batch*.html",
