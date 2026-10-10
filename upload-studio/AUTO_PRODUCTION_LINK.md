@@ -18,6 +18,12 @@
 
 현재 목록이나 복구용 state.backup.json 등에서 참조하는 이미지는 이동하지 않는다. 참조가 사라진 이전 이미지만 해시를 확인한 보관 폴더로 옮긴다. 완료 상태와 처리한 ID·버전은 로컬 state에 기록해 재시작 중복을 막는다.
 
-설정은 `.local/auto-production-link.json`의 schema=1, enabled, interval_ms, baseline, checkpoint_roots이다. 새 설정 파일은 게시 승인이나 계정 권한을 부여하지 않는다. 상태는 GET `/api/production/auto-status` 및 `.local/auto-production-link-status.json`에서 확인하고 화면 하단에 켜짐/확인 대기를 표시한다. 실제 게시·예약 API는 기존처럼 잠겨 있다.
+설정은 `.local/auto-production-link.json`의 schema=1, enabled, interval_ms, baseline, checkpoint_roots이다. 보존 경로로 이관된 제작 입력은 `checkpoint_directory: "checkpoints/relocated"`를 지정한다. 생략하면 기존 `work/checkpoints`를 유지한다. 이 두 경로 외에는 허용하지 않는다. 설정 전환 시 baseline·현재 판정·메모를 유지하고 전달된 매핑과 모든 파일의 해시를 먼저 검증한다. 새 설정 파일은 게시 승인이나 계정 권한을 부여하지 않는다. 상태는 GET `/api/production/auto-status` 및 `.local/auto-production-link-status.json`에서 확인하고 화면 하단에 켜짐/확인 대기를 표시한다. 실제 게시·예약 API는 기존처럼 잠겨 있다.
+
+`project.control.json`에 켜기·끄기·검토 화면 열기·상태 확인 명령을 등록한다. 서버를 끄면 자동 연결도 멈추고, 켜면 시작 검사와 15초 주기 검사를 재개한다. 파일 삭제나 사용자 판정 초기화는 하지 않는다. 전체 자료 열기는 같은 manifest의 `navigation`을 소비하는 `OPEN_VIEWER.ps1`로 등록한다.
+
+`navigation`은 schema=1, 절대 `delivery_root`, `mapping_sha256`, `inventory_sha256`를 갖는다. 고정된 delivery-mapping.json/file-inventory.json을 읽고 `/api/navigation`, `/viewer/`, `/viewer/<post-id>/`로 기존 전체 이미지 HTML과 원본 PNG를 읽기 전용 제공한다. HTML 디스크 파일 대신 응답에만 검토 화면 복귀 링크를 붙인다. 현재 글 버전과 이미지 전체 순서가 매핑과 일치해야 열리며, 임의 경로·변경된 파일·구버전은 거절한다. 검토 화면에서 미저장 편집을 저장한 후 이동하고, 같은 탭으로 돌아오면 선택 글·검색·필터·플랫폼·이미지 위치를 복원한다.
+
+`GET /api/integration/status` 및 `.local/controller-runtime-status.json`은 checkedAt/processId/activeJobs를 제공한다. 실제 작업, 자동 연결 검사, handoff 작업 및 실제 state 잠금을 관찰하고 2초마다 갱신한다. 이 파일은 사용자 상태를 바꾸지 않으며 공통 컨트롤러에 별도 등록해야 한다. 한 번의 activeJobs=0이나 잠금 부재만으로 전체 프로젝트 작업 종료를 보장하지 않는다.
 
 검증: `node upload-studio/test/node.test.mjs`, `node upload-studio/test/final-review-browser.test.mjs`. 자동 연결 테스트는 시작 후 완료 감지, 실제 파일 검증, 보관, 실패 시 기존 판정 유지, 사용자 편집 충돌, 재시작 중복 방지, 복구 파일의 이미지 보존과 패키지 체크포인트 입력을 다룬다. 외부 미디어 전송은 0회다.
