@@ -22,9 +22,11 @@ test('runtime idle evidence is fresh, detects held state locks, and does not cha
   const before=await fs.readFile(path.join(root,'state.json'));
   const response=await request(app,'/api/integration/status');assert.equal(response.status,200);
   const idle=await response.json();assert.ok(Number.isInteger(idle.activeJobs));assert.ok(Date.now()-Date.parse(idle.checkedAt)<5000);
-  await fs.mkdir(path.join(root,'.state-lock'));
-  const busy=await(await request(app,'/api/integration/status')).json();assert.ok(busy.activeJobs>=1);
-  await fs.rmdir(path.join(root,'.state-lock'));
+  // An empty lock is abandoned and may be reclaimed by the startup handoff.
+  // Hold a real live-owner lease to test idle detection without racing recovery.
+  const lockStore=new StateStore(root),lease=await lockStore.acquire();
+  try{const busy=await(await request(app,'/api/integration/status')).json();assert.ok(busy.activeJobs>=1);}
+  finally{await lockStore.release(lease);}
   assert.deepEqual(await fs.readFile(path.join(root,'state.json')),before);
   assert.equal(JSON.parse(await fs.readFile(path.join(root,'controller-runtime-status.json'),'utf8')).appId,'threads-upload-studio');
  }finally{if(app)await app.close();await fs.rm(root,{recursive:true,force:true});}
