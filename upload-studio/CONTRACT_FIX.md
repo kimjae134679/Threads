@@ -1,0 +1,7 @@
+# Current producer contract correction
+
+The current .38 reviewer at producer commit f85b072221fdf5f3ab1e5d92c313bb9157547c77 includes optional truthy reviewRound at the end of its version JSON array. The previous uploader omitted it. The producer's app/source-page-plan.js titleInfo handles repeated source/category prefixes and source suffixes; the previous uploader had a smaller prefix-only rule. Red checks reproduced both differences before editing.
+
+Only Upload Studio is changed. Original production, reviews, producer code and images are read-only. The corrected catalog reads each production-plan.json and uses titleInfo(plan.coverTitle || row.title), exactly as the reviewer. Existing prepared displayTitle/captionInputTitle fields must match or import holds. source.label/display_title/caption_input_title consume the clean title and source.original_title retains raw row.title. Captions are never generated when absent.
+
+PC first run is already confirmed: Node24.16.0, Chrome Threads Studio at http://127.0.0.1:4387, 199 readonly catalog rows, 1719 images with zero missing/hash mismatch, all4529 original production/review files unchanged. The current correction has not yet been patched into that running PC process. Automatic approval review rejected an additional shared-queue/read relay request because earlier approval covered the isolated transfer job only. Further PC queue requests are paused; do not infer current PC parity from code/CI checks.

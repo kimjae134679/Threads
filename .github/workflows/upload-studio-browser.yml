@@ -1,0 +1,40 @@
+name: upload-studio-browser
+on:
+  pull_request:
+    paths:
+      - 'upload-studio/**'
+      - 'test/upload-studio.test.mjs'
+      - '.github/workflows/upload-studio-browser.yml'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Korean font support for actual screenshots
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Actual Chromium offline editor test
+        run: node upload-studio/test/browser.mjs
+      - name: Final review decisions, image recovery, reload and handoff
+        run: node upload-studio/test/final-review-browser.test.mjs
+      - name: Startup automatic sync and bulk selection
+        run: node upload-studio/test/autoload-browser.mjs
+      - name: Keep actual browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-studio-actual-browser
+          path: upload-studio/evidence/*.png
+          if-no-files-found: ignore
+      - name: Package isolated offline program
+        run: zip -r upload-studio-portable.zip upload-studio -x 'upload-studio/evidence/*' 'upload-studio/.local/*'
+      - name: Keep offline program
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-studio-offline-program
+          path: upload-studio-portable.zip
