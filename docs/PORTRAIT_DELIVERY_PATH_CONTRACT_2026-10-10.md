@@ -40,3 +40,20 @@
 ## 실패·복구
 
 대상 위치가 이미 있거나 원본 pin이 불일치하거나 파일/디렉터리가 링크이면 복사를 보류한다. 기존 목적지를 덮어쓰거나 원본을 지우지 않는다. 복사 도중 원본 bytes가 바뀌면 보류하고 실패 기록을 남긴다. 부분 폴더는 완료 결과로 등록하지 않으며 임의 재시작 대신 완료 inventory와 실제 파일을 담당자가 대조한다. 검토 전환에 실패하면 해당 담당자가 보존한 이전 설정 및 `recovery-map.json`으로 되돌린다. 자료 복사 성공만으로 공유 큐 갱신·프로그램 재시작·API 설정·게시·예약을 실행하지 않는다.
+
+## 이번 보존 복사의 실제 검증
+
+2026-10-10에 고유 199글·1918PNG, raw checkpoint 4+195개, 선택 입력 199폴더를 기존 자료 역할의 별도 보존 위치로 복사했다. 원본에서 복사한 10,447파일·6,840,376,269bytes의 원본/복사본 SHA256과 크기가 일치했다. 이 수치는 별도 생성한 relocated checkpoint·relocation proof·매핑 파일을 포함하지 않는다. 완성 출력6814파일, 선택 입력3420파일, raw checkpoint199파일, 원본 계약1파일, 제작 기록11파일, 과거 평가 스냅샷2파일이다.
+
+두 checkpoint roots와 계획·provenance·입력 JSON 및 두 ZIP 형식 내부 JSON을 조사했다. 원본에는 절대 경로인 `source_bundle` 필드가 없었으며, 신규 매핑의 각 행에 실제 복사된 `source-bundle.zip` 절대 경로를 명시하고 기존 `sourceBundleSha256`과 대조했다. 조사한 절대 경로15,300건은 이동 대상 prefix를 새 경로로 해결한 뒤 모두 존재했다. PNG1918개의 해시·bytes·1080×1440, 원문/preview ZIP의 원본 바이트·CRC, checkpoint target·fingerprint·이전/신규 버전 불변을 검증했다.
+
+복사 완료 후 계약 파일을 다시 읽어 아래 raw SHA256과 bytes를 확인했다.
+
+| 계약 파일 | SHA256 | bytes |
+|---|---|---:|
+| `delivery-mapping.json` | `ac970eeaa806a3db63aaad5ee8e159c216b66b9f2bc9a7d980d1b442fb48407b` | 1,518,327 |
+| `file-inventory.json` | `55a01fcc96f6d5190865ffe8e6aec751c4eb85f0d53f18d6c035651928db9b2c` | 7,410,506 |
+| `absolute-reference-audit.json` | `280c72e34d60e97ec001c5f55b254aef536a855f60efa4c9aa4ebbd13f3700ba` | 12,227,583 |
+| `recovery-map.json` | `0a4a770d7668b764e2d19343bb6e28a477abfd9bd9cc7297f9c884994da1048d` | 72,381 |
+
+공통 catalog의 동시 편집을 감지해 처음에는 완료 표식 생성을 멈췄다. 실패 기록과 복사본을 보존하고, 최신 계약의 자료 역할을 다시 읽은 뒤 재복사 없이 전체 원본/복사본을 독립 검증하여 제작 담당의 완료 계약을 확정했다. 공통 catalog는 독립 검증 중에도 변경됐으므로 `stableDuringIndependentVerification: false`를 기록했다. 공통 파일을 수정하거나 controller receipt를 발급하지 않았다. 경로 전환 계약은 준비됐지만 리뷰 설정 전환과 공통 컨트롤러의 고정 pin/유휴/receipt 검증은 해당 담당자의 미완료 단계다.
