@@ -32,10 +32,10 @@ test('mapped viewer opens existing HTML and returns to the matching current revi
  assert.equal(await fs.readFile(path.join(output,'이미지 전체 보기.html'),'utf8'),html);
  const image=await reader.read('/viewer/source-one/rendered/slide-001.png');assert.equal(image.bytes.toString(),'fixture bytes');
 }));
-test('HTTP navigation serves the pinned current viewer and image without changing state',()=>fixture(async({state,manifest,base,html,output})=>{
+test('HTTP navigation uses the actual configured material root and serves the pinned viewer without changing state',()=>fixture(async({state,base,html,output})=>{
  const data=path.join(base,'data');await new StateStore(data).mutate(s=>importBundle(s,{bundle_id:'viewer-fixture',posts:[{post_id:'source-one',output_version:'version-one',production_caption_status:'authored',caption:'fixture',images:[{asset_id:state.posts[0].images[0].asset_id,order:1,mime:'image/png'}]}]}));
  let app;try{
-  app=await createStudioServer({root:data,port:0,seedTags:false,materialRoot:path.join(base,'missing'),projectManifest:manifest});
+  app=await createStudioServer({root:data,port:0,seedTags:false,materialRoot:path.join(base,'missing')});
   const before=await fs.readFile(path.join(data,'state.json'));
   const n=await(await fetch(app.url+'/api/navigation')).json();assert.equal(n.available,true);assert.equal(n.posts[0].post_id,'source-one');
   const response=await fetch(app.url+'/viewer/source-one/');assert.equal(response.status,200);assert.match(response.headers.get('content-security-policy'),/connect-src 'none'/);assert.match(await response.text(),/\?post=source-one/);

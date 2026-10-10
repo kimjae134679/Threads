@@ -54,7 +54,7 @@ export async function readTitleEditApproval(root){
   }catch{fail('title_edit_approval_invalid');}
   finally{if(handle)await handle.close();}
 }
-export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,projectManifest=path.resolve(DEFAULT_MATERIAL_ROOT,'..','project.control.json')}={}) {
+export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,projectManifest=path.resolve(materialRoot,'..','project.control.json')}={}) {
   let lastDelivery={records:[],warnings:[]};
   const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records).filter(row=>Object.values(row.platforms||{}).some(platform=>platform.recordedAt!=null||platform.status==='error')),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
