@@ -1,3 +1,7 @@
+import './current-layout.test.mjs';
+import './read-only-viewer.test.mjs';
+import './review-entry.test.mjs';
+import './auto-production-link.test.mjs';
 import './title-edit-approval.test.mjs';
 import './handoff-performance.test.mjs';
 import './delivery-results.test.mjs';

@@ -245,6 +245,16 @@ try {
   const rejectedBody=await send('Network.getResponseBody',{requestId:rejectedReview.requestId});
   assert.equal(JSON.parse(rejectedBody.body).code,'review_form_version_changed');
   assert.equal((await api('/api/state')).state.publications.length,0);assert.equal(external,0);
+  // Hub shortcuts must open this app's current list, with an explicit filter.
+  for(const filter of ['hold','discard','all']){
+    await send('Page.navigate',{url:app.url+'/?review='+filter});
+    await until(()=>evaluate('document.querySelector("#post-status-filter")?.value==='+JSON.stringify(filter)+' && document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
+    assert.equal(await evaluate('document.querySelector("#post-status-filter").value'),filter);
+    assert.equal(await evaluate('document.querySelector("#post-search").value'),'');
+    const current=(await api('/api/state')).state;
+    const expected=current.posts.filter(p=>!p.inactive_for_this_batch&&(filter==='all'||p.final_review_status===filter)).length;
+    await until(()=>evaluate('document.querySelectorAll("#post-list [data-post]").length').then(n=>n===expected));
+  }
   await shot('final-review-layout.png');
   console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, memo/hold restore, clickable dots/local hearts, delayed verdict feedback and dedup/navigation, verified delivery partial/scheduled/sending/posted/current-basis projection, no-blank-frame switching, flushed verdicts and competing edit intent rejection. External requests: 0.');
 }catch(error){if(socket?.readyState===1){console.log("FAILURE_DOM",JSON.stringify(await evaluate('({save:document.querySelector("#save-state")?.textContent,status:document.querySelector("#status")?.textContent})')));await shot("final-review-failure.png");}throw error;}finally {socket?.close();chrome?.kill('SIGTERM');if(app)await app.close();await fs.rm(root,{recursive:true,force:true,maxRetries:20,retryDelay:100});}

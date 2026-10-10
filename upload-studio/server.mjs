@@ -17,6 +17,9 @@ import {LocalVideoAssets,renderReel,buildReelDryRun} from './reels.mjs';
 import {LocalAssets} from './local-assets.mjs';
 import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
 import {ProductionSync} from './production-sync.mjs';
+import {CurrentProduction} from './current-production.mjs';
+import {AutoProductionLink} from './auto-production-link.mjs';
+import {ReadOnlyViewer} from './read-only-viewer.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {historyFor,undoPost,redoPost,restorePostSnapshot} from './history.mjs';
 import {offlinePlan} from './adapter.mjs';
@@ -51,10 +54,11 @@ export async function readTitleEditApproval(root){
   }catch{fail('title_edit_approval_invalid');}
   finally{if(handle)await handle.close();}
 }
-export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true}={}) {
+export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,projectManifest=path.resolve(materialRoot,'..','project.control.json')}={}) {
   let lastDelivery={records:[],warnings:[]};
   const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records).filter(row=>Object.values(row.platforms||{}).some(platform=>platform.recordedAt!=null||platform.status==='error')),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
+  const viewer=new ReadOnlyViewer(projectManifest,()=>store.read());
   let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
   let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
   const handoffWaiters=new Map(),clone=value=>JSON.parse(JSON.stringify(value));
@@ -115,7 +119,14 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   const refreshDecisions=state=>store.write(decisionFile,reviewDecisionProjection(state));
   const store=new StateStore(root,{onSaved:async state=>{await refreshDecisions(state);requestHandoff(state,true);}}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
-  const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
+  const rawProduction=new ProductionInput(materialRoot,assets),production=new CurrentProduction(rawProduction,root,store,assets),productionSync=new ProductionSync(production,store),autoProduction=new AutoProductionLink(rawProduction,root,store,assets);
+  let runtimeStatusTail=Promise.resolve(),runtimeStatusTimer=null;
+  function observeRuntime(){const task=runtimeStatusTail.then(async()=>{
+    let stateLock=0;try{await fs.lstat(store.lock);stateLock=1;}catch(e){if(e.code!=='ENOENT')throw e;}
+    const status={schemaVersion:1,appId:'threads-upload-studio',checkedAt:new Date().toISOString(),processId:process.pid,
+      activeJobs:active.size+Number(autoProduction.progress.running)+Number(Boolean(handoffTask||handoffScheduled))+stateLock};
+    await store.write(path.join(root,'controller-runtime-status.json'),status);return status;
+  });runtimeStatusTail=task.catch(()=>{});return task;}
   const titleEditApproval=await readTitleEditApproval(root);
   await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
   // Recreate the small decision file under the existing state lock without changing any review.
@@ -135,6 +146,10 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='POST'&&route==='/api/videos'){if(req.headers['x-studio-local']!=='1'||!['video/mp4','video/quicktime'].includes(req.headers['content-type']))fail('local_request_required',403);const asset=await videos.add({stream:req,mime:req.headers['content-type'],name:'local-video'});return send(res,200,{asset,externalCalls:0});}
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
+      if(req.method==='GET'&&route==='/api/production/auto-status')return send(res,200,autoProduction.progress);
+      if(req.method==='GET'&&route==='/api/navigation')return send(res,200,await viewer.status());
+      if(req.method==='GET'&&route==='/api/integration/status')return send(res,200,await observeRuntime());
+      if(req.method==='GET'&&(route==='/viewer'||route.startsWith('/viewer/'))){const out=await viewer.read(route);res.writeHead(200,{'content-type':out.mime,'cache-control':'no-store','x-content-type-options':'nosniff','content-security-policy':out.csp});return res.end(out.bytes);}
       if(req.method==='GET'&&route==='/api/final-review/handoff'){const state=await store.read(),projection=reviewHandoffProjection(state);return send(res,200,{...projection,latest:currentHandoffStatus(state,projection)});}
       if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
       if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
@@ -182,14 +197,16 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         return send(res,200,{state,externalCalls:0});
       }
       if(req.method!=='GET')fail('method_not_allowed',405);
-      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
+      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/review-entry.mjs':'public/review-entry.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
       if(!files[route])fail('route_not_found',404);
       const file=path.join(here,files[route]),data=await fs.readFile(file);res.writeHead(200,{'content-type':mime[path.extname(file)],'cache-control':'no-store','x-content-type-options':'nosniff'});res.end(data);
     }catch(e){const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}
   });
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve);});
   const url='http://127.0.0.1:'+server.address().port;
-  return {server,url,close:async()=>{closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
+  await autoProduction.start();
+  await observeRuntime();runtimeStatusTimer=setInterval(()=>observeRuntime().catch(()=>{}),2000);runtimeStatusTimer.unref();
+  return {server,url,close:async()=>{clearInterval(runtimeStatusTimer);await runtimeStatusTail;await autoProduction.stop();closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const portArg=process.argv.indexOf('--port');const port=portArg<0?4387:Number(process.argv[portArg+1]);
