@@ -2,6 +2,7 @@ import {readiness,finalCaption,platformCaption,PLATFORM_LIMITS,platformTextLengt
 import {icon} from '/icons.mjs';
 import {DraftBackups} from '/draft-backups.mjs';
 import {cleanDisplayTitle,cleanCaptionFirstLine} from '/title-normalization.mjs';
+import {reviewEntry} from '/review-entry.mjs';
 const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const label=p=>[p.source?.display_title,p.source?.label,p.publication_title,p.source?.original_title,p.caption?.split(/\r?\n/)[0].slice(0,45)].map(x=>cleanDisplayTitle(x||'')).find(x=>x&&x!==p.post_id&&x!==p.output_version&&!/^[a-f0-9]{32,}$/i.test(x))||'제목 없는 글';
 const finalReviewLabels={unreviewed:'미검토',revise:'수정',discard:'폐기',hold:'보류',passed:'통과'};
@@ -16,6 +17,7 @@ function restoreViewerOrigin(){
  const requested=new URLSearchParams(location.search).get('post')||viewerOrigin?.post_id;
  selected=state.posts.find(p=>p.post_id===requested&&isActivePost(p))?.post_id||state.posts.find(isActivePost)?.post_id||null;
  if(viewerOrigin?.post_id===selected){$('post-search').value=String(viewerOrigin.search||'');if(['all','unreviewed','revise','discard','hold','passed'].includes(viewerOrigin.filter))$('post-status-filter').value=viewerOrigin.filter;previewPlatform=['instagram','threads'].includes(viewerOrigin.platform)?viewerOrigin.platform:'instagram';slide=Math.max(0,Math.min(Number(viewerOrigin.slide)||0,(current()?.images.length||1)-1));}
+ const entry=reviewEntry(state.posts,location.search);if(entry){selected=entry.postId;$('post-search').value=entry.search;$('post-status-filter').value=entry.filter;slide=0;}
 }
 function updateViewerLinks(){const p=visiblePost(),mapped=viewerPosts.get(p?.post_id),link=$('current-full-viewer');$('full-viewer').hidden=!viewerAvailable;link.hidden=!viewerAvailable||!mapped||mapped.output_version!==p?.output_version||JSON.stringify(mapped.images)!==JSON.stringify(p.images.map(i=>i.asset_id));link.href=p?'/viewer/'+encodeURIComponent(p.post_id)+'/':'/viewer/';}
 async function loadViewerNavigation(){const n=await api('/api/navigation');viewerAvailable=n.available===true;viewerPosts=new Map((n.posts||[]).map(p=>[p.post_id,p]));updateViewerLinks();}

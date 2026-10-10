@@ -197,7 +197,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         return send(res,200,{state,externalCalls:0});
       }
       if(req.method!=='GET')fail('method_not_allowed',405);
-      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
+      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/review-entry.mjs':'public/review-entry.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
       if(!files[route])fail('route_not_found',404);
       const file=path.join(here,files[route]),data=await fs.readFile(file);res.writeHead(200,{'content-type':mime[path.extname(file)],'cache-control':'no-store','x-content-type-options':'nosniff'});res.end(data);
     }catch(e){const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}

@@ -22,6 +22,8 @@
 
 `project.control.json`에 켜기·끄기·검토 화면 열기·상태 확인 명령을 등록한다. 서버를 끄면 자동 연결도 멈추고, 켜면 시작 검사와 15초 주기 검사를 재개한다. 파일 삭제나 사용자 판정 초기화는 하지 않는다. 전체 자료 열기는 같은 manifest의 `navigation`을 소비하는 `OPEN_VIEWER.ps1`로 등록한다.
 
+현재 게시글 평가 및 보류·폐기 바로가기도 같은 검토 서버의 `OPEN_REVIEW.ps1 -Filter all|hold|discard`를 사용한다. 이전 0.3.19 평가 EXE를 현재 프로그램으로 열지 않는다. 명시된 URL 필터는 이전 탭의 검색·필터보다 우선하며, 해당 판정이 없으면 빈 목록을 보여준다. 과거 판정 데이터를 이 변경으로 가져오거나 바꾸지 않는다. `-CheckOnly`는 실제 열기 없이 현재 서버와 해석된 URL을 확인한다. 기존 원문 편집 항목은 별도 역할을 유지한다.
+
 `navigation`은 schema=1, 절대 `delivery_root`, `mapping_sha256`, `inventory_sha256`를 갖는다. 고정된 delivery-mapping.json/file-inventory.json을 읽고 `/api/navigation`, `/viewer/`, `/viewer/<post-id>/`로 기존 전체 이미지 HTML과 원본 PNG를 읽기 전용 제공한다. HTML 디스크 파일 대신 응답에만 검토 화면 복귀 링크를 붙인다. 현재 글 버전과 이미지 전체 순서가 매핑과 일치해야 열리며, 임의 경로·변경된 파일·구버전은 거절한다. 검토 화면에서 미저장 편집을 저장한 후 이동하고, 같은 탭으로 돌아오면 선택 글·검색·필터·플랫폼·이미지 위치를 복원한다.
 
 `GET /api/integration/status` 및 `.local/controller-runtime-status.json`은 checkedAt/processId/activeJobs를 제공한다. 실제 작업, 자동 연결 검사, handoff 작업 및 실제 state 잠금을 관찰하고 2초마다 갱신한다. 이 파일은 사용자 상태를 바꾸지 않으며 공통 컨트롤러에 별도 등록해야 한다. 한 번의 activeJobs=0이나 잠금 부재만으로 전체 프로젝트 작업 종료를 보장하지 않는다.
