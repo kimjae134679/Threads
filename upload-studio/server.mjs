@@ -17,6 +17,7 @@ import {LocalVideoAssets,renderReel,buildReelDryRun} from './reels.mjs';
 import {LocalAssets} from './local-assets.mjs';
 import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
 import {ProductionSync} from './production-sync.mjs';
+import {CurrentProduction} from './current-production.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {historyFor,undoPost,redoPost,restorePostSnapshot} from './history.mjs';
 import {offlinePlan} from './adapter.mjs';
@@ -115,7 +116,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   const refreshDecisions=state=>store.write(decisionFile,reviewDecisionProjection(state));
   const store=new StateStore(root,{onSaved:async state=>{await refreshDecisions(state);requestHandoff(state,true);}}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
-  const production=new ProductionInput(materialRoot,assets),productionSync=new ProductionSync(production,store);
+  const production=new CurrentProduction(new ProductionInput(materialRoot,assets),root,store,assets),productionSync=new ProductionSync(production,store);
   const titleEditApproval=await readTitleEditApproval(root);
   await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
   // Recreate the small decision file under the existing state lock without changing any review.

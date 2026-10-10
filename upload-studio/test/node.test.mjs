@@ -1,3 +1,4 @@
+import './current-layout.test.mjs';
 import './title-edit-approval.test.mjs';
 import './handoff-performance.test.mjs';
 import './delivery-results.test.mjs';
