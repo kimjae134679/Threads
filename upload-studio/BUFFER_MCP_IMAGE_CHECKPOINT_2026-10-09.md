@@ -1,5 +1,29 @@
 # Buffer 게시 운영 결과와 재개 규칙 — 2026-10-10 KST
 
+## 사진 캐러셀 + Instagram 음악 준비 — 2026-10-10
+
+요청 형식은 사진을 좌우로 직접 넘기는 Instagram **Post 캐러셀**과 Instagram 자체 음악이다. MP4 슬라이드쇼·영상 Reel로 전환하지 않는다. 이번 준비에서는 Buffer API 호출, 새 예약, 기존 예약 변경·삭제, 인증·권한·비용 변경을 실행하지 않았다.
+
+[Buffer 게시 방식 안내](https://support.buffer.com/en-us/articles/scheduling-instagram-posts-reels-stories-and-notifications-3XA98S9Q5p)와 [음악 기능 안내](https://support.buffer.com/en-us/articles/adding-music-stickers-and-other-effects-to-instagram-and-tiktok-posts-G5QrWfQL4k)를 직접 확인했다. 사진 Post의 음악은 Notify Me를 통해 Instagram 앱에서 붙인다. Facebook 경유로 연결된 영상 Reel의 조건부 자동 음악 지원은 사진 캐러셀의 자동 음악 지원을 뜻하지 않는다.
+
+### 기존 업로드 계약에 연결하는 준비 조건
+
+- 기존 외부 전송·현재 통과본·원본 순서 계약을 유지한다. 향후 승인된 신규 음악 캐러셀은 Instagram type=post, schedulingType=notification으로 계획한다. 현재 MCP 스키마에는 해당 schedulingType 입력이 있지만 이번 계정의 실제 알림 예약 성공·기기 연결·음악 선택을 검증한 것은 아니다. 음악 자동 선택이나 실제 곡 첨부를 수행할 전용 도구는 노출되지 않았다. 새로운 음악 파라미터를 만들어 넣지 않는다.
+- 새 세로 결과는 검토 앱 활성화와 정확한 버전·지문·자산 연결 확인 전까지 사용하지 않는다. 기존 예약을 음악 알림 방식으로 일괄 변환하지 않는다. 묶음 등록의 시작·종료 통합 조회와 요청 예산 계약은 그대로 적용한다.
+- 휴대전화에 Buffer 앱 설치, 기존 계정의 연결된 기기, push 알림 허용, Instagram의 필요한 사진 접근이 전제다. 현재 충족 여부는 미확인이다. [공식 알림 절차](https://support.buffer.com/en-us/articles/using-notification-publishing-gvZQiMxVa2)에 기기·사진 권한 요건이 명시돼 있지만, 새 인증·권한 변경은 이번 승인 범위가 아니므로 수행하지 않았다.
+- Threads는 Buffer notification publishing 대상이 아니다. 두 플랫폼의 같은 계획 시각을 쓰더라도 Instagram은 앱 마무리 시점에 실제 게시되므로 실제 공개 시각 동시 완료를 보장하지 않는다. 음악 캐러셀의 사용자 앱 마무리와 Threads의 provider 결과를 각각 기록한다.
+
+### 사용자가 휴대전화에서 마무리할 위치
+
+Buffer 알림을 열고 올바른 Instagram 계정으로 이동한다. 캐러셀은 첫 이미지가 전달되고 나머지는 사진 보관함에 저장될 수 있으므로, 전체 승인 이미지를 원래 순서로 선택하고 문안·태그를 붙여 넣는다. Instagram의 음악 선택 화면에서 해당 계정에 실제 제공·사용 허용되는 적절한 곡을 미리 듣고 선택한 뒤 사진 순서·화면 잘림·음악을 확인하고 공유한다. 외부 곡 다운로드·새 권한·결제·계정 전환 우회는 사용하지 않는다. 현재는 곡을 특정하거나 선택 완료로 기록하지 않았다.
+
+이 세션의 지원 도구에는 모바일 앱 조작 기능이 없고 native computer API도 비활성화돼 있다. 따라서 휴대전화 알림 열기, 전체 사진 선택, 실제 계정 음악 고르기, 최종 공유는 사용자의 Instagram 앱 조작이 필요하다. 브라우저를 바꾸거나 보호된 경로를 우회해 대신 수행하지 않는다.
+
+### 알림과 게시 완료 구분
+
+알림 방식의 Buffer sent/Published는 전화로 알림이 전송됐다는 뜻일 수 있다. 이를 Instagram 게시 완료로 승격하지 않는다. 알림 전송 시각은 notificationSentAt으로 별도 기록하며 provider sentAt을 실제 publishedAt으로 자동 복사하지 않는다. 실제 Instagram 게시 URL·게시 시각·확인 근거와 앱 마무리, 선택 음악 증거를 비공개 원장에 연결해야 기존 완료 계약을 충족한다. 검증 전에는 연결 완료·음악 적용 완료·게시 완료가 아닌 **준비됨 / 기기 미확인 / 앱 마무리 필요**로 표시한다. 이번 결과는 준비 계약·공식 절차 확인이며 실제 연동·예약·게시 증거는 없다.
+
+
 ## 묶음 등록 운영 변경 — 2026-10-10 사용자 지시
 
 이 절은 항목마다 list/get를 반복하던 이전 확인 절차를 대체한다. 이번 변경은 체크포인트와 문서의 운영 계약 갱신이며, 실행 코드 구현·배포 또는 새 게시·예약 실행을 뜻하지 않는다.
