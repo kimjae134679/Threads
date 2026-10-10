@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $controller = 'D:\A_KJ\AI\Scripts\ThreadsUploadStudio\Control.ps1'
 $current = (& $controller -Action status | ConvertFrom-Json)
 if (-not $current.healthy -or $current.foreign) { throw '검토 앱 켜기를 먼저 실행하세요.' }
