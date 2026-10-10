@@ -7,7 +7,7 @@ export class CurrentProduction{
   let raw;try{const real=await fs.realpath(this.file);if(path.dirname(real)!==await fs.realpath(this.root))fail('current_layout_path_invalid');const stat=await fs.stat(real);if(!stat.isFile()||stat.size>2000000)fail('current_layout_invalid');raw=await fs.readFile(real,'utf8');}catch(e){if(e.code==='ENOENT')return null;throw e;}
   let data;try{data=JSON.parse(raw);}catch{fail('current_layout_invalid');}
   if(data.schema!==1||data.kind!=='current-layout-selection'||!Array.isArray(data.entries)||!data.entries.length||data.entries.length>1000||new Set(data.entries.map(p=>p.post_id)).size!==data.entries.length||data.entries.some(p=>typeof p.post_id!=='string'||typeof p.output_version!=='string'))fail('current_layout_invalid');
-  const state=await this.store.read(),posts=data.entries.map(e=>state.posts.find(p=>p.post_id===e.post_id&&p.output_version===e.output_version));if(posts.some(p=>!p))fail('current_layout_version_changed');
+  const state=await this.store.read(),posts=data.dynamic===true?state.posts.filter(p=>p.current_layout?.activated===true):data.entries.map(e=>state.posts.find(p=>p.post_id===e.post_id&&p.output_version===e.output_version));if(!posts.length||posts.some(p=>!p||data.dynamic===true&&(p.current_layout.output_version||data.entries.find(e=>e.post_id===p.post_id)?.output_version)!==p.output_version))fail('current_layout_version_changed');
   return {data,posts};
  }
  async selected(selection,current){

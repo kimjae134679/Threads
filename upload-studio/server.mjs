@@ -18,6 +18,7 @@ import {LocalAssets} from './local-assets.mjs';
 import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
 import {ProductionSync} from './production-sync.mjs';
 import {CurrentProduction} from './current-production.mjs';
+import {AutoProductionLink} from './auto-production-link.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {historyFor,undoPost,redoPost,restorePostSnapshot} from './history.mjs';
 import {offlinePlan} from './adapter.mjs';
@@ -116,7 +117,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   const refreshDecisions=state=>store.write(decisionFile,reviewDecisionProjection(state));
   const store=new StateStore(root,{onSaved:async state=>{await refreshDecisions(state);requestHandoff(state,true);}}),journal=new PublicationJournal(path.join(root,'dry-run-journal')),active=new Map();
   const connections=new OfflineConnectionPreparation(),videos=new LocalVideoAssets(root),callbackBroker=new OAuthCallbackBroker({preparation:connections,vault:new WindowsCredentialVault(root),live_authorized:false});
-  const production=new CurrentProduction(new ProductionInput(materialRoot,assets),root,store,assets),productionSync=new ProductionSync(production,store);
+  const rawProduction=new ProductionInput(materialRoot,assets),production=new CurrentProduction(rawProduction,root,store,assets),productionSync=new ProductionSync(production,store),autoProduction=new AutoProductionLink(rawProduction,root,store,assets);
   const titleEditApproval=await readTitleEditApproval(root);
   await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
   // Recreate the small decision file under the existing state lock without changing any review.
@@ -136,6 +137,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='POST'&&route==='/api/videos'){if(req.headers['x-studio-local']!=='1'||!['video/mp4','video/quicktime'].includes(req.headers['content-type']))fail('local_request_required',403);const asset=await videos.add({stream:req,mime:req.headers['content-type'],name:'local-video'});return send(res,200,{asset,externalCalls:0});}
       if(req.method==='GET'&&route==='/api/production')return send(res,200,await production.catalog());
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
+      if(req.method==='GET'&&route==='/api/production/auto-status')return send(res,200,autoProduction.progress);
       if(req.method==='GET'&&route==='/api/final-review/handoff'){const state=await store.read(),projection=reviewHandoffProjection(state);return send(res,200,{...projection,latest:currentHandoffStatus(state,projection)});}
       if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
       if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
@@ -190,7 +192,8 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   });
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve);});
   const url='http://127.0.0.1:'+server.address().port;
-  return {server,url,close:async()=>{closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
+  await autoProduction.start();
+  return {server,url,close:async()=>{await autoProduction.stop();closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const portArg=process.argv.indexOf('--port');const port=portArg<0?4387:Number(process.argv[portArg+1]);

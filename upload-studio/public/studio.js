@@ -119,7 +119,11 @@ function productionCount(){const inputs=[...$('production-list').querySelectorAl
 function chooseProduction(all){$('production-list').querySelectorAll('[data-production-id]').forEach(x=>x.checked=all);productionCount();}
 $('production-all').addEventListener('click',()=>chooseProduction(true));
 $('production-none').addEventListener('click',()=>chooseProduction(false));
+async function refreshAutoProductionStatus(){
+ try{const p=await api('/api/production/auto-status');$('auto-link-state').textContent=p.enabled?(p.code?'제작 완료 자동 연결 · 확인 필요':p.waiting.length?'제작 완료 자동 연결 · 확인 대기 '+p.waiting.length+'개':'제작 완료 자동 연결 켜짐 · 이전 결과 자동 보관'):'제작 완료 자동 연결 꺼짐';}catch{$('auto-link-state').textContent='제작 완료 자동 연결 상태 확인 대기';}
+}
 async function syncProduction(selection=null,initial=false){
+ refreshAutoProductionStatus().catch(()=>{});
  if(productionBusy)return;await settled();if(productionBusy)return;productionBusy=true;productionCount();
  $('production-sync-state').textContent='현재 제작 결과 자동 동기화 중…';
  const progressTimer=setInterval(()=>api('/api/production/sync-status').then(p=>{if(p.running)$('production-sync-state').textContent='제작 결과 '+p.completed+' / '+p.total+'개 동기화 중…';}).catch(()=>{}),1000);

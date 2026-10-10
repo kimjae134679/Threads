@@ -16,7 +16,7 @@ export function replaceCurrentLayouts(state,entries,operation){
   p.source={...p.source,verified:false};p.safety={fact:'UNKNOWN',rights:'UNKNOWN',privacy:'UNKNOWN',defamation:'UNKNOWN',platform_policy:'UNKNOWN',warn_note:''};
   p.media_format='images';p.reel_video=null;p.reel_playback_reviewed=false;p.inactive_for_this_batch=false;
   delete p.layout_review_link;delete p.restored_from_output_version;
-  p.current_layout={activated:true,operation_id:operation.operation_id,activated_at:operation.at,mapping_sha256:e.mapping_sha256,source_bundle_sha256:e.source_bundle_sha256,width:1080,height:1440,review_inherited:false};
+  p.current_layout={activated:true,output_version:e.new_output_version,operation_id:operation.operation_id,activated_at:operation.at,mapping_sha256:e.mapping_sha256,source_bundle_sha256:e.source_bundle_sha256,width:1080,height:1440,review_inherited:false};
   return p;
  });
  next.jobs=[];next.dry_runs=[];next.archived_posts=[];next.post_history={};next.revision++;

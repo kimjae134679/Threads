@@ -1,0 +1,15 @@
+// Packaged portrait producer writes completed checkpoints before the installed catalog is promoted.
+import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';
+import {ProductionInput,productionVersion} from './production-input.mjs';
+const fail=code=>{throw Object.assign(Error(code),{code});},sha=b=>createHash('sha256').update(b).digest('hex');
+const inside=(root,file)=>{const r=path.relative(root,file);if(!r||r==='..'||r.startsWith('..'+path.sep)||path.isAbsolute(r))fail('production_path_invalid');return file;};
+export class CheckpointProductionInput extends ProductionInput{
+ constructor(runRoot,assets){super(runRoot,assets);this.output=path.join(this.materialRoot,'outputs');this.checkpoints=path.join(this.materialRoot,'work','checkpoints');}
+ async rows(){const root=await fs.realpath(this.materialRoot),checkpoints=inside(root,await fs.realpath(this.checkpoints)),output=inside(root,await fs.realpath(this.output)),names=await fs.readdir(checkpoints,{withFileTypes:true});if(names.length>2000)fail('production_manifest_invalid');const rows=[];
+  for(const entry of names){if(!entry.isFile()||entry.isSymbolicLink()||!entry.name.endsWith('.json'))continue;const file=inside(checkpoints,await fs.realpath(path.join(checkpoints,entry.name))),data=await this.json(file);if(data.state!=='complete')continue;const row=data.changed;if(!row||row.id!==data.id||!Array.isArray(row.images)||!row.images.length||row.images.length>200||data.versionLinks?.newOutputVersion!==productionVersion(row)||!Array.isArray(data.files)||data.files.length>10000)fail('production_checkpoint_invalid');const target=inside(output,await fs.realpath(data.target));rows.push({...row,outputFolder:path.relative(output,target),generatedAt:data.completedAt,_checkpoint_file:file,_checkpoint_sha256:sha(await fs.readFile(file))});
+  }if(new Set(rows.map(r=>r.id)).size!==rows.length)fail('production_manifest_invalid');return rows;
+ }
+ async bundle(selection){const before=await this.rows();for(const selected of selection){const row=before.find(r=>r.id===selected.id&&productionVersion(r)===selected.output_version);if(!row)fail('production_version_changed');const checkpoint=await this.json(row._checkpoint_file);for(const item of checkpoint.files){if(typeof item.name!=='string'||!/^[a-f0-9]{64}$/.test(item.sha256||''))fail('production_checkpoint_invalid');const file=await this.safeFile(row,item.name),stat=await fs.stat(file);if(!stat.isFile()||stat.size>300*1024*1024||sha(await fs.readFile(file))!==item.sha256)fail('production_checkpoint_changed');}}
+  const bundle=await super.bundle(selection),after=await this.rows();for(const selected of selection){const old=before.find(r=>r.id===selected.id),current=after.find(r=>r.id===selected.id);if(!current||current._checkpoint_sha256!==old._checkpoint_sha256)fail('production_version_changed');}return bundle;
+ }
+}
