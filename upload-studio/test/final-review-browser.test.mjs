@@ -9,17 +9,17 @@ import {deliveryFingerprint} from '../delivery-results.mjs';
 const root=await fs.mkdtemp(path.join(os.tmpdir(),'upload-studio-browser-'));
 const studioRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const out=path.join(studioRoot,'evidence');await fs.mkdir(out,{recursive:true});
-let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0,holdAsset=null,holdVerdict=false,handoffRequests=0;const finalReviewResponses=[],heldAssets=[],heldVerdicts=[];
+let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0,failVerdictOnce=false,holdAsset=null,holdVerdict=false,handoffRequests=0;const finalReviewResponses=[],heldAssets=[],heldVerdicts=[];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn){for(let i=0;i<300;i++){const x=await fn();if(x)return x;await wait(100);}throw Error('browser_condition_timeout');}
 function send(method,params={}){return new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{calls.delete(id);reject(Error('CDP timeout: '+method));},10000);calls.set(id,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});socket.send(JSON.stringify({id,method,params}));});}
-const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.text);return r.result.value;};
+const evaluate=async expression=>(await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true})).result.value;
 async function click(selector){const rect=await evaluate('(()=>{const e=document.querySelector('+JSON.stringify(selector)+');if(!e)throw Error("missing element");e.scrollIntoView({block:"center"});const r=e.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()');await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...rect});await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...rect});}
 async function fill(selector,text){await click(selector);await send('Input.dispatchKeyEvent',{type:'rawKeyDown',key:'a',code:'KeyA',windowsVirtualKeyCode:65,modifiers:2});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'a',code:'KeyA',windowsVirtualKeyCode:65,modifiers:2});await send('Input.insertText',{text});}
 async function shot(name){await evaluate('window.scrollTo(0,0)');const {data}=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await fs.writeFile(path.join(out,name),Buffer.from(data,'base64'));console.log('SCREENSHOT '+path.join(out,name));}
 async function api(route,body){const r=await fetch(app.url+route,{method:body?'POST':'GET',headers:body?{'content-type':'application/json','x-studio-local':'1'}:{},body:body?JSON.stringify(body):undefined});const v=await r.json();assert.equal(r.status,200,JSON.stringify(v));return v;}
 try {
-  for(const file of ['domain.mjs','store.mjs','server.mjs','adapter.mjs','planner-worker.mjs','local-assets.mjs','public/studio.js','public/icons.mjs','public/draft-backups.mjs','production-input.mjs','production-sync.mjs','title-normalization.mjs']){const r=spawnSync(process.execPath,['--check',path.join(studioRoot,file)],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);}
+  for(const file of ['domain.mjs','store.mjs','server.mjs','adapter.mjs','planner-worker.mjs','local-assets.mjs','public/studio.js','public/icons.mjs','public/draft-backups.mjs','review-order.mjs','production-input.mjs','production-sync.mjs','title-normalization.mjs']){const r=spawnSync(process.execPath,['--check',path.join(studioRoot,file)],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);}
   let executable;for(const p of [process.env.STUDIO_CHROMIUM_EXECUTABLE||'/missing-explicit-browser',path.join(process.env.PROGRAMFILES||'C:\\Program Files','Google','Chrome','Application','chrome.exe'),path.join(process.env['PROGRAMFILES(X86)']||'C:\\Program Files (x86)','Google','Chrome','Application','chrome.exe'),'/usr/bin/google-chrome','/usr/bin/google-chrome-stable','/usr/bin/chromium','/usr/bin/chromium-browser']){try{await fs.access(p);executable=p;break;}catch{}}
   if(!executable)throw Error('actual_browser_unavailable');
   app=await createStudioServer({root:path.join(root,'data'),port:0,materialRoot:path.join(root,'production-materials')});
@@ -30,7 +30,7 @@ try {
   socket.addEventListener('message',event=>{const msg=JSON.parse(String(event.data));if(msg.id){const c=calls.get(msg.id);if(c){calls.delete(msg.id);msg.error?c.reject(Error(msg.error.message)):c.resolve(msg.result);}}else events.get(msg.method)?.(msg.params);});
   await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
   await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Fetch.enable',{patterns:[{urlPattern:'*'}]});
-  events.set('Fetch.requestPaused',p=>{if(holdAsset&&p.request.url===app.url+'/assets/'+holdAsset){heldAssets.push(p.requestId);return;}if(p.request.url===app.url+'/api/final-review'){finalReviewRequests++;if(holdVerdict){heldVerdicts.push(p.requestId);return;}}if(p.request.url===app.url+'/api/final-review/handoff')handoffRequests++;if(holdSync&&p.request.url===app.url+'/api/production/sync'){heldSync=p.requestId;return;}if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
+  events.set('Fetch.requestPaused',p=>{if(holdAsset&&p.request.url===app.url+'/assets/'+holdAsset){heldAssets.push(p.requestId);return;}if(p.request.url===app.url+'/api/final-review'){finalReviewRequests++;if(failVerdictOnce){failVerdictOnce=false;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'Failed'}).catch(()=>{});return;}if(holdVerdict){heldVerdicts.push(p.requestId);return;}}if(p.request.url===app.url+'/api/final-review/handoff')handoffRequests++;if(holdSync&&p.request.url===app.url+'/api/production/sync'){heldSync=p.requestId;return;}if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
   events.set('Network.responseReceived',p=>{if(p.response.url===app.url+'/api/final-review')finalReviewResponses.push({status:p.response.status,requestId:p.requestId});});
   await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1400,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
   await send('Page.navigate',{url:app.url});await until(()=>evaluate('document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
@@ -151,22 +151,38 @@ try {
   const pendingRequestCount=finalReviewRequests,pendingHandoffCount=handoffRequests;
   holdVerdict=true;await click('[data-final-review="passed"]');await until(()=>heldVerdicts.length===1);
   assert.equal(await evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 중")'),true,'pending verdict feedback appears immediately');
-  assert.equal((await api('/api/state')).state.posts[1].final_review_status,'hold','no optimistic pass before durable save');
-  assert.equal(await evaluate('document.querySelector("#final-review-status").dataset.status'),"hold",'confirmed UI verdict remains unchanged while saving');
-  assert.equal(await evaluate('document.querySelector(\'[data-final-review="passed"]\').getAttribute("aria-pressed")'),"false");
+  assert.equal((await api('/api/state')).state.posts[1].final_review_status,'hold','pending change is only a local preview');
+  assert.equal(await evaluate('document.querySelector("#final-review-status").dataset.status'),"passed",'new verdict is visible immediately while saving');
+  assert.equal(await evaluate('document.querySelector(\'[data-final-review="passed"]\').getAttribute("aria-pressed")'),"true");
+  assert.equal(await evaluate('document.querySelector(\'[data-final-review="hold"]\').disabled'),false,'another verdict can replace the pending one');
   assert.equal(await evaluate('document.querySelector("#review-handoff").disabled'),true);
-  await click('[data-final-review="passed"]');assert.equal(finalReviewRequests,pendingRequestCount+1,'rapid duplicate click is not another write');
+  await click('[data-final-review="hold"]');
+  assert.equal(await evaluate('document.querySelector("#final-review-status").dataset.status'),"hold",'latest rapid verdict paints immediately');
+  assert.equal(finalReviewRequests,pendingRequestCount+1,'same-post verdicts serialize and coalesce while a write is pending');
   await click('[data-post="'+first+'"]');await until(()=>evaluate('document.querySelector("#post-review-note").value==='+JSON.stringify(firstMemo)+' && document.querySelector("#preview").dataset.postId==='+JSON.stringify(first)+' && document.querySelector("#preview").getAttribute("aria-busy")==="false"'));
   assert.ok(await evaluate('document.querySelector("#final-review-status").textContent.includes("폐기")'));
   assert.equal(handoffRequests,pendingHandoffCount,'pending pass cannot be handed off');
   await evaluate('window.__pendingVerdictFrame=document.querySelector("#preview .media-frame");window.__pendingFirstRow=document.querySelector(\'#post-list [data-post="'+first+'"]\')');
   holdVerdict=false;for(const requestId of heldVerdicts.splice(0))await send('Fetch.continueRequest',{requestId});
-  await until(async()=>(await api('/api/state')).state.posts[1].final_review_status==='passed');
-  await until(()=>evaluate('!document.querySelector("#review-handoff").disabled'));
+  await until(async()=>finalReviewRequests===pendingRequestCount+2&&(await api('/api/state')).state.posts[1].final_review_status==='hold');
   assert.ok(await evaluate('document.querySelector("#final-review-status").textContent.includes("폐기")'),'late response does not replace another post verdict');
   assert.equal(await evaluate('document.querySelector("#preview .media-frame")===window.__pendingVerdictFrame && document.querySelector(\'#post-list [data-post="'+first+'"]\')===window.__pendingFirstRow'),true,'verdict response preserves current frame and keyed row');
-  await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요") && document.querySelector("#final-review-status").textContent.includes("통과")'));
+  await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요") && document.querySelector("#final-review-status").textContent.includes("보류")'));await until(()=>evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 완료")'));
 
+  await click('[data-final-review="passed"]');await until(async()=>(await api('/api/state')).state.posts[1].final_review_status==='passed');
+  await until(()=>evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 완료")'));
+  failVerdictOnce=true;await click('[data-final-review="revise"]');await until(()=>evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 실패")'));
+  assert.equal((await api('/api/state')).state.posts[1].final_review_status,'passed','failed save never changes confirmed uploader verdict');
+  await send('Page.reload');await until(()=>evaluate('document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
+  await click('[data-post="'+second+'"]');await until(()=>evaluate('document.querySelector("#caption").value.includes("수정 필요")'));
+  assert.ok(await evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 실패")'),'failed verdict retry survives a page restart');
+  assert.equal(await evaluate('document.querySelector("#final-review-status").dataset.status'),'passed','restored failed intent does not become a durable pass');
+  assert.equal((await api('/api/state')).state.posts[1].final_review_status,'passed','restart still exposes only the server-confirmed verdict');
+  assert.equal(await evaluate('document.querySelector(\'[data-final-review="revise"]\').disabled'),false,'same verdict control remains available to retry');
+  await click('[data-final-review="revise"]');await until(async()=>(await api('/api/state')).state.posts[1].final_review_status==='revise');
+  await until(()=>evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 완료")'));
+  await click('[data-final-review="passed"]');await until(async()=>(await api('/api/state')).state.posts[1].final_review_status==='passed');
+  await until(()=>evaluate('document.querySelector("#final-review-save-status").textContent.includes("저장 완료")'));
   await click('#add-queue');await until(async()=>(await api('/api/state')).state.jobs.length===1);
   // Delayed local image responses reproduce the old empty-frame race.
   const delayedData=await evaluate('(()=>{const c=document.createElement("canvas");c.width=140;c.height=140;const x=c.getContext("2d");x.fillStyle="#813ca2";x.fillRect(0,0,140,140);return c.toDataURL("image/jpeg").split(",")[1];})()');
@@ -218,7 +234,7 @@ try {
   await until(()=>heldSync);
   const requestsBefore=finalReviewRequests;
   await click('[data-final-review="passed"]');
-  await until(()=>evaluate('document.querySelector(\'[data-final-review="passed"]\').disabled'));
+  assert.equal(await evaluate('document.querySelector("#final-review-status").dataset.status'),'passed','review choice paints while sync is pending');
   holdSync=false;await send('Fetch.continueRequest',{requestId:heldSync});heldSync=null;
   await until(()=>evaluate('document.querySelector("#status").classList.contains("error") && document.querySelector("#status").textContent.includes("현재 버전 검수를 다시 불러온")'));
   const raceAfter=(await api('/api/state')).state.posts.find(p=>p.post_id==='race-review');
@@ -245,6 +261,16 @@ try {
   const rejectedBody=await send('Network.getResponseBody',{requestId:rejectedReview.requestId});
   assert.equal(JSON.parse(rejectedBody.body).code,'review_form_version_changed');
   assert.equal((await api('/api/state')).state.publications.length,0);assert.equal(external,0);
+  // Hub shortcuts must open this app's current list, with an explicit filter.
+  for(const filter of ['hold','discard','all']){
+    await send('Page.navigate',{url:app.url+'/?review='+filter});
+    await until(()=>evaluate('document.querySelector("#post-status-filter")?.value==='+JSON.stringify(filter)+' && document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
+    assert.equal(await evaluate('document.querySelector("#post-status-filter").value'),filter);
+    assert.equal(await evaluate('document.querySelector("#post-search").value'),'');
+    const current=(await api('/api/state')).state;
+    const expected=current.posts.filter(p=>!p.inactive_for_this_batch&&(filter==='all'||p.final_review_status===filter)).length;
+    await until(()=>evaluate('document.querySelectorAll("#post-list [data-post]").length').then(n=>n===expected));
+  }
   await shot('final-review-layout.png');
   console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, memo/hold restore, clickable dots/local hearts, delayed verdict feedback and dedup/navigation, verified delivery partial/scheduled/sending/posted/current-basis projection, no-blank-frame switching, flushed verdicts and competing edit intent rejection. External requests: 0.');
-}catch(error){if(socket?.readyState===1){console.log("FAILURE_DOM",JSON.stringify(await evaluate('({save:document.querySelector("#save-state")?.textContent,status:document.querySelector("#status")?.textContent})')));await shot("final-review-failure.png");}throw error;}finally {socket?.close();chrome?.kill('SIGTERM');if(app)await app.close();await fs.rm(root,{recursive:true,force:true,maxRetries:20,retryDelay:100});}
+}catch(error){if(socket?.readyState===1){try{console.log("FAILURE_DOM",JSON.stringify(await evaluate('({save:document.querySelector("#save-state")?.textContent,status:document.querySelector("#status")?.textContent})')));}catch(diagnostic){console.log("DOM_DIAGNOSTIC_FAILED",diagnostic.message);}try{await shot("final-review-failure.png");}catch{}}throw error;}finally {socket?.close();chrome?.kill('SIGTERM');if(app)await app.close();await fs.rm(root,{recursive:true,force:true,maxRetries:20,retryDelay:100});}

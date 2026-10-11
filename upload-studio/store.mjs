@@ -51,7 +51,7 @@ export class StateStore {
       for(let n=0;n<80;n++){
         try{await fs.rename(candidate,this.lock);return {ownerFile};}catch(e){if(!['EEXIST','ENOTEMPTY','EPERM'].includes(e.code))throw e;}
         try {
-          const names=await fs.readdir(this.lock);
+          const names=await readOwnerFile(this.lock,fs.readdir);
           if(!names.length){await removeEmptyLock(this.lock);continue;}
           if(names.length!==1||!/^owner(?:\.[a-f0-9-]{36})?\.json$/.test(names[0]))throw error('state_lock_invalid');
           let owner;try{owner=JSON.parse(await readOwnerFile(path.join(this.lock,names[0])));}catch(e){if(e.code==='ENOENT')continue;if(e instanceof SyntaxError)throw error('state_lock_invalid');throw e;}
