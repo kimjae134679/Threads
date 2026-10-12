@@ -6,10 +6,11 @@ import {spawn,spawnSync} from 'node:child_process';
 import {createStudioServer} from '../server.mjs';
 import assert from 'node:assert/strict';
 import {deliveryFingerprint} from '../delivery-results.mjs';
+import {platformCaption,finalCaption} from '../domain.mjs';
 const root=await fs.mkdtemp(path.join(os.tmpdir(),'upload-studio-browser-'));
 const studioRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const out=path.join(studioRoot,'evidence');await fs.mkdir(out,{recursive:true});
-let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0,failVerdictOnce=false,holdAsset=null,holdVerdict=false,handoffRequests=0;const finalReviewResponses=[],heldAssets=[],heldVerdicts=[];
+let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0,failVerdictOnce=false,holdAsset=null,holdVerdict=false,handoffRequests=0;const finalReviewResponses=[],heldAssets=[],heldVerdicts=[];let holdMaterialKey=null;const heldMaterials=[];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn){for(let i=0;i<300;i++){const x=await fn();if(x)return x;await wait(100);}throw Error('browser_condition_timeout');}
 function send(method,params={}){return new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{calls.delete(id);reject(Error('CDP timeout: '+method));},10000);calls.set(id,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});socket.send(JSON.stringify({id,method,params}));});}
@@ -30,7 +31,7 @@ try {
   socket.addEventListener('message',event=>{const msg=JSON.parse(String(event.data));if(msg.id){const c=calls.get(msg.id);if(c){calls.delete(msg.id);msg.error?c.reject(Error(msg.error.message)):c.resolve(msg.result);}}else events.get(msg.method)?.(msg.params);});
   await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
   await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Fetch.enable',{patterns:[{urlPattern:'*'}]});
-  events.set('Fetch.requestPaused',p=>{if(holdAsset&&p.request.url===app.url+'/assets/'+holdAsset){heldAssets.push(p.requestId);return;}if(p.request.url===app.url+'/api/final-review'){finalReviewRequests++;if(failVerdictOnce){failVerdictOnce=false;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'Failed'}).catch(()=>{});return;}if(holdVerdict){heldVerdicts.push(p.requestId);return;}}if(p.request.url===app.url+'/api/final-review/handoff')handoffRequests++;if(holdSync&&p.request.url===app.url+'/api/production/sync'){heldSync=p.requestId;return;}if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
+  events.set('Fetch.requestPaused',p=>{if(holdMaterialKey&&p.request.url===app.url+'/api/materials/'+holdMaterialKey){heldMaterials.push(p.requestId);return;}if(holdAsset&&p.request.url===app.url+'/assets/'+holdAsset){heldAssets.push(p.requestId);return;}if(p.request.url===app.url+'/api/final-review'){finalReviewRequests++;if(failVerdictOnce){failVerdictOnce=false;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'Failed'}).catch(()=>{});return;}if(holdVerdict){heldVerdicts.push(p.requestId);return;}}if(p.request.url===app.url+'/api/final-review/handoff')handoffRequests++;if(holdSync&&p.request.url===app.url+'/api/production/sync'){heldSync=p.requestId;return;}if(p.request.url.startsWith(app.url+'/')||p.request.url.startsWith('data:')||p.request.url.startsWith('blob:'))send('Fetch.continueRequest',{requestId:p.requestId}).catch(()=>{});else {external++;send('Fetch.failRequest',{requestId:p.requestId,errorReason:'BlockedByClient'}).catch(()=>{});}});
   events.set('Network.responseReceived',p=>{if(p.response.url===app.url+'/api/final-review')finalReviewResponses.push({status:p.response.status,requestId:p.requestId});});
   await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1400,deviceScaleFactor:1,mobile:false});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Seoul'});
   await send('Page.navigate',{url:app.url});await until(()=>evaluate('document.querySelector("#status")?.textContent.startsWith("로컬 저장을 불러왔습니다.")'));
@@ -272,5 +273,21 @@ try {
     await until(()=>evaluate('document.querySelectorAll("#post-list [data-post]").length').then(n=>n===expected));
   }
   await shot('final-review-layout.png');
+  const materialIndex=await api('/api/materials'),materialFirst=materialIndex.records.find(r=>r.scope==='current'&&r.postId===first),materialSecond=materialIndex.records.find(r=>r.scope==='current'&&r.postId===second),materialPost=(await api('/api/state')).state.posts.find(p=>p.post_id===second);
+  assert.equal(await evaluate('document.querySelector("#all-materials").getAttribute("href")'),'/materials/');
+  await send('Page.navigate',{url:app.url+'/materials/?post='+encodeURIComponent(second)});
+  await until(()=>evaluate('document.querySelector("#detail")?.dataset.key==='+JSON.stringify(materialSecond.key)+' && document.querySelector("#detail").getAttribute("aria-busy")==="false"'));
+  assert.equal(await evaluate('document.querySelector("#text-body").value'),platformCaption(materialPost,'instagram'));
+  assert.equal(await evaluate('document.querySelector("#text-fullText").value'),finalCaption(materialPost,'instagram'));
+  assert.equal(await evaluate('document.querySelectorAll(".image-grid figure").length'),materialPost.images.length);
+  assert.ok((await evaluate('document.querySelector("#package").getAttribute("href")')).includes('&scope=current'));
+  await evaluate('window.__materialCopied=[];navigator.clipboard.writeText=async text=>window.__materialCopied.push(text)');await click('[data-copy="fullText"]');await until(()=>evaluate('window.__materialCopied.length===1'));
+  assert.equal(await evaluate('window.__materialCopied[0]'),finalCaption(materialPost,'instagram'));
+  holdMaterialKey=materialFirst.key;await click('[data-key="'+materialFirst.key+'"]');await until(()=>heldMaterials.length===1);
+  await click('[data-key="'+materialSecond.key+'"]');await until(()=>evaluate('document.querySelector("#detail").dataset.key==='+JSON.stringify(materialSecond.key)+' && document.querySelector("#detail").getAttribute("aria-busy")==="false"'));
+  holdMaterialKey=null;for(const requestId of heldMaterials.splice(0))await send('Fetch.continueRequest',{requestId}).catch(()=>{});
+  await wait(150);assert.equal(await evaluate('document.querySelector("#text-body").value'),platformCaption(materialPost,'instagram'),'late catalog response cannot mix another post text or images');
+  await shot('materials-layout.png');
+
   console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, memo/hold restore, clickable dots/local hearts, delayed verdict feedback and dedup/navigation, verified delivery partial/scheduled/sending/posted/current-basis projection, no-blank-frame switching, flushed verdicts and competing edit intent rejection. External requests: 0.');
 }catch(error){if(socket?.readyState===1){try{console.log("FAILURE_DOM",JSON.stringify(await evaluate('({save:document.querySelector("#save-state")?.textContent,status:document.querySelector("#status")?.textContent})')));}catch(diagnostic){console.log("DOM_DIAGNOSTIC_FAILED",diagnostic.message);}try{await shot("final-review-failure.png");}catch{}}throw error;}finally {socket?.close();chrome?.kill('SIGTERM');if(app)await app.close();await fs.rm(root,{recursive:true,force:true,maxRetries:20,retryDelay:100});}

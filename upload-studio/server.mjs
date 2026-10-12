@@ -20,6 +20,8 @@ import {ProductionSync} from './production-sync.mjs';
 import {CurrentProduction} from './current-production.mjs';
 import {AutoProductionLink} from './auto-production-link.mjs';
 import {ReadOnlyViewer} from './read-only-viewer.mjs';
+import {MaterialCatalog} from './material-catalog.mjs';
+import {materialZip} from './material-zip.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {historyFor,undoPost,redoPost,restorePostSnapshot} from './history.mjs';
 import {offlinePlan} from './adapter.mjs';
@@ -59,6 +61,7 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
   const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records).filter(row=>Object.values(row.platforms||{}).some(platform=>platform.recordedAt!=null||platform.status==='error')),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
   const viewer=new ReadOnlyViewer(projectManifest,()=>store.read());
+  const materials=new MaterialCatalog({root,materialRoot,readState:()=>store.read()});let materialExportBusy=false;
   let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
   let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
   const handoffWaiters=new Map(),clone=value=>JSON.parse(JSON.stringify(value));
@@ -148,6 +151,19 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
       if(req.method==='GET'&&route==='/api/production/auto-status')return send(res,200,autoProduction.progress);
       if(req.method==='GET'&&route==='/api/navigation')return send(res,200,await viewer.status());
+      if(req.method==='GET'&&route==='/api/materials')return send(res,200,await materials.index());
+      if(req.method==='GET'&&route==='/api/materials/audit')return send(res,200,await materials.audit());
+      const materialRoute=route.match(/^\/api\/materials\/((?:post|edit|intake|producer)-[a-f0-9]{64})(?:\/(image|source|package)(?:\/([a-f0-9]{64}|\d+))?)?$/);
+      if(req.method==='GET'&&materialRoute){
+        const [,key,kind,position]=materialRoute;
+        if(!kind)return send(res,200,await materials.detail(key));
+        if(kind==='package'){
+          if(materialExportBusy)fail('material_export_busy',409);materialExportBusy=true;
+          try{const platform=url.searchParams.get('platform')||'instagram',files=await materials.packageFiles(key,platform,{expectedScope:url.searchParams.get('scope')}),d=await materials.detail(key),name=(d.scope==='historical'?'과거기록-':'')+d.statusLabel+'-'+d.title.slice(0,70)+'-'+platform+'.zip';res.writeHead(200,{'content-type':'application/zip','content-disposition':"attachment; filename=materials.zip; filename*=UTF-8''"+encodeURIComponent(name),'cache-control':'no-store'});for await(const bytes of materialZip(files)){if(res.destroyed)break;if(!res.write(bytes))await new Promise(resolve=>{const done=()=>{res.off('drain',done);res.off('close',done);resolve();};res.once('drain',done);res.once('close',done);});}return res.end();}finally{materialExportBusy=false;}
+        }
+        if(position===undefined)fail('material_file_not_found',404);
+        const file=kind==='image'?await materials.image(key,Number(position)):await materials.source(key,position);const download=kind==='source'||url.searchParams.get('download')==='1';res.writeHead(200,{'content-type':file.mime,'content-length':file.bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff',...(download?{'content-disposition':"attachment; filename=material-file; filename*=UTF-8''"+encodeURIComponent(file.name)}:{})});return res.end(file.bytes);
+      }
       if(req.method==='GET'&&route==='/api/integration/status')return send(res,200,await observeRuntime());
       if(req.method==='GET'&&(route==='/viewer'||route.startsWith('/viewer/'))){const out=await viewer.read(route);res.writeHead(200,{'content-type':out.mime,'cache-control':'no-store','x-content-type-options':'nosniff','content-security-policy':out.csp});return res.end(out.bytes);}
       if(req.method==='GET'&&route==='/api/final-review/handoff'){const state=await store.read(),projection=reviewHandoffProjection(state);return send(res,200,{...projection,latest:currentHandoffStatus(state,projection)});}
@@ -197,10 +213,10 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         return send(res,200,{state,externalCalls:0});
       }
       if(req.method!=='GET')fail('method_not_allowed',405);
-      const files={'/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/review-entry.mjs':'public/review-entry.mjs','/review-order.mjs':'review-order.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
+      const files={'/materials':'public/materials.html','/materials/':'public/materials.html','/materials.js':'public/materials.js','/materials.css':'public/materials.css','/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/review-entry.mjs':'public/review-entry.mjs','/review-order.mjs':'review-order.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
       if(!files[route])fail('route_not_found',404);
       const file=path.join(here,files[route]),data=await fs.readFile(file);res.writeHead(200,{'content-type':mime[path.extname(file)],'cache-control':'no-store','x-content-type-options':'nosniff'});res.end(data);
-    }catch(e){const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}
+    }catch(e){if(res.headersSent){res.destroy(e);return;}const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}
   });
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve);});
   const url='http://127.0.0.1:'+server.address().port;
