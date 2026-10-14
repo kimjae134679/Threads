@@ -4,6 +4,10 @@ AI로 **소재 발견 → 검증·점수 → 콘텐츠 제작 → 검수·게시
 
 > 처음 들어왔다면 **[`00_START_HERE/`](00_START_HERE/)** 부터 읽습니다.
 
+## 운영 규칙 지도
+
+현재 법칙은 [AGENTS](AGENTS.md), 짧은 분야별 지도는 [00_START_HERE](00_START_HERE/README.md), 실행/경로는 [사용 안내](프로젝트_사용안내.md), 실제 완료 집계·미확인 소통은 [현재 인수인계](00_START_HERE/NEXT_RUN_HANDOFF.md)를 따릅니다. 세부 규칙을 여기 다시 복제하지 않습니다. 아래 구현 기능 설명은 신규 수집·계정/게시·예약 실행 권한이 아닙니다. 컴퓨터 종료 요청은 이번 작업에서 취소됐으며 영구 전역 금지로 일반화하지 않습니다.
+
 ## 통합 프로젝트 실행 · 단일 자료 TXT
 
 이 통합 작업의 코드와 공개 가능한 후보는 Git에, 원자료·이미지·운영/평가/provider 기록·설치 사본은 같은 루트의 `local-private/`에 둡니다. 해당 폴더와 `upload-studio/.local/`은 Git에서 제외합니다. 원본 파일을 삭제하거나 과거 승인/예약을 새로 활성화하지 않습니다.
@@ -91,21 +95,13 @@ TH-C  Internet Story / Culture
 
 ---
 
-## 최신 사용자 요청과 리뷰 기록 (2026-10-08)
+## 과거 제작·설치 기록
 
-[범용 표지 디자인 기준과 실제 리뷰 저장 확인](docs/UNIVERSAL_COVER_AND_USER_REVIEW_2026-10-08.md)을 다음 제작 전에 읽습니다. 사진 없는 첫 표지는 특정 소재·금액에 종속되지 않고 **어떤 제목으로도 교체 가능한 공통 디자인**이어야 합니다. 사용자 리뷰 작성 사실을 확인했고, 03:48 KST 디스크 검사에서 새 회차 평가 기록86건(점수85건·메모24건)이 현재 제작본과 모두 일치했습니다. 이 문서 저장은 디자인 구현·재제작·게시 승인의 완료를 뜻하지 않습니다.
+2026-10-08 디자인/평가 및 Windows .3.7/399글 구 설치 안내는 [6d5016d1 README](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/README.md)에 보존합니다. 현재 .39.1 통합 실행/199 제작본과 구분하며 당시 재제작 요청을 일반 문서 정리/현재 평가 초기화에 적용하지 않습니다. 원본 private 자료·코드·데이터를 삭제하지 않습니다.
 
-## Windows 폴더 자동 제작
+## Trend Inbox 개발 기능
 
-바탕화면 **Threads Cut Editor**를 실행하고 **전체 이미지 만들기**를 누릅니다. 저장 원문·이미지와 기존 정확한 공개 주소 보완으로 일괄 처리합니다. **저장한 웹 글 가져오기**는 HTML과 첨부 이미지 폴더·원문 TXT/JSON을 목록에 등록합니다. 원문·계획·규칙·결과 해시가 같으면 건너뜁니다.
-
-현재 Windows **0.3.7** / 규칙 **2026-10-06.3**. 입력1,084건 → 검수 전 결과399건·3,189 PNG, 보류·제외685건, 실패0. 표지 제목·줄바꿈·강조·근거20건을 편집하고 본문/댓글 글씨·장 분할·글 단위 검수 화면을 개선했습니다. 이미지 표지는105건, 일부6건에만 AI상황 이미지를 썼습니다. 전체 파일 감사 오류0, 재실행399건 건너뜀, 설치 앱 실행과67suite 통과. 전체 시각 품질/게시 승인은 별도입니다. 먼저 [사용 안내](00_사용안내.md)와 [제작 기반](docs/POST_PRODUCTION_FOUNDATION_2026-10-06.md)을 읽습니다.
-
-[실행·상태·검증](docs/SOURCE_CUT_DESKTOP.md), [사용자 표지 기준](docs/USER_COVER_PREFERENCES_2026-10-05.md), [입력 자료](docs/COMMUNITY_SOURCE_INPUT.md), [레퍼런스 기획](docs/INSTAGRAM_REFERENCE_GUIDE.md). 생성 완료와 시각 검수·게시 완료는 구분합니다.
-
-## 현재 실행형 MVP
-
-현재 Trend Inbox 앱에서 다음이 연결되어 있습니다.
+별도 개발용 Trend Inbox에 구현된 기능입니다. 실제 credential 연결·외부 수집/게시 결과와 현재 통합 native 실행을 혼동하지 않습니다.
 
 - Google Trends KR Trending Now RSS
 - YouTube Data API KR 인기 메타데이터
@@ -126,7 +122,7 @@ TH-C  Internet Story / Culture
 - JSON 백업/복원 + Experiment CSV
 - 회귀 테스트 + GitHub Actions 서버 smoke test
 
-## 바로 실행
+## 별도 개발용 Trend Inbox 진입
 
 Node.js 24 이상:
 
@@ -146,7 +142,7 @@ http://127.0.0.1:4173/app/
 npm run check
 ```
 
-별도 `npm install`은 필요하지 않습니다.
+새 환경/마이그레이션 의존성·Electron 설치는 위 통합 기술 섹션의 정확한 준비 명령을 따릅니다. 이 개발용 주소는 현재 native 기본 실행 경로가 아닙니다.
 
 ## 선택적 연결
 
@@ -267,16 +263,9 @@ performance_index
 - [`docs/EXPERIMENT_LAB.md`](docs/EXPERIMENT_LAB.md) — 성과 모델
 - [`AGENTS.md`](AGENTS.md) — AI/Codex 작업 규칙
 
-## 지금부터의 우선순위
+## 현재 작업과 향후 변경
 
-현재는 검수 중인 로컬 제작 도구입니다. API 코드 구현, 예약 요청, 실제 게시 성공은 서로 다른 상태입니다.
-
-1. [검수 결과와 실행 순서](docs/AUDIT_2026-09-18.md)를 확인합니다.
-2. Node.js 24에서 후보 하나 → 이미지 선택 → 전체 본문 확인 → Source Package → PNG 다운로드를 실제 브라우저로 검수합니다.
-3. 원본 이미지와 상태 JSON을 별도로 백업하고 다시 불러오는 과정을 확인합니다.
-4. Source Package 제작 경로와 기존 Card Factory/게시 경로를 하나의 검수 흐름으로 연결합니다.
-5. 사용자가 최종 결과물과 게시 계정을 확인한 뒤 계정 하나에서 소량 게시/성과 수집을 검증합니다.
-6. 그 이후에 추가 플랫폼, 다계정, 예약 자동화를 확대합니다.
+현재 규칙 문서 정리/Git 마무리 및 실제 상태는 [인수인계](00_START_HERE/NEXT_RUN_HANDOFF.md)를 따릅니다. 과거 2026-09-18 개발 우선순위·게시 실험 순서는 [6d5016d1 README](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/README.md)의 당시 계획이며 현재 외부 실행 승인이 아닙니다. 이후 변경은 최신 인간 승인·단계별 gate와 실제 코드/자료를 확인한 범위에서만 진행합니다.
 
 서버 JSON/SQLite 저장과 계정별 범위 백업은 구현되어 있습니다. 서버 저장은 명시적 백업/복원이며 자동 동기화가 아닙니다. 이미지 원본 바이트는 상태 JSON에 저장되지 않습니다.
 
