@@ -35,3 +35,15 @@ test('leave barrier stays on save failure or an async identity/version race',asy
  await assert.rejects(prepareNavigation({getPost:()=>current,save:async()=>{saved++;},refresh:async()=>{current={...post,output_version:'new'};}}),/navigation_version_changed/);assert.equal(saved,1);
  current=post;assert.equal((await prepareNavigation({getPost:()=>current,save:async()=>{saved++;},refresh:async()=>{}})).post_id,post.post_id);
 });
+
+test('same-app post selection saves caption and quality without deadlocking a held per-ID verdict',async()=>{
+ const code=await fs.readFile(new URL('../upload-studio/public/studio.js',import.meta.url),'utf8'),vm=await import('node:vm');
+ const extract=name=>{const match=new RegExp('async function '+name+'\\(\\)\\{[^\\r\\n]*\\}').exec(code);assert.ok(match,'missing '+name);return match[0];};
+ const calls=[],context={qualityDirty:true,settled:async()=>{calls.push('caption');},saveQuality:async()=>{calls.push('quality');context.qualityDirty=false;},visitQualityPreview:async()=>{calls.push('visit');},qualityVisitTail:Promise.resolve(),verdictWorkers:new Map([['held',new Promise(()=>{})]]),verdictPending:new Map([['held',{}]]),selected:'held',conflicted:false,saveFailed:false};
+ const api=vm.runInNewContext(extract('postSelectionSettled')+';'+extract('navigationSettled')+';({postSelectionSettled,navigationSettled})',context);
+ await api.postSelectionSettled();assert.deepEqual(calls,['caption','quality','visit']);assert.equal(context.verdictPending.size,1,'selection never consumes or approves a pending verdict');
+ assert.equal(await Promise.race([api.navigationSettled().then(()=>true),new Promise(resolve=>setTimeout(()=>resolve(false),10))]),false,'unmount/navigation still waits for the held write');
+ assert.match(code,/button\.onclick=async\(\)=>\{try\{await postSelectionSettled\(\);selected=/);
+ context.settled=async()=>{throw Error('caption_failed');};await assert.rejects(api.postSelectionSettled(),/caption_failed/);
+ context.settled=async()=>{};context.qualityDirty=true;context.saveQuality=async()=>{throw Error('quality_failed');};await assert.rejects(api.postSelectionSettled(),/quality_failed/);
+});

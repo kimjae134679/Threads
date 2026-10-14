@@ -4,7 +4,7 @@ test('pack helper resources cannot implicitly exclude active desktop CJS from AS
  const pkg=JSON.parse(await fs.readFile(path.join(desktop,'package.json'),'utf8'));assert.ok(pkg.build.extraResources.every(row=>row.from!=='.'),'same-directory extraResources exclude root appFiles');assert.equal(pkg.build.afterPack,'after-pack.cjs');assert.ok(pkg.build.files.includes('!after-pack.cjs'));
 });
 test('afterPack verifies real ASAR active relative-require closure and exact dual helper resources',async()=>{
- const hook=require('./after-pack.cjs'),asar=require('@electron/asar'),out=await fs.mkdtemp(path.join(desktop,'dist/after-pack-fixture-')),input=path.join(out,'input'),resources=path.join(out,'app/resources');
+ const hook=require('./after-pack.cjs'),asar=require('@electron/asar');await fs.mkdir(path.join(desktop,'dist'),{recursive:true});const out=await fs.mkdtemp(path.join(desktop,'dist/after-pack-fixture-')),input=path.join(out,'input'),resources=path.join(out,'app/resources');
  try{
   await fs.mkdir(input);await fs.mkdir(resources,{recursive:true});for(const name of await fs.readdir(desktop)){if(name.endsWith('.cjs')&&name!=='after-pack.cjs'||['package.json','image-requirements-schema.json'].includes(name))await fs.copyFile(path.join(desktop,name),path.join(input,name));}
   await fs.unlink(path.join(input,'project-paths.cjs'));const archive=path.join(resources,'app.asar');await asar.createPackage(input,archive);
