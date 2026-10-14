@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2696419?iskin=heroes&p=531
+제목 - 여친 아파서 지각한다는 신입
+내용 - [명시 요약 — 원문 전문 아님]
+신입이 여자친구가 아파서 지각한다고 알린 상황을 이미지/게시물로 공유한 직장 유머형 소재다. 기존 기록에는 이미지 속 대화 전문을 저장하지 않았으므로 문구를 임의로 채우지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2696419?iskin=heroes&p=531",
+    "title": "여친 아파서 지각한다는 신입",
+    "body": "신입이 여자친구가 아파서 지각한다고 알린 상황을 이미지/게시물로 공유한 직장 유머형 소재다. 기존 기록에는 이미지 속 대화 전문을 저장하지 않았으므로 문구를 임의로 채우지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_여친아파서지각한다는신입.md",
+      "originalTitle": "여친 아파서 지각한다는 신입",
+      "originalMarkdown": "# 여친 아파서 지각한다는 신입\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2696419?iskin=heroes&p=531\r\n- 조회수: 14,095\r\n- 댓글: 18\r\n- 이미지: 노출 확인, 파일 미확보\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n신입이 여자친구가 아파서 지각한다고 알린 상황을 이미지/게시물로 공유한 직장 유머형 소재다. 기존 기록에는 이미지 속 대화 전문을 저장하지 않았으므로 문구를 임의로 채우지 않는다.\r\n\r\n## 평가\r\n- 평가: 상급 시각 후보\r\n- 이유: 상황을 즉시 이해할 수 있고 실제 source image가 있음.\r\n- 약점: 재게시 이미지의 최초 출처와 권리 확인 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "ea432c1096e70552ad52747508dc10e1b18415066665509fdd11b283bd22f8c6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 235
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3182870671
+제목 - 165㎝ 남친 본 부모님 "결혼 반대"…예비시댁도 "키 큰 사돈네 불편"
+내용 - [명시 요약 — 원문 전문 아님]
+34세 여성이 두 살 연하 남자친구와 결혼을 준비해 상견례까지 했지만 여성 부모가 남자친구의 165cm 키를 이유로 결혼을 반대했고, 남자친구 부모 역시 상대 가족이 장신이라 불편하다는 반응을 보였다는 사연이다. 당사자는 서로 좋아하는데 키가 결혼생활에 그렇게 중요한지 묻고 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3182870671",
+    "title": "165㎝ 남친 본 부모님 \"결혼 반대\"…예비시댁도 \"키 큰 사돈네 불편\"",
+    "body": "34세 여성이 두 살 연하 남자친구와 결혼을 준비해 상견례까지 했지만 여성 부모가 남자친구의 165cm 키를 이유로 결혼을 반대했고, 남자친구 부모 역시 상대 가족이 장신이라 불편하다는 반응을 보였다는 사연이다. 당사자는 서로 좋아하는데 키가 결혼생활에 그렇게 중요한지 묻고 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_165남친키때문에결혼반대.md",
+      "originalTitle": "165㎝ 남친 본 부모님 \"결혼 반대\"…예비시댁도 \"키 큰 사돈네 불편\"",
+      "originalMarkdown": "# 165㎝ 남친 본 부모님 \"결혼 반대\"…예비시댁도 \"키 큰 사돈네 불편\"\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: TheQoo / 뉴스 재게시\r\n- 관측: 2026-09-16 09:35 KST\r\n- 링크: https://theqoo.net/square/3182870671\r\n- 조회수: 60,314\r\n- 댓글: 327\r\n\r\n## 글 내용\r\n34세 여성이 두 살 연하 남자친구와 결혼을 준비해 상견례까지 했지만 여성 부모가 남자친구의 165cm 키를 이유로 결혼을 반대했고, 남자친구 부모 역시 상대 가족이 장신이라 불편하다는 반응을 보였다는 사연이다. 당사자는 서로 좋아하는데 키가 결혼생활에 그렇게 중요한지 묻고 있다.\r\n\r\n## 평가\r\n- 평가: 상급 즉답형 가족갈등\r\n- 이유: 양가가 서로 반대 방향으로 같은 '키' 문제를 삼는 대칭 구조와 327댓글.\r\n- 약점: 2024 게시물로 최신성 낮고 재게시/2차 기사 구조라 최초 원문과 권리 확인 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n\r\n## 2026-09-22 sequential verification\r\n- Exact public individual page re-verified: https://theqoo.net/square/3182870671\r\n- Public page exposes the article body, 60,314 views, 327 comments, timestamp 2024-04-14 15:33, and one ordered source-image reference.\r\n- Public/permitted source image acquired from `https://img-cdn.theqoo.net/Quzyme.jpg` without login or access-control bypass.\r\n- SHA-256: `b0ff9dbb601241eaec8647e4a71f0c13ea85b17259fac0ebb5f26c1a5981307d`.\r\n- Canonical state remains C1/A0/P0. Rights clearance, privacy/safety approval, A1 and P1 are NOT inferred; publicationAllowed=false.\r\n",
+      "originalSha256": "4b05c30cc7c93bcb627916d32a8f875e4a4e112ded1489a4d3f731030e5fa3dd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 284
+}

@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 한국 전철 찍고 있다가 어리둥절해진 일본인 .jpg
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. Inven 공개 목록에서 제목과 반응 수치만 확인했다. 정확한 개별 원문 URL은 이번 실행에서 해결하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "한국 전철 찍고 있다가 어리둥절해진 일본인 .jpg",
+    "body": "본문 미확인. Inven 공개 목록에서 제목과 반응 수치만 확인했다. 정확한 개별 원문 URL은 이번 실행에서 해결하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_한국전철보고어리둥절한일본인.md",
+      "originalTitle": "한국 전철 찍고 있다가 어리둥절해진 일본인 .jpg",
+      "originalMarkdown": "# 한국 전철 찍고 있다가 어리둥절해진 일본인 .jpg\r\n\r\n## 글 내용\r\n본문 미확인. Inven 공개 목록에서 제목과 반응 수치만 확인했다. 정확한 개별 원문 URL은 이번 실행에서 해결하지 못했다.\r\n\r\n## 정확한 링크\r\n정확한 개별 링크 미확인. 공개 목록: https://m.inven.co.kr/board/webzine/2097?category=_%EC%9D%B4%EC%8A%88&iskin=webzine\r\n\r\n- 출처: Inven 오픈이슈갤러리 공개 목록\r\n- 관측 시각: 2026-09-16 10:37 KST 전후\r\n- 본문 읽음: 아니오\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 목록 관측: 조회 4,275 / 추천 표기 없음 / 댓글 14\r\n- 목록의 동일 관측시점 값만 기록.\r\n\r\n## 평가\r\n- 외국인이 한국 일상에서 예상 밖 상황을 만나는 문화차이/관찰형 소재라 짧은 시각 콘텐츠 가능성이 높음.\r\n- `.jpg` 제목이므로 이미지 포스팅일 가능성은 있지만 실제 원문을 확인하기 전에는 형식을 확정하지 않는다.\r\n\r\n## 형식\r\n이미지 여부 미확인\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 실제 source 파일 확보: 아니오\r\n- acquisition: public index lead / exact URL unresolved\r\n- C0 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- privacy/human review: 필요\r\n- 실제 게시: 없음\r\n\r\n## 2026-09-21 20:30 KST 순차 검증\r\n- C0: BLOCKED_EXACT_INDIVIDUAL_SOURCE\r\n- 공개 Inven hot-list에서 동일 제목 노출은 재확인했으나 exact individual Inven URL/post ID는 해결하지 못함.\r\n- 2차 이슈 집계에서 더 이른 Ruliweb 노출 정황은 확인했지만 exact primary/original individual URL을 독립 검증하지 못했으므로 원문 provenance로 대체하지 않음.\r\n- unblock: exact individual Inven URL/post ID 또는 독립 검증된 정확한 원출처 individual URL/post ID가 공개적으로 확인될 때.\r\n- source bytes/body/comments/OCR/vision/rights/A1/P1: 미확인·미수행. publicationAllowed=false.\r\n",
+      "originalSha256": "d16fec457a8cf3f30ed8ed064131e569289cbc7a5e2bda29f90813224d5e7562",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 150
+}

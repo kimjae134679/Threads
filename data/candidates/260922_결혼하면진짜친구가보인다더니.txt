@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/514249340
+제목 - 결혼하면 진짜친구가 보인다더니 맞는말이네요
+내용 - [명시 요약 — 원문 전문 아님]
+결혼·축의금·경제사정·친구 사이 기대치가 한꺼번에 충돌한다. 형편이 어려운 친구의 축의금 액수를 두고 서운해하는 상황이라 독자가 즉시 누구 입장에 공감하는지 의견을 내기 쉽다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/514249340",
+    "title": "결혼하면 진짜친구가 보인다더니 맞는말이네요",
+    "body": "결혼·축의금·경제사정·친구 사이 기대치가 한꺼번에 충돌한다. 형편이 어려운 친구의 축의금 액수를 두고 서운해하는 상황이라 독자가 즉시 누구 입장에 공감하는지 의견을 내기 쉽다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_결혼하면진짜친구가보인다더니.md",
+      "originalTitle": "[판] 결혼하면 진짜친구가 보인다더니 맞는말이네요",
+      "originalMarkdown": "# [판] 결혼하면 진짜친구가 보인다더니 맞는말이네요\r\n\r\n- stage: C1\r\n- source: TheQoo square (Nate Pann repost/quotation indicated by observed title)\r\n- publicUrl: https://theqoo.net/square/514249340\r\n- exactObservedTitle: `[판] 결혼하면 진짜친구가 보인다더니 맞는말이네요`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 13,181 / 댓글 108\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (page indicates Files; no asset downloaded or inspected)\r\n- acquisition: Public individual page indexed and readable; exact individual URL verified. The title indicates this is a Pann repost, so this URL is not asserted as the first/original publication.\r\n- provenance: C1 exact public individual TheQoo URL; upstream Pann original URL not verified in this run.\r\n- whyGood: 결혼·축의금·경제사정·친구 사이 기대치가 한꺼번에 충돌한다. 형편이 어려운 친구의 축의금 액수를 두고 서운해하는 상황이라 독자가 즉시 누구 입장에 공감하는지 의견을 내기 쉽다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6337603e99d64a69031822a9a084851fe7d791945d7acecb6886756b4bd54d8a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 207
+}

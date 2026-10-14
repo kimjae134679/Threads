@@ -1,0 +1,57 @@
+원문링크 - https://gongnong.tistory.com/entry/%EC%8D%B0%EA%B3%A0%EB%93%B1%ED%95%99%EC%83%9D%EB%95%8C-%ED%8A%B8%EC%9C%84%ED%84%B0%EC%97%90%EC%84%9C-%EC%95%8C%EA%B2%8C%EB%90%9C-%EC%B9%9C%EA%B5%AC%EA%B0%80-10%EB%85%84%EC%A7%B8-%EC%A0%88%EC%B9%9C%EC%9D%B4%EB%8B%A4
+제목 - 온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다. 대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다. 취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.
+
+- bodyRead: true
+- commentsRead: false
+- provenance: 공개 개별 텍스트 원문을 처음부터 끝까지 열람; 댓글 본문 미열람·표시 수치와 구분.작성자의 경험·주장이며 독립 사실 검증은 미완료.
+- 본문 길이 관측: 전체 텍스트에 경험 진행과 실제 결과 또는 미확인 상태 확인.요약 길이가 원문 길이를 뜻하지 않음.
+게시문안 -
+[instagram]
+온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다
+
+작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다.
+
+대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다.
+
+취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.
+
+#썰 #사연 #온라인친구 #우정 #관계대화
+[threads]
+온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다
+
+작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다.
+
+대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다.
+
+취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.
+
+#썰 #사연 #온라인친구 #우정 #관계대화
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gongnong.tistory.com/entry/%EC%8D%B0%EA%B3%A0%EB%93%B1%ED%95%99%EC%83%9D%EB%95%8C-%ED%8A%B8%EC%9C%84%ED%84%B0%EC%97%90%EC%84%9C-%EC%95%8C%EA%B2%8C%EB%90%9C-%EC%B9%9C%EA%B5%AC%EA%B0%80-10%EB%85%84%EC%A7%B8-%EC%A0%88%EC%B9%9C%EC%9D%B4%EB%8B%A4",
+    "title": "온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다",
+    "body": "작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다. 대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다. 취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.\r\n\r\n- bodyRead: true\r\n- commentsRead: false\r\n- provenance: 공개 개별 텍스트 원문을 처음부터 끝까지 열람; 댓글 본문 미열람·표시 수치와 구분.작성자의 경험·주장이며 독립 사실 검증은 미완료.\r\n- 본문 길이 관측: 전체 텍스트에 경험 진행과 실제 결과 또는 미확인 상태 확인.요약 길이가 원문 길이를 뜻하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {
+      "instagram": "온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다\r\n\r\n작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다.\r\n\r\n대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다.\r\n\r\n취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.\r\n\r\n#썰 #사연 #온라인친구 #우정 #관계대화",
+      "threads": "온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다\r\n\r\n작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다.\r\n\r\n대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다.\r\n\r\n취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.\r\n\r\n#썰 #사연 #온라인친구 #우정 #관계대화"
+    }
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "261010_C1_A0_P0_SNS친구근처대학장기우정.md",
+      "originalTitle": "온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다",
+      "originalMarkdown": "# 온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다\r\n\r\n## 원문 제목\r\n[경험담]고등학생때 트위터에서 알게된 친구가 10년째 절친이다???\r\n\r\n## 글 내용\r\n작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다. 대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다. 취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.\r\n\r\n- bodyRead: true\r\n- commentsRead: false\r\n- provenance: 공개 개별 텍스트 원문을 처음부터 끝까지 열람; 댓글 본문 미열람·표시 수치와 구분.작성자의 경험·주장이며 독립 사실 검증은 미완료.\r\n- 본문 길이 관측: 전체 텍스트에 경험 진행과 실제 결과 또는 미확인 상태 확인.요약 길이가 원문 길이를 뜻하지 않음.\r\n\r\n## 중간 문구 초안\r\n위치: 갈등 전개 뒤 / 작성 의견: 이 선택을 어떻게 받아들일까? / 근거: 본문에 제시된 행동과 결과.\r\n\r\n작성 의견이며 실제 댓글·여론이 아니다.\r\n\r\n## 정확한 링크\r\nhttps://gongnong.tistory.com/entry/%EC%8D%B0%EA%B3%A0%EB%93%B1%ED%95%99%EC%83%9D%EB%95%8C-%ED%8A%B8%EC%9C%84%ED%84%B0%EC%97%90%EC%84%9C-%EC%95%8C%EA%B2%8C%EB%90%9C-%EC%B9%9C%EA%B5%AC%EA%B0%80-10%EB%85%84%EC%A7%B8-%EC%A0%88%EC%B9%9C%EC%9D%B4%EB%8B%A4\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n조회·좋아요 미확인 / 댓글0 (다른 개별글 관련목록 표시)\r\n\r\n- 원문 작성 시점: 2020-11-16 11:00 (초 미확인)\r\n- 관측 시점: 2026-10-10 00:25~00:31 KST 연구원 열람; 배치 clock 00:31:16, 개별 초 시각 미확인\r\n- 공개 페이지·캐시 상태: 웹 도구 캐시 관측값: today; 실시간 보장 아님\r\n- 모르는 수치는 미확인으로 유지. 다른 글·시점의 수치를 합치지 않음.\r\n\r\n## 평가\r\n- 탐색 테마: dating_relationships — 연애 / 인간관계 (수집 메모, 최종점수 아님)\r\n- 선정 이유: 온라인 우연이 오프라인 장기 우정으로 이어진다.\r\n- 중복 대조: 로컬 기존 후보(앞선 29개 포함), runtime 입력, 직전 9개 묶음, 현 제작 status·평가·review-current의 정확 URL 및 게시물 ID 대조에서 중복 없음. 의미·유사 소재 중복은 미확정.\r\n- 별도 검토: 10년은 저자 제목 주장, 정밀 기간 입증 아님. 친구 사진 얼굴 미검사, 학교·실명 추정 금지\r\n- 최신 사용자 기준: 많은 규모를 원하되 300은 참고 규모이며 강제 충족·종료 조건이 아님. 고조회 필수 아님; 기존 테마 적합성과 충분한 사건 전개·중복 방지·이미지 출처를 우선함.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 관측: 텍스트로 전체 사건을 읽었고 사진은 부수 삽화. 순서·본문 위치만 관측, 픽셀 미열람/다운로드0\r\n- 원문·이미지 출처: 위 원문 URL.\r\n1. https://blog.kakaocdn.net/dna/bJngGg/btqNpfYeQQs/AAAAAAAAAAAAAAAAAAAAAM5fWh4rZQhDRyr7dqJlqq1WArmi5tY4MTwL-gHZ6q4h/img.png?allow_ip=&allow_referer=&credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1793458799&signature=7KJLPKMXz51SeuOBbEc8wL6u66k%3D — SNS설명 앞\r\n2. https://blog.kakaocdn.net/dna/n6xBW/btqNqeqX27Y/AAAAAAAAAAAAAAAAAAAAABHMuBMqoS2PvOQXrAZwnhsvVPUz5BOJD8qc7pHrkKQn/img.jpg?allow_ip=&allow_referer=&credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1793458799&signature=YPqOHbo7sVw%2F2wFpx30TfSjkpXU%3D — 대학프로필 뒤\r\n3. https://blog.kakaocdn.net/dna/djkZH8/btqNwwp5W3I/AAAAAAAAAAAAAAAAAAAAAKHcFzlxTkO7JTLSv3hQuO5xdJr3AWip6tOmi3-gnC_7/img.jpg?allow_ip=&allow_referer=&credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1793458799&signature=rmqL35vGIMOXaHtUblLKPWSMdjw%3D — 만화카페 언급\r\n4. https://blog.kakaocdn.net/dna/Gp671/btqNr8XNpAH/AAAAAAAAAAAAAAAAAAAAAK2thsFEOMnc4hwtEbm0ZjuXVfV2uaEpGxSstJnw3g8K/img.jpg?allow_ip=&allow_referer=&credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1793458799&signature=7iPs4aAJf2g6tUUUFQXfwvAb%2FEc%3D — 부산여행 언급\r\n사진만의 시각 사실은 요약·제목·캡션 근거로 사용하지 않음. 권리·개인정보 검토 및 게시 승인 없음\r\n- 이미지 원본·사용자 자산: 다운로드 없음. 이 신규 글과 연결되는 사용자 제공 이미지 미확인. 임의 생성·대체 없음.\r\n- 원문·이미지 재사용 권리: 미확인. 공개 접근은 상업 재사용 허락이 아님.\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- 제작·게시: 수집 후보. 제작·게시 승인 없음, 미제작·미게시.\r\n- 프로그램 변환: 미실행. 실제 앱 가져오기: 미실행.\r\n- 정식 글 ID·outputVersion: 미부여. 기존 제작·평가 ID에 임의 연결하지 않음.\r\n\r\n## 게시 설명글 초안\r\n온라인 친구가 가까운 학교에 다녔다, 다툼과 화해 뒤 우정이 남았다\r\n\r\n작성자는 고등학생 때 SNS로 만난 친구와 연락처를 남기고 계정을 지웠다고 밝혔다.\r\n\r\n대학에 간 뒤 가까운 학교에 다닌다는 사실을 알며 실제 만남으로 이어졌다고 전했다.\r\n\r\n취향은 같아도 성격 차이로 다퉜지만 강요하지 않는 방식이 생겼고 지금도 고민을 나눈다고 했다. 신원은 추정하지 않는다.\r\n\r\n#썰 #사연 #온라인친구 #우정 #관계대화\r\n\r\n- 원문 요약과 분리한 미승인 초안.\r\n- 문안 길이: 226자(공백·줄바꿈 포함). 플랫폼별 제한 대조 미실행; 임의 절단 없음.\r\n",
+      "originalSha256": "01ee22c8d9c9fe7da2a72b5e8a1fb338c6c3194778c3f5a4ac1bcc415b8b0a4a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 1195
+}

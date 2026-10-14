@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EC%9D%98%EA%B8%88%EC%97%90-%EB%8C%80%ED%95%B4-iADOfF0D
+제목 - 결혼식 축의금에 대해...
+내용 - [명시 요약 — 원문 전문 아님]
+해외 거주 중 베프 결혼에 당시 큰돈이라 여긴 20만원을 보냈지만 잘 받았다는 연락조차 없어 먼저 확인했다는 서운함으로, 돈보다 관계 예절이 핵심인 공감형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EC%9D%98%EA%B8%88%EC%97%90-%EB%8C%80%ED%95%B4-iADOfF0D",
+    "title": "결혼식 축의금에 대해...",
+    "body": "해외 거주 중 베프 결혼에 당시 큰돈이라 여긴 20만원을 보냈지만 잘 받았다는 연락조차 없어 먼저 확인했다는 서운함으로, 돈보다 관계 예절이 핵심인 공감형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_20년베프축의후연락없음.md",
+      "originalTitle": "결혼식 축의금에 대해...",
+      "originalMarkdown": "# 결혼식 축의금에 대해...\r\n\r\n- source: Blind / 블라블라\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EC%9D%98%EA%B8%88%EC%97%90-%EB%8C%80%ED%95%B4-iADOfF0D\r\n- exactObservedTitle: 결혼식 축의금에 대해...\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 1,730, 댓글 23\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 해외 거주 중 베프 결혼에 당시 큰돈이라 여긴 20만원을 보냈지만 잘 받았다는 연락조차 없어 먼저 확인했다는 서운함으로, 돈보다 관계 예절이 핵심인 공감형 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a43dc918937b05447be399ad928e838f0776b4b8bcbea36df2d84717c56bdd02",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 281
+}

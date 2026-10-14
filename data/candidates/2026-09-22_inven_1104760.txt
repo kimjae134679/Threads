@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1104760
+제목 - 펌) 중소기업 썰.ssul
+내용 - [명시 요약 — 원문 전문 아님]
+전문연구요원으로 중소기업에 들어간 작성자가 직접 겪은 조직의 단점과 사람 문제를 여러 항목으로 풀어 직장인 공감과 반론이 동시에 붙기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1104760",
+    "title": "펌) 중소기업 썰.ssul",
+    "body": "전문연구요원으로 중소기업에 들어간 작성자가 직접 겪은 조직의 단점과 사람 문제를 여러 항목으로 풀어 직장인 공감과 반론이 동시에 붙기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_inven_1104760.md",
+      "originalTitle": "펌) 중소기업 썰.ssul",
+      "originalMarkdown": "# 펌) 중소기업 썰.ssul\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1104760\r\n- exactObservedTitle: 펌) 중소기업 썰.ssul\r\n- observedAt: 2026-09-22 09:16 KST\r\n- observedMetrics: 조회 24,272 / 추천 6 / 댓글 37\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true\r\n- whyGood: 전문연구요원으로 중소기업에 들어간 작성자가 직접 겪은 조직의 단점과 사람 문제를 여러 항목으로 풀어 직장인 공감과 반론이 동시에 붙기 좋은 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 파일은 다운로드하지 않음.\r\n- provenance: 제목에 `펌)`이 명시된 재게시물. 원출처의 정확한 개별 URL은 이번 확인에서 확보하지 못함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "cf24ca33e5dd5c8699d077048cd1b4bb0e3d695c7d7acfedd30671fd3e492854",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 197
+}

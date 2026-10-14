@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/828036055
+제목 - 딸 미용실 60만원 결제
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/828036055",
+    "title": "딸 미용실 60만원 결제",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_딸미용실60만원.md",
+      "originalTitle": "딸 미용실 60만원 결제",
+      "originalMarkdown": "# 딸 미용실 60만원 결제\r\n\r\n- source: TheQoo (재전달)\r\n- publicUrl: https://theqoo.net/square/828036055\r\n- exactObservedTitle: [후기추가] 딸내미 미용실 보냈더니만 60만원 결제해 왔네요 ㄷㄷㄷ\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 수치 미확인\r\n- bodyRead: true (공개 검색 노출 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- provenance: C1 / exact public repost URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n미성년 자녀가 미용실에서 60만원을 결제했고 사전 동의 없는 클리닉과 지인 할인 누락이 얽힌 소비자 갈등이다. '어디까지 환불 요구 가능한가' 의견이 즉시 갈린다.\r\n",
+      "originalSha256": "876d54452a77342465fa0d05f9ec607486d49a8fc67c546e27c1b5d897444186",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 92
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%9E%91-%EC%97%B0-%EB%81%8A%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%95%98%EB%A0%A8%EB%8B%A4-ml5i8a1c
+제목 - 부모랑 연 끊고 결혼하련다
+내용 - [명시 요약 — 원문 전문 아님]
+아픈 동생 중심으로 성장하며 누적된 가족 차별과 결혼 직전 절연 결심까지 이어지는 강한 가족갈등 서사.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%9E%91-%EC%97%B0-%EB%81%8A%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%95%98%EB%A0%A8%EB%8B%A4-ml5i8a1c",
+    "title": "부모랑 연 끊고 결혼하련다",
+    "body": "아픈 동생 중심으로 성장하며 누적된 가족 차별과 결혼 직전 절연 결심까지 이어지는 강한 가족갈등 서사.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_부모랑연끊고결혼하련다.md",
+      "originalTitle": "부모랑 연 끊고 결혼하련다",
+      "originalMarkdown": "# 부모랑 연 끊고 결혼하련다\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%9E%91-%EC%97%B0-%EB%81%8A%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%95%98%EB%A0%A8%EB%8B%A4-ml5i8a1c\r\n- exactObservedTitle: 부모랑 연 끊고 결혼하련다\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 26K, 댓글 178, 좋아요 393\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 아픈 동생 중심으로 성장하며 누적된 가족 차별과 결혼 직전 절연 결심까지 이어지는 강한 가족갈등 서사.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 게시자 주장 자체이며 독립 사실 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "454570b9f7d3388907b322aa70ac3ec72dc4c26c490ac87d7784bbb3cc270351",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 267
+}

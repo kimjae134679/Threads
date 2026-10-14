@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1tsj35x/aitah_obligated_to_attend_2nd_wedding_across_the/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+시누이가 2027년 두 번째 결혼식을 멀리서 올릴 예정인데, 과거에도 작성자 부부가 시누이와 시아버지의 여행비를 대신 낸 적이 있고 아직 돌려받지 못한 돈도 있다. 가족은 참석을 당연한 전제로 말하고 시아버지 비용까지 다시 부탁할 가능성이 높은데, 같은 시기에 딸의 고교 졸업과 오랫동안 미뤄온 유럽여행이 예정돼 있어 갈등한다. 본문 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1tsj35x/aitah_obligated_to_attend_2nd_wedding_across_the/",
+    "title": "제목",
+    "body": "시누이가 2027년 두 번째 결혼식을 멀리서 올릴 예정인데, 과거에도 작성자 부부가 시누이와 시아버지의 여행비를 대신 낸 적이 있고 아직 돌려받지 못한 돈도 있다. 가족은 참석을 당연한 전제로 말하고 시아버지 비용까지 다시 부탁할 가능성이 높은데, 같은 시기에 딸의 고교 졸업과 오랫동안 미뤄온 유럽여행이 예정돼 있어 갈등한다. 본문 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_두번째결혼식여행비.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITAH Obligated to attend 2nd wedding across the country?\r\n\r\n## 글 내용\r\n시누이가 2027년 두 번째 결혼식을 멀리서 올릴 예정인데, 과거에도 작성자 부부가 시누이와 시아버지의 여행비를 대신 낸 적이 있고 아직 돌려받지 못한 돈도 있다. 가족은 참석을 당연한 전제로 말하고 시아버지 비용까지 다시 부탁할 가능성이 높은데, 같은 시기에 딸의 고교 졸업과 오랫동안 미뤄온 유럽여행이 예정돼 있어 갈등한다. 본문 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1tsj35x/aitah_obligated_to_attend_2nd_wedding_across_the/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 02:35 KST 전후. 게시물 점수 +49 확인. 조회수/댓글 총수 확인 안 됨.\r\n\r\n## 평가\r\n반복되는 가족의 비용 의존 + 두 번째 결혼식 + 딸 졸업여행이 충돌하는 구조가 명확하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/source bytes 미확보. ASSETS_PENDING. A0/P0. publicationAllowed=false. rights/privacy/human review gate 유지.",
+      "originalSha256": "6164693f76dcd89445703cdbdece2860823ef3e75665de91e080ffb14e3778ea",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 348
+}

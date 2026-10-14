@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo
+제목 - 배우자의 동의없는 대출 및 주식투자는 이혼사유?
+내용 - [명시 요약 — 원문 전문 아님]
+사실혼 배우자가 동의 없이 대출을 받아 주식투자를 반복해 약 1.5억원 손실을 냈고, 주택 중도금용 대출금과 배우자 돈까지 단타에 넣어 지급 위기를 만든 뒤 이혼·위자료 소송으로 이어진 사연. 법원 판단을 두고 작성자가 의견을 묻는다. 공개 본문 전체를 확인함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo",
+    "title": "배우자의 동의없는 대출 및 주식투자는 이혼사유?",
+    "body": "사실혼 배우자가 동의 없이 대출을 받아 주식투자를 반복해 약 1.5억원 손실을 냈고, 주택 중도금용 대출금과 배우자 돈까지 단타에 넣어 지급 위기를 만든 뒤 이혼·위자료 소송으로 이어진 사연. 법원 판단을 두고 작성자가 의견을 묻는다. 공개 본문 전체를 확인함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_배우자동의없는대출주식.md",
+      "originalTitle": "배우자의 동의없는 대출 및 주식투자는 이혼사유?",
+      "originalMarkdown": "# 배우자의 동의없는 대출 및 주식투자는 이혼사유?\r\n\r\n## 글 내용\r\n사실혼 배우자가 동의 없이 대출을 받아 주식투자를 반복해 약 1.5억원 손실을 냈고, 주택 중도금용 대출금과 배우자 돈까지 단타에 넣어 지급 위기를 만든 뒤 이혼·위자료 소송으로 이어진 사연. 법원 판단을 두고 작성자가 의견을 묻는다. 공개 본문 전체를 확인함.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 22:37 KST · 조회수 1,958 · 좋아요 1 · 댓글 19.\r\n\r\n## 평가\r\n몰래 대출·반복 투자·주택 중도금 위기·법원 판단까지 이어지는 강한 돈/부부 갈등. 결과에 대한 의견이 갈릴 구조라 swipe-worthy.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 공개 페이지 확인, 댓글 영역도 공개 페이지에서 확인 가능. source screenshot 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "bce6786a81b18ce8ccd3f414c5c8caf2a8f03d7eeed9821ab34fcbbee7a70ec6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 451
+}

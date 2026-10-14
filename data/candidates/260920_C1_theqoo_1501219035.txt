@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1501219035
+제목 - 돈문제? 때문에 친구랑 싸운 썰.txt
+내용 - [명시 요약 — 원문 전문 아님]
+협찬 식사에 친구를 데려가며 생긴 비용·호의·기대치 갈등으로 공감과 찬반이 모두 강한 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1501219035",
+    "title": "돈문제? 때문에 친구랑 싸운 썰.txt",
+    "body": "협찬 식사에 친구를 데려가며 생긴 비용·호의·기대치 갈등으로 공감과 찬반이 모두 강한 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_theqoo_1501219035.md",
+      "originalTitle": "돈문제? 때문에 친구랑 싸운 썰.txt",
+      "originalMarkdown": "# 돈문제? 때문에 친구랑 싸운 썰.txt\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1501219035\r\n- exactObservedTitle: 돈문제? 때문에 친구랑 싸운 썰.txt\r\n- observedAt: 2026-09-20 16:16 KST\r\n- provenanceLevel: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READ\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- observedMetrics: 조회 수 3682\r\n- whyGood: 협찬 식사에 친구를 데려가며 생긴 비용·호의·기대치 갈등으로 공감과 찬반이 모두 강한 소재.\r\n- bodyStatus: 공개 본문 읽음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b554c4571b764d5aa79bcbe118b81f713f0c67273713235e12492050eee9440b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 159
+}

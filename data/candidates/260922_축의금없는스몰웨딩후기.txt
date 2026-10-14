@@ -1,0 +1,29 @@
+원문링크 - https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=8202099
+제목 - 축의금 없는 스몰웨딩 찐 후기.jpg
+내용 - [명시 요약 — 원문 전문 아님]
+`축의금 없는 스몰웨딩`이라는 기대와 댓글에서 드러나는 높은 비용 인식이 충돌해 결혼비용·스몰웨딩의 의미를 두고 즉시 의견이 갈리는 소재다. 다만 핵심 본문은 이미지 기반이므로 내용은 추정하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=8202099",
+    "title": "축의금 없는 스몰웨딩 찐 후기.jpg",
+    "body": "`축의금 없는 스몰웨딩`이라는 기대와 댓글에서 드러나는 높은 비용 인식이 충돌해 결혼비용·스몰웨딩의 의미를 두고 즉시 의견이 갈리는 소재다. 다만 핵심 본문은 이미지 기반이므로 내용은 추정하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_축의금없는스몰웨딩후기.md",
+      "originalTitle": "축의금 없는 스몰웨딩 찐 후기.jpg",
+      "originalMarkdown": "# 축의금 없는 스몰웨딩 찐 후기.jpg\r\n\r\n- stage: C1\r\n- source: Ppomppu 자유게시판\r\n- publicUrl: https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&no=8202099\r\n- exactObservedTitle: `축의금 없는 스몰웨딩 찐 후기.jpg`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 57,339 / 댓글 98 / 추천 3 / 다른의견 0\r\n- bodyRead: false\r\n- bodyStatus: 본문 미확인 (핵심 원문이 첨부 이미지/외부 블로그 링크 기반)\r\n- commentsRead: partially (public page exposed several comments; full comment set not read)\r\n- imageOrScreenshotPresent: true (public page lists Screenshot_20230126_202318_Chrome.jpg; not downloaded or inspected)\r\n- acquisition: Public individual Ppomppu page verified. Page references an external Naver Blog item, but its exact full URL/body was not acquired or verified in this run.\r\n- provenance: C1 for the exact Ppomppu individual page only; underlying blog is not claimed as verified provenance.\r\n- whyGood: `축의금 없는 스몰웨딩`이라는 기대와 댓글에서 드러나는 높은 비용 인식이 충돌해 결혼비용·스몰웨딩의 의미를 두고 즉시 의견이 갈리는 소재다. 다만 핵심 본문은 이미지 기반이므로 내용은 추정하지 않는다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7b5015d2751a94cef2302a7de2cf5a83b71d4fd1f724766a8c254aee8c178c02",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 247
+}

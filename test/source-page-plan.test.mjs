@@ -43,7 +43,7 @@ assert.throws(()=>P.compile({...textPlan,editorial:{titleHighlights:['없는 사
 const longTitle='아주 긴 원문 제목의 뒷부분에도 중요한 반전이 있어서 이 부분을 마음대로 자르면 안 됩니다';
 assert.equal(P.headline(longTitle),longTitle);
 const chart=P.compile({...base,coverTitle:'돈관리 유형'},{'a.jpg':{width:700,height:467,analysis:{kind:'photo',textBands:4}}},measure);
-assert.equal(chart.templateId,'photo_cover');assert(!chart.pages[0].operations.some(o=>o.kind==='gradient'));assert(chart.pages.flatMap(p=>p.operations).some(o=>o.kind==='image'));
+assert.equal(chart.templateId,'screenshot');assert.equal(chart.pages[0].operations.filter(o=>o.kind==='image').length,0,'text-rich chart is never hidden under a photo-cover title');assert(chart.pages.some(p=>p.role==='body'&&p.operations.some(o=>o.kind==='image'&&o.sourceId==='photo')));assert(!chart.pages[0].operations.some(o=>o.kind==='gradient'));assert(chart.pages.flatMap(p=>p.operations).some(o=>o.kind==='image'));
 
 const caption=P.compile({...base,segments:[photo,{...photo,id:'second',mediaName:'b.jpg'},{id:'caption',kind:'text',text:'원문 사진 설명',selected:true}]},{'a.jpg':{width:800,height:600,analysis:{kind:'photo'}},'b.jpg':{width:800,height:1067,analysis:{kind:'photo'}}},measure);
 assert.equal(caption.pages.length,2);assert(caption.pages[1].operations.some(o=>o.sourceId==='caption'));
@@ -51,7 +51,7 @@ const excluded=P.compile({...textPlan,editorial:{exclusions:{duplicate:'원문�
 assert(excluded.omitted.some(o=>o.sourceId==='duplicate'&&o.reason==='explicit_editorial_exclusion'));
 assert.throws(()=>P.compile({...textPlan,editorial:{exclusions:{absent:'없는 이미지'}}},{},measure),/제외할 원문/);
 
-const panel=P.compile({...base,editorial:{templateId:"photo_cover",coverPresentation:"panel",titleHighlights:["담배"]}},{"a.jpg":{width:700,height:467,analysis:{kind:"screenshot",textBands:4}}},measure);
+const panel=P.compile({...base,editorial:{templateId:"photo_cover",coverPresentation:"panel",imageRoles:{photo:"photo"},titleHighlights:["담배"]}},{"a.jpg":{width:700,height:467,analysis:{kind:"screenshot",textBands:4}}},measure);
 assert.equal(panel.pages[0].background,"#152623");
 assert(panel.pages[0].operations.filter(o=>o.role==="title").every(o=>o.y>=panel.pages[0].operations[0].y+panel.pages[0].operations[0].height));
-assert.equal(text.pages[0].background,"#B8DCD4");
+assert.equal(text.templateId,"white_title");assert.equal(text.pages[0].background,"#fff");assert.equal(explicit.pages[0].background,"#B8DCD4");

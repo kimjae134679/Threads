@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4188994022
+제목 - 버스번호 기억해서 돈 찾은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+어린 시절 현금이 든 가방과 버스 차량번호 기억이 연결되는 생활형 에피소드로 조회수와 무관하게 구체적 상황과 회수 과정 자체가 이야기성이 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4188994022",
+    "title": "버스번호 기억해서 돈 찾은 후기",
+    "body": "어린 시절 현금이 든 가방과 버스 차량번호 기억이 연결되는 생활형 에피소드로 조회수와 무관하게 구체적 상황과 회수 과정 자체가 이야기성이 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_4188994022.md",
+      "originalTitle": "버스번호 기억해서 돈 찾은 후기",
+      "originalMarkdown": "# 버스번호 기억해서 돈 찾은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/4188994022\r\n- exactObservedTitle: 버스번호 기억해서 돈 찾은 후기\r\n- observedAt: 2026-09-22 08:16 KST\r\n- observedMetrics: 조회 70 / 댓글 2\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 어린 시절 현금이 든 가방과 버스 차량번호 기억이 연결되는 생활형 에피소드로 조회수와 무관하게 구체적 상황과 회수 과정 자체가 이야기성이 있다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 검색 인덱스에서 확인. C1.\r\n- provenance: TheQoo 공개 후기 게시물.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e6f1c79d8dfb733490243b468ce6915e8ce4e8bfced9b241103ba270aa9e1840",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 184
+}

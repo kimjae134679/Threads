@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1242898395
+제목 - 맞벌이 부모 밑에서 자라는 우리 애들 조금 짠한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+초등학생 아이가 워킹맘인 엄마 부담을 걱정해 반장 출마 시기까지 스스로 조절했다는 구체적 장면이 있어 즉각적인 공감과 의견을 유도함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1242898395",
+    "title": "맞벌이 부모 밑에서 자라는 우리 애들 조금 짠한 후기",
+    "body": "초등학생 아이가 워킹맘인 엄마 부담을 걱정해 반장 출마 시기까지 스스로 조절했다는 구체적 장면이 있어 즉각적인 공감과 의견을 유도함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_맞벌이부모아이들짠한후기.md",
+      "originalTitle": "맞벌이 부모 밑에서 자라는 우리 애들 조금 짠한 후기",
+      "originalMarkdown": "# 맞벌이 부모 밑에서 자라는 우리 애들 조금 짠한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/1242898395\r\n- exactObservedTitle: 맞벌이 부모 밑에서 자라는 우리 애들 조금 짠한 후기\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 조회 수 5397\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public URL; poster account, not independently verified\r\n- whyGood: 초등학생 아이가 워킹맘인 엄마 부담을 걱정해 반장 출마 시기까지 스스로 조절했다는 구체적 장면이 있어 즉각적인 공감과 의견을 유도함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5fd03a050939c470aa6cbb29434b294bf4b1d7da8e36cb6c0cfe13268a1b2bc7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 190
+}

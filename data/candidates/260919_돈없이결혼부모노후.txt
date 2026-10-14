@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EC%9D%B4-%EA%B2%B0%ED%98%BC-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-tEAMJCDs
+제목 - 돈 없이 결혼 가능할까?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EC%9D%B4-%EA%B2%B0%ED%98%BC-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-tEAMJCDs",
+    "title": "돈 없이 결혼 가능할까?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_돈없이결혼부모노후.md",
+      "originalTitle": "돈 없이 결혼 가능할까?",
+      "originalMarkdown": "# 돈 없이 결혼 가능할까?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EC%9D%B4-%EA%B2%B0%ED%98%BC-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-tEAMJCDs\r\n- exactObservedTitle: 돈 없이 결혼 가능할까?\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 15K / 댓글 127 / 좋아요 26\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n30세 7천만원 저축과 29세 1천만원 저축, 양가 지원 없음에 부모 노후 부담 가능성까지 있는 커플의 결혼 고민이라 현실적인 돈·결혼 논쟁이 강하다.\r\n\r\n## 관찰 메모\r\n작성자는 본인 연봉 5천만원·저축 7천만원, 여자친구 연봉 3.5천만원·저축 1천만원이라고 적었으며 양가 지원이 어렵다고 밝혔다.",
+      "originalSha256": "7c17b467de8d5b31665b7045b70db876047dd20b2b67afbf670521068af6d9b3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 184
+}

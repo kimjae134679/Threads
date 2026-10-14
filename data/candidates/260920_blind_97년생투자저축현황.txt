@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/97%EB%85%84%EC%83%9D-%ED%88%AC%EC%9E%90-%EB%B0%8F-%EC%A0%80%EC%B6%95-%ED%98%84%ED%99%A9-%EC%A2%80-%EB%B4%90%EC%A4%98-u70xfk6k
+제목 - 97년생 투자 및 저축 현황 좀 봐줘!!
+내용 - [명시 요약 — 원문 전문 아님]
+월급·저축·투자액과 결혼 계획이 구체적이라 또래 자산 비교와 소비/투자 기준에 대한 반응을 유도함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/97%EB%85%84%EC%83%9D-%ED%88%AC%EC%9E%90-%EB%B0%8F-%EC%A0%80%EC%B6%95-%ED%98%84%ED%99%A9-%EC%A2%80-%EB%B4%90%EC%A4%98-u70xfk6k",
+    "title": "97년생 투자 및 저축 현황 좀 봐줘!!",
+    "body": "월급·저축·투자액과 결혼 계획이 구체적이라 또래 자산 비교와 소비/투자 기준에 대한 반응을 유도함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_97년생투자저축현황.md",
+      "originalTitle": "97년생 투자 및 저축 현황 좀 봐줘!!",
+      "originalMarkdown": "# 97년생 투자 및 저축 현황 좀 봐줘!!\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/97%EB%85%84%EC%83%9D-%ED%88%AC%EC%9E%90-%EB%B0%8F-%EC%A0%80%EC%B6%95-%ED%98%84%ED%99%A9-%EC%A2%80-%EB%B4%90%EC%A4%98-u70xfk6k\r\n- exactObservedTitle: 97년생 투자 및 저축 현황 좀 봐줘!!\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 479, 댓글 26\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 월급·저축·투자액과 결혼 계획이 구체적이라 또래 자산 비교와 소비/투자 기준에 대한 반응을 유도함.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 모든 금액은 게시자 자기신고\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "337d35e7409ce7e4bc19bd2a155099bc1f2b63a8388d477a6ecf756c7f1dca30",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 287
+}

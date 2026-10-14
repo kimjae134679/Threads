@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2065526478
+제목 - 부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2065526478",
+    "title": "부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23-c341-05-realestate-trust.md",
+      "originalTitle": "부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)",
+      "originalMarkdown": "# 부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)\r\n\r\n- source: TheQoo\r\n- public URL: https://theqoo.net/review/2065526478\r\n- exact observed title: `부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)`\r\n- observedAt: 2026-09-23 13:19 KST\r\n- observed metrics: 조회 4,126\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n첫 독립 때 주변 도움을 받아 전세 계약을 시작한 뒤 여러 차례 전세·재계약과 매매까지 경험한 작성자가 부동산을 무조건 믿지 말라고 말하는 경험담. 사회초년생 주거 불안과 중개 신뢰 문제라는 공감·경계 포인트가 강하다.\r\n\r\n## acquisition / provenance\r\n공개 검색에서 정확한 개별 TheQoo URL과 공개 본문을 직접 확인한 C1. 공개 검색 결과에서 실제로 보인 조회 수만 기록했다. 댓글은 읽지 않았다. 개인 경험 주장의 사실성은 별도 검증되지 않았으며 작성자의 경험담으로만 취급한다. 이미지/스크린샷 존재 여부는 확인하지 않았다.",
+      "originalSha256": "d59075fd151ce0e85bd2a02e699fa0bc42c65e89c14bfebd8800ece1b5044b16",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 108
+}

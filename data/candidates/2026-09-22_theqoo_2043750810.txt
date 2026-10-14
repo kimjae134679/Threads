@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2043750810
+제목 - 엔터사에서 일하고 다시는 돌덕질 못하게 된 썰
+내용 - [명시 요약 — 원문 전문 아님]
+좋아하던 업계에 취업한 뒤 책임전가·공개 질책·과로·텃세를 겪으며 팬심까지 사라졌다는 직장 경험 구조가 강하고, '덕업일치의 현실'이라는 반전도 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2043750810",
+    "title": "엔터사에서 일하고 다시는 돌덕질 못하게 된 썰",
+    "body": "좋아하던 업계에 취업한 뒤 책임전가·공개 질책·과로·텃세를 겪으며 팬심까지 사라졌다는 직장 경험 구조가 강하고, '덕업일치의 현실'이라는 반전도 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_2043750810.md",
+      "originalTitle": "엔터사에서 일하고 다시는 돌덕질 못하게 된 썰",
+      "originalMarkdown": "# 엔터사에서 일하고 다시는 돌덕질 못하게 된 썰\r\n\r\n- stage: C1\r\n- source: TheQoo square\r\n- sourceUrl: https://theqoo.net/square/2043750810\r\n- exactObservedTitle: 엔터사에서 일하고 다시는 돌덕질 못하게 된 썰\r\n- observedAt: 2026-09-22 04:17 KST\r\n- observedMetrics: 수치 확인 안 함\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 좋아하던 업계에 취업한 뒤 책임전가·공개 질책·과로·텃세를 겪으며 팬심까지 사라졌다는 직장 경험 구조가 강하고, '덕업일치의 현실'이라는 반전도 있다.\r\n- acquisition: 공개 개별 게시물 URL을 검색 인덱스에서 확인하고 공개 본문 텍스트를 읽음. C1.\r\n- provenance: TheQoo 공개 게시물. 본문 자체가 개인 업계 경험담 형식이나 별도 최초 원출처 여부는 확인하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "fc4edd863c8d32bceb679d28c9fc237232ce24dd5322caf929f4c1c565ad7ea8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

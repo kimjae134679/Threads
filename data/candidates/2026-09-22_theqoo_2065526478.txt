@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2065526478
+제목 - 부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)
+내용 - [명시 요약 — 원문 전문 아님]
+첫 독립 때 주변 도움을 받아 전세 계약을 시작한 뒤 여러 차례 계약과 매매를 경험한 작성자가 중개업자를 무조건 믿지 말라고 경고하는 경험담이라 주거·돈·신뢰 문제의 공감도가 높다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2065526478",
+    "title": "부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)",
+    "body": "첫 독립 때 주변 도움을 받아 전세 계약을 시작한 뒤 여러 차례 계약과 매매를 경험한 작성자가 중개업자를 무조건 믿지 말라고 경고하는 경험담이라 주거·돈·신뢰 문제의 공감도가 높다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_2065526478.md",
+      "originalTitle": "부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)",
+      "originalMarkdown": "# 부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2065526478\r\n- exactObservedTitle: 부동산 너무 믿지 말라고 당부 하고픈 후기 (스압)\r\n- observedAt: 2026-09-22 09:16 KST\r\n- observedMetrics: 조회 수 4126 (검색 결과에 표시된 수치)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 첫 독립 때 주변 도움을 받아 전세 계약을 시작한 뒤 여러 차례 계약과 매매를 경험한 작성자가 중개업자를 무조건 믿지 말라고 경고하는 경험담이라 주거·돈·신뢰 문제의 공감도가 높다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 외부 원출처 없음으로 단정하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "74ad389561478ddd1d94a6cfbcc13d0973d00dbb8c62314191c30df245b6948c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 216
+}

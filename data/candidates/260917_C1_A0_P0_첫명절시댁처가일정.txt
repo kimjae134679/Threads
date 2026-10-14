@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%B2%AB-%EB%AA%85%EC%A0%88-%EC%8B%9C%EB%8C%81%EC%B2%98%EA%B0%80-%EC%9D%BC%EC%A0%95%EB%AC%B8%EC%9D%98-wpbx0BtA
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 3개월 차 부부의 첫 명절 일정 갈등. 아내는 명절 당일 시댁에 잠깐 다녀오길 원하지만 시가는 전날 저녁에도 함께 있어야 한다는 분위기이고, 처가는 시댁 방문 뒤 별도 일정이다. 맞벌이 부부의 휴식과 양가 방문 형평성을 두고 작성자가 중간에서 고민한다. 공개 본문과 공개 댓글을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%B2%AB-%EB%AA%85%EC%A0%88-%EC%8B%9C%EB%8C%81%EC%B2%98%EA%B0%80-%EC%9D%BC%EC%A0%95%EB%AC%B8%EC%9D%98-wpbx0BtA",
+    "title": "제목",
+    "body": "결혼 3개월 차 부부의 첫 명절 일정 갈등. 아내는 명절 당일 시댁에 잠깐 다녀오길 원하지만 시가는 전날 저녁에도 함께 있어야 한다는 분위기이고, 처가는 시댁 방문 뒤 별도 일정이다. 맞벌이 부부의 휴식과 양가 방문 형평성을 두고 작성자가 중간에서 고민한다. 공개 본문과 공개 댓글을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_첫명절시댁처가일정.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼 첫 명절 시댁/처가 일정문의\r\n\r\n## 글 내용\r\n결혼 3개월 차 부부의 첫 명절 일정 갈등. 아내는 명절 당일 시댁에 잠깐 다녀오길 원하지만 시가는 전날 저녁에도 함께 있어야 한다는 분위기이고, 처가는 시댁 방문 뒤 별도 일정이다. 맞벌이 부부의 휴식과 양가 방문 형평성을 두고 작성자가 중간에서 고민한다. 공개 본문과 공개 댓글을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%B2%AB-%EB%AA%85%EC%A0%88-%EC%8B%9C%EB%8C%81%EC%B2%98%EA%B0%80-%EC%9D%BC%EC%A0%95%EB%AC%B8%EC%9D%98-wpbx0BtA\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 3,044\r\n- 좋아요: 4\r\n- 댓글: 60\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 예\r\n- comments read: 예(공개 노출 댓글)\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 한국 명절의 매우 익숙한 갈등이라 공감·논쟁성이 높고 댓글 반응도 큼.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "7e61873e6bfd2ebced00d93a464028ba13649d42fd2541742a50fbb663d33298",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 379
+}

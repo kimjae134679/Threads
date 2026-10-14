@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D%EC%9C%BC%EB%A1%9C-5%EC%B2%9C-%EC%9E%83%EC%97%88%EB%8A%94%EB%8D%B0-%EC%A2%85%EB%AA%A9-%EC%B6%94%EC%B2%9C%ED%95%B4%EC%A4%80%EB%8B%A4-ruj0q5w7
+제목 - 주식으로 5천 잃고 "형 믿고 매수해라" 종목 추천하는 사람
+내용 - [명시 요약 — 원문 전문 아님]
+작성자가 주식으로 5천만원을 잃었다고 제목에 밝힌 뒤 '조만간 날아갈 종목'이라며 12개 종목을 나열하고 자신을 믿고 매수하라고 적은 짧은 글. 공개 댓글에서는 '같이 죽자는 거야?'라는 반응도 노출된다. 본문과 공개 댓글 일부 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D%EC%9C%BC%EB%A1%9C-5%EC%B2%9C-%EC%9E%83%EC%97%88%EB%8A%94%EB%8D%B0-%EC%A2%85%EB%AA%A9-%EC%B6%94%EC%B2%9C%ED%95%B4%EC%A4%80%EB%8B%A4-ruj0q5w7",
+    "title": "주식으로 5천 잃고 \"형 믿고 매수해라\" 종목 추천하는 사람",
+    "body": "작성자가 주식으로 5천만원을 잃었다고 제목에 밝힌 뒤 '조만간 날아갈 종목'이라며 12개 종목을 나열하고 자신을 믿고 매수하라고 적은 짧은 글. 공개 댓글에서는 '같이 죽자는 거야?'라는 반응도 노출된다. 본문과 공개 댓글 일부 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_주식5천잃고추천.md",
+      "originalTitle": "주식으로 5천 잃고 \"형 믿고 매수해라\" 종목 추천하는 사람",
+      "originalMarkdown": "# 주식으로 5천 잃고 \"형 믿고 매수해라\" 종목 추천하는 사람\r\n\r\n## 원문 제목\r\n주식으로 5천 잃었는데 종목 추천해준다\r\n\r\n## source\r\nBlind 공개 개별 페이지.\r\n\r\n## 글 내용\r\n작성자가 주식으로 5천만원을 잃었다고 제목에 밝힌 뒤 '조만간 날아갈 종목'이라며 12개 종목을 나열하고 자신을 믿고 매수하라고 적은 짧은 글. 공개 댓글에서는 '같이 죽자는 거야?'라는 반응도 노출된다. 본문과 공개 댓글 일부 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D%EC%9C%BC%EB%A1%9C-5%EC%B2%9C-%EC%9E%83%EC%97%88%EB%8A%94%EB%8D%B0-%EC%A2%85%EB%AA%A9-%EC%B6%94%EC%B2%9C%ED%95%B4%EC%A4%80%EB%8B%A4-ruj0q5w7\r\n\r\n## 관찰시각 / 실제로 보인 수치\r\n- 관찰: 2026-09-19 12:17 KST 전후 자동화 실행 중\r\n- 조회수: 1,341\r\n- 댓글: 23\r\n- 좋아요 총수: 확정 수치로 기록하지 않음\r\n\r\n## 본문·댓글·이미지 확인\r\n- 본문: 읽음\r\n- 댓글: 공개 페이지 노출 일부 읽음 / 전체 미확인\r\n- 이미지/스크린샷: 확인/취득하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n'5천만원 손실' 직후 다른 사람에게 종목을 추천한다는 자기모순이 한 줄로 웃기고 댓글 반응을 유도한다. 평범한 시장뉴스가 아니라 투자로 실제 큰 손실을 본 사람 이야기라는 Discovery 취향에도 맞는다.\r\n\r\n## acquisition / provenance\r\n- exact individual public page: VERIFIED\r\n- provenance: DIRECT_PUBLIC_PAGE\r\n- Blind bulk crawl/login/anti-bot bypass: NOT_PERFORMED\r\n- financial claim verification: NOT_PERFORMED; user-generated claim only\r\n- source media acquisition: NOT_PERFORMED\r\n- rights/privacy/human review: 미실행·필요\r\n- OCR/moderation: 미실행\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "3033efec6f5494aebce1c3093c33e1d28343e75a066771e0e8a287c60ba35d61",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 407
+}

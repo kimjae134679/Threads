@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITAH/comments/1ad1n6h
+제목 - 남편이 크게 벌인 결혼식 대출까지 제가 대신 갚았습니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 본인이 더 안정적으로 돈을 벌고 재정관리를 해왔으며, 남편이 자기 쪽 결혼 행사를 위해 큰 대출을 받았지만 결국 작성자가 갚았다고 한다. 결혼 직후에는 남편이 아버지에게 진 큰 빚도 작성자가 갚도록 압박했다고 적으며 남편의 재정 책임 문제를 고민한다. 공개 원문 본문을 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITAH/comments/1ad1n6h",
+    "title": "남편이 크게 벌인 결혼식 대출까지 제가 대신 갚았습니다",
+    "body": "작성자는 본인이 더 안정적으로 돈을 벌고 재정관리를 해왔으며, 남편이 자기 쪽 결혼 행사를 위해 큰 대출을 받았지만 결국 작성자가 갚았다고 한다. 결혼 직후에는 남편이 아버지에게 진 큰 빚도 작성자가 갚도록 압박했다고 적으며 남편의 재정 책임 문제를 고민한다. 공개 원문 본문을 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼식대출까지대신갚은아내.md",
+      "originalTitle": "남편이 크게 벌인 결혼식 대출까지 제가 대신 갚았습니다",
+      "originalMarkdown": "# 남편이 크게 벌인 결혼식 대출까지 제가 대신 갚았습니다\r\n\r\n## 원문 제목\r\nAITAH for expecting my husband to be a bit more financially responsible\r\n\r\n## source\r\nReddit\r\n\r\n## 글 내용\r\n작성자는 본인이 더 안정적으로 돈을 벌고 재정관리를 해왔으며, 남편이 자기 쪽 결혼 행사를 위해 큰 대출을 받았지만 결국 작성자가 갚았다고 한다. 결혼 직후에는 남편이 아버지에게 진 큰 빚도 작성자가 갚도록 압박했다고 적으며 남편의 재정 책임 문제를 고민한다. 공개 원문 본문을 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AITAH/comments/1ad1n6h\r\n\r\n## 관찰\r\n2026-09-19 08:19 KST. 공개 Reddit 결과 +2 votes 표시. 조회수·댓글 총수 미확인. 본문 읽음. 댓글 미확인. 이미지/스크린샷 존재 여부 미확인.\r\n\r\n## 평가\r\n결혼식 대출→배우자가 상환→시아버지 빚까지 상환이라는 연속적인 돈 갈등 구조가 강함. 조회수 대신 스토리성을 기준으로 retained.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. acquisition/provenance: C1 / EXACT_PUBLIC_URL_VERIFIED. source asset 미확보. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료. 실제 게시 권한은 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "8da4fe1dec3bda54c01f8facec3237a713d733dcaefed4479d210d0f5b9d5574",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 291
+}

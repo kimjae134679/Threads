@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1imlm8w
+제목 - AITA for not helping my sister pay for her wedding but helping our family go to the wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+여동생이 destination wedding 비용 지원을 부모에게 요청했지만 작성자는 결혼식 자체에는 돈을 빌려주지 않고 대신 부모와 가족들의 여행·숙박비를 부담하겠다고 했다. 그런데 정작 여동생이 비용 때문에 못 올 것이라 판단해 부모에게 초대장을 보내지 않은 사실이 드러난 사연. 공개 원문 전체 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1imlm8w",
+    "title": "AITA for not helping my sister pay for her wedding but helping our family go to the wedding?",
+    "body": "여동생이 destination wedding 비용 지원을 부모에게 요청했지만 작성자는 결혼식 자체에는 돈을 빌려주지 않고 대신 부모와 가족들의 여행·숙박비를 부담하겠다고 했다. 그런데 정작 여동생이 비용 때문에 못 올 것이라 판단해 부모에게 초대장을 보내지 않은 사실이 드러난 사연. 공개 원문 전체 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_부모결혼식초대안한여동생.md",
+      "originalTitle": "AITA for not helping my sister pay for her wedding but helping our family go to the wedding?",
+      "originalMarkdown": "# AITA for not helping my sister pay for her wedding but helping our family go to the wedding?\r\n\r\n## 글 내용\r\n여동생이 destination wedding 비용 지원을 부모에게 요청했지만 작성자는 결혼식 자체에는 돈을 빌려주지 않고 대신 부모와 가족들의 여행·숙박비를 부담하겠다고 했다. 그런데 정작 여동생이 비용 때문에 못 올 것이라 판단해 부모에게 초대장을 보내지 않은 사실이 드러난 사연. 공개 원문 전체 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1imlm8w\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 22:37 KST · Reddit score +547. 조회수·댓글수는 확인하지 않음.\r\n\r\n## 평가\r\n'결혼식 비용은 안 대지만 가족 참석비는 대겠다'는 조건과 '그래서 부모를 아예 초대 안 했다'는 반전이 강하다. 가족·결혼·돈 논쟁형.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n공개 Reddit 원문 확인. source screenshot 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "7a4f1dbf11de19c9a8e4936e67ea5be90a0153eba295cca52bae1554c0caf955",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 369
+}

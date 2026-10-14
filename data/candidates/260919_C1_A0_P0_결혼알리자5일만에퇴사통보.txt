@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3706419018
+제목 - 입사 3일 만에 결혼 알렸더니 5일 차에 퇴사하랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+다음 달 결혼 예정인 화장품 회사 사무직 신입이 입사 3일째 회사의 결혼 관련 규정을 문의했다가 5일 차에 '부적응'을 이유로 퇴사를 요구받았다고 주장한 사연. 휴가나 지원을 요구한 것이 아니라 규정을 물었을 뿐이라는 것이 작성자 측 설명이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3706419018",
+    "title": "입사 3일 만에 결혼 알렸더니 5일 차에 퇴사하랍니다",
+    "body": "다음 달 결혼 예정인 화장품 회사 사무직 신입이 입사 3일째 회사의 결혼 관련 규정을 문의했다가 5일 차에 '부적응'을 이유로 퇴사를 요구받았다고 주장한 사연. 휴가나 지원을 요구한 것이 아니라 규정을 물었을 뿐이라는 것이 작성자 측 설명이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼알리자5일만에퇴사통보.md",
+      "originalTitle": "입사 3일 만에 결혼 알렸더니 5일 차에 퇴사하랍니다",
+      "originalMarkdown": "# 입사 3일 만에 결혼 알렸더니 5일 차에 퇴사하랍니다\r\n\r\n## source\r\nTheQoo (기사/뉴스 재게시)\r\n\r\n## 원문 제목\r\n\"입사 3일 만에 결혼 알리자 퇴사하라는 회사…사유는 '부적응'\" 황당\r\n\r\n## 글 내용\r\n다음 달 결혼 예정인 화장품 회사 사무직 신입이 입사 3일째 회사의 결혼 관련 규정을 문의했다가 5일 차에 '부적응'을 이유로 퇴사를 요구받았다고 주장한 사연. 휴가나 지원을 요구한 것이 아니라 규정을 물었을 뿐이라는 것이 작성자 측 설명이다.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/3706419018\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 페이지 표시: 2025.04.23 09:09 / 조회수 84,776 / 댓글 468\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재 여부: 이번 관찰에서 source asset으로 취득/검증하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n'입사 3일→결혼 고지→5일 차 퇴사 통보'라는 시간 흐름이 한눈에 이해되고 직장 공정성 논쟁을 즉시 만든다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. 기사 재게시임을 명시. source media 미확보. publicationAllowed=false. rights/privacy/human review 필요.",
+      "originalSha256": "1ce4226188e9fd822aa79ded9f7e4905d04c0ce3f1c47a1c3ecffb7e05102a5d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 252
+}

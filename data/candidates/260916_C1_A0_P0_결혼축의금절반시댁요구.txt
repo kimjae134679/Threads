@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/18daerl
+제목 - AITA if we decided not to give 50% of the wedding cash gifts to my in-laws and offer an apology after?
+내용 - [명시 요약 — 원문 전문 아님]
+커플은 이미 간단히 결혼했고 사업에 저축을 투입하려 별도 결혼 파티를 원하지 않았다. 그러나 시댁이 전통을 이유로 파티를 주도했고, 커플은 자신들이 돈을 부담하지 않는 조건으로 동의했다. 행사 뒤 축의금을 정리한 후 시댁이 축의금의 50%를 받기로 했다는 취지로 화를 내면서 갈등이 생겼다. 원문 본문과 공개 댓글 일부를 읽었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/18daerl",
+    "title": "AITA if we decided not to give 50% of the wedding cash gifts to my in-laws and offer an apology after?",
+    "body": "커플은 이미 간단히 결혼했고 사업에 저축을 투입하려 별도 결혼 파티를 원하지 않았다. 그러나 시댁이 전통을 이유로 파티를 주도했고, 커플은 자신들이 돈을 부담하지 않는 조건으로 동의했다. 행사 뒤 축의금을 정리한 후 시댁이 축의금의 50%를 받기로 했다는 취지로 화를 내면서 갈등이 생겼다. 원문 본문과 공개 댓글 일부를 읽었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼축의금절반시댁요구.md",
+      "originalTitle": "AITA if we decided not to give 50% of the wedding cash gifts to my in-laws and offer an apology after?",
+      "originalMarkdown": "# AITA if we decided not to give 50% of the wedding cash gifts to my in-laws and offer an apology after?\r\n\r\n## 글 내용\r\n커플은 이미 간단히 결혼했고 사업에 저축을 투입하려 별도 결혼 파티를 원하지 않았다. 그러나 시댁이 전통을 이유로 파티를 주도했고, 커플은 자신들이 돈을 부담하지 않는 조건으로 동의했다. 행사 뒤 축의금을 정리한 후 시댁이 축의금의 50%를 받기로 했다는 취지로 화를 내면서 갈등이 생겼다. 원문 본문과 공개 댓글 일부를 읽었다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/18daerl\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-16 23:34 KST 전후 공개 Reddit 결과\r\n- score: +4,078\r\n- 대표 댓글에서 +1,839 등 공개 반응 확인\r\n- 조회수: 확인하지 못함\r\n- 총 댓글 수: 확인하지 못함\r\n\r\n## 평가\r\n'우리는 원하지 않았던 결혼식 → 시댁이 비용 부담 → 축의금은 누구 돈인가'라는 구조가 매우 명확하다. 문화 차이와 돈 문제 때문에 독자가 바로 편을 고르게 되는 강한 논쟁형 소재다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: 일부만 확인, 전체 NO\r\n- source screenshot/media bytes: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "a0f1d4e99ad1cfa9b17b96726c531f1b49c243117e102aa13851270f5b3ef1d1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 392
+}

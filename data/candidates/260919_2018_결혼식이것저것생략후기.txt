@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2160915219
+제목 - 결혼식에 이것 저것 생략 했던 후기
+내용 - [명시 요약 — 원문 전문 아님]
+주례·스튜디오·예단 등을 과감히 생략하고 실제 비용을 제시하는 결혼식 경험담이라 비용/관습 논쟁과 실용 정보성이 동시에 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2160915219",
+    "title": "결혼식에 이것 저것 생략 했던 후기",
+    "body": "주례·스튜디오·예단 등을 과감히 생략하고 실제 비용을 제시하는 결혼식 경험담이라 비용/관습 논쟁과 실용 정보성이 동시에 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_결혼식이것저것생략후기.md",
+      "originalTitle": "결혼식에 이것 저것 생략 했던 후기",
+      "originalMarkdown": "# 결혼식에 이것 저것 생략 했던 후기\r\n\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2160915219\r\n- exactObservedTitle: 결혼식에 이것 저것 생략 했던 후기\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 공개 검색 결과에서 확실히 확인 가능한 수치 없음\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_PARTIAL\r\n- provenance: TheQoo 개별 공개 글. 검색 공개 범위에서 본문 일부 확인.\r\n- whyGood: 주례·스튜디오·예단 등을 과감히 생략하고 실제 비용을 제시하는 결혼식 경험담이라 비용/관습 논쟁과 실용 정보성이 동시에 있음.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "60d98252ace25755d2f2f2cb265e57c8d313a8f9f3efbb55e991798203a2655f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 176
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%9E%90%EA%B8%88-%EB%82%98%EC%A4%91%EC%97%90-%EC%A7%80%EC%9B%90%ED%95%B4%EC%A3%BC%EA%B2%A0%EB%8B%A4%EA%B3%A0-%ED%95%98%EB%8A%94%EB%8D%B0-%EB%B6%88%EC%8B%A0%ED%95%98%EB%8A%94-%EC%97%AC%EC%B9%9C-Q0XyzSOx
+제목 - 결혼 자금 나중에 지원해주겠다고 하는데 불신하는 여친
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%9E%90%EA%B8%88-%EB%82%98%EC%A4%91%EC%97%90-%EC%A7%80%EC%9B%90%ED%95%B4%EC%A3%BC%EA%B2%A0%EB%8B%A4%EA%B3%A0-%ED%95%98%EB%8A%94%EB%8D%B0-%EB%B6%88%EC%8B%A0%ED%95%98%EB%8A%94-%EC%97%AC%EC%B9%9C-Q0XyzSOx",
+    "title": "결혼 자금 나중에 지원해주겠다고 하는데 불신하는 여친",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼자금1억조건불신.md",
+      "originalTitle": "결혼 자금 나중에 지원해주겠다고 하는데 불신하는 여친",
+      "originalMarkdown": "# 결혼 자금 나중에 지원해주겠다고 하는데 불신하는 여친\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%9E%90%EA%B8%88-%EB%82%98%EC%A4%91%EC%97%90-%EC%A7%80%EC%9B%90%ED%95%B4%EC%A3%BC%EA%B2%A0%EB%8B%A4%EA%B3%A0-%ED%95%98%EB%8A%94%EB%8D%B0-%EB%B6%88%EC%8B%A0%ED%95%98%EB%8A%94-%EC%97%AC%EC%B9%9C-Q0XyzSOx\r\n- exactObservedTitle: 결혼 자금 나중에 지원해주겠다고 하는데 불신하는 여친\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 3,145 / 댓글 66\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n부모에게 빌려준 6천만원, 본인 저축 5천만원, 부모 지원 5천만원과 '1억원이 있어야 결혼' 조건이 얽혀 있어 결혼자금과 신뢰 논쟁이 선명하다.\r\n\r\n## 관찰 메모\r\n작성자는 부모에게 빌려준 6천만원이 있고, 상대 부모가 본인 자금·지원금을 합쳐 1억원이 있어야 결혼시킨다는 입장이라고 적었다.",
+      "originalSha256": "62f2ca1e862671e8f3588454af877e01c52c7fd001b31864cdf7574ebce39cdd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 329
+}

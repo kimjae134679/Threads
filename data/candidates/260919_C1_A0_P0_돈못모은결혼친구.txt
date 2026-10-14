@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88-%EB%AA%BB%EB%AA%A8%EC%9D%80-%EC%97%AC%EC%9E%90%EB%9E%91-%EA%B2%B0%ED%98%BC-%EB%8B%A4%EC%8B%9C-%EC%83%9D%EA%B0%81%ED%95%B4%EB%9D%BC%E3%85%8B%E3%85%8B-miegythf
+제목 - 결혼 준비하면서 남친에게 피부과까지 결제해달라는 친구
+내용 - [명시 요약 — 원문 전문 아님]
+30대 초반 여성 작성자가 결혼 준비 중인 친구의 이야기를 전한다. 친구가 남자친구에게 보상심리로 여러 소비를 요구하고 결혼 준비를 이유로 피부과 비용까지 결제해달라고 하며, 결혼 뒤에는 일을 그만둘 계획이라고 말했다는 내용이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88-%EB%AA%BB%EB%AA%A8%EC%9D%80-%EC%97%AC%EC%9E%90%EB%9E%91-%EA%B2%B0%ED%98%BC-%EB%8B%A4%EC%8B%9C-%EC%83%9D%EA%B0%81%ED%95%B4%EB%9D%BC%E3%85%8B%E3%85%8B-miegythf",
+    "title": "결혼 준비하면서 남친에게 피부과까지 결제해달라는 친구",
+    "body": "30대 초반 여성 작성자가 결혼 준비 중인 친구의 이야기를 전한다. 친구가 남자친구에게 보상심리로 여러 소비를 요구하고 결혼 준비를 이유로 피부과 비용까지 결제해달라고 하며, 결혼 뒤에는 일을 그만둘 계획이라고 말했다는 내용이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_돈못모은결혼친구.md",
+      "originalTitle": "결혼 준비하면서 남친에게 피부과까지 결제해달라는 친구",
+      "originalMarkdown": "# 결혼 준비하면서 남친에게 피부과까지 결제해달라는 친구\r\n\r\n## source\r\nBlind 블라블라\r\n\r\n## 원문 제목\r\n돈 못모은 여자랑 결혼 다시 생각해라ㅋㅋ\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%8F%88-%EB%AA%BB%EB%AA%A8%EC%9D%80-%EC%97%AC%EC%9E%90%EB%9E%91-%EA%B2%B0%ED%98%BC-%EB%8B%A4%EC%8B%9C-%EC%83%9D%EA%B0%81%ED%95%B4%EB%9D%BC%E3%85%8B%E3%85%8B-miegythf\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 1,734 / 댓글 35\r\n\r\n## 본문·댓글 확인\r\n공개 본문 확인. 댓글 전체 미확인. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n30대 초반 여성 작성자가 결혼 준비 중인 친구의 이야기를 전한다. 친구가 남자친구에게 보상심리로 여러 소비를 요구하고 결혼 준비를 이유로 피부과 비용까지 결제해달라고 하며, 결혼 뒤에는 일을 그만둘 계획이라고 말했다는 내용이다.\r\n\r\n## 왜 소재로 좋은지\r\n결혼 비용·소비·맞벌이 기대가 한 번에 충돌해 반응을 만들기 쉽다. 다만 작성자의 친구에 대한 평가가 강한 글이므로 사실과 의견을 구분해야 한다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 개별 페이지에서 작성자 서술 확인. 제3자 전언이며 독립 검증 없음. source asset 미확보. publicationAllowed=false.",
+      "originalSha256": "d2e12c63faba6d940f9d3173f0e92283a0a3f21034edf67b6bd3dc545bd9b045",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 409
+}

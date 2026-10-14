@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D%EC%9D%84-%EA%B4%91%EC%A0%81%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-q1Rs6ya6
+제목 - 주식을 광적으로 하는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 전 5천만원 마통 정리 후 재발, 몰래 2천만원 대출에 이어 다시 5천만원 마통을 만들었다는 반복형 신뢰 붕괴 사연. 금액은 게시자 주장임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D%EC%9D%84-%EA%B4%91%EC%A0%81%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-q1Rs6ya6",
+    "title": "주식을 광적으로 하는 남편",
+    "body": "결혼 전 5천만원 마통 정리 후 재발, 몰래 2천만원 대출에 이어 다시 5천만원 마통을 만들었다는 반복형 신뢰 붕괴 사연. 금액은 게시자 주장임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_주식광적으로하는남편.md",
+      "originalTitle": "주식을 광적으로 하는 남편",
+      "originalMarkdown": "# 주식을 광적으로 하는 남편\r\n\r\n- source: Blind / 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D%EC%9D%84-%EA%B4%91%EC%A0%81%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-q1Rs6ya6\r\n- exactObservedTitle: 주식을 광적으로 하는 남편\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 1,044, 댓글 29\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 결혼 전 5천만원 마통 정리 후 재발, 몰래 2천만원 대출에 이어 다시 5천만원 마통을 만들었다는 반복형 신뢰 붕괴 사연. 금액은 게시자 주장임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0dbd0c29ababe5841a58a3805815d3755a79849dc463502dce547e4dfb88f01c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 291
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2726514
+제목 - 낙수효과를 진짜 실철한 사장님
+내용 - [명시 요약 — 원문 전문 아님]
+직원 처우를 높이기 위해 사장이 자신의 보수를 줄였다는 취지의 사례를 여러 이미지로 소개하는 게시물이다. 원 사건의 사실관계와 upstream provenance를 별도 확인하기 전에는 세부 수치를 사실로 단정하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2726514",
+    "title": "낙수효과를 진짜 실철한 사장님",
+    "body": "직원 처우를 높이기 위해 사장이 자신의 보수를 줄였다는 취지의 사례를 여러 이미지로 소개하는 게시물이다. 원 사건의 사실관계와 upstream provenance를 별도 확인하기 전에는 세부 수치를 사실로 단정하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_낙수효과실천한사장님.md",
+      "originalTitle": "낙수효과를 진짜 실철한 사장님",
+      "originalMarkdown": "# 낙수효과를 진짜 실철한 사장님\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2726514\r\n- 조회수: 6,287\r\n- 추천: 13\r\n- 댓글: 22\r\n- 본문: 읽음\r\n- 이미지: 여러 장 있음\r\n\r\n## 글 내용\r\n직원 처우를 높이기 위해 사장이 자신의 보수를 줄였다는 취지의 사례를 여러 이미지로 소개하는 게시물이다. 원 사건의 사실관계와 upstream provenance를 별도 확인하기 전에는 세부 수치를 사실로 단정하지 않는다.\r\n\r\n## 평가\r\n- 평가: 상급 직장·돈 반전 후보\r\n- 주의: 사실검증 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "42a31150e8fcd45451103ae94148eafc0592380fb5ffe4b91ceff5f0bce58c05",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 241
+}

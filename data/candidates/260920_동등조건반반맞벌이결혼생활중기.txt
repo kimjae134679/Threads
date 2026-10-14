@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2225074199
+제목 - 동등한 조건으로 결혼 후 반반 맞벌이 결혼 생활 중기
+내용 - [명시 요약 — 원문 전문 아님]
+수입·결혼자금·용돈·집안일을 거의 동일하게 나누는 부부의 장단점이 명확해 반반결혼 논쟁을 유도하기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2225074199",
+    "title": "동등한 조건으로 결혼 후 반반 맞벌이 결혼 생활 중기",
+    "body": "수입·결혼자금·용돈·집안일을 거의 동일하게 나누는 부부의 장단점이 명확해 반반결혼 논쟁을 유도하기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_동등조건반반맞벌이결혼생활중기.md",
+      "originalTitle": "동등한 조건으로 결혼 후 반반 맞벌이 결혼 생활 중기",
+      "originalMarkdown": "# 동등한 조건으로 결혼 후 반반 맞벌이 결혼 생활 중기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2225074199\r\n- exactObservedTitle: 동등한 조건으로 결혼 후 반반 맞벌이 결혼 생활 중기\r\n- observedAt: 2026-09-20 06:15 KST\r\n- observedMetrics: 5463 / 13 (페이지 표시 수치; 의미를 임의 확정하지 않음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: unconfirmed\r\n- whyGood: 수입·결혼자금·용돈·집안일을 거의 동일하게 나누는 부부의 장단점이 명확해 반반결혼 논쟁을 유도하기 좋음.\r\n- acquisition: exact individual public page text observed\r\n- provenance: C1 exact-page provenance; personal account\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5468d9fa906017041c105ae789f2d4623ba220b4e41f1737732a7191ed7596c9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 174
+}

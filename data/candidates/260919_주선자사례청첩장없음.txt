@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A3%BC%EC%84%A0%EC%9E%90-%EC%82%AC%EB%A1%80-X-%EC%B2%AD%EC%B2%A9%EC%9E%A5-%EB%AA%BB-%EB%B0%9B%EC%9D%8C-%EC%B6%95%EC%9D%98%EA%B8%88-%ED%95%B4%EC%95%BC%EB%8F%BC-iqoHmidD
+제목 - 결혼 주선자 사례 X, 청첩장 못 받음. 축의금 해야돼?
+내용 - [명시 요약 — 원문 전문 아님]
+부부가 소개해 결혼하게 된 커플에게 사례도 못 받고 한쪽 주선자는 청첩장조차 못 받은 상황이라 인간관계·축의금 논쟁의 반전이 큼.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A3%BC%EC%84%A0%EC%9E%90-%EC%82%AC%EB%A1%80-X-%EC%B2%AD%EC%B2%A9%EC%9E%A5-%EB%AA%BB-%EB%B0%9B%EC%9D%8C-%EC%B6%95%EC%9D%98%EA%B8%88-%ED%95%B4%EC%95%BC%EB%8F%BC-iqoHmidD",
+    "title": "결혼 주선자 사례 X, 청첩장 못 받음. 축의금 해야돼?",
+    "body": "부부가 소개해 결혼하게 된 커플에게 사례도 못 받고 한쪽 주선자는 청첩장조차 못 받은 상황이라 인간관계·축의금 논쟁의 반전이 큼.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_주선자사례청첩장없음.md",
+      "originalTitle": "결혼 주선자 사례 X, 청첩장 못 받음. 축의금 해야돼?",
+      "originalMarkdown": "# 결혼 주선자 사례 X, 청첩장 못 받음. 축의금 해야돼?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A3%BC%EC%84%A0%EC%9E%90-%EC%82%AC%EB%A1%80-X-%EC%B2%AD%EC%B2%A9%EC%9E%A5-%EB%AA%BB-%EB%B0%9B%EC%9D%8C-%EC%B6%95%EC%9D%98%EA%B8%88-%ED%95%B4%EC%95%BC%EB%8F%BC-iqoHmidD\r\n- exactObservedTitle: 결혼 주선자 사례 X, 청첩장 못 받음. 축의금 해야돼?\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 4,072 / 댓글 41\r\n- bodyRead: true (공개 본문 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 부부가 소개해 결혼하게 된 커플에게 사례도 못 받고 한쪽 주선자는 청첩장조차 못 받은 상황이라 인간관계·축의금 논쟁의 반전이 큼.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "dd3352e1a04d784765a336ab0fe224af381e0599cc31f8c5664b0ca0a6d0ff49",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 377
+}

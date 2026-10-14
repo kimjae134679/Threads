@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%95%A0-%EB%B4%90%EC%A4%84-%EC%82%AC%EB%9E%8C-%EC%97%86%EC%96%B4%EC%84%9C-%EB%AA%BB%EB%82%B3%EB%8A%94%EB%8D%B0-oimz5fib
+제목 - 애 봐줄 사람 없어서 못낳는데
+내용 - [명시 요약 — 원문 전문 아님]
+육아 도움 의사는 없지만 아이 둘을 빨리 낳으라는 시댁의 요구라는 모순이 즉시 반응을 부르는 가족 갈등 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%95%A0-%EB%B4%90%EC%A4%84-%EC%82%AC%EB%9E%8C-%EC%97%86%EC%96%B4%EC%84%9C-%EB%AA%BB%EB%82%B3%EB%8A%94%EB%8D%B0-oimz5fib",
+    "title": "애 봐줄 사람 없어서 못낳는데",
+    "body": "육아 도움 의사는 없지만 아이 둘을 빨리 낳으라는 시댁의 요구라는 모순이 즉시 반응을 부르는 가족 갈등 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_애봐줄사람없는데둘낳으라는시댁.md",
+      "originalTitle": "애 봐줄 사람 없어서 못낳는데",
+      "originalMarkdown": "# 애 봐줄 사람 없어서 못낳는데\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EC%95%A0-%EB%B4%90%EC%A4%84-%EC%82%AC%EB%9E%8C-%EC%97%86%EC%96%B4%EC%84%9C-%EB%AA%BB%EB%82%B3%EB%8A%94%EB%8D%B0-oimz5fib\r\n- exactObservedTitle: 애 봐줄 사람 없어서 못낳는데\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 489, 댓글 21\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 육아 도움 의사는 없지만 아이 둘을 빨리 낳으라는 시댁의 요구라는 모순이 즉시 반응을 부르는 가족 갈등 소재.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c609d53733d531158048f9fcf7718940539c543fb3ddbe6f89174a070ae15cf8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 283
+}

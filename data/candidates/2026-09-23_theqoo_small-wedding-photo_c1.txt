@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3204349278
+제목 - 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3204349278",
+    "title": "10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_small-wedding-photo_c1.md",
+      "originalTitle": "10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기",
+      "originalMarkdown": "# 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/3204349278\r\n- exactObservedTitle: 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기\r\n- observedAt: 2026-09-23 16:16 KST\r\n- observedMetrics: 조회 11,256 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 개인 경험담. 사실관계는 독립 검증하지 않았으며 작성자의 주장으로만 취급.\r\n- whyGoodMaterial: 소수 하객 결혼식 원판 촬영 뒤 타인의 시선을 의식하며 후회하는 상황이라 결혼식·인맥·체면 논쟁을 즉시 유발할 수 있음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7f688ee5ed603a85b58f91a19e370d6bed84d7f23ce660a8dd59e4b03899d760",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 116
+}

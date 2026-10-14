@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%83%81%EB%8C%80%EB%B0%A9-%EB%B6%80%EB%AA%A8%EB%8B%98-%EB%B9%9A-%EA%B2%B0%ED%98%BC-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C%EC%9A%94-g5l4ia0n
+제목 - 상대방 부모님 빚.. 결혼 괜찮을까요?
+내용 - [명시 요약 — 원문 전문 아님]
+30대 초반 작성자가 교제를 시작한 30대 중반 남성과 결혼·재산·부모 노후 이야기를 나누다가 상대 어머니에게 과거 사업 부도로 약 30~40억원의 빚이 있고 신용불량 상태이며 개인파산을 준비 중이라는 사실을 들었다고 설명하며 결혼을 고민하는 글이다. 사업이 어려워지기 전 아파트를 아버지 명의로 이전했고 부모는 이후 이혼했다고 적었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%83%81%EB%8C%80%EB%B0%A9-%EB%B6%80%EB%AA%A8%EB%8B%98-%EB%B9%9A-%EA%B2%B0%ED%98%BC-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C%EC%9A%94-g5l4ia0n",
+    "title": "상대방 부모님 빚.. 결혼 괜찮을까요?",
+    "body": "30대 초반 작성자가 교제를 시작한 30대 중반 남성과 결혼·재산·부모 노후 이야기를 나누다가 상대 어머니에게 과거 사업 부도로 약 30~40억원의 빚이 있고 신용불량 상태이며 개인파산을 준비 중이라는 사실을 들었다고 설명하며 결혼을 고민하는 글이다. 사업이 어려워지기 전 아파트를 아버지 명의로 이전했고 부모는 이후 이혼했다고 적었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_상대부모빚3040억결혼고민.md",
+      "originalTitle": "상대방 부모님 빚.. 결혼 괜찮을까요?",
+      "originalMarkdown": "# 상대방 부모님 빚.. 결혼 괜찮을까요?\r\n\r\n## 글 내용\r\n30대 초반 작성자가 교제를 시작한 30대 중반 남성과 결혼·재산·부모 노후 이야기를 나누다가 상대 어머니에게 과거 사업 부도로 약 30~40억원의 빚이 있고 신용불량 상태이며 개인파산을 준비 중이라는 사실을 들었다고 설명하며 결혼을 고민하는 글이다. 사업이 어려워지기 전 아파트를 아버지 명의로 이전했고 부모는 이후 이혼했다고 적었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%83%81%EB%8C%80%EB%B0%A9-%EB%B6%80%EB%AA%A8%EB%8B%98-%EB%B9%9A-%EA%B2%B0%ED%98%BC-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C%EC%9A%94-g5l4ia0n\r\n\r\n- 출처: Blind 공개 페이지\r\n- 관측: 2026-09-17 06:39 KST\r\n- 본문: 확인\r\n- 댓글: 미확인\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n동일 관측시점 공개 페이지 표시: 조회수 678 / 댓글 11. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n연애 초기에 발견한 상대 가족의 30~40억원대 채무·파산 문제라는 규모감이 크고, 결혼 시 가족 부채를 어디까지 고려해야 하는지 즉시 의견이 갈리는 소재다. 개인을 공격하기보다 결혼·가족 재정 리스크 논쟁으로 다루는 것이 적절하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source image/screenshot 존재는 이번 관측에서 확인하지 못함.\r\n- 실제 source bytes 및 full-post screenshot 미확보.\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 필요\r\n- 게시 권한: 04_REVIEW_PUBLISH only\r\n",
+      "originalSha256": "90d8b2d63ce5c6166e294202de1185cc662ec601c0a1cc59613c77f98c2ea23d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 433
+}

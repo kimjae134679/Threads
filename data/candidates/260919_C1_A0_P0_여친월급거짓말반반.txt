@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITH/comments/1wdz6nw/aitah_for_telling_my_boyfriend_i_wont_split_our/
+제목 - 월급 8.5만달러라던 남친, 사실 13만달러 받고 있었습니다
+내용 - [명시 요약 — 원문 전문 아님]
+동거 중인 커플이 월세·식비·여행을 계속 50:50으로 나눴는데, 여성은 남자친구가 연 8.5만달러를 번다고 알고 있었다. 대출 서류를 돕다가 실제 연봉이 13만달러이며 지난 2년간의 인상도 말하지 않았다는 사실을 알게 됐다는 사연. 여성의 연봉은 5.8만달러라고 적혀 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITH/comments/1wdz6nw/aitah_for_telling_my_boyfriend_i_wont_split_our/",
+    "title": "월급 8.5만달러라던 남친, 사실 13만달러 받고 있었습니다",
+    "body": "동거 중인 커플이 월세·식비·여행을 계속 50:50으로 나눴는데, 여성은 남자친구가 연 8.5만달러를 번다고 알고 있었다. 대출 서류를 돕다가 실제 연봉이 13만달러이며 지난 2년간의 인상도 말하지 않았다는 사실을 알게 됐다는 사연. 여성의 연봉은 5.8만달러라고 적혀 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_여친월급거짓말반반.md",
+      "originalTitle": "월급 8.5만달러라던 남친, 사실 13만달러 받고 있었습니다",
+      "originalMarkdown": "# 월급 8.5만달러라던 남친, 사실 13만달러 받고 있었습니다\r\n\r\n## source\r\nReddit r/AITH\r\n\r\n## 원문 제목 (exact observed title)\r\nAITAH for telling my boyfriend I won't split our vacation costs evenly anymore after finding out he's been lying about his salary for two years?\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://www.reddit.com/r/AITH/comments/1wdz6nw/aitah_for_telling_my_boyfriend_i_wont_split_our/\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 검색 관측: +4 votes. 조회수·댓글 총수 미확인.\r\n\r\n## 본문 / 댓글 확인\r\n- 본문 읽음: YES\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n동거 중인 커플이 월세·식비·여행을 계속 50:50으로 나눴는데, 여성은 남자친구가 연 8.5만달러를 번다고 알고 있었다. 대출 서류를 돕다가 실제 연봉이 13만달러이며 지난 2년간의 인상도 말하지 않았다는 사실을 알게 됐다는 사연. 여성의 연봉은 5.8만달러라고 적혀 있다.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n미확인. 자산 취득 없음.\r\n\r\n## 왜 소재로 좋은지\r\n'공평한 반반'이라는 전제가 숨긴 소득 때문에 뒤집힌다. 구체적인 8.5만/13만/5.8만달러 숫자가 있어 독자가 즉시 분담 기준을 판단하게 만든다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1. Reddit 개별 공개 URL과 본문 확인. A0/P0. publicationAllowed=false. source asset/OCR/moderation/rights clearance/human approval 미실행.",
+      "originalSha256": "99b050b0c6b56f5f14bad11b4e80468006cc5cad11a9eb9c982f22cda9a71570",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 333
+}

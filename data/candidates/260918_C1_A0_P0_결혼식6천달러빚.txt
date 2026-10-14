@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/13jfxxl
+제목 - AITA for not wanting to go 6k in debt for my bffs impromptu destination wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+실직 후 친구와 새 사업을 시작했지만 아직 수입이 없는 작성자가, 친구의 촉박한 이탈리아 결혼식 참석 때문에 약 6천달러 빚을 져야 할 상황을 고민하는 사연. 친구는 결혼해야 부모에게 집 구입용 6만달러를 받을 수 있어 일정도 촉박하다. 본문 확인, 댓글 전체는 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/13jfxxl",
+    "title": "AITA for not wanting to go 6k in debt for my bffs impromptu destination wedding?",
+    "body": "실직 후 친구와 새 사업을 시작했지만 아직 수입이 없는 작성자가, 친구의 촉박한 이탈리아 결혼식 참석 때문에 약 6천달러 빚을 져야 할 상황을 고민하는 사연. 친구는 결혼해야 부모에게 집 구입용 6만달러를 받을 수 있어 일정도 촉박하다. 본문 확인, 댓글 전체는 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼식6천달러빚.md",
+      "originalTitle": "AITA for not wanting to go 6k in debt for my bffs impromptu destination wedding?",
+      "originalMarkdown": "# AITA for not wanting to go 6k in debt for my bffs impromptu destination wedding?\r\n\r\n## 글 내용\r\n실직 후 친구와 새 사업을 시작했지만 아직 수입이 없는 작성자가, 친구의 촉박한 이탈리아 결혼식 참석 때문에 약 6천달러 빚을 져야 할 상황을 고민하는 사연. 친구는 결혼해야 부모에게 집 구입용 6만달러를 받을 수 있어 일정도 촉박하다. 본문 확인, 댓글 전체는 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/13jfxxl\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 04:38 KST 공개 페이지 관측: 게시물 점수 +67. 조회수·댓글 총수는 확인하지 않음.\r\n\r\n## 평가\r\n친구 결혼식 참석비 6천달러 vs 친구의 결혼 인센티브 6만달러라는 숫자 대비가 강하다. 형식: 글.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "d51e7f1297c0476537acaf8b9e961b5ca3a4d125c591606fbbdc5ffd93bbf5d5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 337
+}

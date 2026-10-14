@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2481598091
+제목 - 남편 선물 살말 고민인 중기
+내용 - [명시 요약 — 원문 전문 아님]
+출산 준비 중 외벌이 가정에서 50~60만원대 남편 선물이 과소비인지 묻는 돈·선물 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2481598091",
+    "title": "남편 선물 살말 고민인 중기",
+    "body": "출산 준비 중 외벌이 가정에서 50~60만원대 남편 선물이 과소비인지 묻는 돈·선물 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_남편선물살말고민.md",
+      "originalTitle": "남편 선물 살말 고민인 중기",
+      "originalMarkdown": "# 남편 선물 살말 고민인 중기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2481598091\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `남편 선물 살말 고민인 중기`\r\n- observedMetrics: 조회 2,143 / 댓글 30\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 출산 준비 중 외벌이 가정에서 50~60만원대 남편 선물이 과소비인지 묻는 돈·선물 논쟁 소재.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative only\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "08b66ea55440b5dab84bfe78f3be5f58a37c34c4d314810d565872463d842fd5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 155
+}

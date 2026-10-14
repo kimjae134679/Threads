@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C%EC%9A%94-24j6ob7m
+제목 - 파혼 해야 할까요..
+내용 - [명시 요약 — 원문 전문 아님]
+10년 넘게 만난 커플이 결혼을 결정해 식장·스드메·신혼여행까지 예약했지만 신혼집 비용과 명의 문제를 이야기하면서 갈등이 커져 파혼을 고민하게 된 사연이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C%EC%9A%94-24j6ob7m",
+    "title": "파혼 해야 할까요..",
+    "body": "10년 넘게 만난 커플이 결혼을 결정해 식장·스드메·신혼여행까지 예약했지만 신혼집 비용과 명의 문제를 이야기하면서 갈등이 커져 파혼을 고민하게 된 사연이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_파혼해야할까요.md",
+      "originalTitle": "파혼 해야 할까요..",
+      "originalMarkdown": "# 파혼 해야 할까요..\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C%EC%9A%94-24j6ob7m\r\n- 조회수: 1,043\r\n- 댓글: 45\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n10년 넘게 만난 커플이 결혼을 결정해 식장·스드메·신혼여행까지 예약했지만 신혼집 비용과 명의 문제를 이야기하면서 갈등이 커져 파혼을 고민하게 된 사연이다.\r\n\r\n## 평가\r\n- 평가: 상급\r\n- 이유: 장기연애→결혼 확정→집·돈 문제로 무너지는 현실적 반전.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "c9862f5d8da32ebe46f60c37a9cd28a8dd4318bc1b399db7e6d8a22cd86933c0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 257
+}

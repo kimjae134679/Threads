@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3706419018
+제목 - "입사 3일 만에 결혼 알리자 퇴사하라는 회사…사유는 '부적응'" 황당
+내용 - [명시 요약 — 원문 전문 아님]
+`입사 3일째 다음 달 결혼 사실과 사내 경조사 규정을 문의한 뒤 5일째 '부적응'을 이유로 퇴사를 요구받았다는 구조라 직장 갑질·결혼 차별·회사 상식 논쟁이 즉시 발생할 소재.`
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3706419018",
+    "title": "\"입사 3일 만에 결혼 알리자 퇴사하라는 회사…사유는 '부적응'\" 황당",
+    "body": "`입사 3일째 다음 달 결혼 사실과 사내 경조사 규정을 문의한 뒤 5일째 '부적응'을 이유로 퇴사를 요구받았다는 구조라 직장 갑질·결혼 차별·회사 상식 논쟁이 즉시 발생할 소재.`",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo-company-marriage-fired.md",
+      "originalTitle": "\"입사 3일 만에 결혼 알리자 퇴사하라는 회사…사유는 '부적응'\" 황당",
+      "originalMarkdown": "# \"입사 3일 만에 결혼 알리자 퇴사하라는 회사…사유는 '부적응'\" 황당\r\n\r\n- source: TheQoo / 스퀘어 / 뉴스 재게시\r\n- publicUrl: https://theqoo.net/square/3706419018\r\n- exactObservedTitle: `\"입사 3일 만에 결혼 알리자 퇴사하라는 회사…사유는 '부적응'\" 황당`\r\n- observedAt: `2026-09-22 18:14 KST`\r\n- observedMetrics: `조회 84,776 / 댓글 468`\r\n- bodyRead: `true` — 공개 페이지 본문 확인\r\n- commentsRead: `false`\r\n- imageOrScreenshotPresent: `확인된 공개 본문상 별도 이미지·스크린샷 없음`\r\n- whyGood: `입사 3일째 다음 달 결혼 사실과 사내 경조사 규정을 문의한 뒤 5일째 '부적응'을 이유로 퇴사를 요구받았다는 구조라 직장 갑질·결혼 차별·회사 상식 논쟁이 즉시 발생할 소재.`\r\n- acquisition: `public search -> exact individual public URL -> public page body read; page also links a NAVER News article`\r\n- provenanceStatus: `C1`\r\n- A1: `false`\r\n- P1: `false`\r\n- publicationAllowed: `false`\r\n",
+      "originalSha256": "cbde0b84d2e0e0afbf2fc758670db7a15cf36faa10b9d41b6a651af10ea2e5e5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 226
+}

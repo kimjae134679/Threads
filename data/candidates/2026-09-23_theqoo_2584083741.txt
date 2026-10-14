@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2584083741
+제목 - 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)
+내용 - [명시 요약 — 원문 전문 아님]
+비혼 성향인 작성자가 같은 날 친척·지인에게 연달아 결혼과 출산 압박을 받는 상황이 구체적으로 이어져 공감되는 짜증과 세대·관계 경계 논쟁을 만들기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2584083741",
+    "title": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+    "body": "비혼 성향인 작성자가 같은 날 친척·지인에게 연달아 결혼과 출산 압박을 받는 상황이 구체적으로 이어져 공감되는 짜증과 세대·관계 경계 논쟁을 만들기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_2584083741.md",
+      "originalTitle": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+      "originalMarkdown": "# 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2584083741\r\n- exactObservedTitle: 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)\r\n- observedAt: 2026-09-23 01:17 KST\r\n- observedMetrics: 조회 9,501 / 댓글 38\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 비혼 성향인 작성자가 같은 날 친척·지인에게 연달아 결혼과 출산 압박을 받는 상황이 구체적으로 이어져 공감되는 짜증과 세대·관계 경계 논쟁을 만들기 좋은 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 파일은 다운로드하지 않음.\r\n- provenance: TheQoo 공개 후기 게시물. 대화와 개인 경험은 작성자 진술로만 취급하며 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "2151dda4a53ef00ab0acce6edcb007d27a258ba922c524d040f81fb9a3712ee2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 203
+}

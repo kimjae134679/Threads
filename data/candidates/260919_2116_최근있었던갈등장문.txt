@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B5%9C%EA%B7%BC-%EC%9E%88%EC%97%88%EB%8D%98-%EA%B0%88%EB%93%B1%EC%9E%A5-%EB%AC%B8-ypxykykr
+제목 - 최근 있었던 갈등(장-문)
+내용 - [명시 요약 — 원문 전문 아님]
+집들이 장보기, 친구 약속, 새집 배관, 친정·시댁 방문까지 사소한 갈등이 연쇄적으로 커지는 구조라 공감·논쟁성이 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B5%9C%EA%B7%BC-%EC%9E%88%EC%97%88%EB%8D%98-%EA%B0%88%EB%93%B1%EC%9E%A5-%EB%AC%B8-ypxykykr",
+    "title": "최근 있었던 갈등(장-문)",
+    "body": "집들이 장보기, 친구 약속, 새집 배관, 친정·시댁 방문까지 사소한 갈등이 연쇄적으로 커지는 구조라 공감·논쟁성이 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_최근있었던갈등장문.md",
+      "originalTitle": "최근 있었던 갈등(장-문)",
+      "originalMarkdown": "# 최근 있었던 갈등(장-문)\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B5%9C%EA%B7%BC-%EC%9E%88%EC%97%88%EB%8D%98-%EA%B0%88%EB%93%B1%EC%9E%A5-%EB%AC%B8-ypxykykr\r\n- exactObservedTitle: 최근 있었던 갈등(장-문)\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 81, 댓글 5\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 집들이 장보기, 친구 약속, 새집 배관, 친정·시댁 방문까지 사소한 갈등이 연쇄적으로 커지는 구조라 공감·논쟁성이 강함.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지의 공개 본문 일부 관찰; 장문 전체 확인 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "67e5e42469b14ca8317964823731ff2af493e51184224398242a6f4ded89a341",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 259
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/18sl91e
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 앞둔 작성자에게 예비 시누이가 5살 딸이 결혼식에 흰 드레스를 입어도 되는지 물었다. 실제 드레스는 큰 흰색 튤과 레이스 장식으로 사실상 작은 웨딩드레스처럼 보였고, 조카는 화동도 아닌데 신부와 맞춘 꽃관까지 요구해 작성자가 거절하려는 사연이다. 공개 원문 본문을 읽었고 공개 댓글은 일부 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/18sl91e",
+    "title": "제목",
+    "body": "결혼을 앞둔 작성자에게 예비 시누이가 5살 딸이 결혼식에 흰 드레스를 입어도 되는지 물었다. 실제 드레스는 큰 흰색 튤과 레이스 장식으로 사실상 작은 웨딩드레스처럼 보였고, 조카는 화동도 아닌데 신부와 맞춘 꽃관까지 요구해 작성자가 거절하려는 사연이다. 공개 원문 본문을 읽었고 공개 댓글은 일부 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_5살조카흰드레스.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for not letting my niece wear white at my wedding?\r\n\r\n## 글 내용\r\n결혼을 앞둔 작성자에게 예비 시누이가 5살 딸이 결혼식에 흰 드레스를 입어도 되는지 물었다. 실제 드레스는 큰 흰색 튤과 레이스 장식으로 사실상 작은 웨딩드레스처럼 보였고, 조카는 화동도 아닌데 신부와 맞춘 꽃관까지 요구해 작성자가 거절하려는 사연이다. 공개 원문 본문을 읽었고 공개 댓글은 일부 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/18sl91e\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-17 00:47 KST. 공개 페이지에서 score +4,361 이상이 표시된 것을 확인. 조회수·전체 댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n'화동도 아닌 5살 조카에게 작은 웨딩드레스+신부와 맞춘 꽃관'이라는 상황이 이미지 없이도 바로 이해되고 황당함이 강하다. 가족 결혼식 예절 논쟁으로 반응성이 높다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- source images/screenshots: 실제 파일 미확보\r\n- acquisition: exact public URL + 본문 확인, comments 일부 확인\r\n- ASSETS_PENDING / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "ec9b1dacedc35652c2295f9a8540572746658e74a1eb6bce66af46cc6021bef0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 279
+}

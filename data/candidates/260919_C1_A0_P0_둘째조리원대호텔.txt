@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%99%80%EC%9D%B4%ED%94%84%EA%B0%80-%EB%91%98%EC%A7%B8-%EC%B6%9C%EC%82%B0-%EA%B3%A7%EC%9D%B8%EB%8D%B0-%EC%A1%B0%EB%A6%AC%EC%9B%90%EB%AC%B8%EC%A0%9C-f03snb0u
+제목 - 둘째 출산 뒤 1주 조리원+1주 호텔을 원하는 아내
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%99%80%EC%9D%B4%ED%94%84%EA%B0%80-%EB%91%98%EC%A7%B8-%EC%B6%9C%EC%82%B0-%EA%B3%A7%EC%9D%B8%EB%8D%B0-%EC%A1%B0%EB%A6%AC%EC%9B%90%EB%AC%B8%EC%A0%9C-f03snb0u",
+    "title": "둘째 출산 뒤 1주 조리원+1주 호텔을 원하는 아내",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_둘째조리원대호텔.md",
+      "originalTitle": "둘째 출산 뒤 1주 조리원+1주 호텔을 원하는 아내",
+      "originalMarkdown": "# 둘째 출산 뒤 1주 조리원+1주 호텔을 원하는 아내\r\n\r\n- source: Blind / 결혼생활\r\n- exact observed title: `와이프가 둘째 출산 곧인데 조리원문제`\r\n- public URL: https://www.teamblind.com/kr/post/%EC%99%80%EC%9D%B4%ED%94%84%EA%B0%80-%EB%91%98%EC%A7%B8-%EC%B6%9C%EC%82%B0-%EA%B3%A7%EC%9D%B8%EB%8D%B0-%EC%A1%B0%EB%A6%AC%EC%9B%90%EB%AC%B8%EC%A0%9C-f03snb0u\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 328 / 댓글 15\r\n- body read: 예. 아내는 1주 조리원+1주 호텔, 작성자는 2주 조리원+도우미를 선호하며 조리원 비용 600~700 언급 확인.\r\n- comments read: 일부 공개 댓글 확인.\r\n- image/screenshot: 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 산후회복 방식·첫째 돌봄·비용 문제를 한 번에 놓고 부부 의견이 갈리는 생활형 소재.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_READ / COMMENTS_PARTIAL.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "2aac82d007e00c4ebc7fa479631018bd4f1f6510516dd77517169fe617385767",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 263
+}

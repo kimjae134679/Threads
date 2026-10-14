@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%95%BC%E2%80%9D-%EB%9D%BC%EA%B3%A0-%EB%B6%80%EB%A5%B4%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-PnVwLnmV
+제목 - 며느리한테 "야 야 야"라고 부르며 10만원 주는 시어머니
+내용 - [명시 요약 — 원문 전문 아님]
+시댁에서 돌아가려던 작성자에게 시어머니가 '야 야 야 이거 가져가 야'라고 불렀고, 작성자는 남편을 부르는 줄 알았다가 자신에게 10만원을 주려는 상황이었다는 것을 알게 됐다고 한다. 친정 부모를 말할 때도 사돈 대신 'ㅇㅇ엄마/아빠'라고 부르는 점이 반복돼 기분이 상했고 남편에게 어떻게 말할지 고민한다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%95%BC%E2%80%9D-%EB%9D%BC%EA%B3%A0-%EB%B6%80%EB%A5%B4%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-PnVwLnmV",
+    "title": "며느리한테 \"야 야 야\"라고 부르며 10만원 주는 시어머니",
+    "body": "시댁에서 돌아가려던 작성자에게 시어머니가 '야 야 야 이거 가져가 야'라고 불렀고, 작성자는 남편을 부르는 줄 알았다가 자신에게 10만원을 주려는 상황이었다는 것을 알게 됐다고 한다. 친정 부모를 말할 때도 사돈 대신 'ㅇㅇ엄마/아빠'라고 부르는 점이 반복돼 기분이 상했고 남편에게 어떻게 말할지 고민한다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_야라고부르는시어머니.md",
+      "originalTitle": "며느리한테 \"야 야 야\"라고 부르며 10만원 주는 시어머니",
+      "originalMarkdown": "# 며느리한테 \"야 야 야\"라고 부르며 10만원 주는 시어머니\r\n\r\n## source\r\nBlind\r\n\r\n## 원문 제목\r\n“야” 라고 부르는 시어머니\r\n\r\n## 글 내용\r\n시댁에서 돌아가려던 작성자에게 시어머니가 '야 야 야 이거 가져가 야'라고 불렀고, 작성자는 남편을 부르는 줄 알았다가 자신에게 10만원을 주려는 상황이었다는 것을 알게 됐다고 한다. 친정 부모를 말할 때도 사돈 대신 'ㅇㅇ엄마/아빠'라고 부르는 점이 반복돼 기분이 상했고 남편에게 어떻게 말할지 고민한다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%95%BC%E2%80%9D-%EB%9D%BC%EA%B3%A0-%EB%B6%80%EB%A5%B4%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-PnVwLnmV\r\n\r\n## 관찰시각 / 실제 관측 수치\r\n- 관찰: 2026-09-19 10:17 KST 전후\r\n- 조회수 1,197 / 댓글 10 / 좋아요 4\r\n\r\n## 평가\r\n아주 일상적인 호칭 하나로 예의·세대·시댁 관계 논쟁이 즉시 발생하는 짧고 전달력 좋은 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / acquisition·provenance / 제작·게시 상태\r\n- exact individual public URL 확인: C1\r\n- full body read: 예\r\n- comments read: 아니오\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n- source media 확보: 0\r\n- acquisition: EXACT_PUBLIC_URL_VERIFIED / SOURCE_MEDIA_NOT_ACQUIRED\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 미완료. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "164bf648849e6c2bf604e697c654ba37ef6fc49ad490f197110050852e862be8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 429
+}

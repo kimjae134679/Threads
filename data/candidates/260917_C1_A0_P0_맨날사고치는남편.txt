@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%A7%A8%EB%82%A0-%EC%82%AC%EA%B3%A0%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-TwPZyVip
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+출산 직후 일까지 다시 시작한 작성자가 남편의 반복되는 사고와 경제 문제를 토로한다. 남편이 주식·코인·부동산으로 3억원 넘게 잃고 빚까지 내 작성자가 갚았으며, 집·차와 상당한 생활 기반도 작성자 돈으로 마련했다는 내용이다. 신생아를 씻기다 다치게 한 사건까지 겹쳐 갈등이 폭발한 사연이다. 공개 페이지 본문을 확인했으며 댓글 전체는 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%A7%A8%EB%82%A0-%EC%82%AC%EA%B3%A0%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-TwPZyVip",
+    "title": "제목",
+    "body": "출산 직후 일까지 다시 시작한 작성자가 남편의 반복되는 사고와 경제 문제를 토로한다. 남편이 주식·코인·부동산으로 3억원 넘게 잃고 빚까지 내 작성자가 갚았으며, 집·차와 상당한 생활 기반도 작성자 돈으로 마련했다는 내용이다. 신생아를 씻기다 다치게 한 사건까지 겹쳐 갈등이 폭발한 사연이다. 공개 페이지 본문을 확인했으며 댓글 전체는 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_맨날사고치는남편.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n맨날 사고치는 남편\r\n\r\n## 글 내용\r\n출산 직후 일까지 다시 시작한 작성자가 남편의 반복되는 사고와 경제 문제를 토로한다. 남편이 주식·코인·부동산으로 3억원 넘게 잃고 빚까지 내 작성자가 갚았으며, 집·차와 상당한 생활 기반도 작성자 돈으로 마련했다는 내용이다. 신생아를 씻기다 다치게 한 사건까지 겹쳐 갈등이 폭발한 사연이다. 공개 페이지 본문을 확인했으며 댓글 전체는 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%A7%A8%EB%82%A0-%EC%82%AC%EA%B3%A0%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-TwPZyVip\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 19:39 KST 공개 페이지\r\n- 조회수: 7,226\r\n- 댓글: 65\r\n- 좋아요: 관측값 미확인\r\n\r\n## 평가\r\n투자손실 3억+와 부부 갈등, 출산 직후 상황이 겹친 강한 사람 이야기. 단순 투자 뉴스가 아니라 실제 투자 실패가 가족생활에 미친 결과라는 점에서 우선순위 높음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 실제 source screenshot bytes: 미확보\r\n- full body read: 확인\r\n- comments read: 전체 미확인\r\n- acquisition: exact public URL verified / ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 04_REVIEW_PUBLISH만 게시 가능",
+      "originalSha256": "c88d3047e876529fff00be60c838f1f2f9365bcb06b05cf3a0eefb3b738ac913",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 365
+}

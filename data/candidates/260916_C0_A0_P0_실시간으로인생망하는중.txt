@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 실시간으로 인생 망하는 즁
+내용 - [명시 요약 — 원문 전문 아님]
+과거 수집에서 파혼과 결혼 판단이 얽힌 감정형 관계 후보로 기록됐지만 현재 정확한 개별 원문 URL/shortlink/post ID와 원문 본문은 확인하지 못했다. 공개 Blind 검색 인덱스에서 동일 제목 `실시간으로 인생 망하는 즁`, 카테고리 `결혼생활`, 작성자 표시 `공무원 · s*********`까지는 재확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "실시간으로 인생 망하는 즁",
+    "body": "과거 수집에서 파혼과 결혼 판단이 얽힌 감정형 관계 후보로 기록됐지만 현재 정확한 개별 원문 URL/shortlink/post ID와 원문 본문은 확인하지 못했다. 공개 Blind 검색 인덱스에서 동일 제목 `실시간으로 인생 망하는 즁`, 카테고리 `결혼생활`, 작성자 표시 `공무원 · s*********`까지는 재확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_실시간으로인생망하는중.md",
+      "originalTitle": "실시간으로 인생 망하는 즁",
+      "originalMarkdown": "# 실시간으로 인생 망하는 즁\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind / 결혼생활\r\n- 정확한 원문 링크: 미확인\r\n- 공개 검색 인덱스 재확인: 2026-09-20 KST\r\n- 공개 인덱스 표기 작성자: 공무원 · s*********\r\n- 공개 인덱스 관측 수치: 조회수 7548 / 좋아요 6\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n과거 수집에서 파혼과 결혼 판단이 얽힌 감정형 관계 후보로 기록됐지만 현재 정확한 개별 원문 URL/shortlink/post ID와 원문 본문은 확인하지 못했다. 공개 Blind 검색 인덱스에서 동일 제목 `실시간으로 인생 망하는 즁`, 카테고리 `결혼생활`, 작성자 표시 `공무원 · s*********`까지는 재확인했다.\r\n\r\n## 평가\r\n- 평가: BLOCKED_PROVENANCE\r\n- unblockWhen: 동일 개별 글을 증명하는 정확한 Blind URL/shortlink/post ID 또는 다른 신뢰 가능한 고유 식별자가 공개적으로 확인될 때\r\n- 인덱스/연관글 페이지를 개별 원문으로 대체하지 않음\r\n- 본문/댓글/스크린샷/자산/OCR/권리 상태 추정 금지\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n- C0 / A0 / P0 유지\r\n",
+      "originalSha256": "1eb74332eac1316384567e0010ecc14a5d1a2b4b7aab341704c1d7c86c94044a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 247
+}

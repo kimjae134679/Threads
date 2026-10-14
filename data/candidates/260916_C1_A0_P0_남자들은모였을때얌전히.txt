@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2727940?iskin=webzine
+제목 - 남자들은 모였을때 얌전히 있어야한다.
+내용 - [명시 요약 — 원문 전문 아님]
+원문 페이지를 확인했다. 작성자는 누군가가 먼저 무모한 행동을 시작하고 다른 사람이 또 다른 방법을 시도하는 상황을 짧게 설명한다. 영상/시각 자료가 핵심으로 보이지만 이번 수집에서는 실제 미디어 파일을 확보하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2727940?iskin=webzine",
+    "title": "남자들은 모였을때 얌전히 있어야한다.",
+    "body": "원문 페이지를 확인했다. 작성자는 누군가가 먼저 무모한 행동을 시작하고 다른 사람이 또 다른 방법을 시도하는 상황을 짧게 설명한다. 영상/시각 자료가 핵심으로 보이지만 이번 수집에서는 실제 미디어 파일을 확보하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_남자들은모였을때얌전히.md",
+      "originalTitle": "남자들은 모였을때 얌전히 있어야한다.",
+      "originalMarkdown": "# 남자들은 모였을때 얌전히 있어야한다.\r\n\r\n## 글 내용\r\n원문 페이지를 확인했다. 작성자는 누군가가 먼저 무모한 행동을 시작하고 다른 사람이 또 다른 방법을 시도하는 상황을 짧게 설명한다. 영상/시각 자료가 핵심으로 보이지만 이번 수집에서는 실제 미디어 파일을 확보하지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2727940?iskin=webzine\r\n\r\n- 출처: Inven 오픈이슈갤러리\r\n- 관측 시각: 2026-09-16 10:37 KST 전후\r\n- 원문 등록: 2026-09-15 10:13\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 조회: 3,704\r\n- 추천: 1\r\n- 댓글: 10\r\n- 위 수치는 동일 페이지 관측 스냅샷이며 다른 시점 수치와 합치지 않음.\r\n\r\n## 평가\r\n- 짧고 즉시 이해되는 실패/황당 상황 레인. 성별 일반화가 제목에 있으나 그 이유만으로 자동 폐기하지 않는다.\r\n- 실제 재미는 원본 시각 자료에 달려 있어 source media 확보 전에는 A0 유지가 필수.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 시각 자료: 있음으로 페이지에서 표시되나 실제 파일 미확보\r\n- 실제 source 파일 확보: 아니오\r\n- 전체 원문 screenshot 확보: 아니오\r\n- acquisition: exact page verified / media pending\r\n- C1 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- privacy/human review: 필요\r\n- 실제 게시: 없음",
+      "originalSha256": "a55b05cf57b304279ff9e41260137e9e684b8e428c141a167fd2ff16e3057ef6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 258
+}

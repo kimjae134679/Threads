@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2970723316
+제목 - 23살에 연년생 셋… 술값은 장모님 카드로 긁은 남편
+내용 - [명시 요약 — 원문 전문 아님]
+젊은 부부가 연년생 자녀를 키우며 경제·육아 문제를 겪는 방송 사연. 아내가 임신·육아 중에도 생활을 책임지는 동안 남편은 술자리를 갖고 장모의 카드를 사용했으며, 셋째 임신까지 이어진 이유를 두고 황당한 설명을 내놓는다. 공개 본문 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2970723316",
+    "title": "23살에 연년생 셋… 술값은 장모님 카드로 긁은 남편",
+    "body": "젊은 부부가 연년생 자녀를 키우며 경제·육아 문제를 겪는 방송 사연. 아내가 임신·육아 중에도 생활을 책임지는 동안 남편은 술자리를 갖고 장모의 카드를 사용했으며, 셋째 임신까지 이어진 이유를 두고 황당한 설명을 내놓는다. 공개 본문 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_23살연년생셋장모카드.md",
+      "originalTitle": "23살에 연년생 셋… 술값은 장모님 카드로 긁은 남편",
+      "originalMarkdown": "# 23살에 연년생 셋… 술값은 장모님 카드로 긁은 남편\r\n\r\n## source\r\nTheQoo\r\n\r\n## 원문 제목\r\n23살에 연년생 아이 셋…남편 \"피임기구 작아서 안 써\" 황당 변명\r\n\r\n## 글 내용\r\n젊은 부부가 연년생 자녀를 키우며 경제·육아 문제를 겪는 방송 사연. 아내가 임신·육아 중에도 생활을 책임지는 동안 남편은 술자리를 갖고 장모의 카드를 사용했으며, 셋째 임신까지 이어진 이유를 두고 황당한 설명을 내놓는다. 공개 본문 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2970723316\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 조회수 5,277 / 댓글 31\r\n\r\n## 평가\r\n23살·아이 셋·장모 카드·월 지출 등 구체적인 요소가 연속해서 나오며 가족·돈·책임 논쟁이 강하다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n공개 페이지에 이미지 표시 존재. 실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "7476cd520fccb7e01f33b048b43844df578a81bbcd6d8ce769258331d2ef98c0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 260
+}

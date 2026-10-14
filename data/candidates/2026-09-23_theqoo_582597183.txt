@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/582597183
+제목 - 가난한(?) 시댁에 시집간 후기.
+내용 - [명시 요약 — 원문 전문 아님]
+경제적으로 넉넉하지 않은 시댁을 걱정했지만 실제로는 제사·용돈·안부전화 강요가 없고 며느리를 손님처럼 대한다는 반전이 있어 결혼·시댁·돈에 대한 선입견을 놓고 의견이 갈리기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/582597183",
+    "title": "가난한(?) 시댁에 시집간 후기.",
+    "body": "경제적으로 넉넉하지 않은 시댁을 걱정했지만 실제로는 제사·용돈·안부전화 강요가 없고 며느리를 손님처럼 대한다는 반전이 있어 결혼·시댁·돈에 대한 선입견을 놓고 의견이 갈리기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_582597183.md",
+      "originalTitle": "가난한(?) 시댁에 시집간 후기.",
+      "originalMarkdown": "# 가난한(?) 시댁에 시집간 후기.\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/582597183\r\n- exactObservedTitle: 가난한(?) 시댁에 시집간 후기.\r\n- observedAt: 2026-09-23 20:16 KST\r\n- observedMetrics: 공개 검색 결과에서 신뢰할 수 있는 수치 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 본문 공개 텍스트 확인 범위에서는 이미지/스크린샷을 확인하지 않음\r\n- whyGood: 경제적으로 넉넉하지 않은 시댁을 걱정했지만 실제로는 제사·용돈·안부전화 강요가 없고 며느리를 손님처럼 대한다는 반전이 있어 결혼·시댁·돈에 대한 선입견을 놓고 의견이 갈리기 좋다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 다운로드·스크린샷 캡처 없음.\r\n- provenance: TheQoo 익명 작성자의 개인 경험담. 개인 주장으로만 취급하며 외부 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "985a9b4083accf2869e659db76340ec875769522b763075db716572cbd692c82",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 204
+}

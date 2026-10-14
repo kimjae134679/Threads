@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728400
+제목 - 이시대를 사는 4050 특징
+내용 - [명시 요약 — 원문 전문 아님]
+4050 세대의 특징을 소재로 한 이미지형 유머 게시물. 공개 페이지에서 이미지 게시물임은 확인했지만 이미지 안 전체 내용은 아직 확인하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728400",
+    "title": "이시대를 사는 4050 특징",
+    "body": "4050 세대의 특징을 소재로 한 이미지형 유머 게시물. 공개 페이지에서 이미지 게시물임은 확인했지만 이미지 안 전체 내용은 아직 확인하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_4050특징.md",
+      "originalTitle": "이시대를 사는 4050 특징",
+      "originalMarkdown": "# 이시대를 사는 4050 특징\r\n\r\n## 글 내용\r\n4050 세대의 특징을 소재로 한 이미지형 유머 게시물. 공개 페이지에서 이미지 게시물임은 확인했지만 이미지 안 전체 내용은 아직 확인하지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728400\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 6,229 / 추천 4 / 댓글 16\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n세대 공감/반박이 바로 붙는 소재라 댓글 유발 가능성이 높다. 단순 세대 비꼼인지 실제 공감형 반전인지 원문 이미지 확인이 필요하다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "e06413a6a4a05d33083eb91b3465f40fef1024499a74b41f04a746416446c7d4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 198
+}

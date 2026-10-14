@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1w4qo0n/aita_for_withholding_my_brothers_800_wedding_gift/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+가족 갈등 중 어머니가 상황을 과장해 전달했고, 오빠가 작성자를 결혼식에서 제외했다. 작성자는 야간 병원 근무와 생활비·시험·고장난 휴대폰 비용 부담이 있는 상황에서 원래 오빠에게 주려던 800달러 결혼 선물을 보류했고 가족은 이를 두고 이기적이라고 비난한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1w4qo0n/aita_for_withholding_my_brothers_800_wedding_gift/",
+    "title": "제목",
+    "body": "가족 갈등 중 어머니가 상황을 과장해 전달했고, 오빠가 작성자를 결혼식에서 제외했다. 작성자는 야간 병원 근무와 생활비·시험·고장난 휴대폰 비용 부담이 있는 상황에서 원래 오빠에게 주려던 800달러 결혼 선물을 보류했고 가족은 이를 두고 이기적이라고 비난한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_형결혼식800달러선물취소.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for withholding my brother’s $800 wedding gift after he kicked me off the guest list for crying\r\n\r\n## 글 내용\r\n가족 갈등 중 어머니가 상황을 과장해 전달했고, 오빠가 작성자를 결혼식에서 제외했다. 작성자는 야간 병원 근무와 생활비·시험·고장난 휴대폰 비용 부담이 있는 상황에서 원래 오빠에게 주려던 800달러 결혼 선물을 보류했고 가족은 이를 두고 이기적이라고 비난한다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1w4qo0n/aita_for_withholding_my_brothers_800_wedding_gift/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-18 08:37 KST\r\n- votes: +2,566\r\n- 댓글/조회수: 미확인\r\n\r\n## 평가\r\n결혼식 초대 취소와 현금 선물이 직접 충돌하는 구조라 상황이 즉시 이해되고 의견이 갈린다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- full body read: 공개 검색에서 제공된 본문 범위 확인; 전체 댓글 미확인\r\n- comments read: 아니오\r\n- source screenshot 확보: 0\r\n- acquisition: ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 필요 / 04_REVIEW_PUBLISH만 게시",
+      "originalSha256": "786815c0e17ec59d99044c5b664f7be3388ff175b7acd5c9ea911b5c2c9672f3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 304
+}

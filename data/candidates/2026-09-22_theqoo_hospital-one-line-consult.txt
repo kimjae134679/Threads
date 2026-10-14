@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2638595510
+제목 - 대학병원 의사한테 한마디듣고 진료실나와서 좀 황당한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2638595510",
+    "title": "대학병원 의사한테 한마디듣고 진료실나와서 좀 황당한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_hospital-one-line-consult.md",
+      "originalTitle": "대학병원 의사한테 한마디듣고 진료실나와서 좀 황당한 후기",
+      "originalMarkdown": "# 대학병원 의사한테 한마디듣고 진료실나와서 좀 황당한 후기\r\n\r\n- source: TheQoo / 후기\r\n- publicUrl: https://theqoo.net/review/2638595510\r\n- exactObservedTitle: 대학병원 의사한테 한마디듣고 진료실나와서 좀 황당한 후기\r\n- observedAt: 2026-09-22 12:15 KST\r\n- observedMetrics: 조회 5,246, 댓글 20 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- acquisition: public individual page discovered via public web search; no login, anti-bot bypass, bulk crawl, screenshot, image download, or OCR\r\n- provenance: exact individual public TheQoo URL verified; body text was publicly readable\r\n\r\n## 왜 소재로 좋은지\r\n대학병원 진료실에 들어가자 의사가 거의 첫마디로 수술 의향을 묻고, 수술 방식 질문에는 밖에서 설명을 들으라고 했다는 경험담이다. 환자가 기대하는 최소한의 상태 설명과 대형병원의 효율 중심 진료 사이에서 `이 정도 진료가 정상인가`라는 의견이 즉시 갈릴 수 있는 상황이다.",
+      "originalSha256": "fee89dd06abdb5f1f920b3ef7b22bf2c87b55532d2792f918e05447d39e5a264",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 111
+}

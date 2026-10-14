@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/261535896
+제목 - 돈 없는 친구가 피곤한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/261535896",
+    "title": "돈 없는 친구가 피곤한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_moneyless-friend-tiring.md",
+      "originalTitle": "돈 없는 친구가 피곤한 후기",
+      "originalMarkdown": "# 돈 없는 친구가 피곤한 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/261535896\r\n- exactObservedTitle: `돈 없는 친구가 피곤한 후기`\r\n- observedAt: 2026-09-22 23:15 KST\r\n- acquisitionStatus: C1 — exact individual public URL verified via public indexed page\r\n- provenance: Public search/index result exposed the individual TheQoo review page and readable body text. Personal-experience claims are attributed to the anonymous poster and are not independently verified.\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed in retained text\r\n- observedMetrics: 조회 수 4,871 (as displayed by indexed public page at observation)\r\n- whyGoodMaterial: 반복적으로 소액을 빌리고 갚지 않는 친구와 금전적 경계 문제라 상황이 즉시 이해되고, 어디까지 친구를 배려해야 하는지 의견이 갈리기 쉽다.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rightsStatus: not established\r\n- OCR: not performed\r\n- moderation: not performed\r\n",
+      "originalSha256": "5905b19ee01f5f973ecadae8cd25dc6ac10ac49ad6e477423907e94df262eddf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 94
+}

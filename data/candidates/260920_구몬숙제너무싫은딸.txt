@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2729275
+제목 - 구몬 숙제가 너무하기싫은딸
+내용 - [명시 요약 — 원문 전문 아님]
+부모-자녀 일상에서 '숙제가 너무 싫은 딸'이라는 즉시 이해되는 공감/웃음 소재 가능성이 있으나 핵심 내용은 미확인이므로 후속 검증 필요.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2729275",
+    "title": "구몬 숙제가 너무하기싫은딸",
+    "body": "부모-자녀 일상에서 '숙제가 너무 싫은 딸'이라는 즉시 이해되는 공감/웃음 소재 가능성이 있으나 핵심 내용은 미확인이므로 후속 검증 필요.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_구몬숙제너무싫은딸.md",
+      "originalTitle": "구몬 숙제가 너무하기싫은딸",
+      "originalMarkdown": "# 구몬 숙제가 너무하기싫은딸\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- publicUrl: https://www.inven.co.kr/board/webzine/2097/2729275\r\n- exactObservedTitle: `구몬 숙제가 너무하기싫은딸`\r\n- observedAt: 2026-09-20 07:17 KST\r\n- observedMetrics: 조회 741 / 추천 2 / 댓글 3 (검색 관찰값)\r\n- bodyRead: false\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (iframe 표시; 실제 미디어 내용 미확인)\r\n- acquisition: public individual page; BODY_UNCONFIRMED; EMBED_PRESENT_UNREAD\r\n- provenance: Inven 개별 공개 페이지의 제목/메타데이터만 확인. iframe 내용은 읽지 않았음.\r\n- whyGood: 부모-자녀 일상에서 '숙제가 너무 싫은 딸'이라는 즉시 이해되는 공감/웃음 소재 가능성이 있으나 핵심 내용은 미확인이므로 후속 검증 필요.\r\n- note: 본문 미확인\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "54a7d647ec5a3e9978d89978e39898aaa503c989a25912c1e8d1d5ed3056b97d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 192
+}

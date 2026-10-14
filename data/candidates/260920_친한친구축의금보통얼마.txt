@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3311622903
+제목 - 친한친구 축의금 보통 얼마들 하는지 궁금한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+회사사람·가끔 보는 친구·매일 연락하는 절친·결혼식 역할 수행 여부에 따라 축의금 기준을 어떻게 나눌지 묻는 즉답형 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3311622903",
+    "title": "친한친구 축의금 보통 얼마들 하는지 궁금한 후기",
+    "body": "회사사람·가끔 보는 친구·매일 연락하는 절친·결혼식 역할 수행 여부에 따라 축의금 기준을 어떻게 나눌지 묻는 즉답형 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_친한친구축의금보통얼마.md",
+      "originalTitle": "친한친구 축의금 보통 얼마들 하는지 궁금한 후기",
+      "originalMarkdown": "# 친한친구 축의금 보통 얼마들 하는지 궁금한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/3311622903\r\n- exactObservedTitle: 친한친구 축의금 보통 얼마들 하는지 궁금한 후기\r\n- observedAt: 2026-09-20 14:18 KST\r\n- observedMetrics: 조회 13,693\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: 공개 개별 게시물과 공개 본문 텍스트 확인. 댓글 미열람.\r\n- provenance: ORIGINAL_PUBLIC_POST_OBSERVED\r\n- whyGood: 회사사람·가끔 보는 친구·매일 연락하는 절친·결혼식 역할 수행 여부에 따라 축의금 기준을 어떻게 나눌지 묻는 즉답형 논쟁 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "13ed648665900719f9d6806cd597a44813e0d37168451834958c99eb8ea2c492",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 184
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2723426?iskin=webzine
+제목 - 소설가 카프카가 직장내에서 귀여움 받았던 이유
+내용 - [명시 요약 — 원문 전문 아님]
+소설가 카프카가 직장에서 귀여움을 받았다는 일화를 여러 이미지로 구성한 게시물. 작성자는 '섬세 그 자체'라고 덧붙였으며 핵심 이미지 내부 내용은 source 확보 전까지 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2723426?iskin=webzine",
+    "title": "소설가 카프카가 직장내에서 귀여움 받았던 이유",
+    "body": "소설가 카프카가 직장에서 귀여움을 받았다는 일화를 여러 이미지로 구성한 게시물. 작성자는 '섬세 그 자체'라고 덧붙였으며 핵심 이미지 내부 내용은 source 확보 전까지 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_카프카직장에서귀여움.md",
+      "originalTitle": "소설가 카프카가 직장내에서 귀여움 받았던 이유",
+      "originalMarkdown": "# 소설가 카프카가 직장내에서 귀여움 받았던 이유\r\n\r\n## 글 내용\r\n소설가 카프카가 직장에서 귀여움을 받았다는 일화를 여러 이미지로 구성한 게시물. 작성자는 '섬세 그 자체'라고 덧붙였으며 핵심 이미지 내부 내용은 source 확보 전까지 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2723426?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 11:38 KST 부근\r\n- 조회 7,615 / 추천 11 / 댓글 13\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n유명인 역사 일화+직장생활+의외의 인간적인 면이라는 조합으로 가볍게 읽히며 이미지 연속형 콘텐츠에 적합할 가능성이 있다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 다수 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n",
+      "originalSha256": "3c8608fcd1defe4accf6acead5da2befb873ba9a39dbaa453e57adce9116c139",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 242
+}

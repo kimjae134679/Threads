@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/lostark/6271/2478061
+제목 - 헬스장에서 얼떨결에 번호 따일 뻔한 썰
+내용 - [명시 요약 — 원문 전문 아님]
+헬스장에서 상대가 자신을 계속 보는 상황에서 시작해 번호 교환 기대/오해로 이어지는 일상형 민망함과 반전 가능성이 있어 짧은 이야기 소재로 적합하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/2478061",
+    "title": "헬스장에서 얼떨결에 번호 따일 뻔한 썰",
+    "body": "헬스장에서 상대가 자신을 계속 보는 상황에서 시작해 번호 교환 기대/오해로 이어지는 일상형 민망함과 반전 가능성이 있어 짧은 이야기 소재로 적합하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_헬스장번호따일뻔한썰.md",
+      "originalTitle": "헬스장에서 얼떨결에 번호 따일 뻔한 썰",
+      "originalMarkdown": "# 헬스장에서 얼떨결에 번호 따일 뻔한 썰\r\n\r\n- stage: C1\r\n- source: Inven 로스트아크 자유 게시판\r\n- sourceUrl: https://www.inven.co.kr/board/lostark/6271/2478061\r\n- exactObservedTitle: `헬스장에서 얼떨결에 번호 따일 뻔한 썰`\r\n- observedAt: 2026-09-21 01:16 KST\r\n- observedMetrics: 조회 791, 추천 1, 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: true (공개 페이지에 Image 표시가 관찰됨; 다운로드/캡처하지 않음)\r\n- whyGood: 헬스장에서 상대가 자신을 계속 보는 상황에서 시작해 번호 교환 기대/오해로 이어지는 일상형 민망함과 반전 가능성이 있어 짧은 이야기 소재로 적합하다.\r\n- acquisition: 공개 검색으로 발견 후 정확한 개별 public URL의 본문을 직접 확인한 C1. 접근 우회 없음. 이미지 바이트/OCR/권리 검증은 수행하지 않음.\r\n- provenance: 원문은 게시자의 개인 경험 주장으로만 취급하며 사실 검증된 사건으로 승격하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "4dd213762e8736a0465eb18ecd970d8ea55a1b94b4f395bdd607779816b2a8db",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 205
+}

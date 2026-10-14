@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1444666601
+제목 - 친구가 나를 질투하는 것 같은 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1444666601",
+    "title": "친구가 나를 질투하는 것 같은 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구가나를질투하는것같은후기.md",
+      "originalTitle": "친구가 나를 질투하는 것 같은 후기",
+      "originalMarkdown": "# 친구가 나를 질투하는 것 같은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1444666601\r\n- exactObservedTitle: 친구가 나를 질투하는 것 같은 후기\r\n- observedAt: 2026-09-21 07:16 KST\r\n- observedMetrics: 조회 8,249 / 댓글 4\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: public individual page indexed and body text publicly readable\r\n- provenance: exact individual public URL verified\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n\r\n## 왜 소재로 좋은가\r\n친한 친구가 자기계발·구매·스타일을 계속 따라 하고 비교하는 것 같다는 관계 갈등이다. '질투인가, 우연인가'로 즉시 의견이 갈릴 수 있고 일상 공감·친구 손절/거리두기 논쟁으로 이어지는 스토리성이 있다.\r\n\r\n## 확인 메모\r\n본문을 실제 공개 페이지에서 확인했다. 댓글은 읽지 않았다. 확인하지 않은 권리·OCR·moderation·asset/publication 상태는 추정하지 않는다.\r\n",
+      "originalSha256": "e02ac021ae03a3653a82535c003391d6a83ff8a7ca7b2770e2fa7f3e6b652b8a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 99
+}

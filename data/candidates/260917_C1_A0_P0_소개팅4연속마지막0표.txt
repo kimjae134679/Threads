@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%A1%9C%ED%85%8C%EC%9D%B4%EC%85%98-%EC%86%8C%EA%B0%9C%ED%8C%85-0yrgkxm6
+제목 - 로테이션 소개팅
+내용 - [명시 요약 — 원문 전문 아님]
+여성 작성자가 로테이션 소개팅을 최근 네 번 연속 나간 결과를 정리했다. 앞선 세 번에는 상대에게 4~6표를 받았지만 네 번째에는 자신이 3명을 선택했는데 받은 표가 0이라 충격받았고 당분간 나가지 않겠다고 적었다. 공개 페이지에서 본문 전체를 확인했다. 댓글에서는 단순히 잘 웃는 것만으로는 표를 받는 게 아니라는 조언과 다른 참가자의 경험담 등이 나왔으며 일부만 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%A1%9C%ED%85%8C%EC%9D%B4%EC%85%98-%EC%86%8C%EA%B0%9C%ED%8C%85-0yrgkxm6",
+    "title": "로테이션 소개팅",
+    "body": "여성 작성자가 로테이션 소개팅을 최근 네 번 연속 나간 결과를 정리했다. 앞선 세 번에는 상대에게 4~6표를 받았지만 네 번째에는 자신이 3명을 선택했는데 받은 표가 0이라 충격받았고 당분간 나가지 않겠다고 적었다. 공개 페이지에서 본문 전체를 확인했다. 댓글에서는 단순히 잘 웃는 것만으로는 표를 받는 게 아니라는 조언과 다른 참가자의 경험담 등이 나왔으며 일부만 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_소개팅4연속마지막0표.md",
+      "originalTitle": "로테이션 소개팅",
+      "originalMarkdown": "# 로테이션 소개팅\r\n\r\n## 글 내용\r\n여성 작성자가 로테이션 소개팅을 최근 네 번 연속 나간 결과를 정리했다. 앞선 세 번에는 상대에게 4~6표를 받았지만 네 번째에는 자신이 3명을 선택했는데 받은 표가 0이라 충격받았고 당분간 나가지 않겠다고 적었다. 공개 페이지에서 본문 전체를 확인했다. 댓글에서는 단순히 잘 웃는 것만으로는 표를 받는 게 아니라는 조언과 다른 참가자의 경험담 등이 나왔으며 일부만 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%A1%9C%ED%85%8C%EC%9D%B4%EC%85%98-%EC%86%8C%EA%B0%9C%ED%8C%85-0yrgkxm6\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 조회수 1,842, 댓글 12. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n`4번 연속 도전 → 마지막 0표`라는 숫자 기반 반전이 명확하고 민망함/공감/연애 논쟁이 함께 있다. 무거운 결혼·빚 소재 사이에 섞기 좋은 가벼운 후보.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Blind\r\n- full body read: YES\r\n- comments read: PARTIAL\r\n- source images/screenshots: 본문 필수 첨부 이미지 확인되지 않음\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "645c13bee2f2f4d18dadb75e08e3cbfa3be55ac4458d49ab4344cda553a5be73",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 376
+}

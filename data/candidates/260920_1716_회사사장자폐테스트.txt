@@ -1,0 +1,29 @@
+원문링크 - https://www.ppomppu.co.kr/zboard/view.php?id=humor&ismobile=&no=750595
+제목 - 회사 사장이 갑자기 자폐테스트 시킨 썰
+내용 - [명시 요약 — 원문 전문 아님]
+제목만으로 직장 상사의 돌발 검사라는 황당한 직장 상황이지만, 본문 미확인이므로 사실관계·스토리는 채우지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.ppomppu.co.kr/zboard/view.php?id=humor&ismobile=&no=750595",
+    "title": "회사 사장이 갑자기 자폐테스트 시킨 썰",
+    "body": "제목만으로 직장 상사의 돌발 검사라는 황당한 직장 상황이지만, 본문 미확인이므로 사실관계·스토리는 채우지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_회사사장자폐테스트.md",
+      "originalTitle": "회사 사장이 갑자기 자폐테스트 시킨 썰",
+      "originalMarkdown": "# 회사 사장이 갑자기 자폐테스트 시킨 썰\r\n\r\n- stage: C1\r\n- source: Ppomppu\r\n- publicUrl: https://www.ppomppu.co.kr/zboard/view.php?id=humor&ismobile=&no=750595\r\n- exactObservedTitle: 회사 사장이 갑자기 자폐테스트 시킨 썰\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회수 2598, 추천 0, 다른의견 0\r\n- bodyRead: false\r\n- bodyStatus: 본문 미확인\r\n- commentsRead: false\r\n- imageOrScreenshot: 이미지 첨부 존재 확인; 내용 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_IMAGE_BODY_UNREAD\r\n- provenance: exact individual public URL confirmed; substantive story appears image-dependent and was not downloaded/OCRed\r\n- whyGood: 제목만으로 직장 상사의 돌발 검사라는 황당한 직장 상황이지만, 본문 미확인이므로 사실관계·스토리는 채우지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "4745b84ff0a7c3f59403fadd6051fc3c0f601935819ac63b606a6dfef8668387",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 204
+}

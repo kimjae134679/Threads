@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/463560036
+제목 - 식탐레전드 - 남편머리에 죽사발엎고 이혼해요
+내용 - [명시 요약 — 원문 전문 아님]
+시댁의 4억원 요구, 아이 통장·적금 자금 이동, 차량 처분과 시동생 지원 등 금전 갈등이 연속적으로 누적되는 강한 서사 구조.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/463560036",
+    "title": "식탐레전드 - 남편머리에 죽사발엎고 이혼해요",
+    "body": "시댁의 4억원 요구, 아이 통장·적금 자금 이동, 차량 처분과 시동생 지원 등 금전 갈등이 연속적으로 누적되는 강한 서사 구조.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_남편머리에죽사발엎고이혼해요.md",
+      "originalTitle": "식탐레전드 - 남편머리에 죽사발엎고 이혼해요",
+      "originalMarkdown": "# 식탐레전드 - 남편머리에 죽사발엎고 이혼해요\r\n\r\n- source: TheQoo square (재전달)\r\n- publicUrl: https://theqoo.net/square/463560036\r\n- exactObservedTitle: 식탐레전드 - 남편머리에 죽사발엎고 이혼해요\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 공개 검색 결과에서 확실히 확인 가능한 수치 없음\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_REPOST_BODY_PARTIAL\r\n- provenance: TheQoo 개별 공개 재전달 글. 원문 출처 자체로 취급하지 않음.\r\n- whyGood: 시댁의 4억원 요구, 아이 통장·적금 자금 이동, 차량 처분과 시동생 지원 등 금전 갈등이 연속적으로 누적되는 강한 서사 구조.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "da80da6d2d78b74b0efd4e4c8d12a909ea91b4cc7161f1c8289ecaf84434d685",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 181
+}

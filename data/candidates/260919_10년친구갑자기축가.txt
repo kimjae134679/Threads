@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EA%B0%80-%EC%82%AC%EB%A1%80-%EC%9D%B4%EA%B1%B0-%EB%A7%9E%EB%8A%94%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A8-h3bnOJdy
+제목 - 친구 결혼식 축가 사례 이거 맞는지 궁금함
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EA%B0%80-%EC%82%AC%EB%A1%80-%EC%9D%B4%EA%B1%B0-%EB%A7%9E%EB%8A%94%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A8-h3bnOJdy",
+    "title": "친구 결혼식 축가 사례 이거 맞는지 궁금함",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_10년친구갑자기축가.md",
+      "originalTitle": "친구 결혼식 축가 사례 이거 맞는지 궁금함",
+      "originalMarkdown": "# 친구 결혼식 축가 사례 이거 맞는지 궁금함\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EA%B0%80-%EC%82%AC%EB%A1%80-%EC%9D%B4%EA%B1%B0-%EB%A7%9E%EB%8A%94%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A8-h3bnOJdy\r\n- exactObservedTitle: 친구 결혼식 축가 사례 이거 맞는지 궁금함\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 1,609 / 댓글 11\r\n- bodyRead: partial (공개 검색 노출 본문 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; BODY_PARTIAL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n10년 동안 실제로 만나지 않은 옛 친구가 갑자기 연락해 장거리 결혼식 축가를 부탁했다는 상황이라 우정의 거리와 부탁의 선을 두고 의견이 갈린다.\r\n\r\n## 관찰 메모\r\n작성자는 경기권, 친구는 울산 거주이며 약 10년간 만나지 않다가 친구가 결혼 소식과 함께 축가를 부탁했다고 적었다.",
+      "originalSha256": "a487774045f6674f887e8cab577851f11e58aba7bf2d96dd5bdba718aac4e984",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 269
+}

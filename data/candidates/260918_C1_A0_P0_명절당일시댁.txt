@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%98%88%EC%A0%95-%EB%B6%80%EB%B6%80%EC%9D%98-%EB%AA%85%EC%A0%88-%EB%AC%B8%EC%A0%9C-4h4wgao7
+제목 - 결혼 예정 부부의 명절 문제
+내용 - [명시 요약 — 원문 전문 아님]
+예비부부는 명절 당일 방문을 양가 번갈아 하기로 합의했지만 남자 측 아버지가 설·추석 모두 당일 아침은 시댁에서 먹고 제사·차례를 도와야 한다고 요구해 충돌한 사연. 남자는 이를 받아들일 수 없다며 부모와 연을 끊는 이야기까지 나온 상태라고 한다. 공개 페이지 본문을 실제로 읽었고 일부 댓글이 노출됨. 댓글 전체는 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%98%88%EC%A0%95-%EB%B6%80%EB%B6%80%EC%9D%98-%EB%AA%85%EC%A0%88-%EB%AC%B8%EC%A0%9C-4h4wgao7",
+    "title": "결혼 예정 부부의 명절 문제",
+    "body": "예비부부는 명절 당일 방문을 양가 번갈아 하기로 합의했지만 남자 측 아버지가 설·추석 모두 당일 아침은 시댁에서 먹고 제사·차례를 도와야 한다고 요구해 충돌한 사연. 남자는 이를 받아들일 수 없다며 부모와 연을 끊는 이야기까지 나온 상태라고 한다. 공개 페이지 본문을 실제로 읽었고 일부 댓글이 노출됨. 댓글 전체는 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_명절당일시댁.md",
+      "originalTitle": "결혼 예정 부부의 명절 문제",
+      "originalMarkdown": "# 결혼 예정 부부의 명절 문제\r\n\r\n## 글 내용\r\n예비부부는 명절 당일 방문을 양가 번갈아 하기로 합의했지만 남자 측 아버지가 설·추석 모두 당일 아침은 시댁에서 먹고 제사·차례를 도와야 한다고 요구해 충돌한 사연. 남자는 이를 받아들일 수 없다며 부모와 연을 끊는 이야기까지 나온 상태라고 한다. 공개 페이지 본문을 실제로 읽었고 일부 댓글이 노출됨. 댓글 전체는 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%98%88%EC%A0%95-%EB%B6%80%EB%B6%80%EC%9D%98-%EB%AA%85%EC%A0%88-%EB%AC%B8%EC%A0%9C-4h4wgao7\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 03:36 KST 관측: 조회수 8,375, 좋아요 7, 댓글 161.\r\n\r\n## 평가\r\n양가 공평성·제사·부모와의 관계 단절까지 이어지는 매우 강한 한국형 가족 갈등. 댓글 161개로 반응도 확인됨.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 공개 URL 확인. source screenshot 미확보, `ASSETS_PENDING`. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "7eeb58befb0271581b5aea883e687bf73231d6596c2473739442a3bd1d30a95b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 393
+}

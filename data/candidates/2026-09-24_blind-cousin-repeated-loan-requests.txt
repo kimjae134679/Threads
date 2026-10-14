@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88-%EB%B9%8C%EB%A0%A4%EB%8B%AC%EB%9D%BC%EA%B3%A0-%EC%97%B0%EB%9D%BD%ED%95%9C-%EC%82%AC%EC%B4%8C%EC%98%A4%EB%B9%A0-%EC%84%A4%EC%97%90-%EB%A7%8C%EB%82%98%EA%B8%B0-GeObEA2k
+제목 - 돈 빌려달라고 연락한 사촌오빠 설에 만나기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88-%EB%B9%8C%EB%A0%A4%EB%8B%AC%EB%9D%BC%EA%B3%A0-%EC%97%B0%EB%9D%BD%ED%95%9C-%EC%82%AC%EC%B4%8C%EC%98%A4%EB%B9%A0-%EC%84%A4%EC%97%90-%EB%A7%8C%EB%82%98%EA%B8%B0-GeObEA2k",
+    "title": "돈 빌려달라고 연락한 사촌오빠 설에 만나기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_blind-cousin-repeated-loan-requests.md",
+      "originalTitle": "돈 빌려달라고 연락한 사촌오빠 설에 만나기",
+      "originalMarkdown": "# 돈 빌려달라고 연락한 사촌오빠 설에 만나기\r\n\r\n- source: Blind 갑분설날\r\n- source_url: https://www.teamblind.com/kr/post/%EB%8F%88-%EB%B9%8C%EB%A0%A4%EB%8B%AC%EB%9D%BC%EA%B3%A0-%EC%97%B0%EB%9D%BD%ED%95%9C-%EC%82%AC%EC%B4%8C%EC%98%A4%EB%B9%A0-%EC%84%A4%EC%97%90-%EB%A7%8C%EB%82%98%EA%B8%B0-GeObEA2k\r\n- exact_observed_title: `돈 빌려달라고 연락한 사촌오빠 설에 만나기`\r\n- observed_at: 2026-09-24 00:46 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous/pseudonymous community post; first-person claims are attributed/unverified unless independently established\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not confirmed / not downloaded\r\n- observed_metrics: 조회 561; 댓글 8\r\n- why_good: 어릴 때 자신을 잘 챙겨준 사촌이 성인이 된 뒤 반복적으로 돈을 빌려달라고 해 가족에게 말할지 고민하는 관계 반전이 있다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 어릴 때 가까웠던 사촌오빠가 성인이 된 뒤 간헐적으로 돈을 빌려달라고 연락해왔고, 최근에도 요청이 반복되면서 설에 만나기 전 큰어른에게 알려야 할지 고민한다고 적었다.\r\n",
+      "originalSha256": "80fc0dd7672ce83c7119fc1618f66790b0fa41c9c45505eacc0aae98e2b26506",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 277
+}

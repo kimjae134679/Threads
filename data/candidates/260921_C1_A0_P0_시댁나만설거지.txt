@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2222967424
+제목 - 시댁에서 나만 설거지 해서 계속 화가나는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2222967424",
+    "title": "시댁에서 나만 설거지 해서 계속 화가나는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_C1_A0_P0_시댁나만설거지.md",
+      "originalTitle": "시댁에서 나만 설거지 해서 계속 화가나는 후기",
+      "originalMarkdown": "# 시댁에서 나만 설거지 해서 계속 화가나는 후기\r\n\r\n- source: TheQoo / 후기\r\n- sourceUrl: https://theqoo.net/review/2222967424\r\n- exactObservedTitle: 시댁에서 나만 설거지 해서 계속 화가나는 후기\r\n- observedAt: 2026-09-21 17:14 KST\r\n- acquisitionStatus: C1 — exact individual public URL verified\r\n- bodyRead: true\r\n- commentsRead: false\r\n- observedMetrics: 조회 9,980 / 댓글 136\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 소재 가치\r\n시댁에서 외식 대신 늘 집밥을 먹는데 식사 후 설거지가 며느리 한 사람의 몫으로 굳어졌다는 갈등이다. 가족 역할·성별 기대·배우자의 대응을 두고 즉시 의견이 갈릴 수 있는 구조다.\r\n\r\n## provenance\r\n공개 개별 페이지에서 노출된 본문을 실제 읽음. 댓글 내용은 읽지 않음. 이미지/권리/OCR/자산 상태는 추정하지 않음.",
+      "originalSha256": "3944033b20889b094384ad8f5af498004c0c260c0e0dc33da4189593dc812e55",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 105
+}

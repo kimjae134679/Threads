@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1adu2mq
+제목 - 상속받는다고 아내에게만 말했는데 처가가 다 알고 있었습니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자가 여러 부동산과 큰 금액을 상속받게 된 사실을 아내에게만 알리며 가족에게 말하지 말아 달라고 부탁했지만, 처가 식사 자리에서 이미 가족들이 상속 내용을 알고 있었고 처남까지 집 문제를 꺼내면서 부부 갈등이 생긴 사연. 공개 본문 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1adu2mq",
+    "title": "상속받는다고 아내에게만 말했는데 처가가 다 알고 있었습니다",
+    "body": "작성자가 여러 부동산과 큰 금액을 상속받게 된 사실을 아내에게만 알리며 가족에게 말하지 말아 달라고 부탁했지만, 처가 식사 자리에서 이미 가족들이 상속 내용을 알고 있었고 처남까지 집 문제를 꺼내면서 부부 갈등이 생긴 사연. 공개 본문 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_상속받자마자가족에게소문.md",
+      "originalTitle": "상속받는다고 아내에게만 말했는데 처가가 다 알고 있었습니다",
+      "originalMarkdown": "# 상속받는다고 아내에게만 말했는데 처가가 다 알고 있었습니다\r\n\r\n## source\r\nReddit / r/AmItheAsshole\r\n\r\n## 원문 제목\r\nAITA for wanting my wife to not tell her family about our financial situation?\r\n\r\n## 글 내용\r\n작성자가 여러 부동산과 큰 금액을 상속받게 된 사실을 아내에게만 알리며 가족에게 말하지 말아 달라고 부탁했지만, 처가 식사 자리에서 이미 가족들이 상속 내용을 알고 있었고 처남까지 집 문제를 꺼내면서 부부 갈등이 생긴 사연. 공개 본문 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1adu2mq\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 게시물 점수 +6,530 확인\r\n- 조회수/댓글수 미확인\r\n\r\n## 평가\r\n비밀로 해달라는 상속 소식이 즉시 가족 전체에 퍼지고 곧바로 주택 이야기가 나온다는 전개가 강하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "e2ae0aec0978a6afd814a761b5a7504f298b6a9170ba3df13c7505fa6e29db9a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 283
+}

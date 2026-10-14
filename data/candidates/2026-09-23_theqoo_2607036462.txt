@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2607036462
+제목 - 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요
+내용 - [명시 요약 — 원문 전문 아님]
+절친에게 소개팅을 주선해 실제 결혼까지 이어졌지만 신혼여행 선물이 사탕·초콜릿 몇 개였다는 데서 서운함이 폭발하는 이야기로, 선물의 성의·소개 주선 보답의 적정선에 대해 즉시 의견이 갈릴 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2607036462",
+    "title": "판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요",
+    "body": "절친에게 소개팅을 주선해 실제 결혼까지 이어졌지만 신혼여행 선물이 사탕·초콜릿 몇 개였다는 데서 서운함이 폭발하는 이야기로, 선물의 성의·소개 주선 보답의 적정선에 대해 즉시 의견이 갈릴 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_2607036462.md",
+      "originalTitle": "판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요",
+      "originalMarkdown": "# 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요\r\n\r\n- stage: C1\r\n- source: TheQoo 스퀘어\r\n- sourceUrl: https://theqoo.net/square/2607036462\r\n- exactObservedTitle: 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요\r\n- observedAt: 2026-09-23 06:19 KST\r\n- observedMetrics: 조회 90,831 / 댓글 732\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true\r\n- whyGood: 절친에게 소개팅을 주선해 실제 결혼까지 이어졌지만 신혼여행 선물이 사탕·초콜릿 몇 개였다는 데서 서운함이 폭발하는 이야기로, 선물의 성의·소개 주선 보답의 적정선에 대해 즉시 의견이 갈릴 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 포함 이미지 링크는 관찰됐지만 이미지 다운로드·스크린샷·OCR은 하지 않음.\r\n- provenance: TheQoo 공개 게시물이며 제목상 네이트판 계열 재게시로 표시되어 있음. 원 네이트판 개별 URL은 이번 실행에서 확인하지 못했으므로 현재 URL을 공개 재게시 출처로 기록함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0f37f874a1f535094f46debf9292c28a3000fbf3fbc7f4da3df4b310c163bd94",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 230
+}

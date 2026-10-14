@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%82%AC%EC%B4%8C%EC%98%A4%EB%B9%A0%EA%B0%80-%EB%82%B4-%EB%82%A8%ED%8E%B8%EC%9D%84-O%EC%84%9C%EB%B0%A9%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EB%B6%80%EB%A5%B4%EB%8A%94%EA%B1%B0-3h4i50ag
+제목 - 사촌오빠가 내 남편을 O서방이라고 부르는거
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%82%AC%EC%B4%8C%EC%98%A4%EB%B9%A0%EA%B0%80-%EB%82%B4-%EB%82%A8%ED%8E%B8%EC%9D%84-O%EC%84%9C%EB%B0%A9%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EB%B6%80%EB%A5%B4%EB%8A%94%EA%B1%B0-3h4i50ag",
+    "title": "사촌오빠가 내 남편을 O서방이라고 부르는거",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_사촌오빠가남편을서방이라부름.md",
+      "originalTitle": "사촌오빠가 내 남편을 O서방이라고 부르는거",
+      "originalMarkdown": "# 사촌오빠가 내 남편을 O서방이라고 부르는거\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%82%AC%EC%B4%8C%EC%98%A4%EB%B9%A0%EA%B0%80-%EB%82%B4-%EB%82%A8%ED%8E%B8%EC%9D%84-O%EC%84%9C%EB%B0%A9%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EB%B6%80%EB%A5%B4%EB%8A%94%EA%B1%B0-3h4i50ag\r\n- exact_observed_title: 사촌오빠가 내 남편을 O서방이라고 부르는거\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 490, 댓글 9, 좋아요 2\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 한 살 차이 사촌이 동갑 남편을 '서방'이라 부르는 호칭 문제로 세대·예절 논쟁이 즉시 발생하는 가벼운 소재.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8aa3a2a4b3284fb51d0a9908ec5823f182a50c46902175dfb8498272e4605323",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 277
+}

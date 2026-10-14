@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2046737
+제목 - 7,000원 돈까스 세트
+내용 - [명시 요약 — 원문 전문 아님]
+7,000원짜리 돈까스 세트 구성을 여러 장의 사진으로 보여주는 게시물. 공개 페이지에서 이미지 3장 존재와 짧은 작성자 반응은 확인했지만 사진 자체는 source 파일로 확보하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2046737",
+    "title": "7,000원 돈까스 세트",
+    "body": "7,000원짜리 돈까스 세트 구성을 여러 장의 사진으로 보여주는 게시물. 공개 페이지에서 이미지 3장 존재와 짧은 작성자 반응은 확인했지만 사진 자체는 source 파일로 확보하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_7000원돈까스세트.md",
+      "originalTitle": "7,000원 돈까스 세트",
+      "originalMarkdown": "# 7,000원 돈까스 세트\r\n\r\n## 글 내용\r\n7,000원짜리 돈까스 세트 구성을 여러 장의 사진으로 보여주는 게시물. 공개 페이지에서 이미지 3장 존재와 짧은 작성자 반응은 확인했지만 사진 자체는 source 파일로 확보하지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2046737\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 4,581 / 추천 1 / 댓글 18\r\n- 본문 읽음: 텍스트 확인, 이미지 내용 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n가격 대비 구성에 즉각 의견을 내기 쉬운 가벼운 생활 소재. 시의성은 낮아 최신 관계/직장 후보보다 우선순위는 낮다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예, 3장\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "e7de01575f381d7e6dacced3dd273adb8da3c0422dd0dc3c292268194699fa90",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 219
+}

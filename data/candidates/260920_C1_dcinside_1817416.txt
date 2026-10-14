@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416
+제목 - 돈 모을려면 일단 친구를 끊어라
+내용 - [명시 요약 — 원문 전문 아님]
+친구 관계와 돈·축의금 지출을 극단적으로 연결한 주장이라 즉시 찬반 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416",
+    "title": "돈 모을려면 일단 친구를 끊어라",
+    "body": "친구 관계와 돈·축의금 지출을 극단적으로 연결한 주장이라 즉시 찬반 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_dcinside_1817416.md",
+      "originalTitle": "돈 모을려면 일단 친구를 끊어라",
+      "originalMarkdown": "# 돈 모을려면 일단 친구를 끊어라\r\n\r\n- source: DCInside 중소기업 갤러리\r\n- sourceUrl: https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416\r\n- exactObservedTitle: 돈 모을려면 일단 친구를 끊어라\r\n- observedAt: 2026-09-20 16:16 KST\r\n- provenanceLevel: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READ\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 본문 이미지 관찰되지 않음\r\n- observedMetrics: 조회 61, 댓글 6 (검색/공개 페이지 관찰값; URL 변형 결과에서 다른 값도 노출되어 변동 가능)\r\n- whyGood: 친구 관계와 돈·축의금 지출을 극단적으로 연결한 주장이라 즉시 찬반 의견이 갈릴 소재.\r\n- bodyStatus: 공개 본문 읽음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "87aa26b096a229d727b30d0d9081304ef585f9f40113da1a344e605e89eca89f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 176
+}

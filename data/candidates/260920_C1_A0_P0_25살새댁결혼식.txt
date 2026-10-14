@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2029762430
+제목 - 25살 새댁덬 꿈같았던 결혼식 후기
+내용 - [명시 요약 — 원문 전문 아님]
+야외식 날씨 반전, 가족 편지, 참석자들의 눈물 등 장면 전환이 많고 감정선이 명확해 스토리성이 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2029762430",
+    "title": "25살 새댁덬 꿈같았던 결혼식 후기",
+    "body": "야외식 날씨 반전, 가족 편지, 참석자들의 눈물 등 장면 전환이 많고 감정선이 명확해 스토리성이 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_25살새댁결혼식.md",
+      "originalTitle": "25살 새댁덬 꿈같았던 결혼식 후기",
+      "originalMarkdown": "# 25살 새댁덬 꿈같았던 결혼식 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/2029762430\r\n- exactObservedTitle: `25살 새댁덬 꿈같았던 결혼식 후기`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 결혼식 경험담.\r\n- whyGood: 야외식 날씨 반전, 가족 편지, 참석자들의 눈물 등 장면 전환이 많고 감정선이 명확해 스토리성이 좋음.\r\n- safety: 관찰되지 않은 수치·권리 상태를 채우지 않음.",
+      "originalSha256": "b0a8bb6791b464e105bd5a34ed02434ff6d204c253f2ea5b50501cbda926c1e8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 163
+}

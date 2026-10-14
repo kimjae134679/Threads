@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EB%8F%88%EB%8F%88-%EA%B1%B0%EB%A6%AC%EB%8A%94%EA%B1%B0-%EB%93%A3%EA%B8%B0-%ED%9E%98%EB%93%A4%EC%96%B4-h1puixb6
+제목 - 시어머니 돈돈 거리는거 듣기 힘들어
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EB%8F%88%EB%8F%88-%EA%B1%B0%EB%A6%AC%EB%8A%94%EA%B1%B0-%EB%93%A3%EA%B8%B0-%ED%9E%98%EB%93%A4%EC%96%B4-h1puixb6",
+    "title": "시어머니 돈돈 거리는거 듣기 힘들어",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_시어머니돈돈거리는거.md",
+      "originalTitle": "시어머니 돈돈 거리는거 듣기 힘들어",
+      "originalMarkdown": "# 시어머니 돈돈 거리는거 듣기 힘들어\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EB%8F%88%EB%8F%88-%EA%B1%B0%EB%A6%AC%EB%8A%94%EA%B1%B0-%EB%93%A3%EA%B8%B0-%ED%9E%98%EB%93%A4%EC%96%B4-h1puixb6\r\n- exact_observed_title: 시어머니 돈돈 거리는거 듣기 힘들어\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 511, 댓글 16\r\n- body_read: yes\r\n- comments_read: no\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 결혼 5개월차에 '어릴 때 투자했으니 이제 수금'이라는 표현과 반복되는 돈 요구 암시가 강한 시댁 갈등 소재.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 발언·사연 독립 검증 안 함\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d2cfd79cc738a86bf108a08d3e7e47f8987d557f2a2605e7e2f548490b9768cb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 245
+}

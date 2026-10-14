@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4069701714
+제목 - “모은 돈 5천만원” 결혼하자던 남친, 알고 보니 재산 4억…“시험해봤다네요” 황당
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 논의하며 5천만원밖에 없다고 말했던 연인이 실제로는 4억원 넘게 보유했고 상대를 시험하려고 숨겼다는 구조라 신뢰·돈·결혼 논쟁이 동시에 발생한다. 사람들이 즉시 찬반을 내기 쉬운 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4069701714",
+    "title": "“모은 돈 5천만원” 결혼하자던 남친, 알고 보니 재산 4억…“시험해봤다네요” 황당",
+    "body": "결혼을 논의하며 5천만원밖에 없다고 말했던 연인이 실제로는 4억원 넘게 보유했고 상대를 시험하려고 숨겼다는 구조라 신뢰·돈·결혼 논쟁이 동시에 발생한다. 사람들이 즉시 찬반을 내기 쉬운 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_4069701714.md",
+      "originalTitle": "“모은 돈 5천만원” 결혼하자던 남친, 알고 보니 재산 4억…“시험해봤다네요” 황당",
+      "originalMarkdown": "# “모은 돈 5천만원” 결혼하자던 남친, 알고 보니 재산 4억…“시험해봤다네요” 황당\r\n\r\n- source: TheQoo (news/community relay)\r\n- sourceUrl: https://theqoo.net/square/4069701714\r\n- exactObservedTitle: `“모은 돈 5천만원” 결혼하자던 남친, 알고 보니 재산 4억…“시험해봤다네요” 황당`\r\n- observedAt: 2026-09-22 19:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL opened/read through public page; page itself identifies an underlying online-community story and links a Naver News article\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed in the text inspected\r\n- observedMetrics: 조회 3,870 / 댓글 36\r\n- whyGood: 결혼을 논의하며 5천만원밖에 없다고 말했던 연인이 실제로는 4억원 넘게 보유했고 상대를 시험하려고 숨겼다는 구조라 신뢰·돈·결혼 논쟁이 동시에 발생한다. 사람들이 즉시 찬반을 내기 쉬운 소재다.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights: 미확인\r\n- OCR: 미수행\r\n- moderation: 미수행\r\n",
+      "originalSha256": "440485e7f338344a6d51e4619dcedbcf8e5f7e976761a62f95eb2f4ec2788001",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 241
+}

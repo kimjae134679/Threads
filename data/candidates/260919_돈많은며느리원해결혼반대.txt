@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-mwpbz8Qg
+제목 - 남친 부모님 결혼 반대
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-mwpbz8Qg",
+    "title": "남친 부모님 결혼 반대",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_돈많은며느리원해결혼반대.md",
+      "originalTitle": "남친 부모님 결혼 반대",
+      "originalMarkdown": "# 남친 부모님 결혼 반대\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-mwpbz8Qg\r\n- exactObservedTitle: 남친 부모님 결혼 반대\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 2,658 / 댓글 33\r\n- bodyRead: true (공개 노출 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n결혼 상대 어머니가 '돈을 많이 가져오는 며느리'를 원해 반대한다는 갈등으로 직업·혼수·부모 개입에 대한 의견이 크게 갈릴 수 있다.\r\n\r\n## 관찰 메모\r\n작성자는 자신이 교사, 남친은 전문직이며 본인이 결혼 때 1억5천 이상 가져가기 어렵고 상대 어머니가 더 큰 자금을 기대하는 것 같다고 적었다.",
+      "originalSha256": "41eefaf5fc9fddc34f5249362e73ee790bfb8e883f3fcf92c7c72dd809d75968",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 183
+}

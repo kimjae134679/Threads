@@ -24,6 +24,8 @@ jobs:
         run: node upload-studio/test/final-review-browser.test.mjs
       - name: Startup automatic sync and bulk selection
         run: node upload-studio/test/autoload-browser.mjs
+      - name: Unified same-version quality and save-barrier navigation
+        run: node upload-studio/test/unified-navigation-browser.mjs
       - name: Keep actual browser screenshots
         if: always()
         uses: actions/upload-artifact@v4

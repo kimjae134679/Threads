@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2156373479
+제목 - 손절한 친구에게서 다시 연락이 온 초기
+내용 - [명시 요약 — 원문 전문 아님]
+10년 지기 친구와 관계를 끊은 뒤 다시 연락이 오는 구조라 손절의 정당성, 재접촉에 응할지 여부, 관계 경계선에 대한 참여형 논쟁 소재가 된다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2156373479",
+    "title": "손절한 친구에게서 다시 연락이 온 초기",
+    "body": "10년 지기 친구와 관계를 끊은 뒤 다시 연락이 오는 구조라 손절의 정당성, 재접촉에 응할지 여부, 관계 경계선에 대한 참여형 논쟁 소재가 된다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_2156373479.md",
+      "originalTitle": "손절한 친구에게서 다시 연락이 온 초기",
+      "originalMarkdown": "# 손절한 친구에게서 다시 연락이 온 초기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2156373479\r\n- exactObservedTitle: 손절한 친구에게서 다시 연락이 온 초기\r\n- observedAt: 2026-09-22 04:17 KST\r\n- observedMetrics: 조회 수 13577\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 10년 지기 친구와 관계를 끊은 뒤 다시 연락이 오는 구조라 손절의 정당성, 재접촉에 응할지 여부, 관계 경계선에 대한 참여형 논쟁 소재가 된다.\r\n- acquisition: 공개 개별 게시물 URL을 검색 인덱스에서 확인하고 공개 본문 텍스트를 읽음. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 최초 작성자의 별도 외부 원출처 여부는 확인하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "beb224f04a46dd0f7dcdad2ed2570ead22d694fbff3f5cd83f692f36caa83df8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 189
+}

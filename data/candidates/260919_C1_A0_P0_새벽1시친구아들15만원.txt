@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4050520140
+제목 - 새벽 1시에 15만원 뽑아 친구 아들 용돈 준 남편
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4050520140",
+    "title": "새벽 1시에 15만원 뽑아 친구 아들 용돈 준 남편",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_새벽1시친구아들15만원.md",
+      "originalTitle": "새벽 1시에 15만원 뽑아 친구 아들 용돈 준 남편",
+      "originalMarkdown": "# 새벽 1시에 15만원 뽑아 친구 아들 용돈 준 남편\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/4050520140\r\n- exactObservedTitle: 새벽1시에 15만원 뽑아 친구 아들한테 용돈 준 남편\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 71,838 / 댓글 187개\r\n- bodyRead: false — 본문 미확인(이미지 중심)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes (페이지 표시)\r\n- provenance: C1 / exact individual public URL\r\n- acquisition: PUBLIC_INDEX_TEXT_ONLY\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n새벽 1시·15만원·친구 아들이라는 조합만으로 부부의 돈 사용 경계와 인간관계 논쟁이 강하다. 이미지 본문 내용은 읽지 않았으므로 추가 서사는 채우지 않음.\r\n",
+      "originalSha256": "b84146b60b10bcfd84dc4f3e2d20d2e01865dbe09a9cb2e196080c25b8e6651b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 108
+}

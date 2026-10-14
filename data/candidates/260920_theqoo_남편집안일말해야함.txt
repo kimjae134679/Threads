@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/543328502
+제목 - 사소한 것에 크게 서운한 후기(스압)
+내용 - [명시 요약 — 원문 전문 아님]
+숟가락 놓기, 그릇 물에 담그기, 청소할 때 다리만 들기처럼 아주 사소하고 구체적인 행동이 누적되는 부부 갈등이라 공감되는 짜증 소재로 전달력이 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/543328502",
+    "title": "사소한 것에 크게 서운한 후기(스압)",
+    "body": "숟가락 놓기, 그릇 물에 담그기, 청소할 때 다리만 들기처럼 아주 사소하고 구체적인 행동이 누적되는 부부 갈등이라 공감되는 짜증 소재로 전달력이 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_theqoo_남편집안일말해야함.md",
+      "originalTitle": "사소한 것에 크게 서운한 후기(스압)",
+      "originalMarkdown": "# 사소한 것에 크게 서운한 후기(스압)\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/543328502\r\n- exactObservedTitle: `사소한 것에 크게 서운한 후기(스압)`\r\n- observedAt: 2026-09-20 03:14 KST\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: TheQoo 개별 공개 페이지 본문 확인.\r\n- observedMetrics: 조회 수 2304\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 숟가락 놓기, 그릇 물에 담그기, 청소할 때 다리만 들기처럼 아주 사소하고 구체적인 행동이 누적되는 부부 갈등이라 공감되는 짜증 소재로 전달력이 좋음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "36c8c7226cee339cbf711e7f3595878d0c905430a9e53c966c0dec796b9432b9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 190
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1totofa/aita_wedding_familymoney_drama/
+제목 - AITA – wedding family/money drama
+내용 - [명시 요약 — 원문 전문 아님]
+작성자 어머니가 결혼식 비용을 계속 대신 내면서 상대 부모가 돈을 안 낸다고 불평했는데, 상대 부모가 신랑신부에게 5,000파운드를 지원하자 이번에는 그 돈을 자신에게 직접 보냈어야 한다며 화를 낸 사연. 본문 확인, 댓글 전체는 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1totofa/aita_wedding_familymoney_drama/",
+    "title": "AITA – wedding family/money drama",
+    "body": "작성자 어머니가 결혼식 비용을 계속 대신 내면서 상대 부모가 돈을 안 낸다고 불평했는데, 상대 부모가 신랑신부에게 5,000파운드를 지원하자 이번에는 그 돈을 자신에게 직접 보냈어야 한다며 화를 낸 사연. 본문 확인, 댓글 전체는 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼비용부모계좌.md",
+      "originalTitle": "AITA – wedding family/money drama",
+      "originalMarkdown": "# AITA – wedding family/money drama\r\n\r\n## 글 내용\r\n작성자 어머니가 결혼식 비용을 계속 대신 내면서 상대 부모가 돈을 안 낸다고 불평했는데, 상대 부모가 신랑신부에게 5,000파운드를 지원하자 이번에는 그 돈을 자신에게 직접 보냈어야 한다며 화를 낸 사연. 본문 확인, 댓글 전체는 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1totofa/aita_wedding_familymoney_drama/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 04:38 KST 공개 페이지 관측: 게시물 점수 +34. 조회수·댓글 총수는 확인하지 않음.\r\n\r\n## 평가\r\n'돈을 안 낸다' 불만→실제 지원→왜 나에게 안 보냈냐는 반전이 명확한 결혼·가족 돈 갈등. 형식: 글.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "da440e8341d9fff3585be3d2b832dd3c132e1a1975d3938ba87dd956c9a0f15e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 304
+}

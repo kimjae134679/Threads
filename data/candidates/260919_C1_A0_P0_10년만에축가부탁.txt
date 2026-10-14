@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EA%B0%80-%EC%82%AC%EB%A1%80-%EC%9D%B4%EA%B1%B0-%EB%A7%9E%EB%8A%94%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A8-h3bnOJdy
+제목 - 10년 동안 못 본 친구가 갑자기 결혼식 축가를 부탁했습니다
+내용 - [명시 요약 — 원문 전문 아님]
+경기권에 사는 작성자와 울산에 사는 친구는 20대 초반 힘든 시기에 친했지만 이후 10년 동안 직접 만난 적이 없었다. 친구가 결혼을 앞두고 갑자기 연락해, 힘들 때 자신을 이해해준 친구가 새 출발 길에 축가를 불러주면 의미 있을 것 같다며 축가를 부탁했다. 작성자는 노래도 예전 같지 않다며 한 차례 거절했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EA%B0%80-%EC%82%AC%EB%A1%80-%EC%9D%B4%EA%B1%B0-%EB%A7%9E%EB%8A%94%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A8-h3bnOJdy",
+    "title": "10년 동안 못 본 친구가 갑자기 결혼식 축가를 부탁했습니다",
+    "body": "경기권에 사는 작성자와 울산에 사는 친구는 20대 초반 힘든 시기에 친했지만 이후 10년 동안 직접 만난 적이 없었다. 친구가 결혼을 앞두고 갑자기 연락해, 힘들 때 자신을 이해해준 친구가 새 출발 길에 축가를 불러주면 의미 있을 것 같다며 축가를 부탁했다. 작성자는 노래도 예전 같지 않다며 한 차례 거절했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_10년만에축가부탁.md",
+      "originalTitle": "10년 동안 못 본 친구가 갑자기 결혼식 축가를 부탁했습니다",
+      "originalMarkdown": "# 10년 동안 못 본 친구가 갑자기 결혼식 축가를 부탁했습니다\r\n\r\n## source\r\nBlind\r\n\r\n## 원문 제목\r\n친구 결혼식 축가 사례 이거 맞는지 궁금함\r\n\r\n## 글 내용\r\n경기권에 사는 작성자와 울산에 사는 친구는 20대 초반 힘든 시기에 친했지만 이후 10년 동안 직접 만난 적이 없었다. 친구가 결혼을 앞두고 갑자기 연락해, 힘들 때 자신을 이해해준 친구가 새 출발 길에 축가를 불러주면 의미 있을 것 같다며 축가를 부탁했다. 작성자는 노래도 예전 같지 않다며 한 차례 거절했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EA%B0%80-%EC%82%AC%EB%A1%80-%EC%9D%B4%EA%B1%B0-%EB%A7%9E%EB%8A%94%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A8-h3bnOJdy\r\n\r\n## 관찰시각 / 실제 관측 수치\r\n- 관찰: 2026-09-19 10:17 KST 전후\r\n- 조회수 1,609 / 댓글 11\r\n- 좋아요: 미확인\r\n\r\n## 평가\r\n'10년 동안 안 만난 친구의 축가 부탁'이라는 상황이 한 줄로 이해되고 관계의 거리와 추억의 의미를 두고 의견이 갈림.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / acquisition·provenance / 제작·게시 상태\r\n- exact individual public URL 확인: C1\r\n- full body read: 예\r\n- comments read: 아니오\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n- source media 확보: 0\r\n- acquisition: EXACT_PUBLIC_URL_VERIFIED / SOURCE_MEDIA_NOT_ACQUIRED\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 미완료. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "8f0ca8b719ec3e7eede4ce8e0684eb8910816cf5bbb2d77ae01e29a00ec80270",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 495
+}

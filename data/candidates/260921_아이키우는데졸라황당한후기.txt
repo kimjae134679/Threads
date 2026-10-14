@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3920410867
+제목 - 아이 키우는데 졸라 황당한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+처음 본 어린이집 친구 엄마가 아무 말 없이 자기 아이를 두 차례 맡겨두고 자리를 비우는 상황. 황당함과 육아 매너 논쟁이 즉시 발생하는 구조.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3920410867",
+    "title": "아이 키우는데 졸라 황당한 후기",
+    "body": "처음 본 어린이집 친구 엄마가 아무 말 없이 자기 아이를 두 차례 맡겨두고 자리를 비우는 상황. 황당함과 육아 매너 논쟁이 즉시 발생하는 구조.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_아이키우는데졸라황당한후기.md",
+      "originalTitle": "아이 키우는데 졸라 황당한 후기",
+      "originalMarkdown": "# 아이 키우는데 졸라 황당한 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/3920410867\r\n- exactObservedTitle: 아이 키우는데 졸라 황당한 후기\r\n- observedAt: 2026-09-21 23:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL verified via public web index/page\r\n- bodyRead: true\r\n- commentsRead: false\r\n- observedMetrics: 조회 5,867 / 댓글 35 (검색 노출값)\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- whyGood: 처음 본 어린이집 친구 엄마가 아무 말 없이 자기 아이를 두 차례 맡겨두고 자리를 비우는 상황. 황당함과 육아 매너 논쟁이 즉시 발생하는 구조.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7ad10cfc68954b75d56c3dd7d1e01e0e4ef83aaf99354d465026f23e66a804bc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 184
+}

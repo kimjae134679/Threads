@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC-%EC%9C%A0%EC%A7%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%8A%94-%EA%B2%8C-%EB%A7%9E%EC%9D%84%EA%B9%8C-f3gcvk5u
+제목 - 이혼? 유지? 어떻게 하는 게 맞을까?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC-%EC%9C%A0%EC%A7%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%8A%94-%EA%B2%8C-%EB%A7%9E%EC%9D%84%EA%B9%8C-f3gcvk5u",
+    "title": "이혼? 유지? 어떻게 하는 게 맞을까?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼식없는4년시댁돈.md",
+      "originalTitle": "이혼? 유지? 어떻게 하는 게 맞을까?",
+      "originalMarkdown": "# 이혼? 유지? 어떻게 하는 게 맞을까?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC-%EC%9C%A0%EC%A7%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%98%EB%8A%94-%EA%B2%8C-%EB%A7%9E%EC%9D%84%EA%B9%8C-f3gcvk5u\r\n- exactObservedTitle: 이혼? 유지? 어떻게 하는 게 맞을까?\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 3,716 / 댓글 17\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n결혼식·혼인신고 없이 4년을 같이 살았는데 배우자가 가정에 가져온 돈은 사실상 없고 시댁으로 돈이 계속 흘러간다는 장기 누적형 갈등이다.\r\n",
+      "originalSha256": "1513c8b185e934caff1fd0177d4a6a3c05269347c08796b0591b0dcebc3c50ac",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 230
+}

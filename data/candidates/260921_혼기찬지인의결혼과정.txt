@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4106959032
+제목 - 혼기 찬 지인의 결혼 과정
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 과정이라는 주제와 높은 반응량이 확인되어 관계·결혼 논쟁 소재 후보로 보존할 가치가 있음. 단, 본문 미확인이므로 구체적인 사건 내용은 기록하거나 추정하지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4106959032",
+    "title": "혼기 찬 지인의 결혼 과정",
+    "body": "결혼 과정이라는 주제와 높은 반응량이 확인되어 관계·결혼 논쟁 소재 후보로 보존할 가치가 있음. 단, 본문 미확인이므로 구체적인 사건 내용은 기록하거나 추정하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_혼기찬지인의결혼과정.md",
+      "originalTitle": "혼기 찬 지인의 결혼 과정",
+      "originalMarkdown": "# 혼기 찬 지인의 결혼 과정\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/square/4106959032\r\n- exactObservedTitle: 혼기 찬 지인의 결혼 과정\r\n- observedAt: 2026-09-21 18:14 KST\r\n- observedMetrics: 조회 수 109018, 댓글 454\r\n- bodyRead: false\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (공개 페이지에 본문 이미지가 노출됨; 다운로드하지 않음)\r\n- acquisition: 공개 개별 게시물 URL 확인. 검색/공개 페이지에서 제목·조회수·댓글수·이미지 존재를 관찰함. 본문은 이미지 형태여서 이번 discovery 실행에서는 읽지 않음.\r\n- provenance: TheQoo 공개 개별 게시물. 원저작권/재게시 권리는 확인하지 않음.\r\n- whyGood: 결혼 과정이라는 주제와 높은 반응량이 확인되어 관계·결혼 논쟁 소재 후보로 보존할 가치가 있음. 단, 본문 미확인이므로 구체적인 사건 내용은 기록하거나 추정하지 않음.\r\n\r\n## 본문\r\n본문 미확인\r\n\r\n## 댓글\r\n댓글 미확인\r\n",
+      "originalSha256": "8ef816afa63271743455be9356f6d0790d7d49abf4128034191a7c453de34399",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 194
+}

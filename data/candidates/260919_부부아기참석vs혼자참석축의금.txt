@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%B6%80%EC%95%84%EA%B8%B0-%EC%B0%B8%EC%84%9D-vs-%ED%98%BC%EC%9E%90-%EC%B0%B8%EC%84%9D-%EC%B9%9C%EA%B5%AC-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%96%BC%EB%A7%88%EA%B0%80-%EC%A0%81%EB%8B%B9%ED%95%A0%EA%B9%8C-bw58ifg3
+제목 - 부부+아기 참석 vs 혼자 참석, 친구 축의금 얼마가 적당할까?
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식을 하지 않은 사람이 가족 동반/혼자 참석에 따른 축의금 액수를 고민하는 상황에 친구 관계의 서운함까지 겹쳐 즉시 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%B6%80%EC%95%84%EA%B8%B0-%EC%B0%B8%EC%84%9D-vs-%ED%98%BC%EC%9E%90-%EC%B0%B8%EC%84%9D-%EC%B9%9C%EA%B5%AC-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%96%BC%EB%A7%88%EA%B0%80-%EC%A0%81%EB%8B%B9%ED%95%A0%EA%B9%8C-bw58ifg3",
+    "title": "부부+아기 참석 vs 혼자 참석, 친구 축의금 얼마가 적당할까?",
+    "body": "결혼식을 하지 않은 사람이 가족 동반/혼자 참석에 따른 축의금 액수를 고민하는 상황에 친구 관계의 서운함까지 겹쳐 즉시 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_부부아기참석vs혼자참석축의금.md",
+      "originalTitle": "부부+아기 참석 vs 혼자 참석, 친구 축의금 얼마가 적당할까?",
+      "originalMarkdown": "# 부부+아기 참석 vs 혼자 참석, 친구 축의금 얼마가 적당할까?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%B6%80%EB%B6%80%EC%95%84%EA%B8%B0-%EC%B0%B8%EC%84%9D-vs-%ED%98%BC%EC%9E%90-%EC%B0%B8%EC%84%9D-%EC%B9%9C%EA%B5%AC-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%96%BC%EB%A7%88%EA%B0%80-%EC%A0%81%EB%8B%B9%ED%95%A0%EA%B9%8C-bw58ifg3\r\n- exactObservedTitle: 부부+아기 참석 vs 혼자 참석, 친구 축의금 얼마가 적당할까?\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 79, 댓글 6\r\n- bodyRead: true\r\n- commentsRead: true (공개 페이지에 노출된 댓글)\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 결혼식을 하지 않은 사람이 가족 동반/혼자 참석에 따른 축의금 액수를 고민하는 상황에 친구 관계의 서운함까지 겹쳐 즉시 의견이 갈릴 소재.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지를 직접 확인. 게시자 주장 자체는 독립 검증 사실이 아님.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "baceb7a6f91db4d773e172b6e7f726c0a942819a243b1b19ebc4eef979bdf172",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 414
+}

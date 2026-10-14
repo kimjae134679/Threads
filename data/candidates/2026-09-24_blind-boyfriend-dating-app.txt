@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%96%B4%ED%94%8C-p8gjdsw1
+제목 - 남자친구 소개팅어플
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%96%B4%ED%94%8C-p8gjdsw1",
+    "title": "남자친구 소개팅어플",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_blind-boyfriend-dating-app.md",
+      "originalTitle": "남자친구 소개팅어플",
+      "originalMarkdown": "# 남자친구 소개팅어플\r\n\r\n- source: Blind 썸·연애\r\n- source_url: https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%96%B4%ED%94%8C-p8gjdsw1\r\n- exact_observed_title: `남자친구 소개팅어플`\r\n- observed_at: 2026-09-24 00:46 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous/pseudonymous community post; first-person claims are attributed/unverified unless independently established\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not confirmed / not downloaded\r\n- observed_metrics: 조회 313; 댓글 26\r\n- why_good: 교제 중 소개팅 앱 연락을 뒤늦게 발견한 뒤 과거 일정까지 의심하게 되는 신뢰 붕괴 서사가 있다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 교제 중이던 남자친구가 소개팅 앱으로 다른 여성들과 연락한 사실을 뒤늦게 알고 헤어졌으며, 실제 만남 여부는 모르지만 기존 설명까지 거짓말처럼 느껴져 신뢰가 무너졌다고 적었다.\r\n",
+      "originalSha256": "f0f53a73226ca36b0280cf666867e78cabaa8e2c07669fad2f089a4993bcc47d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 179
+}

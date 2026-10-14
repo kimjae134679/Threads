@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-qrF7jVNr
+제목 - 남친 연봉이 낮고 사주가 안 좋다며 부모님이 결혼을 반대합니다
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 전제로 만나는 남자친구를 부모가 반대하는데 이유로 사주와 작성자보다 낮은 연봉, 시댁 지원 가능성을 든다는 사연. 작성자는 남친이 안정적으로 일하고 돈도 잘 모으고 있어 반대 이유를 이해하기 어렵다고 적었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-qrF7jVNr",
+    "title": "남친 연봉이 낮고 사주가 안 좋다며 부모님이 결혼을 반대합니다",
+    "body": "결혼을 전제로 만나는 남자친구를 부모가 반대하는데 이유로 사주와 작성자보다 낮은 연봉, 시댁 지원 가능성을 든다는 사연. 작성자는 남친이 안정적으로 일하고 돈도 잘 모으고 있어 반대 이유를 이해하기 어렵다고 적었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_사주때문결혼반대.md",
+      "originalTitle": "남친 연봉이 낮고 사주가 안 좋다며 부모님이 결혼을 반대합니다",
+      "originalMarkdown": "# 남친 연봉이 낮고 사주가 안 좋다며 부모님이 결혼을 반대합니다\r\n\r\n## 원문 제목\r\n부모님 결혼 반대\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n결혼을 전제로 만나는 남자친구를 부모가 반대하는데 이유로 사주와 작성자보다 낮은 연봉, 시댁 지원 가능성을 든다는 사연. 작성자는 남친이 안정적으로 일하고 돈도 잘 모으고 있어 반대 이유를 이해하기 어렵다고 적었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-qrF7jVNr\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 11:16 KST\r\n- 조회수: 1,794\r\n- 댓글: 9\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n\r\n## 평가\r\n사주와 경제조건이 실제 연애·결혼 결정에 개입하는 상황이라 세대·가치관 논쟁이 선명하다.\r\n\r\n## 형식\r\n글\r\n\r\n## acquisition/provenance / 제작·게시 상태\r\nexact individual public Blind URL 확인. C1_A0_P0. sourceRisk=red. source media 미확보. publicationAllowed=false. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "68a86e5f966918f832678e19c6cd9db3b65ed1f68c3a705eccefe2829fc128c6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 313
+}

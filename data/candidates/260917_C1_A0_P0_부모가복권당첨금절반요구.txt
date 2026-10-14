@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1tqlg6b/aita_for_not_giving_my_parents_half_of_my_lottery/
+제목 - 부모가 복권 당첨금 절반을 요구
+내용 - [명시 요약 — 원문 전문 아님]
+19세 작성자가 올해 약 £4M 복권에 당첨된 뒤 부모에게 알렸다. 부모는 은퇴·여행·보트·차 구매를 이야기하며 당첨금의 절반을 기대했고, 작성자가 £750,000을 주겠다고 제안하자 이기적이라며 화를 냈다는 가족 돈 갈등. 공개 원문 본문을 읽음. 댓글은 이번 관측에서 별도 검토하지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1tqlg6b/aita_for_not_giving_my_parents_half_of_my_lottery/",
+    "title": "부모가 복권 당첨금 절반을 요구",
+    "body": "19세 작성자가 올해 약 £4M 복권에 당첨된 뒤 부모에게 알렸다. 부모는 은퇴·여행·보트·차 구매를 이야기하며 당첨금의 절반을 기대했고, 작성자가 £750,000을 주겠다고 제안하자 이기적이라며 화를 냈다는 가족 돈 갈등. 공개 원문 본문을 읽음. 댓글은 이번 관측에서 별도 검토하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_부모가복권당첨금절반요구.md",
+      "originalTitle": "부모가 복권 당첨금 절반을 요구",
+      "originalMarkdown": "# 부모가 복권 당첨금 절반을 요구\r\n\r\n## 글 내용\r\n19세 작성자가 올해 약 £4M 복권에 당첨된 뒤 부모에게 알렸다. 부모는 은퇴·여행·보트·차 구매를 이야기하며 당첨금의 절반을 기대했고, 작성자가 £750,000을 주겠다고 제안하자 이기적이라며 화를 냈다는 가족 돈 갈등. 공개 원문 본문을 읽음. 댓글은 이번 관측에서 별도 검토하지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1tqlg6b/aita_for_not_giving_my_parents_half_of_my_lottery/\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n관측: 2026-09-17 15:35 KST. 공개 검색 관측에서 +11,395 votes가 표시됨. 조회수·댓글 수는 이번 동일 관측시점에서 확인하지 못함.\r\n\r\n## 평가\r\n복권 대박 직후 가족이 절반을 요구한다는 즉시 이해되는 갈등과 금액 규모가 강하다. 독자가 바로 편을 가를 수 있어 swipe-worthy. 가족/금전 갈등이므로 과도한 신상 추론 없이 검토 필요.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- exact title: `AITA for not giving my parents half of my lottery winnings.`\r\n- full body read: 예\r\n- comments read: 아니오\r\n- source screenshots/images: 확보하지 않음\r\n- acquisition: exact public post URL + 공개 본문 확인\r\n- C1_A0_P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "92e446faa3915ac2be9f3ac9adfcbf7785ea72958ce4dbf39c4977b0619b5fcd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 337
+}

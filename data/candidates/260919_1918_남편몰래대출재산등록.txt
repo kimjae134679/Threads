@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B3%B5%EC%A7%81%EC%9E%90%EC%9C%A4%EB%A6%AC%EB%B2%95-%EC%9E%AC%EC%82%B0%EB%93%B1%EB%A1%9D-%EB%8C%80%EC%B6%9C-SOjNA1BU
+제목 - 공직자윤리법 재산등록 대출???
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B3%B5%EC%A7%81%EC%9E%90%EC%9C%A4%EB%A6%AC%EB%B2%95-%EC%9E%AC%EC%82%B0%EB%93%B1%EB%A1%9D-%EB%8C%80%EC%B6%9C-SOjNA1BU",
+    "title": "공직자윤리법 재산등록 대출???",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_남편몰래대출재산등록.md",
+      "originalTitle": "공직자윤리법 재산등록 대출???",
+      "originalMarkdown": "# 공직자윤리법 재산등록 대출???\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EA%B3%B5%EC%A7%81%EC%9E%90%EC%9C%A4%EB%A6%AC%EB%B2%95-%EC%9E%AC%EC%82%B0%EB%93%B1%EB%A1%9D-%EB%8C%80%EC%B6%9C-SOjNA1BU\r\n- exact_observed_title: 공직자윤리법 재산등록 대출???\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 220 / 댓글 14 / 좋아요 1\r\n- body_read: 예\r\n- comments_read: 일부 공개 댓글 확인\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 배우자 몰래 받은 대출과 공직자 재산등록이 충돌하는 즉각적인 윤리·부부 신뢰 논쟁형 상황.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; no claim about legality beyond observed post\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "9475c79d63003760d35e460b679c6bfeabb6477377f4633badcc9d48ed685d2e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 214
+}

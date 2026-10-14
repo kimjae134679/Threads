@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/15589wh
+제목 - AITA for not taking out a loan to attend my SIL wedding
+내용 - [명시 요약 — 원문 전문 아님]
+처제가 두 번째 결혼을 destination wedding으로 진행하면서 부부 참석비가 약 4,500달러 드는 상황. 작성자 부부는 이미 약 4만달러의 HELOC와 생활비성 카드 잔액 부담이 있어 추가 대출로 결혼식에 가는 것은 거부했다. 그러나 아내와 처가 쪽에서는 작성자를 문제 삼고 있어, 결혼식 참석을 위해 빚을 내지 않겠다는 판단이 잘못인지 묻는다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/15589wh",
+    "title": "AITA for not taking out a loan to attend my SIL wedding",
+    "body": "처제가 두 번째 결혼을 destination wedding으로 진행하면서 부부 참석비가 약 4,500달러 드는 상황. 작성자 부부는 이미 약 4만달러의 HELOC와 생활비성 카드 잔액 부담이 있어 추가 대출로 결혼식에 가는 것은 거부했다. 그러나 아내와 처가 쪽에서는 작성자를 문제 삼고 있어, 결혼식 참석을 위해 빚을 내지 않겠다는 판단이 잘못인지 묻는다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_대출받아처제결혼식가라.md",
+      "originalTitle": "AITA for not taking out a loan to attend my SIL wedding",
+      "originalMarkdown": "# AITA for not taking out a loan to attend my SIL wedding\r\n\r\n## 글 내용\r\n처제가 두 번째 결혼을 destination wedding으로 진행하면서 부부 참석비가 약 4,500달러 드는 상황. 작성자 부부는 이미 약 4만달러의 HELOC와 생활비성 카드 잔액 부담이 있어 추가 대출로 결혼식에 가는 것은 거부했다. 그러나 아내와 처가 쪽에서는 작성자를 문제 삼고 있어, 결혼식 참석을 위해 빚을 내지 않겠다는 판단이 잘못인지 묻는다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/15589wh\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 공개 검색에서 Reddit 점수 +73 확인. 조회수·댓글 수는 같은 관측에서 확인하지 못함.\r\n\r\n## 평가\r\n`결혼식 한번 가려고 4,500달러를 빚내라`는 상황 자체가 황당하고 즉시 이해된다. 점수는 높지 않지만 결혼·가족·빚 갈등 레인의 선명한 보조 후보다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: NO\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "32bd38f3c12c570b9a0d7ac2b329cc49bccdb6d12927adff8d7d918f4297d470",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 400
+}

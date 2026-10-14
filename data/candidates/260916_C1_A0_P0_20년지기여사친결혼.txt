@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2727985
+제목 - 20년지기 여사친 하고 결국 결혼했다
+내용 - [명시 요약 — 원문 전문 아님]
+20년 동안 알고 지낸 여사친과 결국 결혼했다는 이미지 중심 게시물. 공개 페이지에서 제목과 첨부 이미지 존재, 짧은 작성자 반응은 확인했지만 핵심 이미지 본문 전체는 확인하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2727985",
+    "title": "20년지기 여사친 하고 결국 결혼했다",
+    "body": "20년 동안 알고 지낸 여사친과 결국 결혼했다는 이미지 중심 게시물. 공개 페이지에서 제목과 첨부 이미지 존재, 짧은 작성자 반응은 확인했지만 핵심 이미지 본문 전체는 확인하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_20년지기여사친결혼.md",
+      "originalTitle": "20년지기 여사친 하고 결국 결혼했다",
+      "originalMarkdown": "# 20년지기 여사친 하고 결국 결혼했다\r\n\r\n## 글 내용\r\n20년 동안 알고 지낸 여사친과 결국 결혼했다는 이미지 중심 게시물. 공개 페이지에서 제목과 첨부 이미지 존재, 짧은 작성자 반응은 확인했지만 핵심 이미지 본문 전체는 확인하지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2727985\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 7,318 / 댓글 19\r\n- 추천 수치는 이번 관측에서 확정 기록하지 않음\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n오랜 친구→결혼이라는 즉시 이해되는 관계 반전 소재라 연애·결혼 레인에서 스와이프 동기가 강하다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "b57bd8ef4d9be37735045ac02e44139bd19b2e3ab991d0e6a27b2c09b44f90da",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 224
+}

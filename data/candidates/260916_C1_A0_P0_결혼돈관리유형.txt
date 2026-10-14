@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728411
+제목 - 결혼하면 은근히 의견 갈린다는 돈관리 유형
+내용 - [명시 요약 — 원문 전문 아님]
+원문 페이지를 확인했다. 본문 설명은 거의 없고 첨부 이미지가 돈관리 유형 비교의 핵심이다. 이번 수집에서는 이미지 내부 문구를 별도 OCR/전사하지 않았으므로 세부 유형 내용은 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728411",
+    "title": "결혼하면 은근히 의견 갈린다는 돈관리 유형",
+    "body": "원문 페이지를 확인했다. 본문 설명은 거의 없고 첨부 이미지가 돈관리 유형 비교의 핵심이다. 이번 수집에서는 이미지 내부 문구를 별도 OCR/전사하지 않았으므로 세부 유형 내용은 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼돈관리유형.md",
+      "originalTitle": "결혼하면 은근히 의견 갈린다는 돈관리 유형",
+      "originalMarkdown": "# 결혼하면 은근히 의견 갈린다는 돈관리 유형\r\n\r\n## 글 내용\r\n원문 페이지를 확인했다. 본문 설명은 거의 없고 첨부 이미지가 돈관리 유형 비교의 핵심이다. 이번 수집에서는 이미지 내부 문구를 별도 OCR/전사하지 않았으므로 세부 유형 내용은 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728411\r\n\r\n- 출처: Inven 오픈이슈갤러리\r\n- 관측 시각: 2026-09-16 10:37 KST 전후\r\n- 원문 등록: 2026-09-16 07:20\r\n- 본문 읽음: 페이지 텍스트 확인 / 이미지 내부 텍스트 미전사\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 조회: 3,983\r\n- 추천: 1\r\n- 댓글: 23\r\n- 위 수치는 동일 페이지 관측 스냅샷이며 다른 시점 수치와 합치지 않음.\r\n\r\n## 평가\r\n- 결혼+돈관리라는 누구나 의견을 내기 쉬운 생활 논쟁 레인이고 댓글 반응이 강함.\r\n- 원문 제목 자체가 커버 훅으로 충분하며 이미지 한 장을 그대로 이어 보여주기 좋은 구조.\r\n- 이미지 내용 확인 전에는 어떤 돈관리 방식들이 제시됐는지 추측하지 않는다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지: 있음(페이지에서 확인)\r\n- 실제 source 파일 확보: 아니오\r\n- 전체 원문 screenshot 확보: 아니오\r\n- acquisition: exact page verified / source image visible / bytes pending\r\n- C1 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- privacy/human review: 필요\r\n- 실제 게시: 없음",
+      "originalSha256": "8ce8d60b9739411bbde20290952a7d8c98f7d8197d7be31341da2790194e3bf9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 230
+}

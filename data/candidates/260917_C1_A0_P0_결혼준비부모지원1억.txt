@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%ED%95%A0%EB%95%8C-%EC%96%91%EA%B0%80%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EB%A7%90%EC%95%BC-ZQMBARZ2
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 결혼생활 공개 글. 결혼을 준비하는 커플이 원래 부모 지원 없이 자신들이 모은 자산으로 시작하기로 합의했는데, 작성자의 부모가 딸 결혼인데 아무 지원도 안 할 수 없다며 약 1억원을 보태겠다고 제안했다고 한다. 예비 배우자는 이 돈을 받으면 자신의 부모에게도 같은 부담이 생긴다며 절대 받지 말자고 했고 이 문제로 크게 다퉜다는 내용이다. 공개 페이지에서 본문을 읽었고 댓글 15개 존재를 확인했으나 전체 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%ED%95%A0%EB%95%8C-%EC%96%91%EA%B0%80%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EB%A7%90%EC%95%BC-ZQMBARZ2",
+    "title": "제목",
+    "body": "Blind 결혼생활 공개 글. 결혼을 준비하는 커플이 원래 부모 지원 없이 자신들이 모은 자산으로 시작하기로 합의했는데, 작성자의 부모가 딸 결혼인데 아무 지원도 안 할 수 없다며 약 1억원을 보태겠다고 제안했다고 한다. 예비 배우자는 이 돈을 받으면 자신의 부모에게도 같은 부담이 생긴다며 절대 받지 말자고 했고 이 문제로 크게 다퉜다는 내용이다. 공개 페이지에서 본문을 읽었고 댓글 15개 존재를 확인했으나 전체 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼준비부모지원1억.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼준비할때 양가부모님 지원말야\r\n\r\n## 글 내용\r\nBlind 결혼생활 공개 글. 결혼을 준비하는 커플이 원래 부모 지원 없이 자신들이 모은 자산으로 시작하기로 합의했는데, 작성자의 부모가 딸 결혼인데 아무 지원도 안 할 수 없다며 약 1억원을 보태겠다고 제안했다고 한다. 예비 배우자는 이 돈을 받으면 자신의 부모에게도 같은 부담이 생긴다며 절대 받지 말자고 했고 이 문제로 크게 다퉜다는 내용이다. 공개 페이지에서 본문을 읽었고 댓글 15개 존재를 확인했으나 전체 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%ED%95%A0%EB%95%8C-%EC%96%91%EA%B0%80%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EB%A7%90%EC%95%BC-ZQMBARZ2\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 페이지/search 결과\r\n- 조회수: 1,153\r\n- 댓글: 15\r\n- 좋아요: 확인하지 못함\r\n\r\n## 평가\r\n- '부모가 1억을 준다는데 배우자가 받지 말자고 한다'는 한 문장만으로 논쟁이 성립하는 소재.\r\n- 결혼 지원의 형평성·부모 부담·독립 문제라 한국 독자의 의견 유발력이 높음.\r\n- 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "34e39344440039fb9ab823c3e0e4cf7f3cd178daf75a021ca44f25d906334f53",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 477
+}

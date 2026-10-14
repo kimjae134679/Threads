@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%94%EC%84%9D-%EC%A0%9C%EC%A3%BC-%EC%8B%9C%EB%8C%81%EB%B0%A9%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EB%B9%84%ED%96%89%EA%B8%B0%EA%B0%92-72%EB%A7%8C%EC%9B%90%EB%82%98%EC%99%94%EC%96%B4-zcmo7t87
+제목 - 추석 제주 시댁방문으로 비행기값 72만원나왔어
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%94%EC%84%9D-%EC%A0%9C%EC%A3%BC-%EC%8B%9C%EB%8C%81%EB%B0%A9%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EB%B9%84%ED%96%89%EA%B8%B0%EA%B0%92-72%EB%A7%8C%EC%9B%90%EB%82%98%EC%99%94%EC%96%B4-zcmo7t87",
+    "title": "추석 제주 시댁방문으로 비행기값 72만원나왔어",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_추석제주72만원.md",
+      "originalTitle": "추석 제주 시댁방문으로 비행기값 72만원나왔어",
+      "originalMarkdown": "# 추석 제주 시댁방문으로 비행기값 72만원나왔어\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B6%94%EC%84%9D-%EC%A0%9C%EC%A3%BC-%EC%8B%9C%EB%8C%81%EB%B0%A9%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EB%B9%84%ED%96%89%EA%B8%B0%EA%B0%92-72%EB%A7%8C%EC%9B%90%EB%82%98%EC%99%94%EC%96%B4-zcmo7t87\r\n- exactObservedTitle: 추석 제주 시댁방문으로 비행기값 72만원나왔어\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 426 / 댓글 5\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n부부와 아이 셋의 추석 제주 방문 항공료만 72만원이고 숙박·용돈까지 합치면 150만원가량 들 것으로 예상돼 명절 가족방문의 비용 기준을 두고 의견이 갈린다.\r\n",
+      "originalSha256": "d812504848bcbe327ce9b677eaad1b7a5c7411af4ffd0cc4e83b9d01fdc03e48",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 289
+}

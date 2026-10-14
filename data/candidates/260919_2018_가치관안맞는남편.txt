@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B0%80%EC%B9%98%EA%B4%80-%EC%95%88%EB%A7%9E%EB%8A%94-%EB%82%A8%ED%8E%B8-tJsBfwWM
+제목 - 가치관 안맞는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+신혼 100일, 남편의 전세사기 피해와 미해결 자금 문제, 시댁 지원 약속, 서로 다른 돈·시간 가치관이 한꺼번에 충돌하는 구체적인 신혼 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B0%80%EC%B9%98%EA%B4%80-%EC%95%88%EB%A7%9E%EB%8A%94-%EB%82%A8%ED%8E%B8-tJsBfwWM",
+    "title": "가치관 안맞는 남편",
+    "body": "신혼 100일, 남편의 전세사기 피해와 미해결 자금 문제, 시댁 지원 약속, 서로 다른 돈·시간 가치관이 한꺼번에 충돌하는 구체적인 신혼 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_가치관안맞는남편.md",
+      "originalTitle": "가치관 안맞는 남편",
+      "originalMarkdown": "# 가치관 안맞는 남편\r\n\r\n- source: Blind 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B0%80%EC%B9%98%EA%B4%80-%EC%95%88%EB%A7%9E%EB%8A%94-%EB%82%A8%ED%8E%B8-tJsBfwWM\r\n- exactObservedTitle: 가치관 안맞는 남편\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 2,856, 댓글 13, 좋아요 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (확인된 공개 텍스트 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: Blind 개별 공개 글. 게시자 주장 사실은 독립 검증하지 않음.\r\n- whyGood: 신혼 100일, 남편의 전세사기 피해와 미해결 자금 문제, 시댁 지원 약속, 서로 다른 돈·시간 가치관이 한꺼번에 충돌하는 구체적인 신혼 갈등.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "74e7c63a466f2a1b4df96948382810342ee9f5eb9b309a58df654a1e9184cb38",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 258
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C-%EB%B0%9B%EC%95%84-%EC%A3%BC%EC%8B%9D-%ED%95%9C-%EB%82%A8%ED%8E%B8-of3qid2j
+제목 - 몰래 대출 받아 주식 한 남편
+내용 - [명시 요약 — 원문 전문 아님]
+과거 3천만원 대출 손실 이후에도 상의 없이 다시 대출·주식, 한때 3억 가까이 벌었다가 200만원이 남았다는 반전형 부부 돈 갈등. 수치는 게시자 주장임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C-%EB%B0%9B%EC%95%84-%EC%A3%BC%EC%8B%9D-%ED%95%9C-%EB%82%A8%ED%8E%B8-of3qid2j",
+    "title": "몰래 대출 받아 주식 한 남편",
+    "body": "과거 3천만원 대출 손실 이후에도 상의 없이 다시 대출·주식, 한때 3억 가까이 벌었다가 200만원이 남았다는 반전형 부부 돈 갈등. 수치는 게시자 주장임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_몰래대출주식남편.md",
+      "originalTitle": "몰래 대출 받아 주식 한 남편",
+      "originalMarkdown": "# 몰래 대출 받아 주식 한 남편\r\n\r\n- source: Blind / 블라블라\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C-%EB%B0%9B%EC%95%84-%EC%A3%BC%EC%8B%9D-%ED%95%9C-%EB%82%A8%ED%8E%B8-of3qid2j\r\n- exactObservedTitle: 몰래 대출 받아 주식 한 남편\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 117, 댓글 6\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 과거 3천만원 대출 손실 이후에도 상의 없이 다시 대출·주식, 한때 3억 가까이 벌었다가 200만원이 남았다는 반전형 부부 돈 갈등. 수치는 게시자 주장임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "246b3c2c95701d9fb7f70a8ddd50a92d897aa2e3091bfced44971394e5a8f549",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 301
+}

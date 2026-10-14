@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1444666601
+제목 - 친구가 나를 질투하는 것 같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 준비 과정에서 친구가 유독 집·조건 등을 캐묻고 깎아내리는 발언을 반복한다는 관계 갈등이라 '질투인가 아닌가'를 두고 즉각 의견이 갈릴 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1444666601",
+    "title": "친구가 나를 질투하는 것 같은 후기",
+    "body": "결혼 준비 과정에서 친구가 유독 집·조건 등을 캐묻고 깎아내리는 발언을 반복한다는 관계 갈등이라 '질투인가 아닌가'를 두고 즉각 의견이 갈릴 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_1444666601.md",
+      "originalTitle": "친구가 나를 질투하는 것 같은 후기",
+      "originalMarkdown": "# 친구가 나를 질투하는 것 같은 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1444666601\r\n- exactObservedTitle: 친구가 나를 질투하는 것 같은 후기\r\n- observedAt: 2026-09-22 21:19 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 공개 검색 결과에서 별도 수치 확정 기록하지 않음\r\n- whyGood: 결혼 준비 과정에서 친구가 유독 집·조건 등을 캐묻고 깎아내리는 발언을 반복한다는 관계 갈등이라 '질투인가 아닌가'를 두고 즉각 의견이 갈릴 소재다.\r\n- verification: 개인 경험담이며 상대 의도나 질투 여부는 검증된 사실이 아님. 작성자의 관찰·해석으로만 취급.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "9685215947cf67ab294fc3e0ecea89a7b4c8665c499722ed2fb07d1aab302efc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 189
+}

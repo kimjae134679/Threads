@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2555491724
+제목 - 수입은 99대1인데 남편 명품값이 번 돈보다 더 큽니다
+내용 - [명시 요약 — 원문 전문 아님]
+방송에서 부부가 경제관념 갈등을 털어놓은 내용을 전달한 글. 아내는 수입 차이가 크게는 99:1 수준이고 남편이 자신이 번 돈 전액을 아내에게 이체한다고 하지만 명품 구매액이 그 수입보다 더 크다고 설명한다. 남편은 대출을 받아본 적도 신용카드를 만들어본 적도 없어 신용이 좋을 것이라고 생각하는 등 금융 지식 차이도 드러났다고 기사에서 전한다. 공개 페이지 본문 읽음. 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2555491724",
+    "title": "수입은 99대1인데 남편 명품값이 번 돈보다 더 큽니다",
+    "body": "방송에서 부부가 경제관념 갈등을 털어놓은 내용을 전달한 글. 아내는 수입 차이가 크게는 99:1 수준이고 남편이 자신이 번 돈 전액을 아내에게 이체한다고 하지만 명품 구매액이 그 수입보다 더 크다고 설명한다. 남편은 대출을 받아본 적도 신용카드를 만들어본 적도 없어 신용이 좋을 것이라고 생각하는 등 금융 지식 차이도 드러났다고 기사에서 전한다. 공개 페이지 본문 읽음. 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_수입99대1명품.md",
+      "originalTitle": "수입은 99대1인데 남편 명품값이 번 돈보다 더 큽니다",
+      "originalMarkdown": "# 수입은 99대1인데 남편 명품값이 번 돈보다 더 큽니다\r\n\r\n## 원문 제목\r\n김지혜♥최성욱, 혼인신고·2세 계획 미룬 이유 \"수입 차이 99:1, 경제관념 無\"\r\n\r\n## source\r\nTheQoo 공개 기사 전달 페이지. 방송 출연자 관련 기사 기반.\r\n\r\n## 글 내용\r\n방송에서 부부가 경제관념 갈등을 털어놓은 내용을 전달한 글. 아내는 수입 차이가 크게는 99:1 수준이고 남편이 자신이 번 돈 전액을 아내에게 이체한다고 하지만 명품 구매액이 그 수입보다 더 크다고 설명한다. 남편은 대출을 받아본 적도 신용카드를 만들어본 적도 없어 신용이 좋을 것이라고 생각하는 등 금융 지식 차이도 드러났다고 기사에서 전한다. 공개 페이지 본문 읽음. 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2555491724\r\n\r\n## 관찰시각 / 실제로 보인 수치\r\n- 관찰: 2026-09-19 12:17 KST 전후 자동화 실행 중\r\n- 조회수: 107,112\r\n- 댓글/기타 반응수치: 이번 검색 결과에서 확정하지 않음\r\n\r\n## 본문·댓글·이미지 확인\r\n- 본문: 읽음\r\n- 댓글: 전체 미확인\r\n- 이미지 존재: 공개 페이지에 기사 이미지 표시가 있는 것은 확인\r\n- 이미지 다운로드/캡처: 하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n99:1이라는 극단적인 수입 차이와 '번 돈보다 명품 지출이 더 크다'는 갈등이 매우 직관적이다. 부부 경제권과 소비 습관에 즉시 의견이 붙을 수 있다.\r\n\r\n## acquisition / provenance\r\n- exact individual public page: VERIFIED\r\n- provenance: SECONDARY_NEWS_REPOST / public-figure broadcast story\r\n- source media acquisition: NOT_PERFORMED\r\n- rights/privacy/human review: 미실행·필요\r\n- OCR/moderation: 미실행\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "c9d5bacb4eb3703adfe1e68522d81070253da95f070d2aa019208b3f02df7e88",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 338
+}

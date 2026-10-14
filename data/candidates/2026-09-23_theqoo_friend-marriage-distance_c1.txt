@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3234682660
+제목 - 친구 결혼하면 원래 멀어지는건가 싶은 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3234682660",
+    "title": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_friend-marriage-distance_c1.md",
+      "originalTitle": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+      "originalMarkdown": "# 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/3234682660\r\n- exactObservedTitle: 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n- observedAt: 2026-09-23 16:16 KST\r\n- observedMetrics: 조회 9,465 / 댓글 37 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 개인 경험담. 사실관계는 독립 검증하지 않았으며 작성자의 주장으로만 취급.\r\n- whyGoodMaterial: 결혼 이후 절친과 자연스럽게 멀어지는 관계 변화와 외로움이라는 즉시 공감·의견 유도형 갈등이 명확함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e15b50ead1b0e6386651533d47bd7751e26c7489187a91086238e6589c97d084",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 103
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/690417604
+제목 - 혼자 연애한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+데이트·키스·여행까지 해 사실상 연애라고 생각했지만 상대가 관계를 '캐주얼'이라고 인식했다는 사실을 뒤늦게 알게 되는 강한 관계 인식 반전이 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/690417604",
+    "title": "혼자 연애한 후기",
+    "body": "데이트·키스·여행까지 해 사실상 연애라고 생각했지만 상대가 관계를 '캐주얼'이라고 인식했다는 사실을 뒤늦게 알게 되는 강한 관계 인식 반전이 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_혼자연애한후기.md",
+      "originalTitle": "혼자 연애한 후기",
+      "originalMarkdown": "# 혼자 연애한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/690417604\r\n- exactObservedTitle: `혼자 연애한 후기`\r\n- observedAt: 2026-09-21 21:22 KST\r\n- observedMetrics: 공개 검색 페이지에서 별도 신뢰 가능한 수치 기록 안 함\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: 공개 개별 게시물 URL 및 공개 노출 본문 확인\r\n- provenance: TheQoo 개별 게시물 C1. 더 이전 원출처 존재 여부는 확인하지 않음.\r\n- whyGood: 데이트·키스·여행까지 해 사실상 연애라고 생각했지만 상대가 관계를 '캐주얼'이라고 인식했다는 사실을 뒤늦게 알게 되는 강한 관계 인식 반전이 있음.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "9439c10116b2250a196ead2abc6f7fa221e7317c1d3aa23a822a8851dff39220",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 177
+}

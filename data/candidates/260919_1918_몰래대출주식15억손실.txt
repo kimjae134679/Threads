@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo
+제목 - 배우자의 동의없는 대출 및 주식투자는 이혼사유?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo",
+    "title": "배우자의 동의없는 대출 및 주식투자는 이혼사유?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_몰래대출주식15억손실.md",
+      "originalTitle": "배우자의 동의없는 대출 및 주식투자는 이혼사유?",
+      "originalMarkdown": "# 배우자의 동의없는 대출 및 주식투자는 이혼사유?\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo\r\n- exact_observed_title: 배우자의 동의없는 대출 및 주식투자는 이혼사유?\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 1,958 / 댓글 19\r\n- body_read: 예\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 몰래 대출·주식투자를 반복해 게시글 주장상 약 1.5억원 손실, 주택 중도금까지 위태롭게 된 강한 돈/신뢰/이혼 갈등.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; monetary loss is poster claim, not independently verified\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "eafeb5ad8c2d091eba97b86ae9ac10a7a2037cbe864d54934ce3d55a27c6c47a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 298
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/maple/5974/4983886
+제목 - 월 900만원 넘게 들어와도 7년째 무직으로 게임만 하는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+작성자가 과거에 봤다는 다른 사연을 요약해 전달한 글. 전달 내용상 부부는 동갑이고 남편은 시댁에서 받은 상가의 임대료로 월 900만원 이상을 받지만 7년째 무직이며, 결혼 전에는 자영업 등 무엇이든 일을 하겠다고 했으나 결혼 후에도 집에서 주로 게임만 한다고 한다. 아내는 결혼 전부터 계속 일하며 돈의 문제가 아니라 생산적인 일을 하려는 가치관 차이 때문에 고민한다는 내용이다. 이번 페이지의 재전달 본문 읽음. 최초 원문은 확인하지 못함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/maple/5974/4983886",
+    "title": "월 900만원 넘게 들어와도 7년째 무직으로 게임만 하는 남편",
+    "body": "작성자가 과거에 봤다는 다른 사연을 요약해 전달한 글. 전달 내용상 부부는 동갑이고 남편은 시댁에서 받은 상가의 임대료로 월 900만원 이상을 받지만 7년째 무직이며, 결혼 전에는 자영업 등 무엇이든 일을 하겠다고 했으나 결혼 후에도 집에서 주로 게임만 한다고 한다. 아내는 결혼 전부터 계속 일하며 돈의 문제가 아니라 생산적인 일을 하려는 가치관 차이 때문에 고민한다는 내용이다. 이번 페이지의 재전달 본문 읽음. 최초 원문은 확인하지 못함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_건물주남편7년무직.md",
+      "originalTitle": "월 900만원 넘게 들어와도 7년째 무직으로 게임만 하는 남편",
+      "originalMarkdown": "# 월 900만원 넘게 들어와도 7년째 무직으로 게임만 하는 남편\r\n\r\n## 원문 제목\r\n옛날에 월 900만원이상 버는 건물주 아내 글 생각나네\r\n\r\n## source\r\nInven 메이플스토리 자유게시판 공개 재전달 페이지.\r\n\r\n## 글 내용\r\n작성자가 과거에 봤다는 다른 사연을 요약해 전달한 글. 전달 내용상 부부는 동갑이고 남편은 시댁에서 받은 상가의 임대료로 월 900만원 이상을 받지만 7년째 무직이며, 결혼 전에는 자영업 등 무엇이든 일을 하겠다고 했으나 결혼 후에도 집에서 주로 게임만 한다고 한다. 아내는 결혼 전부터 계속 일하며 돈의 문제가 아니라 생산적인 일을 하려는 가치관 차이 때문에 고민한다는 내용이다. 이번 페이지의 재전달 본문 읽음. 최초 원문은 확인하지 못함.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/maple/5974/4983886\r\n\r\n## 관찰시각 / 실제로 보인 수치\r\n- 관찰: 2026-09-19 12:17 KST 전후 자동화 실행 중\r\n- 페이지 표시 작성시각: 2025-05-12 14:42\r\n- 조회수: 5,053\r\n- 추천: 5\r\n- 댓글: 24\r\n\r\n## 본문·댓글·이미지 확인\r\n- 본문: 현재 재전달 페이지 읽음\r\n- 최초 원문: 미확인\r\n- 댓글: 전체 미확인\r\n- 이미지/스크린샷: 별도 source asset 확인/취득하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n경제적으로는 충분한데 '사람이 꼭 일을 해야 하는가'라는 가치관 충돌이 선명하다. 돈이 부족해서 생기는 갈등과 정반대라 후보 풀의 변주도 좋다.\r\n\r\n## acquisition / provenance\r\n- exact individual public page: VERIFIED\r\n- provenance: SECONDARY_USER_RECOLLECTION / upstream original unverified\r\n- source media acquisition: NOT_PERFORMED\r\n- rights/privacy/human review: 미실행·필요\r\n- OCR/moderation: 미실행\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "8198a7bc9f0c283de2d622917546fe1bcb3db89026b41767a55b72c117a2c4e2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 381
+}

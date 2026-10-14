@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/490143476
+제목 - 미팅인줄 모르고 단체 미팅 다녀온 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/490143476",
+    "title": "미팅인줄 모르고 단체 미팅 다녀온 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_C1_A0_P0_미팅인줄모르고단체미팅다녀온후기.md",
+      "originalTitle": "미팅인줄 모르고 단체 미팅 다녀온 후기",
+      "originalMarkdown": "# 미팅인줄 모르고 단체 미팅 다녀온 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/490143476\r\n- exactObservedTitle: 미팅인줄 모르고 단체 미팅 다녀온 후기\r\n- observedAt: 2026-09-21 03:14 KST\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- observedMetrics: 조회 4,494 (공개 페이지에서 관찰된 값)\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인. 로그인/우회/스크린샷/OCR 없음.\r\n- provenance: public individual page; exact source URL verified\r\n\r\n## 왜 소재로 좋은가\r\n일본에서 친구를 만들려다가 미팅인지 모르고 단체 미팅에 참석했다는 제목 자체가 강한 민망한 오해 훅을 갖고 있다. 타지 인간관계·문화차이·소개 모임이라는 상황도 스토리성이 있다.\r\n\r\n## 확인 메모\r\n공개 페이지에서 제공된 본문을 확인. 댓글은 읽지 않음.",
+      "originalSha256": "a3260acb72e09742db3bd0e2afdb206fb59c54e746dd08a4c1c5a1f5f0c99d11",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 100
+}

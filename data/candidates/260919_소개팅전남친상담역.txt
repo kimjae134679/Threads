@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%B0%9B%EC%9D%80-%EC%97%AC%EC%9E%90%EA%B0%80%ED%99%A9%EB%8B%B9-20g8pSJ7
+제목 - 소개팅 받은 여자가...황당
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%B0%9B%EC%9D%80-%EC%97%AC%EC%9E%90%EA%B0%80%ED%99%A9%EB%8B%B9-20g8pSJ7",
+    "title": "소개팅 받은 여자가...황당",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_소개팅전남친상담역.md",
+      "originalTitle": "소개팅 받은 여자가...황당",
+      "originalMarkdown": "# 소개팅 받은 여자가...황당\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%B0%9B%EC%9D%80-%EC%97%AC%EC%9E%90%EA%B0%80%ED%99%A9%EB%8B%B9-20g8pSJ7\r\n- exactObservedTitle: 소개팅 받은 여자가...황당\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 2,334 / 댓글 20 / 좋아요 7\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n소개팅 상대와 사흘간 연락하다 만나려는 시점에 상대가 전 연인 정리가 안 됐다고 밝히고, 작성자가 그 사이 연애상담을 해준 셈이 된 황당한 반전이 있다.\r\n\r\n## 관찰 메모\r\n본문은 만나기 전 연락 단계의 경험담이며 실제 만남은 없었던 것으로 관찰된다.",
+      "originalSha256": "375e8ce04c84f335c486c5f7a6dc2bc26213a2487ffdbe127c1f65e07d5290a8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 194
+}

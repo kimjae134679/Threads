@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%8F%84-%ED%9B%84-%EC%9E%84%EC%8B%A0-%EA%B3%A0%EB%AF%BC%ED%95%9C-%EC%82%AC%EB%9E%8C%EC%9E%85%EB%8B%88%EB%8B%A4-entw7wtt
+제목 - 남편 외도 후, 임신 고민한 사람입니다.
+내용 - [명시 요약 — 원문 전문 아님]
+사내불륜 발견 뒤 8개월, 임신 여부를 고민한 이전 글에 대한 후속이라는 강한 연속 서사와 극단적으로 갈릴 판단 포인트가 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%8F%84-%ED%9B%84-%EC%9E%84%EC%8B%A0-%EA%B3%A0%EB%AF%BC%ED%95%9C-%EC%82%AC%EB%9E%8C%EC%9E%85%EB%8B%88%EB%8B%A4-entw7wtt",
+    "title": "남편 외도 후, 임신 고민한 사람입니다.",
+    "body": "사내불륜 발견 뒤 8개월, 임신 여부를 고민한 이전 글에 대한 후속이라는 강한 연속 서사와 극단적으로 갈릴 판단 포인트가 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_남편외도후임신고민후속.md",
+      "originalTitle": "남편 외도 후, 임신 고민한 사람입니다.",
+      "originalMarkdown": "# 남편 외도 후, 임신 고민한 사람입니다.\r\n\r\n- source: Blind 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%8F%84-%ED%9B%84-%EC%9E%84%EC%8B%A0-%EA%B3%A0%EB%AF%BC%ED%95%9C-%EC%82%AC%EB%9E%8C%EC%9E%85%EB%8B%88%EB%8B%A4-entw7wtt\r\n- exactObservedTitle: 남편 외도 후, 임신 고민한 사람입니다.\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 594, 댓글 18\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false (확인된 공개 텍스트 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_FOLLOWUP\r\n- provenance: Blind 개별 공개 후속 글. 외도 및 대화 내용은 게시자 주장으로만 기록.\r\n- whyGood: 사내불륜 발견 뒤 8개월, 임신 여부를 고민한 이전 글에 대한 후속이라는 강한 연속 서사와 극단적으로 갈릴 판단 포인트가 있음.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "77fa141955ce45538da1e3859667190699f1b31425c083d21c5d35d8093c14b1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 327
+}

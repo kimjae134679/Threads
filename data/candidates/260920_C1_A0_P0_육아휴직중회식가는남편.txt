@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9C%A1%EC%95%84%ED%9C%B4%EC%A7%81%ED%96%88%EB%8A%94%EB%8D%B0-%ED%9A%8C%EC%8B%9D-%EA%B0%84%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-bPUBWyAz
+제목 - 육아휴직했는데 회식 간다는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+20개월·7개월 연년생을 돌보려고 육아휴직한 남편이 팀 마지막 회식에 인맥관리 명목으로 참석하려는 상황이라 육아 분담과 직장관계 가치가 정면 충돌.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9C%A1%EC%95%84%ED%9C%B4%EC%A7%81%ED%96%88%EB%8A%94%EB%8D%B0-%ED%9A%8C%EC%8B%9D-%EA%B0%84%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-bPUBWyAz",
+    "title": "육아휴직했는데 회식 간다는 남편",
+    "body": "20개월·7개월 연년생을 돌보려고 육아휴직한 남편이 팀 마지막 회식에 인맥관리 명목으로 참석하려는 상황이라 육아 분담과 직장관계 가치가 정면 충돌.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_육아휴직중회식가는남편.md",
+      "originalTitle": "육아휴직했는데 회식 간다는 남편",
+      "originalMarkdown": "# 육아휴직했는데 회식 간다는 남편\r\n\r\n- source: Blind / 육아\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%9C%A1%EC%95%84%ED%9C%B4%EC%A7%81%ED%96%88%EB%8A%94%EB%8D%B0-%ED%9A%8C%EC%8B%9D-%EA%B0%84%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-bPUBWyAz\r\n- exactObservedTitle: 육아휴직했는데 회식 간다는 남편\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 4,433, 댓글 42\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 20개월·7개월 연년생을 돌보려고 육아휴직한 남편이 팀 마지막 회식에 인맥관리 명목으로 참석하려는 상황이라 육아 분담과 직장관계 가치가 정면 충돌.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8652ce4ee67dbf272ec9edec71bd8e47fbb30725a66c518c1df0116c721c2d38",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 322
+}

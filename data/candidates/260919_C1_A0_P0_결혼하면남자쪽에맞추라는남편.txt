@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/334916
+제목 - 공평하게 결혼했는데 결혼 후엔 남자쪽에 맞추랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+연애와 결혼 준비 때 공평함을 강조하던 남편과 양가 경조사가 같은 날 겹치자 각자 참석하자는 아내. 남편은 결혼 후에는 여자가 남자 쪽에 맞추는 것이 맞다고 주장하고, 연애 때의 공평 원칙은 결혼 후까지 적용할 생각이 아니었다고 말해 갈등이 폭발한다. 공개 페이지 본문을 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/334916",
+    "title": "공평하게 결혼했는데 결혼 후엔 남자쪽에 맞추랍니다",
+    "body": "연애와 결혼 준비 때 공평함을 강조하던 남편과 양가 경조사가 같은 날 겹치자 각자 참석하자는 아내. 남편은 결혼 후에는 여자가 남자 쪽에 맞추는 것이 맞다고 주장하고, 연애 때의 공평 원칙은 결혼 후까지 적용할 생각이 아니었다고 말해 갈등이 폭발한다. 공개 페이지 본문을 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼하면남자쪽에맞추라는남편.md",
+      "originalTitle": "공평하게 결혼했는데 결혼 후엔 남자쪽에 맞추랍니다",
+      "originalMarkdown": "# 공평하게 결혼했는데 결혼 후엔 남자쪽에 맞추랍니다\r\n\r\n## 원문 제목\r\n공평하게 결혼한 부부의 최후\r\n\r\n## source\r\nInven\r\n\r\n## 글 내용\r\n연애와 결혼 준비 때 공평함을 강조하던 남편과 양가 경조사가 같은 날 겹치자 각자 참석하자는 아내. 남편은 결혼 후에는 여자가 남자 쪽에 맞추는 것이 맞다고 주장하고, 연애 때의 공평 원칙은 결혼 후까지 적용할 생각이 아니었다고 말해 갈등이 폭발한다. 공개 페이지 본문을 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/334916\r\n\r\n## 관찰\r\n2026-09-19 08:19 KST. 이번 공개 검색 노출에서 조회수/추천/댓글 수치를 확인하지 못함. 본문 읽음. 댓글 미확인. 페이지에 이미지 요소가 존재함.\r\n\r\n## 평가\r\n'공평'을 내세워 결혼했는데 결혼 뒤 기준이 뒤집히는 반전이 명확하고 양가 경조사라는 일상적 상황이라 즉시 의견이 갈림.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. acquisition/provenance: C1 / EXACT_PUBLIC_URL_VERIFIED. 실제 source image/screenshot 미확보. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료. 실제 게시 권한은 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "1e514495ccccc5bd5824caad7a6315e6842c3936cab33005d0796071826dc4a4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 286
+}

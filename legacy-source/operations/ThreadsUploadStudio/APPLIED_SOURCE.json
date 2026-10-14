@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "recordType": "applied_source_audit",
+  "checkedAt": "2026-10-10T08:05:01.034438+00:00",
+  "runtimeSourceCommit": "6a0566a20a2f76330c01050b620473771d3faf12",
+  "originalApplyMethod": "local-isolated-worktree-copy-before-commit-followed-by-push-and-hash-verification",
+  "githubReference": "https://github.com/kimjae134679/project-operations-hub/pull/36",
+  "files": [
+    {
+      "file": "Control.ps1",
+      "pcSha256": "5c53cd66d6f5fbf8a69032d1bbf9586b21c8a01188dd2092864926582963907b",
+      "gitBlobSha256": "8575011e3b3118b290c55ae25af289abb5b192a00ec2f675acebba71eac4bd7b",
+      "pinnedCodeMatches": true,
+      "worktreeBytesMatch": true
+    },
+    {
+      "file": "Lifecycle.psm1",
+      "pcSha256": "124d1bc2fc9e0b251e454e345ebd19e33a54031962e70bb9f509c25d12075c8c",
+      "gitBlobSha256": "124d1bc2fc9e0b251e454e345ebd19e33a54031962e70bb9f509c25d12075c8c",
+      "pinnedCodeMatches": true,
+      "worktreeBytesMatch": true
+    },
+    {
+      "file": "ApplyWhenIdle.ps1",
+      "pcSha256": "587875654f34072c845a778c49ae322031a95f3b49f825617528e650ad501af6",
+      "gitBlobSha256": "e0a2d3e26e7c2ffbca4500e232b8253bcd8223548dbcf853418ba82f9294c650",
+      "pinnedCodeMatches": true,
+      "worktreeBytesMatch": true
+    }
+  ],
+  "controlTowerHost": {
+    "version": "0.9.18",
+    "sourceCommit": "a1bb5c4d376a05dc62b003a510a88012d5a466e6",
+    "sourceHasLocalChanges": true
+  },
+  "nativeMenuVisualVerified": false,
+  "activationObservation": {
+    "phase": "waiting_idle",
+    "newProcessId": null,
+    "expectedProcessId": 22684,
+    "reason": "current_owned_work_preserved",
+    "forceTermination": false,
+    "schemaVersion": 1,
+    "checkedAt": "2026-10-10T07:39:27.1445884+00:00"
+  },
+  "githubCi": {
+    "checkedAt": "2026-10-10T08:07:59.554315+00:00",
+    "commit": "ef70d28bde8d76cd874bc94e13699f04000c30be",
+    "statusCount": 0,
+    "checkRunCount": 0,
+    "result": "not_reported",
+    "passed": null
+  },
+  "readOnlyReview": {
+    "proof": "C:\\Users\\user\\Documents\\Codex\\2026-10-09\\task-6\\studio-control-proof\\PC_READONLY_UI_AUDIT.json",
+    "assemblyVersion": "0.9.18.0",
+    "assemblySha256": "A162CA28BF611687A1A9B63A28B5D32BC3520DA1535677A999565F4E97E45C0C",
+    "actualNativeUiAvailable": false,
+    "serviceCommandsExecuted": 0,
+    "windowsCreated": 0
+  },
+  "reviewScope": "documentation-and-read-only-audit-only-no-new-deployment",
+  "documentationAndAuditCommit": "ef70d28bde8d76cd874bc94e13699f04000c30be",
+  "documentationAppliedOnly": true
+}

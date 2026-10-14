@@ -1,0 +1,29 @@
+원문링크 - https://bbs.ruliweb.com/community/board/300143/read/74149846
+제목 - 베스트 보고 생각난 고깃집 썰
+내용 - [명시 요약 — 원문 전문 아님]
+2인 이상만 예약되는 유명 야키니쿠집을 혼자 가기 위해 2인 예약을 잡고 실제로 혼자 15만원어치 고기를 주문했다는 상황 자체가 짧고 선명하며, 예약 매너와 혼밥에 대한 의견을 유도하기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://bbs.ruliweb.com/community/board/300143/read/74149846",
+    "title": "베스트 보고 생각난 고깃집 썰",
+    "body": "2인 이상만 예약되는 유명 야키니쿠집을 혼자 가기 위해 2인 예약을 잡고 실제로 혼자 15만원어치 고기를 주문했다는 상황 자체가 짧고 선명하며, 예약 매너와 혼밥에 대한 의견을 유도하기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_ruliweb_74149846.md",
+      "originalTitle": "베스트 보고 생각난 고깃집 썰",
+      "originalMarkdown": "# 베스트 보고 생각난 고깃집 썰\r\n\r\n- stage: C1\r\n- source: Ruliweb\r\n- sourceUrl: https://bbs.ruliweb.com/community/board/300143/read/74149846\r\n- exactObservedTitle: 베스트 보고 생각난 고깃집 썰\r\n- observedAt: 2026-09-22 20:18 KST\r\n- observedMetrics: 추천 24, 조회 4265 (공개 페이지에 관찰된 수치)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 2인 이상만 예약되는 유명 야키니쿠집을 혼자 가기 위해 2인 예약을 잡고 실제로 혼자 15만원어치 고기를 주문했다는 상황 자체가 짧고 선명하며, 예약 매너와 혼밥에 대한 의견을 유도하기 좋다.\r\n- acquisition: 공개 개별 게시물 URL을 확인하고 공개 본문 텍스트를 직접 읽음. C1.\r\n- provenance: Ruliweb 공개 게시물의 작성자 서술. 개인 경험담이므로 외부 사실 검증은 하지 않았으며 사실로 단정하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "f872c1f3fc399468c1a3a24f741936399b288284154d970e2ce262b8ef1ba54b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 234
+}

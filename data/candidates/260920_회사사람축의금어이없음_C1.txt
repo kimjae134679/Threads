@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1048853306
+제목 - 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+회사 선임이 배우자와 함께 식사하면서 축의금 액수는 그대로였다는 상황과 추가 전언 사례가 결합돼 직장·결혼·돈 예절 논쟁이 강함
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1048853306",
+    "title": "축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기",
+    "body": "회사 선임이 배우자와 함께 식사하면서 축의금 액수는 그대로였다는 상황과 추가 전언 사례가 결합돼 직장·결혼·돈 예절 논쟁이 강함",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_회사사람축의금어이없음_C1.md",
+      "originalTitle": "축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기",
+      "originalMarkdown": "# 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기\r\n\r\n- state: C1\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1048853306\r\n- exactObservedTitle: 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기\r\n- observedAt: 2026-09-20 20:15 KST\r\n- observedMetrics: 조회 14,557 / 댓글 111\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: public individual page/search-readable body; exact individual public URL confirmed\r\n- provenance: 작성자 개인 경험·전언. 독립 사실 검증 아님\r\n- whyGood: 회사 선임이 배우자와 함께 식사하면서 축의금 액수는 그대로였다는 상황과 추가 전언 사례가 결합돼 직장·결혼·돈 예절 논쟁이 강함\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "cb2a9a91ea6fca49ff3de93ea4f477f79bfd1ef246e0db3ec7b739b4b7f2a5bd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

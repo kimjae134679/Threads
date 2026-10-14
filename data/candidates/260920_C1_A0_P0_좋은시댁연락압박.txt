@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1309101415
+제목 - 좋은 시댁 만난 것 같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+간섭 없는 좋은 시댁이라는 전제와 연락을 자주 해달라는 압박이 충돌해 '이 정도는 괜찮다/부담이다' 의견이 갈리기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1309101415",
+    "title": "좋은 시댁 만난 것 같은 후기",
+    "body": "간섭 없는 좋은 시댁이라는 전제와 연락을 자주 해달라는 압박이 충돌해 '이 정도는 괜찮다/부담이다' 의견이 갈리기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_좋은시댁연락압박.md",
+      "originalTitle": "좋은 시댁 만난 것 같은 후기",
+      "originalMarkdown": "# 좋은 시댁 만난 것 같은 후기\r\n\r\n- source: TheQoo 후기\r\n- exactObservedTitle: `좋은 시댁 만난 것 같은 후기`\r\n- sourceUrl: https://theqoo.net/review/1309101415\r\n- observedAt: 2026-09-20 19:18 KST\r\n- acquisition: C1 — exact individual public URL verified; public text body readable\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 4,331 (공개 페이지 표시값); 댓글 수 미확인\r\n- whyGood: 간섭 없는 좋은 시댁이라는 전제와 연락을 자주 해달라는 압박이 충돌해 '이 정도는 괜찮다/부담이다' 의견이 갈리기 좋다.\r\n- provenanceNote: 익명 게시자의 개인 경험담이며 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a7fa8182f1542da00d6e170a53de3e13c6e1a7a29e88e7c943e3b27c1fdb6474",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 170
+}

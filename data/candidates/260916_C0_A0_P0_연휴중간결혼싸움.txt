@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4341661279
+제목 - 연휴 중간에 결혼 한다고 싸움 남
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4341661279",
+    "title": "연휴 중간에 결혼 한다고 싸움 남",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_연휴중간결혼싸움.md",
+      "originalTitle": "연휴 중간에 결혼 한다고 싸움 남",
+      "originalMarkdown": "# 연휴 중간에 결혼 한다고 싸움 남\r\n\r\n- 상태: C0 / A0 / P0 (저장 파일명 유지; 논리 provenance C1 확인)\r\n- 출처: TheQoo HOT\r\n- 정확한 원문 링크: https://theqoo.net/square/4341661279\r\n- 공개 관측: 작성자 `무명의 더쿠`, 작성일 `09-10`, 조회 45,062, 댓글 388 (관측 시점 검색 인덱스 기준)\r\n- 원문 페이지에서 이미지 5개 placeholder가 관측됨. 실제 이미지 bytes/OCR/vision은 확보하지 않음.\r\n\r\n## 검증된 범위\r\n정확한 개별 TheQoo 게시물 제목이 후보 제목 `연휴 중간에 결혼 한다고 싸움 남`과 일치함을 확인했다. 공개 페이지에 이미지 5개가 존재하지만 이번 회차에는 실제 원본 이미지 bytes나 이미지 속 본문을 확보하지 않았다.\r\n\r\n## 평가\r\n- 논리 provenance: C1\r\n- 자산: A0 / 실제 source image bytes 미확보\r\n- 게시: P0 / publicationAllowed=false\r\n- 결과: BLOCKED_NEXT_STAGE\r\n- unblockWhen: 실제 source image bytes가 로그인/anti-bot/paywall/access-control 우회 없이 공개·허용된 방식으로 확보되고, 별도 권리/개인정보/안전 검수가 가능해질 때\r\n- 금지: 이미지 내용, OCR, 댓글 내용, 권리 상태를 추정하거나 테스트 결과만으로 A1/P1 승격하지 않음\r\n",
+      "originalSha256": "cf09fc42166ec21336d42c72e703a4ba4c0a59f272e37547932a9197e975eb78",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 98
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%95%A1%EC%88%98-%EB%A7%90%ED%95%9C-%EC%8B%A0%EB%B6%80-vs-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%95%A1%EC%88%98-%EA%B1%B0%EC%A7%93%EB%A7%90%ED%95%9C-%EC%B9%9C%EA%B5%AC-xfqh3kvq
+제목 - 결혼식 축의금 액수 말한 신부 vs 축의금 액수 거짓말한 친구
+내용 - [명시 요약 — 원문 전문 아님]
+10만원을 내고 친구들에게는 20만원 냈다고 말한 친구와 이를 정정한 신부 중 누가 잘못인지 묻는 민망한 오해·체면 논쟁.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%95%A1%EC%88%98-%EB%A7%90%ED%95%9C-%EC%8B%A0%EB%B6%80-vs-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%95%A1%EC%88%98-%EA%B1%B0%EC%A7%93%EB%A7%90%ED%95%9C-%EC%B9%9C%EA%B5%AC-xfqh3kvq",
+    "title": "결혼식 축의금 액수 말한 신부 vs 축의금 액수 거짓말한 친구",
+    "body": "10만원을 내고 친구들에게는 20만원 냈다고 말한 친구와 이를 정정한 신부 중 누가 잘못인지 묻는 민망한 오해·체면 논쟁.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_축의금액수거짓말친구.md",
+      "originalTitle": "결혼식 축의금 액수 말한 신부 vs 축의금 액수 거짓말한 친구",
+      "originalMarkdown": "# 결혼식 축의금 액수 말한 신부 vs 축의금 액수 거짓말한 친구\r\n\r\n- source: Blind / 예신예랑 결혼준비\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%95%A1%EC%88%98-%EB%A7%90%ED%95%9C-%EC%8B%A0%EB%B6%80-vs-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%95%A1%EC%88%98-%EA%B1%B0%EC%A7%93%EB%A7%90%ED%95%9C-%EC%B9%9C%EA%B5%AC-xfqh3kvq\r\n- exactObservedTitle: 결혼식 축의금 액수 말한 신부 vs 축의금 액수 거짓말한 친구\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 264, 댓글 11\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 10만원을 내고 친구들에게는 20만원 냈다고 말한 친구와 이를 정정한 신부 중 누가 잘못인지 묻는 민망한 오해·체면 논쟁.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "ac4f68cb6ca3b776e2cd3a8fe188e8f132aa17dc010daa39e2e39d97609b06ef",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 414
+}

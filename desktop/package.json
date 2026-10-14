@@ -1,6 +1,6 @@
 {
   "name": "threads-cut-editor",
-  "version": "0.3.8",
+  "version": "0.3.39-unified.20261014.1",
   "private": true,
   "description": "Source screenshot and cut editor",
   "author": "Threads project",
@@ -22,44 +22,54 @@
     "productName": "Threads Cut Editor",
     "artifactName": "Threads-Cut-Editor-${version}-Windows-x64.zip",
     "files": [
-      "main.cjs",
-      "preload.cjs",
-      "capture.cjs",
-      "network.cjs",
-      "package.json",
-      "reference-store.cjs",
-      "saved-materials.cjs",
-      "folder-batch.cjs",
-      "source-access.cjs",
-      "source-import.cjs",
-      "public-source.cjs",
-      "batch-input.cjs",
-      "batch-service.cjs",
-      "batch-catalog.cjs",
-      "atomic-file.cjs",
-      "cover-asset.cjs",
-      "post-review-store.cjs",
-      "post-review-service.cjs",
-      "post-review-preload.cjs"
+      "*.cjs",
+      "!after-pack.cjs",
+      "image-requirements-schema.json",
+      "package.json"
     ],
     "extraResources": [
       {
         "from": "../app",
         "to": "editor",
         "filter": [
-          "source-cut-*.html",
-          "source-cut-*.css",
-          "source-cut-*.js",
-          "fonts/**",
-          "source-community-*.js",
-          "source-batch*.html",
-          "source-batch*.css",
-          "source-batch*.js",
-          "source-curation.js",
+          "source-*.html",
+          "source-*.css",
+          "source-*.js",
+          "universal-production-model.js",
+          "unified-material-txt.js",
+          "viral-model.js",
+          "fonts/**"
+        ]
+      },
+      {
+        "from": "../mobile/android-review",
+        "to": "pc-review/mobile/android-review",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "../repo-candidates.mjs",
+        "to": "unified-runtime/repo-candidates.mjs"
+      },
+      {
+        "from": "../app",
+        "to": "unified-runtime/app",
+        "filter": [
+          "unified-material-txt.js",
           "source-page-plan.js",
-          "source-bundle-zip.js",
-          "source-workflow.js",
-          "viral-model.js"
+          "source-cover-typography.js"
+        ]
+      },
+      {
+        "from": "../upload-studio",
+        "to": "unified-runtime/upload-studio",
+        "filter": [
+          "*.mjs",
+          "public/**",
+          "vendor/*.mjs",
+          "vendor/provenance.json",
+          "vendor/production-contract-provenance.json"
         ]
       }
     ],
@@ -69,6 +79,7 @@
     },
     "directories": {
       "output": "dist"
-    }
+    },
+    "afterPack": "after-pack.cjs"
   }
 }

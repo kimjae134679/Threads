@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728162
+제목 - 신생아가 집에 오면 생기는 일
+내용 - [명시 요약 — 원문 전문 아님]
+신생아는 밤낮없이 대략 3~4시간 간격으로 수유가 필요하고, 수유 준비·수유·트림까지 이어지며 부모의 생활 리듬이 크게 바뀌는 과정을 다룬 게시물. 공개 페이지에서 이 설명 부분은 실제로 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728162",
+    "title": "신생아가 집에 오면 생기는 일",
+    "body": "신생아는 밤낮없이 대략 3~4시간 간격으로 수유가 필요하고, 수유 준비·수유·트림까지 이어지며 부모의 생활 리듬이 크게 바뀌는 과정을 다룬 게시물. 공개 페이지에서 이 설명 부분은 실제로 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_신생아집에오면.md",
+      "originalTitle": "신생아가 집에 오면 생기는 일",
+      "originalMarkdown": "# 신생아가 집에 오면 생기는 일\r\n\r\n## 글 내용\r\n신생아는 밤낮없이 대략 3~4시간 간격으로 수유가 필요하고, 수유 준비·수유·트림까지 이어지며 부모의 생활 리듬이 크게 바뀌는 과정을 다룬 게시물. 공개 페이지에서 이 설명 부분은 실제로 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728162\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 이번 관측 결과에서 조회/추천/댓글 수치를 확정할 수 없어 기록하지 않음\r\n- 본문 읽음: 공개 노출된 설명 부분 확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n육아 현실의 피로를 구체적인 시간 흐름으로 보여줘 부모/비부모 모두 반응하기 쉬운 생활 공감 소재다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "650fb1fb598551c967d627703341702c97662c0963c9da7171b453ceeca768d3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 227
+}

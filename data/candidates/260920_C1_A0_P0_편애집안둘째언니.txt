@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1164925843
+제목 - 편애심한 집안의 둘째인데 언니랑 친한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+편애받은 둘째가 오히려 언니의 희생을 인식하고 부모 책임을 자신이 맡겠다고 보는 역방향 가족 갈등 구조가 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1164925843",
+    "title": "편애심한 집안의 둘째인데 언니랑 친한 후기",
+    "body": "편애받은 둘째가 오히려 언니의 희생을 인식하고 부모 책임을 자신이 맡겠다고 보는 역방향 가족 갈등 구조가 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_편애집안둘째언니.md",
+      "originalTitle": "편애심한 집안의 둘째인데 언니랑 친한 후기",
+      "originalMarkdown": "# 편애심한 집안의 둘째인데 언니랑 친한 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/1164925843\r\n- exactObservedTitle: `편애심한 집안의 둘째인데 언니랑 친한 후기`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 가족관계 경험담.\r\n- whyGood: 편애받은 둘째가 오히려 언니의 희생을 인식하고 부모 책임을 자신이 맡겠다고 보는 역방향 가족 갈등 구조가 강함.\r\n- safety: 가족 구성원에 대한 작성자 평가를 사실판단으로 확대하지 않음.",
+      "originalSha256": "3ab9df9568e3f892e8c98f9c5c2f2e9215ea624b26b1f4c5e4f6ebf5ebece2a6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

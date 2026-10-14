@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728393
+제목 - 결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 전에는 '내가 왜 화났는지 몰라?'였던 표현이 결혼 후에는 '우리가 왜 화났는지 몰라?'로 바뀐다는 짧은 부부 유머. 이미지 2장이 함께 게시되어 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728393",
+    "title": "결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ",
+    "body": "결혼 전에는 '내가 왜 화났는지 몰라?'였던 표현이 결혼 후에는 '우리가 왜 화났는지 몰라?'로 바뀐다는 짧은 부부 유머. 이미지 2장이 함께 게시되어 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼전후.md",
+      "originalTitle": "결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ",
+      "originalMarkdown": "# 결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ\r\n\r\n## 글 내용\r\n결혼 전에는 '내가 왜 화났는지 몰라?'였던 표현이 결혼 후에는 '우리가 왜 화났는지 몰라?'로 바뀐다는 짧은 부부 유머. 이미지 2장이 함께 게시되어 있다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728393\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 13:37 KST 부근\r\n- 댓글 10 / 추천 5\r\n- 조회수: 같은 관측 화면에서 명확히 확인하지 못함\r\n- 본문 읽음: 예(페이지에 노출된 텍스트)\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n짧고 바로 이해되는 결혼 전후 반전이라 캐러셀 첫 훅이 강하다. 원문 이미지가 핵심이므로 전체 이미지 확보가 필요하다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예(2장 표시 확인)\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "42c3bb2ba32bfec3a6557abbd24a304f44ceb550acf8202d822c262e586597c9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 207
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/14smq7l
+제목 - AITA refusing to give my boss a check and opting for a wedding gift instead?
+내용 - [명시 요약 — 원문 전문 아님]
+최저임금 파트타임으로 일하는 학생 직원들이 결혼하는 직속 매니저에게 관습상 일정 수준 이상의 현금을 내야 한다는 압박을 느끼는 사연이다. 매니저는 참석 여부를 반복해서 확인했고, 직원들은 현금 대신 공동 선물을 고민한다. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/14smq7l",
+    "title": "AITA refusing to give my boss a check and opting for a wedding gift instead?",
+    "body": "최저임금 파트타임으로 일하는 학생 직원들이 결혼하는 직속 매니저에게 관습상 일정 수준 이상의 현금을 내야 한다는 압박을 느끼는 사연이다. 매니저는 참석 여부를 반복해서 확인했고, 직원들은 현금 대신 공동 선물을 고민한다. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_최저임금직원상사축의금.md",
+      "originalTitle": "AITA refusing to give my boss a check and opting for a wedding gift instead?",
+      "originalMarkdown": "# AITA refusing to give my boss a check and opting for a wedding gift instead?\r\n\r\n## 글 내용\r\n최저임금 파트타임으로 일하는 학생 직원들이 결혼하는 직속 매니저에게 관습상 일정 수준 이상의 현금을 내야 한다는 압박을 느끼는 사연이다. 매니저는 참석 여부를 반복해서 확인했고, 직원들은 현금 대신 공동 선물을 고민한다. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/14smq7l\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 10:37 KST 관측: +6 votes. 조회수/댓글 수치는 확인하지 못함.\r\n\r\n## 평가\r\n월급을 정하는 상사의 결혼식에 최저임금 직원이 큰 축의금을 내야 하는가라는 직장 권력+돈 갈등이 명확하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "6ed71370ee1b136fa94872ec057e4f9fb12726ee493373dc6a9413ceeb94bf44",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 316
+}

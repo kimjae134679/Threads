@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. Blind 공개 browse/index에서 28세 작성자가 연애 경험 없이 운동 중심으로 지내다 취업 후 선배가 데려간 운동 모임에서 처음 많은 이성을 접했고, 사람들에게 상처를 주고받은 뒤 모임을 나왔다는 도입부까지만 확인됨. 정확한 개별 원문 URL을 이번 관측에서 확보하지 못했으므로 내용을 더 채우지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "제목",
+    "body": "본문 미확인. Blind 공개 browse/index에서 28세 작성자가 연애 경험 없이 운동 중심으로 지내다 취업 후 선배가 데려간 운동 모임에서 처음 많은 이성을 접했고, 사람들에게 상처를 주고받은 뒤 모임을 나왔다는 도입부까지만 확인됨. 정확한 개별 원문 URL을 이번 관측에서 확보하지 못했으므로 내용을 더 채우지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C0_A0_P0_연애경험없는데무례했나.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n연애경험없는데 제가 여자분에게 무례 범한건가요..\r\n\r\n## 글 내용\r\n본문 미확인. Blind 공개 browse/index에서 28세 작성자가 연애 경험 없이 운동 중심으로 지내다 취업 후 선배가 데려간 운동 모임에서 처음 많은 이성을 접했고, 사람들에게 상처를 주고받은 뒤 모임을 나왔다는 도입부까지만 확인됨. 정확한 개별 원문 URL을 이번 관측에서 확보하지 못했으므로 내용을 더 채우지 않음.\r\n\r\n## 정확한 링크\r\n정확한 개별 원문 URL 미확인. 공개 index/browse lead만 확인.\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 08:37 KST\r\n- 공개 index에서 노출된 수치: 조회수 204 / 좋아요 3 / 댓글 1\r\n- 다른 시점 수치와 합치지 않음\r\n\r\n## 평가\r\n- 연애 초보의 사회적 오해/실수 가능성이 있는 공감·논쟁형 lead.\r\n- 다만 본문과 정확한 원문 URL 미확인이라 현재는 C0. 원문 확보 전 story 내용을 추정하지 말 것.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- full body read: NO\r\n- comments read: NO\r\n- source images/screenshots: 미확인/미확보\r\n- acquisition: INDEX_ONLY / ASSETS_PENDING\r\n- C0 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한: 04_REVIEW_PUBLISH only\r\n",
+      "originalSha256": "874524c3ed3b201e9326a672a63243625155765ad6f6536385b3e46d22e4566e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 236
+}

@@ -4,6 +4,36 @@ AI로 **소재 발견 → 검증·점수 → 콘텐츠 제작 → 검수·게시
 
 > 처음 들어왔다면 **[`00_START_HERE/`](00_START_HERE/)** 부터 읽습니다.
 
+## 통합 프로젝트 실행 · 단일 자료 TXT
+
+이 통합 작업의 코드와 공개 가능한 후보는 Git에, 원자료·이미지·운영/평가/provider 기록·설치 사본은 같은 루트의 `local-private/`에 둡니다. 해당 폴더와 `upload-studio/.local/`은 Git에서 제외합니다. 원본 파일을 삭제하거나 과거 승인/예약을 새로 활성화하지 않습니다.
+
+이관 원본의 전수 SHA/CAS 확인과 대상 검증이 끝난 뒤 프로젝트 루트에서 실행합니다:
+```powershell
+powershell -NoProfile -File upload-studio/START.ps1
+# 브라우저를 열지 않고 서버만 확인: START.ps1 -CheckOnly
+# 로컬 서버만 중단: powershell -NoProfile -File upload-studio/STOP.ps1
+```
+또는 `node upload-studio/server.mjs --project-root .`입니다. 단일 서버의 검토 화면(`/`), 자료 전체 목록(`/materials/`), 같은 버전의 이미지 전체 보기(`/viewer/`)를 사용합니다. 점수·메모·읽은 장은 글 ID/제작 버전/검토 회차로 묶이며 게시 최종 판정과 별도입니다. 다른 버전 기록은 과거 영역으로 표시합니다. 저장 실패/버전 변경 때 현재 편집 화면을 보존합니다. 실제 게시·외부 예약은 차단되고, 과거 pending 작업/자동 제작 연결은 시작 시 재개하지 않습니다. **완료 뒤 결과만 보고하며 컴퓨터 종료/종료 예약을 하지 않습니다.**
+
+사람이 읽는 `자료.txt` 한 파일에는 `원문링크 -`, 표시 `제목 -`, `내용 -`, 양쪽 플랫폼 전체 `게시문안 -`과 해시태그를 함께 넣습니다. 별도 줄의 `==============================` 및 `프로그램용 데이터들` 뒤 JSON에는 원제·정확 ID/버전·원문/댓글·이미지 순서/해시·권리/판정·unknown 필드를 보존합니다. 명시 요약/보존 기록/본문 미확보는 전문 입력으로 승격하지 않습니다. BOM/CRLF/본문 속 헤더는 보존하고 손상 자료는 중단합니다. 기존 분리 입력은 호환 읽기/원본 이력으로 남기고 신규 출력은 한 TXT를 사용합니다.
+
+이관은 `node scripts/unified-migration.mjs plan --project-root .`의 비공개 `local-private/migration-manifest.json`을 먼저 검토합니다. `apply`/`verify`에는 그 파일의 정확 `--manifest-sha`가 필요합니다. 단순 보존 사본과 형식 변환/활성화는 다른 단계이며, 경로는 검증된 old-root→새 상대경로 맵으로만 해석합니다. 모든 JSON 문자열의 일괄 치환/출처 삭제/판정 승계는 하지 않습니다.
+
+실제 .38 설치 소스의 원본 바이트는 Git `b277085` 및 `desktop/installed-source-provenance.json`에 핀 고정했습니다. `legacy-source/operations/`는 공개 감사된 과거 운영·복구 스크립트와 delivery helper/계약 원본입니다. 실행/롤백/현재 상태 복원에 자동 등록하지 않습니다.
+
+`desktop/production/`, `desktop/production-editor/`, `desktop/pc-review/`는 삭제가 도구 정책에서 거부되어 남겨 둔 **비활성 설치 원점 snapshot**입니다. 원본 110개는 Git 원점 바이트로 복원·검증하며, 실행·소비·패키지는 표준 `desktop/`, `app/`, `mobile/android-review/`만 사용합니다. 남은 snapshot을 최신 활성 프로그램이나 제거 완료라고 부르지 않습니다.
+
+자료 이관은 `node scripts/unified-migration.mjs plan --project-root <프로젝트>`로 원본 전수 SHA와 복사/생성 범위를 한 비공개 manifest에 고정한 뒤, 같은 manifest SHA의 `apply`/`verify`로만 진행합니다. 생성기 보완 시 `refresh-generated --manifest-sha <기존 SHA>`는 기존 복사 바이트·경로·원본 핀을 바꾸지 않고 생성 TXT의 대상 핀만 갱신합니다. 실제 기존 2,168 프로그램 폴더 중 862개의 저장 HTML은 원바이트·인코딩·이미지 상대경로를 typed sourceDocument로 보존해 기존 HTML reader로 읽습니다. 나머지 1,306 참고 기록은 원문 전문으로 승격하지 않습니다. 수동 업로드 문안은 원문 미확보 상태로 양쪽 문안 중 실제 저장된 플랫폼만 기록하고, 기존 글·버전·사진 binding을 보존하되 새 게시 승인을 부여하지 않습니다.
+
+Windows 패키지 준비는 `cd desktop; npm ci --no-audit --no-fund; node node_modules/electron/install.js; npm run pack:win`입니다. Electron 44.4.3의 이 lock은 `npm ci`만으로 바이너리를 설치하지 않아 명시 설치 단계가 필요합니다. 게시 기능 활성화가 아닌 `--publish never` 패키징입니다.
+
+빌드 전용 `desktop/after-pack.cjs`는 실제 `app.asar`의 활성 root CJS 전부와 상대 require 의존성/원소스 바이트를 검사한 후 canonical helper9개만 두 물리 resource 경로에 복사·SHA 검증합니다. 같은 desktop 디렉터리를 `extraResources.from='.'`로 지정하면 electron-builder가 해당 파일을 ASAR 앱 코드에서 제외하므로 그 방식은 쓰지 않습니다. hook 자체와 inert 설치 snapshot은 실행 ASAR에서 제외합니다. 누락·오래된 코드·경로탈출·링크는 빌드를 실패시키며 코드 검증을 위해 private 자료 루트를 순회하지 않습니다.
+
+프로젝트 루트의 변환·검증 전에는 `npm ci --ignore-scripts --no-audit --no-fund`를 실행합니다. 읽기용 HTML 본문은 기존 `source-curation.htmlDraft` 본문/광고/댓글 분리 로직을 VM 격리해 재사용하고, Node DOMParser만 [LinkeDOM 0.18.13](https://github.com/WebReflection/linkedom)으로 고정합니다([ISC 라이선스](https://github.com/WebReflection/linkedom/blob/main/LICENSE), 정확 의존성/무결성은 package-lock). DOM-like 구현이므로 지원 selector와 실제 코퍼스 검증 범위를 따릅니다. script·외부 리소스를 실행하지 않으며, 지원되지 않는 HTML은 본문 선택 미확인으로 표시합니다. TXT 앞부분에 실제 선택한 본문과 원순서 이미지 위치를 읽기용으로 넣되 `preserved`/원검토 상태를 유지하고, 원HTML 전체 바이트·SHA와 참고노트는 뒤 metadata에 보존합니다. 읽기 추출이 원문 완독·OCR·권리·제작/게시 승인이 되지는 않습니다. 일반 제작의 400 segment 제한은 그대로이며 읽기 전용 full mode만 별도 bounded 범위를 사용합니다.
+
+통합 native 실행은 `Threads Cut Editor.exe --project-root <이 프로젝트 절대경로>` 또는 같은 `THREADS_PROJECT_ROOT` 환경변수입니다. 평가·숫자 품질·자료·게시 준비가 같은 Electron 창의 동일 offline 서버에서 열립니다. 패키지는 실제 uploader 서버/UI 및 상대 module 의존성만 포함하며 project 전체나 private 자료를 순회해 패키징하지 않습니다. `upload-studio/START.ps1`와 `Control.ps1 start/open/stop/status`, 평가·자료 바로가기는 같은 lifecycle을 씁니다. 현재 버전 native 설치(`local-private/programs/ThreadsProduction/<desktop package version>/Threads Cut Editor.exe`) 또는 `desktop/dist/win-unpacked`가 있으면 같은 native 창을 사용하며, 없을 때만 명시적으로 소유한 Node 서버로 fallback합니다. start는 기존 소유 Node 서버만 정상 전환할 수 있습니다. 프로젝트·실행파일·PID·포트·health identity가 다른 프로세스는 가져오거나 종료하지 않습니다. native stop은 정상 창 닫기만 요청하므로 미저장 편집이 거부하면 실패 상태로 남고 강제 종료하지 않습니다. 같은 창 이동 역시 문안·품질 저장 barrier를 통과해야 합니다. Electron의 second-instance argv 재정렬을 피하려고 추가 실행의 정확한 프로젝트/이동 경로는 `requestSingleInstanceLock`의 JSON `additionalData`로 전달하고, 같은 절대 루트와 허용 경로만 검증합니다. 잘못된 요청은 현재 창·초안을 보존하며 비동기 오류 안내로 표시해 서버 응답을 막지 않습니다. 외부 URL/권한/새 창은 차단하며 창을 정상 닫은 뒤 자신이 만든 서버와 PID 기록만 정리합니다. `--editor`, `--pc-review-run`, `--review-audit=...`는 기존 원문 편집·strict 평가/읽기전용 감사 경로를 유지합니다. 실제 게시·예약·과거 작업 자동 재개는 여전히 금지됩니다.
+
 ## 역할별 작업 구역
 
 ```text

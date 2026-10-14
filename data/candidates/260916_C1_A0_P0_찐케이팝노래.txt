@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4345714238
+제목 - 찐케이팝 같다며 난리난 노래
+내용 - [명시 요약 — 원문 전문 아님]
+더쿠 유머 게시물. 펜타곤의 10년 만의 싱글을 두고 영어 가사가 적고 한국어로 꽉 찬 느낌 때문에 '진짜 케이팝 같다'는 반응이 나온다는 내용. X와 YouTube 원문 링크가 함께 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4345714238",
+    "title": "찐케이팝 같다며 난리난 노래",
+    "body": "더쿠 유머 게시물. 펜타곤의 10년 만의 싱글을 두고 영어 가사가 적고 한국어로 꽉 찬 느낌 때문에 '진짜 케이팝 같다'는 반응이 나온다는 내용. X와 YouTube 원문 링크가 함께 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_찐케이팝노래.md",
+      "originalTitle": "찐케이팝 같다며 난리난 노래",
+      "originalMarkdown": "# 찐케이팝 같다며 난리난 노래\r\n\r\n## 글 내용\r\n더쿠 유머 게시물. 펜타곤의 10년 만의 싱글을 두고 영어 가사가 적고 한국어로 꽉 찬 느낌 때문에 '진짜 케이팝 같다'는 반응이 나온다는 내용. X와 YouTube 원문 링크가 함께 있다.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/4345714238\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 조회수: 1,565\r\n- 댓글: 13\r\n\r\n## 평가\r\n음악/세대 공감형 소재로 반응은 준수하지만 프로젝트의 핵심 생활갈등 레인보다는 우선순위가 낮다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 본문 전체 읽음: 예\r\n- 댓글 읽음: 아니오\r\n- 연결 source media: X, YouTube 링크 존재\r\n- source bytes 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false",
+      "originalSha256": "87378fe766df67fc2f4cbe80e96e576c75ecab94a6497741fbdb6ffcc46ed584",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 208
+}

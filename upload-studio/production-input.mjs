@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {validateProductionCaptions,legacyProductionCaptions} from './production-captions.mjs';
+import {configuredResolver} from '../desktop/project-paths.cjs';
 import {cleanDisplayTitle} from './title-normalization.mjs';
 export const DEFAULT_MATERIAL_ROOT=path.resolve(process.env.STUDIO_MATERIAL_ROOT||'자료');
 const fail=code=>{throw Object.assign(new Error(code),{code,status:400});};
@@ -9,9 +10,9 @@ const inside=(root,file)=>{const rel=path.relative(root,file);if(!rel||rel==='..
 // Exactly the version basis used by desktop/post-review-store.cjs. No review-store writes.
 export function productionVersion(row){return createHash('sha256').update(JSON.stringify([row.sourceFingerprint,row.outputSha256,row.ruleVersion,row.images?.map(i=>i.sha256),...(row.reviewRound?[row.reviewRound]:[])])).digest('hex');}
 export class ProductionInput {
- constructor(materialRoot,assets){this.materialRoot=path.resolve(materialRoot);this.output=path.join(this.materialRoot,'06_자동 제작 결과');this.assets=assets;}
+ constructor(materialRoot,assets){this.pathResolver=configuredResolver();this.materialRoot=path.resolve(this.pathResolver?this.pathResolver(materialRoot):materialRoot);this.output=path.join(this.materialRoot,'06_자동 제작 결과');this.assets=assets;}
  async safeRoot(){try{const material=await fs.realpath(this.materialRoot),output=await fs.realpath(this.output);inside(material,output);return output;}catch(e){if(e.code==='ENOENT')fail('production_unavailable');throw e;}}
- async safeFile(row,name){const root=await this.safeRoot();const base=inside(root,path.resolve(root,row.outputFolder));const candidate=inside(base,path.resolve(base,name));const [realBase,realFile]=await Promise.all([fs.realpath(base),fs.realpath(candidate)]);inside(root,realBase);inside(realBase,realFile);return realFile;}
+ async safeFile(row,name){const root=await this.safeRoot();const base=inside(root,path.resolve(root,this.pathResolver&&path.isAbsolute(row.outputFolder)?this.pathResolver(row.outputFolder):row.outputFolder));const candidate=inside(base,path.resolve(base,name));const [realBase,realFile]=await Promise.all([fs.realpath(base),fs.realpath(candidate)]);inside(root,realBase);inside(realBase,realFile);return realFile;}
  async json(file){const stat=await fs.stat(file);if(!stat.isFile()||stat.size>20000000)fail('production_manifest_invalid');try{return JSON.parse(await fs.readFile(file,'utf8'));}catch(e){if(e instanceof SyntaxError)fail('production_manifest_invalid');throw e;}}
  async rows(){const root=await this.safeRoot(),file=await fs.realpath(path.join(root,'status.json'));inside(root,file);const data=await this.json(file);if(!Array.isArray(data.entries)||data.entries.length>10000)fail('production_manifest_invalid');const rows=data.entries.filter(r=>r.outputFolder&&Array.isArray(r.images)&&r.images.length);const ids=new Set();for(const row of rows){if(typeof row.id!=='string'||!/^[-\w가-힣.: ]{1,200}$/.test(row.id)||ids.has(row.id)||row.images.length>200)fail('production_manifest_invalid');ids.add(row.id);}return rows;}
  async feedback(){try{const root=await fs.realpath(this.materialRoot),folder=await fs.realpath(path.join(root,'07_사용자 평가'));inside(root,folder);const file=await fs.realpath(path.join(folder,'평가 기록.json'));inside(folder,file);const data=await this.json(file);if(data.schemaVersion!==1||!Array.isArray(data.evaluations))fail('production_feedback_invalid');return data.evaluations;}catch(e){if(e.code==='ENOENT')return [];throw e;}}

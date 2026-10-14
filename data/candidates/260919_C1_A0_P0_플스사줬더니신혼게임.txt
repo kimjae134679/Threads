@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%EB%86%88%EC%9D%98-%EA%B2%8C%EC%9E%84-E17AmY5q
+제목 - 신혼 선물로 플스5 사줬더니 주7일 게임합니다
+내용 - [명시 요약 — 원문 전문 아님]
+신혼 초 남편에게 플스5를 선물했는데 쉬는 날 6시간 이상, 평일 퇴근 후에도 기본 3시간 이상 게임하고 데이트 제안도 거절한다는 사연. 작성자는 처음부터 사준 것을 후회한다고 적었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%EB%86%88%EC%9D%98-%EA%B2%8C%EC%9E%84-E17AmY5q",
+    "title": "신혼 선물로 플스5 사줬더니 주7일 게임합니다",
+    "body": "신혼 초 남편에게 플스5를 선물했는데 쉬는 날 6시간 이상, 평일 퇴근 후에도 기본 3시간 이상 게임하고 데이트 제안도 거절한다는 사연. 작성자는 처음부터 사준 것을 후회한다고 적었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_플스사줬더니신혼게임.md",
+      "originalTitle": "신혼 선물로 플스5 사줬더니 주7일 게임합니다",
+      "originalMarkdown": "# 신혼 선물로 플스5 사줬더니 주7일 게임합니다\r\n\r\n## 원문 제목\r\n이놈의 게임\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n신혼 초 남편에게 플스5를 선물했는데 쉬는 날 6시간 이상, 평일 퇴근 후에도 기본 3시간 이상 게임하고 데이트 제안도 거절한다는 사연. 작성자는 처음부터 사준 것을 후회한다고 적었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%9D%B4%EB%86%88%EC%9D%98-%EA%B2%8C%EC%9E%84-E17AmY5q\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 11:16 KST\r\n- 조회수: 558\r\n- 댓글: 23\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 일부\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n\r\n## 평가\r\n선물한 게임기가 바로 신혼 갈등의 원인이 됐다는 아이러니와 주7일·하루 6시간이라는 구체성이 강하다.\r\n\r\n## 형식\r\n글\r\n\r\n## acquisition/provenance / 제작·게시 상태\r\nexact individual public Blind URL 확인. C1_A0_P0. sourceRisk=red; 공개 페이지/검색 노출만 확인. source media 미확보. publicationAllowed=false. 04_REVIEW_PUBLISH만 실제 게시 가능.",
+      "originalSha256": "5e5d15caf354a4bd1eeb40ece78b1f3b7c96be0d598ba3fc7c7b07075b7ad0fc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 268
+}

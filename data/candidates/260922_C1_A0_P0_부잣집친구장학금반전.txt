@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2781616473
+제목 - 핫게 보고 내 친구 생각난 후기
+내용 - [명시 요약 — 원문 전문 아님]
+잘사는 친구가 티를 내지 않았는데 뒤늦게 동생 장학금이 그 친구 집안 회사 지원이었다는 사실을 알게 되는 선행 반전이 있어 짧고 강한 감정 전환과 공유성이 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2781616473",
+    "title": "핫게 보고 내 친구 생각난 후기",
+    "body": "잘사는 친구가 티를 내지 않았는데 뒤늦게 동생 장학금이 그 친구 집안 회사 지원이었다는 사실을 알게 되는 선행 반전이 있어 짧고 강한 감정 전환과 공유성이 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_C1_A0_P0_부잣집친구장학금반전.md",
+      "originalTitle": "핫게 보고 내 친구 생각난 후기",
+      "originalMarkdown": "# 핫게 보고 내 친구 생각난 후기\r\n\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- source: TheQoo 후기\r\n- public URL: https://theqoo.net/review/2781616473\r\n- exact observed title: `핫게 보고 내 친구 생각난 후기`\r\n- observedAt: 2026-09-22 03:16 KST\r\n- observed metrics: 조회 5,327 / 댓글 16\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인하지 않음\r\n- acquisition: 공개 개별 게시물 URL과 노출 본문을 확인한 C1. 로그인/우회/OCR 없음.\r\n- provenance: TheQoo 공개 후기 페이지. 최초 창작 원출처 여부는 별도 주장하지 않음.\r\n- whyGood: 잘사는 친구가 티를 내지 않았는데 뒤늦게 동생 장학금이 그 친구 집안 회사 지원이었다는 사실을 알게 되는 선행 반전이 있어 짧고 강한 감정 전환과 공유성이 좋음.\r\n- rights/moderation/assets/publication: 미확정. 제작/게시 단계로 승격하지 않음.\r\n",
+      "originalSha256": "b58d2a46404bfba13c6dd555ba70821d4ce6a13ffcdf9614a950820b70d7efa2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 194
+}

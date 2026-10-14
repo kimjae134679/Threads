@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2689291421
+제목 - 알레르기 경고 무시한 시댁 갔다가 30분 만에 응급실
+내용 - [명시 요약 — 원문 전문 아님]
+고양이 알레르기가 심한 며느리에게 시댁과 남편이 방문을 압박했고, 당사자는 문제가 생기면 소송·이혼하겠다고 미리 경고했다. 실제 방문 30분 만에 응급실에 실려가면서 양가 갈등과 법적 대응으로 번졌다는 사연. 공개 본문 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2689291421",
+    "title": "알레르기 경고 무시한 시댁 갔다가 30분 만에 응급실",
+    "body": "고양이 알레르기가 심한 며느리에게 시댁과 남편이 방문을 압박했고, 당사자는 문제가 생기면 소송·이혼하겠다고 미리 경고했다. 실제 방문 30분 만에 응급실에 실려가면서 양가 갈등과 법적 대응으로 번졌다는 사연. 공개 본문 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_알레르기시댁응급실.md",
+      "originalTitle": "알레르기 경고 무시한 시댁 갔다가 30분 만에 응급실",
+      "originalMarkdown": "# 알레르기 경고 무시한 시댁 갔다가 30분 만에 응급실\r\n\r\n## source\r\nTheQoo\r\n\r\n## 원문 제목\r\n\"알레르기 오버하지 마\" 시댁 강요에 응급실 실려간 며느리, 살인미수 고소\r\n\r\n## 글 내용\r\n고양이 알레르기가 심한 며느리에게 시댁과 남편이 방문을 압박했고, 당사자는 문제가 생기면 소송·이혼하겠다고 미리 경고했다. 실제 방문 30분 만에 응급실에 실려가면서 양가 갈등과 법적 대응으로 번졌다는 사연. 공개 본문 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2689291421\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 조회수/댓글 수치: 이번 관찰에서 확인되지 않음\r\n\r\n## 평가\r\n'오버한다'는 가족 압박이 실제 응급실행으로 이어지는 명확한 결과와 가족·건강·법적 갈등이 동시에 있다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n이미지 존재 여부 이번 관찰에서 확정하지 않음. 실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "d4a2fe51dda9c6696c88769c46bd8007e924059ec0747f129e675275a603b5df",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 252
+}

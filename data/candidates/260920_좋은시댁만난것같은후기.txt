@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1309101415
+제목 - 좋은 시댁 만난 것 같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 준비 간섭은 없지만 연락 빈도를 둘러싼 서운함이 생기는 등 좋은 관계에서도 경계선 문제가 생기는 반전형 가족 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1309101415",
+    "title": "좋은 시댁 만난 것 같은 후기",
+    "body": "결혼 준비 간섭은 없지만 연락 빈도를 둘러싼 서운함이 생기는 등 좋은 관계에서도 경계선 문제가 생기는 반전형 가족 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_좋은시댁만난것같은후기.md",
+      "originalTitle": "좋은 시댁 만난 것 같은 후기",
+      "originalMarkdown": "# 좋은 시댁 만난 것 같은 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1309101415\r\n- exactObservedTitle: 좋은 시댁 만난 것 같은 후기\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 4,331\r\n- whyGood: 결혼 준비 간섭은 없지만 연락 빈도를 둘러싼 서운함이 생기는 등 좋은 관계에서도 경계선 문제가 생기는 반전형 가족 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "53188bbd6bbc5dfdcbff163554cceb35f2a4500a6991b516896e5a1fd1ebe1e9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 170
+}

@@ -1,0 +1,29 @@
+원문링크 - https://it.reddit.com/r/AmItheAsshole/comments/x2466v/aita_for_not_wanting_to_pay_for_my_wifes_spending/
+제목 - 상속금으로 집과 차 사준 아내에게 생활비는 네 돈 쓰랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+아내가 상속금으로 집과 차량을 마련해 가족의 큰 고정비를 없앤 뒤 육아를 맡고 있는데, 남편은 자신의 급여로 아내의 개인 지출까지 부담하는 것은 불공평하다며 갈등하는 사연. 공개 본문과 공개 댓글 일부를 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://it.reddit.com/r/AmItheAsshole/comments/x2466v/aita_for_not_wanting_to_pay_for_my_wifes_spending/",
+    "title": "상속금으로 집과 차 사준 아내에게 생활비는 네 돈 쓰랍니다",
+    "body": "아내가 상속금으로 집과 차량을 마련해 가족의 큰 고정비를 없앤 뒤 육아를 맡고 있는데, 남편은 자신의 급여로 아내의 개인 지출까지 부담하는 것은 불공평하다며 갈등하는 사연. 공개 본문과 공개 댓글 일부를 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_상속금집차사준아내생활비.md",
+      "originalTitle": "상속금으로 집과 차 사준 아내에게 생활비는 네 돈 쓰랍니다",
+      "originalMarkdown": "# 상속금으로 집과 차 사준 아내에게 생활비는 네 돈 쓰랍니다\r\n\r\n## source\r\nReddit / r/AmItheAsshole\r\n\r\n## 원문 제목\r\nAITA for not wanting to pay for my wife's spending money?\r\n\r\n## 글 내용\r\n아내가 상속금으로 집과 차량을 마련해 가족의 큰 고정비를 없앤 뒤 육아를 맡고 있는데, 남편은 자신의 급여로 아내의 개인 지출까지 부담하는 것은 불공평하다며 갈등하는 사연. 공개 본문과 공개 댓글 일부를 읽음.\r\n\r\n## 정확한 링크\r\nhttps://it.reddit.com/r/AmItheAsshole/comments/x2466v/aita_for_not_wanting_to_pay_for_my_wifes_spending/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 댓글 5,666 표시 확인\r\n- 조회수/게시물 점수 미확인\r\n\r\n## 평가\r\n상속금으로 집·차를 이미 마련한 기여와 현재 현금소득을 누구 돈으로 볼 것인지가 정면 충돌한다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "c85f5d946bfc3c72579ef4c53cfa2947cfa0670721800e806549c8a222a75b77",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 304
+}

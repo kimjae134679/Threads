@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1203068734
+제목 - 애기 엄마가된 친구들 만나고 마음 헛헛한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+비혼·비출산을 생각하는 작성자가 출산한 친구들을 오랜만에 만나며 느끼는 관계와 인생 단계의 거리감이 핵심이라 또래 관계 변화에 대한 공감과 논쟁이 붙기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1203068734",
+    "title": "애기 엄마가된 친구들 만나고 마음 헛헛한 후기",
+    "body": "비혼·비출산을 생각하는 작성자가 출산한 친구들을 오랜만에 만나며 느끼는 관계와 인생 단계의 거리감이 핵심이라 또래 관계 변화에 대한 공감과 논쟁이 붙기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_1203068734.md",
+      "originalTitle": "애기 엄마가된 친구들 만나고 마음 헛헛한 후기",
+      "originalMarkdown": "# 애기 엄마가된 친구들 만나고 마음 헛헛한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1203068734\r\n- exactObservedTitle: 애기 엄마가된 친구들 만나고 마음 헛헛한 후기\r\n- observedAt: 2026-09-23 01:17 KST\r\n- observedMetrics: 조회 5,059 / 댓글 22\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 비혼·비출산을 생각하는 작성자가 출산한 친구들을 오랜만에 만나며 느끼는 관계와 인생 단계의 거리감이 핵심이라 또래 관계 변화에 대한 공감과 논쟁이 붙기 좋은 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 파일은 다운로드하지 않음.\r\n- provenance: TheQoo 공개 후기 게시물. 개인 감정과 경험은 작성자 진술로만 취급하며 일반화하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c3bd81e47e6e290454fd1beeb100b1d004ca1f03cd6e660053fbbcece292b007",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 204
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2466597020
+제목 - Candidate — 눈새 친구 때문에 짜증나는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2466597020",
+    "title": "Candidate — 눈새 친구 때문에 짜증나는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_눈새친구돈없다고징징후기.md",
+      "originalTitle": "Candidate — 눈새 친구 때문에 짜증나는 후기",
+      "originalMarkdown": "# Candidate — 눈새 친구 때문에 짜증나는 후기\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: TheQoo / 후기\r\n- exactObservedTitle: `눈새 친구 때문에 짜증나는 후기`\r\n- publicUrl: https://theqoo.net/review/2466597020\r\n- observedAt: 2026-09-21 10:16 KST\r\n- observedMetrics: 조회 6,981\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인하지 않음\r\n- acquisition: 공개 검색 결과에서 TheQoo 개별 public URL과 노출 본문 확인\r\n- provenance: 원문 개별 공개 URL 확인(C1). 별도 asset/source bytes 저장 없음.\r\n\r\n## 관찰 내용\r\n30대 초반 대학 동기 세 명 중 상대적으로 소득과 퇴직금 사정이 좋은 친구가, 형편이 어려운 두 친구 앞에서 반복적으로 돈이 없다고 말해 작성자가 불편함을 느낀다는 경험담이다.\r\n\r\n## 왜 소재로 좋은가\r\n같은 `돈 없다`는 말도 각자의 형편에 따라 어떻게 받아들여지는지, 친구끼리 소득 차이를 어디까지 배려해야 하는지 의견이 즉시 갈릴 만한 소재다.\r\n\r\n## 제한\r\n댓글 미열람. 권리·moderation·publication 승인 없음. 제작 단계로 이동하지 않으며 `publicationAllowed=false` 유지.",
+      "originalSha256": "033e408bc5ae8cb25a988a281933f7aee4050c07eae024e8ae56e4fc0e01fe4d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 109
+}

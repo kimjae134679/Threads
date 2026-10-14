@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EB%8A%94-%EC%BB%A4%ED%94%8C%EC%9D%98-%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84-qLj88uVD
+제목 - 돈 없는 커플의 결혼준비
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EB%8A%94-%EC%BB%A4%ED%94%8C%EC%9D%98-%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84-qLj88uVD",
+    "title": "돈 없는 커플의 결혼준비",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_돈없는커플아파트고집.md",
+      "originalTitle": "돈 없는 커플의 결혼준비",
+      "originalMarkdown": "# 돈 없는 커플의 결혼준비\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EB%8A%94-%EC%BB%A4%ED%94%8C%EC%9D%98-%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84-qLj88uVD\r\n- exactObservedTitle: 돈 없는 커플의 결혼준비\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 1,415 / 댓글 15\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n둘이 모은 돈으로 빌라 전월세 보증금도 빠듯한데 한쪽은 아파트에서 신혼을 시작해야 한다고 고집해 현실과 기대치 충돌이 선명하다.\r\n",
+      "originalSha256": "d20194eda600aa78f3452f6fb8856c7d39a66c27bf543e51a374d5bebba31ec0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 193
+}

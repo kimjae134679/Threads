@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1sf2ea0/removed/
+제목 - Removed AITA — 이탈리아 결혼식 비용 갈등
+내용 - [명시 요약 — 원문 전문 아님]
+Reddit의 삭제된 원글이 AutoModerator 복사본으로 남아 있다. 커플은 현재 약 £10,500을 모았고 결혼 때 약 £32,000을 예상하지만, 약혼자는 이탈리아에서 £25k~£30k 규모 결혼식을 원한다. 작성자는 이후 주거·출산 계획을 생각하면 저축이 거의 사라지는 점을 걱정한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1sf2ea0/removed/",
+    "title": "Removed AITA — 이탈리아 결혼식 비용 갈등",
+    "body": "Reddit의 삭제된 원글이 AutoModerator 복사본으로 남아 있다. 커플은 현재 약 £10,500을 모았고 결혼 때 약 £32,000을 예상하지만, 약혼자는 이탈리아에서 £25k~£30k 규모 결혼식을 원한다. 작성자는 이후 주거·출산 계획을 생각하면 저축이 거의 사라지는 점을 걱정한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼식이탈리아3만파운드.md",
+      "originalTitle": "Removed AITA — 이탈리아 결혼식 비용 갈등",
+      "originalMarkdown": "# Removed AITA — 이탈리아 결혼식 비용 갈등\r\n\r\n## 글 내용\r\nReddit의 삭제된 원글이 AutoModerator 복사본으로 남아 있다. 커플은 현재 약 £10,500을 모았고 결혼 때 약 £32,000을 예상하지만, 약혼자는 이탈리아에서 £25k~£30k 규모 결혼식을 원한다. 작성자는 이후 주거·출산 계획을 생각하면 저축이 거의 사라지는 점을 걱정한다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1sf2ea0/removed/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 삭제 게시물 표시 점수: +2\r\n- 원문 반응 총수는 확인 불가\r\n\r\n## 평가\r\n결혼식 꿈 vs 결혼 후 재정이라는 명확한 돈 갈등. 반응량 증거가 약해 보조 후보로 유지.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 본문 전체 읽음: 예, AutoModerator 보존본\r\n- 댓글 읽음: 아니오\r\n- source screenshots 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false",
+      "originalSha256": "8139517959eb469b456684522e2092646d0cab4b4486e350b1fdcb154609dcab",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 310
+}

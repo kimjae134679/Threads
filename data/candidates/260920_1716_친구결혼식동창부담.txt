@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3452076666
+제목 - 친구 결혼식 때문에 고민중인 중기
+내용 - [명시 요약 — 원문 전문 아님]
+고마운 친구 결혼식은 가고 싶지만 퇴사·직종변경 상태에서 동창들을 마주치는 것이 부담스럽다는 현실적인 양자택일 상황.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3452076666",
+    "title": "친구 결혼식 때문에 고민중인 중기",
+    "body": "고마운 친구 결혼식은 가고 싶지만 퇴사·직종변경 상태에서 동창들을 마주치는 것이 부담스럽다는 현실적인 양자택일 상황.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_친구결혼식동창부담.md",
+      "originalTitle": "친구 결혼식 때문에 고민중인 중기",
+      "originalMarkdown": "# 친구 결혼식 때문에 고민중인 중기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/3452076666\r\n- exactObservedTitle: 친구 결혼식 때문에 고민중인 중기\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회 수 7167, 댓글 24\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact individual public URL; first-person account\r\n- whyGood: 고마운 친구 결혼식은 가고 싶지만 퇴사·직종변경 상태에서 동창들을 마주치는 것이 부담스럽다는 현실적인 양자택일 상황.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6adef34e6bb35bdfec7464b1baf94e974407e793d073b2f6d0fa566a9a49c876",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 170
+}

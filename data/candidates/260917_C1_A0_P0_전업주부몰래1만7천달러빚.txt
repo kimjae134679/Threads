@@ -1,0 +1,34 @@
+원문링크 - https://www.reddit.com/r/BestofRedditorUpdates/comments/1s6l47y/my_wife_is_a_sahm_and_has_racked_up_17k_of_debt/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+두 아이를 키우는 부부 이야기다. 군 복무로 집을 오래 비웠던 남편이 귀가한 뒤 돈이 빠듯해진 상황에서, 전업주부인 아내가 약 11개월 동안 신용카드 빚 약 1만7천 달러를 쌓아온 사실을 알게 된다. 공개된 업데이트 모음에는 부부 갈등과 재정 문제가 이어지는 과정이 포함돼 있다.
+
+- source: Reddit / r/BestofRedditorUpdates (원 게시물 출처 r/Marriage 표기)
+- 관측: 2026-09-17 17:34 KST
+- 전체 본문: 공개 BORU 페이지에서 장문 원문/업데이트 확인
+- 댓글: 미확인
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BestofRedditorUpdates/comments/1s6l47y/my_wife_is_a_sahm_and_has_racked_up_17k_of_debt/",
+    "title": "제목",
+    "body": "두 아이를 키우는 부부 이야기다. 군 복무로 집을 오래 비웠던 남편이 귀가한 뒤 돈이 빠듯해진 상황에서, 전업주부인 아내가 약 11개월 동안 신용카드 빚 약 1만7천 달러를 쌓아온 사실을 알게 된다. 공개된 업데이트 모음에는 부부 갈등과 재정 문제가 이어지는 과정이 포함돼 있다.\r\n\r\n- source: Reddit / r/BestofRedditorUpdates (원 게시물 출처 r/Marriage 표기)\r\n- 관측: 2026-09-17 17:34 KST\r\n- 전체 본문: 공개 BORU 페이지에서 장문 원문/업데이트 확인\r\n- 댓글: 미확인",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_전업주부몰래1만7천달러빚.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nMy wife is a sahm and has racked up 17k of debt in the past 11 months behind my back\r\n\r\n## 글 내용\r\n두 아이를 키우는 부부 이야기다. 군 복무로 집을 오래 비웠던 남편이 귀가한 뒤 돈이 빠듯해진 상황에서, 전업주부인 아내가 약 11개월 동안 신용카드 빚 약 1만7천 달러를 쌓아온 사실을 알게 된다. 공개된 업데이트 모음에는 부부 갈등과 재정 문제가 이어지는 과정이 포함돼 있다.\r\n\r\n- source: Reddit / r/BestofRedditorUpdates (원 게시물 출처 r/Marriage 표기)\r\n- 관측: 2026-09-17 17:34 KST\r\n- 전체 본문: 공개 BORU 페이지에서 장문 원문/업데이트 확인\r\n- 댓글: 미확인\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/BestofRedditorUpdates/comments/1s6l47y/my_wife_is_a_sahm_and_has_racked_up_17k_of_debt/\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n동일 관측시점에서 확인 가능한 Reddit 점수: +3,042. 조회수·댓글수는 확인하지 못함.\r\n\r\n## 평가\r\n배우자 몰래 생긴 큰 빚, 육아·외벌이·군 복무가 함께 얽혀 있고 이후 전개까지 있어 스토리성이 강하다. 다만 장문이므로 실제 제작 시 전체 원문 screenshot 확보량이 많을 수 있다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. rights/privacy/human review 필요. publicationAllowed=false. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "e3625a1e4a4499ea6425bb4f9ec2db398cd473738b6283097b6f89e5b72b2dcc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 469
+}

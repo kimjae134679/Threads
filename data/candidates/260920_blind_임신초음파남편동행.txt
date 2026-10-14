@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0-%EC%B4%88%EC%9D%8C%ED%8C%8C-%EA%B2%80%EC%82%AC%EB%A5%BC-%EB%82%A8%ED%8E%B8%EC%9D%B4-%EA%B0%99%EC%9D%B4-%EA%B0%80%EC%A3%BC%EB%82%98%EC%9A%94-isak85yd
+제목 - 임신 초음파 검사를 남편이 같이 가주나요?
+내용 - [명시 요약 — 원문 전문 아님]
+임신 검사 동행을 둘러싼 기대치 차이가 짧고 명확해 부부 역할에 대한 즉각적인 논쟁 소재가 됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0-%EC%B4%88%EC%9D%8C%ED%8C%8C-%EA%B2%80%EC%82%AC%EB%A5%BC-%EB%82%A8%ED%8E%B8%EC%9D%B4-%EA%B0%99%EC%9D%B4-%EA%B0%80%EC%A3%BC%EB%82%98%EC%9A%94-isak85yd",
+    "title": "임신 초음파 검사를 남편이 같이 가주나요?",
+    "body": "임신 검사 동행을 둘러싼 기대치 차이가 짧고 명확해 부부 역할에 대한 즉각적인 논쟁 소재가 됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_임신초음파남편동행.md",
+      "originalTitle": "임신 초음파 검사를 남편이 같이 가주나요?",
+      "originalMarkdown": "# 임신 초음파 검사를 남편이 같이 가주나요?\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0-%EC%B4%88%EC%9D%8C%ED%8C%8C-%EA%B2%80%EC%82%AC%EB%A5%BC-%EB%82%A8%ED%8E%B8%EC%9D%B4-%EA%B0%99%EC%9D%B4-%EA%B0%80%EC%A3%BC%EB%82%98%EC%9A%94-isak85yd\r\n- exactObservedTitle: 임신 초음파 검사를 남편이 같이 가주나요?\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 7,890, 댓글 125, 좋아요 4\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 임신 검사 동행을 둘러싼 기대치 차이가 짧고 명확해 부부 역할에 대한 즉각적인 논쟁 소재가 됨.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 게시자 주장 자체이며 독립 사실 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3bd708966b51fe1d5b2940833d9e1a15f10099bbdc1cffa523354c279dda1d10",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 328
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/954234398
+제목 - 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생
+내용 - [명시 요약 — 원문 전문 아님]
+같은 시기에 결혼을 앞둔 20년지기 두 친구가 `결혼`과 `해외행`으로 갈라진 뒤 몇 년 후 서로 전혀 다른 삶을 살게 된 비교 서사다. 선택의 후회·결혼생활·비혼/해외생활을 두고 독자가 자신의 가치관을 바로 투영하기 쉽다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/954234398",
+    "title": "결혼 안하고 외국간 친구와 나의 뒤바뀐 인생",
+    "body": "같은 시기에 결혼을 앞둔 20년지기 두 친구가 `결혼`과 `해외행`으로 갈라진 뒤 몇 년 후 서로 전혀 다른 삶을 살게 된 비교 서사다. 선택의 후회·결혼생활·비혼/해외생활을 두고 독자가 자신의 가치관을 바로 투영하기 쉽다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_결혼안하고외국간친구뒤바뀐인생.md",
+      "originalTitle": "[판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생",
+      "originalMarkdown": "# [판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생\r\n\r\n- stage: C1\r\n- source: TheQoo square (Pann repost/quotation indicated by observed title)\r\n- publicUrl: https://theqoo.net/square/954234398\r\n- exactObservedTitle: `[판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 54,474 (retrieved public page); 댓글 수는 이번 관찰에서 확실히 확인되지 않아 기록하지 않음\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not confirmed from retrieved public text\r\n- acquisition: Public individual TheQoo page indexed and readable; exact individual URL verified. Title indicates a Pann repost; upstream original URL not verified.\r\n- provenance: C1 exact public individual TheQoo URL; not asserted as first/original publication.\r\n- whyGood: 같은 시기에 결혼을 앞둔 20년지기 두 친구가 `결혼`과 `해외행`으로 갈라진 뒤 몇 년 후 서로 전혀 다른 삶을 살게 된 비교 서사다. 선택의 후회·결혼생활·비혼/해외생활을 두고 독자가 자신의 가치관을 바로 투영하기 쉽다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6fab30203f6d6f2ecd24eaec85aa36ba917be479ad0d4e54e0680d05ff6359d4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 235
+}

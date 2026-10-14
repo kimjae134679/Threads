@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416
+제목 - 돈 모을려면 일단 친구를 끊어라
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416",
+    "title": "돈 모을려면 일단 친구를 끊어라",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_돈모을려면일단친구를끊어라.md",
+      "originalTitle": "돈 모을려면 일단 친구를 끊어라",
+      "originalMarkdown": "# 돈 모을려면 일단 친구를 끊어라\r\n\r\n- stage: C1\r\n- source: DCInside 중소기업 갤러리\r\n- sourceUrl: https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416\r\n- exactObservedTitle: 돈 모을려면 일단 친구를 끊어라\r\n- observedAt: 2026-09-21 04:14 KST\r\n- observedMetrics: 조회 61, 댓글 6 (공개 검색 결과에서 실제 관찰된 값; 다른 색인 결과에는 상이한 캐시 수치가 있어 이 값만 관찰치로 기록)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual post page indexed/readable without login or bypass\r\n- provenance: exact individual public URL verified; post no=1817416\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 내용\r\n작성자는 친구가 많으면 술자리·결혼 축의금 등 지출이 늘어 돈을 모으기 어렵다는 취지로 주장하고, 가까운 친구는 소수면 충분하다는 의견을 적었다.\r\n\r\n## 왜 소재로 좋은지\r\n돈을 아끼기 위해 인간관계를 줄이는 것이 맞는지, 결혼 축의금과 모임비를 인간관계 비용으로 어디까지 받아들일지 즉시 의견이 갈릴 수 있는 돈+친구 관계 논쟁 소재다.\r\n\r\n## 검증 메모\r\n본문은 공개 페이지에서 실제 읽음. 댓글 내용은 읽지 않았음. 작성자의 주장은 개인 의견이며 일반적 사실로 승격하지 않음. 이미지/OCR/권리/moderation/asset/publication 상태를 추정하지 않음.\r\n",
+      "originalSha256": "c7d2852063dbeacf744dddf4ddf683e7ed95089dd8bf6415b279b62191fe556e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 121
+}

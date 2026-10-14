@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 한 달 앞둔 작성자가 전세사기로 전세대출 1억원이 사실상 빚이 된 상황을 결혼 준비 초반부터 상대와 상대 부모에게 알렸다. 처음에는 상대가 함께 버티자고 했지만 식을 한 달 남긴 시점에 상대 부모가 1억원을 청산하고 오거나 작성자 부모가 왜 지원하지 못하는지 설명하라고 요구했고, 해결하지 못하면 파혼도 생각하라는 말까지 나왔다. 작성자는 이미 모든 절차가 진행된 뒤 나온 요구 때문에 결혼을 계속해도 될지 고민한다. 공개 본문과 공개 댓글을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727",
+    "title": "제목",
+    "body": "결혼을 한 달 앞둔 작성자가 전세사기로 전세대출 1억원이 사실상 빚이 된 상황을 결혼 준비 초반부터 상대와 상대 부모에게 알렸다. 처음에는 상대가 함께 버티자고 했지만 식을 한 달 남긴 시점에 상대 부모가 1억원을 청산하고 오거나 작성자 부모가 왜 지원하지 못하는지 설명하라고 요구했고, 해결하지 못하면 파혼도 생각하라는 말까지 나왔다. 작성자는 이미 모든 절차가 진행된 뒤 나온 요구 때문에 결혼을 계속해도 될지 고민한다. 공개 본문과 공개 댓글을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼한달남았는데파혼.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼 한달 남았는데 파혼..\r\n\r\n## 글 내용\r\n결혼을 한 달 앞둔 작성자가 전세사기로 전세대출 1억원이 사실상 빚이 된 상황을 결혼 준비 초반부터 상대와 상대 부모에게 알렸다. 처음에는 상대가 함께 버티자고 했지만 식을 한 달 남긴 시점에 상대 부모가 1억원을 청산하고 오거나 작성자 부모가 왜 지원하지 못하는지 설명하라고 요구했고, 해결하지 못하면 파혼도 생각하라는 말까지 나왔다. 작성자는 이미 모든 절차가 진행된 뒤 나온 요구 때문에 결혼을 계속해도 될지 고민한다. 공개 본문과 공개 댓글을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 1,846\r\n- 좋아요: 1\r\n- 댓글: 53\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 예\r\n- comments read: 예(공개 노출 댓글)\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 결혼 한 달 전이라는 촉박함, 전세사기 1억원, 부모 지원 요구와 파혼이라는 갈등이 한 번에 이해돼 swipe-worthy.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "02d4b18b91cd43d24ac1cc0f394c39fd4f74c5a87e34913581691bacfea2b5ef",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 444
+}

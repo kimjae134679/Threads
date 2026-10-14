@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2990916263
+제목 - 내가 10만원 받았는데 호텔 결혼식이면 더 돌려줘야 하나요?
+내용 - [명시 요약 — 원문 전문 아님]
+일반 예식장에서 결혼한 친구 B가 당시 C에게 축의금 10만원을 받았고, 1년 뒤 C의 호텔 결혼식에도 혼자 참석해 같은 10만원을 냈다는 사연. C는 호텔 식대와 물가가 더 비싸졌고 다른 친구는 20만원을 냈다며 서운함을 표시했다고 전달된다. B는 식장 선택은 당사자의 선택이고 받은 만큼 돌려주는 게 맞다고 본다. 공개 페이지 본문 읽음. 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2990916263",
+    "title": "내가 10만원 받았는데 호텔 결혼식이면 더 돌려줘야 하나요?",
+    "body": "일반 예식장에서 결혼한 친구 B가 당시 C에게 축의금 10만원을 받았고, 1년 뒤 C의 호텔 결혼식에도 혼자 참석해 같은 10만원을 냈다는 사연. C는 호텔 식대와 물가가 더 비싸졌고 다른 친구는 20만원을 냈다며 서운함을 표시했다고 전달된다. B는 식장 선택은 당사자의 선택이고 받은 만큼 돌려주는 게 맞다고 본다. 공개 페이지 본문 읽음. 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_호텔축의금10만원.md",
+      "originalTitle": "내가 10만원 받았는데 호텔 결혼식이면 더 돌려줘야 하나요?",
+      "originalMarkdown": "# 내가 10만원 받았는데 호텔 결혼식이면 더 돌려줘야 하나요?\r\n\r\n## 원문 제목\r\n“호텔서 결혼하는데 축의금 10만원은 좀 서운하다는 친구”\r\n\r\n## source\r\nTheQoo 공개 기사 전달 페이지.\r\n\r\n## 글 내용\r\n일반 예식장에서 결혼한 친구 B가 당시 C에게 축의금 10만원을 받았고, 1년 뒤 C의 호텔 결혼식에도 혼자 참석해 같은 10만원을 냈다는 사연. C는 호텔 식대와 물가가 더 비싸졌고 다른 친구는 20만원을 냈다며 서운함을 표시했다고 전달된다. B는 식장 선택은 당사자의 선택이고 받은 만큼 돌려주는 게 맞다고 본다. 공개 페이지 본문 읽음. 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2990916263\r\n\r\n## 관찰시각 / 실제로 보인 수치\r\n- 관찰: 2026-09-19 12:17 KST 전후 자동화 실행 중\r\n- 조회수: 37,447\r\n- 댓글: 356\r\n- 그 외 반응수치: 미확인\r\n\r\n## 본문·댓글·이미지 확인\r\n- 본문: 읽음\r\n- 댓글: 전체 미확인\r\n- 이미지/스크린샷: 별도 source asset 확인/취득하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n'받은 만큼 돌려주기'와 '현재 식대에 맞춰 내기'라는 두 기준이 명확하게 충돌한다. 누구나 경험하거나 곧 겪을 수 있는 축의금 문제라 의견 유도력이 높다.\r\n\r\n## acquisition / provenance\r\n- exact individual public page: VERIFIED\r\n- provenance: SECONDARY_NEWS_REPOST\r\n- source media acquisition: NOT_PERFORMED\r\n- rights/privacy/human review: 미실행·필요\r\n- OCR/moderation: 미실행\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "903845325c0d67e57cc2882ea446c59be429667ec1451fc8fe22ba413fb7d261",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

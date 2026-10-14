@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/
+제목 - AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding
+내용 - [명시 요약 — 원문 전문 아님]
+딸의 결혼식이 취소됐는데 작성자는 약 한 달 뒤에야 이를 알았다. 취소 원인은 딸의 과거 외도 사실을 약혼자가 알게 된 것이었고, 작성자가 조건부로 부담한 예식장 비용은 환불되지 않았다. 작성자가 딸에게 일부 상환을 요구하자 딸이 잔인하다고 반발한 사연. 공개 원문 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/",
+    "title": "AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding",
+    "body": "딸의 결혼식이 취소됐는데 작성자는 약 한 달 뒤에야 이를 알았다. 취소 원인은 딸의 과거 외도 사실을 약혼자가 알게 된 것이었고, 작성자가 조건부로 부담한 예식장 비용은 환불되지 않았다. 작성자가 딸에게 일부 상환을 요구하자 딸이 잔인하다고 반발한 사연. 공개 원문 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_취소된결혼식비용딸에게상환요구.md",
+      "originalTitle": "AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding",
+      "originalMarkdown": "# AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding\r\n\r\n## 글 내용\r\n딸의 결혼식이 취소됐는데 작성자는 약 한 달 뒤에야 이를 알았다. 취소 원인은 딸의 과거 외도 사실을 약혼자가 알게 된 것이었고, 작성자가 조건부로 부담한 예식장 비용은 환불되지 않았다. 작성자가 딸에게 일부 상환을 요구하자 딸이 잔인하다고 반발한 사연. 공개 원문 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n관측: 2026-09-17 15:35 KST. 공개 검색 관측에서 +9,412 votes. 조회수·댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n결혼 취소, 환불 불가 비용, 외도라는 원인, 부모-자녀 상환 갈등까지 연속 반전이 있다. 사생활/관계 주장 성격이 있으므로 human review에서 명예훼손·privacy 맥락을 별도 점검할 것.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- exact title: 위 제목 그대로\r\n- full body read: 예\r\n- comments read: 아니오\r\n- source screenshots/images: 확보하지 않음\r\n- acquisition: exact public post URL + 공개 본문 확인\r\n- C1_A0_P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "8288c68b2f2be0e995c481bc38edfac676d841e3739b1e6f66e12c2433210907",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 430
+}

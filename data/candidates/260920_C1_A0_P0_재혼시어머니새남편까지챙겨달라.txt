@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%EC%97%86%EC%9C%BC%EB%82%98-%EC%8B%9C%EB%8C%81-%EB%AC%B8%EC%A0%9C%EB%A1%9C-%ED%9E%98%EB%93%A4%EC%96%B4%EC%84%9C-%EC%93%B0%EB%8A%94-%EC%A3%BC%EC%A0%88%EC%A3%BC%EC%A0%88-cOiONfnq
+제목 - 남편과 문제 없으나 시댁 문제로 힘들어서 쓰는 주절주절
+내용 - [명시 요약 — 원문 전문 아님]
+시아버지 사후 재혼한 시어머니가 새 배우자를 아버님이라 부르고 생일·어버이날·명절까지 챙겨달라고 한다는 가족 경계 논쟁. 관계와 요구는 게시자 주장임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%EC%97%86%EC%9C%BC%EB%82%98-%EC%8B%9C%EB%8C%81-%EB%AC%B8%EC%A0%9C%EB%A1%9C-%ED%9E%98%EB%93%A4%EC%96%B4%EC%84%9C-%EC%93%B0%EB%8A%94-%EC%A3%BC%EC%A0%88%EC%A3%BC%EC%A0%88-cOiONfnq",
+    "title": "남편과 문제 없으나 시댁 문제로 힘들어서 쓰는 주절주절",
+    "body": "시아버지 사후 재혼한 시어머니가 새 배우자를 아버님이라 부르고 생일·어버이날·명절까지 챙겨달라고 한다는 가족 경계 논쟁. 관계와 요구는 게시자 주장임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_재혼시어머니새남편까지챙겨달라.md",
+      "originalTitle": "남편과 문제 없으나 시댁 문제로 힘들어서 쓰는 주절주절",
+      "originalMarkdown": "# 남편과 문제 없으나 시댁 문제로 힘들어서 쓰는 주절주절\r\n\r\n- source: Blind / 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%EC%97%86%EC%9C%BC%EB%82%98-%EC%8B%9C%EB%8C%81-%EB%AC%B8%EC%A0%9C%EB%A1%9C-%ED%9E%98%EB%93%A4%EC%96%B4%EC%84%9C-%EC%93%B0%EB%8A%94-%EC%A3%BC%EC%A0%88%EC%A3%BC%EC%A0%88-cOiONfnq\r\n- exactObservedTitle: 남편과 문제 없으나 시댁 문제로 힘들어서 쓰는 주절주절\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 1,078, 댓글 13\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 시아버지 사후 재혼한 시어머니가 새 배우자를 아버님이라 부르고 생일·어버이날·명절까지 챙겨달라고 한다는 가족 경계 논쟁. 관계와 요구는 게시자 주장임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "501adbf129194dbee8f2cb011275c4b97e1370fa4e2f191f95b2afda848befdc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 422
+}

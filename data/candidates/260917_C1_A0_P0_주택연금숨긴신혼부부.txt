@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%83%9D%ED%99%9C%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-mnq3uqeu
+제목 - 결혼생활&주택연금
+내용 - [명시 요약 — 원문 전문 아님]
+최근 결혼한 30대 초반 부부의 사연. 남편은 결혼 전 자금과 부모 지원을 바탕으로 투자해 자산을 늘렸고, 작성자 친정도 자산과 지원 여력이 있는 편이라고 설명한다. 갈등은 시댁이 보유한 서울 아파트에 주택연금을 이용 중이라는 사실을 작성자가 친정에 숨긴 데서 생겼다. 친정이 시부모 노후 준비를 걱정하고 주택연금에 부정적이라 결혼 반대를 피하려 숨겼는데, 남편은 숨길 일이 아니라고 본다는 내용이다. 공개 페이지에서 본문 일부를 확인했으나 검색 노출이 끝까지 이어지지 않아 **본문 전체 미확인**. 댓글 전체 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%83%9D%ED%99%9C%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-mnq3uqeu",
+    "title": "결혼생활&주택연금",
+    "body": "최근 결혼한 30대 초반 부부의 사연. 남편은 결혼 전 자금과 부모 지원을 바탕으로 투자해 자산을 늘렸고, 작성자 친정도 자산과 지원 여력이 있는 편이라고 설명한다. 갈등은 시댁이 보유한 서울 아파트에 주택연금을 이용 중이라는 사실을 작성자가 친정에 숨긴 데서 생겼다. 친정이 시부모 노후 준비를 걱정하고 주택연금에 부정적이라 결혼 반대를 피하려 숨겼는데, 남편은 숨길 일이 아니라고 본다는 내용이다. 공개 페이지에서 본문 일부를 확인했으나 검색 노출이 끝까지 이어지지 않아 **본문 전체 미확인**. 댓글 전체 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_주택연금숨긴신혼부부.md",
+      "originalTitle": "결혼생활&주택연금",
+      "originalMarkdown": "# 결혼생활&주택연금\r\n\r\n## 글 내용\r\n최근 결혼한 30대 초반 부부의 사연. 남편은 결혼 전 자금과 부모 지원을 바탕으로 투자해 자산을 늘렸고, 작성자 친정도 자산과 지원 여력이 있는 편이라고 설명한다. 갈등은 시댁이 보유한 서울 아파트에 주택연금을 이용 중이라는 사실을 작성자가 친정에 숨긴 데서 생겼다. 친정이 시부모 노후 준비를 걱정하고 주택연금에 부정적이라 결혼 반대를 피하려 숨겼는데, 남편은 숨길 일이 아니라고 본다는 내용이다. 공개 페이지에서 본문 일부를 확인했으나 검색 노출이 끝까지 이어지지 않아 **본문 전체 미확인**. 댓글 전체 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%83%9D%ED%99%9C%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-mnq3uqeu\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 조회수 203, 댓글 16. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n양가 자산·노후·상속 기대와 `결혼 전에 어디까지 공개해야 하나`가 결합된 의견형 소재다. 조회수는 아직 작지만 댓글 비율이 높고 한국 결혼문화에서 논쟁성이 있다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Blind\r\n- full body read: NO — 본문 전체 미확인\r\n- comments read: NO\r\n- source images/screenshots: 본문 필수 첨부 이미지 확인되지 않음\r\n- acquisition: exact public source URL verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "75df7cabd154b39d229774348a2f550ccf732e0e7f2c87f69f837f20d336d9d1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 466
+}

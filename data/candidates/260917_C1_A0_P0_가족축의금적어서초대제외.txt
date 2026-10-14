@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1817cy9
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 언니 결혼식에서 자기 가족이 낸 축의금이 너무 적어 언니가 상대 집안 앞에서 창피를 당했다고 느꼈다. 그래서 자신의 결혼식에는 가족을 덜 부르고 대신 돈이 많고 후한 배우자 쪽 가족을 더 초대하겠다고 결정해 가족과 충돌했다. 공개 원문 본문을 읽었고 공개 댓글은 일부 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1817cy9",
+    "title": "제목",
+    "body": "작성자는 언니 결혼식에서 자기 가족이 낸 축의금이 너무 적어 언니가 상대 집안 앞에서 창피를 당했다고 느꼈다. 그래서 자신의 결혼식에는 가족을 덜 부르고 대신 돈이 많고 후한 배우자 쪽 가족을 더 초대하겠다고 결정해 가족과 충돌했다. 공개 원문 본문을 읽었고 공개 댓글은 일부 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_가족축의금적어서초대제외.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for not inviting my family to my wedding?\r\n\r\n## 글 내용\r\n작성자는 언니 결혼식에서 자기 가족이 낸 축의금이 너무 적어 언니가 상대 집안 앞에서 창피를 당했다고 느꼈다. 그래서 자신의 결혼식에는 가족을 덜 부르고 대신 돈이 많고 후한 배우자 쪽 가족을 더 초대하겠다고 결정해 가족과 충돌했다. 공개 원문 본문을 읽었고 공개 댓글은 일부 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1817cy9\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-17 00:45 KST. 공개 페이지에서 score +520 확인. 조회수·전체 댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n'축의금 적게 낸 친척은 결혼식에 부르지 않겠다'는 판단 자체가 강한 논쟁거리다. 가족 체면·축의금 문화·하객 선별·부유한 배우자 집안이라는 요소가 명확하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- source images/screenshots: 실제 파일 미확보\r\n- acquisition: exact public URL + 본문 확인, comments 일부 확인\r\n- ASSETS_PENDING / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "d2e7d5b932cae2e26b1b69b5ad6b786553ec990367560de832f3761f0ef39f3d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 268
+}

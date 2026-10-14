@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/
+제목 - 딸의 외도로 결혼 깨졌는데 예식장비는 부모가 계속 내야 합니다
+내용 - [명시 요약 — 원문 전문 아님]
+딸의 결혼을 약 4개월 앞두고 결혼이 취소됐고, 부모는 한 달이나 지나서야 알게 됐다는 사연. 파혼 이유는 예비신랑이 딸의 과거 외도를 알게 된 것이었다고 작성자는 설명한다. 부모가 조건부로 예식장 비용을 내기로 했는데 환불이 안 돼, 딸에게 일부를 갚으라고 요구하자 '잔인하다'는 반응을 들었다고 한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/",
+    "title": "딸의 외도로 결혼 깨졌는데 예식장비는 부모가 계속 내야 합니다",
+    "body": "딸의 결혼을 약 4개월 앞두고 결혼이 취소됐고, 부모는 한 달이나 지나서야 알게 됐다는 사연. 파혼 이유는 예비신랑이 딸의 과거 외도를 알게 된 것이었다고 작성자는 설명한다. 부모가 조건부로 예식장 비용을 내기로 했는데 환불이 안 돼, 딸에게 일부를 갚으라고 요구하자 '잔인하다'는 반응을 들었다고 한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼깨진딸예식장비.md",
+      "originalTitle": "딸의 외도로 결혼 깨졌는데 예식장비는 부모가 계속 내야 합니다",
+      "originalMarkdown": "# 딸의 외도로 결혼 깨졌는데 예식장비는 부모가 계속 내야 합니다\r\n\r\n## source\r\nReddit r/AmItheAsshole\r\n\r\n## 원문 제목 (exact observed title)\r\nAITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 검색 관측: +9,412 votes. 조회수·댓글 총수 미확인.\r\n\r\n## 본문 / 댓글 확인\r\n- 본문 읽음: YES\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n딸의 결혼을 약 4개월 앞두고 결혼이 취소됐고, 부모는 한 달이나 지나서야 알게 됐다는 사연. 파혼 이유는 예비신랑이 딸의 과거 외도를 알게 된 것이었다고 작성자는 설명한다. 부모가 조건부로 예식장 비용을 내기로 했는데 환불이 안 돼, 딸에게 일부를 갚으라고 요구하자 '잔인하다'는 반응을 들었다고 한다.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n미확인. 자산 취득 없음.\r\n\r\n## 왜 소재로 좋은지\r\n'외도 → 파혼 → 환불 불가 예식장 → 부모가 딸에게 비용 청구'로 갈등이 연쇄적으로 이어진다. 책임 범위를 두고 즉시 의견이 갈리는 구조다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1. Reddit 개별 공개 URL과 본문 확인. A0/P0. publicationAllowed=false. source asset/OCR/moderation/rights clearance/human approval 미실행.",
+      "originalSha256": "e54877bac318329d2c82768318b79c3d295c7cb6147634479caa8ef6bba39700",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 361
+}

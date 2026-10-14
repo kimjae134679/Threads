@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1cg6c88
+제목 - 결혼비 20~30% 준다는 부모님, 돈 받으면 결정권도 따라옵니다
+내용 - [명시 요약 — 원문 전문 아님]
+28세 남성이 1년 뒤 결혼을 앞두고 이미 예산을 마련했지만 부모가 결혼비의 20~30%를 지원하겠다고 제안한 사연. 작성자는 과거 부모가 돈을 지원한 뒤 자신의 결정에 영향력을 행사하고 과거 교육비를 반복해서 언급해 왔다며 지원을 거절할지 고민한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1cg6c88",
+    "title": "결혼비 20~30% 준다는 부모님, 돈 받으면 결정권도 따라옵니다",
+    "body": "28세 남성이 1년 뒤 결혼을 앞두고 이미 예산을 마련했지만 부모가 결혼비의 20~30%를 지원하겠다고 제안한 사연. 작성자는 과거 부모가 돈을 지원한 뒤 자신의 결정에 영향력을 행사하고 과거 교육비를 반복해서 언급해 왔다며 지원을 거절할지 고민한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼자금지원받으면부모간섭.md",
+      "originalTitle": "결혼비 20~30% 준다는 부모님, 돈 받으면 결정권도 따라옵니다",
+      "originalMarkdown": "# 결혼비 20~30% 준다는 부모님, 돈 받으면 결정권도 따라옵니다\r\n\r\n## source\r\nReddit r/AmItheAsshole\r\n\r\n## 원문 제목\r\nWIBTA for not accepting my parents money on my wedding\r\n\r\n## 글 내용\r\n28세 남성이 1년 뒤 결혼을 앞두고 이미 예산을 마련했지만 부모가 결혼비의 20~30%를 지원하겠다고 제안한 사연. 작성자는 과거 부모가 돈을 지원한 뒤 자신의 결정에 영향력을 행사하고 과거 교육비를 반복해서 언급해 왔다며 지원을 거절할지 고민한다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1cg6c88\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 Reddit 검색 표시: +309 votes\r\n- 조회수/댓글수: 미확인\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재 여부: source asset 미확보\r\n\r\n## 왜 소재로 좋은지\r\n'돈을 받는 대신 부모의 간섭도 감수해야 하나'라는 결혼비용 논점이 매우 명확하고 한국 가족문화와도 연결해 의견이 갈릴 만하다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. publicationAllowed=false. source media 미확보. rights/privacy/human review 필요.",
+      "originalSha256": "2bdd94f9704332c906c82346ad0829da5ac0c6e1afe71332f4153ea64405f51f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 282
+}

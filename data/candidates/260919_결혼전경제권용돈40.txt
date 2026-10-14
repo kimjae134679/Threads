@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%5B%EA%B2%B0%ED%98%BC-%EA%B3%A0%EB%AF%BC%5D-%EA%B2%B0%ED%98%BC-%EC%A0%84%EB%B6%80%ED%84%B0-%EA%B2%BD%EC%A0%9C%EA%B6%8C-%EC%9A%94%EA%B5%AC%ED%95%98%EB%8A%94-%EC%97%AC%EC%B9%9C-%EB%82%B4%EA%B0%80-%EC%9E%98%EB%AA%BB%ED%95%A8-67szoadr
+제목 - [결혼 고민] 결혼 전부터 경제권 요구하는 여친... 내가 잘못함?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%5B%EA%B2%B0%ED%98%BC-%EA%B3%A0%EB%AF%BC%5D-%EA%B2%B0%ED%98%BC-%EC%A0%84%EB%B6%80%ED%84%B0-%EA%B2%BD%EC%A0%9C%EA%B6%8C-%EC%9A%94%EA%B5%AC%ED%95%98%EB%8A%94-%EC%97%AC%EC%B9%9C-%EB%82%B4%EA%B0%80-%EC%9E%98%EB%AA%BB%ED%95%A8-67szoadr",
+    "title": "[결혼 고민] 결혼 전부터 경제권 요구하는 여친... 내가 잘못함?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼전경제권용돈40.md",
+      "originalTitle": "[결혼 고민] 결혼 전부터 경제권 요구하는 여친... 내가 잘못함?",
+      "originalMarkdown": "# [결혼 고민] 결혼 전부터 경제권 요구하는 여친... 내가 잘못함?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%5B%EA%B2%B0%ED%98%BC-%EA%B3%A0%EB%AF%BC%5D-%EA%B2%B0%ED%98%BC-%EC%A0%84%EB%B6%80%ED%84%B0-%EA%B2%BD%EC%A0%9C%EA%B6%8C-%EC%9A%94%EA%B5%AC%ED%95%98%EB%8A%94-%EC%97%AC%EC%B9%9C-%EB%82%B4%EA%B0%80-%EC%9E%98%EB%AA%BB%ED%95%A8-67szoadr\r\n- exactObservedTitle: [결혼 고민] 결혼 전부터 경제권 요구하는 여친... 내가 잘못함?\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 97 / 댓글 14\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only; BODY_PARTIAL\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n결혼 전부터 경제권을 한쪽이 맡고 각자 용돈을 40만원으로 하자는 제안이 나온 상황으로 고소득 커플의 경제권 논쟁이 명확하다.\r\n",
+      "originalSha256": "4355ccdfefcf49cdd8c60fe63d443d5631c5e30e0dfd7ed01a2adab2e5cfd439",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 345
+}

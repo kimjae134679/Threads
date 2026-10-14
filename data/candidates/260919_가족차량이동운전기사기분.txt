@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A7%88%EB%AC%B8-%EA%B0%80%EC%A1%B1-%EC%B0%A8%EB%9F%89%EC%9D%B4%EB%8F%99%ED%95%A0%EB%95%8C-xkzizqau
+제목 - (질문) 가족 차량이동할때
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A7%88%EB%AC%B8-%EA%B0%80%EC%A1%B1-%EC%B0%A8%EB%9F%89%EC%9D%B4%EB%8F%99%ED%95%A0%EB%95%8C-xkzizqau",
+    "title": "(질문) 가족 차량이동할때",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_가족차량이동운전기사기분.md",
+      "originalTitle": "(질문) 가족 차량이동할때",
+      "originalMarkdown": "# (질문) 가족 차량이동할때\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%A7%88%EB%AC%B8-%EA%B0%80%EC%A1%B1-%EC%B0%A8%EB%9F%89%EC%9D%B4%EB%8F%99%ED%95%A0%EB%95%8C-xkzizqau\r\n- exact_observed_title: (질문) 가족 차량이동할때\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 294, 댓글 8\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 장거리 운전 중 아내가 뒷좌석에서 휴대폰만 봐 '운전기사 같다'는 일상형 부부 갈등으로 의견 참여가 쉬움.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3bd8ab23cf6fc31623c3859c020c06b43766910857ac5e1c583e32f4a4fcba03",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 193
+}

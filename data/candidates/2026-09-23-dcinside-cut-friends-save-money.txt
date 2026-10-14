@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416
+제목 - 돈 모을려면 일단 친구를 끊어라
+내용 - [명시 요약 — 원문 전문 아님]
+'돈을 모으려면 친구를 줄여야 한다'는 단순하지만 즉시 찬반이 갈리는 주장에 술값·축의금·모임비라는 현실적인 비용이 붙어 있음. 짧지만 댓글형 토론 소재로 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416",
+    "title": "돈 모을려면 일단 친구를 끊어라",
+    "body": "'돈을 모으려면 친구를 줄여야 한다'는 단순하지만 즉시 찬반이 갈리는 주장에 술값·축의금·모임비라는 현실적인 비용이 붙어 있음. 짧지만 댓글형 토론 소재로 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23-dcinside-cut-friends-save-money.md",
+      "originalTitle": "돈 모을려면 일단 친구를 끊어라",
+      "originalMarkdown": "# 돈 모을려면 일단 친구를 끊어라\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: DCInside 중소기업 갤러리\r\n- publicUrl: https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416\r\n- exactObservedTitle: 돈 모을려면 일단 친구를 끊어라\r\n- observedAt: 2026-09-23 08:14 KST\r\n- observedMetrics: 공개 검색 결과에서 조회/댓글 수치가 서로 다르게 노출되어 신뢰 가능한 단일 값으로 기록하지 않음\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 본문에서 이미지 의존성을 관찰하지 않음)\r\n- acquisition: public individual page discovered through public web search; exact individual URL and body text verified\r\n- provenance: DCInside 익명 게시글. 개인 의견이며 사실 주장으로 취급하지 않음. 동일 URL의 공개 검색 결과에서 수치가 불일치해 수치는 보류.\r\n- whyGood: '돈을 모으려면 친구를 줄여야 한다'는 단순하지만 즉시 찬반이 갈리는 주장에 술값·축의금·모임비라는 현실적인 비용이 붙어 있음. 짧지만 댓글형 토론 소재로 강함.\r\n\r\n## 확인 메모\r\n공개 본문을 실제 읽음. 댓글 내용은 읽지 않음. 서로 불일치한 조회/댓글 수치는 임의 선택하지 않음.",
+      "originalSha256": "33fc4907d51f676ad52a0718a6f9eb528ce3cd6d21fde58ced859f8f42a336d7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

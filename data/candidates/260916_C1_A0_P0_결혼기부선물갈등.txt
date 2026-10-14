@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/BORUpdates/comments/1wa3pjd/aita_for_gifting_a_donation/
+제목 - AITA for gifting a donation
+내용 - [명시 요약 — 원문 전문 아님]
+Reddit 업데이트 사연. 결혼식 웹사이트에 '선물 대신 신랑의 돌아가신 아버지 이름으로 심장·뇌졸중 재단에 기부해 달라'고 적혀 있어 지인이 500달러를 기부했는데, 신부가 현금 500달러를 자신들에게 주지 않았다며 화를 냈다는 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BORUpdates/comments/1wa3pjd/aita_for_gifting_a_donation/",
+    "title": "AITA for gifting a donation",
+    "body": "Reddit 업데이트 사연. 결혼식 웹사이트에 '선물 대신 신랑의 돌아가신 아버지 이름으로 심장·뇌졸중 재단에 기부해 달라'고 적혀 있어 지인이 500달러를 기부했는데, 신부가 현금 500달러를 자신들에게 주지 않았다며 화를 냈다는 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼기부선물갈등.md",
+      "originalTitle": "AITA for gifting a donation",
+      "originalMarkdown": "# AITA for gifting a donation\r\n\r\n## 글 내용\r\nReddit 업데이트 사연. 결혼식 웹사이트에 '선물 대신 신랑의 돌아가신 아버지 이름으로 심장·뇌졸중 재단에 기부해 달라'고 적혀 있어 지인이 500달러를 기부했는데, 신부가 현금 500달러를 자신들에게 주지 않았다며 화를 냈다는 갈등.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/BORUpdates/comments/1wa3pjd/aita_for_gifting_a_donation/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 공개 검색 게시물 점수: +1,351\r\n- 조회수/댓글 총수: 미확인\r\n\r\n## 평가\r\n결혼·선물·돈·명시된 요청과 실제 기대가 충돌하는 강한 반전형 이야기. 의견 유도력이 높다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 본문 전체 읽음: 예, 공개 페이지 노출 범위\r\n- 댓글 읽음: 아니오\r\n- source screenshots 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false",
+      "originalSha256": "99ec1839388e3ca23af0f06ffacaf99bcfb79f0f7f624e7273148252cd0da70f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 292
+}

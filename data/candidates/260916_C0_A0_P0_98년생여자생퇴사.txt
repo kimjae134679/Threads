@@ -1,0 +1,31 @@
+원문링크 - https://www.teamblind.com/kr/s/iu4xi5ax
+제목 - 98년생 여자, 퇴사하고 공대 석박사통합 간다
+내용 - [명시 요약 — 원문 전문 아님]
+공개 Blind 검색 결과와 이를 직접 링크한 후속 Blind 글을 통해, 98년생 여성이 현재 직장을 퇴사하고 공과대학 석박사통합 과정으로 공부하러 간다는 핵심 문구와 정확한 short link를 확인했다.
+
+다만 현재 공개 검색으로 원문 전체 댓글 스레드와 실제 원본 캡처/자산까지 확보한 것은 아니다. 확인하지 못한 세부 사유·직장·전공·후속 결과는 추정하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/s/iu4xi5ax",
+    "title": "98년생 여자, 퇴사하고 공대 석박사통합 간다",
+    "body": "공개 Blind 검색 결과와 이를 직접 링크한 후속 Blind 글을 통해, 98년생 여성이 현재 직장을 퇴사하고 공과대학 석박사통합 과정으로 공부하러 간다는 핵심 문구와 정확한 short link를 확인했다.\r\n\r\n다만 현재 공개 검색으로 원문 전체 댓글 스레드와 실제 원본 캡처/자산까지 확보한 것은 아니다. 확인하지 못한 세부 사유·직장·전공·후속 결과는 추정하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_98년생여자생퇴사.md",
+      "originalTitle": "98년생 여자, 퇴사하고 공대 석박사통합 간다",
+      "originalMarkdown": "# 98년생 여자, 퇴사하고 공대 석박사통합 간다\r\n\r\n## 원문 제목\r\n98년생 여자 생퇴사한다\r\n\r\n- 상태: C0 / A0 / P0 (논리적 provenance 검증은 C1, 파일명 상태 승격은 자산/검수와 분리 유지)\r\n- 출처: Blind\r\n- 정확한 원문 링크: https://www.teamblind.com/kr/s/iu4xi5ax\r\n- 공개 검색에서 재확인된 원문 문구: `생퇴사하고 공과대학 석박사통합으로 공부하러 간다... 잘할거야`\r\n- 공개 검색 관측 수치: 조회수 1435 / 좋아요 18 (2026-09-19 09:27 KST 전후 검색 결과 관측; 수치는 변동 가능)\r\n\r\n## 글 내용\r\n공개 Blind 검색 결과와 이를 직접 링크한 후속 Blind 글을 통해, 98년생 여성이 현재 직장을 퇴사하고 공과대학 석박사통합 과정으로 공부하러 간다는 핵심 문구와 정확한 short link를 확인했다.\r\n\r\n다만 현재 공개 검색으로 원문 전체 댓글 스레드와 실제 원본 캡처/자산까지 확보한 것은 아니다. 확인하지 못한 세부 사유·직장·전공·후속 결과는 추정하지 않는다.\r\n\r\n## 평가\r\n- 직장 퇴사 + 진학 전환이라는 명확한 장면이 있는 직장 공감형 소재.\r\n- exact individual Blind short link와 핵심 원문 문구가 확인되어 provenance는 논리적으로 C1 수준까지 검증됨.\r\n- 제작은 실제 허용된 원본 스크린샷/자산과 권리·개인정보·명예훼손·사람 검수 전까지 진행하지 않는다.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source body: PARTIAL (공개 핵심 문구 확인, 전체 원문/댓글 미확인)\r\n- source assets: A0 / 미확보\r\n- publicationAllowed=false\r\n- P0 유지\r\n",
+      "originalSha256": "56479338c85d513a6da46182a3b554fac04659b09d74b7b358c13ed84cb6f7a8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

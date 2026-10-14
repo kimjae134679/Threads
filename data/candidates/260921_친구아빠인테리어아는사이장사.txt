@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/984182907
+제목 - 친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구 부모에게 인테리어를 맡긴 뒤 '아는 사이에 장사하냐'는 가격 갈등이 생기고, 장기간 친구 모임 전체의 관계 정리 문제로 번지는 구조라 돈·친구·가족·손절 논쟁이 동시에 발생하는 강한 스토리 소재임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/984182907",
+    "title": "친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기",
+    "body": "친구 부모에게 인테리어를 맡긴 뒤 '아는 사이에 장사하냐'는 가격 갈등이 생기고, 장기간 친구 모임 전체의 관계 정리 문제로 번지는 구조라 돈·친구·가족·손절 논쟁이 동시에 발생하는 강한 스토리 소재임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구아빠인테리어아는사이장사.md",
+      "originalTitle": "친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기",
+      "originalMarkdown": "# 친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: TheQoo (네이트판 글 재게시/후기)\r\n- sourceUrl: https://theqoo.net/square/984182907\r\n- exactObservedTitle: 친구 아빠한테 인테리어 맡겨놓고 아는사이에 장사하냐고 난리쳤던 네이트판글 후기\r\n- observedAt: 2026-09-21 18:14 KST\r\n- observedMetrics: 수치 기록 안 함 (이번 관찰에서 확실히 확인한 수치 없음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 확인하지 못함\r\n- acquisition: 공개 개별 게시물 URL과 공개 페이지의 텍스트 본문 일부를 직접 확인함.\r\n- provenance: TheQoo에 재게시된 네이트판 후기. 원 네이트판 URL은 이번 실행에서 확인하지 못했으므로 이 파일은 확인된 TheQoo 공개 URL만 기록함. 원저작권/재게시 권리는 확인하지 않음.\r\n- whyGood: 친구 부모에게 인테리어를 맡긴 뒤 '아는 사이에 장사하냐'는 가격 갈등이 생기고, 장기간 친구 모임 전체의 관계 정리 문제로 번지는 구조라 돈·친구·가족·손절 논쟁이 동시에 발생하는 강한 스토리 소재임.\r\n\r\n## 확인된 본문 요지\r\n공개 본문에서 작성자가 친구 A와의 인테리어 비용 갈등을 친구 모임에 공유했고, 다른 친구들이 관계를 끊을지 이유를 들어볼지 의견이 갈린 상황을 확인함. A는 인건비 구조를 오해했다고 설명하는 내용이 노출됨.\r\n\r\n## 댓글\r\n댓글 미확인\r\n",
+      "originalSha256": "eef2c88e191315c4e7919c171c093cd5886adde114c88e8b75315090cce80fc9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 242
+}

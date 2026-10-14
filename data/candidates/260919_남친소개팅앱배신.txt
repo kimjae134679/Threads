@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%96%B4%ED%94%8C-p8gjdsw1
+제목 - 남자친구 소개팅어플
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%96%B4%ED%94%8C-p8gjdsw1",
+    "title": "남자친구 소개팅어플",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_남친소개팅앱배신.md",
+      "originalTitle": "남자친구 소개팅어플",
+      "originalMarkdown": "# 남자친구 소개팅어플\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%96%B4%ED%94%8C-p8gjdsw1\r\n- exactObservedTitle: 남자친구 소개팅어플\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 313 / 댓글 26\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n연애 중 남자친구가 소개팅 앱으로 다른 여성들과 연락했다는 사실을 뒤늦게 알게 된 사례라 배신의 기준과 온라인 연락의 선을 두고 반응이 빠르게 붙을 수 있다.\r\n\r\n## 관찰 메모\r\n작성자는 실제 만남 여부는 모른다고 명시했으므로 실제 만남이 있었다고 추정하지 않는다.",
+      "originalSha256": "6efdc9c44fd09d71eff4dd3fc569e4e71e9344b6034e40a54a04552c70563c49",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 179
+}

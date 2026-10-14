@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 축의금 얼마나 적당 할까요?
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식 축의금 액수를 묻는 돈·인간관계 후보로 과거 수집됐다. 현재는 일반 조언형 성격이 강해 우선순위가 낮다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "축의금 얼마나 적당 할까요?",
+    "body": "결혼식 축의금 액수를 묻는 돈·인간관계 후보로 과거 수집됐다. 현재는 일반 조언형 성격이 강해 우선순위가 낮다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_축의금얼마나적당.md",
+      "originalTitle": "축의금 얼마나 적당 할까요?",
+      "originalMarkdown": "# 축의금 얼마나 적당 할까요?\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Ppomppu\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n- C0 검증: BLOCKED_EXACT_INDIVIDUAL_SOURCE\r\n- unblockWhen: 정확한 개별 Ppomppu 원문 URL/post ID 또는 동일 개별 게시물임을 증명하는 신뢰 가능한 고유 식별자가 공개적으로 확인될 때\r\n- publicationAllowed: false\r\n\r\n## 글 내용\r\n결혼식 축의금 액수를 묻는 돈·인간관계 후보로 과거 수집됐다. 현재는 일반 조언형 성격이 강해 우선순위가 낮다.\r\n\r\n## 이번 순차 검증 (2026-09-21 11:26 KST)\r\n- 제목 exact/near-exact와 Ppomppu 도메인 조합으로 공개 웹 검색을 재실행했다.\r\n- 동일 개별 Ppomppu 게시물의 안정적인 URL/post ID는 확인하지 못했다.\r\n- 일반 축의금 조언 페이지는 검색되지만 원 후보 provenance로 사용할 수 없어 연결하지 않았다.\r\n- 본문/댓글/metrics/source bytes/스크린샷/OCR/vision/rights clearance는 확보 또는 추정하지 않았다.\r\n\r\n## 평가\r\n- 평가: 낮은 우선순위 / C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "29ba3eefd96a1a09fb80d1c08501025a6281cd8cbcd504dac04fc181ab1be6f0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 128
+}

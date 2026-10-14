@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2607036462
+제목 - 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요
+내용 - [명시 요약 — 원문 전문 아님]
+오랜 친구에게 소개팅을 주선해 실제 결혼까지 이어진 뒤 받은 답례 선물을 둘러싼 기대·보답 기준이 핵심이라 선물/우정/결혼 예의 논쟁이 즉시 발생하기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2607036462",
+    "title": "판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요",
+    "body": "오랜 친구에게 소개팅을 주선해 실제 결혼까지 이어진 뒤 받은 답례 선물을 둘러싼 기대·보답 기준이 핵심이라 선물/우정/결혼 예의 논쟁이 즉시 발생하기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_C1_A0_P0_소개팅주선결혼초콜렛선물.md",
+      "originalTitle": "판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요",
+      "originalMarkdown": "# 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요\r\n\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- source: TheQoo square (판 재게시 표기)\r\n- public URL: https://theqoo.net/square/2607036462\r\n- exact observed title: `판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요`\r\n- observedAt: 2026-09-22 03:16 KST\r\n- observed metrics: 조회 90,831 / 댓글 732\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 페이지에 Files 표시는 있으나 별도 확인/다운로드하지 않음\r\n- acquisition: 공개 개별 게시물 URL과 노출 본문을 확인한 C1. 로그인/우회/OCR 없음.\r\n- provenance: TheQoo 재게시 페이지이며 제목 자체가 `판)`으로 원출처 재게시임을 표시. 최초 원문 URL은 이번 실행에서 확정하지 않음.\r\n- whyGood: 오랜 친구에게 소개팅을 주선해 실제 결혼까지 이어진 뒤 받은 답례 선물을 둘러싼 기대·보답 기준이 핵심이라 선물/우정/결혼 예의 논쟁이 즉시 발생하기 좋음.\r\n- rights/moderation/assets/publication: 미확정. 제작/게시 단계로 승격하지 않음.\r\n",
+      "originalSha256": "aedced99432b3790aede77c3c5275ee6e5080f1674947049708ccfc6d61ed646",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 208
+}

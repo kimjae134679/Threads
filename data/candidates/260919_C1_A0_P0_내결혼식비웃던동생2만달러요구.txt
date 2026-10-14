@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/12oi77s/aita_for_not_helping_my_sister_pay_for_her/
+제목 - 내 결혼식 싸구려라 비웃던 동생이 2만달러를 빌려달랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+33세 여성이 2년 전 부모에게 받은 결혼 지원금 2만5천달러 중 대부분을 아껴 2만달러를 저축한 사연. 동생은 당시 작성자의 소박한 결혼식을 가족 모임마다 '싸고 초라하다'는 취지로 비웃었고, 이후 자신의 결혼 준비를 하며 비용 지원을 요청한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/12oi77s/aita_for_not_helping_my_sister_pay_for_her/",
+    "title": "내 결혼식 싸구려라 비웃던 동생이 2만달러를 빌려달랍니다",
+    "body": "33세 여성이 2년 전 부모에게 받은 결혼 지원금 2만5천달러 중 대부분을 아껴 2만달러를 저축한 사연. 동생은 당시 작성자의 소박한 결혼식을 가족 모임마다 '싸고 초라하다'는 취지로 비웃었고, 이후 자신의 결혼 준비를 하며 비용 지원을 요청한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_내결혼식비웃던동생2만달러요구.md",
+      "originalTitle": "내 결혼식 싸구려라 비웃던 동생이 2만달러를 빌려달랍니다",
+      "originalMarkdown": "# 내 결혼식 싸구려라 비웃던 동생이 2만달러를 빌려달랍니다\r\n\r\n## source\r\nReddit r/AmItheAsshole\r\n\r\n## 원문 제목\r\nAITA for not helping my sister pay for her wedding even though I could easily afford it just because of a petty reason?\r\n\r\n## 글 내용\r\n33세 여성이 2년 전 부모에게 받은 결혼 지원금 2만5천달러 중 대부분을 아껴 2만달러를 저축한 사연. 동생은 당시 작성자의 소박한 결혼식을 가족 모임마다 '싸고 초라하다'는 취지로 비웃었고, 이후 자신의 결혼 준비를 하며 비용 지원을 요청한다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/12oi77s/aita_for_not_helping_my_sister_pay_for_her/\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 Reddit 검색 표시: +8,246 votes\r\n- 조회수/댓글수: 미확인\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재 여부: source asset 미확보\r\n\r\n## 왜 소재로 좋은지\r\n상대의 검소한 결혼을 조롱한 사람이 나중에 그 절약한 돈을 원한다는 인과관계가 선명해 감정적 반응과 찬반을 동시에 만든다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. publicationAllowed=false. source media 미확보. rights/privacy/human review 필요.",
+      "originalSha256": "ea418f20ca1c836d36f1beecdf1f1f4284dc916b8dff062c199dd117fbb17696",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 319
+}

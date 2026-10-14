@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/BestofRedditorUpdates/comments/1jme02z
+제목 - my coworkers have way more money than me … and they constantly expect me to shell out cash for meals and gifts
+내용 - [명시 요약 — 원문 전문 아님]
+같은 급여를 받지만 주변 동료들은 이전 민간 경력이나 개인 자산으로 훨씬 여유로운 직장. 작성자는 학자금 대출과 외벌이 가정을 책임지는데, 동료들이 비싼 식사·선물 비용을 당연하게 함께 부담하길 기대해 경제적 압박을 느낀다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BestofRedditorUpdates/comments/1jme02z",
+    "title": "my coworkers have way more money than me … and they constantly expect me to shell out cash for meals and gifts",
+    "body": "같은 급여를 받지만 주변 동료들은 이전 민간 경력이나 개인 자산으로 훨씬 여유로운 직장. 작성자는 학자금 대출과 외벌이 가정을 책임지는데, 동료들이 비싼 식사·선물 비용을 당연하게 함께 부담하길 기대해 경제적 압박을 느낀다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_부자직장동료지출압박.md",
+      "originalTitle": "my coworkers have way more money than me … and they constantly expect me to shell out cash for meals and gifts",
+      "originalMarkdown": "# my coworkers have way more money than me … and they constantly expect me to shell out cash for meals and gifts\r\n\r\n## 글 내용\r\n같은 급여를 받지만 주변 동료들은 이전 민간 경력이나 개인 자산으로 훨씬 여유로운 직장. 작성자는 학자금 대출과 외벌이 가정을 책임지는데, 동료들이 비싼 식사·선물 비용을 당연하게 함께 부담하길 기대해 경제적 압박을 느낀다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/BestofRedditorUpdates/comments/1jme02z\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-18 02:39 KST\r\n- Reddit 표시 점수 +4,227\r\n- 조회수/댓글 수치는 확인하지 않음\r\n\r\n## 평가\r\n같은 직장·같은 급여인데 자산 격차 때문에 소비 기준이 달라지는 매우 공감하기 쉬운 직장 돈 갈등. 본문 읽음. 댓글 전체 미확인.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot/media 미확보. exact public page 확인. `ASSETS_PENDING`. C1_A0_P0 / publicationAllowed=false. rights/privacy/human review 필요, 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "eb35825cc545d18311f474feadae4622fc2cd871d00d58373cf80a428795b3b7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 349
+}

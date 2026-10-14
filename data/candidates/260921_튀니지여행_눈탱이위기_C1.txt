@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2560491496
+제목 - 여행와서 눈탱이 맞을뻔한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2560491496",
+    "title": "여행와서 눈탱이 맞을뻔한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_튀니지여행_눈탱이위기_C1.md",
+      "originalTitle": "여행와서 눈탱이 맞을뻔한 후기",
+      "originalMarkdown": "# 여행와서 눈탱이 맞을뻔한 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2560491496\r\n- exactObservedTitle: 여행와서 눈탱이 맞을뻔한 후기\r\n- observedAt: 2026-09-21 00:17 KST\r\n- provenanceStage: C1\r\n- acquisition: public individual page verified via public web index/page\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- observedMetrics: 조회 2,445 (공개 페이지에서 관찰; 댓글 수 미확인)\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n\r\n## 왜 소재로 좋은가\r\n튀니지에서 현지인의 친절을 따라갔다가 에센셜 오일 구매 후 다시 기념품점으로 이어지는 관광객 경험담. 친절인지 판매 유도인지 경계가 바뀌는 과정과 낯선 여행지에서의 긴장감이 있어 짧은 썰 구조에 적합하다.\r\n\r\n## provenance note\r\n본문은 공개 페이지에서 실제 확인. 댓글은 읽지 않음. 이미지/스크린샷 존재 여부는 확인하지 않았으며 권리·OCR·moderation·asset 상태를 추정하지 않음. 가격·의도·사기 여부는 작성자의 경험 서술 이상으로 단정하지 않음.\r\n",
+      "originalSha256": "5f4b533a7ed8d4c310d1e24c8c3c618f368f42c804427f4ba7560d1e54f0489c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 96
+}

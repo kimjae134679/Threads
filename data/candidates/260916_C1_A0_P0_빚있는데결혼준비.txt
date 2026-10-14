@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B9%9A%EC%9E%88%EB%8A%94%EB%8D%B0-%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84-2vrhy1rh
+제목 - 빚있는데 결혼준비..
+내용 - [명시 요약 — 원문 전문 아님]
+주식 투자 실패로 약 1억원의 빚이 생긴 상태에서 2년 뒤 결혼을 준비하려는 사연이다. 여자친구가 채무 사실을 알고 있는 상태에서 현실적으로 결혼 준비가 가능한지 의견을 묻는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B9%9A%EC%9E%88%EB%8A%94%EB%8D%B0-%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84-2vrhy1rh",
+    "title": "빚있는데 결혼준비..",
+    "body": "주식 투자 실패로 약 1억원의 빚이 생긴 상태에서 2년 뒤 결혼을 준비하려는 사연이다. 여자친구가 채무 사실을 알고 있는 상태에서 현실적으로 결혼 준비가 가능한지 의견을 묻는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_빚있는데결혼준비.md",
+      "originalTitle": "빚있는데 결혼준비..",
+      "originalMarkdown": "# 빚있는데 결혼준비..\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EB%B9%9A%EC%9E%88%EB%8A%94%EB%8D%B0-%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84-2vrhy1rh\r\n- 조회수: 657\r\n- 좋아요: 1\r\n- 댓글: 9\r\n- 본문/댓글: 읽음\r\n\r\n## 글 내용\r\n주식 투자 실패로 약 1억원의 빚이 생긴 상태에서 2년 뒤 결혼을 준비하려는 사연이다. 여자친구가 채무 사실을 알고 있는 상태에서 현실적으로 결혼 준비가 가능한지 의견을 묻는다.\r\n\r\n## 평가\r\n- 평가: 중상급 투자 사연\r\n- 이유: 단순 시황이 아니라 투자실패가 결혼계획에 직접 영향을 준 이야기.\r\n- 약점: 반응 규모가 작고 이미지가 없음.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "6da874a097e88304af423b0ec9ec65212f86a0290088cf90f64f69356be78b80",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 277
+}

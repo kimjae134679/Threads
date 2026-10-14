@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2481598091
+제목 - 남편 선물 살말 고민인 중기
+내용 - [명시 요약 — 원문 전문 아님]
+출산을 앞둔 상황에서 고생한 배우자에게 50~60만원대 선물을 해도 되는지라는 구체적인 돈·선물 갈등이라 의견 참여가 쉽다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2481598091",
+    "title": "남편 선물 살말 고민인 중기",
+    "body": "출산을 앞둔 상황에서 고생한 배우자에게 50~60만원대 선물을 해도 되는지라는 구체적인 돈·선물 갈등이라 의견 참여가 쉽다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_남편생일선물과소비고민.md",
+      "originalTitle": "남편 선물 살말 고민인 중기",
+      "originalMarkdown": "# 남편 선물 살말 고민인 중기\r\n\r\n- source: TheQoo 후기\r\n- exactObservedTitle: `남편 선물 살말 고민인 중기`\r\n- sourceUrl: https://theqoo.net/review/2481598091\r\n- observedAt: 2026-09-20 19:18 KST\r\n- acquisition: C1 — exact individual public URL verified; public text body readable\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 2,143 / 댓글 30 (공개 페이지 표시값)\r\n- whyGood: 출산을 앞둔 상황에서 고생한 배우자에게 50~60만원대 선물을 해도 되는지라는 구체적인 돈·선물 갈등이라 의견 참여가 쉽다.\r\n- provenanceNote: 익명 게시자의 개인 경험담이며 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "cc3727de9cdb281068b1999a155ffdbdab2f744744cf5080a90c13d398c694e5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 171
+}

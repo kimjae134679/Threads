@@ -7,3 +7,16 @@ desktop/production-editor/** -text whitespace=cr-at-eol
 desktop/pc-review/** -text whitespace=cr-at-eol
 desktop/installed-source-provenance.json -text whitespace=cr-at-eol
 desktop/production/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof
+
+# Active promoted source and canonical TXT keep original CRLF/metadata binding bytes.
+desktop/*.cjs -text whitespace=cr-at-eol
+app/source-*.js -text whitespace=cr-at-eol
+app/source-*.html -text whitespace=cr-at-eol
+app/source-*.css -text whitespace=cr-at-eol
+app/universal-production-model.js -text whitespace=cr-at-eol
+app/unified-material-txt.js -text whitespace=cr-at-eol
+mobile/android-review/** -text whitespace=cr-at-eol
+# Lossless protocol headers retain the delimiter space when a source URL is unknown.
+data/candidates/**/*.txt -text whitespace=cr-at-eol,-blank-at-eol
+desktop/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof
+legacy-source/operations/** -text whitespace=cr-at-eol

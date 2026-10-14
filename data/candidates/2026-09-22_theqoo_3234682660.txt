@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3234682660
+제목 - 친구 결혼하면 원래 멀어지는건가 싶은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+유일한 베프가 결혼한 뒤 자연스럽게 연락이 끊기며 생기는 외로움과 관계 변화 문제라 결혼 후 친구관계가 멀어지는 것이 자연스러운지 의견을 끌어내기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3234682660",
+    "title": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+    "body": "유일한 베프가 결혼한 뒤 자연스럽게 연락이 끊기며 생기는 외로움과 관계 변화 문제라 결혼 후 친구관계가 멀어지는 것이 자연스러운지 의견을 끌어내기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_3234682660.md",
+      "originalTitle": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+      "originalMarkdown": "# 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/3234682660\r\n- exactObservedTitle: 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n- observedAt: 2026-09-22 04:17 KST\r\n- observedMetrics: 9,465 / 37 (페이지에 표시된 수치)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 유일한 베프가 결혼한 뒤 자연스럽게 연락이 끊기며 생기는 외로움과 관계 변화 문제라 결혼 후 친구관계가 멀어지는 것이 자연스러운지 의견을 끌어내기 좋다.\r\n- acquisition: 공개 개별 게시물 URL을 검색 인덱스에서 확인하고 공개 본문 텍스트를 읽음. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 별도 외부 원출처 여부는 확인하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "89abe7ec860bf2bbe51ce21367d0b3f5b6be7cca40fb90c80eb986c792b560f5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

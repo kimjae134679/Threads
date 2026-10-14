@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1508828
+제목 - 20년 만에 전재산 천만원 된 썰
+내용 - [명시 요약 — 원문 전문 아님]
+직장에서 무시받던 사람이 자신이 잘하는 업무를 발견하고 계약서의 이상점을 포착하는 흐름이 있어 직장 갈등, 좌절, 역전의 서사성이 강하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1508828",
+    "title": "20년 만에 전재산 천만원 된 썰",
+    "body": "직장에서 무시받던 사람이 자신이 잘하는 업무를 발견하고 계약서의 이상점을 포착하는 흐름이 있어 직장 갈등, 좌절, 역전의 서사성이 강하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_20년전재산천만원썰.md",
+      "originalTitle": "[스압]20년 만에 전재산 천만원 된 썰",
+      "originalMarkdown": "# [스압]20년 만에 전재산 천만원 된 썰\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1508828\r\n- exactObservedTitle: `[스압]20년 만에 전재산 천만원 된 썰`\r\n- observedAt: 2026-09-21 01:16 KST\r\n- observedMetrics: 수치 기록 안 함 (이번 관찰 결과에서 신뢰 가능한 수치를 확정하지 않음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false/미확인\r\n- whyGood: 직장에서 무시받던 사람이 자신이 잘하는 업무를 발견하고 계약서의 이상점을 포착하는 흐름이 있어 직장 갈등, 좌절, 역전의 서사성이 강하다.\r\n- acquisition: 공개 검색으로 발견 후 정확한 개별 public URL의 본문을 직접 확인한 C1. 접근 우회 없음. 이미지 다운로드/OCR/권리 검증은 수행하지 않음.\r\n- provenance: 게시자의 회고성 서술로 취급하며 외부에서 사실 검증된 사건으로 승격하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "eb6a2165e5d668b80be9836991f18fdd93e9eec82e4b2822d97b204c175fc77d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

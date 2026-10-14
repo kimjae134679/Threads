@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0-%EB%82%98%EC%84%9C-%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%B0%95-PLOL8xrc
+제목 - 결혼하고 나서 남편 외박
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 5년차·21개월 아이가 있는 상황에서 연 1~2회 친구들과의 외박 허용 여부를 묻는 생활밀착형 부부 논쟁.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0-%EB%82%98%EC%84%9C-%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%B0%95-PLOL8xrc",
+    "title": "결혼하고 나서 남편 외박",
+    "body": "결혼 5년차·21개월 아이가 있는 상황에서 연 1~2회 친구들과의 외박 허용 여부를 묻는 생활밀착형 부부 논쟁.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼후남편외박논쟁.md",
+      "originalTitle": "결혼하고 나서 남편 외박",
+      "originalMarkdown": "# 결혼하고 나서 남편 외박\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0-%EB%82%98%EC%84%9C-%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%B0%95-PLOL8xrc\r\n- exactObservedTitle: 결혼하고 나서 남편 외박\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 1,213 / 댓글 11\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 결혼 5년차·21개월 아이가 있는 상황에서 연 1~2회 친구들과의 외박 허용 여부를 묻는 생활밀착형 부부 논쟁.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a200a6d50faa24555eb72e475597b77ee7d8528be373baa94a09cdfa92b5c329",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 262
+}

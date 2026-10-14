@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 이혼가정 예랑이 상견례 두번 하재요
+내용 - [명시 요약 — 원문 전문 아님]
+예비신랑의 가족상황 때문에 상견례를 두 번 하자는 제안이 나온 결혼 준비 사연으로 과거 후보화됐으나 원문 재확인이 필요하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "이혼가정 예랑이 상견례 두번 하재요",
+    "body": "예비신랑의 가족상황 때문에 상견례를 두 번 하자는 제안이 나온 결혼 준비 사연으로 과거 후보화됐으나 원문 재확인이 필요하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_이혼가정예랑상견례두번.md",
+      "originalTitle": "이혼가정 예랑이 상견례 두번 하재요",
+      "originalMarkdown": "# 이혼가정 예랑이 상견례 두번 하재요\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n예비신랑의 가족상황 때문에 상견례를 두 번 하자는 제안이 나온 결혼 준비 사연으로 과거 후보화됐으나 원문 재확인이 필요하다.\r\n\r\n## 평가\r\n- 평가: 특수상황 결혼논쟁, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "21e65572d712f94e4b036b9d3fec54a1dee67beaf4c44e28bd46117fb4322e28",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 139
+}

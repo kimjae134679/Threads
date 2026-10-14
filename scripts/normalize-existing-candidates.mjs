@@ -2,6 +2,9 @@ import { access, copyFile, mkdir, readFile, readdir, rm, writeFile } from 'node:
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import '../app/unified-material-txt.js';
+import '../app/source-page-plan.js';
+const MaterialTxt=globalThis.ThreadsUnifiedMaterialTxt;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const queuePath = path.join(root, 'data/_system/source-work-queue.json');
@@ -331,10 +334,14 @@ async function addExistingMedia(record, folder) {
   }
   return result;
 }
+function renderUnifiedRecord(record){
+ const manifest=JSON.parse(renderManifest(record)),body=renderContent(record);
+ return MaterialTxt.serialize({human:{title:globalThis.ThreadsPagePlan.titleInfo(record.title).displayTitle,sourceUrl:record.url||'',body,bodyKind:'preserved',platformCaptions:{}},records:{manifest,originalCandidates:record.candidates.map(c=>({path:c.path,sha256:c.sha256,markdown:c.markdown})),preservedComments:renderComments(record),priorBundles:record.bundles.map(b=>({...b})),sourcePackage:record.sourcePackage?.intake||null}});
+}
 async function generate({ output = defaultOutput, overwrite = false } = {}) {
   if (await exists(output)) {
     if (!overwrite) throw new Error('Output already exists. Use --write --overwrite only after reviewing it: ' + output);
-    await rm(output, { recursive: true, force: true });
+    throw new Error('Existing originals are immutable; use the CAS migration command into a new owned destination instead of --overwrite.');
   }
   const { queue, groups, candidateGroupCount, legacyBundleCount } = await collect();
   const records = [];
@@ -369,10 +376,7 @@ async function generate({ output = defaultOutput, overwrite = false } = {}) {
     const folder = path.join(output, ...record.relativeFolder.split('/'));
     await mkdir(folder, { recursive: true });
     record.media = await addExistingMedia(record, folder);
-    await writeFile(path.join(folder, 'candidate.md'), renderCandidate(record), 'utf8');
-    await writeFile(path.join(folder, 'content.txt'), renderContent(record), 'utf8');
-    await writeFile(path.join(folder, 'comments.txt'), renderComments(record), 'utf8');
-    await writeFile(path.join(folder, 'manifest.json'), renderManifest(record), 'utf8');
+    await writeFile(path.join(folder, '자료.txt'), renderUnifiedRecord(record), {encoding:'utf8',flag:'wx'});
   }
   const publicRecords = records.map(record => ({
     id: record.id, platform: record.platform, title: record.title, sourceUrl: record.url,
@@ -415,7 +419,7 @@ async function generate({ output = defaultOutput, overwrite = false } = {}) {
     '',
     '- index.csv: 엑셀에서 후보·플랫폼·원문 링크·확인 상태를 검색합니다.',
     '- index.json: 전체 후보 색인입니다.',
-    '- 플랫폼별 폴더: 게시물 한 건당 candidate.md, content.txt, comments.txt, manifest.json을 둡니다.',
+    '- 플랫폼별 폴더: 게시물 한 건당 원문 기록·댓글·기존 metadata가 포함된 자료.txt 하나를 둡니다.',
     '- media/: 실제 원문 연결을 확인한 기존 원본 이미지가 있는 경우에만 둡니다.',
     '',
     '## 프로그램에서 처리',
@@ -423,7 +427,7 @@ async function generate({ output = defaultOutput, overwrite = false } = {}) {
     '1. 앱의 기존 후보 목록에서 한 건을 선택합니다.',
     '2. 정확한 공개 원문이 있으면 한 건씩 원문을 수집합니다.',
     '3. 제목·본문·이미지 위치·댓글을 원문과 대조하고 선별 ZIP을 만듭니다.',
-    '4. 이 폴더의 content.txt는 BODY_SEQUENCE 요약용 기록이며, 원문 입력 TXT가 아닙니다. 앱의 원문 가져오기에 넣지 마세요.',
+    '4. 이 폴더의 자료.txt는 보존 기록이며 verbatim 원문 전문으로 승격되지 않습니다. 앱의 원문 가져오기에 넣지 마세요.',
     '',
     '현재 자료에서 대조 전 본문이나 댓글은 미확인으로 표시했습니다. 이전 Jev 점수와 후보 요약은 원문이 아니며 프로그램이 그대로 게시 이미지를 만들면 안 됩니다.',
     '이미지 자동수집은 하지 않았습니다. 기존 기록에 실제 연결된 TheQoo 원본 이미지 8장만 SHA-256을 확인해 media/에 복사했습니다.',
@@ -437,10 +441,11 @@ async function check(output = defaultOutput) {
   let checked = 0, mediaChecked = 0;
   for (const item of index.records) {
     const folder = path.join(output, ...item.folder.split('/'));
-    const files = ['candidate.md', 'content.txt', 'comments.txt', 'manifest.json'];
+    const canonical=await exists(path.join(folder,'자료.txt'));
+    const files = canonical?['자료.txt']:['candidate.md', 'content.txt', 'comments.txt', 'manifest.json'];
     for (const name of files) if (!(await exists(path.join(folder, name))) || (await readFile(path.join(folder, name))).length === 0)
       throw new Error('Missing or empty bundle file: ' + item.folder + '/' + name);
-    const manifest = await readJson(path.join(folder, 'manifest.json'));
+    const manifest = canonical?MaterialTxt.parse(await readFile(path.join(folder,'자료.txt'))).records.manifest:await readJson(path.join(folder, 'manifest.json'));
     if (manifest.schema !== 'threads-program-input-v1' || manifest.id !== item.id)
       throw new Error('Invalid manifest: ' + item.folder);
     if (manifest.sourceReview.publicationAllowed !== false)
@@ -483,4 +488,4 @@ async function main() {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   main().catch(error => { console.error(error); process.exitCode = 1; });
 }
-export { check, collect, exactSourceUrl, generate, platformFor, titleFrom };
+export { renderUnifiedRecord, check, collect, exactSourceUrl, generate, platformFor, titleFrom };

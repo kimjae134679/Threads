@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/713964799
+제목 - 나랑 차이나는 남자친구가 결혼하자고 해서 덬들의 조언을 듣고싶은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+경제적·학력·직업 배경 차이가 큰 연인이 결혼을 제안하면서 상대 부모를 만날 부담과 계층 차이에 대한 현실적 고민이 생긴 이야기라 결혼·돈·가족 의견이 강하게 갈릴 수 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/713964799",
+    "title": "나랑 차이나는 남자친구가 결혼하자고 해서 덬들의 조언을 듣고싶은 후기",
+    "body": "경제적·학력·직업 배경 차이가 큰 연인이 결혼을 제안하면서 상대 부모를 만날 부담과 계층 차이에 대한 현실적 고민이 생긴 이야기라 결혼·돈·가족 의견이 강하게 갈릴 수 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_713964799.md",
+      "originalTitle": "나랑 차이나는 남자친구가 결혼하자고 해서 덬들의 조언을 듣고싶은 후기",
+      "originalMarkdown": "# 나랑 차이나는 남자친구가 결혼하자고 해서 덬들의 조언을 듣고싶은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/713964799\r\n- exactObservedTitle: 나랑 차이나는 남자친구가 결혼하자고 해서 덬들의 조언을 듣고싶은 후기\r\n- observedAt: 2026-09-22 09:16 KST\r\n- observedMetrics: 13,983 48 (공개 페이지에 표시된 조회/댓글 수치)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 경제적·학력·직업 배경 차이가 큰 연인이 결혼을 제안하면서 상대 부모를 만날 부담과 계층 차이에 대한 현실적 고민이 생긴 이야기라 결혼·돈·가족 의견이 강하게 갈릴 수 있다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 외부 원출처 없음으로 단정하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "fa7c7e1f0763df2a838938898990d53348f24017acbe656c3db68d4f4f19a0c5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 221
+}

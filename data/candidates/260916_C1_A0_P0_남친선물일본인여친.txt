@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728123
+제목 - 남자친구에게 선물을 주는 일본인 여자친구
+내용 - [명시 요약 — 원문 전문 아님]
+남자친구에게 선물을 건네는 일본인 여자친구를 소재로 한 이미지 게시물. 공개 페이지에서 이미지 존재는 확인했지만 이미지 안 상황 전체는 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728123",
+    "title": "남자친구에게 선물을 주는 일본인 여자친구",
+    "body": "남자친구에게 선물을 건네는 일본인 여자친구를 소재로 한 이미지 게시물. 공개 페이지에서 이미지 존재는 확인했지만 이미지 안 상황 전체는 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_남친선물일본인여친.md",
+      "originalTitle": "남자친구에게 선물을 주는 일본인 여자친구",
+      "originalMarkdown": "# 남자친구에게 선물을 주는 일본인 여자친구\r\n\r\n## 글 내용\r\n남자친구에게 선물을 건네는 일본인 여자친구를 소재로 한 이미지 게시물. 공개 페이지에서 이미지 존재는 확인했지만 이미지 안 상황 전체는 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728123\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 2,371 / 추천 0 / 댓글 5\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n연애+선물 소재로 가볍게 의견이 붙을 수 있으나 현재 반응 강도는 상위 후보보다 낮다. 이미지 내용이 강한 반전인지 확인 후 유지 우선순위를 재평가한다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "ef212b051a8f35c2def1df4fe8466a258786cff4544988fb873852d62d3a769f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 205
+}

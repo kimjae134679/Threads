@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/261535896
+제목 - 돈 없는 친구가 피곤한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+소액을 반복해서 빌리고 갚지 않는 친구와 가정형편을 아는 작성자 사이의 경계 설정 문제라 의견 유도가 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/261535896",
+    "title": "돈 없는 친구가 피곤한 후기",
+    "body": "소액을 반복해서 빌리고 갚지 않는 친구와 가정형편을 아는 작성자 사이의 경계 설정 문제라 의견 유도가 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_돈없는친구피곤한후기.md",
+      "originalTitle": "돈 없는 친구가 피곤한 후기",
+      "originalMarkdown": "# 돈 없는 친구가 피곤한 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/261535896\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `돈 없는 친구가 피곤한 후기`\r\n- observedMetrics: 조회 4,871\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 소액을 반복해서 빌리고 갚지 않는 친구와 가정형편을 아는 작성자 사이의 경계 설정 문제라 의견 유도가 강함.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative only\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5c599bd3f270aa41238d85b5da451a1d1dafba6c58b964aae1bb814552422118",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 161
+}

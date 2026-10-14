@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2718512
+제목 - 남편 도시락 싸주는 유부녀의 평소 저녁밥 수준..
+내용 - [명시 요약 — 원문 전문 아님]
+남편에게 도시락을 싸주는 사람이 평소 준비하는 저녁 식사의 수준을 여러 실제 음식 이미지로 보여주는 시각형 게시물이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2718512",
+    "title": "남편 도시락 싸주는 유부녀의 평소 저녁밥 수준..",
+    "body": "남편에게 도시락을 싸주는 사람이 평소 준비하는 저녁 식사의 수준을 여러 실제 음식 이미지로 보여주는 시각형 게시물이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_남편도시락저녁밥수준.md",
+      "originalTitle": "남편 도시락 싸주는 유부녀의 평소 저녁밥 수준..",
+      "originalMarkdown": "# 남편 도시락 싸주는 유부녀의 평소 저녁밥 수준..\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2718512\r\n- 조회수: 20,501\r\n- 추천: 27\r\n- 댓글: 31\r\n- 본문: 읽음\r\n- 이미지: 공개 링크 확인, 파일 미확보\r\n\r\n## 글 내용\r\n남편에게 도시락을 싸주는 사람이 평소 준비하는 저녁 식사의 수준을 여러 실제 음식 이미지로 보여주는 시각형 게시물이다.\r\n\r\n## 평가\r\n- 평가: 최상급 저위험 시각 후보\r\n- 이유: 갈등 없이 이미지 자체로 넘겨볼 가치가 있음.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "e449103d1ca6e9366ab65a589a3507f4442e4ddd3596b32ace2618c7b106a12a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 194
+}

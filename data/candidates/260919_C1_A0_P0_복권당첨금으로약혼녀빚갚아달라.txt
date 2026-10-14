@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/x99btg
+제목 - 카지노 대박 나자 약혼녀가 자기 카드빚부터 갚아달랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+31세 남성이 약혼녀와 여행 중 카지노에서 큰 잭팟에 당첨된 뒤 벌어진 갈등. 작성자에 따르면 약혼녀는 학자금 등 부채뿐 아니라 맥스아웃된 신용카드 3장을 가지고 있었고, 당첨금을 자신의 빚을 갚는 데 모두 써달라고 요구했다. 작성자는 다시 빚이 늘 가능성을 걱정해 거절했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/x99btg",
+    "title": "카지노 대박 나자 약혼녀가 자기 카드빚부터 갚아달랍니다",
+    "body": "31세 남성이 약혼녀와 여행 중 카지노에서 큰 잭팟에 당첨된 뒤 벌어진 갈등. 작성자에 따르면 약혼녀는 학자금 등 부채뿐 아니라 맥스아웃된 신용카드 3장을 가지고 있었고, 당첨금을 자신의 빚을 갚는 데 모두 써달라고 요구했다. 작성자는 다시 빚이 늘 가능성을 걱정해 거절했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_복권당첨금으로약혼녀빚갚아달라.md",
+      "originalTitle": "카지노 대박 나자 약혼녀가 자기 카드빚부터 갚아달랍니다",
+      "originalMarkdown": "# 카지노 대박 나자 약혼녀가 자기 카드빚부터 갚아달랍니다\r\n\r\n## source\r\nReddit r/AmItheAsshole\r\n\r\n## 원문 제목\r\nAITA for not giving my fiancé any of the winnings to pay off her debt?\r\n\r\n## 글 내용\r\n31세 남성이 약혼녀와 여행 중 카지노에서 큰 잭팟에 당첨된 뒤 벌어진 갈등. 작성자에 따르면 약혼녀는 학자금 등 부채뿐 아니라 맥스아웃된 신용카드 3장을 가지고 있었고, 당첨금을 자신의 빚을 갚는 데 모두 써달라고 요구했다. 작성자는 다시 빚이 늘 가능성을 걱정해 거절했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/x99btg\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 Reddit 검색 표시: +5,564 votes\r\n- 조회수/댓글수: 미확인\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재 여부: source asset 미확보\r\n\r\n## 왜 소재로 좋은지\r\n갑작스러운 횡재와 연인의 기존 부채가 충돌하면서 '결혼할 사이면 당첨금도 함께 써야 하나'라는 즉각적인 돈·신뢰 논쟁이 생긴다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. publicationAllowed=false. source media 미확보. rights/privacy/human review 필요.",
+      "originalSha256": "e62f163157ff42d33f070888b00ecc8c897fa56136d10fce9f39aa259a37f673",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 289
+}

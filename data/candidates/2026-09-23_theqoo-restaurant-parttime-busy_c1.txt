@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3601432480
+제목 - 식당 알바 시작했는데 태어나서 처음 바빠본 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3601432480",
+    "title": "식당 알바 시작했는데 태어나서 처음 바빠본 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-restaurant-parttime-busy_c1.md",
+      "originalTitle": "식당 알바 시작했는데 태어나서 처음 바빠본 후기",
+      "originalMarkdown": "# 식당 알바 시작했는데 태어나서 처음 바빠본 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/3601432480\r\n- exactObservedTitle: 식당 알바 시작했는데 태어나서 처음 바빠본 후기\r\n- observedAt: 2026-09-23 17:15 KST\r\n- observedMetrics: 조회 11,669 / 댓글 7 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 아르바이트 경험담. 사실관계는 독립 검증하지 않았으며 작성자의 주장으로만 취급.\r\n- whyGoodMaterial: 카페·마트·편의점 경험자가 대형 식당 홀 1인 근무에서 처음 겪는 압도적 바쁨이라는 대비가 선명해 알바 공감과 진상·업무강도 경험담을 끌어내기 좋음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "a1731fd1acd9e19345e448f211cd59132251147dce361653a804c6101551a663",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

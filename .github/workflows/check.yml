@@ -13,9 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # byte-pinned installed baseline is preserved in Git history
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Install pinned HTML DOM reader dependency without install scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install pinned build-only ASAR dependency without Electron binary scripts
+        run: npm ci --prefix desktop --ignore-scripts --no-audit --no-fund
       - name: JavaScript syntax and regression checks
         run: npm run check
       - name: Local server smoke test

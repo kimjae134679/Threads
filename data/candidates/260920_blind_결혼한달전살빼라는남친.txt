@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%99%94%EA%B0%80-%EC%A2%80-%EB%82%98%EB%8A%94%EB%8D%B0-jscnx5hr
+제목 - 화가 좀 나는데
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 한 달 전 예비배우자의 체중 감량 압박이라는 직관적 갈등과 공개 투표 구조가 있어 의견 유도성이 높음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%99%94%EA%B0%80-%EC%A2%80-%EB%82%98%EB%8A%94%EB%8D%B0-jscnx5hr",
+    "title": "화가 좀 나는데",
+    "body": "결혼 한 달 전 예비배우자의 체중 감량 압박이라는 직관적 갈등과 공개 투표 구조가 있어 의견 유도성이 높음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_결혼한달전살빼라는남친.md",
+      "originalTitle": "화가 좀 나는데",
+      "originalMarkdown": "# 화가 좀 나는데\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%ED%99%94%EA%B0%80-%EC%A2%80-%EB%82%98%EB%8A%94%EB%8D%B0-jscnx5hr\r\n- exactObservedTitle: 화가 좀 나는데\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 299, 댓글 30, 투표참여 56\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 결혼 한 달 전 예비배우자의 체중 감량 압박이라는 직관적 갈등과 공개 투표 구조가 있어 의견 유도성이 높음.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 게시자 주장 자체이며 독립 사실 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b54f1492f04faf37f3ead2d62df0698e8c010f9cd155f4733eaa507a34e1f5d9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

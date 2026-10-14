@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2466597020
+제목 - 눈새 친구 때문에 짜증나는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2466597020",
+    "title": "눈새 친구 때문에 짜증나는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_2466597020.md",
+      "originalTitle": "눈새 친구 때문에 짜증나는 후기",
+      "originalMarkdown": "# 눈새 친구 때문에 짜증나는 후기\r\n\r\n- source: TheQoo / 후기\r\n- publicUrl: https://theqoo.net/review/2466597020\r\n- exactObservedTitle: 눈새 친구 때문에 짜증나는 후기\r\n- observedAt: 2026-09-23 14:16 KST\r\n- observedMetrics: 조회 6,981 (공개 페이지/검색 노출에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- acquisition: public individual page discovered via public web search; no login, anti-bot bypass, bulk crawl, screenshot, image download, or OCR\r\n- provenance: exact individual public TheQoo URL and publicly readable body text verified; personal-experience claims are attributed/unverified\r\n\r\n## 왜 소재로 좋은지\r\n취업이 잘 풀리지 않은 두 친구 앞에서 상대적으로 수입과 저축 여건이 좋은 친구가 반복해서 돈이 없다고 하소연한다는 상황이다. 같은 말도 누구 앞에서 하느냐가 중요한지, 친구의 경제 사정을 비교하는 것이 맞는지를 두고 공감과 반론이 쉽게 붙는다.\r\n",
+      "originalSha256": "19c2e8607afd73074948c03d68270783e23b3a6021e0a83ff020954530a93a8c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 97
+}

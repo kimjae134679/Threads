@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728087
+제목 - 친구랑 낡은 집에 살았는데.jpg
+내용 - [명시 요약 — 원문 전문 아님]
+친구와 낡은 집에서 살았던 일을 다룬 이미지 중심 사연. 공개 페이지에서 이미지가 본문 중심인 것은 확인했지만 이미지 안 전체 이야기는 아직 읽지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728087",
+    "title": "친구랑 낡은 집에 살았는데.jpg",
+    "body": "친구와 낡은 집에서 살았던 일을 다룬 이미지 중심 사연. 공개 페이지에서 이미지가 본문 중심인 것은 확인했지만 이미지 안 전체 이야기는 아직 읽지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_친구랑낡은집.md",
+      "originalTitle": "친구랑 낡은 집에 살았는데.jpg",
+      "originalMarkdown": "# 친구랑 낡은 집에 살았는데.jpg\r\n\r\n## 글 내용\r\n친구와 낡은 집에서 살았던 일을 다룬 이미지 중심 사연. 공개 페이지에서 이미지가 본문 중심인 것은 확인했지만 이미지 안 전체 이야기는 아직 읽지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728087\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 4,396 / 추천 1 / 댓글 13\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n동거/주거 상황에서 무슨 일이 벌어졌는지 궁금하게 만드는 생활 사연형 제목이다. 이미지 원문 확보 후 반전 여부를 확인할 가치가 있다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "9eaf3d987cfb241b4bcf10b5cb82c46e405d4e673b8a8ff51c27e0c47f66b4f6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 205
+}

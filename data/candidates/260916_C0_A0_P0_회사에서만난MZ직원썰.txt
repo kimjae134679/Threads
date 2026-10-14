@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 저도 회사에서 만난 mz직원 썰.
+내용 - [명시 요약 — 원문 전문 아님]
+직장에서 만난 신입/젊은 직원과 관련한 경험담 후보로 과거 발견됐다. 본문 미확인 상태라 세대 비하나 구체 사건을 만들어 넣지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "저도 회사에서 만난 mz직원 썰.",
+    "body": "직장에서 만난 신입/젊은 직원과 관련한 경험담 후보로 과거 발견됐다. 본문 미확인 상태라 세대 비하나 구체 사건을 만들어 넣지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_회사에서만난MZ직원썰.md",
+      "originalTitle": "저도 회사에서 만난 mz직원 썰.",
+      "originalMarkdown": "# 저도 회사에서 만난 mz직원 썰.\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Ppomppu\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n직장에서 만난 신입/젊은 직원과 관련한 경험담 후보로 과거 발견됐다. 본문 미확인 상태라 세대 비하나 구체 사건을 만들어 넣지 않는다.\r\n\r\n## 평가\r\n- 평가: 직장 썰 가능성, C1 재검증 필요\r\n- 참고: 세대·성별 비꼼 자체는 자동 탈락하지 않되 심한 비인간화·표적 괴롭힘은 별도 검토.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n\r\n## Sequential verification — 2026-09-21 22:30 KST\r\n- Fresh public exact/near-exact searches did not resolve a trustworthy individual Ppomppu post URL/post ID for this candidate.\r\n- The publicly indexed Ppomppu 전/현/무 forum listing was checked, but the available indexed slice did not prove this exact individual post.\r\n- Result: `BLOCKED_PROVENANCE`; C0/A0/P0, `publicationAllowed=false`.\r\n- Unblock only when an exact individual primary Ppomppu URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.\r\n- No body/comments/metrics/screenshots/assets/OCR/vision/rights/A1/P1 were inferred or fabricated.\r\n",
+      "originalSha256": "a91bbf9c99e90380b005daa276d57c10a1a759110910b09fdf5d0d0af7368082",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 144
+}

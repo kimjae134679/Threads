@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728233?iskin=webzine
+제목 - 간호사랑 기싸움하려고 환자 죽일뻔한 의사 썰..
+내용 - [명시 요약 — 원문 전문 아님]
+간호사와 의사의 갈등 때문에 환자가 위험해질 뻔했다는 이미지형 사연. 게시물 페이지와 이미지 2장 존재, 작성자의 `예???????????` 반응은 확인했지만 이미지 안 핵심 사연 전체는 읽지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728233?iskin=webzine",
+    "title": "간호사랑 기싸움하려고 환자 죽일뻔한 의사 썰..",
+    "body": "간호사와 의사의 갈등 때문에 환자가 위험해질 뻔했다는 이미지형 사연. 게시물 페이지와 이미지 2장 존재, 작성자의 `예???????????` 반응은 확인했지만 이미지 안 핵심 사연 전체는 읽지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_간호사의사기싸움.md",
+      "originalTitle": "간호사랑 기싸움하려고 환자 죽일뻔한 의사 썰..",
+      "originalMarkdown": "# 간호사랑 기싸움하려고 환자 죽일뻔한 의사 썰..\r\n\r\n## 글 내용\r\n간호사와 의사의 갈등 때문에 환자가 위험해질 뻔했다는 이미지형 사연. 게시물 페이지와 이미지 2장 존재, 작성자의 `예???????????` 반응은 확인했지만 이미지 안 핵심 사연 전체는 읽지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728233?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 14:34 KST 부근\r\n- 조회 5,470 / 추천 7 / 댓글 21\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n직장 갈등+의료 현장+극단적 결과라는 강한 구조다. 다만 실제 사연 검증과 명예훼손/안전 검토가 특히 중요하다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예(2장 표시)\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "dfd1981b9c3d11c5cf8493f292f15ed4470524f96a0fc63e0e37a1792b9e9571",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 253
+}

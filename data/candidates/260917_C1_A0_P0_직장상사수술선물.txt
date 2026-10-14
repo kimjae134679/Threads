@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/30%EB%8C%80-%EC%97%AC%EC%9E%90-%EC%A7%81%EC%9E%A5-%EC%83%81%EC%82%AC-%EC%84%A0%EB%AC%BC-%EC%B6%94%EC%B2%9C-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BC-kiY11UxE
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+수술로 2주간 자리를 비우는 30대 여성 직장 상사에게 팀원 둘이 약 10만원 내외 선물을 하려는 평범한 질문에서 댓글 추천이 엉뚱한 방향으로 튀는 글. 상품권·홍삼·책 같은 정상적인 추천 사이에 황당한 성인용품 추천이 등장하고 작성자가 농담으로 받아치는 등 댓글 흐름 자체가 웃긴 직장 에피소드다. 공개 본문과 공개 댓글을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/30%EB%8C%80-%EC%97%AC%EC%9E%90-%EC%A7%81%EC%9E%A5-%EC%83%81%EC%82%AC-%EC%84%A0%EB%AC%BC-%EC%B6%94%EC%B2%9C-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BC-kiY11UxE",
+    "title": "제목",
+    "body": "수술로 2주간 자리를 비우는 30대 여성 직장 상사에게 팀원 둘이 약 10만원 내외 선물을 하려는 평범한 질문에서 댓글 추천이 엉뚱한 방향으로 튀는 글. 상품권·홍삼·책 같은 정상적인 추천 사이에 황당한 성인용품 추천이 등장하고 작성자가 농담으로 받아치는 등 댓글 흐름 자체가 웃긴 직장 에피소드다. 공개 본문과 공개 댓글을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_직장상사수술선물.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n30대 여자 직장 상사 선물 추천 부탁드림\r\n\r\n## 글 내용\r\n수술로 2주간 자리를 비우는 30대 여성 직장 상사에게 팀원 둘이 약 10만원 내외 선물을 하려는 평범한 질문에서 댓글 추천이 엉뚱한 방향으로 튀는 글. 상품권·홍삼·책 같은 정상적인 추천 사이에 황당한 성인용품 추천이 등장하고 작성자가 농담으로 받아치는 등 댓글 흐름 자체가 웃긴 직장 에피소드다. 공개 본문과 공개 댓글을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/30%EB%8C%80-%EC%97%AC%EC%9E%90-%EC%A7%81%EC%9E%A5-%EC%83%81%EC%82%AC-%EC%84%A0%EB%AC%BC-%EC%B6%94%EC%B2%9C-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BC-kiY11UxE\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 2,145\r\n- 좋아요: 1\r\n- 댓글: 20\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 예\r\n- comments read: 예(공개 노출 댓글)\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 결혼/돈 후보 일변도에서 벗어나는 짧고 황당한 직장 댓글형 소재. 노골적 성적 본문은 아니지만 성인용품 단어가 댓글에 있어 comfort review 필요.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- comfort review 필요\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "7e9f6e1dafa849af804ec6a7c27baf2a0edae37ff86472afaa243d9342cfdaf3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 424
+}

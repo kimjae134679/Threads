@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728428
+제목 - 팁을 거절하는 종업원
+내용 - [명시 요약 — 원문 전문 아님]
+공개 Inven 개별 페이지에서 확인된 본문 텍스트는 `하지만 어림없지`이다. 그 밖의 이미지 내부 내용은 이번 순차 처리에서 읽거나 추정하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728428",
+    "title": "팁을 거절하는 종업원",
+    "body": "공개 Inven 개별 페이지에서 확인된 본문 텍스트는 `하지만 어림없지`이다. 그 밖의 이미지 내부 내용은 이번 순차 처리에서 읽거나 추정하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_팁거절종업원.md",
+      "originalTitle": "팁을 거절하는 종업원",
+      "originalMarkdown": "# 팁을 거절하는 종업원\r\n\r\n## 글 내용\r\n공개 Inven 개별 페이지에서 확인된 본문 텍스트는 `하지만 어림없지`이다. 그 밖의 이미지 내부 내용은 이번 순차 처리에서 읽거나 추정하지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728428\r\n\r\n- source post ID: `2728428`\r\n- 작성자: `돌체콜드부르`\r\n- 게시 시각: `2026-09-16 08:22`\r\n- 제목: `팁을 거절하는 종업원`\r\n- C0: VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE\r\n\r\n## 관측 수치\r\n- 개별 페이지 공개 검색 결과에서 조회 4,085 / 추천 3 / 댓글 16이 관측되었으나 이는 관측 시점 값이며 현재값으로 일반화하지 않는다.\r\n- 본문 이미지 내부 내용/OCR: 미확인\r\n- 댓글 본문: 미확인\r\n\r\n## 평가\r\n정확한 개별 원문 provenance는 해결되었다. 다음 단계는 동일 개별 원문의 실제 source media bytes를 공개·허용된 접근으로 확보하고 URL/provenance/SHA-256을 기록하는 것이다. 로그인, anti-bot, paywall, access-control 우회는 금지한다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: EXACT_SOURCE_VERIFIED / ASSETS_PENDING\r\n- logical candidate stage: C1\r\n- canonical filename state: C0 / A0 / P0 (TEMP 또는 provenance 검증만으로 파일명 상태 승격 금지)\r\n- blocker: BLOCKED_SOURCE_ASSET_BYTES\r\n- unblockWhen: 동일 Inven 개별 글의 실제 원본 미디어 bytes를 공개·허용 접근으로 source URL/provenance/SHA-256과 함께 확보할 때\r\n- publicationAllowed=false\r\n- rights/privacy/safety/human review 필요\r\n- A1/P1 아님\r\n",
+      "originalSha256": "668c1f84a66b9488fa39fe004302a31835503529157e2e0c20588eeeb5c587b2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

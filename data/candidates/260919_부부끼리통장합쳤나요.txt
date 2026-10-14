@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%B6%80%EB%81%BC%EB%A6%AC-%ED%86%B5%EC%9E%A5-%ED%95%A9%EC%B3%A4%EB%82%98%EC%9A%94-d1hmgrtz
+제목 - 부부끼리 통장 합쳤나요?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%B6%80%EB%81%BC%EB%A6%AC-%ED%86%B5%EC%9E%A5-%ED%95%A9%EC%B3%A4%EB%82%98%EC%9A%94-d1hmgrtz",
+    "title": "부부끼리 통장 합쳤나요?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_부부끼리통장합쳤나요.md",
+      "originalTitle": "부부끼리 통장 합쳤나요?",
+      "originalMarkdown": "# 부부끼리 통장 합쳤나요?\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EB%B6%80%EB%B6%80%EB%81%BC%EB%A6%AC-%ED%86%B5%EC%9E%A5-%ED%95%A9%EC%B3%A4%EB%82%98%EC%9A%94-d1hmgrtz\r\n- exact_observed_title: 부부끼리 통장 합쳤나요?\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 273, 댓글 20, 좋아요 2\r\n- body_read: yes\r\n- comments_read: partial (공개 페이지 노출 일부)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 부부 월수입이 천만원인데 저축 300만원도 안 된다는 숫자가 강하고 합산·분리 재정 논쟁으로 바로 이어짐.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 수입·저축 주장은 독립 검증 안 함\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "06a6e7fc046b36c5904d527d5569d57911f6a9b47a4005210b384a4aa873cd3e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 192
+}

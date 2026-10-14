@@ -1,14 +1,9 @@
-param(
-  [ValidateSet('all','hold','discard')][string]$Filter='all',
-  [switch]$CheckOnly
-)
+param([ValidateSet('all','hold','discard')][string]$Filter='all',[switch]$CheckOnly)
 $ErrorActionPreference='Stop'
-[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new()
-$controller='D:\A_KJ\AI\Scripts\ThreadsUploadStudio\Control.ps1'
-$currentOutput=& powershell.exe -NoProfile -File $controller -Action status
+$result=& (Join-Path $PSScriptRoot 'Control.ps1') -Action status
 if ($LASTEXITCODE -ne 0) { throw 'studio_status_failed' }
-$current=$currentOutput | ConvertFrom-Json
-if (-not $current.healthy -or $current.foreign) { throw 'studio_open_requires_running' }
-$reviewUrl='http://127.0.0.1:4387/?review='+$Filter
-if (-not $CheckOnly) { Start-Process $reviewUrl }
-[Console]::Out.WriteLine((@{schemaVersion=1;url=$reviewUrl;filter=$Filter;healthy=$current.healthy;pid=$current.pid;mode='read_only_navigation'} | ConvertTo-Json -Compress))
+$current=$result | ConvertFrom-Json
+if (!$current.healthy -or $current.foreign) { throw 'studio_open_requires_running' }
+$url='http://127.0.0.1:4387/?review='+$Filter
+if (!$CheckOnly) { & (Join-Path $PSScriptRoot 'Control.ps1') -Action open -Route ('/?review='+$Filter);if($LASTEXITCODE -ne 0){throw 'review_open_failed'} }
+[Console]::Out.WriteLine((@{url=$url;mode='offline_navigation'} | ConvertTo-Json -Compress))

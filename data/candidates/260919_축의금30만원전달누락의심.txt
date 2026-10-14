@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88%EB%95%8C%EC%97%90-%EB%A7%98%EC%83%81%ED%96%88%EC%97%88%EB%8A%94%EB%8D%B0-APV7hVaS
+제목 - 축의금땜에 맘상했었는데
+내용 - [명시 요약 — 원문 전문 아님]
+30만원 축의금을 지인에게 대신 전달했는데 신부 기록에는 20만원으로 남아 있고 이후 관계까지 틀어진 돈·오해·친구 갈등 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88%EB%95%8C%EC%97%90-%EB%A7%98%EC%83%81%ED%96%88%EC%97%88%EB%8A%94%EB%8D%B0-APV7hVaS",
+    "title": "축의금땜에 맘상했었는데",
+    "body": "30만원 축의금을 지인에게 대신 전달했는데 신부 기록에는 20만원으로 남아 있고 이후 관계까지 틀어진 돈·오해·친구 갈등 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_축의금30만원전달누락의심.md",
+      "originalTitle": "축의금땜에 맘상했었는데",
+      "originalMarkdown": "# 축의금땜에 맘상했었는데\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88%EB%95%8C%EC%97%90-%EB%A7%98%EC%83%81%ED%96%88%EC%97%88%EB%8A%94%EB%8D%B0-APV7hVaS\r\n- exactObservedTitle: 축의금땜에 맘상했었는데\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 3,000 / 댓글 37\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 30만원 축의금을 지인에게 대신 전달했는데 신부 기록에는 20만원으로 남아 있고 이후 관계까지 틀어진 돈·오해·친구 갈등 소재.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 기억과 주장; 실제 전달액/누락 여부 독립 검증 없음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "1ffa913f58ac03dcb8929aa237c8cacbe70c781af1b2995e68b6d34f9458a19f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 277
+}

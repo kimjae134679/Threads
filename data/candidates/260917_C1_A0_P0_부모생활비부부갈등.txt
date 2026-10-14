@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8-%EB%85%B8%ED%9B%84-%EC%83%9D%ED%99%9C%EB%B9%84-5up7w0m2
+제목 - 부모 노후.. 생활비..
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 1년 반 된 30대 초반 부부가 양가 부모의 경제 상황과 지원 차이 때문에 고민하는 글. 작성자 부모는 결혼 때 1.5억원을 지원하고 이후에도 생활비·여행비 등을 계속 보태는 반면 처가 쪽 사정은 다르다고 설명하며 부모 노후와 부부 돈 문제를 묻는다. 공개 페이지에서 확인 가능한 본문을 읽음. 댓글은 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8-%EB%85%B8%ED%9B%84-%EC%83%9D%ED%99%9C%EB%B9%84-5up7w0m2",
+    "title": "부모 노후.. 생활비..",
+    "body": "결혼 1년 반 된 30대 초반 부부가 양가 부모의 경제 상황과 지원 차이 때문에 고민하는 글. 작성자 부모는 결혼 때 1.5억원을 지원하고 이후에도 생활비·여행비 등을 계속 보태는 반면 처가 쪽 사정은 다르다고 설명하며 부모 노후와 부부 돈 문제를 묻는다. 공개 페이지에서 확인 가능한 본문을 읽음. 댓글은 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_부모생활비부부갈등.md",
+      "originalTitle": "부모 노후.. 생활비..",
+      "originalMarkdown": "# 부모 노후.. 생활비..\r\n\r\n## 글 내용\r\n결혼 1년 반 된 30대 초반 부부가 양가 부모의 경제 상황과 지원 차이 때문에 고민하는 글. 작성자 부모는 결혼 때 1.5억원을 지원하고 이후에도 생활비·여행비 등을 계속 보태는 반면 처가 쪽 사정은 다르다고 설명하며 부모 노후와 부부 돈 문제를 묻는다. 공개 페이지에서 확인 가능한 본문을 읽음. 댓글은 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8-%EB%85%B8%ED%9B%84-%EC%83%9D%ED%99%9C%EB%B9%84-5up7w0m2\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 01:39 KST — 조회 1,357, 댓글 39. 좋아요 수치 미확인.\r\n\r\n## 평가\r\n양가 경제력·지원의 비대칭과 결혼 후 부모 부양이라는 현실적인 논쟁 포인트가 선명하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "c21da27cff17a82b0540948d1b3a02bd1c3b8ba205cbca08b3d9f72a5b99b14b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 348
+}

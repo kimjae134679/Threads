@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B9%9A-%EC%88%A8%EA%B8%B0%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%95%9C-%EB%82%A8%ED%8E%B8-878qw0cl
+제목 - 빚 숨기고 결혼한 남편
+내용 - [명시 요약 — 원문 전문 아님]
+알려진 5~6천만원 외에 뽑기 중독으로 추가 빚을 고백했다는 만삭 부부 사연으로 신뢰·돈·결혼 판단이 겹친 강한 갈등 소재. 금액과 사정은 게시자 주장임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B9%9A-%EC%88%A8%EA%B8%B0%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%95%9C-%EB%82%A8%ED%8E%B8-878qw0cl",
+    "title": "빚 숨기고 결혼한 남편",
+    "body": "알려진 5~6천만원 외에 뽑기 중독으로 추가 빚을 고백했다는 만삭 부부 사연으로 신뢰·돈·결혼 판단이 겹친 강한 갈등 소재. 금액과 사정은 게시자 주장임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_빚숨기고결혼한남편.md",
+      "originalTitle": "빚 숨기고 결혼한 남편",
+      "originalMarkdown": "# 빚 숨기고 결혼한 남편\r\n\r\n- source: Blind / 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%B9%9A-%EC%88%A8%EA%B8%B0%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%95%9C-%EB%82%A8%ED%8E%B8-878qw0cl\r\n- exactObservedTitle: 빚 숨기고 결혼한 남편\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 117, 댓글 5\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 알려진 5~6천만원 외에 뽑기 중독으로 추가 빚을 고백했다는 만삭 부부 사연으로 신뢰·돈·결혼 판단이 겹친 강한 갈등 소재. 금액과 사정은 게시자 주장임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d33bacc2944d0d14a3d78edee9dec19ce6941877f54855b531e0a51a9bc6e9d8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 276
+}

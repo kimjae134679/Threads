@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2630086534
+제목 - 부모님 자영업을 왜 내가 도와야하는지 어이없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+부모 사업을 성인 자녀가 무급으로 도와야 하는지, 형제간 부담이 왜 다른지라는 가족·노동·돈 갈등이 선명함
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2630086534",
+    "title": "부모님 자영업을 왜 내가 도와야하는지 어이없는 후기",
+    "body": "부모 사업을 성인 자녀가 무급으로 도와야 하는지, 형제간 부담이 왜 다른지라는 가족·노동·돈 갈등이 선명함",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_부모님자영업무급도움_C1.md",
+      "originalTitle": "부모님 자영업을 왜 내가 도와야하는지 어이없는 후기",
+      "originalMarkdown": "# 부모님 자영업을 왜 내가 도와야하는지 어이없는 후기\r\n\r\n- state: C1\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2630086534\r\n- exactObservedTitle: 부모님 자영업을 왜 내가 도와야하는지 어이없는 후기\r\n- observedAt: 2026-09-20 20:15 KST\r\n- observedMetrics: 조회 4,222 / 댓글 15\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: public individual page/search-readable body; exact individual public URL confirmed\r\n- provenance: 작성자 개인 경험·주장. 독립 사실 검증 아님\r\n- whyGood: 부모 사업을 성인 자녀가 무급으로 도와야 하는지, 형제간 부담이 왜 다른지라는 가족·노동·돈 갈등이 선명함\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "f0dbcead77a4dba007e302b3e31f26ca0273e851ccf69552c7c4060404f798c4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 174
+}

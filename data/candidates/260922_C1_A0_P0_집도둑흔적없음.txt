@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/928816097
+제목 - 집에 도둑이 들어서 경찰이 왔다간 후기
+내용 - [명시 요약 — 원문 전문 아님]
+금팔찌만 포장에서 사라지고 침입 흔적·지문·발자국이 없으며 집 비밀번호를 아는 사람도 극소수라는 미스터리 구조라 다음 전개를 궁금하게 만드는 힘이 큼. 범인이나 사실관계는 추정하지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/928816097",
+    "title": "집에 도둑이 들어서 경찰이 왔다간 후기",
+    "body": "금팔찌만 포장에서 사라지고 침입 흔적·지문·발자국이 없으며 집 비밀번호를 아는 사람도 극소수라는 미스터리 구조라 다음 전개를 궁금하게 만드는 힘이 큼. 범인이나 사실관계는 추정하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_C1_A0_P0_집도둑흔적없음.md",
+      "originalTitle": "집에 도둑이 들어서 경찰이 왔다간 후기",
+      "originalMarkdown": "# 집에 도둑이 들어서 경찰이 왔다간 후기\r\n\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- source: TheQoo 후기\r\n- public URL: https://theqoo.net/review/928816097\r\n- exact observed title: `집에 도둑이 들어서 경찰이 왔다간 후기`\r\n- observedAt: 2026-09-22 03:16 KST\r\n- observed metrics: 검색 노출에서 수치 확인 안 됨\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인하지 않음\r\n- acquisition: 공개 개별 게시물 URL과 노출 본문을 확인한 C1. 로그인/우회/OCR 없음.\r\n- provenance: TheQoo 공개 후기 페이지. 최초 창작 원출처 여부는 별도 주장하지 않음.\r\n- whyGood: 금팔찌만 포장에서 사라지고 침입 흔적·지문·발자국이 없으며 집 비밀번호를 아는 사람도 극소수라는 미스터리 구조라 다음 전개를 궁금하게 만드는 힘이 큼. 범인이나 사실관계는 추정하지 않음.\r\n- rights/moderation/assets/publication: 미확정. 제작/게시 단계로 승격하지 않음.\r\n",
+      "originalSha256": "f235bfafa5684fae4b00d73f8a4d8c451796dee5dad5b433cebb46e46bb9656c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 211
+}

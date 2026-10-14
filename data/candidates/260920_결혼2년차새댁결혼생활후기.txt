@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/502837197
+제목 - 결혼 2년차 새댁의 결혼생활 후기
+내용 - [명시 요약 — 원문 전문 아님]
+시댁·집안일·돈관리·결혼 만족도를 한 글에서 대비해 즉시 의견이 갈릴 생활형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/502837197",
+    "title": "결혼 2년차 새댁의 결혼생활 후기",
+    "body": "시댁·집안일·돈관리·결혼 만족도를 한 글에서 대비해 즉시 의견이 갈릴 생활형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼2년차새댁결혼생활후기.md",
+      "originalTitle": "결혼 2년차 새댁의 결혼생활 후기",
+      "originalMarkdown": "# 결혼 2년차 새댁의 결혼생활 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/502837197\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `결혼 2년차 새댁의 결혼생활 후기`\r\n- observedMetrics: 조회 6,051 / 댓글 19\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 시댁·집안일·돈관리·결혼 만족도를 한 글에서 대비해 즉시 의견이 갈릴 생활형 소재.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; poster narrative, not independently verified fact\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "13b5c894ed1ae6b9cae42de2485930d9099c35fbd4f0b26effb0aaa50f1c2700",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 150
+}

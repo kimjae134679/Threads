@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%83%9D%ED%99%9C%EB%B9%84-4EcpVHKX
+제목 - 결혼했는데도 시댁에서 매달 100만원을 요구합니다
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 전부터 아들이 부모에게 용돈을 드렸고 결혼 후에도 시댁이 계속 생활비를 요구해 부부가 크게 다퉜다는 글. 댓글 문답에서 작성자는 요구 금액이 한 달 100만원이라고 밝혔다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%83%9D%ED%99%9C%EB%B9%84-4EcpVHKX",
+    "title": "결혼했는데도 시댁에서 매달 100만원을 요구합니다",
+    "body": "결혼 전부터 아들이 부모에게 용돈을 드렸고 결혼 후에도 시댁이 계속 생활비를 요구해 부부가 크게 다퉜다는 글. 댓글 문답에서 작성자는 요구 금액이 한 달 100만원이라고 밝혔다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_시댁매달100만원용돈.md",
+      "originalTitle": "결혼했는데도 시댁에서 매달 100만원을 요구합니다",
+      "originalMarkdown": "# 결혼했는데도 시댁에서 매달 100만원을 요구합니다\r\n\r\n## source\r\nBlind\r\n\r\n## 원문 제목\r\n시댁 생활비\r\n\r\n## 글 내용\r\n결혼 전부터 아들이 부모에게 용돈을 드렸고 결혼 후에도 시댁이 계속 생활비를 요구해 부부가 크게 다퉜다는 글. 댓글 문답에서 작성자는 요구 금액이 한 달 100만원이라고 밝혔다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%83%9D%ED%99%9C%EB%B9%84-4EcpVHKX\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 페이지 표시: 작성일 2021.03.20 / 조회수 5,468 / 댓글 60 / 좋아요 8\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 일부 읽음 — 월 100만원이라는 작성자 대댓글 확인\r\n- 이미지/스크린샷 존재 여부: source asset 미확보\r\n\r\n## 왜 소재로 좋은지\r\n'부모 생활비를 결혼 뒤에도 어디까지 부담해야 하나'라는 보편적인 갈등에 월 100만원이라는 구체적 숫자가 붙어 반응성이 높다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. publicationAllowed=false. source media 미확보. rights/privacy/human review 필요.",
+      "originalSha256": "f3e337482a6898959a356bbee7211687544434603abc3027aef934a2183d7bbe",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 266
+}

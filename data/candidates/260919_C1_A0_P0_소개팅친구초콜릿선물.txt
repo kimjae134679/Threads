@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2607036462
+제목 - 소개팅 주선해 결혼시킨 친구에게 받은 답례가 초콜릿이었습니다
+내용 - [명시 요약 — 원문 전문 아님]
+친구 커플을 소개해 결혼까지 이어지게 한 작성자가 결혼식 축의금, 부케, 생일·집들이 선물까지 챙긴 뒤 받은 답례를 두고 서운함을 토로하는 사연. 공개 본문 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2607036462",
+    "title": "소개팅 주선해 결혼시킨 친구에게 받은 답례가 초콜릿이었습니다",
+    "body": "친구 커플을 소개해 결혼까지 이어지게 한 작성자가 결혼식 축의금, 부케, 생일·집들이 선물까지 챙긴 뒤 받은 답례를 두고 서운함을 토로하는 사연. 공개 본문 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_소개팅친구초콜릿선물.md",
+      "originalTitle": "소개팅 주선해 결혼시킨 친구에게 받은 답례가 초콜릿이었습니다",
+      "originalMarkdown": "# 소개팅 주선해 결혼시킨 친구에게 받은 답례가 초콜릿이었습니다\r\n\r\n## source\r\nTheQoo (판 재게시)\r\n\r\n## 원문 제목\r\n판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요\r\n\r\n## 글 내용\r\n친구 커플을 소개해 결혼까지 이어지게 한 작성자가 결혼식 축의금, 부케, 생일·집들이 선물까지 챙긴 뒤 받은 답례를 두고 서운함을 토로하는 사연. 공개 본문 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2607036462\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 수치: 이번 관찰에서 확인되지 않음\r\n\r\n## 평가\r\n'결혼까지 연결해준 주선자에게 어느 정도 답례가 적절한가'라는 관계·선물 논쟁이 선명하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "3ac873ecce44fd61d5d108a354a1eaff5970b0b45a548cc2379db4a7ccf47852",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 221
+}

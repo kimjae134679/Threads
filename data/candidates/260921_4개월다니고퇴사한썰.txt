@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1802194
+제목 - 4개월 다니고 퇴사한 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1802194",
+    "title": "4개월 다니고 퇴사한 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_4개월다니고퇴사한썰.md",
+      "originalTitle": "[초스압] 4개월 다니고 퇴사한 썰",
+      "originalMarkdown": "# [초스압] 4개월 다니고 퇴사한 썰\r\n\r\n- source: Inven 오픈이슈갤러리\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1802194\r\n- exactObservedTitle: `[초스압] 4개월 다니고 퇴사한 썰`\r\n- observedAt: 2026-09-21 16:16 KST\r\n- provenanceLevel: C1\r\n- acquisitionStatus: exact individual public URL verified; public page body readable\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (page exposes an image element; bytes not acquired)\r\n- observedMetrics: 조회 7,359 / 추천 0 / 댓글 9\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n번아웃 때문에 업무 강도가 낮을 것으로 예상한 회사로 옮겼다가 4개월 만에 퇴사하게 된 장문 직장 경험담이다. 이직 선택과 실제 회사생활의 괴리가 핵심이라 직장인 공감·논쟁 소재로 쓰기 좋다.\r\n\r\n## provenance 주의\r\n공개 Inven 개별 페이지에서 제목·본문·표시 수치를 확인했다. 최초 작성처 및 권리관계는 별도 검증하지 않았다. 이미지 파일 다운로드와 댓글 열람은 하지 않았다. 제작·게시 권한을 의미하지 않는다.\r\n",
+      "originalSha256": "ef75e33c03945492236352d0344fe5a5ec65cbf645394734b0e6e34270caceaf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 107
+}

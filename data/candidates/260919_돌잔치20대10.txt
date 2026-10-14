@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%8C%EC%9E%94%EC%B9%98-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%9D%B4%EA%B2%8C-%EB%A7%9E%EB%8A%94%EA%B1%B0%EC%95%BC-63voqXAG
+제목 - 돌잔치 축의금 이게 맞는거야?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%8C%EC%9E%94%EC%B9%98-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%9D%B4%EA%B2%8C-%EB%A7%9E%EB%8A%94%EA%B1%B0%EC%95%BC-63voqXAG",
+    "title": "돌잔치 축의금 이게 맞는거야?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_돌잔치20대10.md",
+      "originalTitle": "돌잔치 축의금 이게 맞는거야?",
+      "originalMarkdown": "# 돌잔치 축의금 이게 맞는거야?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%8F%8C%EC%9E%94%EC%B9%98-%EC%B6%95%EC%9D%98%EA%B8%88-%EC%9D%B4%EA%B2%8C-%EB%A7%9E%EB%8A%94%EA%B1%B0%EC%95%BC-63voqXAG\r\n- exactObservedTitle: 돌잔치 축의금 이게 맞는거야?\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 7,053 / 댓글 58 / 좋아요 15\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n6년 전 친구 돌잔치에 20만원을 냈는데 자신의 돌잔치에는 불참한 친구가 10만원을 보내면서 축의금의 상호성 논쟁이 생긴다.\r\n",
+      "originalSha256": "9d6c706f8c97f477182c6da7305e69dab2208c58119169dedd991f80adcda869",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 214
+}

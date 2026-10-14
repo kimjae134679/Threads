@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9C-%EA%B2%BD%EC%A0%9C%EB%A0%A5-ify351q8
+제목 - 결혼시 경제력
+내용 - [명시 요약 — 원문 전문 아님]
+중소기업+결혼지원 7억과 전문직+부모 용돈이라는 극단적으로 명확한 결혼 경제력 선택지.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9C-%EA%B2%BD%EC%A0%9C%EB%A0%A5-ify351q8",
+    "title": "결혼시 경제력",
+    "body": "중소기업+결혼지원 7억과 전문직+부모 용돈이라는 극단적으로 명확한 결혼 경제력 선택지.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼경제력7억지원vs전문직.md",
+      "originalTitle": "결혼시 경제력",
+      "originalMarkdown": "# 결혼시 경제력\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9C-%EA%B2%BD%EC%A0%9C%EB%A0%A5-ify351q8\r\n- exactObservedTitle: 결혼시 경제력\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 95, 댓글 6\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 중소기업+결혼지원 7억과 전문직+부모 용돈이라는 극단적으로 명확한 결혼 경제력 선택지.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "932403923014d2782c49d2731f43f751f84eb74d4234581607ec94dd89f71221",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 204
+}

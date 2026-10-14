@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=sc&no=972033
+제목 - 노력한 흙수저 인생
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. 공개 검색에서 확인 가능한 일부 본문에는 가족 생활비 요구와 빚 부담 때문에 저축·투자를 못한 경험, 가족여행 비용 부담, 선물 문제로 생긴 갈등, 가난한 집안 사정 때문에 연애·결혼을 걱정하게 된 과정, 본가 지역 집을 사달라는 가족 요구, 남자친구를 가족에게 소개했을 때의 갈등 등이 나타난다. 검색 노출 범위를 넘어선 전체 내용은 확인했다고 간주하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=sc&no=972033",
+    "title": "노력한 흙수저 인생",
+    "body": "본문 미확인. 공개 검색에서 확인 가능한 일부 본문에는 가족 생활비 요구와 빚 부담 때문에 저축·투자를 못한 경험, 가족여행 비용 부담, 선물 문제로 생긴 갈등, 가난한 집안 사정 때문에 연애·결혼을 걱정하게 된 과정, 본가 지역 집을 사달라는 가족 요구, 남자친구를 가족에게 소개했을 때의 갈등 등이 나타난다. 검색 노출 범위를 넘어선 전체 내용은 확인했다고 간주하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_노력한흙수저인생.md",
+      "originalTitle": "노력한 흙수저 인생",
+      "originalMarkdown": "# 노력한 흙수저 인생\r\n\r\n## 글 내용\r\n본문 미확인. 공개 검색에서 확인 가능한 일부 본문에는 가족 생활비 요구와 빚 부담 때문에 저축·투자를 못한 경험, 가족여행 비용 부담, 선물 문제로 생긴 갈등, 가난한 집안 사정 때문에 연애·결혼을 걱정하게 된 과정, 본가 지역 집을 사달라는 가족 요구, 남자친구를 가족에게 소개했을 때의 갈등 등이 나타난다. 검색 노출 범위를 넘어선 전체 내용은 확인했다고 간주하지 않는다.\r\n\r\n## 정확한 링크\r\nhttps://gall.dcinside.com/board/view/?id=sc&no=972033\r\n\r\n- 출처: DCInside 흙수저 갤러리\r\n- 관측 시각: 2026-09-16 21:15 KST\r\n- exact individual public URL: 확인\r\n- full body read: 아니오 — 공개 검색 노출 일부만 확인\r\n- comments read: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n이번 관측에서 신뢰할 수 있는 반응 수치를 확인하지 못해 기록하지 않음.\r\n\r\n## 평가\r\n가족의 생활비·빚 부담 → 저축 실패 → 연애/결혼 불안 → 집 구매 요구 → 가족 소개 갈등으로 이어지는 사람 중심의 돈·가족·연애 복합 사연이다. 단순 투자 시황이 아니라 돈 때문에 실제 인간관계와 인생 선택이 꼬이는 구조라 Discovery 취향과 잘 맞는다. 다만 전체 본문과 댓글을 아직 읽지 않았으므로 제작 전 원문 전체 확인이 필요하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source screenshot/image bytes: 미확보\r\n- source images/screenshots 존재 여부: 이번 관측에서는 확인하지 못함\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 미통과\r\n- OCR/moderation 미실행\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH에만 있음\r\n",
+      "originalSha256": "587c0b056895185e5f6081d66f8470b554a6ef68b4530f2ab7f88255370e0303",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

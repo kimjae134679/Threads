@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B5%B0%EB%8C%80-%EB%82%98%EB%B3%B4%EB%8B%A4-%EA%BF%80%EB%B9%A4-%EC%82%AC%EB%9E%8C-rmc61nuf
+제목 - 군대 나보다 꿀빤 사람?
+내용 - [명시 요약 — 원문 전문 아님]
+서울 부대·휴가 150일 전후·장비를 못 만져 사실상 독서실처럼 지냈다는 주장에 경험담 경쟁이 붙기 쉬움.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B5%B0%EB%8C%80-%EB%82%98%EB%B3%B4%EB%8B%A4-%EA%BF%80%EB%B9%A4-%EC%82%AC%EB%9E%8C-rmc61nuf",
+    "title": "군대 나보다 꿀빤 사람?",
+    "body": "서울 부대·휴가 150일 전후·장비를 못 만져 사실상 독서실처럼 지냈다는 주장에 경험담 경쟁이 붙기 쉬움.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_군대꿀보직자랑.md",
+      "originalTitle": "군대 나보다 꿀빤 사람?",
+      "originalMarkdown": "# 군대 나보다 꿀빤 사람?\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EA%B5%B0%EB%8C%80-%EB%82%98%EB%B3%B4%EB%8B%A4-%EA%BF%80%EB%B9%A4-%EC%82%AC%EB%9E%8C-rmc61nuf\r\n- exactObservedTitle: 군대 나보다 꿀빤 사람?\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 72, 댓글 9\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 서울 부대·휴가 150일 전후·장비를 못 만져 사실상 독서실처럼 지냈다는 주장에 경험담 경쟁이 붙기 쉬움.\r\n- acquisition: C1; exact individual public URL directly observed; poster claims not independently verified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "9e6b53f5f97422f2af2c48f3bd8f2865f2699f518349a4af44bad869a542e523",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 250
+}

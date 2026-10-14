@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2156373479
+제목 - 손절한 친구에게서 다시 연락이 온 초기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2156373479",
+    "title": "손절한 친구에게서 다시 연락이 온 초기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23-c341-02-cutoff-friend-contact.md",
+      "originalTitle": "손절한 친구에게서 다시 연락이 온 초기",
+      "originalMarkdown": "# 손절한 친구에게서 다시 연락이 온 초기\r\n\r\n- source: TheQoo\r\n- public URL: https://theqoo.net/review/2156373479\r\n- exact observed title: `손절한 친구에게서 다시 연락이 온 초기`\r\n- observedAt: 2026-09-23 13:19 KST\r\n- observed metrics: 조회 13,577\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n10년지기 친구와 최근 1년 동안 과도한 연락과 정서적 의존 때문에 힘들어하다 손절했고, 그 친구에게 다시 연락이 온 상황을 다룬 경험담. 오래된 우정·연락 빈도·관계 경계선에 대해 즉시 의견이 갈릴 만한 소재다.\r\n\r\n## acquisition / provenance\r\n공개 검색에서 정확한 개별 TheQoo URL과 공개 본문을 직접 확인한 C1. 공개 검색 결과에서 실제로 보인 조회 수만 기록했다. 댓글은 읽지 않았다. 개인 경험 주장의 사실성은 별도 검증되지 않았으며 작성자의 경험담으로만 취급한다. 이미지/스크린샷 존재 여부는 확인하지 않았다.",
+      "originalSha256": "e95de222aead100e92dd0732a3c81cef9b26906fa09c83d9f953a9fa2608a5a1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 101
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/994985727
+제목 - 네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)
+내용 - [명시 요약 — 원문 전문 아님]
+공유기를 주문했는데 상자 안에 이쑤시개와 A4용지가 들어 있었다는 강한 황당 반전과 판매자 연락·교환 과정이 있는 소비자 경험담.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/994985727",
+    "title": "네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)",
+    "body": "공유기를 주문했는데 상자 안에 이쑤시개와 A4용지가 들어 있었다는 강한 황당 반전과 판매자 연락·교환 과정이 있는 소비자 경험담.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_중고공유기이쑤시개배송후기.md",
+      "originalTitle": "네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)",
+      "originalMarkdown": "# 네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/994985727\r\n- observedAt: 2026-09-20 15:17 KST\r\n- provenanceLevel: C1\r\n- acquisition: public individual page / readable body\r\n- exactObservedTitle: `네이버 쇼핑으로 중고 노트북, 공유기 구매한 후기(긴 글 주의)`\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 공유기를 주문했는데 상자 안에 이쑤시개와 A4용지가 들어 있었다는 강한 황당 반전과 판매자 연락·교환 과정이 있는 소비자 경험담.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights/moderation/asset/publication: 미확인/미진행\r\n",
+      "originalSha256": "d1f90c95b3e31a193c20b2034a81a2187480b2badba6927a35298d26cb8c2eaf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 193
+}

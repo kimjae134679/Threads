@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/lostark/6271/3659250
+제목 - 회사 대표 옆에 태우고 운전하다 사고낸 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/3659250",
+    "title": "회사 대표 옆에 태우고 운전하다 사고낸 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_inven_ceo-car-black-ice.md",
+      "originalTitle": "회사 대표 옆에 태우고 운전하다 사고낸 썰",
+      "originalMarkdown": "# 회사 대표 옆에 태우고 운전하다 사고낸 썰\r\n\r\n- source: Inven / 로스트아크 인벤 자유 게시판\r\n- publicUrl: https://www.inven.co.kr/board/lostark/6271/3659250\r\n- exactObservedTitle: 회사 대표 옆에 태우고 운전하다 사고낸 썰\r\n- observedAt: 2026-09-22 11:15 KST\r\n- observedMetrics: 조회 102, 추천 0, 댓글 10 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- acquisition: public individual page discovered via public web search; no login, anti-bot bypass, bulk crawl, screenshot, image download, or OCR\r\n- provenance: exact individual public Inven URL verified; body text was publicly readable\r\n\r\n## 왜 소재로 좋은지\r\n첫 직장에서 회사 대표의 고가 차량을 직접 운전하다 블랙아이스 때문에 제동이 되지 않아 앞차와 접촉한 경험담이다. 옆자리 대표가 매우 태연하게 반응하는 장면과 초보 직장인의 당황이 맞물려 상황 자체가 선명하고, 겨울 운전 경험자들의 공감·경험담도 붙기 좋은 소재다.\r\n",
+      "originalSha256": "d024c532c5e14accd31899f0f2686078c6f96f1c579930f47fc8e32ad3e7f6b7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 117
+}

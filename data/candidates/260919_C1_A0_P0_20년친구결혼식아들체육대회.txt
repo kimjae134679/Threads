@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3391025928
+제목 - 20년지기 친구 결혼식 vs 아들 유치원 체육대회
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3391025928",
+    "title": "20년지기 친구 결혼식 vs 아들 유치원 체육대회",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_20년친구결혼식아들체육대회.md",
+      "originalTitle": "20년지기 친구 결혼식 vs 아들 유치원 체육대회",
+      "originalMarkdown": "# 20년지기 친구 결혼식 vs 아들 유치원 체육대회\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/3391025928\r\n- exactObservedTitle: 20년지기 친구 결혼식 vs 아들 유치원 체육대회.jpg\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 48,723 / 댓글 552개\r\n- bodyRead: false — 본문 미확인(이미지 중심)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes\r\n- provenance: C1 / exact individual public URL\r\n- acquisition: PUBLIC_INDEX_TEXT_ONLY\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n20년 친구와 자녀의 한 번뿐인 행사 중 무엇을 선택할지라는 명확한 양자택일형 갈등이다. 이미지 내용은 추정하지 않음.\r\n",
+      "originalSha256": "bbf907c793dd67b7827aa9cea30552e514f43924b0f69a334f5bf3025697e092",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 107
+}

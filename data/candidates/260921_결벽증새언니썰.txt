@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1157452
+제목 - 결벽증 새언니 썰
+내용 - [명시 요약 — 원문 전문 아님]
+명절을 앞두고 새언니가 시댁에 일찍 와서 일반적인 대청소 수준을 넘어 냉장고 이동·실리콘 교체까지 하는 상황으로 번지는 가족 이야기. 기대와 현실의 반전이 크고 가족·청결 기준 논쟁성이 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1157452",
+    "title": "결벽증 새언니 썰",
+    "body": "명절을 앞두고 새언니가 시댁에 일찍 와서 일반적인 대청소 수준을 넘어 냉장고 이동·실리콘 교체까지 하는 상황으로 번지는 가족 이야기. 기대와 현실의 반전이 크고 가족·청결 기준 논쟁성이 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_결벽증새언니썰.md",
+      "originalTitle": "결벽증 새언니 썰",
+      "originalMarkdown": "# 결벽증 새언니 썰\r\n\r\n- source: Inven 오픈이슈갤러리\r\n- exactObservedTitle: `결벽증 새언니 썰`\r\n- publicUrl: https://www.inven.co.kr/board/webzine/2097/1157452\r\n- observedAt: 2026-09-21 22:18 KST\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (페이지에 이미지 표시 존재, 다운로드/내용 판독 안 함)\r\n- observedMetrics: 조회 150,595 / 추천 17 / 댓글 24\r\n- acquisition: 공개 개별 게시물 URL과 공개 텍스트 본문을 검색 결과에서 직접 확인\r\n- provenance: Inven 개별 공개 페이지. 최초 원출처 여부는 확인하지 않음.\r\n- whyGood: 명절을 앞두고 새언니가 시댁에 일찍 와서 일반적인 대청소 수준을 넘어 냉장고 이동·실리콘 교체까지 하는 상황으로 번지는 가족 이야기. 기대와 현실의 반전이 크고 가족·청결 기준 논쟁성이 강함.\r\n- moderation: 미판정\r\n- rights: 미확인\r\n- asset: 미수집\r\n\r\n본문은 실제 공개 텍스트 범위에서 확인했으며 이미지 내용은 읽거나 추정하지 않음.\r\n",
+      "originalSha256": "bd7946225a8259e4e4ac34f9d32ca72ca81c881676b67cf652251447fa115d6b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 217
+}

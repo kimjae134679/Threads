@@ -1,0 +1,29 @@
+원문링크 - https://www.ppomppu.co.kr/zboard/view.php?id=whatever&no=27215
+제목 - 재산세 2천나왔네요
+내용 - [명시 요약 — 원문 전문 아님]
+기존 후보 요약에는 재산세 고지액이 약 2천만원이라는 큰 숫자를 중심으로 한 돈·부동산 경험담으로 기록돼 있었지만, 원문 본문 bytes를 이번 실행에서 읽지 못했으므로 이 요약을 원문 본문으로 승격하거나 제작 근거로 사용하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.ppomppu.co.kr/zboard/view.php?id=whatever&no=27215",
+    "title": "재산세 2천나왔네요",
+    "body": "기존 후보 요약에는 재산세 고지액이 약 2천만원이라는 큰 숫자를 중심으로 한 돈·부동산 경험담으로 기록돼 있었지만, 원문 본문 bytes를 이번 실행에서 읽지 못했으므로 이 요약을 원문 본문으로 승격하거나 제작 근거로 사용하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_재산세2천나왔네요.md",
+      "originalTitle": "재산세 2천나왔네요",
+      "originalMarkdown": "# 재산세 2천나왔네요\r\n\r\n- 상태: logical C1 / A0 / P0\r\n- 출처: Ppomppu 전/현/무포럼\r\n- 정확한 원문 링크: https://www.ppomppu.co.kr/zboard/view.php?id=whatever&no=27215\r\n- source post ID: 27215\r\n- C0 provenance: VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE_IDENTITY\r\n- C1 source assets: BLOCKED_SOURCE_ASSET_BYTES\r\n- publicationAllowed=false\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 검증된 공개 근거\r\n2026-09-21 공개 Ppomppu 전/현/무포럼 목록에서 post 27215, 정확한 제목 `재산세 2천나왔네요`, 2026-09-10 등록, 익명 작성자, 이미지 표시를 확인했다. 자동 개별 페이지 읽기는 이번 실행에서 접근되지 않았으므로 본문·이미지 bytes·댓글 내용은 확보했다고 간주하지 않는다.\r\n\r\n## 글 내용\r\n기존 후보 요약에는 재산세 고지액이 약 2천만원이라는 큰 숫자를 중심으로 한 돈·부동산 경험담으로 기록돼 있었지만, 원문 본문 bytes를 이번 실행에서 읽지 못했으므로 이 요약을 원문 본문으로 승격하거나 제작 근거로 사용하지 않는다.\r\n\r\n## 평가\r\n- 평가: 숫자 훅 강함. exact individual identity는 확인됨.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n- unblock: post 27215의 실제 본문 및 원본 이미지/스크린샷 bytes를 public/permitted 방식으로 확보하고 source URL/provenance/hash를 보존할 것. 로그인·anti-bot·paywall·access-control 우회 금지.\r\n- OCR/vision/moderation/rights/A1/P1: 미확인·미승격\r\n",
+      "originalSha256": "4ccedaae47358383829adf5bf1810d4c95cd55bd28b202d2c3833f6f2e99c50c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 254
+}

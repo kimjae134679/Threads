@@ -14,5 +14,8 @@
   },
   "engines": {
     "node": ">=24"
+  },
+  "dependencies": {
+    "linkedom": "0.18.13"
   }
 }

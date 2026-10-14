@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4074622063
+제목 - 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구 결혼에 축의금 40만원을 냈지만 이후 연락이 끊긴 경험이 핵심이라 우정·축의금·결혼 후 관계 변화 논쟁성이 높음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4074622063",
+    "title": "30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기",
+    "body": "친구 결혼에 축의금 40만원을 냈지만 이후 연락이 끊긴 경험이 핵심이라 우정·축의금·결혼 후 관계 변화 논쟁성이 높음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_theqoo_4074622063.md",
+      "originalTitle": "30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기",
+      "originalMarkdown": "# 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/4074622063\r\n- exactObservedTitle: 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기\r\n- observedAt: 2026-09-20 16:16 KST\r\n- provenanceLevel: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READ\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- observedMetrics: 조회 3,346, 댓글 19\r\n- whyGood: 친구 결혼에 축의금 40만원을 냈지만 이후 연락이 끊긴 경험이 핵심이라 우정·축의금·결혼 후 관계 변화 논쟁성이 높음.\r\n- bodyStatus: 공개 본문 읽음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e18178ef00060809e707ba4fe7db29f69c16cf78dd72f6f23373807830707fb1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 192
+}

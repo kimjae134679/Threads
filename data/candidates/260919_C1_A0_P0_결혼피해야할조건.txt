@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0%EB%B3%B4%EB%8B%88-%EA%BC%AD-%ED%94%BC%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%9E%88%EC%96%B4-btg0nulr
+제목 - 결혼하고 보니 꼭 피해야 하는 조건이 뭐냐는 질문
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0%EB%B3%B4%EB%8B%88-%EA%BC%AD-%ED%94%BC%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%9E%88%EC%96%B4-btg0nulr",
+    "title": "결혼하고 보니 꼭 피해야 하는 조건이 뭐냐는 질문",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼피해야할조건.md",
+      "originalTitle": "결혼하고 보니 꼭 피해야 하는 조건이 뭐냐는 질문",
+      "originalMarkdown": "# 결혼하고 보니 꼭 피해야 하는 조건이 뭐냐는 질문\r\n\r\n- source: Blind / 결혼생활\r\n- exact observed title: `결혼하고보니 꼭 피해야 하는게 있어?`\r\n- public URL: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0%EB%B3%B4%EB%8B%88-%EA%BC%AD-%ED%94%BC%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%9E%88%EC%96%B4-btg0nulr\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 485 / 댓글 19 / 좋아요 2\r\n- body read: 예. 가부장성·사치·위생·집안간섭·환경차이 등 질문 목록 확인.\r\n- comments read: 일부 공개 댓글 확인.\r\n- image/screenshot: 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 결혼 경험자들이 자기 사례를 덧붙이기 쉬운 참여형 소재. 단 의료/장애 관련 일반화는 후속 단계에서 특히 주의 필요.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_READ / COMMENTS_PARTIAL.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "db93e0ac31e212561792ec08b563ef71b54fb2c94d26aba09d42eae1c4415da2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 253
+}

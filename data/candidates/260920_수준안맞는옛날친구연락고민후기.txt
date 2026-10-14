@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2330813018
+제목 - 수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기
+내용 - [명시 요약 — 원문 전문 아님]
+오래된 친구와 가치관·도덕 기준이 달라졌을 때 관계를 유지할지라는 보편적 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2330813018",
+    "title": "수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기",
+    "body": "오래된 친구와 가치관·도덕 기준이 달라졌을 때 관계를 유지할지라는 보편적 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_수준안맞는옛날친구연락고민후기.md",
+      "originalTitle": "수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기",
+      "originalMarkdown": "# 수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2330813018\r\n- exactObservedTitle: 수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기\r\n- observedAt: 2026-09-20 06:15 KST\r\n- observedMetrics: 조회 8437\r\n- bodyRead: true (공개 페이지에서 노출된 본문 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: unconfirmed\r\n- whyGood: 오래된 친구와 가치관·도덕 기준이 달라졌을 때 관계를 유지할지라는 보편적 논쟁 소재.\r\n- acquisition: exact individual public page text observed\r\n- provenance: C1 exact-page provenance; subjective personal account\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d88893e4a57a1bf2112d40020d944038a4ae3f5d6451f6738339bc22a212560a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 171
+}

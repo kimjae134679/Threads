@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2239107
+제목 - 망한 피씨방 인수한 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2239107",
+    "title": "망한 피씨방 인수한 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_C1_A0_P0_망한피씨방인수한썰.md",
+      "originalTitle": "(초스압) 망한 피씨방 인수한 썰",
+      "originalMarkdown": "# (초스압) 망한 피씨방 인수한 썰\r\n\r\n## source\r\n- Inven 오픈이슈갤러리\r\n- exact public URL: https://www.inven.co.kr/board/webzine/2097/2239107\r\n\r\n## 관찰\r\n- observedAt: 2026-09-21 20:15 KST\r\n- exact observed title: `(초스압) 망한 피씨방 인수한 썰`\r\n- 게시 표시: 2024-04-08 20:46\r\n- 조회: 33,115\r\n- 추천: 45\r\n- 댓글: 44\r\n- 본문 읽음: 예 (공개 페이지에서 노출된 텍스트 범위)\r\n- 댓글 읽음: 아니오\r\n- 이미지/스크린샷 존재: 페이지에 이미지 요소 존재. 별도 다운로드/캡처하지 않음.\r\n\r\n## 왜 소재로 좋은가\r\n망한 PC방을 실제로 인수해 운영하는 경험담으로 시작하며, 매장 규모·흡연실·좌석 배치 등 구체적인 운영 디테일이 있어 `망한 가게를 인수하면 무슨 일이 생기나`라는 강한 도입을 만들기 좋다. 자영업 현실/돈/운영 판단으로 의견이 갈릴 여지도 있다.\r\n\r\n## acquisition / provenance\r\n- C1: 정확한 개별 공개 URL 확인.\r\n- acquisition: PUBLIC_TEXT_OBSERVED\r\n- provenance: Inven 개별 공개 게시물 자체를 확인. 최초 창작 원출처/저작권 소유 여부는 별도 확인하지 않았으므로 주장하지 않음.\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- 스크린샷, 이미지 다운로드, OCR, 제작, 게시 작업 없음.\r\n",
+      "originalSha256": "6b04d8ac22d77b070c98ab28358cf4f016343c5736f506b932482bd40a67d229",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

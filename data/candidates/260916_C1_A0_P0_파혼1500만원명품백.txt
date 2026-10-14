@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-iscybzlg
+제목 - 파혼
+내용 - [명시 요약 — 원문 전문 아님]
+예비장인의 직업 평가, 결혼비용은 남자가 더 부담해야 한다는 주장, 약 1,500만원짜리 명품백을 둘러싼 갈등이 겹치면서 파혼으로 끝난 사연이다. 작성자는 파혼 뒤 오히려 다행이었다는 취지로 정리한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-iscybzlg",
+    "title": "파혼",
+    "body": "예비장인의 직업 평가, 결혼비용은 남자가 더 부담해야 한다는 주장, 약 1,500만원짜리 명품백을 둘러싼 갈등이 겹치면서 파혼으로 끝난 사연이다. 작성자는 파혼 뒤 오히려 다행이었다는 취지로 정리한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_파혼1500만원명품백.md",
+      "originalTitle": "파혼",
+      "originalMarkdown": "# 파혼\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-iscybzlg\r\n- 조회수: 148\r\n- 좋아요: 2\r\n- 댓글: 4\r\n- 본문/댓글: 읽음\r\n\r\n## 글 내용\r\n예비장인의 직업 평가, 결혼비용은 남자가 더 부담해야 한다는 주장, 약 1,500만원짜리 명품백을 둘러싼 갈등이 겹치면서 파혼으로 끝난 사연이다. 작성자는 파혼 뒤 오히려 다행이었다는 취지로 정리한다.\r\n\r\n## 평가\r\n- 평가: 상급 반전형\r\n- 이유: 구체적인 금액·양가·명품·파혼까지 전개가 뚜렷함.\r\n- 참고: 성별을 비꼬거나 일반화하는 표현 자체는 자동 탈락 사유로 보지 않는다. 다만 실제 게시 시 표적 괴롭힘·비인간화 등은 별도 검토.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "2da9b9c6e5e13285fc2afeb886582d139c73b694a3d954b00c83461bc45194ad",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 226
+}

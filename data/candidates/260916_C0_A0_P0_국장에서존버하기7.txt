@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 국장에서 존버하기 - (7)
+내용 - [명시 요약 — 원문 전문 아님]
+검색 인덱스에는 2022년 1억원에서 시작해 2026년 8월 7.8억원까지 이어진 장기투자 기록으로 노출됐다. 개별 원문과 계좌 인증 여부를 확인하지 못해 해당 수치를 검증된 성과로 취급하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "국장에서 존버하기 - (7)",
+    "body": "검색 인덱스에는 2022년 1억원에서 시작해 2026년 8월 7.8억원까지 이어진 장기투자 기록으로 노출됐다. 개별 원문과 계좌 인증 여부를 확인하지 못해 해당 수치를 검증된 성과로 취급하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_국장에서존버하기7.md",
+      "originalTitle": "국장에서 존버하기 - (7)",
+      "originalMarkdown": "# 국장에서 존버하기 - (7)\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind 공개 회사 인덱스\r\n- 개별 원문 링크: 미확인\r\n- 확인된 인덱스: https://www.teamblind.com/kr/company/HD%ED%95%9C%EA%B5%AD%EC%A1%B0%EC%84%A0%ED%95%B4%EC%96%91/posts/HD%ED%95%9C%EA%B5%AD%EC%A1%B0%EC%84%A0%ED%95%B4%EC%96%91?page=5\r\n- 반응 수치: 미확인\r\n- 본문: 미확인\r\n\r\n## 글 내용\r\n검색 인덱스에는 2022년 1억원에서 시작해 2026년 8월 7.8억원까지 이어진 장기투자 기록으로 노출됐다. 개별 원문과 계좌 인증 여부를 확인하지 못해 해당 수치를 검증된 성과로 취급하지 않는다.\r\n\r\n## 평가\r\n- 평가: C1 검증 필요 투자 경험담\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "c146bf0093a9b228279328101ea8a68e457933402ba846c0c90cdde965611d91",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 177
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-%EA%B4%80%EB%A0%A8-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94-lruhg30k
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+대기업 재직 여성과 교사 남성의 2년 연애 후 결혼 논의에서 여성 부모가 강하게 반대하는 사연. 여성 쪽도 아버지 사업 실패·신용 문제와 부모 지원 불가 상황이고 남성 쪽 역시 큰 자산가는 아니지만, 여성 부모는 딸이 더 좋은 조건의 상대를 만날 수 있다며 결사반대한다. 당사자는 조건이 비슷하다고 보고 결혼 의지가 확고하다. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-%EA%B4%80%EB%A0%A8-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94-lruhg30k",
+    "title": "제목",
+    "body": "대기업 재직 여성과 교사 남성의 2년 연애 후 결혼 논의에서 여성 부모가 강하게 반대하는 사연. 여성 쪽도 아버지 사업 실패·신용 문제와 부모 지원 불가 상황이고 남성 쪽 역시 큰 자산가는 아니지만, 여성 부모는 딸이 더 좋은 조건의 상대를 만날 수 있다며 결사반대한다. 당사자는 조건이 비슷하다고 보고 결혼 의지가 확고하다. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼반대조언.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼 반대 관련 조언 부탁드려요\r\n\r\n## 글 내용\r\n대기업 재직 여성과 교사 남성의 2년 연애 후 결혼 논의에서 여성 부모가 강하게 반대하는 사연. 여성 쪽도 아버지 사업 실패·신용 문제와 부모 지원 불가 상황이고 남성 쪽 역시 큰 자산가는 아니지만, 여성 부모는 딸이 더 좋은 조건의 상대를 만날 수 있다며 결사반대한다. 당사자는 조건이 비슷하다고 보고 결혼 의지가 확고하다. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-%EA%B4%80%EB%A0%A8-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%EB%93%9C%EB%A0%A4%EC%9A%94-lruhg30k\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 1,371\r\n- 댓글: 26\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 공개 노출 본문 확인\r\n- comments read: 아니오\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 양가 조건을 숫자로 비교하면서 정작 더 불안정한 쪽 부모가 반대한다는 구조가 논쟁성을 만듦.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "d7bec3927492244a8406497a36330db19e0ec01360891090837ad87788f3c562",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 410
+}

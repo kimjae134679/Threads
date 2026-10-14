@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3608151741
+제목 - 같은 대기업 다니고 돈 많아 믿었는데…동료 30명 속여 70억원 가로챈 40대女
+내용 - [명시 요약 — 원문 전문 아님]
+대기업 직장동료들에게 부동산 경매투자를 미끼로 접근해 명의를 빌리고, 피해자 명의의 신용·전세대출 등으로 약 70억원을 가로챈 혐의로 송치된 사건을 다룬 글이다. 피해자별 대출액은 약 5천만원에서 6억원으로 소개된다. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3608151741",
+    "title": "같은 대기업 다니고 돈 많아 믿었는데…동료 30명 속여 70억원 가로챈 40대女",
+    "body": "대기업 직장동료들에게 부동산 경매투자를 미끼로 접근해 명의를 빌리고, 피해자 명의의 신용·전세대출 등으로 약 70억원을 가로챈 혐의로 송치된 사건을 다룬 글이다. 피해자별 대출액은 약 5천만원에서 6억원으로 소개된다. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_직장동료70억사기.md",
+      "originalTitle": "같은 대기업 다니고 돈 많아 믿었는데…동료 30명 속여 70억원 가로챈 40대女",
+      "originalMarkdown": "# 같은 대기업 다니고 돈 많아 믿었는데…동료 30명 속여 70억원 가로챈 40대女\r\n\r\n## 글 내용\r\n대기업 직장동료들에게 부동산 경매투자를 미끼로 접근해 명의를 빌리고, 피해자 명의의 신용·전세대출 등으로 약 70억원을 가로챈 혐의로 송치된 사건을 다룬 글이다. 피해자별 대출액은 약 5천만원에서 6억원으로 소개된다. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/3608151741\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 10:37 KST 관측: 조회 22,704. 좋아요/댓글 수치는 확인하지 못함.\r\n\r\n## 평가\r\n'같은 회사 사람이어서 믿었다'는 관계성과 수억원대 피해가 결합된 강한 직장·투자 사고 소재. 범죄 혐의 기사 재전달이므로 표현·명예훼손 검토 필요.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 source asset 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/defamation/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "ab4e5e66afd47b867385ffc3f5c380b5cdb23c341f8fa54f22dd7e51045220b4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 263
+}

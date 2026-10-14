@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/10lwvlo/aita_for_telling_my_parents_they_have_to_pay_for_my_wedding/
+제목 - AITA for telling my parents they have to pay for my wedding.
+내용 - [명시 요약 — 원문 전문 아님]
+커플은 약 $10,000 규모의 소규모 destination wedding을 원하지만 부모가 수백 명 규모의 교회 결혼식을 요구하는 상황. 부모가 원하는 식은 약 $35,000~45,000으로 견적이 나왔고 작성자는 부모가 큰 결혼식을 원한다면 그 차액을 부모가 내야 한다고 주장한다. 공개 원문 본문을 실제로 읽음. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/10lwvlo/aita_for_telling_my_parents_they_have_to_pay_for_my_wedding/",
+    "title": "AITA for telling my parents they have to pay for my wedding.",
+    "body": "커플은 약 $10,000 규모의 소규모 destination wedding을 원하지만 부모가 수백 명 규모의 교회 결혼식을 요구하는 상황. 부모가 원하는 식은 약 $35,000~45,000으로 견적이 나왔고 작성자는 부모가 큰 결혼식을 원한다면 그 차액을 부모가 내야 한다고 주장한다. 공개 원문 본문을 실제로 읽음. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_부모요구대형결혼식.md",
+      "originalTitle": "AITA for telling my parents they have to pay for my wedding.",
+      "originalMarkdown": "# AITA for telling my parents they have to pay for my wedding.\r\n\r\n## 글 내용\r\n커플은 약 $10,000 규모의 소규모 destination wedding을 원하지만 부모가 수백 명 규모의 교회 결혼식을 요구하는 상황. 부모가 원하는 식은 약 $35,000~45,000으로 견적이 나왔고 작성자는 부모가 큰 결혼식을 원한다면 그 차액을 부모가 내야 한다고 주장한다. 공개 원문 본문을 실제로 읽음. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/10lwvlo/aita_for_telling_my_parents_they_have_to_pay_for_my_wedding/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 03:36 KST 관측: Reddit 공개 검색 결과 +12,084 votes. 조회수·댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n부모 체면용 결혼식 비용을 누가 부담해야 하는지라는 보편적 갈등이며 반응 규모도 큼.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 공개 URL 확인. source screenshot 미확보, `ASSETS_PENDING`. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "35000259ab3e291ca71ea17b9a8ee18d0cd0e4dd24c8583f2a20252368065e29",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 415
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728110
+제목 - 여친이 약속에 자꾸 늦는 이유
+내용 - [명시 요약 — 원문 전문 아님]
+연인이 약속마다 늦는 이유를 반전처럼 보여주는 짧은 연애 유머형 후보다. 실제 이유와 자산은 아직 확인하지 않아 내용을 만들어 넣지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728110",
+    "title": "여친이 약속에 자꾸 늦는 이유",
+    "body": "연인이 약속마다 늦는 이유를 반전처럼 보여주는 짧은 연애 유머형 후보다. 실제 이유와 자산은 아직 확인하지 않아 내용을 만들어 넣지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_여친이약속에자꾸늦는이유.md",
+      "originalTitle": "여친이 약속에 자꾸 늦는 이유",
+      "originalMarkdown": "# 여친이 약속에 자꾸 늦는 이유\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2728110\r\n- 조회수: 808\r\n- 댓글: 7\r\n- 본문: 이번 수집에서 전체 미확인\r\n\r\n## 글 내용\r\n연인이 약속마다 늦는 이유를 반전처럼 보여주는 짧은 연애 유머형 후보다. 실제 이유와 자산은 아직 확인하지 않아 내용을 만들어 넣지 않는다.\r\n\r\n## 평가\r\n- 평가: 검증 대기\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "169ff1ae4c3be5d7f75691cd90921bb7a99237965b54f89721383ca00defc8a0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

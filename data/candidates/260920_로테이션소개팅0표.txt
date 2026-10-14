@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%A1%9C%ED%85%8C%EC%9D%B4%EC%85%98-%EC%86%8C%EA%B0%9C%ED%8C%85-0-%ED%91%9C-%EB%B0%9B%EC%95%98%EB%8B%A4-oi07euol
+제목 - 로테이션 소개팅 0 표 받았다
+내용 - [명시 요약 — 원문 전문 아님]
+11대11 소개팅에서 지난번 2표 뒤 이번엔 0표를 받은 반전과 자조가 강한 공감/논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%A1%9C%ED%85%8C%EC%9D%B4%EC%85%98-%EC%86%8C%EA%B0%9C%ED%8C%85-0-%ED%91%9C-%EB%B0%9B%EC%95%98%EB%8B%A4-oi07euol",
+    "title": "로테이션 소개팅 0 표 받았다",
+    "body": "11대11 소개팅에서 지난번 2표 뒤 이번엔 0표를 받은 반전과 자조가 강한 공감/논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_로테이션소개팅0표.md",
+      "originalTitle": "로테이션 소개팅 0 표 받았다",
+      "originalMarkdown": "# 로테이션 소개팅 0 표 받았다\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EB%A1%9C%ED%85%8C%EC%9D%B4%EC%85%98-%EC%86%8C%EA%B0%9C%ED%8C%85-0-%ED%91%9C-%EB%B0%9B%EC%95%98%EB%8B%A4-oi07euol\r\n- exactObservedTitle: 로테이션 소개팅 0 표 받았다\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 156, 댓글 28\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 11대11 소개팅에서 지난번 2표 뒤 이번엔 0표를 받은 반전과 자조가 강한 공감/논쟁 소재.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5c0e66f3b2589a2b28bd4b8d0eededba4aff6b6fbad089351a086ca8d0ab5084",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 266
+}

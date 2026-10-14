@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3754743957
+제목 - 출근 40분 전 상사 카톡 14회, 직장내 괴롭힘인가
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3754743957",
+    "title": "출근 40분 전 상사 카톡 14회, 직장내 괴롭힘인가",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_출근40분전카톡14회.md",
+      "originalTitle": "출근 40분 전 상사 카톡 14회, 직장내 괴롭힘인가",
+      "originalMarkdown": "# 출근 40분 전 상사 카톡 14회, 직장내 괴롭힘인가\r\n\r\n- source: TheQoo (기사 재전달)\r\n- publicUrl: https://theqoo.net/square/3754743957\r\n- exactObservedTitle: [단독] 출근시간 40분전 상사 카톡, 직장내 괴롭힘 신고한 직원…법원 판단은\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 수 65460\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- provenance: C1 / exact public article-repost URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n1년 4개월 동안 업무시간 외 연락 14회라는 구체 수치와 노동청·법원의 판단이 엇갈린 구조가 있어 직장인들이 자신의 기준을 즉시 말하게 만드는 소재다.\r\n",
+      "originalSha256": "db47ca62412b6d2917d502dd3796ae0fc8e82e24ee8920020d96f6dea583eece",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 109
+}

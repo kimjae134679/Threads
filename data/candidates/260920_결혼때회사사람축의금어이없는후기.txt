@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1048853306
+제목 - 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+회사 동료가 배우자를 동반하고 기존과 같은 축의금을 낸 상황에서 예의·식대·상호성 논쟁이 즉시 발생하는 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1048853306",
+    "title": "축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기",
+    "body": "회사 동료가 배우자를 동반하고 기존과 같은 축의금을 낸 상황에서 예의·식대·상호성 논쟁이 즉시 발생하는 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼때회사사람축의금어이없는후기.md",
+      "originalTitle": "축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기",
+      "originalMarkdown": "# 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1048853306\r\n- exactObservedTitle: 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 14,557 / 댓글 111\r\n- whyGood: 회사 동료가 배우자를 동반하고 기존과 같은 축의금을 낸 상황에서 예의·식대·상호성 논쟁이 즉시 발생하는 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "2d2c53fab3037a801153e1c519e2b164ff6b2dfb681d6e092111e06e75eb677b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 185
+}

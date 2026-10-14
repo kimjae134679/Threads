@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-gdzahf65
+제목 - 5개월 만에 결혼 확신했는데 부모님이 뜯어말립니다
+내용 - [명시 요약 — 원문 전문 아님]
+교제 5개월 만에 결혼 확신이 생긴 작성자가 부모 반대에 부딪힌다. 친한 친구들은 상대를 긍정적으로 보지만 부모는 '이 사람이 뭐가 그렇게 대단하냐'며 반대하고, 작성자는 자신이 너무 빠르게 확신한 것인지 고민한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-gdzahf65",
+    "title": "5개월 만에 결혼 확신했는데 부모님이 뜯어말립니다",
+    "body": "교제 5개월 만에 결혼 확신이 생긴 작성자가 부모 반대에 부딪힌다. 친한 친구들은 상대를 긍정적으로 보지만 부모는 '이 사람이 뭐가 그렇게 대단하냐'며 반대하고, 작성자는 자신이 너무 빠르게 확신한 것인지 고민한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_5개월연애부모반대.md",
+      "originalTitle": "5개월 만에 결혼 확신했는데 부모님이 뜯어말립니다",
+      "originalMarkdown": "# 5개월 만에 결혼 확신했는데 부모님이 뜯어말립니다\r\n\r\n## 원문 제목\r\n부모님 결혼 반대\r\n\r\n## 글 내용\r\n교제 5개월 만에 결혼 확신이 생긴 작성자가 부모 반대에 부딪힌다. 친한 친구들은 상대를 긍정적으로 보지만 부모는 '이 사람이 뭐가 그렇게 대단하냐'며 반대하고, 작성자는 자신이 너무 빠르게 확신한 것인지 고민한다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-gdzahf65\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-18 02:39 KST\r\n- 조회수 1,790 / 댓글 73\r\n- 좋아요 수치는 확인하지 않음\r\n\r\n## 평가\r\n'5개월이면 너무 빠른가 vs 확신이 중요하다'가 즉시 갈리는 결혼 논쟁. 본문 읽음. 댓글 전체 미확인.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot/media 미확보. exact public page 확인. `ASSETS_PENDING`. C1_A0_P0 / publicationAllowed=false. rights/privacy/human review 필요, 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "fe3ca9b20590376d574bcda46c60fb2bb57b34525d6f5ec58923752d4517ef82",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 306
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/maple/5974/2926976
+제목 - 피시방 알바 4달정도 해본 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/maple/5974/2926976",
+    "title": "피시방 알바 4달정도 해본 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_inven-pc-cafe-four-months.md",
+      "originalTitle": "피시방 알바 4달정도 해본 후기",
+      "originalMarkdown": "# 피시방 알바 4달정도 해본 후기\r\n\r\n- source: Inven 메이플스토리 자유게시판\r\n- source_url: https://www.inven.co.kr/board/maple/5974/2926976\r\n- exact_observed_title: `피시방 알바 4달정도 해본 후기`\r\n- observed_at: 2026-09-24 00:16 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public Inven URL verified; pseudonymous first-person community post; personal claims are attributed/unverified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: page has image markers; images not downloaded or relied upon\r\n- observed_metrics: 조회 13,571; 추천 6; 댓글 14 (public page/search rendering observed)\r\n- why_good: '일 자체는 단순하지만 4~5가지를 동시에 해야 한다'는 역설과 시간대별 난이도·급식 손님·음식 주문 폭주가 구체적이라 피시방 경험자들이 바로 의견을 붙일 수 있다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n약 100석 규모 피시방에서 4개월 근무했다는 작성자가 시간대별 업무 강도와 손님 유형, 음식 업무를 정리한다. 평일 오후·저녁에는 혼자 여러 일을 동시에 처리해야 해서 특히 힘들었다고 설명한다.\r\n",
+      "originalSha256": "70df854fa6a3eb1f54ed766e3f36be36e5e3866393b229a951752e4f79bd7578",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 109
+}

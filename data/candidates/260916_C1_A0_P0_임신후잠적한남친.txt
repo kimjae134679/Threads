@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3968848644
+제목 - 임신 후 잠적한 남친 "한부모 가정과 결혼 싫어"…여대생과 바람도
+내용 - [명시 요약 — 원문 전문 아님]
+임신과 결혼을 논의하던 관계에서 남성이 집안 반대를 이유로 잠적했는데 이후 12살 연하 대학생과 새로운 관계가 있었다는 내용으로 이어지는 보도 재게시물이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3968848644",
+    "title": "임신 후 잠적한 남친 \"한부모 가정과 결혼 싫어\"…여대생과 바람도",
+    "body": "임신과 결혼을 논의하던 관계에서 남성이 집안 반대를 이유로 잠적했는데 이후 12살 연하 대학생과 새로운 관계가 있었다는 내용으로 이어지는 보도 재게시물이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_임신후잠적한남친.md",
+      "originalTitle": "임신 후 잠적한 남친 \"한부모 가정과 결혼 싫어\"…여대생과 바람도",
+      "originalMarkdown": "# 임신 후 잠적한 남친 \"한부모 가정과 결혼 싫어\"…여대생과 바람도\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: TheQoo / 뉴스 재게시\r\n- 링크: https://theqoo.net/square/3968848644\r\n- 조회수: 10,562\r\n- 댓글: 16\r\n- 본문: 읽음\r\n- 이미지: 있음\r\n\r\n## 글 내용\r\n임신과 결혼을 논의하던 관계에서 남성이 집안 반대를 이유로 잠적했는데 이후 12살 연하 대학생과 새로운 관계가 있었다는 내용으로 이어지는 보도 재게시물이다.\r\n\r\n## 평가\r\n- 평가: 강한 반전이나 민감도 높음\r\n- 주의: 임신·유산·사생활이 얽혀 sensationalize 하지 말고 privacy/human review 필수.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "0880d730a738cf2dde55e068d895b9454f0e4b8c5e3a2d48326fce935fa6a8ab",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 210
+}

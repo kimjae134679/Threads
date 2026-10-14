@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1s5e4vr/aita_for_resciding_our_gift_for_sils_wedding/
+제목 - AITA for resciding our gift for SIL's wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+작성자 부부는 유럽여행을 잡으면서 시누이 부부에게 항공·호텔·활동비를 결혼선물로 대신 내주겠다고 제안했지만 처음에는 거절당했다. 여행 출발이 2주도 남지 않은 시점에 시누이가 갑자기 제안을 받아들이겠다고 했고, 막판 예약 비용이 원래보다 약 $4,000 더 비싸져 작성자가 선물을 철회하려 하면서 갈등이 생긴 사연. 공개 원문 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1s5e4vr/aita_for_resciding_our_gift_for_sils_wedding/",
+    "title": "AITA for resciding our gift for SIL's wedding?",
+    "body": "작성자 부부는 유럽여행을 잡으면서 시누이 부부에게 항공·호텔·활동비를 결혼선물로 대신 내주겠다고 제안했지만 처음에는 거절당했다. 여행 출발이 2주도 남지 않은 시점에 시누이가 갑자기 제안을 받아들이겠다고 했고, 막판 예약 비용이 원래보다 약 $4,000 더 비싸져 작성자가 선물을 철회하려 하면서 갈등이 생긴 사연. 공개 원문 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_유럽여행결혼선물막판요구.md",
+      "originalTitle": "AITA for resciding our gift for SIL's wedding?",
+      "originalMarkdown": "# AITA for resciding our gift for SIL's wedding?\r\n\r\n## 글 내용\r\n작성자 부부는 유럽여행을 잡으면서 시누이 부부에게 항공·호텔·활동비를 결혼선물로 대신 내주겠다고 제안했지만 처음에는 거절당했다. 여행 출발이 2주도 남지 않은 시점에 시누이가 갑자기 제안을 받아들이겠다고 했고, 막판 예약 비용이 원래보다 약 $4,000 더 비싸져 작성자가 선물을 철회하려 하면서 갈등이 생긴 사연. 공개 원문 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1s5e4vr/aita_for_resciding_our_gift_for_sils_wedding/\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n관측: 2026-09-17 15:35 KST. 공개 검색 관측에서 +4,018 votes. 조회수·댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n좋은 선물 제안 → 거절 → 출발 직전 마음 변경 → $4,000 추가비용이라는 구조가 깔끔하다. 결혼·선물·가족 갈등으로 의견이 갈리기 좋음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- exact title: `AITA for resciding our gift for SIL's wedding?`\r\n- full body read: 예\r\n- comments read: 아니오\r\n- source screenshots/images: 확보하지 않음\r\n- acquisition: exact public post URL + 공개 본문 확인\r\n- C1_A0_P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "3aab3689248a56b2fb07b31d1f812aa89791c558cf79bfea9711608610850df2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 388
+}

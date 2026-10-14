@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2137236135
+제목 - 택시 탈 때마다 낮지 않은 확률로 기분 잡치는 중기
+내용 - [명시 요약 — 원문 전문 아님]
+목적지에 도착하기도 전에 카드 결제를 요구받는 등 택시 이용 중 겪은 황당한 상황을 짧고 명확하게 전달해 공감·서비스 태도 논쟁이 즉시 생길 수 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2137236135",
+    "title": "택시 탈 때마다 낮지 않은 확률로 기분 잡치는 중기",
+    "body": "목적지에 도착하기도 전에 카드 결제를 요구받는 등 택시 이용 중 겪은 황당한 상황을 짧고 명확하게 전달해 공감·서비스 태도 논쟁이 즉시 생길 수 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_2137236135.md",
+      "originalTitle": "택시 탈 때마다 낮지 않은 확률로 기분 잡치는 중기",
+      "originalMarkdown": "# 택시 탈 때마다 낮지 않은 확률로 기분 잡치는 중기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2137236135\r\n- exactObservedTitle: 택시 탈 때마다 낮지 않은 확률로 기분 잡치는 중기\r\n- observedAt: 2026-09-23 20:16 KST\r\n- observedMetrics: 조회 2,314 / 댓글 28\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 본문 공개 텍스트 확인 범위에서는 이미지/스크린샷을 확인하지 않음\r\n- whyGood: 목적지에 도착하기도 전에 카드 결제를 요구받는 등 택시 이용 중 겪은 황당한 상황을 짧고 명확하게 전달해 공감·서비스 태도 논쟁이 즉시 생길 수 있다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 다운로드·스크린샷 캡처 없음.\r\n- provenance: TheQoo 익명 작성자의 개인 경험담. 개인 주장으로만 취급하며 외부 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "30164d3f34a719d80b8ac2aa208ce9c202116431b5930ae3154b9abf2cf1f98f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 199
+}

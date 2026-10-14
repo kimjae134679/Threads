@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/ws1l8c
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+커플이 카리브해 고급 리조트에서 목적지 결혼식을 정하고 가까운 몇 명의 비용만 부담하기로 한다. 다른 하객은 최소 2박과 항공료를 스스로 내야 해 커플당 참석 비용이 약 1만 달러가 된다. 초대받고 싶어 하던 주변 사람들에게 이 조건을 알리면서 `하객에게 사실상 결혼식 비용을 떠넘기는 것 아니냐`는 갈등이 생긴 사연이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/ws1l8c",
+    "title": "제목",
+    "body": "커플이 카리브해 고급 리조트에서 목적지 결혼식을 정하고 가까운 몇 명의 비용만 부담하기로 한다. 다른 하객은 최소 2박과 항공료를 스스로 내야 해 커플당 참석 비용이 약 1만 달러가 된다. 초대받고 싶어 하던 주변 사람들에게 이 조건을 알리면서 `하객에게 사실상 결혼식 비용을 떠넘기는 것 아니냐`는 갈등이 생긴 사연이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_하객에게1만달러결혼식.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for making people pay to come to my wedding\r\n\r\n## 글 내용\r\n커플이 카리브해 고급 리조트에서 목적지 결혼식을 정하고 가까운 몇 명의 비용만 부담하기로 한다. 다른 하객은 최소 2박과 항공료를 스스로 내야 해 커플당 참석 비용이 약 1만 달러가 된다. 초대받고 싶어 하던 주변 사람들에게 이 조건을 알리면서 `하객에게 사실상 결혼식 비용을 떠넘기는 것 아니냐`는 갈등이 생긴 사연이다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/ws1l8c\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n- 관측: 2026-09-16 18:38 KST 공개 검색 결과\r\n- Reddit 점수: +344\r\n- 조회수/댓글 수: 확인하지 않음\r\n- 본문: 확인\r\n- 댓글: 전체 미확인\r\n\r\n## 평가\r\n`결혼식 참석비 커플당 약 1만 달러`라는 숫자만으로 상황이 즉시 이해되고 의견이 갈린다. 돈·결혼·친구관계 논쟁형 후보.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 공개 원문 URL 확인: C1\r\n- source screenshot/media 실제 확보: 없음\r\n- full-post screenshot: 없음\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "737d74cc0ebba55d4e18a8fbf0e6fe1ac09b9685d446288a0f2c819c29824420",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 287
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/zn4ro5
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+비싼 물건 위주의 결혼 선물 목록을 만든 언니에게 작성자가 신혼여행 비용으로 150달러를 선물한다. 언니는 가족치고 너무 적다며 작성자가 결혼 때 남편에게 받은 것과 같은 티파니 목걸이를 사주거나 자기 목걸이를 줄 수도 있지 않았냐고 불만을 표시해 자매가 다툰 사연이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/zn4ro5",
+    "title": "제목",
+    "body": "비싼 물건 위주의 결혼 선물 목록을 만든 언니에게 작성자가 신혼여행 비용으로 150달러를 선물한다. 언니는 가족치고 너무 적다며 작성자가 결혼 때 남편에게 받은 것과 같은 티파니 목걸이를 사주거나 자기 목걸이를 줄 수도 있지 않았냐고 불만을 표시해 자매가 다툰 사연이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼선물로내목걸이요구.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for giving my sister a \"cheap\" gift for her wedding and not a necklace I myself own?\r\n\r\n## 글 내용\r\n비싼 물건 위주의 결혼 선물 목록을 만든 언니에게 작성자가 신혼여행 비용으로 150달러를 선물한다. 언니는 가족치고 너무 적다며 작성자가 결혼 때 남편에게 받은 것과 같은 티파니 목걸이를 사주거나 자기 목걸이를 줄 수도 있지 않았냐고 불만을 표시해 자매가 다툰 사연이다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/zn4ro5\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n- 관측: 2026-09-16 18:38 KST 공개 검색 결과\r\n- Reddit 점수: +3,877\r\n- 조회수/댓글 수: 확인하지 않음\r\n- 본문: 확인\r\n- 댓글: 전체 미확인\r\n\r\n## 평가\r\n결혼 선물 액수와 `네가 가진 목걸이를 달라`는 요구가 결합돼 황당함이 강하다. 축의금/선물 기준 논쟁으로 한국 사용자에게도 쉽게 전환되는 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 공개 원문 URL 확인: C1\r\n- source screenshot/media 실제 확보: 없음\r\n- full-post screenshot: 없음\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "c67aec13828f12cdddc7cd4f5f434b78209c35436d1627c5035997756c4a84f5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 258
+}

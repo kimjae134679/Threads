@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2638737381
+제목 - 집들이 문제로 제가 유독 쪼잔한걸까요?.pann (+후기)
+내용 - [명시 요약 — 원문 전문 아님]
+집들이에서 시작된 서운함이 친구 사이 500만원 금전문제와 연락두절·법적 대응 언급으로 커지는 강한 반전형 갈등 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2638737381",
+    "title": "집들이 문제로 제가 유독 쪼잔한걸까요?.pann (+후기)",
+    "body": "집들이에서 시작된 서운함이 친구 사이 500만원 금전문제와 연락두절·법적 대응 언급으로 커지는 강한 반전형 갈등 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_집들이500만원친구갈등.md",
+      "originalTitle": "집들이 문제로 제가 유독 쪼잔한걸까요?.pann (+후기)",
+      "originalMarkdown": "# 집들이 문제로 제가 유독 쪼잔한걸까요?.pann (+후기)\r\n\r\n- stage: C1\r\n- source: TheQoo 스퀘어 (Nate Pann 재게시/인용)\r\n- sourceUrl: https://theqoo.net/square/2638737381\r\n- exactObservedTitle: 집들이 문제로 제가 유독 쪼잔한걸까요?.pann (+후기)\r\n- observedAt: 2026-09-21 11:16 KST\r\n- observedMetrics: 미기록\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual TheQoo page verified; page itself points to an underlying Nate Pann URL\r\n- provenance: 2차 재게시/인용 페이지. 원출처로 표시된 Nate Pann 링크가 본문에 존재하나 이번 실행에서 원문 동일성까지 독립 검증하지 않음.\r\n- whyGood: 집들이에서 시작된 서운함이 친구 사이 500만원 금전문제와 연락두절·법적 대응 언급으로 커지는 강한 반전형 갈등 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "283a88f6b8ba687df6c71d3e06ee851a787704e5d1f3b0dddd705339d820ac6d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 185
+}

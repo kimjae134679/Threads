@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/mgallery/board/view/?id=ado&no=20712
+제목 - 살짝 다른 입장에서 쓴 후기답지 않은 후기(장문임)
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/mgallery/board/view/?id=ado&no=20712",
+    "title": "살짝 다른 입장에서 쓴 후기답지 않은 후기(장문임)",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_dcinside-concert-staff-backstage.md",
+      "originalTitle": "살짝 다른 입장에서 쓴 후기답지 않은 후기(장문임)",
+      "originalMarkdown": "# 살짝 다른 입장에서 쓴 후기답지 않은 후기(장문임)\r\n\r\n- source: DCInside 아도(Ado) 마이너 갤러리\r\n- source_url: https://gall.dcinside.com/mgallery/board/view/?id=ado&no=20712\r\n- exact_observed_title: `살짝 다른 입장에서 쓴 후기답지 않은 후기(장문임)`\r\n- observed_at: 2026-09-24 00:16 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public DCInside URL verified; anonymous/pseudonymous first-person community post; personal claims are attributed/unverified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not relied upon / not downloaded\r\n- observed_metrics: 조회 4,757; 댓글 40 (public page/search rendering observed)\r\n- why_good: 팬 관람 후기가 아니라 공연장 스태프 시점이라는 반전이 있고, 백스테이지 접근 통제 업무와 장거리 출근 등 일반 관객이 보기 어려운 현장 경험이 스토리 훅으로 작동한다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 공연을 보러 간 관객이 아니라 콘서트 스태프 알바로 킨텍스에 갔다고 밝힌다. 이전 공연 스태프 경험도 있었으며, 해당 공연에서는 콘서트장 내부에서 관계자 외 인원이 백스테이지로 들어가지 못하도록 통제하는 일을 했다고 적었다.\r\n",
+      "originalSha256": "695c633771a859117f75e2ada6c2dfb07f3f76c13c74067478c0610d923cfce4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 134
+}

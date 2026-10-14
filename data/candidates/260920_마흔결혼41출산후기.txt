@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2755493079
+제목 - 마흔 살 여자 결혼, 마흔 한 살 출산 후기
+내용 - [명시 요약 — 원문 전문 아님]
+40세 결혼·41세 출산이라는 선명한 타임라인과 양가 첫손주, 시댁 지원 등 예상 밖의 후속 전개가 있어 이야기성이 높음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2755493079",
+    "title": "마흔 살 여자 결혼, 마흔 한 살 출산 후기",
+    "body": "40세 결혼·41세 출산이라는 선명한 타임라인과 양가 첫손주, 시댁 지원 등 예상 밖의 후속 전개가 있어 이야기성이 높음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_마흔결혼41출산후기.md",
+      "originalTitle": "마흔 살 여자 결혼, 마흔 한 살 출산 후기",
+      "originalMarkdown": "# 마흔 살 여자 결혼, 마흔 한 살 출산 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/2755493079\r\n- exactObservedTitle: 마흔 살 여자 결혼, 마흔 한 살 출산 후기\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public URL; personal account and financial claims not independently verified\r\n- whyGood: 40세 결혼·41세 출산이라는 선명한 타임라인과 양가 첫손주, 시댁 지원 등 예상 밖의 후속 전개가 있어 이야기성이 높음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "02a5e700a170829bed642948d93326640c84b99baf01c4eb29653391c8b49f48",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 179
+}

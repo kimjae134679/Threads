@@ -1,20 +1,24 @@
 # Upload Studio · 로컬 게시 준비
 
-사용자의 승인된 v2 방향을 실제 프로그램으로 구현한 별도 모듈입니다. 기존 표지·리뷰·설치본을 덮어쓰지 않습니다.
+사용자의 승인된 v2 방향과 단일 프로젝트/TXT 방향을 구현한 로컬 모듈입니다. 원본 표지·리뷰·설치본을 삭제하거나 과거 판정을 현재 승인으로 이식하지 않습니다.
 
 ## 실행
 
 Node.js 24 이상에서 저장소 루트 기준:
 ```powershell
-node upload-studio/server.mjs
+node upload-studio/server.mjs --project-root .
 ```
 브라우저에서 http://127.0.0.1:4387 을 엽니다. 서버는 127.0.0.1에만 연결되며 원격 접속·다른 Origin 요청·실제 게시/예약/연결 API를 거부합니다.
 
-Windows 편의 실행은 `upload-studio/START.ps1`, 중단은 `STOP.ps1`입니다. 실행 정책을 바꾸거나 우회하지 않습니다. 실행 정책이 허용하지 않으면 위 Node 명령을 씁니다. 기존 앱·4173 서버를 변경하지 않습니다. 제작 자료는 아래 고정 계약만 읽으며 원본을 덮어쓰지 않습니다.
+Windows 편의 실행은 `upload-studio/START.ps1`, 서버만 중단하는 명령은 `STOP.ps1`입니다. 컴퓨터 종료/종료 예약은 하지 않습니다. 실행 정책을 우회하지 않고 허용되지 않으면 위 Node 명령을 씁니다. 통합 실행은 전수 검증된 private 이관 맵/운영 state가 있어야 하며 `local-private/operating-studio`와 `local-private/project/자료`만 씁니다. source 원본과 기존 앱·4173 서버는 변경하지 않습니다.
+
+이 통합 실행에서는 시작/15초 timer의 자동 제작 동기화, 과거 pending job 복구, 제목/태그 일괄 재작성과 판정 파일 재생성을 막습니다. 기존 33/8/158 최종 판정은 원바이트로 보존합니다. quality 점수1~10 또는 null/메모/읽은 장은 실제 설치 .38 계약과 같은 ID·버전·reviewRound·이미지 근거에 연결하며, 과거 365회차의 null점수/메모3개 및 진행44개는 과거 영역에서만 봅니다. 읽기 완료/점수는 게시 승인과 무관합니다. 현재 bank에 연결되지 않은 글은 숫자 평가 저장을 보류합니다.
+
+현재 자료 파일 저장은 `/api/materials/<key>/text`의 한 `자료.txt`입니다. 게시문안/해시태그의 불필요한 분리 파일을 만들지 않고 양쪽 플랫폼의 저장 문안·태그를 그대로 보존합니다. 구형 자료 경로/자동 연결에 대한 아래 설명은 일반 legacy mode의 호환 계약이며 통합 preserve mode에서 자동 실행되지 않습니다.
 
 ## 현재 제작 결과 연결
 
-'현재 제작글 불러오기'에서 글을 선택합니다. 기본 자료 경로는 `D:\\A_KJ\\AI\\Projects\\Threads\\자료`이며 다른 경로는 `START.ps1 -MaterialRoot '실제 자료 폴더'` 또는 `node upload-studio/server.mjs --material-root "실제 자료 폴더"`로 지정합니다. 브라우저가 임의 파일 경로를 서버에 넘기는 API는 없습니다.
+'현재 제작글 불러오기'는 명시적인 사용자 동작입니다. 일반 legacy Node 실행에서만 기본 자료 경로 `D:\\A_KJ\\AI\\Projects\\Threads\\자료`와 `--material-root "실제 자료 폴더"` 호환 옵션을 지원합니다. 통합 `--project-root`/START는 다른 root override를 거부합니다. 브라우저가 임의 파일 경로를 서버에 넘기는 API는 없습니다.
 
 기존 `desktop/post-review-store.cjs`의 계약을 확인했습니다. `06_자동 제작 결과/status.json`의 글 ID와 `sourceFingerprint/outputSha256/ruleVersion/이미지 SHA-256 및 값이 있는 reviewRound`으로 동일한 제작 버전을 계산합니다. manifest 순서대로 rendered/slide-*.png의 실제 해시를 확인하고 선택한 글의 이미지 사본만 .local/assets에 저장합니다. 상대경로·realpath·심볼릭 링크 탈출을 차단합니다. 가져오는 동안 버전이 바뀌면 중단합니다. 모든 제작 페이지(최대200장)를 보존하고 Instagram10/Threads20 범위를 넘으면 준비를 보류합니다.
 

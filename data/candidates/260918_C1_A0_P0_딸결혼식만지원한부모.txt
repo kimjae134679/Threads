@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/13azdun
+제목 - AITA for paying for my daughters wedding but not my sons?
+내용 - [명시 요약 — 원문 전문 아님]
+아들이 십대에 부모가 되어 작성자가 손녀 양육과 아들 가족 지원을 오래 맡았고, 그 과정에서 딸에게 충분히 신경 쓰지 못했다고 느끼는 부모의 사연. 이후 딸 결혼식 비용은 지원했지만 아들 결혼식에는 같은 지원을 하지 않자 아들이 불공평하다고 문제를 제기함. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/13azdun",
+    "title": "AITA for paying for my daughters wedding but not my sons?",
+    "body": "아들이 십대에 부모가 되어 작성자가 손녀 양육과 아들 가족 지원을 오래 맡았고, 그 과정에서 딸에게 충분히 신경 쓰지 못했다고 느끼는 부모의 사연. 이후 딸 결혼식 비용은 지원했지만 아들 결혼식에는 같은 지원을 하지 않자 아들이 불공평하다고 문제를 제기함. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_딸결혼식만지원한부모.md",
+      "originalTitle": "AITA for paying for my daughters wedding but not my sons?",
+      "originalMarkdown": "# AITA for paying for my daughters wedding but not my sons?\r\n\r\n## 글 내용\r\n아들이 십대에 부모가 되어 작성자가 손녀 양육과 아들 가족 지원을 오래 맡았고, 그 과정에서 딸에게 충분히 신경 쓰지 못했다고 느끼는 부모의 사연. 이후 딸 결혼식 비용은 지원했지만 아들 결혼식에는 같은 지원을 하지 않자 아들이 불공평하다고 문제를 제기함. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/13azdun\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · post score +9,837 확인. 조회수/댓글 총수는 확인하지 못함.\r\n\r\n## 평가\r\n형제간 공평함과 과거 양육 지원을 결혼비로 상계할 수 있는지 즉시 의견이 갈리는 가족 소재. C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "f90bbaafd29e2541c1797694d965e7f69d883f06ecb4717479a66878d3b9835a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 317
+}

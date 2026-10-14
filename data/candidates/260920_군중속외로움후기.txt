@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4021170862
+제목 - 군중 속의 외로움을 극복 못하는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구·직장·연애에서 반복되는 소외감이 구체적 상황으로 드러나 공감과 관계 조언 반응이 예상됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4021170862",
+    "title": "군중 속의 외로움을 극복 못하는 후기",
+    "body": "친구·직장·연애에서 반복되는 소외감이 구체적 상황으로 드러나 공감과 관계 조언 반응이 예상됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_군중속외로움후기.md",
+      "originalTitle": "군중 속의 외로움을 극복 못하는 후기",
+      "originalMarkdown": "# 군중 속의 외로움을 극복 못하는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4021170862\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `군중 속의 외로움을 극복 못하는 후기`\r\n- observedMetrics: 조회 2,182 / 댓글 7 / 스크랩 2\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 친구·직장·연애에서 반복되는 소외감이 구체적 상황으로 드러나 공감과 관계 조언 반응이 예상됨.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative only\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "574243e35727159456c10f218cfdc677223a0b254fdff0d618363209c01d5bf5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 159
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/10lwvlo
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+작성자 커플은 약 1만 달러 규모의 소규모 휴양지 결혼을 원하지만 부모는 수백 명이 참석하는 대형 교회 결혼식을 요구한다. 웨딩플래너 견적은 3.5만~4.5만 달러. 작성자는 부모가 원하는 과시성 결혼식이라면 부모가 비용을 내야 한다고 맞서면서 갈등이 생겼다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/10lwvlo",
+    "title": "제목",
+    "body": "작성자 커플은 약 1만 달러 규모의 소규모 휴양지 결혼을 원하지만 부모는 수백 명이 참석하는 대형 교회 결혼식을 요구한다. 웨딩플래너 견적은 3.5만~4.5만 달러. 작성자는 부모가 원하는 과시성 결혼식이라면 부모가 비용을 내야 한다고 맞서면서 갈등이 생겼다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_부모가원한결혼식비용.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for telling my parents they have to pay for my wedding.\r\n\r\n## 글 내용\r\n작성자 커플은 약 1만 달러 규모의 소규모 휴양지 결혼을 원하지만 부모는 수백 명이 참석하는 대형 교회 결혼식을 요구한다. 웨딩플래너 견적은 3.5만~4.5만 달러. 작성자는 부모가 원하는 과시성 결혼식이라면 부모가 비용을 내야 한다고 맞서면서 갈등이 생겼다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/10lwvlo\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n- 관측: 2026-09-16 18:38 KST 공개 검색 결과\r\n- Reddit 점수: +12,084\r\n- 조회수/댓글 수: 확인하지 않음\r\n- 본문: 확인\r\n- 댓글: 전체 미확인\r\n\r\n## 평가\r\n`내 결혼식`과 `부모가 원하는 결혼식`의 비용 책임이 명확하게 충돌한다. 금액 차이도 커서 짧게 설명해도 논쟁 구조가 즉시 이해되는 후보.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 공개 원문 URL 확인: C1\r\n- source screenshot/media 실제 확보: 없음\r\n- full-post screenshot: 없음\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "104bc3d9a10fadcc494e422b98754dc56d6518bff5124e42f19d35a3e5be3dd3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 253
+}

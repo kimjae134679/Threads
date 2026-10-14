@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1slu5j0/aita_for_telling_my_sister_i_cant_attend_her/
+제목 - AITA for telling my sister I can't attend her Destination Wedding
+내용 - [명시 요약 — 원문 전문 아님]
+실직과 네 차례 큰 수술로 저축이 줄어든 부부가 여동생의 이탈리아 결혼식 참석비를 감당하기 어렵다는 사연. 여동생이 700달러를 돕겠다고 했지만 부부 합계 예상비용은 약 3,200달러여서 가족관계와 비용 사이에서 갈등한다. 본문 확인, 댓글 전체는 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1slu5j0/aita_for_telling_my_sister_i_cant_attend_her/",
+    "title": "AITA for telling my sister I can't attend her Destination Wedding",
+    "body": "실직과 네 차례 큰 수술로 저축이 줄어든 부부가 여동생의 이탈리아 결혼식 참석비를 감당하기 어렵다는 사연. 여동생이 700달러를 돕겠다고 했지만 부부 합계 예상비용은 약 3,200달러여서 가족관계와 비용 사이에서 갈등한다. 본문 확인, 댓글 전체는 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_이탈리아결혼식3200.md",
+      "originalTitle": "AITA for telling my sister I can't attend her Destination Wedding",
+      "originalMarkdown": "# AITA for telling my sister I can't attend her Destination Wedding\r\n\r\n## 글 내용\r\n실직과 네 차례 큰 수술로 저축이 줄어든 부부가 여동생의 이탈리아 결혼식 참석비를 감당하기 어렵다는 사연. 여동생이 700달러를 돕겠다고 했지만 부부 합계 예상비용은 약 3,200달러여서 가족관계와 비용 사이에서 갈등한다. 본문 확인, 댓글 전체는 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1slu5j0/aita_for_telling_my_sister_i_cant_attend_her/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 04:38 KST 공개 페이지 관측: 게시물 점수 +1,341. 조회수·댓글 총수는 확인하지 않음.\r\n\r\n## 평가\r\n가족 의리와 목적지 결혼식 비용의 현실적 충돌이 명확하다. 형식: 글.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "8a044b9119596ce7540a6b4f826b395e4c1a37645faaed88815df2db35c79823",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 360
+}

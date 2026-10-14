@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%95%84%EB%B9%A0%EA%B0%80-%EB%82%A8%ED%8E%B8%ED%95%9C%ED%85%8C-%EB%8F%88-%EB%B9%8C%EB%A0%B8%EC%96%B4-ZaEDammC
+제목 - 아빠가 남편한테 돈 빌렸어
+내용 - [명시 요약 — 원문 전문 아님]
+아버지가 딸 몰래 예비사위에게 200만원을 빌리고 이후 딸에게도 돈을 빌린 사실이 드러나는 가족·돈·비밀 갈등 구조.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%95%84%EB%B9%A0%EA%B0%80-%EB%82%A8%ED%8E%B8%ED%95%9C%ED%85%8C-%EB%8F%88-%EB%B9%8C%EB%A0%B8%EC%96%B4-ZaEDammC",
+    "title": "아빠가 남편한테 돈 빌렸어",
+    "body": "아버지가 딸 몰래 예비사위에게 200만원을 빌리고 이후 딸에게도 돈을 빌린 사실이 드러나는 가족·돈·비밀 갈등 구조.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_아빠가남편한테돈빌림.md",
+      "originalTitle": "아빠가 남편한테 돈 빌렸어",
+      "originalMarkdown": "# 아빠가 남편한테 돈 빌렸어\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%95%84%EB%B9%A0%EA%B0%80-%EB%82%A8%ED%8E%B8%ED%95%9C%ED%85%8C-%EB%8F%88-%EB%B9%8C%EB%A0%B8%EC%96%B4-ZaEDammC\r\n- exactObservedTitle: `아빠가 남편한테 돈 빌렸어`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 24K, 댓글 188, 좋아요 55\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: 아버지가 딸 몰래 예비사위에게 200만원을 빌리고 이후 딸에게도 돈을 빌린 사실이 드러나는 가족·돈·비밀 갈등 구조.\r\n- acquisition: C1 / exact individual public URL / BODY_READ / COMMENTS_READ\r\n- provenance: 공개 Blind 개별 페이지 및 공개 댓글 일부 관찰. 금액·사정은 게시자 주장.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3135d4e7fabdd6cb1d728b0d5f2c38ffa210d2e2a97a9420da148ab2714c827a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 275
+}

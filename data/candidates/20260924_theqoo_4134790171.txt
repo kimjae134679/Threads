@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4134790171
+제목 - 중소기업 다니면서 이해 안되는점 있는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+중소기업 직장생활에서 이해되지 않는 관행이라는 즉시 공감 가능한 갈등 훅이 있고, 직장인들이 자신의 경험과 의견을 붙이기 쉬운 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4134790171",
+    "title": "중소기업 다니면서 이해 안되는점 있는 후기",
+    "body": "중소기업 직장생활에서 이해되지 않는 관행이라는 즉시 공감 가능한 갈등 훅이 있고, 직장인들이 자신의 경험과 의견을 붙이기 쉬운 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "20260924_theqoo_4134790171.md",
+      "originalTitle": "중소기업 다니면서 이해 안되는점 있는 후기",
+      "originalMarkdown": "# 중소기업 다니면서 이해 안되는점 있는 후기\r\n\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- publicationAllowed: false\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4134790171\r\n- exactObservedTitle: 중소기업 다니면서 이해 안되는점 있는 후기\r\n- observedAt: 2026-09-24T03:16:20+09:00\r\n- observedMetrics: 검색 공개 인덱스에서 확인 가능한 별도 수치 없음\r\n- bodyRead: false\r\n- commentsRead: false\r\n- screenshotOrImageObserved: false\r\n- bodyStatus: 본문 미확인\r\n- acquisition: public search index에서 개별 공개 URL과 제목/검색 스니펫 확인\r\n- provenance: exact individual public URL verified via public search index; page body not fetched/read\r\n- whyGood: 중소기업 직장생활에서 이해되지 않는 관행이라는 즉시 공감 가능한 갈등 훅이 있고, 직장인들이 자신의 경험과 의견을 붙이기 쉬운 소재다.\r\n\r\n## 확인 메모\r\n검색 스니펫에서 작성자가 중소기업 재직 상황을 전제로 이해되지 않는 점을 말하는 글임을 확인했다. 본문을 직접 읽지 않았으므로 구체적인 사건·발언·수치는 기록하지 않는다.\r\n",
+      "originalSha256": "b70b1949fe2b158797f399229baaa9cc2391dbe11db1ef2a76de7617b8428d10",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 185
+}

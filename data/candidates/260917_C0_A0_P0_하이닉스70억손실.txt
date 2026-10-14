@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - SK하이닉스 약 70억원 투자 후 약 18억원 평가손실 인증 lead
+내용 - [명시 요약 — 원문 전문 아님]
+디시인사이드 한국주식 갤러리 원글을 인용한 공개 보도 페이지에서 확인된 투자 인증 lead다. 보도 페이지에는 작성자의 계좌 화면에 SK하이닉스 2,728주, 매입 약 70억원, 평가 약 52억원, 평가손익 약 -17억8,662만원, 수익률 -25.52%가 표시됐다고 적혀 있다. 원 디시 본문은 이번 회차에 직접 읽지 못했으므로 본문 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "SK하이닉스 약 70억원 투자 후 약 18억원 평가손실 인증 lead",
+    "body": "디시인사이드 한국주식 갤러리 원글을 인용한 공개 보도 페이지에서 확인된 투자 인증 lead다. 보도 페이지에는 작성자의 계좌 화면에 SK하이닉스 2,728주, 매입 약 70억원, 평가 약 52억원, 평가손익 약 -17억8,662만원, 수익률 -25.52%가 표시됐다고 적혀 있다. 원 디시 본문은 이번 회차에 직접 읽지 못했으므로 본문 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C0_A0_P0_하이닉스70억손실.md",
+      "originalTitle": "SK하이닉스 약 70억원 투자 후 약 18억원 평가손실 인증 lead",
+      "originalMarkdown": "# SK하이닉스 약 70억원 투자 후 약 18억원 평가손실 인증 lead\r\n\r\n## 글 내용\r\n디시인사이드 한국주식 갤러리 원글을 인용한 공개 보도 페이지에서 확인된 투자 인증 lead다. 보도 페이지에는 작성자의 계좌 화면에 SK하이닉스 2,728주, 매입 약 70억원, 평가 약 52억원, 평가손익 약 -17억8,662만원, 수익률 -25.52%가 표시됐다고 적혀 있다. 원 디시 본문은 이번 회차에 직접 읽지 못했으므로 본문 미확인이다.\r\n\r\n## 정확한 링크\r\n원 디시 개별 URL 미확인. 공개 확인 페이지: https://issuefeed.dcinside.com/content/2296185\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 07:39~07:50 KST\r\n- 원문 조회수/추천/댓글: 확인하지 못함\r\n- 본문 읽음: 원문 아니오 / 공개 보도 페이지 예\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n70억원 투자에서 약 18억원 평가손실과 계좌 인증이라는 강한 투자 인간사 lead. 정확한 원 디시 URL과 원본 source bytes 확보 전까지 C0 유지.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 공개 보도 페이지에서 투자내역 이미지 존재 확인\r\n- 실제 원문 screenshot/source bytes: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "b8adfa0e68d1634b885d2be5ffbeb62b5da63b89368d26cd2d71847983dd6415",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 283
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88-%EB%B9%8C%EB%A6%AC%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%98%EB%83%90-8dpjN3F5
+제목 - 돈 빌리는 친구 어떻게 생각하냐?
+내용 - [명시 요약 — 원문 전문 아님]
+친구가 100만원 단위로 반복 차용하고 제때 갚지만 총액은 계속 커지는 상황에서 '잘 갚으면 신용 좋은 것인가'라는 판단 포인트가 명확함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88-%EB%B9%8C%EB%A6%AC%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%98%EB%83%90-8dpjN3F5",
+    "title": "돈 빌리는 친구 어떻게 생각하냐?",
+    "body": "친구가 100만원 단위로 반복 차용하고 제때 갚지만 총액은 계속 커지는 상황에서 '잘 갚으면 신용 좋은 것인가'라는 판단 포인트가 명확함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_돈빌리는친구총액늘어남.md",
+      "originalTitle": "돈 빌리는 친구 어떻게 생각하냐?",
+      "originalMarkdown": "# 돈 빌리는 친구 어떻게 생각하냐?\r\n\r\n- source: Blind 블라블라\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%8F%88-%EB%B9%8C%EB%A6%AC%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%98%EB%83%90-8dpjN3F5\r\n- exactObservedTitle: 돈 빌리는 친구 어떻게 생각하냐?\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 677, 댓글 19\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (확인된 공개 텍스트 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: Blind 개별 공개 글.\r\n- whyGood: 친구가 100만원 단위로 반복 차용하고 제때 갚지만 총액은 계속 커지는 상황에서 '잘 갚으면 신용 좋은 것인가'라는 판단 포인트가 명확함.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "2587a07bf55bd28182b7d07c2d59a75c70e8850852eeba5db055a12443f2f0bd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 310
+}

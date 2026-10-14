@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/13v2775/aita_for_not_putting_my_sisters_wedding_expenses/
+제목 - AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?
+내용 - [명시 요약 — 원문 전문 아님]
+가족 중 유일하게 대학을 나와 안정적인 소득을 얻은 작성자에게 가족이 반복적으로 금전 지원을 기대해 온 상황. 여동생 결혼 준비를 돕던 중 식료품점에서 약 1,700달러 결제가 여러 카드에서 거절되자 작성자의 신용카드로 결혼 비용을 대신 결제하는 문제가 갈등으로 번지는 사연이다. 공개 페이지에서 본문 앞부분은 확인했지만 전체 결말까지 확인했다고 단정할 수 없어 **본문 전체 미확인**으로 둔다. 댓글 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/13v2775/aita_for_not_putting_my_sisters_wedding_expenses/",
+    "title": "AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?",
+    "body": "가족 중 유일하게 대학을 나와 안정적인 소득을 얻은 작성자에게 가족이 반복적으로 금전 지원을 기대해 온 상황. 여동생 결혼 준비를 돕던 중 식료품점에서 약 1,700달러 결제가 여러 카드에서 거절되자 작성자의 신용카드로 결혼 비용을 대신 결제하는 문제가 갈등으로 번지는 사연이다. 공개 페이지에서 본문 앞부분은 확인했지만 전체 결말까지 확인했다고 단정할 수 없어 **본문 전체 미확인**으로 둔다. 댓글 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_언니결혼비용카드거절.md",
+      "originalTitle": "AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?",
+      "originalMarkdown": "# AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?\r\n\r\n## 글 내용\r\n가족 중 유일하게 대학을 나와 안정적인 소득을 얻은 작성자에게 가족이 반복적으로 금전 지원을 기대해 온 상황. 여동생 결혼 준비를 돕던 중 식료품점에서 약 1,700달러 결제가 여러 카드에서 거절되자 작성자의 신용카드로 결혼 비용을 대신 결제하는 문제가 갈등으로 번지는 사연이다. 공개 페이지에서 본문 앞부분은 확인했지만 전체 결말까지 확인했다고 단정할 수 없어 **본문 전체 미확인**으로 둔다. 댓글 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/13v2775/aita_for_not_putting_my_sisters_wedding_expenses/\r\n\r\n- 출처: Reddit / r/AmItheAsshole\r\n- 관측: 2026-09-17 14:37~14:50 KST 공개 원문\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n동일 관측 결과에서 확인 가능한 투표 수: +7,972. 조회수·댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n가족의 경제적 기대 → 결혼 준비 → 계산대 카드 거절 → 다른 가족의 신용카드를 요구하는 상황으로 전개되어 돈·가족·결혼 갈등 레인에 강하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 정확한 개별 공개 URL: 확인\r\n- full body read: NO (전체 미확인)\r\n- comments read: NO\r\n- source screenshot/media: 없음\r\n- acquisition: PUBLIC_PAGE_VERIFIED / ASSETS_PENDING\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH only\r\n",
+      "originalSha256": "43dea3e035a52b40edf3c02f47ac6339af323b24546cf474c63b83a4d7b6b65b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 474
+}

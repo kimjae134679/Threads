@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3873873698
+제목 - 내가 운전해서 친구랑 여행갔는데 돈 정확히 반반 낸 후기ㅋㅋ
+내용 - [명시 요약 — 원문 전문 아님]
+임신 중인 글쓴이가 왕복 운전을 맡은 1박 여행에서 친구가 비용을 사실상 정확히 반반 정산한 상황이라 운전자 노동·기름값·친구 사이 정산 기준을 두고 즉각 의견이 갈릴 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3873873698",
+    "title": "내가 운전해서 친구랑 여행갔는데 돈 정확히 반반 낸 후기ㅋㅋ",
+    "body": "임신 중인 글쓴이가 왕복 운전을 맡은 1박 여행에서 친구가 비용을 사실상 정확히 반반 정산한 상황이라 운전자 노동·기름값·친구 사이 정산 기준을 두고 즉각 의견이 갈릴 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_3873873698.md",
+      "originalTitle": "내가 운전해서 친구랑 여행갔는데 돈 정확히 반반 낸 후기ㅋㅋ",
+      "originalMarkdown": "# 내가 운전해서 친구랑 여행갔는데 돈 정확히 반반 낸 후기ㅋㅋ\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3873873698\r\n- exactObservedTitle: 내가 운전해서 친구랑 여행갔는데 돈 정확히 반반 낸 후기ㅋㅋ\r\n- observedAt: 2026-09-23 09:19 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 6,809 / 댓글 88 (public page as observed)\r\n- whyGood: 임신 중인 글쓴이가 왕복 운전을 맡은 1박 여행에서 친구가 비용을 사실상 정확히 반반 정산한 상황이라 운전자 노동·기름값·친구 사이 정산 기준을 두고 즉각 의견이 갈릴 소재다.\r\n- verification: 개인 경험담이며 친구의 의도는 확인되지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "63c35fd3b988c7b64cf1187029c563d1a823dba0131568c5a0a77cbc492420a5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2573576391
+제목 - 쌍둥이 언니들의 시댁이 너무나 다른 후기
+내용 - [명시 요약 — 원문 전문 아님]
+쌍둥이 자매인데 시댁의 명절 문화가 극단적으로 다른 대비 구조다. 한쪽은 각자 요리를 가져오고 남성들이 상을 차리는 식이라 전통적 명절 노동과 비교되는 장면 자체가 재미와 가족문화 논쟁을 동시에 만든다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2573576391",
+    "title": "쌍둥이 언니들의 시댁이 너무나 다른 후기",
+    "body": "쌍둥이 자매인데 시댁의 명절 문화가 극단적으로 다른 대비 구조다. 한쪽은 각자 요리를 가져오고 남성들이 상을 차리는 식이라 전통적 명절 노동과 비교되는 장면 자체가 재미와 가족문화 논쟁을 동시에 만든다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_쌍둥이언니시댁차이.md",
+      "originalTitle": "쌍둥이 언니들의 시댁이 너무나 다른 후기",
+      "originalMarkdown": "# 쌍둥이 언니들의 시댁이 너무나 다른 후기\r\n\r\n- stage: C1\r\n- source: TheQoo review\r\n- publicUrl: https://theqoo.net/review/2573576391\r\n- exactObservedTitle: `쌍둥이 언니들의 시댁이 너무나 다른 후기`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 9,710 / 댓글 65\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed in retrieved public text (not independently asset-inspected)\r\n- acquisition: Public individual page indexed and readable; exact individual URL verified.\r\n- provenance: C1 exact public individual TheQoo URL. No claim about any earlier/off-platform source.\r\n- whyGood: 쌍둥이 자매인데 시댁의 명절 문화가 극단적으로 다른 대비 구조다. 한쪽은 각자 요리를 가져오고 남성들이 상을 차리는 식이라 전통적 명절 노동과 비교되는 장면 자체가 재미와 가족문화 논쟁을 동시에 만든다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5e5cda40b018e61617682b5437c2266752b5921240c84828d00e14d329ca5e24",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 222
+}

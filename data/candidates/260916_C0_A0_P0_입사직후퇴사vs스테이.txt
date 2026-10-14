@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 입사 직후 퇴사 vs 스테이
+내용 - [명시 요약 — 원문 전문 아님]
+새 직장에 들어간 직후 계속 다닐지 바로 퇴사할지 고민하는 직장 후보로 과거 수집됐다. 구체적인 이유는 원문 재확인이 필요하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "입사 직후 퇴사 vs 스테이",
+    "body": "새 직장에 들어간 직후 계속 다닐지 바로 퇴사할지 고민하는 직장 후보로 과거 수집됐다. 구체적인 이유는 원문 재확인이 필요하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_입사직후퇴사vs스테이.md",
+      "originalTitle": "입사 직후 퇴사 vs 스테이",
+      "originalMarkdown": "# 입사 직후 퇴사 vs 스테이\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Ppomppu\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n새 직장에 들어간 직후 계속 다닐지 바로 퇴사할지 고민하는 직장 후보로 과거 수집됐다. 구체적인 이유는 원문 재확인이 필요하다.\r\n\r\n## 평가\r\n- 평가: 일반 조언형이라 우선순위 낮음\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "5df16f91c6fa45825c7661a81bcce8f5dd624f00802b8e006a344414775ebcc8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 137
+}

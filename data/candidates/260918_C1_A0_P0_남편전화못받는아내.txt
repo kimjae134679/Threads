@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4052303810
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+이미지 중심 유머 포스팅. 공개 페이지에서 이미지가 존재하는 것은 확인했지만 이미지 속 실제 내용은 이번 관측에서 읽지 못했다. **본문 미확인**.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4052303810",
+    "title": "제목",
+    "body": "이미지 중심 유머 포스팅. 공개 페이지에서 이미지가 존재하는 것은 확인했지만 이미지 속 실제 내용은 이번 관측에서 읽지 못했다. **본문 미확인**.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_남편전화못받는아내.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n남편 전화 못받는 아내\r\n\r\n## 글 내용\r\n이미지 중심 유머 포스팅. 공개 페이지에서 이미지가 존재하는 것은 확인했지만 이미지 속 실제 내용은 이번 관측에서 읽지 못했다. **본문 미확인**.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/4052303810\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-18 08:37 KST\r\n- 조회수: 7,254\r\n- 댓글: 20\r\n- 그 외 반응수치: 미확인\r\n\r\n## 평가\r\n부부 일상 유머 레인 후보. 제목과 반응은 확인됐지만 실제 이미지 내용을 확보·확인하기 전에는 제작하지 않는다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source image 존재: 확인\r\n- 실제 source screenshot/media 확보: 0\r\n- acquisition: ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 필요 / OCR/moderation 미확인 / 04_REVIEW_PUBLISH만 게시",
+      "originalSha256": "6b73aff4dee3dae388e901c58b9993c7db0d8ac641543d77bdf053e4f3c29504",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

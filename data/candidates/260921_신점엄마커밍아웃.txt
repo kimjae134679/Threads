@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4189996573
+제목 - 신점 보고 엄마한테 커밍아웃한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+신점을 보러 엄마와 갔다가 결혼운 질문이 예상 밖 커밍아웃 상황으로 이어지는 강한 전환점이 있는 개인 경험담. 시작 상황과 반전이 짧고 명확함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4189996573",
+    "title": "신점 보고 엄마한테 커밍아웃한 후기",
+    "body": "신점을 보러 엄마와 갔다가 결혼운 질문이 예상 밖 커밍아웃 상황으로 이어지는 강한 전환점이 있는 개인 경험담. 시작 상황과 반전이 짧고 명확함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_신점엄마커밍아웃.md",
+      "originalTitle": "신점 보고 엄마한테 커밍아웃한 후기",
+      "originalMarkdown": "# 신점 보고 엄마한테 커밍아웃한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/4189996573\r\n- exactObservedTitle: 신점 보고 엄마한테 커밍아웃한 후기\r\n- observedAt: 2026-09-21 14:15 KST\r\n- observedMetrics: 조회 5,627 / 댓글 29 (이번 공개 검색 결과에서 관찰된 값)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page/search-index text; exact individual public URL verified\r\n- provenance: TheQoo 공개 개별 게시물. 개인 경험 서술이며 외부 사실 검증 없음.\r\n- whyGood: 신점을 보러 엄마와 갔다가 결혼운 질문이 예상 밖 커밍아웃 상황으로 이어지는 강한 전환점이 있는 개인 경험담. 시작 상황과 반전이 짧고 명확함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 친구 추천으로 엄마와 처음 신점을 보러 갔다. 직장·금전·결혼·건강운을 묻던 중 남자 인연과 결혼 이야기가 나오자, 이후 엄마를 잠시 밖에 있게 한 뒤 자신의 상황을 이야기했다고 서술한다.\r\n",
+      "originalSha256": "a36181650b7f65fd2c3d199846fdd30b9024e858baaa3d83724e09d63fb16e75",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 186
+}

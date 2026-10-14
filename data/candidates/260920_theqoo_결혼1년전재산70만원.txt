@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2699286547
+제목 - 결혼한지 1년도 안되서 이혼을 생각중인 중기 그리고 이혼한 덬들의 삶이 궁금한 중기
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 직후 전재산 70만원, 주식 손실·대여금·빚 문제에서 갈등이 격화되는 서사가 강함. 다만 폭력 주장도 포함돼 있어 후속 단계가 있다면 별도 안전 검토가 필요함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2699286547",
+    "title": "결혼한지 1년도 안되서 이혼을 생각중인 중기 그리고 이혼한 덬들의 삶이 궁금한 중기",
+    "body": "결혼 직후 전재산 70만원, 주식 손실·대여금·빚 문제에서 갈등이 격화되는 서사가 강함. 다만 폭력 주장도 포함돼 있어 후속 단계가 있다면 별도 안전 검토가 필요함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_theqoo_결혼1년전재산70만원.md",
+      "originalTitle": "결혼한지 1년도 안되서 이혼을 생각중인 중기 그리고 이혼한 덬들의 삶이 궁금한 중기",
+      "originalMarkdown": "# 결혼한지 1년도 안되서 이혼을 생각중인 중기 그리고 이혼한 덬들의 삶이 궁금한 중기\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/2699286547\r\n- exactObservedTitle: `결혼한지 1년도 안되서 이혼을 생각중인 중기 그리고 이혼한 덬들의 삶이 궁금한 중기`\r\n- observedAt: 2026-09-20 03:14 KST\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: TheQoo 개별 공개 페이지에서 검색 노출 본문을 확인. 게시자의 개인 주장으로만 취급.\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 결혼 직후 전재산 70만원, 주식 손실·대여금·빚 문제에서 갈등이 격화되는 서사가 강함. 다만 폭력 주장도 포함돼 있어 후속 단계가 있다면 별도 안전 검토가 필요함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c39458194bb6d186884fbcbcfb5c2045d001e2bfca9f1a21243228884ca93adb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 225
+}

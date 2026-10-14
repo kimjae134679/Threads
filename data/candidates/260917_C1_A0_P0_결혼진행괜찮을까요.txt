@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A7%84%ED%96%89-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C%EC%9A%94-erp5vxj2
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+외동인 남자친구 부모의 경제상황 때문에 결혼을 계속 진행해도 될지 고민하는 글. 부모는 자가 없이 전세 거주 중이며 보증금 일부와 전세대출이 아들 자금·명의로 연결돼 있고 이자도 아들이 부담한다. 결혼 지원은 불가능한 상황이라 작성자가 향후 부담 가능성을 걱정한다. 공개 본문과 공개 댓글을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A7%84%ED%96%89-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C%EC%9A%94-erp5vxj2",
+    "title": "제목",
+    "body": "외동인 남자친구 부모의 경제상황 때문에 결혼을 계속 진행해도 될지 고민하는 글. 부모는 자가 없이 전세 거주 중이며 보증금 일부와 전세대출이 아들 자금·명의로 연결돼 있고 이자도 아들이 부담한다. 결혼 지원은 불가능한 상황이라 작성자가 향후 부담 가능성을 걱정한다. 공개 본문과 공개 댓글을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼진행괜찮을까요.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼 진행 괜찮을까요\r\n\r\n## 글 내용\r\n외동인 남자친구 부모의 경제상황 때문에 결혼을 계속 진행해도 될지 고민하는 글. 부모는 자가 없이 전세 거주 중이며 보증금 일부와 전세대출이 아들 자금·명의로 연결돼 있고 이자도 아들이 부담한다. 결혼 지원은 불가능한 상황이라 작성자가 향후 부담 가능성을 걱정한다. 공개 본문과 공개 댓글을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A7%84%ED%96%89-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C%EC%9A%94-erp5vxj2\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 236\r\n- 댓글: 16\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 예\r\n- comments read: 예(공개 노출 댓글)\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 반응 규모는 작지만 결혼 뒤 부모 부양 가능성이라는 현실적 주제로 의견 유도가 쉬움.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "5aeec3e72dabe1aa910e4d3b267d3c6637b97fcdbba838b2b9b83bc2e6611b0b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 345
+}

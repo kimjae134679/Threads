@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/239777637
+제목 - 친구 남친 신나게 까다가 아무래도 절교당한것 같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구가 남친에게 정이 떨어졌다는 말을 믿고 작성자가 그동안 참았던 비판을 쏟아냈다가 친구가 오히려 남친을 변호하며 관계가 틀어지는 즉각적인 역전이 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/239777637",
+    "title": "친구 남친 신나게 까다가 아무래도 절교당한것 같은 후기",
+    "body": "친구가 남친에게 정이 떨어졌다는 말을 믿고 작성자가 그동안 참았던 비판을 쏟아냈다가 친구가 오히려 남친을 변호하며 관계가 틀어지는 즉각적인 역전이 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구남친까다가절교당한후기.md",
+      "originalTitle": "친구 남친 신나게 까다가 아무래도 절교당한것 같은 후기",
+      "originalMarkdown": "# 친구 남친 신나게 까다가 아무래도 절교당한것 같은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/239777637\r\n- exactObservedTitle: `친구 남친 신나게 까다가 아무래도 절교당한것 같은 후기`\r\n- observedAt: 2026-09-21 21:22 KST\r\n- observedMetrics: 조회 5,601 / 댓글 25 (공개 페이지 관찰값)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: 공개 개별 게시물 URL 및 공개 노출 본문 확인\r\n- provenance: TheQoo 개별 게시물 C1. 더 이전 원출처 존재 여부는 확인하지 않음.\r\n- whyGood: 친구가 남친에게 정이 떨어졌다는 말을 믿고 작성자가 그동안 참았던 비판을 쏟아냈다가 친구가 오히려 남친을 변호하며 관계가 틀어지는 즉각적인 역전이 있음.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6ffc5711a89999e5ea2eed462a497cb3557fa2e117b9ba9b730a8230fc3366d4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 201
+}

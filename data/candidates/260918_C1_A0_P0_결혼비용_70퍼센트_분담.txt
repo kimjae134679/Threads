@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/aitaweddings/comments/1w9vc11/aita_for_refusing_to_pay_70_of_our_wedding_just/
+제목 - 내가 돈 더 버니까 결혼식 비용 70% 내라는 약혼자
+내용 - [명시 요약 — 원문 전문 아님]
+연봉 약 14.5만달러인 여성과 8.5만달러인 남성이 3.5만달러 결혼식을 준비하다, 남성이 소득차를 이유로 남은 비용을 70:30으로 나누자고 하면서 처음으로 크게 다툰 사연. 여성은 차라리 결혼식 규모를 줄여 둘 다 감당 가능한 금액으로 맞추자는 입장이다. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/aitaweddings/comments/1w9vc11/aita_for_refusing_to_pay_70_of_our_wedding_just/",
+    "title": "내가 돈 더 버니까 결혼식 비용 70% 내라는 약혼자",
+    "body": "연봉 약 14.5만달러인 여성과 8.5만달러인 남성이 3.5만달러 결혼식을 준비하다, 남성이 소득차를 이유로 남은 비용을 70:30으로 나누자고 하면서 처음으로 크게 다툰 사연. 여성은 차라리 결혼식 규모를 줄여 둘 다 감당 가능한 금액으로 맞추자는 입장이다. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼비용_70퍼센트_분담.md",
+      "originalTitle": "내가 돈 더 버니까 결혼식 비용 70% 내라는 약혼자",
+      "originalMarkdown": "# 내가 돈 더 버니까 결혼식 비용 70% 내라는 약혼자\r\n\r\n## 원문 제목\r\nAITA for refusing to pay 70% of our wedding just because I earn more?\r\n\r\n## 글 내용\r\n연봉 약 14.5만달러인 여성과 8.5만달러인 남성이 3.5만달러 결혼식을 준비하다, 남성이 소득차를 이유로 남은 비용을 70:30으로 나누자고 하면서 처음으로 크게 다툰 사연. 여성은 차라리 결혼식 규모를 줄여 둘 다 감당 가능한 금액으로 맞추자는 입장이다. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/aitaweddings/comments/1w9vc11/aita_for_refusing_to_pay_70_of_our_wedding_just/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측 2026-09-18 05:35 KST: Reddit 검색 노출 점수 +385. 조회수·댓글수 미확인.\r\n\r\n## 평가\r\n소득비례 분담 vs 공동선택 비용의 50:50이라는 논점이 선명하고 최근 게시물이라 토론성이 높다.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n형식: 글. screenshot 미확보, A0 / ASSETS_PENDING / P0 / publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation 미실행. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "9ab78bd053efbd19082587ac12d78660e676a536f8e56bc642b9daf750aa8ba7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 354
+}

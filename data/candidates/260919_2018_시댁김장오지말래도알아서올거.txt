@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EA%B9%80%EC%9E%A5-nVSSmemh
+제목 - 시댁 김장
+내용 - [명시 요약 — 원문 전문 아님]
+돌 전 아기·편도 3~4시간·김장이라는 상황에서 '나중엔 오지 말라 해도 알아서 올 것'이라는 한마디가 갈등 핵심이 되어 말투/의무/시댁 문화 논쟁이 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EA%B9%80%EC%9E%A5-nVSSmemh",
+    "title": "시댁 김장",
+    "body": "돌 전 아기·편도 3~4시간·김장이라는 상황에서 '나중엔 오지 말라 해도 알아서 올 것'이라는 한마디가 갈등 핵심이 되어 말투/의무/시댁 문화 논쟁이 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_시댁김장오지말래도알아서올거.md",
+      "originalTitle": "시댁 김장",
+      "originalMarkdown": "# 시댁 김장\r\n\r\n- source: Blind 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EA%B9%80%EC%9E%A5-nVSSmemh\r\n- exactObservedTitle: 시댁 김장\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 3,512, 댓글 12, 좋아요 12\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false (확인된 공개 텍스트 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: Blind 개별 공개 글.\r\n- whyGood: 돌 전 아기·편도 3~4시간·김장이라는 상황에서 '나중엔 오지 말라 해도 알아서 올 것'이라는 한마디가 갈등 핵심이 되어 말투/의무/시댁 문화 논쟁이 선명함.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "b064ce80e1449e6dd41a3631b36352ed8c46001b84e9e921a748d61c30d4a681",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 224
+}

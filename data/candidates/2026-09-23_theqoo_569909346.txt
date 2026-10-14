@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/569909346
+제목 - 남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기
+내용 - [명시 요약 — 원문 전문 아님]
+비대면 계좌개설 영상통화라는 평범한 상황에서 촬영 각도와 주변 사람 때문에 상담원이 웃음을 터뜨리는 민망한 오해형 에피소드로 장면이 선명하고 가볍게 반응하기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/569909346",
+    "title": "남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기",
+    "body": "비대면 계좌개설 영상통화라는 평범한 상황에서 촬영 각도와 주변 사람 때문에 상담원이 웃음을 터뜨리는 민망한 오해형 에피소드로 장면이 선명하고 가볍게 반응하기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_569909346.md",
+      "originalTitle": "남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기",
+      "originalMarkdown": "# 남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/569909346\r\n- exactObservedTitle: 남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기\r\n- observedAt: 2026-09-23 04:18 KST\r\n- observedMetrics: 조회 12,043\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true\r\n- whyGood: 비대면 계좌개설 영상통화라는 평범한 상황에서 촬영 각도와 주변 사람 때문에 상담원이 웃음을 터뜨리는 민망한 오해형 에피소드로 장면이 선명하고 가볍게 반응하기 좋다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 게시물 내 이미지/설명 존재는 확인했지만 이미지 파일은 다운로드하지 않음.\r\n- provenance: TheQoo 공개 후기 게시물. 작성자의 개인 경험 주장은 별도 검증하지 않았으며 게시물 자체가 재게시인지 여부도 확인하지 못함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8fcde4e97e879ba2140e67b89646460a4c92911e8f79ddf72799cc059747b2ac",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 209
+}

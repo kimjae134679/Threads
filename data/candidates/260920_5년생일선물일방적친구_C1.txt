@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2159447501
+제목 - 5년동안 생일선물 받기만한 친구때문에 살짝 속상한 후기...
+내용 - [명시 요약 — 원문 전문 아님]
+5년간 생일선물을 일방적으로 챙긴 기록을 뒤늦게 확인한다는 구체적 장치가 있고 인간관계의 기브앤테이크 논쟁을 즉시 유발함
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2159447501",
+    "title": "5년동안 생일선물 받기만한 친구때문에 살짝 속상한 후기...",
+    "body": "5년간 생일선물을 일방적으로 챙긴 기록을 뒤늦게 확인한다는 구체적 장치가 있고 인간관계의 기브앤테이크 논쟁을 즉시 유발함",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_5년생일선물일방적친구_C1.md",
+      "originalTitle": "5년동안 생일선물 받기만한 친구때문에 살짝 속상한 후기...",
+      "originalMarkdown": "# 5년동안 생일선물 받기만한 친구때문에 살짝 속상한 후기...\r\n\r\n- state: C1\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2159447501\r\n- exactObservedTitle: 5년동안 생일선물 받기만한 친구때문에 살짝 속상한 후기...\r\n- observedAt: 2026-09-20 20:15 KST\r\n- observedMetrics: 조회 8,784\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: public individual page/search-readable body; exact individual public URL confirmed\r\n- provenance: 작성자 개인 경험·주장. 독립 사실 검증 아님\r\n- whyGood: 5년간 생일선물을 일방적으로 챙긴 기록을 뒤늦게 확인한다는 구체적 장치가 있고 인간관계의 기브앤테이크 논쟁을 즉시 유발함\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c5549c330e2bd801dd140e282c10e07dc89ac58bc9ea12f6785b6e2c80276d65",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 187
+}

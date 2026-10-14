@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/582597183
+제목 - 가난한(?) 시댁에 시집간 후기.
+내용 - [명시 요약 — 원문 전문 아님]
+경제적으로 어려운 시댁이라 부담이 클 것으로 예상했지만 실제로는 용돈을 요구하지 않고 제사·명절 부담도 거의 없으며 며느리를 존중해, 작성자가 오히려 시어머니를 위해 적금을 들게 되는 반전형 가족 이야기.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/582597183",
+    "title": "가난한(?) 시댁에 시집간 후기.",
+    "body": "경제적으로 어려운 시댁이라 부담이 클 것으로 예상했지만 실제로는 용돈을 요구하지 않고 제사·명절 부담도 거의 없으며 며느리를 존중해, 작성자가 오히려 시어머니를 위해 적금을 들게 되는 반전형 가족 이야기.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo-poor-inlaws-582597183.md",
+      "originalTitle": "가난한(?) 시댁에 시집간 후기.",
+      "originalMarkdown": "# 가난한(?) 시댁에 시집간 후기.\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/582597183\r\n- exactObservedTitle: 가난한(?) 시댁에 시집간 후기.\r\n- observedAt: 2026-09-22 17:17 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL confirmed; substantial public indexed body text was visible\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not confirmed\r\n- observedMetrics: not recorded; no reliable current metric captured in this run\r\n- whyGood: 경제적으로 어려운 시댁이라 부담이 클 것으로 예상했지만 실제로는 용돈을 요구하지 않고 제사·명절 부담도 거의 없으며 며느리를 존중해, 작성자가 오히려 시어머니를 위해 적금을 들게 되는 반전형 가족 이야기.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "29e18418aea8017edebed9c61801d311b6f316a1b010e7faf63f8de3ee159688",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

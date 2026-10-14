@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80%EB%82%98%EB%8A%94-%EB%82%A8%EC%9E%90-3ThE0Phi
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+6년 장기연애한 커플의 결혼을 남성 쪽 부모가 반대하는 사연. 남성은 공기업·연봉 7천만원대 중반이고 결혼자금 4.5억원 이상을 준비하지만, 부모는 여자친구의 작은 키와 상대적으로 적은 결혼 비용 부담 등을 이유로 강하게 반대한다. 여자친구 쪽은 가족 사업 실패와 빚 상환 때문에 추가 지원이 어려운 상황이다. 공개 본문을 읽었으며 반응 규모가 큰 조건·가족 갈등형 글이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80%EB%82%98%EB%8A%94-%EB%82%A8%EC%9E%90-3ThE0Phi",
+    "title": "제목",
+    "body": "6년 장기연애한 커플의 결혼을 남성 쪽 부모가 반대하는 사연. 남성은 공기업·연봉 7천만원대 중반이고 결혼자금 4.5억원 이상을 준비하지만, 부모는 여자친구의 작은 키와 상대적으로 적은 결혼 비용 부담 등을 이유로 강하게 반대한다. 여자친구 쪽은 가족 사업 실패와 빚 상환 때문에 추가 지원이 어려운 상황이다. 공개 본문을 읽었으며 반응 규모가 큰 조건·가족 갈등형 글이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_부모님결혼반대6년연애.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n부모님 결혼 반대(나는 남자)\r\n\r\n## 글 내용\r\n6년 장기연애한 커플의 결혼을 남성 쪽 부모가 반대하는 사연. 남성은 공기업·연봉 7천만원대 중반이고 결혼자금 4.5억원 이상을 준비하지만, 부모는 여자친구의 작은 키와 상대적으로 적은 결혼 비용 부담 등을 이유로 강하게 반대한다. 여자친구 쪽은 가족 사업 실패와 빚 상환 때문에 추가 지원이 어려운 상황이다. 공개 본문을 읽었으며 반응 규모가 큰 조건·가족 갈등형 글이다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80%EB%82%98%EB%8A%94-%EB%82%A8%EC%9E%90-3ThE0Phi\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 16K\r\n- 댓글: 138\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 공개 노출 본문 확인\r\n- comments read: 아니오\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 6년 연애와 부모 반대 이유가 매우 구체적이고 독자가 즉시 찬반을 고를 수 있어 swipe-worthy.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "df8e6c3ebd8f8e9019f1a0fc331c1c6ff80a0566709069d33978147254341147",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 407
+}

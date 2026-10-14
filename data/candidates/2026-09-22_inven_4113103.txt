@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/lostark/6271/4113103
+제목 - 오늘 회사 동료 레전드 썰 들음
+내용 - [명시 요약 — 원문 전문 아님]
+직장동료가 전 연인과 안전이별하지 못한 뒤 보복성 공격을 당했다는 매우 강한 반전의 전언형 이야기다. 다만 폭력 사건이고 2차 전언이므로 실제 사실처럼 단정하면 안 되는 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/4113103",
+    "title": "오늘 회사 동료 레전드 썰 들음",
+    "body": "직장동료가 전 연인과 안전이별하지 못한 뒤 보복성 공격을 당했다는 매우 강한 반전의 전언형 이야기다. 다만 폭력 사건이고 2차 전언이므로 실제 사실처럼 단정하면 안 되는 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_inven_4113103.md",
+      "originalTitle": "오늘 회사 동료 레전드 썰 들음",
+      "originalMarkdown": "# 오늘 회사 동료 레전드 썰 들음\r\n\r\n- source: Inven\r\n- sourceUrl: https://www.inven.co.kr/board/lostark/6271/4113103\r\n- exactObservedTitle: `오늘 회사 동료 레전드 썰 들음`\r\n- observedAt: 2026-09-22 19:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL opened/read through public page; story is the poster's account of what a coworker reportedly experienced, so underlying incident remains second-hand/unverified\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: page UI contains images/icons; no story screenshot was relied on\r\n- observedMetrics: 조회 232 / 추천 1 / 댓글 11\r\n- whyGood: 직장동료가 전 연인과 안전이별하지 못한 뒤 보복성 공격을 당했다는 매우 강한 반전의 전언형 이야기다. 다만 폭력 사건이고 2차 전언이므로 실제 사실처럼 단정하면 안 되는 소재다.\r\n- safetyNote: 폭력·스토킹성 맥락. 사실 검증 전에는 전언/커뮤니티 썰로만 취급.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights: 미확인\r\n- OCR: 미수행\r\n- moderation: 미수행\r\n",
+      "originalSha256": "3e55225946798fd3e8600513ae5084b3f6bfc07b0167f9dc9b1658e4b60f68f3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 217
+}

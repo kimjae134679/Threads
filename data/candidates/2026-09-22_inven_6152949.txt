@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/maple/5974/6152949
+제목 - 돈 빌려줬는데 받는 방법 없을까요?..
+내용 - [명시 요약 — 원문 전문 아님]
+고등학교 친구에게 250만원을 빌려준 뒤 상환 약속이 반복해서 깨지고, 상대가 부모 돈까지 들고 집을 나갔다는 사연으로 친구·빚·잠수·가족 개입이 겹쳐 의견을 내기 쉬운 갈등 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/maple/5974/6152949",
+    "title": "돈 빌려줬는데 받는 방법 없을까요?..",
+    "body": "고등학교 친구에게 250만원을 빌려준 뒤 상환 약속이 반복해서 깨지고, 상대가 부모 돈까지 들고 집을 나갔다는 사연으로 친구·빚·잠수·가족 개입이 겹쳐 의견을 내기 쉬운 갈등 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_inven_6152949.md",
+      "originalTitle": "돈 빌려줬는데 받는 방법 없을까요?..",
+      "originalMarkdown": "# 돈 빌려줬는데 받는 방법 없을까요?..\r\n\r\n- stage: C1\r\n- source: 메이플스토리 인벤 자유 게시판\r\n- sourceUrl: https://www.inven.co.kr/board/maple/5974/6152949\r\n- exactObservedTitle: 돈 빌려줬는데 받는 방법 없을까요?..\r\n- observedAt: 2026-09-22 10:16 KST\r\n- observedMetrics: 조회 804 / 추천 0 / 댓글 19\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 고등학교 친구에게 250만원을 빌려준 뒤 상환 약속이 반복해서 깨지고, 상대가 부모 돈까지 들고 집을 나갔다는 사연으로 친구·빚·잠수·가족 개입이 겹쳐 의견을 내기 쉬운 갈등 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1.\r\n- provenance: Inven 공개 게시물. 작성자의 개인 경험 주장으로 별도 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "702db07094d7b90562e12ef9adc268649bddeeb54f3c345061bd426e49af9813",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 222
+}

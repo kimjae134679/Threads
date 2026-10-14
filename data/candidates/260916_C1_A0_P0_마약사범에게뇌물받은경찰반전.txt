@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728353
+제목 - 마약사범에게 뇌물 받은 경찰의 충격적인 반전..
+내용 - [명시 요약 — 원문 전문 아님]
+원문 페이지를 확인했다. 본문은 이미지 1장이 핵심이고 작성자가 짧게 반응을 덧붙인 형태다. 이미지 안의 세부 서사는 이번 수집에서 별도 OCR/전사하지 않았으므로 이미지 내부 내용은 미확인으로 남긴다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728353",
+    "title": "마약사범에게 뇌물 받은 경찰의 충격적인 반전..",
+    "body": "원문 페이지를 확인했다. 본문은 이미지 1장이 핵심이고 작성자가 짧게 반응을 덧붙인 형태다. 이미지 안의 세부 서사는 이번 수집에서 별도 OCR/전사하지 않았으므로 이미지 내부 내용은 미확인으로 남긴다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_마약사범에게뇌물받은경찰반전.md",
+      "originalTitle": "마약사범에게 뇌물 받은 경찰의 충격적인 반전..",
+      "originalMarkdown": "# 마약사범에게 뇌물 받은 경찰의 충격적인 반전..\r\n\r\n## 글 내용\r\n원문 페이지를 확인했다. 본문은 이미지 1장이 핵심이고 작성자가 짧게 반응을 덧붙인 형태다. 이미지 안의 세부 서사는 이번 수집에서 별도 OCR/전사하지 않았으므로 이미지 내부 내용은 미확인으로 남긴다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728353\r\n\r\n- 출처: Inven 오픈이슈갤러리\r\n- 관측 시각: 2026-09-16 10:37 KST 전후\r\n- 원문 등록: 2026-09-15 23:39\r\n- 본문 읽음: 페이지 텍스트 확인 / 핵심 이미지 내부 텍스트 미전사\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 조회: 3,949\r\n- 추천: 22\r\n- 댓글: 14\r\n- 위 수치는 동일 페이지 관측 스냅샷이며 다른 시점 수치와 합치지 않음.\r\n\r\n## 평가\r\n- 현재 Inven 오늘의 화제 상위권에 노출된 강한 반전형 소재.\r\n- 제목만으로 상황→반전을 예고해 첫 장 훅이 강하고 이미지 포스팅으로 넘기기 좋음.\r\n- 경찰·마약 사건 관련 내용이므로 사실관계/명예훼손 검토가 필요하고 이미지 원문을 실제로 읽기 전에는 세부 내용을 단정하지 않는다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지: 있음(페이지에서 확인)\r\n- 실제 source 파일 확보: 아니오\r\n- 전체 원문 screenshot 확보: 아니오\r\n- acquisition: exact page verified / source image visible / bytes pending\r\n- C1 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- privacy/defamation/human review: 필요\r\n- 실제 게시: 없음",
+      "originalSha256": "84d95433ecebc673215cb2441a4ea3816320670405cdf5261cb85aa88eef2bb3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 240
+}

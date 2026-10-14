@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4057802091
+제목 - 로테이션 소개팅 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4057802091",
+    "title": "로테이션 소개팅 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_theqoo_rotation-dating-no-matches.md",
+      "originalTitle": "로테이션 소개팅 후기",
+      "originalMarkdown": "# 로테이션 소개팅 후기\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/4057802091\r\n- exact_observed_title: `로테이션 소개팅 후기`\r\n- observed_at: 2026-09-24 00:16 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public TheQoo URL verified; first-person anonymous community post; personal claims are attributed/unverified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not relied upon / not downloaded\r\n- observed_metrics: 조회 8,132; 댓글 17 (public page/search rendering observed)\r\n- why_good: 8대8 로테이션 소개팅에서 대화가 잘 됐다고 느꼈지만 16번의 선택 중 한 번도 선택받지 못했다는 결말이 즉각적인 공감·연애 논쟁·자기평가 반응을 유도한다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n3n 작성자가 새로운 사람을 만나기 어려워 친구 추천으로 8대8 로테이션 소개팅에 참가했다. 대화가 잘 됐고 관심 가는 사람도 있어 2지망까지 적었지만, 결과적으로 아무에게도 선택받지 못해 충격을 받았다고 썼다. 본인의 대화 방식에 문제가 있는지 고민하는 내용이다.\r\n",
+      "originalSha256": "ecad35f84388b20e64943ff2bced234ab46f8840eb950a3861020a2c64b215aa",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 91
+}

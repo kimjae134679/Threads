@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4112436317
+제목 - 엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4112436317",
+    "title": "엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_mom-2n3d-visit-cost-conflict.md",
+      "originalTitle": "엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기",
+      "originalMarkdown": "# 엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4112436317\r\n- exactObservedTitle: `엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기`\r\n- observedAt: 2026-09-22 13:18 KST\r\n- observedMetrics: 조회 수 4,871\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (관찰된 공개 텍스트 기준)\r\n- acquisitionClass: C1\r\n- acquisition/provenance: 공개 검색 결과에서 TheQoo 개별 게시물 URL과 본문 텍스트를 직접 확인함. 로그인/우회/OCR/이미지 다운로드 없음.\r\n- stage: A0/P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n부모가 자녀 집에 2박 3일 머무는 동안 교통비·식비·장보기 등을 자녀가 부담한 뒤, 빵과 장보기 비용을 둘러싸고 서로 서운해지는 상황이다. 가족 사이의 돈·대접·기대치라는 즉시 의견이 갈리는 주제이고, 작은 농담이 감정싸움으로 번지는 흐름이 명확하다.\r\n\r\n## 확인 메모\r\n본문 확인 완료. 댓글은 읽지 않음. 실제로 관찰한 수치 외에는 기록하지 않음.",
+      "originalSha256": "a6acad9d1f2a2cbcb826675316d6d560b5cb4f4211a01f3b385871ca603d1a5b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 108
+}

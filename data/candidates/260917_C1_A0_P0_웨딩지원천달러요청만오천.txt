@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/16ny3po
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Reddit 공개 글. 작성자는 형제의 의붓딸 결혼식에 도움을 주겠다고 했을 때 약 1,000달러 정도를 생각하고 있었지만, 가족이 실제로는 15,000달러를 요청했다고 한다. 작성자가 1,000달러만 내겠다고 하자 압박과 모욕이 이어졌고, 결국 결혼식 지원·참석·선물까지 모두 철회했다고 설명한다. 공개 원문 본문을 읽었으며 전체 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/16ny3po",
+    "title": "제목",
+    "body": "Reddit 공개 글. 작성자는 형제의 의붓딸 결혼식에 도움을 주겠다고 했을 때 약 1,000달러 정도를 생각하고 있었지만, 가족이 실제로는 15,000달러를 요청했다고 한다. 작성자가 1,000달러만 내겠다고 하자 압박과 모욕이 이어졌고, 결국 결혼식 지원·참석·선물까지 모두 철회했다고 설명한다. 공개 원문 본문을 읽었으며 전체 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_웨딩지원천달러요청만오천.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for rescinding my offer to help with my niece's wedding.\r\n\r\n## 글 내용\r\nReddit 공개 글. 작성자는 형제의 의붓딸 결혼식에 도움을 주겠다고 했을 때 약 1,000달러 정도를 생각하고 있었지만, 가족이 실제로는 15,000달러를 요청했다고 한다. 작성자가 1,000달러만 내겠다고 하자 압박과 모욕이 이어졌고, 결국 결혼식 지원·참석·선물까지 모두 철회했다고 설명한다. 공개 원문 본문을 읽었으며 전체 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/16ny3po\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 검색 결과\r\n- Reddit score: +7,958\r\n- 조회수/댓글 수: 확인하지 못함\r\n\r\n## 평가\r\n- '1천 달러 정도 도와주려 했는데 1만5천 달러를 요구'라는 금액 차이가 즉시 이해되는 강한 훅.\r\n- 호의→요구 확대→지원 전면 철회라는 반전 구조가 명확함.\r\n- 한국 커뮤니티 우선 탐색 후 해외 레인 보강용으로 retained.\r\n- 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "74aae534edc01d9970412f50b873128583701fec14e10749fe0b608fa29fec4c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 305
+}

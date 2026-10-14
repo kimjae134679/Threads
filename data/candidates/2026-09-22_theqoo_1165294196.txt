@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1165294196
+제목 - 몇일전에 글쓴 미국유학덬 남친 엄마 무례하냐고 물어본덬의 후기
+내용 - [명시 요약 — 원문 전문 아님]
+남친 어머니가 영주권 때문에 결혼하려는지 시험하려 했다는 의심, 당사자의 부인, 남친의 편들기가 한 자리에서 충돌해 연애·결혼·가족 경계 문제로 즉시 논쟁이 생길 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1165294196",
+    "title": "몇일전에 글쓴 미국유학덬 남친 엄마 무례하냐고 물어본덬의 후기",
+    "body": "남친 어머니가 영주권 때문에 결혼하려는지 시험하려 했다는 의심, 당사자의 부인, 남친의 편들기가 한 자리에서 충돌해 연애·결혼·가족 경계 문제로 즉시 논쟁이 생길 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_1165294196.md",
+      "originalTitle": "몇일전에 글쓴 미국유학덬 남친 엄마 무례하냐고 물어본덬의 후기",
+      "originalMarkdown": "# 몇일전에 글쓴 미국유학덬 남친 엄마 무례하냐고 물어본덬의 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1165294196\r\n- exactObservedTitle: 몇일전에 글쓴 미국유학덬 남친 엄마 무례하냐고 물어본덬의 후기\r\n- observedAt: 2026-09-22 15:17 KST\r\n- observedMetrics: 조회 3,246 / 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 남친 어머니가 영주권 때문에 결혼하려는지 시험하려 했다는 의심, 당사자의 부인, 남친의 편들기가 한 자리에서 충돌해 연애·결혼·가족 경계 문제로 즉시 논쟁이 생길 소재.\r\n- acquisition: 공개 개별 게시물 URL을 직접 확인하고 공개 본문을 읽음. C1.\r\n- provenance: TheQoo 공개 후기 게시물이며 이전 글 링크도 본문에 존재하지만 이번 후보는 이 후기 글 자체만 기록. 표시된 조회/댓글 수만 기록. 댓글 미열람.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "664aa670e100eb82f112e65b4b7bce1c00c3f63246f4cf9e4d44e3492b372e6b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 215
+}

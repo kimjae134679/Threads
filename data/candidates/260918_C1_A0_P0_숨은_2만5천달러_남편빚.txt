@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITAH/comments/1gsgdg3
+제목 - Wife surprised with Husband's $25K in debt
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 4년차 여성이 남편에게 HELOC 등을 포함해 약 2.5만달러의 빚이 쌓인 사실을 뒤늦게 알게 된 사연. 결혼 초에도 약 1만달러 채무가 뒤늦게 드러나 다시는 반복하지 않기로 했지만 재발했다. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITAH/comments/1gsgdg3",
+    "title": "Wife surprised with Husband's $25K in debt",
+    "body": "결혼 4년차 여성이 남편에게 HELOC 등을 포함해 약 2.5만달러의 빚이 쌓인 사실을 뒤늦게 알게 된 사연. 결혼 초에도 약 1만달러 채무가 뒤늦게 드러나 다시는 반복하지 않기로 했지만 재발했다. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_숨은_2만5천달러_남편빚.md",
+      "originalTitle": "Wife surprised with Husband's $25K in debt",
+      "originalMarkdown": "# Wife surprised with Husband's $25K in debt\r\n\r\n## 글 내용\r\n결혼 4년차 여성이 남편에게 HELOC 등을 포함해 약 2.5만달러의 빚이 쌓인 사실을 뒤늦게 알게 된 사연. 결혼 초에도 약 1만달러 채무가 뒤늦게 드러나 다시는 반복하지 않기로 했지만 재발했다. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AITAH/comments/1gsgdg3\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측 2026-09-18 05:35 KST: Reddit 검색 노출 점수 +11. 조회수·댓글수 미확인.\r\n\r\n## 평가\r\n과거에 한 번 해결한 숨은 빚이 다시 나타나는 반복·배신 구조가 강하다. 반응수는 낮지만 story potential 때문에 retained.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n형식: 글. screenshot 미확보, A0 / ASSETS_PENDING / P0 / publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation 미실행. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "d2dd8713cc926655ef4c810ff9e5bb8603cf778244710c43cfe96f04ac1f0cfa",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 276
+}

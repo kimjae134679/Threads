@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%B9%B4%EB%93%9C%EA%B0%92-8L6G04kG
+제목 - 남편 카드값
+내용 - [명시 요약 — 원문 전문 아님]
+육아휴직 중 외벌이 생활비를 빠듯하게 관리하는데 남편이 반복적으로 카드값과 관리비를 요청하는 생활밀착형 돈 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%B9%B4%EB%93%9C%EA%B0%92-8L6G04kG",
+    "title": "남편 카드값",
+    "body": "육아휴직 중 외벌이 생활비를 빠듯하게 관리하는데 남편이 반복적으로 카드값과 관리비를 요청하는 생활밀착형 돈 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_남편카드값.md",
+      "originalTitle": "남편 카드값",
+      "originalMarkdown": "# 남편 카드값\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%B9%B4%EB%93%9C%EA%B0%92-8L6G04kG\r\n- exactObservedTitle: `남편 카드값`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 844, 댓글 31\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: 육아휴직 중 외벌이 생활비를 빠듯하게 관리하는데 남편이 반복적으로 카드값과 관리비를 요청하는 생활밀착형 돈 갈등.\r\n- acquisition: C1 / exact individual public URL / BODY_PARTIAL\r\n- provenance: 공개 Blind 개별 페이지에서 보인 범위만 확인.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3a4856b1ff51f89b733689e3f3bafb92a7ce51d56683bc8b2f96684d6fd43e1b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 209
+}

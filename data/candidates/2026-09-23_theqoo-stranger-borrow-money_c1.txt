@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/382108159
+제목 - 돈 빌려 달라는 아저씨 만난 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/382108159",
+    "title": "돈 빌려 달라는 아저씨 만난 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-stranger-borrow-money_c1.md",
+      "originalTitle": "돈 빌려 달라는 아저씨 만난 후기",
+      "originalMarkdown": "# 돈 빌려 달라는 아저씨 만난 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/382108159\r\n- exactObservedTitle: 돈 빌려 달라는 아저씨 만난 후기\r\n- observedAt: 2026-09-23 17:15 KST\r\n- observedMetrics: 조회 1,221 / 댓글 6 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자가 길에서 겪었다고 주장하는 개인 경험담. 상대방의 사기 여부 등 사실관계는 독립 검증하지 않았으며 작성자의 판단으로만 취급.\r\n- whyGoodMaterial: 길에서 차비를 빌려달라며 시계를 맡기겠다는 낯선 사람과 경찰서를 권하자 태도가 바뀌는 전개가 짧고 반전이 분명해 즉시 반응을 유도함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "355e529d5f53b96792e5d04056f4b7f8c8abd1cd7e677fe9319f82d87df718ea",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 97
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1882453687
+제목 - 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+평소 연락에는 답하지 않던 선배가 1년 뒤 청첩장만 보내자 무시한 선택과, 이후 동기들의 예상 밖 반응이 이어지는 구조라 공감·반론 모두 유도함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1882453687",
+    "title": "선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기",
+    "body": "평소 연락에는 답하지 않던 선배가 1년 뒤 청첩장만 보내자 무시한 선택과, 이후 동기들의 예상 밖 반응이 이어지는 구조라 공감·반론 모두 유도함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_선배청첩장무시.md",
+      "originalTitle": "선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기",
+      "originalMarkdown": "# 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/1882453687\r\n- exactObservedTitle: `선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 인간관계·청첩장 경험담.\r\n- whyGood: 평소 연락에는 답하지 않던 선배가 1년 뒤 청첩장만 보내자 무시한 선택과, 이후 동기들의 예상 밖 반응이 이어지는 구조라 공감·반론 모두 유도함.\r\n- safety: 상대 의도는 추정하지 않고 작성자의 당시 생각으로만 취급.",
+      "originalSha256": "e24719965cb3ea24fdd5bc7c6c8af7c700c6f8ae352f15ff277d7bc9322e8b31",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

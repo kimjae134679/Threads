@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3234682660
+제목 - 친구 결혼하면 원래 멀어지는건가 싶은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+유일한 베프가 결혼 뒤 멀어진다는 외로움이 강한 공감 소재이며 '자연스러운 관계 변화인가' 질문이 바로 생김.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3234682660",
+    "title": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+    "body": "유일한 베프가 결혼 뒤 멀어진다는 외로움이 강한 공감 소재이며 '자연스러운 관계 변화인가' 질문이 바로 생김.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_친구결혼후멀어짐.md",
+      "originalTitle": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+      "originalMarkdown": "# 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/3234682660\r\n- exactObservedTitle: 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n- observedAt: 2026-09-20 09:19 KST\r\n- observedMetrics: 9,465 / 37; 댓글 37개 표시\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_URL_BODY_READ\r\n- provenance: TheQoo individual public review; poster narrative only\r\n- whyGood: 유일한 베프가 결혼 뒤 멀어진다는 외로움이 강한 공감 소재이며 '자연스러운 관계 변화인가' 질문이 바로 생김.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "d361259b2862bb27631741c2b15c0685fa2a488e59c694f321d25493bd279e98",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 171
+}

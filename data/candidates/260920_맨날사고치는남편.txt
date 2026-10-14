@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%A7%A8%EB%82%A0-%EC%82%AC%EA%B3%A0%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-TwPZyVip
+제목 - 맨날 사고치는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+신생아 돌봄 실수와 투자 손실, 출산 직후 복직이 한꺼번에 겹친 부부 갈등으로 사건성이 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%A7%A8%EB%82%A0-%EC%82%AC%EA%B3%A0%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-TwPZyVip",
+    "title": "맨날 사고치는 남편",
+    "body": "신생아 돌봄 실수와 투자 손실, 출산 직후 복직이 한꺼번에 겹친 부부 갈등으로 사건성이 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_맨날사고치는남편.md",
+      "originalTitle": "맨날 사고치는 남편",
+      "originalMarkdown": "# 맨날 사고치는 남편\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%A7%A8%EB%82%A0-%EC%82%AC%EA%B3%A0%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-TwPZyVip\r\n- exactObservedTitle: `맨날 사고치는 남편`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 7,226, 댓글 65\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: 신생아 돌봄 실수와 투자 손실, 출산 직후 복직이 한꺼번에 겹친 부부 갈등으로 사건성이 강함.\r\n- acquisition: C1 / exact individual public URL / BODY_PARTIAL\r\n- provenance: 공개 Blind 개별 페이지 관찰. 의료·금전 내용은 게시자 주장이고 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "4b8c57376e84dae863639866ff4372227c7f348beab28a044bba98001b8b57b3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 230
+}

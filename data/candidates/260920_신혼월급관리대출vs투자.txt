@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80%EC%9D%B8%EB%8D%B0-%EC%9B%94%EA%B8%89-%EA%B4%80%EB%A6%AC-%ED%8C%81-%EC%A2%80-rkio64hu
+제목 - 신혼부부인데 월급 관리 팁 좀..
+내용 - [명시 요약 — 원문 전문 아님]
+월 1600~1700 소득, 4억 대출에서 상환과 투자 선택이 선명하게 충돌하는 돈 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80%EC%9D%B8%EB%8D%B0-%EC%9B%94%EA%B8%89-%EA%B4%80%EB%A6%AC-%ED%8C%81-%EC%A2%80-rkio64hu",
+    "title": "신혼부부인데 월급 관리 팁 좀..",
+    "body": "월 1600~1700 소득, 4억 대출에서 상환과 투자 선택이 선명하게 충돌하는 돈 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_신혼월급관리대출vs투자.md",
+      "originalTitle": "신혼부부인데 월급 관리 팁 좀..",
+      "originalMarkdown": "# 신혼부부인데 월급 관리 팁 좀..\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80%EC%9D%B8%EB%8D%B0-%EC%9B%94%EA%B8%89-%EA%B4%80%EB%A6%AC-%ED%8C%81-%EC%A2%80-rkio64hu\r\n- exactObservedTitle: 신혼부부인데 월급 관리 팁 좀..\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 161, 댓글 6\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 월 1600~1700 소득, 4억 대출에서 상환과 투자 선택이 선명하게 충돌하는 돈 논쟁 소재.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d609994132f9ffd368b1b302c8e8c2917b654d4b55caef22839a2b83bda4667b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 277
+}

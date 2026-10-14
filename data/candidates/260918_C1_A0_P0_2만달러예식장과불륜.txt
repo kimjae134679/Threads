@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1mux4g3/aita_for_not_changing_my_daughters_wedding_venue/
+제목 - 딸 결혼식장이 하필 이모부 불륜 청혼 장소였습니다
+내용 - [명시 요약 — 원문 전문 아님]
+딸이 오래 꿈꿔온 해변 예식장에 $20,000 환불 불가 보증금을 낸 뒤, 작성자의 자매가 전남편이 과거 불륜 상대에게 바로 그 장소에서 청혼했다는 사실을 알게 된다. 자매는 장소 변경을 부탁하지만 이미 비용과 일정이 묶인 상황. 공개 원문 본문 일부 실제 확인. 댓글 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1mux4g3/aita_for_not_changing_my_daughters_wedding_venue/",
+    "title": "딸 결혼식장이 하필 이모부 불륜 청혼 장소였습니다",
+    "body": "딸이 오래 꿈꿔온 해변 예식장에 $20,000 환불 불가 보증금을 낸 뒤, 작성자의 자매가 전남편이 과거 불륜 상대에게 바로 그 장소에서 청혼했다는 사실을 알게 된다. 자매는 장소 변경을 부탁하지만 이미 비용과 일정이 묶인 상황. 공개 원문 본문 일부 실제 확인. 댓글 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_2만달러예식장과불륜.md",
+      "originalTitle": "딸 결혼식장이 하필 이모부 불륜 청혼 장소였습니다",
+      "originalMarkdown": "# 딸 결혼식장이 하필 이모부 불륜 청혼 장소였습니다\r\n\r\n## 원문 제목\r\nAITA for not changing my daughter's wedding venue even though my sister's husband proposed to his 22-year-old mistress there last month?\r\n\r\n## 글 내용\r\n딸이 오래 꿈꿔온 해변 예식장에 $20,000 환불 불가 보증금을 낸 뒤, 작성자의 자매가 전남편이 과거 불륜 상대에게 바로 그 장소에서 청혼했다는 사실을 알게 된다. 자매는 장소 변경을 부탁하지만 이미 비용과 일정이 묶인 상황. 공개 원문 본문 일부 실제 확인. 댓글 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1mux4g3/aita_for_not_changing_my_daughters_wedding_venue/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-18 07:39 KST. +13,261 votes 확인. 조회수·댓글수 미확인.\r\n\r\n## 평가\r\n같은 장소에 불륜·청혼·딸 결혼식이 겹치는 황당한 상황과 $20K 환불 불가 비용이 동시에 걸려 있어 훅이 매우 강함.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\nsource asset 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "a1627458a5879072ee5cefe215f22bea19905b02a5012b9511f91a0633ba3beb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 338
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITA_Relationships/comments/1wjrpdz/aitah_for_suing_my_boyfriend_of_2_years/
+제목 - 브레이크 고치라고 750달러 줬더니 골프채를 샀습니다
+내용 - [명시 요약 — 원문 전문 아님]
+로드트립 전에 자동차 브레이크 패드를 교체하라고 작성자가 남자친구에게 750달러를 줬는데, 남자친구는 수리했다고 거짓말하고 골프 장비를 샀다고 한다. 이후 여행 중 제동거리가 길어진 상태에서 앞차와 충돌했다는 사연.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITA_Relationships/comments/1wjrpdz/aitah_for_suing_my_boyfriend_of_2_years/",
+    "title": "브레이크 고치라고 750달러 줬더니 골프채를 샀습니다",
+    "body": "로드트립 전에 자동차 브레이크 패드를 교체하라고 작성자가 남자친구에게 750달러를 줬는데, 남자친구는 수리했다고 거짓말하고 골프 장비를 샀다고 한다. 이후 여행 중 제동거리가 길어진 상태에서 앞차와 충돌했다는 사연.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_브레이크수리비골프채.md",
+      "originalTitle": "브레이크 고치라고 750달러 줬더니 골프채를 샀습니다",
+      "originalMarkdown": "# 브레이크 고치라고 750달러 줬더니 골프채를 샀습니다\r\n\r\n## source\r\nReddit r/AITA_Relationships\r\n\r\n## 원문 제목 (exact observed title)\r\nAITAH For Suing My Boyfriend of 2 Years?\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://www.reddit.com/r/AITA_Relationships/comments/1wjrpdz/aitah_for_suing_my_boyfriend_of_2_years/\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 검색 관측: +32 votes. 조회수·댓글 총수 미확인.\r\n\r\n## 본문 / 댓글 확인\r\n- 본문 읽음: YES (검색 결과에서 공개된 본문 범위)\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n로드트립 전에 자동차 브레이크 패드를 교체하라고 작성자가 남자친구에게 750달러를 줬는데, 남자친구는 수리했다고 거짓말하고 골프 장비를 샀다고 한다. 이후 여행 중 제동거리가 길어진 상태에서 앞차와 충돌했다는 사연.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n미확인. 자산 취득 없음.\r\n\r\n## 왜 소재로 좋은지\r\n'안전 수리비 → 골프채 → 실제 사고'로 인과관계가 빠르게 악화되는 강한 반전형 소재다. 돈·거짓말·안전 문제가 동시에 걸린다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1. Reddit 개별 공개 URL 확인, 공개 검색 결과에서 본문 사건 전개 확인. A0/P0. publicationAllowed=false. source asset/OCR/moderation/rights clearance/human approval 미실행.",
+      "originalSha256": "fc81e5882f4e36c0375e7e822cd85c0c28e43ef683bbe15a12e123de494a5099",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 301
+}

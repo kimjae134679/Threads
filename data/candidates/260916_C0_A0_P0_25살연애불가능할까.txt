@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%98-%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-25-%EC%97%AC%EC%9D%B8%EB%8D%B0-cn6hnlfx
+제목 - 나 불가능할까...? 25 여인데
+내용 - [명시 요약 — 원문 전문 아님]
+25세 작성자가 자신의 조건과 연애/결혼 가능성에 대해 고민하는 글이다. 공개 원문에서 키·직업·취미·가족 관련 조건, 법적 혼인 이력과 이상형 조건을 직접 확인했다. 민감한 개인 서술이 포함되어 있으므로 실제 제작 전 개인정보/명예훼손/권리 검수가 필요하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98-%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-25-%EC%97%AC%EC%9D%B8%EB%8D%B0-cn6hnlfx",
+    "title": "나 불가능할까...? 25 여인데",
+    "body": "25세 작성자가 자신의 조건과 연애/결혼 가능성에 대해 고민하는 글이다. 공개 원문에서 키·직업·취미·가족 관련 조건, 법적 혼인 이력과 이상형 조건을 직접 확인했다. 민감한 개인 서술이 포함되어 있으므로 실제 제작 전 개인정보/명예훼손/권리 검수가 필요하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_25살연애불가능할까.md",
+      "originalTitle": "나 불가능할까...? 25 여인데",
+      "originalMarkdown": "# 나 불가능할까...? 25 여인데\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 정확한 원문 링크: https://www.teamblind.com/kr/post/%EB%82%98-%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C-25-%EC%97%AC%EC%9D%B8%EB%8D%B0-cn6hnlfx\r\n- 원문 확인: 공개 페이지에서 제목·본문·댓글 일부를 로그인/우회 없이 직접 확인 (2026-09-19 05:24 KST 순차 처리)\r\n- 과거 반응 수치: 시점별 공개 인덱스 값이 변동하므로 고정 성과 수치로 사용하지 않음\r\n\r\n## 글 내용\r\n25세 작성자가 자신의 조건과 연애/결혼 가능성에 대해 고민하는 글이다. 공개 원문에서 키·직업·취미·가족 관련 조건, 법적 혼인 이력과 이상형 조건을 직접 확인했다. 민감한 개인 서술이 포함되어 있으므로 실제 제작 전 개인정보/명예훼손/권리 검수가 필요하다.\r\n\r\n## 검증\r\n- C0 provenance blocker 해제: 정확한 Blind 개별 게시물 URL 확인\r\n- 본문: 공개 페이지에서 직접 확인\r\n- 댓글: 일부 공개 확인, 전체 댓글 완전 수집으로 간주하지 않음\r\n- 원본 스크린샷/미디어 자산: 미확보\r\n- 접근제어 우회: 없음\r\n\r\n## 평가\r\n- 평가: C1 검증 완료\r\n- 제작: ASSETS_PENDING / A0 / P0 / publicationAllowed=false\r\n- 다음 단계: 허용된 실제 원본 스크린샷/자산 확보 후 별도 검수. 테스트 결과만으로 A1/P1 승격 금지.\r\n",
+      "originalSha256": "5e7d7ae28af0b4a4ecb3b3f6edcc9987ab9bfb9829bb1be03078fd4d20036924",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 343
+}

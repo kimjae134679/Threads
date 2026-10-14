@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 직장인 현실 명언
+내용 - [명시 요약 — 원문 전문 아님]
+직장생활 현실을 짧은 문구나 이미지로 표현한 것으로 보이는 후보로 과거 수집됐다. 원문/이미지를 재확인하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "직장인 현실 명언",
+    "body": "직장생활 현실을 짧은 문구나 이미지로 표현한 것으로 보이는 후보로 과거 수집됐다. 원문/이미지를 재확인하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_직장인현실명언.md",
+      "originalTitle": "직장인 현실 명언",
+      "originalMarkdown": "# 직장인 현실 명언\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Ppomppu\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n직장생활 현실을 짧은 문구나 이미지로 표현한 것으로 보이는 후보로 과거 수집됐다. 원문/이미지를 재확인하지 못했다.\r\n\r\n## 평가\r\n- 평가: 일반 공감형, 낮은 우선순위\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n\r\n## 2026-09-21 05:25 KST sequential verification\r\n- Fresh public search did not resolve an exact individual Ppomppu post URL/post ID for this candidate. Generic third-party pages about workplace quotes are not accepted as provenance.\r\n- C0 remains blocked; no body, comments, metrics, screenshot/media bytes, OCR/vision, rights clearance, A1 or P1 claimed.\r\n- blocker: `BLOCKED_PROVENANCE`\r\n- unblockWhen: Exact individual primary Ppomppu post URL/post ID or another trustworthy unique identifier proving this same candidate becomes publicly resolvable.\r\n- publicationAllowed=false\r\n",
+      "originalSha256": "28469252936594efd229787b81cefb502e5ac3becb2d2eace7c79642fc56dadb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 124
+}

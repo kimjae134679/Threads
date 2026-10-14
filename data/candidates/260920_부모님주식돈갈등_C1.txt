@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2569473707
+제목 - 돈 문제로 부모님이 싸우는 중인데 해결방법을 찾는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+반복적인 주식 손실과 숨긴 재산 문제로 부모가 충돌하고 자녀가 중간에 끼는 가족·돈 갈등으로 반전과 분노 포인트가 큼
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2569473707",
+    "title": "돈 문제로 부모님이 싸우는 중인데 해결방법을 찾는 후기",
+    "body": "반복적인 주식 손실과 숨긴 재산 문제로 부모가 충돌하고 자녀가 중간에 끼는 가족·돈 갈등으로 반전과 분노 포인트가 큼",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_부모님주식돈갈등_C1.md",
+      "originalTitle": "돈 문제로 부모님이 싸우는 중인데 해결방법을 찾는 후기",
+      "originalMarkdown": "# 돈 문제로 부모님이 싸우는 중인데 해결방법을 찾는 후기\r\n\r\n- state: C1\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2569473707\r\n- exactObservedTitle: 돈 문제로 부모님이 싸우는 중인데 해결방법을 찾는 후기\r\n- observedAt: 2026-09-20 20:15 KST\r\n- observedMetrics: 조회 1,758 / 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: public individual page/search-readable body; exact individual public URL confirmed\r\n- provenance: 작성자 개인 경험·주장. 독립 사실 검증 아님\r\n- whyGood: 반복적인 주식 손실과 숨긴 재산 문제로 부모가 충돌하고 자녀가 중간에 끼는 가족·돈 갈등으로 반전과 분노 포인트가 큼\r\n- safetyNote: 가족의 재정 갈등 및 도박성 투자 주장 포함; 사실로 단정 금지\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "4c340ad5c55d2c5a7983d2dfaac0131c5a0aeacd54349ebbf5fda2c0863533d1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 182
+}

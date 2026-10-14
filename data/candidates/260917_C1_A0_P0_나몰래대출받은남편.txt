@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%98%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C%EB%B0%9B%EC%9D%80-%EB%82%A8%ED%8E%B8-r2nssWfv
+제목 - 나몰래 대출받은 남편
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 결혼생활 글. 연애 시절 배우자가 코인·선물 거래로 약 5천만원을 잃은 전력이 있었고, 결혼 뒤 각자 돈을 관리하던 중 카드 할부 약 1,400만원 등 추가 재정 문제가 드러나는 흐름이다. 공개 페이지에서 본문 앞부분은 확인했으나 현재 관측 결과만으로 전체 본문 끝까지 읽었다고 단정할 수 없어 **본문 전체 미확인**으로 둔다. 댓글 전체도 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C%EB%B0%9B%EC%9D%80-%EB%82%A8%ED%8E%B8-r2nssWfv",
+    "title": "나몰래 대출받은 남편",
+    "body": "Blind 결혼생활 글. 연애 시절 배우자가 코인·선물 거래로 약 5천만원을 잃은 전력이 있었고, 결혼 뒤 각자 돈을 관리하던 중 카드 할부 약 1,400만원 등 추가 재정 문제가 드러나는 흐름이다. 공개 페이지에서 본문 앞부분은 확인했으나 현재 관측 결과만으로 전체 본문 끝까지 읽었다고 단정할 수 없어 **본문 전체 미확인**으로 둔다. 댓글 전체도 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_나몰래대출받은남편.md",
+      "originalTitle": "나몰래 대출받은 남편",
+      "originalMarkdown": "# 나몰래 대출받은 남편\r\n\r\n## 글 내용\r\nBlind 결혼생활 글. 연애 시절 배우자가 코인·선물 거래로 약 5천만원을 잃은 전력이 있었고, 결혼 뒤 각자 돈을 관리하던 중 카드 할부 약 1,400만원 등 추가 재정 문제가 드러나는 흐름이다. 공개 페이지에서 본문 앞부분은 확인했으나 현재 관측 결과만으로 전체 본문 끝까지 읽었다고 단정할 수 없어 **본문 전체 미확인**으로 둔다. 댓글 전체도 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%98%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C%EB%B0%9B%EC%9D%80-%EB%82%A8%ED%8E%B8-r2nssWfv\r\n\r\n- 출처: Blind / 결혼생활\r\n- 관측: 2026-09-17 14:37~14:50 KST 공개 검색·페이지\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n동일 관측시점에 공개 페이지에서 확인: 조회수 12K, 댓글 257. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n코인 손실 → 결혼 → 숨겨진 추가 채무라는 강한 연속 반전이 있고 돈·부부 신뢰 문제라 즉시 의견이 갈릴 소재다. 다만 개인 재정·배우자 갈등 내용이므로 privacy/defamation/human review gate를 유지한다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 정확한 개별 공개 URL: 확인\r\n- full body read: NO (전체 미확인)\r\n- comments read: NO\r\n- source screenshot/media: 없음\r\n- acquisition: PUBLIC_PAGE_VERIFIED / ASSETS_PENDING\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH only\r\n",
+      "originalSha256": "640f6536d716e2545a43296e1f7cdc38625ba3c9b4d97709816a92544c117c0a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 390
+}

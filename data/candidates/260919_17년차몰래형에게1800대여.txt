@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-17%EB%85%84%EC%B0%A8-%EB%A7%9E%EB%B2%8C%EC%9D%B4-%EB%8F%88-%EA%B4%80%EB%A6%AC-isHjXmAT
+제목 - 결혼 17년차 맞벌이 돈 관리
+내용 - [명시 요약 — 원문 전문 아님]
+맞벌이 각출 부부에서 남편이 상의 없이 형에게 1,800만원을 빌려주고 '생활비 외는 자기 돈'이라고 한 사건이라 공동재정 경계 논쟁이 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-17%EB%85%84%EC%B0%A8-%EB%A7%9E%EB%B2%8C%EC%9D%B4-%EB%8F%88-%EA%B4%80%EB%A6%AC-isHjXmAT",
+    "title": "결혼 17년차 맞벌이 돈 관리",
+    "body": "맞벌이 각출 부부에서 남편이 상의 없이 형에게 1,800만원을 빌려주고 '생활비 외는 자기 돈'이라고 한 사건이라 공동재정 경계 논쟁이 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_17년차몰래형에게1800대여.md",
+      "originalTitle": "결혼 17년차 맞벌이 돈 관리",
+      "originalMarkdown": "# 결혼 17년차 맞벌이 돈 관리\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-17%EB%85%84%EC%B0%A8-%EB%A7%9E%EB%B2%8C%EC%9D%B4-%EB%8F%88-%EA%B4%80%EB%A6%AC-isHjXmAT\r\n- exactObservedTitle: 결혼 17년차 맞벌이 돈 관리\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 975 / 댓글 17\r\n- bodyRead: true (공개 본문 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 맞벌이 각출 부부에서 남편이 상의 없이 형에게 1,800만원을 빌려주고 '생활비 외는 자기 돈'이라고 한 사건이라 공동재정 경계 논쟁이 선명함.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a8cb2135dd91902290e31b16d8bc5f23216370986d61c4560f5d68b5c451cd3b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 286
+}

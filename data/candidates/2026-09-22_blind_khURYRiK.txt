@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/10%EB%85%84%EC%B9%9C%EA%B5%AC-%EC%86%90%EC%A0%88%EA%B0%81%EC%9D%B8%EA%B0%80-khURYRiK
+제목 - 10년친구 손절각인가
+내용 - [명시 요약 — 원문 전문 아님]
+오래된 세 친구가 여행계를 만들 정도로 가까웠지만 한 명의 결혼 이후 모임 태도가 크게 바뀌면서 관계 유지와 곗돈 문제가 함께 얽힌다. 오래된 우정도 정리해야 하는지 의견을 내기 좋은 구조다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/10%EB%85%84%EC%B9%9C%EA%B5%AC-%EC%86%90%EC%A0%88%EA%B0%81%EC%9D%B8%EA%B0%80-khURYRiK",
+    "title": "10년친구 손절각인가",
+    "body": "오래된 세 친구가 여행계를 만들 정도로 가까웠지만 한 명의 결혼 이후 모임 태도가 크게 바뀌면서 관계 유지와 곗돈 문제가 함께 얽힌다. 오래된 우정도 정리해야 하는지 의견을 내기 좋은 구조다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_blind_khURYRiK.md",
+      "originalTitle": "10년친구 손절각인가",
+      "originalMarkdown": "# 10년친구 손절각인가\r\n\r\n- stage: C1\r\n- source: Blind\r\n- sourceUrl: https://www.teamblind.com/kr/post/10%EB%85%84%EC%B9%9C%EA%B5%AC-%EC%86%90%EC%A0%88%EA%B0%81%EC%9D%B8%EA%B0%80-khURYRiK\r\n- exactObservedTitle: 10년친구 손절각인가\r\n- observedAt: 2026-09-22 06:19 KST\r\n- observedMetrics: 조회수 4,878 / 댓글 45\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 오래된 세 친구가 여행계를 만들 정도로 가까웠지만 한 명의 결혼 이후 모임 태도가 크게 바뀌면서 관계 유지와 곗돈 문제가 함께 얽힌다. 오래된 우정도 정리해야 하는지 의견을 내기 좋은 구조다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: Blind 공개 개별 게시물. 작성자의 일방 서술이며 사실관계를 별도 검증한 것으로 간주하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "2f347fe7970fa43e7fe28af04dc6931f0fd806c1d561389840d2730b1a95784e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 287
+}

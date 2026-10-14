@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {configuredResolver} from '../desktop/project-paths.cjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const fail=(code,status=409)=>{throw Object.assign(Error(code),{code,status});};
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -15,13 +16,13 @@ async function regular(file,max=300*1024*1024){
  const s=await fs.stat(file);if(!s.isFile()||s.size>max)fail('viewer_file_invalid');return fs.readFile(file);
 }
 export class ReadOnlyViewer{
- constructor(manifest,readState){this.manifest=manifest;this.readState=readState;}
+ constructor(manifest,readState){this.pathResolver=configuredResolver();this.manifest=this.pathResolver?this.pathResolver(manifest):manifest;this.readState=readState;}
  async load(){
   let navigation;try{navigation=JSON.parse((await regular(this.manifest,2*1024*1024)).toString('utf8')).navigation;}
   catch(e){if(e.code==='ENOENT')fail('viewer_unavailable',503);throw e;}
   if(navigation?.schema!==1||typeof navigation.delivery_root!=='string'||!path.isAbsolute(navigation.delivery_root)
    ||!['mapping_sha256','inventory_sha256'].every(k=>/^[a-f0-9]{64}$/.test(navigation[k]||'')))fail('viewer_unavailable',503);
-  const root=path.resolve(navigation.delivery_root);if(await fs.realpath(root)!==root)fail('viewer_path_invalid');
+  const root=path.resolve(this.pathResolver?this.pathResolver(navigation.delivery_root):navigation.delivery_root);if(await fs.realpath(root)!==root)fail('viewer_path_invalid');
   const mapFile=path.join(root,'delivery-mapping.json'),inventoryFile=path.join(root,'file-inventory.json');
   const [ms,is]=await Promise.all([fs.stat(mapFile),fs.stat(inventoryFile)]);
   const key=JSON.stringify([root,navigation.mapping_sha256,navigation.inventory_sha256,ms.mtimeMs,ms.size,is.mtimeMs,is.size]);
@@ -33,9 +34,9 @@ export class ReadOnlyViewer{
   const rows=new Map(),pins=new Map();
   for(const row of mapping.rows){
    if(!/^[A-Za-z0-9_-]+$/.test(row.id)||rows.has(row.id)||typeof row.newOutputVersion!=='string'||!Array.isArray(row.images))fail('viewer_mapping_invalid');
-   inside(root,path.resolve(row.output));rows.set(row.id,row);
+   const output=this.pathResolver?this.pathResolver(row.output):row.output;inside(root,path.resolve(output));rows.set(row.id,{...row,output,images:row.images.map(im=>({...im,file:this.pathResolver?this.pathResolver(im.file):im.file}))});
   }
-  for(const f of inventory.files){if(typeof f.newPath!=='string'||!/^[a-f0-9]{64}$/.test(f.sha256||'')||!Number.isSafeInteger(f.bytes))fail('viewer_mapping_invalid');pins.set(inside(root,path.resolve(f.newPath)),f);}
+  for(const f of inventory.files){if(typeof f.newPath!=='string'||!/^[a-f0-9]{64}$/.test(f.sha256||'')||!Number.isSafeInteger(f.bytes))fail('viewer_mapping_invalid');pins.set(inside(root,path.resolve(this.pathResolver?this.pathResolver(f.newPath):f.newPath)),f);}
   for(const row of rows.values())for(const [i,im]of row.images.entries()){
    const name='rendered/slide-'+String(i+1).padStart(3,'0')+'.png',file=path.resolve(row.output,name);
    if(im.name!==name||path.resolve(im.file)!==file||pins.get(file)?.sha256!==im.sha256)fail('viewer_mapping_invalid');

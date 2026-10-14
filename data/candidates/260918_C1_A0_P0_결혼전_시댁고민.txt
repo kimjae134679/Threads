@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84-%EA%B3%A0%EB%AF%BC%EC%8B%9C%EB%8C%81-%EA%B4%80%EB%A0%A8-wWMbz1c2
+제목 - 결혼 전 고민..(시댁 관련)
+내용 - [명시 요약 — 원문 전문 아님]
+예식을 약 3개월 앞둔 작성자가 여자친구와의 관계 자체는 매우 잘 맞지만, 상견례 이후 상대 가족 특히 동생 부부와 얽힌 시댁 관계 때문에 결혼을 계속할지 고민하는 사연. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84-%EA%B3%A0%EB%AF%BC%EC%8B%9C%EB%8C%81-%EA%B4%80%EB%A0%A8-wWMbz1c2",
+    "title": "결혼 전 고민..(시댁 관련)",
+    "body": "예식을 약 3개월 앞둔 작성자가 여자친구와의 관계 자체는 매우 잘 맞지만, 상견례 이후 상대 가족 특히 동생 부부와 얽힌 시댁 관계 때문에 결혼을 계속할지 고민하는 사연. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼전_시댁고민.md",
+      "originalTitle": "결혼 전 고민..(시댁 관련)",
+      "originalMarkdown": "# 결혼 전 고민..(시댁 관련)\r\n\r\n## 글 내용\r\n예식을 약 3개월 앞둔 작성자가 여자친구와의 관계 자체는 매우 잘 맞지만, 상견례 이후 상대 가족 특히 동생 부부와 얽힌 시댁 관계 때문에 결혼을 계속할지 고민하는 사연. 공개 원문 본문을 읽었고 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84-%EA%B3%A0%EB%AF%BC%EC%8B%9C%EB%8C%81-%EA%B4%80%EB%A0%A8-wWMbz1c2\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측 2026-09-18 05:35 KST: 조회수 9,902 / 댓글 99. 좋아요 총수 미확인.\r\n\r\n## 평가\r\n결혼 직전의 가족관계 리스크라 의견이 즉시 갈리고 반응량도 높다. 실제 가족관계 서술은 privacy/defamation human review 필요.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n형식: 글. source screenshot 미확보, A0 / ASSETS_PENDING / P0 / publicationAllowed=false. OCR·moderation·rights 미확인. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "13394c62618d21d2146eaf6a1b6b4695838bb8418f801668ccf893f33fae5ab3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 315
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3114948945
+제목 - 친구랑 만나서 얘기하는데 친구가 계속 휴대폰 보는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+10년 넘은 친구가 대화 중 웹소설을 계속 보는 상황이라 매너 기준과 손절 여부에 즉각 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3114948945",
+    "title": "친구랑 만나서 얘기하는데 친구가 계속 휴대폰 보는 후기",
+    "body": "10년 넘은 친구가 대화 중 웹소설을 계속 보는 상황이라 매너 기준과 손절 여부에 즉각 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_친구만나는데계속폰보는후기.md",
+      "originalTitle": "친구랑 만나서 얘기하는데 친구가 계속 휴대폰 보는 후기",
+      "originalMarkdown": "# 친구랑 만나서 얘기하는데 친구가 계속 휴대폰 보는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3114948945\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `친구랑 만나서 얘기하는데 친구가 계속 휴대폰 보는 후기`\r\n- observedMetrics: 관찰된 수치 없음\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 10년 넘은 친구가 대화 중 웹소설을 계속 보는 상황이라 매너 기준과 손절 여부에 즉각 의견이 갈릴 소재.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative only\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "ff045ebe5da563eb75497b763a93ab00da0cf2d04b489e039763a431b2f7c8c6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 176
+}

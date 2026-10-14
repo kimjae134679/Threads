@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%ED%99%94%EB%82%B4%EB%8A%94%EA%B1%B0-%EC%B2%98%EC%9D%8C-%EB%B4%84-%E3%85%A0-L5aQCt8c
+제목 - 남자친구 화내는거 처음 봄 ㅠ
+내용 - [명시 요약 — 원문 전문 아님]
+월 800만원 수준의 직장을 그만두고 공부를 택한 남자친구와 자주 만나려는 연인 사이에서 '응원인가 방해인가'가 충돌해 양쪽 입장이 선명하고 논쟁성이 높다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%ED%99%94%EB%82%B4%EB%8A%94%EA%B1%B0-%EC%B2%98%EC%9D%8C-%EB%B4%84-%E3%85%A0-L5aQCt8c",
+    "title": "남자친구 화내는거 처음 봄 ㅠ",
+    "body": "월 800만원 수준의 직장을 그만두고 공부를 택한 남자친구와 자주 만나려는 연인 사이에서 '응원인가 방해인가'가 충돌해 양쪽 입장이 선명하고 논쟁성이 높다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_blind_L5aQCt8c.md",
+      "originalTitle": "남자친구 화내는거 처음 봄 ㅠ",
+      "originalMarkdown": "# 남자친구 화내는거 처음 봄 ㅠ\r\n\r\n- stage: C1\r\n- source: Blind\r\n- sourceUrl: https://www.teamblind.com/kr/post/%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC-%ED%99%94%EB%82%B4%EB%8A%94%EA%B1%B0-%EC%B2%98%EC%9D%8C-%EB%B4%84-%E3%85%A0-L5aQCt8c\r\n- exactObservedTitle: 남자친구 화내는거 처음 봄 ㅠ\r\n- observedAt: 2026-09-22 06:19 KST\r\n- observedMetrics: 조회수 19K / 댓글 151\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 월 800만원 수준의 직장을 그만두고 공부를 택한 남자친구와 자주 만나려는 연인 사이에서 '응원인가 방해인가'가 충돌해 양쪽 입장이 선명하고 논쟁성이 높다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: Blind 공개 개별 게시물. 작성자의 일방 서술이며 사실관계를 별도 검증한 것으로 간주하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "63eb1f45d78dbab2a86c1ddc8ec8813e40d493f6dd300a8ae5aba2ae1874a045",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 309
+}

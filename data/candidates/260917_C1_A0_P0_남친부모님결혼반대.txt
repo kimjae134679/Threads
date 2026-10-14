@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-mwpbz8Qg
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+30대 초반 교사와 전문직 남자친구의 결혼을 남자친구 어머니가 반대하는 사연. 작성자는 부모 노후가 준비돼 있고 본인도 저축했지만 결혼 때 1억5천만원 이상 가져가기 어렵다. 상대 어머니는 며느리가 더 많은 돈을 가져오길 바라며 개원비용 정도를 기대하는 것으로 보인다고 작성자가 설명한다. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-mwpbz8Qg",
+    "title": "제목",
+    "body": "30대 초반 교사와 전문직 남자친구의 결혼을 남자친구 어머니가 반대하는 사연. 작성자는 부모 노후가 준비돼 있고 본인도 저축했지만 결혼 때 1억5천만원 이상 가져가기 어렵다. 상대 어머니는 며느리가 더 많은 돈을 가져오길 바라며 개원비용 정도를 기대하는 것으로 보인다고 작성자가 설명한다. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_남친부모님결혼반대.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n남친 부모님 결혼 반대\r\n\r\n## 글 내용\r\n30대 초반 교사와 전문직 남자친구의 결혼을 남자친구 어머니가 반대하는 사연. 작성자는 부모 노후가 준비돼 있고 본인도 저축했지만 결혼 때 1억5천만원 이상 가져가기 어렵다. 상대 어머니는 며느리가 더 많은 돈을 가져오길 바라며 개원비용 정도를 기대하는 것으로 보인다고 작성자가 설명한다. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-mwpbz8Qg\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 2,658\r\n- 댓글: 33\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 공개 노출 본문 확인\r\n- comments read: 아니오\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 직업·결혼자금·개원비 기대가 얽혀 의견이 즉시 갈릴 만한 가족/돈 갈등.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "31c0d63fc1d4493b6a60177a2cfcb57156b3ae310ef68d093db46b434f631136",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 352
+}

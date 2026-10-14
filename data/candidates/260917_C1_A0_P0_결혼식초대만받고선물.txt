@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1egtyuz
+제목 - AITA for not giving a wedding gift?
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식 참석을 싫어해 늘 초대는 거절하면서도 선물을 보내던 사람이, 친척들이 '어차피 안 오지만 선물은 보내니 초대하자'는 식으로 자신을 이용해 왔다는 대화를 우연히 듣는다. 이후 새 결혼식 초대부터 선물을 보내지 않기로 하자 해당 친척이 왜 자기만 선물을 못 받느냐며 항의한 사연이다. 공개 원문 본문 확인. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1egtyuz",
+    "title": "AITA for not giving a wedding gift?",
+    "body": "결혼식 참석을 싫어해 늘 초대는 거절하면서도 선물을 보내던 사람이, 친척들이 '어차피 안 오지만 선물은 보내니 초대하자'는 식으로 자신을 이용해 왔다는 대화를 우연히 듣는다. 이후 새 결혼식 초대부터 선물을 보내지 않기로 하자 해당 친척이 왜 자기만 선물을 못 받느냐며 항의한 사연이다. 공개 원문 본문 확인. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼식초대만받고선물.md",
+      "originalTitle": "AITA for not giving a wedding gift?",
+      "originalMarkdown": "# AITA for not giving a wedding gift?\r\n\r\n## 글 내용\r\n결혼식 참석을 싫어해 늘 초대는 거절하면서도 선물을 보내던 사람이, 친척들이 '어차피 안 오지만 선물은 보내니 초대하자'는 식으로 자신을 이용해 왔다는 대화를 우연히 듣는다. 이후 새 결혼식 초대부터 선물을 보내지 않기로 하자 해당 친척이 왜 자기만 선물을 못 받느냐며 항의한 사연이다. 공개 원문 본문 확인. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1egtyuz\r\n\r\n- 출처: Reddit / r/AmItheAsshole\r\n- 관측: 2026-09-17 14:37~14:50 KST 공개 원문\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n동일 관측 결과에서 확인 가능한 투표 수: +415. 조회수·댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n'안 오는 사람에게 선물 받으려고 일부러 초대'라는 황당한 가족 관행이 한 문장으로 설명되고, 선물을 끊은 행동이 정당한지 즉시 의견이 갈린다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 정확한 개별 공개 URL: 확인\r\n- full body read: YES\r\n- comments read: NO\r\n- source screenshot/media: 없음\r\n- acquisition: PUBLIC_PAGE_VERIFIED / ASSETS_PENDING\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH only\r\n",
+      "originalSha256": "bb0edf4f62c06807aac2d3b7dd33561587a091c9295a7397dd1bafa361025bd4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

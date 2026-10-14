@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%B4%EA%B0%80-%EC%95%84%EB%93%A4%EC%9D%84-%EB%BA%8F%EC%9D%80-%EA%B2%83-%EA%B0%99%EC%95%84-DefnNDfR
+제목 - 내가 아들을 뺏은 것 같아.
+내용 - [명시 요약 — 원문 전문 아님]
+재택근무 날마다 시댁 일을 맡는 남편과 결혼 뒤 아들에게 의존하는 시댁이라는 가족 경계 갈등이 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%B4%EA%B0%80-%EC%95%84%EB%93%A4%EC%9D%84-%EB%BA%8F%EC%9D%80-%EA%B2%83-%EA%B0%99%EC%95%84-DefnNDfR",
+    "title": "내가 아들을 뺏은 것 같아.",
+    "body": "재택근무 날마다 시댁 일을 맡는 남편과 결혼 뒤 아들에게 의존하는 시댁이라는 가족 경계 갈등이 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_내가아들을뺏은것같아.md",
+      "originalTitle": "내가 아들을 뺏은 것 같아.",
+      "originalMarkdown": "# 내가 아들을 뺏은 것 같아.\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EB%82%B4%EA%B0%80-%EC%95%84%EB%93%A4%EC%9D%84-%EB%BA%8F%EC%9D%80-%EA%B2%83-%EA%B0%99%EC%95%84-DefnNDfR\r\n- exactObservedTitle: 내가 아들을 뺏은 것 같아.\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 7,957, 댓글 47\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 재택근무 날마다 시댁 일을 맡는 남편과 결혼 뒤 아들에게 의존하는 시댁이라는 가족 경계 갈등이 선명함.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a81afd822b45b6e31fd985aae658daf9f04ab63772592b64403dd7b51cf9e272",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 260
+}

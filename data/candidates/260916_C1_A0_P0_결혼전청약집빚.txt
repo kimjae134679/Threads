@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84-%EC%B2%AD%EC%95%BD%EB%90%9C-%EC%A7%91-%EB%B9%9A-%EA%B0%9A%EB%8A%94-%EB%AC%B8%EC%A0%9C-7lvmv8co
+제목 - 결혼 전 청약된 집 빚 갚는 문제
+내용 - [명시 요약 — 원문 전문 아님]
+남편이 결혼 전 청약된 5억원대 집을 가지고 있고 양가와 개인 자금을 넣는 과정에서 잔금 부담을 누가 더 져야 하는지 갈등하는 사연이다. 작성자 부모가 이미 1억원을 보탰는데 추가로 5천만원을 부탁하자는 제안과 공동관리/각출 재테크 문제까지 이어진다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84-%EC%B2%AD%EC%95%BD%EB%90%9C-%EC%A7%91-%EB%B9%9A-%EA%B0%9A%EB%8A%94-%EB%AC%B8%EC%A0%9C-7lvmv8co",
+    "title": "결혼 전 청약된 집 빚 갚는 문제",
+    "body": "남편이 결혼 전 청약된 5억원대 집을 가지고 있고 양가와 개인 자금을 넣는 과정에서 잔금 부담을 누가 더 져야 하는지 갈등하는 사연이다. 작성자 부모가 이미 1억원을 보탰는데 추가로 5천만원을 부탁하자는 제안과 공동관리/각출 재테크 문제까지 이어진다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼전청약집빚.md",
+      "originalTitle": "결혼 전 청약된 집 빚 갚는 문제",
+      "originalMarkdown": "# 결혼 전 청약된 집 빚 갚는 문제\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84-%EC%B2%AD%EC%95%BD%EB%90%9C-%EC%A7%91-%EB%B9%9A-%EA%B0%9A%EB%8A%94-%EB%AC%B8%EC%A0%9C-7lvmv8co\r\n- 조회수: 125\r\n- 댓글: 9\r\n- 본문/댓글: 읽음\r\n\r\n## 글 내용\r\n남편이 결혼 전 청약된 5억원대 집을 가지고 있고 양가와 개인 자금을 넣는 과정에서 잔금 부담을 누가 더 져야 하는지 갈등하는 사연이다. 작성자 부모가 이미 1억원을 보탰는데 추가로 5천만원을 부탁하자는 제안과 공동관리/각출 재테크 문제까지 이어진다.\r\n\r\n## 평가\r\n- 평가: 중상급 돈/양가 갈등\r\n- 이유: 구체적인 돈 흐름 때문에 독자가 즉시 책임 범위를 판단하게 됨.\r\n- 약점: 반응 작음, 개인 가족재정 정보.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "ce8d5ab32780de9420109532dc67ab4408278ed2a48a4ec366e07f72f14175e2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 366
+}

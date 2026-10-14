@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2595109302
+제목 - 당근 첫 중고거래 후기
+내용 - [명시 요약 — 원문 전문 아님]
+첫 중고거래가 질문 없이 1시간 이내 쿨거래로 끝난 짧고 가벼운 생활 공감형 소재. 강도는 낮아 보조 후보로 유지.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2595109302",
+    "title": "당근 첫 중고거래 후기",
+    "body": "첫 중고거래가 질문 없이 1시간 이내 쿨거래로 끝난 짧고 가벼운 생활 공감형 소재. 강도는 낮아 보조 후보로 유지.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_당근첫중고거래.md",
+      "originalTitle": "당근 첫 중고거래 후기",
+      "originalMarkdown": "# 당근 첫 중고거래 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/2595109302\r\n- exactObservedTitle: 당근 첫 중고거래 후기\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회 수 743, 댓글 2\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact individual public URL; first-person account\r\n- whyGood: 첫 중고거래가 질문 없이 1시간 이내 쿨거래로 끝난 짧고 가벼운 생활 공감형 소재. 강도는 낮아 보조 후보로 유지.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "09d5fcfa29b94133c74adbbff9845f37ca0bd44f48dbd7cf6401db55bf323053",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 163
+}

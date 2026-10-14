@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0%EB%B3%B4%EB%8B%88-%EC%97%84%EB%A7%88%EA%B0%80-%EB%A9%98%ED%97%A4%EB%9D%BC-wdpam128
+제목 - 결혼하고보니 엄마가 멘헤라..
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0%EB%B3%B4%EB%8B%88-%EC%97%84%EB%A7%88%EA%B0%80-%EB%A9%98%ED%97%A4%EB%9D%BC-wdpam128",
+    "title": "결혼하고보니 엄마가 멘헤라..",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼하고보니엄마가멘헤라.md",
+      "originalTitle": "결혼하고보니 엄마가 멘헤라..",
+      "originalMarkdown": "# 결혼하고보니 엄마가 멘헤라..\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0%EB%B3%B4%EB%8B%88-%EC%97%84%EB%A7%88%EA%B0%80-%EB%A9%98%ED%97%A4%EB%9D%BC-wdpam128\r\n- exact_observed_title: 결혼하고보니 엄마가 멘헤라..\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 407, 댓글 8\r\n- body_read: partial\r\n- comments_read: no\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 결혼 뒤 친모와 배우자 사이에서 뒤늦게 자신의 대응을 후회하는 가족 갈등 구조가 강함.\r\n- acquisition: C1 / exact individual public URL / public search text\r\n- provenance: original public Blind post as observed; BODY_PARTIAL, 보이지 않은 후반부는 채우지 않음\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e106473dd751657e3d118c148f3d784f0c92840e6ce4996c55c45397e58d0606",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 213
+}

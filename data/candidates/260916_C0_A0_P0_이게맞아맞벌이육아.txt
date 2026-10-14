@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077
+제목 - 복직한 맞벌이 엄마, 준비물 깜빡했는데 남편 반응이 이게 맞아?
+내용 - [명시 요약 — 원문 전문 아님]
+공개 원문에서 육아휴직 후 복직한 작성자가 바뀐 육아 환경에 적응하던 중 어린이집 준비물을 놓쳐 아이가 나들이에서 간식과 단체복을 챙기지 못했고, 맞벌이 남편이 이를 위로하는 태도를 보이자 육아 책임을 자기 일처럼 보지 않는 것 같아 문제를 제기한 사연임을 확인했다. 공개 페이지에는 작성자의 추가 설명과 여러 반응 댓글도 존재한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077",
+    "title": "복직한 맞벌이 엄마, 준비물 깜빡했는데 남편 반응이 이게 맞아?",
+    "body": "공개 원문에서 육아휴직 후 복직한 작성자가 바뀐 육아 환경에 적응하던 중 어린이집 준비물을 놓쳐 아이가 나들이에서 간식과 단체복을 챙기지 못했고, 맞벌이 남편이 이를 위로하는 태도를 보이자 육아 책임을 자기 일처럼 보지 않는 것 같아 문제를 제기한 사연임을 확인했다. 공개 페이지에는 작성자의 추가 설명과 여러 반응 댓글도 존재한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_이게맞아맞벌이육아.md",
+      "originalTitle": "복직한 맞벌이 엄마, 준비물 깜빡했는데 남편 반응이 이게 맞아?",
+      "originalMarkdown": "# 복직한 맞벌이 엄마, 준비물 깜빡했는데 남편 반응이 이게 맞아?\r\n\r\n- 상태: logical C1 / A0 / P0\r\n- 출처: Blind · 육아\r\n- 정확한 원문 링크: https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C%EB%A7%9E%EC%95%84-3sx7p077\r\n- 원문 식별자: 3sx7p077\r\n- C0 provenance: VERIFIED_PUBLIC_EXACT_INDIVIDUAL_SOURCE\r\n- C1 source asset: ASSETS_PENDING\r\n- publicationAllowed: false\r\n\r\n## 원문 제목\r\n이게맞아????\r\n\r\n## 글 내용\r\n공개 원문에서 육아휴직 후 복직한 작성자가 바뀐 육아 환경에 적응하던 중 어린이집 준비물을 놓쳐 아이가 나들이에서 간식과 단체복을 챙기지 못했고, 맞벌이 남편이 이를 위로하는 태도를 보이자 육아 책임을 자기 일처럼 보지 않는 것 같아 문제를 제기한 사연임을 확인했다. 공개 페이지에는 작성자의 추가 설명과 여러 반응 댓글도 존재한다.\r\n\r\n## 관측\r\n- 2026-09-20 공개 Blind 개별 게시물 페이지가 검색/열람 가능함을 확인.\r\n- 동일 공개 페이지에서 본문과 댓글 영역이 노출됨.\r\n- 수치는 크롤 시점별 표기가 달라 canonical metric으로 고정하지 않음.\r\n\r\n## 평가\r\n- 생활/맞벌이 육아 책임분담 논쟁형 소재.\r\n- C0 exact source/provenance 검증은 통과.\r\n- 다음 단계 C1은 실제 원문 screenshot/media bytes 확보가 필요하다. 현재 회차에서는 브라우저 캡처 bytes를 확보하지 않았으므로 A0 유지.\r\n- 로그인, anti-bot, paywall, access-control 우회 금지.\r\n\r\n## 제작·게시 상태\r\n- C1 real source asset: BLOCKED_SOURCE_ASSET_BYTES\r\n- unblockWhen: 공개/허용된 접근으로 동일 개별 게시물의 실제 원문 screenshot/media bytes를 획득하고 source URL/provenance/hash를 기록할 수 있을 때.\r\n- A1 금지 / P1 금지\r\n- rights/privacy/safety 승인 없음\r\n",
+      "originalSha256": "f40df236684eb746f6237cbb9ddf1c9876aa6c67546299bde3448f4bb8bbce20",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 351
+}

@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 잘생남 만나고 싶다
+내용 - [명시 요약 — 원문 전문 아님]
+다른 조건보다 외모를 우선해 연애 상대를 찾고 싶다는 가벼운 연애 후보로 과거 수집됐다. 현재 원문 URL은 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "잘생남 만나고 싶다",
+    "body": "다른 조건보다 외모를 우선해 연애 상대를 찾고 싶다는 가벼운 연애 후보로 과거 수집됐다. 현재 원문 URL은 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_잘생남만나고싶다.md",
+      "originalTitle": "잘생남 만나고 싶다",
+      "originalMarkdown": "# 잘생남 만나고 싶다\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n다른 조건보다 외모를 우선해 연애 상대를 찾고 싶다는 가벼운 연애 후보로 과거 수집됐다. 현재 원문 URL은 미확인이다.\r\n\r\n## 평가\r\n- 평가: 가벼운 의견형, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "b1a3a9ffaaaa5d5496a3fae7d484cec7fbdafd8c79aa4419510db28798b56c06",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 128
+}

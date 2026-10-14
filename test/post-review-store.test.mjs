@@ -11,8 +11,13 @@ try{
  await fs.mkdir(path.join(folder,'rendered'),{recursive:true});
  const bytes=Buffer.from('fixture-only'),hash=crypto.createHash('sha256').update(bytes).digest('hex');
  await fs.writeFile(path.join(folder,'rendered','slide-001.png'),bytes);
- const row={id:'a',title:'한글 원제',outputFolder:'현재 결과/test',sourceFingerprint:'source',outputSha256:'v1',ruleVersion:'rule',images:[{name:'rendered/slide-001.png',sha256:hash}]};
- const status=path.join(output,'status.json'),report=()=>fs.writeFile(status,JSON.stringify({entries:[row,{...row,id:'b'}]}));
+ // Installed .38 only accepts image-linked reviewable output. These are explicit
+ // test-only metadata fixtures; they never assert user image generation/approval.
+ const recordHash=crypto.createHash('sha256').update('TEST_ONLY_DO_NOT_PUBLISH generated-record').digest('hex');
+ const row={id:'a',title:'한글 원제',outputFolder:'현재 결과/test',sourceFingerprint:'source',outputSha256:'v1',ruleVersion:'rule',coverRefresh:{consumedGeneratedRecordSha256:recordHash},images:[{name:'rendered/slide-001.png',sha256:hash}]};
+ const other=path.join(output,'현재 결과','other');await fs.mkdir(path.join(other,'rendered'),{recursive:true});await fs.writeFile(path.join(other,'rendered','slide-001.png'),bytes);
+ for(const [id,dir] of [['a',folder],['b',other]])await fs.writeFile(path.join(dir,'production-plan.json'),JSON.stringify({universalCover:{aiAsset:{sourceId:id,generationRecordSha256:recordHash}}}));
+ const status=path.join(output,'status.json'),report=()=>fs.writeFile(status,JSON.stringify({entries:[row,{...row,id:'b',outputFolder:'현재 결과/other'}]}));
  await report();const store=createPostReviewStore(root),v=version(row);
  assert.equal((await store.list()).entries[0].current,null);
  await Promise.all([store.save({id:'a',outputVersion:v,score:1,note:'작은 글씨\n수정해주세요'}),store.save({id:'b',outputVersion:v,score:10,note:'좋아요 <script> 그대로'})]);

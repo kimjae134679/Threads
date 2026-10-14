@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%B8%EC%9A%B8%EB%95%8C-%EC%9A%95%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-meyuijl3
+제목 - 싸울때 욕하는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+갈등 때 고함·욕설·물건 투척과 '남자가 큰소리 내면 여자는 조용히'라는 태도가 등장해 부부 관계 경계선에 대한 즉각적인 반응을 유도하는 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%B8%EC%9A%B8%EB%95%8C-%EC%9A%95%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-meyuijl3",
+    "title": "싸울때 욕하는 남편",
+    "body": "갈등 때 고함·욕설·물건 투척과 '남자가 큰소리 내면 여자는 조용히'라는 태도가 등장해 부부 관계 경계선에 대한 즉각적인 반응을 유도하는 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_싸울때욕하고물건던지는남편.md",
+      "originalTitle": "싸울때 욕하는 남편",
+      "originalMarkdown": "# 싸울때 욕하는 남편\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%B8%EC%9A%B8%EB%95%8C-%EC%9A%95%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-meyuijl3\r\n- exactObservedTitle: 싸울때 욕하는 남편\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 530 / 댓글 19\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 갈등 때 고함·욕설·물건 투척과 '남자가 큰소리 내면 여자는 조용히'라는 태도가 등장해 부부 관계 경계선에 대한 즉각적인 반응을 유도하는 소재.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b62b86ce0d2ef6b42db644e49a4b380cfc3121b3cf7958cc35ba4d359fb8c94c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 258
+}

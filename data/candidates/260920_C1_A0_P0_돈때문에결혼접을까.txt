@@ -1,0 +1,29 @@
+원문링크 - https://m.ppomppu.co.kr/new/bbs_view.php?id=wedding&no=27777&page=1
+제목 - 돈 때문에 결혼접을까 고민된다는 남자
+내용 - [명시 요약 — 원문 전문 아님]
+결혼과 돈의 충돌이라는 강한 주제지만 이미지 의존 게시물이라 내용 확인 전에는 제목 이상을 확장하면 안 됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://m.ppomppu.co.kr/new/bbs_view.php?id=wedding&no=27777&page=1",
+    "title": "돈 때문에 결혼접을까 고민된다는 남자",
+    "body": "결혼과 돈의 충돌이라는 강한 주제지만 이미지 의존 게시물이라 내용 확인 전에는 제목 이상을 확장하면 안 됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_돈때문에결혼접을까.md",
+      "originalTitle": "돈 때문에 결혼접을까 고민된다는 남자",
+      "originalMarkdown": "# 돈 때문에 결혼접을까 고민된다는 남자\r\n\r\n- source: Ppomppu 결혼/연애\r\n- exactPublicUrl: https://m.ppomppu.co.kr/new/bbs_view.php?id=wedding&no=27777&page=1\r\n- exactObservedTitle: `돈 때문에 결혼접을까 고민된다는 남자`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 조회 6,298 / 표시 수치 15 / 추천 0 / 다른의견 0\r\n- bodyRead: false\r\n- commentsRead: false\r\n- imageOrScreenshot: 이미지 첨부 2개 존재 확인, 내용 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_METADATA_ONLY__BODY_UNCONFIRMED\r\n- provenance: 개별 공개 URL과 제목·표시 메타데이터만 확인. 본문 미확인.\r\n- whyGood: 결혼과 돈의 충돌이라는 강한 주제지만 이미지 의존 게시물이라 내용 확인 전에는 제목 이상을 확장하면 안 됨.\r\n- safety: 이미지 다운로드/OCR/내용 추정 없음.",
+      "originalSha256": "b6bd1fed4eadbd759141949e32091e076cb719f3ce5f6816fbf4a9bcf1b8a851",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 198
+}

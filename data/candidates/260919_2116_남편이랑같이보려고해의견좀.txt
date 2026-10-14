@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%B3%B4%EB%A0%A4%EA%B3%A0%ED%95%B4-%EC%9D%98%EA%B2%AC%EC%A2%80-kcv6mwqi
+제목 - 남편이랑 같이 보려고해 의견좀
+내용 - [명시 요약 — 원문 전문 아님]
+장거리 운전·아이 병원·카드값 미납 상황에서 '많이 보내달라'는 말 하나가 부부간 무시 논쟁으로 번지는 생활밀착형 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%B3%B4%EB%A0%A4%EA%B3%A0%ED%95%B4-%EC%9D%98%EA%B2%AC%EC%A2%80-kcv6mwqi",
+    "title": "남편이랑 같이 보려고해 의견좀",
+    "body": "장거리 운전·아이 병원·카드값 미납 상황에서 '많이 보내달라'는 말 하나가 부부간 무시 논쟁으로 번지는 생활밀착형 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_남편이랑같이보려고해의견좀.md",
+      "originalTitle": "남편이랑 같이 보려고해 의견좀",
+      "originalMarkdown": "# 남편이랑 같이 보려고해 의견좀\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4%EB%9E%91-%EA%B0%99%EC%9D%B4-%EB%B3%B4%EB%A0%A4%EA%B3%A0%ED%95%B4-%EC%9D%98%EA%B2%AC%EC%A2%80-kcv6mwqi\r\n- exactObservedTitle: 남편이랑 같이 보려고해 의견좀\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 123, 댓글 29\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 장거리 운전·아이 병원·카드값 미납 상황에서 '많이 보내달라'는 말 하나가 부부간 무시 논쟁으로 번지는 생활밀착형 갈등.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지의 공개 본문 일부 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c15fc7fe8aed1c0f8c309dcbcedfda6249d030858c6fd1fe59d584239c25e754",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 297
+}

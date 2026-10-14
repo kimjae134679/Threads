@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EA%B7%80%EC%97%AC%EC%9A%B4-%EA%B1%B0-%EC%9E%90%EB%9E%91%ED%95%B4%EB%8F%84-%EB%8F%BC-QoLz1wxq
+제목 - 남편 귀여운 거 자랑해도 돼?
+내용 - [명시 요약 — 원문 전문 아님]
+떨어진 젤네일을 남편 손톱에 올려둔 뒤 떨어지지 않게 손을 가만히 두고 다시 올리는 사소한 행동 하나로 귀여움과 공감이 생기는 가벼운 생활 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EA%B7%80%EC%97%AC%EC%9A%B4-%EA%B1%B0-%EC%9E%90%EB%9E%91%ED%95%B4%EB%8F%84-%EB%8F%BC-QoLz1wxq",
+    "title": "남편 귀여운 거 자랑해도 돼?",
+    "body": "떨어진 젤네일을 남편 손톱에 올려둔 뒤 떨어지지 않게 손을 가만히 두고 다시 올리는 사소한 행동 하나로 귀여움과 공감이 생기는 가벼운 생활 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_남편귀여운거자랑.md",
+      "originalTitle": "남편 귀여운 거 자랑해도 돼?",
+      "originalMarkdown": "# 남편 귀여운 거 자랑해도 돼?\r\n\r\n- source: Blind 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EA%B7%80%EC%97%AC%EC%9A%B4-%EA%B1%B0-%EC%9E%90%EB%9E%91%ED%95%B4%EB%8F%84-%EB%8F%BC-QoLz1wxq\r\n- exactObservedTitle: 남편 귀여운 거 자랑해도 돼?\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 52K, 댓글 302\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (확인된 텍스트 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_PARTIAL\r\n- provenance: Blind 개별 공개 글.\r\n- whyGood: 떨어진 젤네일을 남편 손톱에 올려둔 뒤 떨어지지 않게 손을 가만히 두고 다시 올리는 사소한 행동 하나로 귀여움과 공감이 생기는 가벼운 생활 소재.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "cef9219fd01edcd6b92ebb968cd1ed627a634edcdb1f8112d7172e273e8ebba8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 294
+}

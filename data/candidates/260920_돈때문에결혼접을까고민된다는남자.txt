@@ -1,0 +1,29 @@
+원문링크 - https://m.ppomppu.co.kr/new/bbs_view.php?id=wedding&no=27777&page=1
+제목 - 돈 때문에 결혼접을까 고민된다는 남자
+내용 - [명시 요약 — 원문 전문 아님]
+결혼과 돈이라는 즉시 의견이 갈리는 주제이며 제목만으로 갈등 구조가 명확함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://m.ppomppu.co.kr/new/bbs_view.php?id=wedding&no=27777&page=1",
+    "title": "돈 때문에 결혼접을까 고민된다는 남자",
+    "body": "결혼과 돈이라는 즉시 의견이 갈리는 주제이며 제목만으로 갈등 구조가 명확함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_돈때문에결혼접을까고민된다는남자.md",
+      "originalTitle": "돈 때문에 결혼접을까 고민된다는 남자",
+      "originalMarkdown": "# 돈 때문에 결혼접을까 고민된다는 남자\r\n\r\n- stage: C1\r\n- source: Ppomppu 결혼/연애\r\n- publicUrl: https://m.ppomppu.co.kr/new/bbs_view.php?id=wedding&no=27777&page=1\r\n- exactObservedTitle: 돈 때문에 결혼접을까 고민된다는 남자\r\n- observedAt: 2026-09-20 06:15 KST\r\n- observedMetrics: 조회 6298\r\n- bodyRead: false\r\n- bodyStatus: 본문 미확인 (공개 페이지에서 이미지 중심으로 관찰)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (공개 페이지에 JPG 2개 표시)\r\n- whyGood: 결혼과 돈이라는 즉시 의견이 갈리는 주제이며 제목만으로 갈등 구조가 명확함.\r\n- acquisition: exact individual public page observed; image bytes/OCR not acquired\r\n- provenance: C1 exact-page provenance; underlying claims unverified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "f0ea56d5eddbbc33217b05ae1f60417da0a95a00d96e27effd8adcacbc15d479",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 180
+}

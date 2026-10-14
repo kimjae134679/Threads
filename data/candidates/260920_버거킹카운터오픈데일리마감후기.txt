@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/mgallery/board/view/?id=burgerking&no=169988
+제목 - 카운터 오픈, 데일리, 마감 후기
+내용 - [명시 요약 — 원문 전문 아님]
+오픈·데일리·마감별 실제 체감 난이도와 선호가 대비되어 알바 경험 공감 소재로 쓰기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/mgallery/board/view/?id=burgerking&no=169988",
+    "title": "카운터 오픈, 데일리, 마감 후기",
+    "body": "오픈·데일리·마감별 실제 체감 난이도와 선호가 대비되어 알바 경험 공감 소재로 쓰기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_버거킹카운터오픈데일리마감후기.md",
+      "originalTitle": "카운터 오픈, 데일리, 마감 후기",
+      "originalMarkdown": "# 카운터 오픈, 데일리, 마감 후기\r\n\r\n- stage: C1\r\n- source: DCInside 버거킹 마이너 갤러리\r\n- publicUrl: https://gall.dcinside.com/mgallery/board/view/?id=burgerking&no=169988\r\n- exactObservedTitle: 카운터 오픈, 데일리, 마감 후기\r\n- observedAt: 2026-09-20 06:15 KST\r\n- observedMetrics: 조회 363 / 댓글 10\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: unconfirmed\r\n- whyGood: 오픈·데일리·마감별 실제 체감 난이도와 선호가 대비되어 알바 경험 공감 소재로 쓰기 좋음.\r\n- acquisition: exact individual public page text observed\r\n- provenance: C1 exact-page provenance; personal work account\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "897823b8ca9c6f3cd07823690ea84a970da3072604746a598a0fcaf8590baa8e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 189
+}

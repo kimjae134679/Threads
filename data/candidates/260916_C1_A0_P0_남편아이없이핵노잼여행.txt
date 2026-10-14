@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4345613177
+제목 - 남편 아이 없이 친구들이랑 핵노잼여행
+내용 - [명시 요약 — 원문 전문 아님]
+더쿠 유머 게시물. Instagram 원문 링크와 이미지 2장이 붙어 있다. 검색 결과에서 이미지 내부 전체 내용은 읽지 못했으므로 **이미지 본문 미확인**.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4345613177",
+    "title": "남편 아이 없이 친구들이랑 핵노잼여행",
+    "body": "더쿠 유머 게시물. Instagram 원문 링크와 이미지 2장이 붙어 있다. 검색 결과에서 이미지 내부 전체 내용은 읽지 못했으므로 **이미지 본문 미확인**.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_남편아이없이핵노잼여행.md",
+      "originalTitle": "남편 아이 없이 친구들이랑 핵노잼여행",
+      "originalMarkdown": "# 남편 아이 없이 친구들이랑 핵노잼여행\r\n\r\n## 글 내용\r\n더쿠 유머 게시물. Instagram 원문 링크와 이미지 2장이 붙어 있다. 검색 결과에서 이미지 내부 전체 내용은 읽지 못했으므로 **이미지 본문 미확인**.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/4345613177\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 조회수: 48\r\n- 댓글: 0\r\n\r\n## 평가\r\n남편·아이 없이 친구들과 떠난 여행이라는 생활/가족 소재와 제목의 반전성이 좋다. 현재 반응량은 낮아 자산 확인 후 재평가 대상.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지/자산/게시상태\r\n- 원문 페이지 및 Instagram 연결 확인\r\n- 본문 전체 읽음: 아니오 — 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n- source images 존재: 예, 2개 표시\r\n- source bytes 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false\r\n- rights/privacy/human review gate 유지, 04만 게시 가능",
+      "originalSha256": "5ea12138b939ea5857cf858ccff96dd6da6a8ccb5ccc8cc5743dc596ff36beb9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

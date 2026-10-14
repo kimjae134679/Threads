@@ -1,5 +1,6 @@
 import http from 'node:http';
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
@@ -19,6 +20,8 @@ import {ProductionInput,DEFAULT_MATERIAL_ROOT} from './production-input.mjs';
 import {ProductionSync} from './production-sync.mjs';
 import {CurrentProduction} from './current-production.mjs';
 import {AutoProductionLink} from './auto-production-link.mjs';
+import {QualityService} from './quality-service.mjs';
+import {configuredResolver} from '../desktop/project-paths.cjs';
 import {ReadOnlyViewer} from './read-only-viewer.mjs';
 import {MaterialCatalog} from './material-catalog.mjs';
 import {materialZip} from './material-zip.mjs';
@@ -56,11 +59,13 @@ export async function readTitleEditApproval(root){
   }catch{fail('title_edit_approval_invalid');}
   finally{if(handle)await handle.close();}
 }
-export async function createStudioServer({root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,projectManifest=path.resolve(materialRoot,'..','project.control.json')}={}) {
+export async function createStudioServer({projectRoot=null,nativeHosted=false,root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,preserveStartupState=!!process.env.THREADS_PROJECT_ROOT,projectManifest=path.resolve(materialRoot,'..','project.control.json')}={}) {
+  let nativeUIReady=false;const projectIdentity=projectRoot?createHash('sha256').update(process.platform==='win32'?path.resolve(projectRoot).toLowerCase():path.resolve(projectRoot)).digest('hex'):null;
   let lastDelivery={records:[],warnings:[]};
   const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records).filter(row=>Object.values(row.platforms||{}).some(platform=>platform.recordedAt!=null||platform.status==='error')),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
   const viewer=new ReadOnlyViewer(projectManifest,()=>store.read());
+  const quality=new QualityService({viewer,readState:()=>store.read(),materialRoot});
   const materials=new MaterialCatalog({root,materialRoot,readState:()=>store.read()});let materialExportBusy=false;
   let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
   let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
@@ -131,9 +136,10 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
     await store.write(path.join(root,'controller-runtime-status.json'),status);return status;
   });runtimeStatusTail=task.catch(()=>{});return task;}
   const titleEditApproval=await readTitleEditApproval(root);
-  await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
+  if(!preserveStartupState)await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
   // Recreate the small decision file under the existing state lock without changing any review.
-  await store.mutate(async state=>{await refreshDecisions(state);requestHandoff(state,true);return state;});
+  if(!preserveStartupState)await store.mutate(async state=>{await refreshDecisions(state);requestHandoff(state,true);return state;});
+  else await store.read();
   const server=http.createServer(async(req,res)=>{
     try {
       const actualPort=server.address().port,hosts=['127.0.0.1:'+actualPort,'localhost:'+actualPort];
@@ -151,12 +157,14 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='GET'&&route==='/api/production/sync-status')return send(res,200,productionSync.progress);
       if(req.method==='GET'&&route==='/api/production/auto-status')return send(res,200,autoProduction.progress);
       if(req.method==='GET'&&route==='/api/navigation')return send(res,200,await viewer.status());
+      if(req.method==='GET'&&route.startsWith('/api/quality/'))return send(res,200,await quality.get(decodeURIComponent(route.slice('/api/quality/'.length)),url.searchParams.get('version')));
       if(req.method==='GET'&&route==='/api/materials')return send(res,200,await materials.index());
       if(req.method==='GET'&&route==='/api/materials/audit')return send(res,200,await materials.audit());
-      const materialRoute=route.match(/^\/api\/materials\/((?:post|edit|intake|producer)-[a-f0-9]{64})(?:\/(image|source|package)(?:\/([a-f0-9]{64}|\d+))?)?$/);
+      const materialRoute=route.match(/^\/api\/materials\/((?:post|edit|intake|producer|collection)-[a-f0-9]{64})(?:\/(image|source|package|text)(?:\/([a-f0-9]{64}|\d+))?)?$/);
       if(req.method==='GET'&&materialRoute){
         const [,key,kind,position]=materialRoute;
         if(!kind)return send(res,200,await materials.detail(key));
+        if(kind==='text'){const file=await materials.unifiedText(key,url.searchParams.get('platform')||'instagram',{expectedScope:url.searchParams.get('scope')});res.writeHead(200,{'content-type':file.mime,'content-length':file.bytes.length,'content-disposition':"attachment; filename=material.txt; filename*=UTF-8''"+encodeURIComponent(file.name),'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(file.bytes);}
         if(kind==='package'){
           if(materialExportBusy)fail('material_export_busy',409);materialExportBusy=true;
           try{const platform=url.searchParams.get('platform')||'instagram',files=await materials.packageFiles(key,platform,{expectedScope:url.searchParams.get('scope')}),d=await materials.detail(key),name=(d.scope==='historical'?'과거기록-':'')+d.statusLabel+'-'+d.title.slice(0,70)+'-'+platform+'.zip';res.writeHead(200,{'content-type':'application/zip','content-disposition':"attachment; filename=materials.zip; filename*=UTF-8''"+encodeURIComponent(name),'cache-control':'no-store'});for await(const bytes of materialZip(files)){if(res.destroyed)break;if(!res.write(bytes))await new Promise(resolve=>{const done=()=>{res.off('drain',done);res.off('close',done);resolve();};res.once('drain',done);res.once('close',done);});}return res.end();}finally{materialExportBusy=false;}
@@ -168,14 +176,16 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
       if(req.method==='GET'&&(route==='/viewer'||route.startsWith('/viewer/'))){const out=await viewer.read(route);res.writeHead(200,{'content-type':out.mime,'cache-control':'no-store','x-content-type-options':'nosniff','content-security-policy':out.csp});return res.end(out.bytes);}
       if(req.method==='GET'&&route==='/api/final-review/handoff'){const state=await store.read(),projection=reviewHandoffProjection(state);return send(res,200,{...projection,latest:currentHandoffStatus(state,projection)});}
       if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
-      if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0});
+      if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0,projectIdentity,pid:process.pid,startup_state_preserved:preserveStartupState,nativeHosted,nativeUIReady});
       if(req.method==='GET'&&route==='/api/schedule-defaults')return send(res,200,{defaults:(await store.read()).schedule_defaults||DEFAULT_SCHEDULE});
-      if(req.method==='GET'&&route==='/api/state'){const state=await store.read();lastDelivery=await readDeliveryResults(root);return send(res,200,{state,mode:'offline-only',accountsConnected:false});}
+      if(req.method==='GET'&&route==='/api/state'){const state=await store.read();lastDelivery=await readDeliveryResults(root);return send(res,200,{state,mode:'offline-only',accountsConnected:false,startup_state_preserved:preserveStartupState});}
       if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,review_note:domain.reviewNote(p),review_note_updated_at:p.review_note_updated_at||null,threads_title_only:p.threads_title_only,caption:p.caption,platform_captions:p.platform_captions,platform_caption_edited:p.platform_caption_edited,publication_title:p.publication_title,production_caption_version:p.production_caption_version,production_caption_status:p.production_caption_status,tags:p.tags,topic_tags:p.topic_tags,topic_tags_edited:p.topic_tags_edited,threads_topic_tag:p.threads_topic_tag,common_tags:p.common_tags,media_format:p.media_format,reel_video:p.reel_video,music:p.music,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
       if(req.method==='POST'&&route.startsWith('/api/')){
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
         const body=await readBody(req);domain.rejectSecrets(body);let state;
+        if(route==='/api/quality/save')return send(res,200,{quality:await quality.save(body),externalCalls:0,publicationAuthorized:false});
+        if(route==='/api/quality/visit')return send(res,200,{progress:await quality.visit(body),externalCalls:0,publicationAuthorized:false});
         if(route==='/api/buffer/preview'){const saved=await store.read(),post=saved.posts.find(p=>p.post_id===body.post_id);if(!post)fail('post_not_found');if(body.expected_revision!==post.revision)fail('revision_conflict',409);return send(res,200,previewBufferPost(post,body.options||{}));}
         if(route.startsWith('/api/buffer/'))fail('live_operation_disabled',405);
         if(route==='/api/connection/prepare')return send(res,200,connections.prepare(body));
@@ -213,20 +223,32 @@ export async function createStudioServer({root=path.join(here,'.local'),port=438
         return send(res,200,{state,externalCalls:0});
       }
       if(req.method!=='GET')fail('method_not_allowed',405);
-      const files={'/materials':'public/materials.html','/materials/':'public/materials.html','/materials.js':'public/materials.js','/materials.css':'public/materials.css','/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/review-entry.mjs':'public/review-entry.mjs','/review-order.mjs':'review-order.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
+      const files={'/materials':'public/materials.html','/materials/':'public/materials.html','/materials.js':'public/materials.js','/materials.css':'public/materials.css','/':'public/index.html','/studio.js':'public/studio.js','/studio.css':'public/studio.css','/icons.mjs':'public/icons.mjs','/draft-backups.mjs':'public/draft-backups.mjs','/review-entry.mjs':'public/review-entry.mjs','/review-order.mjs':'review-order.mjs','/navigation-state.mjs':'navigation-state.mjs','/domain.mjs':'domain.mjs','/final-review.mjs':'final-review.mjs','/title-normalization.mjs':'title-normalization.mjs','/tags.mjs':'tags.mjs'};
       if(!files[route])fail('route_not_found',404);
       const file=path.join(here,files[route]),data=await fs.readFile(file);res.writeHead(200,{'content-type':mime[path.extname(file)],'cache-control':'no-store','x-content-type-options':'nosniff'});res.end(data);
     }catch(e){if(res.headersSent){res.destroy(e);return;}const code=/^[a-z0-9_]+$/.test(e.code||'')?e.code:'local_operation_failed';send(res,e.status||500,{ok:false,code});}
   });
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve);});
   const url='http://127.0.0.1:'+server.address().port;
-  await autoProduction.start();
+  if(!preserveStartupState)await autoProduction.start();
   await observeRuntime();runtimeStatusTimer=setInterval(()=>observeRuntime().catch(()=>{}),2000);runtimeStatusTimer.unref();
-  return {server,url,close:async()=>{clearInterval(runtimeStatusTimer);await runtimeStatusTail;await autoProduction.stop();closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
+  return {server,url,setNativeReady:value=>{nativeUIReady=nativeHosted&&value===true;},close:async()=>{clearInterval(runtimeStatusTimer);await runtimeStatusTail;await autoProduction.stop();closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
+}
+export function studioLaunchConfig(args=process.argv.slice(2)){
+  const value=flag=>args.includes(flag)?args[args.indexOf(flag)+1]:undefined;
+  const port=value('--port')===undefined?4387:Number(value('--port'));
+  if(!Number.isInteger(port)||port<1024||port>65535)throw Error('invalid_local_port');
+  const project=value('--project-root')||process.env.THREADS_PROJECT_ROOT;
+  if(project){
+    if(args.includes('--root')||args.includes('--material-root')||args.includes('--project-manifest'))throw Error('unified_launch_override');
+    const projectRoot=path.resolve(project),resolve=configuredResolver(projectRoot),root=resolve(path.join(projectRoot,'local-private/operating-studio')),materialRoot=resolve(path.join(projectRoot,'local-private/project/자료')),projectManifest=resolve(path.join(projectRoot,'local-private/project/project.control.json'));
+    try{if(!fsSync.statSync(resolve(path.join(root,'state.json'))).isFile()||!fsSync.statSync(projectManifest).isFile()||!fsSync.statSync(materialRoot).isDirectory())throw Error('missing');}catch{throw Error('unified_runtime_missing');}
+    return{projectRoot,port,root,materialRoot,projectManifest,preserveStartupState:true,seedTags:false};
+  }
+  const materialRoot=value('--material-root')||DEFAULT_MATERIAL_ROOT;
+  return{port,materialRoot,...(value('--root')?{root:path.resolve(value('--root'))}:{}),...(value('--project-manifest')?{projectManifest:path.resolve(value('--project-manifest'))}:{})};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
-  const portArg=process.argv.indexOf('--port');const port=portArg<0?4387:Number(process.argv[portArg+1]);
-  if(!Number.isInteger(port)||port<1024||port>65535)throw Error('invalid_local_port');
-  const materialArg=process.argv.indexOf('--material-root');const materialRoot=materialArg<0?DEFAULT_MATERIAL_ROOT:process.argv[materialArg+1];if(!materialRoot)throw Error('invalid_material_root');
-  const app=await createStudioServer({port,materialRoot});console.log('Upload Studio (offline only): '+app.url);for(const signal of ['SIGINT','SIGTERM'])process.once(signal,async()=>{await app.close();process.exit(0);});
+  const config=studioLaunchConfig();if(config.projectRoot)process.env.THREADS_PROJECT_ROOT=config.projectRoot;
+  const app=await createStudioServer(config);console.log('Upload Studio (offline only; automatic publishing disabled): '+app.url);for(const signal of ['SIGINT','SIGTERM'])process.once(signal,async()=>{await app.close();process.exit(0);});
 }

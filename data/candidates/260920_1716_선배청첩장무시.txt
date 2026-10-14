@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1882453687
+제목 - 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+이전 연락에는 답이 없던 선배가 1년 뒤 청첩장만 보내자 무시한 상황으로, 청첩장·축의금·관계 예의의 경계가 명확한 논쟁거리.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1882453687",
+    "title": "선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기",
+    "body": "이전 연락에는 답이 없던 선배가 1년 뒤 청첩장만 보내자 무시한 상황으로, 청첩장·축의금·관계 예의의 경계가 명확한 논쟁거리.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_선배청첩장무시.md",
+      "originalTitle": "선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기",
+      "originalMarkdown": "# 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/1882453687\r\n- exactObservedTitle: 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact individual public URL; first-person account\r\n- whyGood: 이전 연락에는 답이 없던 선배가 1년 뒤 청첩장만 보내자 무시한 상황으로, 청첩장·축의금·관계 예의의 경계가 명확한 논쟁거리.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6162b46a360a103f13d455f9b5f2bfe4cdd95d463cbf7276701ddada440820fc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 184
+}

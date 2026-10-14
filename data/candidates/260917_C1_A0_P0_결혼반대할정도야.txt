@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80%ED%95%A0-%EC%A0%95%EB%8F%84%EC%95%BC-l1z8yxnw
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+33세 남성과 30세 여성의 결혼을 한쪽 가족이 반대하는 상황에서 두 사람의 소득·저축·부모 자산·부채·노후 준비·결혼 지원 규모를 비교해 정말 반대할 정도인지 묻는 글. 남성은 대기업 연봉 9천만원, 저축 2억원이지만 부모 노후대비와 부채 문제가 있고 결혼 지원은 없으며, 여성은 중견기업 연봉 6천만원, 저축 1억원이고 부모 노후 준비와 일부 결혼 지원이 있다. 공개 본문과 공개 댓글을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80%ED%95%A0-%EC%A0%95%EB%8F%84%EC%95%BC-l1z8yxnw",
+    "title": "제목",
+    "body": "33세 남성과 30세 여성의 결혼을 한쪽 가족이 반대하는 상황에서 두 사람의 소득·저축·부모 자산·부채·노후 준비·결혼 지원 규모를 비교해 정말 반대할 정도인지 묻는 글. 남성은 대기업 연봉 9천만원, 저축 2억원이지만 부모 노후대비와 부채 문제가 있고 결혼 지원은 없으며, 여성은 중견기업 연봉 6천만원, 저축 1억원이고 부모 노후 준비와 일부 결혼 지원이 있다. 공개 본문과 공개 댓글을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼반대할정도야.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼 반대할 정도야?\r\n\r\n## 글 내용\r\n33세 남성과 30세 여성의 결혼을 한쪽 가족이 반대하는 상황에서 두 사람의 소득·저축·부모 자산·부채·노후 준비·결혼 지원 규모를 비교해 정말 반대할 정도인지 묻는 글. 남성은 대기업 연봉 9천만원, 저축 2억원이지만 부모 노후대비와 부채 문제가 있고 결혼 지원은 없으며, 여성은 중견기업 연봉 6천만원, 저축 1억원이고 부모 노후 준비와 일부 결혼 지원이 있다. 공개 본문과 공개 댓글을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80%ED%95%A0-%EC%A0%95%EB%8F%84%EC%95%BC-l1z8yxnw\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 1,075\r\n- 댓글: 7\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 예\r\n- comments read: 예(공개 노출 댓글)\r\n- source images/screenshots: 실제 source asset 미확보\r\n- 숫자가 구체적이고 '이 정도면 반대할 만한가'라는 즉답형 포맷이라 의견 참여 유도가 쉬움.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "c596c4c6c11863d71b2e9487518a15729ddf17229fa51e7afd1482f00c451547",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 392
+}

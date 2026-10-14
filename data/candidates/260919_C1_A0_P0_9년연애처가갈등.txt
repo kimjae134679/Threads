@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B2%98%EB%82%A8-%EB%8F%88-%EB%AA%BB%EB%B2%8C%EA%B3%A0%EC%B2%98%EA%B0%80%EC%A7%91-%EB%85%B8%ED%9B%84X%EC%99%80%EC%9D%B4%ED%94%84-%ED%9A%A8%EB%85%80-1mbni3xw
+제목 - 9년 연애했는데 처가 사정 때문에 결혼을 말립니다
+내용 - [명시 요약 — 원문 전문 아님]
+35세 커플이 9년 연애했지만, 작성자는 예비 처남의 경제상태, 처가 노후 준비 부족, 예비 장모의 성향, 여자친구가 효녀라는 점 때문에 부모와 친구들이 결혼을 말린다고 고민한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B2%98%EB%82%A8-%EB%8F%88-%EB%AA%BB%EB%B2%8C%EA%B3%A0%EC%B2%98%EA%B0%80%EC%A7%91-%EB%85%B8%ED%9B%84X%EC%99%80%EC%9D%B4%ED%94%84-%ED%9A%A8%EB%85%80-1mbni3xw",
+    "title": "9년 연애했는데 처가 사정 때문에 결혼을 말립니다",
+    "body": "35세 커플이 9년 연애했지만, 작성자는 예비 처남의 경제상태, 처가 노후 준비 부족, 예비 장모의 성향, 여자친구가 효녀라는 점 때문에 부모와 친구들이 결혼을 말린다고 고민한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_9년연애처가갈등.md",
+      "originalTitle": "9년 연애했는데 처가 사정 때문에 결혼을 말립니다",
+      "originalMarkdown": "# 9년 연애했는데 처가 사정 때문에 결혼을 말립니다\r\n\r\n## source\r\nBlind 결혼생활\r\n\r\n## 원문 제목\r\n처남 돈 못벌고+처가집 노후X+와이프 효녀\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B2%98%EB%82%A8-%EB%8F%88-%EB%AA%BB%EB%B2%8C%EA%B3%A0%EC%B2%98%EA%B0%80%EC%A7%91-%EB%85%B8%ED%9B%84X%EC%99%80%EC%9D%B4%ED%94%84-%ED%9A%A8%EB%85%80-1mbni3xw\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 947 / 댓글 29. 좋아요 숫자는 확인하지 않음.\r\n\r\n## 본문·댓글 확인\r\n- 본문: 읽음\r\n- 댓글: 공개 댓글 일부 읽음\r\n- 이미지/스크린샷: 별도 source asset 확보 안 함\r\n\r\n## 글 내용\r\n35세 커플이 9년 연애했지만, 작성자는 예비 처남의 경제상태, 처가 노후 준비 부족, 예비 장모의 성향, 여자친구가 효녀라는 점 때문에 부모와 친구들이 결혼을 말린다고 고민한다.\r\n\r\n## 왜 소재로 좋은지\r\n9년 연애라는 긴 관계와 결혼 후 가족경제 리스크가 정면충돌한다. '배우자가 좋으면 원가족 사정은 어디까지 감수해야 하나'라는 즉답형 논쟁 소재다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 개별 Blind 페이지에서 본문·일부 댓글을 확인. source screenshot/media 미확보. rights/privacy/human review 미확인. OCR/moderation 미실행. publicationAllowed=false.",
+      "originalSha256": "a533335d5d620a10531f131ae2c6066bbea4a33cd046549f42e48598bf50bac1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 370
+}

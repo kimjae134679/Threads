@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%5B%EC%9D%B8%EC%A6%9D%5D-%ED%95%98%EB%A3%A8-52%EC%96%B5-%EC%86%90%EC%8B%A4-%ED%95%9C-%EB%8B%AC-15%EC%96%B5-%EC%86%90%EC%8B%A4-2bP5VJOs
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 주식·투자 글. 작성자는 키네마스터 투자 중 회사 매각이 불발되면서 하한가를 맞았고, 두 증권사의 하루·한달 손익 인증 이미지 4장을 올렸다고 설명한다. 큰 수익을 인증했던 만큼 큰 손실도 공개한다는 취지이며, 당시 추가 하락 가능성을 인정하면서도 기업의 성장성과 경영진을 믿고 투자를 이어가겠다고 적었다. 공개 페이지에서 본문 전체를 읽었고 댓글도 공개 범위에서 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%5B%EC%9D%B8%EC%A6%9D%5D-%ED%95%98%EB%A3%A8-52%EC%96%B5-%EC%86%90%EC%8B%A4-%ED%95%9C-%EB%8B%AC-15%EC%96%B5-%EC%86%90%EC%8B%A4-2bP5VJOs",
+    "title": "제목",
+    "body": "Blind 주식·투자 글. 작성자는 키네마스터 투자 중 회사 매각이 불발되면서 하한가를 맞았고, 두 증권사의 하루·한달 손익 인증 이미지 4장을 올렸다고 설명한다. 큰 수익을 인증했던 만큼 큰 손실도 공개한다는 취지이며, 당시 추가 하락 가능성을 인정하면서도 기업의 성장성과 경영진을 믿고 투자를 이어가겠다고 적었다. 공개 페이지에서 본문 전체를 읽었고 댓글도 공개 범위에서 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_하루52억한달15억손실.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n[인증] 하루 5.2억 손실, 한 달 15억 손실\r\n\r\n## 글 내용\r\nBlind 주식·투자 글. 작성자는 키네마스터 투자 중 회사 매각이 불발되면서 하한가를 맞았고, 두 증권사의 하루·한달 손익 인증 이미지 4장을 올렸다고 설명한다. 큰 수익을 인증했던 만큼 큰 손실도 공개한다는 취지이며, 당시 추가 하락 가능성을 인정하면서도 기업의 성장성과 경영진을 믿고 투자를 이어가겠다고 적었다. 공개 페이지에서 본문 전체를 읽었고 댓글도 공개 범위에서 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%5B%EC%9D%B8%EC%A6%9D%5D-%ED%95%98%EB%A3%A8-52%EC%96%B5-%EC%86%90%EC%8B%A4-%ED%95%9C-%EB%8B%AC-15%EC%96%B5-%EC%86%90%EC%8B%A4-2bP5VJOs\r\n\r\n관측: 2026-09-17 02:17 KST 공개 페이지\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n동일 관측시점 공개 표시: 조회수 5,380 / 좋아요 10 / 댓글 96.\r\n\r\n## 평가\r\n투자 사람-story 레인의 강한 C1. 하루 5.2억·한 달 15억이라는 즉시 이해되는 극적 손실, 실제 손익 인증 이미지 4장, 과거 수익 인증과의 반전이 있어 swipe potential이 높다. 단순 시황/종목뉴스가 아니다. 이미지 안 신상정보 가능성은 자동 마스킹하지 않고 후속 human privacy review 대상으로 둔다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 페이지에 손익 인증 이미지 4장 존재 확인.\r\n- 실제 source screenshot/image bytes는 아직 확보하지 않음: `ASSETS_PENDING`.\r\n- full-post screenshot capture: 미실행.\r\n- OCR/moderation/rights 확인 성공을 주장하지 않음.\r\n- rights/privacy/human review gate 유지.\r\n- `publicationAllowed=false`.\r\n- A0 / P0. 실제 사용자용 source-backed asset 없음. 실제 게시 없음.\r\n- 게시 권한은 `04_REVIEW_PUBLISH`에만 있음.\r\n",
+      "originalSha256": "b2bec51d75540f0ec3fb96dc438289cf613362c0cfa44cb5fb5af0788ad94146",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 436
+}

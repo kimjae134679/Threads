@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%98-%EC%97%86%EC%9C%BC%EB%A9%B4-%EC%95%84%EB%AC%B4%EA%B2%83%EB%8F%84-%EB%AA%BB%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-Nwbk6bCB
+제목 - 집·차·대출까지 전부 아내가… "남편이 나 없으면 아무것도 못해요"
+내용 - [명시 요약 — 원문 전문 아님]
+공개 페이지 본문 확인. 맞벌이인데 집계약·차계약·대출 같은 큰일과 대부분의 집안일까지 작성자가 맡아 자신이 부인이 아니라 엄마나 가장 같다고 느끼는 사연. 새 차 관련 신청도 남편에게 구체적으로 알려준 뒤 맡겼지만 잘못 처리하고 다시 작성자에게 해결 방법을 물었다고 한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98-%EC%97%86%EC%9C%BC%EB%A9%B4-%EC%95%84%EB%AC%B4%EA%B2%83%EB%8F%84-%EB%AA%BB%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-Nwbk6bCB",
+    "title": "집·차·대출까지 전부 아내가… \"남편이 나 없으면 아무것도 못해요\"",
+    "body": "공개 페이지 본문 확인. 맞벌이인데 집계약·차계약·대출 같은 큰일과 대부분의 집안일까지 작성자가 맡아 자신이 부인이 아니라 엄마나 가장 같다고 느끼는 사연. 새 차 관련 신청도 남편에게 구체적으로 알려준 뒤 맡겼지만 잘못 처리하고 다시 작성자에게 해결 방법을 물었다고 한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_아무것도못하는남편.md",
+      "originalTitle": "집·차·대출까지 전부 아내가… \"남편이 나 없으면 아무것도 못해요\"",
+      "originalMarkdown": "# 집·차·대출까지 전부 아내가… \"남편이 나 없으면 아무것도 못해요\"\r\n\r\n## 원문 제목\r\n나 없으면 아무것도 못하는 남편\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n공개 페이지 본문 확인. 맞벌이인데 집계약·차계약·대출 같은 큰일과 대부분의 집안일까지 작성자가 맡아 자신이 부인이 아니라 엄마나 가장 같다고 느끼는 사연. 새 차 관련 신청도 남편에게 구체적으로 알려준 뒤 맡겼지만 잘못 처리하고 다시 작성자에게 해결 방법을 물었다고 한다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%98-%EC%97%86%EC%9C%BC%EB%A9%B4-%EC%95%84%EB%AC%B4%EA%B2%83%EB%8F%84-%EB%AA%BB%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-Nwbk6bCB\r\n\r\n## 관측\r\n- 관측시각: 2026-09-19 09:20 KST\r\n- 조회수: 9,933\r\n- 댓글: 130\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재: 미확인\r\n\r\n## 평가\r\n'배우자냐 엄마냐'라는 관계 피로가 구체적 생활 사례로 드러나 공감·반론 모두 나오기 좋은 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL 확인. acquisition/provenance: C1_EXACT_PUBLIC_PAGE_VERIFIED. A0/P0. publicationAllowed=false.",
+      "originalSha256": "1ab7199b49b41fdcb4c4eeab772ca582c83b8379e02a0d1958c8c98fae823fbf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 405
+}

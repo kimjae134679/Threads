@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EC%84%A0%EB%AC%BC-ez1x4nnn
+제목 - 친정이 사준 명품가방, 시어머니가 다음날 환불하겠답니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자의 어머니가 사위를 어렵게 키운 시어머니에게 감사 표시로 가방을 선물하자고 해 평일 11시부터 4시까지 함께 명품관을 돌고 결제까지 했다고 한다. 그런데 다음 날 시어머니가 '받으면 줘야 되니까 싫다'며 환불하고 싶다고 했고, 시아버지가 예물비로 700만원을 주겠다는 기존 말도 없던 일이 된 상황. 반면 친정은 시어머니 선물과 반지 비용으로 1,000만원을 입금했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EC%84%A0%EB%AC%BC-ez1x4nnn",
+    "title": "친정이 사준 명품가방, 시어머니가 다음날 환불하겠답니다",
+    "body": "작성자의 어머니가 사위를 어렵게 키운 시어머니에게 감사 표시로 가방을 선물하자고 해 평일 11시부터 4시까지 함께 명품관을 돌고 결제까지 했다고 한다. 그런데 다음 날 시어머니가 '받으면 줘야 되니까 싫다'며 환불하고 싶다고 했고, 시아버지가 예물비로 700만원을 주겠다는 기존 말도 없던 일이 된 상황. 반면 친정은 시어머니 선물과 반지 비용으로 1,000만원을 입금했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_명품가방환불시어머니.md",
+      "originalTitle": "친정이 사준 명품가방, 시어머니가 다음날 환불하겠답니다",
+      "originalMarkdown": "# 친정이 사준 명품가방, 시어머니가 다음날 환불하겠답니다\r\n\r\n## source\r\nBlind\r\n\r\n## 원문 제목\r\n시어머니 선물\r\n\r\n## 글 내용\r\n작성자의 어머니가 사위를 어렵게 키운 시어머니에게 감사 표시로 가방을 선물하자고 해 평일 11시부터 4시까지 함께 명품관을 돌고 결제까지 했다고 한다. 그런데 다음 날 시어머니가 '받으면 줘야 되니까 싫다'며 환불하고 싶다고 했고, 시아버지가 예물비로 700만원을 주겠다는 기존 말도 없던 일이 된 상황. 반면 친정은 시어머니 선물과 반지 비용으로 1,000만원을 입금했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EC%84%A0%EB%AC%BC-ez1x4nnn\r\n\r\n## 관찰시각 / 실제 관측 수치\r\n- 관찰: 2026-09-19 10:17 KST 전후\r\n- 조회수 778 / 댓글 24\r\n- 좋아요: 미확인\r\n\r\n## 평가\r\n선물 자체보다 '받으면 줘야 하니까 싫다'는 한마디와 양가 돈의 대비가 강한 결혼 전 가족갈등 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / acquisition·provenance / 제작·게시 상태\r\n- exact individual public URL 확인: C1\r\n- full body read: 예\r\n- comments read: 아니오\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n- source media 확보: 0\r\n- acquisition: EXACT_PUBLIC_URL_VERIFIED / SOURCE_MEDIA_NOT_ACQUIRED\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 미완료. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "001b5aac0e7ac3c58a112704ed77985f43c3d0341b0f3aa2d4dde39273097dec",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 423
+}

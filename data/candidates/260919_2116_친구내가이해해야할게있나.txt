@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EB%82%B4%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%ED%95%A0%EA%B2%8C-%EC%9E%88%EB%82%98-4OpAYDjP
+제목 - 친구 내가 이해해야할게 있나
+내용 - [명시 요약 — 원문 전문 아님]
+20년지기 결혼에 축의 50만원과 가방순이까지 했는데 출산 전 선물 링크를 직접 보내 요구한 사건으로 친구 사이 금전·예의 논쟁성이 높음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EB%82%B4%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%ED%95%A0%EA%B2%8C-%EC%9E%88%EB%82%98-4OpAYDjP",
+    "title": "친구 내가 이해해야할게 있나",
+    "body": "20년지기 결혼에 축의 50만원과 가방순이까지 했는데 출산 전 선물 링크를 직접 보내 요구한 사건으로 친구 사이 금전·예의 논쟁성이 높음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_친구내가이해해야할게있나.md",
+      "originalTitle": "친구 내가 이해해야할게 있나",
+      "originalMarkdown": "# 친구 내가 이해해야할게 있나\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EB%82%B4%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%ED%95%A0%EA%B2%8C-%EC%9E%88%EB%82%98-4OpAYDjP\r\n- exactObservedTitle: 친구 내가 이해해야할게 있나\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 639, 댓글 17\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 20년지기 결혼에 축의 50만원과 가방순이까지 했는데 출산 전 선물 링크를 직접 보내 요구한 사건으로 친구 사이 금전·예의 논쟁성이 높음.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지 직접 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a5045fcc2f9f6a2e155b1e4f0fd64e202c7e0360b1c02d57d7b2c1c5c68aca93",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 297
+}

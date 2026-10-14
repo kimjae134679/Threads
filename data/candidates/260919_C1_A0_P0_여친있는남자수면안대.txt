@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%97%AC%EC%B9%9C-%EC%9E%88%EB%8A%94-%EB%82%A8%EC%9E%90-6JO7LzL8
+제목 - 마음 가는 유부남급 장기연애 남자에게 '여친 갖다주라'며 수면안대를 보냈습니다
+내용 - [명시 요약 — 원문 전문 아님]
+6년 사귄 여자친구가 있는 남성과 대화가 잘 통해 마음이 생긴 작성자의 글. 남성이 연하 범위나 사귀자는 농담 등 호감을 오해할 수 있는 말을 했지만, 작성자는 여자친구가 힘들다는 이야기를 듣고 선을 긋기 위해 아로마 오일과 수면 안대를 사서 여자친구에게 가져다주라고 보냈다고 한다. 남성은 고맙다며 여자친구에게 잘 전달하겠다고 답했고, 작성자는 마음이 아픈 걸 보니 자신도 많이 좋아하게 된 것 같다고 적었다. 공개 본문 읽음. 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%97%AC%EC%B9%9C-%EC%9E%88%EB%8A%94-%EB%82%A8%EC%9E%90-6JO7LzL8",
+    "title": "마음 가는 유부남급 장기연애 남자에게 '여친 갖다주라'며 수면안대를 보냈습니다",
+    "body": "6년 사귄 여자친구가 있는 남성과 대화가 잘 통해 마음이 생긴 작성자의 글. 남성이 연하 범위나 사귀자는 농담 등 호감을 오해할 수 있는 말을 했지만, 작성자는 여자친구가 힘들다는 이야기를 듣고 선을 긋기 위해 아로마 오일과 수면 안대를 사서 여자친구에게 가져다주라고 보냈다고 한다. 남성은 고맙다며 여자친구에게 잘 전달하겠다고 답했고, 작성자는 마음이 아픈 걸 보니 자신도 많이 좋아하게 된 것 같다고 적었다. 공개 본문 읽음. 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_여친있는남자수면안대.md",
+      "originalTitle": "마음 가는 유부남급 장기연애 남자에게 '여친 갖다주라'며 수면안대를 보냈습니다",
+      "originalMarkdown": "# 마음 가는 유부남급 장기연애 남자에게 '여친 갖다주라'며 수면안대를 보냈습니다\r\n\r\n## 원문 제목\r\n여친 있는 남자\r\n\r\n## source\r\nBlind 공개 개별 페이지.\r\n\r\n## 글 내용\r\n6년 사귄 여자친구가 있는 남성과 대화가 잘 통해 마음이 생긴 작성자의 글. 남성이 연하 범위나 사귀자는 농담 등 호감을 오해할 수 있는 말을 했지만, 작성자는 여자친구가 힘들다는 이야기를 듣고 선을 긋기 위해 아로마 오일과 수면 안대를 사서 여자친구에게 가져다주라고 보냈다고 한다. 남성은 고맙다며 여자친구에게 잘 전달하겠다고 답했고, 작성자는 마음이 아픈 걸 보니 자신도 많이 좋아하게 된 것 같다고 적었다. 공개 본문 읽음. 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%97%AC%EC%B9%9C-%EC%9E%88%EB%8A%94-%EB%82%A8%EC%9E%90-6JO7LzL8\r\n\r\n## 관찰시각 / 실제로 보인 수치\r\n- 관찰: 2026-09-19 12:17 KST 전후 자동화 실행 중\r\n- 조회수: 1,322\r\n- 댓글: 51\r\n- 좋아요: 이번 검색 결과에서 확정 수치 미확인\r\n\r\n## 본문·댓글·이미지 확인\r\n- 본문: 읽음\r\n- 댓글: 전체 미확인\r\n- 이미지/스크린샷: 확인/취득하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n호감이 생긴 상대의 기존 연인에게 오히려 선물을 보내며 선을 긋는 행동이 예상과 반대라 장면성이 강하다. '상대 남자의 말 자체가 선을 넘었는가'까지 자연스럽게 논쟁이 붙는다.\r\n\r\n## acquisition / provenance\r\n- exact individual public page: VERIFIED\r\n- provenance: DIRECT_PUBLIC_PAGE\r\n- Blind bulk crawl/login/anti-bot bypass: NOT_PERFORMED\r\n- source media acquisition: NOT_PERFORMED\r\n- rights/privacy/human review: 미실행·필요\r\n- OCR/moderation: 미실행\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "49e4d1d1b7ad1625520937a026d2a1135c5ef3ecf5a78b3da891a699f209c5b0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 447
+}

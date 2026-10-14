@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC
+제목 - 축의금 논란 , 제가 이상한가요?(특이케이스)
+내용 - [명시 요약 — 원문 전문 아님]
+두 친구에게 각각 20만원과 부케 관련 비용까지 썼지만 본인 결혼식에는 불참하며 10·15만원을 받은 비교 구조라 축의금 계산 논쟁이 명확함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC",
+    "title": "축의금 논란 , 제가 이상한가요?(특이케이스)",
+    "body": "두 친구에게 각각 20만원과 부케 관련 비용까지 썼지만 본인 결혼식에는 불참하며 10·15만원을 받은 비교 구조라 축의금 계산 논쟁이 명확함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_축의금특이케이스두친구.md",
+      "originalTitle": "축의금 논란 , 제가 이상한가요?(특이케이스)",
+      "originalMarkdown": "# 축의금 논란 , 제가 이상한가요?(특이케이스)\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC\r\n- exactObservedTitle: 축의금 논란 , 제가 이상한가요?(특이케이스)\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 8,933 / 댓글 92 / 좋아요 17\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 두 친구에게 각각 20만원과 부케 관련 비용까지 썼지만 본인 결혼식에는 불참하며 10·15만원을 받은 비교 구조라 축의금 계산 논쟁이 명확함.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_PARTIAL\r\n- provenance: 원문 게시자의 주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "194a9298a7688f7208d5022ee1a816914eaacbf5af5e7e40f93ed68b2c341286",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 354
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/1190600825
+제목 - 핫게간 축의금보고 생각난 결혼식 하객예의
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 발표 식사·배우자 질문·청첩장 참석 등 하객 예의를 강한 어조로 규정해 찬반과 경험담이 즉시 붙기 좋은 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/1190600825",
+    "title": "핫게간 축의금보고 생각난 결혼식 하객예의",
+    "body": "결혼 발표 식사·배우자 질문·청첩장 참석 등 하객 예의를 강한 어조로 규정해 찬반과 경험담이 즉시 붙기 좋은 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_결혼식하객예의.md",
+      "originalTitle": "핫게간 축의금보고 생각난 결혼식 하객예의",
+      "originalMarkdown": "# 핫게간 축의금보고 생각난 결혼식 하객예의\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/1190600825\r\n- exactObservedTitle: 핫게간 축의금보고 생각난 결혼식 하객예의\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회 수 22827\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact individual public URL; opinion post, not independent fact\r\n- whyGood: 결혼 발표 식사·배우자 질문·청첩장 참석 등 하객 예의를 강한 어조로 규정해 찬반과 경험담이 즉시 붙기 좋은 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a0de0a924634e198aeb3953bcc3277743c1735dca1844e09820b65ac446a22b5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 173
+}

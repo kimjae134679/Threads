@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4327958733
+제목 - 파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기
+내용 - [명시 요약 — 원문 전문 아님]
+`파혼 자체보다 이후 아버지와의 갈등, 과거 가족사와 부모의 자존심 문제가 겹치는 후속 갈등형 소재다. 결혼·부모·자식 선택의 경계에 대한 의견을 부르기 쉽다.`
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4327958733",
+    "title": "파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기",
+    "body": "`파혼 자체보다 이후 아버지와의 갈등, 과거 가족사와 부모의 자존심 문제가 겹치는 후속 갈등형 소재다. 결혼·부모·자식 선택의 경계에 대한 의견을 부르기 쉽다.`",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_파혼후아빠갈등후기.md",
+      "originalTitle": "파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기",
+      "originalMarkdown": "# 파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/4327958733\r\n- exactObservedTitle: `파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기`\r\n- observedAt: 2026-09-20 13:16 KST\r\n- observedPublishedAt: `2026.08.28 11:29`\r\n- observedMetrics: `조회 629`, `댓글 21`\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 파싱 결과에서 본문 이미지/스크린샷 표시는 관찰되지 않음)\r\n- acquisition: `PUBLIC_INDIVIDUAL_PAGE_TEXT_READ`\r\n- provenance: `TheQoo 개별 공개 후기 페이지에서 제목·본문·표시 수치를 직접 관찰. 가족사와 갈등은 작성자 진술로만 기록.`\r\n- whyGood: `파혼 자체보다 이후 아버지와의 갈등, 과거 가족사와 부모의 자존심 문제가 겹치는 후속 갈등형 소재다. 결혼·부모·자식 선택의 경계에 대한 의견을 부르기 쉽다.`\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0cc39011d8b1150448f0385ba7be5c68814b67d6e8477c5b9773ae81404693a5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 202
+}

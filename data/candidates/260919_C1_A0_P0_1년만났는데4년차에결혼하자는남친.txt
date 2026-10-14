@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EA%B2%B0%ED%98%BC-%EC%83%9D%EA%B0%81-%EC%97%86%EB%8A%94%EA%B1%B0%EC%A7%80-%EC%9D%B4%EA%B1%B0-4kmxereh
+제목 - 1년 만났는데 남친은 연애 4년차에 결혼하고 싶답니다
+내용 - [명시 요약 — 원문 전문 아님]
+27세 작성자는 썸 단계부터 서른 전에 결혼하고 싶다는 뜻을 밝혔고 31세 남자친구와 1년째 연애 중이다. 남자친구는 3년을 연애한 뒤 4년차에 결혼하고 싶다고 말했고, 작성자는 이것이 자신과 결혼할 생각이 없다는 의미인지 고민한다. 공개 페이지 본문과 공개 댓글 일부를 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EA%B2%B0%ED%98%BC-%EC%83%9D%EA%B0%81-%EC%97%86%EB%8A%94%EA%B1%B0%EC%A7%80-%EC%9D%B4%EA%B1%B0-4kmxereh",
+    "title": "1년 만났는데 남친은 연애 4년차에 결혼하고 싶답니다",
+    "body": "27세 작성자는 썸 단계부터 서른 전에 결혼하고 싶다는 뜻을 밝혔고 31세 남자친구와 1년째 연애 중이다. 남자친구는 3년을 연애한 뒤 4년차에 결혼하고 싶다고 말했고, 작성자는 이것이 자신과 결혼할 생각이 없다는 의미인지 고민한다. 공개 페이지 본문과 공개 댓글 일부를 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_1년만났는데4년차에결혼하자는남친.md",
+      "originalTitle": "1년 만났는데 남친은 연애 4년차에 결혼하고 싶답니다",
+      "originalMarkdown": "# 1년 만났는데 남친은 연애 4년차에 결혼하고 싶답니다\r\n\r\n## 원문 제목\r\n남친 결혼 생각 없는거지 이거?\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n27세 작성자는 썸 단계부터 서른 전에 결혼하고 싶다는 뜻을 밝혔고 31세 남자친구와 1년째 연애 중이다. 남자친구는 3년을 연애한 뒤 4년차에 결혼하고 싶다고 말했고, 작성자는 이것이 자신과 결혼할 생각이 없다는 의미인지 고민한다. 공개 페이지 본문과 공개 댓글 일부를 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EA%B2%B0%ED%98%BC-%EC%83%9D%EA%B0%81-%EC%97%86%EB%8A%94%EA%B1%B0%EC%A7%80-%EC%9D%B4%EA%B1%B0-4kmxereh\r\n\r\n## 관찰\r\n2026-09-19 08:19 KST. 공개 페이지 표시 조회수 146 / 댓글 17 / 좋아요 1. 본문 읽음. 댓글 일부 읽음. 이미지/스크린샷 존재 여부 미확인.\r\n\r\n## 평가\r\n27세의 '서른 전 결혼'과 남친의 '4년차 결혼'이 정확히 충돌해 결혼 의지냐 단순 속도 차이냐로 의견이 갈리는 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. acquisition/provenance: C1 / EXACT_PUBLIC_URL_VERIFIED. source asset 미확보. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료. 실제 게시 권한은 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "e8da51194fef8359948e96479ba5d5a82951af92962e525b2c2b4f595677eaac",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 394
+}

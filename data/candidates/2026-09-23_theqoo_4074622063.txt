@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4074622063
+제목 - 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+30대에 접어들며 친구들이 연애·결혼한 뒤 연락이 급격히 줄고, 특히 결혼한 친구에게 큰 축의금을 냈는데 관계가 끊긴 듯해 돈까지 아깝게 느껴진다는 경험담이다. 결혼 후 친구관계·축의금·관계의 상호성에 대해 즉시 의견이 갈릴 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4074622063",
+    "title": "30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기",
+    "body": "30대에 접어들며 친구들이 연애·결혼한 뒤 연락이 급격히 줄고, 특히 결혼한 친구에게 큰 축의금을 냈는데 관계가 끊긴 듯해 돈까지 아깝게 느껴진다는 경험담이다. 결혼 후 친구관계·축의금·관계의 상호성에 대해 즉시 의견이 갈릴 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_4074622063.md",
+      "originalTitle": "30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기",
+      "originalMarkdown": "# 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4074622063\r\n- exactObservedTitle: 30대 초중반 미혼 여자 평소 연락하는 사람 엄마 제외 1도 없는 후기\r\n- observedAt: 2026-09-23 10:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 3,346 / 댓글 19 (관찰 시점 공개 페이지 표시)\r\n- whyGood: 30대에 접어들며 친구들이 연애·결혼한 뒤 연락이 급격히 줄고, 특히 결혼한 친구에게 큰 축의금을 냈는데 관계가 끊긴 듯해 돈까지 아깝게 느껴진다는 경험담이다. 결혼 후 친구관계·축의금·관계의 상호성에 대해 즉시 의견이 갈릴 소재다.\r\n- verification: 개인 경험담이며 상대방 관점과 세부 사실은 독립 검증되지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "a08ea599dbaf74c2074a745b7caa5e39cd3beb7bf61068ffddf65f6469fd375f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 256
+}

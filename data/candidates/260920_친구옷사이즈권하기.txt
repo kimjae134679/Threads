@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3302337023
+제목 - 친구에게 맞는 사이즈의 옷을 권할 방법 찾는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+같은 옷·같은 사이즈를 둘러싼 반복 갈등이라 공감/답답함 반응과 해결 의견을 끌어내기 쉬움.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3302337023",
+    "title": "친구에게 맞는 사이즈의 옷을 권할 방법 찾는 후기",
+    "body": "같은 옷·같은 사이즈를 둘러싼 반복 갈등이라 공감/답답함 반응과 해결 의견을 끌어내기 쉬움.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_친구옷사이즈권하기.md",
+      "originalTitle": "친구에게 맞는 사이즈의 옷을 권할 방법 찾는 후기",
+      "originalMarkdown": "# 친구에게 맞는 사이즈의 옷을 권할 방법 찾는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3302337023\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `친구에게 맞는 사이즈의 옷을 권할 방법 찾는 후기`\r\n- observedMetrics: 조회 9,470 / 댓글 13\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 같은 옷·같은 사이즈를 둘러싼 반복 갈등이라 공감/답답함 반응과 해결 의견을 끌어내기 쉬움.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative only\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "9981929005778f9ff4060f74580c46c72c31a3d7c7be5e99420fd1067c6a43d3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 165
+}

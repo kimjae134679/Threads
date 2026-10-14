@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81%EC%97%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%98%ED%95%B4%EB%93%9C%EB%A0%A4%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94-jjysjful
+제목 - 시댁에 어떻게 잘해드려야 하나요?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81%EC%97%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%98%ED%95%B4%EB%93%9C%EB%A0%A4%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94-jjysjful",
+    "title": "시댁에 어떻게 잘해드려야 하나요?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_시댁주1_2회요구.md",
+      "originalTitle": "시댁에 어떻게 잘해드려야 하나요?",
+      "originalMarkdown": "# 시댁에 어떻게 잘해드려야 하나요?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81%EC%97%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%98%ED%95%B4%EB%93%9C%EB%A0%A4%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94-jjysjful\r\n- exactObservedTitle: 시댁에 어떻게 잘해드려야 하나요?\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 193 / 댓글 12\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n주 1~2회 가족모임, 카톡 답장, 신혼집 정리, 결혼기념일 달 가족여행까지 이어지는 요구와 친정에는 같은 기준을 적용하지 않는 갈등이 즉시 의견을 부른다.\r\n",
+      "originalSha256": "179c896e369858a95f74d1691d8f46674c1d516eac4367f8c22dba053dacadcf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 234
+}

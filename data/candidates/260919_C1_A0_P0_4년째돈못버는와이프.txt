@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/4%EB%85%84%EC%A7%B8-%EB%8F%88-%EB%AA%BB-%EB%B2%84%EB%8A%94-%EC%99%80%EC%9D%B4%ED%94%84-Pb8FULLo
+제목 - 돈 잘 번다던 아내가 결혼 후 4년째 일을 안 합니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 결혼 전 아내가 돈을 잘 번다고 했지만 결혼 후 힘들다며 일을 그만뒀고, 자녀 계획도 미뤄졌다가 이후 임신이 잘 되지 않는 상황에서 부부싸움까지 겹쳐 결혼 자체를 후회하는 마음을 적었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/4%EB%85%84%EC%A7%B8-%EB%8F%88-%EB%AA%BB-%EB%B2%84%EB%8A%94-%EC%99%80%EC%9D%B4%ED%94%84-Pb8FULLo",
+    "title": "돈 잘 번다던 아내가 결혼 후 4년째 일을 안 합니다",
+    "body": "작성자는 결혼 전 아내가 돈을 잘 번다고 했지만 결혼 후 힘들다며 일을 그만뒀고, 자녀 계획도 미뤄졌다가 이후 임신이 잘 되지 않는 상황에서 부부싸움까지 겹쳐 결혼 자체를 후회하는 마음을 적었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_4년째돈못버는와이프.md",
+      "originalTitle": "돈 잘 번다던 아내가 결혼 후 4년째 일을 안 합니다",
+      "originalMarkdown": "# 돈 잘 번다던 아내가 결혼 후 4년째 일을 안 합니다\r\n\r\n## source\r\nBlind 결혼생활\r\n\r\n## 원문 제목\r\n4년째 돈 못 버는 와이프\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/4%EB%85%84%EC%A7%B8-%EB%8F%88-%EB%AA%BB-%EB%B2%84%EB%8A%94-%EC%99%80%EC%9D%B4%ED%94%84-Pb8FULLo\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 23K / 댓글 145\r\n\r\n## 본문·댓글 확인\r\n본문 읽음. 공개 댓글 일부 읽음. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n작성자는 결혼 전 아내가 돈을 잘 번다고 했지만 결혼 후 힘들다며 일을 그만뒀고, 자녀 계획도 미뤄졌다가 이후 임신이 잘 되지 않는 상황에서 부부싸움까지 겹쳐 결혼 자체를 후회하는 마음을 적었다.\r\n\r\n## 왜 소재로 좋은지\r\n맞벌이 기대·퇴사·자녀계획이라는 여러 현실 갈등이 겹쳐 댓글 반응이 크다. 다만 임신 관련 내용은 민감하므로 자극적으로 소비하지 않고 human review가 필요하다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 본문·일부 댓글 확인. 민감한 가족/임신 정보 포함. source asset 미확보. rights/privacy/human review 필요. publicationAllowed=false.",
+      "originalSha256": "c4230aadc4135c48e3e579720d510f6e1f5c4f5ecaea3dcd831f1ce602189d39",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 318
+}

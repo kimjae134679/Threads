@@ -60,3 +60,12 @@ test('viewer refuses changed mapping, altered image bytes, and arbitrary filesys
  await fs.writeFile(manifest,JSON.stringify({navigation:{...navigation,mapping_sha256:'a'.repeat(64)}}));
  await assert.rejects(reader.read('/viewer/'),/viewer_mapping_changed/);
 }));
+
+test('copied viewer resolves only typed paths while original signed mapping and inventory bytes stay identical',()=>fixture(async({state,base,manifest,html})=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'viewer-relocated-')),prior=process.env.THREADS_PROJECT_ROOT;try{
+  const dest=path.join(root,'local-private/copy');await fs.cp(base,dest,{recursive:true});await fs.writeFile(path.join(root,'local-private/migration-manifest.json'),JSON.stringify({schema:'threads-unified-migration-v1',projectRoot:root,pathMappings:[{sourceRoot:base,destinationRoot:'local-private/copy',classification:'private'}]}));process.env.THREADS_PROJECT_ROOT=root;
+  await fs.rename(path.join(base,'delivered'),path.join(base,'held-original-history'));
+  const reader=new ReadOnlyViewer(manifest,async()=>state),opened=await reader.read('/viewer/source-one/');assert.match(opened.bytes.toString(),/Existing full viewer/);assert.equal(await fs.readFile(path.join(dest,'delivered/outputs/post/이미지 전체 보기.html'),'utf8'),html);
+  for(const name of ['delivery-mapping.json','file-inventory.json'])assert.deepEqual(await fs.readFile(path.join(dest,'delivered',name)),await fs.readFile(path.join(base,'held-original-history',name)));
+ }finally{if(prior===undefined)delete process.env.THREADS_PROJECT_ROOT;else process.env.THREADS_PROJECT_ROOT=prior;await fs.rm(root,{recursive:true,force:true});}
+}));

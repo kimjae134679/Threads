@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/lostark/6271/3290621
+제목 - 난 아부지 회사 썰 듣는거 좋아함
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/3290621",
+    "title": "난 아부지 회사 썰 듣는거 좋아함",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_inven-dad-company-implant.md",
+      "originalTitle": "난 아부지 회사 썰 듣는거 좋아함",
+      "originalMarkdown": "# 난 아부지 회사 썰 듣는거 좋아함\r\n\r\n- source: Inven / 로스트아크 인벤 자유 게시판\r\n- publicUrl: https://www.inven.co.kr/board/lostark/6271/3290621\r\n- exactObservedTitle: 난 아부지 회사 썰 듣는거 좋아함\r\n- observedAt: 2026-09-22 11:15 KST\r\n- observedMetrics: 조회 779, 추천 0, 댓글 3 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (본문에 설명용 이미지가 공개 페이지상 표시됨; 다운로드하지 않음)\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- acquisition: public individual page discovered via public web search; no login, anti-bot bypass, bulk crawl, screenshot, image download, or OCR\r\n- provenance: exact individual public Inven URL verified; body text was publicly readable\r\n\r\n## 왜 소재로 좋은지\r\n회사 상사가 점심에 임플란트를 여러 개 하고도 바로 회사로 복귀해 술까지 마시러 갔다가 결국 입이 붓고 실려 갔다는 짧고 강한 직장 에피소드다. `왜 굳이 출근했나`, `술을 왜 마셨나`라는 황당함이 한 번에 전달돼 짧은 커뮤니티형 소재로 쓰기 좋다.\r\n",
+      "originalSha256": "45cde2b1ee01e2c566739fa59211668db5be3b5b4e2f9b4c4ac23cb3bc3fd47f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 112
+}

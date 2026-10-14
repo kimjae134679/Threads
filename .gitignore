@@ -8,6 +8,12 @@ data/runtime/
 Thumbs.db
 desktop/dist/
 
+# Private originals, large assets and live judgments remain inside this project,
+# but are never public Git content. Migration copies; it does not delete sources.
+/local-private/
+/desktop/production-editor/unified-material-txt.js
+/upload-studio/.local/
+
 # Local Chromium capture profile (GitHub Desktop worktree hygiene)
 tmp_capture/
 

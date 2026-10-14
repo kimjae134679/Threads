@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%B4-%EA%B2%B0%ED%98%BC%EC%8B%9D%EB%95%8C-%EC%B6%95%EC%9D%98%EA%B8%88-50%ED%95%9C-%EC%B9%9C%EA%B5%AC-Noz7dF3z
+제목 - 연락 끊긴 친구가 내 결혼식에 50만원 냈습니다
+내용 - [명시 요약 — 원문 전문 아님]
+몇 년 전 자신의 결혼식에 축의금 50만원을 낸 친구와 성향 차이로 연락이 끊겼는데, 그 친구가 아직 결혼하지 않은 것 같아 지금 돈을 돌려줘야 할지, 나중에 결혼 소식을 들으면 보내야 할지 고민하는 글.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%B4-%EA%B2%B0%ED%98%BC%EC%8B%9D%EB%95%8C-%EC%B6%95%EC%9D%98%EA%B8%88-50%ED%95%9C-%EC%B9%9C%EA%B5%AC-Noz7dF3z",
+    "title": "연락 끊긴 친구가 내 결혼식에 50만원 냈습니다",
+    "body": "몇 년 전 자신의 결혼식에 축의금 50만원을 낸 친구와 성향 차이로 연락이 끊겼는데, 그 친구가 아직 결혼하지 않은 것 같아 지금 돈을 돌려줘야 할지, 나중에 결혼 소식을 들으면 보내야 할지 고민하는 글.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_친구결혼축의금50.md",
+      "originalTitle": "연락 끊긴 친구가 내 결혼식에 50만원 냈습니다",
+      "originalMarkdown": "# 연락 끊긴 친구가 내 결혼식에 50만원 냈습니다\r\n\r\n## source\r\nBlind 블라블라\r\n\r\n## 원문 제목\r\n내 결혼식때 축의금 50한 친구.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%B4-%EA%B2%B0%ED%98%BC%EC%8B%9D%EB%95%8C-%EC%B6%95%EC%9D%98%EA%B8%88-50%ED%95%9C-%EC%B9%9C%EA%B5%AC-Noz7dF3z\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 849 / 댓글 9 / 투표 참여 158\r\n\r\n## 본문·댓글 확인\r\n본문 읽음. 댓글 전체 미확인. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n몇 년 전 자신의 결혼식에 축의금 50만원을 낸 친구와 성향 차이로 연락이 끊겼는데, 그 친구가 아직 결혼하지 않은 것 같아 지금 돈을 돌려줘야 할지, 나중에 결혼 소식을 들으면 보내야 할지 고민하는 글.\r\n\r\n## 왜 소재로 좋은지\r\n한국식 축의금 '받은 만큼 돌려줘야 하나' 문제와 절교가 겹쳐 즉시 의견이 갈린다. 실제 투표도 붙어 있어 논쟁 구조가 명확하다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 본문 및 투표 참여 수 확인. source asset 미확보. publicationAllowed=false.",
+      "originalSha256": "b41d70d2c5a999575b8a112db35250452c886c882b937b78b8d8f319b8420c71",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 339
+}

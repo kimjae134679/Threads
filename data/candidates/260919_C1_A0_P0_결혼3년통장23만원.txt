@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4007037226
+제목 - 결혼 3년차 통장잔고 23만원
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4007037226",
+    "title": "결혼 3년차 통장잔고 23만원",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼3년통장23만원.md",
+      "originalTitle": "결혼 3년차 통장잔고 23만원",
+      "originalMarkdown": "# 결혼 3년차 통장잔고 23만원\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/4007037226\r\n- exactObservedTitle: 결혼 3년차 통장잔고 23만원 남은 부부\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 98,075 / 댓글 544개\r\n- bodyRead: false — 본문 미확인(이미지 중심)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes\r\n- provenance: C1 / exact individual public URL\r\n- acquisition: PUBLIC_INDEX_TEXT_ONLY\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n결혼 3년차와 잔고 23만원이라는 대비가 강해 돈·소비·부부 갈등에 대한 반응을 즉시 끌어낸다. 이미지 내용은 추정하지 않음.\r\n",
+      "originalSha256": "32642595374245d8d899ad073163b9085c388218200fc03f4141873048347fee",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 96
+}

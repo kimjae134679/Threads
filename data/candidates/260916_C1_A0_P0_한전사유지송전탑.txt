@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728387
+제목 - 한전 사유지에 송전탑 설치
+내용 - [명시 요약 — 원문 전문 아님]
+사유지에 설치된 송전탑 문제를 다루는 이미지+영상 링크 게시물. 공개 페이지에서 제목, 이미지 존재, YouTube 링크와 작성자의 짧은 반응은 확인했지만 첨부 이미지/영상 전체 내용은 아직 확인하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728387",
+    "title": "한전 사유지에 송전탑 설치",
+    "body": "사유지에 설치된 송전탑 문제를 다루는 이미지+영상 링크 게시물. 공개 페이지에서 제목, 이미지 존재, YouTube 링크와 작성자의 짧은 반응은 확인했지만 첨부 이미지/영상 전체 내용은 아직 확인하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_한전사유지송전탑.md",
+      "originalTitle": "한전 사유지에 송전탑 설치",
+      "originalMarkdown": "# 한전 사유지에 송전탑 설치\r\n\r\n## 글 내용\r\n사유지에 설치된 송전탑 문제를 다루는 이미지+영상 링크 게시물. 공개 페이지에서 제목, 이미지 존재, YouTube 링크와 작성자의 짧은 반응은 확인했지만 첨부 이미지/영상 전체 내용은 아직 확인하지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728387\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 이번 관측 결과에서 조회/추천/댓글 수치를 확정할 수 없어 기록하지 않음\r\n- 본문 읽음: 페이지 텍스트 일부 확인, 이미지/영상 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n재산권+공공시설 갈등이라 누구나 의견을 내기 쉽고, 사용자가 제시했던 Instagram 사례와도 연결되는 소재다. 사실관계와 원출처 확인을 우선해야 한다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- 외부 영상 링크 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "9f89b27adcc9d0c205d4d853a016cc49914d9f6c25ea3e1f4b56094129f3d950",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 231
+}

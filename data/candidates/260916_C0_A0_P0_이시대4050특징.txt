@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 이시대를 사는 4050 특징
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. Inven 공개 목록에서 제목과 반응 수치만 확인했다. exact individual source URL을 이번 실행에서 해결하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "이시대를 사는 4050 특징",
+    "body": "본문 미확인. Inven 공개 목록에서 제목과 반응 수치만 확인했다. exact individual source URL을 이번 실행에서 해결하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_이시대4050특징.md",
+      "originalTitle": "이시대를 사는 4050 특징",
+      "originalMarkdown": "# 이시대를 사는 4050 특징\r\n\r\n## 글 내용\r\n본문 미확인. Inven 공개 목록에서 제목과 반응 수치만 확인했다. exact individual source URL을 이번 실행에서 해결하지 못했다.\r\n\r\n## 정확한 링크\r\n정확한 개별 링크 미확인. 공개 목록: https://m.inven.co.kr/board/webzine/2097?category=_%EC%9D%B4%EC%8A%88&iskin=webzine\r\n\r\n- 출처: Inven 오픈이슈갤러리 공개 목록\r\n- 관측 시각: 2026-09-16 10:37 KST 전후\r\n- 본문 읽음: 아니오\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 목록 관측: 조회 3,893 / 추천 4 / 댓글 12\r\n- 목록의 동일 관측시점 값만 기록.\r\n\r\n## 평가\r\n- 세대 공감/논쟁형 소재로 반응성이 있으나 실제 내용에 따라 단순 비하나 과도한 일반화가 될 수 있어 본문 확인이 먼저 필요.\r\n- 성별·세대 일반화 표현 자체만으로 자동 폐기하지 않되 맥락을 실제 확인한다.\r\n\r\n## 형식\r\n이미지 여부 미확인\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 실제 source 파일 확보: 아니오\r\n- acquisition: public index lead / exact URL unresolved\r\n- C0 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- safety/privacy/human review: 필요\r\n- 실제 게시: 없음",
+      "originalSha256": "ee3bcd6be0f73c1297ac0fb20477fbbe506fd2099ac9c45b6e82d08cf26e3e97",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 151
+}

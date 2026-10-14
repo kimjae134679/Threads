@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EA%B3%84%EC%A2%8C%EC%9D%B4%EC%B2%B4-d5kma7ke
+제목 - 축의금 계좌이체
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식 축의금을 현금 대신 계좌이체한 참석자가 식권을 받을 때 눈치를 받았다며 계좌이체가 예의에 어긋나는지 묻는다. 공개 댓글에서는 축의대가 이체 사실을 즉시 확인하기 어렵고 식권 사기와 구분하기 어렵다는 반응이 나온다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EA%B3%84%EC%A2%8C%EC%9D%B4%EC%B2%B4-d5kma7ke",
+    "title": "축의금 계좌이체",
+    "body": "결혼식 축의금을 현금 대신 계좌이체한 참석자가 식권을 받을 때 눈치를 받았다며 계좌이체가 예의에 어긋나는지 묻는다. 공개 댓글에서는 축의대가 이체 사실을 즉시 확인하기 어렵고 식권 사기와 구분하기 어렵다는 반응이 나온다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_축의금계좌이체식권.md",
+      "originalTitle": "축의금 계좌이체",
+      "originalMarkdown": "# 축의금 계좌이체\r\n\r\n## 글 내용\r\n결혼식 축의금을 현금 대신 계좌이체한 참석자가 식권을 받을 때 눈치를 받았다며 계좌이체가 예의에 어긋나는지 묻는다. 공개 댓글에서는 축의대가 이체 사실을 즉시 확인하기 어렵고 식권 사기와 구분하기 어렵다는 반응이 나온다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EA%B3%84%EC%A2%8C%EC%9D%B4%EC%B2%B4-d5kma7ke\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 01:36 KST · 조회 453 · 댓글 7. 좋아요 수치는 확인하지 않아 기록하지 않음.\r\n\r\n## 평가\r\n- 출처: Blind 공개 페이지\r\n- 본문: 확인\r\n- 댓글: 공개 노출 댓글 확인\r\n- 누구나 겪을 수 있는 결혼식 예절 문제에 '식권 사기 오해'라는 반전이 붙어 swipe-worthy.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. `ASSETS_PENDING`. C1_A0_P0. `publicationAllowed=false`. rights/privacy/human-review gate 유지. 게시 권한은 `04_REVIEW_PUBLISH`만 보유.",
+      "originalSha256": "2d6685fe0231749230af852890db2ebc677a18cd3b789cdd88073f7f6bbb1eb4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 289
+}

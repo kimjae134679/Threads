@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728276
+제목 - 쪼개진 나무를 복원하는 방법
+내용 - [명시 요약 — 원문 전문 아님]
+원문 페이지를 확인했다. 작성자는 시각 자료를 올리고 '완벽하다'는 짧은 반응을 남긴다. 복원 과정의 구체적 모습은 실제 미디어가 핵심이며 이번 수집에서는 source 파일을 확보하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728276",
+    "title": "쪼개진 나무를 복원하는 방법",
+    "body": "원문 페이지를 확인했다. 작성자는 시각 자료를 올리고 '완벽하다'는 짧은 반응을 남긴다. 복원 과정의 구체적 모습은 실제 미디어가 핵심이며 이번 수집에서는 source 파일을 확보하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_쪼개진나무복원방법.md",
+      "originalTitle": "쪼개진 나무를 복원하는 방법",
+      "originalMarkdown": "# 쪼개진 나무를 복원하는 방법\r\n\r\n## 글 내용\r\n원문 페이지를 확인했다. 작성자는 시각 자료를 올리고 '완벽하다'는 짧은 반응을 남긴다. 복원 과정의 구체적 모습은 실제 미디어가 핵심이며 이번 수집에서는 source 파일을 확보하지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728276\r\n\r\n- 출처: Inven 오픈이슈갤러리\r\n- 관측 시각: 2026-09-16 10:37 KST 전후\r\n- 원문 등록: 2026-09-15 21:15\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 조회: 2,514\r\n- 추천: 2\r\n- 댓글: 14\r\n- 위 수치는 동일 페이지 관측 스냅샷이며 다른 시점 수치와 합치지 않음.\r\n\r\n## 평가\r\n- '어떻게 고치지?'에서 결과를 확인하는 과정형 시각 콘텐츠로 짧고 이해가 빠름.\r\n- 원본 미디어 의존도가 높으므로 실제 asset을 확보해야만 제작 단계로 넘길 수 있음.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 시각 자료: 있음으로 페이지에서 표시\r\n- 실제 source 파일 확보: 아니오\r\n- 전체 원문 screenshot 확보: 아니오\r\n- acquisition: exact page verified / media pending\r\n- C1 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- privacy/human review: 필요\r\n- 실제 게시: 없음",
+      "originalSha256": "b0f8558a61ac7dfc6abfbabcb6dda57758aba7dc80f719530ef2bdd1d9c6c38b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 223
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4051012049?listStyle=viewer
+제목 - 결혼이랑 임출육 후회 하는 중기
+내용 - [명시 요약 — 원문 전문 아님]
+다정하고 성실하며 육아 참여도가 높은 남편, 순한 아기라는 외형적 조건과 달리 본인 성향 때문에 결혼·출산·육아를 후회한다는 역설이 강해 공감과 논쟁을 동시에 유발함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4051012049?listStyle=viewer",
+    "title": "결혼이랑 임출육 후회 하는 중기",
+    "body": "다정하고 성실하며 육아 참여도가 높은 남편, 순한 아기라는 외형적 조건과 달리 본인 성향 때문에 결혼·출산·육아를 후회한다는 역설이 강해 공감과 논쟁을 동시에 유발함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_theqoo_결혼임출육후회중기.md",
+      "originalTitle": "결혼이랑 임출육 후회 하는 중기",
+      "originalMarkdown": "# 결혼이랑 임출육 후회 하는 중기\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/4051012049?listStyle=viewer\r\n- exactObservedTitle: `결혼이랑 임출육 후회 하는 중기`\r\n- observedAt: 2026-09-20 03:14 KST\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: TheQoo 개별 공개 페이지 본문 확인.\r\n- observedMetrics: 조회 수 8002\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 다정하고 성실하며 육아 참여도가 높은 남편, 순한 아기라는 외형적 조건과 달리 본인 성향 때문에 결혼·출산·육아를 후회한다는 역설이 강해 공감과 논쟁을 동시에 유발함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "2487e01cb5b2cb61058719598b5c485a0839d351aa18ccf41dc63e94c7c8aef7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 214
+}

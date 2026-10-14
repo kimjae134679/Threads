@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728033
+제목 - 얼마예요 묻자 거지취급하는 업체
+내용 - [명시 요약 — 원문 전문 아님]
+공개 개별 게시물에서 제목과 작성자 본문 텍스트 `얼마냐고 물어보지도 못하네`를 확인함. 게시물은 영상/미디어 소재를 포함하지만 실제 source media bytes는 이번 회차에 확보하지 않았으므로 영상 내용·OCR·장면·업체 식별 정보는 추정하지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728033",
+    "title": "얼마예요 묻자 거지취급하는 업체",
+    "body": "공개 개별 게시물에서 제목과 작성자 본문 텍스트 `얼마냐고 물어보지도 못하네`를 확인함. 게시물은 영상/미디어 소재를 포함하지만 실제 source media bytes는 이번 회차에 확보하지 않았으므로 영상 내용·OCR·장면·업체 식별 정보는 추정하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_얼마예요거지취급.md",
+      "originalTitle": "얼마예요 묻자 거지취급하는 업체",
+      "originalMarkdown": "# 얼마예요 묻자 거지취급하는 업체\r\n\r\n## 글 내용\r\n공개 개별 게시물에서 제목과 작성자 본문 텍스트 `얼마냐고 물어보지도 못하네`를 확인함. 게시물은 영상/미디어 소재를 포함하지만 실제 source media bytes는 이번 회차에 확보하지 않았으므로 영상 내용·OCR·장면·업체 식별 정보는 추정하지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728033\r\n\r\n## 관측 수치\r\n- 공개 개별 페이지 작성시각: 2026-09-15 13:08\r\n- 작성자: 주마등\r\n- 이번 공개 검색 관측: 조회 3,287 / 추천 0 / 댓글 26\r\n- 본문 텍스트 읽음: 예\r\n- 댓글 전체 읽음: 아니오\r\n- source media bytes 확보: 아니오\r\n\r\n## 평가\r\n정확한 개별 공개 게시물 provenance는 확인됨. 다만 실제 영상/media bytes와 댓글 전체, 권리·개인정보·명예훼손 검토는 미완료이므로 제작/게시 단계로 승격하지 않음.\r\n\r\n## 형식\r\n영상/미디어 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- logical provenance: C1\r\n- source 파일 확보: 아니오\r\n- acquisition: SOURCE_PAGE_VERIFIED / MEDIA_ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- unblock: 실제 source video/media bytes를 로그인·anti-bot·paywall·access-control 우회 없이 공개/허용된 방식으로 확보할 수 있을 때\r\n",
+      "originalSha256": "b24332ad758073f9d35fcd5ee2e9718befdbd9014b1dcbde47601476430a0501",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 262
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EB%8A%94-%EC%8B%9C%EB%8C%81-igtr7swq
+제목 - 돈 없는 시댁
+내용 - [명시 요약 — 원문 전문 아님]
+시어머니의 500만원 요청과 주택·대출 문제가 얽혀 부모 부양의 적정선을 두고 의견이 갈릴 가족·돈 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EB%8A%94-%EC%8B%9C%EB%8C%81-igtr7swq",
+    "title": "돈 없는 시댁",
+    "body": "시어머니의 500만원 요청과 주택·대출 문제가 얽혀 부모 부양의 적정선을 두고 의견이 갈릴 가족·돈 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_돈없는시댁.md",
+      "originalTitle": "돈 없는 시댁",
+      "originalMarkdown": "# 돈 없는 시댁\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%8F%88-%EC%97%86%EB%8A%94-%EC%8B%9C%EB%8C%81-igtr7swq\r\n- exactObservedTitle: `돈 없는 시댁`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 3,414, 댓글 44\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: 시어머니의 500만원 요청과 주택·대출 문제가 얽혀 부모 부양의 적정선을 두고 의견이 갈릴 가족·돈 소재.\r\n- acquisition: C1 / exact individual public URL / BODY_PARTIAL\r\n- provenance: 공개 Blind 개별 페이지 관찰. 자산·대출·요청액은 게시자 주장.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "04409ab9b6e3cc20f3bb734ca7d35bf9f9c870b75826465f9b633cf5d91931dd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 207
+}

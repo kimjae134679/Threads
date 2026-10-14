@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/685118598
+제목 - 키즈카페 알바 그만둔 후기(키즈카페 알바의 모든 것)
+내용 - [명시 요약 — 원문 전문 아님]
+1년 넘게 일한 알바생이 체력 한계와 보호자·아이 관련 여러 상황을 Q&A로 정리해 서비스직 공감과 키즈카페 이용 예절 논쟁이 자연스럽게 생기는 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/685118598",
+    "title": "키즈카페 알바 그만둔 후기(키즈카페 알바의 모든 것)",
+    "body": "1년 넘게 일한 알바생이 체력 한계와 보호자·아이 관련 여러 상황을 Q&A로 정리해 서비스직 공감과 키즈카페 이용 예절 논쟁이 자연스럽게 생기는 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_685118598.md",
+      "originalTitle": "키즈카페 알바 그만둔 후기(키즈카페 알바의 모든 것)",
+      "originalMarkdown": "# 키즈카페 알바 그만둔 후기(키즈카페 알바의 모든 것)\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/685118598\r\n- exactObservedTitle: 키즈카페 알바 그만둔 후기(키즈카페 알바의 모든 것)\r\n- observedAt: 2026-09-23 20:16 KST\r\n- observedMetrics: 조회 34,437 / 댓글 5\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 본문 공개 텍스트 확인 범위에서는 이미지/스크린샷을 확인하지 않음\r\n- whyGood: 1년 넘게 일한 알바생이 체력 한계와 보호자·아이 관련 여러 상황을 Q&A로 정리해 서비스직 공감과 키즈카페 이용 예절 논쟁이 자연스럽게 생기는 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 다운로드·스크린샷 캡처 없음.\r\n- provenance: TheQoo 익명 작성자의 개인 알바 경험담. 개인 주장으로만 취급하며 외부 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e5a7b7691aa8788dff80653d2ef67769a98cf20459056a5aa17360165b8d6704",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 200
+}

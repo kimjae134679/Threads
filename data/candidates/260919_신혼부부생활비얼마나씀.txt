@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%ED%99%9C%EB%B9%84-%EC%96%BC%EB%A7%88%EB%82%98-%EC%94%80-bauwwg8z
+제목 - 신혼부부 생활비 얼마나 씀?
+내용 - [명시 요약 — 원문 전문 아님]
+월 고정비·생활비·경조사비를 구체적으로 공개하고 앞으로 주담대 약 200만원이 추가될 상황에서 무엇을 줄일지 묻는 생활밀착형 돈 논쟁.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%ED%99%9C%EB%B9%84-%EC%96%BC%EB%A7%88%EB%82%98-%EC%94%80-bauwwg8z",
+    "title": "신혼부부 생활비 얼마나 씀?",
+    "body": "월 고정비·생활비·경조사비를 구체적으로 공개하고 앞으로 주담대 약 200만원이 추가될 상황에서 무엇을 줄일지 묻는 생활밀착형 돈 논쟁.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_신혼부부생활비얼마나씀.md",
+      "originalTitle": "신혼부부 생활비 얼마나 씀?",
+      "originalMarkdown": "# 신혼부부 생활비 얼마나 씀?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%ED%99%9C%EB%B9%84-%EC%96%BC%EB%A7%88%EB%82%98-%EC%94%80-bauwwg8z\r\n- exactObservedTitle: 신혼부부 생활비 얼마나 씀?\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 260, 댓글 12, 좋아요 1\r\n- bodyRead: true\r\n- commentsRead: true (공개 노출 일부)\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 월 고정비·생활비·경조사비를 구체적으로 공개하고 앞으로 주담대 약 200만원이 추가될 상황에서 무엇을 줄일지 묻는 생활밀착형 돈 논쟁.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 지출 수치는 게시자 기재값.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "ba0a6a3df06ace051c9ad462b9bae78a11c0ca27a3bce6c2f3390c995052e606",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 286
+}

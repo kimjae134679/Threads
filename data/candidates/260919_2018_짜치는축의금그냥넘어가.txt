@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A7%9C%EC%B9%98%EB%8A%94-%EC%B6%95%EC%9D%98%EA%B8%88-%E3%85%9C-%EA%B7%B8%EB%83%A5-%EB%84%98%EC%96%B4%EA%B0%80%EB%8A%94%EA%B2%8C-%EB%A7%9E%EB%8A%94%EA%B1%B0%EC%95%BC-negimzls
+제목 - 짜치는 축의금 ㅜ 그냥 넘어가는게 맞는거야?
+내용 - [명시 요약 — 원문 전문 아님]
+친구 커플에게 15만원 식사 대접→결혼식 2인 참석·축의 10만원→장난스러운 확인 뒤 2년 연락두절이라는 흐름이 짧고 선명하며 축의 문화 논쟁성이 큼.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A7%9C%EC%B9%98%EB%8A%94-%EC%B6%95%EC%9D%98%EA%B8%88-%E3%85%9C-%EA%B7%B8%EB%83%A5-%EB%84%98%EC%96%B4%EA%B0%80%EB%8A%94%EA%B2%8C-%EB%A7%9E%EB%8A%94%EA%B1%B0%EC%95%BC-negimzls",
+    "title": "짜치는 축의금 ㅜ 그냥 넘어가는게 맞는거야?",
+    "body": "친구 커플에게 15만원 식사 대접→결혼식 2인 참석·축의 10만원→장난스러운 확인 뒤 2년 연락두절이라는 흐름이 짧고 선명하며 축의 문화 논쟁성이 큼.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_짜치는축의금그냥넘어가.md",
+      "originalTitle": "짜치는 축의금 ㅜ 그냥 넘어가는게 맞는거야?",
+      "originalMarkdown": "# 짜치는 축의금 ㅜ 그냥 넘어가는게 맞는거야?\r\n\r\n- source: Blind 예신예랑 결혼준비\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%A7%9C%EC%B9%98%EB%8A%94-%EC%B6%95%EC%9D%98%EA%B8%88-%E3%85%9C-%EA%B7%B8%EB%83%A5-%EB%84%98%EC%96%B4%EA%B0%80%EB%8A%94%EA%B2%8C-%EB%A7%9E%EB%8A%94%EA%B1%B0%EC%95%BC-negimzls\r\n- exactObservedTitle: 짜치는 축의금 ㅜ 그냥 넘어가는게 맞는거야?\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 333, 댓글 20, 좋아요 1\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false (확인된 공개 텍스트 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: Blind 개별 공개 글. 상대방 사정은 게시자 서술에 한정.\r\n- whyGood: 친구 커플에게 15만원 식사 대접→결혼식 2인 참석·축의 10만원→장난스러운 확인 뒤 2년 연락두절이라는 흐름이 짧고 선명하며 축의 문화 논쟁성이 큼.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "9c09b2ce8dab7de61b882bf977e4f46f2d7dfc9179b5eb8d7da066f819fc8c5b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 369
+}

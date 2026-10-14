@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%BD%94%EC%9D%B8-%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-%EA%B0%84%EC%84%AD%ED%95%B4%EB%8F%84-%EB%90%A0%EA%B9%8C%EC%9A%94-eapqGBjE
+제목 - 코인 하는 남편 간섭해도 될까요?
+내용 - [명시 요약 — 원문 전문 아님]
+남편이 200만원으로 시작해 집과 차를 살 정도로 코인 투자 성과를 냈지만 현재 2억~3억원 규모로 단타를 해 작성자가 큰 손실 가능성을 두려워한다는 사연. 경제적으로 여유로워진 현실과 큰 베팅에 대한 불안이 동시에 존재함. 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%BD%94%EC%9D%B8-%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-%EA%B0%84%EC%84%AD%ED%95%B4%EB%8F%84-%EB%90%A0%EA%B9%8C%EC%9A%94-eapqGBjE",
+    "title": "코인 하는 남편 간섭해도 될까요?",
+    "body": "남편이 200만원으로 시작해 집과 차를 살 정도로 코인 투자 성과를 냈지만 현재 2억~3억원 규모로 단타를 해 작성자가 큰 손실 가능성을 두려워한다는 사연. 경제적으로 여유로워진 현실과 큰 베팅에 대한 불안이 동시에 존재함. 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_코인단타2억3억.md",
+      "originalTitle": "코인 하는 남편 간섭해도 될까요?",
+      "originalMarkdown": "# 코인 하는 남편 간섭해도 될까요?\r\n\r\n## 글 내용\r\n남편이 200만원으로 시작해 집과 차를 살 정도로 코인 투자 성과를 냈지만 현재 2억~3억원 규모로 단타를 해 작성자가 큰 손실 가능성을 두려워한다는 사연. 경제적으로 여유로워진 현실과 큰 베팅에 대한 불안이 동시에 존재함. 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%BD%94%EC%9D%B8-%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-%EA%B0%84%EC%84%AD%ED%95%B4%EB%8F%84-%EB%90%A0%EA%B9%8C%EC%9A%94-eapqGBjE\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 조회 5,522 · 댓글 55. 좋아요 수는 확인하지 못함.\r\n\r\n## 평가\r\n손실담 일변도가 아니라 '실제로 크게 벌었지만 2~3억 단타가 무섭다'는 반대 방향 투자 갈등이라 다양성이 좋음. 공개 원문 URL 확인 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "2e6c103f9048035c4d81ab41381259abe0c036e08a5ed57fdc645649ffe9737e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 366
+}

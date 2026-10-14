@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/580289057
+제목 - 친구랑 여행갔다와서 쌩깐 후기 (스압, 넋두리주의)
+내용 - [명시 요약 — 원문 전문 아님]
+오래된 친구와 파리여행을 잡은 뒤 숙소·비용·사진·여행방식 충돌이 누적돼 관계가 깨지는 전형적인 여행 손절 서사로 세부 갈등 포인트가 많음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/580289057",
+    "title": "친구랑 여행갔다와서 쌩깐 후기 (스압, 넋두리주의)",
+    "body": "오래된 친구와 파리여행을 잡은 뒤 숙소·비용·사진·여행방식 충돌이 누적돼 관계가 깨지는 전형적인 여행 손절 서사로 세부 갈등 포인트가 많음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구파리여행손절.md",
+      "originalTitle": "친구랑 여행갔다와서 쌩깐 후기 (스압, 넋두리주의)",
+      "originalMarkdown": "# 친구랑 여행갔다와서 쌩깐 후기 (스압, 넋두리주의)\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/580289057\r\n- exactObservedTitle: 친구랑 여행갔다와서 쌩깐 후기 (스압, 넋두리주의)\r\n- observedAt: 2026-09-21 11:16 KST\r\n- observedMetrics: 미기록\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page indexed/readable; exact individual URL verified\r\n- provenance: 작성자 경험담으로 관찰됨. 사실성은 독립 검증하지 않음.\r\n- whyGood: 오래된 친구와 파리여행을 잡은 뒤 숙소·비용·사진·여행방식 충돌이 누적돼 관계가 깨지는 전형적인 여행 손절 서사로 세부 갈등 포인트가 많음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "37839ce50d652ec518cf7a369c82b99f94a08d8741ed57395bdb5d04e6e2c9fa",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 192
+}
