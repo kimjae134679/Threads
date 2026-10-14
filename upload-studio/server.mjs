@@ -66,7 +66,7 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,ro
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
   const viewer=new ReadOnlyViewer(projectManifest,()=>store.read());
   const quality=new QualityService({viewer,readState:()=>store.read(),materialRoot});
-  const materials=new MaterialCatalog({root,materialRoot,readState:()=>store.read()});let materialExportBusy=false;
+  const materials=new MaterialCatalog({root,materialRoot,readState:()=>store.read(),currentSourceBinding:async(id,outputVersion)=>{let b;try{b=await quality.binding(id,outputVersion);}catch(e){if(e.code==='viewer_unavailable')return null;throw e;}if(!b||!b.sourceZipPreserved)return null;const source=await viewer.read('/viewer/'+id+'/source-bundle.zip');return{post:b.post,row:b.row,root:b.root,sourceZipPreserved:true,bytes:source.bytes,sourceFile:path.resolve(b.root,'outputs',b.row.outputFolder,'source-bundle.zip')};}});let materialExportBusy=false;
   let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
   let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
   const handoffWaiters=new Map(),clone=value=>JSON.parse(JSON.stringify(value));

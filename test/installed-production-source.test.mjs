@@ -33,7 +33,7 @@ test('original110 source bytes are preserved in Git history and inert snapshots,
   const bytes=execFileSync('git',['show',origin.originGitCommit+':'+member.path],{cwd:root,maxBuffer:32*1024*1024});assert.equal(bytes.length,member.bytes,member.path);assert.equal(createHash('sha256').update(bytes).digest('hex'),member.sha256,member.path);
   assert.deepEqual(fs.readFileSync(path.join(root,member.path)),bytes,member.path+' retained original');assert.notEqual(member.activePath,member.path);
  }
- const pkg=JSON.parse(fs.readFileSync(path.join(root,'desktop/package.json'),'utf8'));assert.deepEqual(pkg.build.files,['*.cjs','!after-pack.cjs','image-requirements-schema.json','package.json']);for(const r of pkg.build.extraResources)assert.ok(['../app','../mobile/android-review','../upload-studio','../repo-candidates.mjs','.'].includes(r.from)||r.from==='..'&&r.to==='unified-runtime'&&!r.filter.some(p=>/^(?:local-private|data|desktop\/(?:production|pc-review))\//.test(p)));
+ const pkg=JSON.parse(fs.readFileSync(path.join(root,'desktop/package.json'),'utf8'));assert.deepEqual(pkg.build.files,['*.cjs','!after-pack.cjs','image-requirements-schema.json','package.json']);for(const r of pkg.build.extraResources)assert.ok(['../app','../mobile/android-review','../upload-studio','../repo-candidates.mjs','.'].includes(r.from)||r.from==='../node_modules/linkedom/worker.js'&&r.to==='unified-runtime/vendor/linkedom-worker.mjs'&&!r.filter||r.from==='../node_modules/linkedom/LICENSE'&&r.to==='unified-runtime/vendor/linkedom-LICENSE'&&!r.filter||r.from==='..'&&r.to==='unified-runtime'&&!r.filter.some(p=>/^(?:local-private|data|desktop\/(?:production|pc-review))\//.test(p)));
 });
 
 test('active standard desktop entry preserves installed reviewRound version semantics',()=>{

@@ -58,7 +58,9 @@
         "filter": [
           "unified-material-txt.js",
           "source-page-plan.js",
-          "source-cover-typography.js"
+          "source-cover-typography.js",
+          "source-cut-zip.js",
+          "source-bundle-zip.js"
         ]
       },
       {
@@ -71,6 +73,14 @@
           "vendor/provenance.json",
           "vendor/production-contract-provenance.json"
         ]
+      },
+      {
+        "from": "../node_modules/linkedom/worker.js",
+        "to": "unified-runtime/vendor/linkedom-worker.mjs"
+      },
+      {
+        "from": "../node_modules/linkedom/LICENSE",
+        "to": "unified-runtime/vendor/linkedom-LICENSE"
       }
     ],
     "win": {

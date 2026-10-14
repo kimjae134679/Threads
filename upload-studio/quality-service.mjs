@@ -19,7 +19,7 @@ export class QualityService{
    const latest=await this.readState(),current=latest.posts.find(p=>p.post_id===id);if(current?.output_version!==expectedVersion||JSON.stringify(current.images.map(i=>i.asset_id))!==JSON.stringify(post.images.map(i=>i.asset_id)))fail('quality_version_changed');
    return[currentRow];
   },roundProvider:async()=>({reviewRound:row.reviewRound||null})});
-  return{store,post,row:currentRow,root:bank.root};
+  return{store,post,row:currentRow,root:bank.root,sourceZipPreserved:checkpoint.sourceZipPreserved===true};
  }
  async historical(id){
   const root=this.materialRoot,file=path.join(root,'07_사용자 평가/평가 기록.json');try{const data=await json(root,file);if(data.schemaVersion!==1||data.recordType!=='user_post_quality_feedback'||!Array.isArray(data.evaluations))fail('quality_legacy_invalid');return data.evaluations.filter(e=>e.id===id).map(e=>({...e,historical:true}));}catch(e){if(e.code==='ENOENT')return[];throw e;}
