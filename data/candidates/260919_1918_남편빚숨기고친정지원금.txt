@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%B9%9A%EC%9D%84-%EC%88%A8%EA%B8%B0%EA%B3%A0-%EC%B9%9C%EC%A0%95%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EA%B8%88%EC%9C%BC%EB%A1%9C-%EA%B0%9A%EC%95%98%EC%96%B4%EC%9A%94-diia6dk7
+제목 - 남편이 빚을 숨기고 친정부모님 지원금으로 갚았어요.
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%B9%9A%EC%9D%84-%EC%88%A8%EA%B8%B0%EA%B3%A0-%EC%B9%9C%EC%A0%95%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EA%B8%88%EC%9C%BC%EB%A1%9C-%EA%B0%9A%EC%95%98%EC%96%B4%EC%9A%94-diia6dk7",
+    "title": "남편이 빚을 숨기고 친정부모님 지원금으로 갚았어요.",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_남편빚숨기고친정지원금.md",
+      "originalTitle": "남편이 빚을 숨기고 친정부모님 지원금으로 갚았어요.",
+      "originalMarkdown": "# 남편이 빚을 숨기고 친정부모님 지원금으로 갚았어요.\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%B9%9A%EC%9D%84-%EC%88%A8%EA%B8%B0%EA%B3%A0-%EC%B9%9C%EC%A0%95%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EA%B8%88%EC%9C%BC%EB%A1%9C-%EA%B0%9A%EC%95%98%EC%96%B4%EC%9A%94-diia6dk7\r\n- exact_observed_title: 남편이 빚을 숨기고 친정부모님 지원금으로 갚았어요.\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 883 / 댓글 13\r\n- body_read: 부분 확인 (BODY_PARTIAL)\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 친정에서 추가 지원한 1억원을 대출 상환용으로 보냈는데 상환액이 기대만큼 줄지 않으며 숨긴 빚 의혹이 드러나는 반전형 소재.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; only observed portion recorded, debt facts remain poster claims\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "032bd17cbb0fdc1e7b5bf21a7bd166ff621d1622b91016287121351855859d66",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 318
+}

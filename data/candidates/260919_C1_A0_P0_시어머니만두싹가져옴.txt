@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/392467790
+제목 - 새벽 6시부터 만두 빚게 하길래 싹 싸들고 집에 왔습니다
+내용 - [명시 요약 — 원문 전문 아님]
+시어머니가 며느리를 새벽 6시에 깨워 많은 양의 만두를 빚게 하고, 남편은 자게 둔 사연. 몇 시간 일한 뒤 막 먹으려는 순간 따뜻한 만두를 경비원에게 먼저 가져다주라고 하자 작성자가 자신이 만든 만두를 큰 통에 모두 싸서 '저는 가족이 아니니 저희 집에서 먹겠다'며 돌아온다. 공개 본문 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/392467790",
+    "title": "새벽 6시부터 만두 빚게 하길래 싹 싸들고 집에 왔습니다",
+    "body": "시어머니가 며느리를 새벽 6시에 깨워 많은 양의 만두를 빚게 하고, 남편은 자게 둔 사연. 몇 시간 일한 뒤 막 먹으려는 순간 따뜻한 만두를 경비원에게 먼저 가져다주라고 하자 작성자가 자신이 만든 만두를 큰 통에 모두 싸서 '저는 가족이 아니니 저희 집에서 먹겠다'며 돌아온다. 공개 본문 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_시어머니만두싹가져옴.md",
+      "originalTitle": "새벽 6시부터 만두 빚게 하길래 싹 싸들고 집에 왔습니다",
+      "originalMarkdown": "# 새벽 6시부터 만두 빚게 하길래 싹 싸들고 집에 왔습니다\r\n\r\n## source\r\nTheQoo (판 재게시)\r\n\r\n## 원문 제목\r\n(사이다) 시어머니 만두 다 뺏어 온 썰.pann\r\n\r\n## 글 내용\r\n시어머니가 며느리를 새벽 6시에 깨워 많은 양의 만두를 빚게 하고, 남편은 자게 둔 사연. 몇 시간 일한 뒤 막 먹으려는 순간 따뜻한 만두를 경비원에게 먼저 가져다주라고 하자 작성자가 자신이 만든 만두를 큰 통에 모두 싸서 '저는 가족이 아니니 저희 집에서 먹겠다'며 돌아온다. 공개 본문 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/392467790\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 조회수 22,631 / 댓글 48\r\n\r\n## 평가\r\n부당한 명절노동과 음식 갈등 뒤에 '만두 전량 회수'라는 시각적이고 통쾌한 결말이 있다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "12e0927f330f2ff403142ce7b28d92a48a3818c183768bd28496ba3b898aad27",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 292
+}

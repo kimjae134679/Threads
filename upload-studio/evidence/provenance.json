@@ -1,0 +1,16 @@
+{
+  "kind": "actual-chromium-screenshots",
+  "tested_code_commit": "60e4342e4188f8bf781536e5ba865f94663dc80e",
+  "workflow_run": 37931437809,
+  "viewport": {
+    "width": 1600,
+    "height": 1400
+  },
+  "external_browser_requests": 0,
+  "source_data": "Labelled synthetic local test posts and images; not actual production posts.",
+  "screens": [
+    "01-writing-instagram.png",
+    "02-writing-threads.png",
+    "03-queue.png"
+  ]
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%98%EB%AA%B0%EB%9E%98-cctv%EB%85%B9%ED%99%94%ED%95%9C-%EB%82%A8%ED%8E%B8-nbxctu04
+제목 - 나몰래 cctv녹화한 남편
+내용 - [명시 요약 — 원문 전문 아님]
+이혼 국면에서 배우자가 몰래 홈캠 녹화를 했다는 사생활·신뢰 갈등과 양육권/재산 요구가 맞물린 논쟁성 높은 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98%EB%AA%B0%EB%9E%98-cctv%EB%85%B9%ED%99%94%ED%95%9C-%EB%82%A8%ED%8E%B8-nbxctu04",
+    "title": "나몰래 cctv녹화한 남편",
+    "body": "이혼 국면에서 배우자가 몰래 홈캠 녹화를 했다는 사생활·신뢰 갈등과 양육권/재산 요구가 맞물린 논쟁성 높은 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_몰래CCTV녹화한남편.md",
+      "originalTitle": "나몰래 cctv녹화한 남편",
+      "originalMarkdown": "# 나몰래 cctv녹화한 남편\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%98%EB%AA%B0%EB%9E%98-cctv%EB%85%B9%ED%99%94%ED%95%9C-%EB%82%A8%ED%8E%B8-nbxctu04\r\n- exactObservedTitle: 나몰래 cctv녹화한 남편\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 1,112 / 댓글 18\r\n- bodyRead: true (공개 본문 범위)\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: true (페이지에 이미지 존재 표시만 확인; 다운로드/내용 판독 안 함)\r\n- whyGood: 이혼 국면에서 배우자가 몰래 홈캠 녹화를 했다는 사생활·신뢰 갈등과 양육권/재산 요구가 맞물린 논쟁성 높은 소재.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_PARTIAL; IMAGE_PRESENT_UNREAD\r\n- provenance: 원문 게시자의 주장으로 관찰했으며 이미지 내용/OCR 및 독립 검증 없음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "46deeb9711abcadbb0257db2ae7d69e34b3693d9bcfbaadc4fa4dcfbb9977fd8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 249
+}

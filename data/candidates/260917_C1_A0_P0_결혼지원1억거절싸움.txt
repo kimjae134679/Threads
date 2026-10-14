@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%ED%95%A0%EB%95%8C-%EC%96%91%EA%B0%80%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EB%A7%90%EC%95%BC-ZQMBARZ2
+제목 - 결혼준비할때 양가부모님 지원말야
+내용 - [명시 요약 — 원문 전문 아님]
+부모 도움 없이 결혼하기로 했던 커플에게 신부 측 부모가 1억원을 지원하겠다고 하자 예비신랑이 상대 부모에게 받으면 자기 부모도 부담을 느낀다며 거절해 크게 싸운 사연. 공개 본문 읽음. 댓글은 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%ED%95%A0%EB%95%8C-%EC%96%91%EA%B0%80%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EB%A7%90%EC%95%BC-ZQMBARZ2",
+    "title": "결혼준비할때 양가부모님 지원말야",
+    "body": "부모 도움 없이 결혼하기로 했던 커플에게 신부 측 부모가 1억원을 지원하겠다고 하자 예비신랑이 상대 부모에게 받으면 자기 부모도 부담을 느낀다며 거절해 크게 싸운 사연. 공개 본문 읽음. 댓글은 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼지원1억거절싸움.md",
+      "originalTitle": "결혼준비할때 양가부모님 지원말야",
+      "originalMarkdown": "# 결혼준비할때 양가부모님 지원말야\r\n\r\n## 글 내용\r\n부모 도움 없이 결혼하기로 했던 커플에게 신부 측 부모가 1억원을 지원하겠다고 하자 예비신랑이 상대 부모에게 받으면 자기 부모도 부담을 느낀다며 거절해 크게 싸운 사연. 공개 본문 읽음. 댓글은 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%ED%95%A0%EB%95%8C-%EC%96%91%EA%B0%80%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90%EB%A7%90%EC%95%BC-ZQMBARZ2\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 01:39 KST — 조회 1,153, 댓글 15. 좋아요 수치 미확인.\r\n\r\n## 평가\r\n공짜 1억원을 받을지 말지를 두고 싸운다는 강한 훅과 양가 형평성 문제가 있어 의견 유도가 쉽다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "a96d94404adbfc33ff69e5f3b6072be13ea3e52ed446bc0de9f7760e0f860d85",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 361
+}

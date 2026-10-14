@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1104760
+제목 - 펌) 중소기업 썰.ssul
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1104760",
+    "title": "펌) 중소기업 썰.ssul",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_C1_A0_P0_중소기업썰.md",
+      "originalTitle": "펌) 중소기업 썰.ssul",
+      "originalMarkdown": "# 펌) 중소기업 썰.ssul\r\n\r\n## source\r\n- Inven 오픈이슈갤러리\r\n- exact public URL: https://www.inven.co.kr/board/webzine/2097/1104760\r\n\r\n## 관찰\r\n- observedAt: 2026-09-21 20:15 KST\r\n- exact observed title: `펌) 중소기업 썰.ssul`\r\n- 게시 표시: 2018-11-23 00:00\r\n- 조회: 24,272\r\n- 추천: 6\r\n- 댓글: 37\r\n- 본문 읽음: 예 (공개 페이지에서 노출된 텍스트 범위)\r\n- 댓글 읽음: 아니오\r\n- 이미지/스크린샷 존재: 페이지에 이미지 요소 존재. 별도 다운로드/캡처하지 않음.\r\n\r\n## 왜 소재로 좋은가\r\n석사 후 전문연구요원으로 중소기업에 다닌 작성자가 회사의 무능, 형식적인 국책과제, 과제비 사용 등 직접 겪었다고 서술하는 직장 경험담이다. `중소기업 다녀보니 왜 대기업을 찾는지 알겠다`는 구조가 직장인 공감과 논쟁을 동시에 만들 수 있다.\r\n\r\n## acquisition / provenance\r\n- C1: 정확한 개별 공개 URL 확인.\r\n- acquisition: PUBLIC_TEXT_OBSERVED_REPOST\r\n- provenance: 제목에 `펌)`이 명시된 Inven 재게시물. Inven을 최초 원출처로 취급하지 않으며 최초 원문은 이번 실행에서 확인하지 못함.\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- 스크린샷, 이미지 다운로드, OCR, 제작, 게시 작업 없음.\r\n",
+      "originalSha256": "6cc6119b341ecbc406206d35d66a29ddc7f35807d6fdf6c4afb46371044d0f5c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 108
+}

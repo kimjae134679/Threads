@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/13v2775/aita_for_not_putting_my_sisters_wedding_expenses/
+제목 - AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?
+내용 - [명시 요약 — 원문 전문 아님]
+가족 중 유일하게 대학을 나와 비교적 좋은 직장을 얻은 27세 작성자에게 가족이 지속적으로 경제적 지원을 기대해온 상황. 여동생 결혼 준비를 돕던 중 식료품점에서 결혼식용 식재료 1,700달러어치를 결제하려 했으나 여동생 카드들이 거절됐고, 작성자에게 비용 부담 압력이 이어지는 사연이다. 공개 원문에서 해당 배경과 결혼 준비 중 결제 거절 상황까지 읽었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/13v2775/aita_for_not_putting_my_sisters_wedding_expenses/",
+    "title": "AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?",
+    "body": "가족 중 유일하게 대학을 나와 비교적 좋은 직장을 얻은 27세 작성자에게 가족이 지속적으로 경제적 지원을 기대해온 상황. 여동생 결혼 준비를 돕던 중 식료품점에서 결혼식용 식재료 1,700달러어치를 결제하려 했으나 여동생 카드들이 거절됐고, 작성자에게 비용 부담 압력이 이어지는 사연이다. 공개 원문에서 해당 배경과 결혼 준비 중 결제 거절 상황까지 읽었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼비용카드1700달러.md",
+      "originalTitle": "AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?",
+      "originalMarkdown": "# AITA for not putting my sister’s wedding expenses on my credit card and humiliating her?\r\n\r\n## 글 내용\r\n가족 중 유일하게 대학을 나와 비교적 좋은 직장을 얻은 27세 작성자에게 가족이 지속적으로 경제적 지원을 기대해온 상황. 여동생 결혼 준비를 돕던 중 식료품점에서 결혼식용 식재료 1,700달러어치를 결제하려 했으나 여동생 카드들이 거절됐고, 작성자에게 비용 부담 압력이 이어지는 사연이다. 공개 원문에서 해당 배경과 결혼 준비 중 결제 거절 상황까지 읽었다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/13v2775/aita_for_not_putting_my_sisters_wedding_expenses/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 07:39~07:50 KST 공개 검색 결과\r\n- Reddit score: +7,972\r\n- 조회수/댓글 수: 이번 관측에서 확인하지 못함\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n결혼식 직전 카드 결제 거절과 가족의 '돈 잘 버니 대신 내라' 압박이 결합되어 상황성이 강하다. 돈·가족·결혼 갈등 레인에서 댓글 논쟁을 만들기 쉬운 후보다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 screenshot/source bytes: 미확보\r\n- source images/screenshots 존재 여부: 이번 관측에서 확인하지 못함\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "dbd973400dd7b05b56e06848facb8dae95fb0d4179e758569e9247d456985014",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 444
+}

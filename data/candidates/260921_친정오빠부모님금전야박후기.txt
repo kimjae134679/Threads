@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2672070549
+제목 - 돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+부모 지원을 많이 받은 형제와 부모 부양·금전 문제를 둘러싼 형제간 형평성 갈등이라 가족·돈·효도 기준에 대한 의견이 강하게 갈릴 수 있는 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2672070549",
+    "title": "돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기",
+    "body": "부모 지원을 많이 받은 형제와 부모 부양·금전 문제를 둘러싼 형제간 형평성 갈등이라 가족·돈·효도 기준에 대한 의견이 강하게 갈릴 수 있는 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친정오빠부모님금전야박후기.md",
+      "originalTitle": "돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기",
+      "originalMarkdown": "# 돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2672070549\r\n- exactObservedTitle: `돈 잘 버는 친정오빠가 부모님에게 금전적으로 야박하게 구는게 꽁기한 후기`\r\n- observedAt: 2026-09-21 02:16 KST\r\n- observedMetrics: 조회 9,568 / 댓글 58 (공개 페이지에서 실제 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false/미확인\r\n- whyGood: 부모 지원을 많이 받은 형제와 부모 부양·금전 문제를 둘러싼 형제간 형평성 갈등이라 가족·돈·효도 기준에 대한 의견이 강하게 갈릴 수 있는 소재다.\r\n- acquisition: 공개 검색으로 발견 후 정확한 개별 public URL의 본문을 직접 확인한 C1. 접근 우회 없음. 이미지 다운로드/OCR/권리 검증은 수행하지 않음.\r\n- provenance: 익명 게시자의 가족관계 회고로 취급하며 외부에서 사실 검증된 사건으로 승격하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "adc5ab5b9df3c4a74322d4cb67a5fdd8cf736b83043dca615ced30ec25c6a5be",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 209
+}

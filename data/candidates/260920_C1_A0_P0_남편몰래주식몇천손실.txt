@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%8F%99%EC%82%B0-%EB%A7%A4%EC%88%98-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-%EC%8B%9C%EB%8C%81-%EB%8F%84%EC%9B%80-06k0lzav
+제목 - 부동산 매수 과정에서 시댁 도움
+내용 - [명시 요약 — 원문 전문 아님]
+결혼자금 기여 차이, 남편의 몰래 주식 손실·빚, 친정의 추가 5억 지원과 시댁 반응을 비교하는 돈·가족 갈등. 수치와 사정은 게시자 주장임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%8F%99%EC%82%B0-%EB%A7%A4%EC%88%98-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-%EC%8B%9C%EB%8C%81-%EB%8F%84%EC%9B%80-06k0lzav",
+    "title": "부동산 매수 과정에서 시댁 도움",
+    "body": "결혼자금 기여 차이, 남편의 몰래 주식 손실·빚, 친정의 추가 5억 지원과 시댁 반응을 비교하는 돈·가족 갈등. 수치와 사정은 게시자 주장임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_남편몰래주식몇천손실.md",
+      "originalTitle": "부동산 매수 과정에서 시댁 도움",
+      "originalMarkdown": "# 부동산 매수 과정에서 시댁 도움\r\n\r\n- source: Blind / 경제·자산관리\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%B6%80%EB%8F%99%EC%82%B0-%EB%A7%A4%EC%88%98-%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C-%EC%8B%9C%EB%8C%81-%EB%8F%84%EC%9B%80-06k0lzav\r\n- exactObservedTitle: 부동산 매수 과정에서 시댁 도움\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 90, 댓글 16\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 결혼자금 기여 차이, 남편의 몰래 주식 손실·빚, 친정의 추가 5억 지원과 시댁 반응을 비교하는 돈·가족 갈등. 수치와 사정은 게시자 주장임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "af08610a68304b9d5deee435ec2bf4ddda9b87bf0b0cf684db314c1d5091c8b0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 311
+}

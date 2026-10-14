@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITAH/comments/1c3kjvs
+제목 - AITAH for divorcing my wife after she refused to help me financially in difficult times?
+내용 - [명시 요약 — 원문 전문 아님]
+실직과 주택 관련 빚으로 어려워진 남편이 결혼 때 받은 금을 팔거나 아내의 저축으로 일시적으로 도와달라고 요청했지만 아내가 거절했고, 결국 관계가 이혼으로 이어졌다는 사연. 작성자는 이전에는 본인이 생활비 대부분을 부담하며 아내가 저축하도록 했다고 설명함. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITAH/comments/1c3kjvs",
+    "title": "AITAH for divorcing my wife after she refused to help me financially in difficult times?",
+    "body": "실직과 주택 관련 빚으로 어려워진 남편이 결혼 때 받은 금을 팔거나 아내의 저축으로 일시적으로 도와달라고 요청했지만 아내가 거절했고, 결국 관계가 이혼으로 이어졌다는 사연. 작성자는 이전에는 본인이 생활비 대부분을 부담하며 아내가 저축하도록 했다고 설명함. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_실직후결혼금거부이혼.md",
+      "originalTitle": "AITAH for divorcing my wife after she refused to help me financially in difficult times?",
+      "originalMarkdown": "# AITAH for divorcing my wife after she refused to help me financially in difficult times?\r\n\r\n## 글 내용\r\n실직과 주택 관련 빚으로 어려워진 남편이 결혼 때 받은 금을 팔거나 아내의 저축으로 일시적으로 도와달라고 요청했지만 아내가 거절했고, 결국 관계가 이혼으로 이어졌다는 사연. 작성자는 이전에는 본인이 생활비 대부분을 부담하며 아내가 저축하도록 했다고 설명함. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AITAH/comments/1c3kjvs\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · post score +7,966 확인. 조회수/댓글 총수는 확인하지 못함.\r\n\r\n## 평가\r\n결혼 선물의 소유권·부부 재정 책임·실직 상황이 한꺼번에 충돌해 의견 분열성이 높음. C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "3104792d8bc588316515d8679171cc5bd35d48895f0cd487073d57f3a01c90a0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 340
+}

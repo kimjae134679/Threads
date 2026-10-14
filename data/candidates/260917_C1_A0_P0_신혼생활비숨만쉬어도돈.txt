@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%ED%99%9C%EB%B9%84-%EC%96%BC%EB%A7%88%EB%82%98-%EC%94%80-bauwwg8z
+제목 - 신혼부부 생활비 얼마나 씀?
+내용 - [명시 요약 — 원문 전문 아님]
+신혼부부가 월평균 고정비 약 200만원, 생활비 120만원, 경조사·이벤트 70만원 정도가 든다며 항목별 지출을 공개했다. 내년에는 주담대 약 200만원이 추가될 예정이라 어디서 줄여야 할지 묻고 `숨만 쉬어도 돈이 나간다`고 토로했다. 공개 페이지에서 본문 전체를 확인했고 댓글 일부만 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%ED%99%9C%EB%B9%84-%EC%96%BC%EB%A7%88%EB%82%98-%EC%94%80-bauwwg8z",
+    "title": "신혼부부 생활비 얼마나 씀?",
+    "body": "신혼부부가 월평균 고정비 약 200만원, 생활비 120만원, 경조사·이벤트 70만원 정도가 든다며 항목별 지출을 공개했다. 내년에는 주담대 약 200만원이 추가될 예정이라 어디서 줄여야 할지 묻고 `숨만 쉬어도 돈이 나간다`고 토로했다. 공개 페이지에서 본문 전체를 확인했고 댓글 일부만 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_신혼생활비숨만쉬어도돈.md",
+      "originalTitle": "신혼부부 생활비 얼마나 씀?",
+      "originalMarkdown": "# 신혼부부 생활비 얼마나 씀?\r\n\r\n## 글 내용\r\n신혼부부가 월평균 고정비 약 200만원, 생활비 120만원, 경조사·이벤트 70만원 정도가 든다며 항목별 지출을 공개했다. 내년에는 주담대 약 200만원이 추가될 예정이라 어디서 줄여야 할지 묻고 `숨만 쉬어도 돈이 나간다`고 토로했다. 공개 페이지에서 본문 전체를 확인했고 댓글 일부만 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%ED%99%9C%EB%B9%84-%EC%96%BC%EB%A7%88%EB%82%98-%EC%94%80-bauwwg8z\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 조회수 260, 좋아요 1, 댓글 12.\r\n\r\n## 평가\r\n극적 사건은 아니지만 실제 지출 숫자가 촘촘하고 `숨만 쉬어도 돈`이라는 공감 포인트가 명확하다. 강한 막장 후보 사이에 현실 공감형 레인으로 유지할 가치가 있다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Blind\r\n- full body read: YES\r\n- comments read: PARTIAL\r\n- source images/screenshots: 본문 필수 첨부 이미지 확인되지 않음\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "cf69bd85cc21d5139a589d29702c5a77c64503c87e56503d7c16b59de56797e9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 377
+}

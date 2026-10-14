@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3826011865
+제목 - 8년 만에 만나 청첩장 주는 친구
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3826011865",
+    "title": "8년 만에 만나 청첩장 주는 친구",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_8년만친구청첩장.md",
+      "originalTitle": "8년 만에 만나 청첩장 주는 친구",
+      "originalMarkdown": "# 8년 만에 만나 청첩장 주는 친구\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/3826011865\r\n- exactObservedTitle: 8년만에 만나서 청첩장 주는 친구… 결혼식 참석해야하나요?\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 5,024 / 댓글 51개\r\n- bodyRead: false — 본문 미확인(이미지 중심)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes\r\n- provenance: C1 / exact individual public URL\r\n- acquisition: PUBLIC_INDEX_TEXT_ONLY\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n8년간 만나지 않은 친구가 청첩장을 주러 나타났다는 관계 거리감과 경조사 의무의 충돌이 명확하다. 이미지 속 세부 사연은 추정하지 않음.\r\n",
+      "originalSha256": "f2d98861d609d3492c3e9cb440211ed34744cfe60ff235a13bf929f1576bd144",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 98
+}

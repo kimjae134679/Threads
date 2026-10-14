@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 권태기 오면 어떻게 극복해요?
+내용 - [명시 요약 — 원문 전문 아님]
+공개 index에서 7개월 만난 연인의 식사·물 마시는 모습·연락까지 전부 싫어졌다는 23세 언니의 권태기를 두고, 연애 경험이 없는 20세 동생이 극복 방법을 묻는 사연 일부를 확인했다. 정확한 원문 페이지는 아직 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "권태기 오면 어떻게 극복해요?",
+    "body": "공개 index에서 7개월 만난 연인의 식사·물 마시는 모습·연락까지 전부 싫어졌다는 23세 언니의 권태기를 두고, 연애 경험이 없는 20세 동생이 극복 방법을 묻는 사연 일부를 확인했다. 정확한 원문 페이지는 아직 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_권태기모든게싫음.md",
+      "originalTitle": "권태기 오면 어떻게 극복해요?",
+      "originalMarkdown": "# 권태기 오면 어떻게 극복해요?\r\n\r\n## 글 내용\r\n공개 index에서 7개월 만난 연인의 식사·물 마시는 모습·연락까지 전부 싫어졌다는 23세 언니의 권태기를 두고, 연애 경험이 없는 20세 동생이 극복 방법을 묻는 사연 일부를 확인했다. 정확한 원문 페이지는 아직 미확인이다.\r\n\r\n## 정확한 링크\r\n정확한 개별 원문 URL 미확인. 공개 검색/index에서 부분 본문 확인.\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 14:34 KST 부근\r\n- 조회/좋아요/댓글 미확인\r\n- 본문 읽음: index 노출분만 확인, 전체 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n연애 권태기의 구체적인 생활 디테일 때문에 공감과 논쟁이 동시에 생기는 사연이다.\r\n\r\n## 형식\r\n글 추정\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C0 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "1126b7963efd3c2a4bc07d6cc0f1a9f8aabc926847c69d4fec9cbf3fe3ce1357",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 194
+}

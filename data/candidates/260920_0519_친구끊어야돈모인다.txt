@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416
+제목 - 돈 모을려면 일단 친구를 끊어라
+내용 - [명시 요약 — 원문 전문 아님]
+친구가 많을수록 축의금·술값 때문에 돈을 못 모은다는 과격한 주장이라 즉시 찬반이 갈리고 공감/반박 댓글을 유도하기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416",
+    "title": "돈 모을려면 일단 친구를 끊어라",
+    "body": "친구가 많을수록 축의금·술값 때문에 돈을 못 모은다는 과격한 주장이라 즉시 찬반이 갈리고 공감/반박 댓글을 유도하기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_0519_친구끊어야돈모인다.md",
+      "originalTitle": "돈 모을려면 일단 친구를 끊어라",
+      "originalMarkdown": "# 돈 모을려면 일단 친구를 끊어라\r\n\r\n- stage: C1\r\n- source: DCInside 중소기업 갤러리\r\n- publicUrl: https://gall.dcinside.com/board/view/?id=jungsopd&no=1817416\r\n- exactObservedTitle: `돈 모을려면 일단 친구를 끊어라`\r\n- observedAt: 2026-09-20 05:19 KST\r\n- observedMetrics: 조회 61, 댓글 6, 추천 32, 비추천 1 (공개 검색 결과에서 관찰된 값; 다른 indexed variant와 차이가 있어 고정값으로 간주하지 않음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: false\r\n- acquisition: exact individual public page indexed/read; no login/bypass\r\n- provenance: original DCInside post page as observed\r\n- whyGood: 친구가 많을수록 축의금·술값 때문에 돈을 못 모은다는 과격한 주장이라 즉시 찬반이 갈리고 공감/반박 댓글을 유도하기 좋음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e8b39e590fc24e16415af36f799abe4a661262877259f15c55731acc0c79306d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

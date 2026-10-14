@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-Vnv81Qoc
+제목 - 부모님 결혼 반대
+내용 - [명시 요약 — 원문 전문 아님]
+30세 남성이 4살 연상 여자친구와 결혼하려 하자 부모가 교제기간, 나이, 상대 집안의 지원 가능성 등을 이유로 반대한다. 반전은 작성자 본인도 부모 이혼 후 어머니 빚을 갚느라 모은 돈이 거의 없다는 점으로, 부모의 반대 논리가 타당한지 묻는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-Vnv81Qoc",
+    "title": "부모님 결혼 반대",
+    "body": "30세 남성이 4살 연상 여자친구와 결혼하려 하자 부모가 교제기간, 나이, 상대 집안의 지원 가능성 등을 이유로 반대한다. 반전은 작성자 본인도 부모 이혼 후 어머니 빚을 갚느라 모은 돈이 거의 없다는 점으로, 부모의 반대 논리가 타당한지 묻는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_연상여친결혼반대.md",
+      "originalTitle": "부모님 결혼 반대",
+      "originalMarkdown": "# 부모님 결혼 반대\r\n\r\n## 글 내용\r\n30세 남성이 4살 연상 여자친구와 결혼하려 하자 부모가 교제기간, 나이, 상대 집안의 지원 가능성 등을 이유로 반대한다. 반전은 작성자 본인도 부모 이혼 후 어머니 빚을 갚느라 모은 돈이 거의 없다는 점으로, 부모의 반대 논리가 타당한지 묻는다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-Vnv81Qoc\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-18 02:39 KST\r\n- 조회수 19K / 댓글 147\r\n- 좋아요 수치는 확인하지 않음\r\n\r\n## 평가\r\n부모가 상대의 경제조건을 문제 삼지만 작성자 쪽도 여유가 없다는 반전이 강하다. 본문 읽음. 댓글 전체 미확인.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot/media 미확보. exact public page 확인. `ASSETS_PENDING`. C1_A0_P0 / publicationAllowed=false. rights/privacy/human review 필요, 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "148c1d270582173c679aff00a1f2b8f43ba26145613bedc34c645f8c25fb0829",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 306
+}

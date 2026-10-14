@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2724881?iskin=webzine
+제목 - 여친 때문에 롤토체스 승급전 진 남친
+내용 - [명시 요약 — 원문 전문 아님]
+롤토체스 승급전 도중 여자친구가 개입하면서 게임 한 판이 연애 상황극처럼 이어지는 6장 이미지형 사연이다. 기존 기록에 이미지 속 대화 전문을 저장하지 않았으므로 세부 문구는 원문에서 다시 확인해야 한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2724881?iskin=webzine",
+    "title": "여친 때문에 롤토체스 승급전 진 남친",
+    "body": "롤토체스 승급전 도중 여자친구가 개입하면서 게임 한 판이 연애 상황극처럼 이어지는 6장 이미지형 사연이다. 기존 기록에 이미지 속 대화 전문을 저장하지 않았으므로 세부 문구는 원문에서 다시 확인해야 한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_여친때문에롤토체스승급전.md",
+      "originalTitle": "여친 때문에 롤토체스 승급전 진 남친",
+      "originalMarkdown": "# 여친 때문에 롤토체스 승급전 진 남친\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2724881?iskin=webzine\r\n- 조회수: 3,855\r\n- 댓글: 15\r\n- 이미지: 6장 확인, 파일 미확보\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n롤토체스 승급전 도중 여자친구가 개입하면서 게임 한 판이 연애 상황극처럼 이어지는 6장 이미지형 사연이다. 기존 기록에 이미지 속 대화 전문을 저장하지 않았으므로 세부 문구는 원문에서 다시 확인해야 한다.\r\n\r\n## 평가\r\n- 평가: 상급 캐러셀 후보\r\n- 이유: 이미 6장 순서가 있어 별도 텍스트카드를 끼우지 않고 실제 source sequence로 만들기 좋음.\r\n- 약점: 최초 이미지 출처/권리 확인 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "c1cafb7187b0d7f4f706f3f72b7472655c3bf0d81dac43b13f3d78a6564c70b6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 249
+}

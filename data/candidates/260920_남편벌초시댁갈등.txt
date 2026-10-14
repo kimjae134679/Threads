@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%9D%B4%EB%B2%88-%EC%A3%BC%EB%A7%90%EC%97%90-%EB%B2%8C%EC%B4%88%ED%95%9C%EB%8B%A4%EA%B3%A0-%EC%8B%9C%EB%8C%81-%EB%82%B4%EB%A0%A4%EA%B0%94%EB%8A%94%EB%8D%B0-%EC%A2%80-%EC%9D%B4%ED%95%B4%EC%95%88%EB%8F%BC-8szfizpf
+제목 - 남편 이번 주말에 벌초한다고 시댁 내려갔는데 좀 이해안돼
+내용 - [명시 요약 — 원문 전문 아님]
+벌초·종교·시댁 문화라는 생활 밀착 가치관 충돌로 댓글 의견이 즉시 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%9D%B4%EB%B2%88-%EC%A3%BC%EB%A7%90%EC%97%90-%EB%B2%8C%EC%B4%88%ED%95%9C%EB%8B%A4%EA%B3%A0-%EC%8B%9C%EB%8C%81-%EB%82%B4%EB%A0%A4%EA%B0%94%EB%8A%94%EB%8D%B0-%EC%A2%80-%EC%9D%B4%ED%95%B4%EC%95%88%EB%8F%BC-8szfizpf",
+    "title": "남편 이번 주말에 벌초한다고 시댁 내려갔는데 좀 이해안돼",
+    "body": "벌초·종교·시댁 문화라는 생활 밀착 가치관 충돌로 댓글 의견이 즉시 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_남편벌초시댁갈등.md",
+      "originalTitle": "남편 이번 주말에 벌초한다고 시댁 내려갔는데 좀 이해안돼",
+      "originalMarkdown": "# 남편 이번 주말에 벌초한다고 시댁 내려갔는데 좀 이해안돼\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%9D%B4%EB%B2%88-%EC%A3%BC%EB%A7%90%EC%97%90-%EB%B2%8C%EC%B4%88%ED%95%9C%EB%8B%A4%EA%B3%A0-%EC%8B%9C%EB%8C%81-%EB%82%B4%EB%A0%A4%EA%B0%94%EB%8A%94%EB%8D%B0-%EC%A2%80-%EC%9D%B4%ED%95%B4%EC%95%88%EB%8F%BC-8szfizpf\r\n- exactObservedTitle: `남편 이번 주말에 벌초한다고 시댁 내려갔는데 좀 이해안돼`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 943, 댓글 48\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: 벌초·종교·시댁 문화라는 생활 밀착 가치관 충돌로 댓글 의견이 즉시 갈릴 소재.\r\n- acquisition: C1 / exact individual public URL / BODY_PARTIAL\r\n- provenance: 공개 Blind 개별 페이지에서 관찰. 게시자 관점은 사실 판정하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3867a2b18f166a3b21295f2694c66315cbe826174c85982fdd19bc971bb4e368",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 392
+}

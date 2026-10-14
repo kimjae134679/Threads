@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8C%80%EC%B6%9C%EB%82%84-%EC%83%9D%EA%B0%81%EC%97%86%EB%8A%94-%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%84%A4%EB%93%9D%EC%9D%B4%EC%8A%88-fh7eux0a
+제목 - 대출낄 생각없는 배우자..설득이슈
+내용 - [명시 요약 — 원문 전문 아님]
+부부가 약 6억원을 모았지만 주거 선택에서 충돌한 사연. 작성자는 직장과 가까운 12억원 미만 집을 대출로 사고 싶지만 남편은 부모 소유 건물에 살며 6억원을 S&P500·QQQ·금 ETF에 투자하고 이자 대신 생활을 즐기자는 입장이라고 설명한다. 공개 페이지 본문을 실제로 읽음. 댓글 전체는 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8C%80%EC%B6%9C%EB%82%84-%EC%83%9D%EA%B0%81%EC%97%86%EB%8A%94-%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%84%A4%EB%93%9D%EC%9D%B4%EC%8A%88-fh7eux0a",
+    "title": "대출낄 생각없는 배우자..설득이슈",
+    "body": "부부가 약 6억원을 모았지만 주거 선택에서 충돌한 사연. 작성자는 직장과 가까운 12억원 미만 집을 대출로 사고 싶지만 남편은 부모 소유 건물에 살며 6억원을 S&P500·QQQ·금 ETF에 투자하고 이자 대신 생활을 즐기자는 입장이라고 설명한다. 공개 페이지 본문을 실제로 읽음. 댓글 전체는 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_대출싫은배우자.md",
+      "originalTitle": "대출낄 생각없는 배우자..설득이슈",
+      "originalMarkdown": "# 대출낄 생각없는 배우자..설득이슈\r\n\r\n## 글 내용\r\n부부가 약 6억원을 모았지만 주거 선택에서 충돌한 사연. 작성자는 직장과 가까운 12억원 미만 집을 대출로 사고 싶지만 남편은 부모 소유 건물에 살며 6억원을 S&P500·QQQ·금 ETF에 투자하고 이자 대신 생활을 즐기자는 입장이라고 설명한다. 공개 페이지 본문을 실제로 읽음. 댓글 전체는 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%8C%80%EC%B6%9C%EB%82%84-%EC%83%9D%EA%B0%81%EC%97%86%EB%8A%94-%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%84%A4%EB%93%9D%EC%9D%B4%EC%8A%88-fh7eux0a\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 03:36 KST 관측: 조회수 173, 댓글 13. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n집을 살지 ETF에 넣을지라는 매우 현실적인 부부 돈 갈등. 양쪽 논리가 모두 있어 댓글·투표형 반응을 끌기 좋음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 공개 URL 확인. source screenshot 미확보, `ASSETS_PENDING`. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "626469c2ffb8a2f41695f05dfff00415c997147bd35a3ce7c08442eb83c76497",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 409
+}

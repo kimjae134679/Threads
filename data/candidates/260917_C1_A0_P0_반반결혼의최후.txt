@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2920139035
+제목 - 반반결혼의 최후 (애로부부 캡쳐)
+내용 - [명시 요약 — 원문 전문 아님]
+생활비와 집안일을 정확히 반반으로 나누던 부부가 출산 이후에도 비용을 기계적으로 나누면서 갈등이 커지는 방송 사연 캡처. 산후조리원 비용을 공용생활비로 낼 수 없다는 남편의 태도 등이 핵심 갈등으로 제시된다. 공개 게시물 설명을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2920139035",
+    "title": "반반결혼의 최후 (애로부부 캡쳐)",
+    "body": "생활비와 집안일을 정확히 반반으로 나누던 부부가 출산 이후에도 비용을 기계적으로 나누면서 갈등이 커지는 방송 사연 캡처. 산후조리원 비용을 공용생활비로 낼 수 없다는 남편의 태도 등이 핵심 갈등으로 제시된다. 공개 게시물 설명을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_반반결혼의최후.md",
+      "originalTitle": "반반결혼의 최후 (애로부부 캡쳐)",
+      "originalMarkdown": "# 반반결혼의 최후 (애로부부 캡쳐)\r\n\r\n## 글 내용\r\n생활비와 집안일을 정확히 반반으로 나누던 부부가 출산 이후에도 비용을 기계적으로 나누면서 갈등이 커지는 방송 사연 캡처. 산후조리원 비용을 공용생활비로 낼 수 없다는 남편의 태도 등이 핵심 갈등으로 제시된다. 공개 게시물 설명을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2920139035\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n2026-09-17 20:38 KST 공개 페이지 관측: 조회 75,932 / 댓글 515.\r\n\r\n## 평가\r\n'반반' 원칙이 출산·육아 상황에서도 그대로 적용될 수 있는가라는 즉각적인 논쟁점과 다수 이미지 시퀀스가 있어 carousel 적합도가 높다. 형식: 이미지 포스팅.\r\n\r\n## 이미지/자산/게시상태\r\n원문에 다수 캡처 이미지 존재 확인. 실제 source bytes/full-post screenshot sequence는 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "0e0437eaceea699fb8b37375d92a949449b19b3c2aa6872f4bedcee33bfc5468",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 236
+}

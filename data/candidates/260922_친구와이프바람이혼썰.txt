@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1901877
+제목 - 내 친구랑 바람난 와이프 이혼 썰...
+내용 - [명시 요약 — 원문 전문 아님]
+배우자와 자신의 친구가 바람났다는 강한 배신 구조에 이혼 후 두 사람도 잘되지 않았다는 후일담까지 붙어 있다. 반전과 감정선이 강하지만 개인의 주장인 만큼 사실 확정 표현 없이 소재 후보로만 보존한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1901877",
+    "title": "내 친구랑 바람난 와이프 이혼 썰...",
+    "body": "배우자와 자신의 친구가 바람났다는 강한 배신 구조에 이혼 후 두 사람도 잘되지 않았다는 후일담까지 붙어 있다. 반전과 감정선이 강하지만 개인의 주장인 만큼 사실 확정 표현 없이 소재 후보로만 보존한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_친구와이프바람이혼썰.md",
+      "originalTitle": "내 친구랑 바람난 와이프 이혼 썰...",
+      "originalMarkdown": "# 내 친구랑 바람난 와이프 이혼 썰...\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- publicUrl: https://www.inven.co.kr/board/webzine/2097/1901877\r\n- exactObservedTitle: `내 친구랑 바람난 와이프 이혼 썰...`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 댓글 108 / 추천 167 (retrieved page excerpt); 조회수는 이번 관찰에서 확실히 확인되지 않아 기록하지 않음\r\n- bodyRead: true (retrieved public body excerpt sufficient to identify narrative; full comment thread not read)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (page shows Image marker; asset not downloaded or inspected)\r\n- acquisition: Public individual Inven page indexed and readable; exact individual URL verified.\r\n- provenance: C1 exact public individual Inven URL; personal-story claims are not independently verified and no original/off-platform source is asserted.\r\n- whyGood: 배우자와 자신의 친구가 바람났다는 강한 배신 구조에 이혼 후 두 사람도 잘되지 않았다는 후일담까지 붙어 있다. 반전과 감정선이 강하지만 개인의 주장인 만큼 사실 확정 표현 없이 소재 후보로만 보존한다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a73afa11eb898ee1214d39eb67f54a5a6f34ed7fc4fe882ea421b0093c9302c1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 234
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2724488?iskin=webzine
+제목 - 길에서 핸드폰 빌려줬더니 온 카톡
+내용 - [명시 요약 — 원문 전문 아님]
+길에서 휴대폰을 빌려준 뒤 예상치 못한 카톡이 왔다는 이미지 중심 사연. 작성자는 신고해야 할 것 같다는 반응을 덧붙였지만 핵심 대화 내용은 이미지 안에 있어 현재 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2724488?iskin=webzine",
+    "title": "길에서 핸드폰 빌려줬더니 온 카톡",
+    "body": "길에서 휴대폰을 빌려준 뒤 예상치 못한 카톡이 왔다는 이미지 중심 사연. 작성자는 신고해야 할 것 같다는 반응을 덧붙였지만 핵심 대화 내용은 이미지 안에 있어 현재 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_길에서폰빌려줬더니카톡.md",
+      "originalTitle": "길에서 핸드폰 빌려줬더니 온 카톡",
+      "originalMarkdown": "# 길에서 핸드폰 빌려줬더니 온 카톡\r\n\r\n## 글 내용\r\n길에서 휴대폰을 빌려준 뒤 예상치 못한 카톡이 왔다는 이미지 중심 사연. 작성자는 신고해야 할 것 같다는 반응을 덧붙였지만 핵심 대화 내용은 이미지 안에 있어 현재 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2724488?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 11:36 KST 부근\r\n- 조회 7,606 / 추천 0 / 댓글 26\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n일상 호의→예상 밖 결과 구조가 강하고 제목만으로 궁금증이 생긴다. 실제 대화 캡처 확인 후 privacy/명예훼손 위험을 별도 검토해야 한다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n",
+      "originalSha256": "dae3d45d1c05d944703a655702db2dca6fbd61b27c749758306761e94efbf4e3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 231
+}

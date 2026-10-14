@@ -1,0 +1,14 @@
+{
+  "producerCommit": "f85b072221fdf5f3ab1e5d92c313bb9157547c77",
+  "reviewVersionSource": "desktop/post-review-store.cjs:function version",
+  "titlePolicySource": "app/source-page-plan.js:function titleInfo",
+  "consumerOnly": true,
+  "originalsModified": false,
+  "verifiedPcBeforePatch": {
+    "catalog": 199,
+    "images": 1719,
+    "originalSourceFiles": 4529,
+    "unchanged": true
+  },
+  "pcPatchPendingApproval": true
+}

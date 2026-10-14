@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/1310556395
+제목 - 친구들과의 계모임, 제가 쪼잔한 건가요...?
+내용 - [명시 요약 — 원문 전문 아님]
+친구 계모임에 결혼한 친구의 남편들이 반복 합석하면서 생기는 불편함이라는 일상적이면서 의견이 크게 갈릴 상황.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/1310556395",
+    "title": "친구들과의 계모임, 제가 쪼잔한 건가요...?",
+    "body": "친구 계모임에 결혼한 친구의 남편들이 반복 합석하면서 생기는 불편함이라는 일상적이면서 의견이 크게 갈릴 상황.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_계모임친구남편합석갈등.md",
+      "originalTitle": "친구들과의 계모임, 제가 쪼잔한 건가요...?",
+      "originalMarkdown": "# 친구들과의 계모임, 제가 쪼잔한 건가요...?\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/1310556395\r\n- exactObservedTitle: 친구들과의 계모임, 제가 쪼잔한 건가요...?\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public TheQoo URL; repost/forwarded-story provenance possible, original source not established\r\n- whyGood: 친구 계모임에 결혼한 친구의 남편들이 반복 합석하면서 생기는 불편함이라는 일상적이면서 의견이 크게 갈릴 상황.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "06e3b7777c3cd70f641aee09cb8cf85826d382c2d127a382e6fdaa8a784c29c1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 173
+}

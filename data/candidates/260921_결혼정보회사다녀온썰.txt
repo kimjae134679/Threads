@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/517738
+제목 - 결혼 정보회사에 다녀온 썰.txt
+내용 - [명시 요약 — 원문 전문 아님]
+결혼정보회사라는 즉시 이해되는 상황에서 실제 만남과 배우자 선택 기준을 다루는 경험담 형태라 연애·결혼 가치관에 대한 의견을 유도하기 쉬운 소재임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/517738",
+    "title": "결혼 정보회사에 다녀온 썰.txt",
+    "body": "결혼정보회사라는 즉시 이해되는 상황에서 실제 만남과 배우자 선택 기준을 다루는 경험담 형태라 연애·결혼 가치관에 대한 의견을 유도하기 쉬운 소재임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_결혼정보회사다녀온썰.md",
+      "originalTitle": "결혼 정보회사에 다녀온 썰.txt",
+      "originalMarkdown": "# 결혼 정보회사에 다녀온 썰.txt\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: Inven 오픈이슈갤러리\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/517738\r\n- exactObservedTitle: 결혼 정보회사에 다녀온 썰.txt\r\n- observedAt: 2026-09-21 18:14 KST\r\n- observedMetrics: 수치 기록 안 함 (이번 관찰에서 확실히 확인한 수치 없음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 확인하지 못함\r\n- acquisition: 공개 개별 게시물 URL과 공개 페이지에서 노출되는 본문 텍스트 일부를 직접 확인함.\r\n- provenance: Inven 공개 게시물. 원작성/재게시 여부 및 권리는 이번 실행에서 확인하지 않음.\r\n- whyGood: 결혼정보회사라는 즉시 이해되는 상황에서 실제 만남과 배우자 선택 기준을 다루는 경험담 형태라 연애·결혼 가치관에 대한 의견을 유도하기 쉬운 소재임.\r\n\r\n## 확인된 본문\r\n공개 페이지에서 커플 매니저가 여러 번의 만남을 통해 자신에게 맞는 상대를 찾고, 화려함보다 일상에서 편한 상대를 찾는 것이 중요하다는 취지로 조언하는 대목을 확인함. 그 밖의 본문은 이번 실행에서 확인된 범위 이상으로 채우지 않음.\r\n\r\n## 댓글\r\n댓글 미확인\r\n",
+      "originalSha256": "987e06f6edcf5bbb42b510cb70f8fb6be028cc2043682387f5279845d3f5faa3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 200
+}

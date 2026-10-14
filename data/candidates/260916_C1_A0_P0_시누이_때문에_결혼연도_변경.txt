@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/aitaweddings/comments/1vcme9w/aitah_for_refusing_to_change_my_wedding_year_for/
+제목 - AITAH for refusing to change my wedding year for my SIL?
+내용 - [명시 요약 — 원문 전문 아님]
+본문 확인. 작성자 커플은 재정 문제로 한 차례 결혼식을 취소했다가 2027년 호텔 결혼식을 다시 계획했다. 그런데 시누이도 자신의 결혼식을 2027년 같은 장소로 옮긴 뒤, 한 해를 나눠 쓰기 싫다며 작성자에게 2028년으로 미루라고 요구한다. 가족 일부가 시누이 편을 들면서 갈등이 커진다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/aitaweddings/comments/1vcme9w/aitah_for_refusing_to_change_my_wedding_year_for/",
+    "title": "AITAH for refusing to change my wedding year for my SIL?",
+    "body": "본문 확인. 작성자 커플은 재정 문제로 한 차례 결혼식을 취소했다가 2027년 호텔 결혼식을 다시 계획했다. 그런데 시누이도 자신의 결혼식을 2027년 같은 장소로 옮긴 뒤, 한 해를 나눠 쓰기 싫다며 작성자에게 2028년으로 미루라고 요구한다. 가족 일부가 시누이 편을 들면서 갈등이 커진다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_시누이_때문에_결혼연도_변경.md",
+      "originalTitle": "AITAH for refusing to change my wedding year for my SIL?",
+      "originalMarkdown": "# AITAH for refusing to change my wedding year for my SIL?\r\n\r\n## 글 내용\r\n본문 확인. 작성자 커플은 재정 문제로 한 차례 결혼식을 취소했다가 2027년 호텔 결혼식을 다시 계획했다. 그런데 시누이도 자신의 결혼식을 2027년 같은 장소로 옮긴 뒤, 한 해를 나눠 쓰기 싫다며 작성자에게 2028년으로 미루라고 요구한다. 가족 일부가 시누이 편을 들면서 갈등이 커진다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/aitaweddings/comments/1vcme9w/aitah_for_refusing_to_change_my_wedding_year_for/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 19:35 KST 전후 공개 검색 결과\r\n- 공개 검색에서 확인된 Reddit score: +473 votes\r\n- 조회수/댓글 수: 이번 관측에서 확인하지 못함\r\n\r\n## 평가\r\n- '결혼식 한 해를 독점할 수 있나'라는 즉각적인 논쟁 포인트와 같은 venue라는 황당함이 있음.\r\n- 돈 문제로 이미 한 번 취소했다는 배경까지 있어 단순 일정 다툼보다 이야기가 강함.\r\n- 전체 댓글은 읽지 않음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 공개 페이지 본문: 읽음\r\n- 댓글: 전체 미확인\r\n- source image/screenshot: 실제 확보하지 않음\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "e0b5812fa447e5dc25c7a30bd85ecc5bd23180bcea78091ae26df50499dc34c4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 375
+}

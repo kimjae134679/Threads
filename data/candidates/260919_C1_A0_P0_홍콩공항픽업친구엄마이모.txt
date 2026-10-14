@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/ktalk/4348622596
+제목 - 친구 픽업하러 공항 갔는데 친구 엄마와 이모가 왔습니다
+내용 - [명시 요약 — 원문 전문 아님]
+홍콩에서 일하던 작성자가 친구가 온다는 말에 공항 픽업을 약속했는데 실제로는 친구가 아니라 친구 엄마와 이모가 왔다. 작성자가 호텔 프론트에 확인한 내용상 처음부터 2인실 예약이었고, 친구 엄마는 이모와 6개월 동안 여행을 기대했다고 말했다고 한다. 이후 작성자에게 현지 가이드 역할까지 요구했다는 사연.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/ktalk/4348622596",
+    "title": "친구 픽업하러 공항 갔는데 친구 엄마와 이모가 왔습니다",
+    "body": "홍콩에서 일하던 작성자가 친구가 온다는 말에 공항 픽업을 약속했는데 실제로는 친구가 아니라 친구 엄마와 이모가 왔다. 작성자가 호텔 프론트에 확인한 내용상 처음부터 2인실 예약이었고, 친구 엄마는 이모와 6개월 동안 여행을 기대했다고 말했다고 한다. 이후 작성자에게 현지 가이드 역할까지 요구했다는 사연.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_홍콩공항픽업친구엄마이모.md",
+      "originalTitle": "친구 픽업하러 공항 갔는데 친구 엄마와 이모가 왔습니다",
+      "originalMarkdown": "# 친구 픽업하러 공항 갔는데 친구 엄마와 이모가 왔습니다\r\n\r\n## source\r\nTheQoo (ktalk)\r\n\r\n## 원문 제목 (exact observed title)\r\n나 일떄문에 홍콩살았었는데 친구 온데서 공항 픽업도 가준다했는데 친구엄마랑 이모랑 둘이 온게 레전드 아니냐? ㅋㅋㅋㅋ\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://theqoo.net/ktalk/4348622596\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 페이지 검색 관측: 조회 40 / 댓글 4. 시간에 따라 변할 수 있는 관측값.\r\n\r\n## 본문 / 댓글 확인\r\n- 본문 읽음: YES\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n홍콩에서 일하던 작성자가 친구가 온다는 말에 공항 픽업을 약속했는데 실제로는 친구가 아니라 친구 엄마와 이모가 왔다. 작성자가 호텔 프론트에 확인한 내용상 처음부터 2인실 예약이었고, 친구 엄마는 이모와 6개월 동안 여행을 기대했다고 말했다고 한다. 이후 작성자에게 현지 가이드 역할까지 요구했다는 사연.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n이번 discovery run에서 별도 이미지·스크린샷 존재 여부는 확인하지 않음. 자산 취득하지 않음.\r\n\r\n## 왜 소재로 좋은지\r\n'친구 픽업 약속 → 엄마와 이모 등장 → 가이드 요구'로 상황이 단계적으로 커지는 반전이 명확하다. 직장인이 휴가도 아닌데 가이드까지 해야 하느냐는 즉시 의견 포인트가 있다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1. 공개 개별 페이지와 본문을 직접 확인. source asset 미취득. A0/P0. publicationAllowed=false. OCR/moderation/rights clearance/human approval 미실행. 실제 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "55b48ee6888b33db0a0ac1b39659f59a72fe64d7d028105bbf65c532234c6f6f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 286
+}

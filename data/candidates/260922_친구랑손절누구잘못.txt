@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3060491642
+제목 - 친구랑 손절했는데 누구잘못인가요?
+내용 - [명시 요약 — 원문 전문 아님]
+5~6년 친구에게 일본여행 선물을 직장동료와 똑같이 줬다는 이유로 갈등이 시작되는 이야기다. 선물 가격보다 관계의 서열·기대치가 쟁점이라 사소한 사건이 손절까지 번지는 구조와 댓글 논쟁성이 강하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3060491642",
+    "title": "친구랑 손절했는데 누구잘못인가요?",
+    "body": "5~6년 친구에게 일본여행 선물을 직장동료와 똑같이 줬다는 이유로 갈등이 시작되는 이야기다. 선물 가격보다 관계의 서열·기대치가 쟁점이라 사소한 사건이 손절까지 번지는 구조와 댓글 논쟁성이 강하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_친구랑손절누구잘못.md",
+      "originalTitle": "[판] 친구랑 손절했는데 누구잘못인가요?",
+      "originalMarkdown": "# [판] 친구랑 손절했는데 누구잘못인가요?\r\n\r\n- stage: C1\r\n- source: TheQoo square (Nate Pann repost/quotation indicated by observed title)\r\n- publicUrl: https://theqoo.net/square/3060491642\r\n- exactObservedTitle: `[판] 친구랑 손절했는데 누구잘못인가요?`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 46,625 / 댓글 323\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (page indicates Files; no asset downloaded or inspected)\r\n- acquisition: Public individual page indexed and readable; exact individual URL verified. The title indicates a Pann repost; upstream original URL was not verified.\r\n- provenance: C1 exact public individual TheQoo URL; not asserted as first/original publication.\r\n- whyGood: 5~6년 친구에게 일본여행 선물을 직장동료와 똑같이 줬다는 이유로 갈등이 시작되는 이야기다. 선물 가격보다 관계의 서열·기대치가 쟁점이라 사소한 사건이 손절까지 번지는 구조와 댓글 논쟁성이 강하다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6afa8082d07d5a8bb3a2a3b4f4e16b7563bd630854141cc2bb5b8063e305b26c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 215
+}

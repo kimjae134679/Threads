@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/582597183
+제목 - 가난한(?) 시댁에 시집간 후기.
+내용 - [명시 요약 — 원문 전문 아님]
+경제적으로 넉넉하지 않은 시댁을 걱정했지만 간섭·용돈·제사 부담이 거의 없어 오히려 만족하게 됐다는 예상 반전이 있는 결혼·가족 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/582597183",
+    "title": "가난한(?) 시댁에 시집간 후기.",
+    "body": "경제적으로 넉넉하지 않은 시댁을 걱정했지만 간섭·용돈·제사 부담이 거의 없어 오히려 만족하게 됐다는 예상 반전이 있는 결혼·가족 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_가난한시댁에시집간후기.md",
+      "originalTitle": "가난한(?) 시댁에 시집간 후기.",
+      "originalMarkdown": "# 가난한(?) 시댁에 시집간 후기.\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/582597183\r\n- exactObservedTitle: 가난한(?) 시댁에 시집간 후기.\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: not observed in retrieved public page\r\n- whyGood: 경제적으로 넉넉하지 않은 시댁을 걱정했지만 간섭·용돈·제사 부담이 거의 없어 오히려 만족하게 됐다는 예상 반전이 있는 결혼·가족 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7d442a932c05d0b403fa55809d7caf99451a7ff06fb2d5efd4cc813037ddc313",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 179
+}

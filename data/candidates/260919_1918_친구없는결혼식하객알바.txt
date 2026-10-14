@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%97%86%EB%8A%94-%EA%B2%B0%ED%98%BC%EC%8B%9D-wuy26bqk
+제목 - 친구 없는 결혼식
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%97%86%EB%8A%94-%EA%B2%B0%ED%98%BC%EC%8B%9D-wuy26bqk",
+    "title": "친구 없는 결혼식",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_친구없는결혼식하객알바.md",
+      "originalTitle": "친구 없는 결혼식",
+      "originalMarkdown": "# 친구 없는 결혼식\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%97%86%EB%8A%94-%EA%B2%B0%ED%98%BC%EC%8B%9D-wuy26bqk\r\n- exact_observed_title: 친구 없는 결혼식\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 1,195 / 댓글 17 / 좋아요 2\r\n- body_read: 예\r\n- comments_read: 일부 공개 댓글 확인\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 결혼식에 부를 친구가 5명 미만이라 하객알바까지 고민하는 상황이 공감과 찬반을 동시에 유발함.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; public page readable without bypass\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "adaa078a1fc7cd7fe9f6d6ed854949388899734541c2bae6104aa3ef1dee71f3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 161
+}

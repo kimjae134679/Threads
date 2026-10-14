@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%99%EC%83%9D-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-Tt3v33cH
+제목 - 동생 결혼 반대
+내용 - [명시 요약 — 원문 전문 아님]
+대기업에 다니는 20대 후반 남녀가 각각 약 5천만원을 모았고 부모 지원 없이 월세·스몰웨딩으로 시작하려 하자 부모가 가진 것이 너무 적다며 결혼을 반대해 형제가 중간에서 고민하는 사연. 공개 원문 본문과 댓글 일부를 읽었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%99%EC%83%9D-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-Tt3v33cH",
+    "title": "동생 결혼 반대",
+    "body": "대기업에 다니는 20대 후반 남녀가 각각 약 5천만원을 모았고 부모 지원 없이 월세·스몰웨딩으로 시작하려 하자 부모가 가진 것이 너무 적다며 결혼을 반대해 형제가 중간에서 고민하는 사연. 공개 원문 본문과 댓글 일부를 읽었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_동생_스몰웨딩_결혼반대.md",
+      "originalTitle": "동생 결혼 반대",
+      "originalMarkdown": "# 동생 결혼 반대\r\n\r\n## 글 내용\r\n대기업에 다니는 20대 후반 남녀가 각각 약 5천만원을 모았고 부모 지원 없이 월세·스몰웨딩으로 시작하려 하자 부모가 가진 것이 너무 적다며 결혼을 반대해 형제가 중간에서 고민하는 사연. 공개 원문 본문과 댓글 일부를 읽었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%8F%99%EC%83%9D-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-Tt3v33cH\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측 2026-09-18 05:35 KST: 조회수 3,414 / 좋아요 2 / 댓글 14.\r\n\r\n## 평가\r\n부모지원 없는 결혼이 무리인가라는 현실적인 돈·세대 논쟁으로 공감 범위가 넓다.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n형식: 글. screenshot 미확보, A0 / ASSETS_PENDING / P0 / publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation 미실행. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "68e82af93827153091eb37f3d48750466eefa5b5de0bb090b1c19f99f6fcf761",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 284
+}

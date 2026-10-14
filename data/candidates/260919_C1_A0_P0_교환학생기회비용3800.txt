@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B5%90%ED%99%98%ED%95%99%EC%83%9D-1%ED%95%99%EA%B8%B05%EA%B0%9C%EC%9B%94-%EB%8B%A4%EB%85%80%EC%98%A4%EB%8A%94-%EA%B8%B0%ED%9A%8C%EB%B9%84%EC%9A%A9-%EA%B3%A0%EB%AF%BC-s3cdfihj
+제목 - 5개월 교환학생에 기회비용 3800만원 고민
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B5%90%ED%99%98%ED%95%99%EC%83%9D-1%ED%95%99%EA%B8%B05%EA%B0%9C%EC%9B%94-%EB%8B%A4%EB%85%80%EC%98%A4%EB%8A%94-%EA%B8%B0%ED%9A%8C%EB%B9%84%EC%9A%A9-%EA%B3%A0%EB%AF%BC-s3cdfihj",
+    "title": "5개월 교환학생에 기회비용 3800만원 고민",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_교환학생기회비용3800.md",
+      "originalTitle": "5개월 교환학생에 기회비용 3800만원 고민",
+      "originalMarkdown": "# 5개월 교환학생에 기회비용 3800만원 고민\r\n\r\n- source: Blind / 블라블라\r\n- exact observed title: `교환학생 1학기(5개월) 다녀오는 기회비용 고민...`\r\n- public URL: https://www.teamblind.com/kr/post/%EA%B5%90%ED%99%98%ED%95%99%EC%83%9D-1%ED%95%99%EA%B8%B05%EA%B0%9C%EC%9B%94-%EB%8B%A4%EB%85%80%EC%98%A4%EB%8A%94-%EA%B8%B0%ED%9A%8C%EB%B9%84%EC%9A%A9-%EA%B3%A0%EB%AF%BC-s3cdfihj\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 4 / 댓글 5\r\n- body read: 예. 체류비 약 2000, 등록금 300, 휴직 월급 1500이라는 공개 본문 확인.\r\n- comments read: 일부 공개 댓글 확인.\r\n- image/screenshot: 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 돈과 경험 중 무엇을 택할지 숫자가 선명하고 직장인들이 즉시 자기 기준을 말하기 좋은 논쟁형 소재.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_READ.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "a8153dacc4a120eddc4f5b8ccf2f2cf08b649d9d02351477e4f105ab48eb7e5c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 279
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%ED%99%94%EB%B2%95-%EC%9D%B4-%EB%8B%B5%EB%8B%B5%ED%95%9C%EB%8D%B0-z5iqigfd
+제목 - 열나는데 출근한다는 남친… "다들 운동해서 안 옮아"
+내용 - [명시 요약 — 원문 전문 아님]
+장거리 연애 중인 남자친구가 며칠째 열이 나는데 병원 갈 시간이 없다고 했다는 글. 쉬는 날 병원에 가보라고 권하자 병원에 가도 낫지 않는다거나, 독감·코로나일 수 있으니 출근하면 다른 사람에게 옮길 수 있다는 말에는 직장 사람들이 모두 건강하고 운동하니 안 옮는다는 취지로 답했다고 한다. 작성자는 답답해 전화를 끊고 자신이 실수한 건지 묻는다. 공개 본문 읽음. 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%ED%99%94%EB%B2%95-%EC%9D%B4-%EB%8B%B5%EB%8B%B5%ED%95%9C%EB%8D%B0-z5iqigfd",
+    "title": "열나는데 출근한다는 남친… \"다들 운동해서 안 옮아\"",
+    "body": "장거리 연애 중인 남자친구가 며칠째 열이 나는데 병원 갈 시간이 없다고 했다는 글. 쉬는 날 병원에 가보라고 권하자 병원에 가도 낫지 않는다거나, 독감·코로나일 수 있으니 출근하면 다른 사람에게 옮길 수 있다는 말에는 직장 사람들이 모두 건강하고 운동하니 안 옮는다는 취지로 답했다고 한다. 작성자는 답답해 전화를 끊고 자신이 실수한 건지 묻는다. 공개 본문 읽음. 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_남친아픈데운동해서안옮아.md",
+      "originalTitle": "열나는데 출근한다는 남친… \"다들 운동해서 안 옮아\"",
+      "originalMarkdown": "# 열나는데 출근한다는 남친… \"다들 운동해서 안 옮아\"\r\n\r\n## 원문 제목\r\n남친 화법 ? 이 답답한데\r\n\r\n## source\r\nBlind 공개 개별 페이지.\r\n\r\n## 글 내용\r\n장거리 연애 중인 남자친구가 며칠째 열이 나는데 병원 갈 시간이 없다고 했다는 글. 쉬는 날 병원에 가보라고 권하자 병원에 가도 낫지 않는다거나, 독감·코로나일 수 있으니 출근하면 다른 사람에게 옮길 수 있다는 말에는 직장 사람들이 모두 건강하고 운동하니 안 옮는다는 취지로 답했다고 한다. 작성자는 답답해 전화를 끊고 자신이 실수한 건지 묻는다. 공개 본문 읽음. 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%ED%99%94%EB%B2%95-%EC%9D%B4-%EB%8B%B5%EB%8B%B5%ED%95%9C%EB%8D%B0-z5iqigfd\r\n\r\n## 관찰시각 / 실제로 보인 수치\r\n- 관찰: 2026-09-19 12:17 KST 전후 자동화 실행 중\r\n- 조회수: 169\r\n- 댓글: 11\r\n- 좋아요: 3\r\n\r\n## 본문·댓글·이미지 확인\r\n- 본문: 읽음\r\n- 댓글: 전체 미확인\r\n- 이미지/스크린샷: 확인/취득하지 않음\r\n\r\n## 왜 소재로 좋은지\r\n'운동하니까 감염되지 않는다'는 대답이 황당하고 한 줄로 장면이 잡힌다. 연인의 걱정에 대한 반응, 아픈 상태의 출근 문제까지 공감형 짜증 소재로 쓰기 좋다.\r\n\r\n## acquisition / provenance\r\n- exact individual public page: VERIFIED\r\n- provenance: DIRECT_PUBLIC_PAGE\r\n- Blind bulk crawl/login/anti-bot bypass: NOT_PERFORMED\r\n- source media acquisition: NOT_PERFORMED\r\n- rights/privacy/human review: 미실행·필요\r\n- OCR/moderation: 미실행\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "301b07f3121deaf35b245f2cb61f46204a9a054017013dfd97faf3d3516ae598",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 425
+}

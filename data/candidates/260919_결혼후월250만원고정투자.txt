@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%9B%84-%EC%9B%94-250%EB%A7%8C%EC%9B%90-%EA%B3%A0%EC%A0%95-%ED%88%AC%EC%9E%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%98%EC%84%B8%EC%9A%94-fcq8bgqj
+제목 - 결혼후 월 250만원 고정 투자 어떻게 생각하세요?
+내용 - [명시 요약 — 원문 전문 아님]
+실수령 400만원 중 결혼 후에도 매달 250만원을 장기투자하겠다는 계획이 생활비·출산·주거비와 충돌해 돈/결혼 가치관 논쟁이 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%9B%84-%EC%9B%94-250%EB%A7%8C%EC%9B%90-%EA%B3%A0%EC%A0%95-%ED%88%AC%EC%9E%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%98%EC%84%B8%EC%9A%94-fcq8bgqj",
+    "title": "결혼후 월 250만원 고정 투자 어떻게 생각하세요?",
+    "body": "실수령 400만원 중 결혼 후에도 매달 250만원을 장기투자하겠다는 계획이 생활비·출산·주거비와 충돌해 돈/결혼 가치관 논쟁이 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼후월250만원고정투자.md",
+      "originalTitle": "결혼후 월 250만원 고정 투자 어떻게 생각하세요?",
+      "originalMarkdown": "# 결혼후 월 250만원 고정 투자 어떻게 생각하세요?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%9B%84-%EC%9B%94-250%EB%A7%8C%EC%9B%90-%EA%B3%A0%EC%A0%95-%ED%88%AC%EC%9E%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%83%9D%EA%B0%81%ED%95%98%EC%84%B8%EC%9A%94-fcq8bgqj\r\n- exactObservedTitle: 결혼후 월 250만원 고정 투자 어떻게 생각하세요?\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 138, 댓글 8\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 실수령 400만원 중 결혼 후에도 매달 250만원을 장기투자하겠다는 계획이 생활비·출산·주거비와 충돌해 돈/결혼 가치관 논쟁이 선명함.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 금액과 계획은 게시자 주장.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3882f73054958d9abf9b8dfb8bb18bc5c3ae833a13058871e2d332b9660eee44",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 368
+}

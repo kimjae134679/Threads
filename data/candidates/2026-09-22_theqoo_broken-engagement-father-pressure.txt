@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4327958733
+제목 - 파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4327958733",
+    "title": "파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_broken-engagement-father-pressure.md",
+      "originalTitle": "파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기",
+      "originalMarkdown": "# 파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4327958733\r\n- exactObservedTitle: `파혼한지 좀 됐는데 아빠가 계속 ㅈㄹ중인 후기`\r\n- observedAt: 2026-09-22 23:15 KST\r\n- acquisitionStatus: C1 — exact individual public URL verified via public indexed page\r\n- provenance: Public indexed TheQoo review page exposed readable body text. Personal-experience and dispute claims are attributed to the anonymous poster and remain unverified.\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed in retained text\r\n- observedMetrics: none retained; no metric was relied on for selection\r\n- whyGoodMaterial: 결혼 직전 상대의 전 연인 관련 금전 소송을 알게 되어 파혼했는데 가족이 계속 재결합을 압박하는 이야기라 결혼 전 고지 의무와 부모 개입을 두고 즉시 의견이 갈릴 수 있다.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rightsStatus: not established\r\n- OCR: not performed\r\n- moderation: not performed\r\n",
+      "originalSha256": "81775c0e1b2e8640786936d33bace376d9f39e1193dbbcca040ad920bf7ba13e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 105
+}

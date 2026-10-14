@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2718508
+제목 - 분당 헬스장에서 포착된 의문의 남성
+내용 - [명시 요약 — 원문 전문 아님]
+분당의 한 헬스장에서 사람들이 눈길을 줄 만한 장면을 이미지로 보여주는 미스터리·유머형 게시물이다. 실제 인물이 식별될 수 있어 이미지 세부 내용은 privacy review 후 다룬다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2718508",
+    "title": "분당 헬스장에서 포착된 의문의 남성",
+    "body": "분당의 한 헬스장에서 사람들이 눈길을 줄 만한 장면을 이미지로 보여주는 미스터리·유머형 게시물이다. 실제 인물이 식별될 수 있어 이미지 세부 내용은 privacy review 후 다룬다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_분당헬스장의문의남성.md",
+      "originalTitle": "분당 헬스장에서 포착된 의문의 남성",
+      "originalMarkdown": "# 분당 헬스장에서 포착된 의문의 남성\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2718508\r\n- 조회수: 21,697\r\n- 추천: 25\r\n- 댓글: 41\r\n- 본문: 읽음\r\n- 이미지: 공개 링크 확인, 파일 미확보\r\n\r\n## 글 내용\r\n분당의 한 헬스장에서 사람들이 눈길을 줄 만한 장면을 이미지로 보여주는 미스터리·유머형 게시물이다. 실제 인물이 식별될 수 있어 이미지 세부 내용은 privacy review 후 다룬다.\r\n\r\n## 평가\r\n- 평가: 강한 시각 호기심 후보\r\n- 주의: 얼굴·개인 식별 가능성 검토 필수.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "27bd5badc84e5df73b447153438e1df266102ba560c3e4277133e6a89af93de2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 224
+}

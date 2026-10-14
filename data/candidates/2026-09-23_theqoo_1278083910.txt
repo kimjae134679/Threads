@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1278083910
+제목 - 이딴 놈이 내 상사라니 후기
+내용 - [명시 요약 — 원문 전문 아님]
+반복적인 업무 반려와 모욕적 언행을 하던 상사 때문에 퇴사를 준비하던 작성자에게 주변 팀·인사팀·임원까지 개입하면서 상황이 크게 뒤집히는 직장 경험담이다. 직장 빌런에서 조직 차원의 반전으로 이어지는 서사가 분명해 의견과 공감을 끌기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1278083910",
+    "title": "이딴 놈이 내 상사라니 후기",
+    "body": "반복적인 업무 반려와 모욕적 언행을 하던 상사 때문에 퇴사를 준비하던 작성자에게 주변 팀·인사팀·임원까지 개입하면서 상황이 크게 뒤집히는 직장 경험담이다. 직장 빌런에서 조직 차원의 반전으로 이어지는 서사가 분명해 의견과 공감을 끌기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_1278083910.md",
+      "originalTitle": "이딴 놈이 내 상사라니 후기",
+      "originalMarkdown": "# 이딴 놈이 내 상사라니 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1278083910\r\n- exactObservedTitle: 이딴 놈이 내 상사라니 후기\r\n- observedAt: 2026-09-23 10:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 4,588 / 댓글 21 (관찰 시점 공개 페이지 표시)\r\n- whyGood: 반복적인 업무 반려와 모욕적 언행을 하던 상사 때문에 퇴사를 준비하던 작성자에게 주변 팀·인사팀·임원까지 개입하면서 상황이 크게 뒤집히는 직장 경험담이다. 직장 빌런에서 조직 차원의 반전으로 이어지는 서사가 분명해 의견과 공감을 끌기 좋은 소재다.\r\n- verification: 개인 경험담이며 회사·상사·동료의 관점과 세부 사실은 독립 검증되지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "a6b8a86a9558c816ff6fdce26f9b0a35f63a799fec8a4c32d617398af0438980",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 240
+}

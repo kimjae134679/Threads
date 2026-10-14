@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/1552430279
+제목 - 얼떨결에 결혼한 상견례 썰.txt
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/1552430279",
+    "title": "얼떨결에 결혼한 상견례 썰.txt",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_C1_A0_P0_얼떨결에결혼한상견례썰.md",
+      "originalTitle": "얼떨결에 결혼한 상견례 썰.txt",
+      "originalMarkdown": "# 얼떨결에 결혼한 상견례 썰.txt\r\n\r\n## source\r\n- TheQoo 스퀘어\r\n- exact public URL: https://theqoo.net/square/1552430279\r\n\r\n## 관찰\r\n- observedAt: 2026-09-21 20:15 KST\r\n- exact observed title: `얼떨결에 결혼한 상견례 썰.txt`\r\n- 게시 표시: 2020.08.05 11:02\r\n- 조회: 15,234\r\n- 댓글/표시 수치: 공개 검색 페이지에 38 표시(해당 숫자의 UI 의미를 추가 추정하지 않음)\r\n- 본문 읽음: 예 (공개 페이지에서 노출된 텍스트 범위)\r\n- 댓글 읽음: 아니오\r\n- 이미지/스크린샷 존재 여부: 이번 관찰에서 별도 자산 검증하지 않음.\r\n\r\n## 왜 소재로 좋은가\r\n원래 비혼을 생각하던 작성자가 가족의 경제 문제와 본인 명의 빚 등 복잡한 배경을 가진 상태에서 결혼 과정으로 들어가는 이야기다. 제목 자체가 `얼떨결에 결혼`이라는 강한 궁금증을 만들고, 돈·가족·결혼이라는 즉각적인 논쟁 요소가 함께 있다.\r\n\r\n## acquisition / provenance\r\n- C1: 정확한 개별 공개 URL 확인.\r\n- acquisition: PUBLIC_TEXT_OBSERVED\r\n- provenance: TheQoo 개별 공개 게시물을 확인. 재전파 여부/최초 원저작자는 확정하지 않음.\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- 스크린샷, 이미지 다운로드, OCR, 제작, 게시 작업 없음.\r\n",
+      "originalSha256": "5bc62d1dce0e4156e01be3dc723899e031fc0a228114dbb03a1e2dd69c883ee4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 98
+}

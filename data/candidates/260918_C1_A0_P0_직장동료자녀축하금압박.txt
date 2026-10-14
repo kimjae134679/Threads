@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1tofumk/aitah_for_not_putting_cash_in_cards_for_my/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+6명 규모 사무실에서 가장 어린 27세 직원이 한두 달에 한 번씩 동료들의 자녀 결혼·출산·졸업 등을 이유로 돌려지는 카드에 현금을 넣어야 하는 분위기에 불만을 느끼는 사연. 작성자는 그 자녀들을 실제로 만난 적도 없고 본인 급여도 사무실에서 낮은 편이라고 설명한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1tofumk/aitah_for_not_putting_cash_in_cards_for_my/",
+    "title": "제목",
+    "body": "6명 규모 사무실에서 가장 어린 27세 직원이 한두 달에 한 번씩 동료들의 자녀 결혼·출산·졸업 등을 이유로 돌려지는 카드에 현금을 넣어야 하는 분위기에 불만을 느끼는 사연. 작성자는 그 자녀들을 실제로 만난 적도 없고 본인 급여도 사무실에서 낮은 편이라고 설명한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_직장동료자녀축하금압박.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITAH for not putting cash in cards for my coworkers kids?\r\n\r\n## 글 내용\r\n6명 규모 사무실에서 가장 어린 27세 직원이 한두 달에 한 번씩 동료들의 자녀 결혼·출산·졸업 등을 이유로 돌려지는 카드에 현금을 넣어야 하는 분위기에 불만을 느끼는 사연. 작성자는 그 자녀들을 실제로 만난 적도 없고 본인 급여도 사무실에서 낮은 편이라고 설명한다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1tofumk/aitah_for_not_putting_cash_in_cards_for_my/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-18 08:37 KST\r\n- votes: +104\r\n- 댓글/조회수: 미확인\r\n\r\n## 평가\r\n한국 직장에서도 쉽게 공감 가능한 경조사비 압박 소재. 금액보다 직장 관계와 세대 차이에서 즉시 의견이 갈린다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- full body read: 공개 페이지 본문 확인\r\n- comments read: 아니오\r\n- source screenshot 확보: 0\r\n- acquisition: ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 필요 / 04_REVIEW_PUBLISH만 게시",
+      "originalSha256": "1e9bef95801391518d4845d886f98bf1865392d5b5b624e71511ff122da921cf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 301
+}

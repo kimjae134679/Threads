@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1497897957
+제목 - 35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+이혼·양육권·주거 지원이라는 사정과 성인 자녀에 대한 부모 지원의 한계가 충돌해 단순 악역 구도로 끝나지 않는 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1497897957",
+    "title": "35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기",
+    "body": "이혼·양육권·주거 지원이라는 사정과 성인 자녀에 대한 부모 지원의 한계가 충돌해 단순 악역 구도로 끝나지 않는 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_35살언니부모님돈.md",
+      "originalTitle": "35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기",
+      "originalMarkdown": "# 35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/1497897957\r\n- exactObservedTitle: `35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 조회 3,730 / 댓글 30\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 가족 금전 갈등 경험담.\r\n- whyGood: 이혼·양육권·주거 지원이라는 사정과 성인 자녀에 대한 부모 지원의 한계가 충돌해 단순 악역 구도로 끝나지 않는 논쟁 소재.\r\n- safety: 가족 상황은 작성자 서술로만 취급.",
+      "originalSha256": "4c4b6a275163cd022f8bbaf4a0228695b464629e0d7af79102b150749f16e93a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 188
+}

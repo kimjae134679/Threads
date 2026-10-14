@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%EB%9F%B4%EB%95%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C-jhPrhV2c
+제목 - 이럴땐 어떻게 해야할까?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%EB%9F%B4%EB%95%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C-jhPrhV2c",
+    "title": "이럴땐 어떻게 해야할까?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_시댁제사전화요구.md",
+      "originalTitle": "이럴땐 어떻게 해야할까?",
+      "originalMarkdown": "# 이럴땐 어떻게 해야할까?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%9D%B4%EB%9F%B4%EB%95%90-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C-jhPrhV2c\r\n- exactObservedTitle: 이럴땐 어떻게 해야할까?\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 1,565 / 댓글 43\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n시댁 제사 불참을 남편이 전달했는데 며느리가 직접 전화하지 않았다고 지적받고, 반대로 친정 제사에는 남편이 전화하지 않는다는 비대칭이 핵심이라 즉시 의견이 갈린다.\r\n\r\n## 관찰 메모\r\n작성자는 코로나 집합금지 때문에 시댁 제사에 불참했고 남편이 부모에게 전달했지만, 이후 시아버지가 직접 연락해야 한다고 말했다고 적었다.",
+      "originalSha256": "eeccfaa24ab09b57e06c31df5258bfacee4a5168161d7727f30c1ee151850243",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 192
+}

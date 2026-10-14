@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC
+제목 - 친구 결혼엔 20만원 냈는데 내 결혼엔 10만원
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC",
+    "title": "친구 결혼엔 20만원 냈는데 내 결혼엔 10만원",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_축의20내결혼10.md",
+      "originalTitle": "친구 결혼엔 20만원 냈는데 내 결혼엔 10만원",
+      "originalMarkdown": "# 친구 결혼엔 20만원 냈는데 내 결혼엔 10만원\r\n\r\n- source: Blind / 결혼생활\r\n- exact observed title: `축의금 논란 , 제가 이상한가요?(특이케이스)`\r\n- public URL: https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 8,933 / 댓글 92 / 좋아요 17\r\n- body read: 예. 두 친구에게 각각 20만원 축의 및 추가 수고를 했으나 본인 결혼식에는 불참하며 10만원·15만원을 받았다는 본문 확인.\r\n- comments read: 일부 공개 댓글 확인.\r\n- image/screenshot: 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 두 사례가 나란히 있어 독자가 `식비를 빼는 게 맞나`를 즉시 판단하게 만드는 선명한 축의금 갈등.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_READ / COMMENTS_PARTIAL.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "c17c774ff65c4d7ece7a78e12a56bd73aaf9717fa0561b84a3e80fd875e58382",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 269
+}

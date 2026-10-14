@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/488718057
+제목 - 맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/488718057",
+    "title": "맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-no-money-friend-spends_c1.md",
+      "originalTitle": "맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기",
+      "originalMarkdown": "# 맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/488718057\r\n- exactObservedTitle: 맨날 돈 없다고 하면서 할 거 다하는 친구가 애매한 후기\r\n- observedAt: 2026-09-23 19:16 KST\r\n- observedMetrics: 조회 3,052\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 친구 관계 경험담. 친구의 실제 경제상황·소비내역은 독립 검증하지 않았으며 작성자의 관찰과 주장으로만 취급.\r\n- whyGoodMaterial: 늘 돈이 없다고 말해 작성자가 식사를 사주게 되지만 여행·성형 등에는 소비한다는 모순처럼 보이는 상황과 ‘내가 호구인가’라는 결론이 있어 돈·우정 경계에 대한 의견이 바로 나올 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "3874e311ec7d047ebe714f726129c0db039fcd85e8f1495c2aeb50af9774703a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 110
+}

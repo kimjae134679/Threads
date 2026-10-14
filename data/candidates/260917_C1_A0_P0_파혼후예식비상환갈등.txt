@@ -1,0 +1,34 @@
+원문링크 - https://www.reddit.com/r/BestofRedditorUpdates/comments/1w1c230/aitah_for_not_offering_to_repay_my_exfiancees_25f/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 준비하던 커플이 신혼집 문제 등 가족과 얽힌 재정 갈등을 겪은 뒤 관계가 깨지고, 이미 들어간 결혼 비용을 전 약혼자의 부모에게 돌려줘야 하는지를 둘러싼 장문 후속 이야기다. 공개 BORU 페이지에 원 게시물과 후속 맥락이 정리되어 있다.
+
+- source: Reddit / r/BestofRedditorUpdates (원 게시물 출처 relationship_advice / TwoHotTakes 표기)
+- 관측: 2026-09-17 17:34 KST
+- 전체 본문: 공개 BORU 페이지에서 장문 원문/업데이트 확인
+- 댓글: 미확인
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BestofRedditorUpdates/comments/1w1c230/aitah_for_not_offering_to_repay_my_exfiancees_25f/",
+    "title": "제목",
+    "body": "결혼을 준비하던 커플이 신혼집 문제 등 가족과 얽힌 재정 갈등을 겪은 뒤 관계가 깨지고, 이미 들어간 결혼 비용을 전 약혼자의 부모에게 돌려줘야 하는지를 둘러싼 장문 후속 이야기다. 공개 BORU 페이지에 원 게시물과 후속 맥락이 정리되어 있다.\r\n\r\n- source: Reddit / r/BestofRedditorUpdates (원 게시물 출처 relationship_advice / TwoHotTakes 표기)\r\n- 관측: 2026-09-17 17:34 KST\r\n- 전체 본문: 공개 BORU 페이지에서 장문 원문/업데이트 확인\r\n- 댓글: 미확인",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_파혼후예식비상환갈등.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITAH for not offering to re-pay my ex-fiancee's (25F) parents (50s M&F) for any of the cost they incurred for our wedding that I (28M) incurred?\r\n\r\n## 글 내용\r\n결혼을 준비하던 커플이 신혼집 문제 등 가족과 얽힌 재정 갈등을 겪은 뒤 관계가 깨지고, 이미 들어간 결혼 비용을 전 약혼자의 부모에게 돌려줘야 하는지를 둘러싼 장문 후속 이야기다. 공개 BORU 페이지에 원 게시물과 후속 맥락이 정리되어 있다.\r\n\r\n- source: Reddit / r/BestofRedditorUpdates (원 게시물 출처 relationship_advice / TwoHotTakes 표기)\r\n- 관측: 2026-09-17 17:34 KST\r\n- 전체 본문: 공개 BORU 페이지에서 장문 원문/업데이트 확인\r\n- 댓글: 미확인\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/BestofRedditorUpdates/comments/1w1c230/aitah_for_not_offering_to_repay_my_exfiancees_25f/\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n동일 관측시점에서 확인 가능한 Reddit 점수: +4,550. 조회수·댓글수는 확인하지 못함.\r\n\r\n## 평가\r\n결혼→집/가족 재정 갈등→파혼→이미 쓴 예식비 반환 문제로 사건이 연속돼 스토리 잠재력이 높다. 반응도 강하다. 장문이라 전체 screenshot 확보 난이도는 높음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. rights/privacy/human review 필요. publicationAllowed=false. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "51843ca061149d1c59c96663a83797712833b8ecfd04d620bc76edb8708b9fd9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 475
+}

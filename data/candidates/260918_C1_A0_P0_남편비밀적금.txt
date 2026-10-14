@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%98-%EB%B9%84%EB%B0%80%EC%A0%81%EA%B8%88-EEVFt7GO
+제목 - 남편의 비밀적금
+내용 - [명시 요약 — 원문 전문 아님]
+남편이 가계 돈을 관리하면서 늘 돈이 없다고 하고 아내에게 용돈도 아껴 생활비에 보태라고 했지만, 실제로는 매달 50만원씩 10회차 비밀 적금을 넣고 있던 것을 휴대폰 화면으로 우연히 발견한 사연. 과거 쇼핑 과소비와 코인 손실도 언급됨. 본문과 공개 댓글 일부를 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%98-%EB%B9%84%EB%B0%80%EC%A0%81%EA%B8%88-EEVFt7GO",
+    "title": "남편의 비밀적금",
+    "body": "남편이 가계 돈을 관리하면서 늘 돈이 없다고 하고 아내에게 용돈도 아껴 생활비에 보태라고 했지만, 실제로는 매달 50만원씩 10회차 비밀 적금을 넣고 있던 것을 휴대폰 화면으로 우연히 발견한 사연. 과거 쇼핑 과소비와 코인 손실도 언급됨. 본문과 공개 댓글 일부를 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_남편비밀적금.md",
+      "originalTitle": "남편의 비밀적금",
+      "originalMarkdown": "# 남편의 비밀적금\r\n\r\n## 글 내용\r\n남편이 가계 돈을 관리하면서 늘 돈이 없다고 하고 아내에게 용돈도 아껴 생활비에 보태라고 했지만, 실제로는 매달 50만원씩 10회차 비밀 적금을 넣고 있던 것을 휴대폰 화면으로 우연히 발견한 사연. 과거 쇼핑 과소비와 코인 손실도 언급됨. 본문과 공개 댓글 일부를 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%98-%EB%B9%84%EB%B0%80%EC%A0%81%EA%B8%88-EEVFt7GO\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 조회 55K · 좋아요 64 · 댓글 710.\r\n\r\n## 평가\r\n손실이 아닌 '몰래 저축'인데도 배우자에게 절약을 강요했다는 역설 때문에 댓글 논쟁성이 매우 강함. 한국 후보 최상위권. 공개 원문 URL 확인 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "946c4bfa2049853542e6927733458de28f53bc2d37c09e31c5bc2f6d40fe7ade",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 317
+}

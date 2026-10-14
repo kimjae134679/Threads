@@ -50,6 +50,11 @@ const sandbox={TextEncoder,TextDecoder,Uint8Array,Uint8ClampedArray,Blob,File:Te
     ThreadsPagePlan:{VERSION:'test-rule',compile(){counts.compile++;return {ruleVersion:'test-rule',pages:[
       {number:1,width:1080,height:1350,operations:[{kind:'image',name:'photo.png',x:0,y:0,width:100,height:100}]}]};}}}
 };
+// Real title normalization is a dependency of the installed renderer. Image/canvas
+// doubles remain limited to the asset-lifecycle behavior under test.
+vm.runInNewContext(await fs.readFile(new URL('../app/source-page-plan.js',import.meta.url),'utf8'),sandbox);
+vm.runInNewContext(await fs.readFile(new URL('../app/source-curation.js',import.meta.url),'utf8'),sandbox);
+sandbox.window.ThreadsSourceCuration.normalizeTitles=sandbox.ThreadsSourceCuration.normalizeTitles;
 vm.runInNewContext(await fs.readFile(new URL('../app/source-batch.js',import.meta.url),'utf8'),sandbox);
 const api=sandbox.window.ThreadsSourceBatch;
 const delta=async fn=>{const before={...counts};await fn();return Object.fromEntries(Object.keys(counts).map(key=>[key,counts[key]-before[key]]));};

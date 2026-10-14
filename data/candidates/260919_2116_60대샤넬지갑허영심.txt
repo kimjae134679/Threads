@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/60%EB%8C%80-%EC%83%A4%EB%84%AC-%EC%A7%80%EA%B0%91-%EA%B5%AC%EB%A7%A4---%ED%97%88%EC%98%81%EC%8B%AC-fwkawhbt
+제목 - 60대 샤넬 지갑 구매 - 허영심?
+내용 - [명시 요약 — 원문 전문 아님]
+육아를 돕는 친정엄마가 생일 선물 돈으로 샤넬 지갑을 사려는 것을 남편이 허영심이라 보는 갈등이라 소비·부모·배우자 경계가 동시에 걸림.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/60%EB%8C%80-%EC%83%A4%EB%84%AC-%EC%A7%80%EA%B0%91-%EA%B5%AC%EB%A7%A4---%ED%97%88%EC%98%81%EC%8B%AC-fwkawhbt",
+    "title": "60대 샤넬 지갑 구매 - 허영심?",
+    "body": "육아를 돕는 친정엄마가 생일 선물 돈으로 샤넬 지갑을 사려는 것을 남편이 허영심이라 보는 갈등이라 소비·부모·배우자 경계가 동시에 걸림.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_60대샤넬지갑허영심.md",
+      "originalTitle": "60대 샤넬 지갑 구매 - 허영심?",
+      "originalMarkdown": "# 60대 샤넬 지갑 구매 - 허영심?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/60%EB%8C%80-%EC%83%A4%EB%84%AC-%EC%A7%80%EA%B0%91-%EA%B5%AC%EB%A7%A4---%ED%97%88%EC%98%81%EC%8B%AC-fwkawhbt\r\n- exactObservedTitle: 60대 샤넬 지갑 구매 - 허영심?\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 5,045, 댓글 109\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 육아를 돕는 친정엄마가 생일 선물 돈으로 샤넬 지갑을 사려는 것을 남편이 허영심이라 보는 갈등이라 소비·부모·배우자 경계가 동시에 걸림.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지의 공개 본문 일부 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "952d6d92895b11370daa6ebec309da790263b0aa745ed6f448e13daf6fee4a77",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 287
+}

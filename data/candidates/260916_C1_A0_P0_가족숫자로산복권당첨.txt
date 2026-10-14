@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1qjgvut/aita_for_refusing_to_share_my_lottery_winnings/
+제목 - AITA for refusing to share my lottery winnings with my family, even though I used the family numbers?
+내용 - [명시 요약 — 원문 전문 아님]
+가족 기념일 숫자를 이용해 작성자가 자기 돈으로 혼자 산 복권이 큰 당첨이 되자 가족이 '가족 숫자'를 썼으니 상금을 나눠야 한다고 요구하면서 생긴 갈등이다. 구체 당첨액은 공개되지 않아 적지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1qjgvut/aita_for_refusing_to_share_my_lottery_winnings/",
+    "title": "AITA for refusing to share my lottery winnings with my family, even though I used the family numbers?",
+    "body": "가족 기념일 숫자를 이용해 작성자가 자기 돈으로 혼자 산 복권이 큰 당첨이 되자 가족이 '가족 숫자'를 썼으니 상금을 나눠야 한다고 요구하면서 생긴 갈등이다. 구체 당첨액은 공개되지 않아 적지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_가족숫자로산복권당첨.md",
+      "originalTitle": "AITA for refusing to share my lottery winnings with my family, even though I used the family numbers?",
+      "originalMarkdown": "# AITA for refusing to share my lottery winnings with my family, even though I used the family numbers?\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Reddit\r\n- 링크: https://www.reddit.com/r/AmItheAsshole/comments/1qjgvut/aita_for_refusing_to_share_my_lottery_winnings/\r\n- 관측 점수: 2,120\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n가족 기념일 숫자를 이용해 작성자가 자기 돈으로 혼자 산 복권이 큰 당첨이 되자 가족이 '가족 숫자'를 썼으니 상금을 나눠야 한다고 요구하면서 생긴 갈등이다. 구체 당첨액은 공개되지 않아 적지 않는다.\r\n\r\n## 평가\r\n- 평가: 최상급 돈·가족 즉답형\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "cfacb0ace3f37ba0fc73f175595125a60e4c950957f96aa78d0eedff38ef46b0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 367
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1645433994?category=25892
+제목 - 결혼을 후회하는 중기
+내용 - [명시 요약 — 원문 전문 아님]
+비혼 성향에서 반복 고백을 거쳐 결혼까지 간 과정 자체가 강한 관계 서사와 의견 충돌 지점을 가짐.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1645433994?category=25892",
+    "title": "결혼을 후회하는 중기",
+    "body": "비혼 성향에서 반복 고백을 거쳐 결혼까지 간 과정 자체가 강한 관계 서사와 의견 충돌 지점을 가짐.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼후회중기.md",
+      "originalTitle": "결혼을 후회하는 중기",
+      "originalMarkdown": "# 결혼을 후회하는 중기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1645433994?category=25892\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `결혼을 후회하는 중기`\r\n- observedMetrics: 조회 11,932\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 비혼 성향에서 반복 고백을 거쳐 결혼까지 간 과정 자체가 강한 관계 서사와 의견 충돌 지점을 가짐.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative only\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "601e586d8fd1cee51f4b11d29464898ed80763640c42485d27e72807503fce3e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 168
+}

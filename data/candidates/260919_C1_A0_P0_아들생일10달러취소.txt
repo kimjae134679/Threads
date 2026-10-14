@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/BestofRedditorUpdates/comments/1wijaop/aita_for_canceling_my_sons_bday_over_10/
+제목 - 10달러 때문에 13살 아들 생일파티를 취소한 엄마
+내용 - [명시 요약 — 원문 전문 아님]
+경제적으로 빠듯한 엄마가 13살이 되는 아들의 생일을 특별하게 해주려고 10명을 초대하고 배팅 케이지, 케이크, 게임 등을 준비했다. 제목상 10달러 문제로 파티를 취소하는 사건으로 이어지지만 이번 run에서는 전체 원문·업데이트를 끝까지 읽지 않았으므로 세부 결말은 `본문 일부 미확인`으로 남긴다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BestofRedditorUpdates/comments/1wijaop/aita_for_canceling_my_sons_bday_over_10/",
+    "title": "10달러 때문에 13살 아들 생일파티를 취소한 엄마",
+    "body": "경제적으로 빠듯한 엄마가 13살이 되는 아들의 생일을 특별하게 해주려고 10명을 초대하고 배팅 케이지, 케이크, 게임 등을 준비했다. 제목상 10달러 문제로 파티를 취소하는 사건으로 이어지지만 이번 run에서는 전체 원문·업데이트를 끝까지 읽지 않았으므로 세부 결말은 `본문 일부 미확인`으로 남긴다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_아들생일10달러취소.md",
+      "originalTitle": "10달러 때문에 13살 아들 생일파티를 취소한 엄마",
+      "originalMarkdown": "# 10달러 때문에 13살 아들 생일파티를 취소한 엄마\r\n\r\n## source\r\nReddit r/BestofRedditorUpdates (original r/AmItheAsshole story preserved)\r\n\r\n## 원문 제목 (exact observed title)\r\nAITA for canceling my son's bday over $10\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://www.reddit.com/r/BestofRedditorUpdates/comments/1wijaop/aita_for_canceling_my_sons_bday_over_10/\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 BORU 페이지 관측: +2,324 votes. 원 게시물의 동일시점 수치는 미확인.\r\n\r\n## 본문 / 댓글 확인\r\n- 보존된 원문 본문 읽음: PARTIAL\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n경제적으로 빠듯한 엄마가 13살이 되는 아들의 생일을 특별하게 해주려고 10명을 초대하고 배팅 케이지, 케이크, 게임 등을 준비했다. 제목상 10달러 문제로 파티를 취소하는 사건으로 이어지지만 이번 run에서는 전체 원문·업데이트를 끝까지 읽지 않았으므로 세부 결말은 `본문 일부 미확인`으로 남긴다.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n미확인. 자산 취득 없음.\r\n\r\n## 왜 소재로 좋은지\r\n'13살 첫 틴에이저 생일'과 '단돈 10달러'라는 숫자 대비가 강하다. 전체 전개 검증 후 사용 가치가 높은 가족·돈·훈육 논쟁형 후보.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_REPOST_URL_VERIFIED / C1. BORU 개별 공개 URL 확인. full body PARTIAL. A0/P0. publicationAllowed=false. source asset/OCR/moderation/rights clearance/human approval 미실행.",
+      "originalSha256": "7048e9fb0e769ef3600aa4168cf5665f2d8befa436bb10a5f291a42c7b4434d6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 351
+}

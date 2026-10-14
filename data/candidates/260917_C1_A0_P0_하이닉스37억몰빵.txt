@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4-37%EC%96%B5-%EB%AA%B0%EB%B9%B5-%ED%92%80%EB%A7%A4%EC%88%98-f0l2d3yc?from=share_link
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 주식·투자 글. 작성자가 SK하이닉스에 37억원을 몰빵 매수했다고 밝히며 마이크론과 다른 반도체 종목 흐름을 근거로 단타를 한 번 더 하겠다고 적었다. 본문에 매수/계좌 관련 이미지가 표시된다. 공개 페이지에서 본문과 일부 댓글을 실제 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4-37%EC%96%B5-%EB%AA%B0%EB%B9%B5-%ED%92%80%EB%A7%A4%EC%88%98-f0l2d3yc?from=share_link",
+    "title": "제목",
+    "body": "Blind 주식·투자 글. 작성자가 SK하이닉스에 37억원을 몰빵 매수했다고 밝히며 마이크론과 다른 반도체 종목 흐름을 근거로 단타를 한 번 더 하겠다고 적었다. 본문에 매수/계좌 관련 이미지가 표시된다. 공개 페이지에서 본문과 일부 댓글을 실제 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_하이닉스37억몰빵.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n하이닉스 37억 몰빵 풀매수\r\n\r\n## 글 내용\r\nBlind 주식·투자 글. 작성자가 SK하이닉스에 37억원을 몰빵 매수했다고 밝히며 마이크론과 다른 반도체 종목 흐름을 근거로 단타를 한 번 더 하겠다고 적었다. 본문에 매수/계좌 관련 이미지가 표시된다. 공개 페이지에서 본문과 일부 댓글을 실제 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4-37%EC%96%B5-%EB%AA%B0%EB%B9%B5-%ED%92%80%EB%A7%A4%EC%88%98-f0l2d3yc?from=share_link\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측시각: 2026-09-17 05:34 KST\r\n- 조회수: 58K\r\n- 좋아요: 54\r\n- 댓글: 1,137\r\n- 서로 다른 시점의 수치를 합치지 않음\r\n\r\n## 평가\r\n실제 거액 몰빵 + 이미지 + 1천개 넘는 댓글로 투자 사람 이야기 레인에서 매우 강함. 결과가 어떻게 됐는지 후속글 연결 여부도 확인 가치가 큼. 본문 읽음: 예. 댓글 읽음: 일부. 원문 이미지 존재: 예.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL verified, source screenshot bytes 미확보\r\n- source images: 공개 페이지에서 존재 확인, 실제 파일 미확보\r\n- ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH only",
+      "originalSha256": "01e66f780aa9bb79717e49977ebc306a7e8ea2ce9062f88727a5d3e94d740bed",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 350
+}

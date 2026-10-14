@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EA%B0%88%EB%93%B1-%EC%A1%B0%EC%96%B8-%EC%A2%80%E2%80%A6-%EB%82%B4%EA%B0%80-%EB%AF%B8%EC%B9%9C-%EB%A9%B0%EB%8A%90%EB%A6%B0%EA%B0%80-0lhawkbz
+제목 - 시댁 갈등 조언 좀… 내가 미친 며느린가
+내용 - [명시 요약 — 원문 전문 아님]
+시부모가 남편 명의로 새 집을 계약했다는 출발부터 형제 지원·부모 자산·대출 문제가 얽히는 가족 돈 갈등. 본문은 공개 페이지에서 관찰된 범위만 사용하며 사실관계는 게시자 주장임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EA%B0%88%EB%93%B1-%EC%A1%B0%EC%96%B8-%EC%A2%80%E2%80%A6-%EB%82%B4%EA%B0%80-%EB%AF%B8%EC%B9%9C-%EB%A9%B0%EB%8A%90%EB%A6%B0%EA%B0%80-0lhawkbz",
+    "title": "시댁 갈등 조언 좀… 내가 미친 며느린가",
+    "body": "시부모가 남편 명의로 새 집을 계약했다는 출발부터 형제 지원·부모 자산·대출 문제가 얽히는 가족 돈 갈등. 본문은 공개 페이지에서 관찰된 범위만 사용하며 사실관계는 게시자 주장임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_시부모남편명의집계약.md",
+      "originalTitle": "시댁 갈등 조언 좀… 내가 미친 며느린가",
+      "originalMarkdown": "# 시댁 갈등 조언 좀… 내가 미친 며느린가\r\n\r\n- source: Blind / 결혼생활\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EA%B0%88%EB%93%B1-%EC%A1%B0%EC%96%B8-%EC%A2%80%E2%80%A6-%EB%82%B4%EA%B0%80-%EB%AF%B8%EC%B9%9C-%EB%A9%B0%EB%8A%90%EB%A6%B0%EA%B0%80-0lhawkbz\r\n- exactObservedTitle: 시댁 갈등 조언 좀… 내가 미친 며느린가\r\n- observedAt: 2026-09-20 02:15 KST\r\n- observedMetrics: 조회수 5,801, 댓글 48\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: 확인하지 않음\r\n- provenance: C1 / 개별 공개 페이지 직접 확인\r\n- acquisition: PUBLIC_PAGE_BODY_READ\r\n- whyGood: 시부모가 남편 명의로 새 집을 계약했다는 출발부터 형제 지원·부모 자산·대출 문제가 얽히는 가족 돈 갈등. 본문은 공개 페이지에서 관찰된 범위만 사용하며 사실관계는 게시자 주장임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "f0322cfcc1e8687e3f63687740cccd4f092a750f579ef6b550c937c9d3a44993",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 366
+}

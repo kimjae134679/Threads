@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2151559342
+제목 - 내가 바라는 행복한 결혼은 못하겠구나 싶어 좌절감이 드는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+5년 연애 상대의 외도 이후 새로 만난 장기 연애 상대는 돈을 전혀 모으지 않았고 소비를 줄이는 문제로 헤어졌다는 연속 반전이 있어 연애·결혼·경제관념 논쟁성이 큼.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2151559342",
+    "title": "내가 바라는 행복한 결혼은 못하겠구나 싶어 좌절감이 드는 후기",
+    "body": "5년 연애 상대의 외도 이후 새로 만난 장기 연애 상대는 돈을 전혀 모으지 않았고 소비를 줄이는 문제로 헤어졌다는 연속 반전이 있어 연애·결혼·경제관념 논쟁성이 큼.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_C1_A0_P0_남친돈없어헤어짐.md",
+      "originalTitle": "내가 바라는 행복한 결혼은 못하겠구나 싶어 좌절감이 드는 후기",
+      "originalMarkdown": "# 내가 바라는 행복한 결혼은 못하겠구나 싶어 좌절감이 드는 후기\r\n\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- source: TheQoo 후기\r\n- public URL: https://theqoo.net/review/2151559342\r\n- exact observed title: `내가 바라는 행복한 결혼은 못하겠구나 싶어 좌절감이 드는 후기`\r\n- observedAt: 2026-09-22 03:16 KST\r\n- observed metrics: 조회 수 9634 / 댓글 33\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인하지 않음\r\n- acquisition: 공개 개별 게시물 URL과 노출 본문을 확인한 C1. 로그인/우회/OCR 없음.\r\n- provenance: TheQoo 공개 후기 페이지. 최초 창작 원출처 여부는 별도 주장하지 않음.\r\n- whyGood: 5년 연애 상대의 외도 이후 새로 만난 장기 연애 상대는 돈을 전혀 모으지 않았고 소비를 줄이는 문제로 헤어졌다는 연속 반전이 있어 연애·결혼·경제관념 논쟁성이 큼.\r\n- rights/moderation/assets/publication: 미확정. 제작/게시 단계로 승격하지 않음.\r\n",
+      "originalSha256": "1a43538d93a2cc7a2223981a5ba038c1b64cc98515fd4f3b23cd68e1a574a14e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 213
+}

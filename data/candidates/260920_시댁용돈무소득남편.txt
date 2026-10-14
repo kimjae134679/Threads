@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%9A%A9%EB%8F%88-%EB%AC%B8%EC%A0%9C-ZqMXxSR5
+제목 - 시댁 용돈 문제
+내용 - [명시 요약 — 원문 전문 아님]
+남편 고정수입이 없어진 뒤에도 매달 시부모 용돈 40만원을 고수하는 문제와 과거 지원/손실까지 얽힌 돈·가족 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%9A%A9%EB%8F%88-%EB%AC%B8%EC%A0%9C-ZqMXxSR5",
+    "title": "시댁 용돈 문제",
+    "body": "남편 고정수입이 없어진 뒤에도 매달 시부모 용돈 40만원을 고수하는 문제와 과거 지원/손실까지 얽힌 돈·가족 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_시댁용돈무소득남편.md",
+      "originalTitle": "시댁 용돈 문제",
+      "originalMarkdown": "# 시댁 용돈 문제\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%9A%A9%EB%8F%88-%EB%AC%B8%EC%A0%9C-ZqMXxSR5\r\n- exactObservedTitle: 시댁 용돈 문제\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 1,338, 댓글 11\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 남편 고정수입이 없어진 뒤에도 매달 시부모 용돈 40만원을 고수하는 문제와 과거 지원/손실까지 얽힌 돈·가족 갈등.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6a997c5b8d69fc04be1715c4a6c25fb07b710f5d39f04de47b37ec89e1075509",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 222
+}

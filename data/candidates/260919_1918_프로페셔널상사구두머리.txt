@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%94%84%EB%A1%9C%ED%8E%98%EC%85%94%EB%84%90%EC%97%90-%EB%AA%A9%EC%88%A8-%EA%B1%B0%EB%8A%94-%EC%83%81%EC%82%AC-OgOVgSGS
+제목 - 프로페셔널에 목숨 거는 상사
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%94%84%EB%A1%9C%ED%8E%98%EC%85%94%EB%84%90%EC%97%90-%EB%AA%A9%EC%88%A8-%EA%B1%B0%EB%8A%94-%EC%83%81%EC%82%AC-OgOVgSGS",
+    "title": "프로페셔널에 목숨 거는 상사",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_프로페셔널상사구두머리.md",
+      "originalTitle": "프로페셔널에 목숨 거는 상사",
+      "originalMarkdown": "# 프로페셔널에 목숨 거는 상사\r\n\r\n- source: Blind / 블라블라\r\n- public_url: https://www.teamblind.com/kr/post/%ED%94%84%EB%A1%9C%ED%8E%98%EC%85%94%EB%84%90%EC%97%90-%EB%AA%A9%EC%88%A8-%EA%B1%B0%EB%8A%94-%EC%83%81%EC%82%AC-OgOVgSGS\r\n- exact_observed_title: 프로페셔널에 목숨 거는 상사\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 476 / 댓글 21\r\n- body_read: 예\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 외부 미팅에서 마우스·구두굽·머리·핸드크림까지 '프로페셔널' 기준으로 통제하는 상사의 황당한 직장 규칙이 연속적으로 등장함.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; public page readable without bypass\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "916887acec6c2e94c7ed711966ddcee855c4009658a6ead36462f9d41a8351cc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 213
+}

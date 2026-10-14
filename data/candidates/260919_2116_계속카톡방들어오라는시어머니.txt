@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B3%84%EC%86%8D-%EC%B9%B4%ED%86%A1%EB%B0%A9-%EB%93%A4%EC%96%B4%EC%98%A4%EB%9D%BC%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-qllga02s
+제목 - 계속 카톡방 들어오라는 시어머니
+내용 - [명시 요약 — 원문 전문 아님]
+개인주의 친정과 공유가 많은 시댁의 문화 차이, 결혼 전 합의한 단톡방 불참을 계속 권하는 시어머니라는 명확한 갈등축이 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B3%84%EC%86%8D-%EC%B9%B4%ED%86%A1%EB%B0%A9-%EB%93%A4%EC%96%B4%EC%98%A4%EB%9D%BC%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-qllga02s",
+    "title": "계속 카톡방 들어오라는 시어머니",
+    "body": "개인주의 친정과 공유가 많은 시댁의 문화 차이, 결혼 전 합의한 단톡방 불참을 계속 권하는 시어머니라는 명확한 갈등축이 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_계속카톡방들어오라는시어머니.md",
+      "originalTitle": "계속 카톡방 들어오라는 시어머니",
+      "originalMarkdown": "# 계속 카톡방 들어오라는 시어머니\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B3%84%EC%86%8D-%EC%B9%B4%ED%86%A1%EB%B0%A9-%EB%93%A4%EC%96%B4%EC%98%A4%EB%9D%BC%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-qllga02s\r\n- exactObservedTitle: 계속 카톡방 들어오라는 시어머니\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 33, 댓글 2\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 개인주의 친정과 공유가 많은 시댁의 문화 차이, 결혼 전 합의한 단톡방 불참을 계속 권하는 시어머니라는 명확한 갈등축이 있음.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지의 공개 본문 일부 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "45e584f2c846b1e9cdb5e6d1fe187353582d34452f134380756337a0981f9d06",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 310
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%98%88%EB%B9%84%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%ED%92%80%EB%8C%80%EC%B6%9C-%EA%B3%A0%EB%AF%BC-twdhc0tn
+제목 - 예비신혼부부 풀대출 고민..
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%98%88%EB%B9%84%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%ED%92%80%EB%8C%80%EC%B6%9C-%EA%B3%A0%EB%AF%BC-twdhc0tn",
+    "title": "예비신혼부부 풀대출 고민..",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_신혼풀대출식비100.md",
+      "originalTitle": "예비신혼부부 풀대출 고민..",
+      "originalMarkdown": "# 예비신혼부부 풀대출 고민..\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%98%88%EB%B9%84%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%ED%92%80%EB%8C%80%EC%B6%9C-%EA%B3%A0%EB%AF%BC-twdhc0tn\r\n- exact_observed_title: 예비신혼부부 풀대출 고민..\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 1,046 / 댓글 15\r\n- body_read: 예\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 합산 월소득 600만원대, 모은돈 1.2억인데 5.8억 집과 결혼비용까지 대출하고 월 100만원으로 식비·저축을 해결하려는 영끌 논쟁형 소재.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; financial figures are poster claims\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b41fecefb2cd2a05c865613ce10fcc5213e69fd6387982af53d35510a08a98eb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 203
+}

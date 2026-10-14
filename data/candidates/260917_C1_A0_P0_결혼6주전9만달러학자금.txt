@@ -1,0 +1,34 @@
+원문링크 - https://www.reddit.com/r/AITH/comments/1v59qxu/aith_for_postponing_my_wedding_after_finding_out/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 6주를 앞둔 작성자가 재정 점검 과정에서 약혼자에게 약 9만 달러의 사립 학자금 대출이 있다는 사실을 처음 알게 된다. 빚의 액수 자체보다 4년 넘게 집·예산·미래를 함께 논의하면서도 정확한 규모를 숨겼다는 점 때문에 신뢰가 흔들렸고 결혼 연기를 고민한다.
+
+- source: Reddit / r/AITH
+- 관측: 2026-09-17 17:34 KST
+- 전체 본문: 공개 페이지에서 본문 확인
+- 댓글: 미확인
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITH/comments/1v59qxu/aith_for_postponing_my_wedding_after_finding_out/",
+    "title": "제목",
+    "body": "결혼 6주를 앞둔 작성자가 재정 점검 과정에서 약혼자에게 약 9만 달러의 사립 학자금 대출이 있다는 사실을 처음 알게 된다. 빚의 액수 자체보다 4년 넘게 집·예산·미래를 함께 논의하면서도 정확한 규모를 숨겼다는 점 때문에 신뢰가 흔들렸고 결혼 연기를 고민한다.\r\n\r\n- source: Reddit / r/AITH\r\n- 관측: 2026-09-17 17:34 KST\r\n- 전체 본문: 공개 페이지에서 본문 확인\r\n- 댓글: 미확인",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼6주전9만달러학자금.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITH for postponing my wedding after finding out about my fiance's debt?\r\n\r\n## 글 내용\r\n결혼 6주를 앞둔 작성자가 재정 점검 과정에서 약혼자에게 약 9만 달러의 사립 학자금 대출이 있다는 사실을 처음 알게 된다. 빚의 액수 자체보다 4년 넘게 집·예산·미래를 함께 논의하면서도 정확한 규모를 숨겼다는 점 때문에 신뢰가 흔들렸고 결혼 연기를 고민한다.\r\n\r\n- source: Reddit / r/AITH\r\n- 관측: 2026-09-17 17:34 KST\r\n- 전체 본문: 공개 페이지에서 본문 확인\r\n- 댓글: 미확인\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AITH/comments/1v59qxu/aith_for_postponing_my_wedding_after_finding_out/\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n동일 관측시점에서 확인 가능한 Reddit 점수: +301. 조회수·댓글수는 확인하지 못함.\r\n\r\n## 평가\r\n결혼 직전 숨겨진 거액의 빚이 드러나는 구조가 명확하다. 돈 자체보다 신뢰 문제라는 논쟁 포인트가 있어 댓글 유도력이 높다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 screenshot/source bytes 미확보. ASSETS_PENDING. C1_A0_P0. rights/privacy/human review 필요. publicationAllowed=false. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "a6fa05fb925d06c6415214e2058b2f5f954342469f65231f1c7f1e4927056aa6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 388
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4345669009
+제목 - 사람들이 잘 모르는 에버레스트 입산 비용
+내용 - [명시 요약 — 원문 전문 아님]
+더쿠 게시물. 에베레스트 정상 허가비가 성수기 1인 1만5천 달러이며 가이드·셰르파·산소·수송·보험 등을 더하면 일반 등반대 약 4천만~1억 원, 상업 등반대 약 1억~3억 원 수준이라는 내용과 산 쓰레기 문제를 함께 다룬다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4345669009",
+    "title": "사람들이 잘 모르는 에버레스트 입산 비용",
+    "body": "더쿠 게시물. 에베레스트 정상 허가비가 성수기 1인 1만5천 달러이며 가이드·셰르파·산소·수송·보험 등을 더하면 일반 등반대 약 4천만~1억 원, 상업 등반대 약 1억~3억 원 수준이라는 내용과 산 쓰레기 문제를 함께 다룬다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_에버레스트입산비용.md",
+      "originalTitle": "사람들이 잘 모르는 에버레스트 입산 비용",
+      "originalMarkdown": "# 사람들이 잘 모르는 에버레스트 입산 비용\r\n\r\n## 글 내용\r\n더쿠 게시물. 에베레스트 정상 허가비가 성수기 1인 1만5천 달러이며 가이드·셰르파·산소·수송·보험 등을 더하면 일반 등반대 약 4천만~1억 원, 상업 등반대 약 1억~3억 원 수준이라는 내용과 산 쓰레기 문제를 함께 다룬다.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/4345669009\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 조회수: 136\r\n- 댓글: 0\r\n\r\n## 평가\r\n금액 자체가 강한 놀람 포인트이고 '정상 한 번 가는데 억 단위'라는 즉시 이해 가능한 소재. 반응량은 낮아 보조 후보.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지/자산/게시상태\r\n- 본문 전체 읽음: 예, 공개 페이지에 노출된 텍스트 범위\r\n- 댓글 읽음: 해당 관측에서 댓글 없음\r\n- source image 존재: 예\r\n- source bytes 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false\r\n- rights/privacy/human review gate 유지",
+      "originalSha256": "fe6c8d8979fd9e883eb65a513771809e7244777097c38ac6733bfc401675451e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 235
+}

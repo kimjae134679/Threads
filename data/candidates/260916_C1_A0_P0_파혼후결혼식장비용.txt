@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/
+제목 - AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding
+내용 - [명시 요약 — 원문 전문 아님]
+부모가 딸의 결혼식을 위해 장애인 접근이 가능한 예식장을 조건으로 비용을 부담했는데, 결혼 약 4개월 전 파혼 사실을 한 달 뒤에야 알게 됐다는 사연이다. 작성자 설명상 딸의 과거 외도로 약혼자가 결혼을 취소했고, 예식장은 환불되지 않아 부모에게 비용 의무가 남았다. 부모가 딸에게 일부를 갚으라고 요구하자 딸은 잔인하다며 크게 다퉜다는 내용이다. 공개 Reddit 원문 전체를 읽었고 댓글 전체는 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/",
+    "title": "AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding",
+    "body": "부모가 딸의 결혼식을 위해 장애인 접근이 가능한 예식장을 조건으로 비용을 부담했는데, 결혼 약 4개월 전 파혼 사실을 한 달 뒤에야 알게 됐다는 사연이다. 작성자 설명상 딸의 과거 외도로 약혼자가 결혼을 취소했고, 예식장은 환불되지 않아 부모에게 비용 의무가 남았다. 부모가 딸에게 일부를 갚으라고 요구하자 딸은 잔인하다며 크게 다퉜다는 내용이다. 공개 Reddit 원문 전체를 읽었고 댓글 전체는 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_파혼후결혼식장비용.md",
+      "originalTitle": "AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding",
+      "originalMarkdown": "# AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding\r\n\r\n## 글 내용\r\n부모가 딸의 결혼식을 위해 장애인 접근이 가능한 예식장을 조건으로 비용을 부담했는데, 결혼 약 4개월 전 파혼 사실을 한 달 뒤에야 알게 됐다는 사연이다. 작성자 설명상 딸의 과거 외도로 약혼자가 결혼을 취소했고, 예식장은 환불되지 않아 부모에게 비용 의무가 남았다. 부모가 딸에게 일부를 갚으라고 요구하자 딸은 잔인하다며 크게 다퉜다는 내용이다. 공개 Reddit 원문 전체를 읽었고 댓글 전체는 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 21:35~21:50 KST 공개 Reddit 결과\r\n- score: +9,412\r\n- 조회수/댓글 수: 이번 공개 관측에서 확인하지 못함\r\n\r\n## 평가\r\n- 파혼 원인 → 환불불가 예식장 → 부모가 딸에게 비용 상환 요구라는 갈등 진행이 명확함.\r\n- 가족·결혼·돈·책임 소재가 한 번에 붙고 어느 쪽 책임인지 즉시 의견이 갈릴 만함.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- full-post screenshot/source bytes 실제 확보: 없음\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요. OCR/moderation/게시 성공 주장 없음.",
+      "originalSha256": "808c8c942d4cff9e9f631b44cd854303b51c147199b72eea90146d35cd24584c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 504
+}

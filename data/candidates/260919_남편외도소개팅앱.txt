@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%8F%84-dvh1o152
+제목 - 남편 외도
+내용 - [명시 요약 — 원문 전문 아님]
+신혼 중 소개팅 앱 사용 발견, 여행 중에도 사용했다는 정황과 즉각적인 이혼/신뢰 논쟁이 결합된 강한 관계 갈등 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%8F%84-dvh1o152",
+    "title": "남편 외도",
+    "body": "신혼 중 소개팅 앱 사용 발견, 여행 중에도 사용했다는 정황과 즉각적인 이혼/신뢰 논쟁이 결합된 강한 관계 갈등 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_남편외도소개팅앱.md",
+      "originalTitle": "남편 외도",
+      "originalMarkdown": "# 남편 외도\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%8F%84-dvh1o152\r\n- exactObservedTitle: 남편 외도\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 1,542 / 댓글 36 / 좋아요 3\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 신혼 중 소개팅 앱 사용 발견, 여행 중에도 사용했다는 정황과 즉각적인 이혼/신뢰 논쟁이 결합된 강한 관계 갈등 소재.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_PARTIAL\r\n- provenance: 원문 게시자의 주장으로 관찰했으며 독립적 사실 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "397a1d21209edb391730e4b6c546078d079c1a30d75e2147a52bf94a5df7ea67",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 202
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4133817962
+제목 - 회사 너무 스트레스 받는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+회사 스트레스와 상사/업무 갈등은 직장인 공감과 의견 참여가 빠른 주제이며, 검색 스니펫에서도 상사와의 업무 상황이 드러나 이야기형 소재 가능성이 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4133817962",
+    "title": "회사 너무 스트레스 받는 후기",
+    "body": "회사 스트레스와 상사/업무 갈등은 직장인 공감과 의견 참여가 빠른 주제이며, 검색 스니펫에서도 상사와의 업무 상황이 드러나 이야기형 소재 가능성이 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "20260924_theqoo_4133817962.md",
+      "originalTitle": "회사 너무 스트레스 받는 후기",
+      "originalMarkdown": "# 회사 너무 스트레스 받는 후기\r\n\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- publicationAllowed: false\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4133817962\r\n- exactObservedTitle: 회사 너무 스트레스 받는 후기\r\n- observedAt: 2026-09-24T03:16:20+09:00\r\n- observedMetrics: 검색 공개 인덱스에서 확인 가능한 별도 수치 없음\r\n- bodyRead: false\r\n- commentsRead: false\r\n- screenshotOrImageObserved: false\r\n- bodyStatus: 본문 미확인\r\n- acquisition: public search index에서 개별 공개 URL과 제목/검색 스니펫 확인\r\n- provenance: exact individual public URL verified via public search index; page body not fetched/read\r\n- whyGood: 회사 스트레스와 상사/업무 갈등은 직장인 공감과 의견 참여가 빠른 주제이며, 검색 스니펫에서도 상사와의 업무 상황이 드러나 이야기형 소재 가능성이 있다.\r\n\r\n## 확인 메모\r\n검색 스니펫에서 상사에게 보고하는 업무 상황과 스트레스 맥락이 일부 노출됐다. 본문 직접 열람은 하지 못했으므로 세부 사건은 `본문 미확인`으로 유지한다.\r\n",
+      "originalSha256": "d390d5b348907bdc0250e83f5f35b80e13648f548abd35e4bc44bec5d644650c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 188
+}

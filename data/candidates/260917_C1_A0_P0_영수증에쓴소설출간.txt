@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/nextfuckinglevel/comments/kdp598
+제목 - I wasn't allowed to use a notebook at my cashier job, so I started writing my book about bullying on printed out receipts. This year, after transposing hundreds of receipts, I finally published my novel.
+내용 - [명시 요약 — 원문 전문 아님]
+계산원으로 일할 때 노트 사용이 허용되지 않자 출력된 영수증 뒷면 등에 소설을 쓰기 시작했고, 수백 장을 다시 옮겨 적은 끝에 책을 출간했다는 사연이다. 공개 Reddit 게시물은 외부 공유 콘텐츠를 가리키는 형태이며 게시글 제목과 공개 댓글 흐름을 확인했다. 원 외부 미디어 내용 전체는 이번 회차에 확인하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/nextfuckinglevel/comments/kdp598",
+    "title": "I wasn't allowed to use a notebook at my cashier job, so I started writing my book about bullying on printed out receipts. This year, after transposing hundreds of receipts, I finally published my novel.",
+    "body": "계산원으로 일할 때 노트 사용이 허용되지 않자 출력된 영수증 뒷면 등에 소설을 쓰기 시작했고, 수백 장을 다시 옮겨 적은 끝에 책을 출간했다는 사연이다. 공개 Reddit 게시물은 외부 공유 콘텐츠를 가리키는 형태이며 게시글 제목과 공개 댓글 흐름을 확인했다. 원 외부 미디어 내용 전체는 이번 회차에 확인하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_영수증에쓴소설출간.md",
+      "originalTitle": "I wasn't allowed to use a notebook at my cashier job, so I started writing my book about bullying on printed out receipts. This year, after transposing hundreds of receipts, I finally published my novel.",
+      "originalMarkdown": "# I wasn't allowed to use a notebook at my cashier job, so I started writing my book about bullying on printed out receipts. This year, after transposing hundreds of receipts, I finally published my novel.\r\n\r\n## 글 내용\r\n계산원으로 일할 때 노트 사용이 허용되지 않자 출력된 영수증 뒷면 등에 소설을 쓰기 시작했고, 수백 장을 다시 옮겨 적은 끝에 책을 출간했다는 사연이다. 공개 Reddit 게시물은 외부 공유 콘텐츠를 가리키는 형태이며 게시글 제목과 공개 댓글 흐름을 확인했다. 원 외부 미디어 내용 전체는 이번 회차에 확인하지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/nextfuckinglevel/comments/kdp598\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 04:35 KST\r\n- Reddit score: +110,406\r\n- 조회수/댓글 총수: 공개 검색 결과에서 확인하지 못함\r\n\r\n## 평가\r\n\"회사에서 노트를 못 쓰게 함 → 영수증 수백 장에 소설 씀 → 실제 출간\"이라는 시각적이고 강한 반전이 있다. 원 source media 확보가 핵심이며 Reddit 제목만으로 본문을 재구성하면 안 된다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit r/nextfuckinglevel (shared URL post)\r\n- full body read: NO — 제목/공개 댓글만 확인\r\n- comments read: PARTIAL\r\n- source images/media: 외부 shared media 존재, 실제 bytes 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n",
+      "originalSha256": "3503f66fe8c4be119f2d0aaf0b5db43719a3fe71a564fa086bd0e53cfaf3c60d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 489
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3979504201
+제목 - 동생 커플 결혼식 못 오게 한 후기(하소연글)
+내용 - [명시 요약 — 원문 전문 아님]
+자신의 결혼식에서 가족 도움을 기대한 글쓴이와 남동생·아직 부모에게 인사하지 않은 동생 여자친구 사이의 참석 문제 및 카톡 노출이 겹친 가족 갈등이라 누가 선을 넘었는지 의견이 갈리기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3979504201",
+    "title": "동생 커플 결혼식 못 오게 한 후기(하소연글)",
+    "body": "자신의 결혼식에서 가족 도움을 기대한 글쓴이와 남동생·아직 부모에게 인사하지 않은 동생 여자친구 사이의 참석 문제 및 카톡 노출이 겹친 가족 갈등이라 누가 선을 넘었는지 의견이 갈리기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_3979504201.md",
+      "originalTitle": "동생 커플 결혼식 못 오게 한 후기(하소연글)",
+      "originalMarkdown": "# 동생 커플 결혼식 못 오게 한 후기(하소연글)\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3979504201\r\n- exactObservedTitle: 동생 커플 결혼식 못 오게 한 후기(하소연글)\r\n- observedAt: 2026-09-23 09:19 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 5,332 / 댓글 98 (public page as observed)\r\n- whyGood: 자신의 결혼식에서 가족 도움을 기대한 글쓴이와 남동생·아직 부모에게 인사하지 않은 동생 여자친구 사이의 참석 문제 및 카톡 노출이 겹친 가족 갈등이라 누가 선을 넘었는지 의견이 갈리기 좋은 소재다.\r\n- verification: 개인 경험담이며 동생 및 여자친구의 관점은 확인되지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "9cb67792743031852119aafe44347bd52b1fb5c936e1a729edc08eae3c85fd73",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 222
+}

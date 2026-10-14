@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/144226753
+제목 - 친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+해외여행 중 친구가 가진 현금이 예상보다 적었고 결제 방식 확인까지 상대에게 떠넘기며 갈등이 커지는 상황으로, 여행 경비·준비 책임·친구 사이 배려 문제를 다루기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/144226753",
+    "title": "친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기",
+    "body": "해외여행 중 친구가 가진 현금이 예상보다 적었고 결제 방식 확인까지 상대에게 떠넘기며 갈등이 커지는 상황으로, 여행 경비·준비 책임·친구 사이 배려 문제를 다루기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_144226753.md",
+      "originalTitle": "친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기",
+      "originalMarkdown": "# 친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/144226753\r\n- exactObservedTitle: 친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기\r\n- observedAt: 2026-09-22 10:16 KST\r\n- observedMetrics: 확인 가능한 검색 결과에 신뢰할 수 있는 수치가 없어 기록하지 않음\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 해외여행 중 친구가 가진 현금이 예상보다 적었고 결제 방식 확인까지 상대에게 떠넘기며 갈등이 커지는 상황으로, 여행 경비·준비 책임·친구 사이 배려 문제를 다루기 좋은 소재다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1.\r\n- provenance: TheQoo 공개 게시물. 작성자의 개인 경험 주장으로 별도 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "183c72b902532ccfae24533f5f1c81493d1b06b1ba0f594e54bd683ce6add535",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 212
+}

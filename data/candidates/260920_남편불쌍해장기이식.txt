@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EB%B6%88%EC%8C%8D%ED%95%B4-bwd3a61s
+제목 - 남편 불쌍해...
+내용 - [명시 요약 — 원문 전문 아님]
+아버지에게 장기이식까지 한 남편과 결혼 지원 약속 번복, 시부모의 태도가 연달아 등장하는 강한 가족 갈등 서사.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EB%B6%88%EC%8C%8D%ED%95%B4-bwd3a61s",
+    "title": "남편 불쌍해...",
+    "body": "아버지에게 장기이식까지 한 남편과 결혼 지원 약속 번복, 시부모의 태도가 연달아 등장하는 강한 가족 갈등 서사.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_남편불쌍해장기이식.md",
+      "originalTitle": "남편 불쌍해...",
+      "originalMarkdown": "# 남편 불쌍해...\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EB%B6%88%EC%8C%8D%ED%95%B4-bwd3a61s\r\n- exactObservedTitle: `남편 불쌍해...`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 648, 댓글 8\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: 아버지에게 장기이식까지 한 남편과 결혼 지원 약속 번복, 시부모의 태도가 연달아 등장하는 강한 가족 갈등 서사.\r\n- acquisition: C1 / exact individual public URL / BODY_PARTIAL\r\n- provenance: 공개 Blind 개별 페이지 관찰. 의료·가족 사정은 게시자 주장으로만 취급.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "62278529adbd3238c188d490ab50250502afce889dd979c5748f5738d5677f89",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 211
+}

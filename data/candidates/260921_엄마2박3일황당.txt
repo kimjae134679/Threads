@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4112436317
+제목 - 엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+부모 방문의 교통·식사·장보기 비용을 모두 부담한 뒤 사소한 빵 이야기와 카드 문제로 서로 감정이 상한 가족 갈등. 작은 돈과 말 한마디가 크게 번지는 공감형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4112436317",
+    "title": "엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기",
+    "body": "부모 방문의 교통·식사·장보기 비용을 모두 부담한 뒤 사소한 빵 이야기와 카드 문제로 서로 감정이 상한 가족 갈등. 작은 돈과 말 한마디가 크게 번지는 공감형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_엄마2박3일황당.md",
+      "originalTitle": "엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기",
+      "originalMarkdown": "# 엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/4112436317\r\n- exactObservedTitle: 엄마가 내집에서 2박3일 지내고 갔는데 황당한 후기\r\n- observedAt: 2026-09-21 23:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL verified via public web index/page\r\n- bodyRead: true\r\n- commentsRead: false\r\n- observedMetrics: 조회 4,871 (검색 노출값)\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- whyGood: 부모 방문의 교통·식사·장보기 비용을 모두 부담한 뒤 사소한 빵 이야기와 카드 문제로 서로 감정이 상한 가족 갈등. 작은 돈과 말 한마디가 크게 번지는 공감형 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b21e4e7dccf3fe2ad7e6b66c9a905c2e0a09571cfa882e683c83a06efe70358b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 207
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/926355454
+제목 - Candidate — 친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/926355454",
+    "title": "Candidate — 친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구동생결혼식축의금고민.md",
+      "originalTitle": "Candidate — 친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기",
+      "originalMarkdown": "# Candidate — 친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: TheQoo / 후기\r\n- exactObservedTitle: `친구 동생의 결혼식에는 얼마를 내야하는지 궁금한 후기`\r\n- publicUrl: https://theqoo.net/review/926355454\r\n- observedAt: 2026-09-21 10:16 KST\r\n- observedMetrics: 조회 26,926 / 댓글 84\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인하지 않음\r\n- acquisition: 공개 검색 결과에서 TheQoo 개별 public URL과 본문 확인\r\n- provenance: 원문 개별 공개 URL 확인(C1). 별도 asset/source bytes 저장 없음.\r\n\r\n## 관찰 내용\r\n친한 대학 동기의 동생 결혼식 청첩장을 받은 작성자가 동생을 실제로는 한 번 정도만 본 상황에서 축의금 5만원이 적절한지 고민하는 글이다.\r\n\r\n## 왜 소재로 좋은가\r\n`친한 친구의 가족이지만 당사자와는 안 친함`이라는 애매한 경계가 명확하고, 축의금 액수와 인간관계 예절에 대해 누구나 바로 의견을 내기 쉬운 소재다.\r\n\r\n## 제한\r\n댓글 미열람. 권리·moderation·publication 승인 없음. 제작 단계로 이동하지 않으며 `publicationAllowed=false` 유지.",
+      "originalSha256": "d134051cb34d7093d2f911945dfc4af98e997a0e2ae288dfe9d06ca30102b8b5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 120
+}

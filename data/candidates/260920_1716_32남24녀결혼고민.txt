@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=wedding&no=76798
+제목 - 32 24 이 결혼 하시나요?
+내용 - [명시 요약 — 원문 전문 아님]
+32세 남성·24세 여성의 직업·가족·경제·생활성향을 나열하고 결혼 여부를 묻는 구조라 조건 평가 자체가 논쟁을 유발함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=wedding&no=76798",
+    "title": "32 24 이 결혼 하시나요?",
+    "body": "32세 남성·24세 여성의 직업·가족·경제·생활성향을 나열하고 결혼 여부를 묻는 구조라 조건 평가 자체가 논쟁을 유발함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_32남24녀결혼고민.md",
+      "originalTitle": "32 24 이 결혼 하시나요?",
+      "originalMarkdown": "# 32 24 이 결혼 하시나요?\r\n\r\n- stage: C1\r\n- source: DCInside 결혼 갤러리\r\n- publicUrl: https://gall.dcinside.com/board/view/?id=wedding&no=76798\r\n- exactObservedTitle: 32 24 이 결혼 하시나요?\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회 383, 댓글 5\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact public post URL; self-described circumstances only\r\n- whyGood: 32세 남성·24세 여성의 직업·가족·경제·생활성향을 나열하고 결혼 여부를 묻는 구조라 조건 평가 자체가 논쟁을 유발함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5c574bd7b4120855ea5441fd89852a75cbb5cce02ceb85cac63f65e8fdaf3911",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 191
+}

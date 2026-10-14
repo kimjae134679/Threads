@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%98%88%EB%8B%A8%EC%9D%80-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%ED%95%B4%EC%95%BC%ED%95%B4-hmur4vk7
+제목 - 예단은 어느정도 해야해?
+내용 - [명시 요약 — 원문 전문 아님]
+예비신랑은 순자산이 약 -2천만원이고 신부가 결혼비와 집 비용을 더 부담하는 상황이다. 양가는 예물·예단을 하지 말자고 했지만 친정 쪽에서 예단을 해야 한다는 의견이 나오면서 고민이 생긴다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%98%88%EB%8B%A8%EC%9D%80-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%ED%95%B4%EC%95%BC%ED%95%B4-hmur4vk7",
+    "title": "예단은 어느정도 해야해?",
+    "body": "예비신랑은 순자산이 약 -2천만원이고 신부가 결혼비와 집 비용을 더 부담하는 상황이다. 양가는 예물·예단을 하지 말자고 했지만 친정 쪽에서 예단을 해야 한다는 의견이 나오면서 고민이 생긴다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_예단은어느정도해야해.md",
+      "originalTitle": "예단은 어느정도 해야해?",
+      "originalMarkdown": "# 예단은 어느정도 해야해?\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EC%98%88%EB%8B%A8%EC%9D%80-%EC%96%B4%EB%8A%90%EC%A0%95%EB%8F%84-%ED%95%B4%EC%95%BC%ED%95%B4-hmur4vk7\r\n- 조회수: 309\r\n- 댓글: 21\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n예비신랑은 순자산이 약 -2천만원이고 신부가 결혼비와 집 비용을 더 부담하는 상황이다. 양가는 예물·예단을 하지 말자고 했지만 친정 쪽에서 예단을 해야 한다는 의견이 나오면서 고민이 생긴다.\r\n\r\n## 평가\r\n- 평가: 상급 돈·관습 논쟁\r\n- 이유: 빚·결혼비·예단이 동시에 붙어 의견이 갈리기 쉬움.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "04aef16cffa1eb4a5d041201856d9f6903379ee0cc46fc91578d677c9c077519",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 305
+}

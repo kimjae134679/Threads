@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/30%EC%B4%88-%EB%82%A8%EC%9E%90-%EB%B9%9A-%EC%98%A4%ED%94%88-j67zv6hs
+제목 - 30초 남자 빚 오픈
+내용 - [명시 요약 — 원문 전문 아님]
+6억원대 자가가 있지만 주택대출이 있고, 약 1억원의 마이너스통장을 주식·코인 투기로 사용했으며 부모 지원금도 투자로 잃었다고 밝힌 사연이다. 연인에게 이 빚을 언제 공개해야 할지를 고민한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/30%EC%B4%88-%EB%82%A8%EC%9E%90-%EB%B9%9A-%EC%98%A4%ED%94%88-j67zv6hs",
+    "title": "30초 남자 빚 오픈",
+    "body": "6억원대 자가가 있지만 주택대출이 있고, 약 1억원의 마이너스통장을 주식·코인 투기로 사용했으며 부모 지원금도 투자로 잃었다고 밝힌 사연이다. 연인에게 이 빚을 언제 공개해야 할지를 고민한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_30초남자빚오픈.md",
+      "originalTitle": "30초 남자 빚 오픈",
+      "originalMarkdown": "# 30초 남자 빚 오픈\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/30%EC%B4%88-%EB%82%A8%EC%9E%90-%EB%B9%9A-%EC%98%A4%ED%94%88-j67zv6hs\r\n- 조회수: 205\r\n- 댓글: 9\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n6억원대 자가가 있지만 주택대출이 있고, 약 1억원의 마이너스통장을 주식·코인 투기로 사용했으며 부모 지원금도 투자로 잃었다고 밝힌 사연이다. 연인에게 이 빚을 언제 공개해야 할지를 고민한다.\r\n\r\n## 평가\r\n- 평가: 중상급\r\n- 이유: 겉으로는 자산이 있어 보이지만 투자빚이 크다는 대비가 강함.\r\n- 약점: 반응 규모가 작고 사적 재정 내용임.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "9d096034f7c9620a4aa9165b86aee800ea13a1b4665c08a1b8a25674c79dbc21",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 271
+}

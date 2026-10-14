@@ -1,0 +1,20 @@
+name: Upload Studio Windows lock recovery
+on:
+  pull_request:
+    paths:
+      - 'upload-studio/**'
+      - '.github/workflows/upload-studio-windows.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-state-lock:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify bounded recovery and concurrent CAS on Windows
+        run: node --test upload-studio/test/store-lock.test.mjs

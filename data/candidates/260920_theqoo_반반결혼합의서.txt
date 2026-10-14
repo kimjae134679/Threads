@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3839412766
+제목 - '반반 결혼 합의서' 갈등 부부..오은영 "찢어버렸으면 좋겠다"
+내용 - [명시 요약 — 원문 전문 아님]
+육아휴직비부터 생일선물 64만원 대 100만원 차액 35만원까지 합의서로 맞추는 부부라는 비현실적으로 구체적인 계산이 강한 황당함과 논쟁성을 가짐.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3839412766",
+    "title": "'반반 결혼 합의서' 갈등 부부..오은영 \"찢어버렸으면 좋겠다\"",
+    "body": "육아휴직비부터 생일선물 64만원 대 100만원 차액 35만원까지 합의서로 맞추는 부부라는 비현실적으로 구체적인 계산이 강한 황당함과 논쟁성을 가짐.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_theqoo_반반결혼합의서.md",
+      "originalTitle": "'반반 결혼 합의서' 갈등 부부..오은영 \"찢어버렸으면 좋겠다\"",
+      "originalMarkdown": "# '반반 결혼 합의서' 갈등 부부..오은영 \"찢어버렸으면 좋겠다\"\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/3839412766\r\n- exactObservedTitle: `'반반 결혼 합의서' 갈등 부부..오은영 \"찢어버렸으면 좋겠다\"`\r\n- observedAt: 2026-09-20 03:14 KST\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_REPOST\r\n- provenance: TheQoo 개별 공개 페이지에서 방송/기사 재전달 본문 확인. TheQoo 자체 원사연으로 취급하지 않음.\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 육아휴직비부터 생일선물 64만원 대 100만원 차액 35만원까지 합의서로 맞추는 부부라는 비현실적으로 구체적인 계산이 강한 황당함과 논쟁성을 가짐.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3a54ad28ae28575c3592f6879a33ecd0e989a8071e0a8cf8b2a3d89f2ec82ac6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 204
+}

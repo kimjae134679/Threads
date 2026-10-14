@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%ED%86%B5%EC%9E%A5%EC%97%90-200%EB%A7%8C%EC%9B%90%EB%8F%84-%EC%97%86%EB%8B%A4%EB%8A%94%EB%8D%B0-lhhnsjru
+제목 - 남편 통장에 200만원도 없다는데..
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%ED%86%B5%EC%9E%A5%EC%97%90-200%EB%A7%8C%EC%9B%90%EB%8F%84-%EC%97%86%EB%8B%A4%EB%8A%94%EB%8D%B0-lhhnsjru",
+    "title": "남편 통장에 200만원도 없다는데..",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_남편통장200만원도없다.md",
+      "originalTitle": "남편 통장에 200만원도 없다는데..",
+      "originalMarkdown": "# 남편 통장에 200만원도 없다는데..\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%ED%86%B5%EC%9E%A5%EC%97%90-200%EB%A7%8C%EC%9B%90%EB%8F%84-%EC%97%86%EB%8B%A4%EB%8A%94%EB%8D%B0-lhhnsjru\r\n- exact_observed_title: 남편 통장에 200만원도 없다는데..\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 369, 댓글 7\r\n- body_read: yes\r\n- comments_read: no\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 추석 부모님 용돈을 뽑으려다 배우자 통장 잔액 문제를 처음 마주한 상황이라 돈관리·신뢰 논쟁이 명확함.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 재정 주장 독립 검증 안 함\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8dc120eab3471fb05675e8784b6442b3562ca56f773297b4d931826534568e1d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 221
+}

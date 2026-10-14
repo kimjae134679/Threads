@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%9D%84-%EC%95%9E%EB%91%94-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EC%9D%98-%EC%A3%BC%EC%8B%9D-%EB%B9%9A-%EC%88%A8%EA%B2%A8%EC%A4%98%EC%95%BC%ED%95%A0%EA%B9%8C-FXKg0m5X
+제목 - 결혼을 앞둔 남자친구의 주식 빚 숨겨줘야할까?
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 전제로 만나는 남자친구가 주식으로 약 5천만원의 빚을 만들었고, 이것이 두 번째 투자 사고라 부모에게 알리지 못하고 있다는 사연. 두 사람의 월 실수령 합계는 약 550만원이며 향후 주택대출과 결혼 비용도 예정돼 있어, 작성자는 이 빚을 부모에게 숨겨주는 것이 맞는지 고민한다. 공개 페이지에서 확인 가능한 본문 범위는 읽었으나 장문 전체 끝까지는 확인하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%9D%84-%EC%95%9E%EB%91%94-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EC%9D%98-%EC%A3%BC%EC%8B%9D-%EB%B9%9A-%EC%88%A8%EA%B2%A8%EC%A4%98%EC%95%BC%ED%95%A0%EA%B9%8C-FXKg0m5X",
+    "title": "결혼을 앞둔 남자친구의 주식 빚 숨겨줘야할까?",
+    "body": "결혼을 전제로 만나는 남자친구가 주식으로 약 5천만원의 빚을 만들었고, 이것이 두 번째 투자 사고라 부모에게 알리지 못하고 있다는 사연. 두 사람의 월 실수령 합계는 약 550만원이며 향후 주택대출과 결혼 비용도 예정돼 있어, 작성자는 이 빚을 부모에게 숨겨주는 것이 맞는지 고민한다. 공개 페이지에서 확인 가능한 본문 범위는 읽었으나 장문 전체 끝까지는 확인하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_주식빚숨겨줘야할까.md",
+      "originalTitle": "결혼을 앞둔 남자친구의 주식 빚 숨겨줘야할까?",
+      "originalMarkdown": "# 결혼을 앞둔 남자친구의 주식 빚 숨겨줘야할까?\r\n\r\n## 글 내용\r\n결혼을 전제로 만나는 남자친구가 주식으로 약 5천만원의 빚을 만들었고, 이것이 두 번째 투자 사고라 부모에게 알리지 못하고 있다는 사연. 두 사람의 월 실수령 합계는 약 550만원이며 향후 주택대출과 결혼 비용도 예정돼 있어, 작성자는 이 빚을 부모에게 숨겨주는 것이 맞는지 고민한다. 공개 페이지에서 확인 가능한 본문 범위는 읽었으나 장문 전체 끝까지는 확인하지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%9D%84-%EC%95%9E%EB%91%94-%EB%82%A8%EC%9E%90%EC%B9%9C%EA%B5%AC%EC%9D%98-%EC%A3%BC%EC%8B%9D-%EB%B9%9A-%EC%88%A8%EA%B2%A8%EC%A4%98%EC%95%BC%ED%95%A0%EA%B9%8C-FXKg0m5X\r\n\r\n- 출처: Blind / 썸·연애\r\n- 관측: 2026-09-17 16:35 KST\r\n- exact individual public URL 확인: 예\r\n- 본문: 부분 확인(전체 끝까지 미확인)\r\n- 댓글: 미확인\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 조회수: 4,054\r\n- 댓글: 86\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n평범한 투자 전망이 아니라 실제 5천만원 주식 빚, 반복된 투자 사고, 결혼 직전 비밀이라는 사람 중심 갈등이라 투자 레인 우선 기준에 잘 맞는다. '배우자의 투자 빚을 가족에게 숨겨줘야 하나'라는 질문이 즉시 의견을 유도한다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- source screenshot/media: 확보하지 않음\r\n- acquisition: ASSETS_PENDING\r\n- C1_A0_P0\r\n- rights/privacy/human review gate 유지\r\n- publicationAllowed=false\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "7c6263596db6745da538cc213088dfe1a821052863160f6949951169d01bebfa",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 503
+}

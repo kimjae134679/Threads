@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%97%86%EB%8A%94-%EA%B2%B0%ED%98%BC%EC%8B%9D-wuy26bqk
+제목 - 친구 없는 결혼식
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식에 부를 친구가 5명 미만이라 하객 아르바이트까지 고민하는 상황이 민망함·체면·결혼식 문화 논쟁을 동시에 자극함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%97%86%EB%8A%94-%EA%B2%B0%ED%98%BC%EC%8B%9D-wuy26bqk",
+    "title": "친구 없는 결혼식",
+    "body": "결혼식에 부를 친구가 5명 미만이라 하객 아르바이트까지 고민하는 상황이 민망함·체면·결혼식 문화 논쟁을 동시에 자극함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_친구없는결혼식.md",
+      "originalTitle": "친구 없는 결혼식",
+      "originalMarkdown": "# 친구 없는 결혼식\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%97%86%EB%8A%94-%EA%B2%B0%ED%98%BC%EC%8B%9D-wuy26bqk\r\n- exactObservedTitle: 친구 없는 결혼식\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 1,195, 댓글 17, 좋아요 2\r\n- bodyRead: true\r\n- commentsRead: true (공개 노출 일부)\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 결혼식에 부를 친구가 5명 미만이라 하객 아르바이트까지 고민하는 상황이 민망함·체면·결혼식 문화 논쟁을 동시에 자극함.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 개인 관계 상황은 게시자 서술.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0398a8e9b7709fa1668a290106b5314d1b868214b98b2b85eca234af7f2f71b7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 234
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2577490309
+제목 - 스터디카페 알바 진상 종류 후기
+내용 - [명시 요약 — 원문 전문 아님]
+스터디카페에서 대화 금지 규칙을 눈치 보며 어기거나 무료 간식을 과도하게 가져가는 등 알바생이 직접 겪은 여러 유형을 묶은 경험담이다. 일상적인 규칙·민폐의 경계와 서비스직 공감을 동시에 끌어내기 좋은 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2577490309",
+    "title": "스터디카페 알바 진상 종류 후기",
+    "body": "스터디카페에서 대화 금지 규칙을 눈치 보며 어기거나 무료 간식을 과도하게 가져가는 등 알바생이 직접 겪은 여러 유형을 묶은 경험담이다. 일상적인 규칙·민폐의 경계와 서비스직 공감을 동시에 끌어내기 좋은 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_2577490309.md",
+      "originalTitle": "스터디카페 알바 진상 종류 후기",
+      "originalMarkdown": "# 스터디카페 알바 진상 종류 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2577490309\r\n- exactObservedTitle: 스터디카페 알바 진상 종류 후기\r\n- observedAt: 2026-09-23 10:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 6,176 (관찰 시점 공개 페이지 표시)\r\n- whyGood: 스터디카페에서 대화 금지 규칙을 눈치 보며 어기거나 무료 간식을 과도하게 가져가는 등 알바생이 직접 겪은 여러 유형을 묶은 경험담이다. 일상적인 규칙·민폐의 경계와 서비스직 공감을 동시에 끌어내기 좋은 소재다.\r\n- verification: 개인 경험담이며 등장 인물의 관점과 세부 사실은 독립 검증되지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "8ae0070b25870c1738e816c3336b15f5638fb7f2b29ac93fdb679854ea93eeb6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 221
+}

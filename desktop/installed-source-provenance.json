@@ -1,0 +1,1085 @@
+{
+  "version": "0.3.38-cover.20261009.10",
+  "asar": {
+    "name": "app.asar",
+    "bytes": 392707,
+    "sha256": "e1f9671cb83f4dbdf6b52a65cef5776c10098fae034340733f1248fc21475fd1",
+    "members": [
+      {
+        "path": "desktop/production/activate-review-round-fresh.cjs",
+        "source": "app.asar/activate-review-round-fresh.cjs",
+        "bytes": 9010,
+        "sha256": "8760da0df33f450795be0a828eda065dca11415a2c0b8076b7a19ddc11f4509c",
+        "activePath": "desktop/activate-review-round-fresh.cjs",
+        "originSha256": "8760da0df33f450795be0a828eda065dca11415a2c0b8076b7a19ddc11f4509c"
+      },
+      {
+        "path": "desktop/production/atomic-file.cjs",
+        "source": "app.asar/atomic-file.cjs",
+        "bytes": 737,
+        "sha256": "4b46ce8756d2e6e3d9db8683c830ca93155c33bb57a88f8c98c2e94573c6f66b",
+        "activePath": "desktop/atomic-file.cjs",
+        "originSha256": "4b46ce8756d2e6e3d9db8683c830ca93155c33bb57a88f8c98c2e94573c6f66b"
+      },
+      {
+        "path": "desktop/production/batch-catalog.cjs",
+        "source": "app.asar/batch-catalog.cjs",
+        "bytes": 9431,
+        "sha256": "6720ee27090ec5a89d86fd4303828149c47b95d2e19e2daaaad69084e7304176",
+        "activePath": "desktop/batch-catalog.cjs",
+        "originSha256": "6720ee27090ec5a89d86fd4303828149c47b95d2e19e2daaaad69084e7304176"
+      },
+      {
+        "path": "desktop/production/batch-input.cjs",
+        "source": "app.asar/batch-input.cjs",
+        "bytes": 8411,
+        "sha256": "c302302feb70c2dcc5627b28f77dc5a9857da10c387d0fa82a6f2a4774761d82",
+        "activePath": "desktop/batch-input.cjs",
+        "originSha256": "c302302feb70c2dcc5627b28f77dc5a9857da10c387d0fa82a6f2a4774761d82"
+      },
+      {
+        "path": "desktop/production/batch-render.cjs",
+        "source": "app.asar/batch-render.cjs",
+        "bytes": 9648,
+        "sha256": "5ff4b3244ebb78ddc1a9d3e1c34ca06cdd11d56788ef12d5b94ac33970d10c8f",
+        "activePath": "desktop/batch-render.cjs",
+        "originSha256": "5ff4b3244ebb78ddc1a9d3e1c34ca06cdd11d56788ef12d5b94ac33970d10c8f"
+      },
+      {
+        "path": "desktop/production/batch-service.cjs",
+        "source": "app.asar/batch-service.cjs",
+        "bytes": 12368,
+        "sha256": "de2ffaa792badf2c792ea4ceb707e374682d8c8bcd9433d976eec263b68388a8",
+        "activePath": "desktop/batch-service.cjs",
+        "originSha256": "de2ffaa792badf2c792ea4ceb707e374682d8c8bcd9433d976eec263b68388a8"
+      },
+      {
+        "path": "desktop/production/capture.cjs",
+        "source": "app.asar/capture.cjs",
+        "bytes": 15960,
+        "sha256": "e7fcd6ffd5389c5e68259143191f3055af7ba94b5ac00b66000e098c91deb0e1",
+        "activePath": "desktop/capture.cjs",
+        "originSha256": "e7fcd6ffd5389c5e68259143191f3055af7ba94b5ac00b66000e098c91deb0e1"
+      },
+      {
+        "path": "desktop/production/cover-asset.cjs",
+        "source": "app.asar/cover-asset.cjs",
+        "bytes": 2128,
+        "sha256": "5d38d0b22efa0ea663ecd4ce893029005a76c506207c5e505c79e7296c2c7af1",
+        "activePath": "desktop/cover-asset.cjs",
+        "originSha256": "5d38d0b22efa0ea663ecd4ce893029005a76c506207c5e505c79e7296c2c7af1"
+      },
+      {
+        "path": "desktop/production/cover-reproduction-run.cjs",
+        "source": "app.asar/cover-reproduction-run.cjs",
+        "bytes": 15811,
+        "sha256": "cdff7bde457b3c200f5a07926a1179b9b18813a821352e6556ed393df47ff285",
+        "activePath": "desktop/cover-reproduction-run.cjs",
+        "originSha256": "cdff7bde457b3c200f5a07926a1179b9b18813a821352e6556ed393df47ff285"
+      },
+      {
+        "path": "desktop/production/editor-assets.cjs",
+        "source": "app.asar/editor-assets.cjs",
+        "bytes": 368,
+        "sha256": "7dbc133bf66e68052b7e9e245641c9edc1316a4b1edb1b721b41afb6e2b8cc63",
+        "activePath": "desktop/editor-assets.cjs",
+        "originSha256": "7dbc133bf66e68052b7e9e245641c9edc1316a4b1edb1b721b41afb6e2b8cc63"
+      },
+      {
+        "path": "desktop/production/feedback-migration.cjs",
+        "source": "app.asar/feedback-migration.cjs",
+        "bytes": 2487,
+        "sha256": "b1ce597ac34780fc670399365ae9b8966f514e68da54cf34593353b9212259b8",
+        "activePath": "desktop/feedback-migration.cjs",
+        "originSha256": "b1ce597ac34780fc670399365ae9b8966f514e68da54cf34593353b9212259b8"
+      },
+      {
+        "path": "desktop/production/folder-batch.cjs",
+        "source": "app.asar/folder-batch.cjs",
+        "bytes": 19877,
+        "sha256": "85619432a47559c006c2b62427b8a13b65e91a4c9b63260f22255b1fcdea776a",
+        "activePath": "desktop/folder-batch.cjs",
+        "originSha256": "85619432a47559c006c2b62427b8a13b65e91a4c9b63260f22255b1fcdea776a"
+      },
+      {
+        "path": "desktop/production/image-composition.cjs",
+        "source": "app.asar/image-composition.cjs",
+        "bytes": 2619,
+        "sha256": "515531df592a937f7060a16492eadd64e48b8fbed830eab36fa253328947296b",
+        "activePath": "desktop/image-composition.cjs",
+        "originSha256": "515531df592a937f7060a16492eadd64e48b8fbed830eab36fa253328947296b"
+      },
+      {
+        "path": "desktop/production/image-file-receive.cjs",
+        "source": "app.asar/image-file-receive.cjs",
+        "bytes": 839,
+        "sha256": "2fe8473b11199f16752e5cb7c21bec93d6f58d17f4e572d7174d3fc7f2eb362c",
+        "activePath": "desktop/image-file-receive.cjs",
+        "originSha256": "2fe8473b11199f16752e5cb7c21bec93d6f58d17f4e572d7174d3fc7f2eb362c"
+      },
+      {
+        "path": "desktop/production/image-file-receiver.cjs",
+        "source": "app.asar/image-file-receiver.cjs",
+        "bytes": 21687,
+        "sha256": "8576f9ed8bea42cfa0bb8cf51deb1110b2cb1e6cdd73d89b1feee1032e4e3b4a",
+        "activePath": "desktop/image-file-receiver.cjs",
+        "originSha256": "8576f9ed8bea42cfa0bb8cf51deb1110b2cb1e6cdd73d89b1feee1032e4e3b4a"
+      },
+      {
+        "path": "desktop/production/image-production-run.cjs",
+        "source": "app.asar/image-production-run.cjs",
+        "bytes": 9192,
+        "sha256": "425eab59bc696a3afd8fab6894524b2eaafe5fb9d6c250d0c92d071d31eae929",
+        "activePath": "desktop/image-production-run.cjs",
+        "originSha256": "425eab59bc696a3afd8fab6894524b2eaafe5fb9d6c250d0c92d071d31eae929"
+      },
+      {
+        "path": "desktop/production/image-requirements-schema.json",
+        "source": "app.asar/image-requirements-schema.json",
+        "bytes": 27991,
+        "sha256": "5586384ae56fe6ae9445974dce071748bc57b1c08fc46e3fae30b9d7d57ab0a5",
+        "activePath": "desktop/image-requirements-schema.json",
+        "originSha256": "5586384ae56fe6ae9445974dce071748bc57b1c08fc46e3fae30b9d7d57ab0a5"
+      },
+      {
+        "path": "desktop/production/image-requirements.cjs",
+        "source": "app.asar/image-requirements.cjs",
+        "bytes": 21235,
+        "sha256": "7c23c5964a5cade74e22942986af6512d2ad772280c87419cfcdce7d43178957",
+        "activePath": "desktop/image-requirements.cjs",
+        "originSha256": "7c23c5964a5cade74e22942986af6512d2ad772280c87419cfcdce7d43178957"
+      },
+      {
+        "path": "desktop/production/image-work-state.cjs",
+        "source": "app.asar/image-work-state.cjs",
+        "bytes": 1536,
+        "sha256": "c7118fedd8ca81643654c7d5b85c4be0215123331bf3c1546b4714e989af9f9c",
+        "activePath": "desktop/image-work-state.cjs",
+        "originSha256": "c7118fedd8ca81643654c7d5b85c4be0215123331bf3c1546b4714e989af9f9c"
+      },
+      {
+        "path": "desktop/production/intake-pipeline-cli.cjs",
+        "source": "app.asar/intake-pipeline-cli.cjs",
+        "bytes": 2291,
+        "sha256": "196c59b5f33bf63778ed6515375ed3cc69cd690a31fb3512280ddc6877b88aba",
+        "activePath": "desktop/intake-pipeline-cli.cjs",
+        "originSha256": "196c59b5f33bf63778ed6515375ed3cc69cd690a31fb3512280ddc6877b88aba"
+      },
+      {
+        "path": "desktop/production/intake-pipeline-run.cjs",
+        "source": "app.asar/intake-pipeline-run.cjs",
+        "bytes": 5454,
+        "sha256": "2b73ad16f0cad1bddc170c9002f69db921af7888ad83b592c5a2b3d4f11f80dd",
+        "activePath": "desktop/intake-pipeline-run.cjs",
+        "originSha256": "2b73ad16f0cad1bddc170c9002f69db921af7888ad83b592c5a2b3d4f11f80dd"
+      },
+      {
+        "path": "desktop/production/intake-pipeline.cjs",
+        "source": "app.asar/intake-pipeline.cjs",
+        "bytes": 19413,
+        "sha256": "78ed5e17735085ef063275ae4f4a2fcedb9da1ad399c1e9d6e9e25f4668416a1",
+        "activePath": "desktop/intake-pipeline.cjs",
+        "originSha256": "78ed5e17735085ef063275ae4f4a2fcedb9da1ad399c1e9d6e9e25f4668416a1"
+      },
+      {
+        "path": "desktop/production/intake-policy.cjs",
+        "source": "app.asar/intake-policy.cjs",
+        "bytes": 4319,
+        "sha256": "63d0299cbd3ff9145e34594d8ac58cbd5ad248ee0ccc68f552e7f9378c35ccc6",
+        "activePath": "desktop/intake-policy.cjs",
+        "originSha256": "63d0299cbd3ff9145e34594d8ac58cbd5ad248ee0ccc68f552e7f9378c35ccc6"
+      },
+      {
+        "path": "desktop/production/main.cjs",
+        "source": "app.asar/main.cjs",
+        "bytes": 12179,
+        "sha256": "39854a75cd8063234e586d2ac7101a6b8d1bdbb37f158776e7651593af73bb45",
+        "activePath": "desktop/main.cjs",
+        "originSha256": "39854a75cd8063234e586d2ac7101a6b8d1bdbb37f158776e7651593af73bb45"
+      },
+      {
+        "path": "desktop/production/material-paths.cjs",
+        "source": "app.asar/material-paths.cjs",
+        "bytes": 973,
+        "sha256": "0375dd6af21dcfab42716b532a06c8c1c1b1310db8fdfe8f315207ae637cfe50",
+        "activePath": "desktop/material-paths.cjs",
+        "originSha256": "0375dd6af21dcfab42716b532a06c8c1c1b1310db8fdfe8f315207ae637cfe50"
+      },
+      {
+        "path": "desktop/production/network.cjs",
+        "source": "app.asar/network.cjs",
+        "bytes": 848,
+        "sha256": "778e28b7586e02b4a465d62cc27c638e44152e7b059e5bfea0e4929d935a7a37",
+        "activePath": "desktop/network.cjs",
+        "originSha256": "778e28b7586e02b4a465d62cc27c638e44152e7b059e5bfea0e4929d935a7a37"
+      },
+      {
+        "path": "desktop/production/package.json",
+        "source": "app.asar/package.json",
+        "bytes": 200,
+        "sha256": "233d86ab13b5647bf6c72beccd5439f531e350355bb25e5d8fbd1ab0623c19ba",
+        "activePath": "desktop/package.json",
+        "originSha256": "233d86ab13b5647bf6c72beccd5439f531e350355bb25e5d8fbd1ab0623c19ba",
+        "activeRole": "merged existing build configuration; original package bytes remain in b277085"
+      },
+      {
+        "path": "desktop/production/pc-review-entry.cjs",
+        "source": "app.asar/pc-review-entry.cjs",
+        "bytes": 636,
+        "sha256": "b8252b8ed1ddae8cdaf19657630cd93b45d6e6dd308dcb842db07e50a3f3bdc5",
+        "activePath": "desktop/pc-review-entry.cjs",
+        "originSha256": "b8252b8ed1ddae8cdaf19657630cd93b45d6e6dd308dcb842db07e50a3f3bdc5"
+      },
+      {
+        "path": "desktop/production/post-review-preload.cjs",
+        "source": "app.asar/post-review-preload.cjs",
+        "bytes": 1130,
+        "sha256": "0cb6dfa8639d805ab4379c2c846e90152031bfb5689c72496ae6556564a8606b",
+        "activePath": "desktop/post-review-preload.cjs",
+        "originSha256": "0cb6dfa8639d805ab4379c2c846e90152031bfb5689c72496ae6556564a8606b"
+      },
+      {
+        "path": "desktop/production/post-review-service.cjs",
+        "source": "app.asar/post-review-service.cjs",
+        "bytes": 4284,
+        "sha256": "af5d0d55ca0696d81f9149849230a565f9f3c0c3d1d483f5e79aa0c3d0fd1d0a",
+        "activePath": "desktop/post-review-service.cjs",
+        "originSha256": "af5d0d55ca0696d81f9149849230a565f9f3c0c3d1d483f5e79aa0c3d0fd1d0a"
+      },
+      {
+        "path": "desktop/production/post-review-store.cjs",
+        "source": "app.asar/post-review-store.cjs",
+        "bytes": 13840,
+        "sha256": "44f3d9c0565a4c6732c75d0e77caec756d37ebdc240714942a9844504bacd5af",
+        "activePath": "desktop/post-review-store.cjs",
+        "originSha256": "44f3d9c0565a4c6732c75d0e77caec756d37ebdc240714942a9844504bacd5af"
+      },
+      {
+        "path": "desktop/production/preload.cjs",
+        "source": "app.asar/preload.cjs",
+        "bytes": 1721,
+        "sha256": "bf8b5c92f4dfd5ca3b62df16a3ca7b3269370462c170f29f99c8f7c2a037ce27",
+        "activePath": "desktop/preload.cjs",
+        "originSha256": "bf8b5c92f4dfd5ca3b62df16a3ca7b3269370462c170f29f99c8f7c2a037ce27"
+      },
+      {
+        "path": "desktop/production/production-batch.cjs",
+        "source": "app.asar/production-batch.cjs",
+        "bytes": 881,
+        "sha256": "7631c414796bdae9a383f4a65d54318443bbc5ff12253ce94664324f8b00ab89",
+        "activePath": "desktop/production-batch.cjs",
+        "originSha256": "7631c414796bdae9a383f4a65d54318443bbc5ff12253ce94664324f8b00ab89"
+      },
+      {
+        "path": "desktop/production/production-title.cjs",
+        "source": "app.asar/production-title.cjs",
+        "bytes": 1633,
+        "sha256": "7dc78a04478eac6ec45e7a6cf77962739947b505846cabc053b21fb218976178",
+        "activePath": "desktop/production-title.cjs",
+        "originSha256": "7dc78a04478eac6ec45e7a6cf77962739947b505846cabc053b21fb218976178"
+      },
+      {
+        "path": "desktop/production/production-triage.cjs",
+        "source": "app.asar/production-triage.cjs",
+        "bytes": 1603,
+        "sha256": "c1197d7282d554220bcf6798e75eea5b9f4a92d70411690b673510d61e2547d2",
+        "activePath": "desktop/production-triage.cjs",
+        "originSha256": "c1197d7282d554220bcf6798e75eea5b9f4a92d70411690b673510d61e2547d2"
+      },
+      {
+        "path": "desktop/production/public-source.cjs",
+        "source": "app.asar/public-source.cjs",
+        "bytes": 5748,
+        "sha256": "3aa754770e23157ec6aefc4e26c288887cb93e734fbeb7e033abaf1ddfbd7cc2",
+        "activePath": "desktop/public-source.cjs",
+        "originSha256": "3aa754770e23157ec6aefc4e26c288887cb93e734fbeb7e033abaf1ddfbd7cc2"
+      },
+      {
+        "path": "desktop/production/reference-store.cjs",
+        "source": "app.asar/reference-store.cjs",
+        "bytes": 3138,
+        "sha256": "ee4345566cefd8df5454a37ad6120da8d4cafcd9e2f02e78fc27547ce2c33ecd",
+        "activePath": "desktop/reference-store.cjs",
+        "originSha256": "ee4345566cefd8df5454a37ad6120da8d4cafcd9e2f02e78fc27547ce2c33ecd"
+      },
+      {
+        "path": "desktop/production/reflow-review-covers-run.cjs",
+        "source": "app.asar/reflow-review-covers-run.cjs",
+        "bytes": 27336,
+        "sha256": "1b743eab2b6126d4c5593ec70233a8157b1a0ac59db80d011f3a20b5765ee36c",
+        "activePath": "desktop/reflow-review-covers-run.cjs",
+        "originSha256": "1b743eab2b6126d4c5593ec70233a8157b1a0ac59db80d011f3a20b5765ee36c"
+      },
+      {
+        "path": "desktop/production/review-canonical-writer.cjs",
+        "source": "app.asar/review-canonical-writer.cjs",
+        "bytes": 8245,
+        "sha256": "8cc0ddc82ddfd0cacf942c2ddc69ff7a72065be15701950b1ffc61746ee34bd3",
+        "activePath": "desktop/review-canonical-writer.cjs",
+        "originSha256": "8cc0ddc82ddfd0cacf942c2ddc69ff7a72065be15701950b1ffc61746ee34bd3"
+      },
+      {
+        "path": "desktop/production/review-installed-audit.cjs",
+        "source": "app.asar/review-installed-audit.cjs",
+        "bytes": 9898,
+        "sha256": "f3ec3b10d38487fd4b2f5069735ccf0697f7a2792950afcb811e4780d93a0ca8",
+        "activePath": "desktop/review-installed-audit.cjs",
+        "originSha256": "f3ec3b10d38487fd4b2f5069735ccf0697f7a2792950afcb811e4780d93a0ca8"
+      },
+      {
+        "path": "desktop/production/review-release.cjs",
+        "source": "app.asar/review-release.cjs",
+        "bytes": 13015,
+        "sha256": "59239f1ae7a1411085e48536c90a67f381abf56828647be802039530c846971b",
+        "activePath": "desktop/review-release.cjs",
+        "originSha256": "59239f1ae7a1411085e48536c90a67f381abf56828647be802039530c846971b"
+      },
+      {
+        "path": "desktop/production/review-workflow-model.cjs",
+        "source": "app.asar/review-workflow-model.cjs",
+        "bytes": 1220,
+        "sha256": "be44275cdd3031725deadbe5ee0dd4a81e0cbe49f8acef5ea38173a9dcff1c62",
+        "activePath": "desktop/review-workflow-model.cjs",
+        "originSha256": "be44275cdd3031725deadbe5ee0dd4a81e0cbe49f8acef5ea38173a9dcff1c62"
+      },
+      {
+        "path": "desktop/production/saved-materials.cjs",
+        "source": "app.asar/saved-materials.cjs",
+        "bytes": 4767,
+        "sha256": "470e09fbe00b75a99f7b88b9baffe7c8c87b3f2d9d1e7b31c14d4595780dcb4d",
+        "activePath": "desktop/saved-materials.cjs",
+        "originSha256": "470e09fbe00b75a99f7b88b9baffe7c8c87b3f2d9d1e7b31c14d4595780dcb4d"
+      },
+      {
+        "path": "desktop/production/source-access.cjs",
+        "source": "app.asar/source-access.cjs",
+        "bytes": 3108,
+        "sha256": "d1f68ee36f0500ee619b2c9bb97e146bacdd463f2ac46304bac51c0447197ff2",
+        "activePath": "desktop/source-access.cjs",
+        "originSha256": "d1f68ee36f0500ee619b2c9bb97e146bacdd463f2ac46304bac51c0447197ff2"
+      },
+      {
+        "path": "desktop/production/source-import.cjs",
+        "source": "app.asar/source-import.cjs",
+        "bytes": 7022,
+        "sha256": "1c82d1aa604a59a6cd41daf948a55c7f57ff66fa0ead85e1f2c70e99fb23f466",
+        "activePath": "desktop/source-import.cjs",
+        "originSha256": "1c82d1aa604a59a6cd41daf948a55c7f57ff66fa0ead85e1f2c70e99fb23f466"
+      },
+      {
+        "path": "desktop/production/square-cover-canvas.cjs",
+        "source": "app.asar/square-cover-canvas.cjs",
+        "bytes": 5217,
+        "sha256": "96920949d43312b6c561a96bb0ad31a548ed09e86afd477c5228c99bba12f3d3",
+        "activePath": "desktop/square-cover-canvas.cjs",
+        "originSha256": "96920949d43312b6c561a96bb0ad31a548ed09e86afd477c5228c99bba12f3d3"
+      },
+      {
+        "path": "desktop/production/square-cover.cjs",
+        "source": "app.asar/square-cover.cjs",
+        "bytes": 1985,
+        "sha256": "cf63900f475e6d5956ea1ba4b10824c90e1438091e3c51553a418fd1f7b995d5",
+        "activePath": "desktop/square-cover.cjs",
+        "originSha256": "cf63900f475e6d5956ea1ba4b10824c90e1438091e3c51553a418fd1f7b995d5"
+      },
+      {
+        "path": "desktop/production/typography-cover-canvas.cjs",
+        "source": "app.asar/typography-cover-canvas.cjs",
+        "bytes": 4523,
+        "sha256": "edcb352d6e0a3a5d5408189a485242ae26457a5357eb6fc87dea9156985376f7",
+        "activePath": "desktop/typography-cover-canvas.cjs",
+        "originSha256": "edcb352d6e0a3a5d5408189a485242ae26457a5357eb6fc87dea9156985376f7"
+      },
+      {
+        "path": "desktop/production/universal-cover-canvas.cjs",
+        "source": "app.asar/universal-cover-canvas.cjs",
+        "bytes": 9202,
+        "sha256": "ce5a7c24525ee5e51a62c59e341caa4ed9990c7860c2037fcfaebfc599513ae4",
+        "activePath": "desktop/universal-cover-canvas.cjs",
+        "originSha256": "ce5a7c24525ee5e51a62c59e341caa4ed9990c7860c2037fcfaebfc599513ae4"
+      },
+      {
+        "path": "desktop/production/universal-cover.cjs",
+        "source": "app.asar/universal-cover.cjs",
+        "bytes": 7157,
+        "sha256": "270bfbdebf53b382ae5d6e0e4430cf692e2ec86b6e29107016f450cf864879d1",
+        "activePath": "desktop/universal-cover.cjs",
+        "originSha256": "270bfbdebf53b382ae5d6e0e4430cf692e2ec86b6e29107016f450cf864879d1"
+      },
+      {
+        "path": "desktop/production/universal-reproduction.cjs",
+        "source": "app.asar/universal-reproduction.cjs",
+        "bytes": 2841,
+        "sha256": "761cd4c602a76629a599ce4f614f8ebd55462e565855c602b2530a6f6dee27fb",
+        "activePath": "desktop/universal-reproduction.cjs",
+        "originSha256": "761cd4c602a76629a599ce4f614f8ebd55462e565855c602b2530a6f6dee27fb"
+      },
+      {
+        "path": "desktop/production/user-generated-cover.cjs",
+        "source": "app.asar/user-generated-cover.cjs",
+        "bytes": 1905,
+        "sha256": "41585afc55eb3c6604015b5eb858d186e91442c32c4014e45021c855ba97f1a7",
+        "activePath": "desktop/user-generated-cover.cjs",
+        "originSha256": "41585afc55eb3c6604015b5eb858d186e91442c32c4014e45021c855ba97f1a7"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "path": "desktop/production-editor/fonts/CarouselSansKR-Black.woff",
+      "source": "resources/editor/fonts/CarouselSansKR-Black.woff",
+      "bytes": 1037320,
+      "sha256": "91d5c408a923220140891c16ef2197b923ef346cd7c98c5703e9f400588f2864",
+      "activePath": "app/fonts/CarouselSansKR-Black.woff",
+      "originSha256": "91d5c408a923220140891c16ef2197b923ef346cd7c98c5703e9f400588f2864"
+    },
+    {
+      "path": "desktop/production-editor/fonts/CarouselSansKR-Regular.woff",
+      "source": "resources/editor/fonts/CarouselSansKR-Regular.woff",
+      "bytes": 1097668,
+      "sha256": "fc74b9531fe49a0af928927f0e4da2da14279a12452f8d5bbf289dd07c9a2642",
+      "activePath": "app/fonts/CarouselSansKR-Regular.woff",
+      "originSha256": "fc74b9531fe49a0af928927f0e4da2da14279a12452f8d5bbf289dd07c9a2642"
+    },
+    {
+      "path": "desktop/production-editor/fonts/CutGothic-ExtraBold.woff",
+      "source": "resources/editor/fonts/CutGothic-ExtraBold.woff",
+      "bytes": 723432,
+      "sha256": "d02c215774669a145fde5073b6f639a350646e3c1576f4ef194a2f59622664bd",
+      "activePath": "app/fonts/CutGothic-ExtraBold.woff",
+      "originSha256": "d02c215774669a145fde5073b6f639a350646e3c1576f4ef194a2f59622664bd"
+    },
+    {
+      "path": "desktop/production-editor/fonts/OFL-NanumGothic.txt",
+      "source": "resources/editor/fonts/OFL-NanumGothic.txt",
+      "bytes": 4628,
+      "sha256": "7be2b72fe24dfe90078af1df9803316dcf8ef9b43c406e1d5de8ec37970c9ee8",
+      "activePath": "app/fonts/OFL-NanumGothic.txt",
+      "originSha256": "7be2b72fe24dfe90078af1df9803316dcf8ef9b43c406e1d5de8ec37970c9ee8"
+    },
+    {
+      "path": "desktop/production-editor/fonts/OFL.txt",
+      "source": "resources/editor/fonts/OFL.txt",
+      "bytes": 4480,
+      "sha256": "7accca2f29220c9ab44e4950799b821f36ebf5bbe6b5fb5342724b32228a8daf",
+      "activePath": "app/fonts/OFL.txt",
+      "originSha256": "7accca2f29220c9ab44e4950799b821f36ebf5bbe6b5fb5342724b32228a8daf"
+    },
+    {
+      "path": "desktop/production-editor/fonts/README.md",
+      "source": "resources/editor/fonts/README.md",
+      "bytes": 2199,
+      "sha256": "2eb4c9c94bd20984b637e0663a4bab7d0288f7cdd86d5bbaae73fce4b7c5096b",
+      "activePath": "app/fonts/README.md",
+      "originSha256": "2eb4c9c94bd20984b637e0663a4bab7d0288f7cdd86d5bbaae73fce4b7c5096b"
+    },
+    {
+      "path": "desktop/production-editor/fonts/SB_Aggro_B.ttf",
+      "source": "resources/editor/fonts/SB_Aggro_B.ttf",
+      "bytes": 565236,
+      "sha256": "6c2d664601dc6684676329577c7dd28fb6295fd488f97220b245ca72b82fc14e",
+      "activePath": "app/fonts/SB_Aggro_B.ttf",
+      "originSha256": "6c2d664601dc6684676329577c7dd28fb6295fd488f97220b245ca72b82fc14e"
+    },
+    {
+      "path": "desktop/production-editor/fonts/SB_Aggro_Font_license.pdf",
+      "source": "resources/editor/fonts/SB_Aggro_Font_license.pdf",
+      "bytes": 115442,
+      "sha256": "81205967cc4a132f6bfaa2a34c88a3698354f46b91c7d32e707663fa0fa462a0",
+      "activePath": "app/fonts/SB_Aggro_Font_license.pdf",
+      "originSha256": "81205967cc4a132f6bfaa2a34c88a3698354f46b91c7d32e707663fa0fa462a0"
+    },
+    {
+      "path": "desktop/production-editor/source-batch-core.js",
+      "source": "resources/editor/source-batch-core.js",
+      "bytes": 3619,
+      "sha256": "e90be8270262e1c6821a56ae784b76897e7e1f8affcb5af7f51331cbe9aba8ec",
+      "activePath": "app/source-batch-core.js",
+      "originSha256": "e90be8270262e1c6821a56ae784b76897e7e1f8affcb5af7f51331cbe9aba8ec"
+    },
+    {
+      "path": "desktop/production-editor/source-batch-image-analysis.js",
+      "source": "resources/editor/source-batch-image-analysis.js",
+      "bytes": 4773,
+      "sha256": "e4e7777702eeffd77d07161d9b74a695eed9eff76c2ca6bd60a86b199241f362",
+      "activePath": "app/source-batch-image-analysis.js",
+      "originSha256": "e4e7777702eeffd77d07161d9b74a695eed9eff76c2ca6bd60a86b199241f362"
+    },
+    {
+      "path": "desktop/production-editor/source-batch-image-composition.js",
+      "source": "resources/editor/source-batch-image-composition.js",
+      "bytes": 6953,
+      "sha256": "944655181ca1f72c2f6360b631f6a03f0e56b368bde44671eac47ab41512ab9e",
+      "activePath": "app/source-batch-image-composition.js",
+      "originSha256": "944655181ca1f72c2f6360b631f6a03f0e56b368bde44671eac47ab41512ab9e"
+    },
+    {
+      "path": "desktop/production-editor/source-batch.css",
+      "source": "resources/editor/source-batch.css",
+      "bytes": 4122,
+      "sha256": "de1025128b3cc04df4860d3fd45c7fff48ec6ad55ad87d6860c48364ee915fe1",
+      "activePath": "app/source-batch.css",
+      "originSha256": "de1025128b3cc04df4860d3fd45c7fff48ec6ad55ad87d6860c48364ee915fe1"
+    },
+    {
+      "path": "desktop/production-editor/source-batch.html",
+      "source": "resources/editor/source-batch.html",
+      "bytes": 9425,
+      "sha256": "cb05437a2a3edf0e3b5454628d04bfcfe83c02d05d0b0aa324ebc134b0dc9a61",
+      "activePath": "app/source-batch.html",
+      "originSha256": "cb05437a2a3edf0e3b5454628d04bfcfe83c02d05d0b0aa324ebc134b0dc9a61"
+    },
+    {
+      "path": "desktop/production-editor/source-batch.js",
+      "source": "resources/editor/source-batch.js",
+      "bytes": 40054,
+      "sha256": "a136fe6bbede4753a9ba852bf0c93bb7c0ebe414d860abd8821fa492bf0a59c4",
+      "activePath": "app/source-batch.js",
+      "originSha256": "a136fe6bbede4753a9ba852bf0c93bb7c0ebe414d860abd8821fa492bf0a59c4"
+    },
+    {
+      "path": "desktop/production-editor/source-bundle-zip.js",
+      "source": "resources/editor/source-bundle-zip.js",
+      "bytes": 1738,
+      "sha256": "fe6bb573063eda0757f09a386a5c7764f916f5c06258b3d93b67214cdd33de9f",
+      "activePath": "app/source-bundle-zip.js",
+      "originSha256": "fe6bb573063eda0757f09a386a5c7764f916f5c06258b3d93b67214cdd33de9f"
+    },
+    {
+      "path": "desktop/production-editor/source-community-template.js",
+      "source": "resources/editor/source-community-template.js",
+      "bytes": 12075,
+      "sha256": "da0efcfb1bc835a427eaf8d44b05a41b5e41b5992ff3f5d67ba99ba7584cb37c",
+      "activePath": "app/source-community-template.js",
+      "originSha256": "da0efcfb1bc835a427eaf8d44b05a41b5e41b5992ff3f5d67ba99ba7584cb37c"
+    },
+    {
+      "path": "desktop/production-editor/source-cover-typography.js",
+      "source": "resources/editor/source-cover-typography.js",
+      "bytes": 7114,
+      "sha256": "e1aa3ffca0b40a0cddb90b88aaf40f560e23b0ab195559bfd9ca1292011475ae",
+      "activePath": "app/source-cover-typography.js",
+      "originSha256": "e1aa3ffca0b40a0cddb90b88aaf40f560e23b0ab195559bfd9ca1292011475ae"
+    },
+    {
+      "path": "desktop/production-editor/source-curation.js",
+      "source": "resources/editor/source-curation.js",
+      "bytes": 15528,
+      "sha256": "fbda585977d2403cdbfefd0ecfc84f5999c1378dda31fee7bd69ba429e441a69",
+      "activePath": "app/source-curation.js",
+      "originSha256": "fbda585977d2403cdbfefd0ecfc84f5999c1378dda31fee7bd69ba429e441a69"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-automation.css",
+      "source": "resources/editor/source-cut-automation.css",
+      "bytes": 3025,
+      "sha256": "e19c94c399b4a0d1e1fd42759b44dad6d501c12db563cd354e44e74ab1f5fdfe",
+      "activePath": "app/source-cut-automation.css",
+      "originSha256": "e19c94c399b4a0d1e1fd42759b44dad6d501c12db563cd354e44e74ab1f5fdfe"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-automation.js",
+      "source": "resources/editor/source-cut-automation.js",
+      "bytes": 9113,
+      "sha256": "fb38336db4c77339edc3f3361eb847c39cdcbad4dae09e6b0913b0f1a2e03f1e",
+      "activePath": "app/source-cut-automation.js",
+      "originSha256": "fb38336db4c77339edc3f3361eb847c39cdcbad4dae09e6b0913b0f1a2e03f1e"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-composition.js",
+      "source": "resources/editor/source-cut-composition.js",
+      "bytes": 11616,
+      "sha256": "dcf0bc8e40c6d11c9e01fa59da58edd5b84d00f40362a65e9f258b07069ab6ef",
+      "activePath": "app/source-cut-composition.js",
+      "originSha256": "dcf0bc8e40c6d11c9e01fa59da58edd5b84d00f40362a65e9f258b07069ab6ef"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-editor.css",
+      "source": "resources/editor/source-cut-editor.css",
+      "bytes": 12328,
+      "sha256": "85ffdbf24575864cf12e0b5384651bc93831abf9e1cad4f13468927b64e34253",
+      "activePath": "app/source-cut-editor.css",
+      "originSha256": "85ffdbf24575864cf12e0b5384651bc93831abf9e1cad4f13468927b64e34253"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-editor.html",
+      "source": "resources/editor/source-cut-editor.html",
+      "bytes": 20673,
+      "sha256": "65d0ea0c97d9394e2ed297f9abfcc728a02b5aaf1408c092eebc768ec74a4eab",
+      "activePath": "app/source-cut-editor.html",
+      "originSha256": "65d0ea0c97d9394e2ed297f9abfcc728a02b5aaf1408c092eebc768ec74a4eab"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-editor.js",
+      "source": "resources/editor/source-cut-editor.js",
+      "bytes": 61098,
+      "sha256": "2b7d5fb2dd7cd43f331f50d047ab8dcdbd6d98395d7a0d26b39b8be778895e99",
+      "activePath": "app/source-cut-editor.js",
+      "originSha256": "2b7d5fb2dd7cd43f331f50d047ab8dcdbd6d98395d7a0d26b39b8be778895e99"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-history.js",
+      "source": "resources/editor/source-cut-history.js",
+      "bytes": 3858,
+      "sha256": "0fc6d8035e3715ca9964b617bfd34b011aac95727a939200504c28cd96970562",
+      "activePath": "app/source-cut-history.js",
+      "originSha256": "0fc6d8035e3715ca9964b617bfd34b011aac95727a939200504c28cd96970562"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-model.js",
+      "source": "resources/editor/source-cut-model.js",
+      "bytes": 11030,
+      "sha256": "747e9dc6b992e9cd96935a59be6fc7127624b5501afec62d9f9d1542e3c3f774",
+      "activePath": "app/source-cut-model.js",
+      "originSha256": "747e9dc6b992e9cd96935a59be6fc7127624b5501afec62d9f9d1542e3c3f774"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-post-review.css",
+      "source": "resources/editor/source-cut-post-review.css",
+      "bytes": 13178,
+      "sha256": "b462bdd6cf91b098201f2386fc6e431d21e54911865783b5eabaa0082c22bbac",
+      "activePath": "app/source-cut-post-review.css",
+      "originSha256": "b462bdd6cf91b098201f2386fc6e431d21e54911865783b5eabaa0082c22bbac"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-post-review.html",
+      "source": "resources/editor/source-cut-post-review.html",
+      "bytes": 7573,
+      "sha256": "e007ab16cd911885590b95276d5ca14034e33126042e09a932f382280e938229",
+      "activePath": "app/source-cut-post-review.html",
+      "originSha256": "e007ab16cd911885590b95276d5ca14034e33126042e09a932f382280e938229"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-post-review.js",
+      "source": "resources/editor/source-cut-post-review.js",
+      "bytes": 36802,
+      "sha256": "d70b388168de9c98900d870f0799f6f0471f890e3dbf9943743a770583a69c26",
+      "activePath": "app/source-cut-post-review.js",
+      "originSha256": "d70b388168de9c98900d870f0799f6f0471f890e3dbf9943743a770583a69c26"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-review-loader.js",
+      "source": "resources/editor/source-cut-review-loader.js",
+      "bytes": 2899,
+      "sha256": "29a9cc67c9946b40f49a5b9b0bbbd28eccf85391352575404392198c2355b5e6",
+      "activePath": "app/source-cut-review-loader.js",
+      "originSha256": "29a9cc67c9946b40f49a5b9b0bbbd28eccf85391352575404392198c2355b5e6"
+    },
+    {
+      "path": "desktop/production-editor/source-cut-zip.js",
+      "source": "resources/editor/source-cut-zip.js",
+      "bytes": 2252,
+      "sha256": "60369a897e4f01341a49575c88d7b189695475552bfc07387e44a8ecfd5a7b9f",
+      "activePath": "app/source-cut-zip.js",
+      "originSha256": "60369a897e4f01341a49575c88d7b189695475552bfc07387e44a8ecfd5a7b9f"
+    },
+    {
+      "path": "desktop/production-editor/source-page-plan.js",
+      "source": "resources/editor/source-page-plan.js",
+      "bytes": 38684,
+      "sha256": "8619b54fb0092557b89dec41e897cf2783d5db99a3eacd5dadd20e7f0b7df380",
+      "activePath": "app/source-page-plan.js",
+      "originSha256": "8619b54fb0092557b89dec41e897cf2783d5db99a3eacd5dadd20e7f0b7df380"
+    },
+    {
+      "path": "desktop/production-editor/source-review-batches.js",
+      "source": "resources/editor/source-review-batches.js",
+      "bytes": 755,
+      "sha256": "9b95133ec3f70f1958c4828c8dabb4b22ca5d23a5d2cc9709d7181ff8f27bce8",
+      "activePath": "app/source-review-batches.js",
+      "originSha256": "9b95133ec3f70f1958c4828c8dabb4b22ca5d23a5d2cc9709d7181ff8f27bce8"
+    },
+    {
+      "path": "desktop/production-editor/source-review-gallery.js",
+      "source": "resources/editor/source-review-gallery.js",
+      "bytes": 4690,
+      "sha256": "446fcb3b68f259d5e6ee009b6d53a89d78dd4598df764fbd8b6dc24f49bf3e42",
+      "activePath": "app/source-review-gallery.js",
+      "originSha256": "446fcb3b68f259d5e6ee009b6d53a89d78dd4598df764fbd8b6dc24f49bf3e42"
+    },
+    {
+      "path": "desktop/production-editor/source-workflow.js",
+      "source": "resources/editor/source-workflow.js",
+      "bytes": 8426,
+      "sha256": "d24cc819ab81b9289bd454a36cab9e5582ac7385f564019d56b7f61dcbd79783",
+      "activePath": "app/source-workflow.js",
+      "originSha256": "d24cc819ab81b9289bd454a36cab9e5582ac7385f564019d56b7f61dcbd79783"
+    },
+    {
+      "path": "desktop/production-editor/universal-production-model.js",
+      "source": "resources/editor/universal-production-model.js",
+      "bytes": 7113,
+      "sha256": "05756671997749fb34575314c41c45065ec57ecb456c5a1282caa3f2268e344d",
+      "activePath": "app/universal-production-model.js",
+      "originSha256": "05756671997749fb34575314c41c45065ec57ecb456c5a1282caa3f2268e344d"
+    },
+    {
+      "path": "desktop/production-editor/viral-model.js",
+      "source": "resources/editor/viral-model.js",
+      "bytes": 8755,
+      "sha256": "cdd913700761c0a6fcb56204ac7d4670abb801a639680ec5043964899443a8e5",
+      "activePath": "app/viral-model.js",
+      "originSha256": "cdd913700761c0a6fcb56204ac7d4670abb801a639680ec5043964899443a8e5"
+    },
+    {
+      "path": "desktop/pc-review/desktop/atomic-file.cjs",
+      "source": "resources/pc-review/desktop/atomic-file.cjs",
+      "bytes": 737,
+      "sha256": "4b46ce8756d2e6e3d9db8683c830ca93155c33bb57a88f8c98c2e94573c6f66b",
+      "activePath": "desktop/atomic-file.cjs",
+      "originSha256": "4b46ce8756d2e6e3d9db8683c830ca93155c33bb57a88f8c98c2e94573c6f66b"
+    },
+    {
+      "path": "desktop/pc-review/desktop/feedback-migration.cjs",
+      "source": "resources/pc-review/desktop/feedback-migration.cjs",
+      "bytes": 2487,
+      "sha256": "b1ce597ac34780fc670399365ae9b8966f514e68da54cf34593353b9212259b8",
+      "activePath": "desktop/feedback-migration.cjs",
+      "originSha256": "b1ce597ac34780fc670399365ae9b8966f514e68da54cf34593353b9212259b8"
+    },
+    {
+      "path": "desktop/pc-review/desktop/post-review-store.cjs",
+      "source": "resources/pc-review/desktop/post-review-store.cjs",
+      "bytes": 13840,
+      "sha256": "44f3d9c0565a4c6732c75d0e77caec756d37ebdc240714942a9844504bacd5af",
+      "activePath": "desktop/post-review-store.cjs",
+      "originSha256": "44f3d9c0565a4c6732c75d0e77caec756d37ebdc240714942a9844504bacd5af"
+    },
+    {
+      "path": "desktop/pc-review/desktop/review-canonical-writer.cjs",
+      "source": "resources/pc-review/desktop/review-canonical-writer.cjs",
+      "bytes": 8245,
+      "sha256": "8cc0ddc82ddfd0cacf942c2ddc69ff7a72065be15701950b1ffc61746ee34bd3",
+      "activePath": "desktop/review-canonical-writer.cjs",
+      "originSha256": "8cc0ddc82ddfd0cacf942c2ddc69ff7a72065be15701950b1ffc61746ee34bd3"
+    },
+    {
+      "path": "desktop/pc-review/desktop/review-release.cjs",
+      "source": "resources/pc-review/desktop/review-release.cjs",
+      "bytes": 13015,
+      "sha256": "59239f1ae7a1411085e48536c90a67f381abf56828647be802039530c846971b",
+      "activePath": "desktop/review-release.cjs",
+      "originSha256": "59239f1ae7a1411085e48536c90a67f381abf56828647be802039530c846971b"
+    },
+    {
+      "path": "desktop/pc-review/desktop/review-workflow-model.cjs",
+      "source": "resources/pc-review/desktop/review-workflow-model.cjs",
+      "bytes": 1220,
+      "sha256": "be44275cdd3031725deadbe5ee0dd4a81e0cbe49f8acef5ea38173a9dcff1c62",
+      "activePath": "desktop/review-workflow-model.cjs",
+      "originSha256": "be44275cdd3031725deadbe5ee0dd4a81e0cbe49f8acef5ea38173a9dcff1c62"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/app/core.js",
+      "source": "resources/pc-review/mobile/android-review/app/core.js",
+      "bytes": 6157,
+      "sha256": "f9d5d1b858b219eec0fb39776281b419516a53f4b19b783bb30ba45216c4aa4b",
+      "activePath": "mobile/android-review/app/core.js",
+      "originSha256": "f9d5d1b858b219eec0fb39776281b419516a53f4b19b783bb30ba45216c4aa4b"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/app/review-limits.js",
+      "source": "resources/pc-review/mobile/android-review/app/review-limits.js",
+      "bytes": 182,
+      "sha256": "c2e8d9e689fdaae439cb74cbba79bca1d48066bb9da465a728492f10b92b8fb8",
+      "activePath": "mobile/android-review/app/review-limits.js",
+      "originSha256": "c2e8d9e689fdaae439cb74cbba79bca1d48066bb9da465a728492f10b92b8fb8"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/exchange.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/exchange.mjs",
+      "bytes": 22957,
+      "sha256": "0f65d0f7a5e1342e9fd785813f1f88cd963c0a4fe7c0c4ea06c1356e833fad8e",
+      "activePath": "mobile/android-review/pc/exchange.mjs",
+      "originSha256": "0f65d0f7a5e1342e9fd785813f1f88cd963c0a4fe7c0c4ea06c1356e833fad8e"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/feedback-transaction.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/feedback-transaction.mjs",
+      "bytes": 15820,
+      "sha256": "f0d21f050651c1161ba29d1c88f4305f385a2b925eed093442dcb1acfa5a5c4c",
+      "activePath": "mobile/android-review/pc/feedback-transaction.mjs",
+      "originSha256": "f0d21f050651c1161ba29d1c88f4305f385a2b925eed093442dcb1acfa5a5c4c"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/github-transport.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/github-transport.mjs",
+      "bytes": 9113,
+      "sha256": "0193a78160ec82a93329e0b8d823c74e53766fcc9bb36e388951596a63cd59f0",
+      "activePath": "mobile/android-review/pc/github-transport.mjs",
+      "originSha256": "0193a78160ec82a93329e0b8d823c74e53766fcc9bb36e388951596a63cd59f0"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/pc-binding.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/pc-binding.mjs",
+      "bytes": 18020,
+      "sha256": "eb998a439f2b1097a08eccde9001548dfcaddfb1939a4b0bbf0c3f13aef536d5",
+      "activePath": "mobile/android-review/pc/pc-binding.mjs",
+      "originSha256": "eb998a439f2b1097a08eccde9001548dfcaddfb1939a4b0bbf0c3f13aef536d5"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/pc-review-config.example.json",
+      "source": "resources/pc-review/mobile/android-review/pc/pc-review-config.example.json",
+      "bytes": 119,
+      "sha256": "caaf936c0103b3dc1bcc6bb22c245c67a573c2ad9274e3b873d627385116fbe6",
+      "activePath": "mobile/android-review/pc/pc-review-config.example.json",
+      "originSha256": "caaf936c0103b3dc1bcc6bb22c245c67a573c2ad9274e3b873d627385116fbe6"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/pc-review-runner.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/pc-review-runner.mjs",
+      "bytes": 15822,
+      "sha256": "c93af79c154ba05c3f6b76c6e1ca41e1c0aee6fcc5bb4b96a15b918bd0cac3de",
+      "activePath": "mobile/android-review/pc/pc-review-runner.mjs",
+      "originSha256": "c93af79c154ba05c3f6b76c6e1ca41e1c0aee6fcc5bb4b96a15b918bd0cac3de"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/publish-release.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/publish-release.mjs",
+      "bytes": 14552,
+      "sha256": "b59502aeaa0c1023feefdafc1582640d5956c3462c2d2d8cc19bbb45087e1067",
+      "activePath": "mobile/android-review/pc/publish-release.mjs",
+      "originSha256": "b59502aeaa0c1023feefdafc1582640d5956c3462c2d2d8cc19bbb45087e1067"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/release-feed.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/release-feed.mjs",
+      "bytes": 22141,
+      "sha256": "0c0980f4415bcaecd2a35c2a7f4fcf1943f8e34452502eda78a4c73f4dd155c1",
+      "activePath": "mobile/android-review/pc/release-feed.mjs",
+      "originSha256": "0c0980f4415bcaecd2a35c2a7f4fcf1943f8e34452502eda78a4c73f4dd155c1"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/pc/review-pipeline.mjs",
+      "source": "resources/pc-review/mobile/android-review/pc/review-pipeline.mjs",
+      "bytes": 2305,
+      "sha256": "7cbfe39d3e7ba5ce9fca02aea304a0cfea9d6423b75aef27be999bb0ae574c8b",
+      "activePath": "mobile/android-review/pc/review-pipeline.mjs",
+      "originSha256": "7cbfe39d3e7ba5ce9fca02aea304a0cfea9d6423b75aef27be999bb0ae574c8b"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/PC_0318_BINDING.md",
+      "source": "resources/pc-review/mobile/android-review/PC_0318_BINDING.md",
+      "bytes": 8267,
+      "sha256": "ad1e6f139700e5b15fa3a591e1b7c8a2f9e370a101f5a6c6e6f2232cf5ba9690",
+      "activePath": "mobile/android-review/PC_0318_BINDING.md",
+      "originSha256": "ad1e6f139700e5b15fa3a591e1b7c8a2f9e370a101f5a6c6e6f2232cf5ba9690"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/PC_FEEDBACK_TRANSACTION.md",
+      "source": "resources/pc-review/mobile/android-review/PC_FEEDBACK_TRANSACTION.md",
+      "bytes": 9467,
+      "sha256": "2f3ab0a09b2956b76e292be1efd9dfb6603befde77512bcc0b06bab2bed867f2",
+      "activePath": "mobile/android-review/PC_FEEDBACK_TRANSACTION.md",
+      "originSha256": "2f3ab0a09b2956b76e292be1efd9dfb6603befde77512bcc0b06bab2bed867f2"
+    },
+    {
+      "path": "desktop/pc-review/mobile/android-review/PC_RELEASE_FEED.md",
+      "source": "resources/pc-review/mobile/android-review/PC_RELEASE_FEED.md",
+      "bytes": 11766,
+      "sha256": "9d9ad8d3002cd97622c1dfd23c18797c7db69b088688b9215ffb19718a2911b2",
+      "activePath": "mobile/android-review/PC_RELEASE_FEED.md",
+      "originSha256": "9d9ad8d3002cd97622c1dfd23c18797c7db69b088688b9215ffb19718a2911b2"
+    },
+    {
+      "path": "desktop/pc-review/package.json",
+      "source": "resources/pc-review/package.json",
+      "bytes": 546,
+      "sha256": "52095c8e9bb55caeb062ff497c9075405d1bbfa379419382e856192700358616",
+      "activeRole": "main project ESM package retained; original PC package bytes remain in b277085",
+      "activePath": "package.json",
+      "originSha256": "52095c8e9bb55caeb062ff497c9075405d1bbfa379419382e856192700358616"
+    }
+  ],
+  "scope": "Exact installed source baseline; original runtime/state/material files unchanged; no launch or publication.",
+  "originGitCommit": "b277085",
+  "activeLayout": "standard desktop/, app/, mobile/android-review/; original installed sources preserved in originGitCommit, no original installation changes",
+  "legacyOperations": [
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/APPLIED_SOURCE.json",
+      "bytes": 2576,
+      "sha256": "486460373b03bab675e85b1c6e7a9a0c209a0b0f080815daba55af8a9f9f6682",
+      "source": "ThreadsUploadStudio/APPLIED_SOURCE.json"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/ApplyWhenIdle.ps1",
+      "bytes": 4114,
+      "sha256": "587875654f34072c845a778c49ae322031a95f3b49f825617528e650ad501af6",
+      "source": "ThreadsUploadStudio/ApplyWhenIdle.ps1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/Control.ps1",
+      "bytes": 4836,
+      "sha256": "5c53cd66d6f5fbf8a69032d1bbf9586b21c8a01188dd2092864926582963907b",
+      "source": "ThreadsUploadStudio/Control.ps1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/Lifecycle.psm1",
+      "bytes": 1612,
+      "sha256": "124d1bc2fc9e0b251e454e345ebd19e33a54031962e70bb9f509c25d12075c8c",
+      "source": "ThreadsUploadStudio/Lifecycle.psm1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/menu-activation.json",
+      "bytes": 191,
+      "sha256": "ed1833c32dac5e305ac844ab1c9c6abae9a5b0b007d127061b1436d5edcdac66",
+      "source": "ThreadsUploadStudio/menu-activation.json"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/README.md",
+      "bytes": 12549,
+      "sha256": "1975c27b0768d6ae54d1c6d8e63b2bb7a0cd5c098135bb1e4bcb531622bb24b3",
+      "source": "ThreadsUploadStudio/README.md"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/guide-before-20261010.md",
+      "bytes": 4996,
+      "sha256": "84b300d69bc3d157d1d6ff5797bc7084ad375319f4af337e59e091b74c171443",
+      "source": "ThreadsUploadStudio/recovery/guide-before-20261010.md"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/review-doc-11_프로젝트와_폴더_안내.md.47b64ee7eb9c",
+      "bytes": 7263,
+      "sha256": "47b64ee7eb9c348ddbaedc8006229d14565ed643098c3cfaf82671707f99f051",
+      "source": "ThreadsUploadStudio/recovery/review-doc-11_프로젝트와_폴더_안내.md.47b64ee7eb9c"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/review-doc-프로젝트_사용안내.md.d3884f0712ee",
+      "bytes": 5903,
+      "sha256": "d3884f0712ee35c4351ca7561903125fc637ae03b52e5fb39864321889e9c672",
+      "source": "ThreadsUploadStudio/recovery/review-doc-프로젝트_사용안내.md.d3884f0712ee"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/review-doc-README.md.2108e7c2a08f",
+      "bytes": 4558,
+      "sha256": "2108e7c2a08f40cf2f504b55de3cbc33c8a10a6ca424497640422558e26d9ea3",
+      "source": "ThreadsUploadStudio/recovery/review-doc-README.md.2108e7c2a08f"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T072648885Z/Control.ps1",
+      "bytes": 4691,
+      "sha256": "595ec96ae1ebbd96556e14f266e718a0eca2fe956ea17184d05ad54b3ae892c2",
+      "source": "ThreadsUploadStudio/recovery/20261010T072648885Z/Control.ps1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T072648885Z/Lifecycle.psm1",
+      "bytes": 1612,
+      "sha256": "124d1bc2fc9e0b251e454e345ebd19e33a54031962e70bb9f509c25d12075c8c",
+      "source": "ThreadsUploadStudio/recovery/20261010T072648885Z/Lifecycle.psm1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T072648885Z/project.control.before.json",
+      "bytes": 18104,
+      "sha256": "072007157828513d80f37686f866560db3d258f50df0a7d1459e51649179dd4d",
+      "source": "ThreadsUploadStudio/recovery/20261010T072648885Z/project.control.before.json"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T072901630Z/Control.ps1",
+      "bytes": 4836,
+      "sha256": "85d8cf65b82671dddad0e609289068709f2521baf0e08aac53864068403e4f4e",
+      "source": "ThreadsUploadStudio/recovery/20261010T072901630Z/Control.ps1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T072901630Z/Lifecycle.psm1",
+      "bytes": 1612,
+      "sha256": "124d1bc2fc9e0b251e454e345ebd19e33a54031962e70bb9f509c25d12075c8c",
+      "source": "ThreadsUploadStudio/recovery/20261010T072901630Z/Lifecycle.psm1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T072901630Z/project.control.before.json",
+      "bytes": 18104,
+      "sha256": "072007157828513d80f37686f866560db3d258f50df0a7d1459e51649179dd4d",
+      "source": "ThreadsUploadStudio/recovery/20261010T072901630Z/project.control.before.json"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T073616112Z/ApplyWhenIdle.ps1",
+      "bytes": 3962,
+      "sha256": "52755c79bedb1225b6ad8aa3eaf0837df3729c9d1cc0b252831fc2033a8adf31",
+      "source": "ThreadsUploadStudio/recovery/20261010T073616112Z/ApplyWhenIdle.ps1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T073616112Z/Control.ps1",
+      "bytes": 4836,
+      "sha256": "5c53cd66d6f5fbf8a69032d1bbf9586b21c8a01188dd2092864926582963907b",
+      "source": "ThreadsUploadStudio/recovery/20261010T073616112Z/Control.ps1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T073616112Z/Lifecycle.psm1",
+      "bytes": 1612,
+      "sha256": "124d1bc2fc9e0b251e454e345ebd19e33a54031962e70bb9f509c25d12075c8c",
+      "source": "ThreadsUploadStudio/recovery/20261010T073616112Z/Lifecycle.psm1"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/ThreadsUploadStudio/recovery/20261010T073616112Z/project.control.before.json",
+      "bytes": 18104,
+      "sha256": "072007157828513d80f37686f866560db3d258f50df0a7d1459e51649179dd4d",
+      "source": "ThreadsUploadStudio/recovery/20261010T073616112Z/project.control.before.json"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/task16/stage-portrait-delivery.py",
+      "bytes": 15371,
+      "sha256": "3574d6cadfca60d851b3d0b35ffd4334955b16b621f842e4e6189ac4f476dcbe",
+      "source": "task16/stage-portrait-delivery.py"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/task16/finalize-portrait-delivery.py",
+      "bytes": 10092,
+      "sha256": "88b6d6e4caed44068702db94d7b78a5812c298c7a122328224697956b2dbfa4b",
+      "source": "task16/finalize-portrait-delivery.py"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/task16/write-portrait-delivery-handoff.py",
+      "bytes": 4112,
+      "sha256": "7ea83396ca90c0fdc2309adc3edc3a4548ffb93cc8413aa58ec5df5a3c45ba14",
+      "source": "task16/write-portrait-delivery-handoff.py"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/task16/cover-integration/docs/PORTRAIT_DELIVERY_PATH_CONTRACT_2026-10-10.md",
+      "bytes": 8655,
+      "sha256": "ce2330377a86167b636f3de00051a6f0367d83078c46d4a7397478168920b18f",
+      "source": "task16/cover-integration/docs/PORTRAIT_DELIVERY_PATH_CONTRACT_2026-10-10.md"
+    },
+    {
+      "active": false,
+      "path": "legacy-source/operations/task16/cover-integration/docs/PORTRAIT_LAYOUT_PRODUCTION_2026-10-09.md",
+      "bytes": 16422,
+      "sha256": "91a2d7fa68ed8d8112b925a95cba9d648e1e5591340df3181266b9887af154d1",
+      "source": "task16/cover-integration/docs/PORTRAIT_LAYOUT_PRODUCTION_2026-10-09.md"
+    }
+  ],
+  "retainedNamespaces": {
+    "paths": [
+      "desktop/production",
+      "desktop/production-editor",
+      "desktop/pc-review"
+    ],
+    "kind": "inert_installed_origin_snapshot",
+    "active": false,
+    "packaged": false,
+    "reason": "recursive deletion denied by tool policy; original110 restored from byte-pinned Git history; no runtime consumers"
+  }
+}

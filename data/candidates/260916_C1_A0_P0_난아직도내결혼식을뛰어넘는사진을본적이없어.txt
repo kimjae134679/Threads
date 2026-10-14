@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4341458823
+제목 - 난 아직도 내 결혼식을 뛰어넘는 사진을 본적이 없어.jpg (빡침주의)
+내용 - [명시 요약 — 원문 전문 아님]
+공개 페이지의 본문은 읽었고 결혼식 사진을 중심으로 전개되는 이미지형 사연임을 확인했다. 기존 Discovery 기록에는 이미지 속 세부 내용 전문이 보관되지 않았으므로 여기서 임의로 재구성하지 않는다. 원 Threads 출처도 아직 확인되지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4341458823",
+    "title": "난 아직도 내 결혼식을 뛰어넘는 사진을 본적이 없어.jpg (빡침주의)",
+    "body": "공개 페이지의 본문은 읽었고 결혼식 사진을 중심으로 전개되는 이미지형 사연임을 확인했다. 기존 Discovery 기록에는 이미지 속 세부 내용 전문이 보관되지 않았으므로 여기서 임의로 재구성하지 않는다. 원 Threads 출처도 아직 확인되지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_난아직도내결혼식을뛰어넘는사진을본적이없어.md",
+      "originalTitle": "난 아직도 내 결혼식을 뛰어넘는 사진을 본적이 없어.jpg (빡침주의)",
+      "originalMarkdown": "# 난 아직도 내 결혼식을 뛰어넘는 사진을 본적이 없어.jpg (빡침주의)\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: TheQoo\r\n- 관측: 2026-09-16 03:16 KST\r\n- 링크: https://theqoo.net/square/4341458823\r\n- 조회수: 124,540\r\n- 댓글: 528\r\n- 이미지: 3장 노출 확인, 파일 미확보\r\n\r\n## 글 내용\r\n공개 페이지의 본문은 읽었고 결혼식 사진을 중심으로 전개되는 이미지형 사연임을 확인했다. 기존 Discovery 기록에는 이미지 속 세부 내용 전문이 보관되지 않았으므로 여기서 임의로 재구성하지 않는다. 원 Threads 출처도 아직 확인되지 않았다.\r\n\r\n## 평가\r\n- 평가: 최상급 시각 후보\r\n- 이유: 높은 반응과 3장 이미지 진행, 제목만으로 강한 호기심이 생김.\r\n- 약점: 원 Threads provenance와 이미지 사용 권리 확인 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "33d6f65f2026fb14068cb6096844c5c1c31d127ac40acc871b57f0ccc5862b71",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 266
+}

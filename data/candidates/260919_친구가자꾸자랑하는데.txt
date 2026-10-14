@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC%EA%B0%80-%EC%9E%90%EA%BE%B8-%EC%9E%90%EB%9E%91%ED%95%98%EB%8A%94%EB%8D%B0-w4x8kz4k
+제목 - 친구가 자꾸 자랑하는데
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC%EA%B0%80-%EC%9E%90%EA%BE%B8-%EC%9E%90%EB%9E%91%ED%95%98%EB%8A%94%EB%8D%B0-w4x8kz4k",
+    "title": "친구가 자꾸 자랑하는데",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_친구가자꾸자랑하는데.md",
+      "originalTitle": "친구가 자꾸 자랑하는데",
+      "originalMarkdown": "# 친구가 자꾸 자랑하는데\r\n\r\n- source: Blind / 블라블라\r\n- public_url: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC%EA%B0%80-%EC%9E%90%EA%BE%B8-%EC%9E%90%EB%9E%91%ED%95%98%EB%8A%94%EB%8D%B0-w4x8kz4k\r\n- exact_observed_title: 친구가 자꾸 자랑하는데\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 68, 댓글 7\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 친구가 모임마다 '곧 10억' 자랑하지만 1차는 더치페이하고 먼저 간다는 짧고 선명한 짜증/반전 구조.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 자산 주장은 독립 검증 안 함\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8b30bd5773544d472d651b3739c78faead433a5323dfb5511fa5345b42863f1a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 191
+}

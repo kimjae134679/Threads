@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 월급 300인데 명품 시계 사는거
+내용 - [명시 요약 — 원문 전문 아님]
+월급 약 300만원 수준에서 명품 시계를 구매해도 되는지 묻는 돈·소비 의견형 후보로 과거 발견됐다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "월급 300인데 명품 시계 사는거",
+    "body": "월급 약 300만원 수준에서 명품 시계를 구매해도 되는지 묻는 돈·소비 의견형 후보로 과거 발견됐다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_월급300명품시계.md",
+      "originalTitle": "월급 300인데 명품 시계 사는거",
+      "originalMarkdown": "# 월급 300인데 명품 시계 사는거\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n월급 약 300만원 수준에서 명품 시계를 구매해도 되는지 묻는 돈·소비 의견형 후보로 과거 발견됐다.\r\n\r\n## 평가\r\n- 평가: 소비논쟁형, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "487b7b2ba7557ed0aecd324838c3f8dda8638d58a20dabe19f294171b7c7f102",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 125
+}

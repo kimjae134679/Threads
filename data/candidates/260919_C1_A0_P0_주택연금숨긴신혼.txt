@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%83%9D%ED%99%9C%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-mnq3uqeu
+제목 - 친정에 시댁 주택연금 사실을 숨긴 신혼
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%83%9D%ED%99%9C%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-mnq3uqeu",
+    "title": "친정에 시댁 주택연금 사실을 숨긴 신혼",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_주택연금숨긴신혼.md",
+      "originalTitle": "친정에 시댁 주택연금 사실을 숨긴 신혼",
+      "originalMarkdown": "# 친정에 시댁 주택연금 사실을 숨긴 신혼\r\n\r\n- source: Blind / 결혼생활\r\n- exact observed title: `결혼생활&주택연금`\r\n- public URL: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%83%9D%ED%99%9C%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-mnq3uqeu\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 203 / 댓글 16\r\n- body read: 예. 공개 페이지에 노출된 본문 확인.\r\n- comments read: 아니오(댓글 수 표지만 확인).\r\n- image/screenshot: 본문 이미지 존재는 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 신혼·양가 자산격차·주택연금·결혼 전 정보 은폐가 한 사건에 겹쳐 즉시 의견이 갈릴 소재.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_PARTIAL. 공개 페이지에서 실제 보인 범위만 기록.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "a00e5c383897ffdd84fca949139ce45b06ca8ffa4b89bd7a6336d188d14ba9d0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 180
+}

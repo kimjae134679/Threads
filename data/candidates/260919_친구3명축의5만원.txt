@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EA%B4%80%EB%A0%A8-%EA%B6%81%EA%B8%88%ED%95%9C%EA%B2%8C-%EC%9E%88%EC%96%B4-FjXmtYKp
+제목 - 축의금 관련 궁금한게 있어
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EA%B4%80%EB%A0%A8-%EA%B6%81%EA%B8%88%ED%95%9C%EA%B2%8C-%EC%9E%88%EC%96%B4-FjXmtYKp",
+    "title": "축의금 관련 궁금한게 있어",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_친구3명축의5만원.md",
+      "originalTitle": "축의금 관련 궁금한게 있어",
+      "originalMarkdown": "# 축의금 관련 궁금한게 있어\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EA%B4%80%EB%A0%A8-%EA%B6%81%EA%B8%88%ED%95%9C%EA%B2%8C-%EC%9E%88%EC%96%B4-FjXmtYKp\r\n- exactObservedTitle: 축의금 관련 궁금한게 있어\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 1,230 / 댓글 35\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n10년지기 친구를 위해 숙박까지 잡아줬는데 친구가 남편·딸과 셋이 참석하고 축의금 5만원을 낸 상황이라 비용과 우정의 기준을 두고 즉각 논쟁이 생긴다.\r\n",
+      "originalSha256": "c5f020e49008536356b7da8cc72ca90411774639deb0de49d8813f914ae0f77d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 203
+}

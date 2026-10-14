@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3887886765
+제목 - 축의금 안 받는 결혼 때문에 살벌해진 회사
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3887886765",
+    "title": "축의금 안 받는 결혼 때문에 살벌해진 회사",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_축의금안받아회사살벌.md",
+      "originalTitle": "축의금 안 받는 결혼 때문에 살벌해진 회사",
+      "originalMarkdown": "# 축의금 안 받는 결혼 때문에 살벌해진 회사\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/3887886765\r\n- exactObservedTitle: 축의금 안 받는 결혼한 사람 때문에 살벌해진 회사.jpg\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 85,638 / 댓글 567개\r\n- bodyRead: partial (공개 텍스트 일부만)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes\r\n- provenance: C1 / exact individual public URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n축의금을 받지 않는 한 사람의 선택이 같은 시기 결혼하는 동료들에게 어떤 압박을 만드는지라는 직장+결혼 문화 충돌 소재다. 이미지 세부는 추정하지 않음.\r\n",
+      "originalSha256": "5f76b36bfb6781a4874b7145e900f8aee5e068e492cc2330c1351904d349d55a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 103
+}

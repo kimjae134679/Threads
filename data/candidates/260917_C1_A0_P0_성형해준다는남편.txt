@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%84%B1%ED%98%95%EC%88%98%EC%88%A0-%ED%95%B4%EC%A4%80%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-mal1437m
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+본인이 코 등 외모 고민을 말했더니 남편이 성형을 원하면 하라고 적극적으로 허용해, 오히려 '내가 그렇게 못생겼나'라는 생각이 들었다는 부부 오해 사연. 공개 본문과 댓글을 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%84%B1%ED%98%95%EC%88%98%EC%88%A0-%ED%95%B4%EC%A4%80%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-mal1437m",
+    "title": "제목",
+    "body": "본인이 코 등 외모 고민을 말했더니 남편이 성형을 원하면 하라고 적극적으로 허용해, 오히려 '내가 그렇게 못생겼나'라는 생각이 들었다는 부부 오해 사연. 공개 본문과 댓글을 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_성형해준다는남편.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n성형수술 해준다는 남편\r\n\r\n## 글 내용\r\n본인이 코 등 외모 고민을 말했더니 남편이 성형을 원하면 하라고 적극적으로 허용해, 오히려 '내가 그렇게 못생겼나'라는 생각이 들었다는 부부 오해 사연. 공개 본문과 댓글을 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%84%B1%ED%98%95%EC%88%98%EC%88%A0-%ED%95%B4%EC%A4%80%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-mal1437m\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-17 23:37 KST · 조회 362 · 좋아요 1 · 댓글 15.\r\n\r\n## 평가\r\n'하라고 해도 서운함'이라는 민망한 오해와 부부 대화 방식이 핵심이라 가볍고 반응 유도가 쉽다. 노골적 성적 소재는 아니다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\nsource screenshot/media 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "6347590c82cada7a94be3b2641a8bad20ac1d1389477d6f6b31b0a226466d2be",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 290
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84%EA%B9%8C%EC%A7%80-%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%A7%88%EB%8B%88%ED%95%A8-C6iqhcK6
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 공개 글. 작성자는 결혼 전 소개팅했던 사람들을 직업별로 떠올리며 약 20명 정도를 만났다고 정리한다. 소방관·경찰·교사·의사·약사·연구원·회계사·변호사·은행원 등 다양한 상대와 소개팅했고, 그중 실제 교제로 이어진 사람은 3명 정도였으며 앞선 두 관계는 한 달 이상 가지 못했다고 한다. 마지막 소개팅 상대와는 2년 넘게 만나 결국 결혼했다고 적었다. 공개 페이지에서 본문과 일부 댓글을 읽었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84%EA%B9%8C%EC%A7%80-%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%A7%88%EB%8B%88%ED%95%A8-C6iqhcK6",
+    "title": "제목",
+    "body": "Blind 공개 글. 작성자는 결혼 전 소개팅했던 사람들을 직업별로 떠올리며 약 20명 정도를 만났다고 정리한다. 소방관·경찰·교사·의사·약사·연구원·회계사·변호사·은행원 등 다양한 상대와 소개팅했고, 그중 실제 교제로 이어진 사람은 3명 정도였으며 앞선 두 관계는 한 달 이상 가지 못했다고 한다. 마지막 소개팅 상대와는 2년 넘게 만나 결국 결혼했다고 적었다. 공개 페이지에서 본문과 일부 댓글을 읽었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_소개팅20명마지막과결혼.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼 전까지 소개팅 마니함\r\n\r\n## 글 내용\r\nBlind 공개 글. 작성자는 결혼 전 소개팅했던 사람들을 직업별로 떠올리며 약 20명 정도를 만났다고 정리한다. 소방관·경찰·교사·의사·약사·연구원·회계사·변호사·은행원 등 다양한 상대와 소개팅했고, 그중 실제 교제로 이어진 사람은 3명 정도였으며 앞선 두 관계는 한 달 이상 가지 못했다고 한다. 마지막 소개팅 상대와는 2년 넘게 만나 결국 결혼했다고 적었다. 공개 페이지에서 본문과 일부 댓글을 읽었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A0%84%EA%B9%8C%EC%A7%80-%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%A7%88%EB%8B%88%ED%95%A8-C6iqhcK6\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 페이지/search 결과\r\n- 조회수: 9,929\r\n- 좋아요: 7\r\n- 댓글: 30\r\n\r\n## 평가\r\n- 약 20번 소개팅이라는 숫자와 '마지막 소개팅 상대와 결혼'이라는 깔끔한 반전/결말이 있음.\r\n- 갈등형보다 가벼운 연애 경험담 레인으로 균형을 맞출 수 있는 후보.\r\n- 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "873e819f69da02d86eb36417df5ca3016df414155e14294aedb2b978343566fd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 426
+}

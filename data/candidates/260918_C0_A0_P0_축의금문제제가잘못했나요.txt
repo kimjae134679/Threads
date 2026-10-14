@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 축의금 문제인데 제가 잘못했나요?
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 공개 회사 게시글 index에서 확인. 다른 부서·다른 사무실의 거의 대화한 적 없는 직원에게 청첩장을 받았지만 계좌가 없어 결혼일을 놓쳤고, 뒤늦게 5만원 상품권을 준비한 뒤 상대가 인사를 무시한 것 같아 고민하는 내용으로 index에 노출됨. 개별 원문 본문은 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "축의금 문제인데 제가 잘못했나요?",
+    "body": "Blind 공개 회사 게시글 index에서 확인. 다른 부서·다른 사무실의 거의 대화한 적 없는 직원에게 청첩장을 받았지만 계좌가 없어 결혼일을 놓쳤고, 뒤늦게 5만원 상품권을 준비한 뒤 상대가 인사를 무시한 것 같아 고민하는 내용으로 index에 노출됨. 개별 원문 본문은 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C0_A0_P0_축의금문제제가잘못했나요.md",
+      "originalTitle": "축의금 문제인데 제가 잘못했나요?",
+      "originalMarkdown": "# 축의금 문제인데 제가 잘못했나요?\r\n\r\n## 글 내용\r\nBlind 공개 회사 게시글 index에서 확인. 다른 부서·다른 사무실의 거의 대화한 적 없는 직원에게 청첩장을 받았지만 계좌가 없어 결혼일을 놓쳤고, 뒤늦게 5만원 상품권을 준비한 뒤 상대가 인사를 무시한 것 같아 고민하는 내용으로 index에 노출됨. 개별 원문 본문은 미확인.\r\n\r\n## 정확한 링크\r\n개별 원문 URL 미확인. 공개 index: https://www.teamblind.com/kr/company/%EC%9D%B8%EC%82%AC%EB%A7%8C%EC%82%AC/posts\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n2026-09-18 06:34 KST 동일 관측: 조회 1,820 / 좋아요 1 / 댓글 38.\r\n\r\n## 평가\r\n낯선 직장동료 축의금 의무와 결혼 후 인사 무시 해석이 즉시 갈리는 생활형 논쟁. 개별 URL 확보 전까지 C0.\r\n\r\n## 이미지/자산/게시상태\r\n형식: 글. full body read: 아니오(본문 미확인). comments read: 아니오. source screenshot/media: 미확인. acquisition: INDEX_ONLY / ASSETS_PENDING. C0_A0_P0. publicationAllowed=false. rights/privacy/human review 필요, 게시 권한은 04_REVIEW_PUBLISH만 보유.\r\n",
+      "originalSha256": "7a416fe0679621adc415dadd9f67dd4773829bb5149de53c69a6d8d2154ab631",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 227
+}

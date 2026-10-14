@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/t8rlny
+제목 - AITA for offering only $35,000 for my daughter's wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+은퇴한 부모가 딸의 결혼식에 35,000달러를 지원했지만 딸은 약 70,000달러인 결혼식 전체 비용을 부모가 내야 한다고 주장한다. 부모는 대학 졸업 후 이미 약 30만 달러를 지원했고 매년 2만 달러를 계속 주고 있으며, 딸 부부의 합산소득도 약 22만 달러라고 설명한다. 공개 원문 본문 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/t8rlny",
+    "title": "AITA for offering only $35,000 for my daughter's wedding?",
+    "body": "은퇴한 부모가 딸의 결혼식에 35,000달러를 지원했지만 딸은 약 70,000달러인 결혼식 전체 비용을 부모가 내야 한다고 주장한다. 부모는 대학 졸업 후 이미 약 30만 달러를 지원했고 매년 2만 달러를 계속 주고 있으며, 딸 부부의 합산소득도 약 22만 달러라고 설명한다. 공개 원문 본문 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_부모결혼지원7만달러요구.md",
+      "originalTitle": "AITA for offering only $35,000 for my daughter's wedding?",
+      "originalMarkdown": "# AITA for offering only $35,000 for my daughter's wedding?\r\n\r\n## 글 내용\r\n은퇴한 부모가 딸의 결혼식에 35,000달러를 지원했지만 딸은 약 70,000달러인 결혼식 전체 비용을 부모가 내야 한다고 주장한다. 부모는 대학 졸업 후 이미 약 30만 달러를 지원했고 매년 2만 달러를 계속 주고 있으며, 딸 부부의 합산소득도 약 22만 달러라고 설명한다. 공개 원문 본문 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/t8rlny\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 04:35 KST\r\n- Reddit score: +1,695\r\n- 조회수/댓글 총수: 공개 검색 결과에서 확인하지 못함\r\n\r\n## 평가\r\n숫자 자체가 강하다. 3.5만 달러 지원이 \"적은가\"라는 질문에 기존 30만 달러 지원·연 2만 달러·부부소득 22만 달러가 붙어 댓글 논쟁이 예상되는 구조다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: PARTIAL\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n",
+      "originalSha256": "5a2e415fd51950a5f883d223d1684a42976fe8c8354baddc3d7e53d4e2d28e72",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 329
+}

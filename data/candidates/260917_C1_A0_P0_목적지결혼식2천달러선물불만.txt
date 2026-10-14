@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1niwxcd
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Reddit 공개 글. 작성자는 가까운 가족의 목적지 결혼식을 위해 항공·숙박·파티 등에 이미 2,000달러 넘게 지출했고, 커플과 반려동물을 그린 약 100달러짜리 맞춤 액자도 미리 선물했다고 한다. 그런데 상대가 그 선물을 집들이 선물 같은 성의 없는 것으로 느꼈다며 현금 선물을 기대했고, 작성자가 몇 달 전 실직해 저축으로 생활 중이라는 사실을 알면서도 친구들과 술 마실 돈은 있으니 결혼식 현금 선물을 위해 아꼈어야 한다는 취지로 말했다고 한다. 공개 원문 본문을 읽었으며 전체 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1niwxcd",
+    "title": "제목",
+    "body": "Reddit 공개 글. 작성자는 가까운 가족의 목적지 결혼식을 위해 항공·숙박·파티 등에 이미 2,000달러 넘게 지출했고, 커플과 반려동물을 그린 약 100달러짜리 맞춤 액자도 미리 선물했다고 한다. 그런데 상대가 그 선물을 집들이 선물 같은 성의 없는 것으로 느꼈다며 현금 선물을 기대했고, 작성자가 몇 달 전 실직해 저축으로 생활 중이라는 사실을 알면서도 친구들과 술 마실 돈은 있으니 결혼식 현금 선물을 위해 아꼈어야 한다는 취지로 말했다고 한다. 공개 원문 본문을 읽었으며 전체 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_목적지결혼식2천달러선물불만.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for gifting a digital art photo of a couple and their pets for a destination wedding instead of giving money?\r\n\r\n## 글 내용\r\nReddit 공개 글. 작성자는 가까운 가족의 목적지 결혼식을 위해 항공·숙박·파티 등에 이미 2,000달러 넘게 지출했고, 커플과 반려동물을 그린 약 100달러짜리 맞춤 액자도 미리 선물했다고 한다. 그런데 상대가 그 선물을 집들이 선물 같은 성의 없는 것으로 느꼈다며 현금 선물을 기대했고, 작성자가 몇 달 전 실직해 저축으로 생활 중이라는 사실을 알면서도 친구들과 술 마실 돈은 있으니 결혼식 현금 선물을 위해 아꼈어야 한다는 취지로 말했다고 한다. 공개 원문 본문을 읽었으며 전체 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1niwxcd\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 검색 결과\r\n- Reddit score: +84\r\n- 조회수/댓글 수: 확인하지 못함\r\n\r\n## 평가\r\n- 실직 상태에서 이미 2천 달러 이상 쓴 하객에게 현금 선물까지 요구하는 갈등이라 즉시 의견이 갈림.\r\n- 점수는 높지 않지만 구체적인 금액과 상황이 있어 이야기성이 충분함.\r\n- 한국 커뮤니티 우선 탐색 후 해외 레인 보강용으로 retained.\r\n- 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "a8943bb0123a190006cec28c8531b2efc7b4f65559823f9b27f4500ee47db187",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 392
+}

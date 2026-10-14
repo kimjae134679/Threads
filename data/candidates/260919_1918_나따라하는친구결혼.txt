@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%98-%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EC%B9%9C%EA%B5%AC-gKo8Lu6Y
+제목 - 나 따라하는 친구
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98-%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EC%B9%9C%EA%B5%AC-gKo8Lu6Y",
+    "title": "나 따라하는 친구",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_나따라하는친구결혼.md",
+      "originalTitle": "나 따라하는 친구",
+      "originalMarkdown": "# 나 따라하는 친구\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EB%82%98-%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EC%B9%9C%EA%B5%AC-gKo8Lu6Y\r\n- exact_observed_title: 나 따라하는 친구\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 1,684 / 댓글 46\r\n- body_read: 부분 확인 (BODY_PARTIAL)\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 결혼 준비 재개부터 신랑신부 합동축가까지 친구가 자신을 따라한다고 느끼는 누적형 관계 갈등.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; only publicly observed text recorded\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "4a1910cef5fbe0153e7dd8da79bd30226c6e11c61bc8a6e7eb176b6ec31b3802",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 161
+}

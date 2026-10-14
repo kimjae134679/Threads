@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3028635401
+제목 - 찐친 결혼식 축의금 얼마가 적당할지 모르겠는 중기
+내용 - [명시 요약 — 원문 전문 아님]
+10년 넘은 유일한 베프, 30만원대 가전 선물과 부케 역할까지 예정된 상태에서 축의금 30·50·100만원을 고민하는 구체적인 금액 논쟁이라 참여성이 높음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3028635401",
+    "title": "찐친 결혼식 축의금 얼마가 적당할지 모르겠는 중기",
+    "body": "10년 넘은 유일한 베프, 30만원대 가전 선물과 부케 역할까지 예정된 상태에서 축의금 30·50·100만원을 고민하는 구체적인 금액 논쟁이라 참여성이 높음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_theqoo_찐친축의금100고민.md",
+      "originalTitle": "찐친 결혼식 축의금 얼마가 적당할지 모르겠는 중기",
+      "originalMarkdown": "# 찐친 결혼식 축의금 얼마가 적당할지 모르겠는 중기\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/3028635401\r\n- exactObservedTitle: `찐친 결혼식 축의금 얼마가 적당할지 모르겠는 중기`\r\n- observedAt: 2026-09-20 03:14 KST\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: TheQoo 개별 공개 페이지 본문 확인.\r\n- observedMetrics: 조회 수 4651, 댓글 47개\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 10년 넘은 유일한 베프, 30만원대 가전 선물과 부케 역할까지 예정된 상태에서 축의금 30·50·100만원을 고민하는 구체적인 금액 논쟁이라 참여성이 높음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "faf02e041e11d98c1482478c56ab9e40fbf765c6a78948a2458908853b95b18a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 202
+}

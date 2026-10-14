@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/954234398
+제목 - 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/954234398",
+    "title": "결혼 안하고 외국간 친구와 나의 뒤바뀐 인생",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_friend-marriage-foreign-life-reversal.md",
+      "originalTitle": "[판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생",
+      "originalMarkdown": "# [판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/square/954234398\r\n- exactObservedTitle: `[판][추가 후기] + [후기] 결혼 안하고 외국간 친구와 나의 뒤바뀐 인생`\r\n- observedAt: 2026-09-23 21:18 KST\r\n- observedMetrics: 조회 수 54,474\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- acquisitionStatus: C1 — 정확한 개별 공개 URL과 공개 본문 확인\r\n- provenance: TheQoo 공개 페이지에 재게시된 판 출처 소재. 공개 검색/index를 통해 발견 후 해당 개별 공개 페이지 본문 확인. 원 최초 게시물 URL은 이번 실행에서 확인하지 못했으므로 재게시 provenance를 명시함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n같은 시기에 결혼을 준비하던 두 친구가 결혼과 해외행이라는 반대 선택을 한 뒤 삶이 뒤바뀌었다는 비교·반전 구조가 매우 선명하다. 결혼, 경력, 해외생활, 후회라는 논쟁 요소가 한 이야기 안에 묶여 있다.\r\n\r\n## 확인 메모\r\nTheQoo 공개 본문은 실제 확인했다. 댓글은 읽지 않았다. 제목상 판 출처 재게시물이므로 최초 원문으로 꾸며 기록하지 않았다. 개인 경험담의 사실관계는 별도 검증하지 않았다.",
+      "originalSha256": "a70b7669dcdcb356b4ab93580e43f176b435a380da1b6a483f69396c34d537d4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 103
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3204349278
+제목 - 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식 단체사진에 지인 10명 이하만 남은 상황에서 주변 시선을 의식하고 후회했다는 민망함·공감·인맥 논쟁 요소가 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3204349278",
+    "title": "10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기",
+    "body": "결혼식 단체사진에 지인 10명 이하만 남은 상황에서 주변 시선을 의식하고 후회했다는 민망함·공감·인맥 논쟁 요소가 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼식친구10명이하원판.md",
+      "originalTitle": "10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기",
+      "originalMarkdown": "# 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/3204349278\r\n- exactObservedTitle: 10명 이하 소수인원으로 직장동료 친구 결혼 본식 원판 찍은 후기\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 조회 수 11256\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public URL; poster account, not independently verified\r\n- whyGood: 결혼식 단체사진에 지인 10명 이하만 남은 상황에서 주변 시선을 의식하고 후회했다는 민망함·공감·인맥 논쟁 요소가 강함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "12f0727993be95e433196f8cc4fc2e10aa2b38eea1511f50cd423401287e03e0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 190
+}

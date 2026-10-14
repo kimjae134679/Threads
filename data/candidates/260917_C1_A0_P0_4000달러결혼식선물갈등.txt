@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1byacju
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+자매의 해외 목적지 결혼식 참석을 위해 작성자 부부가 항공·숙박·의상·팁 등 약 4천 달러를 썼다. 별도 현금 대신 직접 만든 맞춤 자수 작품을 선물하려 했는데, 결혼식 참석비와 선물의 기준을 두고 갈등이 생긴 사연이다. 공개 원문 본문을 읽었으며 댓글은 충분히 확인하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1byacju",
+    "title": "제목",
+    "body": "자매의 해외 목적지 결혼식 참석을 위해 작성자 부부가 항공·숙박·의상·팁 등 약 4천 달러를 썼다. 별도 현금 대신 직접 만든 맞춤 자수 작품을 선물하려 했는데, 결혼식 참석비와 선물의 기준을 두고 갈등이 생긴 사연이다. 공개 원문 본문을 읽었으며 댓글은 충분히 확인하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_4000달러결혼식선물갈등.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA Sister Mad About Gift at Destination Wedding\r\n\r\n## 글 내용\r\n자매의 해외 목적지 결혼식 참석을 위해 작성자 부부가 항공·숙박·의상·팁 등 약 4천 달러를 썼다. 별도 현금 대신 직접 만든 맞춤 자수 작품을 선물하려 했는데, 결혼식 참석비와 선물의 기준을 두고 갈등이 생긴 사연이다. 공개 원문 본문을 읽었으며 댓글은 충분히 확인하지 못했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1byacju\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-17 00:45 KST. 공개 페이지에서 score +246 확인. 조회수·전체 댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n이미 결혼식 참석에 4천 달러를 썼는데 현금 선물까지 해야 하는가라는 현실적인 논쟁이 바로 생긴다. 해외결혼식 비용과 가족 기대치의 충돌이 명확하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- source images/screenshots: 실제 파일 미확보\r\n- acquisition: exact public URL + 본문 확인, comments 미확인\r\n- ASSETS_PENDING / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "59319810d9f631bb35798322c4e6e11b1dbcaa6793d6f0ce2ff5baf706c166d9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 264
+}

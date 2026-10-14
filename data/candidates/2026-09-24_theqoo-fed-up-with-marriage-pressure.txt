@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/241495069?category=25889
+제목 - 결혼 얘기가 지겨워 죽겠는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/241495069?category=25889",
+    "title": "결혼 얘기가 지겨워 죽겠는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_theqoo-fed-up-with-marriage-pressure.md",
+      "originalTitle": "결혼 얘기가 지겨워 죽겠는 후기",
+      "originalMarkdown": "# 결혼 얘기가 지겨워 죽겠는 후기\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/241495069?category=25889\r\n- exact_observed_title: `결혼 얘기가 지겨워 죽겠는 후기`\r\n- observed_at: 2026-09-24 00:46 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous/pseudonymous community post; first-person claims are attributed/unverified unless independently established\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not confirmed / not downloaded\r\n- observed_metrics: 조회 1,348\r\n- why_good: 주변 사람들이 반복적으로 결혼·출산을 압박하는 상황이 공감·논쟁형 소재로 바로 연결된다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 결혼과 출산 계획이 없는데도 주변에서 만날 때마다 결혼해야 한다는 말을 반복해 듣고, 자신의 삶을 이상하게 취급하는 분위기에 지쳤다고 적었다.\r\n",
+      "originalSha256": "7bc1574ce702e7973e68603326f7642b6bc1eeef795f7088a57bf048b7f0136c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 111
+}

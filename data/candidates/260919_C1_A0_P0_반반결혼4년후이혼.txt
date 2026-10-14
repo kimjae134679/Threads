@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%9D%B4%ED%98%BC%ED%95%9C%EB%8B%A4%EB%84%A4-%EC%86%8D%EC%83%81%ED%95%98%EB%8B%A4-VvJhfnx7
+제목 - 반반 결혼 후 4년, 5천만원 사고까지 막아줬는데 이혼합니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자의 친구는 결혼을 반반으로 시작하고 4년간 일해 매장을 2개로 늘렸으며, 남편의 비트코인 관련 5천만원 손실도 막아줬다고 한다. 이후 부부가 이혼하게 되면서 양육권과 재산분할 조건까지 얽혔다는 제3자 전언 형식의 사연.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%9D%B4%ED%98%BC%ED%95%9C%EB%8B%A4%EB%84%A4-%EC%86%8D%EC%83%81%ED%95%98%EB%8B%A4-VvJhfnx7",
+    "title": "반반 결혼 후 4년, 5천만원 사고까지 막아줬는데 이혼합니다",
+    "body": "작성자의 친구는 결혼을 반반으로 시작하고 4년간 일해 매장을 2개로 늘렸으며, 남편의 비트코인 관련 5천만원 손실도 막아줬다고 한다. 이후 부부가 이혼하게 되면서 양육권과 재산분할 조건까지 얽혔다는 제3자 전언 형식의 사연.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_반반결혼4년후이혼.md",
+      "originalTitle": "반반 결혼 후 4년, 5천만원 사고까지 막아줬는데 이혼합니다",
+      "originalMarkdown": "# 반반 결혼 후 4년, 5천만원 사고까지 막아줬는데 이혼합니다\r\n\r\n## source\r\nBlind 블라블라\r\n\r\n## 원문 제목\r\n친구 이혼한다네 속상하다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EC%9D%B4%ED%98%BC%ED%95%9C%EB%8B%A4%EB%84%A4-%EC%86%8D%EC%83%81%ED%95%98%EB%8B%A4-VvJhfnx7\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 1,989 / 댓글 33\r\n\r\n## 본문·댓글 확인\r\n본문 읽음. 댓글 전체 미확인. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n작성자의 친구는 결혼을 반반으로 시작하고 4년간 일해 매장을 2개로 늘렸으며, 남편의 비트코인 관련 5천만원 손실도 막아줬다고 한다. 이후 부부가 이혼하게 되면서 양육권과 재산분할 조건까지 얽혔다는 제3자 전언 형식의 사연.\r\n\r\n## 왜 소재로 좋은지\r\n'돈을 많이 벌어 가족에 썼는데 돈만 안다고 비난받았다'는 역설과 5천만원 사고, 양육권 협의가 강한 반응을 만든다. 단 제3자 전언이므로 사실 단정은 금지.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 본문 확인. 제3자 전언이며 별도 검증 없음. source asset 미확보. privacy/human review 필요. publicationAllowed=false.",
+      "originalSha256": "9187c7ea7290d91e986721e743d5225620d4cc44ba51fc9bd1bac3a6eb951937",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 353
+}

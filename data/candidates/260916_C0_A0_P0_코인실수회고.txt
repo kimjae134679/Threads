@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 글 잘 안 쓰는데 불안한 사람들을 위한 글
+내용 - [명시 요약 — 원문 전문 아님]
+공개 Blind 추천 카드에는 2017년부터 코인을 해온 작성자가 가장 뼈아픈 두 번의 실수를 회고하며 1~2년차 코인 이용자에게 경험을 공유하는 글로 노출된다. 공개 검색 결과에서 양자컴퓨터·역프 등 일부 후속 문장도 관측되지만, exact individual source가 확정되지 않았으므로 전체 본문으로 저장하거나 완전성/댓글/미디어를 추정하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "글 잘 안 쓰는데 불안한 사람들을 위한 글",
+    "body": "공개 Blind 추천 카드에는 2017년부터 코인을 해온 작성자가 가장 뼈아픈 두 번의 실수를 회고하며 1~2년차 코인 이용자에게 경험을 공유하는 글로 노출된다. 공개 검색 결과에서 양자컴퓨터·역프 등 일부 후속 문장도 관측되지만, exact individual source가 확정되지 않았으므로 전체 본문으로 저장하거나 완전성/댓글/미디어를 추정하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_코인실수회고.md",
+      "originalTitle": "글 잘 안 쓰는데 불안한 사람들을 위한 글",
+      "originalMarkdown": "# 글 잘 안 쓰는데 불안한 사람들을 위한 글\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind 공개 회사/암호화폐 추천 인덱스\r\n- 개별 원문 링크: 미확인\r\n- 확인된 인덱스: https://www.teamblind.com/kr/company/%EB%82%98%EC%9D%B8%ED%95%98%EC%9D%B4%EC%96%B4/posts/%EB%82%98%EC%9D%B8%ED%95%98%EC%9D%B4%EC%96%B4%20%ED%88%AC%EC%9E%90?page=2\r\n- 공개 재검증(2026-09-21): Blind 암호화폐 추천 카드에서 동일 제목, 작성 표시 `인천메트로서비스 · 졸***`, 본문 시작 `본인은 2017년 부터 코인한 사람임. 몇백억 벌은 건 아니지만`까지 반복 확인됨.\r\n- C0: BLOCKED_EXACT_INDIVIDUAL_SOURCE\r\n- blocker: 공개 검색/추천 카드로 동일 글 존재와 일부 본문은 확인했지만 exact individual Blind URL/stable post ID를 확인하지 못함. 다른 Blind 게시물의 추천 카드를 원문 URL로 간주하지 않음.\r\n- unblockWhen: Exact individual Blind URL/shortlink/stable post ID or another trustworthy unique identifier proving this same individual post becomes publicly resolvable.\r\n- 본문 전체/댓글/원본 source bytes: 미확인\r\n\r\n## 글 내용\r\n공개 Blind 추천 카드에는 2017년부터 코인을 해온 작성자가 가장 뼈아픈 두 번의 실수를 회고하며 1~2년차 코인 이용자에게 경험을 공유하는 글로 노출된다. 공개 검색 결과에서 양자컴퓨터·역프 등 일부 후속 문장도 관측되지만, exact individual source가 확정되지 않았으므로 전체 본문으로 저장하거나 완전성/댓글/미디어를 추정하지 않는다.\r\n\r\n## 평가\r\n- 평가: C1 승격 전 exact provenance 검증 우선\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n- A1/P1: 금지\r\n",
+      "originalSha256": "f70c1d21ce27746117ddff520760a65333cd2b50423aaa8057fc37abe0cb9c03",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 275
+}

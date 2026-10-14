@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3952735923
+제목 - 사돈어른 조문 며칠을 가있어야 하나요?
+내용 - [명시 요약 — 원문 전문 아님]
+3~4시간 거리 장례에 이틀 조문했지만 발인을 못 본 일을 두고 동서가 눈물로 서운함을 말하는 상황이라 가족 의무의 경계가 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3952735923",
+    "title": "사돈어른 조문 며칠을 가있어야 하나요?",
+    "body": "3~4시간 거리 장례에 이틀 조문했지만 발인을 못 본 일을 두고 동서가 눈물로 서운함을 말하는 상황이라 가족 의무의 경계가 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_사돈어른조문며칠.md",
+      "originalTitle": "[네이트판] 사돈어른 조문 며칠을 가있어야 하나요?",
+      "originalMarkdown": "# [네이트판] 사돈어른 조문 며칠을 가있어야 하나요?\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/3952735923\r\n- exactObservedTitle: [네이트판] 사돈어른 조문 며칠을 가있어야 하나요?\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 43,441, 댓글 204\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 3~4시간 거리 장례에 이틀 조문했지만 발인을 못 본 일을 두고 동서가 눈물로 서운함을 말하는 상황이라 가족 의무의 경계가 선명함.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: TheQoo 공개 네이트판 재전달 페이지 관찰; 원 네이트판 원문으로 취급하지 않음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "debbf186eaceec505835e6847238123c2c3d5c84be1cf733a1b59f262d960934",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 181
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3339966745
+제목 - 휴가비 내라는 남편
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3339966745",
+    "title": "휴가비 내라는 남편",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_휴가비내라는남편.md",
+      "originalTitle": "휴가비 내라는 남편",
+      "originalMarkdown": "# 휴가비 내라는 남편\r\n\r\n- source: TheQoo (Nate Pann 재전달)\r\n- publicUrl: https://theqoo.net/square/3339966745\r\n- exactObservedTitle: 판) 휴가비 내라는 남편\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 수 71716\r\n- bodyRead: true (공개 검색 노출 범위)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes\r\n- provenance: C1 / exact public repost URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n두돌 아이를 키우는 전업 배우자에게 생활비 140만원을 주면서 시모 용돈은 유지하고 휴가비까지 요구한다는 구조가 돈·가사·부양 우선순위 논쟁을 만든다.\r\n",
+      "originalSha256": "e71c96c4920de73d04181578ed8a908cd4a204d7d3526c69eb90d39e84d3c9d6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 90
+}

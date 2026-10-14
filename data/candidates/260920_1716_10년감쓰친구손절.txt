@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2193330303
+제목 - 10년동안 날 감쓰 취급하던 친구 손절 후기
+내용 - [명시 요약 — 원문 전문 아님]
+10년 친구가 개인사를 가족에게 전달하고 일방적으로 감정 배출을 한다는 누적 갈등과 손절 결말이 있어 공감·반박 모두 강하게 나올 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2193330303",
+    "title": "10년동안 날 감쓰 취급하던 친구 손절 후기",
+    "body": "10년 친구가 개인사를 가족에게 전달하고 일방적으로 감정 배출을 한다는 누적 갈등과 손절 결말이 있어 공감·반박 모두 강하게 나올 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_10년감쓰친구손절.md",
+      "originalTitle": "10년동안 날 감쓰 취급하던 친구 손절 후기",
+      "originalMarkdown": "# 10년동안 날 감쓰 취급하던 친구 손절 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/2193330303\r\n- exactObservedTitle: 10년동안 날 감쓰 취급하던 친구 손절 후기\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact individual public URL; first-person account, independently unverified\r\n- whyGood: 10년 친구가 개인사를 가족에게 전달하고 일방적으로 감정 배출을 한다는 누적 갈등과 손절 결말이 있어 공감·반박 모두 강하게 나올 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3d8b7a83045dd2d60c875ffa075b98c0074360921f4864070b134da5137184a3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 187
+}

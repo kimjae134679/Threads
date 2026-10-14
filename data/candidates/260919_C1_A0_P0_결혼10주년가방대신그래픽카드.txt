@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC10%EC%A3%BC%EB%85%84%EC%9D%B4%EB%9D%BC-%EC%99%80%EC%9D%B4%ED%94%84-%EA%B9%9C%EC%A7%9D%EC%84%A0%EB%AC%BC-%ED%95%98%EB%A0%A4%ED%96%88%EB%8A%94%EB%8D%B0-bts77i8k
+제목 - 결혼 10주년 명품가방 사려다 잔소리 듣고 그래픽카드로 바꿨습니다
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 10주년을 맞아 몰래 모은 약 300만원으로 배우자에게 200~300만원대 명품가방을 선물하려던 작성자가, 직전에 잔소리를 듣고 기분이 상해 선물을 접고 자신의 그래픽카드를 사겠다고 쓴 글. 공개 페이지 본문과 댓글 일부를 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC10%EC%A3%BC%EB%85%84%EC%9D%B4%EB%9D%BC-%EC%99%80%EC%9D%B4%ED%94%84-%EA%B9%9C%EC%A7%9D%EC%84%A0%EB%AC%BC-%ED%95%98%EB%A0%A4%ED%96%88%EB%8A%94%EB%8D%B0-bts77i8k",
+    "title": "결혼 10주년 명품가방 사려다 잔소리 듣고 그래픽카드로 바꿨습니다",
+    "body": "결혼 10주년을 맞아 몰래 모은 약 300만원으로 배우자에게 200~300만원대 명품가방을 선물하려던 작성자가, 직전에 잔소리를 듣고 기분이 상해 선물을 접고 자신의 그래픽카드를 사겠다고 쓴 글. 공개 페이지 본문과 댓글 일부를 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼10주년가방대신그래픽카드.md",
+      "originalTitle": "결혼 10주년 명품가방 사려다 잔소리 듣고 그래픽카드로 바꿨습니다",
+      "originalMarkdown": "# 결혼 10주년 명품가방 사려다 잔소리 듣고 그래픽카드로 바꿨습니다\r\n\r\n## 원문 제목\r\n결혼10주년이라 와이프 깜짝선물 하려했는데\r\n\r\n## source\r\nBlind / 공개 개별 페이지\r\n\r\n## 글 내용\r\n결혼 10주년을 맞아 몰래 모은 약 300만원으로 배우자에게 200~300만원대 명품가방을 선물하려던 작성자가, 직전에 잔소리를 듣고 기분이 상해 선물을 접고 자신의 그래픽카드를 사겠다고 쓴 글. 공개 페이지 본문과 댓글 일부를 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC10%EC%A3%BC%EB%85%84%EC%9D%B4%EB%9D%BC-%EC%99%80%EC%9D%B4%ED%94%84-%EA%B9%9C%EC%A7%9D%EC%84%A0%EB%AC%BC-%ED%95%98%EB%A0%A4%ED%96%88%EB%8A%94%EB%8D%B0-bts77i8k\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-19 13:17 KST\r\n- 조회수: 383\r\n- 좋아요: 2\r\n- 댓글: 8\r\n\r\n## 확인 상태\r\n- full body read: 예\r\n- comments read: 일부\r\n- 이미지/스크린샷 존재 여부: 페이지 내 이미지 표시 확인, 실제 source asset 미확보\r\n\r\n## 평가\r\n명품가방→그래픽카드라는 즉각적인 반전이 있고 가벼운 부부 논쟁 소재라 무거운 결혼·빚 후보 사이의 다양성을 준다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. page image existence observed, source bytes/screenshots not acquired. acquisition/provenance: EXACT_PUBLIC_URL_VERIFIED / ASSETS_PENDING. A0/P0. publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation 미실행. 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "3eb9a6a6da9a3c029b80b84bfac89857f07dc2225aa53c05d1119422a77405a7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 432
+}

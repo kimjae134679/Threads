@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%AC%B4%EC%9D%8C%EC%9C%BC%EB%A1%9C-%ED%95%B4%EB%86%93%EB%8A%94-%EA%B2%83%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%B8%EC%9B%80-p1i0z0nk
+제목 - 배우자 핸드폰 무음으로 해놓는 것에 대한 싸움
+내용 - [명시 요약 — 원문 전문 아님]
+사소해 보이는 휴대폰 무음 설정이 아이의 통화와 늦은 귀가 상황에서 반복 갈등으로 커지는 매우 공감하기 쉬운 생활형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%AC%B4%EC%9D%8C%EC%9C%BC%EB%A1%9C-%ED%95%B4%EB%86%93%EB%8A%94-%EA%B2%83%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%B8%EC%9B%80-p1i0z0nk",
+    "title": "배우자 핸드폰 무음으로 해놓는 것에 대한 싸움",
+    "body": "사소해 보이는 휴대폰 무음 설정이 아이의 통화와 늦은 귀가 상황에서 반복 갈등으로 커지는 매우 공감하기 쉬운 생활형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_배우자핸드폰무음싸움.md",
+      "originalTitle": "배우자 핸드폰 무음으로 해놓는 것에 대한 싸움",
+      "originalMarkdown": "# 배우자 핸드폰 무음으로 해놓는 것에 대한 싸움\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%AC%B4%EC%9D%8C%EC%9C%BC%EB%A1%9C-%ED%95%B4%EB%86%93%EB%8A%94-%EA%B2%83%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%B8%EC%9B%80-p1i0z0nk\r\n- exactObservedTitle: 배우자 핸드폰 무음으로 해놓는 것에 대한 싸움\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 258, 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 사소해 보이는 휴대폰 무음 설정이 아이의 통화와 늦은 귀가 상황에서 반복 갈등으로 커지는 매우 공감하기 쉬운 생활형 소재.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 상황은 게시자 서술.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c6a289f427a07b95b4c33cb2c71559464b89da816145ad7d3c209f6dbfa6e023",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 364
+}

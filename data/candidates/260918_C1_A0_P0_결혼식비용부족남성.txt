@@ -1,0 +1,29 @@
+원문링크 - https://bbs.ruliweb.com/community/board/300143/read/73083511
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+이미지 중심 유머 포스팅. 공개 페이지에서 제목과 댓글 반응은 확인했으나 원문 이미지 자체의 전체 내용은 이번 관측에서 읽지 못했다. **본문 미확인**.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://bbs.ruliweb.com/community/board/300143/read/73083511",
+    "title": "제목",
+    "body": "이미지 중심 유머 포스팅. 공개 페이지에서 제목과 댓글 반응은 확인했으나 원문 이미지 자체의 전체 내용은 이번 관측에서 읽지 못했다. **본문 미확인**.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼식비용부족남성.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼식 비용이 부족했던 남성\r\n\r\n## 글 내용\r\n이미지 중심 유머 포스팅. 공개 페이지에서 제목과 댓글 반응은 확인했으나 원문 이미지 자체의 전체 내용은 이번 관측에서 읽지 못했다. **본문 미확인**.\r\n\r\n## 정확한 링크\r\nhttps://bbs.ruliweb.com/community/board/300143/read/73083511\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-18 08:37 KST\r\n- 조회수: 18,161\r\n- 추천: 79\r\n- 댓글 수: 이번 관측에서 정확한 총수 미확인\r\n\r\n## 평가\r\n결혼비용이라는 보편적 주제에 예상 밖 해결 방식이 있는 이미지형 소재로 보이지만 실제 원문 이미지 확인이 우선이다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source image 존재: 확인\r\n- 실제 source screenshot/media 확보: 0\r\n- acquisition: ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 필요 / 04_REVIEW_PUBLISH만 게시",
+      "originalSha256": "a484f5435b5278808d6e94c0e881f68f7fa5607b8fa02948ecfc519fce4ada66",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 199
+}

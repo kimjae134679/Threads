@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3594406593
+제목 - 미술학원덬 조금 속상한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+아이들을 가르치는 일을 좋아하지만 학생을 통해 부모가 학원비를 아까워한다는 말을 전달받으며 현타를 겪는 상황이라 직업 존중과 사교육 가치에 대한 공감·논쟁 요소가 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3594406593",
+    "title": "미술학원덬 조금 속상한 후기",
+    "body": "아이들을 가르치는 일을 좋아하지만 학생을 통해 부모가 학원비를 아까워한다는 말을 전달받으며 현타를 겪는 상황이라 직업 존중과 사교육 가치에 대한 공감·논쟁 요소가 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_3594406593.md",
+      "originalTitle": "미술학원덬 조금 속상한 후기",
+      "originalMarkdown": "# 미술학원덬 조금 속상한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/3594406593\r\n- exactObservedTitle: 미술학원덬 조금 속상한 후기\r\n- observedAt: 2026-09-23 12:18 KST\r\n- observedMetrics: 조회 16,239 / 댓글 25\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 아이들을 가르치는 일을 좋아하지만 학생을 통해 부모가 학원비를 아까워한다는 말을 전달받으며 현타를 겪는 상황이라 직업 존중과 사교육 가치에 대한 공감·논쟁 요소가 있다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1.\r\n- provenance: TheQoo 공개 개인 경험 게시물. 개인 경험 주장은 외부 검증하지 않았음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "480d7195e6c4f5a583ba36efaa1a3281e99c3c92d3355464f420b5f171df9da3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

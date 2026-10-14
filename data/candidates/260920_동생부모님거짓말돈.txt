@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2729653330
+제목 - 동생이 부모님한테 거짓말하고 돈 받아가는데 알릴까말까 고민되는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+돈이 있는 동생이 형편이 넉넉하지 않은 부모에게 계속 돈을 받는다는 가족·돈·거짓말 삼중 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2729653330",
+    "title": "동생이 부모님한테 거짓말하고 돈 받아가는데 알릴까말까 고민되는 후기",
+    "body": "돈이 있는 동생이 형편이 넉넉하지 않은 부모에게 계속 돈을 받는다는 가족·돈·거짓말 삼중 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_동생부모님거짓말돈.md",
+      "originalTitle": "동생이 부모님한테 거짓말하고 돈 받아가는데 알릴까말까 고민되는 후기",
+      "originalMarkdown": "# 동생이 부모님한테 거짓말하고 돈 받아가는데 알릴까말까 고민되는 후기\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2729653330\r\n- exactObservedTitle: 동생이 부모님한테 거짓말하고 돈 받아가는데 알릴까말까 고민되는 후기\r\n- observedAt: 2026-09-20 09:19 KST\r\n- observedMetrics: 4,189 / 18 (page-displayed counters; semantics not further inferred)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_URL_BODY_READ\r\n- provenance: TheQoo individual public review; financial claims are poster-reported only\r\n- whyGood: 돈이 있는 동생이 형편이 넉넉하지 않은 부모에게 계속 돈을 받는다는 가족·돈·거짓말 삼중 갈등.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "09a14421504caaa25bb28a89ffd63df83f65bcdfc1e6d878189eb7dacec251e6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 177
+}

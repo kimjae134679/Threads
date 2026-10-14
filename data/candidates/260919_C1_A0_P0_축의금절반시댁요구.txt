@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/18daerl
+제목 - 결혼식 끝나고 축의금 절반을 달라는 시댁
+내용 - [명시 요약 — 원문 전문 아님]
+원래 파티 없이 결혼한 부부에게 시댁이 전통을 이유로 결혼 파티를 열자고 했고, 사전에 부부가 돈을 내지 않는 조건으로 합의했다. 파티 뒤 현금 선물을 정산하는 과정에서 시댁과 부부 사이에 축의금 절반을 둘러싼 갈등이 생긴 사연. 공개 본문 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/18daerl",
+    "title": "결혼식 끝나고 축의금 절반을 달라는 시댁",
+    "body": "원래 파티 없이 결혼한 부부에게 시댁이 전통을 이유로 결혼 파티를 열자고 했고, 사전에 부부가 돈을 내지 않는 조건으로 합의했다. 파티 뒤 현금 선물을 정산하는 과정에서 시댁과 부부 사이에 축의금 절반을 둘러싼 갈등이 생긴 사연. 공개 본문 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_축의금절반시댁요구.md",
+      "originalTitle": "결혼식 끝나고 축의금 절반을 달라는 시댁",
+      "originalMarkdown": "# 결혼식 끝나고 축의금 절반을 달라는 시댁\r\n\r\n## source\r\nReddit / r/AmItheAsshole\r\n\r\n## 원문 제목\r\nAITA if we decided not to give 50% of the wedding cash gifts to my in-laws and offer an apology after?\r\n\r\n## 글 내용\r\n원래 파티 없이 결혼한 부부에게 시댁이 전통을 이유로 결혼 파티를 열자고 했고, 사전에 부부가 돈을 내지 않는 조건으로 합의했다. 파티 뒤 현금 선물을 정산하는 과정에서 시댁과 부부 사이에 축의금 절반을 둘러싼 갈등이 생긴 사연. 공개 본문 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/18daerl\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 게시물 점수 +4,078 확인\r\n- 조회수/댓글수 미확인\r\n\r\n## 평가\r\n'시댁이 주도한 결혼식의 축의금은 누구 돈인가'라는 한국 독자에게도 바로 통하는 돈·결혼 논쟁이다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "9bb73f6ea226c804b072af62faecc9a128cc4476e98bacb1f98a5246b41f0749",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 276
+}

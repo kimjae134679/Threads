@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/job/4341320086
+제목 - 직장동료 축의금 질문
+내용 - [명시 요약 — 원문 전문 아님]
+같은 팀이고 청첩장 모임까지 했지만 결혼식 당일은 못 가는 직장동료에게 10만원이 무난한지를 묻는 매우 짧고 즉답을 부르는 직장·돈 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/job/4341320086",
+    "title": "직장동료 축의금 질문",
+    "body": "같은 팀이고 청첩장 모임까지 했지만 결혼식 당일은 못 가는 직장동료에게 10만원이 무난한지를 묻는 매우 짧고 즉답을 부르는 직장·돈 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_직장동료축의금질문.md",
+      "originalTitle": "직장동료 축의금 질문",
+      "originalMarkdown": "# 직장동료 축의금 질문\r\n\r\n- stage: C1\r\n- source: TheQoo 직장인\r\n- publicUrl: https://theqoo.net/job/4341320086\r\n- exactObservedTitle: `직장동료 축의금 질문`\r\n- observedAt: 2026-09-20 07:17 KST\r\n- observedMetrics: 조회 2 / 댓글 0 (검색 관찰 시점 표시값)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- acquisition: public indexed individual page; BODY_READ\r\n- provenance: TheQoo 개별 공개 게시글.\r\n- whyGood: 같은 팀이고 청첩장 모임까지 했지만 결혼식 당일은 못 가는 직장동료에게 10만원이 무난한지를 묻는 매우 짧고 즉답을 부르는 직장·돈 논쟁 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a12e418a31cea3443cbe21d45b1948a61b8d9d5493e64f38c18814318cd8386f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 175
+}

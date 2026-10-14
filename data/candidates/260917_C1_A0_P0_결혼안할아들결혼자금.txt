@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/10hcnod
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+부모가 딸의 결혼식에는 8천 달러를 지원했다. 결혼할 생각이 없다고 확신하는 32세 아들에게도 형평성을 맞추겠다며 같은 8천 달러를 현금으로 줬는데, 딸이 자신도 결혼비용 대신 현금을 받았으면 더 유용했을 것이라며 불공평하다고 반발한 가족 돈 갈등이다. 공개 원문 본문을 읽었고 공개 댓글은 일부만 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/10hcnod",
+    "title": "제목",
+    "body": "부모가 딸의 결혼식에는 8천 달러를 지원했다. 결혼할 생각이 없다고 확신하는 32세 아들에게도 형평성을 맞추겠다며 같은 8천 달러를 현금으로 줬는데, 딸이 자신도 결혼비용 대신 현금을 받았으면 더 유용했을 것이라며 불공평하다고 반발한 가족 돈 갈등이다. 공개 원문 본문을 읽었고 공개 댓글은 일부만 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼안할아들결혼자금.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for giving my son money for a wedding he'll never have?\r\n\r\n## 글 내용\r\n부모가 딸의 결혼식에는 8천 달러를 지원했다. 결혼할 생각이 없다고 확신하는 32세 아들에게도 형평성을 맞추겠다며 같은 8천 달러를 현금으로 줬는데, 딸이 자신도 결혼비용 대신 현금을 받았으면 더 유용했을 것이라며 불공평하다고 반발한 가족 돈 갈등이다. 공개 원문 본문을 읽었고 공개 댓글은 일부만 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/10hcnod\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-17 00:45 KST. 공개 페이지에서 score +1,526 확인. 조회수·전체 댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n결혼하지 않는 자녀에게도 '결혼자금'을 현금으로 줘야 공평한가라는 질문이 즉시 생기고, 형제간 공정성·부모 지원·현금 사용처가 한 번에 얽혀 의견이 갈리기 좋다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- source images/screenshots: 실제 파일 미확보\r\n- acquisition: exact public URL + 본문 확인, comments 일부 확인\r\n- ASSETS_PENDING / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH만",
+      "originalSha256": "4112b79fb5dc79f87808a49ed7301cdc1786311192bf1d8897ffa942368f08a1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 280
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/lostark/4811/1419953
+제목 - 메이플 길드사람 여친 뺏어진 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/lostark/4811/1419953",
+    "title": "메이플 길드사람 여친 뺏어진 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_메이플길드사람여친뺏어진썰.md",
+      "originalTitle": "메이플 길드사람 여친 뺏어진 썰",
+      "originalMarkdown": "# 메이플 길드사람 여친 뺏어진 썰\r\n\r\n- stage: C1\r\n- source: Inven 로스트아크 자유게시판\r\n- sourceUrl: https://www.inven.co.kr/board/lostark/4811/1419953\r\n- exactObservedTitle: 메이플 길드사람 여친 뺏어진 썰\r\n- observedAt: 2026-09-21 07:16 KST\r\n- observedMetrics: 조회 858 / 추천 0 / 댓글 10\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: page image indicator present; not inspected\r\n- acquisition: public individual page indexed and body text publicly readable\r\n- provenance: exact individual public URL verified\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n\r\n## 왜 소재로 좋은가\r\n길드 내 커플 중 한 사람이 작성자에게 연락하기 시작했고 작성자는 거절·차단했는데, 정작 길드에서는 '친구 여자친구를 뺏은 사람'으로 오해받게 됐다는 짧고 강한 반전형 이야기다. 온라인 인간관계·오해·억울함이라는 즉각적인 반응 포인트가 있다.\r\n\r\n## 확인 메모\r\n본문을 실제 공개 페이지에서 확인했다. 댓글은 읽지 않았다. 이미지 다운로드·스크린샷·OCR은 하지 않았다. 확인하지 않은 권리·moderation·asset/publication 상태는 추정하지 않는다.\r\n",
+      "originalSha256": "2fbb2ed42f498893816ff6b1636d57e73f6c34d3afa9d457e7910629317ff62e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 111
+}

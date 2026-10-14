@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B9%9C%EA%B5%AC-%EA%B6%81%EA%B8%88%ED%95%B4%EC%84%9C-%EA%B8%80-%EC%98%AC%EB%A0%A4-t0fwrstw
+제목 - 결혼식 친구 궁금해서 글 올려.
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B9%9C%EA%B5%AC-%EA%B6%81%EA%B8%88%ED%95%B4%EC%84%9C-%EA%B8%80-%EC%98%AC%EB%A0%A4-t0fwrstw",
+    "title": "결혼식 친구 궁금해서 글 올려.",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_악랄상사결혼식친구0명.md",
+      "originalTitle": "결혼식 친구 궁금해서 글 올려.",
+      "originalMarkdown": "# 결혼식 친구 궁금해서 글 올려.\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B9%9C%EA%B5%AC-%EA%B6%81%EA%B8%88%ED%95%B4%EC%84%9C-%EA%B8%80-%EC%98%AC%EB%A0%A4-t0fwrstw\r\n- exact_observed_title: 결혼식 친구 궁금해서 글 올려.\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 778 / 댓글 6\r\n- body_read: 예\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 직원을 괴롭히던 상사의 결혼식에서 친구 사진에 아무도 나오지 않았다는 관찰과 작성자 자신의 하객 걱정이 연결되는 민망·공감 소재.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; characterization of boss is poster claim\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "043f7e70150c19abd5f2e19cd6eea454af5ef1b634394eaf95196ac33700fce3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 216
+}

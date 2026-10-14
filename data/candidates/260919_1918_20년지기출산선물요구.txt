@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EB%82%B4%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%ED%95%A0%EA%B2%8C-%EC%9E%88%EB%82%98-4OpAYDjP
+제목 - 친구 내가 이해해야할게 있나
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EB%82%B4%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%ED%95%A0%EA%B2%8C-%EC%9E%88%EB%82%98-4OpAYDjP",
+    "title": "친구 내가 이해해야할게 있나",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_20년지기출산선물요구.md",
+      "originalTitle": "친구 내가 이해해야할게 있나",
+      "originalMarkdown": "# 친구 내가 이해해야할게 있나\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EB%82%B4%EA%B0%80-%EC%9D%B4%ED%95%B4%ED%95%B4%EC%95%BC%ED%95%A0%EA%B2%8C-%EC%9E%88%EB%82%98-4OpAYDjP\r\n- exact_observed_title: 친구 내가 이해해야할게 있나\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 639 / 댓글 17\r\n- body_read: 예\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 20년지기에게 축의 50만원·가방순이까지 했는데 출산선물을 직접 요구받고 돌잔치 후 손절을 고민하는 선물/우정 갈등.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; public page readable without bypass\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a260d6eae170579a96e4493127a271eba2b159359162de071edbf2165912c9f9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 213
+}

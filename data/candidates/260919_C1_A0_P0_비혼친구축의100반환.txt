@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%95%88%ED%95%9C%EB%8B%A4%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%B6%95%EC%9D%98%EA%B8%88-7y7T8CVu
+제목 - 비혼 친구에게 결혼 축의금 100만원을 언제 돌려줘야 하나
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%95%88%ED%95%9C%EB%8B%A4%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%B6%95%EC%9D%98%EA%B8%88-7y7T8CVu",
+    "title": "비혼 친구에게 결혼 축의금 100만원을 언제 돌려줘야 하나",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_비혼친구축의100반환.md",
+      "originalTitle": "비혼 친구에게 결혼 축의금 100만원을 언제 돌려줘야 하나",
+      "originalMarkdown": "# 비혼 친구에게 결혼 축의금 100만원을 언제 돌려줘야 하나\r\n\r\n- source: Blind / 블라블라\r\n- exact observed title: `결혼안한다는 친구 축의금?`\r\n- public URL: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%95%88%ED%95%9C%EB%8B%A4%EB%8A%94-%EC%B9%9C%EA%B5%AC-%EC%B6%95%EC%9D%98%EA%B8%88-7y7T8CVu\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 150 / 댓글 6\r\n- body read: 예. 4인 계모임에서 결혼한 둘은 각 100만원을 받았고 비혼주의 친구에게 몇 살에 반환할지 묻는 본문 확인.\r\n- comments read: 예. 공개 댓글에서 선언 시 반환, 40/60세 등의 반응 확인.\r\n- image/screenshot: 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 결혼을 하지 않는 사람에게 경조사 계의 형평성을 어떻게 맞출지 독특하고 즉시 토론 가능한 소재.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_READ / COMMENTS_READ.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "e8d9b75459e1ada9d53ca280c7cce1fd9b6c8bbaa93a1bd6308b41248b739abc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 220
+}

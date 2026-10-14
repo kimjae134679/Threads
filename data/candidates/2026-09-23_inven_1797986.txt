@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1797986
+제목 - 1000건 배달 해보고 쓰는 바달 알바 _ 자전거
+내용 - [명시 요약 — 원문 전문 아님]
+자전거 배달 1,000건을 채운 작성자가 실제 수입과 장비 구매 과정을 풀어내는 경험담으로, 부업 수익·장비 과투자·배달 현실이라는 돈 이야기와 웃긴 자기반전이 함께 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1797986",
+    "title": "1000건 배달 해보고 쓰는 바달 알바 _ 자전거",
+    "body": "자전거 배달 1,000건을 채운 작성자가 실제 수입과 장비 구매 과정을 풀어내는 경험담으로, 부업 수익·장비 과투자·배달 현실이라는 돈 이야기와 웃긴 자기반전이 함께 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_inven_1797986.md",
+      "originalTitle": "1000건 배달 해보고 쓰는 바달 알바 _ 자전거",
+      "originalMarkdown": "# 1000건 배달 해보고 쓰는 바달 알바 _ 자전거\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1797986\r\n- exactObservedTitle: 1000건 배달 해보고 쓰는 바달 알바 _ 자전거\r\n- observedAt: 2026-09-23 23:14 KST\r\n- observedMetrics: 조회 20,378 / 추천 38 / 댓글 49\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true\r\n- whyGood: 자전거 배달 1,000건을 채운 작성자가 실제 수입과 장비 구매 과정을 풀어내는 경험담으로, 부업 수익·장비 과투자·배달 현실이라는 돈 이야기와 웃긴 자기반전이 함께 있다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 페이지 내 이미지 존재는 확인했지만 다운로드하지 않음.\r\n- provenance: Inven 공개 게시물. 작성자의 개인 경험 및 수입 주장은 별도 검증하지 않았음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "52e8f8660ba46e69248c7090d2c964915c00206be604b79c6f42fce148a6e4ca",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 224
+}

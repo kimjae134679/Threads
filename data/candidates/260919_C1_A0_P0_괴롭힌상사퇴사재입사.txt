@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%87%B4%EC%82%AC%ED%95%9C%EA%B3%B3%EC%97%90-%EC%9E%AC%EC%9E%85%EC%82%AC-tmw1r154
+제목 - 나 괴롭히던 상사가 퇴사하자 회사에서 다시 돌아오랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+공개 페이지 본문 확인. 작성자는 이전 직장에서 상사의 괴롭힘 때문에 울면서 다니다 9개월 만에 퇴사했다. 이후 자신과 사이가 좋았던 사람이 최고 관리직이 되고 괴롭히던 상사는 퇴사했으며, 회사에서 다시 돌아오라는 연락을 받아 재입사를 고민한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%87%B4%EC%82%AC%ED%95%9C%EA%B3%B3%EC%97%90-%EC%9E%AC%EC%9E%85%EC%82%AC-tmw1r154",
+    "title": "나 괴롭히던 상사가 퇴사하자 회사에서 다시 돌아오랍니다",
+    "body": "공개 페이지 본문 확인. 작성자는 이전 직장에서 상사의 괴롭힘 때문에 울면서 다니다 9개월 만에 퇴사했다. 이후 자신과 사이가 좋았던 사람이 최고 관리직이 되고 괴롭히던 상사는 퇴사했으며, 회사에서 다시 돌아오라는 연락을 받아 재입사를 고민한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_괴롭힌상사퇴사재입사.md",
+      "originalTitle": "나 괴롭히던 상사가 퇴사하자 회사에서 다시 돌아오랍니다",
+      "originalMarkdown": "# 나 괴롭히던 상사가 퇴사하자 회사에서 다시 돌아오랍니다\r\n\r\n## 원문 제목\r\n퇴사한곳에 재입사\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n공개 페이지 본문 확인. 작성자는 이전 직장에서 상사의 괴롭힘 때문에 울면서 다니다 9개월 만에 퇴사했다. 이후 자신과 사이가 좋았던 사람이 최고 관리직이 되고 괴롭히던 상사는 퇴사했으며, 회사에서 다시 돌아오라는 연락을 받아 재입사를 고민한다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%ED%87%B4%EC%82%AC%ED%95%9C%EA%B3%B3%EC%97%90-%EC%9E%AC%EC%9E%85%EC%82%AC-tmw1r154\r\n\r\n## 관측\r\n- 관측시각: 2026-09-19 09:20 KST\r\n- 조회수: 666\r\n- 댓글: 9\r\n- 본문: 읽음\r\n- 댓글: 일부 공개 노출 확인\r\n- 이미지/스크린샷 존재: 미확인\r\n\r\n## 평가\r\n'문제 인물이 사라진 옛 직장으로 돌아갈 것인가'라는 선택지가 명확하고 직장인 공감과 경험담 댓글을 끌기 좋다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL 확인. acquisition/provenance: C1_EXACT_PUBLIC_PAGE_VERIFIED. A0/P0. publicationAllowed=false.",
+      "originalSha256": "1bde97bc3441f349afca180f2bfe17f206f3913ebf1f3909eca261daadc46655",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 334
+}

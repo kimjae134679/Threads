@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 애플: 다른 회사가 만든 폴더블폰은 완성도가 별로다.
+내용 - [명시 요약 — 원문 전문 아님]
+경쟁사 폴더블폰의 완성도를 평가했다는 애플 관련 IT 논쟁 후보로 과거 수집됐다. 일반 제품 뉴스 성격이 강해 현재 취향에서는 우선순위가 낮다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "애플: 다른 회사가 만든 폴더블폰은 완성도가 별로다.",
+    "body": "경쟁사 폴더블폰의 완성도를 평가했다는 애플 관련 IT 논쟁 후보로 과거 수집됐다. 일반 제품 뉴스 성격이 강해 현재 취향에서는 우선순위가 낮다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_애플폴더블완성도별로.md",
+      "originalTitle": "애플: 다른 회사가 만든 폴더블폰은 완성도가 별로다.",
+      "originalMarkdown": "# 애플: 다른 회사가 만든 폴더블폰은 완성도가 별로다.\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: TheQoo HOT\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n경쟁사 폴더블폰의 완성도를 평가했다는 애플 관련 IT 논쟁 후보로 과거 수집됐다. 일반 제품 뉴스 성격이 강해 현재 취향에서는 우선순위가 낮다.\r\n\r\n## 평가\r\n- 평가: 낮은 우선순위 / 원문 검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "4af53d32358c3f0c8400bc1cd0813fb051545dec781e38c71c7b67fb86dbec63",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 160
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728512?iskin=webzine
+제목 - 군대리아 최신 근황
+내용 - [명시 요약 — 원문 전문 아님]
+35사단 신교대에 시범적으로 노브랜드가 생겼다는 짧은 게시물이다. 본문과 첨부 이미지가 함께 있는 형식이며 페이지 본문은 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728512?iskin=webzine",
+    "title": "군대리아 최신 근황",
+    "body": "35사단 신교대에 시범적으로 노브랜드가 생겼다는 짧은 게시물이다. 본문과 첨부 이미지가 함께 있는 형식이며 페이지 본문은 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_군대리아최신근황.md",
+      "originalTitle": "군대리아 최신 근황",
+      "originalMarkdown": "# 군대리아 최신 근황\r\n\r\n## 글 내용\r\n35사단 신교대에 시범적으로 노브랜드가 생겼다는 짧은 게시물이다. 본문과 첨부 이미지가 함께 있는 형식이며 페이지 본문은 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728512?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 11:36 KST 부근\r\n- 조회 571 / 추천 0 / 댓글 5\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n군대 경험과 편의점 브랜드의 의외 조합이라 가볍게 의견이 붙기 좋다. 다만 현재 반응량은 초기 단계라 후속 상승 여부를 볼 가치가 있다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 첨부 이미지 존재: 예\r\n- 실제 source screenshot/media 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n",
+      "originalSha256": "4d8e26946d46c0146cb600143da9930c4f04cc0e541ed03a5e7f401bbdf8a7c3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 198
+}

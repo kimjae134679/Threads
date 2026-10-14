@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/554962330
+제목 - 시누이가 부모님께 준 3천만원, 우리한테 줬다며 돌려달랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+결혼한 시누이가 부모에게 3천만원을 드렸고, 이후 그 돈을 둘러싸고 시부모와 신혼부부 사이에 반환 요구가 생기는 가족 금전 갈등 사연. 공개 페이지 본문을 읽음. 댓글 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/554962330",
+    "title": "시누이가 부모님께 준 3천만원, 우리한테 줬다며 돌려달랍니다",
+    "body": "결혼한 시누이가 부모에게 3천만원을 드렸고, 이후 그 돈을 둘러싸고 시부모와 신혼부부 사이에 반환 요구가 생기는 가족 금전 갈등 사연. 공개 페이지 본문을 읽음. 댓글 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_시누이3천만원돌려달라.md",
+      "originalTitle": "시누이가 부모님께 준 3천만원, 우리한테 줬다며 돌려달랍니다",
+      "originalMarkdown": "# 시누이가 부모님께 준 3천만원, 우리한테 줬다며 돌려달랍니다\r\n\r\n## source\r\nTheQoo (판 재게시)\r\n\r\n## 원문 제목\r\n[판] 시누가 시부모님께 준 돈. 시부모님이 저희 줬다고 돌려달래요\r\n\r\n## 글 내용\r\n결혼한 시누이가 부모에게 3천만원을 드렸고, 이후 그 돈을 둘러싸고 시부모와 신혼부부 사이에 반환 요구가 생기는 가족 금전 갈등 사연. 공개 페이지 본문을 읽음. 댓글 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/554962330\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관찰: 2026-09-19 07:16 KST\r\n- 조회수 9,476 / 댓글 95\r\n\r\n## 평가\r\n3천만원이라는 구체적 금액과 '누가 누구에게 준 돈인가'가 꼬이는 가족 돈 갈등이라 즉시 의견을 내기 좋다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/media 미확보. acquisition=EXACT_PUBLIC_URL_VERIFIED / provenance=C1. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료.",
+      "originalSha256": "26807b825a3d3496aeb32284cec8650ecdf49a97d2d1189ae7a5fe17b22102ce",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 219
+}

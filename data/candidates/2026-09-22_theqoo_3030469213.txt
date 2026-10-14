@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3030469213
+제목 - 친구랑 자강두천으로 싸운 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구가 야근 종료 시간을 알려주기로 해놓고 연락하지 않았고 작성자도 일부러 먼저 묻지 않으면서 약속이 깨진 상황이라 연락 책임·반복되는 약속 문제를 두고 즉시 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3030469213",
+    "title": "친구랑 자강두천으로 싸운 후기",
+    "body": "친구가 야근 종료 시간을 알려주기로 해놓고 연락하지 않았고 작성자도 일부러 먼저 묻지 않으면서 약속이 깨진 상황이라 연락 책임·반복되는 약속 문제를 두고 즉시 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_3030469213.md",
+      "originalTitle": "친구랑 자강두천으로 싸운 후기",
+      "originalMarkdown": "# 친구랑 자강두천으로 싸운 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/3030469213\r\n- exactObservedTitle: 친구랑 자강두천으로 싸운 후기\r\n- observedAt: 2026-09-22 16:18 KST\r\n- observedMetrics: 조회 2,071\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 친구가 야근 종료 시간을 알려주기로 해놓고 연락하지 않았고 작성자도 일부러 먼저 묻지 않으면서 약속이 깨진 상황이라 연락 책임·반복되는 약속 문제를 두고 즉시 의견이 갈릴 소재.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 검색 결과에 실제 표시된 조회 수만 기록. 댓글 미열람.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "5c0da5b9f8e04a70a055cf6241d1483d073be5176384d895953528bf22ba9493",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 202
+}

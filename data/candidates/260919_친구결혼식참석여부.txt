@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B0%B8%EC%84%9D-%EC%97%AC%EB%B6%80-%E3%85%A0%E3%85%A0-ij13llex
+제목 - 친구 결혼식 참석 여부 ㅠㅠ
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B0%B8%EC%84%9D-%EC%97%AC%EB%B6%80-%E3%85%A0%E3%85%A0-ij13llex",
+    "title": "친구 결혼식 참석 여부 ㅠㅠ",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_친구결혼식참석여부.md",
+      "originalTitle": "친구 결혼식 참석 여부 ㅠㅠ",
+      "originalMarkdown": "# 친구 결혼식 참석 여부 ㅠㅠ\r\n\r\n- source: Blind / 블라블라\r\n- public_url: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B0%B8%EC%84%9D-%EC%97%AC%EB%B6%80-%E3%85%A0%E3%85%A0-ij13llex\r\n- exact_observed_title: 친구 결혼식 참석 여부 ㅠㅠ\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 76, 댓글 17\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 오래된 친구와 싸운 직후 결혼식에 갈지 말지 고민하는 관계 회복/거리두기 소재로 댓글 의견이 갈리기 쉬움.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6bf21673e22f42e246498d608f2d2ca77ecf901789e6245a91643bfa9d8eb60e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 205
+}

@@ -1,0 +1,8 @@
+// Metadata only; Threads body stays the actual cover title.
+const fail=code=>{throw Object.assign(new Error(code),{code,status:400});};
+export const COMMON_TAG_CANDIDATES=Object.freeze(['이야기','읽을거리']);
+export function normalizeTopicTags(value=[]){if(!Array.isArray(value)||![0,2].includes(value.length))fail('two_topic_tags_required');const tags=value.map(v=>{if(typeof v!=='string')fail('invalid_tag');const t=v.replace(/^#/,'').trim();if(!/^[\p{L}\p{N}_]{1,50}$/u.test(t))fail('invalid_tag');return t;});if(new Set(tags).size!==tags.length)fail('invalid_tag');return tags;}
+export function normalizeCommonTags(value=[]){if(!Array.isArray(value)||value.length>2||value.some(v=>!COMMON_TAG_CANDIDATES.includes(v))||new Set(value).size!==value.length)fail('invalid_common_tags');return [...value];}
+export function normalizeThreadsTopic(value=''){if(typeof value!=='string'||[...value].length>50||/[#\r\n]/.test(value))fail('invalid_threads_topic');return value.trim();}
+export function instagramTaggedCaption(body,post){const legacy=post.tags?.trim()||'',existing=new Set([...(body+'\n'+legacy).matchAll(/#([\p{L}\p{N}_]+)/gu)].map(x=>x[1])),additions=[];for(const tag of [...(post.common_tags||[]),...(post.topic_tags||[])])if(!existing.has(tag)){existing.add(tag);additions.push('#'+tag);}const text=body+(legacy?'\n\n'+legacy:'')+(additions.length?'\n\n'+additions.join(' '):'');return {text,hashtag_count:[...text.matchAll(/#([\p{L}\p{N}_]+)/gu)].length};}
+export function publicationTagMetadata(post,platform){return platform==='threads'?{topic_tag:normalizeThreadsTopic(post.threads_topic_tag||''),body_hashtags:false}:{common_tags:normalizeCommonTags(post.common_tags||[]),topic_tags:normalizeTopicTags(post.topic_tags||[])};}

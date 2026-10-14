@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3234682660
+제목 - 친구 결혼하면 원래 멀어지는건가 싶은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+유일한 베프가 결혼한 뒤 연락이 끊기며 관계 변화와 외로움을 체감하는 이야기. 결혼 후 친구관계가 자연히 멀어지는지에 대해 공감과 의견을 쉽게 끌어낼 수 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3234682660",
+    "title": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+    "body": "유일한 베프가 결혼한 뒤 연락이 끊기며 관계 변화와 외로움을 체감하는 이야기. 결혼 후 친구관계가 자연히 멀어지는지에 대해 공감과 의견을 쉽게 끌어낼 수 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo-friend-marriage-distance.md",
+      "originalTitle": "친구 결혼하면 원래 멀어지는건가 싶은 후기",
+      "originalMarkdown": "# 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/3234682660\r\n- exactObservedTitle: 친구 결혼하면 원래 멀어지는건가 싶은 후기\r\n- observedAt: 2026-09-22 14:18 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL confirmed via public search/index result; direct open returned access restriction during verification\r\n- bodyRead: true (public indexed body text was visible in search result)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not confirmed\r\n- observedMetrics: views 9,465; comments 37 (public indexed result at observation)\r\n- whyGood: 유일한 베프가 결혼한 뒤 연락이 끊기며 관계 변화와 외로움을 체감하는 이야기. 결혼 후 친구관계가 자연히 멀어지는지에 대해 공감과 의견을 쉽게 끌어낼 수 있음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "65c195cdf77b955b82000a30a2cb316ed59a50e7a6e6f5a9bbfeb988af4f7103",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 199
+}

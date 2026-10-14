@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2584083741
+제목 - 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)
+내용 - [명시 요약 — 원문 전문 아님]
+같은 날 서로 다른 어른에게 연속으로 결혼·출산 압박을 받는 반복-증폭 구조가 분명함. 세대·결혼관 논쟁과 공감되는 짜증을 동시에 만들 수 있는 생활 갈등 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2584083741",
+    "title": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+    "body": "같은 날 서로 다른 어른에게 연속으로 결혼·출산 압박을 받는 반복-증폭 구조가 분명함. 세대·결혼관 논쟁과 공감되는 짜증을 동시에 만들 수 있는 생활 갈등 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_비혼결혼공격2연타.md",
+      "originalTitle": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+      "originalMarkdown": "# 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2584083741\r\n- exactObservedTitle: `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`\r\n- observedAt: 2026-09-21 13:16 KST\r\n- stage: C1\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 9,501 / 댓글 38\r\n- acquisition: public individual page text exposed through public web index/search; exact individual URL verified\r\n- provenance: exact public individual TheQoo URL; page body was readable in public search result\r\n- whyGood: 같은 날 서로 다른 어른에게 연속으로 결혼·출산 압박을 받는 반복-증폭 구조가 분명함. 세대·결혼관 논쟁과 공감되는 짜증을 동시에 만들 수 있는 생활 갈등 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n본문은 실제 공개 페이지 노출 텍스트를 읽어 확인함. 댓글은 읽지 않음. 수치·이미지·권리 상태는 확인된 범위를 넘어 추정하지 않음.\r\n",
+      "originalSha256": "415e05d721a3791a2bd3b9b35661515a49c21540b9332984e32a46867cb29d59",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 203
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/15589wh
+제목 - AITA for not taking out a loan to attend my SIL wedding
+내용 - [명시 요약 — 원문 전문 아님]
+세 자녀가 있고 4만달러 HELOC 채무를 갚는 부부에게 처제의 두 번째 destination wedding 참석비가 부부당 약 4,500달러로 제시됨. 남편은 결혼식 참석 때문에 추가 대출은 못 받겠다고 하지만 아내와 처가가 이를 비난하는 상황.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/15589wh",
+    "title": "AITA for not taking out a loan to attend my SIL wedding",
+    "body": "세 자녀가 있고 4만달러 HELOC 채무를 갚는 부부에게 처제의 두 번째 destination wedding 참석비가 부부당 약 4,500달러로 제시됨. 남편은 결혼식 참석 때문에 추가 대출은 못 받겠다고 하지만 아내와 처가가 이를 비난하는 상황.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼식가려고대출4500달러.md",
+      "originalTitle": "AITA for not taking out a loan to attend my SIL wedding",
+      "originalMarkdown": "# AITA for not taking out a loan to attend my SIL wedding\r\n\r\n## 글 내용\r\n세 자녀가 있고 4만달러 HELOC 채무를 갚는 부부에게 처제의 두 번째 destination wedding 참석비가 부부당 약 4,500달러로 제시됨. 남편은 결혼식 참석 때문에 추가 대출은 못 받겠다고 하지만 아내와 처가가 이를 비난하는 상황.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/15589wh\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n2026-09-18 06:34 KST 관측: +73 votes. 조회수/댓글 총수 미확인.\r\n\r\n## 평가\r\n'가족 결혼식 참석을 위해 빚을 내야 하나'라는 한 문장만으로도 즉시 의견이 갈리는 돈·가족 갈등.\r\n\r\n## 이미지/자산/게시상태\r\n형식: 글. full body read: 예. comments read: 아니오. source screenshot/media: 미확인. acquisition: EXACT_PUBLIC_URL_VERIFIED / ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요, 04_REVIEW_PUBLISH만 게시 가능.\r\n",
+      "originalSha256": "eb2b3e7fc7077339eb6f745bd7acc7b92c38c3769fb7b7b8fc11f42cd81b4a85",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 299
+}

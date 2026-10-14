@@ -1,0 +1,29 @@
+원문링크 - https://m.inven.co.kr/board/webzine/2097/2728406?iskin=lol
+제목 - AI 급 가속하는 발전 속도..
+내용 - [명시 요약 — 원문 전문 아님]
+AI 발전 속도를 이미지로 보여주는 게시물. 공개 페이지에서 이미지 게시물과 짧은 작성자 문구는 확인했지만 이미지 안의 구체적 비교 내용은 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://m.inven.co.kr/board/webzine/2097/2728406?iskin=lol",
+    "title": "AI 급 가속하는 발전 속도..",
+    "body": "AI 발전 속도를 이미지로 보여주는 게시물. 공개 페이지에서 이미지 게시물과 짧은 작성자 문구는 확인했지만 이미지 안의 구체적 비교 내용은 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_AI급가속발전.md",
+      "originalTitle": "AI 급 가속하는 발전 속도..",
+      "originalMarkdown": "# AI 급 가속하는 발전 속도..\r\n\r\n## 글 내용\r\nAI 발전 속도를 이미지로 보여주는 게시물. 공개 페이지에서 이미지 게시물과 짧은 작성자 문구는 확인했지만 이미지 안의 구체적 비교 내용은 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://m.inven.co.kr/board/webzine/2097/2728406?iskin=lol\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 4,278 / 추천 2 / 댓글 15\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\nAI 자체 뉴스보다는 실제 변화가 한눈에 보이는 이미지일 경우 반응형 소재가 될 수 있다. 원문 이미지 확인 전에는 우선순위를 높이지 않는다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "2e95329ed3c4e40fb353284ba57023a04d719f060604b5fb7300bd277eeffcb6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 210
+}

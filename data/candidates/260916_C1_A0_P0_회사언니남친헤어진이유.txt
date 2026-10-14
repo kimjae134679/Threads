@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728179
+제목 - 회사 언니가 남친과 헤어진 이유
+내용 - [명시 요약 — 원문 전문 아님]
+회사 언니가 남자친구와 헤어진 이유를 다룬 이미지형 유머 게시물. 공개 페이지에서 제목과 이미지 존재는 확인했지만 핵심 이미지 사연 전체는 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728179",
+    "title": "회사 언니가 남친과 헤어진 이유",
+    "body": "회사 언니가 남자친구와 헤어진 이유를 다룬 이미지형 유머 게시물. 공개 페이지에서 제목과 이미지 존재는 확인했지만 핵심 이미지 사연 전체는 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_회사언니남친헤어진이유.md",
+      "originalTitle": "회사 언니가 남친과 헤어진 이유",
+      "originalMarkdown": "# 회사 언니가 남친과 헤어진 이유\r\n\r\n## 글 내용\r\n회사 언니가 남자친구와 헤어진 이유를 다룬 이미지형 유머 게시물. 공개 페이지에서 제목과 이미지 존재는 확인했지만 핵심 이미지 사연 전체는 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728179\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 12:38 KST 부근\r\n- 조회 6,137 / 추천 1 / 댓글 13\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n직장 지인+연애 파국의 이유를 궁금하게 만드는 전형적인 사연형 제목으로 스와이프 유도가 좋다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "d0e3a368d54fe23bd50d26b11c84e94ebb007b42e5cba001ab794156cf50cfbc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 202
+}

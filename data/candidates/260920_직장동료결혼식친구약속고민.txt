@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3193935920
+제목 - 직장동료 결혼식과 친구약속 둘중 뭘 선택해야할지 고민중인 초기
+내용 - [명시 요약 — 원문 전문 아님]
+같은 팀에서 4개월 일한 동료의 결혼식과 한 번 미뤘던 친구 약속이 정확히 겹친 상황이라 누구를 선택할지 즉시 의견을 내기 쉬운 인간관계 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3193935920",
+    "title": "직장동료 결혼식과 친구약속 둘중 뭘 선택해야할지 고민중인 초기",
+    "body": "같은 팀에서 4개월 일한 동료의 결혼식과 한 번 미뤘던 친구 약속이 정확히 겹친 상황이라 누구를 선택할지 즉시 의견을 내기 쉬운 인간관계 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_직장동료결혼식친구약속고민.md",
+      "originalTitle": "직장동료 결혼식과 친구약속 둘중 뭘 선택해야할지 고민중인 초기",
+      "originalMarkdown": "# 직장동료 결혼식과 친구약속 둘중 뭘 선택해야할지 고민중인 초기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/3193935920\r\n- observedAt: 2026-09-20 15:17 KST\r\n- provenanceLevel: C1\r\n- acquisition: public individual page / readable body\r\n- exactObservedTitle: `직장동료 결혼식과 친구약속 둘중 뭘 선택해야할지 고민중인 초기`\r\n- observedMetrics: 조회 8,411 / 댓글 20\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 카카오톡 공유 버튼 이미지 표시는 관찰했으나 본문 자산은 미확인\r\n- whyGood: 같은 팀에서 4개월 일한 동료의 결혼식과 한 번 미뤘던 친구 약속이 정확히 겹친 상황이라 누구를 선택할지 즉시 의견을 내기 쉬운 인간관계 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights/moderation/asset/publication: 미확인/미진행\r\n",
+      "originalSha256": "966f205265bc4702faf7bf7b99fbd541b89adc20fcd456c5de40f4ebf0c56445",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 201
+}

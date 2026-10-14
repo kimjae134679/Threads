@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/1508828
+제목 - 20년 만에 전재산 천만원 된 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/1508828",
+    "title": "20년 만에 전재산 천만원 된 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_20년만에전재산천만원.md",
+      "originalTitle": "[스압]20년 만에 전재산 천만원 된 썰",
+      "originalMarkdown": "# [스압]20년 만에 전재산 천만원 된 썰\r\n\r\n- source: Inven 오픈이슈갤러리 (본문에 개드립 재게시 취지 언급)\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/1508828\r\n- exactObservedTitle: `[스압]20년 만에 전재산 천만원 된 썰`\r\n- observedAt: 2026-09-21 16:16 KST\r\n- provenanceLevel: C1\r\n- acquisitionStatus: exact individual public URL verified; public page body readable\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (page exposes image elements; bytes not acquired)\r\n- observedMetrics: 조회 10,729 / 추천 20 / 댓글 28\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\nIMF 시기 공장 화재와 가족의 빚 3억에서 출발해 장기간 빚을 갚고 변호사가 된 뒤 빚을 정리하는 장기 서사가 있다. 가족·돈·직장·연애·역전 요소가 한 이야기 안에 있고 중간 사건과 결말이 분명해 스토리성이 강하다.\r\n\r\n## provenance 주의\r\n공개 Inven 개별 페이지에서 제목·본문·표시 수치를 직접 확인했다. 원 최초 게시처/권리관계는 확인하지 않았으며, 이미지 파일은 다운로드하지 않았다. 댓글 본문도 읽지 않았다. 제작·게시 권한을 의미하지 않는다.\r\n",
+      "originalSha256": "8650eed5aede1a4e3ce2030bc4cd99ac946650ca4a89d2aa9b3661f1446d9acb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 112
+}

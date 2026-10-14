@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A3%84%EC%9D%98%EC%8B%9D%EC%9D%B4-%EB%82%AE%EC%9D%80%EA%B1%B4%EA%B0%80-FFimvYmk
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 결혼생활 공개 글. 작성자는 남편이 상의 없이 2금융권 등을 통해 대출을 최대한 끌어 코인에 투자했고 돌려막기 끝에 감당할 수 없어 개인회생을 진행하게 됐다고 설명한다. 이후 시어머니 집 담보까지 사용했고 시어머니 역시 개인회생을 거쳤다는 사실을 알게 됐다고 적었다. 작성자가 채무와 개인회생에 대한 태도를 문제 삼자 남편은 자신이 은행에 낸 이자로 충분하며 어머니에게 고마워해야 한다는 취지로 반응했다고 한다. 공개 페이지에서 본문을 읽었고 댓글 70개 존재를 확인했으나 전체 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A3%84%EC%9D%98%EC%8B%9D%EC%9D%B4-%EB%82%AE%EC%9D%80%EA%B1%B4%EA%B0%80-FFimvYmk",
+    "title": "제목",
+    "body": "Blind 결혼생활 공개 글. 작성자는 남편이 상의 없이 2금융권 등을 통해 대출을 최대한 끌어 코인에 투자했고 돌려막기 끝에 감당할 수 없어 개인회생을 진행하게 됐다고 설명한다. 이후 시어머니 집 담보까지 사용했고 시어머니 역시 개인회생을 거쳤다는 사실을 알게 됐다고 적었다. 작성자가 채무와 개인회생에 대한 태도를 문제 삼자 남편은 자신이 은행에 낸 이자로 충분하며 어머니에게 고마워해야 한다는 취지로 반응했다고 한다. 공개 페이지에서 본문을 읽었고 댓글 70개 존재를 확인했으나 전체 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_죄의식이낮은건가.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n죄의식이 낮은건가?\r\n\r\n## 글 내용\r\nBlind 결혼생활 공개 글. 작성자는 남편이 상의 없이 2금융권 등을 통해 대출을 최대한 끌어 코인에 투자했고 돌려막기 끝에 감당할 수 없어 개인회생을 진행하게 됐다고 설명한다. 이후 시어머니 집 담보까지 사용했고 시어머니 역시 개인회생을 거쳤다는 사실을 알게 됐다고 적었다. 작성자가 채무와 개인회생에 대한 태도를 문제 삼자 남편은 자신이 은행에 낸 이자로 충분하며 어머니에게 고마워해야 한다는 취지로 반응했다고 한다. 공개 페이지에서 본문을 읽었고 댓글 70개 존재를 확인했으나 전체 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%A3%84%EC%9D%98%EC%8B%9D%EC%9D%B4-%EB%82%AE%EC%9D%80%EA%B1%B4%EA%B0%80-FFimvYmk\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 페이지/search 결과\r\n- 조회수: 5,165\r\n- 댓글: 70\r\n- 좋아요: 확인하지 못함\r\n\r\n## 평가\r\n- 몰래 대출 → 코인 → 돌려막기 → 개인회생 → 부모 집 담보/개인회생까지 이어지는 가족·돈·투자 갈등.\r\n- 남편의 반응까지 강한 논쟁 포인트가 있어 사람들이 즉시 의견을 내기 좋은 소재.\r\n- 공개 원문 URL과 본문을 확인해 C1. 개인의 재정·가족 갈등이므로 게시 전 privacy/defamation 맥락을 별도 검토해야 함.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/defamation/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "0136ac43f0e8f225e53f4b867cb2b2a03cc652a6097e3cb879c86afe5fb492a4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 454
+}

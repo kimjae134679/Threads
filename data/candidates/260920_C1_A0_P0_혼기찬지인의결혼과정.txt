@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4106959032
+제목 - 혼기 찬 지인의 결혼 과정
+내용 - [명시 요약 — 원문 전문 아님]
+제목과 높은 반응으로 결혼 과정에 대한 관심은 확인되지만, 이번 범위에서는 이미지 본문을 읽지 않았으므로 내용은 추정하지 않는다. 추후 허용된 방식으로 원문 텍스트가 확인될 때만 구체 평가 가능.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4106959032",
+    "title": "혼기 찬 지인의 결혼 과정",
+    "body": "제목과 높은 반응으로 결혼 과정에 대한 관심은 확인되지만, 이번 범위에서는 이미지 본문을 읽지 않았으므로 내용은 추정하지 않는다. 추후 허용된 방식으로 원문 텍스트가 확인될 때만 구체 평가 가능.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_혼기찬지인의결혼과정.md",
+      "originalTitle": "혼기 찬 지인의 결혼 과정",
+      "originalMarkdown": "# 혼기 찬 지인의 결혼 과정\r\n\r\n- source: TheQoo 스퀘어\r\n- exactObservedTitle: `혼기 찬 지인의 결혼 과정`\r\n- sourceUrl: https://theqoo.net/square/4106959032\r\n- observedAt: 2026-09-20 18:15 KST\r\n- acquisition: C1 — exact individual public URL verified; source page is image-dependent in this observation\r\n- bodyRead: false — 본문 미확인\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (공개 페이지에 이미지 항목 표시; 다운로드/OCR하지 않음)\r\n- observedMetrics: 조회 109,018 / 댓글 454 (공개 페이지 표시값)\r\n- whyGood: 제목과 높은 반응으로 결혼 과정에 대한 관심은 확인되지만, 이번 범위에서는 이미지 본문을 읽지 않았으므로 내용은 추정하지 않는다. 추후 허용된 방식으로 원문 텍스트가 확인될 때만 구체 평가 가능.\r\n- provenanceNote: exact page identity만 검증. 이미지 내용·권리·OCR·구체 스토리는 미확인.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "1f6edd811a3c6b37c5c61c639f6ae6fdfc6779959b9a15c4ccfd1c82b540250b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 210
+}

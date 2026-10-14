@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EC%9D%B8%EB%8D%B0-6%EC%A3%BC%EC%B0%A8-%EC%9C%A0%EC%82%B0%ED%96%88%EB%8A%94%EB%8D%B0-%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%84%88%EB%AC%B4-%ED%9E%98%EB%93%A4%EC%96%B4%ED%95%B4-zkwm0f5d
+제목 - 신혼인데 6주차 유산했는데 남편이 너무 힘들어해
+내용 - [명시 요약 — 원문 전문 아님]
+유산 이후 부부의 슬픔 처리 방식이 충돌하는 상황으로 공감과 의견 대립이 즉시 생기는 이야기.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EC%9D%B8%EB%8D%B0-6%EC%A3%BC%EC%B0%A8-%EC%9C%A0%EC%82%B0%ED%96%88%EB%8A%94%EB%8D%B0-%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%84%88%EB%AC%B4-%ED%9E%98%EB%93%A4%EC%96%B4%ED%95%B4-zkwm0f5d",
+    "title": "신혼인데 6주차 유산했는데 남편이 너무 힘들어해",
+    "body": "유산 이후 부부의 슬픔 처리 방식이 충돌하는 상황으로 공감과 의견 대립이 즉시 생기는 이야기.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_신혼인데6주차유산남편힘들어해.md",
+      "originalTitle": "신혼인데 6주차 유산했는데 남편이 너무 힘들어해",
+      "originalMarkdown": "# 신혼인데 6주차 유산했는데 남편이 너무 힘들어해\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EC%8B%A0%ED%98%BC%EC%9D%B8%EB%8D%B0-6%EC%A3%BC%EC%B0%A8-%EC%9C%A0%EC%82%B0%ED%96%88%EB%8A%94%EB%8D%B0-%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%84%88%EB%AC%B4-%ED%9E%98%EB%93%A4%EC%96%B4%ED%95%B4-zkwm0f5d\r\n- exactObservedTitle: 신혼인데 6주차 유산했는데 남편이 너무 힘들어해\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 12K, 댓글 118, 좋아요 10\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 유산 이후 부부의 슬픔 처리 방식이 충돌하는 상황으로 공감과 의견 대립이 즉시 생기는 이야기.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 게시자 주장 자체이며 독립 사실 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "deb5e8d042c00ab04207e621b35d1fda4cc2b66d89777a68f9757b2096089b04",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 358
+}

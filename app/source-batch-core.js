@@ -51,7 +51,12 @@
     return result;
   }
   function parseExactText(text) {
-    const source = String(text), title = /^\[TITLE\]\r?\n/.exec(source);
+    if(globalThis.ThreadsUnifiedMaterialTxt?.isUnifiedText(text)){
+      const data=globalThis.ThreadsUnifiedMaterialTxt.parse(text),h=data.human;
+      return {title:h.title,body:h.body,sourceUrl:h.sourceUrl,
+        verbatim:h.bodyKind==='verbatim',comments:data.records.source?.comments||'',unifiedMaterial:data};
+    }
+    const source = String(text).replace(/^\ufeff/,''), title = /^\[TITLE\]\r?\n/.exec(source);
     if (!title) return null;
     const body = /^\[BODY\]\r?\n/gm, comments = /^\[COMMENTS\]\r?\n/gm;
     body.lastIndex = title[0].length;
@@ -61,5 +66,20 @@
       body: source.slice(body.lastIndex, c ? c.index : undefined),
       comments: c ? source.slice(comments.lastIndex) : '' };
   }
-  return Object.freeze({ rankPopular, classifyPath, status, severeScreen, splitBody, parseExactText });
+  function parseVerbatimSource(text){
+    const codec=globalThis.ThreadsUnifiedMaterialTxt;
+    if(codec?.isUnifiedText(text))return codec.verbatimSource(codec.parse(text));
+    const data=parseExactText(text);
+    if(!data)throw new Error('정확한 [TITLE]·[BODY] 원문 TXT가 필요합니다.');
+    const comments=data.comments.trim()==='NONE'?[]:data.comments.split(/\r?\n/).flatMap((line,i)=>{
+      const match=/^\[\+(\d+)\] (.+)$/.exec(line);return match?[{text:match[2],likes:Number(match[1]),sourceOrder:i}]:[];
+    });
+    return {schema:'threads-verbatim-source-v1',verbatim:true,title:data.title,body:data.body,comments};
+  }
+  async function parseSourceDocument(text){
+    const codec=globalThis.ThreadsUnifiedMaterialTxt;if(!codec?.isUnifiedText(text))return null;
+    const data=codec.parse(text);if(!data.records.sourceDocument)return null;
+    const doc=codec.sourceDocument(data),raw=await codec.documentBytes(data);return{...doc,raw,unifiedMaterial:data};
+  }
+  return Object.freeze({ rankPopular, classifyPath, status, severeScreen, splitBody, parseExactText,parseVerbatimSource,parseSourceDocument });
 });

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B9%9A-%EC%95%88-%EA%B0%9A%EA%B3%A0-%EC%A3%BC%EC%8B%9D-%ED%95%98%EA%B2%A0%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-SYVFUAP0
+제목 - 빚 안 갚고 주식 하겠다는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+집 매수로 신용대출 약 1억4천만원이 있는 상황에서 작성자가 만기 적금 3천만원을 남편에게 대출 상환용으로 보냈지만, 남편이 주식으로 불린 뒤 갚겠다며 상환하지 않아 불안하다는 사연. 본문과 공개 댓글 일부를 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B9%9A-%EC%95%88-%EA%B0%9A%EA%B3%A0-%EC%A3%BC%EC%8B%9D-%ED%95%98%EA%B2%A0%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-SYVFUAP0",
+    "title": "빚 안 갚고 주식 하겠다는 남편",
+    "body": "집 매수로 신용대출 약 1억4천만원이 있는 상황에서 작성자가 만기 적금 3천만원을 남편에게 대출 상환용으로 보냈지만, 남편이 주식으로 불린 뒤 갚겠다며 상환하지 않아 불안하다는 사연. 본문과 공개 댓글 일부를 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_빚안갚고주식하겠다는남편.md",
+      "originalTitle": "빚 안 갚고 주식 하겠다는 남편",
+      "originalMarkdown": "# 빚 안 갚고 주식 하겠다는 남편\r\n\r\n## 글 내용\r\n집 매수로 신용대출 약 1억4천만원이 있는 상황에서 작성자가 만기 적금 3천만원을 남편에게 대출 상환용으로 보냈지만, 남편이 주식으로 불린 뒤 갚겠다며 상환하지 않아 불안하다는 사연. 본문과 공개 댓글 일부를 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B9%9A-%EC%95%88-%EA%B0%9A%EA%B3%A0-%EC%A3%BC%EC%8B%9D-%ED%95%98%EA%B2%A0%EB%8B%A4%EB%8A%94-%EB%82%A8%ED%8E%B8-SYVFUAP0\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 조회 1,412 · 좋아요 1 · 댓글 33.\r\n\r\n## 평가\r\n대출 상환용 돈까지 투자에 쓰는 부부 갈등이라 즉시 의견이 갈리고 투자 사람 이야기 기준에도 잘 맞음. 공개 원문 URL 확인 C1. rights/privacy/human review 필요.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. OCR/moderation/rights 확인 또는 게시 성공을 주장하지 않음. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "0abcb8069391caa28c364b12a6497db7672928cfdfcf16e2e51232ce8c1950ee",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 344
+}

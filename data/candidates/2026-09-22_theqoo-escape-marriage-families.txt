@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/1644589059
+제목 - 절친과 도피형 결혼을 선택+후기+추가.txt
+내용 - [명시 요약 — 원문 전문 아님]
+`초중학교 절친 두 사람이 각자 가족에게 경제적으로 이용당한 끝에 양가와 연을 끊고 결혼한다는 강한 서사와 반전이 있음. 가족 부양, 결혼, 돈 문제를 동시에 건드려 의견이 크게 갈릴 소재.`
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/1644589059",
+    "title": "절친과 도피형 결혼을 선택+후기+추가.txt",
+    "body": "`초중학교 절친 두 사람이 각자 가족에게 경제적으로 이용당한 끝에 양가와 연을 끊고 결혼한다는 강한 서사와 반전이 있음. 가족 부양, 결혼, 돈 문제를 동시에 건드려 의견이 크게 갈릴 소재.`",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo-escape-marriage-families.md",
+      "originalTitle": "절친과 도피형 결혼을 선택+후기+추가.txt",
+      "originalMarkdown": "# 절친과 도피형 결혼을 선택+후기+추가.txt\r\n\r\n- source: TheQoo / 스퀘어 (원출처 링크 표기)\r\n- publicUrl: https://theqoo.net/square/1644589059\r\n- exactObservedTitle: `절친과 도피형 결혼을 선택+후기+추가.txt`\r\n- observedAt: `2026-09-22 18:14 KST`\r\n- observedMetrics: `조회 수 21404`\r\n- bodyRead: `true` — 공개 인덱스에서 본문 확인\r\n- commentsRead: `false`\r\n- imageOrScreenshotPresent: `본문에 외부 이미지 링크가 관찰됨; 다운로드/열람하지 않음`\r\n- whyGood: `초중학교 절친 두 사람이 각자 가족에게 경제적으로 이용당한 끝에 양가와 연을 끊고 결혼한다는 강한 서사와 반전이 있음. 가족 부양, 결혼, 돈 문제를 동시에 건드려 의견이 크게 갈릴 소재.`\r\n- acquisition: `public search/index -> exact individual public URL -> indexed body text read; page itself displays a Nate Pann source URL, but this run did not promote that unverified downstream URL as the candidate URL`\r\n- provenanceStatus: `C1`\r\n- A1: `false`\r\n- P1: `false`\r\n- publicationAllowed: `false`\r\n",
+      "originalSha256": "b27e48d14fcfa96bda39b4283794ece0770c6eac7969a3ab69c2d1c39891618f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

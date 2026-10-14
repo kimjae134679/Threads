@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1bgtevh/aita_if_i_dont_give_a_wedding_gift_of_cash/
+제목 - AITA if I don’t give a wedding gift of cash?
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 앞둔 친척이 작성자에게 아직 £250을 갚지 않은 상태에서 신혼여행 비용 명목의 현금 결혼선물을 요청한 상황. 작성자는 현금 £50을 새로 주는 대신 기존 빚에서 £50을 차감해주는 것을 선물로 치면 안 되느냐고 묻는다. 공개 원문 본문을 실제로 읽음. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1bgtevh/aita_if_i_dont_give_a_wedding_gift_of_cash/",
+    "title": "AITA if I don’t give a wedding gift of cash?",
+    "body": "결혼을 앞둔 친척이 작성자에게 아직 £250을 갚지 않은 상태에서 신혼여행 비용 명목의 현금 결혼선물을 요청한 상황. 작성자는 현금 £50을 새로 주는 대신 기존 빚에서 £50을 차감해주는 것을 선물로 치면 안 되느냐고 묻는다. 공개 원문 본문을 실제로 읽음. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_빚대신결혼선물.md",
+      "originalTitle": "AITA if I don’t give a wedding gift of cash?",
+      "originalMarkdown": "# AITA if I don’t give a wedding gift of cash?\r\n\r\n## 글 내용\r\n결혼을 앞둔 친척이 작성자에게 아직 £250을 갚지 않은 상태에서 신혼여행 비용 명목의 현금 결혼선물을 요청한 상황. 작성자는 현금 £50을 새로 주는 대신 기존 빚에서 £50을 차감해주는 것을 선물로 치면 안 되느냐고 묻는다. 공개 원문 본문을 실제로 읽음. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1bgtevh/aita_if_i_dont_give_a_wedding_gift_of_cash/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 03:36 KST 관측: Reddit 공개 검색 결과 +17 votes. 조회수·댓글 수는 확인하지 못함.\r\n\r\n## 평가\r\n'내 돈도 안 갚았는데 축의금을 또 줘야 하나'라는 한 줄로 이해되는 갈등. 수치는 낮지만 이야기 구조와 의견 유발력이 좋음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n원문 공개 URL 확인. source screenshot 미확보, `ASSETS_PENDING`. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "0efd1a25ee302883a517808ce139498ea61522bee50f5a2d5df45811274dba86",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 350
+}

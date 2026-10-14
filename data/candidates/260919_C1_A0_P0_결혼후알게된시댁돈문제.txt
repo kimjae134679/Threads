@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%8B%9C%EB%8C%81-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%8B%A4-ZYNvixZ0
+제목 - 결혼비용 반반 했는데 시댁 돈은 계속 제가 보태고 있습니다
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 3년차 작성자는 연애 때 남편에게 본인 명의 빚이 없다는 답을 들었고 양쪽이 1억원씩 동원하는 식으로 신혼집을 구했다고 한다. 이후 전세 이동 때 작성자의 부담이 크게 늘었고, 시어머니의 예단 요구와 남편 명의 재건축 아파트 중도금까지 작성자가 함께 부담했다고 적었다. 명절·벌초·생신·김장과 식사·용돈 부담도 이어졌다는 내용. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%8B%9C%EB%8C%81-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%8B%A4-ZYNvixZ0",
+    "title": "결혼비용 반반 했는데 시댁 돈은 계속 제가 보태고 있습니다",
+    "body": "결혼 3년차 작성자는 연애 때 남편에게 본인 명의 빚이 없다는 답을 들었고 양쪽이 1억원씩 동원하는 식으로 신혼집을 구했다고 한다. 이후 전세 이동 때 작성자의 부담이 크게 늘었고, 시어머니의 예단 요구와 남편 명의 재건축 아파트 중도금까지 작성자가 함께 부담했다고 적었다. 명절·벌초·생신·김장과 식사·용돈 부담도 이어졌다는 내용. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼후알게된시댁돈문제.md",
+      "originalTitle": "결혼비용 반반 했는데 시댁 돈은 계속 제가 보태고 있습니다",
+      "originalMarkdown": "# 결혼비용 반반 했는데 시댁 돈은 계속 제가 보태고 있습니다\r\n\r\n## source\r\nBlind\r\n\r\n## 원문 제목\r\n남편 시댁 고민이다\r\n\r\n## 글 내용\r\n결혼 3년차 작성자는 연애 때 남편에게 본인 명의 빚이 없다는 답을 들었고 양쪽이 1억원씩 동원하는 식으로 신혼집을 구했다고 한다. 이후 전세 이동 때 작성자의 부담이 크게 늘었고, 시어머니의 예단 요구와 남편 명의 재건축 아파트 중도금까지 작성자가 함께 부담했다고 적었다. 명절·벌초·생신·김장과 식사·용돈 부담도 이어졌다는 내용. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EC%8B%9C%EB%8C%81-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%8B%A4-ZYNvixZ0\r\n\r\n## 관찰시각 / 실제 관측 수치\r\n- 관찰: 2026-09-19 10:17 KST 전후\r\n- 조회수 8,970 / 댓글 56\r\n- 좋아요: 미확인\r\n\r\n## 평가\r\n결혼 전 합의와 결혼 후 실제 비용 부담이 달라지는 구조가 명확해 돈·시댁 논쟁 소재로 강함.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / acquisition·provenance / 제작·게시 상태\r\n- exact individual public URL 확인: C1\r\n- full body read: 예\r\n- comments read: 아니오\r\n- 원문 이미지/스크린샷 존재 여부: 미확인\r\n- source screenshot/media 확보: 0\r\n- acquisition: EXACT_PUBLIC_URL_VERIFIED / SOURCE_MEDIA_NOT_ACQUIRED\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 미완료. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "753f2a5035326ee6185b7e442e83f9a9a835f66fae02d9617ea25e07c6370b4a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 416
+}

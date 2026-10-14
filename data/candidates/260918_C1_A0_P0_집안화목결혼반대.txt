@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98%EC%9D%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-%EC%A7%91%EC%95%88-%ED%99%94%EB%AA%A9-%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80%EC%9A%94-bz6qwinm
+제목 - 부모님의 결혼 반대 (집안 화목 중요한가요?)
+내용 - [명시 요약 — 원문 전문 아님]
+조건이 비슷하고 서로 좋아하는 30대 커플이지만 남자친구 부모가 오래 별거 중이라는 집안 사정을 들은 작성자 어머니가 결혼을 강하게 반대한다. 작성자는 '둘만 좋으면 되는가, 집안의 화목도 결혼 조건인가'를 묻는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98%EC%9D%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-%EC%A7%91%EC%95%88-%ED%99%94%EB%AA%A9-%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80%EC%9A%94-bz6qwinm",
+    "title": "부모님의 결혼 반대 (집안 화목 중요한가요?)",
+    "body": "조건이 비슷하고 서로 좋아하는 30대 커플이지만 남자친구 부모가 오래 별거 중이라는 집안 사정을 들은 작성자 어머니가 결혼을 강하게 반대한다. 작성자는 '둘만 좋으면 되는가, 집안의 화목도 결혼 조건인가'를 묻는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_집안화목결혼반대.md",
+      "originalTitle": "부모님의 결혼 반대 (집안 화목 중요한가요?)",
+      "originalMarkdown": "# 부모님의 결혼 반대 (집안 화목 중요한가요?)\r\n\r\n## 글 내용\r\n조건이 비슷하고 서로 좋아하는 30대 커플이지만 남자친구 부모가 오래 별거 중이라는 집안 사정을 들은 작성자 어머니가 결혼을 강하게 반대한다. 작성자는 '둘만 좋으면 되는가, 집안의 화목도 결혼 조건인가'를 묻는다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98%EC%9D%98-%EA%B2%B0%ED%98%BC-%EB%B0%98%EB%8C%80-%EC%A7%91%EC%95%88-%ED%99%94%EB%AA%A9-%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80%EC%9A%94-bz6qwinm\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-18 02:39 KST\r\n- 조회수 2,730 / 댓글 13\r\n- 좋아요 수치는 확인하지 않음\r\n\r\n## 평가\r\n연인 개인과 원가족 환경을 어디까지 분리해서 볼지 의견이 갈리는 소재. 본문 읽음. 댓글 전체 미확인.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot/media 미확보. exact public page 확인. `ASSETS_PENDING`. C1_A0_P0 / publicationAllowed=false. rights/privacy/human review 필요, 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "a0fee7d8e9f172baba9cd0d42decbca9ac2555f96617c746f928c995fb2837ef",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 397
+}

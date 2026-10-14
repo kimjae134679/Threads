@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITAH/comments/1bvfn3k
+제목 - AITA for calling off my wedding after finding out about my fiancé’s lies?
+내용 - [명시 요약 — 원문 전문 아님]
+약 10년 교제한 커플이 집을 구하는 과정에서 약혼자의 카드빚 약 $10K를 처음 알게 됐고 작성자가 일부 상환까지 도왔음. 약혼자는 교통사고 보험금으로 나머지를 갚았다고 했지만 결혼 준비 중 재정 관련 거짓말이 다시 드러나 결혼 취소를 고민하는 사연. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITAH/comments/1bvfn3k",
+    "title": "AITA for calling off my wedding after finding out about my fiancé’s lies?",
+    "body": "약 10년 교제한 커플이 집을 구하는 과정에서 약혼자의 카드빚 약 $10K를 처음 알게 됐고 작성자가 일부 상환까지 도왔음. 약혼자는 교통사고 보험금으로 나머지를 갚았다고 했지만 결혼 준비 중 재정 관련 거짓말이 다시 드러나 결혼 취소를 고민하는 사연. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_약혼자거짓말로결혼취소.md",
+      "originalTitle": "AITA for calling off my wedding after finding out about my fiancé’s lies?",
+      "originalMarkdown": "# AITA for calling off my wedding after finding out about my fiancé’s lies?\r\n\r\n## 글 내용\r\n약 10년 교제한 커플이 집을 구하는 과정에서 약혼자의 카드빚 약 $10K를 처음 알게 됐고 작성자가 일부 상환까지 도왔음. 약혼자는 교통사고 보험금으로 나머지를 갚았다고 했지만 결혼 준비 중 재정 관련 거짓말이 다시 드러나 결혼 취소를 고민하는 사연. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AITAH/comments/1bvfn3k\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 공개 검색에서 post score +310 확인. 조회수/댓글 총수는 확인하지 못함.\r\n\r\n## 평가\r\n장기연애→주택심사에서 숨은 빚 발견→상환 지원→결혼 직전 거짓말이라는 반전 구조가 강함. C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "12884d49dae39f4f68c88ae52692b329c494a4bdbdf245d59972062e6deba79c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 323
+}

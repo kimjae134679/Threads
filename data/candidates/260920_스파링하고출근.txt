@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8A%A4%ED%8C%8C%EB%A7%81-%ED%95%98%EA%B3%A0-%EC%B6%9C%EA%B7%BC%ED%95%9C%EB%8B%A4-iyql60pg
+제목 - 스파링 하고 출근한다.
+내용 - [명시 요약 — 원문 전문 아님]
+UFC를 보고 자신감을 가진 사람이 복싱 15년 친구에게 스파링을 신청했다가 완패했다는 짧고 명확한 황당 실화형 구조.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8A%A4%ED%8C%8C%EB%A7%81-%ED%95%98%EA%B3%A0-%EC%B6%9C%EA%B7%BC%ED%95%9C%EB%8B%A4-iyql60pg",
+    "title": "스파링 하고 출근한다.",
+    "body": "UFC를 보고 자신감을 가진 사람이 복싱 15년 친구에게 스파링을 신청했다가 완패했다는 짧고 명확한 황당 실화형 구조.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_스파링하고출근.md",
+      "originalTitle": "스파링 하고 출근한다.",
+      "originalMarkdown": "# 스파링 하고 출근한다.\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8A%A4%ED%8C%8C%EB%A7%81-%ED%95%98%EA%B3%A0-%EC%B6%9C%EA%B7%BC%ED%95%9C%EB%8B%A4-iyql60pg\r\n- exactObservedTitle: `스파링 하고 출근한다.`\r\n- observedAt: 2026-09-20 00:16 KST\r\n- observedMetrics: 조회수 100, 댓글 3\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 공개 페이지에서 존재 여부 미확인\r\n- whyGood: UFC를 보고 자신감을 가진 사람이 복싱 15년 친구에게 스파링을 신청했다가 완패했다는 짧고 명확한 황당 실화형 구조.\r\n- acquisition: C1 / exact individual public URL / BODY_READ\r\n- provenance: 공개 Blind 개별 페이지에서 본문 확인. 게시자의 경험담으로 기록하며 독립 사실 검증은 아님.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "32efc789555b086d0799355045618143db4c1c395679fd4ab6c3308cf09c4586",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 255
+}

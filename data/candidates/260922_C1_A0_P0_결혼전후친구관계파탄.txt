@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/702116975
+제목 - 결혼한 친구랑 결혼전후로 관계 파탄난거 써보는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+10년 넘은 친구의 결혼을 신나게 도우려다 오히려 짜증과 거리두기를 겪는 흐름이라 선의의 간섭인지 친구의 과민반응인지 의견이 갈리고 관계 변화 서사가 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/702116975",
+    "title": "결혼한 친구랑 결혼전후로 관계 파탄난거 써보는 후기",
+    "body": "10년 넘은 친구의 결혼을 신나게 도우려다 오히려 짜증과 거리두기를 겪는 흐름이라 선의의 간섭인지 친구의 과민반응인지 의견이 갈리고 관계 변화 서사가 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_C1_A0_P0_결혼전후친구관계파탄.md",
+      "originalTitle": "결혼한 친구랑 결혼전후로 관계 파탄난거 써보는 후기",
+      "originalMarkdown": "# 결혼한 친구랑 결혼전후로 관계 파탄난거 써보는 후기\r\n\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- source: TheQoo 후기\r\n- public URL: https://theqoo.net/review/702116975\r\n- exact observed title: `결혼한 친구랑 결혼전후로 관계 파탄난거 써보는 후기`\r\n- observedAt: 2026-09-22 03:16 KST\r\n- observed metrics: 조회 수 8795\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인하지 않음\r\n- acquisition: 공개 개별 게시물 URL과 노출 본문을 확인한 C1. 로그인/우회/OCR 없음.\r\n- provenance: TheQoo 공개 후기 페이지. 최초 창작 원출처 여부는 별도 주장하지 않음.\r\n- whyGood: 10년 넘은 친구의 결혼을 신나게 도우려다 오히려 짜증과 거리두기를 겪는 흐름이라 선의의 간섭인지 친구의 과민반응인지 의견이 갈리고 관계 변화 서사가 선명함.\r\n- rights/moderation/assets/publication: 미확정. 제작/게시 단계로 승격하지 않음.\r\n",
+      "originalSha256": "4ab4911a4ec46799469e91961f2067fe030569ae1670962fe4f50d7b203063ce",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 202
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%98-%EB%8F%88-%EC%9E%98-%EB%AA%BB%EB%B2%8C%EB%A9%B4-%EB%82%A8%ED%8E%B8-%EC%9E%90%EA%B8%B0%EA%B0%80-%ED%90%81%ED%90%81%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%A0%EA%B9%8C-5en7y3f2
+제목 - 나 돈 잘 못벌면 남편 자기가 퐁퐁이라고 생각할까
+내용 - [명시 요약 — 원문 전문 아님]
+육아 퇴사 뒤 소득 격차와 친정 자산이라는 변수까지 겹쳐 부부 기여도·경제관념에 대한 즉각적인 의견을 유발함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%98-%EB%8F%88-%EC%9E%98-%EB%AA%BB%EB%B2%8C%EB%A9%B4-%EB%82%A8%ED%8E%B8-%EC%9E%90%EA%B8%B0%EA%B0%80-%ED%90%81%ED%90%81%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%A0%EA%B9%8C-5en7y3f2",
+    "title": "나 돈 잘 못벌면 남편 자기가 퐁퐁이라고 생각할까",
+    "body": "육아 퇴사 뒤 소득 격차와 친정 자산이라는 변수까지 겹쳐 부부 기여도·경제관념에 대한 즉각적인 의견을 유발함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_나돈잘못벌면남편퐁퐁.md",
+      "originalTitle": "나 돈 잘 못벌면 남편 자기가 퐁퐁이라고 생각할까",
+      "originalMarkdown": "# 나 돈 잘 못벌면 남편 자기가 퐁퐁이라고 생각할까\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%98-%EB%8F%88-%EC%9E%98-%EB%AA%BB%EB%B2%8C%EB%A9%B4-%EB%82%A8%ED%8E%B8-%EC%9E%90%EA%B8%B0%EA%B0%80-%ED%90%81%ED%90%81%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%A0%EA%B9%8C-5en7y3f2\r\n- exactObservedTitle: 나 돈 잘 못벌면 남편 자기가 퐁퐁이라고 생각할까\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 89, 댓글 14\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 육아 퇴사 뒤 소득 격차와 친정 자산이라는 변수까지 겹쳐 부부 기여도·경제관념에 대한 즉각적인 의견을 유발함.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지의 공개 본문 일부 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3fb09e5913a12f29c3f1da874fd4e9076d8e3e78fed28df6cb8646a79bbfc05f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 369
+}

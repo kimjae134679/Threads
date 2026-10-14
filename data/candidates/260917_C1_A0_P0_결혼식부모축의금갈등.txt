@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%B6%95%EC%9D%98%EA%B8%88-g2vl75g0
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+신랑 측은 하객 150~200명 예상이지만 별도 지원이 없고, 신부 측은 하객 약 80명에 가전·가구와 현금 3천만원, 부모 손님 축의금까지 주기로 한 상황. 신랑 부모가 처음에는 축의금을 모두 주겠다고 했다가 다음 날 입장을 바꾸면서 아들과 언성을 높여 싸웠고, 신부 어머니도 지원 없이 결혼을 재촉하는 신랑 측을 걱정한다는 사연. 본문 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%B6%95%EC%9D%98%EA%B8%88-g2vl75g0",
+    "title": "제목",
+    "body": "신랑 측은 하객 150~200명 예상이지만 별도 지원이 없고, 신부 측은 하객 약 80명에 가전·가구와 현금 3천만원, 부모 손님 축의금까지 주기로 한 상황. 신랑 부모가 처음에는 축의금을 모두 주겠다고 했다가 다음 날 입장을 바꾸면서 아들과 언성을 높여 싸웠고, 신부 어머니도 지원 없이 결혼을 재촉하는 신랑 측을 걱정한다는 사연. 본문 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼식부모축의금갈등.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼식 부모님 축의금...\r\n\r\n## 글 내용\r\n신랑 측은 하객 150~200명 예상이지만 별도 지원이 없고, 신부 측은 하객 약 80명에 가전·가구와 현금 3천만원, 부모 손님 축의금까지 주기로 한 상황. 신랑 부모가 처음에는 축의금을 모두 주겠다고 했다가 다음 날 입장을 바꾸면서 아들과 언성을 높여 싸웠고, 신부 어머니도 지원 없이 결혼을 재촉하는 신랑 측을 걱정한다는 사연. 본문 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%8B%9D-%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%B6%95%EC%9D%98%EA%B8%88-g2vl75g0\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 02:35 KST 전후. 조회수 189 / 댓글 28. 좋아요 총수 확인 안 됨.\r\n\r\n## 평가\r\n양가 지원 격차와 축의금 소유권 문제가 직접 충돌해 결혼·돈 레인에서 의견이 갈리기 좋은 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/source bytes 미확보. ASSETS_PENDING. A0/P0. publicationAllowed=false. rights/privacy/human review gate 유지.",
+      "originalSha256": "d2012fb33d8547837b0c5606c8a103dd41212f575139cd34be706627fce83014",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 372
+}

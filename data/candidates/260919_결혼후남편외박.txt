@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0-%EB%82%98%EC%84%9C-%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%B0%95-PLOL8xrc
+제목 - 결혼하고 나서 남편 외박
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 5년차·어린 자녀가 있는 상황에서 연 1~2회 친구들과 외박도 싫다는 배우자와 개인 자유의 경계를 묻는 공감형 부부 논쟁.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0-%EB%82%98%EC%84%9C-%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%B0%95-PLOL8xrc",
+    "title": "결혼하고 나서 남편 외박",
+    "body": "결혼 5년차·어린 자녀가 있는 상황에서 연 1~2회 친구들과 외박도 싫다는 배우자와 개인 자유의 경계를 묻는 공감형 부부 논쟁.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼후남편외박.md",
+      "originalTitle": "결혼하고 나서 남편 외박",
+      "originalMarkdown": "# 결혼하고 나서 남편 외박\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%98%EA%B3%A0-%EB%82%98%EC%84%9C-%EB%82%A8%ED%8E%B8-%EC%99%B8%EB%B0%95-PLOL8xrc\r\n- exactObservedTitle: 결혼하고 나서 남편 외박\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 1,213, 댓글 11\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 결혼 5년차·어린 자녀가 있는 상황에서 연 1~2회 친구들과 외박도 싫다는 배우자와 개인 자유의 경계를 묻는 공감형 부부 논쟁.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 가정생활 평가는 게시자 자기서술.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "29a4d6d9b6cf70c0cab64f6a16dc195ec282ebcad1acd568db1dabbd3e72a824",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 271
+}

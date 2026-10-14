@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1048853306
+제목 - 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+회사 선임의 결혼식에는 참석해 축의금을 냈는데, 본인 결혼식에는 선임이 배우자까지 데려와 같은 액수만 내고 식사했다는 상호성/축의금 갈등. 이어 다른 동료 사례까지 붙어 있어 사람들이 즉시 '얼마가 적정한가' 의견을 내기 쉬움.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1048853306",
+    "title": "축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기",
+    "body": "회사 선임의 결혼식에는 참석해 축의금을 냈는데, 본인 결혼식에는 선임이 배우자까지 데려와 같은 액수만 내고 식사했다는 상호성/축의금 갈등. 이어 다른 동료 사례까지 붙어 있어 사람들이 즉시 '얼마가 적정한가' 의견을 내기 쉬움.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23-theqoo-company-wedding-gift-money.md",
+      "originalTitle": "축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기",
+      "originalMarkdown": "# 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기\r\n\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/1048853306\r\n- exactObservedTitle: 축의금 보고 생각나서 쓰는 나 결혼때 회사사람 축의금 어이없는 후기\r\n- observedAt: 2026-09-23 08:14 KST\r\n- observedMetrics: 조회 수 14557, 댓글 111 (공개 페이지에서 관찰된 값)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 검색/본문에서 이미지 의존성을 관찰하지 않음)\r\n- acquisition: public individual page discovered through public web search; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 개인 경험담. 개인 경험의 사실관계는 독립 검증하지 않았으며 작성자의 서술로만 취급.\r\n- whyGood: 회사 선임의 결혼식에는 참석해 축의금을 냈는데, 본인 결혼식에는 선임이 배우자까지 데려와 같은 액수만 내고 식사했다는 상호성/축의금 갈등. 이어 다른 동료 사례까지 붙어 있어 사람들이 즉시 '얼마가 적정한가' 의견을 내기 쉬움.\r\n\r\n## 확인 메모\r\n공개 본문을 실제 읽음. 댓글 내용은 읽지 않음. 수치는 공개 페이지에 표시된 값만 기록.",
+      "originalSha256": "d0cf3bf32a73f4a9a6f07eb80bda201119a6478cfb2a928bb409d4bfae61e5a3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 251
+}

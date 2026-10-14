@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B2%AB%EB%A7%8C%EB%82%A8%EC%97%90-%EB%8F%88%EC%96%98%EA%B8%B0-%EA%BA%BC%EB%83%88%EB%8D%98-%ED%99%A9%EB%8B%B9-%EC%86%8C%EA%B0%9C%ED%8C%85%EB%85%80-r1dYmxeP
+제목 - 첫만남에 돈얘기 꺼냈던 황당 소개팅녀
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B2%AB%EB%A7%8C%EB%82%A8%EC%97%90-%EB%8F%88%EC%96%98%EA%B8%B0-%EA%BA%BC%EB%83%88%EB%8D%98-%ED%99%A9%EB%8B%B9-%EC%86%8C%EA%B0%9C%ED%8C%85%EB%85%80-r1dYmxeP",
+    "title": "첫만남에 돈얘기 꺼냈던 황당 소개팅녀",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_첫만남돈관리소개팅.md",
+      "originalTitle": "첫만남에 돈얘기 꺼냈던 황당 소개팅녀",
+      "originalMarkdown": "# 첫만남에 돈얘기 꺼냈던 황당 소개팅녀\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B2%AB%EB%A7%8C%EB%82%A8%EC%97%90-%EB%8F%88%EC%96%98%EA%B8%B0-%EA%BA%BC%EB%83%88%EB%8D%98-%ED%99%A9%EB%8B%B9-%EC%86%8C%EA%B0%9C%ED%8C%85%EB%85%80-r1dYmxeP\r\n- exactObservedTitle: 첫만남에 돈얘기 꺼냈던 황당 소개팅녀\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 950 / 댓글 32\r\n- bodyRead: true\r\n- commentsRead: partial (공개 노출 댓글 일부)\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n소개팅 첫 만남부터 연봉과 결혼 후 돈 관리 주체를 묻는 상황이라 돈·연애·결혼 논쟁이 한 번에 붙는다.\r\n\r\n## 관찰 메모\r\n본문에는 소개팅 상대가 연봉과 결혼 후 돈 관리를 아내에게 맡길지를 물었다는 경험담이 적혀 있다.",
+      "originalSha256": "fd0ef874338b1e2cdd9c7291b8f47a5fb79cbd4e06b50cd3884459a6fe4def58",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 255
+}

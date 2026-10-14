@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%AA%85%EC%A0%88-%EC%8B%9C%EB%8C%81-%EB%B0%A9%EB%AC%B8-%EA%B4%80%EB%A0%A8-%EB%82%A8%ED%8E%B8%EA%B3%BC-%EB%8B%A4%ED%88%BC-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4-YqBp6ASS
+제목 - 명절 시댁 방문 관련 남편과 다툼. 조언 부탁드립니다
+내용 - [명시 요약 — 원문 전문 아님]
+설·추석을 양가에 번갈아 가기로 한 합의와 실제 방문 문제를 두고 '커뮤에 올려보자'까지 간 부부 갈등으로 입장 대립이 명확함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%AA%85%EC%A0%88-%EC%8B%9C%EB%8C%81-%EB%B0%A9%EB%AC%B8-%EA%B4%80%EB%A0%A8-%EB%82%A8%ED%8E%B8%EA%B3%BC-%EB%8B%A4%ED%88%BC-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4-YqBp6ASS",
+    "title": "명절 시댁 방문 관련 남편과 다툼. 조언 부탁드립니다",
+    "body": "설·추석을 양가에 번갈아 가기로 한 합의와 실제 방문 문제를 두고 '커뮤에 올려보자'까지 간 부부 갈등으로 입장 대립이 명확함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_명절시댁처가방문갈등.md",
+      "originalTitle": "명절 시댁 방문 관련 남편과 다툼. 조언 부탁드립니다",
+      "originalMarkdown": "# 명절 시댁 방문 관련 남편과 다툼. 조언 부탁드립니다\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%AA%85%EC%A0%88-%EC%8B%9C%EB%8C%81-%EB%B0%A9%EB%AC%B8-%EA%B4%80%EB%A0%A8-%EB%82%A8%ED%8E%B8%EA%B3%BC-%EB%8B%A4%ED%88%BC-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4-YqBp6ASS\r\n- exactObservedTitle: 명절 시댁 방문 관련 남편과 다툼. 조언 부탁드립니다\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 12K / 댓글 168\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 설·추석을 양가에 번갈아 가기로 한 합의와 실제 방문 문제를 두고 '커뮤에 올려보자'까지 간 부부 갈등으로 입장 대립이 명확함.\r\n- acquisition: exact public individual Blind page; BODY_PARTIAL; COMMENTS_UNREAD\r\n- provenance: 공개 페이지에서 실제 보인 범위만 기록; 잘린 이후 본문은 채워 넣지 않음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d970260a1c9f303ec17f513533675f02dd6dc96f147fdfad59718e2b1548fb14",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 390
+}

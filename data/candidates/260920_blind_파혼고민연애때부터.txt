@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%EA%B3%A0%EB%AF%BC-%EC%97%B0%EC%95%A0%EB%95%8C%EB%B6%80%ED%84%B0-%EA%B3%A0%EB%AF%BC%EB%90%98%EB%8D%98-%EC%A0%90-hepd8yct
+제목 - 파혼 고민-연애때부터 고민되던 점..
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 직전까지 누적된 고압적 말투·비꼼·갈등 사례가 구체적으로 제시돼 파혼 여부에 의견이 갈리는 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%EA%B3%A0%EB%AF%BC-%EC%97%B0%EC%95%A0%EB%95%8C%EB%B6%80%ED%84%B0-%EA%B3%A0%EB%AF%BC%EB%90%98%EB%8D%98-%EC%A0%90-hepd8yct",
+    "title": "파혼 고민-연애때부터 고민되던 점..",
+    "body": "결혼 직전까지 누적된 고압적 말투·비꼼·갈등 사례가 구체적으로 제시돼 파혼 여부에 의견이 갈리는 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_파혼고민연애때부터.md",
+      "originalTitle": "파혼 고민-연애때부터 고민되던 점..",
+      "originalMarkdown": "# 파혼 고민-연애때부터 고민되던 점..\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%EA%B3%A0%EB%AF%BC-%EC%97%B0%EC%95%A0%EB%95%8C%EB%B6%80%ED%84%B0-%EA%B3%A0%EB%AF%BC%EB%90%98%EB%8D%98-%EC%A0%90-hepd8yct\r\n- exactObservedTitle: 파혼 고민-연애때부터 고민되던 점..\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 139, 댓글 18\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 결혼 직전까지 누적된 고압적 말투·비꼼·갈등 사례가 구체적으로 제시돼 파혼 여부에 의견이 갈리는 소재.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 게시자 주장 자체이며 독립 사실 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3e19e3a8111bd0efb95745051e971735dc9cb143770ad20c8727db7bc24ad049",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 301
+}

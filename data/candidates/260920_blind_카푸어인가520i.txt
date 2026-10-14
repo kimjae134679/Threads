@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%B4%ED%91%B8%EC%96%B4%EC%9D%B8%EA%B0%80-lq5nr5qp
+제목 - 카푸어인가??
+내용 - [명시 요약 — 원문 전문 아님]
+31세가 520i 구매 뒤 현금 순자산 3.5억이 남는 조건에서 스스로 카푸어인지 묻는 역설적인 숫자 소재라 즉각적인 반응을 유도함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%B4%ED%91%B8%EC%96%B4%EC%9D%B8%EA%B0%80-lq5nr5qp",
+    "title": "카푸어인가??",
+    "body": "31세가 520i 구매 뒤 현금 순자산 3.5억이 남는 조건에서 스스로 카푸어인지 묻는 역설적인 숫자 소재라 즉각적인 반응을 유도함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_카푸어인가520i.md",
+      "originalTitle": "카푸어인가??",
+      "originalMarkdown": "# 카푸어인가??\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EC%B9%B4%ED%91%B8%EC%96%B4%EC%9D%B8%EA%B0%80-lq5nr5qp\r\n- exactObservedTitle: 카푸어인가??\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 82, 댓글 4\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 31세가 520i 구매 뒤 현금 순자산 3.5억이 남는 조건에서 스스로 카푸어인지 묻는 역설적인 숫자 소재라 즉각적인 반응을 유도함.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 나이·자산은 게시자 자기신고\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "701d1c07fa418f99af22155a9768daa1fb5453b344dca0b8a43489c790b3349d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 220
+}

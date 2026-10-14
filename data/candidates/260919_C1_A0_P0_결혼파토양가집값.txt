@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%8C%8C%ED%86%A0%EB%82%9C-%EC%B9%9C%EA%B5%AC-%EC%9D%B4%EC%95%BC%EA%B8%B0-zaNOMxXt
+제목 - 아파트부터 예단까지 맞추다 결국 결혼이 파토났습니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자의 친구가 결혼을 준비하면서 상대 집이 기대하는 수준의 아파트, 예단비, 식장 선택 등을 맞추려다 양가 갈등이 커졌고, 부모 노후자금 문제까지 얽혀 결국 결혼이 깨졌다는 제3자 전언.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%8C%8C%ED%86%A0%EB%82%9C-%EC%B9%9C%EA%B5%AC-%EC%9D%B4%EC%95%BC%EA%B8%B0-zaNOMxXt",
+    "title": "아파트부터 예단까지 맞추다 결국 결혼이 파토났습니다",
+    "body": "작성자의 친구가 결혼을 준비하면서 상대 집이 기대하는 수준의 아파트, 예단비, 식장 선택 등을 맞추려다 양가 갈등이 커졌고, 부모 노후자금 문제까지 얽혀 결국 결혼이 깨졌다는 제3자 전언.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼파토양가집값.md",
+      "originalTitle": "아파트부터 예단까지 맞추다 결국 결혼이 파토났습니다",
+      "originalMarkdown": "# 아파트부터 예단까지 맞추다 결국 결혼이 파토났습니다\r\n\r\n## source\r\nBlind 썸·연애\r\n\r\n## 원문 제목\r\n결혼 파토난 친구 이야기..\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%8C%8C%ED%86%A0%EB%82%9C-%EC%B9%9C%EA%B5%AC-%EC%9D%B4%EC%95%BC%EA%B8%B0-zaNOMxXt\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 4,842 / 댓글 16\r\n\r\n## 본문·댓글 확인\r\n본문 읽음. 댓글 전체 미확인. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n작성자의 친구가 결혼을 준비하면서 상대 집이 기대하는 수준의 아파트, 예단비, 식장 선택 등을 맞추려다 양가 갈등이 커졌고, 부모 노후자금 문제까지 얽혀 결국 결혼이 깨졌다는 제3자 전언.\r\n\r\n## 왜 소재로 좋은지\r\n'결혼하려다 양가 노후자금까지 흔들린다'는 한국형 현실 갈등이 선명하다. 결혼 비용을 어디까지 부모가 부담해야 하는지 의견을 유도하기 좋다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 본문 확인. 제3자 전언, 독립 검증 없음. source asset 미확보. publicationAllowed=false.",
+      "originalSha256": "3fd443f6518f873725e69267b358a2ebed16e7a05d1a666a64dede88bb586454",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 320
+}

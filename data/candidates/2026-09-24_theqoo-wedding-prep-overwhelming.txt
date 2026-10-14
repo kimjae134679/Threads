@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4128461030?filter_mode=best&listStyle=viewer&m=1&order_type=asc&page=1&sort_index=voted_count
+제목 - 결혼 준비가 너무 스트레스라 눈물나는 중기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4128461030?filter_mode=best&listStyle=viewer&m=1&order_type=asc&page=1&sort_index=voted_count",
+    "title": "결혼 준비가 너무 스트레스라 눈물나는 중기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_theqoo-wedding-prep-overwhelming.md",
+      "originalTitle": "결혼 준비가 너무 스트레스라 눈물나는 중기",
+      "originalMarkdown": "# 결혼 준비가 너무 스트레스라 눈물나는 중기\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/4128461030?filter_mode=best&listStyle=viewer&m=1&order_type=asc&page=1&sort_index=voted_count\r\n- exact_observed_title: `결혼 준비가 너무 스트레스라 눈물나는 중기`\r\n- observed_at: 2026-09-24 00:46 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous/pseudonymous community post; first-person claims are attributed/unverified unless independently established\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not confirmed / not downloaded\r\n- observed_metrics: 조회 5,164\r\n- why_good: 시아버지 일정 때문에 결혼식 시기가 급격히 당겨지고 식장·드레스·촬영 선택이 연쇄적으로 꼬이는 과정이 구체적이다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 결혼 일정이 갑자기 앞당겨지면서 원하는 식장과 드레스, 스튜디오 촬영 일정을 거의 선택하지 못하게 됐고 준비 전체를 회피하고 싶을 정도로 스트레스를 받고 있다고 적었다.\r\n",
+      "originalSha256": "954c75e8e238d2c807a4c7f121009bb5aa9ce0491ad3fb3d44c501bd872d3b16",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 186
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%ED%95%98%EB%8A%94%EB%8D%B0-o0z1rHZL
+제목 - 친구 결혼하는데
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%ED%95%98%EB%8A%94%EB%8D%B0-o0z1rHZL",
+    "title": "친구 결혼하는데",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_친구원룸샤넬예물.md",
+      "originalTitle": "친구 결혼하는데",
+      "originalMarkdown": "# 친구 결혼하는데\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC-%EA%B2%B0%ED%98%BC%ED%95%98%EB%8A%94%EB%8D%B0-o0z1rHZL\r\n- exact_observed_title: 친구 결혼하는데\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회수 1,392 / 댓글 28 / 좋아요 4\r\n- body_read: 예\r\n- comments_read: 일부 공개 댓글 확인\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 원룸급 주거와 샤넬 예물·가방 소비를 대비시키며 소비 우선순위에 즉각 의견이 갈리는 소재.\r\n- acquisition: C1\r\n- provenance: exact individual public Blind URL verified; public page readable without bypass\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "db7f1519d3dc617d38888a87a51e3e4b2d212d4255f98e3fc978b6962943af78",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 159
+}

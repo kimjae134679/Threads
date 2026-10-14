@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/490143476
+제목 - 미팅인줄 모르고 단체 미팅 다녀온 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/490143476",
+    "title": "미팅인줄 모르고 단체 미팅 다녀온 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_490143476.md",
+      "originalTitle": "미팅인줄 모르고 단체 미팅 다녀온 후기",
+      "originalMarkdown": "# 미팅인줄 모르고 단체 미팅 다녀온 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/490143476\r\n- exactObservedTitle: `미팅인줄 모르고 단체 미팅 다녀온 후기`\r\n- observedAt: `2026-09-22 07:14 KST`\r\n- provenanceLevel: `C1`\r\n- acquisitionStatus: `public individual page surfaced/read via public web index; no bypass`\r\n- bodyRead: `yes (publicly indexed visible portion)`\r\n- commentsRead: `no`\r\n- imageOrScreenshotPresent: `not observed`\r\n- observedMetrics: `조회 4,494` (public index에서 실제 관찰된 수치; 댓글 수 미확인)\r\n- assetStatus: `A0`\r\n- publicationStatus: `P0`\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 내용\r\n일본에서 일하는 글쓴이가 이직·이사 후 새 인간관계를 만들기 위해 오프라인 모임을 찾아다니다가, 제목 그대로 미팅인 줄 모르고 단체 미팅에 참석하게 된 경험담의 공개 본문 일부를 확인했다.\r\n\r\n## 소재로 좋은 이유\r\n`친구 만들러 갔는데 알고 보니 단체 미팅`이라는 상황 자체에 즉각적인 오해와 반전이 있다. 해외생활·새 인간관계라는 배경도 있어 짧은 썰 소재로 훅이 분명하다.\r\n\r\n## 주의\r\n공개 검색에서 확인된 범위 밖의 후속 전개는 채워 넣지 않는다. 댓글·추가 수치·권리 상태는 미확인이다.\r\n",
+      "originalSha256": "3c3be985ae7208595cb92d4380f898259c4d31d11d9be3b9594fe197e1eb0561",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 100
+}

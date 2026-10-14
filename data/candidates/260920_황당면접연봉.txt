@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%99%A9%EB%8B%B9-%EB%A9%B4%EC%A0%91-%ED%9B%84%EA%B8%B0-emS1LkWu
+제목 - 황당 면접 후기
+내용 - [명시 요약 — 원문 전문 아님]
+연봉을 사전 기재하고 면접에서도 재확인한 지원자의 황당 면접 경험으로 직장인 반응을 끌기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%99%A9%EB%8B%B9-%EB%A9%B4%EC%A0%91-%ED%9B%84%EA%B8%B0-emS1LkWu",
+    "title": "황당 면접 후기",
+    "body": "연봉을 사전 기재하고 면접에서도 재확인한 지원자의 황당 면접 경험으로 직장인 반응을 끌기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_황당면접연봉.md",
+      "originalTitle": "황당 면접 후기",
+      "originalMarkdown": "# 황당 면접 후기\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%ED%99%A9%EB%8B%B9-%EB%A9%B4%EC%A0%91-%ED%9B%84%EA%B8%B0-emS1LkWu\r\n- exactObservedTitle: 황당 면접 후기\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 3,978, 댓글 13\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 연봉을 사전 기재하고 면접에서도 재확인한 지원자의 황당 면접 경험으로 직장인 반응을 끌기 좋음.\r\n- acquisition: C1; exact individual public URL directly observed; visible body is partial in search retrieval\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "449cbeba2c5c57e874817b4ad8d0cfb32e100f505163add288ea99b112e718b9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 211
+}

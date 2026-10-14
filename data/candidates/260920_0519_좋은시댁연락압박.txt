@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1309101415
+제목 - 좋은 시댁 만난 것 같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 준비 간섭은 거의 없었던 좋은 시댁인데 연락 빈도에서만 서운함이 생기는 미묘한 갈등이라 현실 공감형 소재로 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1309101415",
+    "title": "좋은 시댁 만난 것 같은 후기",
+    "body": "결혼 준비 간섭은 거의 없었던 좋은 시댁인데 연락 빈도에서만 서운함이 생기는 미묘한 갈등이라 현실 공감형 소재로 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_0519_좋은시댁연락압박.md",
+      "originalTitle": "좋은 시댁 만난 것 같은 후기",
+      "originalMarkdown": "# 좋은 시댁 만난 것 같은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/1309101415\r\n- exactObservedTitle: `좋은 시댁 만난 것 같은 후기`\r\n- observedAt: 2026-09-20 05:19 KST\r\n- observedMetrics: 조회 4,331\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: false\r\n- acquisition: exact individual public page read\r\n- provenance: TheQoo anonymous original post page as observed\r\n- whyGood: 결혼 준비 간섭은 거의 없었던 좋은 시댁인데 연락 빈도에서만 서운함이 생기는 미묘한 갈등이라 현실 공감형 소재로 좋음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d4c2e43aea8fd713487a99242d82393072cf5ba0eaad6648ad7a479a2be73f0a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 169
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/202221630
+제목 - 피곤한 친구 성격 좋게 바꿔나간 후기
+내용 - [명시 요약 — 원문 전문 아님]
+악의는 없지만 상대가 말하지 않은 기대까지 알아서 충족해주길 바라는 친구 때문에 관계가 피곤해지고, 글쓴이가 대화를 통해 그 성향을 바꿔보려 한 경험담이라 인간관계의 기대치와 경계 설정에 공감·논쟁 요소가 강하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/202221630",
+    "title": "피곤한 친구 성격 좋게 바꿔나간 후기",
+    "body": "악의는 없지만 상대가 말하지 않은 기대까지 알아서 충족해주길 바라는 친구 때문에 관계가 피곤해지고, 글쓴이가 대화를 통해 그 성향을 바꿔보려 한 경험담이라 인간관계의 기대치와 경계 설정에 공감·논쟁 요소가 강하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_202221630.md",
+      "originalTitle": "피곤한 친구 성격 좋게 바꿔나간 후기",
+      "originalMarkdown": "# 피곤한 친구 성격 좋게 바꿔나간 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/202221630\r\n- exactObservedTitle: 피곤한 친구 성격 좋게 바꿔나간 후기\r\n- observedAt: 2026-09-23 09:19 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 수 13634 (public indexed page as observed)\r\n- whyGood: 악의는 없지만 상대가 말하지 않은 기대까지 알아서 충족해주길 바라는 친구 때문에 관계가 피곤해지고, 글쓴이가 대화를 통해 그 성향을 바꿔보려 한 경험담이라 인간관계의 기대치와 경계 설정에 공감·논쟁 요소가 강하다.\r\n- verification: 개인 경험담이며 친구의 관점은 확인되지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "cc320c7a003260756c8416d880da4333176920dd43eae7b1b6546eb5330f4b9d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 225
+}

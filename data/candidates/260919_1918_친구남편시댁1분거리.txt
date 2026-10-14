@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/foreign/4323485198
+제목 - 친구 남편 마음에 안들어..
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/foreign/4323485198",
+    "title": "친구 남편 마음에 안들어..",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_1918_친구남편시댁1분거리.md",
+      "originalTitle": "친구 남편 마음에 안들어..",
+      "originalMarkdown": "# 친구 남편 마음에 안들어..\r\n\r\n- source: TheQoo / 해외거주토크\r\n- public_url: https://theqoo.net/foreign/4323485198\r\n- exact_observed_title: 친구 남편 마음에 안들어..\r\n- observed_at: 2026-09-19 19:18 KST\r\n- observed_metrics: 조회 327 / 댓글 12\r\n- body_read: 부분 확인 (BODY_PARTIAL)\r\n- comments_read: 아니오\r\n- image_or_screenshot_present: 확인하지 않음\r\n- why_good: 시댁 1분 거리, 잦은 호출, 시누이 갈등, 결혼식 취소까지 이어지는 연속 갈등 구조가 강함.\r\n- acquisition: C1\r\n- provenance: exact individual public TheQoo URL verified; observed post is treated as TheQoo post, no upstream origin inferred\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "afa2c8dc038018bda503d2ecdcb32c39eb64e69541a409b8bd0dd0bc52ccdc01",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 96
+}

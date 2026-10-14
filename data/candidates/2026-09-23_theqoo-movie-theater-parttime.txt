@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/810237940
+제목 - 영화관 알바가 너무 힘든 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/810237940",
+    "title": "영화관 알바가 너무 힘든 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-movie-theater-parttime.md",
+      "originalTitle": "영화관 알바가 너무 힘든 후기",
+      "originalMarkdown": "# 영화관 알바가 너무 힘든 후기\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/810237940\r\n- exact_observed_title: `영화관 알바가 너무 힘든 후기`\r\n- observed_at: 2026-09-23 00:14 KST\r\n- provenance_level: C1\r\n- acquisition: public individual page discovered/read through public web index; exact individual public URL verified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: false / 이번 발굴에서 별도 이미지·스크린샷 확인·다운로드 안 함\r\n- observed_metrics: 조회 수 6043 (공개 페이지에 관찰된 값만 기록)\r\n- why_good: 성수기 영화관에서 200~300석 규모 상영관을 짧은 시간 안에 혼자 퇴장·청소해야 하고 입장을 기다리는 고객 항의까지 동시에 받는 알바 경험이다. 구조적인 업무 압박과 고객 갈등이 명확해 서비스직 공감 소재로 쓰기 좋다.\r\n- claim_status: 작성자의 개인 경험 주장으로 미검증\r\n- rights_status: 미확인\r\n- OCR: false\r\n- moderation_status: 미판정\r\n- asset_status: A0\r\n- publication_status: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3d39b6ab8f31b8fae89cbd51236dd08c2f06cf4f26d4c529901d1c51e8b2ecbf",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 95
+}

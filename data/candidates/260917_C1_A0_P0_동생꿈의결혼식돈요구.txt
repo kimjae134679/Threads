@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1cuvk6h/aita_for_not_helping_my_sister_pay_for_her_wedding/
+제목 - AITA for not helping my sister pay for her wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 장학금으로 대학을 마치고 좋은 직장을 얻어 자신의 결혼식 비용도 부부가 직접 부담했다. 여동생은 비슷한 수준의 결혼식을 원하지만 부모도 여유가 없다. 작성자가 결혼선물로 3,000달러를 줬더니 동생은 이것이 전부라는 말을 듣고 꿈꾸던 드레스 비용에도 부족하다며 추가 금액을 요구했다. 공개 원문 본문 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1cuvk6h/aita_for_not_helping_my_sister_pay_for_her_wedding/",
+    "title": "AITA for not helping my sister pay for her wedding?",
+    "body": "작성자는 장학금으로 대학을 마치고 좋은 직장을 얻어 자신의 결혼식 비용도 부부가 직접 부담했다. 여동생은 비슷한 수준의 결혼식을 원하지만 부모도 여유가 없다. 작성자가 결혼선물로 3,000달러를 줬더니 동생은 이것이 전부라는 말을 듣고 꿈꾸던 드레스 비용에도 부족하다며 추가 금액을 요구했다. 공개 원문 본문 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_동생꿈의결혼식돈요구.md",
+      "originalTitle": "AITA for not helping my sister pay for her wedding?",
+      "originalMarkdown": "# AITA for not helping my sister pay for her wedding?\r\n\r\n## 글 내용\r\n작성자는 장학금으로 대학을 마치고 좋은 직장을 얻어 자신의 결혼식 비용도 부부가 직접 부담했다. 여동생은 비슷한 수준의 결혼식을 원하지만 부모도 여유가 없다. 작성자가 결혼선물로 3,000달러를 줬더니 동생은 이것이 전부라는 말을 듣고 꿈꾸던 드레스 비용에도 부족하다며 추가 금액을 요구했다. 공개 원문 본문 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1cuvk6h/aita_for_not_helping_my_sister_pay_for_her_wedding/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 04:35 KST\r\n- Reddit score: +3,943\r\n- 조회수/댓글 총수: 공개 검색 결과에서 확인하지 못함\r\n\r\n## 평가\r\n3천 달러 선물을 받고도 \"나머지는 언제 보내냐\"고 묻는 한 문장으로 갈등이 즉시 이해된다. 가족·돈·결혼·비교심리가 모두 들어간 의견형 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: 미확인\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n",
+      "originalSha256": "fae9c849a39391fc639c39ff095969c4c9c4cbc4a4596e69bfbd561392157943",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 385
+}

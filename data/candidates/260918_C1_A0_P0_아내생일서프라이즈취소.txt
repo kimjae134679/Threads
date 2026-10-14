@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2784879537
+제목 - 아내 생일 준비를 제대로 못한 남편 (feat. 결혼 바이럴)
+내용 - [명시 요약 — 원문 전문 아님]
+아내의 60번째 생일에 남편이 서프라이즈를 준비하다 아내가 그런 행사를 싫어한다는 사실을 깨닫고 취소한다. 대신 아내가 원하는 동네 카페에 함께 가고 셀프사진을 찍으며 둘만의 시간을 보내는 방향으로 바뀌는 이야기다. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2784879537",
+    "title": "아내 생일 준비를 제대로 못한 남편 (feat. 결혼 바이럴)",
+    "body": "아내의 60번째 생일에 남편이 서프라이즈를 준비하다 아내가 그런 행사를 싫어한다는 사실을 깨닫고 취소한다. 대신 아내가 원하는 동네 카페에 함께 가고 셀프사진을 찍으며 둘만의 시간을 보내는 방향으로 바뀌는 이야기다. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_아내생일서프라이즈취소.md",
+      "originalTitle": "아내 생일 준비를 제대로 못한 남편 (feat. 결혼 바이럴)",
+      "originalMarkdown": "# 아내 생일 준비를 제대로 못한 남편 (feat. 결혼 바이럴)\r\n\r\n## 글 내용\r\n아내의 60번째 생일에 남편이 서프라이즈를 준비하다 아내가 그런 행사를 싫어한다는 사실을 깨닫고 취소한다. 대신 아내가 원하는 동네 카페에 함께 가고 셀프사진을 찍으며 둘만의 시간을 보내는 방향으로 바뀌는 이야기다. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2784879537\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 10:37 KST 관측: 조회 13,867 / 댓글 8. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n갈등 일변도가 아닌 가벼운 반전·부부 공감 레인. 이미지가 핵심이어서 실제 source sequence 확보 전에는 제작 불가.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n본문에 다수 이미지가 있으나 실제 파일 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "014907ccebcb552eafe3f71ed79566e402742f9a9acf831e270b8002e2cfbda7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 252
+}

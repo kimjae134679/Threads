@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC%EC%9D%98-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B0%B8%EC%84%9D-i5byuh0w
+제목 - 친구의 결혼식 참석
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC%EC%9D%98-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B0%B8%EC%84%9D-i5byuh0w",
+    "title": "친구의 결혼식 참석",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_blind-friend-wedding-vs-second-birthday.md",
+      "originalTitle": "친구의 결혼식 참석",
+      "originalMarkdown": "# 친구의 결혼식 참석\r\n\r\n- source: Blind 블라블라\r\n- source_url: https://www.teamblind.com/kr/post/%EC%B9%9C%EA%B5%AC%EC%9D%98-%EA%B2%B0%ED%98%BC%EC%8B%9D-%EC%B0%B8%EC%84%9D-i5byuh0w\r\n- exact_observed_title: `친구의 결혼식 참석`\r\n- observed_at: 2026-09-24 00:46 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous/pseudonymous community post; first-person claims are attributed/unverified unless independently established\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not confirmed / not downloaded\r\n- observed_metrics: 조회 67; 댓글 4\r\n- why_good: 같은 날 아이 돌잔치와 친한 친구 결혼식이 겹쳐 배우자가 참석을 말리는 상황이 양쪽 입장 논쟁으로 이어진다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 친한 친구의 결혼식과 자신의 둘째 돌잔치가 같은 날 겹쳤고, 친구가 돌잔치 후 결혼식에 들르려 했지만 배우자가 아이 둘을 혼자 보기 어렵다며 말리는 상황이라 서운함을 느낀다고 적었다.\r\n",
+      "originalSha256": "48a912e3f5772b9f0be8c2215616c9ce2b4bdd5cd5e3c9621893297ca1706137",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 171
+}

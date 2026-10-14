@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3747563625
+제목 - 요즘 축의금 5 진짜 안 하는 것 같은 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3747563625",
+    "title": "요즘 축의금 5 진짜 안 하는 것 같은 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-wedding-gift-5manwon_c1.md",
+      "originalTitle": "요즘 축의금 5 진짜 안 하는 것 같은 후기",
+      "originalMarkdown": "# 요즘 축의금 5 진짜 안 하는 것 같은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/3747563625\r\n- exactObservedTitle: 요즘 축의금 5 진짜 안 하는 것 같은 후기\r\n- observedAt: 2026-09-23 17:15 KST\r\n- observedMetrics: 조회 9,872 / 댓글 102 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 개인 경험담 및 주변 사례 주장. 사실관계는 독립 검증하지 않았으며 작성자의 주장으로만 취급.\r\n- whyGoodMaterial: 결혼식 축의금 5만원이 이제 적은지, 참석·식사 여부에 따라 얼마가 적정한지 즉시 의견이 갈리는 돈·관계 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "a67e0d72df6c77e5a14a5776c403f40ce2fa5d4d5d9210ae15d8fbb1a23f1da8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 104
+}

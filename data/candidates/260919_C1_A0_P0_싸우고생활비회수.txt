@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%83%9D%ED%99%9C%EB%B9%84-%EC%95%88%EC%A3%BC%EB%8A%94-%EB%82%A8%ED%8E%B8-HWpxMMfR
+제목 - 싸웠더니 공동통장 돈 빼고 "돈 받고 싶으면 알아서 기었어야지"
+내용 - [명시 요약 — 원문 전문 아님]
+공개 페이지 본문 확인. 둘 다 휴직 중인 부부가 다툰 뒤 남편이 공동통장에 넣어둔 돈을 회수하고 부모급여·육아휴직급여·아기용품을 반반 하자고 했다는 사연. 작성자가 생활비를 묻자 남편이 싸울 때 성질을 냈으니 돈을 받고 싶으면 알아서 기었어야 한다는 취지로 말했다고 적었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%83%9D%ED%99%9C%EB%B9%84-%EC%95%88%EC%A3%BC%EB%8A%94-%EB%82%A8%ED%8E%B8-HWpxMMfR",
+    "title": "싸웠더니 공동통장 돈 빼고 \"돈 받고 싶으면 알아서 기었어야지\"",
+    "body": "공개 페이지 본문 확인. 둘 다 휴직 중인 부부가 다툰 뒤 남편이 공동통장에 넣어둔 돈을 회수하고 부모급여·육아휴직급여·아기용품을 반반 하자고 했다는 사연. 작성자가 생활비를 묻자 남편이 싸울 때 성질을 냈으니 돈을 받고 싶으면 알아서 기었어야 한다는 취지로 말했다고 적었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_싸우고생활비회수.md",
+      "originalTitle": "싸웠더니 공동통장 돈 빼고 \"돈 받고 싶으면 알아서 기었어야지\"",
+      "originalMarkdown": "# 싸웠더니 공동통장 돈 빼고 \"돈 받고 싶으면 알아서 기었어야지\"\r\n\r\n## 원문 제목\r\n생활비 안주는 남편\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n공개 페이지 본문 확인. 둘 다 휴직 중인 부부가 다툰 뒤 남편이 공동통장에 넣어둔 돈을 회수하고 부모급여·육아휴직급여·아기용품을 반반 하자고 했다는 사연. 작성자가 생활비를 묻자 남편이 싸울 때 성질을 냈으니 돈을 받고 싶으면 알아서 기었어야 한다는 취지로 말했다고 적었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%83%9D%ED%99%9C%EB%B9%84-%EC%95%88%EC%A3%BC%EB%8A%94-%EB%82%A8%ED%8E%B8-HWpxMMfR\r\n\r\n## 관측\r\n- 관측시각: 2026-09-19 09:20 KST\r\n- 조회수: 1,029\r\n- 댓글: 26\r\n- 좋아요: 확정 수치 미확인\r\n- 본문: 읽음\r\n- 댓글: 일부 공개 노출 확인\r\n- 이미지/스크린샷 존재: 미확인\r\n\r\n## 평가\r\n부부싸움과 생활비를 결부한 발언이 매우 강한 한 장면으로 잡히고, 독자가 즉시 의견을 내기 좋은 소재.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL 확인. acquisition/provenance: C1_EXACT_PUBLIC_PAGE_VERIFIED. A0/P0. publicationAllowed=false.",
+      "originalSha256": "5327da0451be505a983979bfe7962bb2df16a06159d1e02ad9a0a9e8d61f02fc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 357
+}

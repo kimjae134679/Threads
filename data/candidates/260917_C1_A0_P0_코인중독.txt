@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%BD%94%EC%9D%B8-%EC%A4%91%EB%8F%85-ykFZ3Vnu
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 암호화폐 공개 글. 30대 작성자는 주식으로 약 5년 동안 1억5천만원 정도 수익을 냈고 투자로 먹고살 수 있다고 생각했지만, 코인 불장에 뛰어들어 초반 수익을 경험한 뒤 하락장에서 손실 복구를 반복하다 더 큰 돈을 잃고 빚까지 생겼다고 회고한다. 투자에 몰두하면서 회사생활·운동·자기계발도 뒷전이 됐고, 모두 정리한 뒤에도 힘들 때마다 다시 투자 생각이 나는 금단감과 우울감을 적었다. 공개 페이지에서 본문을 읽었고 댓글 33개 존재를 확인했으나 전체 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%BD%94%EC%9D%B8-%EC%A4%91%EB%8F%85-ykFZ3Vnu",
+    "title": "제목",
+    "body": "Blind 암호화폐 공개 글. 30대 작성자는 주식으로 약 5년 동안 1억5천만원 정도 수익을 냈고 투자로 먹고살 수 있다고 생각했지만, 코인 불장에 뛰어들어 초반 수익을 경험한 뒤 하락장에서 손실 복구를 반복하다 더 큰 돈을 잃고 빚까지 생겼다고 회고한다. 투자에 몰두하면서 회사생활·운동·자기계발도 뒷전이 됐고, 모두 정리한 뒤에도 힘들 때마다 다시 투자 생각이 나는 금단감과 우울감을 적었다. 공개 페이지에서 본문을 읽었고 댓글 33개 존재를 확인했으나 전체 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_코인중독.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n코인 중독\r\n\r\n## 글 내용\r\nBlind 암호화폐 공개 글. 30대 작성자는 주식으로 약 5년 동안 1억5천만원 정도 수익을 냈고 투자로 먹고살 수 있다고 생각했지만, 코인 불장에 뛰어들어 초반 수익을 경험한 뒤 하락장에서 손실 복구를 반복하다 더 큰 돈을 잃고 빚까지 생겼다고 회고한다. 투자에 몰두하면서 회사생활·운동·자기계발도 뒷전이 됐고, 모두 정리한 뒤에도 힘들 때마다 다시 투자 생각이 나는 금단감과 우울감을 적었다. 공개 페이지에서 본문을 읽었고 댓글 33개 존재를 확인했으나 전체 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%BD%94%EC%9D%B8-%EC%A4%91%EB%8F%85-ykFZ3Vnu\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 페이지/search 결과\r\n- 조회수: 3,239\r\n- 댓글: 33\r\n- 좋아요: 확인하지 못함\r\n\r\n## 평가\r\n- 주식에서 큰 수익 → 코인 진입 → 손실 복구 집착 → 빚 → 회사·생활 붕괴라는 명확한 사람 이야기.\r\n- 일반 투자 뉴스가 아니라 중독과 생활 변화가 중심이라 투자 레인 우선 기준에 맞음.\r\n- 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "3c34d236e2a452c3867737841b1f8c359d153ded2dc0b4d5d97d78f2f38148d3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 404
+}

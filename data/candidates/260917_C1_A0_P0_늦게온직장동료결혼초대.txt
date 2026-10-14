@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1kabtqu
+제목 - AITA for declining a late invite I got to a coworker’s wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+직장동료이자 상사 아들의 결혼식에서 다른 동료들은 몇 달 전 초대장을 받았지만 작성자는 빠져 있어 서운함을 삼켰다. 이후 뒤늦게 초대장을 받았고, 상대는 먼저 초대한 사람 중 불참자가 생겨 추가로 초대한 것이라고 설명했다. 작성자는 자신이 사실상 빈자리 채우기용 후순위 초대였다고 느껴 거절해도 되는지 고민한다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1kabtqu",
+    "title": "AITA for declining a late invite I got to a coworker’s wedding?",
+    "body": "직장동료이자 상사 아들의 결혼식에서 다른 동료들은 몇 달 전 초대장을 받았지만 작성자는 빠져 있어 서운함을 삼켰다. 이후 뒤늦게 초대장을 받았고, 상대는 먼저 초대한 사람 중 불참자가 생겨 추가로 초대한 것이라고 설명했다. 작성자는 자신이 사실상 빈자리 채우기용 후순위 초대였다고 느껴 거절해도 되는지 고민한다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_늦게온직장동료결혼초대.md",
+      "originalTitle": "AITA for declining a late invite I got to a coworker’s wedding?",
+      "originalMarkdown": "# AITA for declining a late invite I got to a coworker’s wedding?\r\n\r\n## 글 내용\r\n직장동료이자 상사 아들의 결혼식에서 다른 동료들은 몇 달 전 초대장을 받았지만 작성자는 빠져 있어 서운함을 삼켰다. 이후 뒤늦게 초대장을 받았고, 상대는 먼저 초대한 사람 중 불참자가 생겨 추가로 초대한 것이라고 설명했다. 작성자는 자신이 사실상 빈자리 채우기용 후순위 초대였다고 느껴 거절해도 되는지 고민한다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1kabtqu\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 공개 검색에서 Reddit 점수 +1,042 확인. 조회수·댓글 수는 같은 관측에서 확인하지 못함.\r\n\r\n## 평가\r\n`회사에서 나만 초대 안 됨 → 몇 달 뒤 빈자리 생기자 초대`라는 민망한 반전과 직장 인간관계가 강하다. 한국에서도 맥락 이해가 쉬워 해외 보강 후보 중 우선순위가 높다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: NO\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "1612e24f6a9542a49e022c0d86852a273d6678ed98e3c5c5576fc4a13dc89a0a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 382
+}

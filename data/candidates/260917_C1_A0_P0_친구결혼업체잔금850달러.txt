@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1kcgxde
+제목 - AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?
+내용 - [명시 요약 — 원문 전문 아님]
+이벤트 회사를 운영하는 작성자가 남편의 친구 결혼식을 거의 원가 수준으로 진행해 줬는데, 행사 후 5개월이 지나도록 약 70,000루피(약 850달러)의 잔금을 받지 못했다는 사연이다. 친구는 계속 돈이 부족하다고 하고, 작성자 부부는 개인적 관계 때문에 오래 기다려 줬지만 팀 전체가 투입된 일이라 계속 받으려는 것이 잘못인지 묻는다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1kcgxde",
+    "title": "AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?",
+    "body": "이벤트 회사를 운영하는 작성자가 남편의 친구 결혼식을 거의 원가 수준으로 진행해 줬는데, 행사 후 5개월이 지나도록 약 70,000루피(약 850달러)의 잔금을 받지 못했다는 사연이다. 친구는 계속 돈이 부족하다고 하고, 작성자 부부는 개인적 관계 때문에 오래 기다려 줬지만 팀 전체가 투입된 일이라 계속 받으려는 것이 잘못인지 묻는다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_친구결혼업체잔금850달러.md",
+      "originalTitle": "AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?",
+      "originalMarkdown": "# AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?\r\n\r\n## 글 내용\r\n이벤트 회사를 운영하는 작성자가 남편의 친구 결혼식을 거의 원가 수준으로 진행해 줬는데, 행사 후 5개월이 지나도록 약 70,000루피(약 850달러)의 잔금을 받지 못했다는 사연이다. 친구는 계속 돈이 부족하다고 하고, 작성자 부부는 개인적 관계 때문에 오래 기다려 줬지만 팀 전체가 투입된 일이라 계속 받으려는 것이 잘못인지 묻는다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1kcgxde\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 공개 검색에서 Reddit 점수 +937 확인. 조회수·댓글 수는 같은 관측에서 확인하지 못함.\r\n\r\n## 평가\r\n`친구 결혼식이라 원가로 해줬는데 잔금까지 안 줌`이라는 직장/친구/결혼/돈 갈등이 한 문장에 정리된다. 한국 커뮤니티 우선 탐색 뒤 해외 보강용으로 유지할 만하다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: NO\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "e7c978ce6051a8a120ead1f5ee3635c0908efe95a31a68fe8c83a161ba9fe6b9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 478
+}

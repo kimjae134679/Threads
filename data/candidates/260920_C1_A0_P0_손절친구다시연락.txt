@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2156373479
+제목 - 손절한 친구에게서 다시 연락이 온 초기
+내용 - [명시 요약 — 원문 전문 아님]
+오랜 친구의 과도한 연락과 의존 때문에 손절한 뒤 다시 연락이 온 구조라 관계 경계선에 대한 의견이 강하게 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2156373479",
+    "title": "손절한 친구에게서 다시 연락이 온 초기",
+    "body": "오랜 친구의 과도한 연락과 의존 때문에 손절한 뒤 다시 연락이 온 구조라 관계 경계선에 대한 의견이 강하게 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_손절친구다시연락.md",
+      "originalTitle": "손절한 친구에게서 다시 연락이 온 초기",
+      "originalMarkdown": "# 손절한 친구에게서 다시 연락이 온 초기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/2156373479\r\n- exactObservedTitle: `손절한 친구에게서 다시 연락이 온 초기`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 조회 13,577 / 댓글 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 10년 지기 친구 관계 경험담.\r\n- whyGood: 오랜 친구의 과도한 연락과 의존 때문에 손절한 뒤 다시 연락이 온 구조라 관계 경계선에 대한 의견이 강하게 갈릴 소재.\r\n- safety: 작성자 주장만 기록하고 상대방 상태를 진단하지 않음.",
+      "originalSha256": "52d454c571fbe69c4c7c1f73736473deb150dc3e7b82b684c8899a180c659ac9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 174
+}

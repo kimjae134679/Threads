@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C%EB%82%A8%ED%8E%B8-%EC%B2%B4%EC%B7%A8-h502z8mo
+제목 - 남친(남편) 체취??
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 두 달 전 주말 동거를 시작하자 집에 남는 체취 문제를 발견했다는 민망하지만 공감하기 쉬운 생활 오해/고민 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C%EB%82%A8%ED%8E%B8-%EC%B2%B4%EC%B7%A8-h502z8mo",
+    "title": "남친(남편) 체취??",
+    "body": "결혼 두 달 전 주말 동거를 시작하자 집에 남는 체취 문제를 발견했다는 민망하지만 공감하기 쉬운 생활 오해/고민 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼두달전남친체취.md",
+      "originalTitle": "남친(남편) 체취??",
+      "originalMarkdown": "# 남친(남편) 체취??\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C%EB%82%A8%ED%8E%B8-%EC%B2%B4%EC%B7%A8-h502z8mo\r\n- exactObservedTitle: 남친(남편) 체취??\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 190 / 댓글 10\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 결혼 두 달 전 주말 동거를 시작하자 집에 남는 체취 문제를 발견했다는 민망하지만 공감하기 쉬운 생활 오해/고민 소재.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_PARTIAL\r\n- provenance: 원문 게시자의 체감/주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c70b22f81a8d8ab89d060b7193746149c0bc049fb406ae4e189ceeab08ff6744",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 226
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1625052665
+제목 - 결혼식으로 사람 거르는 경우 생각보다 좀 있는 것 같아 신기한 후기(뒤죽박죽 긴글주의)
+내용 - [명시 요약 — 원문 전문 아님]
+외국인 배우자 결혼식 통역을 부탁받았는데 조건이 진행 통역에서 직계가족 동시통역으로 바뀌고 현장 장비도 없었다는 황당한 부탁/우정 갈등 에피소드.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1625052665",
+    "title": "결혼식으로 사람 거르는 경우 생각보다 좀 있는 것 같아 신기한 후기(뒤죽박죽 긴글주의)",
+    "body": "외국인 배우자 결혼식 통역을 부탁받았는데 조건이 진행 통역에서 직계가족 동시통역으로 바뀌고 현장 장비도 없었다는 황당한 부탁/우정 갈등 에피소드.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_친구결혼식통역부탁갈등.md",
+      "originalTitle": "결혼식으로 사람 거르는 경우 생각보다 좀 있는 것 같아 신기한 후기(뒤죽박죽 긴글주의)",
+      "originalMarkdown": "# 결혼식으로 사람 거르는 경우 생각보다 좀 있는 것 같아 신기한 후기(뒤죽박죽 긴글주의)\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/1625052665\r\n- exactObservedTitle: 결혼식으로 사람 거르는 경우 생각보다 좀 있는 것 같아 신기한 후기(뒤죽박죽 긴글주의)\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 2,789 / 20 (페이지 표기 의미를 임의 확정하지 않음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public URL; poster account, not independently verified\r\n- whyGood: 외국인 배우자 결혼식 통역을 부탁받았는데 조건이 진행 통역에서 직계가족 동시통역으로 바뀌고 현장 장비도 없었다는 황당한 부탁/우정 갈등 에피소드.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3fbf851c5d9feba117ecd3d7c3ec5721a0a0e7ca4c0e06868c7800b2e8b2f7e2",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 216
+}

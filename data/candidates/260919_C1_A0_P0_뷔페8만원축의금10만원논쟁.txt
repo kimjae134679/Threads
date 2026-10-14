@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4349803065
+제목 - 뷔페 8만원인데 축의금 10만원 논쟁
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4349803065",
+    "title": "뷔페 8만원인데 축의금 10만원 논쟁",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_뷔페8만원축의금10만원논쟁.md",
+      "originalTitle": "뷔페 8만원인데 축의금 10만원 논쟁",
+      "originalMarkdown": "# 뷔페 8만원인데 축의금 10만원 논쟁\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/4349803065\r\n- exactObservedTitle: 요즘 결혼 뷔페 가격이 8만원인데 축의금 10만원은 뭐야.jpg\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 수 1581\r\n- bodyRead: true (공개 페이지 노출 텍스트)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes (페이지 표시)\r\n- provenance: C1 / exact individual public URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n결혼식 식대와 축의금을 직접 연결하는 태도에 대한 짧고 강한 논쟁거리다. 하객이 식대를 메워야 하는지 즉시 의견을 내기 쉽다.\r\n",
+      "originalSha256": "afb80c16af1b47ff50796d4c2d7016737236099e97f18bca93bca2963dc65671",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 100
+}

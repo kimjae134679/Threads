@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3484928652
+제목 - 여행하면서 황당한 에피소드가 많은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+로드트립 중 걸어서 국경을 넘으려다 제지된 낯선 사람이 작성자의 차에 갑자기 동승하게 되는 상황이 구체적이고 황당하다. 여행 지연과 낯선 사람의 행동이 연속되어 짧은 실화형 소재로 전개력이 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3484928652",
+    "title": "여행하면서 황당한 에피소드가 많은 후기",
+    "body": "로드트립 중 걸어서 국경을 넘으려다 제지된 낯선 사람이 작성자의 차에 갑자기 동승하게 되는 상황이 구체적이고 황당하다. 여행 지연과 낯선 사람의 행동이 연속되어 짧은 실화형 소재로 전개력이 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_3484928652.md",
+      "originalTitle": "여행하면서 황당한 에피소드가 많은 후기",
+      "originalMarkdown": "# 여행하면서 황당한 에피소드가 많은 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3484928652\r\n- exactObservedTitle: `여행하면서 황당한 에피소드가 많은 후기`\r\n- observedAt: 2026-09-22 19:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL verified through public search/index; body text was available and read there\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed in the public text inspected\r\n- observedMetrics: 조회 수 7551\r\n- whyGood: 로드트립 중 걸어서 국경을 넘으려다 제지된 낯선 사람이 작성자의 차에 갑자기 동승하게 되는 상황이 구체적이고 황당하다. 여행 지연과 낯선 사람의 행동이 연속되어 짧은 실화형 소재로 전개력이 있다.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights: 미확인\r\n- OCR: 미수행\r\n- moderation: 미수행\r\n",
+      "originalSha256": "6d15a6212bfddd9c7ebe3a9e198491d7dbf07240a3e48cbb80109003b9f14c05",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 217
+}

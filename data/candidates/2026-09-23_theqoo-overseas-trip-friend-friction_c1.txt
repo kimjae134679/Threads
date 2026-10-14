@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/144226753
+제목 - 친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/144226753",
+    "title": "친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-overseas-trip-friend-friction_c1.md",
+      "originalTitle": "친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기",
+      "originalMarkdown": "# 친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/144226753\r\n- exactObservedTitle: 친구랑 해외여행했는데 이제 같이 여행가기 싫은 후기\r\n- observedAt: 2026-09-23 19:16 KST\r\n- observedMetrics: 조회 12,183 / 댓글 36\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 친구와 해외여행 경험담. 사건·대화·관계에 대한 세부 사실은 독립 검증하지 않았으며 작성자의 주장으로만 취급.\r\n- whyGoodMaterial: 여행 준비·통역·일정 결정·비용 문제를 한 사람이 떠맡으며 누적된 짜증이 여러 구체적 에피소드로 이어지고, 결국 다시 같이 여행하지 않겠다는 결론까지 가서 공감과 의견이 쉽게 갈릴 수 있음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "b48a284567e2ea1c65e53327843b4e48ada37afebe52d2a324da99110e3e5269",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 107
+}

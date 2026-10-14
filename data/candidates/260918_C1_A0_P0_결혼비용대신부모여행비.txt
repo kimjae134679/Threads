@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1imlm8w
+제목 - AITA for not helping my sister pay for her wedding but helping our family go to the wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+여동생이 destination wedding 비용 지원을 부모에게 요청했지만 부모는 여력이 없어 작성자에게 돈을 빌려달라고 함. 작성자는 결혼식 비용 대출은 거절하는 대신 부모와 가족의 여행·숙박비를 내겠다고 했는데, 이후 부모가 초대조차 받지 못했다는 사실이 드러남.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1imlm8w",
+    "title": "AITA for not helping my sister pay for her wedding but helping our family go to the wedding?",
+    "body": "여동생이 destination wedding 비용 지원을 부모에게 요청했지만 부모는 여력이 없어 작성자에게 돈을 빌려달라고 함. 작성자는 결혼식 비용 대출은 거절하는 대신 부모와 가족의 여행·숙박비를 내겠다고 했는데, 이후 부모가 초대조차 받지 못했다는 사실이 드러남.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼비용대신부모여행비.md",
+      "originalTitle": "AITA for not helping my sister pay for her wedding but helping our family go to the wedding?",
+      "originalMarkdown": "# AITA for not helping my sister pay for her wedding but helping our family go to the wedding?\r\n\r\n## 글 내용\r\n여동생이 destination wedding 비용 지원을 부모에게 요청했지만 부모는 여력이 없어 작성자에게 돈을 빌려달라고 함. 작성자는 결혼식 비용 대출은 거절하는 대신 부모와 가족의 여행·숙박비를 내겠다고 했는데, 이후 부모가 초대조차 받지 못했다는 사실이 드러남.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1imlm8w\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n2026-09-18 06:34 KST 관측: +547 votes. 조회수/댓글 총수 미확인.\r\n\r\n## 평가\r\n가족 참석비를 대신 내주겠다는데 정작 부모가 초대되지 않았다는 반전이 명확하고 결혼비용·가족 갈등 의견성이 높음.\r\n\r\n## 이미지/자산/게시상태\r\n형식: 글. full body read: 예. comments read: 아니오. source screenshot/media: 미확인. acquisition: EXACT_PUBLIC_URL_VERIFIED / ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요, 04_REVIEW_PUBLISH만 게시 가능.\r\n",
+      "originalSha256": "bfed6eabb6bc5c09d769661298f3c12fc932704cb734dd94802aa9db1a6d55bc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 348
+}

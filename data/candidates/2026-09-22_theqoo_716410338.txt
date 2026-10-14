@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/716410338
+제목 - 팀장이랑 싸운 후기
+내용 - [명시 요약 — 원문 전문 아님]
+일을 빨리 잘한다는 이유로 자기 업무뿐 아니라 다른 팀원과 타팀의 자잘한 업무까지 계속 떠맡게 된 사회초년생이 팀장과 충돌하는 이야기라 직장인의 공감과 업무분장 논쟁이 강한 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/716410338",
+    "title": "팀장이랑 싸운 후기",
+    "body": "일을 빨리 잘한다는 이유로 자기 업무뿐 아니라 다른 팀원과 타팀의 자잘한 업무까지 계속 떠맡게 된 사회초년생이 팀장과 충돌하는 이야기라 직장인의 공감과 업무분장 논쟁이 강한 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_716410338.md",
+      "originalTitle": "팀장이랑 싸운 후기",
+      "originalMarkdown": "# 팀장이랑 싸운 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/716410338\r\n- exactObservedTitle: 팀장이랑 싸운 후기\r\n- observedAt: 2026-09-22 16:18 KST\r\n- observedMetrics: 조회 1,790\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 일을 빨리 잘한다는 이유로 자기 업무뿐 아니라 다른 팀원과 타팀의 자잘한 업무까지 계속 떠맡게 된 사회초년생이 팀장과 충돌하는 이야기라 직장인의 공감과 업무분장 논쟁이 강한 소재.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 검색 결과에 실제 표시된 조회 수만 기록. 댓글 미열람.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "9343a1c2409e6add181e547f768e802a9a5804e72b33ee3c1513a273280db60b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 196
+}

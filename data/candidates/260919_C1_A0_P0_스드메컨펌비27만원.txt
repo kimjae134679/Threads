@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3696845991
+제목 - 스드메 사진 확인하려면 컨펌비 27만원
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3696845991",
+    "title": "스드메 사진 확인하려면 컨펌비 27만원",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_스드메컨펌비27만원.md",
+      "originalTitle": "스드메 사진 확인하려면 컨펌비 27만원",
+      "originalMarkdown": "# 스드메 사진 확인하려면 컨펌비 27만원\r\n\r\n- source: TheQoo (기사 재전달)\r\n- publicUrl: https://theqoo.net/square/3696845991\r\n- exactObservedTitle: 스드메 추가금만 수백만원… 결혼 첫발부터 ‘호구’\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 29,015 / 댓글 11개\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- provenance: C1 / exact public article-repost URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n촬영 원본 약 1,200장 중 20장을 골라 보정을 맡긴 뒤 결과 확인에 별도 27만원이 필요했다는 사례가 결혼 준비의 예상 밖 추가금이라는 공감·분노 포인트를 만든다.\r\n",
+      "originalSha256": "2a96aaea4e7570e81e8178386063c26d1af0af985ca81ceb91448328d995572a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 101
+}

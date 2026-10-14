@@ -1,0 +1,31 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2727679?iskin=webzine
+제목 - 41세 비혼녀, 실제로 많이 듣는 말.
+내용 - [명시 요약 — 원문 전문 아님]
+공개 개별 페이지 확인 완료. 인벤 오픈이슈갤러리의 정확한 개별 게시물 제목과 페이지를 검증했다.
+
+현재 공개 텍스트 추출에서 확인되는 본문 텍스트는 매우 짧은 `매력있으시디.` 수준이며, 페이지에는 다수의 Image 자리표시자가 노출된다. 따라서 핵심 내용이 이미지에 포함된 이미지형 게시물로 판단되며, 실제 이미지 내용을 읽거나 추정하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2727679?iskin=webzine",
+    "title": "41세 비혼녀, 실제로 많이 듣는 말.",
+    "body": "공개 개별 페이지 확인 완료. 인벤 오픈이슈갤러리의 정확한 개별 게시물 제목과 페이지를 검증했다.\r\n\r\n현재 공개 텍스트 추출에서 확인되는 본문 텍스트는 매우 짧은 `매력있으시디.` 수준이며, 페이지에는 다수의 Image 자리표시자가 노출된다. 따라서 핵심 내용이 이미지에 포함된 이미지형 게시물로 판단되며, 실제 이미지 내용을 읽거나 추정하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_41세비혼녀.md",
+      "originalTitle": "41세 비혼녀, 실제로 많이 듣는 말.",
+      "originalMarkdown": "# 41세 비혼녀, 실제로 많이 듣는 말.\r\n\r\n## 글 내용\r\n공개 개별 페이지 확인 완료. 인벤 오픈이슈갤러리의 정확한 개별 게시물 제목과 페이지를 검증했다.\r\n\r\n현재 공개 텍스트 추출에서 확인되는 본문 텍스트는 매우 짧은 `매력있으시디.` 수준이며, 페이지에는 다수의 Image 자리표시자가 노출된다. 따라서 핵심 내용이 이미지에 포함된 이미지형 게시물로 판단되며, 실제 이미지 내용을 읽거나 추정하지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2727679?iskin=webzine\r\n\r\n- 플랫폼: 인벤 오픈이슈갤러리\r\n- 게시자 표시: 전자팔찌\r\n- 게시 시각 표시: 2026-09-14 16:40\r\n- exact individual public URL verified: YES\r\n\r\n## 관측 수치\r\n- 개별 공개 페이지 검증 시점: 2026-09-19 07:24 KST 부근\r\n- 검색/공개 페이지 노출 수치는 크롤 시점에 따라 변동하므로 고정 성과값으로 간주하지 않음\r\n- 개별 페이지 공개 추출에서 조회 207 / 추천 0 / 댓글 2가 표시된 결과가 있었음\r\n- 다른 공개 목록/색인에는 더 높은 누적 조회·댓글 값도 노출되어 시점별 차이가 확인됨\r\n- 본문 텍스트 읽음: 부분(이미지 내용 미확인)\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n정확한 출처는 확인됐지만 이미지형 핵심 콘텐츠가 미확보 상태다. 이미지 내용을 확보·검수하기 전에는 내용을 요약하거나 제목만으로 성별/비혼 경험을 일반화하지 않는다.\r\n\r\n## 형식\r\n이미지 중심 게시물 + 짧은 텍스트\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: EXACT_PUBLIC_URL_VERIFIED / IMAGE_ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/defamation/human review 필요\r\n- 로그인·anti-bot·paywall·접근통제 우회 금지\r\n",
+      "originalSha256": "ecc1cec4334c22bf28df5612360d4cab5ddb3bfc27cad346e878aa55c0ea516a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 333
+}

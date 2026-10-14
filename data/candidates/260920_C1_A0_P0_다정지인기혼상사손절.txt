@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4126247534
+제목 - C1 candidate — 그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4126247534",
+    "title": "C1 candidate — 그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_다정지인기혼상사손절.md",
+      "originalTitle": "C1 candidate — 그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)",
+      "originalMarkdown": "# C1 candidate — 그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)\r\n\r\n- source: TheQoo / 후기\r\n- exact observed title: `그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)`\r\n- source URL: https://theqoo.net/review/4126247534\r\n- observedAt: 2026-09-20 23:16 KST\r\n- provenance: exact individual public post URL verified via public web page\r\n- acquisitionState: C1\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 본문에서 인스타그램 사진을 언급하지만 해당 자산 자체는 수집/검증하지 않음\r\n- observedMetrics: 조회 2,131 / 댓글 5\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 요약\r\n작성자는 지인이 다른 사람의 호감 상대와 가까워지는 패턴을 반복했다고 주장하고, 이후 결혼했고 아이도 있는 직장 상사와의 관계를 둘러싼 행동을 보고 결국 만나지 않게 됐다고 적었다.\r\n\r\n## 왜 소재로 좋은가\r\n`다정함인가 선 넘기인가`라는 판단 포인트가 선명하고 친구관계·직장·연애 경계가 겹쳐 의견이 갈릴 만하다. 다만 제3자에 대한 일방적 주장이라는 점을 반드시 유지해야 한다.\r\n\r\n## 제한\r\n제3자에 대한 작성자의 주장일 뿐 사실 검증이 아니다. 댓글·이미지 원본은 읽거나 수집하지 않았다. 권리/OCR/moderation/publication 상태는 미확인이며 제작 단계로 넘기지 않는다.\r\n",
+      "originalSha256": "dc8a1523d73ec64b467bd97936dfe1751369a5d8ac2341731261e4a94515d3f0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 143
+}

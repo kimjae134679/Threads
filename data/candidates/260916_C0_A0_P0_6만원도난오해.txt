@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 나 진짜 안 훔쳤다니까요 6만원 때문에 생긴 일jpg
+내용 - [명시 요약 — 원문 전문 아님]
+공개 원문 페이지를 확인했다. 게시물의 실질적인 본문은 이미지 1장 중심이며, 페이지의 추출 가능한 텍스트에는 이미지 안 사건 내용이 들어 있지 않는다. 따라서 이미지 내용을 추정하거나 제3자 AI 요약을 원문처럼 채우지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "나 진짜 안 훔쳤다니까요 6만원 때문에 생긴 일jpg",
+    "body": "공개 원문 페이지를 확인했다. 게시물의 실질적인 본문은 이미지 1장 중심이며, 페이지의 추출 가능한 텍스트에는 이미지 안 사건 내용이 들어 있지 않는다. 따라서 이미지 내용을 추정하거나 제3자 AI 요약을 원문처럼 채우지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_6만원도난오해.md",
+      "originalTitle": "나 진짜 안 훔쳤다니까요 6만원 때문에 생긴 일jpg",
+      "originalMarkdown": "# 나 진짜 안 훔쳤다니까요 6만원 때문에 생긴 일jpg\r\n\r\n## 글 내용\r\n공개 원문 페이지를 확인했다. 게시물의 실질적인 본문은 이미지 1장 중심이며, 페이지의 추출 가능한 텍스트에는 이미지 안 사건 내용이 들어 있지 않는다. 따라서 이미지 내용을 추정하거나 제3자 AI 요약을 원문처럼 채우지 않는다.\r\n\r\n## 정확한 링크\r\n- 보배드림 공개 개별 게시물: https://www.bobaedream.co.kr/view?No=1032069&code=best&vdate=\r\n- 공개 확산 인덱스는 이 보배 게시물을 최초 발생지로 연결하고, 이후 루리웹 재전파 게시물도 별도로 연결한다.\r\n\r\n## 관측 수치\r\n- 원문 직접 확인: 2026-09-19 08:24 KST 부근\r\n- 보배 페이지 직접 표시: 조회 15,256 / 추천 207 / 댓글 16\r\n- 제목: `나 진짜 안 훔쳤다니까요? 6만원 때문에 생긴 일`\r\n- 게시 시각 표시: 2026.09.15 22:12\r\n- 본문 텍스트 읽음: 이미지 중심이라 실질 내용 미확인\r\n- 댓글: 공개 페이지에 16개 표시, 일부 텍스트 확인 가능\r\n\r\n## provenance 판단\r\n- C0 exact-source/provenance verification은 완료.\r\n- 공개 확산 인덱스가 보배를 최초 발생지로 연결하며, 실제 보배 개별 페이지도 제목과 게시물을 직접 확인했다.\r\n- 다만 본문의 핵심은 이미지이므로 이미지 자산을 확보·검수하기 전 사건의 구체 내용은 확정하지 않는다.\r\n\r\n## 형식\r\n이미지 중심 게시물.\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- blocker: 실질 본문이 들어 있는 실제 원본 이미지/허용된 source asset 미확보. rights/privacy/defamation/human review도 미완료.\r\n- unblockWhen: 공개·허용된 실제 원본 이미지/자산이 검사 가능한 형태로 확보될 때. 로그인, anti-bot, paywall, access-control 우회 금지.\r\n",
+      "originalSha256": "d68f718edabb941f4b9b4fefad88b07d1f86796b57cce37ccf90665e9bb1cb73",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 208
+}

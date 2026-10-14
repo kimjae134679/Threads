@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/job/3916774414
+제목 - 공장 알바 1달여간 후기 ~신기한 단기 알바 유형들~
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/job/3916774414",
+    "title": "공장 알바 1달여간 후기 ~신기한 단기 알바 유형들~",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_3916774414.md",
+      "originalTitle": "공장 알바 1달여간 후기 ~신기한 단기 알바 유형들~",
+      "originalMarkdown": "# 공장 알바 1달여간 후기 ~신기한 단기 알바 유형들~\r\n\r\n- source: TheQoo / 직장·알바\r\n- publicUrl: https://theqoo.net/job/3916774414\r\n- exactObservedTitle: 공장 알바 1달여간 후기 ~신기한 단기 알바 유형들~\r\n- observedAt: 2026-09-23 14:16 KST\r\n- observedMetrics: 조회 1,415, 댓글 2 (공개 페이지에서 관찰)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- acquisition: public individual page discovered via public web search; no login, anti-bot bypass, bulk crawl, screenshot, image download, or OCR\r\n- provenance: exact individual public TheQoo URL and publicly readable body text verified; personal-experience claims are attributed/unverified\r\n\r\n## 왜 소재로 좋은지\r\n한 달 남짓한 공장 단기 알바 동안 하루이틀 만에 그만두는 사람, 단순 작업을 유난히 어려워하는 사람, 지적을 받으면 화부터 내는 사람 등 여러 유형을 연속해서 겪은 경험담이다. 짧은 에피소드가 여러 개 있어 직장·알바 빌런 소재로 전개하기 좋다.\r\n",
+      "originalSha256": "ed22f349eaeb88bea59454f8b44a842af3f0e86eb84695486a757b23fe5604c8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

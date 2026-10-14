@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%A0-%EB%82%A8%EC%B9%9C-%EB%8C%80%EB%82%98%EB%AC%B4%EC%88%B2-y7y2v8jl
+제목 - 3년 넘게 만난 결혼할 남친, 좋은데 계속 찜찜합니다
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 3년 넘게 만난 남자친구와 결혼 이야기가 오가고 있고, 외모 취향·다정함·무던함·유능함 등 여러 장점을 길게 적으면서도 한편으로는 계속 찜찜한 마음이 들어 흐린 눈을 하고 준비 중이라고 적는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%A0-%EB%82%A8%EC%B9%9C-%EB%8C%80%EB%82%98%EB%AC%B4%EC%88%B2-y7y2v8jl",
+    "title": "3년 넘게 만난 결혼할 남친, 좋은데 계속 찜찜합니다",
+    "body": "작성자는 3년 넘게 만난 남자친구와 결혼 이야기가 오가고 있고, 외모 취향·다정함·무던함·유능함 등 여러 장점을 길게 적으면서도 한편으로는 계속 찜찜한 마음이 들어 흐린 눈을 하고 준비 중이라고 적는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼할남친찜찜.md",
+      "originalTitle": "3년 넘게 만난 결혼할 남친, 좋은데 계속 찜찜합니다",
+      "originalMarkdown": "# 3년 넘게 만난 결혼할 남친, 좋은데 계속 찜찜합니다\r\n\r\n## source\r\nBlind 결혼생활\r\n\r\n## 원문 제목\r\n결혼할 남친 대나무숲\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%A0-%EB%82%A8%EC%B9%9C-%EB%8C%80%EB%82%98%EB%AC%B4%EC%88%B2-y7y2v8jl\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 246 / 댓글 13\r\n\r\n## 본문·댓글 확인\r\n공개 본문 확인. 댓글 전체 미확인. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n작성자는 3년 넘게 만난 남자친구와 결혼 이야기가 오가고 있고, 외모 취향·다정함·무던함·유능함 등 여러 장점을 길게 적으면서도 한편으로는 계속 찜찜한 마음이 들어 흐린 눈을 하고 준비 중이라고 적는다.\r\n\r\n## 왜 소재로 좋은지\r\n겉으로는 장점이 많은데 결혼 직전 설명하기 어려운 불안이 있다는 구조가 공감과 추측을 동시에 유도한다. 단, 확인한 본문 범위 밖의 단점이나 결론을 제목에서 만들어내면 안 된다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 개별 URL 및 본문 확인. 댓글 전체·source asset 미확보. publicationAllowed=false.",
+      "originalSha256": "47c3bea4b340c18e0863a84a98e947d3387bbbdc7ff570a9a048eb0f27f200d9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 319
+}

@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/board/view/?id=employment&no=2397672
+제목 - 자소서에 교육내역 날짜 잘못 입력한채로 제출했는데 어떡하지?
+내용 - [명시 요약 — 원문 전문 아님]
+단순 입력 실수 뒤 면접 연락이 와서 먼저 해명할지 고민하는 직장/취업 공감형 딜레마.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/board/view/?id=employment&no=2397672",
+    "title": "자소서에 교육내역 날짜 잘못 입력한채로 제출했는데 어떡하지?",
+    "body": "단순 입력 실수 뒤 면접 연락이 와서 먼저 해명할지 고민하는 직장/취업 공감형 딜레마.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_자소서교육내역날짜잘못입력면접문자.md",
+      "originalTitle": "자소서에 교육내역 날짜 잘못 입력한채로 제출했는데 어떡하지?",
+      "originalMarkdown": "# 자소서에 교육내역 날짜 잘못 입력한채로 제출했는데 어떡하지?\r\n\r\n- stage: C1\r\n- source: DCInside 취업 갤러리\r\n- publicUrl: https://gall.dcinside.com/board/view/?id=employment&no=2397672\r\n- exactObservedTitle: 자소서에 교육내역 날짜 잘못 입력한채로 제출했는데 어떡하지?\r\n- observedAt: 2026-09-20 06:15 KST\r\n- observedMetrics: 조회 65 / 댓글 2\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (페이지 이미지 표시)\r\n- whyGood: 단순 입력 실수 뒤 면접 연락이 와서 먼저 해명할지 고민하는 직장/취업 공감형 딜레마.\r\n- acquisition: exact individual public page text observed; image not downloaded/OCRed\r\n- provenance: C1 exact-page provenance; poster claims unverified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0cff00a85335c01c46b95fb21bf72632dbf03ea74242c237322058b048e977fb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 194
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%94%84%EB%A1%9C%ED%8F%AC%EC%A6%88%EB%A1%9C-9850X3D-RTX-5090-%ED%95%B4%EB%8B%AC%EB%9D%BC%ED%95%98%EB%A9%B4-%EC%97%90%EB%B0%98%EA%B0%80-rgwyau28
+제목 - 프로포즈로 9850X3D + RTX 5090 해달라하면 에반가
+내용 - [명시 요약 — 원문 전문 아님]
+명품 가방 대신 고사양 PC를 프로포즈 선물로 원한다는 예상 밖 조합이라 가볍고 즉각적인 의견/공감 소재가 됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%94%84%EB%A1%9C%ED%8F%AC%EC%A6%88%EB%A1%9C-9850X3D-RTX-5090-%ED%95%B4%EB%8B%AC%EB%9D%BC%ED%95%98%EB%A9%B4-%EC%97%90%EB%B0%98%EA%B0%80-rgwyau28",
+    "title": "프로포즈로 9850X3D + RTX 5090 해달라하면 에반가",
+    "body": "명품 가방 대신 고사양 PC를 프로포즈 선물로 원한다는 예상 밖 조합이라 가볍고 즉각적인 의견/공감 소재가 됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_프로포즈5090컴퓨터.md",
+      "originalTitle": "프로포즈로 9850X3D + RTX 5090 해달라하면 에반가",
+      "originalMarkdown": "# 프로포즈로 9850X3D + RTX 5090 해달라하면 에반가\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%ED%94%84%EB%A1%9C%ED%8F%AC%EC%A6%88%EB%A1%9C-9850X3D-RTX-5090-%ED%95%B4%EB%8B%AC%EB%9D%BC%ED%95%98%EB%A9%B4-%EC%97%90%EB%B0%98%EA%B0%80-rgwyau28\r\n- exactObservedTitle: 프로포즈로 9850X3D + RTX 5090 해달라하면 에반가\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 50, 댓글 13\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 명품 가방 대신 고사양 PC를 프로포즈 선물로 원한다는 예상 밖 조합이라 가볍고 즉각적인 의견/공감 소재가 됨.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "955603bb2fe8becb062d7221b116c9e69fc087f21f2fe43644ce662ff8081f99",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 326
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0-%EB%A7%89%EB%8B%AC-%EB%82%A8%ED%8E%B8-%EA%B2%A9%EC%9D%BC-%ED%9A%8C%EC%8B%9D-%EC%9D%B4%ED%95%B4%EA%B0%80-%EA%B0%80%EB%8A%94%EC%A7%80-8h4aw3r6
+제목 - 임신 막달 남편 격일 회식 이해가 가는지
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0-%EB%A7%89%EB%8B%AC-%EB%82%A8%ED%8E%B8-%EA%B2%A9%EC%9D%BC-%ED%9A%8C%EC%8B%9D-%EC%9D%B4%ED%95%B4%EA%B0%80-%EA%B0%80%EB%8A%94%EC%A7%80-8h4aw3r6",
+    "title": "임신 막달 남편 격일 회식 이해가 가는지",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_임신막달남편격일회식.md",
+      "originalTitle": "임신 막달 남편 격일 회식 이해가 가는지",
+      "originalMarkdown": "# 임신 막달 남편 격일 회식 이해가 가는지\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0-%EB%A7%89%EB%8B%AC-%EB%82%A8%ED%8E%B8-%EA%B2%A9%EC%9D%BC-%ED%9A%8C%EC%8B%9D-%EC%9D%B4%ED%95%B4%EA%B0%80-%EA%B0%80%EB%8A%94%EC%A7%80-8h4aw3r6\r\n- exact_observed_title: 임신 막달 남편 격일 회식 이해가 가는지\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 229, 댓글 12\r\n- body_read: yes\r\n- comments_read: no\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 임신 35주·11개월 첫째가 있는 상황과 격일 회식이 충돌해 공감과 분노 반응이 즉각 나올 소재.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 사연 사실관계는 독립 검증하지 않음\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5f06ff64dd0befd20f34ed257ed26452080f6c73c152e0b3aa88ae08c792e410",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 259
+}

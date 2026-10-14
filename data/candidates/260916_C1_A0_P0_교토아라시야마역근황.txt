@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728491?iskin=webzine
+제목 - 교토 아라시야마역 근황
+내용 - [명시 요약 — 원문 전문 아님]
+교토 아라시야마역의 최근 모습을 이미지로 보여주는 게시물. 작성자가 붙인 텍스트는 매우 짧고, 핵심은 이미지에 있어 이미지 내부 전체 내용은 source 확보 전까지 미확인으로 둔다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728491?iskin=webzine",
+    "title": "교토 아라시야마역 근황",
+    "body": "교토 아라시야마역의 최근 모습을 이미지로 보여주는 게시물. 작성자가 붙인 텍스트는 매우 짧고, 핵심은 이미지에 있어 이미지 내부 전체 내용은 source 확보 전까지 미확인으로 둔다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_교토아라시야마역근황.md",
+      "originalTitle": "교토 아라시야마역 근황",
+      "originalMarkdown": "# 교토 아라시야마역 근황\r\n\r\n## 글 내용\r\n교토 아라시야마역의 최근 모습을 이미지로 보여주는 게시물. 작성자가 붙인 텍스트는 매우 짧고, 핵심은 이미지에 있어 이미지 내부 전체 내용은 source 확보 전까지 미확인으로 둔다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728491?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 11:36 KST 부근\r\n- 조회 1,448 / 추천 0 / 댓글 8\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n여행/현장 변화형 시각 소재. 이미지 자체의 의외성이 확인돼야 우선순위를 올릴 수 있다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n",
+      "originalSha256": "5bdf8bb58bca3e10267a274063a733c68f604319a16a37066b0a0231c1608665",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 229
+}

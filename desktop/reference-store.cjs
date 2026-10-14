@@ -1,8 +1,10 @@
 'use strict';
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const {resolveProjectPath}=require('./project-paths.cjs');
 const { createHash } = require('node:crypto');
 function createReferenceStore(root) {
+  root=resolveProjectPath(root);
   let queue = Promise.resolve();
   const save = async (payload) => {
     if (!payload || !/^[a-zA-Z0-9_-]{1,100}$/.test(payload.projectId || '') || !Array.isArray(payload.images) || payload.images.length > 30

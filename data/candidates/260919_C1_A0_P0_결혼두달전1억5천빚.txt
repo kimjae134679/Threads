@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%95%84%EA%B8%B0%EB%82%B3%EA%B3%A0%EB%82%98%EB%A9%B4-%EB%8B%A4-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EC%82%AC%EB%82%98%EC%9A%94-6r1JitiL
+제목 - 결혼 두 달 전에 남편 빚 1억5천을 알았습니다
+내용 - [명시 요약 — 원문 전문 아님]
+7년 연애 후 결혼 4년차, 2살 아이가 있는 부부. 남편은 결혼 직전 자산 0에 빚 1억5천만원이 있었고 작성자는 자산 1억2천만원이었다고 한다. 결혼 두 달 전에 빚을 알게 됐지만 양가 부모에게 알리지 않은 채 결혼을 진행했고, 작성자가 결혼식과 신혼여행 비용을 전부 부담했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%95%84%EA%B8%B0%EB%82%B3%EA%B3%A0%EB%82%98%EB%A9%B4-%EB%8B%A4-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EC%82%AC%EB%82%98%EC%9A%94-6r1JitiL",
+    "title": "결혼 두 달 전에 남편 빚 1억5천을 알았습니다",
+    "body": "7년 연애 후 결혼 4년차, 2살 아이가 있는 부부. 남편은 결혼 직전 자산 0에 빚 1억5천만원이 있었고 작성자는 자산 1억2천만원이었다고 한다. 결혼 두 달 전에 빚을 알게 됐지만 양가 부모에게 알리지 않은 채 결혼을 진행했고, 작성자가 결혼식과 신혼여행 비용을 전부 부담했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼두달전1억5천빚.md",
+      "originalTitle": "결혼 두 달 전에 남편 빚 1억5천을 알았습니다",
+      "originalMarkdown": "# 결혼 두 달 전에 남편 빚 1억5천을 알았습니다\r\n\r\n## source\r\nBlind\r\n\r\n## 원문 제목\r\n아기낳고나면 다 이렇게 사나요?\r\n\r\n## 글 내용\r\n7년 연애 후 결혼 4년차, 2살 아이가 있는 부부. 남편은 결혼 직전 자산 0에 빚 1억5천만원이 있었고 작성자는 자산 1억2천만원이었다고 한다. 결혼 두 달 전에 빚을 알게 됐지만 양가 부모에게 알리지 않은 채 결혼을 진행했고, 작성자가 결혼식과 신혼여행 비용을 전부 부담했다고 적었다. 공개 페이지 본문을 실제 확인함. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%95%84%EA%B8%B0%EB%82%B3%EA%B3%A0%EB%82%98%EB%A9%B4-%EB%8B%A4-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EC%82%AC%EB%82%98%EC%9A%94-6r1JitiL\r\n\r\n## 관찰시각 / 실제 관측 수치\r\n- 관찰: 2026-09-19 10:17 KST 전후\r\n- 조회수 6,491 / 댓글 44\r\n- 좋아요: 미확인\r\n\r\n## 평가\r\n결혼 직전 1.5억 빚 발견이라는 훅이 매우 강하고, 그 상태로 결혼·출산까지 이어진 후속 서사가 있음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / acquisition·provenance / 제작·게시 상태\r\n- exact individual public URL 확인: C1\r\n- full body read: 예\r\n- comments read: 아니오\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n- source media 확보: 0\r\n- acquisition: EXACT_PUBLIC_URL_VERIFIED / SOURCE_MEDIA_NOT_ACQUIRED\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review 미완료. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "12bdb4fb7976a967dbc8910275f9f73ce48aeb34c9753b0a9a892eb7e5a39f14",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 432
+}

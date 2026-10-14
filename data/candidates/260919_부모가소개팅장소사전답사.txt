@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%82%98%EA%B0%80%EB%8F%84-%EB%90%98%EB%83%90-Wipn80oh
+제목 - 소개팅 나가도 되냐?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%82%98%EA%B0%80%EB%8F%84-%EB%90%98%EB%83%90-Wipn80oh",
+    "title": "소개팅 나가도 되냐?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_부모가소개팅장소사전답사.md",
+      "originalTitle": "소개팅 나가도 되냐?",
+      "originalMarkdown": "# 소개팅 나가도 되냐?\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EB%82%98%EA%B0%80%EB%8F%84-%EB%90%98%EB%83%90-Wipn80oh\r\n- exactObservedTitle: 소개팅 나가도 되냐?\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 519 / 댓글 10\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n얼굴도 보기 전 상대 부모가 소개팅 장소를 사전답사하고 장소까지 다시 정하겠다고 한 상황이라 황당함과 가족 개입 논쟁이 강하다.\r\n\r\n## 관찰 메모\r\n본문에서 양가 식사 제안 거절 뒤 스타벅스가 제시됐고, 상대 부모가 그 장소를 답사한 뒤 시끄럽다며 다시 정하겠다고 했다고 적혀 있다.",
+      "originalSha256": "9e04b60aa7674449c884c1620e8ad8b80af11d4bda942f7b51580d5de8fa4de7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

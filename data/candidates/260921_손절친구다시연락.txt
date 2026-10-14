@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2156373479
+제목 - 손절한 친구에게서 다시 연락이 온 초기
+내용 - [명시 요약 — 원문 전문 아님]
+연락 집착 등으로 힘들어 10년지기 친구를 손절했는데 다시 연락이 온 상황. 오래된 우정·경계선·재접촉 여부로 의견이 갈리기 쉬움.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2156373479",
+    "title": "손절한 친구에게서 다시 연락이 온 초기",
+    "body": "연락 집착 등으로 힘들어 10년지기 친구를 손절했는데 다시 연락이 온 상황. 오래된 우정·경계선·재접촉 여부로 의견이 갈리기 쉬움.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_손절친구다시연락.md",
+      "originalTitle": "손절한 친구에게서 다시 연락이 온 초기",
+      "originalMarkdown": "# 손절한 친구에게서 다시 연락이 온 초기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2156373479\r\n- exactObservedTitle: 손절한 친구에게서 다시 연락이 온 초기\r\n- observedAt: 2026-09-21 23:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL verified via public web index/page\r\n- bodyRead: true\r\n- commentsRead: false\r\n- observedMetrics: 조회 13,577 (검색 노출값)\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- whyGood: 연락 집착 등으로 힘들어 10년지기 친구를 손절했는데 다시 연락이 온 상황. 오래된 우정·경계선·재접촉 여부로 의견이 갈리기 쉬움.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7bf64ba043ed52b2bb4c0e6a260eb7d02d16b55a239a1de4502aa7f9994d5b1d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 181
+}

@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 나 똥차 타는데 소개팅 태우러간다했네..
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. 공개 Blind index에서 확인된 요약상 1991년생 작성자가 박사과정 때 500만원에 산 오래된 차를 계속 타고 있는데, 소개팅 상대를 데리러 가겠다고 한 뒤 차량 상태를 뒤늦게 의식하며 상대가 당황할지 고민하는 내용이다. 정확한 개별 원문 URL은 이번 관측에서 확보하지 못했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "나 똥차 타는데 소개팅 태우러간다했네..",
+    "body": "본문 미확인. 공개 Blind index에서 확인된 요약상 1991년생 작성자가 박사과정 때 500만원에 산 오래된 차를 계속 타고 있는데, 소개팅 상대를 데리러 가겠다고 한 뒤 차량 상태를 뒤늦게 의식하며 상대가 당황할지 고민하는 내용이다. 정확한 개별 원문 URL은 이번 관측에서 확보하지 못했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C0_A0_P0_똥차타고소개팅.md",
+      "originalTitle": "나 똥차 타는데 소개팅 태우러간다했네..",
+      "originalMarkdown": "# 나 똥차 타는데 소개팅 태우러간다했네..\r\n\r\n## 글 내용\r\n본문 미확인. 공개 Blind index에서 확인된 요약상 1991년생 작성자가 박사과정 때 500만원에 산 오래된 차를 계속 타고 있는데, 소개팅 상대를 데리러 가겠다고 한 뒤 차량 상태를 뒤늦게 의식하며 상대가 당황할지 고민하는 내용이다. 정확한 개별 원문 URL은 이번 관측에서 확보하지 못했다.\r\n\r\n## 정확한 링크\r\n정확한 개별 원문 URL 미확인. 공개 Blind index/list에서만 관측.\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 13:34 KST\r\n- 조회수: 19K\r\n- 좋아요: 16\r\n- 댓글: 165\r\n\r\n## 평가\r\n소개팅 직전 '내 차가 똥차라는 걸 이제 깨달음'이라는 생활형 민망함과 결과가 궁금한 구조가 강하다. 수치도 반응이 충분하지만 exact individual URL과 전체 본문을 확보하기 전에는 C1로 올리지 않는다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Blind public index/list\r\n- full body read: 아니오 — 본문 미확인\r\n- comments read: 아니오\r\n- source images/screenshots: 미확보\r\n- acquisition state: INDEX_ONLY / ASSETS_PENDING\r\n- C0_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review: 미완료\r\n- 게시 권한: 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "9a2f6f1776843602e09123ec23bb7c3902d6375077182a07f670a56700413077",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 241
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/362794424
+제목 - 돈 혼자번다고 생각하는 아빠가 답답한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+가족 농장에서 함께 일하지만 수입을 아버지 혼자 번 돈처럼 취급하는 문제와 작성자의 노동 대가 200만원 요구가 충돌해 가족노동·돈 관리·부모자녀 경계 논쟁이 선명하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/362794424",
+    "title": "돈 혼자번다고 생각하는 아빠가 답답한 후기",
+    "body": "가족 농장에서 함께 일하지만 수입을 아버지 혼자 번 돈처럼 취급하는 문제와 작성자의 노동 대가 200만원 요구가 충돌해 가족노동·돈 관리·부모자녀 경계 논쟁이 선명하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_362794424.md",
+      "originalTitle": "돈 혼자번다고 생각하는 아빠가 답답한 후기",
+      "originalMarkdown": "# 돈 혼자번다고 생각하는 아빠가 답답한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/362794424\r\n- exactObservedTitle: 돈 혼자번다고 생각하는 아빠가 답답한 후기\r\n- observedAt: 2026-09-22 08:16 KST\r\n- observedMetrics: 조회 수 1371\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 가족 농장에서 함께 일하지만 수입을 아버지 혼자 번 돈처럼 취급하는 문제와 작성자의 노동 대가 200만원 요구가 충돌해 가족노동·돈 관리·부모자녀 경계 논쟁이 선명하다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 검색 인덱스에서 확인. C1.\r\n- provenance: TheQoo 공개 후기 게시물.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "251f27ef3c38d0cac3c50ae6bb7e9241fc413fd5fd40b5bc713fd328dbdafa10",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 203
+}

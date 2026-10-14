@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/lostark/6271/4053492
+제목 - 타 커뮤에서 본 여친이랑 두쫀쿠로 싸운 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/lostark/6271/4053492",
+    "title": "타 커뮤에서 본 여친이랑 두쫀쿠로 싸운 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_타커뮤에서본여친이랑두쫀쿠로싸운썰.md",
+      "originalTitle": "타 커뮤에서 본 여친이랑 두쫀쿠로 싸운 썰",
+      "originalMarkdown": "# 타 커뮤에서 본 여친이랑 두쫀쿠로 싸운 썰\r\n\r\n- source: Inven 로스트아크 자유 게시판\r\n- sourceUrl: https://www.inven.co.kr/board/lostark/6271/4053492\r\n- exactObservedTitle: 타 커뮤에서 본 여친이랑 두쫀쿠로 싸운 썰\r\n- observedAt: 2026-09-21 05:15 KST\r\n- provenanceStage: C1\r\n- acquisitionStatus: exact individual public URL and readable body verified through public web index\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not claimed\r\n- observedMetrics: 조회 40, 추천 0, 댓글 2 (public page observation; may change)\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 내용\r\n2주년 여행을 앞둔 대학생 커플이 당시 유행하던 두쫀쿠를 두고 갈등한 사연. 작성자는 부모 지원을 받는 상황에서 구매 제한 5개 중 가족에게 4개를 주고 여자친구에게 1개와 편의점 제품 1개를 줬고, 여자친구는 기념일 선물인데 자신에게 2개뿐이라며 불만을 보였다고 서술한다.\r\n\r\n## 왜 소재로 좋은가\r\n기념일 선물, 부모의 경제적 지원, 가족과 연인의 우선순위가 한 상황에 겹쳐 즉시 의견이 갈릴 수 있다. 누가 서운할 만한지 독자가 빠르게 판단하고 논쟁하기 좋은 구조다.\r\n\r\n## 주의\r\n제목 자체가 `타 커뮤에서 본`이라고 밝히므로 Inven 작성자가 원사연 당사자라고 간주하지 않는다. 더 앞선 원출처는 이번 관찰에서 확인하지 못했다. 댓글은 읽지 않았다. 제작/게시 권리나 moderation 완료를 의미하지 않는다.",
+      "originalSha256": "a31c65df4f36af9521fa20a717cd1488f05f4c9c261b220e64e49c06ea30dfd9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 117
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728407
+제목 - 결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라
+내용 - [명시 요약 — 원문 전문 아님]
+정확한 Inven 개별 게시물까지 공개 접근으로 확인했다. 페이지의 실질 본문은 이미지 중심이며 텍스트로 확인되는 본문은 `.` 정도뿐이다. 이미지 내부 내용은 실제 허용된 원본 자산을 확보·검수하기 전에는 추정하거나 전사하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728407",
+    "title": "결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라",
+    "body": "정확한 Inven 개별 게시물까지 공개 접근으로 확인했다. 페이지의 실질 본문은 이미지 중심이며 텍스트로 확인되는 본문은 `.` 정도뿐이다. 이미지 내부 내용은 실제 허용된 원본 자산을 확보·검수하기 전에는 추정하거나 전사하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_결혼식축의금5만원논쟁.md",
+      "originalTitle": "결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라",
+      "originalMarkdown": "# 결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라\r\n\r\n## 원문 제목\r\n결혼식 해보니까 오지도 않고 5만원 내는 사람 많더라\r\n\r\n## 글 내용\r\n정확한 Inven 개별 게시물까지 공개 접근으로 확인했다. 페이지의 실질 본문은 이미지 중심이며 텍스트로 확인되는 본문은 `.` 정도뿐이다. 이미지 내부 내용은 실제 허용된 원본 자산을 확보·검수하기 전에는 추정하거나 전사하지 않는다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728407\r\n\r\n- 출처: Inven 오픈이슈갤러리 공개 개별 게시물\r\n- 표시 작성자: 치킨\r\n- 게시 시각: 2026-09-16 07:15\r\n- provenance: exact individual source verified\r\n- 본문 읽음: 텍스트 부분만 확인 / 핵심 이미지 내용 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 2026-09-19 공개 재확인: 조회 6,148 / 추천 2 / 댓글 31\r\n- 수치는 관측 시점 스냅샷이며 이후 변할 수 있음.\r\n\r\n## 평가\r\n- 결혼식 참석/축의금 5만원이라는 생활·돈·관계 논쟁 소재라 즉시 의견이 갈릴 가능성이 높음.\r\n- exact post URL은 해결되어 논리적으로 C1 provenance 조건을 충족했지만, 핵심이 이미지 중심이므로 실제 source asset 확보 전에는 제작 단계로 진행하지 않는다.\r\n\r\n## 형식\r\n이미지 중심 게시물\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source image: 게시물 내 이미지 존재 확인, 실제 파일 미확보\r\n- 실제 source 파일 확보: 아니오\r\n- acquisition: exact public individual source verified / source asset pending\r\n- logical C1 / A0 / P0 / ASSETS_PENDING\r\n- publicationAllowed=false\r\n- rights: 미확인\r\n- privacy/human review: 필요\r\n- 실제 게시: 없음\r\n- unblock: 허용된 실제 원본 이미지/자산이 확보되어 내용·UI 제거·권리/개인정보 검수를 할 수 있을 때",
+      "originalSha256": "421970206abc2b8f46dcb9992cac801297806623733d0baa0a1d8258e98f4fa6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 261
+}

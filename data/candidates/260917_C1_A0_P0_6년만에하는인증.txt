@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/6%EB%85%84%EB%A7%8C%EC%97%90-%ED%95%98%EB%8A%94-%EC%9D%B8%EC%A6%9D-0v2x47y1
+제목 - 6년만에 하는 인증
+내용 - [명시 요약 — 원문 전문 아님]
+약 30년 투자 경험을 말하는 작성자가 일부 포지션을 정리한 뒤 6년 만에 인증 글을 올렸다. 과거 두 번 계좌를 크게 잃은 이유를 각각 숏(풋) 몰빵과 풀 신용·미수라고 밝히며, 살아남기 위해 대출·신용·미수·숏을 피하라는 자신의 경험을 정리한다. 단순 종목 추천보다 두 차례 큰 실패 뒤 다시 투자하고 있는 개인 경험담이 중심이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/6%EB%85%84%EB%A7%8C%EC%97%90-%ED%95%98%EB%8A%94-%EC%9D%B8%EC%A6%9D-0v2x47y1",
+    "title": "6년만에 하는 인증",
+    "body": "약 30년 투자 경험을 말하는 작성자가 일부 포지션을 정리한 뒤 6년 만에 인증 글을 올렸다. 과거 두 번 계좌를 크게 잃은 이유를 각각 숏(풋) 몰빵과 풀 신용·미수라고 밝히며, 살아남기 위해 대출·신용·미수·숏을 피하라는 자신의 경험을 정리한다. 단순 종목 추천보다 두 차례 큰 실패 뒤 다시 투자하고 있는 개인 경험담이 중심이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_6년만에하는인증.md",
+      "originalTitle": "6년만에 하는 인증",
+      "originalMarkdown": "# 6년만에 하는 인증\r\n\r\n## 글 내용\r\n약 30년 투자 경험을 말하는 작성자가 일부 포지션을 정리한 뒤 6년 만에 인증 글을 올렸다. 과거 두 번 계좌를 크게 잃은 이유를 각각 숏(풋) 몰빵과 풀 신용·미수라고 밝히며, 살아남기 위해 대출·신용·미수·숏을 피하라는 자신의 경험을 정리한다. 단순 종목 추천보다 두 차례 큰 실패 뒤 다시 투자하고 있는 개인 경험담이 중심이다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/6%EB%85%84%EB%A7%8C%EC%97%90-%ED%95%98%EB%8A%94-%EC%9D%B8%EC%A6%9D-0v2x47y1\r\n\r\n- 출처: Blind 공개 페이지\r\n- 관측: 2026-09-17 06:39 KST\r\n- 본문: 확인\r\n- 댓글: 미확인\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n동일 관측시점 공개 페이지 표시: 조회수 31K / 댓글 349. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n두 번의 깡통 원인이 '숏 몰빵'과 '풀 신용·미수'였다는 강한 개인 서사가 있고 반응 규모도 크다. 일반 시장 전망이 아니라 레버리지 실패와 생존 경험이 핵심이라 투자 사람 이야기 레인에 적합하다. 실제 인증 자산 확보 여부를 확인하기 전에는 제작하지 않는다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 제목과 본문에서 인증을 언급하지만 실제 source image bytes/전체 screenshot 존재·구성은 이번 관측만으로 확정하지 않음.\r\n- actual source bytes 및 full-post screenshot 미확보.\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 필요\r\n- 게시 권한: 04_REVIEW_PUBLISH only\r\n",
+      "originalSha256": "4a91a95bd2e598bf42f3ac3ce310ec536ffd578af364cd4b17b6309ac8b86dcb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 357
+}

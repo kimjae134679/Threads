@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%8B%A8%EC%A0%90%EB%95%8C%EB%AC%B8%EC%97%90-%EA%B2%B0%ED%98%BC-%EA%B3%A0%EB%AF%BC%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%ED%95%B4-20p4z6kz
+제목 - 남친 단점때문에 결혼 고민중인데 조언 부탁해
+내용 - [명시 요약 — 원문 전문 아님]
+성품은 좋지만 건강관리와 밤샘 게임 습관 때문에 결혼을 고민한다는 생활형 가치관 충돌.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%8B%A8%EC%A0%90%EB%95%8C%EB%AC%B8%EC%97%90-%EA%B2%B0%ED%98%BC-%EA%B3%A0%EB%AF%BC%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%ED%95%B4-20p4z6kz",
+    "title": "남친 단점때문에 결혼 고민중인데 조언 부탁해",
+    "body": "성품은 좋지만 건강관리와 밤샘 게임 습관 때문에 결혼을 고민한다는 생활형 가치관 충돌.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_남친단점결혼고민게임건강.md",
+      "originalTitle": "남친 단점때문에 결혼 고민중인데 조언 부탁해",
+      "originalMarkdown": "# 남친 단점때문에 결혼 고민중인데 조언 부탁해\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EB%82%A8%EC%B9%9C-%EB%8B%A8%EC%A0%90%EB%95%8C%EB%AC%B8%EC%97%90-%EA%B2%B0%ED%98%BC-%EA%B3%A0%EB%AF%BC%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%A1%B0%EC%96%B8-%EB%B6%80%ED%83%81%ED%95%B4-20p4z6kz\r\n- exactObservedTitle: 남친 단점때문에 결혼 고민중인데 조언 부탁해\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 1,722, 댓글 14\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 성품은 좋지만 건강관리와 밤샘 게임 습관 때문에 결혼을 고민한다는 생활형 가치관 충돌.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "97a18caf63dd5cd7954f4a7a566a420c5cd93a151501cce2a2edb32e1d6e3690",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 342
+}

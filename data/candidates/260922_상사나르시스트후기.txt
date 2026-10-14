@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3126844431
+제목 - 싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+과거 싸웠던 사람이 초고속 승진해 자신의 상사로 돌아온 뒤 정치질·비난 민감성·편가르기를 겪는 직장 갈등이다. `예전에 싸운 상대가 내 상사가 됐다`는 시작점이 강하고 직장인 공감과 대처 논쟁이 쉽다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3126844431",
+    "title": "싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기",
+    "body": "과거 싸웠던 사람이 초고속 승진해 자신의 상사로 돌아온 뒤 정치질·비난 민감성·편가르기를 겪는 직장 갈등이다. `예전에 싸운 상대가 내 상사가 됐다`는 시작점이 강하고 직장인 공감과 대처 논쟁이 쉽다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_상사나르시스트후기.md",
+      "originalTitle": "싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기",
+      "originalMarkdown": "# 싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo review\r\n- publicUrl: https://theqoo.net/review/3126844431\r\n- exactObservedTitle: `싸웠던 상사, 괜찮은 사람인줄 알았는데 나르시스트인거같은 후기`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 6,765 / 댓글 6\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed in retrieved public text (not independently asset-inspected)\r\n- acquisition: Public individual page indexed and readable; exact individual URL verified.\r\n- provenance: C1 exact public individual TheQoo URL; post itself links an earlier related post, but that earlier post was not separately verified in this run.\r\n- whyGood: 과거 싸웠던 사람이 초고속 승진해 자신의 상사로 돌아온 뒤 정치질·비난 민감성·편가르기를 겪는 직장 갈등이다. `예전에 싸운 상대가 내 상사가 됐다`는 시작점이 강하고 직장인 공감과 대처 논쟁이 쉽다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7fbc67200fafa8a27a89eb755b2c558ea3710ce193575150467a67eda9ab1c16",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 233
+}

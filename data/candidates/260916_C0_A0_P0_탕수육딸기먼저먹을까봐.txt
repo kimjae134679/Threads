@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4341634677
+제목 - 입에 탕수육 있는데 여출이 딸기 먼저 먹는 거 시러서 저러고 먹는 거임
+내용 - [명시 요약 — 원문 전문 아님]
+탕수육을 먹는 중 딸기를 먼저 먹을까 봐 보인 행동을 이미지/장면으로 보여주는 유머형 후보로 과거 수집됐다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4341634677",
+    "title": "입에 탕수육 있는데 여출이 딸기 먼저 먹는 거 시러서 저러고 먹는 거임",
+    "body": "탕수육을 먹는 중 딸기를 먼저 먹을까 봐 보인 행동을 이미지/장면으로 보여주는 유머형 후보로 과거 수집됐다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_탕수육딸기먼저먹을까봐.md",
+      "originalTitle": "입에 탕수육 있는데 여출이 딸기 먼저 먹는 거 시러서 저러고 먹는 거임",
+      "originalMarkdown": "# 입에 탕수육 있는데 여출이 딸기 먼저 먹는 거 시러서 저러고 먹는 거임\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: TheQoo HOT\r\n- 정확한 원문 링크: https://theqoo.net/square/4341634677\r\n- 원문 post ID: 4341634677\r\n- provenance 검증: 완료 (2026-09-21)\r\n- source asset bytes: 미확보 / BLOCKED_SOURCE_ASSET_BYTES\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n탕수육을 먹는 중 딸기를 먼저 먹을까 봐 보인 행동을 이미지/장면으로 보여주는 유머형 후보로 과거 수집됐다.\r\n\r\n## 평가\r\n- 평가: 시각 유머 가능성 높음, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "9faa246c6961301c55c3f50793eeb86ef893f2b34086d2c2d666cb98188f2751",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 186
+}

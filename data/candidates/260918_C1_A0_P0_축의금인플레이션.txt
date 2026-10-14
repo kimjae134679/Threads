@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%AC%BC%EA%B0%80%EA%B0%80-%EB%A7%8E%EC%9D%B4-%EC%98%AC%EB%9E%90%EB%8B%A4-malqq22i
+제목 - 축의금 물가가 많이 올랐다.
+내용 - [명시 요약 — 원문 전문 아님]
+15년 전 자신의 결혼식에서 친구들이 냈던 축의금을 이번에 얼마로 돌려줘야 하는지 고민한다. 당시 7만원을 낸 친구에게 20만원, 20만원을 낸 친구에게는 호텔 결혼식이라 30~50만원을 고민하며 '축의금에도 인플레이션을 반영해야 하는가'를 묻는 내용.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%AC%BC%EA%B0%80%EA%B0%80-%EB%A7%8E%EC%9D%B4-%EC%98%AC%EB%9E%90%EB%8B%A4-malqq22i",
+    "title": "축의금 물가가 많이 올랐다.",
+    "body": "15년 전 자신의 결혼식에서 친구들이 냈던 축의금을 이번에 얼마로 돌려줘야 하는지 고민한다. 당시 7만원을 낸 친구에게 20만원, 20만원을 낸 친구에게는 호텔 결혼식이라 30~50만원을 고민하며 '축의금에도 인플레이션을 반영해야 하는가'를 묻는 내용.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_축의금인플레이션.md",
+      "originalTitle": "축의금 물가가 많이 올랐다.",
+      "originalMarkdown": "# 축의금 물가가 많이 올랐다.\r\n\r\n## 글 내용\r\n15년 전 자신의 결혼식에서 친구들이 냈던 축의금을 이번에 얼마로 돌려줘야 하는지 고민한다. 당시 7만원을 낸 친구에게 20만원, 20만원을 낸 친구에게는 호텔 결혼식이라 30~50만원을 고민하며 '축의금에도 인플레이션을 반영해야 하는가'를 묻는 내용.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%AC%BC%EA%B0%80%EA%B0%80-%EB%A7%8E%EC%9D%B4-%EC%98%AC%EB%9E%90%EB%8B%A4-malqq22i\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-18 02:39 KST\r\n- 조회수 160 / 댓글 16\r\n- 좋아요 수치는 확인하지 않음\r\n\r\n## 평가\r\n'15년 전 축의금에 물가를 적용하나'라는 한 문장만으로도 의견이 갈리는 생활형 소재. 본문과 공개 댓글 일부 읽음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot/media 미확보. exact public page 확인. `ASSETS_PENDING`. C1_A0_P0 / publicationAllowed=false. rights/privacy/human review 필요, 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "94b68b0ea319e827a685e832a934d6e0076a33da9f54fdddf62a60abdca4384d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 352
+}

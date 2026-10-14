@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2607036462
+제목 - 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요
+내용 - [명시 요약 — 원문 전문 아님]
+절친에게 소개팅을 주선해 실제 결혼까지 이어졌는데 받은 답례가 기대와 달랐다는 관계·선물 갈등. '주선 답례는 어디까지 해야 하나'라는 즉각적인 논쟁 포인트가 있음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2607036462",
+    "title": "판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요",
+    "body": "절친에게 소개팅을 주선해 실제 결혼까지 이어졌는데 받은 답례가 기대와 달랐다는 관계·선물 갈등. '주선 답례는 어디까지 해야 하나'라는 즉각적인 논쟁 포인트가 있음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_C1_A0_P0_소개팅결혼초콜렛선물.md",
+      "originalTitle": "판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요",
+      "originalMarkdown": "# 판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요\r\n\r\n- source: TheQoo 이슈 (재게시/확산)\r\n- exact public URL: https://theqoo.net/square/2607036462\r\n- exact observed title: `판) 소개팅 주선으로 결혼한 친구 부부에게 초콜렛 선물받았어요`\r\n- observedAt: 2026-09-22 01:15 KST 부근\r\n- observed metrics: 조회 90,779 / 댓글 732\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 페이지에 Files 표시; 핵심 서사는 텍스트로 확인\r\n- whyGood: 절친에게 소개팅을 주선해 실제 결혼까지 이어졌는데 받은 답례가 기대와 달랐다는 관계·선물 갈등. '주선 답례는 어디까지 해야 하나'라는 즉각적인 논쟁 포인트가 있음.\r\n- acquisition/provenance: C1 — TheQoo 공개 개별 재게시 페이지와 본문 확인. 제목상 `판)` 재게시이므로 TheQoo를 최초 원출처라고 주장하지 않음.\r\n- A1: false\r\n- P1: false\r\n- A0 / P0\r\n- publicationAllowed=false\r\n",
+      "originalSha256": "1b92af4a7f0ff528d0b9cbb9899b8d4c0537c681847ea497720f22c607b63e63",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 213
+}

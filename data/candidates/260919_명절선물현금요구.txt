@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EB%AA%85%EC%A0%88-%EC%84%A0%EB%AC%BC-%EA%B4%80%EB%A0%A8-%EB%8B%A4%ED%88%BC-po7aii6i
+제목 - 시댁 명절 선물 관련 다툼
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EB%AA%85%EC%A0%88-%EC%84%A0%EB%AC%BC-%EA%B4%80%EB%A0%A8-%EB%8B%A4%ED%88%BC-po7aii6i",
+    "title": "시댁 명절 선물 관련 다툼",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_명절선물현금요구.md",
+      "originalTitle": "시댁 명절 선물 관련 다툼",
+      "originalMarkdown": "# 시댁 명절 선물 관련 다툼\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EB%AA%85%EC%A0%88-%EC%84%A0%EB%AC%BC-%EA%B4%80%EB%A0%A8-%EB%8B%A4%ED%88%BC-po7aii6i\r\n- exactObservedTitle: 시댁 명절 선물 관련 다툼\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 46 / 댓글 7 / 투표참여 10\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n부부가 명절에 현금 20만원과 선물을 하기로 했는데 시댁이 선물 대신 현금을 요청하면서 '선물 선택까지 요구할 수 있나'라는 생활밀착형 논쟁이 생긴다.\r\n",
+      "originalSha256": "9dea3bacf23e3d15c656a821f27dec63cb62cefd2059d565b61fa4752ad171c1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

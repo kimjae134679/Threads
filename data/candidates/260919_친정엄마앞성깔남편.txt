@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B9%9C%EC%A0%95%EC%97%84%EB%A7%88-%EC%95%9E%EC%97%90%EC%84%9C-%EC%84%B1%EA%B9%94-%EB%8B%A4-%EB%82%B4%EB%B9%84%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-gXoFZi24
+제목 - 친정엄마 앞에서 성깔 다 내비치는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+평소 다정한 남편이 친정엄마 앞에서만 짜증을 드러내고 '3out' 대응을 고민하는 대비와 가족 갈등이 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B9%9C%EC%A0%95%EC%97%84%EB%A7%88-%EC%95%9E%EC%97%90%EC%84%9C-%EC%84%B1%EA%B9%94-%EB%8B%A4-%EB%82%B4%EB%B9%84%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-gXoFZi24",
+    "title": "친정엄마 앞에서 성깔 다 내비치는 남편",
+    "body": "평소 다정한 남편이 친정엄마 앞에서만 짜증을 드러내고 '3out' 대응을 고민하는 대비와 가족 갈등이 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_친정엄마앞성깔남편.md",
+      "originalTitle": "친정엄마 앞에서 성깔 다 내비치는 남편",
+      "originalMarkdown": "# 친정엄마 앞에서 성깔 다 내비치는 남편\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%B9%9C%EC%A0%95%EC%97%84%EB%A7%88-%EC%95%9E%EC%97%90%EC%84%9C-%EC%84%B1%EA%B9%94-%EB%8B%A4-%EB%82%B4%EB%B9%84%EC%B9%98%EB%8A%94-%EB%82%A8%ED%8E%B8-gXoFZi24\r\n- exactObservedTitle: 친정엄마 앞에서 성깔 다 내비치는 남편\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 2,239 / 댓글 50\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 평소 다정한 남편이 친정엄마 앞에서만 짜증을 드러내고 '3out' 대응을 고민하는 대비와 가족 갈등이 선명함.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 주장; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5a36feed0882a996e5cca03c2e0bc149e614122e5897cd6a16a69dab250c1088",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

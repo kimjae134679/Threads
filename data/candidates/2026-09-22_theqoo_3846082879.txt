@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3846082879?category=25894
+제목 - 30대 덬들의 친구의 기준이 궁금한 중기
+내용 - [명시 요약 — 원문 전문 아님]
+정치관·연애/결혼 가치관·칼더치·사진 습관 등 사소하지만 관계를 멀어지게 만드는 기준을 구체적으로 제시해 독자가 자기 기준을 바로 말하고 싶어지는 의견형 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3846082879?category=25894",
+    "title": "30대 덬들의 친구의 기준이 궁금한 중기",
+    "body": "정치관·연애/결혼 가치관·칼더치·사진 습관 등 사소하지만 관계를 멀어지게 만드는 기준을 구체적으로 제시해 독자가 자기 기준을 바로 말하고 싶어지는 의견형 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_3846082879.md",
+      "originalTitle": "30대 덬들의 친구의 기준이 궁금한 중기",
+      "originalMarkdown": "# 30대 덬들의 친구의 기준이 궁금한 중기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3846082879?category=25894\r\n- exactObservedTitle: 30대 덬들의 친구의 기준이 궁금한 중기\r\n- observedAt: 2026-09-22 22:19 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL; public indexed page body read\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: not observed/confirmed\r\n- observedMetrics: 조회 수 5314 (public indexed page as observed)\r\n- whyGood: 정치관·연애/결혼 가치관·칼더치·사진 습관 등 사소하지만 관계를 멀어지게 만드는 기준을 구체적으로 제시해 독자가 자기 기준을 바로 말하고 싶어지는 의견형 소재다.\r\n- verification: 개인 경험과 질문이며 관계 원인에 대한 해석은 독립 검증하지 않음. 공개 본문에서 관찰된 내용만 기록.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "95d2a5ef9fb2f96cbfeb92e98c02d79412b3701a88fd2a9c0abd79ec37c44b84",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 214
+}

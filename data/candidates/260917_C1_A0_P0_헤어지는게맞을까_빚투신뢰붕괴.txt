@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94%EA%B2%8C-%EB%A7%9E%EC%9D%84%EA%B9%8C-rq26aro1
+제목 - 헤어지는게 맞을까..?
+내용 - [명시 요약 — 원문 전문 아님]
+30대 초반, 혼인신고와 합가 전이며 결혼식을 올린 지 약 5개월 된 작성자의 고민. 상대가 자기 재산보다 많은 빚을 내 코인·선물·주식에 투자했고 약 절반을 잃었다고 설명한다. 고이율 투자도 결혼 전 하지 않기로 약속했지만 돈을 뺐다가 다시 빚을 더 내 투자해 신뢰가 무너졌다고 한다. 폭력·외도 같은 사유가 아닌 돈 문제로 결혼을 끝내는 것이 너무 가벼운 결정인지, 반성하는 상대를 용서하고 경제권을 잡아야 하는지 고민한다. 공개 페이지에서 표시된 본문 전체를 읽음. 공개 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94%EA%B2%8C-%EB%A7%9E%EC%9D%84%EA%B9%8C-rq26aro1",
+    "title": "헤어지는게 맞을까..?",
+    "body": "30대 초반, 혼인신고와 합가 전이며 결혼식을 올린 지 약 5개월 된 작성자의 고민. 상대가 자기 재산보다 많은 빚을 내 코인·선물·주식에 투자했고 약 절반을 잃었다고 설명한다. 고이율 투자도 결혼 전 하지 않기로 약속했지만 돈을 뺐다가 다시 빚을 더 내 투자해 신뢰가 무너졌다고 한다. 폭력·외도 같은 사유가 아닌 돈 문제로 결혼을 끝내는 것이 너무 가벼운 결정인지, 반성하는 상대를 용서하고 경제권을 잡아야 하는지 고민한다. 공개 페이지에서 표시된 본문 전체를 읽음. 공개 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_헤어지는게맞을까_빚투신뢰붕괴.md",
+      "originalTitle": "헤어지는게 맞을까..?",
+      "originalMarkdown": "# 헤어지는게 맞을까..?\r\n\r\n## 글 내용\r\n30대 초반, 혼인신고와 합가 전이며 결혼식을 올린 지 약 5개월 된 작성자의 고민. 상대가 자기 재산보다 많은 빚을 내 코인·선물·주식에 투자했고 약 절반을 잃었다고 설명한다. 고이율 투자도 결혼 전 하지 않기로 약속했지만 돈을 뺐다가 다시 빚을 더 내 투자해 신뢰가 무너졌다고 한다. 폭력·외도 같은 사유가 아닌 돈 문제로 결혼을 끝내는 것이 너무 가벼운 결정인지, 반성하는 상대를 용서하고 경제권을 잡아야 하는지 고민한다. 공개 페이지에서 표시된 본문 전체를 읽음. 공개 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94%EA%B2%8C-%EB%A7%9E%EC%9D%84%EA%B9%8C-rq26aro1\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 11:38 KST 부근 공개 검색 페이지\r\n- 조회수: 610\r\n- 댓글: 14\r\n- 좋아요: 확인하지 못함\r\n\r\n## 평가\r\n빚투·코인/선물/주식·결혼 직후·약속 위반·신뢰 붕괴가 짧은 본문에 모두 들어가 즉시 의견이 갈리는 소재. 투자 자체보다 실제 부부관계의 선택 문제가 중심이라 우선도가 높다. 정확한 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- source screenshot/media: 확보하지 않음\r\n- full-post screenshot: 없음\r\n- acquisition state: ASSETS_PENDING\r\n- C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 04_REVIEW_PUBLISH만 게시 가능\r\n",
+      "originalSha256": "e18b779734043a2cc169c1de4f98c7fe60738f1bd20409aafe7851dc68d7416d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 456
+}

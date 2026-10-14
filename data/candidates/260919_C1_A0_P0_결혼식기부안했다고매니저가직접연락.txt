@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/14mb5qz
+제목 - 동료 결혼식 돈 안 냈더니 매니저가 직접 연락했습니다
+내용 - [명시 요약 — 원문 전문 아님]
+생활비가 빠듯한 작성자가 친하지 않은 동료의 결혼 선물 모금에 돈을 내지 않았다. 이후 상급 매니저가 Teams로 '기부가 안 보이는데 혹시 누락됐나'라고 직접 연락했고, 작성자는 압박을 느꼈다. 사무실에서 다른 신입 직원에게도 현금앱으로 기부하도록 권하는 장면을 봤다고 적는다. 공개 원문 본문을 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/14mb5qz",
+    "title": "동료 결혼식 돈 안 냈더니 매니저가 직접 연락했습니다",
+    "body": "생활비가 빠듯한 작성자가 친하지 않은 동료의 결혼 선물 모금에 돈을 내지 않았다. 이후 상급 매니저가 Teams로 '기부가 안 보이는데 혹시 누락됐나'라고 직접 연락했고, 작성자는 압박을 느꼈다. 사무실에서 다른 신입 직원에게도 현금앱으로 기부하도록 권하는 장면을 봤다고 적는다. 공개 원문 본문을 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼식기부안했다고매니저가직접연락.md",
+      "originalTitle": "동료 결혼식 돈 안 냈더니 매니저가 직접 연락했습니다",
+      "originalMarkdown": "# 동료 결혼식 돈 안 냈더니 매니저가 직접 연락했습니다\r\n\r\n## 원문 제목\r\nAITA for not donating to a coworker's wedding gift?\r\n\r\n## source\r\nReddit\r\n\r\n## 글 내용\r\n생활비가 빠듯한 작성자가 친하지 않은 동료의 결혼 선물 모금에 돈을 내지 않았다. 이후 상급 매니저가 Teams로 '기부가 안 보이는데 혹시 누락됐나'라고 직접 연락했고, 작성자는 압박을 느꼈다. 사무실에서 다른 신입 직원에게도 현금앱으로 기부하도록 권하는 장면을 봤다고 적는다. 공개 원문 본문을 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/14mb5qz\r\n\r\n## 관찰\r\n2026-09-19 08:19 KST. 이번 공개 결과에서 게시물 votes/조회수/댓글 총수는 확인하지 못함. 본문 읽음. 댓글 미확인. 이미지/스크린샷 존재 여부 미확인.\r\n\r\n## 평가\r\n자율 모금이 상사의 직접 확인 연락으로 바뀌는 순간이 직장인에게 즉각적인 불편함과 의견을 유발함.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. acquisition/provenance: C1 / EXACT_PUBLIC_URL_VERIFIED. source asset 미확보. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료. 실제 게시 권한은 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "386e8ca515299e920bbfdf0b8df1b08656ba7b769aa0f5629d00f3907affa0ca",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 309
+}

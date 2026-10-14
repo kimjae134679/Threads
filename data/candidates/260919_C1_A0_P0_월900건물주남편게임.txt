@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/maple/5974/4983886
+제목 - 월 900 넘게 들어오는데 7년째 무직으로 게임만 하는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+공개 페이지 본문 확인. 결혼 3년차 부부로, 남편은 시댁에서 받은 5층 상가 임대수입이 월 900만원 이상이지만 7년째 무직 상태이고 결혼 전 자영업이라도 하겠다는 약속과 달리 집에서 주로 게임만 한다는 재전달형 글이다. 아내는 계속 직장생활 중이며 돈보다 생산적으로 사는 가치관 차이를 고민한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/maple/5974/4983886",
+    "title": "월 900 넘게 들어오는데 7년째 무직으로 게임만 하는 남편",
+    "body": "공개 페이지 본문 확인. 결혼 3년차 부부로, 남편은 시댁에서 받은 5층 상가 임대수입이 월 900만원 이상이지만 7년째 무직 상태이고 결혼 전 자영업이라도 하겠다는 약속과 달리 집에서 주로 게임만 한다는 재전달형 글이다. 아내는 계속 직장생활 중이며 돈보다 생산적으로 사는 가치관 차이를 고민한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_월900건물주남편게임.md",
+      "originalTitle": "월 900 넘게 들어오는데 7년째 무직으로 게임만 하는 남편",
+      "originalMarkdown": "# 월 900 넘게 들어오는데 7년째 무직으로 게임만 하는 남편\r\n\r\n## 원문 제목\r\n옛날에 월 900만원이상 버는 건물주 아내 글 생각나네\r\n\r\n## source\r\nInven\r\n\r\n## 글 내용\r\n공개 페이지 본문 확인. 결혼 3년차 부부로, 남편은 시댁에서 받은 5층 상가 임대수입이 월 900만원 이상이지만 7년째 무직 상태이고 결혼 전 자영업이라도 하겠다는 약속과 달리 집에서 주로 게임만 한다는 재전달형 글이다. 아내는 계속 직장생활 중이며 돈보다 생산적으로 사는 가치관 차이를 고민한다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/maple/5974/4983886\r\n\r\n## 관측\r\n- 관측시각: 2026-09-19 09:20 KST\r\n- 조회수: 5,053\r\n- 추천: 5\r\n- 댓글: 24\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재: 페이지에 이미지 요소 표시\r\n\r\n## 평가\r\n'월 900 임대수입이면 일을 안 해도 되나'라는 가치관 논쟁이 아주 선명하고, 무직·게임이라는 구체 장면도 강하다. 단 원글이 아닌 재전달형 페이지임을 유지해야 한다.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public repost URL 확인. acquisition/provenance: C1_EXACT_PUBLIC_REPOST_VERIFIED; 원출처 미확인. source asset 미확보. A0/P0. publicationAllowed=false.",
+      "originalSha256": "6080b8e3f9e1d32a405f58e2088c8dc4d877f680c519e7fd47c56ad085eb9aba",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 299
+}

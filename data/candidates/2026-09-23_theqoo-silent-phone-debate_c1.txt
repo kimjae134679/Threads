@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3595146929
+제목 - 전화 무음으로 하는 사람들의 심리가 궁금한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3595146929",
+    "title": "전화 무음으로 하는 사람들의 심리가 궁금한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-silent-phone-debate_c1.md",
+      "originalTitle": "전화 무음으로 하는 사람들의 심리가 궁금한 후기",
+      "originalMarkdown": "# 전화 무음으로 하는 사람들의 심리가 궁금한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/3595146929\r\n- exactObservedTitle: 전화 무음으로 하는 사람들의 심리가 궁금한 후기\r\n- observedAt: 2026-09-23 18:16 KST\r\n- observedMetrics: 조회 15,702 / 댓글 57\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 생활 습관 관련 질문글. 사실관계를 요구하는 사안이 아니며 댓글 의견은 이번 실행에서 읽지 않음.\r\n- whyGoodMaterial: 평소 휴대폰을 항상 무음으로 두는 사람과 급한 연락을 놓칠까 답답해하는 사람 사이의 생활 습관 차이라 누구나 자기 경험을 바로 대입해 의견을 내기 쉬운 일상 논쟁형 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "07c809f808875e6d8fc86daef058ec24cd63a96ac145211db640c69692fad7e7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

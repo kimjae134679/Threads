@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/foreign/4323485198
+제목 - 친구 남편 마음에 안들어..
+내용 - [명시 요약 — 원문 전문 아님]
+사실혼 부부·시댁 1분 거리·잦은 호출·시누이 갈등·아이 데리고 고향 방문을 둘러싼 의심·결혼식 취소까지 이어지는 갈등 구조가 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/foreign/4323485198",
+    "title": "친구 남편 마음에 안들어..",
+    "body": "사실혼 부부·시댁 1분 거리·잦은 호출·시누이 갈등·아이 데리고 고향 방문을 둘러싼 의심·결혼식 취소까지 이어지는 갈등 구조가 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_친구남편마음에안들어.md",
+      "originalTitle": "친구 남편 마음에 안들어..",
+      "originalMarkdown": "# 친구 남편 마음에 안들어..\r\n\r\n- source: TheQoo 해외거주토크\r\n- publicUrl: https://theqoo.net/foreign/4323485198\r\n- exactObservedTitle: 친구 남편 마음에 안들어..\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 327, 댓글 12\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트에서 확인된 범위)\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: TheQoo 개별 공개 글. 게시자 서술은 독립 검증된 사실이 아님.\r\n- whyGood: 사실혼 부부·시댁 1분 거리·잦은 호출·시누이 갈등·아이 데리고 고향 방문을 둘러싼 의심·결혼식 취소까지 이어지는 갈등 구조가 선명함.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "cbe70bc627b0235e244b00692f927b9a04b501e442ad63859d20eba67d1e4db4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 178
+}

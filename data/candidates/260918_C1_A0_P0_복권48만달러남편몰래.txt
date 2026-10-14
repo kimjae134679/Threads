@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/BestofRedditorUpdates/comments/10ct7l4
+제목 - TIFU by not telling my husband about a lottery I won years ago
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 직전 약 48만달러 복권에 당첨된 여성이 남편의 소비 성향을 걱정해 당첨 사실을 누구에게도 알리지 않고 별도 계좌에 보관한 사연. 결혼 뒤에도 비밀을 유지하면서 부부 사이 신뢰와 돈 관리 문제가 핵심 갈등으로 이어진다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BestofRedditorUpdates/comments/10ct7l4",
+    "title": "TIFU by not telling my husband about a lottery I won years ago",
+    "body": "결혼 직전 약 48만달러 복권에 당첨된 여성이 남편의 소비 성향을 걱정해 당첨 사실을 누구에게도 알리지 않고 별도 계좌에 보관한 사연. 결혼 뒤에도 비밀을 유지하면서 부부 사이 신뢰와 돈 관리 문제가 핵심 갈등으로 이어진다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_복권48만달러남편몰래.md",
+      "originalTitle": "TIFU by not telling my husband about a lottery I won years ago",
+      "originalMarkdown": "# TIFU by not telling my husband about a lottery I won years ago\r\n\r\n## 글 내용\r\n결혼 직전 약 48만달러 복권에 당첨된 여성이 남편의 소비 성향을 걱정해 당첨 사실을 누구에게도 알리지 않고 별도 계좌에 보관한 사연. 결혼 뒤에도 비밀을 유지하면서 부부 사이 신뢰와 돈 관리 문제가 핵심 갈등으로 이어진다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/BestofRedditorUpdates/comments/10ct7l4\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-18 02:39 KST\r\n- Reddit 표시 점수 +9,212\r\n- 조회수/댓글 수치는 확인하지 않음\r\n\r\n## 평가\r\n'배우자에게 복권 당첨을 숨겨도 되는가'라는 즉시 이해되는 질문과 큰 금액이 결합된 소재. 본문 읽음. 댓글 전체 미확인.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot/media 미확보. exact public page 확인. `ASSETS_PENDING`. C1_A0_P0 / publicationAllowed=false. rights/privacy/human review 필요, 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "60e85b7e9018fd32470d5e50bf2814aa87775b379be1908cc1beb57728cd5eeb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 301
+}

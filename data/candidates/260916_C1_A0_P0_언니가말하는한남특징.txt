@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728511?iskin=webzine
+제목 - 언니가 말하는 한남특징 이라는 톡내용
+내용 - [명시 요약 — 원문 전문 아님]
+톡 대화 캡처 이미지가 본문 중심인 게시물. 이미지 내부 대화 내용은 현재 텍스트 경로에서 확인하지 못했으므로 본문 미확인으로 유지한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728511?iskin=webzine",
+    "title": "언니가 말하는 한남특징 이라는 톡내용",
+    "body": "톡 대화 캡처 이미지가 본문 중심인 게시물. 이미지 내부 대화 내용은 현재 텍스트 경로에서 확인하지 못했으므로 본문 미확인으로 유지한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_언니가말하는한남특징.md",
+      "originalTitle": "언니가 말하는 한남특징 이라는 톡내용",
+      "originalMarkdown": "# 언니가 말하는 한남특징 이라는 톡내용\r\n\r\n## 글 내용\r\n톡 대화 캡처 이미지가 본문 중심인 게시물. 이미지 내부 대화 내용은 현재 텍스트 경로에서 확인하지 못했으므로 본문 미확인으로 유지한다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728511?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 11:36 KST 부근\r\n- 조회 857 / 추천 0 / 댓글 10\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n성별 비꼼 소재라는 이유만으로 자동 제외하지 않는다. 대화 캡처형이라 원문 이미지를 확보한 뒤 실제 맥락과 표적 괴롭힘/명예훼손 위험을 별도 검토해야 한다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- 실제 source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n",
+      "originalSha256": "f847e4fffcfb3ff28d1ac649ed6b5e9e241b8f45965c78a1db6c066d7c11c6f1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 211
+}

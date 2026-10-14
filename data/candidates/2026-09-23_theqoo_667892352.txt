@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/667892352
+제목 - 카페 알바 손님들 후기...
+내용 - [명시 요약 — 원문 전문 아님]
+'따뜻한 아이스 아메리카노', 마감한 아이스크림 기계를 다시 돌려달라는 요구 등 카페 알바가 반복해서 겪는 손님 유형이 짧은 에피소드로 이어져 공감과 댓글 참여가 쉽다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/667892352",
+    "title": "카페 알바 손님들 후기...",
+    "body": "'따뜻한 아이스 아메리카노', 마감한 아이스크림 기계를 다시 돌려달라는 요구 등 카페 알바가 반복해서 겪는 손님 유형이 짧은 에피소드로 이어져 공감과 댓글 참여가 쉽다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_667892352.md",
+      "originalTitle": "카페 알바 손님들 후기...",
+      "originalMarkdown": "# 카페 알바 손님들 후기...\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/667892352\r\n- exactObservedTitle: 카페 알바 손님들 후기...\r\n- observedAt: 2026-09-23 20:16 KST\r\n- observedMetrics: 조회 5,038\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 본문 공개 텍스트 확인 범위에서는 이미지/스크린샷을 확인하지 않음\r\n- whyGood: '따뜻한 아이스 아메리카노', 마감한 아이스크림 기계를 다시 돌려달라는 요구 등 카페 알바가 반복해서 겪는 손님 유형이 짧은 에피소드로 이어져 공감과 댓글 참여가 쉽다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 다운로드·스크린샷 캡처 없음.\r\n- provenance: TheQoo 익명 작성자의 개인 알바 경험담. 개인 주장으로만 취급하며 외부 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "d4ca754f4bde6527ea04ba22a256a01bdec32d3b230b0b838ba4f0cf8cd41402",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

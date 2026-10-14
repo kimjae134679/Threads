@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1497897957
+제목 - 35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1497897957",
+    "title": "35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_부모님돈_쓰는_언니_갈등후기.md",
+      "originalTitle": "35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기",
+      "originalMarkdown": "# 35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기\r\n\r\nsource: TheQoo 후기\r\nsourceStage: C1\r\nexactPublicUrl: https://theqoo.net/review/1497897957\r\nexactObservedTitle: 35살인데 아직도 부모님 돈 쓰는 언니 때문에 짜증나는 후기\r\nobservedAt: 2026-09-21 06:18 KST\r\nobservedMetrics: 조회 3,730 / 댓글 30\r\nbodyRead: true\r\ncommentsRead: false\r\nimageOrScreenshotExists: 미확인\r\nacquisition: 공개 개별 게시물 URL과 공개 본문을 허용된 공개 페이지에서 확인. 로그인 또는 anti-bot 우회 없음.\r\nprovenance: 작성자 개인 경험담으로 게시된 원문 개별 페이지이며 서술 내용의 외부 사실성은 별도 검증하지 않음.\r\nwhyGood: 성인 형제의 부모 지원과 형평성 문제, 동거 중 약속 파기까지 겹친 가족·돈 갈등이라 독자가 판단을 내리기 쉬운 구조임.\r\nA1: false\r\nP1: false\r\npublicationAllowed: false\r\n",
+      "originalSha256": "d1b7023176658addf1e3215cf2c4e8a3bc761ac8fa395dc7a6026c7b7326948a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 113
+}

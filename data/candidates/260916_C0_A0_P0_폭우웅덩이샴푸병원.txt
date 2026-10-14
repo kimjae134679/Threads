@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 일본 스트리머가 폭우 중 물 웅덩이에서 샴푸하고 38도 발열, 혈뇨로 병원감
+내용 - [명시 요약 — 원문 전문 아님]
+폭우로 생긴 물웅덩이에서 샴푸를 한 뒤 건강 문제가 생겼다고 전해진 스트리머 일화 후보다. 건강·인과관계는 원출처 검증 없이 단정하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "일본 스트리머가 폭우 중 물 웅덩이에서 샴푸하고 38도 발열, 혈뇨로 병원감",
+    "body": "폭우로 생긴 물웅덩이에서 샴푸를 한 뒤 건강 문제가 생겼다고 전해진 스트리머 일화 후보다. 건강·인과관계는 원출처 검증 없이 단정하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_폭우웅덩이샴푸병원.md",
+      "originalTitle": "일본 스트리머가 폭우 중 물 웅덩이에서 샴푸하고 38도 발열, 혈뇨로 병원감",
+      "originalMarkdown": "# 일본 스트리머가 폭우 중 물 웅덩이에서 샴푸하고 38도 발열, 혈뇨로 병원감\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: TheQoo HOT\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n폭우로 생긴 물웅덩이에서 샴푸를 한 뒤 건강 문제가 생겼다고 전해진 스트리머 일화 후보다. 건강·인과관계는 원출처 검증 없이 단정하지 않는다.\r\n\r\n## 평가\r\n- 평가: 황당실화형, 사실검증 필수\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n\r\n## 2026-09-21 sequential verification\r\n- C0: BLOCKED_EXACT_PRIMARY_SOURCE\r\n- Fresh public exact/near-exact searches did not resolve the exact individual TheQoo post URL/post ID.\r\n- Do not treat generic health pages or secondary references as provenance for this candidate.\r\n- unblockWhen: exact individual primary TheQoo URL/post ID or another trustworthy unique primary-post identifier becomes publicly resolvable.\r\n- A0 / P0 / publicationAllowed=false 유지. 본문·이미지·OCR/vision·댓글·metrics·rights는 추정하지 않음.\r\n",
+      "originalSha256": "74c075a9f17049108f2734d67931c7c982cc32f5a7244240a59b26d3570664ba",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

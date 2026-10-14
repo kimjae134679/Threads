@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 나 도저히 아이 못낳겠다니까 계속 낳자는데
+내용 - [명시 요약 — 원문 전문 아님]
+**본문 미확인.** Blind 공개 회사 게시글 index에서 확인한 lead. 검색/index 노출 범위에는 임신 후 작성자 수입이 크게 줄어든 상황에서 남편 연봉 약 4천만원 외벌이로 출산·산후조리원·병원비 등을 감당하기 어렵다고 느끼지만 남편은 계속 아이를 낳자고 한다는 가족·돈 갈등이 보인다. index snippet 밖 내용은 채우지 않음. 댓글은 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "나 도저히 아이 못낳겠다니까 계속 낳자는데",
+    "body": "**본문 미확인.** Blind 공개 회사 게시글 index에서 확인한 lead. 검색/index 노출 범위에는 임신 후 작성자 수입이 크게 줄어든 상황에서 남편 연봉 약 4천만원 외벌이로 출산·산후조리원·병원비 등을 감당하기 어렵다고 느끼지만 남편은 계속 아이를 낳자고 한다는 가족·돈 갈등이 보인다. index snippet 밖 내용은 채우지 않음. 댓글은 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C0_A0_P0_아이못낳겠다는데계속낳자는남편.md",
+      "originalTitle": "나 도저히 아이 못낳겠다니까 계속 낳자는데",
+      "originalMarkdown": "# 나 도저히 아이 못낳겠다니까 계속 낳자는데\r\n\r\n## 글 내용\r\n**본문 미확인.** Blind 공개 회사 게시글 index에서 확인한 lead. 검색/index 노출 범위에는 임신 후 작성자 수입이 크게 줄어든 상황에서 남편 연봉 약 4천만원 외벌이로 출산·산후조리원·병원비 등을 감당하기 어렵다고 느끼지만 남편은 계속 아이를 낳자고 한다는 가족·돈 갈등이 보인다. index snippet 밖 내용은 채우지 않음. 댓글은 읽지 않음.\r\n\r\n## 정확한 링크\r\n정확한 개별 원문 URL 미확인. 공개 index: https://www.teamblind.com/kr/company/%EC%9E%A1%EB%AA%A8%EC%95%84/posts\r\n\r\n관측: 2026-09-17 18:36~18:45 KST, 공개 Blind index/search surface.\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n같은 index 관측면에서 **1,174 / 좋아요 6 / 댓글 15**로 표시됨.\r\n\r\n## 평가\r\n- 출산 여부 + 외벌이 + 현실 비용이라는 즉시 의견이 갈리는 생활 갈등.\r\n- exact individual URL이 없으므로 C0 유지.\r\n- 형식: 글로 추정하지 않고, 원문 확인 전 형식 확정 보류.\r\n\r\n## 이미지/자산/게시상태\r\n- exact individual URL: 미확인.\r\n- full body read: 아니오.\r\n- comments read: 아니오.\r\n- source screenshot/media bytes: 미확보.\r\n- acquisition: `ASSETS_PENDING`.\r\n- `C0_A0_P0` / `publicationAllowed=false`.\r\n- rights/privacy/human review gate 유지. 게시 권한은 `04_REVIEW_PUBLISH`만 가짐.\r\n",
+      "originalSha256": "8fed478d4db71e8b06848792c6d49cbddb344d72d186e44cf45e95a9e76183ce",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 282
+}

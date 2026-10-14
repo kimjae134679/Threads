@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/BORUpdates/comments/1vpxezg/aitah_for_letting_my_fiancee_and_his_son_move_in/
+제목 - AITAH for letting my fiancee and his son move in rather than moving to them so his mom can co-parent?
+내용 - [명시 요약 — 원문 전문 아님]
+배우자를 사고로 잃은 뒤 장거리 연애를 시작한 42세 작성자와 약혼자 가족의 거주지 선택 갈등을 다룬 장기 업데이트 사연. 두 사람은 차로 약 12시간 떨어진 주에 살며 약혼자에게 아들이 있어, 누가 누구에게 이사할지와 친모의 공동양육 관계가 충돌한다. 공개 BORUpdates 재게시에서 메인 글과 여러 후속 업데이트가 묶여 있음을 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/BORUpdates/comments/1vpxezg/aitah_for_letting_my_fiancee_and_his_son_move_in/",
+    "title": "AITAH for letting my fiancee and his son move in rather than moving to them so his mom can co-parent?",
+    "body": "배우자를 사고로 잃은 뒤 장거리 연애를 시작한 42세 작성자와 약혼자 가족의 거주지 선택 갈등을 다룬 장기 업데이트 사연. 두 사람은 차로 약 12시간 떨어진 주에 살며 약혼자에게 아들이 있어, 누가 누구에게 이사할지와 친모의 공동양육 관계가 충돌한다. 공개 BORUpdates 재게시에서 메인 글과 여러 후속 업데이트가 묶여 있음을 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_약혼자아들과12시간이사갈등.md",
+      "originalTitle": "AITAH for letting my fiancee and his son move in rather than moving to them so his mom can co-parent?",
+      "originalMarkdown": "# AITAH for letting my fiancee and his son move in rather than moving to them so his mom can co-parent?\r\n\r\n## 글 내용\r\n배우자를 사고로 잃은 뒤 장거리 연애를 시작한 42세 작성자와 약혼자 가족의 거주지 선택 갈등을 다룬 장기 업데이트 사연. 두 사람은 차로 약 12시간 떨어진 주에 살며 약혼자에게 아들이 있어, 누가 누구에게 이사할지와 친모의 공동양육 관계가 충돌한다. 공개 BORUpdates 재게시에서 메인 글과 여러 후속 업데이트가 묶여 있음을 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/BORUpdates/comments/1vpxezg/aitah_for_letting_my_fiancee_and_his_son_move_in/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 04:35 KST\r\n- Reddit score: +1,796\r\n- 조회수/댓글 총수: 공개 검색 결과에서 확인하지 못함\r\n\r\n## 평가\r\n연애·재혼·아이·장거리·공동양육이 얽혀 선택지가 선명한 업데이트형 소재. 재게시이므로 원문 provenance/권리 확인 후에만 제작 단계로 넘긴다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit BORUpdates (원문 재게시)\r\n- full body read: YES (공개 재게시 범위)\r\n- comments read: 미확인\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n",
+      "originalSha256": "5e8f028921ca6b8b587769f8f1d605be384e6ca9a8c37f3dc9c033abee8d5cae",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 446
+}

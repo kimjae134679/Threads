@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A7%81%EC%9E%A5-%EC%83%81%EC%82%AC-%EC%86%8C%EA%B0%9C%ED%8C%85-%ED%9B%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B1%B0%EC%A0%88%ED%95%98%EC%A3%A0-fTmSujbr
+제목 - 직장 상사 소개팅 후 어떻게 거절하죠?
+내용 - [명시 요약 — 원문 전문 아님]
+직장 상사가 소개해준 상대와 애프터까지 했지만 연락이 뜸해져 마음이 식은 작성자가, 상사에게 말이 나쁘게 전달되지 않도록 어떻게 관계를 정리할지 고민하는 사연. 공개 본문 전체와 댓글 일부를 확인함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A7%81%EC%9E%A5-%EC%83%81%EC%82%AC-%EC%86%8C%EA%B0%9C%ED%8C%85-%ED%9B%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B1%B0%EC%A0%88%ED%95%98%EC%A3%A0-fTmSujbr",
+    "title": "직장 상사 소개팅 후 어떻게 거절하죠?",
+    "body": "직장 상사가 소개해준 상대와 애프터까지 했지만 연락이 뜸해져 마음이 식은 작성자가, 상사에게 말이 나쁘게 전달되지 않도록 어떻게 관계를 정리할지 고민하는 사연. 공개 본문 전체와 댓글 일부를 확인함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_직장상사소개팅거절.md",
+      "originalTitle": "직장 상사 소개팅 후 어떻게 거절하죠?",
+      "originalMarkdown": "# 직장 상사 소개팅 후 어떻게 거절하죠?\r\n\r\n## 글 내용\r\n직장 상사가 소개해준 상대와 애프터까지 했지만 연락이 뜸해져 마음이 식은 작성자가, 상사에게 말이 나쁘게 전달되지 않도록 어떻게 관계를 정리할지 고민하는 사연. 공개 본문 전체와 댓글 일부를 확인함.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%A7%81%EC%9E%A5-%EC%83%81%EC%82%AC-%EC%86%8C%EA%B0%9C%ED%8C%85-%ED%9B%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B1%B0%EC%A0%88%ED%95%98%EC%A3%A0-fTmSujbr\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n2026-09-17 20:38 KST 공개 페이지 관측: 조회 418 / 좋아요 1 / 댓글 11. 댓글 일부 확인.\r\n\r\n## 평가\r\n소개팅의 애매함에 직장 상사라는 사회적 압박이 겹쳐 relatable annoyance 레인으로 쓸 만하다. 형식: 글.\r\n\r\n## 이미지/자산/게시상태\r\nsource screenshot bytes/full-post screenshot 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 게시 권한은 04_REVIEW_PUBLISH만 보유.",
+      "originalSha256": "ef81b15de9bdad08fde003cd2c5375b66e391d6b1226fb583c0aa51694cc32d0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 366
+}

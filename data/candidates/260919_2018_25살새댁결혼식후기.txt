@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2029762430
+제목 - 25살 새댁덬 꿈같았던 결혼식 후기
+내용 - [명시 요약 — 원문 전문 아님]
+하객 43명, 웨딩플래너 친구, 디자이너 어머니의 웨딩드레스, 사진작가 친구 등 작은 결혼식을 지인들의 재능으로 만든 과정이 에피소드형으로 이어짐.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2029762430",
+    "title": "25살 새댁덬 꿈같았던 결혼식 후기",
+    "body": "하객 43명, 웨딩플래너 친구, 디자이너 어머니의 웨딩드레스, 사진작가 친구 등 작은 결혼식을 지인들의 재능으로 만든 과정이 에피소드형으로 이어짐.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_25살새댁결혼식후기.md",
+      "originalTitle": "25살 새댁덬 꿈같았던 결혼식 후기",
+      "originalMarkdown": "# 25살 새댁덬 꿈같았던 결혼식 후기\r\n\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2029762430\r\n- exactObservedTitle: 25살 새댁덬 꿈같았던 결혼식 후기\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 공개 검색 결과에서 확실히 확인 가능한 수치 없음\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_PARTIAL\r\n- provenance: TheQoo 개별 공개 글. 검색 공개 범위에서 장문 본문 일부 확인.\r\n- whyGood: 하객 43명, 웨딩플래너 친구, 디자이너 어머니의 웨딩드레스, 사진작가 친구 등 작은 결혼식을 지인들의 재능으로 만든 과정이 에피소드형으로 이어짐.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "c998ff92cc3b4606991c13092e62fb9450bcb59c277515ab9dc8edc7aa661daa",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 188
+}

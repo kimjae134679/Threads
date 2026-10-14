@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%BC%B4%EB%94%B1-%EB%B0%A4%EC%83%9C%EB%84%A4-h4485tio
+제목 - 꼴딱 밤샜네..
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%BC%B4%EB%94%B1-%EB%B0%A4%EC%83%9C%EB%84%A4-h4485tio",
+    "title": "꼴딱 밤샜네..",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_새벽330시어머니영통.md",
+      "originalTitle": "꼴딱 밤샜네..",
+      "originalMarkdown": "# 꼴딱 밤샜네..\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EA%BC%B4%EB%94%B1-%EB%B0%A4%EC%83%9C%EB%84%A4-h4485tio\r\n- exact_observed_title: 꼴딱 밤샜네..\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 828, 댓글 10\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 새벽 3시30분 시어머니 영상통화 한 번 때문에 밤을 샜다는 매우 짧고 즉시 이해되는 민망·짜증 상황.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3c362c989a4f21bb553c9c45fa4cd1b61f91fd25bbb0b3491e6a623f726e6f0d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 141
+}

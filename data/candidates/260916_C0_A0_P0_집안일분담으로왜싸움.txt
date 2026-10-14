@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 집안일 분담으로 왜싸움?
+내용 - [명시 요약 — 원문 전문 아님]
+설거지·음식물쓰레기·분리수거 등 집안일 분담을 둘러싼 부부 논쟁 후보로 과거 발견됐지만 정확한 원문은 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "집안일 분담으로 왜싸움?",
+    "body": "설거지·음식물쓰레기·분리수거 등 집안일 분담을 둘러싼 부부 논쟁 후보로 과거 발견됐지만 정확한 원문은 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_집안일분담으로왜싸움.md",
+      "originalTitle": "집안일 분담으로 왜싸움?",
+      "originalMarkdown": "# 집안일 분담으로 왜싸움?\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n설거지·음식물쓰레기·분리수거 등 집안일 분담을 둘러싼 부부 논쟁 후보로 과거 발견됐지만 정확한 원문은 미확인이다.\r\n\r\n## 평가\r\n- 평가: 즉답형 생활논쟁, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n\r\n## 2026-09-21 08:28 KST 순차 재검증\r\n- 공개 Blind 페이지의 추천/토픽 영역에서 정확한 제목 `집안일 분담으로 왜싸움?`, 작성 표시 `HD현대일렉트릭 · 𝙅*****************`, 본문 첫 문장 `와이프한테 설거지, 음쓰버리기, 분리수거 절대 안시킴.`까지 반복 확인했다.\r\n- 그러나 이 회차의 공개 검색으로는 해당 글의 정확한 개별 Blind URL/stable post ID를 확정하지 못했다. 다른 Blind 글의 추천 카드만 provenance로 승격하지 않는다.\r\n- 결과: `BLOCKED_PROVENANCE` / C0 / A0 / P0 / `publicationAllowed=false`.\r\n- unblock: 동일 개별 글의 정확한 Blind URL/stable post ID 또는 이를 증명하는 신뢰 가능한 고유 식별자가 로그인·접근제어 우회 없이 공개적으로 확인될 것.\r\n",
+      "originalSha256": "8a9de209e6c0c6a2724dac06eae12e7ae6ecfea791fc6f2b1d9d5af54ffa382a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 127
+}

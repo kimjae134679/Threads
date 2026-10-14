@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC
+제목 - 축의금 논란 , 제가 이상한가요?(특이케이스)
+내용 - [명시 요약 — 원문 전문 아님]
+작성자는 대학 친구 두 명의 결혼식에 각각 남자친구와 참석하며 20만원을 냈고, 한 친구에게는 부케 관련 비용도 별도로 썼다. 그런데 자신의 결혼식에는 두 친구 모두 불참하며 각각 10만원과 15만원을 보내와 이해하기 어렵다며 의견을 물었다. 공개 페이지에서 본문 전체를 확인했다. 댓글 일부는 식비를 제외한 금액으로 생각하라는 반응 등이 있었으나 92개 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC",
+    "title": "축의금 논란 , 제가 이상한가요?(특이케이스)",
+    "body": "작성자는 대학 친구 두 명의 결혼식에 각각 남자친구와 참석하며 20만원을 냈고, 한 친구에게는 부케 관련 비용도 별도로 썼다. 그런데 자신의 결혼식에는 두 친구 모두 불참하며 각각 10만원과 15만원을 보내와 이해하기 어렵다며 의견을 물었다. 공개 페이지에서 본문 전체를 확인했다. 댓글 일부는 식비를 제외한 금액으로 생각하라는 반응 등이 있었으나 92개 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_축의금논란특이케이스.md",
+      "originalTitle": "축의금 논란 , 제가 이상한가요?(특이케이스)",
+      "originalMarkdown": "# 축의금 논란 , 제가 이상한가요?(특이케이스)\r\n\r\n## 글 내용\r\n작성자는 대학 친구 두 명의 결혼식에 각각 남자친구와 참석하며 20만원을 냈고, 한 친구에게는 부케 관련 비용도 별도로 썼다. 그런데 자신의 결혼식에는 두 친구 모두 불참하며 각각 10만원과 15만원을 보내와 이해하기 어렵다며 의견을 물었다. 공개 페이지에서 본문 전체를 확인했다. 댓글 일부는 식비를 제외한 금액으로 생각하라는 반응 등이 있었으나 92개 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%85%BC%EB%9E%80-%EC%A0%9C%EA%B0%80-%EC%9D%B4%EC%83%81%ED%95%9C%EA%B0%80%EC%9A%94%ED%8A%B9%EC%9D%B4%EC%BC%80%EC%9D%B4%EC%8A%A4-0uutRBTC\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 조회수 8,933, 좋아요 17, 댓글 92.\r\n\r\n## 평가\r\n친구 2명의 사례가 나란히 있어 비교가 쉽고 `받은 만큼 돌려줘야 하나`라는 논쟁이 즉시 생긴다. 숫자가 구체적이고 감정선도 단순해 carousel 후보로 좋다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Blind\r\n- full body read: YES\r\n- comments read: PARTIAL\r\n- source images/screenshots: 본문 필수 첨부 이미지 확인되지 않음\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "79528b3280051ad5928357139f5f448e49c9dbfff1ae8dd2725e34b41b013ffc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 484
+}

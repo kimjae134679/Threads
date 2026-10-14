@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A4%80%EB%B9%84-%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%8B%A0%EB%A2%B0%EA%B0%80-%EB%AC%B4%EB%84%88%EC%A0%B8%EC%84%9C-%EA%B3%A0%EB%AF%BC%EC%9E%85%EB%8B%88%EB%8B%A4-5rnjd7y7
+제목 - 사실혼 여친의 유일한 남사친 때문에 무너진 신뢰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A4%80%EB%B9%84-%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%8B%A0%EB%A2%B0%EA%B0%80-%EB%AC%B4%EB%84%88%EC%A0%B8%EC%84%9C-%EA%B3%A0%EB%AF%BC%EC%9E%85%EB%8B%88%EB%8B%A4-5rnjd7y7",
+    "title": "사실혼 여친의 유일한 남사친 때문에 무너진 신뢰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_사실혼남자동료신뢰붕괴.md",
+      "originalTitle": "사실혼 여친의 유일한 남사친 때문에 무너진 신뢰",
+      "originalMarkdown": "# 사실혼 여친의 유일한 남사친 때문에 무너진 신뢰\r\n\r\n- source: Blind / 결혼생활\r\n- exact observed title: `결혼 준비 중인데 신뢰가 무너져서 고민입니다`\r\n- public URL: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%EC%A4%80%EB%B9%84-%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%8B%A0%EB%A2%B0%EA%B0%80-%EB%AC%B4%EB%84%88%EC%A0%B8%EC%84%9C-%EA%B3%A0%EB%AF%BC%EC%9E%85%EB%8B%88%EB%8B%A4-5rnjd7y7\r\n- observed: 2026-09-19 16:17 KST 부근\r\n- observed metrics: 조회수 439 / 댓글 13\r\n- body read: 일부. 사실혼 2년, 연고 없는 지역 이주, 여친의 남자 직장동료와의 교류 및 과거 연락두절 사건까지 공개 노출 범위 확인.\r\n- comments read: 아니오.\r\n- image/screenshot: 확인하지 않음. 캡처/다운로드 안 함.\r\n- why useful: 신뢰·이성친구 허용범위·과거 사건이 겹쳐 의견 분열이 강한 관계 소재.\r\n- acquisition/provenance: C1 exact individual public URL / BODY_PARTIAL.\r\n- A0 / P0 / publicationAllowed=false\r\n",
+      "originalSha256": "c5142f64c344c1e8e0147e5886a1b4d0dda62ab38b4453a0c10c02a1a7e28324",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 289
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%B4-%EC%8B%A0%EA%B3%A0%EB%A1%9C-%ED%8C%80%EC%9E%A5%EC%9D%B4-%EC%A7%A4%EB%A6%B4%EA%B1%B0%EA%B0%99%EC%95%84-zz6kklsm
+제목 - 내 신고로 팀장이 짤릴거같아
+내용 - [명시 요약 — 원문 전문 아님]
+직장 내 괴롭힘 때문에 팀장을 신고했는데 원래는 경고나 분리 정도를 기대했던 작성자가 실제 해고 가능성이 생기자 죄책감을 느끼는 사연이다. 댓글은 결과가 신고자의 잘못이 아니라는 반응이 강하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%B4-%EC%8B%A0%EA%B3%A0%EB%A1%9C-%ED%8C%80%EC%9E%A5%EC%9D%B4-%EC%A7%A4%EB%A6%B4%EA%B1%B0%EA%B0%99%EC%95%84-zz6kklsm",
+    "title": "내 신고로 팀장이 짤릴거같아",
+    "body": "직장 내 괴롭힘 때문에 팀장을 신고했는데 원래는 경고나 분리 정도를 기대했던 작성자가 실제 해고 가능성이 생기자 죄책감을 느끼는 사연이다. 댓글은 결과가 신고자의 잘못이 아니라는 반응이 강하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_내신고로팀장이짤릴거같아.md",
+      "originalTitle": "내 신고로 팀장이 짤릴거같아",
+      "originalMarkdown": "# 내 신고로 팀장이 짤릴거같아\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EB%82%B4-%EC%8B%A0%EA%B3%A0%EB%A1%9C-%ED%8C%80%EC%9E%A5%EC%9D%B4-%EC%A7%A4%EB%A6%B4%EA%B1%B0%EA%B0%99%EC%95%84-zz6kklsm\r\n- 조회수: 133\r\n- 좋아요: 3\r\n- 댓글: 11\r\n- 본문/댓글: 읽음\r\n\r\n## 글 내용\r\n직장 내 괴롭힘 때문에 팀장을 신고했는데 원래는 경고나 분리 정도를 기대했던 작성자가 실제 해고 가능성이 생기자 죄책감을 느끼는 사연이다. 댓글은 결과가 신고자의 잘못이 아니라는 반응이 강하다.\r\n\r\n## 평가\r\n- 평가: 상급 직장 갈등\r\n- 이유: 피해→신고→예상보다 큰 결과→죄책감이라는 반전.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "4e31e8af77f8071087d7f8110bbec5fc7f091e47d363fe2627a87456be9bdba4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 328
+}

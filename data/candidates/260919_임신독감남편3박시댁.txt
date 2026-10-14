@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%A7%8C%EC%95%BD%EC%97%90-%EB%AA%85%EC%A0%88-%EC%9E%84%EC%8B%A0-%EC%B4%88%EA%B8%B0-%EC%99%80%EC%9D%B4%ED%94%84-%EB%8F%85%EA%B0%90%EA%B1%B8%EB%A6%B0%EC%83%81%ED%99%A9-%ED%98%BC%EC%9E%90-%EC%8B%9C%EB%8C%81-%EA%B0%80-gx8361oc
+제목 - (만약에) 명절 임신 초기 와이프 독감걸린상황, 혼자 시댁 가?
+내용 - [명시 요약 — 원문 전문 아님]
+임신 초기 독감·입덧 중 남편을 명절 3박4일 시댁에 보냈는데 사흘간 전화 한 통 없었다는 뒤늦은 서운함이 공감/논쟁을 동시에 만드는 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%A7%8C%EC%95%BD%EC%97%90-%EB%AA%85%EC%A0%88-%EC%9E%84%EC%8B%A0-%EC%B4%88%EA%B8%B0-%EC%99%80%EC%9D%B4%ED%94%84-%EB%8F%85%EA%B0%90%EA%B1%B8%EB%A6%B0%EC%83%81%ED%99%A9-%ED%98%BC%EC%9E%90-%EC%8B%9C%EB%8C%81-%EA%B0%80-gx8361oc",
+    "title": "(만약에) 명절 임신 초기 와이프 독감걸린상황, 혼자 시댁 가?",
+    "body": "임신 초기 독감·입덧 중 남편을 명절 3박4일 시댁에 보냈는데 사흘간 전화 한 통 없었다는 뒤늦은 서운함이 공감/논쟁을 동시에 만드는 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_임신독감남편3박시댁.md",
+      "originalTitle": "(만약에) 명절 임신 초기 와이프 독감걸린상황, 혼자 시댁 가?",
+      "originalMarkdown": "# (만약에) 명절 임신 초기 와이프 독감걸린상황, 혼자 시댁 가?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%A7%8C%EC%95%BD%EC%97%90-%EB%AA%85%EC%A0%88-%EC%9E%84%EC%8B%A0-%EC%B4%88%EA%B8%B0-%EC%99%80%EC%9D%B4%ED%94%84-%EB%8F%85%EA%B0%90%EA%B1%B8%EB%A6%B0%EC%83%81%ED%99%A9-%ED%98%BC%EC%9E%90-%EC%8B%9C%EB%8C%81-%EA%B0%80-gx8361oc\r\n- exactObservedTitle: (만약에) 명절 임신 초기 와이프 독감걸린상황, 혼자 시댁 가?\r\n- observedAt: 2026-09-19 22:16 KST\r\n- confidence: C1\r\n- observedMetrics: 조회수 53 / 댓글 11\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false (공개 페이지 텍스트 기준)\r\n- whyGood: 임신 초기 독감·입덧 중 남편을 명절 3박4일 시댁에 보냈는데 사흘간 전화 한 통 없었다는 뒤늦은 서운함이 공감/논쟁을 동시에 만드는 소재.\r\n- acquisition: exact public individual Blind page; BODY_READ; COMMENTS_UNREAD\r\n- provenance: 원문 게시자의 회고; 독립 검증 아님\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "087a63e0ef2f1b9eee059b37df7d0338a2968b3f59abd926c909801e0546fc80",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 422
+}

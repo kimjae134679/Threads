@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AITAH/comments/1w7m11p/aitah_for_withholding_my_wedding_photos_from_my/
+제목 - AITAH for withholding my wedding photos from my in-laws?
+내용 - [명시 요약 — 원문 전문 아님]
+본문 확인. 작성자 부부는 비용을 아끼며 결혼을 준비했고, 경제적으로 여유 있는 시댁과 주거 지원·결혼 준비 과정에서 복잡한 관계를 겪었다. 이후 결혼사진을 시댁에 제공하지 않는 문제까지 갈등이 이어진 사연이다. 경제적 도움을 받은 관계에서 어디까지 가족 요구를 받아들여야 하는지가 핵심 논쟁점이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AITAH/comments/1w7m11p/aitah_for_withholding_my_wedding_photos_from_my/",
+    "title": "AITAH for withholding my wedding photos from my in-laws?",
+    "body": "본문 확인. 작성자 부부는 비용을 아끼며 결혼을 준비했고, 경제적으로 여유 있는 시댁과 주거 지원·결혼 준비 과정에서 복잡한 관계를 겪었다. 이후 결혼사진을 시댁에 제공하지 않는 문제까지 갈등이 이어진 사연이다. 경제적 도움을 받은 관계에서 어디까지 가족 요구를 받아들여야 하는지가 핵심 논쟁점이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_시댁에_결혼사진_안줌.md",
+      "originalTitle": "AITAH for withholding my wedding photos from my in-laws?",
+      "originalMarkdown": "# AITAH for withholding my wedding photos from my in-laws?\r\n\r\n## 글 내용\r\n본문 확인. 작성자 부부는 비용을 아끼며 결혼을 준비했고, 경제적으로 여유 있는 시댁과 주거 지원·결혼 준비 과정에서 복잡한 관계를 겪었다. 이후 결혼사진을 시댁에 제공하지 않는 문제까지 갈등이 이어진 사연이다. 경제적 도움을 받은 관계에서 어디까지 가족 요구를 받아들여야 하는지가 핵심 논쟁점이다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AITAH/comments/1w7m11p/aitah_for_withholding_my_wedding_photos_from_my/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 19:35 KST 전후 공개 검색 결과\r\n- 공개 검색에서 확인된 Reddit score: +715 votes\r\n- 조회수/댓글 수: 이번 관측에서 확인하지 못함\r\n\r\n## 평가\r\n- 시댁·경제적 지원·결혼사진이라는 생활밀착형 가족 갈등이라 의견이 쉽게 갈림.\r\n- 작성자 과거 가정폭력 경험 등 민감한 개인사가 포함되어 privacy/comfort human review를 특히 요구함.\r\n- 전체 댓글은 읽지 않음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 공개 페이지 본문: 읽음\r\n- 댓글: 전체 미확인\r\n- source image/screenshot: 실제 확보하지 않음\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- privacy/rights/human review gate 필요\r\n- 실제 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "8522cc24621101bb39b8a2cf79254f1559e90f003a78197d362d6c8bb8fb119f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 370
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2725100
+제목 - 여자친구랑 쫑낸 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2725100",
+    "title": "여자친구랑 쫑낸 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_여자친구랑쫑낸썰.md",
+      "originalTitle": "여자친구랑 쫑낸 썰",
+      "originalMarkdown": "# 여자친구랑 쫑낸 썰\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- sourceUrl: https://www.inven.co.kr/board/webzine/2097/2725100\r\n- exactObservedTitle: 여자친구랑 쫑낸 썰\r\n- observedAt: 2026-09-21 04:14 KST\r\n- observedMetrics: 조회 8,792, 추천 11, 댓글 12\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: true\r\n- acquisition: public individual post page readable without login or bypass\r\n- provenance: exact individual public URL verified; post ID 2725100\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 내용\r\n페이지의 텍스트 본문은 `몰라요`뿐이고 핵심 서사는 이미지 2장에 담긴 것으로 보인다. 이번 discovery 실행에서는 이미지 다운로드·OCR·스크린샷을 하지 않았으므로 이미지 속 내용은 확인하지 않았다. 따라서 핵심 본문은 **본문 미확인**으로 취급한다.\r\n\r\n## 왜 소재로 좋은지\r\n최근 공개 게시물이며 제목 자체가 연애·이별 갈등형 서사를 예고하고 실제 반응 수치도 관찰된다. 다만 핵심 내용이 이미지 의존이므로 향후 허용된 방식으로 내용이 검증되기 전에는 제목 이상으로 서사를 채워 넣지 않는다.\r\n\r\n## 검증 메모\r\n개별 URL·제목·표시 수치는 실제 공개 페이지에서 확인. 댓글 내용 미열람. 이미지 2장 존재만 관찰했으며 다운로드/OCR/내용 추론하지 않음. 권리/moderation/asset/publication 상태를 꾸며내지 않음.\r\n",
+      "originalSha256": "dfebfc79a3f9ad33f96c2a416fe0deef8416171a6bf767097c2f3846585eb695",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 104
+}

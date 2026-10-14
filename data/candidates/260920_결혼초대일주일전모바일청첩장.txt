@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/619025927
+제목 - 결혼 초대받았는데 서운한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친한 친구가 결혼 일주일 전에 전화와 모바일 청첩장만 보내고, 직접 밥 산 친구와 축의금을 다르게 할지 고민하는 상황이라 의견이 즉시 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/619025927",
+    "title": "결혼 초대받았는데 서운한 후기",
+    "body": "친한 친구가 결혼 일주일 전에 전화와 모바일 청첩장만 보내고, 직접 밥 산 친구와 축의금을 다르게 할지 고민하는 상황이라 의견이 즉시 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼초대일주일전모바일청첩장.md",
+      "originalTitle": "결혼 초대받았는데 서운한 후기",
+      "originalMarkdown": "# 결혼 초대받았는데 서운한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/619025927\r\n- exactObservedTitle: 결혼 초대받았는데 서운한 후기\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 조회 수 5673\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public URL; poster account, not independently verified\r\n- whyGood: 친한 친구가 결혼 일주일 전에 전화와 모바일 청첩장만 보내고, 직접 밥 산 친구와 축의금을 다르게 할지 고민하는 상황이라 의견이 즉시 갈릴 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "7832371763da73b41f2119b1ed97e4e5c7cf1bd755b75e509ed68af4f0dad376",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 183
+}

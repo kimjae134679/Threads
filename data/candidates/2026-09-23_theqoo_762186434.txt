@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/762186434
+제목 - 도저히 합의할 수 없는 가족간의 갈등은 어떻게 해결해야 하는지 궁금한 후기(긴글주의)
+내용 - [명시 요약 — 원문 전문 아님]
+가족이면 무조건 함께 식사해야 한다는 아버지와 각자 먹고 싶을 때 먹자는 성인 자녀의 충돌이라 사소하지만 반복되는 생활 갈등이고 독자가 즉시 어느 쪽인지 의견을 내기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/762186434",
+    "title": "도저히 합의할 수 없는 가족간의 갈등은 어떻게 해결해야 하는지 궁금한 후기(긴글주의)",
+    "body": "가족이면 무조건 함께 식사해야 한다는 아버지와 각자 먹고 싶을 때 먹자는 성인 자녀의 충돌이라 사소하지만 반복되는 생활 갈등이고 독자가 즉시 어느 쪽인지 의견을 내기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_762186434.md",
+      "originalTitle": "도저히 합의할 수 없는 가족간의 갈등은 어떻게 해결해야 하는지 궁금한 후기(긴글주의)",
+      "originalMarkdown": "# 도저히 합의할 수 없는 가족간의 갈등은 어떻게 해결해야 하는지 궁금한 후기(긴글주의)\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/762186434\r\n- exactObservedTitle: 도저히 합의할 수 없는 가족간의 갈등은 어떻게 해결해야 하는지 궁금한 후기(긴글주의)\r\n- observedAt: 2026-09-23 04:18 KST\r\n- observedMetrics: 조회 2,255 / 댓글 24\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 가족이면 무조건 함께 식사해야 한다는 아버지와 각자 먹고 싶을 때 먹자는 성인 자녀의 충돌이라 사소하지만 반복되는 생활 갈등이고 독자가 즉시 어느 쪽인지 의견을 내기 좋다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 파일은 다운로드하지 않음.\r\n- provenance: TheQoo 공개 후기 게시물. 작성자의 개인 경험 주장은 별도 검증하지 않았으며 게시물 자체가 재게시인지 여부도 확인하지 못함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "97e8658ca75b8600c8709cf05b2fdb120dd76cacb736dd97f50d6778627796fd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 229
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3851705503
+제목 - 친구 시동생이 내 전남친이 되버린 후기
+내용 - [명시 요약 — 원문 전문 아님]
+절친의 결혼식 축의대에서 전남친과 마주친 뒤 그가 신랑의 동생임을 알게 되는 한 문장으로 설명 가능한 강한 반전. 친구·전연인·시댁 관계가 얽혀 후속 상황에 대한 호기심이 큼.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3851705503",
+    "title": "친구 시동생이 내 전남친이 되버린 후기",
+    "body": "절친의 결혼식 축의대에서 전남친과 마주친 뒤 그가 신랑의 동생임을 알게 되는 한 문장으로 설명 가능한 강한 반전. 친구·전연인·시댁 관계가 얽혀 후속 상황에 대한 호기심이 큼.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구시동생전남친.md",
+      "originalTitle": "친구 시동생이 내 전남친이 되버린 후기",
+      "originalMarkdown": "# 친구 시동생이 내 전남친이 되버린 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/3851705503\r\n- exactObservedTitle: `친구 시동생이 내 전남친이 되버린 후기`\r\n- observedAt: 2026-09-21 15:19 KST\r\n- acquisitionStage: C1\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 수 6432\r\n- whyGood: 절친의 결혼식 축의대에서 전남친과 마주친 뒤 그가 신랑의 동생임을 알게 되는 한 문장으로 설명 가능한 강한 반전. 친구·전연인·시댁 관계가 얽혀 후속 상황에 대한 호기심이 큼.\r\n- provenance: 공개 검색으로 정확한 개별 게시물 URL과 노출 본문을 직접 확인. 개인 경험 주장으로 취급.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "849005d8a1bd10e2e45b122e9b08e37b2ac293f5702880c5d82ea108906e83db",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 206
+}

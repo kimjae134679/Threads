@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1882453687
+제목 - 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1882453687",
+    "title": "선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-ignored-wedding-invite_c1.md",
+      "originalTitle": "선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기",
+      "originalMarkdown": "# 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/1882453687\r\n- exactObservedTitle: 선배가 보낸 청첩장 무시한게 조금 신경쓰이는 후기\r\n- observedAt: 2026-09-23 17:15 KST\r\n- observedMetrics: 이번 관찰에서 신뢰할 수 있는 조회/댓글 수치 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 인간관계 경험담. 사실관계는 독립 검증하지 않았으며 작성자의 주장으로만 취급.\r\n- whyGoodMaterial: 평소 연락도 없고 이전 메시지 답도 없던 선배가 1년 뒤 청첩장만 보내자 무시했는데 뒤늦게 마음에 걸린다는 상황이라 청첩장·축의금·관계 예절 논쟁이 즉각 발생함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "605a7558ff2feb94493dea64a5b8db76e2bae091152d1199d1e2efc0275aaf7b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 107
+}

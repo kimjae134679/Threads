@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2481598091
+제목 - 남편 선물 살말 고민인 중기
+내용 - [명시 요약 — 원문 전문 아님]
+출산을 앞둔 외벌이 가정에서 고생한 남편에게 50~60만원대 생일선물을 사는 것이 과소비인지 묻는 돈·선물·부부 갈등형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2481598091",
+    "title": "남편 선물 살말 고민인 중기",
+    "body": "출산을 앞둔 외벌이 가정에서 고생한 남편에게 50~60만원대 생일선물을 사는 것이 과소비인지 묻는 돈·선물·부부 갈등형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_남편생일선물과소비고민.md",
+      "originalTitle": "남편 선물 살말 고민인 중기",
+      "originalMarkdown": "# 남편 선물 살말 고민인 중기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/2481598091\r\n- exactObservedTitle: 남편 선물 살말 고민인 중기\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회 수 2143, 댓글 30\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_READABLE\r\n- provenance: exact individual public URL; first-person account\r\n- whyGood: 출산을 앞둔 외벌이 가정에서 고생한 남편에게 50~60만원대 생일선물을 사는 것이 과소비인지 묻는 돈·선물·부부 갈등형 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c019a2d4c477346148275406277b748dd07c459f14874cecd0a11412cf865722",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

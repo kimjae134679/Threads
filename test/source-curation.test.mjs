@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+// Installed .38 requires the real title policy; do not mock or disable that gate.
+import '../app/source-page-plan.js';
 import '../app/source-curation.js';
 const C=globalThis.ThreadsSourceCuration;
 

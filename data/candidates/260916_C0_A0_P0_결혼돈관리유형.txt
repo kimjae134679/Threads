@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728411
+제목 - 결혼하면 은근히 의견 갈린다는 돈관리 유형
+내용 - [명시 요약 — 원문 전문 아님]
+공개 Inven 개별 게시물의 정확한 제목과 개별 URL을 확인함. 공개 HTML에서 본문 영역은 이미지 1개 중심으로 노출되며 이미지 내부 내용은 읽거나 추정하지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728411",
+    "title": "결혼하면 은근히 의견 갈린다는 돈관리 유형",
+    "body": "공개 Inven 개별 게시물의 정확한 제목과 개별 URL을 확인함. 공개 HTML에서 본문 영역은 이미지 1개 중심으로 노출되며 이미지 내부 내용은 읽거나 추정하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_결혼돈관리유형.md",
+      "originalTitle": "결혼하면 은근히 의견 갈린다는 돈관리 유형",
+      "originalMarkdown": "# 결혼하면 은근히 의견 갈린다는 돈관리 유형\r\n\r\n## 글 내용\r\n공개 Inven 개별 게시물의 정확한 제목과 개별 URL을 확인함. 공개 HTML에서 본문 영역은 이미지 1개 중심으로 노출되며 이미지 내부 내용은 읽거나 추정하지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728411\r\n\r\n## provenance 검증\r\n- 정확한 개별 게시물: 확인\r\n- 게시판: Inven 오픈이슈갤러리\r\n- 작성자 표시: 치킨\r\n- 게시 시각 표시: 2026-09-16 07:20\r\n- 제목 일치: 예\r\n- 공개 페이지 본문 텍스트 전체 확인: 아니오 — 핵심 내용이 이미지 중심\r\n- 이미지 내부 내용: 미확인/추정 금지\r\n\r\n## 관측 수치\r\n- 자동 공개 검색 관측 시점: 2026-09-19\r\n- 조회/댓글 수는 크롤 시점별로 변동함(검색 결과에서 조회 3,983~6,305, 댓글 23~24 관측)\r\n- 추천: 1 관측\r\n- 변동 수치를 고정 성과값으로 취급하지 않음\r\n\r\n## 평가\r\n결혼 후 공동/분리 재정은 즉시 의견이 갈리는 생활·돈 소재라 원문 자산 확보 후 검토 가치가 높다. 다만 현재 핵심 정보가 이미지 안에 있으므로 이미지 내용을 추측하여 편집/제작하지 않는다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- logical candidate stage: C1 (exact provenance verified)\r\n- repository filename state: C0 / A0 / P0 (테스트/검증만으로 파일 상태 승격하지 않음)\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 다음 단계: 허용된 실제 원본 이미지/자산 확보 후 검수\r\n",
+      "originalSha256": "b931caba5d9864742f461ca08fe308a69a28da823f89643697eaaba59297f218",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 219
+}

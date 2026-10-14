@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo
+제목 - 배우자의 동의없는 대출 및 주식투자는 이혼사유?
+내용 - [명시 요약 — 원문 전문 아님]
+사실혼 배우자가 몰래 대출해 주식투자를 반복해 약 1억5천만원을 잃고, 주택 중도금용 대출과 배우자 돈까지 단타에 넣었다가 손실을 내 중도금 지급 위기까지 갔다는 사연. 이후 합의이혼과 위자료 소송 결과를 두고 의견을 묻음. 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo",
+    "title": "배우자의 동의없는 대출 및 주식투자는 이혼사유?",
+    "body": "사실혼 배우자가 몰래 대출해 주식투자를 반복해 약 1억5천만원을 잃고, 주택 중도금용 대출과 배우자 돈까지 단타에 넣었다가 손실을 내 중도금 지급 위기까지 갔다는 사연. 이후 합의이혼과 위자료 소송 결과를 두고 의견을 묻음. 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_동의없는대출주식이혼.md",
+      "originalTitle": "배우자의 동의없는 대출 및 주식투자는 이혼사유?",
+      "originalMarkdown": "# 배우자의 동의없는 대출 및 주식투자는 이혼사유?\r\n\r\n## 글 내용\r\n사실혼 배우자가 몰래 대출해 주식투자를 반복해 약 1억5천만원을 잃고, 주택 중도금용 대출과 배우자 돈까지 단타에 넣었다가 손실을 내 중도금 지급 위기까지 갔다는 사연. 이후 합의이혼과 위자료 소송 결과를 두고 의견을 묻음. 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%B0%B0%EC%9A%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9D%98%EC%97%86%EB%8A%94-%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%A3%BC%EC%8B%9D%ED%88%AC%EC%9E%90%EB%8A%94-%EC%9D%B4%ED%98%BC%EC%82%AC%EC%9C%A0-ZSSLUzUo\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 조회 1,958 · 댓글 19. 좋아요 수는 확인하지 못함.\r\n\r\n## 평가\r\n숨은 빚투가 실제 주택대금 위기와 이혼 소송으로 이어져 결과까지 있는 강한 전개. 법률 사실 단정 없이 사연으로만 취급해야 함. C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/defamation/human review 필수. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "1fd80b6c2879617c781908fa5a7bd7a04b10375edc640454480454531e78893b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 438
+}

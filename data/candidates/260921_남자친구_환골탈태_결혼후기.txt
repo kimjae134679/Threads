@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1180746869
+제목 - 남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1180746869",
+    "title": "남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_남자친구_환골탈태_결혼후기.md",
+      "originalTitle": "남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기",
+      "originalMarkdown": "# 남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기\r\n\r\nsource: TheQoo 후기\r\nsourceStage: C1\r\nexactPublicUrl: https://theqoo.net/review/1180746869\r\nexactObservedTitle: 남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기\r\nobservedAt: 2026-09-21 06:18 KST\r\nobservedMetrics: 공개 검색 결과에서 이번 관찰에 신뢰할 수 있는 수치를 확인하지 못해 미기록\r\nbodyRead: true\r\ncommentsRead: false\r\nimageOrScreenshotExists: 미확인\r\nacquisition: 공개 개별 게시물 URL과 공개 본문을 허용된 공개 페이지에서 확인. 로그인 또는 anti-bot 우회 없음.\r\nprovenance: 작성자 개인 경험담으로 게시된 원문 개별 페이지이며 서술 내용의 외부 사실성은 별도 검증하지 않음.\r\nwhyGood: 오랜 친구였던 상대의 외모와 관리를 3개월간 바꿔본 뒤 관계가 변하는 독특한 전개로, 연애·외모·관계에 대한 의견이 갈리기 쉬움.\r\nA1: false\r\nP1: false\r\npublicationAllowed: false\r\n",
+      "originalSha256": "b7c61a6747a439eb61bf66ed0e0d993ccac7c38896c402e77317976ff4366061",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 108
+}

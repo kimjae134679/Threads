@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 결혼식 해보니까 오지도 않고 5만원만 보내는 사람들 많더라
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식을 치르며 축의금과 참석 여부를 통해 인간관계를 다시 보게 됐다는 공감형 후보로 과거 발견됐다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "결혼식 해보니까 오지도 않고 5만원만 보내는 사람들 많더라",
+    "body": "결혼식을 치르며 축의금과 참석 여부를 통해 인간관계를 다시 보게 됐다는 공감형 후보로 과거 발견됐다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_결혼식5만원인간관계.md",
+      "originalTitle": "결혼식 해보니까 오지도 않고 5만원만 보내는 사람들 많더라",
+      "originalMarkdown": "# 결혼식 해보니까 오지도 않고 5만원만 보내는 사람들 많더라\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: Blind\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n결혼식을 치르며 축의금과 참석 여부를 통해 인간관계를 다시 보게 됐다는 공감형 후보로 과거 발견됐다.\r\n\r\n## 평가\r\n- 평가: 축의금·인간관계 논쟁, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "d98b6eb3566e8410c25561e535f03b9a31037758cbbb8c011b9cb663d0bc78b7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 139
+}

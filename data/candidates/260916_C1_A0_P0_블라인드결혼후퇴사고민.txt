@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%9B%84-%ED%87%B4%EC%82%AC-%EA%B3%A0%EB%AF%BC-8Ac04XpR
+제목 - 결혼 후 퇴사 고민
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 썸·연애 게시물. 본인은 일을 좋아하고 계속 커리어를 쌓고 싶지만 결혼을 앞둔 남자친구가 스트레스 받는 모습을 보기 싫다며 전업주부가 되길 원한다는 갈등. 작성자는 경력단절과 경제적 의존을 걱정하고 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%9B%84-%ED%87%B4%EC%82%AC-%EA%B3%A0%EB%AF%BC-8Ac04XpR",
+    "title": "결혼 후 퇴사 고민",
+    "body": "Blind 썸·연애 게시물. 본인은 일을 좋아하고 계속 커리어를 쌓고 싶지만 결혼을 앞둔 남자친구가 스트레스 받는 모습을 보기 싫다며 전업주부가 되길 원한다는 갈등. 작성자는 경력단절과 경제적 의존을 걱정하고 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_블라인드결혼후퇴사고민.md",
+      "originalTitle": "결혼 후 퇴사 고민",
+      "originalMarkdown": "# 결혼 후 퇴사 고민\r\n\r\n## 글 내용\r\nBlind 썸·연애 게시물. 본인은 일을 좋아하고 계속 커리어를 쌓고 싶지만 결혼을 앞둔 남자친구가 스트레스 받는 모습을 보기 싫다며 전업주부가 되길 원한다는 갈등. 작성자는 경력단절과 경제적 의존을 걱정하고 있다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%9B%84-%ED%87%B4%EC%82%AC-%EA%B3%A0%EB%AF%BC-8Ac04XpR\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 조회수: 2,694\r\n- 좋아요: 2\r\n- 댓글: 19\r\n\r\n## 평가\r\n결혼·커리어·돈·성역할이 한꺼번에 걸린 강한 의견형 소재. 오래된 글이므로 최신성보다 evergreen 갈등 후보로 평가한다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 본문 전체 읽음: 예, 공개 페이지 노출 본문\r\n- 댓글 읽음: 일부 공개 댓글 확인\r\n- source screenshots 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false\r\n- 권리/privacy/human review 필요",
+      "originalSha256": "1e0a1996a4205e265b56fc371c2ca2c1de1f691106983b49102d086c8356df9d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 290
+}

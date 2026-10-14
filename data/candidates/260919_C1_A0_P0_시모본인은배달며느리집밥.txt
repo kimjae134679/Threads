@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A7%91%EB%B0%A5%EC%97%90-%EC%A7%91%EC%B0%A9%ED%95%98%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EC%96%B4%EB%95%8C-4RNjY1QA
+제목 - 본인은 배달만 먹으면서 맞벌이 며느리에겐 집밥 하라는 시어머니
+내용 - [명시 요약 — 원문 전문 아님]
+맞벌이 부부가 배달·외식을 자주 하는데 시어머니가 밥솥을 사줄 테니 집에서 밥을 해먹으라고 반복적으로 말한다는 사연. 작성자는 시어머니 본인은 외식과 배달을 자주 한다는 점 때문에 불편함을 느낀다고 적었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A7%91%EB%B0%A5%EC%97%90-%EC%A7%91%EC%B0%A9%ED%95%98%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EC%96%B4%EB%95%8C-4RNjY1QA",
+    "title": "본인은 배달만 먹으면서 맞벌이 며느리에겐 집밥 하라는 시어머니",
+    "body": "맞벌이 부부가 배달·외식을 자주 하는데 시어머니가 밥솥을 사줄 테니 집에서 밥을 해먹으라고 반복적으로 말한다는 사연. 작성자는 시어머니 본인은 외식과 배달을 자주 한다는 점 때문에 불편함을 느낀다고 적었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_시모본인은배달며느리집밥.md",
+      "originalTitle": "본인은 배달만 먹으면서 맞벌이 며느리에겐 집밥 하라는 시어머니",
+      "originalMarkdown": "# 본인은 배달만 먹으면서 맞벌이 며느리에겐 집밥 하라는 시어머니\r\n\r\n## 원문 제목\r\n집밥에 집착하는 시어머니 어때??\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n맞벌이 부부가 배달·외식을 자주 하는데 시어머니가 밥솥을 사줄 테니 집에서 밥을 해먹으라고 반복적으로 말한다는 사연. 작성자는 시어머니 본인은 외식과 배달을 자주 한다는 점 때문에 불편함을 느낀다고 적었다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%A7%91%EB%B0%A5%EC%97%90-%EC%A7%91%EC%B0%A9%ED%95%98%EB%8A%94-%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88-%EC%96%B4%EB%95%8C-4RNjY1QA\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 11:16 KST\r\n- 조회수: 3,916\r\n- 댓글: 45\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n- 이미지/스크린샷 존재 여부: 미확인\r\n\r\n## 평가\r\n본인 생활방식과 며느리에게 요구하는 기준의 대비가 한 문장으로 이해돼 공감·짜증 반응을 유도하기 좋다.\r\n\r\n## 형식\r\n글\r\n\r\n## acquisition/provenance / 제작·게시 상태\r\nexact individual public Blind URL 확인. C1_A0_P0. sourceRisk=red. source media 미확보. publicationAllowed=false. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "e82ca425e9088431c5c59e0483022bb5e4446727592da36af263ef93bd230bb5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 363
+}

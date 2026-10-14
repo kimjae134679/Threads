@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1164925843
+제목 - 편애심한 집안의 둘째인데 언니랑 친한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1164925843",
+    "title": "편애심한 집안의 둘째인데 언니랑 친한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_C1_A0_P0_편애심한집안의둘째인데언니랑친한후기.md",
+      "originalTitle": "편애심한 집안의 둘째인데 언니랑 친한 후기",
+      "originalMarkdown": "# 편애심한 집안의 둘째인데 언니랑 친한 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1164925843\r\n- exactObservedTitle: 편애심한 집안의 둘째인데 언니랑 친한 후기\r\n- observedAt: 2026-09-21 03:14 KST\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- observedMetrics: 조회 8,367 / 댓글 9 (공개 페이지에서 관찰된 값)\r\n- acquisition: 공개 개별 게시물 URL과 본문을 직접 확인. 로그인/우회/스크린샷/OCR 없음.\r\n- provenance: public individual page; exact source URL verified\r\n\r\n## 왜 소재로 좋은가\r\n부모의 형제 편애라는 갈등에서 출발하지만 편애를 받은 둘째가 오히려 언니에게 부채감을 느끼고 부모 문제를 자신이 책임지려는 방향으로 이어지는 반전이 있다. 첫째 희생·형제관계·부모 책임을 두고 의견이 갈릴 수 있다.\r\n\r\n## 확인 메모\r\n본문 확인. 댓글은 읽지 않음. 개인 경험담의 사실관계는 외부 검증하지 않음.",
+      "originalSha256": "db11a927d193af7db978a7cfc5848d009b9865dbeca4eb11c205dbc3e1076520",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 103
+}

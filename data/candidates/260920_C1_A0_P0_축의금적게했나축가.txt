@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1373946311
+제목 - 축의금 내가 적게 한 건지 궁금한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+교통비까지 들여 축가를 해주고 10만원 축의금을 냈는데 신부가 축가 사례로 다시 10만원을 준 상황이라 '누가 더 챙겨야 하나' 논쟁이 선명함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1373946311",
+    "title": "축의금 내가 적게 한 건지 궁금한 후기",
+    "body": "교통비까지 들여 축가를 해주고 10만원 축의금을 냈는데 신부가 축가 사례로 다시 10만원을 준 상황이라 '누가 더 챙겨야 하나' 논쟁이 선명함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_축의금적게했나축가.md",
+      "originalTitle": "축의금 내가 적게 한 건지 궁금한 후기",
+      "originalMarkdown": "# 축의금 내가 적게 한 건지 궁금한 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/1373946311\r\n- exactObservedTitle: `축의금 내가 적게 한 건지 궁금한 후기`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 조회 5,301 / 댓글 20\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 친구 결혼식·축가·축의금 경험담.\r\n- whyGood: 교통비까지 들여 축가를 해주고 10만원 축의금을 냈는데 신부가 축가 사례로 다시 10만원을 준 상황이라 '누가 더 챙겨야 하나' 논쟁이 선명함.\r\n- safety: 금액은 본문에서 관찰된 작성자 서술.",
+      "originalSha256": "ccc83499df30716c14a9b643572028d8c6f4e836f5b5047748d82035f0ca7da6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 188
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3862850033
+제목 - 얘들아 내가 직장이 짤렸어. 가족한테 당장 말해야할까?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3862850033",
+    "title": "얘들아 내가 직장이 짤렸어. 가족한테 당장 말해야할까?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_theqoo-fired-tell-family.md",
+      "originalTitle": "얘들아 내가 직장이 짤렸어. 가족한테 당장 말해야할까?",
+      "originalMarkdown": "# 얘들아 내가 직장이 짤렸어. 가족한테 당장 말해야할까?\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/3862850033\r\n- exact_observed_title: `얘들아 내가 직장이 짤렸어. 가족한테 당장 말해야할까?`\r\n- observed_at: 2026-09-24 00:46 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous/pseudonymous community post; first-person claims are attributed/unverified unless independently established\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not confirmed / not downloaded\r\n- observed_metrics: 조회 5,071; 댓글 14\r\n- why_good: 해고 직후 가족에게 바로 알릴지 새 직장을 구한 뒤 말할지 선택지가 분명해 의견형 소재로 좋다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 직장에서 해고된 직후 곧바로 구직을 시작했고 면접도 잡았지만, 가족에게 걱정을 끼치지 않기 위해 취업한 뒤 해고 사실을 말할지 고민하고 있다고 적었다.\r\n",
+      "originalSha256": "c836f8a634bc6fb5b81ab16f8130b91eac12975ebebb0ef931c60e1aaa87d281",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 110
+}

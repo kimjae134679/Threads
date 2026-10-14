@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%EA%B2%BD%ED%97%98-%EC%9E%88%EB%8A%94-%EC%82%AC%EB%9E%8C%EC%9D%B4%EB%9E%91-%EC%97%B0%EC%95%A0-hUmPgsbP
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+소개받아 잘되어 가는 상대에게 과거 결혼 준비 중 파혼 경험이 있다는 사실을 알게 된 작성자가 파혼 경력을 어떻게 봐야 하는지 묻는다. 공개 댓글에서는 파혼 자체보다 사유가 중요하다는 반응이 나오고, 한 댓글은 자신의 전 연인이 유흥 문제로 파혼한 뒤 얼마 지나지 않아 소개를 받으러 다녔던 경험을 덧붙인다. 공개 본문과 공개 댓글을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%EA%B2%BD%ED%97%98-%EC%9E%88%EB%8A%94-%EC%82%AC%EB%9E%8C%EC%9D%B4%EB%9E%91-%EC%97%B0%EC%95%A0-hUmPgsbP",
+    "title": "제목",
+    "body": "소개받아 잘되어 가는 상대에게 과거 결혼 준비 중 파혼 경험이 있다는 사실을 알게 된 작성자가 파혼 경력을 어떻게 봐야 하는지 묻는다. 공개 댓글에서는 파혼 자체보다 사유가 중요하다는 반응이 나오고, 한 댓글은 자신의 전 연인이 유흥 문제로 파혼한 뒤 얼마 지나지 않아 소개를 받으러 다녔던 경험을 덧붙인다. 공개 본문과 공개 댓글을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_파혼경험연애.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n파혼 경험 있는 사람이랑 연애\r\n\r\n## 글 내용\r\n소개받아 잘되어 가는 상대에게 과거 결혼 준비 중 파혼 경험이 있다는 사실을 알게 된 작성자가 파혼 경력을 어떻게 봐야 하는지 묻는다. 공개 댓글에서는 파혼 자체보다 사유가 중요하다는 반응이 나오고, 한 댓글은 자신의 전 연인이 유흥 문제로 파혼한 뒤 얼마 지나지 않아 소개를 받으러 다녔던 경험을 덧붙인다. 공개 본문과 공개 댓글을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%ED%8C%8C%ED%98%BC-%EA%B2%BD%ED%97%98-%EC%9E%88%EB%8A%94-%EC%82%AC%EB%9E%8C%EC%9D%B4%EB%9E%91-%EC%97%B0%EC%95%A0-hUmPgsbP\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 03:33 KST\r\n- 조회수: 1,144\r\n- 댓글: 11\r\n- 좋아요: 관측하지 못함\r\n\r\n## 평가\r\n- 출처: Blind 공개 원문\r\n- full body read: 예\r\n- comments read: 예(공개 노출 댓글)\r\n- source images/screenshots: 실제 source asset 미확보\r\n- '파혼은 그냥 이별인가, 확인해야 할 경력인가'라는 즉답형 논쟁에 댓글 반전 경험담까지 있음.\r\n- 형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL + 본문 확인, source bytes 미확보\r\n- ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한은 04_REVIEW_PUBLISH만 보유\r\n",
+      "originalSha256": "bc86fd24d21939fed441a1b43272a9e3c8e90012513db7c13ae34c9ec5ee3331",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 398
+}

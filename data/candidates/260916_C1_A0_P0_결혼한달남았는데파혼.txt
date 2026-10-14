@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727
+제목 - 결혼 한달 남았는데 파혼..
+내용 - [명시 요약 — 원문 전문 아님]
+전세사기 피해로 약 1억원 채무가 생겼고 결혼 준비 초반부터 상대와 상대 부모에게 이 사실을 알렸다는 사연이다. 상대는 함께 버티자는 입장이었지만 식을 한 달 앞두고 상대 부모가 1억원을 모두 청산하고 오라고 요구하면서 갈등이 커졌다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727",
+    "title": "결혼 한달 남았는데 파혼..",
+    "body": "전세사기 피해로 약 1억원 채무가 생겼고 결혼 준비 초반부터 상대와 상대 부모에게 이 사실을 알렸다는 사연이다. 상대는 함께 버티자는 입장이었지만 식을 한 달 앞두고 상대 부모가 1억원을 모두 청산하고 오라고 요구하면서 갈등이 커졌다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_결혼한달남았는데파혼.md",
+      "originalTitle": "결혼 한달 남았는데 파혼..",
+      "originalMarkdown": "# 결혼 한달 남았는데 파혼..\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%95%9C%EB%8B%AC-%EB%82%A8%EC%95%98%EB%8A%94%EB%8D%B0-%ED%8C%8C%ED%98%BC-8b4ol727\r\n- 조회수: 1,846\r\n- 댓글: 53\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n전세사기 피해로 약 1억원 채무가 생겼고 결혼 준비 초반부터 상대와 상대 부모에게 이 사실을 알렸다는 사연이다. 상대는 함께 버티자는 입장이었지만 식을 한 달 앞두고 상대 부모가 1억원을 모두 청산하고 오라고 요구하면서 갈등이 커졌다.\r\n\r\n## 평가\r\n- 평가: 상급\r\n- 이유: 결혼 한 달 전이라는 시한, 전세사기 피해, 양가 돈 문제가 한 번에 충돌함.\r\n- 약점: 텍스트 중심이며 개인 재정/가족 사연이라 privacy 검토 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "33d065f59a7b425634465b5079452a4aa319fc154a2cb9c8f92f4ff860a92b6f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 333
+}

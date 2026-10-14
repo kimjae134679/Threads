@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/mw0u3y/
+제목 - 제목
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/mw0u3y/",
+    "title": "제목",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_사촌결혼식500달러모금.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for saying no to donating money to my cousins wedding?\r\n\r\n# 글 내용\r\n글쓴이 커플은 자기 결혼식 비용을 마련하려고 본업 외 일까지 하며 저축 중이다. 그런데 사촌이 글쓴이 결혼식 바로 전날로 결혼 날짜를 잡은 뒤 가족들에게 1인당 약 500달러 이상을 자기 결혼식 비용으로 내달라고 요청한다. 글쓴이가 자기 결혼식을 위해 저축해야 한다며 거절하자 사촌이 가족들에게 인색하다고 말하고 다닌다. 공개 원문 본문 전체를 읽었고 댓글 전체는 읽지 않았다.\r\n\r\n# 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/mw0u3y/\r\n\r\n# 조회수/좋아요/댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 22:34 KST 부근 공개 검색 결과\r\n- 공개 표시 score: +6,754\r\n- 조회수/전체 댓글 수: 확인하지 못함\r\n\r\n# 평가\r\n- 결혼식 날짜 겹침 + 가족 대상 현금 모금 + 거절 후 뒷말이라는 단계적 갈등이 강함.\r\n- 금액이 구체적이고 누가 이상한지 즉시 토론하기 좋은 소재.\r\n- exact public source 확인 C1.\r\n\r\n# 이미지/자산/게시상태\r\n- source screenshots/media bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 게시 권한: 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "39e79b65a5e286c87d26ea317add6a19f7fadc322c621d1a6b7ddf3f59d31841",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 101
+}

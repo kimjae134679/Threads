@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%B8%EC%9A%B8%EB%95%8C-%EC%9A%95%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-meyuijl3
+제목 - 싸울때 욕하는 남편
+내용 - [명시 요약 — 원문 전문 아님]
+부부싸움에서 욕설·고함과 '말대꾸'라는 표현을 둘러싼 평등/갈등해결 방식 문제가 선명해 의견이 즉시 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%B8%EC%9A%B8%EB%95%8C-%EC%9A%95%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-meyuijl3",
+    "title": "싸울때 욕하는 남편",
+    "body": "부부싸움에서 욕설·고함과 '말대꾸'라는 표현을 둘러싼 평등/갈등해결 방식 문제가 선명해 의견이 즉시 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_싸울때욕하는남편.md",
+      "originalTitle": "싸울때 욕하는 남편",
+      "originalMarkdown": "# 싸울때 욕하는 남편\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%8B%B8%EC%9A%B8%EB%95%8C-%EC%9A%95%ED%95%98%EB%8A%94-%EB%82%A8%ED%8E%B8-meyuijl3\r\n- exactObservedTitle: 싸울때 욕하는 남편\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 530, 댓글 19\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 부부싸움에서 욕설·고함과 '말대꾸'라는 표현을 둘러싼 평등/갈등해결 방식 문제가 선명해 의견이 즉시 갈릴 소재.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 행위는 게시자 주장으로 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "c1ed09c72dd24f65eb248497ce1bc21f68a2c62e81709bc44313bb919e186a56",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 240
+}

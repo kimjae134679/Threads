@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4144712162
+제목 - 계획못짜고 알아보는거 못하는 남편 너무 답답했는데 집안살림을 다하니까 상쇄되는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+연애 때는 단점이던 수동성이 동거 후 요리·살림 능력 때문에 상쇄됐다는 반전과 역할분담 논쟁이 있는 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4144712162",
+    "title": "계획못짜고 알아보는거 못하는 남편 너무 답답했는데 집안살림을 다하니까 상쇄되는 후기",
+    "body": "연애 때는 단점이던 수동성이 동거 후 요리·살림 능력 때문에 상쇄됐다는 반전과 역할분담 논쟁이 있는 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_계획못짜는남편집안살림으로상쇄후기.md",
+      "originalTitle": "계획못짜고 알아보는거 못하는 남편 너무 답답했는데 집안살림을 다하니까 상쇄되는 후기",
+      "originalMarkdown": "# 계획못짜고 알아보는거 못하는 남편 너무 답답했는데 집안살림을 다하니까 상쇄되는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4144712162\r\n- exactObservedTitle: 계획못짜고 알아보는거 못하는 남편 너무 답답했는데 집안살림을 다하니까 상쇄되는 후기\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 3,042\r\n- whyGood: 연애 때는 단점이던 수동성이 동거 후 요리·살림 능력 때문에 상쇄됐다는 반전과 역할분담 논쟁이 있는 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a759101bb6551fc1e09d4ef0362ad816fe6aa6d49601a0dffb9ec2305beac92b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 192
+}

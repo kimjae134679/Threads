@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2416100199
+제목 - 친구 말대로 친구 인생 존중해주고 내 인생사는데 친구가 섭섭해하는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구들이 각자 연애·대학 생활로 바빠진 뒤 서운함을 표현했다가 각자 인생을 살라는 말을 듣고 그대로 거리를 뒀더니 오히려 친구가 섭섭해하는 역전 구조라 우정의 거리감과 기대치를 두고 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2416100199",
+    "title": "친구 말대로 친구 인생 존중해주고 내 인생사는데 친구가 섭섭해하는 후기",
+    "body": "친구들이 각자 연애·대학 생활로 바빠진 뒤 서운함을 표현했다가 각자 인생을 살라는 말을 듣고 그대로 거리를 뒀더니 오히려 친구가 섭섭해하는 역전 구조라 우정의 거리감과 기대치를 두고 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_2416100199.md",
+      "originalTitle": "친구 말대로 친구 인생 존중해주고 내 인생사는데 친구가 섭섭해하는 후기",
+      "originalMarkdown": "# 친구 말대로 친구 인생 존중해주고 내 인생사는데 친구가 섭섭해하는 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2416100199\r\n- exactObservedTitle: 친구 말대로 친구 인생 존중해주고 내 인생사는데 친구가 섭섭해하는 후기\r\n- observedAt: 2026-09-22 16:18 KST\r\n- observedMetrics: 조회 4,250 / 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 친구들이 각자 연애·대학 생활로 바빠진 뒤 서운함을 표현했다가 각자 인생을 살라는 말을 듣고 그대로 거리를 뒀더니 오히려 친구가 섭섭해하는 역전 구조라 우정의 거리감과 기대치를 두고 의견이 갈릴 소재.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 페이지에 실제 표시된 조회/댓글 수만 기록. 댓글 미열람.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "afeec772dc3828b95d618788b4ff65d876d91dff31a1467274e56de4cb931b1b",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 238
+}

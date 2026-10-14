@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/1310556395
+제목 - 친구들과의 계모임, 제가 쪼잔한 건가요...?
+내용 - [명시 요약 — 원문 전문 아님]
+친구들끼리의 계모임에 한 친구 남편이 식당 밖에서 기다리다 반복 합석하고 다른 친구도 연인을 데려오기 시작하는 상황이라 '친구 모임의 배우자 동반' 경계 논쟁이 직관적임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/1310556395",
+    "title": "친구들과의 계모임, 제가 쪼잔한 건가요...?",
+    "body": "친구들끼리의 계모임에 한 친구 남편이 식당 밖에서 기다리다 반복 합석하고 다른 친구도 연인을 데려오기 시작하는 상황이라 '친구 모임의 배우자 동반' 경계 논쟁이 직관적임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_theqoo_계모임남편합석.md",
+      "originalTitle": "친구들과의 계모임, 제가 쪼잔한 건가요...?",
+      "originalMarkdown": "# 친구들과의 계모임, 제가 쪼잔한 건가요...?\r\n\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/square/1310556395\r\n- exactObservedTitle: `친구들과의 계모임, 제가 쪼잔한 건가요...?`\r\n- observedAt: 2026-09-20 03:14 KST\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: TheQoo 개별 공개 페이지에서 노출된 본문 확인. 재전달 여부/원출처는 이번 실행에서 확정하지 못함.\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 친구들끼리의 계모임에 한 친구 남편이 식당 밖에서 기다리다 반복 합석하고 다른 친구도 연인을 데려오기 시작하는 상황이라 '친구 모임의 배우자 동반' 경계 논쟁이 직관적임.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a0aef8264dc7323582d057d279d473c4ebb25464bdb0cf940ea28066595b0ca8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 207
+}

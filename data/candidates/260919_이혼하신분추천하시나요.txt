@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%ED%95%98%EC%8B%A0%EB%B6%84-%EC%B6%94%EC%B2%9C%ED%95%98%EC%8B%9C%EB%82%98%EC%9A%94-yv3c1ahu
+제목 - 이혼하신분 추천하시나요?
+내용 - [명시 요약 — 원문 전문 아님]
+11개월 아이를 둔 상황에서 무너진 신뢰와 반복 갈등 때문에 현실적으로 관계를 유지해야 하는지 묻는 무거운 선택형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%ED%95%98%EC%8B%A0%EB%B6%84-%EC%B6%94%EC%B2%9C%ED%95%98%EC%8B%9C%EB%82%98%EC%9A%94-yv3c1ahu",
+    "title": "이혼하신분 추천하시나요?",
+    "body": "11개월 아이를 둔 상황에서 무너진 신뢰와 반복 갈등 때문에 현실적으로 관계를 유지해야 하는지 묻는 무거운 선택형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_이혼하신분추천하시나요.md",
+      "originalTitle": "이혼하신분 추천하시나요?",
+      "originalMarkdown": "# 이혼하신분 추천하시나요?\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%ED%95%98%EC%8B%A0%EB%B6%84-%EC%B6%94%EC%B2%9C%ED%95%98%EC%8B%9C%EB%82%98%EC%9A%94-yv3c1ahu\r\n- exactObservedTitle: 이혼하신분 추천하시나요?\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 573, 댓글 8\r\n- bodyRead: true\r\n- commentsRead: true (공개 노출 일부)\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 11개월 아이를 둔 상황에서 무너진 신뢰와 반복 갈등 때문에 현실적으로 관계를 유지해야 하는지 묻는 무거운 선택형 소재.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 사유와 생활상황은 게시자 주장.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "71fe6b798362931532205bca6a1bfae0c6ad40cb660769ef22d93f4d61b868ec",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 274
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0%EB%8A%90%EB%82%8C%EC%9D%B4-%EC%9E%88%EC%96%B4%EC%84%9C-u87vvsiw
+제목 - 임신느낌이 있어서
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0%EB%8A%90%EB%82%8C%EC%9D%B4-%EC%9E%88%EC%96%B4%EC%84%9C-u87vvsiw",
+    "title": "임신느낌이 있어서",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_임테기두줄게임계속.md",
+      "originalTitle": "임신느낌이 있어서",
+      "originalMarkdown": "# 임신느낌이 있어서\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%9E%84%EC%8B%A0%EB%8A%90%EB%82%8C%EC%9D%B4-%EC%9E%88%EC%96%B4%EC%84%9C-u87vvsiw\r\n- exactObservedTitle: 임신느낌이 있어서\r\n- observedAt: 2026-09-19 15:16 KST\r\n- observedMetrics: 조회수 310 / 댓글 21\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; public text only\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n연한 두 줄 임신테스트 결과를 보여줬는데 남편이 게임을 멈추지 않고 '이번 판 끝나고 이야기'하자고 한 장면이 짧고 강한 황당·공감 소재다.\r\n",
+      "originalSha256": "bf9962b60b1b413bbd650f68e9890347c56e662de0a11631771528281b4fd810",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 169
+}

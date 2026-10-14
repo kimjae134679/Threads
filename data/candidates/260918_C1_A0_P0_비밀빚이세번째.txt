@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/relationship_advice/comments/1k870h2
+제목 - My wife has a problem maintaining secret finances. How would you proceed?
+내용 - [명시 요약 — 원문 전문 아님]
+아내가 결혼 전 약 1.7만달러 카드빚을 공개해 남편이 대출로 정리했지만, 이후 7천달러 비밀 카드가 다시 발견돼 저축을 털어 상환. 재정을 분리했더니 2022년에는 연체통지로 약 3만달러 카드빚이 또 드러났다는 반복 사연.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/relationship_advice/comments/1k870h2",
+    "title": "My wife has a problem maintaining secret finances. How would you proceed?",
+    "body": "아내가 결혼 전 약 1.7만달러 카드빚을 공개해 남편이 대출로 정리했지만, 이후 7천달러 비밀 카드가 다시 발견돼 저축을 털어 상환. 재정을 분리했더니 2022년에는 연체통지로 약 3만달러 카드빚이 또 드러났다는 반복 사연.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_비밀빚이세번째.md",
+      "originalTitle": "My wife has a problem maintaining secret finances. How would you proceed?",
+      "originalMarkdown": "# My wife has a problem maintaining secret finances. How would you proceed?\r\n\r\n## 글 내용\r\n아내가 결혼 전 약 1.7만달러 카드빚을 공개해 남편이 대출로 정리했지만, 이후 7천달러 비밀 카드가 다시 발견돼 저축을 털어 상환. 재정을 분리했더니 2022년에는 연체통지로 약 3만달러 카드빚이 또 드러났다는 반복 사연.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/relationship_advice/comments/1k870h2\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n2026-09-18 06:34 KST 관측: +22 votes. 조회수/댓글 총수 미확인.\r\n\r\n## 평가\r\n한 번이 아니라 세 차례 비밀 채무가 반복되는 구조라 신뢰 회복 가능성을 두고 의견이 강하게 갈릴 소재.\r\n\r\n## 이미지/자산/게시상태\r\n형식: 글. full body read: 예. comments read: 아니오. source screenshot/media: 미확인. acquisition: EXACT_PUBLIC_URL_VERIFIED / ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요, 04_REVIEW_PUBLISH만 게시 가능.\r\n",
+      "originalSha256": "0b82663a58ae85b937139f2f5301b168e137a2407831fe057b7f4c854d16eac8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 310
+}

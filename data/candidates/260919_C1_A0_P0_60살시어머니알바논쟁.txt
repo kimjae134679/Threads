@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/532223348
+제목 - 60살 시어머니 알바가 안쓰러운가
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/532223348",
+    "title": "60살 시어머니 알바가 안쓰러운가",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_60살시어머니알바논쟁.md",
+      "originalTitle": "60살 시어머니 알바가 안쓰러운가",
+      "originalMarkdown": "# 60살 시어머니 알바가 안쓰러운가\r\n\r\n- source: TheQoo (재전달)\r\n- publicUrl: https://theqoo.net/square/532223348\r\n- exactObservedTitle: 60살에 알바하시는 시어머니 안쓰럽나요?\r\n- observedAt: 2026-09-19 17:19 KST\r\n- observedMetrics: 조회 8,279 / 댓글 145개\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: yes\r\n- provenance: C1 / exact public repost URL\r\n- acquisition: PUBLIC_TEXT_SEARCH\r\n- publicationAllowed: false\r\n- stage: A0/P0\r\n\r\n## 왜 소재로 좋은가\r\n60세 시어머니가 하루 약 1시간 청소 알바로 월 40만원을 벌고, 자녀들이 별도 용돈을 보내며 임대수입도 있다는 구체 조건 때문에 '말려야 하나' 판단이 갈린다.\r\n",
+      "originalSha256": "c1f38d301c93d8e8a02bf20a4fd7c35b79a818ed9358ba62492e1d1d1c4b69a7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 97
+}

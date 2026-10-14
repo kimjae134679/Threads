@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2931323677
+제목 - 부모님 노후대책 없이 정년되신 덬들 부모님은 어떻게 살고 있는지 궁금한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+부모가 자영업·주식으로 자산을 잃은 뒤 자녀가 월세와 생활비를 부담하게 됐다는 돈·가족·노후 갈등이 즉각적으로 이해됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2931323677",
+    "title": "부모님 노후대책 없이 정년되신 덬들 부모님은 어떻게 살고 있는지 궁금한 후기",
+    "body": "부모가 자영업·주식으로 자산을 잃은 뒤 자녀가 월세와 생활비를 부담하게 됐다는 돈·가족·노후 갈등이 즉각적으로 이해됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_부모노후대책없이정년.md",
+      "originalTitle": "부모님 노후대책 없이 정년되신 덬들 부모님은 어떻게 살고 있는지 궁금한 후기",
+      "originalMarkdown": "# 부모님 노후대책 없이 정년되신 덬들 부모님은 어떻게 살고 있는지 궁금한 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- publicUrl: https://theqoo.net/review/2931323677\r\n- exactObservedTitle: 부모님 노후대책 없이 정년되신 덬들 부모님은 어떻게 살고 있는지 궁금한 후기\r\n- observedAt: 2026-09-20 10:18 KST\r\n- observedMetrics: 4,646 / 26; 페이지에 댓글 26개 표기\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_SEARCH_INDEXED_BODY_READ\r\n- provenance: exact individual public URL; poster financial claims not independently verified\r\n- whyGood: 부모가 자영업·주식으로 자산을 잃은 뒤 자녀가 월세와 생활비를 부담하게 됐다는 돈·가족·노후 갈등이 즉각적으로 이해됨.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "52da3fd2f776dfc641800de91a24927778add99f42e609806cf8e0312dcf1089",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

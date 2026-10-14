@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%83%81%EB%8C%80%EB%B0%A9%EB%B6%80%EB%AA%A8%EB%8B%98%EA%BB%98-%EC%9D%B4%EC%A0%95%EB%8F%84-%EC%A7%80%EC%9B%90%EB%90%A0%EA%B9%8C-h1md2vkf
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 준비하는 작성자가 상대 부모의 노후 준비가 부족하고, 연애 중 어머니가 남자친구에게 카드론으로 200~300만원씩 여러 차례 빌렸던 점 때문에 고민한다. 남자친구는 세후 800만원 정도를 벌고 성실하지만 신용점수가 낮아 작성자가 결혼 준비 대출을 맡았다는 내용이다. 공개 본문과 노출 댓글 일부를 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%83%81%EB%8C%80%EB%B0%A9%EB%B6%80%EB%AA%A8%EB%8B%98%EA%BB%98-%EC%9D%B4%EC%A0%95%EB%8F%84-%EC%A7%80%EC%9B%90%EB%90%A0%EA%B9%8C-h1md2vkf",
+    "title": "제목",
+    "body": "결혼을 준비하는 작성자가 상대 부모의 노후 준비가 부족하고, 연애 중 어머니가 남자친구에게 카드론으로 200~300만원씩 여러 차례 빌렸던 점 때문에 고민한다. 남자친구는 세후 800만원 정도를 벌고 성실하지만 신용점수가 낮아 작성자가 결혼 준비 대출을 맡았다는 내용이다. 공개 본문과 노출 댓글 일부를 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼준비카드론부모지원.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n결혼준비중인데 상대방부모님께 이정도 지원될까?\r\n\r\n## 글 내용\r\n결혼을 준비하는 작성자가 상대 부모의 노후 준비가 부족하고, 연애 중 어머니가 남자친구에게 카드론으로 200~300만원씩 여러 차례 빌렸던 점 때문에 고민한다. 남자친구는 세후 800만원 정도를 벌고 성실하지만 신용점수가 낮아 작성자가 결혼 준비 대출을 맡았다는 내용이다. 공개 본문과 노출 댓글 일부를 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%EC%A4%80%EB%B9%84%EC%A4%91%EC%9D%B8%EB%8D%B0-%EC%83%81%EB%8C%80%EB%B0%A9%EB%B6%80%EB%AA%A8%EB%8B%98%EA%BB%98-%EC%9D%B4%EC%A0%95%EB%8F%84-%EC%A7%80%EC%9B%90%EB%90%A0%EA%B9%8C-h1md2vkf\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 19:39 KST 공개 페이지\r\n- 조회수: 81\r\n- 좋아요: 1\r\n- 댓글: 23\r\n\r\n## 평가\r\n조회수는 낮지만 게시 직후 댓글 비율이 높고, 결혼 상대는 고소득·성실하지만 부모의 반복 카드론이 위험신호인가라는 논쟁축이 분명하다. 최신 가족/돈 갈등 레인 후보.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source bytes: 미확보\r\n- full body read: 확인\r\n- comments read: 일부\r\n- exact public URL verified / ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review gate / 04 only publish",
+      "originalSha256": "ad2c99f25ecf4199670f500ca1e02d5289cf729994dec9d287c1876597a9e482",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 463
+}

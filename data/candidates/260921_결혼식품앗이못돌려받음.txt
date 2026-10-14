@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1491297724
+제목 - 품앗이라 생각하고 결혼식 많이 다녔는데 못돌려받은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+다른 사람 결혼식에 꾸준히 참석·축의했지만 본인 결혼식에는 약속하고도 오지 않거나 축의조차 하지 않은 사례가 이어져 인간관계·축의금·품앗이 논쟁을 즉시 유발함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1491297724",
+    "title": "품앗이라 생각하고 결혼식 많이 다녔는데 못돌려받은 후기",
+    "body": "다른 사람 결혼식에 꾸준히 참석·축의했지만 본인 결혼식에는 약속하고도 오지 않거나 축의조차 하지 않은 사례가 이어져 인간관계·축의금·품앗이 논쟁을 즉시 유발함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_결혼식품앗이못돌려받음.md",
+      "originalTitle": "품앗이라 생각하고 결혼식 많이 다녔는데 못돌려받은 후기",
+      "originalMarkdown": "# 품앗이라 생각하고 결혼식 많이 다녔는데 못돌려받은 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1491297724\r\n- exactObservedTitle: `품앗이라 생각하고 결혼식 많이 다녔는데 못돌려받은 후기`\r\n- observedAt: 2026-09-21 15:19 KST\r\n- acquisitionStage: C1\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 수 5033\r\n- whyGood: 다른 사람 결혼식에 꾸준히 참석·축의했지만 본인 결혼식에는 약속하고도 오지 않거나 축의조차 하지 않은 사례가 이어져 인간관계·축의금·품앗이 논쟁을 즉시 유발함.\r\n- provenance: 공개 검색으로 정확한 개별 게시물 URL과 노출 본문을 직접 확인. 작성자의 개인 경험 주장으로 취급.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "53b70b86eb4a2e0b27bad3c5f8d2b6d9853ae496b47fec9991875e03058200d4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 206
+}

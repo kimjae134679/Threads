@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2343517965
+제목 - 오래된 친구 손절?거리두기? 고민중인 중기 장문주의
+내용 - [명시 요약 — 원문 전문 아님]
+오래된 인연이지만 약속 장소와 대화 방식에서 계속 피로가 쌓이는 상황이라 손절 대 거리두기 논쟁이 바로 생긴다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2343517965",
+    "title": "오래된 친구 손절?거리두기? 고민중인 중기 장문주의",
+    "body": "오래된 인연이지만 약속 장소와 대화 방식에서 계속 피로가 쌓이는 상황이라 손절 대 거리두기 논쟁이 바로 생긴다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_오래된친구거리두기.md",
+      "originalTitle": "오래된 친구 손절?거리두기? 고민중인 중기 장문주의",
+      "originalMarkdown": "# 오래된 친구 손절?거리두기? 고민중인 중기 장문주의\r\n\r\n- source: TheQoo 후기\r\n- exactObservedTitle: `오래된 친구 손절?거리두기? 고민중인 중기 장문주의`\r\n- sourceUrl: https://theqoo.net/review/2343517965\r\n- observedAt: 2026-09-20 19:18 KST\r\n- acquisition: C1 — exact individual public URL verified; public text body readable\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 4,067 (공개 페이지 표시값); 댓글 수 미확인\r\n- whyGood: 오래된 인연이지만 약속 장소와 대화 방식에서 계속 피로가 쌓이는 상황이라 손절 대 거리두기 논쟁이 바로 생긴다.\r\n- provenanceNote: 익명 게시자의 개인 경험담이며 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "1bc4f53143412a6277d83b5bd2453e38215ef779dae475f72a18e0875563bc24",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 177
+}

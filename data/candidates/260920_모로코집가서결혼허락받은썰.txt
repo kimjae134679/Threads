@@ -1,0 +1,29 @@
+원문링크 - https://gall.dcinside.com/mgallery/board/view/?id=globalwedding&no=164035
+제목 - 모순이 집 가서 결혼허락 받은 썰
+내용 - [명시 요약 — 원문 전문 아님]
+6개월 채팅 뒤 첫 대면→부모 방문→예상보다 빠른 결혼 승낙이라는 진행과 반전이 명확함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://gall.dcinside.com/mgallery/board/view/?id=globalwedding&no=164035",
+    "title": "모순이 집 가서 결혼허락 받은 썰",
+    "body": "6개월 채팅 뒤 첫 대면→부모 방문→예상보다 빠른 결혼 승낙이라는 진행과 반전이 명확함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_모로코집가서결혼허락받은썰.md",
+      "originalTitle": "모순이 집 가서 결혼허락 받은 썰",
+      "originalMarkdown": "# 모순이 집 가서 결혼허락 받은 썰\r\n\r\n- stage: C1\r\n- source: DCInside 국제결혼 마이너 갤러리\r\n- publicUrl: https://gall.dcinside.com/mgallery/board/view/?id=globalwedding&no=164035\r\n- exactObservedTitle: 모순이 집 가서 결혼허락 받은 썰\r\n- observedAt: 2026-09-20 06:15 KST\r\n- observedMetrics: 조회 6663 / 댓글 60 / 추천 43\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (원본 첨부파일 2개 표시)\r\n- whyGood: 6개월 채팅 뒤 첫 대면→부모 방문→예상보다 빠른 결혼 승낙이라는 진행과 반전이 명확함.\r\n- acquisition: exact individual public page text observed; images not downloaded/OCRed\r\n- provenance: C1 exact-page provenance; poster claims unverified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "ff0508f611ae15b2582eb9a1287999e6001b1adace1bfad684a681ed3e8ac828",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 191
+}

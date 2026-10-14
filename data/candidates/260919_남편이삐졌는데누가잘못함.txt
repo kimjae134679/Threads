@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EC%82%90%EC%A1%8C%EB%8A%94%EB%8D%B0-%EB%88%84%EA%B0%80-%EC%9E%98%EB%AA%BB%ED%95%A8-kcw5li2z
+제목 - 남편이 삐졌는데 누가 잘못함?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EC%82%90%EC%A1%8C%EB%8A%94%EB%8D%B0-%EB%88%84%EA%B0%80-%EC%9E%98%EB%AA%BB%ED%95%A8-kcw5li2z",
+    "title": "남편이 삐졌는데 누가 잘못함?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_남편이삐졌는데누가잘못함.md",
+      "originalTitle": "남편이 삐졌는데 누가 잘못함?",
+      "originalMarkdown": "# 남편이 삐졌는데 누가 잘못함?\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EC%82%90%EC%A1%8C%EB%8A%94%EB%8D%B0-%EB%88%84%EA%B0%80-%EC%9E%98%EB%AA%BB%ED%95%A8-kcw5li2z\r\n- exact_observed_title: 남편이 삐졌는데 누가 잘못함?\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 572, 댓글 18, 좋아요 1\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 시댁 송금과 여행 중 방치가 연달아 겹쳐 누가 더 잘못했는지 즉시 의견이 갈리는 부부 갈등 소재.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 주장 내용은 독립 검증하지 않음\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "de0f6eb5b9770cb8c9e9aaf98f1e21aefcf34d4f351e1565d79e97c0647614f9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 214
+}

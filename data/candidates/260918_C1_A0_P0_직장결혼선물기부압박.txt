@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/14mb5qz
+제목 - AITA for not donating to a coworker's wedding gift?
+내용 - [명시 요약 — 원문 전문 아님]
+입사한 지 얼마 안 된 작성자가 거의 모르는 동료의 결혼선물 모금 메일을 무시했는데, 상사가 직접 Teams로 왜 기부하지 않았는지 확인한다. 이후 다른 신입급 직원에게도 현금앱으로 기부를 유도하는 모습을 보고 직장 내 불이익을 걱정한다. 공개 본문과 공개 댓글 일부를 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/14mb5qz",
+    "title": "AITA for not donating to a coworker's wedding gift?",
+    "body": "입사한 지 얼마 안 된 작성자가 거의 모르는 동료의 결혼선물 모금 메일을 무시했는데, 상사가 직접 Teams로 왜 기부하지 않았는지 확인한다. 이후 다른 신입급 직원에게도 현금앱으로 기부를 유도하는 모습을 보고 직장 내 불이익을 걱정한다. 공개 본문과 공개 댓글 일부를 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_직장결혼선물기부압박.md",
+      "originalTitle": "AITA for not donating to a coworker's wedding gift?",
+      "originalMarkdown": "# AITA for not donating to a coworker's wedding gift?\r\n\r\n## 글 내용\r\n입사한 지 얼마 안 된 작성자가 거의 모르는 동료의 결혼선물 모금 메일을 무시했는데, 상사가 직접 Teams로 왜 기부하지 않았는지 확인한다. 이후 다른 신입급 직원에게도 현금앱으로 기부를 유도하는 모습을 보고 직장 내 불이익을 걱정한다. 공개 본문과 공개 댓글 일부를 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/14mb5qz\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 10:37 KST 관측: 게시물 본문 점수는 검색 노출에서 확인하지 못함. 공개 댓글 반응 수치 일부만 노출되었으나 후보 engagement로 합산하지 않음.\r\n\r\n## 평가\r\n'안 냈더니 상사가 직접 연락'이라는 직장 권력과 경조사비 갈등이 매우 직관적이다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "271c3a978c12b9e9c822b0e0cc6bbbbe310e25d02acb8532f3caee9300329255",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 311
+}

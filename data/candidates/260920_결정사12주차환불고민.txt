@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%E3%84%B1%E3%85%8712%EC%A3%BC%EC%B0%A8-%ED%99%98%EB%B6%88%ED%95%B4%EB%8B%AC%EB%9D%BC%ED%95%A0%EA%B9%8C-7uhby175
+제목 - ㄱㅇ1~2주차 환불해달라할까?
+내용 - [명시 요약 — 원문 전문 아님]
+결정사 가입 직후 환불 고민과 매칭 기대/현실의 충돌이라 즉시 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%E3%84%B1%E3%85%8712%EC%A3%BC%EC%B0%A8-%ED%99%98%EB%B6%88%ED%95%B4%EB%8B%AC%EB%9D%BC%ED%95%A0%EA%B9%8C-7uhby175",
+    "title": "ㄱㅇ1~2주차 환불해달라할까?",
+    "body": "결정사 가입 직후 환불 고민과 매칭 기대/현실의 충돌이라 즉시 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결정사12주차환불고민.md",
+      "originalTitle": "ㄱㅇ1~2주차 환불해달라할까?",
+      "originalMarkdown": "# ㄱㅇ1~2주차 환불해달라할까?\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%E3%84%B1%E3%85%8712%EC%A3%BC%EC%B0%A8-%ED%99%98%EB%B6%88%ED%95%B4%EB%8B%AC%EB%9D%BC%ED%95%A0%EA%B9%8C-7uhby175\r\n- exactObservedTitle: ㄱㅇ1~2주차 환불해달라할까?\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 135, 댓글 21\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 결정사 가입 직후 환불 고민과 매칭 기대/현실의 충돌이라 즉시 의견이 갈릴 소재.\r\n- acquisition: C1; exact individual public URL directly observed; public text/comments read\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8b824f7d6fa87bb6d44e496e3c604d5d6c51c8241ab1a87678b412b8316da7af",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 257
+}

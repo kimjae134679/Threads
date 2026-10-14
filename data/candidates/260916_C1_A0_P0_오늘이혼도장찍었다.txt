@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2718612
+제목 - 오늘 이혼도장 찍었다..나처럼 실패하지 말아라.
+내용 - [명시 요약 — 원문 전문 아님]
+이혼 절차를 마친 작성자가 자신의 결혼 실패를 돌아보며 다른 사람에게 같은 실수를 반복하지 말라는 취지의 이야기를 여러 이미지와 함께 올린 게시물이다. 세부 개인 사연은 실제 원문 자산 검토 전 추가로 재구성하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2718612",
+    "title": "오늘 이혼도장 찍었다..나처럼 실패하지 말아라.",
+    "body": "이혼 절차를 마친 작성자가 자신의 결혼 실패를 돌아보며 다른 사람에게 같은 실수를 반복하지 말라는 취지의 이야기를 여러 이미지와 함께 올린 게시물이다. 세부 개인 사연은 실제 원문 자산 검토 전 추가로 재구성하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_오늘이혼도장찍었다.md",
+      "originalTitle": "오늘 이혼도장 찍었다..나처럼 실패하지 말아라.",
+      "originalMarkdown": "# 오늘 이혼도장 찍었다..나처럼 실패하지 말아라.\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2718612\r\n- 조회수: 22,520\r\n- 추천: 32\r\n- 댓글: 72\r\n- 본문: 읽음\r\n- 이미지: 여러 장 공개 링크 확인, 파일 미확보\r\n\r\n## 글 내용\r\n이혼 절차를 마친 작성자가 자신의 결혼 실패를 돌아보며 다른 사람에게 같은 실수를 반복하지 말라는 취지의 이야기를 여러 이미지와 함께 올린 게시물이다. 세부 개인 사연은 실제 원문 자산 검토 전 추가로 재구성하지 않는다.\r\n\r\n## 평가\r\n- 평가: 강한 감정·스토리 후보\r\n- 주의: 사생활·명예훼손·privacy 검토 필요.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "b34ee3e5ab6d6281654c35f6121423adc1ba3e0ba7ee96080049341323956dba",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 250
+}

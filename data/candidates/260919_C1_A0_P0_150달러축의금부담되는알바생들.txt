@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/14smq7l
+제목 - 최저임금 알바생들한테 사장 결혼 축의금 150달러가 관례랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+공예점에서 최저임금 파트타임으로 일하는 학생 직원들이 매니저 결혼식에 초대됐다. 지역 관례상 현금 선물이 일반적이고 150달러 미만은 실례로 여겨지지만, 이 금액이 직원들 월급의 약 10~25%라 부담스럽다. 직원들은 대신 각자 약 35달러씩 모아 선물을 하자는 방안을 고민한다. 공개 원문 본문과 공개 댓글 일부를 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/14smq7l",
+    "title": "최저임금 알바생들한테 사장 결혼 축의금 150달러가 관례랍니다",
+    "body": "공예점에서 최저임금 파트타임으로 일하는 학생 직원들이 매니저 결혼식에 초대됐다. 지역 관례상 현금 선물이 일반적이고 150달러 미만은 실례로 여겨지지만, 이 금액이 직원들 월급의 약 10~25%라 부담스럽다. 직원들은 대신 각자 약 35달러씩 모아 선물을 하자는 방안을 고민한다. 공개 원문 본문과 공개 댓글 일부를 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_150달러축의금부담되는알바생들.md",
+      "originalTitle": "최저임금 알바생들한테 사장 결혼 축의금 150달러가 관례랍니다",
+      "originalMarkdown": "# 최저임금 알바생들한테 사장 결혼 축의금 150달러가 관례랍니다\r\n\r\n## 원문 제목\r\nAITA refusing to give my boss a check and opting for a wedding gift instead?\r\n\r\n## source\r\nReddit\r\n\r\n## 글 내용\r\n공예점에서 최저임금 파트타임으로 일하는 학생 직원들이 매니저 결혼식에 초대됐다. 지역 관례상 현금 선물이 일반적이고 150달러 미만은 실례로 여겨지지만, 이 금액이 직원들 월급의 약 10~25%라 부담스럽다. 직원들은 대신 각자 약 35달러씩 모아 선물을 하자는 방안을 고민한다. 공개 원문 본문과 공개 댓글 일부를 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/14smq7l\r\n\r\n## 관찰\r\n2026-09-19 08:19 KST. 공개 Reddit 결과 게시물 +6 votes 표시. 조회수·댓글 총수 미확인. 본문 읽음. 댓글 일부 읽음. 이미지/스크린샷 존재 여부 미확인.\r\n\r\n## 평가\r\n상사가 직원 급여를 아는 상황에서 결혼식 현금 관례가 월급 10~25%를 요구한다는 직장+돈 갈등이 선명함. 반응수치는 작지만 스토리성으로 retained.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. acquisition/provenance: C1 / EXACT_PUBLIC_URL_VERIFIED. source asset 미확보. A0/P0. publicationAllowed=false. rights/privacy/human review 미완료. 실제 게시 권한은 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "312a2d01eeb81d33ac1146a0d5f777def9486f55260f45fb89678d9973274938",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 324
+}

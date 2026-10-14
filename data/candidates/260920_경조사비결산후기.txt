@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2465409086
+제목 - 핫게 축의금 보고 생각난 경조사비 결산 후기
+내용 - [명시 요약 — 원문 전문 아님]
+5년 경조사비를 실제 숫자로 결산해 '경조사가 결국 제로섬인가'라는 즉답형 논쟁을 만들기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2465409086",
+    "title": "핫게 축의금 보고 생각난 경조사비 결산 후기",
+    "body": "5년 경조사비를 실제 숫자로 결산해 '경조사가 결국 제로섬인가'라는 즉답형 논쟁을 만들기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_경조사비결산후기.md",
+      "originalTitle": "핫게 축의금 보고 생각난 경조사비 결산 후기",
+      "originalMarkdown": "# 핫게 축의금 보고 생각난 경조사비 결산 후기\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2465409086\r\n- exactObservedTitle: 핫게 축의금 보고 생각난 경조사비 결산 후기\r\n- observedAt: 2026-09-20 09:19 KST\r\n- observedMetrics: 조회 수 1480\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_URL_SEARCH_INDEXED_BODY\r\n- provenance: TheQoo individual public review; amounts are poster-reported, not independently verified\r\n- whyGood: 5년 경조사비를 실제 숫자로 결산해 '경조사가 결국 제로섬인가'라는 즉답형 논쟁을 만들기 좋음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "b7cde3a07cda7faadb29a548e4db6d03cc380d12d33471e34f6d7ac260b7ade1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 164
+}

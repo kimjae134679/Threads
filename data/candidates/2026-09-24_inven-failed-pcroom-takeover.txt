@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2239107
+제목 - 망한 피씨방 인수한 썰
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2239107",
+    "title": "망한 피씨방 인수한 썰",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_inven-failed-pcroom-takeover.md",
+      "originalTitle": "(초스압) 망한 피씨방 인수한 썰",
+      "originalMarkdown": "# (초스압) 망한 피씨방 인수한 썰\r\n\r\n- source: Inven 오픈이슈갤러리\r\n- source_url: https://www.inven.co.kr/board/webzine/2097/2239107\r\n- exact_observed_title: `(초스압) 망한 피씨방 인수한 썰`\r\n- observed_at: 2026-09-24 01:15 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; pseudonymous community post; first-person claims are attributed/unverified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: images indicated on public page; not downloaded\r\n- observed_metrics: 조회 33,115; 추천 45; 댓글 44\r\n- why_good: 망한 PC방을 실제로 인수해 운영하면서 겪은 선택과 시행착오가 길게 이어져 자영업·돈·운영 현실 소재로 스토리성이 강하다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 서울에서 PC방을 운영한다고 밝히며 매장 규모, 흡연실과 조리 공간 구성, 게임 유행 변화와 실제 운영 판단을 장문으로 설명한다.",
+      "originalSha256": "2a5aad13c3dff6bf0ea99ab9ec76386d8c8bf1b7c304a291ca512fd200c17adb",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

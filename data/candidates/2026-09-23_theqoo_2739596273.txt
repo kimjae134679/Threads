@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2739596273
+제목 - 기분 나쁜데 웃긴 면접 후기
+내용 - [명시 요약 — 원문 전문 아님]
+면접관이 나이 문제를 반복하다가 지원자의 솔직한 답변과 주 69시간 이야기에서 갑자기 대화가 엉뚱하게 흘러가는 경험담으로, 직장인 공감·황당함·면접 예절 논쟁이 모두 붙기 좋다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2739596273",
+    "title": "기분 나쁜데 웃긴 면접 후기",
+    "body": "면접관이 나이 문제를 반복하다가 지원자의 솔직한 답변과 주 69시간 이야기에서 갑자기 대화가 엉뚱하게 흘러가는 경험담으로, 직장인 공감·황당함·면접 예절 논쟁이 모두 붙기 좋다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_2739596273.md",
+      "originalTitle": "기분 나쁜데 웃긴 면접 후기",
+      "originalMarkdown": "# 기분 나쁜데 웃긴 면접 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2739596273\r\n- exactObservedTitle: 기분 나쁜데 웃긴 면접 후기\r\n- observedAt: 2026-09-23 20:16 KST\r\n- observedMetrics: 조회 2,386 / 댓글 5\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 본문 공개 텍스트 확인 범위에서는 이미지/스크린샷을 확인하지 않음\r\n- whyGood: 면접관이 나이 문제를 반복하다가 지원자의 솔직한 답변과 주 69시간 이야기에서 갑자기 대화가 엉뚱하게 흘러가는 경험담으로, 직장인 공감·황당함·면접 예절 논쟁이 모두 붙기 좋다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 다운로드·스크린샷 캡처 없음.\r\n- provenance: TheQoo 익명 작성자의 개인 면접 경험담. 개인 주장으로만 취급하며 외부 사실 검증은 하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e6b6bae0ead9684de6fd71c2342b583aee775b15cc912670d3127e79263a2b09",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 201
+}

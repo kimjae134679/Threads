@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1slu5j0/aita_for_telling_my_sister_i_cant_attend_her/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+여동생의 이탈리아 결혼식에 참석하려면 부부 기준 약 3,200달러가 필요한데, 글쓴이 부부는 최근 몇 년간 네 차례 큰 수술과 두 사람의 실직으로 저축을 소진한 상태다. 신부가 700달러를 지원하겠다고 했지만 나머지 비용이 여전히 부담돼 참석하지 못하겠다고 말한 사연이다. 공개 원문 본문을 실제 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1slu5j0/aita_for_telling_my_sister_i_cant_attend_her/",
+    "title": "제목",
+    "body": "여동생의 이탈리아 결혼식에 참석하려면 부부 기준 약 3,200달러가 필요한데, 글쓴이 부부는 최근 몇 년간 네 차례 큰 수술과 두 사람의 실직으로 저축을 소진한 상태다. 신부가 700달러를 지원하겠다고 했지만 나머지 비용이 여전히 부담돼 참석하지 못하겠다고 말한 사연이다. 공개 원문 본문을 실제 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_해외결혼식3200달러.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for telling my sister I can't attend her Destination Wedding\r\n\r\n## 글 내용\r\n여동생의 이탈리아 결혼식에 참석하려면 부부 기준 약 3,200달러가 필요한데, 글쓴이 부부는 최근 몇 년간 네 차례 큰 수술과 두 사람의 실직으로 저축을 소진한 상태다. 신부가 700달러를 지원하겠다고 했지만 나머지 비용이 여전히 부담돼 참석하지 못하겠다고 말한 사연이다. 공개 원문 본문을 실제 확인했다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1slu5j0/aita_for_telling_my_sister_i_cant_attend_her/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측시각: 2026-09-17 05:34 KST\r\n- Reddit score: +1,341\r\n- 조회수/댓글수: 이번 관측에서 확정하지 못함\r\n\r\n## 평가\r\n가족 결혼식 vs 현실적인 재정 사정이라는 보편적 갈등이고 700달러 지원이 있어 단순한 참석 거부보다 판단 포인트가 많음. 본문 읽음: 예. 댓글 읽음: 아니오. source image: 확인되지 않음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- acquisition: exact public URL verified\r\n- full-post screenshot bytes: 미확보\r\n- ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH only",
+      "originalSha256": "a12ba231166d2cfb8dfd1c62a24815a50100fcf25eb1589507be5df879a8bf83",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

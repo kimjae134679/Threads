@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4-lioadcp4
+제목 - 재혼 축의금 100만원 줬는데 신혼여행 용돈 50만원도 내랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+공개 페이지 본문 확인. 남편 누나가 재혼하면서 별도 결혼식 없이 살림을 합쳤고 작성자 부부는 축의금 100만원을 줬다. 이후 시어머니가 누나의 신혼여행 용돈으로 50만원을 더 주자고 했고, 작성자 부부는 둘 다 육아휴직 중이라 빠듯하다는 사연이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4-lioadcp4",
+    "title": "재혼 축의금 100만원 줬는데 신혼여행 용돈 50만원도 내랍니다",
+    "body": "공개 페이지 본문 확인. 남편 누나가 재혼하면서 별도 결혼식 없이 살림을 합쳤고 작성자 부부는 축의금 100만원을 줬다. 이후 시어머니가 누나의 신혼여행 용돈으로 50만원을 더 주자고 했고, 작성자 부부는 둘 다 육아휴직 중이라 빠듯하다는 사연이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_신혼여행용돈50.md",
+      "originalTitle": "재혼 축의금 100만원 줬는데 신혼여행 용돈 50만원도 내랍니다",
+      "originalMarkdown": "# 재혼 축의금 100만원 줬는데 신혼여행 용돈 50만원도 내랍니다\r\n\r\n## 원문 제목\r\n시댁 스트레스\r\n\r\n## source\r\nBlind\r\n\r\n## 글 내용\r\n공개 페이지 본문 확인. 남편 누나가 재혼하면서 별도 결혼식 없이 살림을 합쳤고 작성자 부부는 축의금 100만원을 줬다. 이후 시어머니가 누나의 신혼여행 용돈으로 50만원을 더 주자고 했고, 작성자 부부는 둘 다 육아휴직 중이라 빠듯하다는 사연이다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%8B%9C%EB%8C%81-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4-lioadcp4\r\n\r\n## 관측\r\n- 관측시각: 2026-09-19 09:20 KST\r\n- 조회수: 837\r\n- 댓글: 36\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재: 미확인\r\n\r\n## 평가\r\n축의금 100만원 뒤 추가 50만원이라는 구체 금액과 육휴 중인 경제 상황이 겹쳐 가족 경조사 비용 논쟁이 명확하다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL 확인. acquisition/provenance: C1_EXACT_PUBLIC_PAGE_VERIFIED. A0/P0. publicationAllowed=false.",
+      "originalSha256": "e4b8de5e3f851c8a607e9f72cc9e7f80ca8453098062d359497ca1b24ffe8452",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 323
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1097000772
+제목 - 연애할때마다 염병떨던 (전)친구 (현)절교 한 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1097000772",
+    "title": "연애할때마다 염병떨던 (전)친구 (현)절교 한 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_연애때마다_친구갈등_절교후기.md",
+      "originalTitle": "연애할때마다 염병떨던 (전)친구 (현)절교 한 후기",
+      "originalMarkdown": "# 연애할때마다 염병떨던 (전)친구 (현)절교 한 후기\r\n\r\nsource: TheQoo 후기\r\nsourceStage: C1\r\nexactPublicUrl: https://theqoo.net/review/1097000772\r\nexactObservedTitle: 연애할때마다 염병떨던 (전)친구 (현)절교 한 후기\r\nobservedAt: 2026-09-21 06:18 KST\r\nobservedMetrics: 이번 관찰에서 신뢰할 수 있는 공개 수치를 확인하지 못해 미기록\r\nbodyRead: true\r\ncommentsRead: false\r\nimageOrScreenshotExists: 미확인\r\nacquisition: 공개 개별 게시물 URL과 공개 본문을 허용된 공개 페이지에서 확인. 로그인 또는 anti-bot 우회 없음.\r\nprovenance: 작성자 개인 경험담으로 게시된 원문 개별 페이지이며 서술 내용의 외부 사실성은 별도 검증하지 않음.\r\nwhyGood: 연애를 계기로 친구 사이가 틀어지고 생일파티에서 본인만 제외된 사실을 알게 되는 명확한 반전과 절교 결말이 있어 스토리성이 강함.\r\nA1: false\r\nP1: false\r\npublicationAllowed: false\r\n",
+      "originalSha256": "55e8baf382f5398f61cf2cb85a95f7b1627d4dda798b0c47c7594e22fa4cda4e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 108
+}

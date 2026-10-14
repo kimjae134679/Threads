@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%BD%EC%83%81%EB%8F%84-%EC%8B%9C%EB%8C%81%EC%9D%B4%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%9B%84-%EC%B2%AB-%EB%AA%85%EC%A0%88-i117xas8
+제목 - 경상도 시댁이고 결혼후 첫 명절
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%BD%EC%83%81%EB%8F%84-%EC%8B%9C%EB%8C%81%EC%9D%B4%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%9B%84-%EC%B2%AB-%EB%AA%85%EC%A0%88-i117xas8",
+    "title": "경상도 시댁이고 결혼후 첫 명절",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_경상도시댁첫명절.md",
+      "originalTitle": "경상도 시댁이고 결혼후 첫 명절",
+      "originalMarkdown": "# 경상도 시댁이고 결혼후 첫 명절\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EA%B2%BD%EC%83%81%EB%8F%84-%EC%8B%9C%EB%8C%81%EC%9D%B4%EA%B3%A0-%EA%B2%B0%ED%98%BC%ED%9B%84-%EC%B2%AB-%EB%AA%85%EC%A0%88-i117xas8\r\n- exact_observed_title: 경상도 시댁이고 결혼후 첫 명절\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 404, 댓글 17\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 시어머니와 냉전인데 남편은 첫 명절 방문을 고집하는 상황이라 명절·시댁·부부 갈등이 한 번에 걸림.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 지역 일반화는 사실로 채택하지 않음\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0ea6a1ad9b33c1c2e86990e99aa1da3cfa35c8e5f3b90f5d41c60f5dd689d4df",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 225
+}

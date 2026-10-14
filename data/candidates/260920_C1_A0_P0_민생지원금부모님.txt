@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3840960712
+제목 - 민생지원금 달라고 하는 부모님 때문에 현타오는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+가족 사이 돈 요구와 거리두기 문제라 독자가 즉시 자신의 기준을 대입해 의견을 내기 좋은 생활 갈등 소재다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3840960712",
+    "title": "민생지원금 달라고 하는 부모님 때문에 현타오는 후기",
+    "body": "가족 사이 돈 요구와 거리두기 문제라 독자가 즉시 자신의 기준을 대입해 의견을 내기 좋은 생활 갈등 소재다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_민생지원금부모님.md",
+      "originalTitle": "민생지원금 달라고 하는 부모님 때문에 현타오는 후기",
+      "originalMarkdown": "# 민생지원금 달라고 하는 부모님 때문에 현타오는 후기\r\n\r\n- source: TheQoo 후기\r\n- exactObservedTitle: `민생지원금 달라고 하는 부모님 때문에 현타오는 후기`\r\n- sourceUrl: https://theqoo.net/review/3840960712\r\n- observedAt: 2026-09-20 19:18 KST\r\n- acquisition: C1 — exact individual public URL verified; public text body readable\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- observedMetrics: 조회 6,783 / 댓글 14 (공개 페이지 표시값)\r\n- whyGood: 가족 사이 돈 요구와 거리두기 문제라 독자가 즉시 자신의 기준을 대입해 의견을 내기 좋은 생활 갈등 소재다.\r\n- provenanceNote: 익명 게시자의 개인 경험담이며 독립 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "854995f770f56d74cca5970fb176772ef0155fcdc1808b7b6d1ac8ee88f8b06a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 175
+}

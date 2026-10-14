@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90-5mpzak2j
+제목 - 부모님 지원
+내용 - [명시 요약 — 원문 전문 아님]
+20대 후반 6~7천만원을 모았지만 부모 지원이 어려운 사람이 '지원 못 받으면 헤어질 남자가 많나'를 묻는 현실적인 결혼 자금 논쟁.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90-5mpzak2j",
+    "title": "부모님 지원",
+    "body": "20대 후반 6~7천만원을 모았지만 부모 지원이 어려운 사람이 '지원 못 받으면 헤어질 남자가 많나'를 묻는 현실적인 결혼 자금 논쟁.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_부모님지원결혼고민.md",
+      "originalTitle": "부모님 지원",
+      "originalMarkdown": "# 부모님 지원\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%B6%80%EB%AA%A8%EB%8B%98-%EC%A7%80%EC%9B%90-5mpzak2j\r\n- exactObservedTitle: 부모님 지원\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 538, 댓글 13\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 20대 후반 6~7천만원을 모았지만 부모 지원이 어려운 사람이 '지원 못 받으면 헤어질 남자가 많나'를 묻는 현실적인 결혼 자금 논쟁.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지 직접 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "6a10427ddcbb3c0dc6069d2a893f1c689815de73cd016bc08c62c52741f5e1ee",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 221
+}

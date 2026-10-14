@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 화담숲 예약 킹받는다.
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. Blind 공개 index에는 예약 시스템 무한대기/오류 때문에 티케팅에 약 2시간을 날렸다는 불만 글로 노출됐다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "화담숲 예약 킹받는다.",
+    "body": "본문 미확인. Blind 공개 index에는 예약 시스템 무한대기/오류 때문에 티케팅에 약 2시간을 날렸다는 불만 글로 노출됐다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C0_A0_P0_화담숲예약킹받는다.md",
+      "originalTitle": "화담숲 예약 킹받는다.",
+      "originalMarkdown": "# 화담숲 예약 킹받는다.\r\n\r\n## 글 내용\r\n본문 미확인. Blind 공개 index에는 예약 시스템 무한대기/오류 때문에 티케팅에 약 2시간을 날렸다는 불만 글로 노출됐다.\r\n\r\n## 정확한 링크\r\n개별 원문 URL 미확인. 공개 index: https://www.teamblind.com/kr/company/%EB%AC%B4%ED%95%9C%EC%8B%9C%EC%8A%A4%ED%85%9C/posts\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 04:35 KST\r\n- index 노출: 조회 19K / 좋아요 346 / 댓글 332\r\n\r\n## 평가\r\n한국 생활형 분노 소재로 반응량이 크고 \"예약하려다 2시간 증발\"이라는 공감 포인트가 선명하다. 원문 URL/본문 확인 전까지 C0.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Blind public index\r\n- full body read: NO\r\n- comments read: NO\r\n- source images/screenshots: 미확인\r\n- acquisition: INDEX_ONLY / ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n",
+      "originalSha256": "cf06b47c651afd7f123044e6ea72a51ceb28258d4e18f38d2941d91cdebe6db1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 135
+}

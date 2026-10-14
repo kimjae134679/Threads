@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1326173044
+제목 - 리얼 황당한 사이비 전도 방법 당해본 후기. 모두 조심하자.
+내용 - [명시 요약 — 원문 전문 아님]
+모르는 번호의 전화가 전 연인이 남긴 편지를 전달한다는 뜻밖의 말로 시작되고 실제 목적이 다른 방향으로 이어지는 경험담이라 첫 문장부터 강한 의문과 반전 가능성이 생긴다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1326173044",
+    "title": "리얼 황당한 사이비 전도 방법 당해본 후기. 모두 조심하자.",
+    "body": "모르는 번호의 전화가 전 연인이 남긴 편지를 전달한다는 뜻밖의 말로 시작되고 실제 목적이 다른 방향으로 이어지는 경험담이라 첫 문장부터 강한 의문과 반전 가능성이 생긴다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo_1326173044.md",
+      "originalTitle": "리얼 황당한 사이비 전도 방법 당해본 후기. 모두 조심하자.",
+      "originalMarkdown": "# 리얼 황당한 사이비 전도 방법 당해본 후기. 모두 조심하자.\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1326173044\r\n- exactObservedTitle: 리얼 황당한 사이비 전도 방법 당해본 후기. 모두 조심하자.\r\n- observedAt: 2026-09-23 07:17 KST\r\n- observedMetrics: 조회 1534\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 모르는 번호의 전화가 전 연인이 남긴 편지를 전달한다는 뜻밖의 말로 시작되고 실제 목적이 다른 방향으로 이어지는 경험담이라 첫 문장부터 강한 의문과 반전 가능성이 생긴다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문 텍스트를 확인함. C1. 이미지 다운로드나 스크린샷 캡처는 하지 않음.\r\n- provenance: TheQoo 공개 게시물의 작성자 경험담. 전도 방식과 당시 통화 내용은 작성자의 기억에 따른 서술이며 별도 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "2ef1b0ed4819f84f4f9d67ecfb442d8f47b2fc0522043acca75d06dedfc439af",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 215
+}

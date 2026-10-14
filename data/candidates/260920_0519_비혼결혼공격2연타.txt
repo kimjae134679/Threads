@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2584083741
+제목 - 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)
+내용 - [명시 요약 — 원문 전문 아님]
+같은 날 서로 다른 어른에게 연속으로 결혼·출산 압박을 받은 구조가 명확하고 세대별 예절·비혼 가치관 논쟁으로 이어지기 쉬움.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2584083741",
+    "title": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+    "body": "같은 날 서로 다른 어른에게 연속으로 결혼·출산 압박을 받은 구조가 명확하고 세대별 예절·비혼 가치관 논쟁으로 이어지기 쉬움.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_0519_비혼결혼공격2연타.md",
+      "originalTitle": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+      "originalMarkdown": "# 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2584083741\r\n- exactObservedTitle: `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`\r\n- observedAt: 2026-09-20 05:19 KST\r\n- observedMetrics: 조회 9,501, 댓글 38\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: false\r\n- acquisition: exact individual public page read\r\n- provenance: TheQoo anonymous original post page as observed\r\n- whyGood: 같은 날 서로 다른 어른에게 연속으로 결혼·출산 압박을 받은 구조가 명확하고 세대별 예절·비혼 가치관 논쟁으로 이어지기 쉬움.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "679a594a92100a934d4b382d9dfed94d3d93ebd3129bc2321dc5422146e2ebbc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 183
+}

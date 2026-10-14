@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%83%9D%EC%9D%BC%EC%84%A0%EB%AC%BC-%EC%95%88%EC%A3%BC%EB%8A%94-xod05ud3
+제목 - 여자친구 생일선물 안주는
+내용 - [명시 요약 — 원문 전문 아님]
+9개월 연애 중인 커플이 생일을 맞았고 식사 약 15만원, 꽃과 케이크는 준비했지만 별도 선물이 없어 서운했다는 사연이다. 작성자는 이전에 상대에게 옷과 음식을 선물했다고 적어 서로 기대치가 달랐는지를 묻는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%83%9D%EC%9D%BC%EC%84%A0%EB%AC%BC-%EC%95%88%EC%A3%BC%EB%8A%94-xod05ud3",
+    "title": "여자친구 생일선물 안주는",
+    "body": "9개월 연애 중인 커플이 생일을 맞았고 식사 약 15만원, 꽃과 케이크는 준비했지만 별도 선물이 없어 서운했다는 사연이다. 작성자는 이전에 상대에게 옷과 음식을 선물했다고 적어 서로 기대치가 달랐는지를 묻는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_여자친구생일선물안주는.md",
+      "originalTitle": "여자친구 생일선물 안주는",
+      "originalMarkdown": "# 여자친구 생일선물 안주는\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%83%9D%EC%9D%BC%EC%84%A0%EB%AC%BC-%EC%95%88%EC%A3%BC%EB%8A%94-xod05ud3\r\n- 조회수: 196\r\n- 댓글: 8\r\n- 본문/댓글: 읽음\r\n\r\n## 글 내용\r\n9개월 연애 중인 커플이 생일을 맞았고 식사 약 15만원, 꽃과 케이크는 준비했지만 별도 선물이 없어 서운했다는 사연이다. 작성자는 이전에 상대에게 옷과 음식을 선물했다고 적어 서로 기대치가 달랐는지를 묻는다.\r\n\r\n## 평가\r\n- 평가: 중상급 생활논쟁\r\n- 이유: 연애·돈·생일선물 기대치를 바로 토론할 수 있음.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "d10a07e811e5deea60694adbb14ffd069966d37df17830c02c09282b33b246ea",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

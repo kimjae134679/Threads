@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3917963564
+제목 - 친구한테 사과 카톡이 왔는데 용서해줘야하는걸까?
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3917963564",
+    "title": "친구한테 사과 카톡이 왔는데 용서해줘야하는걸까?",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_3917963564.md",
+      "originalTitle": "친구한테 사과 카톡이 왔는데 용서해줘야하는걸까?",
+      "originalMarkdown": "# 친구한테 사과 카톡이 왔는데 용서해줘야하는걸까?\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/square/3917963564\r\n- exactObservedTitle: `친구한테 사과 카톡이 왔는데 용서해줘야하는걸까?`\r\n- observedAt: `2026-09-22 07:14 KST`\r\n- provenanceLevel: `C1`\r\n- acquisitionStatus: `exact public individual page verified via public web index; no bypass`\r\n- bodyRead: `no — 본문 미확인 (핵심 사연이 이미지 기반)`\r\n- commentsRead: `no`\r\n- imageOrScreenshotPresent: `yes, multiple images observed/listed on public page; not downloaded`\r\n- observedMetrics: `조회 97,683 / 댓글 529` (public page에서 실제 관찰된 수치)\r\n- assetStatus: `A0`\r\n- publicationStatus: `P0`\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 내용\r\n공개 페이지에서 제목, 친구에게서 사과 카톡이 왔다는 설명, 여러 이미지가 이어진다는 구조까지만 확인했다. 친구의 구체적인 잘못과 사과 내용은 이미지에 있어 이번 실행에서는 읽지 않았다.\r\n\r\n## 소재로 좋은 이유\r\n`큰 잘못을 한 친구가 사과하면 용서할 것인가`라는 선택형 갈등 구조가 명확하고 반응 규모도 실제 관찰된다. 다만 핵심 사실 검증 전에는 내용을 추정해 사용하면 안 된다.\r\n\r\n## 주의\r\n**본문 미확인.** 이미지 다운로드·스크린샷·OCR을 하지 않았으며 이미지 속 내용을 꾸며내지 않는다. 권리/moderation/publication 상태도 추정하지 않는다.\r\n",
+      "originalSha256": "5de8c9f785d3c99b46a4eedd2aadb9da484a66d514c445ddb8eddf3e54057448",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

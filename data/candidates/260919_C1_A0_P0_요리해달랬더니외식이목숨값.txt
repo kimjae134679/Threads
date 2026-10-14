@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4349270229
+제목 - 요리해달랬더니 “외식비가 목숨값”이 됐습니다
+내용 - [명시 요약 — 원문 전문 아님]
+전 남자친구가 한 번쯤 요리해달라고 했다가 실제 음식을 먹은 뒤 차라리 외식비를 쓰겠다는 취지로 반응했다는 유머 사연. 이어 다른 이용자의 '녹색 스튜', 여러 실패 요리 사례가 연결된다. 페이지에는 원 X 게시물 링크가 공개되어 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4349270229",
+    "title": "요리해달랬더니 “외식비가 목숨값”이 됐습니다",
+    "body": "전 남자친구가 한 번쯤 요리해달라고 했다가 실제 음식을 먹은 뒤 차라리 외식비를 쓰겠다는 취지로 반응했다는 유머 사연. 이어 다른 이용자의 '녹색 스튜', 여러 실패 요리 사례가 연결된다. 페이지에는 원 X 게시물 링크가 공개되어 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_요리해달랬더니외식이목숨값.md",
+      "originalTitle": "요리해달랬더니 “외식비가 목숨값”이 됐습니다",
+      "originalMarkdown": "# 요리해달랬더니 “외식비가 목숨값”이 됐습니다\r\n\r\n## source\r\nTheQoo (Square; public repost with linked X sources)\r\n\r\n## 원문 제목 (exact observed title)\r\n예전 남자친구가 \"한 번쯤 요리해줘!\"하고 화를 낸 적 있었는데, 막상 요리를 내놓았더니 \"다시는 요리할 생각 하지마... 외식하는 비용으로 목숨이 보장된다면 그걸로 됐어...\"라는 말을 들은적 있어요.\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://theqoo.net/square/4349270229\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 페이지 검색 관측: 조회 1,103 / 댓글 9. 시간에 따라 변할 수 있는 관측값.\r\n\r\n## 본문 / 댓글 확인\r\n- 본문 읽음: YES\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n전 남자친구가 한 번쯤 요리해달라고 했다가 실제 음식을 먹은 뒤 차라리 외식비를 쓰겠다는 취지로 반응했다는 유머 사연. 이어 다른 이용자의 '녹색 스튜', 여러 실패 요리 사례가 연결된다. 페이지에는 원 X 게시물 링크가 공개되어 있다.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n이번 discovery run에서 source media를 취득하지 않음. 페이지 본문에 외부 X 링크 존재.\r\n\r\n## 왜 소재로 좋은지\r\n짧은 요구와 예상 밖 결과가 한 문장 안에서 완결되고, '외식비=목숨값'이라는 강한 문구가 있어 즉시 이해되는 생활 유머다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1. TheQoo 개별 공개 페이지와 본문 확인. 외부 원출처 링크도 페이지에서 관찰했으나 별도 자산 취득 없음. A0/P0. publicationAllowed=false. OCR/moderation/rights clearance/human approval 미실행.",
+      "originalSha256": "1515d3f147e6b8ca73c84ad8d92d38b526403469900d8ca198a27e6038a61147",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 243
+}

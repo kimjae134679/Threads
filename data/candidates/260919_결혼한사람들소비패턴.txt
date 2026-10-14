@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%9C-%EC%82%AC%EB%9E%8C%EB%93%A4-%EC%A0%9C-%EC%86%8C%EB%B9%84-%ED%8C%A8%ED%84%B4%EC%A2%80-%EB%B4%90%EC%A3%BC%EC%84%B8%EC%9A%94%E3%85%9C%E3%85%9C-ac1glhf8
+제목 - 결혼한 사람들 제 소비 패턴좀 봐주세요!ㅜㅜ
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%9C-%EC%82%AC%EB%9E%8C%EB%93%A4-%EC%A0%9C-%EC%86%8C%EB%B9%84-%ED%8C%A8%ED%84%B4%EC%A2%80-%EB%B4%90%EC%A3%BC%EC%84%B8%EC%9A%94%E3%85%9C%E3%85%9C-ac1glhf8",
+    "title": "결혼한 사람들 제 소비 패턴좀 봐주세요!ㅜㅜ",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_결혼한사람들소비패턴.md",
+      "originalTitle": "결혼한 사람들 제 소비 패턴좀 봐주세요!ㅜㅜ",
+      "originalMarkdown": "# 결혼한 사람들 제 소비 패턴좀 봐주세요!ㅜㅜ\r\n\r\n- source: Blind / 블라블라\r\n- public_url: https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC%ED%95%9C-%EC%82%AC%EB%9E%8C%EB%93%A4-%EC%A0%9C-%EC%86%8C%EB%B9%84-%ED%8C%A8%ED%84%B4%EC%A2%80-%EB%B4%90%EC%A3%BC%EC%84%B8%EC%9A%94%E3%85%9C%E3%85%9C-ac1glhf8\r\n- exact_observed_title: 결혼한 사람들 제 소비 패턴좀 봐주세요!ㅜㅜ\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 101, 댓글 18\r\n- body_read: yes\r\n- comments_read: partial (공개 페이지 노출 일부)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 실수령 500만원에 집대출 200·차대출 60 등 지출표가 선명해 '어디부터 줄일까' 의견 참여가 쉬움.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 금액은 작성자 주장 그대로이며 독립 검증 안 함\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "e28e60b18a86e25c6e15675bccc226b88b2ea4f523eb6574e0c8db604e8ceee9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 278
+}

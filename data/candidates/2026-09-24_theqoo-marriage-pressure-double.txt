@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2584083741
+제목 - 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2584083741",
+    "title": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_theqoo-marriage-pressure-double.md",
+      "originalTitle": "비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)",
+      "originalMarkdown": "# 비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/2584083741\r\n- exact_observed_title: `비혼덬 결혼 공격 2연타 당한 후기 (긴글주의)`\r\n- observed_at: 2026-09-24 02:17 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public URL verified; anonymous community post; first-person claims are attributed/unverified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not observed\r\n- observed_metrics: not observed\r\n- why_good: 하루 동안 친척 등에게 연달아 결혼 압박을 받은 비혼 당사자의 상황이라 세대·결혼관·사생활 간섭을 두고 의견이 즉시 갈릴 만하다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n작성자는 평소 안부보다 결혼·출산부터 묻는 기혼 지인과 어른들의 태도에 당혹감을 느끼며, 최근 하루에 겪은 두 차례의 결혼 압박 사례 중 외숙모와의 대화부터 설명한다.",
+      "originalSha256": "a5ad1e66b2b3f6a6cc5c2e35848243cf82d05e46cd65333fc83cbb9d07f03a9f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 106
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EC%A3%BC%EB%A7%90-%EB%84%A4%EC%8B%9C%EC%97%90-%EB%A7%8C%EB%82%98%EC%84%9C-zmnecabu
+제목 - 소개팅 주말 네시에 만나서
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EC%A3%BC%EB%A7%90-%EB%84%A4%EC%8B%9C%EC%97%90-%EB%A7%8C%EB%82%98%EC%84%9C-zmnecabu",
+    "title": "소개팅 주말 네시에 만나서",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_소개팅저녁안먹고애프터취소.md",
+      "originalTitle": "소개팅 주말 네시에 만나서",
+      "originalMarkdown": "# 소개팅 주말 네시에 만나서\r\n\r\n- state: C1_A0_P0\r\n- publicationAllowed: false\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%86%8C%EA%B0%9C%ED%8C%85-%EC%A3%BC%EB%A7%90-%EB%84%A4%EC%8B%9C%EC%97%90-%EB%A7%8C%EB%82%98%EC%84%9C-zmnecabu\r\n- exactObservedTitle: 소개팅 주말 네시에 만나서\r\n- observedAt: 2026-09-19 14:17 KST\r\n- observedMetrics: 조회수 530 / 댓글 18\r\n- bodyRead: true\r\n- commentsRead: partial\r\n- imageOrScreenshotObserved: false\r\n- acquisition: C1 exact individual public URL; no asset acquisition\r\n- provenance: primary individual Blind post\r\n\r\n## 왜 소재로 좋은가\r\n카페에서 분위기가 좋아 애프터까지 잡았는데 저녁 질문을 지나친 뒤 갑자기 애프터가 취소된 상황이라 '신호를 놓쳤나' 논쟁이 즉각 생긴다.\r\n\r\n## 관찰 메모\r\n작성자는 두 시간 넘게 카페에서 이야기했고 애프터를 잡았으나, 상대가 저녁 메뉴를 반복해 물은 뒤 헤어진 후 애프터를 취소했다고 적었다.",
+      "originalSha256": "fda2fe21f7c78081f3e364bb6be270c95e33de04064fe4659b8fbbe370f4923e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 203
+}

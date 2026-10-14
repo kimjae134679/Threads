@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2630086534
+제목 - 부모님 자영업을 왜 내가 도와야하는지 어이없는 후기
+내용 - [명시 요약 — 원문 전문 아님]
+성인 자녀에게 가족 사업 무급 도움과 효도를 요구하는 것이 정당한지, 형제 간 요구가 다른 것이 공정한지 논쟁하기 좋은 가족·노동 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2630086534",
+    "title": "부모님 자영업을 왜 내가 도와야하는지 어이없는 후기",
+    "body": "성인 자녀에게 가족 사업 무급 도움과 효도를 요구하는 것이 정당한지, 형제 간 요구가 다른 것이 공정한지 논쟁하기 좋은 가족·노동 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_부모님자영업왜내가도와야하나후기.md",
+      "originalTitle": "부모님 자영업을 왜 내가 도와야하는지 어이없는 후기",
+      "originalMarkdown": "# 부모님 자영업을 왜 내가 도와야하는지 어이없는 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2630086534\r\n- exactObservedTitle: 부모님 자영업을 왜 내가 도와야하는지 어이없는 후기\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 4,222 / 표시 수치 15 / 댓글 15\r\n- whyGood: 성인 자녀에게 가족 사업 무급 도움과 효도를 요구하는 것이 정당한지, 형제 간 요구가 다른 것이 공정한지 논쟁하기 좋은 가족·노동 소재.\r\n- acquisition: public indexed individual page; poster claims not independently verified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "91aa0534f058782b883ae8b7e08f4e81abd72eaa64420251e08c36ce5667ab07",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 191
+}

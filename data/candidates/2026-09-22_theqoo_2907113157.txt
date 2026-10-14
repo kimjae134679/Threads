@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2907113157
+제목 - "애 가져야지" 며느리 반려묘 몰래 보낸 시모…남편은 '황당' 반응
+내용 - [명시 요약 — 원문 전문 아님]
+시어머니가 며느리의 반려묘를 허락 없이 다른 사람에게 보내고 남편까지 갈등에 가세하는 강한 가족 경계 침범 상황이라 즉각적인 의견과 분노를 유도한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2907113157",
+    "title": "\"애 가져야지\" 며느리 반려묘 몰래 보낸 시모…남편은 '황당' 반응",
+    "body": "시어머니가 며느리의 반려묘를 허락 없이 다른 사람에게 보내고 남편까지 갈등에 가세하는 강한 가족 경계 침범 상황이라 즉각적인 의견과 분노를 유도한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_2907113157.md",
+      "originalTitle": "\"애 가져야지\" 며느리 반려묘 몰래 보낸 시모…남편은 '황당' 반응",
+      "originalMarkdown": "# \"애 가져야지\" 며느리 반려묘 몰래 보낸 시모…남편은 '황당' 반응\r\n\r\n- stage: C1\r\n- source: TheQoo square / 기사 재게시\r\n- sourceUrl: https://theqoo.net/square/2907113157\r\n- exactObservedTitle: \"애 가져야지\" 며느리 반려묘 몰래 보낸 시모…남편은 '황당' 반응\r\n- observedAt: 2026-09-22 04:17 KST\r\n- observedMetrics: 49,124 / 643 (페이지에 표시된 수치; 각각의 의미는 페이지 표기 이상으로 추정하지 않음)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 시어머니가 며느리의 반려묘를 허락 없이 다른 사람에게 보내고 남편까지 갈등에 가세하는 강한 가족 경계 침범 상황이라 즉각적인 의견과 분노를 유도한다.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: TheQoo가 JTBC 사건반장 사연을 인용한 기사/뉴스 재게시임. 페이지 본문에 Daum 기사 링크가 함께 표시됨. 커뮤니티 최초 원글이라고 주장하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3b83a46ed19e2e777b1421de9cdbb6ad3f2e010d88fab407895147c26b3c7a5c",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 207
+}

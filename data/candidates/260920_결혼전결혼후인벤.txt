@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728393
+제목 - 결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ
+내용 - [명시 요약 — 원문 전문 아님]
+'내가 왜 화났는지 몰라?'에서 '우리가 왜 화났는지 몰라?'로 바뀌는 결혼 전후 농담 구조가 관찰되며 부부 공감형 소재 가능성이 있음. 핵심 이미지는 후속 검증 전까지 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728393",
+    "title": "결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ",
+    "body": "'내가 왜 화났는지 몰라?'에서 '우리가 왜 화났는지 몰라?'로 바뀌는 결혼 전후 농담 구조가 관찰되며 부부 공감형 소재 가능성이 있음. 핵심 이미지는 후속 검증 전까지 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼전결혼후인벤.md",
+      "originalTitle": "결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ",
+      "originalMarkdown": "# 결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ\r\n\r\n- stage: C1\r\n- source: Inven 오픈이슈갤러리\r\n- publicUrl: https://www.inven.co.kr/board/webzine/2097/2728393\r\n- exactObservedTitle: `결혼 전 vs 결혼 후 ㄷㄷㄷㄷㄷ`\r\n- observedAt: 2026-09-20 07:17 KST\r\n- observedMetrics: 조회 19,303 / 추천 9 / 댓글 17 (검색 관찰값)\r\n- bodyRead: true (텍스트 최소)\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (이미지 2개 표시; 내용 미열람)\r\n- acquisition: public individual page; BODY_MINIMAL; IMAGE_PRESENT_UNREAD\r\n- provenance: Inven 개별 공개 게시글. 이미지 내용은 다운로드/OCR/추론하지 않음.\r\n- whyGood: '내가 왜 화났는지 몰라?'에서 '우리가 왜 화났는지 몰라?'로 바뀌는 결혼 전후 농담 구조가 관찰되며 부부 공감형 소재 가능성이 있음. 핵심 이미지는 후속 검증 전까지 미확인.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "2916ba39137ff7dc70034ff779e7d90515116eaa90b7b9b698916e7421b11fbd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%8F%88%EB%8F%88%EB%8F%88-%EA%B1%B0%EB%A6%AC%EB%8A%94-%EB%82%A8%ED%8E%B8-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4%EB%B0%9B%EC%95%84-os5zzw4f
+제목 - 돈돈돈 거리는 남편 스트레스받아
+내용 - [명시 요약 — 원문 전문 아님]
+연애 때는 쓰던 사람이 결혼 후 여행 15만원·쿠팡 주문까지 돈을 따지는 변화와 양가 지원으로 산 차가 대비돼 생활비 갈등 소재로 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%8F%88%EB%8F%88%EB%8F%88-%EA%B1%B0%EB%A6%AC%EB%8A%94-%EB%82%A8%ED%8E%B8-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4%EB%B0%9B%EC%95%84-os5zzw4f",
+    "title": "돈돈돈 거리는 남편 스트레스받아",
+    "body": "연애 때는 쓰던 사람이 결혼 후 여행 15만원·쿠팡 주문까지 돈을 따지는 변화와 양가 지원으로 산 차가 대비돼 생활비 갈등 소재로 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2116_돈돈돈거리는남편.md",
+      "originalTitle": "돈돈돈 거리는 남편 스트레스받아",
+      "originalMarkdown": "# 돈돈돈 거리는 남편 스트레스받아\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EB%8F%88%EB%8F%88%EB%8F%88-%EA%B1%B0%EB%A6%AC%EB%8A%94-%EB%82%A8%ED%8E%B8-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4%EB%B0%9B%EC%95%84-os5zzw4f\r\n- exactObservedTitle: 돈돈돈 거리는 남편 스트레스받아\r\n- observedAt: 2026-09-19 21:16 KST\r\n- observedMetrics: 조회수 156, 댓글 9\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 연애 때는 쓰던 사람이 결혼 후 여행 15만원·쿠팡 주문까지 돈을 따지는 변화와 양가 지원으로 산 차가 대비돼 생활비 갈등 소재로 강함.\r\n- acquisition: C1 / exact individual public URL verified\r\n- provenance: 원문 공개 Blind 페이지의 공개 본문 일부 관찰\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "29901332c0e08e64dae96d17a657db4ce255c9900778e30db6a793cafd7bfdfd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 316
+}

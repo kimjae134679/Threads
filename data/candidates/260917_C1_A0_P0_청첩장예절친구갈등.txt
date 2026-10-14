@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%B4%EA%B0%80-%ED%94%84%EB%A1%9C%EB%B6%88%ED%8E%B8%EB%9F%AC%EC%9D%B8%EA%B0%80-%EB%B4%90%EC%A4%84%EB%9E%98-LzWwHGDk
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+Blind 결혼생활 공개 글. 작성자는 친한 친구 A의 청첩장 전달 방식과 결혼 후 태도가 계속 마음에 걸린다고 한다. A가 다른 친구의 아버지 장례를 도와준 데 대한 감사 식사 자리에서 자신의 청첩장을 돌렸고, 결혼 후에는 와줘서 고맙다는 연락도 거의 없이 1년이 흘렀다고 설명한다. 이후 또 다른 친구의 집들이 겸 청첩장 모임에서 A가 갑자기 참치를 사오겠다고 나서는 상황까지 겹치며 자신의 불편함이 과한지 묻는다. 공개 페이지에서 본문을 읽었고 댓글 27개 존재를 확인했으나 전체 댓글은 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%B4%EA%B0%80-%ED%94%84%EB%A1%9C%EB%B6%88%ED%8E%B8%EB%9F%AC%EC%9D%B8%EA%B0%80-%EB%B4%90%EC%A4%84%EB%9E%98-LzWwHGDk",
+    "title": "제목",
+    "body": "Blind 결혼생활 공개 글. 작성자는 친한 친구 A의 청첩장 전달 방식과 결혼 후 태도가 계속 마음에 걸린다고 한다. A가 다른 친구의 아버지 장례를 도와준 데 대한 감사 식사 자리에서 자신의 청첩장을 돌렸고, 결혼 후에는 와줘서 고맙다는 연락도 거의 없이 1년이 흘렀다고 설명한다. 이후 또 다른 친구의 집들이 겸 청첩장 모임에서 A가 갑자기 참치를 사오겠다고 나서는 상황까지 겹치며 자신의 불편함이 과한지 묻는다. 공개 페이지에서 본문을 읽었고 댓글 27개 존재를 확인했으나 전체 댓글은 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_청첩장예절친구갈등.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n내가 프로불편러인가 봐줄래?\r\n\r\n## 글 내용\r\nBlind 결혼생활 공개 글. 작성자는 친한 친구 A의 청첩장 전달 방식과 결혼 후 태도가 계속 마음에 걸린다고 한다. A가 다른 친구의 아버지 장례를 도와준 데 대한 감사 식사 자리에서 자신의 청첩장을 돌렸고, 결혼 후에는 와줘서 고맙다는 연락도 거의 없이 1년이 흘렀다고 설명한다. 이후 또 다른 친구의 집들이 겸 청첩장 모임에서 A가 갑자기 참치를 사오겠다고 나서는 상황까지 겹치며 자신의 불편함이 과한지 묻는다. 공개 페이지에서 본문을 읽었고 댓글 27개 존재를 확인했으나 전체 댓글은 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%B4%EA%B0%80-%ED%94%84%EB%A1%9C%EB%B6%88%ED%8E%B8%EB%9F%AC%EC%9D%B8%EA%B0%80-%EB%B4%90%EC%A4%84%EB%9E%98-LzWwHGDk\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 09:35~09:45 KST 공개 페이지/search 결과\r\n- 조회수: 1,481\r\n- 댓글: 27\r\n- 좋아요: 확인하지 못함\r\n\r\n## 평가\r\n- 청첩장 예절이라는 사소하지만 누구나 판단하고 싶어 하는 인간관계 소재.\r\n- 장례 감사 식사 자리에서 자신의 청첩장을 돌렸다는 첫 장면이 강한 훅 역할을 함.\r\n- 공개 원문 URL과 본문을 확인해 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 source screenshot: 미확보\r\n- source bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- OCR/moderation 실행 주장 없음\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "4fe9f695eb715c0eb97163dfffb7fd671bd8ee89cad33460d6a53fd1e4fad427",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 489
+}

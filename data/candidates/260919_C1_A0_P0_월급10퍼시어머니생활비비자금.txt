@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%B9%84%EC%9E%90%EA%B8%88-%EB%A7%8C%EB%93%A4%EA%B3%A0%EC%9E%88%EC%97%87%EB%84%A4-xv8cVCOo
+제목 - 월급 10~15%를 몰래 모아 시어머니 생활비로 보낸 남편
+내용 - [명시 요약 — 원문 전문 아님]
+남편 월급을 작성자가 관리하는 부부인데, 남편이 월급의 약 10~15%를 별도로 모아온 사실을 알게 됐다는 사연. 작성자는 그 돈이 결혼 초 서로 드리지 않기로 합의했던 홀어머니 생활비로 간 것 같다고 보고 어떻게 대화해야 할지 묻는다. 공개 페이지 본문과 공개 댓글 일부를 실제로 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%B9%84%EC%9E%90%EA%B8%88-%EB%A7%8C%EB%93%A4%EA%B3%A0%EC%9E%88%EC%97%87%EB%84%A4-xv8cVCOo",
+    "title": "월급 10~15%를 몰래 모아 시어머니 생활비로 보낸 남편",
+    "body": "남편 월급을 작성자가 관리하는 부부인데, 남편이 월급의 약 10~15%를 별도로 모아온 사실을 알게 됐다는 사연. 작성자는 그 돈이 결혼 초 서로 드리지 않기로 합의했던 홀어머니 생활비로 간 것 같다고 보고 어떻게 대화해야 할지 묻는다. 공개 페이지 본문과 공개 댓글 일부를 실제로 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_월급10퍼시어머니생활비비자금.md",
+      "originalTitle": "월급 10~15%를 몰래 모아 시어머니 생활비로 보낸 남편",
+      "originalMarkdown": "# 월급 10~15%를 몰래 모아 시어머니 생활비로 보낸 남편\r\n\r\n## 원문 제목\r\n남편이 비자금 만들고있엇네?!\r\n\r\n## source\r\nBlind / 공개 개별 페이지\r\n\r\n## 글 내용\r\n남편 월급을 작성자가 관리하는 부부인데, 남편이 월급의 약 10~15%를 별도로 모아온 사실을 알게 됐다는 사연. 작성자는 그 돈이 결혼 초 서로 드리지 않기로 합의했던 홀어머니 생활비로 간 것 같다고 보고 어떻게 대화해야 할지 묻는다. 공개 페이지 본문과 공개 댓글 일부를 실제로 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EB%B9%84%EC%9E%90%EA%B8%88-%EB%A7%8C%EB%93%A4%EA%B3%A0%EC%9E%88%EC%97%87%EB%84%A4-xv8cVCOo\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n- 관측: 2026-09-19 13:17 KST\r\n- 조회수: 3,831\r\n- 좋아요: 2\r\n- 댓글: 186\r\n\r\n## 확인 상태\r\n- full body read: 예\r\n- comments read: 일부\r\n- 이미지/스크린샷 존재 여부: 별도 source image 존재 확인하지 않음\r\n\r\n## 평가\r\n부모 지원 자체보다 '부부가 하지 않기로 합의했는데 몰래 월급에서 뗐다'는 갈등이라 양쪽 의견이 갈리기 좋고 댓글 반응도 크다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nexact individual public URL verified. acquisition/provenance: EXACT_PUBLIC_URL_VERIFIED. source screenshot/media 미확보. A0/P0. publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation 미실행. 실제 게시는 04_REVIEW_PUBLISH만 가능.",
+      "originalSha256": "d830eb8d30d65ebc229a0a49af1c68e50dfbfb5a98ce6a60926f79b4b439ea94",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 397
+}

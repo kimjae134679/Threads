@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EB%AA%B0%EB%9E%98-%EC%9E%AC%EC%82%B0-%ED%83%95%EC%A7%84%ED%95%98%EA%B3%A0-%EB%8C%80%EC%B6%9C%EA%B9%8C%EC%A7%80-%EB%B0%9B%EC%9D%80-%EC%95%84%EB%82%B4-eJt6UBrx
+제목 - 남편 몰래 재산 탕진하고 대출까지 받은 아내
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 9년, 두 아이가 있는 가정에서 아내가 생활비 외 개인카드 지출을 이어가며 받은 돈과 퇴직금 등 약 1억5천만원을 주식으로 잃고 추가 대출까지 받은 사실을 남편이 알게 된 사연. 대출 규모도 명확히 알려주지 않는다고 함. 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EB%AA%B0%EB%9E%98-%EC%9E%AC%EC%82%B0-%ED%83%95%EC%A7%84%ED%95%98%EA%B3%A0-%EB%8C%80%EC%B6%9C%EA%B9%8C%EC%A7%80-%EB%B0%9B%EC%9D%80-%EC%95%84%EB%82%B4-eJt6UBrx",
+    "title": "남편 몰래 재산 탕진하고 대출까지 받은 아내",
+    "body": "결혼 9년, 두 아이가 있는 가정에서 아내가 생활비 외 개인카드 지출을 이어가며 받은 돈과 퇴직금 등 약 1억5천만원을 주식으로 잃고 추가 대출까지 받은 사실을 남편이 알게 된 사연. 대출 규모도 명확히 알려주지 않는다고 함. 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_아내주식탕진대출.md",
+      "originalTitle": "남편 몰래 재산 탕진하고 대출까지 받은 아내",
+      "originalMarkdown": "# 남편 몰래 재산 탕진하고 대출까지 받은 아내\r\n\r\n## 글 내용\r\n결혼 9년, 두 아이가 있는 가정에서 아내가 생활비 외 개인카드 지출을 이어가며 받은 돈과 퇴직금 등 약 1억5천만원을 주식으로 잃고 추가 대출까지 받은 사실을 남편이 알게 된 사연. 대출 규모도 명확히 알려주지 않는다고 함. 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8-%EB%AA%B0%EB%9E%98-%EC%9E%AC%EC%82%B0-%ED%83%95%EC%A7%84%ED%95%98%EA%B3%A0-%EB%8C%80%EC%B6%9C%EA%B9%8C%EC%A7%80-%EB%B0%9B%EC%9D%80-%EC%95%84%EB%82%B4-eJt6UBrx\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 조회 6,318 · 댓글 48. 좋아요 수는 확인하지 못함.\r\n\r\n## 평가\r\n가계비·카드·퇴직금·주식손실·숨은 대출이 한 번에 얽혀 의견이 갈리는 강한 가족/투자 소재. 공개 원문 URL 확인 C1. 명예훼손/privacy human review 필요.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필수. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "1503ffb490db0ae706cfc98bec8ffee03c6dfdf010bc790df480612fe7416a50",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 420
+}

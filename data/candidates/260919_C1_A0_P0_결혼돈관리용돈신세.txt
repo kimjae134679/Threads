@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%9B%84-%EB%8F%88%EA%B4%80%EB%A6%AC-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%8B%A4-%EA%B0%81%EC%9E%90vs%EC%99%80%EC%9D%B4%ED%94%84-%EB%AF%BF%EA%B8%B0-kpa7dGyn
+제목 - 내가 번 돈인데 결혼하면 평생 용돈 받아 써야 하나요?
+내용 - [명시 요약 — 원문 전문 아님]
+결혼을 앞둔 36세 남성과 29세 여성 공무원 커플. 주말부부 예정이라 생활비 관리를 여자친구가 맡기로 했고 각자 용돈을 정한 뒤 나머지를 관리하는 방식인데, 작성자는 자신이 번 돈을 늘 용돈으로 받아 쓰게 되는 구조가 불만이라고 고민한다. 동시에 여자친구가 실제로 저축을 잘한다는 점도 인정한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%9B%84-%EB%8F%88%EA%B4%80%EB%A6%AC-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%8B%A4-%EA%B0%81%EC%9E%90vs%EC%99%80%EC%9D%B4%ED%94%84-%EB%AF%BF%EA%B8%B0-kpa7dGyn",
+    "title": "내가 번 돈인데 결혼하면 평생 용돈 받아 써야 하나요?",
+    "body": "결혼을 앞둔 36세 남성과 29세 여성 공무원 커플. 주말부부 예정이라 생활비 관리를 여자친구가 맡기로 했고 각자 용돈을 정한 뒤 나머지를 관리하는 방식인데, 작성자는 자신이 번 돈을 늘 용돈으로 받아 쓰게 되는 구조가 불만이라고 고민한다. 동시에 여자친구가 실제로 저축을 잘한다는 점도 인정한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼돈관리용돈신세.md",
+      "originalTitle": "내가 번 돈인데 결혼하면 평생 용돈 받아 써야 하나요?",
+      "originalMarkdown": "# 내가 번 돈인데 결혼하면 평생 용돈 받아 써야 하나요?\r\n\r\n## source\r\nBlind 블라블라\r\n\r\n## 원문 제목\r\n결혼 후 돈관리 고민이다. 각자vs와이프 믿기\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EA%B2%B0%ED%98%BC-%ED%9B%84-%EB%8F%88%EA%B4%80%EB%A6%AC-%EA%B3%A0%EB%AF%BC%EC%9D%B4%EB%8B%A4-%EA%B0%81%EC%9E%90vs%EC%99%80%EC%9D%B4%ED%94%84-%EB%AF%BF%EA%B8%B0-kpa7dGyn\r\n\r\n## 관찰시각\r\n2026-09-19 04:20 KST\r\n\r\n## 관찰 수치\r\n조회수 1,259 / 댓글 11\r\n\r\n## 본문·댓글 확인\r\n본문 읽음. 댓글 전체 미확인. 이미지/스크린샷 별도 확보 안 함.\r\n\r\n## 글 내용\r\n결혼을 앞둔 36세 남성과 29세 여성 공무원 커플. 주말부부 예정이라 생활비 관리를 여자친구가 맡기로 했고 각자 용돈을 정한 뒤 나머지를 관리하는 방식인데, 작성자는 자신이 번 돈을 늘 용돈으로 받아 쓰게 되는 구조가 불만이라고 고민한다. 동시에 여자친구가 실제로 저축을 잘한다는 점도 인정한다.\r\n\r\n## 왜 소재로 좋은지\r\n'공동관리 효율 vs 경제적 자율성'이 선명하고 결혼한 독자들이 자기 집 방식을 바로 댓글로 공유하기 좋다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_URL_VERIFIED / C1_A0_P0. 공개 Blind 본문 확인. source asset 미확보. publicationAllowed=false.",
+      "originalSha256": "0675ee155499a681832503b6a182e8a7815ad4672eda8036f26a220787835107",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 450
+}

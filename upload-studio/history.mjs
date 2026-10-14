@@ -1,0 +1,20 @@
+import {editPost} from './domain.mjs';
+const clone=x=>JSON.parse(JSON.stringify(x));const fail=code=>{throw Object.assign(new Error(code),{code,status:code==='revision_conflict'?409:400});};
+const snapshot=p=>({output_version:p.output_version,platform_captions:{instagram:p.platform_captions?.instagram??p.caption??'',threads:p.platform_captions?.threads??p.caption??''},caption:p.caption,tags:p.tags,images:p.images,targets:p.targets,timing:p.timing,source:p.source,media_format:p.media_format||'images',reel_video:p.reel_video||null,music:p.music||{mode:'silent'},topic_tags:p.topic_tags||[],threads_topic_tag:p.threads_topic_tag||''});
+export function captureHistory(previous,next,at){
+ if(next.revision===previous.revision)return next;const s=clone(next);s.post_history||={};
+ for(const p of s.posts){const before=previous.posts.find(x=>x.post_id===p.post_id),old=previous.post_history?.[p.post_id],current=s.post_history[p.post_id];if(old&&current&&old.cursor!==current.cursor)continue;if(before&&JSON.stringify(snapshot(before))===JSON.stringify(snapshot(p)))continue;
+ const h=current||{entries:before?[{id:'baseline-'+before.revision,saved_at:at,snapshot:snapshot(before)}]:[],cursor:-1};if(h.cursor>=0)h.entries=h.entries.slice(0,h.cursor+1);h.entries.push({id:'saved-'+s.revision+'-'+p.revision,saved_at:at,snapshot:snapshot(p)});if(h.entries.length>20)h.entries=h.entries.slice(-20);h.cursor=h.entries.length-1;s.post_history[p.post_id]=h;}return s;
+}
+export function historyFor(state,id){const h=state.post_history?.[id];return h?{cursor:h.cursor,entries:h.entries.map((e,i)=>({id:e.id,saved_at:e.saved_at,output_version:e.snapshot.output_version,image_count:e.snapshot.images.length,instagram_chars:[...e.snapshot.platform_captions.instagram].length,threads_chars:[...e.snapshot.platform_captions.threads].length,current:i===h.cursor}))}:{cursor:-1,entries:[]};}
+function restore(state,id,index,revision){const p=state.posts.find(p=>p.post_id===id);if(!p||p.revision!==revision)fail('revision_conflict');const h=state.post_history?.[id],record=h?.entries[index];if(!record)fail('history_unavailable');const v=record.snapshot,patch={platform_captions:v.platform_captions||{instagram:v.caption,threads:v.caption},tags:v.tags,images:v.images,targets:v.targets,timing:v.timing,source:{...p.source,url:v.source.url,verified:false},safety:{},review:null};for(const k of ['media_format','reel_video','music','topic_tags','threads_topic_tag'])if(v[k]!==undefined)patch[k]=v[k];const s=editPost(state,id,patch,revision),restored=s.posts.find(x=>x.post_id===id);
+ // Explicit history restoration invalidates final review even when the restored
+ // input equals the current input. History never stores or resurrects a pass.
+ if(restored.final_review){restored.final_review=null;restored.revision++;restored.approval=null;restored.publication_approval=null;
+  for(const job of s.jobs.filter(j=>j.post_id===id&&!['cancelled','dry_run_complete'].includes(j.state))){job.stale=true;if(!['running','reconciliation'].includes(job.state))job.state='waiting';}
+  if(s.revision===state.revision)s.revision++;
+ }
+ s.post_history[id].cursor=index;s.posts.find(x=>x.post_id===id).restored_from_output_version=v.output_version;if(s.revision===state.revision)s.revision++;return s;}
+export function undoPost(s,id,r){const h=s.post_history?.[id];if(!h||h.cursor<=0)fail('undo_unavailable');return restore(s,id,h.cursor-1,r);}
+export function redoPost(s,id,r){const h=s.post_history?.[id];if(!h||h.cursor>=h.entries.length-1)fail('redo_unavailable');return restore(s,id,h.cursor+1,r);}
+export function restorePostSnapshot(s,id,entryId,r){const h=s.post_history?.[id],i=h?.entries.findIndex(e=>e.id===entryId);if(i===undefined||i<0)fail('history_unavailable');return restore(s,id,i,r);}

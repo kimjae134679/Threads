@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/2521314640
+제목 - 아내 손잡고 등산했는데 지나가던 사람이 불륜이라 했습니다
+내용 - [명시 요약 — 원문 전문 아님]
+40대 부부가 산행 후 손을 잡고 내려가던 중 지나가던 행인에게 불륜 커플이라는 말을 들었다는 사연. 행인은 '요즘 손잡고 다니는 부부가 어딨냐'는 취지로 말했다고 작성자가 전했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/2521314640",
+    "title": "아내 손잡고 등산했는데 지나가던 사람이 불륜이라 했습니다",
+    "body": "40대 부부가 산행 후 손을 잡고 내려가던 중 지나가던 행인에게 불륜 커플이라는 말을 들었다는 사연. 행인은 '요즘 손잡고 다니는 부부가 어딨냐'는 취지로 말했다고 작성자가 전했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_손잡았다고불륜오해.md",
+      "originalTitle": "아내 손잡고 등산했는데 지나가던 사람이 불륜이라 했습니다",
+      "originalMarkdown": "# 아내 손잡고 등산했는데 지나가던 사람이 불륜이라 했습니다\r\n\r\n## source\r\nTheQoo (기사/뉴스 재게시)\r\n\r\n## 원문 제목\r\n\"졸지에 불륜 커플 됐습니다\"…등산 갔다가 겪은 황당 사연\r\n\r\n## 글 내용\r\n40대 부부가 산행 후 손을 잡고 내려가던 중 지나가던 행인에게 불륜 커플이라는 말을 들었다는 사연. 행인은 '요즘 손잡고 다니는 부부가 어딨냐'는 취지로 말했다고 작성자가 전했다.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/2521314640\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 페이지 검색 노출: 조회수 57,431\r\n- 댓글/기타 수치: 이번 관찰에서 확정하지 않음\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재 여부: source asset 미확보\r\n\r\n## 왜 소재로 좋은지\r\n'부부가 손잡으면 오히려 불륜처럼 보인다'는 황당한 오해가 짧고 완결된 이야기라 가볍게 의견·경험담을 끌어내기 좋다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. 기사 재게시. publicationAllowed=false. source media 미확보. rights/privacy/human review 필요.",
+      "originalSha256": "c567cdd979a55c4abccd45f8cf07af933b5d608d058d826d2c103fdf86fabd61",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 219
+}

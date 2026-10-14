@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/job/3244694806
+제목 - 직장 상사랑 갈등 있을 때 어떻게 해결해?
+내용 - [명시 요약 — 원문 전문 아님]
+일을 잘한다는 이유로 사원에게 사실상 3인분 업무가 몰리고, 차장의 히스테리와 '널 신뢰해서 그런 것'이라는 상급자 반응까지 이어지는 전형적이면서 강한 직장 공감 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/job/3244694806",
+    "title": "직장 상사랑 갈등 있을 때 어떻게 해결해?",
+    "body": "일을 잘한다는 이유로 사원에게 사실상 3인분 업무가 몰리고, 차장의 히스테리와 '널 신뢰해서 그런 것'이라는 상급자 반응까지 이어지는 전형적이면서 강한 직장 공감 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_직장상사갈등3인분.md",
+      "originalTitle": "직장 상사랑 갈등 있을 때 어떻게 해결해?",
+      "originalMarkdown": "# 직장 상사랑 갈등 있을 때 어떻게 해결해?\r\n\r\n- stage: C1\r\n- source: TheQoo 직장인\r\n- publicUrl: https://theqoo.net/job/3244694806\r\n- exactObservedTitle: `직장 상사랑 갈등 있을 때 어떻게 해결해?`\r\n- observedAt: 2026-09-20 07:17 KST\r\n- observedMetrics: 조회 1,045 / 댓글 8\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- acquisition: public indexed individual page; BODY_READ\r\n- provenance: TheQoo 개별 공개 게시글. 건강 관련 표현은 작성자의 자기보고이며 의학적 사실로 검증하지 않음.\r\n- whyGood: 일을 잘한다는 이유로 사원에게 사실상 3인분 업무가 몰리고, 차장의 히스테리와 '널 신뢰해서 그런 것'이라는 상급자 반응까지 이어지는 전형적이면서 강한 직장 공감 소재.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "5741e641248473da2059e90883c9f4d3ee782ab2db3d117111540adbc3295b70",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 201
+}

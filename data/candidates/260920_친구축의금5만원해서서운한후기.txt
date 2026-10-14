@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1812204177
+제목 - 친구가 결혼식 축의금 5만원해서 서운한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+과거 돌잔치·조의금까지 포함해 경조사비를 합산해야 하는지 결혼식만 따로 봐야 하는지 의견이 갈리는 친구관계 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1812204177",
+    "title": "친구가 결혼식 축의금 5만원해서 서운한 후기",
+    "body": "과거 돌잔치·조의금까지 포함해 경조사비를 합산해야 하는지 결혼식만 따로 봐야 하는지 의견이 갈리는 친구관계 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_친구축의금5만원해서서운한후기.md",
+      "originalTitle": "친구가 결혼식 축의금 5만원해서 서운한 후기",
+      "originalMarkdown": "# 친구가 결혼식 축의금 5만원해서 서운한 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1812204177\r\n- exactObservedTitle: 친구가 결혼식 축의금 5만원해서 서운한 후기\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 3,648\r\n- whyGood: 과거 돌잔치·조의금까지 포함해 경조사비를 합산해야 하는지 결혼식만 따로 봐야 하는지 의견이 갈리는 친구관계 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3c3666dc8c8393ba4a92b54a1f9e26756d4be821a3d5a3754a2959b4d7fd3906",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 174
+}

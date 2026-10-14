@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC-%EA%B3%A0%EB%AF%BC-i20y0f3w
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+무자녀 사실혼 관계의 작성자가 배우자의 여러 장점과 결혼 전부터 고민했던 경제·시댁 문제를 설명한 뒤, 결혼 준비 중 배우자가 빚을 내 투자했다는 사실을 뒤늦게 알게 되어 신뢰 문제와 이혼을 고민하는 글. 공개 페이지에서 본문을 실제 확인함. 공개 페이지에 표시된 일부 댓글도 확인했으며, 투자 손실을 한 번 안고 갈지와 배우자의 말·행동을 신뢰할 수 있는지에 대한 상반된 반응이 보임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC-%EA%B3%A0%EB%AF%BC-i20y0f3w",
+    "title": "제목",
+    "body": "무자녀 사실혼 관계의 작성자가 배우자의 여러 장점과 결혼 전부터 고민했던 경제·시댁 문제를 설명한 뒤, 결혼 준비 중 배우자가 빚을 내 투자했다는 사실을 뒤늦게 알게 되어 신뢰 문제와 이혼을 고민하는 글. 공개 페이지에서 본문을 실제 확인함. 공개 페이지에 표시된 일부 댓글도 확인했으며, 투자 손실을 한 번 안고 갈지와 배우자의 말·행동을 신뢰할 수 있는지에 대한 상반된 반응이 보임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_이혼고민_결혼중빚투발견.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n이혼 고민\r\n\r\n## 글 내용\r\n무자녀 사실혼 관계의 작성자가 배우자의 여러 장점과 결혼 전부터 고민했던 경제·시댁 문제를 설명한 뒤, 결혼 준비 중 배우자가 빚을 내 투자했다는 사실을 뒤늦게 알게 되어 신뢰 문제와 이혼을 고민하는 글. 공개 페이지에서 본문을 실제 확인함. 공개 페이지에 표시된 일부 댓글도 확인했으며, 투자 손실을 한 번 안고 갈지와 배우자의 말·행동을 신뢰할 수 있는지에 대한 상반된 반응이 보임.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC-%EA%B3%A0%EB%AF%BC-i20y0f3w\r\n\r\n- 출처: Blind / 결혼생활 채널\r\n- 관측시각: 2026-09-17 10:34 KST\r\n- 전체 본문 읽음: 예 (공개 페이지에서 현재 노출된 원문 본문 기준)\r\n- 댓글 읽음: 일부 공개 노출 댓글만 읽음\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 조회수: 192\r\n- 댓글: 16\r\n- 원글 좋아요: 공개 검색 결과에서 수치 확인 불가\r\n\r\n## 평가\r\n결혼 후 뒤늦게 발견한 `빚내서 투자`라는 한 문장으로 갈등이 명확하고, 배우자의 장점이 매우 많다는 전반부와 신뢰 붕괴가 대비되어 의견이 갈리기 좋은 소재. 단순 투자 시황이 아니라 돈·결혼·신뢰 문제가 한꺼번에 얽힌 사람 이야기라 swipe potential이 높음. 다만 관측 당시 조회 규모는 아직 작으므로 후속 반응 상승 여부는 별도 관측 가치가 있음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source image/screenshot: 실제 확보하지 않음\r\n- acquisition state: ASSETS_PENDING\r\n- A0: 실제 source-backed 사용자용 자산 미생성\r\n- P0: 미게시\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 게시 권한: 04_REVIEW_PUBLISH만 가능\r\n- OCR/moderation/rights 확인 성공을 주장하지 않음\r\n",
+      "originalSha256": "b8def2cc4bf6ae3ea158ae596c9711cdede797dff3f5fcc1d67a1c090f004e65",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 349
+}

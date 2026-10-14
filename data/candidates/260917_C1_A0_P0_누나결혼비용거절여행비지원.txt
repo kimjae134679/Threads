@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1imlm8w
+제목 - AITA for not helping my sister pay for her wedding but helping our family go to the wedding?
+내용 - [명시 요약 — 원문 전문 아님]
+작성자의 누나가 destination wedding 비용을 부모에게 부탁했지만 부모 형편이 어렵자 부모가 작성자에게 돈을 빌려달라고 했다. 작성자는 결혼식 자체 비용 지원은 거절하는 대신 부모와 참석하고 싶은 가족의 여행·숙박비는 내겠다고 했다. 그런데 이후 부모가 아예 초대받지 못했다는 사실을 알게 되면서 갈등이 커진 사연이다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1imlm8w",
+    "title": "AITA for not helping my sister pay for her wedding but helping our family go to the wedding?",
+    "body": "작성자의 누나가 destination wedding 비용을 부모에게 부탁했지만 부모 형편이 어렵자 부모가 작성자에게 돈을 빌려달라고 했다. 작성자는 결혼식 자체 비용 지원은 거절하는 대신 부모와 참석하고 싶은 가족의 여행·숙박비는 내겠다고 했다. 그런데 이후 부모가 아예 초대받지 못했다는 사실을 알게 되면서 갈등이 커진 사연이다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_누나결혼비용거절여행비지원.md",
+      "originalTitle": "AITA for not helping my sister pay for her wedding but helping our family go to the wedding?",
+      "originalMarkdown": "# AITA for not helping my sister pay for her wedding but helping our family go to the wedding?\r\n\r\n## 글 내용\r\n작성자의 누나가 destination wedding 비용을 부모에게 부탁했지만 부모 형편이 어렵자 부모가 작성자에게 돈을 빌려달라고 했다. 작성자는 결혼식 자체 비용 지원은 거절하는 대신 부모와 참석하고 싶은 가족의 여행·숙박비는 내겠다고 했다. 그런데 이후 부모가 아예 초대받지 못했다는 사실을 알게 되면서 갈등이 커진 사연이다. 공개 Reddit 원문에서 본문을 확인했으며 댓글 전체는 읽지 않음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1imlm8w\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 KST. 공개 검색에서 Reddit 점수 +547 확인. 조회수·댓글 수는 같은 관측에서 확인하지 못함.\r\n\r\n## 평가\r\n`결혼식 비용은 안 내지만 가족 여행비는 내가 냄 → 그런데 부모를 초대하지 않음`이라는 반전이 명확하다. 가족·결혼·돈·초대 갈등이 겹쳐 의견이 즉시 갈리는 소재다.\r\n\r\n형식: 글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit / r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: NO\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: exact public source URL/body verified; full-post screenshots 미확보\r\n- ASSETS_PENDING / C1_A0_P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "2b9098fd9a365d47b7e72f8a5e2645963d18f486c633f1ec53539656f2daccdc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 422
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2231251448
+제목 - 친구한테 '그정도면 남친한테 기생하는거 아니야?ㅋㅋ' 소리 들은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+연인 간 소득 차이와 데이트 비용 분담을 두고 8년지기 친구가 '기생'이라고 표현하면서 생긴 갈등으로, 돈·연애·친구 관계에 대한 의견이 즉시 갈릴 소재임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2231251448",
+    "title": "친구한테 '그정도면 남친한테 기생하는거 아니야?ㅋㅋ' 소리 들은 후기",
+    "body": "연인 간 소득 차이와 데이트 비용 분담을 두고 8년지기 친구가 '기생'이라고 표현하면서 생긴 갈등으로, 돈·연애·친구 관계에 대한 의견이 즉시 갈릴 소재임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_친구가남친기생한다고한후기.md",
+      "originalTitle": "친구한테 '그정도면 남친한테 기생하는거 아니야?ㅋㅋ' 소리 들은 후기",
+      "originalMarkdown": "# 친구한테 '그정도면 남친한테 기생하는거 아니야?ㅋㅋ' 소리 들은 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2231251448\r\n- exactObservedTitle: `친구한테 '그정도면 남친한테 기생하는거 아니야?ㅋㅋ' 소리 들은 후기`\r\n- observedAt: 2026-09-21 21:22 KST\r\n- observedMetrics: 조회 7,282 / 댓글 127 (공개 페이지 관찰값)\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: 공개 개별 게시물 URL 및 공개 노출 본문 확인\r\n- provenance: TheQoo 개별 게시물 C1. 더 이전 원출처 존재 여부는 확인하지 않음.\r\n- whyGood: 연인 간 소득 차이와 데이트 비용 분담을 두고 8년지기 친구가 '기생'이라고 표현하면서 생긴 갈등으로, 돈·연애·친구 관계에 대한 의견이 즉시 갈릴 소재임.\r\n- assetStatus: A0\r\n- publicationStatus: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "0e956862d6b38a5f63c8df20f935eb64db67f7d502163692450604a19de5f435",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 212
+}

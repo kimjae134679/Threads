@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728495?iskin=webzine
+제목 - 반려동물 사료를 잘 골라야하는 이유
+내용 - [명시 요약 — 원문 전문 아님]
+반려동물 사진에 '간식 안주면 나 한대 줘팰수 있음'이라는 짧은 문구를 붙인 이미지 유머 게시물이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728495?iskin=webzine",
+    "title": "반려동물 사료를 잘 골라야하는 이유",
+    "body": "반려동물 사진에 '간식 안주면 나 한대 줘팰수 있음'이라는 짧은 문구를 붙인 이미지 유머 게시물이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_반려동물사료이유.md",
+      "originalTitle": "반려동물 사료를 잘 골라야하는 이유",
+      "originalMarkdown": "# 반려동물 사료를 잘 골라야하는 이유\r\n\r\n## 글 내용\r\n반려동물 사진에 '간식 안주면 나 한대 줘팰수 있음'이라는 짧은 문구를 붙인 이미지 유머 게시물이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728495?iskin=webzine\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 11:36 KST 부근\r\n- 조회 973 / 추천 0 / 댓글 2\r\n- 본문 읽음: 예\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n동물 사진과 짧은 반전 문구로 이해가 빠르지만 현재 반응량은 낮아 보조 후보 수준.\r\n\r\n## 형식\r\n이미지\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n",
+      "originalSha256": "ffd6404e1493752444fa3a18241b151db830e7b1c810fe9aa778e751510d9743",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 190
+}

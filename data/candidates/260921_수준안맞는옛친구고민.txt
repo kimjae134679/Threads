@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2330813018
+제목 - 수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기
+내용 - [명시 요약 — 원문 전문 아님]
+학력·직업뿐 아니라 도덕관과 생활방식까지 달라진 오래된 친구를 계속 만나야 하는지 묻는 소재라 '친구도 수준이 맞아야 하나'라는 즉각적인 의견 대립을 만들기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2330813018",
+    "title": "수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기",
+    "body": "학력·직업뿐 아니라 도덕관과 생활방식까지 달라진 오래된 친구를 계속 만나야 하는지 묻는 소재라 '친구도 수준이 맞아야 하나'라는 즉각적인 의견 대립을 만들기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_수준안맞는옛친구고민.md",
+      "originalTitle": "수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기",
+      "originalMarkdown": "# 수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/2330813018\r\n- exactObservedTitle: 수준 안 맞는 옛날 친구랑 계속 연락하고 지낼지 말지 고민중인 후기\r\n- observedAt: 2026-09-21 11:16 KST\r\n- observedMetrics: 조회 수 8437\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page indexed/readable; exact individual URL verified\r\n- provenance: 작성자 관점의 인간관계 고민. 상대방 관점 및 사실관계는 독립 검증하지 않음.\r\n- whyGood: 학력·직업뿐 아니라 도덕관과 생활방식까지 달라진 오래된 친구를 계속 만나야 하는지 묻는 소재라 '친구도 수준이 맞아야 하나'라는 즉각적인 의견 대립을 만들기 좋음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8610e0529b2e5de09220047f89c45bc1465228b32559d9693fcb1c93f839cdd8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 215
+}

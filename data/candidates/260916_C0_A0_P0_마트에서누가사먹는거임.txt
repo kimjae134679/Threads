@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 도대체 이런 걸 누가 마트에서 사먹는 거임?
+내용 - [명시 요약 — 원문 전문 아님]
+마트에서 흔히 보이지만 누가 사 먹는지 궁금한 상품을 사진으로 보여주는 생활 유머형 후보로 과거 발견됐다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "도대체 이런 걸 누가 마트에서 사먹는 거임?",
+    "body": "마트에서 흔히 보이지만 누가 사 먹는지 궁금한 상품을 사진으로 보여주는 생활 유머형 후보로 과거 발견됐다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_마트에서누가사먹는거임.md",
+      "originalTitle": "도대체 이런 걸 누가 마트에서 사먹는 거임?",
+      "originalMarkdown": "# 도대체 이런 걸 누가 마트에서 사먹는 거임?\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: TheQoo HOT\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n마트에서 흔히 보이지만 누가 사 먹는지 궁금한 상품을 사진으로 보여주는 생활 유머형 후보로 과거 발견됐다.\r\n\r\n## 평가\r\n- 평가: 사진형 후보, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "1ef82675e49ac15be2fbbd83825d192117a4b2de563fe490c79f93d33f45f19f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 134
+}

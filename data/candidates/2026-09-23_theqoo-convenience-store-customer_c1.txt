@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/425048627
+제목 - 편의점 알바 진상 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/425048627",
+    "title": "편의점 알바 진상 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-convenience-store-customer_c1.md",
+      "originalTitle": "편의점 알바 진상 후기",
+      "originalMarkdown": "# 편의점 알바 진상 후기\r\n\r\n- stage: C1\r\n- source: TheQoo\r\n- exactPublicUrl: https://theqoo.net/review/425048627\r\n- exactObservedTitle: 편의점 알바 진상 후기\r\n- observedAt: 2026-09-23 19:16 KST\r\n- observedMetrics: 조회 6,430 / 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- acquisition: public individual page via public web search/index; exact individual URL and body text verified\r\n- provenance: TheQoo 익명 사용자의 편의점 아르바이트 경험담. 고객 행동과 당시 상황은 독립 검증하지 않았으며 작성자의 경험 주장으로만 취급.\r\n- whyGoodMaterial: 계산 중 계속 물건을 추가하거나 바쁜 상황에서도 전자레인지 서비스를 고집하는 등 구체적인 고객 행동이 연속적으로 등장해 서비스직 공감·짜증 소재로 이해가 빠름.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "d8c4c3f447f87ff8594acef4e986663209850dec639dbde197a8872412dbee5f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 91
+}

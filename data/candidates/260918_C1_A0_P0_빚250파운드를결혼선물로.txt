@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1bgtevh
+제목 - AITA if I don’t give a wedding gift of cash?
+내용 - [명시 요약 — 원문 전문 아님]
+파트너의 형제가 결혼하며 현금 신혼여행 선물을 요청했지만 그 형제는 작성자에게 아직 £250을 빚진 상태. 작성자는 £50 현금을 새로 주는 대신 기존 빚을 £200으로 줄여주는 것을 결혼선물로 처리하려고 해 갈등을 예상함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1bgtevh",
+    "title": "AITA if I don’t give a wedding gift of cash?",
+    "body": "파트너의 형제가 결혼하며 현금 신혼여행 선물을 요청했지만 그 형제는 작성자에게 아직 £250을 빚진 상태. 작성자는 £50 현금을 새로 주는 대신 기존 빚을 £200으로 줄여주는 것을 결혼선물로 처리하려고 해 갈등을 예상함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_빚250파운드를결혼선물로.md",
+      "originalTitle": "AITA if I don’t give a wedding gift of cash?",
+      "originalMarkdown": "# AITA if I don’t give a wedding gift of cash?\r\n\r\n## 글 내용\r\n파트너의 형제가 결혼하며 현금 신혼여행 선물을 요청했지만 그 형제는 작성자에게 아직 £250을 빚진 상태. 작성자는 £50 현금을 새로 주는 대신 기존 빚을 £200으로 줄여주는 것을 결혼선물로 처리하려고 해 갈등을 예상함.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1bgtevh\r\n\r\n## 조회수 / 좋아요 / 댓글 등\r\n2026-09-18 06:34 KST 관측: +17 votes. 조회수/댓글 총수 미확인.\r\n\r\n## 평가\r\n'나한테 빚진 사람에게 현금 축의금을 줘야 하나'라는 황당하고 명확한 논쟁 포인트가 좋음.\r\n\r\n## 이미지/자산/게시상태\r\n형식: 글. full body read: 예. comments read: 아니오. source screenshot/media: 미확인. acquisition: EXACT_PUBLIC_URL_VERIFIED / ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요, 04_REVIEW_PUBLISH만 게시 가능.\r\n",
+      "originalSha256": "79f9c7a5796ac9d323dc1375dd7ec07d16fe8a37d387f841d1eb15bcf627e593",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 275
+}

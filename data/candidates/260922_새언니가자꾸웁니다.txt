@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/425845489
+제목 - 새언니가 자꾸 웁니다 + 후기
+내용 - [명시 요약 — 원문 전문 아님]
+상견례부터 새언니가 반복해서 우는데 시누이는 이유를 이해하지 못하는 가족 갈등 구조다. 같은 장면을 두 사람이 완전히 다르게 해석할 여지가 커서 `누가 예민한가` 논쟁과 후속 반전 기대가 강하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/425845489",
+    "title": "새언니가 자꾸 웁니다 + 후기",
+    "body": "상견례부터 새언니가 반복해서 우는데 시누이는 이유를 이해하지 못하는 가족 갈등 구조다. 같은 장면을 두 사람이 완전히 다르게 해석할 여지가 커서 `누가 예민한가` 논쟁과 후속 반전 기대가 강하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260922_새언니가자꾸웁니다.md",
+      "originalTitle": "[판] 새언니가 자꾸 웁니다 + 후기",
+      "originalMarkdown": "# [판] 새언니가 자꾸 웁니다 + 후기\r\n\r\n- stage: C1\r\n- source: TheQoo square (Nate Pann repost/quotation indicated by observed title)\r\n- publicUrl: https://theqoo.net/square/425845489\r\n- exactObservedTitle: `[판] 새언니가 자꾸 웁니다 + 후기`\r\n- observedAt: 2026-09-22 00:18 KST\r\n- observedMetrics: 조회 12,207 / 댓글 121\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: true (page indicates Files; no asset downloaded or inspected)\r\n- acquisition: Public individual page indexed and readable; exact individual URL verified. The title indicates a Pann repost; upstream original URL was not verified.\r\n- provenance: C1 exact public individual TheQoo URL; not asserted as first/original publication.\r\n- whyGood: 상견례부터 새언니가 반복해서 우는데 시누이는 이유를 이해하지 못하는 가족 갈등 구조다. 같은 장면을 두 사람이 완전히 다르게 해석할 여지가 커서 `누가 예민한가` 논쟁과 후속 반전 기대가 강하다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "eed8bf1cc6dec9064cb94726e822eacc780a454933e7f0c0e407cc145d97a7da",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 211
+}

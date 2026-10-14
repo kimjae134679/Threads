@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/502837197
+제목 - 결혼 2년차 새댁의 결혼생활 후기
+내용 - [명시 요약 — 원문 전문 아님]
+시댁과의 연락 빈도, 집안일 등 결혼 후 현실적인 생활 항목을 직접 경험담으로 나눠 말해 공감·비교 반응을 끌기 좋음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/502837197",
+    "title": "결혼 2년차 새댁의 결혼생활 후기",
+    "body": "시댁과의 연락 빈도, 집안일 등 결혼 후 현실적인 생활 항목을 직접 경험담으로 나눠 말해 공감·비교 반응을 끌기 좋음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_2018_결혼2년차새댁결혼생활후기.md",
+      "originalTitle": "결혼 2년차 새댁의 결혼생활 후기",
+      "originalMarkdown": "# 결혼 2년차 새댁의 결혼생활 후기\r\n\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/502837197\r\n- exactObservedTitle: 결혼 2년차 새댁의 결혼생활 후기\r\n- observedAt: 2026-09-19 20:18 KST\r\n- observedMetrics: 조회 6,051, 댓글 19\r\n- bodyRead: partial\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- confidence: C1\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_PARTIAL\r\n- provenance: TheQoo 개별 공개 글.\r\n- whyGood: 시댁과의 연락 빈도, 집안일 등 결혼 후 현실적인 생활 항목을 직접 경험담으로 나눠 말해 공감·비교 반응을 끌기 좋음.\r\n- publicationAllowed: false\r\n- A1: false\r\n- P1: false\r\n",
+      "originalSha256": "dbddab8f303dc14c72f3597fde1433e909e6d6697b8d23888ab0b8c7ca2e61f9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 170
+}

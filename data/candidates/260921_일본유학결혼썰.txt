@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2424028
+제목 - 자체생산)본인 일본 유학 및 결혼 썰
+내용 - [명시 요약 — 원문 전문 아님]
+일본 유학·취업·결혼 경험을 한 작성자가 현실적인 월급과 결혼생활, 소개 과정 등을 함께 이야기하는 경험담. 국제연애·결혼에 대한 기대와 현실을 놓고 의견이 붙기 쉬움.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2424028",
+    "title": "자체생산)본인 일본 유학 및 결혼 썰",
+    "body": "일본 유학·취업·결혼 경험을 한 작성자가 현실적인 월급과 결혼생활, 소개 과정 등을 함께 이야기하는 경험담. 국제연애·결혼에 대한 기대와 현실을 놓고 의견이 붙기 쉬움.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_일본유학결혼썰.md",
+      "originalTitle": "자체생산)본인 일본 유학 및 결혼 썰",
+      "originalMarkdown": "# 자체생산)본인 일본 유학 및 결혼 썰\r\n\r\n- source: Inven 오픈이슈갤러리\r\n- exactObservedTitle: `자체생산)본인 일본 유학 및 결혼 썰`\r\n- publicUrl: https://www.inven.co.kr/board/webzine/2097/2424028\r\n- observedAt: 2026-09-21 22:18 KST\r\n- stage: C1\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- observedMetrics: 댓글 21 (검색 결과에서 확인); 다른 수치는 기록하지 않음\r\n- acquisition: 공개 개별 게시물 URL과 공개 텍스트 본문을 검색 결과에서 직접 확인\r\n- provenance: Inven 개별 공개 페이지이며 제목에 작성자가 `자체생산`이라고 표시. 그 주장 자체만 관찰했으며 별도 신원/사실 검증은 하지 않음.\r\n- whyGood: 일본 유학·취업·결혼 경험을 한 작성자가 현실적인 월급과 결혼생활, 소개 과정 등을 함께 이야기하는 경험담. 국제연애·결혼에 대한 기대와 현실을 놓고 의견이 붙기 쉬움.\r\n- moderation: 미판정\r\n- rights: 미확인\r\n- asset: 미수집\r\n\r\n본문은 실제 공개 텍스트 범위에서 확인했으며 작성자의 경험 주장을 외부 사실로 확정하지 않음.\r\n",
+      "originalSha256": "b6b4fc9c7db09edf55f63069f55eeb7289a88ebb6c18cb4ee778265d1f9f5f01",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 215
+}

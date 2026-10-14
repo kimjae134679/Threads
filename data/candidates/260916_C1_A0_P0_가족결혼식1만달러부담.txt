@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/TrueOffMyChest/comments/1efbw1c
+제목 - Guilted into contributing a family member’s wedding and I feel upset
+내용 - [명시 요약 — 원문 전문 아님]
+승진 후 학자금 대출을 갚고 집을 위한 저축을 하려던 글쓴이에게 가족의 결혼식 비용 부담이 갑자기 넘어왔다. 어머니가 글쓴이와 상의하지 않고 '재정적으로 도와줄 것'이라고 약속했고, 글쓴이는 이미 10,000달러를 제공했지만 앞으로 더 내야 한다는 압박을 받고 있다. 가족은 글쓴이가 상대적으로 잘 번다는 이유와 '가족은 가족을 돕는다'는 논리를 내세운다. 원문 본문을 읽었다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/TrueOffMyChest/comments/1efbw1c",
+    "title": "Guilted into contributing a family member’s wedding and I feel upset",
+    "body": "승진 후 학자금 대출을 갚고 집을 위한 저축을 하려던 글쓴이에게 가족의 결혼식 비용 부담이 갑자기 넘어왔다. 어머니가 글쓴이와 상의하지 않고 '재정적으로 도와줄 것'이라고 약속했고, 글쓴이는 이미 10,000달러를 제공했지만 앞으로 더 내야 한다는 압박을 받고 있다. 가족은 글쓴이가 상대적으로 잘 번다는 이유와 '가족은 가족을 돕는다'는 논리를 내세운다. 원문 본문을 읽었다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_가족결혼식1만달러부담.md",
+      "originalTitle": "Guilted into contributing a family member’s wedding and I feel upset",
+      "originalMarkdown": "# Guilted into contributing a family member’s wedding and I feel upset\r\n\r\n## 글 내용\r\n승진 후 학자금 대출을 갚고 집을 위한 저축을 하려던 글쓴이에게 가족의 결혼식 비용 부담이 갑자기 넘어왔다. 어머니가 글쓴이와 상의하지 않고 '재정적으로 도와줄 것'이라고 약속했고, 글쓴이는 이미 10,000달러를 제공했지만 앞으로 더 내야 한다는 압박을 받고 있다. 가족은 글쓴이가 상대적으로 잘 번다는 이유와 '가족은 가족을 돕는다'는 논리를 내세운다. 원문 본문을 읽었다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/TrueOffMyChest/comments/1efbw1c\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-16 23:34 KST 전후 공개 Reddit 결과\r\n- score: +162\r\n- 조회수: 확인하지 못함\r\n- 총 댓글 수: 확인하지 못함\r\n\r\n## 평가\r\n본인 허락 없이 어머니가 결혼비 지원을 약속했다는 도입과 이미 1만 달러를 냈다는 숫자가 강하다. 가족 의무와 개인 재정의 경계에 대해 즉각 의견이 나오는 소재다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit r/TrueOffMyChest\r\n- full body read: YES\r\n- comments read: NO\r\n- source screenshot/media bytes: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n- 실제 게시는 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "9af62ed809bc3f72f942f654522861dc6b87180609d469551f0d08ac5ca28283",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 386
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%A7%81%EC%9E%A5-%EA%B0%84%EC%84%AD-%EC%A0%9C%EA%B0%80-%EB%84%88%EB%AC%B4-%EB%A7%8E%EC%9D%80%EA%B1%B8-%EB%B0%94%EB%9D%BC%EB%82%98%EC%9A%94-sfm58zhh
+제목 - 여자친구 직장 간섭, 제가 너무 많은걸 바라나요?
+내용 - [명시 요약 — 원문 전문 아님]
+3년 연애 후 결혼을 논의하는 커플 이야기다. 여자친구는 워라밸이 좋은 현재 중견기업에 만족하지만 남자친구는 결혼 상대라면 더 큰 회사나 더 좋은 처우로 이직했으면 한다고 생각한다. 여자친구는 자신의 직장 선택을 존중받고 싶어 하고, 공개 댓글에서는 남자친구가 지나치게 간섭한다는 반응이 강하다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%A7%81%EC%9E%A5-%EA%B0%84%EC%84%AD-%EC%A0%9C%EA%B0%80-%EB%84%88%EB%AC%B4-%EB%A7%8E%EC%9D%80%EA%B1%B8-%EB%B0%94%EB%9D%BC%EB%82%98%EC%9A%94-sfm58zhh",
+    "title": "여자친구 직장 간섭, 제가 너무 많은걸 바라나요?",
+    "body": "3년 연애 후 결혼을 논의하는 커플 이야기다. 여자친구는 워라밸이 좋은 현재 중견기업에 만족하지만 남자친구는 결혼 상대라면 더 큰 회사나 더 좋은 처우로 이직했으면 한다고 생각한다. 여자친구는 자신의 직장 선택을 존중받고 싶어 하고, 공개 댓글에서는 남자친구가 지나치게 간섭한다는 반응이 강하다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_여자친구직장간섭.md",
+      "originalTitle": "여자친구 직장 간섭, 제가 너무 많은걸 바라나요?",
+      "originalMarkdown": "# 여자친구 직장 간섭, 제가 너무 많은걸 바라나요?\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Blind\r\n- 링크: https://www.teamblind.com/kr/post/%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-%EC%A7%81%EC%9E%A5-%EA%B0%84%EC%84%AD-%EC%A0%9C%EA%B0%80-%EB%84%88%EB%AC%B4-%EB%A7%8E%EC%9D%80%EA%B1%B8-%EB%B0%94%EB%9D%BC%EB%82%98%EC%9A%94-sfm58zhh\r\n- 관측 스냅샷: 조회 104 / 댓글 16\r\n- 본문/댓글: 읽음\r\n\r\n## 글 내용\r\n3년 연애 후 결혼을 논의하는 커플 이야기다. 여자친구는 워라밸이 좋은 현재 중견기업에 만족하지만 남자친구는 결혼 상대라면 더 큰 회사나 더 좋은 처우로 이직했으면 한다고 생각한다. 여자친구는 자신의 직장 선택을 존중받고 싶어 하고, 공개 댓글에서는 남자친구가 지나치게 간섭한다는 반응이 강하다.\r\n\r\n## 평가\r\n- 평가: 상급 직장+연애 논쟁\r\n- 이유: '상대 커리어에 어디까지 개입 가능한가'라는 즉시 토론 가능한 질문.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "f8964d10ed6340938f355affe53c997d527d247cc8f2554b850adc8523a046a7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 463
+}

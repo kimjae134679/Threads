@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EC%A0%9C-%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C%EB%B0%9B%EC%95%84-%EC%BD%94%EC%9D%B8%EC%9D%84-%ED%95%98%EB%8B%A4%EA%B0%80-%EB%8B%A4-%EB%82%A0%EB%A0%B8%EC%96%B4%EC%9A%94-xxbhfpri
+제목 - 남편이 제 몰래 대출받아 코인을 하다가 다 날렸어요
+내용 - [명시 요약 — 원문 전문 아님]
+과거 몰래 2천만원을 대출해 코인 손실을 냈다가 원금 복구했다고 했던 남편이 실제로는 다른 대출로 막았고, 이후 다시 마이너스통장 8천만원을 열어 코인에 넣어 약 6천만원을 잃은 사실을 발견한 사연. 공개 본문에서 확인되는 범위까지 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EC%A0%9C-%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C%EB%B0%9B%EC%95%84-%EC%BD%94%EC%9D%B8%EC%9D%84-%ED%95%98%EB%8B%A4%EA%B0%80-%EB%8B%A4-%EB%82%A0%EB%A0%B8%EC%96%B4%EC%9A%94-xxbhfpri",
+    "title": "남편이 제 몰래 대출받아 코인을 하다가 다 날렸어요",
+    "body": "과거 몰래 2천만원을 대출해 코인 손실을 냈다가 원금 복구했다고 했던 남편이 실제로는 다른 대출로 막았고, 이후 다시 마이너스통장 8천만원을 열어 코인에 넣어 약 6천만원을 잃은 사실을 발견한 사연. 공개 본문에서 확인되는 범위까지 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_몰래대출코인6천손실.md",
+      "originalTitle": "남편이 제 몰래 대출받아 코인을 하다가 다 날렸어요",
+      "originalMarkdown": "# 남편이 제 몰래 대출받아 코인을 하다가 다 날렸어요\r\n\r\n## 글 내용\r\n과거 몰래 2천만원을 대출해 코인 손실을 냈다가 원금 복구했다고 했던 남편이 실제로는 다른 대출로 막았고, 이후 다시 마이너스통장 8천만원을 열어 코인에 넣어 약 6천만원을 잃은 사실을 발견한 사연. 공개 본문에서 확인되는 범위까지 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EB%82%A8%ED%8E%B8%EC%9D%B4-%EC%A0%9C-%EB%AA%B0%EB%9E%98-%EB%8C%80%EC%B6%9C%EB%B0%9B%EC%95%84-%EC%BD%94%EC%9D%B8%EC%9D%84-%ED%95%98%EB%8B%A4%EA%B0%80-%EB%8B%A4-%EB%82%A0%EB%A0%B8%EC%96%B4%EC%9A%94-xxbhfpri\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · 조회 406 · 댓글 12. 좋아요 수는 확인하지 못함.\r\n\r\n## 평가\r\n숨은 대출→거짓 복구→재대출→6천만원 손실이라는 반복/반전이 강함. 폭력 표현이 본문에 있어 human safety review 필요. 공개 원문 URL 확인 C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필수. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "cc368a0c2d6876a240523bd8c96012c3727610c9c40355b05494269e2ce147c9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 451
+}

@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 앞으로 정장 입지 말라는 국가공무원 면접
+내용 - [명시 요약 — 원문 전문 아님]
+공무원 면접에서 정장 착용을 둘러싼 변화나 지침을 다룬 취업·직장 후보로 과거 수집됐다. 정확한 사실관계와 원문을 현재 기준으로 재확인해야 한다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "앞으로 정장 입지 말라는 국가공무원 면접",
+    "body": "공무원 면접에서 정장 착용을 둘러싼 변화나 지침을 다룬 취업·직장 후보로 과거 수집됐다. 정확한 사실관계와 원문을 현재 기준으로 재확인해야 한다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_공무원면접정장입지마.md",
+      "originalTitle": "앞으로 정장 입지 말라는 국가공무원 면접",
+      "originalMarkdown": "# 앞으로 정장 입지 말라는 국가공무원 면접\r\n\r\n- 상태: C0 / A0 / P0\r\n- 출처: TheQoo HOT\r\n- 정확한 원문 링크: 미확인\r\n- 과거 반응 수치: provenance가 없어 사용 금지\r\n\r\n## 글 내용\r\n공무원 면접에서 정장 착용을 둘러싼 변화나 지침을 다룬 취업·직장 후보로 과거 수집됐다. 정확한 사실관계와 원문을 현재 기준으로 재확인해야 한다.\r\n\r\n## 평가\r\n- 평가: 실용/논쟁형, C1 재검증 필요\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "84a8bf0805be0ab7e811cc57f54bce3084a7921c38059d3f718f72f5fa3d2763",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 154
+}

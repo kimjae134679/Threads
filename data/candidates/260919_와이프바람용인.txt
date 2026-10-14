@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80%EC%99%80%EC%9D%B4%ED%94%84%EC%9D%98-%EB%B0%94%EB%9E%8C-%EC%9A%A9%EC%9D%B8-3znz3v4k
+제목 - 이게 가능한가(와이프의 바람 용인)
+내용 - [명시 요약 — 원문 전문 아님]
+지인의 반복적 외도를 배우자가 알고도 관계를 유지한다는 제3자 서술로, 관계 경계·왜 유지하는가에 대한 강한 반응이 예상됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80%EC%99%80%EC%9D%B4%ED%94%84%EC%9D%98-%EB%B0%94%EB%9E%8C-%EC%9A%A9%EC%9D%B8-3znz3v4k",
+    "title": "이게 가능한가(와이프의 바람 용인)",
+    "body": "지인의 반복적 외도를 배우자가 알고도 관계를 유지한다는 제3자 서술로, 관계 경계·왜 유지하는가에 대한 강한 반응이 예상됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_와이프바람용인.md",
+      "originalTitle": "이게 가능한가(와이프의 바람 용인)",
+      "originalMarkdown": "# 이게 가능한가(와이프의 바람 용인)\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EC%9D%B4%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80%EC%99%80%EC%9D%B4%ED%94%84%EC%9D%98-%EB%B0%94%EB%9E%8C-%EC%9A%A9%EC%9D%B8-3znz3v4k\r\n- exactObservedTitle: 이게 가능한가(와이프의 바람 용인)\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 548, 댓글 9\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 지인의 반복적 외도를 배우자가 알고도 관계를 유지한다는 제3자 서술로, 관계 경계·왜 유지하는가에 대한 강한 반응이 예상됨.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 제3자에 대한 게시자 주장으로 사실성은 독립 검증되지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8407ff402cbd1d610617e2242e6ad3abdb2fdcc593bea93bf15f3a05a223189e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 311
+}

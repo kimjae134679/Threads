@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EA%B0%95%EB%82%A8%EC%95%84%ED%8C%8C%ED%8A%B8-%EA%BC%AD-%EA%B5%AC%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94%EC%9D%B4%EC%9C%A0-0uocmzmm
+제목 - 강남아파트 꼭 구해야하는이유
+내용 - [명시 요약 — 원문 전문 아님]
+강남 아파트 상승률을 근거로 '사야 한다'는 주장에 '몰라서 못 사나'라는 즉각적 반박이 붙는 돈·부동산 현실 공감형 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EA%B0%95%EB%82%A8%EC%95%84%ED%8C%8C%ED%8A%B8-%EA%BC%AD-%EA%B5%AC%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94%EC%9D%B4%EC%9C%A0-0uocmzmm",
+    "title": "강남아파트 꼭 구해야하는이유",
+    "body": "강남 아파트 상승률을 근거로 '사야 한다'는 주장에 '몰라서 못 사나'라는 즉각적 반박이 붙는 돈·부동산 현실 공감형 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_강남아파트꼭구해야하는이유.md",
+      "originalTitle": "강남아파트 꼭 구해야하는이유",
+      "originalMarkdown": "# 강남아파트 꼭 구해야하는이유\r\n\r\n- source: Blind\r\n- publicUrl: https://www.teamblind.com/kr/post/%EA%B0%95%EB%82%A8%EC%95%84%ED%8C%8C%ED%8A%B8-%EA%BC%AD-%EA%B5%AC%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94%EC%9D%B4%EC%9C%A0-0uocmzmm\r\n- exactObservedTitle: 강남아파트 꼭 구해야하는이유\r\n- observedAt: 2026-09-19 23:18 KST\r\n- observedMetrics: 조회수 165, 댓글 15\r\n- bodyRead: true\r\n- commentsRead: true (공개 노출 일부)\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 강남 아파트 상승률을 근거로 '사야 한다'는 주장에 '몰라서 못 사나'라는 즉각적 반박이 붙는 돈·부동산 현실 공감형 소재.\r\n- acquisition: C1\r\n- provenance: 정확한 개별 공개 Blind 페이지 확인. 가격·상승률 계산은 게시자 주장으로만 기록하며 사실 검증하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "dd0b463c0cb7a9e1692dc072ab4f77861edccb55d97ac96ab9e6caef8db9b9e6",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 297
+}

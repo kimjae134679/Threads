@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1uotre9/aita_for_not_agreeing_with_my_sister_about_her/
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+언니가 동남아에서 환영 파티·본식/리셉션/애프터파티·회복일로 이어지는 3일 결혼식을 계획했고, 작성자는 신부 들러리로 전 일정 참여가 기대되는 상황. 장거리 항공권과 4박 이상 숙박, 의상·선물 비용까지 부담해야 하는데 작성자도 최근 약혼해 자신의 결혼 준비비가 필요한 상태라 갈등한다. 본문 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1uotre9/aita_for_not_agreeing_with_my_sister_about_her/",
+    "title": "제목",
+    "body": "언니가 동남아에서 환영 파티·본식/리셉션/애프터파티·회복일로 이어지는 3일 결혼식을 계획했고, 작성자는 신부 들러리로 전 일정 참여가 기대되는 상황. 장거리 항공권과 4박 이상 숙박, 의상·선물 비용까지 부담해야 하는데 작성자도 최근 약혼해 자신의 결혼 준비비가 필요한 상태라 갈등한다. 본문 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_3일해외결혼식비용.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for not agreeing with my sister about her wedding?\r\n\r\n## 글 내용\r\n언니가 동남아에서 환영 파티·본식/리셉션/애프터파티·회복일로 이어지는 3일 결혼식을 계획했고, 작성자는 신부 들러리로 전 일정 참여가 기대되는 상황. 장거리 항공권과 4박 이상 숙박, 의상·선물 비용까지 부담해야 하는데 작성자도 최근 약혼해 자신의 결혼 준비비가 필요한 상태라 갈등한다. 본문 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1uotre9/aita_for_not_agreeing_with_my_sister_about_her/\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 02:35 KST 전후 공개 페이지. 게시물 점수 +197 확인. 조회수/댓글 총수는 확인 가능한 값 없음.\r\n\r\n## 평가\r\n해외 3일 결혼식과 자기 결혼 준비가 정면 충돌하는 비용·가족 갈등이라 상황 이해가 빠르고 의견 유도가 좋다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n실제 screenshot/source bytes 미확보. ASSETS_PENDING. A0/P0. publicationAllowed=false. rights/privacy/human review gate 유지.",
+      "originalSha256": "17302501de1f9e16b014e76957af84a54a0b83b9c46a85814bb3ef98fe0d03de",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 323
+}

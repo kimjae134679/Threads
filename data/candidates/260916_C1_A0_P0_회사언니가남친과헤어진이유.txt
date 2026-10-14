@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728179
+제목 - 회사 언니가 남친과 헤어진 이유
+내용 - [명시 요약 — 원문 전문 아님]
+회사 동료가 남자친구와 헤어진 이유를 이미지로 전하는 연애 유머형 게시물이다. 이번 수집에서는 이미지 본문의 실제 반전 내용을 끝까지 검증하지 않았으므로 임의로 채우지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728179",
+    "title": "회사 언니가 남친과 헤어진 이유",
+    "body": "회사 동료가 남자친구와 헤어진 이유를 이미지로 전하는 연애 유머형 게시물이다. 이번 수집에서는 이미지 본문의 실제 반전 내용을 끝까지 검증하지 않았으므로 임의로 채우지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_회사언니가남친과헤어진이유.md",
+      "originalTitle": "회사 언니가 남친과 헤어진 이유",
+      "originalMarkdown": "# 회사 언니가 남친과 헤어진 이유\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: Inven\r\n- 링크: https://www.inven.co.kr/board/webzine/2097/2728179\r\n- 조회수: 4,432\r\n- 추천: 1\r\n- 댓글: 13\r\n- 본문: 이번 수집에서 전체 미확인\r\n- 이미지: 있음\r\n\r\n## 글 내용\r\n회사 동료가 남자친구와 헤어진 이유를 이미지로 전하는 연애 유머형 게시물이다. 이번 수집에서는 이미지 본문의 실제 반전 내용을 끝까지 검증하지 않았으므로 임의로 채우지 않는다.\r\n\r\n## 평가\r\n- 평가: 검증 우선 시각 후보\r\n- 다음: 이미지 내용과 최초 출처 확인.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "49e326f3b801a28669290af70ba7230ec9991eb467408b0d80e5d851b7171795",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 216
+}

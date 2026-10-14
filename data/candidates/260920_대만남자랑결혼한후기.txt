@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3648844797
+제목 - 대만 남자랑 결혼한 후기
+내용 - [명시 요약 — 원문 전문 아님]
+국제결혼 5년차의 실제 생활감과 연애 때와 결혼 후의 차이, 가사 분담 이야기가 있어 문화 차이·결혼생활 의견 소재로 전개 가능.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3648844797",
+    "title": "대만 남자랑 결혼한 후기",
+    "body": "국제결혼 5년차의 실제 생활감과 연애 때와 결혼 후의 차이, 가사 분담 이야기가 있어 문화 차이·결혼생활 의견 소재로 전개 가능.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_대만남자랑결혼한후기.md",
+      "originalTitle": "대만 남자랑 결혼한 후기",
+      "originalMarkdown": "# 대만 남자랑 결혼한 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/3648844797\r\n- observedAt: 2026-09-20 15:17 KST\r\n- provenanceLevel: C1\r\n- acquisition: public individual page / readable body\r\n- exactObservedTitle: `대만 남자랑 결혼한 후기`\r\n- observedMetrics: 조회 15,271 / 댓글 28\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 국제결혼 5년차의 실제 생활감과 연애 때와 결혼 후의 차이, 가사 분담 이야기가 있어 문화 차이·결혼생활 의견 소재로 전개 가능.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights/moderation/asset/publication: 미확인/미진행\r\n",
+      "originalSha256": "a4a26b3485044b1b68b677cc1eca1ff59c5cce96180a6da03b4e8cb68b7180b1",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

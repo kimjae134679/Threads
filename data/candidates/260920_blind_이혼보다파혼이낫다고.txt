@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EB%B3%B4%EB%8B%A4-%ED%8C%8C%ED%98%BC%EC%9D%B4-%EB%82%AB%EB%8B%A4%EA%B3%A0-%EB%A7%90%ED%95%B4%EC%A4%98%EB%B9%A8%EB%A6%AC-jmgtudwt
+제목 - 이혼보다 파혼이 낫다고 말해줘빨리
+내용 - [명시 요약 — 원문 전문 아님]
+제목 자체는 즉각적인 선택·의견 유도성이 강하지만 본문 정보가 없어 제한적으로만 보존.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EB%B3%B4%EB%8B%A4-%ED%8C%8C%ED%98%BC%EC%9D%B4-%EB%82%AB%EB%8B%A4%EA%B3%A0-%EB%A7%90%ED%95%B4%EC%A4%98%EB%B9%A8%EB%A6%AC-jmgtudwt",
+    "title": "이혼보다 파혼이 낫다고 말해줘빨리",
+    "body": "제목 자체는 즉각적인 선택·의견 유도성이 강하지만 본문 정보가 없어 제한적으로만 보존.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_이혼보다파혼이낫다고.md",
+      "originalTitle": "이혼보다 파혼이 낫다고 말해줘빨리",
+      "originalMarkdown": "# 이혼보다 파혼이 낫다고 말해줘빨리\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EC%9D%B4%ED%98%BC%EB%B3%B4%EB%8B%A4-%ED%8C%8C%ED%98%BC%EC%9D%B4-%EB%82%AB%EB%8B%A4%EA%B3%A0-%EB%A7%90%ED%95%B4%EC%A4%98%EB%B9%A8%EB%A6%AC-jmgtudwt\r\n- exactObservedTitle: 이혼보다 파혼이 낫다고 말해줘빨리\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 127, 댓글 14, 좋아요 1\r\n- bodyRead: true\r\n- bodyStatus: 본문은 공개 페이지에서 마침표 1개만 관찰됨; 추가 내용 추정 금지\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 제목 자체는 즉각적인 선택·의견 유도성이 강하지만 본문 정보가 없어 제한적으로만 보존.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; BODY_MINIMAL\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "788363bdf42cc559c353ebe18f8620b847d1df2bd551d6aba070393ee008e4b8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 298
+}

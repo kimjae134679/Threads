@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%95%84%ED%8C%8C%ED%8A%B8-2in1-%EC%97%90%EC%96%B4%EC%BB%A8-%EC%B2%A0%EA%B1%B0%EC%9E%90%EB%A6%AC-%EB%B3%B5%EA%B5%AC-sccsksja
+제목 - 아파트 2in1 에어컨 철거자리 복구
+내용 - [명시 요약 — 원문 전문 아님]
+집 매매 뒤 에어컨을 두고 가겠다는 매도인과 이미 새 제품을 산 매수인의 복구 책임 갈등이 구체적임.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%95%84%ED%8C%8C%ED%8A%B8-2in1-%EC%97%90%EC%96%B4%EC%BB%A8-%EC%B2%A0%EA%B1%B0%EC%9E%90%EB%A6%AC-%EB%B3%B5%EA%B5%AC-sccsksja",
+    "title": "아파트 2in1 에어컨 철거자리 복구",
+    "body": "집 매매 뒤 에어컨을 두고 가겠다는 매도인과 이미 새 제품을 산 매수인의 복구 책임 갈등이 구체적임.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_에어컨철거자리복구갈등.md",
+      "originalTitle": "아파트 2in1 에어컨 철거자리 복구",
+      "originalMarkdown": "# 아파트 2in1 에어컨 철거자리 복구\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EC%95%84%ED%8C%8C%ED%8A%B8-2in1-%EC%97%90%EC%96%B4%EC%BB%A8-%EC%B2%A0%EA%B1%B0%EC%9E%90%EB%A6%AC-%EB%B3%B5%EA%B5%AC-sccsksja\r\n- exactObservedTitle: 아파트 2in1 에어컨 철거자리 복구\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 157, 댓글 7\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 집 매매 뒤 에어컨을 두고 가겠다는 매도인과 이미 새 제품을 산 매수인의 복구 책임 갈등이 구체적임.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b0118bde79fa65fed765d427170a3417e8593935e14bac88aec7a0b1b9c40a4f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 286
+}

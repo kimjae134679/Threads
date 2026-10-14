@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/4126247534
+제목 - 그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)
+내용 - [명시 요약 — 원문 전문 아님]
+친구의 호감 상대에게 반복적으로 접근하는 지인을 결국 손절한 관계 갈등으로 행동의 선을 두고 즉각 의견이 갈릴 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/4126247534",
+    "title": "그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)",
+    "body": "친구의 호감 상대에게 반복적으로 접근하는 지인을 결국 손절한 관계 갈등으로 행동의 선을 두고 즉각 의견이 갈릴 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_임자있는사람건드린지인손절후기.md",
+      "originalTitle": "그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)",
+      "originalMarkdown": "# 그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/4126247534\r\n- stage: C1\r\n- observedAt: 2026-09-20 11:18 KST\r\n- exactObservedTitle: `그렇게 다정을 얘기하던 지인이 임자있는 사람 건드리는 게 웃겨 손절한 후기 (긴글주의)`\r\n- observedMetrics: 조회 2,131 / 댓글 5\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 친구의 호감 상대에게 반복적으로 접근하는 지인을 결국 손절한 관계 갈등으로 행동의 선을 두고 즉각 의견이 갈릴 소재.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_READ\r\n- provenance: exact individual public TheQoo URL observed; author narrative/allegation only, not independently verified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "61befd9f826cb8a1c37784f0ac2bcfaedc8e0dc2f6c20ab5c39971311d618f04",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 200
+}

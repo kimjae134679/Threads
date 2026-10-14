@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D-%EC%86%90%EC%8B%A4-%EB%B3%B5%EA%B5%AC-7rc1v4z4
+제목 - 주식 손실 복구
+내용 - [명시 요약 — 원문 전문 아님]
+3일 만에 큰 주식 손실을 본 뒤 회복 경험을 묻는 짧고 강한 돈/후회 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D-%EC%86%90%EC%8B%A4-%EB%B3%B5%EA%B5%AC-7rc1v4z4",
+    "title": "주식 손실 복구",
+    "body": "3일 만에 큰 주식 손실을 본 뒤 회복 경험을 묻는 짧고 강한 돈/후회 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_주식손실복구.md",
+      "originalTitle": "주식 손실 복구",
+      "originalMarkdown": "# 주식 손실 복구\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EC%A3%BC%EC%8B%9D-%EC%86%90%EC%8B%A4-%EB%B3%B5%EA%B5%AC-7rc1v4z4\r\n- exactObservedTitle: 주식 손실 복구\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 832, 댓글 35, 좋아요 5\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 3일 만에 큰 주식 손실을 본 뒤 회복 경험을 묻는 짧고 강한 돈/후회 소재.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 손실 규모는 공개 본문에 특정되지 않음\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "9c37bba8e421ae56bde404a401fa4a3bbe6c12c65c69efb302e39eacc9f43333",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 201
+}

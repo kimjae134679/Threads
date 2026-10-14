@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2600393220
+제목 - 스몰 같지 않은 스몰웨딩 후기
+내용 - [명시 요약 — 원문 전문 아님]
+100명 규모로 시작한 '스몰웨딩'이 부모 지인·답례품·교통비·숙박까지 붙으며 손님 관련 비용만 1,590만원, 전체 약 2,050만원으로 커졌다는 아이러니가 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2600393220",
+    "title": "스몰 같지 않은 스몰웨딩 후기",
+    "body": "100명 규모로 시작한 '스몰웨딩'이 부모 지인·답례품·교통비·숙박까지 붙으며 손님 관련 비용만 1,590만원, 전체 약 2,050만원으로 커졌다는 아이러니가 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_스몰같지않은스몰웨딩.md",
+      "originalTitle": "스몰 같지 않은 스몰웨딩 후기",
+      "originalMarkdown": "# 스몰 같지 않은 스몰웨딩 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/2600393220\r\n- exactObservedTitle: `스몰 같지 않은 스몰웨딩 후기`\r\n- observedAt: 2026-09-20 07:17 KST\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: public indexed individual page; BODY_PARTIAL\r\n- provenance: 공개 인덱스에서 본문 일부 확인. 비용은 작성자 경험 기준.\r\n- whyGood: 100명 규모로 시작한 '스몰웨딩'이 부모 지인·답례품·교통비·숙박까지 붙으며 손님 관련 비용만 1,590만원, 전체 약 2,050만원으로 커졌다는 아이러니가 강함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a9b8642e516f2fbc4db3d8aa338aae25c68b16669a1436b08a4f801af844da1f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 195
+}

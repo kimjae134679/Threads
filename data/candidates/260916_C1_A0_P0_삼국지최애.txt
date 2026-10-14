@@ -1,0 +1,29 @@
+원문링크 - https://www.inven.co.kr/board/webzine/2097/2728397
+제목 - 한중일 삼국마다 갈린다는 삼국지 최애케릭터.jpg
+내용 - [명시 요약 — 원문 전문 아님]
+한국·중국·일본에서 삼국지 최애 캐릭터가 다르다는 이미지 중심 게시물. 페이지의 짧은 작성자 문구는 확인했지만 이미지 내부 비교 내용은 본문 미확인이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.inven.co.kr/board/webzine/2097/2728397",
+    "title": "한중일 삼국마다 갈린다는 삼국지 최애케릭터.jpg",
+    "body": "한국·중국·일본에서 삼국지 최애 캐릭터가 다르다는 이미지 중심 게시물. 페이지의 짧은 작성자 문구는 확인했지만 이미지 내부 비교 내용은 본문 미확인이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_삼국지최애.md",
+      "originalTitle": "한중일 삼국마다 갈린다는 삼국지 최애케릭터.jpg",
+      "originalMarkdown": "# 한중일 삼국마다 갈린다는 삼국지 최애케릭터.jpg\r\n\r\n## 글 내용\r\n한국·중국·일본에서 삼국지 최애 캐릭터가 다르다는 이미지 중심 게시물. 페이지의 짧은 작성자 문구는 확인했지만 이미지 내부 비교 내용은 본문 미확인이다.\r\n\r\n## 정확한 링크\r\nhttps://www.inven.co.kr/board/webzine/2097/2728397\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 13:37 KST 부근\r\n- 조회 3,166 / 추천 1 / 댓글 18\r\n- 본문 읽음: 이미지 본문 미확인\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n국가별 취향 차이라 댓글로 자기 선택을 말하기 쉬운 소재다. 원문 이미지 전체를 확보해야 실제 비교 내용을 검증할 수 있다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- 원문 이미지 존재: 예\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "27bca9d6a054baeaf2ab05514a988363aa69a7c388df6f331f7633ba91999d13",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 213
+}

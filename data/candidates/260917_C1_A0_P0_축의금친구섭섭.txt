@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%95%8C%EB%AC%B8%EC%97%90-%EC%B9%9C%EA%B5%AC%ED%95%9C%ED%85%8C-%EC%84%AD%EC%84%AD%ED%95%9C%EB%8D%B0-kaijhpj0
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+결혼식을 올리지 않고 스냅·혼인신고만 한 글쓴이가 회사나 먼 지인에게는 축의를 바라지 않았지만, 오래 알고 지냈고 본인이 이미 축의했던 친구들이 결혼 사실을 모두 알고도 어떻게 반응했는지를 두고 한 달째 서운함을 느낀 사연. 공개 페이지에서 확인 가능한 본문을 읽었고 댓글도 노출됐다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%95%8C%EB%AC%B8%EC%97%90-%EC%B9%9C%EA%B5%AC%ED%95%9C%ED%85%8C-%EC%84%AD%EC%84%AD%ED%95%9C%EB%8D%B0-kaijhpj0",
+    "title": "제목",
+    "body": "결혼식을 올리지 않고 스냅·혼인신고만 한 글쓴이가 회사나 먼 지인에게는 축의를 바라지 않았지만, 오래 알고 지냈고 본인이 이미 축의했던 친구들이 결혼 사실을 모두 알고도 어떻게 반응했는지를 두고 한 달째 서운함을 느낀 사연. 공개 페이지에서 확인 가능한 본문을 읽었고 댓글도 노출됐다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_축의금친구섭섭.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n축의금 때문에 친구한테 섭섭한데..\r\n\r\n## 글 내용\r\n결혼식을 올리지 않고 스냅·혼인신고만 한 글쓴이가 회사나 먼 지인에게는 축의를 바라지 않았지만, 오래 알고 지냈고 본인이 이미 축의했던 친구들이 결혼 사실을 모두 알고도 어떻게 반응했는지를 두고 한 달째 서운함을 느낀 사연. 공개 페이지에서 확인 가능한 본문을 읽었고 댓글도 노출됐다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%EC%B6%95%EC%9D%98%EA%B8%88-%EB%95%8C%EB%AC%B8%EC%97%90-%EC%B9%9C%EA%B5%AC%ED%95%9C%ED%85%8C-%EC%84%AD%EC%84%AD%ED%95%9C%EB%8D%B0-kaijhpj0\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-17 23:37 KST · 조회 422 · 댓글 13 · 좋아요 수치는 확인하지 않음.\r\n\r\n## 평가\r\n'식을 안 했어도 내가 먼저 냈던 축의는 돌려줘야 하나'라는 한국형 생활 논쟁이 선명하다. 친구관계와 돈이 결합돼 의견 유도가 쉽다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\nsource screenshot/media 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review gate 유지. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "43a01da06b29c914e1df548a3577f1b15bd529d867da0ad421cf9c3765a25e44",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 384
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1180746869
+제목 - 남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기
+내용 - [명시 요약 — 원문 전문 아님]
+오랜 친구였던 상대에게 3개월 동안 외모 관리를 해보자고 제안하고 직접 비용까지 부담한 뒤 관계가 변하는 과정으로, 연애·외모·돈·가치관에 대해 즉시 의견이 갈릴 수 있는 강한 설정과 변화 서사가 있다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1180746869",
+    "title": "남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기",
+    "body": "오랜 친구였던 상대에게 3개월 동안 외모 관리를 해보자고 제안하고 직접 비용까지 부담한 뒤 관계가 변하는 과정으로, 연애·외모·돈·가치관에 대해 즉시 의견이 갈릴 수 있는 강한 설정과 변화 서사가 있다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_남자친구환골탈태결혼후기.md",
+      "originalTitle": "남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기",
+      "originalMarkdown": "# 남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/1180746869\r\n- exactObservedTitle: 남자친구 환골탈태 시켜서 결혼하게 된 스토리와 후기\r\n- observedAt: 2026-09-21 19:18 KST\r\n- stage: C1\r\n- acquisitionStatus: exact individual public URL verified; public text body observed\r\n- provenanceStatus: exact public source page verified\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotObserved: false\r\n- observedMetrics: 본 실행 검색 결과에서 신뢰할 수 있는 수치 미기록\r\n- whyGood: 오랜 친구였던 상대에게 3개월 동안 외모 관리를 해보자고 제안하고 직접 비용까지 부담한 뒤 관계가 변하는 과정으로, 연애·외모·돈·가치관에 대해 즉시 의견이 갈릴 수 있는 강한 설정과 변화 서사가 있다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인 메모\r\n공개 페이지의 개별 URL과 제목, 본문 텍스트를 확인했다. 댓글은 읽지 않았다. 검색 결과에서 확실히 관찰하지 못한 수치·권리·OCR·moderation·asset 상태는 기록하지 않는다.\r\n",
+      "originalSha256": "ea87f8c6a5c7442b761cd284b5f647882bd19d3e3d3d1050ec050ef1e148aaf5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 228
+}

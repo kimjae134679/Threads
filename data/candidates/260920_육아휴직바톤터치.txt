@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3906734410
+제목 - 남편이랑 육아휴직 바톤터치해본 후기
+내용 - [명시 요약 — 원문 전문 아님]
+부부가 육아휴직을 번갈아 하면서 서로가 퇴근을 기다리는 심정과 육아 부담을 뒤늦게 체감하는 역할 반전 구조. 공감·부부 논쟁성이 강함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3906734410",
+    "title": "남편이랑 육아휴직 바톤터치해본 후기",
+    "body": "부부가 육아휴직을 번갈아 하면서 서로가 퇴근을 기다리는 심정과 육아 부담을 뒤늦게 체감하는 역할 반전 구조. 공감·부부 논쟁성이 강함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_육아휴직바톤터치.md",
+      "originalTitle": "남편이랑 육아휴직 바톤터치해본 후기",
+      "originalMarkdown": "# 남편이랑 육아휴직 바톤터치해본 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- publicUrl: https://theqoo.net/review/3906734410\r\n- exactObservedTitle: `남편이랑 육아휴직 바톤터치해본 후기`\r\n- observedAt: 2026-09-20 07:17 KST\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- acquisition: public indexed individual page; BODY_READ\r\n- provenance: TheQoo 게시글 공개 본문 확인. 작성자의 경험담.\r\n- whyGood: 부부가 육아휴직을 번갈아 하면서 서로가 퇴근을 기다리는 심정과 육아 부담을 뒤늦게 체감하는 역할 반전 구조. 공감·부부 논쟁성이 강함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "b0bc7364d4ac7cc0a757e6cf55927256a3cb18dd09157a463c6052dc13a4782a",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 181
+}

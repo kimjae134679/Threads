@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/585714949
+제목 - 제일 친한친구에게 엄청 서운한 후기(feat.청첩장)
+내용 - [명시 요약 — 원문 전문 아님]
+쉬는 날도 없이 일하는 친구가 청첩장을 받으러 시간을 냈는데 상대가 약 50분 늦고 오히려 화를 낸 상황. 오랜 친구 사이의 예의와 결혼 준비 스트레스가 충돌함.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/585714949",
+    "title": "제일 친한친구에게 엄청 서운한 후기(feat.청첩장)",
+    "body": "쉬는 날도 없이 일하는 친구가 청첩장을 받으러 시간을 냈는데 상대가 약 50분 늦고 오히려 화를 낸 상황. 오랜 친구 사이의 예의와 결혼 준비 스트레스가 충돌함.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260921_제일친한친구청첩장서운.md",
+      "originalTitle": "제일 친한친구에게 엄청 서운한 후기(feat.청첩장)",
+      "originalMarkdown": "# 제일 친한친구에게 엄청 서운한 후기(feat.청첩장)\r\n\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/585714949\r\n- exactObservedTitle: 제일 친한친구에게 엄청 서운한 후기(feat.청첩장)\r\n- observedAt: 2026-09-21 23:15 KST\r\n- acquisitionLevel: C1\r\n- provenance: exact individual public URL verified via public web index/page\r\n- bodyRead: true\r\n- commentsRead: false\r\n- observedMetrics: 조회 7,942 / 댓글 31 (검색 노출값)\r\n- imageOrScreenshotPresent: 확인하지 않음\r\n- whyGood: 쉬는 날도 없이 일하는 친구가 청첩장을 받으러 시간을 냈는데 상대가 약 50분 늦고 오히려 화를 낸 상황. 오랜 친구 사이의 예의와 결혼 준비 스트레스가 충돌함.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "8afa58777218a074a34ca20cdea93b3737ba5841aed577aabf50a093bb171078",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 205
+}

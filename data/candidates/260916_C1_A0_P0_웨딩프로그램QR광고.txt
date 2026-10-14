@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmITheDevil/comments/1wc56m0/removed/
+제목 - AITA for removing my cousin’s QR code from our wedding programs?
+내용 - [명시 요약 — 원문 전문 아님]
+Reddit 재게시 사연. 그래픽디자인을 하는 사촌이 결혼식 프로그램을 선물로 디자인하면서 뒤에 자신의 디자인 Instagram 예약 페이지로 가는 QR 광고를 넣었다. 신부가 같은 디자인에서 QR만 뺀 새 인쇄물을 자기 돈으로 주문하자 사촌이 크게 서운해한 갈등.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmITheDevil/comments/1wc56m0/removed/",
+    "title": "AITA for removing my cousin’s QR code from our wedding programs?",
+    "body": "Reddit 재게시 사연. 그래픽디자인을 하는 사촌이 결혼식 프로그램을 선물로 디자인하면서 뒤에 자신의 디자인 Instagram 예약 페이지로 가는 QR 광고를 넣었다. 신부가 같은 디자인에서 QR만 뺀 새 인쇄물을 자기 돈으로 주문하자 사촌이 크게 서운해한 갈등.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_웨딩프로그램QR광고.md",
+      "originalTitle": "AITA for removing my cousin’s QR code from our wedding programs?",
+      "originalMarkdown": "# AITA for removing my cousin’s QR code from our wedding programs?\r\n\r\n## 글 내용\r\nReddit 재게시 사연. 그래픽디자인을 하는 사촌이 결혼식 프로그램을 선물로 디자인하면서 뒤에 자신의 디자인 Instagram 예약 페이지로 가는 QR 광고를 넣었다. 신부가 같은 디자인에서 QR만 뺀 새 인쇄물을 자기 돈으로 주문하자 사촌이 크게 서운해한 갈등.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmITheDevil/comments/1wc56m0/removed/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 16:36 KST\r\n- 원 게시물은 removed 상태이며 재게시 bot 본문이 공개됨\r\n- 반응 총수는 신뢰할 수 있게 확인하지 못함\r\n\r\n## 평가\r\n선물인가 광고인가가 즉시 갈리는 생활형 논쟁이고 결혼식이라는 명확한 상황이 있어 swipe-worthy.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\n- 본문 전체 읽음: 예, 공개 재게시 본문\r\n- 댓글 읽음: 아니오\r\n- source screenshots 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C1 / A0 / P0, publicationAllowed=false",
+      "originalSha256": "b85e9d85de8af8783044d3559be80c4b04854270f14c9474e14ef291f8db6abd",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 325
+}

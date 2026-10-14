@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2013957550
+제목 - 산후조리에 3천만원 쓴 후기+추천
+내용 - [명시 요약 — 원문 전문 아님]
+첫 출산 때 산후조리에 큰돈을 쓴 뒤 무엇이 돈값을 했고 무엇을 후회했는지 대비가 분명한 소비·가족 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2013957550",
+    "title": "산후조리에 3천만원 쓴 후기+추천",
+    "body": "첫 출산 때 산후조리에 큰돈을 쓴 뒤 무엇이 돈값을 했고 무엇을 후회했는지 대비가 분명한 소비·가족 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_산후조리에3천만원쓴후기추천.md",
+      "originalTitle": "산후조리에 3천만원 쓴 후기+추천",
+      "originalMarkdown": "# 산후조리에 3천만원 쓴 후기+추천\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/2013957550\r\n- exactObservedTitle: 산후조리에 3천만원 쓴 후기+추천\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 21,122\r\n- whyGood: 첫 출산 때 산후조리에 큰돈을 쓴 뒤 무엇이 돈값을 했고 무엇을 후회했는지 대비가 분명한 소비·가족 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "f57320b39084b34fd59d8a85435cff1dd7cf128eb3c3a738c6d88a61bbfe0fb8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 164
+}

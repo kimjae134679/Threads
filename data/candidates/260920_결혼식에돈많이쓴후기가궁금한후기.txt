@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3399318447
+제목 - 평범한데 결혼식에 돈 많이 쓴 더쿠들의 후기가 궁금한 후기,,
+내용 - [명시 요약 — 원문 전문 아님]
+합산 실수령과 예산을 구체적으로 제시하고 결혼식 비용 3천만원대가 무리인지 만족할 소비인지 묻는 돈·결혼 논쟁 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3399318447",
+    "title": "평범한데 결혼식에 돈 많이 쓴 더쿠들의 후기가 궁금한 후기,,",
+    "body": "합산 실수령과 예산을 구체적으로 제시하고 결혼식 비용 3천만원대가 무리인지 만족할 소비인지 묻는 돈·결혼 논쟁 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_결혼식에돈많이쓴후기가궁금한후기.md",
+      "originalTitle": "평범한데 결혼식에 돈 많이 쓴 더쿠들의 후기가 궁금한 후기,,",
+      "originalMarkdown": "# 평범한데 결혼식에 돈 많이 쓴 더쿠들의 후기가 궁금한 후기,,\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/3399318447\r\n- exactObservedTitle: 평범한데 결혼식에 돈 많이 쓴 더쿠들의 후기가 궁금한 후기,,\r\n- observedAt: 2026-09-20 08:14 KST\r\n- provenance: C1_EXACT_INDIVIDUAL_PUBLIC_URL\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: not observed\r\n- observedMetrics: 조회 11,992 / 표시 수치 30 / 댓글 30\r\n- whyGood: 합산 실수령과 예산을 구체적으로 제시하고 결혼식 비용 3천만원대가 무리인지 만족할 소비인지 묻는 돈·결혼 논쟁 소재.\r\n- acquisition: public indexed individual page; no bypass\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "477e1b742adbe8c5bbd38fce6087ea2060abd124adc282d5f1edb59dcd7cc792",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 186
+}

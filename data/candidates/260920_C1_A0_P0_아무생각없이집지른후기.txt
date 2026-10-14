@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1933600960
+제목 - 아무생각 없이 집 지른 후기 (스압)
+내용 - [명시 요약 — 원문 전문 아님]
+혼인신고를 미룬 상태에서 집을 매수하고 본문이 곧 '파국'을 예고하는 강한 전환 구조라 후속을 읽게 만드는 힘이 큼.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1933600960",
+    "title": "아무생각 없이 집 지른 후기 (스압)",
+    "body": "혼인신고를 미룬 상태에서 집을 매수하고 본문이 곧 '파국'을 예고하는 강한 전환 구조라 후속을 읽게 만드는 힘이 큼.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_아무생각없이집지른후기.md",
+      "originalTitle": "아무생각 없이 집 지른 후기 (스압)",
+      "originalMarkdown": "# 아무생각 없이 집 지른 후기 (스압)\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/1933600960\r\n- exactObservedTitle: `아무생각 없이 집 지른 후기 (스압)`\r\n- observedAt: 2026-09-20 12:17 KST\r\n- stage: C1 / A0 / P0\r\n- publicationAllowed: false\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_BODY_OBSERVED\r\n- provenance: 작성자의 주택구매 경험담; 금액은 작성자 서술.\r\n- whyGood: 혼인신고를 미룬 상태에서 집을 매수하고 본문이 곧 '파국'을 예고하는 강한 전환 구조라 후속을 읽게 만드는 힘이 큼.\r\n- safety: 금융 조언이나 검증된 재무 사실로 취급하지 않음.",
+      "originalSha256": "f0a05437f63756718a1ce48a7d5a96161bfc0f8ec328b66c3a4f4b75ba1b390d",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 172
+}

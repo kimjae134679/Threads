@@ -1,0 +1,29 @@
+원문링크 - https://www.ppomppu.co.kr/zboard/view.php?id=humor&no=559336
+제목 - 회사 과장님이 경찰한테 잡혀갔던 썰
+내용 - [명시 요약 — 원문 전문 아님]
+회사 과장이 경찰에게 잡혀갔다는 강한 사건형 제목이지만 본문을 읽지 않았으므로 세부내용은 기록하지 않음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.ppomppu.co.kr/zboard/view.php?id=humor&no=559336",
+    "title": "회사 과장님이 경찰한테 잡혀갔던 썰",
+    "body": "회사 과장이 경찰에게 잡혀갔다는 강한 사건형 제목이지만 본문을 읽지 않았으므로 세부내용은 기록하지 않음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_1716_회사과장경찰썰.md",
+      "originalTitle": "회사 과장님이 경찰한테 잡혀갔던 썰",
+      "originalMarkdown": "# 회사 과장님이 경찰한테 잡혀갔던 썰\r\n\r\n- stage: C1\r\n- source: Ppomppu\r\n- publicUrl: https://www.ppomppu.co.kr/zboard/view.php?id=humor&no=559336\r\n- exactObservedTitle: 회사 과장님이 경찰한테 잡혀갔던 썰\r\n- observedAt: 2026-09-20 17:16 KST\r\n- observedMetrics: 조회수 18447, 추천 1, 다른의견 0\r\n- bodyRead: false\r\n- bodyStatus: 본문 미확인\r\n- commentsRead: false\r\n- imageOrScreenshot: 이미지 첨부 존재 확인; 내용 미확인\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE_IMAGE_BODY_UNREAD\r\n- provenance: exact individual public URL confirmed; substantive story image-dependent and not downloaded/OCRed\r\n- whyGood: 회사 과장이 경찰에게 잡혀갔다는 강한 사건형 제목이지만 본문을 읽지 않았으므로 세부내용은 기록하지 않음.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "ce61d2bb39301e2f18dc57dbda8fa82615e3372cfd0eb82972417c65a2b44eb4",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 188
+}

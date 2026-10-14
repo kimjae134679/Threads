@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1961275392
+제목 - 배라 알바 그만둔 후기 및 배스킨라빈스 알바에 대하여
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1961275392",
+    "title": "배라 알바 그만둔 후기 및 배스킨라빈스 알바에 대하여",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23_theqoo-baskin-robbins-manager-job.md",
+      "originalTitle": "배라 알바 그만둔 후기 및 배스킨라빈스 알바에 대하여",
+      "originalMarkdown": "# 배라 알바 그만둔 후기 및 배스킨라빈스 알바에 대하여\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/1961275392\r\n- exactObservedTitle: `배라 알바 그만둔 후기 및 배스킨라빈스 알바에 대하여`\r\n- observedAt: 2026-09-23 21:18 KST\r\n- observedMetrics: 조회 수 94,555; 표시 수치 16\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 페이지에 Files 표시가 있으나 파일/이미지는 열거나 다운로드하지 않음\r\n- acquisitionStatus: C1 — 정확한 개별 공개 URL과 공개 본문 확인\r\n- provenance: 공개 검색/index를 통해 발견 후 개별 공개 페이지 본문 확인\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n5개월 만에 매니저가 된 뒤 주 6일·주말/공휴일 근무와 급여 현실 때문에 그만둔다는 직장 체감형 소재다. 오픈·마감·31데이·진상 유형까지 실제 업무 에피소드가 여러 갈래라 서비스직 공감 포인트가 많다.\r\n\r\n## 확인 메모\r\n본문은 공개 페이지에서 실제 확인했다. 댓글과 첨부 파일은 열지 않았다. `16`은 페이지에 함께 표시된 수치이나 의미를 임의로 단정하지 않았다. 개인 경험담의 사실관계는 별도 검증하지 않았다.",
+      "originalSha256": "09146b439ff0074fc6648fb7092a4d7e09c752f8e349f9575ac997d145eee685",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 109
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/3161930312
+제목 - C1 candidate — 청첩장 받고 축의금 고민하게 된 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/3161930312",
+    "title": "C1 candidate — 청첩장 받고 축의금 고민하게 된 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_C1_A0_P0_청첩장만원대밥더치.md",
+      "originalTitle": "C1 candidate — 청첩장 받고 축의금 고민하게 된 후기",
+      "originalMarkdown": "# C1 candidate — 청첩장 받고 축의금 고민하게 된 후기\r\n\r\n- source: TheQoo / 후기\r\n- exact observed title: `청첩장 받고 축의금 고민하게 된 후기`\r\n- source URL: https://theqoo.net/review/3161930312\r\n- observedAt: 2026-09-20 23:16 KST\r\n- provenance: exact individual public post URL verified via public web page\r\n- acquisitionState: C1\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 본문 내 첨부 이미지 확인되지 않음\r\n- observedMetrics: 조회 10,230 / 댓글 38\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 요약\r\n작성자는 30년 지기에게 청첩장을 받는 자리에서 상대가 만원대 식사를 사고 카페는 더치페이를 한 상황을 적었다. 원래 축의금 20만원을 생각했지만 서운함 때문에 액수를 다시 고민한다고 했다.\r\n\r\n## 왜 소재로 좋은가\r\n`30년 지기`, `청첩장`, `만원대 밥`, `카페 더치`, `축의금 20→5 고민`이라는 갈등 구조가 짧고 선명하다. 친밀도와 돈의 기준을 두고 의견이 즉시 갈릴 수 있다.\r\n\r\n## 제한\r\n댓글은 읽지 않았다. 원문 경험을 외부 사실로 검증한 것이 아니다. 권리/OCR/moderation/asset/publication 상태를 꾸며내지 않으며 제작 단계로 넘기지 않는다.\r\n",
+      "originalSha256": "fcf3c2628818da51f0729117ea57c1404cec3a9f6893f25e86c61fb104428864",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 115
+}

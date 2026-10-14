@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/569909346
+제목 - 남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/569909346",
+    "title": "남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_569909346.md",
+      "originalTitle": "남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기",
+      "originalMarkdown": "# 남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기\r\n\r\n- source: TheQoo\r\n- sourceUrl: https://theqoo.net/review/569909346\r\n- exactObservedTitle: `남자친구가 비대면계좌개설 영상통화 상담원 웃음 터트린 후기`\r\n- observedAt: `2026-09-22 07:14 KST`\r\n- provenanceLevel: `C1`\r\n- acquisitionStatus: `public individual page surfaced/read via public web index; no bypass`\r\n- bodyRead: `yes (publicly indexed visible portion)`\r\n- commentsRead: `no`\r\n- imageOrScreenshotPresent: `yes, body references an attached explanatory image; image not downloaded`\r\n- observedMetrics: `조회 12,043` (public index에서 실제 관찰된 수치; 댓글 수 미확인)\r\n- assetStatus: `A0`\r\n- publicationStatus: `P0`\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 관찰 내용\r\n글쓴이·남자친구·선배가 함께 있던 중 선배가 비대면 계좌개설 영상통화 본인인증을 진행했고, 아래쪽 45도 각도로 얼굴을 화면에 가득 잡는 모습부터 일행이 웃음을 참기 어려웠다는 공개 본문 일부를 확인했다.\r\n\r\n## 소재로 좋은 이유\r\n평범한 금융 본인인증이 주변 사람과 상담원까지 얽힌 민망한 상황으로 변하는 생활형 코미디다. 짧고 시각적으로 상상하기 쉬운 상황이라 도입 훅이 강하다.\r\n\r\n## 주의\r\n이미지는 존재 언급만 기록했으며 다운로드·캡처·OCR하지 않았다. 공개 검색에서 확인되지 않은 후속 전개는 채워 넣지 않는다.\r\n",
+      "originalSha256": "7fa57a8564c1e61fee7205f92278c0e8dbb7c01729ce52aac01f22a7d1d2cb38",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 111
+}

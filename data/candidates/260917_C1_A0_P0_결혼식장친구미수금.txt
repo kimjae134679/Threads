@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1kcgxde
+제목 - AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?
+내용 - [명시 요약 — 원문 전문 아님]
+이벤트 회사를 운영하는 작성자가 남편 친구의 결혼식을 거의 원가 수준으로 맡고 추가 서비스까지 제공했는데, 결혼식이 끝난 뒤 5개월이 지나도록 약 70,000루피(약 850달러)가 미지급 상태라는 사연. 개인적 친분 때문에 싸게 해줬는데도 계속 현금이 부족하다는 답만 돌아와 비용을 요구하는 자신이 과한지 묻는다. 공개 원문 본문 확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1kcgxde",
+    "title": "AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?",
+    "body": "이벤트 회사를 운영하는 작성자가 남편 친구의 결혼식을 거의 원가 수준으로 맡고 추가 서비스까지 제공했는데, 결혼식이 끝난 뒤 5개월이 지나도록 약 70,000루피(약 850달러)가 미지급 상태라는 사연. 개인적 친분 때문에 싸게 해줬는데도 계속 현금이 부족하다는 답만 돌아와 비용을 요구하는 자신이 과한지 묻는다. 공개 원문 본문 확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_결혼식장친구미수금.md",
+      "originalTitle": "AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?",
+      "originalMarkdown": "# AITA for insisting on being paid the remaining amount for a wedding we managed, even though the client (a family friend) says he’s short on cash?\r\n\r\n## 글 내용\r\n이벤트 회사를 운영하는 작성자가 남편 친구의 결혼식을 거의 원가 수준으로 맡고 추가 서비스까지 제공했는데, 결혼식이 끝난 뒤 5개월이 지나도록 약 70,000루피(약 850달러)가 미지급 상태라는 사연. 개인적 친분 때문에 싸게 해줬는데도 계속 현금이 부족하다는 답만 돌아와 비용을 요구하는 자신이 과한지 묻는다. 공개 원문 본문 확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1kcgxde\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-17 04:35 KST\r\n- Reddit score: +937\r\n- 조회수/댓글 총수: 공개 검색 결과에서 확인하지 못함\r\n\r\n## 평가\r\n친구 할인 → 사실상 적자 서비스 → 5개월 미수금이라는 직장/사업+인간관계 갈등. 누구 책임인지 바로 의견을 내기 쉬운 구조다.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source: Reddit r/AmItheAsshole\r\n- full body read: YES\r\n- comments read: 미확인\r\n- source images/screenshots: 확인하지 못함\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review gate 유지\r\n",
+      "originalSha256": "60e74468c3e486488000ff911d51c4d6191a2cca460fae0c12369e660cacf8ee",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 439
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/3390532925
+제목 - 결혼 5년차 아내 불면증 고친 남편
+내용 - [명시 요약 — 원문 전문 아님]
+본문의 핵심 내용이 이미지 3장에 담긴 이미지 중심 게시물이다. 검색 결과에서 이미지 내용 자체는 읽지 못했으므로 본문 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/3390532925",
+    "title": "결혼 5년차 아내 불면증 고친 남편",
+    "body": "본문의 핵심 내용이 이미지 3장에 담긴 이미지 중심 게시물이다. 검색 결과에서 이미지 내용 자체는 읽지 못했으므로 본문 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_아내불면증고친남편.md",
+      "originalTitle": "결혼 5년차 아내 불면증 고친 남편",
+      "originalMarkdown": "# 결혼 5년차 아내 불면증 고친 남편\r\n\r\n## 글 내용\r\n본문의 핵심 내용이 이미지 3장에 담긴 이미지 중심 게시물이다. 검색 결과에서 이미지 내용 자체는 읽지 못했으므로 본문 미확인.\r\n\r\n## 정확한 링크\r\nhttps://theqoo.net/square/3390532925\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n2026-09-18 10:37 KST 관측: 조회 15,726 / 댓글 30. 좋아요 수치는 확인하지 못함.\r\n\r\n## 평가\r\n제목만으로는 가벼운 부부 생활 반전 가능성이 있으나 실제 이미지 본문 확인 전에는 내용 평가를 확정하지 않는다.\r\n\r\n## 형식\r\n이미지 포스팅\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n검색에서 이미지 존재만 확인, 실제 source bytes/screenshot 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "72c14fabf108fe96e090592c2c00623a447cf0f1776902848e5bcf8ce32fa3b0",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 177
+}

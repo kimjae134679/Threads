@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EB%B9%9A-1%EC%96%B5-%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-xyyvsj0d
+제목 - 빚 1억 여자친구
+내용 - [명시 요약 — 원문 전문 아님]
+자산 공개를 앞두고 1억가량의 빚 중 일부만 먼저 말하려는 고민이라 돈과 연애 신뢰 논쟁이 동시에 생김.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EB%B9%9A-1%EC%96%B5-%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-xyyvsj0d",
+    "title": "빚 1억 여자친구",
+    "body": "자산 공개를 앞두고 1억가량의 빚 중 일부만 먼저 말하려는 고민이라 돈과 연애 신뢰 논쟁이 동시에 생김.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_빚1억여자친구자산공개.md",
+      "originalTitle": "빚 1억 여자친구",
+      "originalMarkdown": "# 빚 1억 여자친구\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EB%B9%9A-1%EC%96%B5-%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC-xyyvsj0d\r\n- exactObservedTitle: 빚 1억 여자친구\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 194, 댓글 11\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 자산 공개를 앞두고 1억가량의 빚 중 일부만 먼저 말하려는 고민이라 돈과 연애 신뢰 논쟁이 동시에 생김.\r\n- acquisition: C1; exact individual public URL directly observed; poster claims not independently verified\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "dad419552b5abd9c1668db84d64c19569263b198d9e692b84e3a85cadcb498ee",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 218
+}

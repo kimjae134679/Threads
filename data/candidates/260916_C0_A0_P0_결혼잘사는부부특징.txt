@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - 결혼해서 잘 사는 부부 특징
+내용 - [명시 요약 — 원문 전문 아님]
+본문 미확인. 공개 검색/index에서 제목과 `인정`이라는 짧은 소개만 확인한 결혼·관계 소재 lead.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "결혼해서 잘 사는 부부 특징",
+    "body": "본문 미확인. 공개 검색/index에서 제목과 `인정`이라는 짧은 소개만 확인한 결혼·관계 소재 lead.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_결혼잘사는부부특징.md",
+      "originalTitle": "결혼해서 잘 사는 부부 특징",
+      "originalMarkdown": "# 결혼해서 잘 사는 부부 특징\r\n\r\n## 글 내용\r\n본문 미확인. 공개 검색/index에서 제목과 `인정`이라는 짧은 소개만 확인한 결혼·관계 소재 lead.\r\n\r\n## 정확한 링크\r\n정확한 개별 원문 URL 미확인. 공개 검색/index에서만 확인.\r\n\r\n## 관측 수치\r\n- 관측: 2026-09-16 14:34 KST 부근\r\n- 조회/좋아요/댓글 미확인\r\n- 본문 읽음: 아니오\r\n- 댓글 읽음: 아니오\r\n\r\n## 평가\r\n결혼 생활에 대한 짧고 명확한 주장형 콘텐츠일 가능성이 있어 댓글 유도력이 있을 수 있다. 원문 확인 전 구체 내용은 추정하지 않는다.\r\n\r\n## 형식\r\n미확인\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source 파일 확보: 아니오\r\n- acquisition: ASSETS_PENDING\r\n- C0 / A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요",
+      "originalSha256": "de27e61e5e9c67dcd3499af47f7a3494b5bb3c90c5a6f9b3ea34b600b22611a8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 125
+}

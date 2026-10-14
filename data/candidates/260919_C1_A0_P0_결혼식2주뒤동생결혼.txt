@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmITheAngel/comments/1wjg9sw/aio_to_my_brother_last_minute_getting_married/
+제목 - 내 결혼식 2주 뒤에 동생도 갑자기 결혼하겠답니다
+내용 - [명시 요약 — 원문 전문 아님]
+30세 작성자가 자신의 결혼식 2주 뒤에 26세 남동생이 결혼하겠다고 발표했고, 동생 결혼식까지 4주도 남지 않은 시점이라 과민반응인지 묻는 사연. 이번 run에서 보존된 본문은 이 핵심 상황까지만 확인했다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmITheAngel/comments/1wjg9sw/aio_to_my_brother_last_minute_getting_married/",
+    "title": "내 결혼식 2주 뒤에 동생도 갑자기 결혼하겠답니다",
+    "body": "30세 작성자가 자신의 결혼식 2주 뒤에 26세 남동생이 결혼하겠다고 발표했고, 동생 결혼식까지 4주도 남지 않은 시점이라 과민반응인지 묻는 사연. 이번 run에서 보존된 본문은 이 핵심 상황까지만 확인했다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_결혼식2주뒤동생결혼.md",
+      "originalTitle": "내 결혼식 2주 뒤에 동생도 갑자기 결혼하겠답니다",
+      "originalMarkdown": "# 내 결혼식 2주 뒤에 동생도 갑자기 결혼하겠답니다\r\n\r\n## source\r\nReddit public repost (r/AmITheAngel preserving AIO text)\r\n\r\n## 원문 제목 (exact observed title)\r\nAIO to my Brother last minute getting married 2wks after I do?\r\n\r\n## 정확한 링크 / 공개 페이지\r\nhttps://www.reddit.com/r/AmITheAngel/comments/1wjg9sw/aio_to_my_brother_last_minute_getting_married/\r\n\r\n## 관찰시각\r\n2026-09-19 05:19 KST run\r\n\r\n## 실제 관측 수치\r\n공개 repost 페이지 관측: +6 votes. 원 게시물 수치는 미확인.\r\n\r\n## 본문 / 댓글 확인\r\n- 보존된 원문 본문 읽음: PARTIAL\r\n- 댓글 읽음: NO\r\n\r\n## 글 내용\r\n30세 작성자가 자신의 결혼식 2주 뒤에 26세 남동생이 결혼하겠다고 발표했고, 동생 결혼식까지 4주도 남지 않은 시점이라 과민반응인지 묻는 사연. 이번 run에서 보존된 본문은 이 핵심 상황까지만 확인했다.\r\n\r\n## 이미지 / 스크린샷 존재 여부\r\n미확인. 자산 취득 없음.\r\n\r\n## 왜 소재로 좋은지\r\n'형제 결혼식 간격 2주'라는 숫자만으로 가족 일정·관심 분산·예의 문제를 즉시 토론하게 만드는 짧고 명확한 훅이다.\r\n\r\n## acquisition / provenance\r\nEXACT_PUBLIC_REPOST_URL_VERIFIED / C1 for public repost page. Original AIO URL은 이번 run에서 별도 검증하지 못함. body PARTIAL. A0/P0. publicationAllowed=false. source asset/OCR/moderation/rights clearance/human approval 미실행.",
+      "originalSha256": "e9cbf446cced580f3b0e2ac42093aa1eb3d39f82bd2df549b11c7e1532490580",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 294
+}

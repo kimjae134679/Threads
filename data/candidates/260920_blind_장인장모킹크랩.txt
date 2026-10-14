@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9E%A5%EC%9D%B8-%EC%9E%A5%EB%AA%A8-odchart8
+제목 - 장인 장모
+내용 - [명시 요약 — 원문 전문 아님]
+자신만 빼고 배우자·아이·장인장모가 식사한 사실을 뒤늦게 알게 된 상황과 기존 지원 문제까지 겹친 가족갈등이라 반응성이 높음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9E%A5%EC%9D%B8-%EC%9E%A5%EB%AA%A8-odchart8",
+    "title": "장인 장모",
+    "body": "자신만 빼고 배우자·아이·장인장모가 식사한 사실을 뒤늦게 알게 된 상황과 기존 지원 문제까지 겹친 가족갈등이라 반응성이 높음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_blind_장인장모킹크랩.md",
+      "originalTitle": "장인 장모",
+      "originalMarkdown": "# 장인 장모\r\n\r\n- source: Blind\r\n- sourceStage: C1\r\n- url: https://www.teamblind.com/kr/post/%EC%9E%A5%EC%9D%B8-%EC%9E%A5%EB%AA%A8-odchart8\r\n- exactObservedTitle: 장인 장모\r\n- observedAt: 2026-09-20 04:17 KST\r\n- observedMetrics: 조회수 3,215, 댓글 46, 좋아요 21\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false observed\r\n- whyGood: 자신만 빼고 배우자·아이·장인장모가 식사한 사실을 뒤늦게 알게 된 상황과 기존 지원 문제까지 겹친 가족갈등이라 반응성이 높음.\r\n- acquisition: PUBLIC_INDIVIDUAL_PAGE\r\n- provenance: AUTHOR_POST_ON_BLIND; 가족 지원 관련 내용은 게시자 주장\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "a2de42f72ce1493da846520f903cb8eaa68dfe6b6977b2b44dec258d604bf6be",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 206
+}

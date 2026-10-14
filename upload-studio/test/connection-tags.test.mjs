@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {OfflineConnectionPreparation} from '../connection-preparation.mjs';
+import * as tags from '../tags.mjs';
+let tick=1000,n=0;const flow=new OfflineConnectionPreparation({now:()=>tick,nonce:()=>('test-session-'+(++n)).padEnd(32,'x')});
+const config={platform:'instagram',public_client_id:'123456',redirect_uri:'https://example.invalid/callback',account_label:'@aftertalk2026'};
+const plan=flow.prepare(config);assert.equal(plan.connected,false);assert.equal(plan.externalCalls,0);assert.deepEqual(plan.scopes,['instagram_business_basic','instagram_business_content_publish']);assert.equal(new URL(plan.authorize_url).hostname,'www.instagram.com');assert.equal(plan.page_required,false);const state=new URL(plan.authorize_url).searchParams.get('state');
+assert.throws(()=>flow.inspectCallback({state,platform:'threads',redirect_uri:config.redirect_uri}),/callback_mismatch/);flow.inspectCallback({state,platform:'instagram',redirect_uri:config.redirect_uri});assert.throws(()=>flow.inspectCallback({state,platform:'instagram',redirect_uri:config.redirect_uri}),/state_invalid/);
+const exp=flow.prepare({...config,platform:'threads'});assert.equal(new URL(exp.authorize_url).hostname,'threads.com');tick+=600001;assert.throws(()=>flow.inspectCallback({state:new URL(exp.authorize_url).searchParams.get('state'),platform:'threads',redirect_uri:config.redirect_uri}),/state_expired/);assert.throws(()=>flow.prepare({...config,redirect_uri:'http://localhost/callback'}),/redirect_invalid/);
+assert.deepEqual(tags.normalizeTopicTags(['#결혼','등급']),['결혼','등급']);assert.throws(()=>tags.normalizeTopicTags(['결혼']),/two_topic_tags/);assert.throws(()=>tags.normalizeTopicTags(['결혼','결혼']),/invalid_tag/);
+assert.equal(tags.instagramTaggedCaption('제목 #이야기',{common_tags:['이야기','읽을거리'],topic_tags:['결혼','등급'],tags:'#지역'}).hashtag_count,5);assert.equal(tags.publicationTagMetadata({threads_topic_tag:'결혼'},'threads').topic_tag,'결혼');assert.throws(()=>tags.normalizeThreadsTopic('x'.repeat(51)),/invalid_threads_topic/);
+console.log('Offline OAuth preparation nonce/expiry/mismatch/replay and common/topic tag guard passed.');

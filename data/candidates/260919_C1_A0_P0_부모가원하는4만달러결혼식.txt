@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/10lwvlo
+제목 - 우리는 1만달러 결혼식 원하는데 부모님은 4만달러짜리를 하랍니다
+내용 - [명시 요약 — 원문 전문 아님]
+28세 여성이 약혼자와 약 1만달러 규모의 여행지 결혼식을 원하지만 부모는 수백 명이 참석하는 큰 교회 결혼식을 요구한 사연. 웨딩플래너 견적은 3만5천~4만5천달러였고, 작성자는 부모가 원하는 규모라면 부모가 비용을 내야 한다는 입장이다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/10lwvlo",
+    "title": "우리는 1만달러 결혼식 원하는데 부모님은 4만달러짜리를 하랍니다",
+    "body": "28세 여성이 약혼자와 약 1만달러 규모의 여행지 결혼식을 원하지만 부모는 수백 명이 참석하는 큰 교회 결혼식을 요구한 사연. 웨딩플래너 견적은 3만5천~4만5천달러였고, 작성자는 부모가 원하는 규모라면 부모가 비용을 내야 한다는 입장이다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_C1_A0_P0_부모가원하는4만달러결혼식.md",
+      "originalTitle": "우리는 1만달러 결혼식 원하는데 부모님은 4만달러짜리를 하랍니다",
+      "originalMarkdown": "# 우리는 1만달러 결혼식 원하는데 부모님은 4만달러짜리를 하랍니다\r\n\r\n## source\r\nReddit r/AmItheAsshole\r\n\r\n## 원문 제목\r\nAITA for telling my parents they have to pay for my wedding.\r\n\r\n## 글 내용\r\n28세 여성이 약혼자와 약 1만달러 규모의 여행지 결혼식을 원하지만 부모는 수백 명이 참석하는 큰 교회 결혼식을 요구한 사연. 웨딩플래너 견적은 3만5천~4만5천달러였고, 작성자는 부모가 원하는 규모라면 부모가 비용을 내야 한다는 입장이다.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/10lwvlo\r\n\r\n## 관찰\r\n- 관찰시각: 2026-09-19 06:15 KST 실행\r\n- 공개 Reddit 검색 표시: +12,084 votes\r\n- 조회수/댓글수: 미확인\r\n\r\n## 확인 상태\r\n- 본문: 읽음\r\n- 댓글: 미확인\r\n- 이미지/스크린샷 존재 여부: source asset 미확보\r\n\r\n## 왜 소재로 좋은지\r\n내 결혼식의 규모를 누가 정하고 누가 돈을 내야 하는지라는 보편적 갈등에 1만 vs 3.5~4.5만달러라는 숫자 대비가 강하다.\r\n\r\n## acquisition / provenance\r\nC1_A0_P0. EXACT_PUBLIC_URL_VERIFIED. publicationAllowed=false. source media 미확보. rights/privacy/human review 필요.",
+      "originalSha256": "b6d5e8306aae560598a52559d2fa211b2cbee7de8bfa9e6dafe6c8f51747ebd7",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 275
+}

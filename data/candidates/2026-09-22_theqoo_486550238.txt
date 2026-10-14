@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/486550238
+제목 - 찡찡거리는 친구랑 대판 싸운 후기
+내용 - [명시 요약 — 원문 전문 아님]
+친구가 출근부터 잠들 때까지 일·건강·주변 사람에 대한 불평을 계속 보내고 작성자가 반응을 줄이면서 갈등이 커진 이야기라 친구 사이 감정노동과 선 긋기에 대한 공감·논쟁이 쉬운 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/486550238",
+    "title": "찡찡거리는 친구랑 대판 싸운 후기",
+    "body": "친구가 출근부터 잠들 때까지 일·건강·주변 사람에 대한 불평을 계속 보내고 작성자가 반응을 줄이면서 갈등이 커진 이야기라 친구 사이 감정노동과 선 긋기에 대한 공감·논쟁이 쉬운 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-22_theqoo_486550238.md",
+      "originalTitle": "찡찡거리는 친구랑 대판 싸운 후기",
+      "originalMarkdown": "# 찡찡거리는 친구랑 대판 싸운 후기\r\n\r\n- stage: C1\r\n- source: TheQoo 후기\r\n- sourceUrl: https://theqoo.net/review/486550238\r\n- exactObservedTitle: 찡찡거리는 친구랑 대판 싸운 후기\r\n- observedAt: 2026-09-22 16:18 KST\r\n- observedMetrics: 조회 3,922\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: false\r\n- whyGood: 친구가 출근부터 잠들 때까지 일·건강·주변 사람에 대한 불평을 계속 보내고 작성자가 반응을 줄이면서 갈등이 커진 이야기라 친구 사이 감정노동과 선 긋기에 대한 공감·논쟁이 쉬운 소재.\r\n- acquisition: 공개 개별 게시물 URL과 공개 본문을 확인함. C1.\r\n- provenance: TheQoo 공개 후기 게시물. 검색 결과에 실제 표시된 조회 수만 기록. 댓글 미열람.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false",
+      "originalSha256": "3534ac8c379137d241b206c4a3224fd6b600ad4b9d516988cc9cb7377921bde9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 206
+}

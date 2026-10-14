@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/square/4345613177
+제목 - 남편 아이 없이 친구들이랑 핵노잼여행
+내용 - [명시 요약 — 원문 전문 아님]
+남편과 아이 없이 친구들과 여행을 간 상황을 두 장의 이미지와 함께 보여주는 가벼운 가족/여행 유머형 게시물이다. 원 Instagram 링크까지 노출됐지만 Instagram 본문·반응 수치·권리는 직접 확인하지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/square/4345613177",
+    "title": "남편 아이 없이 친구들이랑 핵노잼여행",
+    "body": "남편과 아이 없이 친구들과 여행을 간 상황을 두 장의 이미지와 함께 보여주는 가벼운 가족/여행 유머형 게시물이다. 원 Instagram 링크까지 노출됐지만 Instagram 본문·반응 수치·권리는 직접 확인하지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_남편아이없이친구들과핵노잼여행.md",
+      "originalTitle": "남편 아이 없이 친구들이랑 핵노잼여행",
+      "originalMarkdown": "# 남편 아이 없이 친구들이랑 핵노잼여행\r\n\r\n- 상태: C1 / A0 / P0\r\n- 출처: TheQoo\r\n- 링크: https://theqoo.net/square/4345613177\r\n- 조회수: 48\r\n- 댓글: 0\r\n- 이미지: 2장 확인\r\n- 원 Instagram: https://www.instagram.com/p/DdOi-v6IKx5/\r\n- 본문: 읽음\r\n\r\n## 글 내용\r\n남편과 아이 없이 친구들과 여행을 간 상황을 두 장의 이미지와 함께 보여주는 가벼운 가족/여행 유머형 게시물이다. 원 Instagram 링크까지 노출됐지만 Instagram 본문·반응 수치·권리는 직접 확인하지 않았다.\r\n\r\n## 평가\r\n- 평가: 콘텐츠 자체 우선순위 낮음 / provenance 테스트 가치는 있음\r\n- 이유: 반응은 작지만 upstream Instagram 경로가 명확함.\r\n- 제작: ASSETS_PENDING / publicationAllowed=false\r\n",
+      "originalSha256": "83ed99abf6887035cd44068eb4b47b8a46a16dc2c743ea1ae830dc10dd5ef2e3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 229
+}

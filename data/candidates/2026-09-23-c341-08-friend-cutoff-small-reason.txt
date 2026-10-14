@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2207618065
+제목 - 별것도 아닌걸로 친구랑 손절 결심했는데 후회는 없는 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2207618065",
+    "title": "별것도 아닌걸로 친구랑 손절 결심했는데 후회는 없는 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-23-c341-08-friend-cutoff-small-reason.md",
+      "originalTitle": "별것도 아닌걸로 친구랑 손절 결심했는데 후회는 없는 후기",
+      "originalMarkdown": "# 별것도 아닌걸로 친구랑 손절 결심했는데 후회는 없는 후기\r\n\r\n- source: TheQoo\r\n- public URL: https://theqoo.net/review/2207618065\r\n- exact observed title: `별것도 아닌걸로 친구랑 손절 결심했는데 후회는 없는 후기`\r\n- observedAt: 2026-09-23 13:19 KST\r\n- observed metrics: 조회 3,228 / 댓글 12\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshotPresent: 미확인\r\n- candidateStage: C1\r\n- assetStage: A0\r\n- publicationStage: P0\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 왜 소재로 좋은지\r\n대학원 준비로 예민한 시기에 직장 다니는 친구가 상담심리 전공이라는 이유로 자신의 심리를 분석해 달라는 식의 질문을 반복하면서 작성자가 결국 관계를 끊기로 결심한 경험담. 겉보기엔 사소한 사건과 누적 피로 사이의 경계가 논쟁 포인트다.\r\n\r\n## acquisition / provenance\r\n공개 검색에서 정확한 개별 TheQoo URL과 공개 본문을 직접 확인한 C1. 위 수치는 공개 페이지에서 실제 관찰된 값만 기록했다. 댓글은 읽지 않았다. 개인 경험 주장의 사실성은 별도 검증되지 않았으며 작성자의 경험담으로만 취급한다. 이미지/스크린샷 존재 여부는 확인하지 않았다.",
+      "originalSha256": "018b0e8435de451b230f7c2f32008c0560aac6dcc9ef3135692ffbf16c40685e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 111
+}

@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1br0bcy
+제목 - AITA for not wanting to use my wedding money to buy a house?
+내용 - [명시 요약 — 원문 전문 아님]
+학자금과 일반 부채를 거의 정리한 커플이 집 계약금을 모으려면 약 5년이 더 걸릴 것으로 예상하는 상황. 작성자는 큰 결혼식을 꿈꿨지만 다시 빚지고 싶지 않아 작은 결혼식을 계획하고 있으며, 결혼에 쓸 돈과 집 마련 사이에서 가치관 충돌을 고민함. 공개 본문을 읽음.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1br0bcy",
+    "title": "AITA for not wanting to use my wedding money to buy a house?",
+    "body": "학자금과 일반 부채를 거의 정리한 커플이 집 계약금을 모으려면 약 5년이 더 걸릴 것으로 예상하는 상황. 작성자는 큰 결혼식을 꿈꿨지만 다시 빚지고 싶지 않아 작은 결혼식을 계획하고 있으며, 결혼에 쓸 돈과 집 마련 사이에서 가치관 충돌을 고민함. 공개 본문을 읽음.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_결혼식돈으로집살까.md",
+      "originalTitle": "AITA for not wanting to use my wedding money to buy a house?",
+      "originalMarkdown": "# AITA for not wanting to use my wedding money to buy a house?\r\n\r\n## 글 내용\r\n학자금과 일반 부채를 거의 정리한 커플이 집 계약금을 모으려면 약 5년이 더 걸릴 것으로 예상하는 상황. 작성자는 큰 결혼식을 꿈꿨지만 다시 빚지고 싶지 않아 작은 결혼식을 계획하고 있으며, 결혼에 쓸 돈과 집 마련 사이에서 가치관 충돌을 고민함. 공개 본문을 읽음.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1br0bcy\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-18 09:33 KST · post score +406 확인. 조회수/댓글 총수는 확인하지 못함.\r\n\r\n## 평가\r\n'하루의 결혼식 vs 5년 앞당길 집'이라는 누구나 바로 의견을 낼 수 있는 돈/결혼 선택지. C1.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\nsource screenshot 미확보. A0 · P0 · ASSETS_PENDING · publicationAllowed=false. rights/privacy/human review 필요. OCR/moderation/게시 성공 미확인. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "ae4bb93fb18c6a9efe49d77de3eeac1387501b4448d23eac4b1b2470287cfb3e",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 315
+}

@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/2577490309
+제목 - 스터디카페 알바 진상 종류 후기
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/2577490309",
+    "title": "스터디카페 알바 진상 종류 후기",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "2026-09-24_theqoo-study-cafe-customer-types.md",
+      "originalTitle": "스터디카페 알바 진상 종류 후기",
+      "originalMarkdown": "# 스터디카페 알바 진상 종류 후기\r\n\r\n- source: TheQoo 후기\r\n- source_url: https://theqoo.net/review/2577490309\r\n- exact_observed_title: `스터디카페 알바 진상 종류 후기`\r\n- observed_at: 2026-09-24 00:16 KST\r\n- stage: C1\r\n- acquisition: public individual page indexed/readable via public web search\r\n- provenance: exact individual public TheQoo URL verified; first-person anonymous community post; personal claims are attributed/unverified\r\n- body_read: true\r\n- comments_read: false\r\n- image_or_screenshot_present: not relied upon / not downloaded\r\n- observed_metrics: 조회 6,176 (public page/search rendering observed)\r\n- why_good: 조용해야 할 스터디카페에서 대화 금지 위반, 간식 과다 이용 등 '상식선'을 두고 이용자와 알바 시각이 충돌해 댓글형 의견을 만들기 좋은 생활 밀착형 소재다.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n\r\n## 확인된 본문 요지\r\n스터디카페 알바 작성자가 근무 중 겪은 진상 유형을 정리한다. 로비·휴게실에서 계속 대화하는 이용자, 무료 간식을 과하게 가져가는 이용자 등 규칙과 이용자 행동 사이에서 생기는 짜증을 사례별로 적었다.\r\n",
+      "originalSha256": "bb4140480050048b6f1f0068c78a739195ea75bf027a18de8c1db2942890a6c8",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 97
+}

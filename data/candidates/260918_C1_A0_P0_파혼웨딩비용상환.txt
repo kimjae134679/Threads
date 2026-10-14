@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/
+제목 - AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding
+내용 - [명시 요약 — 원문 전문 아님]
+결혼 4개월 전 딸의 외도로 파혼됐고, 부모가 장애인 접근성을 조건으로 대신 계약한 환불 불가 예식장 비용이 남은 사연. 부모가 일부 상환을 요구하자 딸이 잔인하다고 반발했다. 공개 원문에서 본문 핵심을 실제 확인. 전체 댓글은 미확인.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/",
+    "title": "AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding",
+    "body": "결혼 4개월 전 딸의 외도로 파혼됐고, 부모가 장애인 접근성을 조건으로 대신 계약한 환불 불가 예식장 비용이 남은 사연. 부모가 일부 상환을 요구하자 딸이 잔인하다고 반발했다. 공개 원문에서 본문 핵심을 실제 확인. 전체 댓글은 미확인.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260918_C1_A0_P0_파혼웨딩비용상환.md",
+      "originalTitle": "AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding",
+      "originalMarkdown": "# AITA “ being cruel” for telling my daughter that she will need to help pay back the money that I spent on her wedding\r\n\r\n## 글 내용\r\n결혼 4개월 전 딸의 외도로 파혼됐고, 부모가 장애인 접근성을 조건으로 대신 계약한 환불 불가 예식장 비용이 남은 사연. 부모가 일부 상환을 요구하자 딸이 잔인하다고 반발했다. 공개 원문에서 본문 핵심을 실제 확인. 전체 댓글은 미확인.\r\n\r\n## 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/1rpxgnz/aita_being_cruel_for_telling_my_daughter_that_she/\r\n\r\n## 조회수 / 좋아요 / 댓글 등 동일 관측시점 수치\r\n관측: 2026-09-18 07:39 KST. +9,412 votes 확인. 조회수·댓글수 미확인.\r\n\r\n## 평가\r\n외도→파혼→환불 불가 결혼비용→부모가 상환 요구라는 연쇄 반전이 강하다. 가족·돈·책임 논쟁성이 매우 높음.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지/자산/게시상태\r\nsource asset 미확보. ASSETS_PENDING. C1_A0_P0. publicationAllowed=false. rights/privacy/human review 필요. 04_REVIEW_PUBLISH만 게시 가능.",
+      "originalSha256": "fa7da6b070b55e4cec07290d6d730e6cc7483d45580277c40c32d44e3b0f5ca3",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 406
+}

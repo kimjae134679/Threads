@@ -1,0 +1,29 @@
+원문링크 - https://theqoo.net/review/1309101415
+제목 - 좋은 시댁 만난 것 같은 후기
+내용 - [명시 요약 — 원문 전문 아님]
+경제력보다 간섭 없는 시댁과 무던한 배우자가 더 큰 복이었다는 결혼생활 관점이라 기존 갈등형 소재와 반대 결의 토론 소재가 됨.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://theqoo.net/review/1309101415",
+    "title": "좋은 시댁 만난 것 같은 후기",
+    "body": "경제력보다 간섭 없는 시댁과 무던한 배우자가 더 큰 복이었다는 결혼생활 관점이라 기존 갈등형 소재와 반대 결의 토론 소재가 됨.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_좋은시댁만난후기.md",
+      "originalTitle": "좋은 시댁 만난 것 같은 후기",
+      "originalMarkdown": "# 좋은 시댁 만난 것 같은 후기\r\n\r\n- source: TheQoo 후기\r\n- exactPublicUrl: https://theqoo.net/review/1309101415\r\n- observedAt: 2026-09-20 15:17 KST\r\n- provenanceLevel: C1\r\n- acquisition: public individual page / readable body\r\n- exactObservedTitle: `좋은 시댁 만난 것 같은 후기`\r\n- observedMetrics: 미확인\r\n- bodyRead: true\r\n- commentsRead: false\r\n- imageOrScreenshot: 미확인\r\n- whyGood: 경제력보다 간섭 없는 시댁과 무던한 배우자가 더 큰 복이었다는 결혼생활 관점이라 기존 갈등형 소재와 반대 결의 토론 소재가 됨.\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n- rights/moderation/asset/publication: 미확인/미진행\r\n",
+      "originalSha256": "4c1c5dbf9a81bb0adba860d13363546e013abaf12061a62cb3e20b82d2812f55",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 174
+}

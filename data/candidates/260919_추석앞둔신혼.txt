@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%B6%94%EC%84%9D-%EC%95%9E%EB%91%94-%EC%8B%A0%ED%98%BC-0bgl8qp8
+제목 - 추석 앞둔 신혼
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%B6%94%EC%84%9D-%EC%95%9E%EB%91%94-%EC%8B%A0%ED%98%BC-0bgl8qp8",
+    "title": "추석 앞둔 신혼",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260919_추석앞둔신혼.md",
+      "originalTitle": "추석 앞둔 신혼",
+      "originalMarkdown": "# 추석 앞둔 신혼\r\n\r\n- source: Blind / 결혼생활\r\n- public_url: https://www.teamblind.com/kr/post/%EC%B6%94%EC%84%9D-%EC%95%9E%EB%91%94-%EC%8B%A0%ED%98%BC-0bgl8qp8\r\n- exact_observed_title: 추석 앞둔 신혼\r\n- observed_at: 2026-09-19 18:19 KST\r\n- observed_metrics: 조회수 281, 댓글 10\r\n- body_read: yes\r\n- comments_read: yes (공개 페이지 노출 댓글 범위)\r\n- image_or_screenshot: 확인하지 않음\r\n- why_good: 첫 명절을 앞두고 친정 지원이 10배 이상이라는 조건까지 등장해 지원금과 시댁문화가 충돌하는 논쟁형 소재.\r\n- acquisition: C1 / exact individual public URL / public search + page text\r\n- provenance: original public Blind post as observed; 지원금 주장은 독립 검증 안 함\r\n- A: A0\r\n- P: P0\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "3dc4b2e6a068e40f220605c89fc14d3463cf167313258504774a602bf7b5ed8f",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 151
+}

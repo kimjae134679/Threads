@@ -1,0 +1,29 @@
+원문링크 - https://www.reddit.com/r/AmItheAsshole/comments/t8rlny/
+제목 - 제목
+내용 - [원문 본문 미확보]
+
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.reddit.com/r/AmItheAsshole/comments/t8rlny/",
+    "title": "제목",
+    "body": "",
+    "bodyKind": "unavailable",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C1_A0_P0_딸결혼식35000달러지원.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\nAITA for offering only $35,000 for my daughter's wedding?\r\n\r\n# 글 내용\r\n부모가 딸의 결혼식에 35,000달러를 지원했지만 딸은 약 70,000달러인 결혼식 전체 비용을 부모가 부담해야 한다고 주장한다. 부모는 대학 졸업 이후 딸에게 약 30만 달러를 지원했고 매년 2만 달러도 주고 있으며, 딸과 약혼자의 합산 소득은 약 22만 달러라고 설명한다. 공개 원문 본문 전체를 읽었고 댓글 전체는 읽지 않았다.\r\n\r\n# 정확한 링크\r\nhttps://www.reddit.com/r/AmItheAsshole/comments/t8rlny/\r\n\r\n# 조회수/좋아요/댓글 등 동일 관측시점 수치\r\n- 관측: 2026-09-16 22:34 KST 부근 공개 검색 결과\r\n- 공개 표시 score: +1,695\r\n- 조회수/전체 댓글 수: 확인하지 못함\r\n\r\n# 평가\r\n- 돈·가족·결혼비용이 직접 충돌하고 지원 규모가 커서 즉시 의견이 갈리는 소재.\r\n- 부모의 기존 지원액과 당사자 소득까지 있어 맥락과 반전이 분명함.\r\n- 원문 provenance 확인 C1.\r\n\r\n# 이미지/자산/게시상태\r\n- source screenshots/media bytes: 미확보\r\n- full-post screenshot: 미확보\r\n- acquisition: ASSETS_PENDING\r\n- A0 / P0\r\n- publicationAllowed=false\r\n- rights/privacy/human review 필요\r\n- 게시 권한: 04_REVIEW_PUBLISH만 가능\r\n",
+      "originalSha256": "0683c1cca7a57c7acde32903cc488254bb54f8f9b86f09d75d7c2cc9054c73a9",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 101
+}

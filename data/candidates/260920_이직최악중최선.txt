@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%EC%9D%B4%EC%A7%81%EC%83%81%EB%8B%B4-%EC%B5%9C%EC%95%85%EC%A4%91-%EC%B5%9C%EC%84%A0%EC%9D%84-%EC%84%A0%ED%83%9D%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C%EC%9A%94-pdtu6aqk
+제목 - 이직상담 최악중 최선을 선택해야할까요
+내용 - [명시 요약 — 원문 전문 아님]
+편도 운전 1시간10분 현직장과 대중교통 1시간30분 이직처 사이의 직장인 현실 선택 소재.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%EC%9D%B4%EC%A7%81%EC%83%81%EB%8B%B4-%EC%B5%9C%EC%95%85%EC%A4%91-%EC%B5%9C%EC%84%A0%EC%9D%84-%EC%84%A0%ED%83%9D%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C%EC%9A%94-pdtu6aqk",
+    "title": "이직상담 최악중 최선을 선택해야할까요",
+    "body": "편도 운전 1시간10분 현직장과 대중교통 1시간30분 이직처 사이의 직장인 현실 선택 소재.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260920_이직최악중최선.md",
+      "originalTitle": "이직상담 최악중 최선을 선택해야할까요",
+      "originalMarkdown": "# 이직상담 최악중 최선을 선택해야할까요\r\n- source: Blind\r\n- url: https://www.teamblind.com/kr/post/%EC%9D%B4%EC%A7%81%EC%83%81%EB%8B%B4-%EC%B5%9C%EC%95%85%EC%A4%91-%EC%B5%9C%EC%84%A0%EC%9D%84-%EC%84%A0%ED%83%9D%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C%EC%9A%94-pdtu6aqk\r\n- exactObservedTitle: 이직상담 최악중 최선을 선택해야할까요\r\n- observedAt: 2026-09-20 01:17 KST\r\n- observedMetrics: 조회수 30, 댓글 2\r\n- bodyRead: true\r\n- commentsRead: true\r\n- imageOrScreenshot: 확인되지 않음\r\n- whyGood: 편도 운전 1시간10분 현직장과 대중교통 1시간30분 이직처 사이의 직장인 현실 선택 소재.\r\n- acquisition: C1; exact individual public URL directly observed\r\n- A1: false\r\n- P1: false\r\n- publicationAllowed: false\r\n",
+      "originalSha256": "152e6bc1279354faf32efa0a639c398702671be59d19153bd84cdde9d7ba2ba5",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 321
+}

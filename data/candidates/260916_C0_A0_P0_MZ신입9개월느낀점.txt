@@ -1,0 +1,29 @@
+원문링크 - 
+제목 - MZ신입이랑 같이 일한지 9개월차 느낀점
+내용 - [명시 요약 — 원문 전문 아님]
+신입과 9개월 함께 일한 뒤 느낀 점을 정리한 직장 갈등/세대 인상 소재다. 정확한 Inven 개별 게시물은 확인했지만 핵심 내용이 이미지에 들어 있고 이번 회차에는 실제 이미지 bytes/OCR/vision을 확보하지 않았으므로 구체 사례·주장·문구를 임의로 복원하지 않는다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "",
+    "title": "MZ신입이랑 같이 일한지 9개월차 느낀점",
+    "body": "신입과 9개월 함께 일한 뒤 느낀 점을 정리한 직장 갈등/세대 인상 소재다. 정확한 Inven 개별 게시물은 확인했지만 핵심 내용이 이미지에 들어 있고 이번 회차에는 실제 이미지 bytes/OCR/vision을 확보하지 않았으므로 구체 사례·주장·문구를 임의로 복원하지 않는다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260916_C0_A0_P0_MZ신입9개월느낀점.md",
+      "originalTitle": "MZ신입이랑 같이 일한지 9개월차 느낀점",
+      "originalMarkdown": "# MZ신입이랑 같이 일한지 9개월차 느낀점\r\n\r\n- 상태: C0 / A0 / P0 (논리 provenance 상태 C1; 파일명/자산/게시 상태는 미승격)\r\n- 출처: Inven 오픈이슈갤러리\r\n- 정확한 개별 원문: https://www.inven.co.kr/board/webzine/2097/2727901\r\n- source post ID: 2727901\r\n- provenance verified: 2026-09-20 KST\r\n- 공개 페이지 표기 작성자/시각: Earth / 2026-09-15 07:22\r\n- 동일 페이지 관측 수치: 조회 14,154 / 추천 14 / 댓글 46\r\n- 본문 텍스트: 확인 가능한 별도 본문 문장 없음; 페이지는 이미지 중심 게시물\r\n- 이미지 존재: YES, 공개 페이지에서 다수 Image placeholder 노출 확인\r\n- source media bytes: 미확보\r\n\r\n## 글 내용\r\n신입과 9개월 함께 일한 뒤 느낀 점을 정리한 직장 갈등/세대 인상 소재다. 정확한 Inven 개별 게시물은 확인했지만 핵심 내용이 이미지에 들어 있고 이번 회차에는 실제 이미지 bytes/OCR/vision을 확보하지 않았으므로 구체 사례·주장·문구를 임의로 복원하지 않는다.\r\n\r\n## 평가\r\n- logical C1 provenance verification 완료\r\n- 다음 단계: permitted source-asset acquisition\r\n- acquisition: PUBLIC_INDIVIDUAL_POST_VERIFIED / IMAGE_BYTES_PENDING / OCR_VISION_NOT_DONE\r\n- 댓글 46개 전체 확인으로 간주하지 않음\r\n- 세대 일반화·표적 괴롭힘 여부는 실제 이미지 확보 후 별도 검토\r\n- A0 / P0 유지\r\n- rights/privacy/safety/human review 미완료\r\n- publicationAllowed=false\r\n- 실제 게시 권한: 04_REVIEW_PUBLISH only\r\n\r\n## BLOCKER\r\n공개·허용 접근으로 이 정확한 Inven 게시물의 실제 이미지 bytes를 확보하고 그 bytes에 대해 OCR/vision 검토가 완료될 때까지 이미지 속 본문을 추정하지 않는다. 로그인·anti-bot·paywall·access-control 우회 금지.\r\n",
+      "originalSha256": "febf79d53b3115b626cc36ce714bfa5991796a2eabcad7a59412ebdc30ff0e81",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 228
+}

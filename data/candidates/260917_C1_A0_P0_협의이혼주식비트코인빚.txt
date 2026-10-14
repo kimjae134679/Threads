@@ -1,0 +1,29 @@
+원문링크 - https://www.teamblind.com/kr/post/%ED%98%91%EC%9D%98%EC%9D%B4%ED%98%BC%EC%8B%9C-%EC%9D%B4%EB%9F%B0-%EA%B2%BD%EC%9A%B0%EB%8A%94-%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0-%EC%96%B4%EB%96%BB%EA%B2%8C%ED%95%B4-NkMQz02Z
+제목 - 제목
+내용 - [명시 요약 — 원문 전문 아님]
+혼인 1년 반인 부부에서 남편이 주식·비트코인 투자를 위해 몰래 대출을 반복해 약 1억원의 빚을 만들고 세 차례 거짓말한 끝에 이혼을 결정했다는 사연. 아내가 이전 카드론까지 자기 명의 신용대출로 갚아준 상태라, 집과 남은 빚을 어떻게 나눌지 묻는다. 공개 페이지 본문을 확인했으며 댓글 전체는 읽지 않았다.
+게시문안 -
+==============================
+프로그램용 데이터들
+{
+  "human": {
+    "sourceUrl": "https://www.teamblind.com/kr/post/%ED%98%91%EC%9D%98%EC%9D%B4%ED%98%BC%EC%8B%9C-%EC%9D%B4%EB%9F%B0-%EA%B2%BD%EC%9A%B0%EB%8A%94-%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0-%EC%96%B4%EB%96%BB%EA%B2%8C%ED%95%B4-NkMQz02Z",
+    "title": "제목",
+    "body": "혼인 1년 반인 부부에서 남편이 주식·비트코인 투자를 위해 몰래 대출을 반복해 약 1억원의 빚을 만들고 세 차례 거짓말한 끝에 이혼을 결정했다는 사연. 아내가 이전 카드론까지 자기 명의 신용대출로 갚아준 상태라, 집과 남은 빚을 어떻게 나눌지 묻는다. 공개 페이지 본문을 확인했으며 댓글 전체는 읽지 않았다.",
+    "bodyKind": "summary",
+    "platformCaptions": {}
+  },
+  "records": {
+    "candidate": {
+      "originalKey": "260917_C1_A0_P0_협의이혼주식비트코인빚.md",
+      "originalTitle": "제목",
+      "originalMarkdown": "# 제목\r\n협의이혼시 이런 경우는 재산분할 어떻게해?\r\n\r\n## 글 내용\r\n혼인 1년 반인 부부에서 남편이 주식·비트코인 투자를 위해 몰래 대출을 반복해 약 1억원의 빚을 만들고 세 차례 거짓말한 끝에 이혼을 결정했다는 사연. 아내가 이전 카드론까지 자기 명의 신용대출로 갚아준 상태라, 집과 남은 빚을 어떻게 나눌지 묻는다. 공개 페이지 본문을 확인했으며 댓글 전체는 읽지 않았다.\r\n\r\n## 정확한 링크\r\nhttps://www.teamblind.com/kr/post/%ED%98%91%EC%9D%98%EC%9D%B4%ED%98%BC%EC%8B%9C-%EC%9D%B4%EB%9F%B0-%EA%B2%BD%EC%9A%B0%EB%8A%94-%EC%9E%AC%EC%82%B0%EB%B6%84%ED%95%A0-%EC%96%B4%EB%96%BB%EA%B2%8C%ED%95%B4-NkMQz02Z\r\n\r\n## 조회수 / 좋아요 / 댓글\r\n관측: 2026-09-17 19:39 KST 공개 페이지\r\n- 조회수: 1,581\r\n- 댓글: 19\r\n- 좋아요: 관측값 미확인\r\n\r\n## 평가\r\n몰래 대출 → 투자손실 → 용서 → 재발 → 이혼이라는 서사가 명확하다. 투자·돈·결혼 갈등 레인이 동시에 걸리는 강한 후보.\r\n\r\n## 형식\r\n글\r\n\r\n## 이미지·자산 / 제작·게시 상태\r\n- source bytes: 미확보\r\n- full body read: 확인\r\n- comments read: 전체 미확인\r\n- exact public URL verified / ASSETS_PENDING\r\n- C1_A0_P0 / publicationAllowed=false\r\n- rights/privacy/human review gate / 04 only publish",
+      "originalSha256": "2af4d4c88b4ca45ef841c1056a1adc8d338e3c68036a3401579ad8b3c4005cdc",
+      "publicationAllowed": false
+    }
+  },
+  "schema": "threads-unified-material-v1",
+  "visibility": "public",
+  "lineEnding": "\r\n",
+  "humanPrefixLength": 434
+}
