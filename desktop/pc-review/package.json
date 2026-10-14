@@ -1,0 +1,18 @@
+{
+  "name": "threads-ai-content-lab",
+  "version": "0.3.19",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "syntax": "node scripts/check-syntax.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "check": "npm run syntax && npm test",
+    "acquisition:queue": "node scripts/build-acquisition-queue.mjs",
+    "migrate:persistence": "node scripts/migrate-persistence.mjs",
+    "browser:e2e:vertical": "node scripts/browser-e2e-vertical.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

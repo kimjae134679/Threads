@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>원문 컷 에디터</title>
+  <link rel="stylesheet" href="./source-cut-editor.css">
+  <link rel="stylesheet" href="./source-cut-automation.css">
+</head>
+<body>
+<main id="source-cut-editor">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">✂</div>
+      <div><h1>원문 컷 에디터</h1><p id="sourceInfo">원문 그대로, 필요한 부분만 깔끔하게</p></div>
+    </div>
+    <nav class="stepper" aria-label="작업 단계">
+      <button class="step active" data-step-target="1" type="button"><span>1</span>저장 자료 불러오기</button>
+      <button class="step" data-step-target="2" type="button"><span>2</span>컷 편집하기</button>
+      <button class="step" data-step-target="3" type="button"><span>3</span>미리보기</button>
+      <button class="step" data-step-target="4" type="button"><span>4</span>저장하기</button>
+    </nav>
+    <div class="top-actions">
+      <button id="openBundleTool" type="button" class="subtle">원문 선별·이미지 제작</button>
+      <label class="file-button subtle">편집 파일 열기<input id="projectFile" type="file" accept="application/json,.json"></label>
+      <button id="saveProject" type="button" class="subtle">편집 파일 저장</button>
+    </div>
+  </header>
+
+  <section class="workflow-step active" data-step="1">
+    <div class="import-shell">
+      <div class="import-copy">
+        <span class="eyebrow">STEP 1</span>
+        <h2>자료를 읽고, 필요한 결과를 자동으로</h2>
+        <p>전체 자동 제작을 시작하면 저장한 자료부터 확인합니다. 결과와 부족한 자료를 이 화면에서 확인하고, 필요한 경우 한 건만 편집할 수 있습니다.</p>
+      </div>
+      <section class="saved-material-panel automation-panel" aria-label="폴더 전체 자동 제작">
+        <h3>저장 자료로 전체 자동 제작</h3>
+        <p>현재 자료를 읽고, 이미 만든 결과는 건너뜁니다. 글·이미지·댓글이 있는 원문은 검수용 이미지로 만들고, 부족한 자료는 이유와 다음 조치를 남깁니다.</p>
+        <p id="batchFolderName" class="batch-folder-name"></p>
+        <div class="batch-summary" aria-label="자료 처리 현황">
+          <div><strong id="batchTotal">0</strong><span>전체 후보</span></div>
+          <div><strong id="batchReady">0</strong><span>확인할 결과</span></div>
+          <div><strong id="batchBlocked">0</strong><span>자료·확인 필요</span></div>
+        </div>
+        <div class="batch-actions">
+          <button id="importWebFiles" type="button">저장한 웹 글 가져오기</button>
+          <button id="runFolderBatch" class="primary" type="button">전체 이미지 만들기</button>
+          <button id="chooseFolderBatch" type="button">다른 자료 폴더 선택</button>
+          <button id="stopFolderBatch" type="button" hidden>작업 중지</button>
+          <button id="openPostReview" type="button" class="primary">게시글 넘겨 보기 · 점수 남기기</button>
+          <button id="openBatchResults" type="button">전체 결과 폴더 열기</button>
+          <label><input id="fillBatchSources" type="checkbox" checked>부족한 공개 원문도 보완 (더쿠·인벤·네이트판·뽐뿌)</label>
+        </div>
+        <p class="small">디시·블라인드 글은 브라우저에서 Ctrl+S로 HTML과 이미지 폴더를 함께 저장한 뒤 ‘저장한 웹 글 가져오기’에서 HTML 파일을 선택하세요.</p>
+        <progress id="folderBatchProgress" value="0" max="1" hidden aria-label="자동 제작 진행"></progress>
+        <p id="folderBatchStatus" class="small" role="status">검수 전 결과입니다. 제작 완료와 게시 승인은 별개입니다.</p>
+        <div class="batch-controls">
+          <select id="batchFilter" aria-label="후보 상태"><option value="ready">결과 있는 글</option><option value="blocked">자료·확인 필요한 글</option><option value="all" selected>전체 글</option></select>
+          <input id="batchSearch" type="search" placeholder="제목·사이트·사유로 찾기" aria-label="후보 검색">
+        </div>
+        <div class="batch-table-wrap"><table class="batch-table">
+          <thead><tr><th>후보</th><th>상태와 다음 조치</th><th>확인</th></tr></thead><tbody id="batchRows"></tbody>
+        </table></div>
+        <p id="batchEmpty" class="small"></p>
+        <div class="batch-foot"><small id="batchListCount"></small><button id="batchMore" type="button" hidden>20건 더 보기</button></div>
+        <section id="batchPreviewPanel" class="batch-preview-panel" hidden aria-label="실제 결과 표지">
+          <div class="batch-preview-heading"><strong id="batchPreviewTitle"></strong><button id="closeBatchPreview" type="button">접기</button></div>
+          <img id="batchPreviewImage" alt="자동 제작한 실제 검수 전 표지">
+        </section>
+        <details class="batch-access-help"><summary>블라인드·디씨·여시 자료는 어떻게 넣나요?</summary>
+          <p>블라인드·디씨는 현재 프로젝트의 자동 수집 대상이 아닙니다. 제공 가능한 저장 HTML·이미지 또는 원문 source.json/source.txt를 후보 폴더에 넣으면 자동으로 읽습니다.</p>
+          <p>여시 등 카페는 검색 공개 글과 회원 전용 글을 구분해야 합니다. 회원 전용 글은 본인 계정의 정상 읽기 권한이 필요하며, 제공 가능한 저장 자료를 같은 방식으로 가져옵니다.</p>
+          <p>source.txt의 [TITLE]·[BODY]·[COMMENTS] 또는 source.json의 원문 구조를 사용합니다. 후보 요약 content.txt는 원문으로 사용하지 않습니다. 자세한 형식은 자료 폴더의 원문 입력 안내에 있습니다.</p>
+        </details>
+      </section>
+      <section class="saved-material-panel" aria-label="저장된 원문 불러오기">
+        <h3>이미 저장된 자료</h3>
+        <p>원본 이미지가 있는 개별 후보 폴더나 저장한 원문 묶음을 선택하세요. 기록된 이미지 순서와 제목을 가져옵니다. 글로 된 원문은 위의 전체 자동 제작에서 HTML·원문 TXT/JSON으로 읽습니다.</p>
+        <button id="loadSavedFolder" class="primary" type="button">폴더 불러와 컷 편집</button>
+        <button id="openBundleQuick" type="button">원본 그대로 검수 이미지 만들기</button>
+        <label class="file-button subtle folder-fallback">브라우저에서 폴더 선택
+          <input id="savedFolderFiles" type="file" accept="image/png,image/jpeg,image/webp" webkitdirectory multiple>
+        </label>
+        <p id="savedFolderStatus" class="small" role="status">컷 편집은 원본 영역을 직접 자릅니다. 검수 이미지는 별도 창에서 같은 저장 폴더를 선택해 바로 만듭니다. 본문·댓글 확인은 자동 완료되지 않습니다.</p>
+      </section>
+      <div class="or"><span>또는</span></div>
+      <label class="dropzone file-button">
+        <strong>이미지 파일 직접 추가</strong>
+        <span>이미 저장된 PNG/JPG/WebP 원문을 여러 장 고를 수 있습니다.</span>
+        <input id="files" type="file" accept="image/png,image/jpeg,image/webp" multiple>
+      </label>
+      <details class="capture-panel capture-secondary">
+        <summary>새 공개 링크에서 캡처하기 (선택 기능)</summary>
+        <label for="captureUrl">게시글 링크</label>
+        <div class="capture-row">
+          <input id="captureUrl" type="url" placeholder="https://… 게시글 주소" maxlength="4096">
+          <button id="captureUrlButton" class="primary" type="button">링크 캡처해서 열기</button>
+          <button id="cancelCapture" type="button" hidden>취소</button>
+        </div>
+        <p id="captureHelp" class="small">저장 자료를 불러오는 데 링크는 쓰지 않습니다. 로그인·보안확인·접근제한은 우회하지 않습니다.</p>
+        <progress id="captureProgress" value="0" max="100" hidden aria-label="원문 캡처 진행"></progress>
+      </details>
+    </div>
+  </section>
+
+  <section class="workflow-step" data-step="2">
+    <p id="message" class="status-bar" role="status" aria-live="polite">원문을 불러온 뒤 표지와 본문을 정하세요.</p>
+    <div class="workspace-grid">
+      <aside class="asset-sidebar panel">
+        <div class="panel-head"><h2>원문 이미지</h2><label class="mini-add file-button">+ 추가<input type="file" id="filesMirror" accept="image/png,image/jpeg,image/webp" multiple></label></div>
+        <div id="assetRail" class="asset-rail"></div>
+        <div class="asset-controls">
+          <label>선택 원문<select id="asset"></select></label>
+          <div class="two-buttons"><button id="moveUp" type="button">앞으로</button><button id="moveDown" type="button">뒤로</button></div>
+        </div>
+      </aside>
+
+      <section class="canvas-column">
+        <div class="editor-toolbar panel">
+          <div class="tool-group">
+            <button data-mode="pan" type="button" aria-pressed="true">✋ 이동</button>
+            <button data-mode="cover" type="button" aria-pressed="false">▣ 표지 영역</button>
+            <button data-mode="body" type="button" aria-pressed="false">▢ 본문 영역</button>
+            <button data-mode="comment" type="button" aria-pressed="false">💬 댓글 시작점</button>
+            <button data-mode="cut" type="button" aria-pressed="false">✂ 분할선 추가</button>
+          </div>
+          <div class="tool-group compact">
+            <label>확대<select id="zoom"><option value="1">화면 맞춤</option><option value="1.5">150%</option><option value="2">200%</option></select></label>
+          </div>
+        </div>
+        <p class="guide" id="modeHelp">원문 안에서 휠로 스크롤하거나 드래그해 이동하세요.</p>
+        <div class="canvas-stage panel">
+          <div id="viewport" tabindex="0" aria-label="긴 원문 편집 영역"><div id="spacer"><canvas id="sourceCanvas" role="img" aria-label="원문과 선택 범위"></canvas></div></div>
+          <div class="canvas-footer">
+            <button id="prevAssetQuick" type="button" aria-label="이전 원문">‹</button>
+            <span id="position">원문 위치</span>
+            <button id="nextAssetQuick" type="button" aria-label="다음 원문">›</button>
+          </div>
+        </div>
+        <div class="selection-strip panel">
+          <div class="selection-actions">
+            <button id="fullBody" type="button">본문 전체 선택</button>
+            <button id="showCover" type="button">표지 위치로 이동</button>
+          </div>
+          <div class="coordinates" id="coordinates">
+            <label>왼쪽<input id="rectX" type="number" min="0"></label>
+            <label>위쪽<input id="rectY" type="number" min="0"></label>
+            <label>너비<input id="rectWidth" type="number" min="8"></label>
+            <label>높이<input id="rectHeight" type="number" min="8"></label>
+          </div>
+          <details class="cuts-details" open><summary>분할선 관리</summary><div id="cutList"></div></details>
+        </div>
+      </section>
+
+      <aside class="settings-sidebar">
+        <section class="panel settings-card">
+          <div class="settings-title"><span class="number">1</span><div><strong>표지 제목</strong><small>기존 방식 그대로 유지</small></div></div>
+          <label>대문 글씨<textarea id="title" rows="2" maxlength="240" placeholder="짧고 눈에 띄는 제목"></textarea></label>
+          <div class="settings two-col">
+            <label>폰트<select id="fontId"><option value="sans">Noto Sans KR 기반</option><option value="gothic">나눔고딕 기반</option></select></label>
+            <label>글자 굵기<select id="fontWeight"></select></label>
+            <label>검정 테두리 <output id="outlineValue">8px</output><input id="outline" type="range" min="2" max="20" step="1" value="8"></label>
+            <label>제목 위치 <output id="titleBottomValue">83%</output><input id="titleBottom" type="range" min="42" max="94" value="83"></label>
+            <label>기본 글씨색<input id="color" type="color" value="#ffffff"></label>
+            <label>강조 색상<input id="highlightColor" type="color" value="#ffe34f"></label>
+          </div>
+          <label>강조할 단어<input id="highlightWords" type="text" maxlength="500" placeholder="쉼표로 구분"></label>
+          <label class="check"><input id="raw" type="checkbox"> 제목 없는 원본 표지로 보기</label>
+        </section>
+
+        <section class="panel settings-card community-card">
+          <div class="settings-title"><span class="number green">2</span><div><strong>본문 게시판 변환</strong><small>원본 사이트 UI 대신 새 양식으로 재구성</small></div></div>
+          <label class="toggle-row"><span>새 커뮤니티 양식 사용</span><input id="communityEnabled" type="checkbox" checked></label>
+          <div class="settings two-col mode-pickers">
+            <label>본문 출력 방식<select id="bodyMode"><option value="screenshot">스크린샷 그대로</option><option value="text">글·이미지로 재구성</option></select></label>
+            <label>댓글 출력 방식<select id="commentMode"><option value="text">댓글 글씨로 재구성</option><option value="screenshot">스크린샷 그대로</option></select></label>
+          </div>
+          <label>가상 사이트명<input id="communityBrand" maxlength="24" value="모두의톡"></label>
+          <label>게시글 원제목<input id="communityTitle" maxlength="240" placeholder="사이트명·게시판명은 빼고 실제 글 제목만"></label>
+          <label>원문 본문<textarea id="communityBody" rows="8" maxlength="30000" placeholder="게시글 본문 글자만 그대로. 링크 캡처에서 추출되면 자동으로 채웁니다."></textarea></label>
+          <div class="media-box">
+            <div class="media-head"><strong>본문 이미지</strong><label class="file-button mini-add">+ 이미지 추가<input id="bodyMediaFiles" type="file" accept="image/png,image/jpeg,image/webp" multiple></label></div>
+            <p class="small">광고·프로필·UI가 아니라 실제 게시글 본문에 들어간 이미지만 사용합니다. 각 이미지는 어느 문단 뒤에 넣을지 바꿀 수 있습니다.</p>
+            <div id="bodyMediaList" class="body-media-list"></div>
+          </div>
+          <label>실제 댓글 텍스트만<textarea id="communityComments" rows="7" maxlength="30000" placeholder="닉네임/날짜/좋아요 없이 실제 댓글 내용만. 링크에서 추출되면 자동으로 채웁니다."></textarea></label>
+          <div class="settings two-col">
+            <label>댓글 위 여백<input id="commentPaddingTop" type="number" min="40" max="360" step="10" value="110"></label>
+            <label>댓글 아래 여백<input id="commentPaddingBottom" type="number" min="40" max="360" step="10" value="120"></label>
+          </div>
+          <div id="commentBoundaryStatus" class="rule-box">스크린샷 댓글을 쓸 때는 왼쪽 도구의 ‘댓글 시작점’을 누르고 댓글이 시작되는 위치를 한 번 클릭하세요. 그 지점 이후 캡처는 댓글로 분리됩니다.</div>
+          <button id="clearCommentBoundary" type="button" class="subtle boundary-clear">선택 원문 댓글 시작선 지우기</button>
+          <div id="captureEvidence" class="evidence-box small"></div>
+          <div class="rule-box">댓글 글씨 출력에는 프로필·닉네임·날짜·좋아요·댓글 수·입력창을 만들지 않습니다. 실제 댓글 문장만 순서대로 표시합니다.</div>
+        </section>
+
+        <details class="panel advanced">
+          <summary>고급 설정 / 편집 기록</summary>
+          <div class="advanced-body">
+            <div class="style-presets"><label>스타일 프리셋<select id="presetList"></select></label><div class="actions"><button id="applyPreset" type="button">프리셋 적용</button><button id="deletePreset" type="button">삭제</button></div><label>저장할 이름<input id="presetName" maxlength="40"></label><button id="savePreset" type="button">현재 스타일 저장</button></div>
+            <label>이번 편집의 기준·이유<textarea id="editingReason" rows="2" maxlength="1000"></textarea></label>
+            <label class="check"><input id="referenceApproved" type="checkbox">다음 자동화의 기준 예시로 사용</label>
+            <div class="actions"><button id="recordReason" type="button">기준 기록</button><button id="saveHistory" type="button">편집 로그 받기</button><button id="openReferences" type="button">PC 레퍼런스 열기</button></div>
+            <p id="historyStatus" class="small"></p><div id="recentHistory" class="notes-buffer"></div>
+            <div class="legacy-controls" hidden>
+              <label>편집할 장<select id="layoutPage"></select></label>
+              <input id="paddingTop" type="number" value="0"><input id="paddingBottom" type="number" value="0"><input id="paddingSide" type="number" value="0">
+              <select id="minimumHeight"><option value="0">내용에 맞춤</option><option value="1080">1080</option><option value="1350">1350</option></select>
+              <input id="background" type="color" value="#ffffff"><input id="noteSize" type="number" value="56">
+              <textarea id="beforeText"></textarea><textarea id="afterText"></textarea><button id="applyBodySpacing" type="button">적용</button>
+              <textarea id="productionNotes"></textarea><p id="unplacedNotes"></p>
+            </div>
+          </div>
+        </details>
+      </aside>
+    </div>
+
+    <section class="quick-preview panel">
+      <div><h2>결과물 미리보기</h2><p>표지 1장 + 본문/댓글 변환 결과를 확인합니다.</p></div>
+      <div id="quickPreview" class="quick-preview-strip"></div>
+      <button class="primary next-step" data-step-target="3" type="button">다음 단계 →</button>
+    </section>
+  </section>
+
+  <section class="workflow-step" data-step="3">
+    <div class="preview-shell">
+      <div class="preview-head"><div><span class="eyebrow">STEP 3</span><h2>미리보기</h2><p>원문 사이트 UI가 남지 않았는지, 본문과 댓글 순서가 맞는지 확인하세요.</p></div><span class="page-total">본문 <strong id="pageCount"></strong></span></div>
+      <p id="previewError" role="alert"></p>
+      <div class="full-preview"><div id="coverPreview"></div><div id="bodyPreview"></div></div>
+      <div class="preview-actions"><button data-step-target="2" type="button">← 컷 편집으로</button><button class="primary" data-step-target="4" type="button">저장 단계 →</button></div>
+    </div>
+  </section>
+
+  <section class="workflow-step" data-step="4">
+    <div class="save-shell panel">
+      <span class="eyebrow">STEP 4</span>
+      <h2>저장하기</h2>
+      <p>저장 폴더의 검수되지 않은 자료는 이미지에 검수 표시를 넣습니다. 실제 게시 승인은 별도입니다.</p>
+      <div class="save-checklist">
+        <label class="check big"><input id="complete" type="checkbox"> 선택한 이미지와 입력한 글의 순서를 확인했습니다.</label>
+        <div class="save-note">실제 게시 승인과는 별개입니다. 이 단계는 이미지 ZIP만 만듭니다.</div>
+      </div>
+      <button id="exportZip" class="primary export" type="button" disabled>이미지 ZIP 받기</button>
+      <p id="exportReason" class="export-reason"></p>
+      <button data-step-target="3" class="back-link" type="button">← 미리보기로 돌아가기</button>
+    </div>
+  </section>
+</main>
+<script src="./source-cut-model.js"></script>
+<script src="./source-community-template.js"></script>
+<script src="./source-cut-composition.js"></script>
+<script src="./source-cut-history.js"></script>
+<script src="./source-cut-zip.js"></script>
+<script src="./source-cut-editor.js"></script>
+<script src="./source-cut-automation.js"></script>
+</body>
+</html>

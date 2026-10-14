@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Installed source authority: preserve original bytes in Git history.
+desktop/production/** -text whitespace=cr-at-eol
+desktop/production-editor/** -text whitespace=cr-at-eol
+desktop/pc-review/** -text whitespace=cr-at-eol
+desktop/installed-source-provenance.json -text whitespace=cr-at-eol
+desktop/production/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof

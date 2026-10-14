@@ -1,0 +1,8 @@
+{
+  "name": "threads-cut-editor",
+  "version": "0.3.38-cover.20261009.10",
+  "private": true,
+  "description": "Source screenshot and cut editor",
+  "author": "Threads project",
+  "main": "main.cjs"
+}
