@@ -1,178 +1,29 @@
-## 현재 통합 진입 — 2026-10-14
+# 00 — START HERE / 운영 규칙 지도
 
-[루트 README의 통합 실행·단일 TXT 계약](../README.md)이 현재 진입점입니다. 평가와 게시 준비는 동일 프로젝트/글/버전의 native 창에서 왕복하며, 원문·게시문안·태그를 한 TXT에 담습니다. 실제 비공개·대용량과 판정은 `local-private/`에 보존하고 공개 Git에서 제외합니다. 설치 .38 원본 snapshot은 inert 이력이며 아래 과거 단계와 현재 실행을 혼동하지 않습니다. 실제 게시·예약 재개 및 컴퓨터 종료는 금지입니다.
+이 문서는 규칙을 복제하는 곳이 아니라 현재 권위를 찾는 짧은 지도입니다.
 
-## 2026-10-07 재검토 현재 상태 — 최종 실행 대기
+## 실행 시작
 
-사용자 평가 반영 .3 전체399글3239장과 .4 변경533장의 실제 시각 검수는 완료했습니다. 추가13글15사례를 고친 0.3.15/.5 코드 d490b62는 71회귀·222JS·실제ffmpeg를 통과했습니다. 별도 배치 캐시 갱신·399글 최종 재생성·새 SHA 재검수·실제0.3.15 패키지 UI·최종 전달은 아직 남았습니다. PC 마지막 실행 응답12:02:37 UTC 이후 새 결과를 받지 못했습니다. 새 사용자점수0, 원평가67과 설치0.3.8 보존, 게시0입니다.
+1. 최신 인간 지시와 [AGENTS 운영 규칙](../AGENTS.md): 우선순위·변경 권한·Git·보존·통합소통.
+2. [사용 안내](../프로젝트_사용안내.md): 실제 통합 루트·.39.1·START/STOP·owned lifecycle.
+3. [현재 인수인계](NEXT_RUN_HANDOFF.md): 완료 근거·판정/이관 범위·미확인 연결.
+4. 맡은 역할의 아래 계약과 실제 관련 코드/자료. 읽지 않은 공지·원문·manifest를 읽었다고 기록하지 않습니다.
 
-현재 기준은 [재검토 상세 상태](../docs/FEEDBACK_REWORK_2026-10-06.md)와 [비공개 체크포인트](https://github.com/kimjae134679/KimJae-Project-Backups/tree/main/threads/reference-rework-20261007-v5)입니다. 앞선 완료 기록은 당시 단계의 범위이며 최신 전체 최종 전달 완료를 뜻하지 않습니다.
+## 규칙별 단일 권위
 
+| 규칙 | 담당 문서 |
+| --- | --- |
+| 우선순위·허용 범위·Git·소통·보존 | [AGENTS.md](../AGENTS.md) |
+| native/패키지/단일 TXT/마이그레이션/privacy 기술 | [루트 README](../README.md#통합-프로젝트-실행--단일-자료-txt) |
+| canonical TXT·C/A/P·형식 enum·원기록/같은 ID 중복 | [data/README.md](../data/README.md) |
+| 입력 종류·현재/과거 자료 경계 | [PROGRAM_INPUTS.md](PROGRAM_INPUTS.md) |
+| 원문 완독·다양성·24장 예상 선별·기사체 문안·태그 | [01 DISCOVERY](../01_DISCOVERY/README.md) |
+| plain 표시제목·원제/URL 보존 | [제목 가이드](../01_DISCOVERY/TITLE_STYLE_GUIDE.md) |
+| 단계 소유권·같은 글/버전·인수인계·되돌림 | [HANDOFF_CONTRACTS](../docs/HANDOFF_CONTRACTS.md) |
+| 권리·출처·접근·원본과 공개물 개인정보 | [SOURCE_POLICY](../docs/SOURCE_POLICY.md) |
+| 실제 게시·예약·사람 승인 gate | [04 REVIEW & PUBLISH](../04_REVIEW_PUBLISH/README.md) |
+| 다계정 가설·실제 성과 | [AGENTS 계정 원칙](../AGENTS.md#다계정-운영-규칙), [05 역할](../05_EXPERIMENTS_ACCOUNTS/README.md) |
 
-# 00 — START HERE / Threads 운영 관제판
+역할 체인은 `01 → 02 → 03 → 04 → 05`이며 단계별 실제 산출물/승인은 별개입니다. 현재 규칙 정리 작업을 신규 수집·전량 재제작·현재 평가 초기화·실제 게시 권한으로 해석하지 않습니다.
 
-> 새 작업자는 여기서 **2분 안에 규칙·현재상태·다음 일**을 파악해야 한다. 채팅 기억보다 GitHub 현재 repo tip이 우선이다.
-
-## 0. 매 실행 시작 순서
-
-```text
-1) 00_START_HERE/NEXT_RUN_HANDOFF.md
-2) 현재 main / repo tip / 최근 커밋
-3) project-operations-hub/04_COMMUNICATION/threads/T-0008-ai-content-monetization/ 최신 순차 note
-4) 이전 실행의 미완료 concrete task
-5) 관련 역할 README/계약
-6) 기존 후보 정리 작업이면 data/README.md + PROGRAM_INPUTS.md; Discovery 작업이면 data/candidates/README.md
-7) 계획만 쓰지 말고 실제 작업
-```
-
-**충돌 우선순위:** 현재 repo tip > NEXT_RUN_HANDOFF > 최신 ops note > 오래된 문서/과거 채팅.
-
-## 1. 절대 역할 체인
-
-`01 DISCOVERY → 02 EDITORIAL_SCORING → 03 PRODUCTION → 04 REVIEW_PUBLISH → 05 EXPERIMENTS_ACCOUNTS`
-
-- `01`: 후보·출처·원문 증거 수집
-- `02`: 사실/출처 검증, Viral/Audience Comfort, 각도
-- `03`: 실제 source-backed 콘텐츠 제작
-- `04`: 권리·안전·privacy·human approval + **유일한 실제 게시 권한**
-- `05`: 계정/포맷 실험과 실제 성과 분석
-
-앞 단계의 사실을 뒤 단계가 임의로 새로 만들지 않는다. 비밀값은 plaintext로 저장하지 않는다.
-
-## 2. 현재 최우선 목표
-
-**2026-10-07 최신 상태:** [통합 기록](../docs/FEEDBACK_REWORK_2026-10-06.md). 통합소통방 최신 기록과 실제 평가67건을 읽고 재작업을 이어갔다. **399글·3,219장 실제 PNG 재제작 완료**, 전체 파일·구조 감사 오류0. 전체 품질 검수·표지7개 개별 수정·설치 교체는 미완료다. 개발0.3.11/제작 규칙2026-10-07.2, 기존 설치0.3.8과 원본은 보존했다. 실제67평가,레퍼런스40완전/2부분을재감사하고8글9원본이미지대조전사와 우선장검수를반영했다. 새PC검토는D의08_재검토_20261007. 원본7표지확보·전체육안검수·3개소재보강/재선정·새평가UI/설치가다음이다. 아래과거수집/설치이력은이상태를덮어쓰지않는다.
-
-현재 Windows 폴더 자동 제작의 실행·검증 상태는 [SOURCE_CUT_DESKTOP.md](../docs/SOURCE_CUT_DESKTOP.md)에 있습니다. 레퍼런스 관찰과 다음 이미지 제작 기획은 [INSTAGRAM_REFERENCE_GUIDE.md](../docs/INSTAGRAM_REFERENCE_GUIDE.md)를 봅니다. 바탕화면의 01_후보 기록을 입력으로 쓰고 06_자동 제작 결과에서 최신 결과와 보류 사유를 확인합니다.
-
-검은 배경 text-only Demo Showcase는 개발/회귀 자료일 뿐 사용자 결과물이 아니다.
-
-1. 한국 커뮤니티 중심 고볼륨 Discovery
-2. 정확한 제목 + 정확한 원문 URL 검증
-3. 실제 source screenshot/image/media 확보
-4. screenshot intake → Source Package
-5. 원문 비율과 실제 내용량에 맞춘 Instagram/Threads 검수 전 카드 (폭 1080, 높이 608~1350; 텍스트도 내용에 맞춘 높이)
-6. Chrome에서 실제 파일/크기/가독성 검증
-7. 같은 Source Package로 별도 1080×1920 Reels/Shorts MP4
-8. 이후 live provider/publisher
-
-실제 자산이 없으면 `ASSETS_PENDING`; 생성 이미지로 빈자리를 꾸며 완료 처리하지 않는다.
-
-## 3. 후보 저장 구조 — 사람이 보는 곳과 기계 기록을 분리
-
-```text
-data/
-├─ README.md
-├─ candidates/          ← 사람이 보는 실제 후보. 후보 한 건 = Markdown 파일 하나
-├─ _raw_batches/        ← 과거 묶음 JSON/수집 스냅샷. 감사·재검증용
-├─ _system/             ← migration/quarantine/backlog 등 운영 메타
-└─ demo/field-test 계열 ← 앱 개발용 데이터. 후보 목록으로 보지 않음
-```
-
-**새 Discovery 후보를 `data/` 루트에 묶음 JSON으로 만들지 않는다.**
-
-후보 파일명:
-
-`YYMMDD_C{0|1|2}_A{0|1}_P{0|1}_짧은제목.md`
-
-- `C0`: 제목/인덱스 lead. 정확한 개별 URL/provenance가 부족함
-- `C1`: 정확한 공개 원문 URL/provenance와 필요한 관측을 확인함
-- `C2`: production 후보로 선정. rights/privacy/human gate는 별도 유지
-- `A0`: 실제 source-backed 사용자용 asset 미생성
-- `A1`: 실제 source screenshot/image 기반 사용자용 결과물 생성 확인
-- `P0`: 미게시
-- `P1`: **04_REVIEW_PUBLISH가 실제 게시 성공을 확인한 경우만**
-
-Queue, 예약, dry-run, provider-ready, API 호출 의도는 P1이 아니다.
-
-## 4. 후보 파일 내용 — 코드처럼 쓰지 않는다
-
-`data/candidates/` 파일은 JSON/schema/program state dump가 아니라 사람이 읽는 Markdown이다.
-
-기본 순서:
-
-```text
-제목
-글 내용
-정확한 링크
-조회수 / 좋아요 / 댓글 등 같은 관측시점의 실제 수치
-평가
-형식
-이미지·자산 / 제작·게시 상태
-```
-
-### 형식 분류
-복잡한 세부 타입을 만들지 않는다. **아래 3개만 사용한다.**
-
-- `글` — 텍스트 중심이며 콘텐츠 이해에 필요한 원문 이미지가 없음.
-- `이미지` — 글 본문과 함께 첨부 이미지/사진/뉴스 캡처 등이 있음. 글과 이미지를 같이 확보한다.
-- `이미지 포스팅` — 이미지/카드/슬라이드/스크린샷 자체가 본문의 중심. 전체 이미지를 원래 순서대로 확보한다.
-
-`CAROUSEL_SOURCE`, `NEWS_CARD_POST`, `SCREENSHOT_POST`, `MIXED_MEDIA_POST` 같은 세부 분류는 새 후보 기록에 만들지 않는다.
-
-- 공개 제3자 글 전문을 장문 복제하지 않고, **실제로 읽은 전체 내용을 충실하게 요약**한다.
-- 본문을 실제로 읽지 않았으면 `본문 미확인`이라고 쓴다. 내용을 만들어 채우지 않는다.
-- exact individual URL이 없고 index/list만 있으면 C0다.
-- 서로 다른 시점·재게시처의 수치를 합쳐 하나의 engagement처럼 만들지 않는다.
-- URL, 반응수치, rights, OCR/moderation, credential, asset capture, delivery, publication success를 추측하지 않는다.
-
-## 5. Discovery 취향
-
-초기에는 많이 보고 강한 것을 추린다. Korean-community first: Blind, DCInside, FMKorea, TheQoo, Instiz, Ruliweb, Ppomppu, Clien, Inven, Arca, NAVER/Daum cafe → Threads/X/Instagram/Reddit/YouTube/news.
-
-선호: 황당/웃긴 실화, 직장 갈등, 연애·결혼·가족 논쟁, 돈·빚·복권·선물, 민망한 오해, 강한 반전, 누구나 한마디 하고 싶은 생활 갈등.
-
-**주식/코인은 평범한 종목·시장·금리 뉴스보다 투자 때문에 인생에 큰 일이 난 사람 이야기**를 우선한다: 큰 손실/수익, 몰빵·레버리지·빚 사고, 황당한 실수, 계좌 인증이 붙은 극적 결과, 가족·연애·직장 갈등, 강한 반전.
-
-DCInside/Blind 등 제한 소스는 bulk crawl, 로그인/anti-bot 우회 금지. 공개 search/index, 허용된 공개 페이지, 사용자 URL/screenshot, 수동 capture만 쓴다.
-
-## 6. 실제 사용자용 카드 규칙
-
-- Slide 1: 원문 캡처 또는 원문 텍스트 + 짧고 눈에 띄는 큰 제목.
-- 사용자 승인된 표지 방향: 하단 그라데이션, 하단에서 위로 올린 굵은 흰색 제목, 얇은 검정 테두리. 배경 블러와 흐린 글자 그림자는 쓰지 않는다.
-- 원제목은 보존하고 표지 문구는 따로 편집한다. 내용을 벗어난 사실을 덧붙이지 않는다.
-- Slide 2부터는 원문 post screenshot을 실제 순서대로 사용한다. 글만 있는 원문은 직접 입력한 본문을 빠짐없이 텍스트 페이지로 출력할 수 있다.
-- 전체 원문 본문을 빠뜨리지 않는다. 여러 화면이면 연속 screenshot으로 모두 포함한다.
-- platform/browser UI chrome은 잘라도 되지만 원문 본문을 잘라내지 않는다.
-- 원문을 임의 요약카드로 대체하지 않는다. 사용자 요청에 따라 원문 사이/아래에 작성 의견·질문을 배치할 수 있다. 소재를 실제로 읽을 때 위치·문구·근거를 함께 기록하며 실제 댓글이나 사실처럼 꾸미지 않는다.
-- privacy/PII는 자동 마스킹하지 않고 수동 마스킹 도구만 유지한다. 사용자가 명시적으로 요청한 경우에만 변경한다.
-- 원문 첨부 이미지/media가 있으면 원문 screenshot/source sequence와 함께 보존한다. 생성 이미지로 대체하지 않는다.
-- 첫 cover 이미지 선택 방식은 source image/사용자 제공/별도 생성 등 케이스별로 결정하며 아직 하나로 고정하지 않는다.
-
-## 7. 안전/권리 기준
-
-- 심한 gore/corpse/severe injury, 동물학대, 노골적 성적 콘텐츠, doxxing/private-person exposure는 강하게 배제한다.
-- **단순 성별 비꼼·성별 일반화·거친 표현이 있다는 이유만으로 후보를 자동 폐기하지 않는다.** 이야기성과 맥락을 본다.
-- 다만 심한 비인간화, 위협, 표적 괴롭힘, 신상노출, 명예훼손 위험은 별도 safety/privacy/defamation 검토한다.
-- 논란성이 rights/privacy보다 우선하지 않는다. 권리 미확인 자산은 실제 게시하지 않는다.
-
-## 8. 과거 데이터 해석
-
-과거 값을 새 규칙에 맞추려고 지어내지 않는다.
-
-- URL/provenance 있는 과거 후보 → 실제 증거 범위에서 C1 mapping 가능
-- URL 없는 과거 lead → C0_A0_P0
-- `ASSETS_PENDING` / text-only demo → A0
-- queue/draft/dry-run/provider-ready → P0
-- 실제 04 게시 증거가 있을 때만 P1
-- grouped/raw 역사자료는 `_raw_batches/`에 보존하고 사람용 후보는 `candidates/`로 한 건씩 풀어 쓴다.
-
-## 9. 어디를 보면 되는가
-
-- 프로그램 입력 자료: [PROGRAM_INPUTS.md](./PROGRAM_INPUTS.md)
-- 후보 데이터 폴더: [data/README.md](../data/README.md)
-
-- 현재 상태/다음 일: [`NEXT_RUN_HANDOFF.md`](./NEXT_RUN_HANDOFF.md)
-- 후보 목록: [`../data/candidates/`](../data/candidates/)
-- 후보 저장 규칙: [`../data/README.md`](../data/README.md)
-- 역할 상세: `01_DISCOVERY/` → `05_EXPERIMENTS_ACCOUNTS/`
-- 제작 포맷: `03_PRODUCTION/FORMAT_PLAYBOOK.md`
-- 순차 기록: ops-hub `04_COMMUNICATION/threads/T-0008-ai-content-monetization/`
-
-앱: `npm start` → `http://127.0.0.1:4173/app/`
-
-## 10. 매 실행 종료
-
-의미 있는 작업이면 실제 repo 변경 → 관련 test → 필요 시 `npm run check`/server smoke → user-visible 변경이면 가능한 경우 browser E2E → commit/push → 임시파일 정리 → `NEXT_RUN_HANDOFF.md` 갱신 → 다음 순차 ops note 작성.
-
-인수인계에는 baseline/result SHA, changed files, raw/retained 후보 수, retained exact title+URL, 실제 실행한 tests/results, browser E2E, 실제 확보 asset, `ASSETS_PENDING`, blocker, 다음 concrete priority, 실제 C/A/P 변화를 적는다. 하지 않은 테스트/CI/OCR/moderation/게시/asset acquisition을 했다고 쓰지 않는다.
+구 실행 대기·MD-only 규칙·C:\KJ 경로·399글 제작 상태는 [6d5016d1 운영 관제판](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/00_START_HERE/README.md)의 당시 기록입니다. 현재 법칙으로 다시 복제하지 않고 원기록을 보존합니다. 실행 종료 때 무엇을 실제로 읽고 적용·검증·Git 반영했는지 구분하는 방법은 AGENTS를 따릅니다.

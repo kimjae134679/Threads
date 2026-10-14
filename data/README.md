@@ -1,90 +1,56 @@
-# Threads 후보 데이터 — 2026-10-14 현재 단일 TXT 계약
+# Threads 후보 데이터 — canonical TXT와 원기록 계약
 
-현재 프로젝트 루트는 `D:\A_KJ\AI\Workspace\Threads\unified-moneti-20261014`입니다. 실행은 [루트 README](../README.md)의 `upload-studio/START.ps1`와 프로젝트 내부 `local-private/programs/ThreadsProduction/0.3.39-unified.20261014.1/Threads Cut Editor.exe`를 사용합니다. 같은 프로그램의 평가·자료·게시 준비 화면과 owned Control/두 바로가기 전환이 적용됐습니다.
+## 현재 파일
 
-## 현재 canonical 파일과 보존 이력
+사람/프로그램이 읽는 canonical은 `data/candidates/`의 **후보 한 건당 단일 TXT**입니다. 변환 범위 **4,519 = 공개 후보 2,350 + private 프로그램 입력 2,168 + 수동 문안 1**과 입력 종류는 [PROGRAM_INPUTS](../00_START_HERE/PROGRAM_INPUTS.md)를 참조합니다. private 약 83.46GB는 `local-private/` 등 Git 제외 영역에 보존하며 공개 파일에 실제 비밀·평가·계정/provider·개인·대용량 자료를 싣지 않습니다.
 
-현재 읽기·프로그램 인식의 canonical은 후보 하나당 **단일 TXT 한 파일**입니다. 변환 결과는 **4,519개 = 공개 후보 2,350개 + 비공개 프로그램 입력 2,168개 + 수동 문안 1개**입니다. 공개 가능한 후보 TXT·코드는 Git에 포함하고, 약 **83.46GB**의 원본/private 이관 자료·평가·계정/provider 이력·이미지·설치본은 `local-private/` 등 Git 제외 영역에 보존합니다. 아래 MD 계약과 원본 MD는 변환 전 원기록·이력이며, 내용이나 당시 C/A/P 판정을 새로 쓴 것이 아닙니다.
+기존 `YYMMDD_C{0|1|2}_A{0|1}_P{0|1}_제목.md`는 원기록/역사 형식입니다. TXT 전환도 원 파일 키·ID·alias·원 MD SHA/기록을 보존합니다. 같은 키/ID의 TXT·MD를 별개의 새 후보로 처리하거나 연구원의 임시 순번을 영구 ID로 만들지 않습니다. 활성 수집 780건은 보존 ledger 범위이며 후보 총 2,350개와 다릅니다. `_raw_batches/`·제외/과거 snapshot을 활성화하지 않습니다.
 
-같은 기존 파일 키·ID의 TXT와 MD를 별개의 후보로 중복 집계하거나, 역사 snapshot을 현재 자료로 재활성화하지 않습니다. 실제 활성 수집 780건은 그 보존 ledger 범위이고, 공개 후보 총 2,350개를 모두 새 수집·제작 완료 수로 취급하지 않습니다. 원래 C/A/P 의미·형식 분류·관측값·정확 URL·원제·본문·댓글·이미지 순서·해시는 아래 원기록 정의를 유지합니다.
+## 한 TXT의 실제 codec 계약
 
-## 단일 TXT의 실제 읽기/쓰기 계약
+사람 영역은 다음 순서입니다.
 
-사람이 읽는 앞부분은 `원문링크 - `, `제목 - `, `내용 - `, `게시문안 - `입니다. 제목은 plain 표시제목이고 원제는 별도로 보존합니다. 양쪽 플랫폼의 실제 저장된 전체 문안과 해시태그를 같은 TXT에 담습니다. 원문 미확보·요약·선별/보존 기록은 그대로 구분하고 전문 확인이나 새 권리·승인으로 승격하지 않습니다.
-
-별도 줄의 `==============================`, 다음 줄의 `프로그램용 데이터들` 뒤 JSON은 기존 ID·버전·sourceFingerprint/ruleVersion/reviewRound·원문/댓글·이미지 순서/해시·분할·권리·판정·provider 상태와 unknown 필드를 보존합니다. 실제 공용 codec은 `app/unified-material-txt.js`이며 BOM/CRLF·한국어·본문 안의 헤더/구분선을 보존하고 손상·ID 충돌·미확인 전문 입력은 failclosed합니다. 후행 JSON을 본문이나 별도 공개 게시문안으로 노출하지 않습니다. 기존 분리 입력은 호환 reader/이력으로 남으며 현재 출력은 한 TXT를 사용합니다.
-
-현재 제작본은 **199글·1,917장**, 같은 버전의 보존 원문 ZIP **197건 연결 / 기존 2건 미연결 보류**입니다. 다른 버전 원문·사진·승인을 대신 붙이지 않으며 **33 통과·8 폐기·158 미검토**는 불변입니다. 실제 native의 같은 글·장·플랫폼·검색·스크롤 왕복과 평가 UI enable을 확인했지만 읽은 장/숫자 평가와 게시 승인은 별개입니다. 기존 plain 표시제목·태그 정책·24장 예상 선별은 보존 기록의 기준으로만 유지합니다.
-
-네 CI workflow 성공 후 [PR #13](https://github.com/kimjae134679/Threads/pull/13)이 main `18086299c0f18e20719b686d875249d1569ef613`에 병합됐습니다. **실제 게시·예약 재개·컴퓨터 종료는 금지**이며 원자료/MD 이력은 그대로 보존합니다.
-
----
-
-## 변환 전 MD·프로그램 입력 계약 — 당시 원기록 보존
-
-아래는 기존 형식과 분류·상태 정의의 이력입니다. MD-only 문구와 분리 TXT 생성 설명은 당시 계약이며, 현재 canonical 출력·실행은 위 단일 TXT와 루트 README가 우선합니다. 원본/평가/관측 이력을 변경하거나 새로운 승인 정책으로 해석하지 않습니다.
-
-# Threads 콘텐츠 후보 데이터
-
-사람이 직접 보는 후보는 **`data/candidates/`** 에서 확인한다.
-
-## 후보 파일 형식
-후보는 한 파일에 하나만 둔다.
-
-`YYMMDD_C0|C1|C2_A0|A1_P0|P1_제목.md`
-
-각 파일은 코드/JSON 구조 대신 다음 순서로 읽는다.
-
-1. 제목
-2. 글 내용
-3. 링크
-4. 조회수·좋아요·댓글 등 실제 관측값
-5. 평가
-6. 형식
-7. 이미지/자산 및 제작·게시 상태
-
-`글 내용`은 공개 제3자 게시글을 통째로 복제한 원문 전문이 아니라, **실제로 확인된 내용을 빠짐없이 요약한 기록**이다. 기존 수집 당시 본문 전체가 저장되지 않았거나 본문을 직접 읽지 않은 후보는 그 사실을 그대로 적고 링크에서 재확인한다. 없는 내용을 채워 넣지 않는다.
-
-## 형식 분류 — 이것만 사용
-복잡한 하위 분류를 만들지 않는다. 후보는 아래 셋 중 하나만 쓴다.
-
-- `글` — 본문이 텍스트 중심이고 콘텐츠를 이해하는 데 필요한 원문 이미지가 없음.
-- `이미지` — 글 본문에 첨부 이미지/사진/뉴스 캡처 등이 함께 있음. 원문 글과 이미지를 같이 가져와야 함.
-- `이미지 포스팅` — 게시물 자체가 이미지/카드/슬라이드/스크린샷 중심이며 이미지 순서가 사실상 본문 역할을 함. 가능한 경우 전체 이미지/슬라이드를 원래 순서대로 함께 확보함.
-
-판단이 애매하면 실제 게시물을 보고 콘텐츠 이해에 이미지가 필수인지 기준으로 정한다. `CAROUSEL_SOURCE`, `NEWS_CARD_POST`, `SCREENSHOT_POST` 같은 세부 타입을 새 후보 기록에 만들지 않는다.
-
-- 성별을 비꼬거나 성별 일반화 표현이 있다는 이유만으로 후보를 자동 폐기하지 않는다.
-- 다만 심한 비인간화·위협·표적 괴롭힘·신상노출·명예훼손 위험 등은 별도 safety/privacy 검토한다.
-- `P1`은 04_REVIEW_PUBLISH가 실제 게시 성공을 확인한 경우만 사용한다.
-- 과거 묶음 JSON/기계용 스냅샷은 `_raw_batches/`로 이동해 감사 기록으로만 보존한다.
-
-## 프로그램 입력 라이브러리
-
-저장소 루트에서 아래 명령을 실행하면 기존 후보를 프로그램 입력 폴더로 정리한다.
-
-```sh
-node scripts/normalize-existing-candidates.mjs --write
-node scripts/normalize-existing-candidates.mjs --check
+```text
+원문링크 - 정확한 원 URL
+제목 - plain 표시제목
+내용 - 실제 보존 원문 또는 명시 요약/보존 기록/미확보 상태
+게시문안 - 실제 저장된 플랫폼별 전체 문안과 태그
+==============================
+프로그램용 데이터들
+기존 codec JSON
 ```
 
-결과는 `data/runtime/program_inputs/`에 저장되며 Git에 올라가지 않는다. 후보별 `candidate.md`, `content.txt`, `comments.txt`, `manifest.json`과 색인 `index.csv`, `index.json`을 만든다. 확인된 원문 미디어가 있을 때만 `media/`가 생긴다. 원본 후보·평가·감사 자료는 이동하거나 덮어쓰지 않는다.
+실제 codec은 [app/unified-material-txt.js](../app/unified-material-txt.js)입니다. 뒤 JSON에는 원제·기존 ID/버전·sourceFingerprint/ruleVersion/reviewRound·raw 원문/댓글·이미지 순서/SHA/분할·권리/판정/provider 상태·unknown 필드를 손실 없이 남깁니다. 새 스키마나 가짜 상태를 발명하지 않습니다. BOM/CRLF·한국어·본문 속 헤더/구분선을 보존하고 손상·ID 충돌·다른 버전은 failclosed합니다. 후행 프로그램 JSON은 사람의 본문이나 게시문안으로 노출하지 않습니다.
 
-현재 앱에서 원문을 가져오는 경로는 기존 후보 목록에서 **이 글만 수집**하는 방식이다. 후보 입력 묶음의 `content.txt`는 기존 요약과 확인 상태를 담는 참고 파일이며 원문 전문 TXT가 아니다. 수동 원문 가져오기에 넣지 않는다. 실제 원문을 확보한 뒤 제목, 본문, 이미지 위치, 댓글을 대조한다.
+- `verbatim`: 기존 원문 기록을 실제 계약으로 확인한 전문 입력. 수집/권리/게시 gate는 별개입니다.
+- `summary`: 실제 읽은 범위의 충실한 요약. 전문을 확보/판독했다는 뜻이 아닙니다.
+- `preserved`: 원자료·HTML/ZIP의 읽기용 본문 또는 선별/참고 기록. 원문 검증/OCR/권리 승격이 아닙니다.
+- `unavailable`: 원문 미확보. 없는 내용을 채우거나 다른 버전 원문을 붙이지 않습니다.
 
-후보·Jev 평가는 원문 자체가 아니다. 기존 요약과 댓글 메모를 인용문으로 사용하지 않는다. 권리·개인정보 확인과 게시 승인은 별도이며 `publicationAllowed=false` 상태를 유지한다. Blind와 DCInside는 자동 수집하지 않는다. 새 후보를 추가하지 않고 기존 자료만 정리한다.
+미열람 URL·사진 href·다운로드 실패·HTML 선택 미확인·권리 unknown은 실제 원문/파일 확보 수와 분리합니다. 이미지가 본문인 자료는 전체 픽셀/순서 판독이 필요하며 독립 텍스트와 부수 이미지 미열람은 구분합니다. 권리 미확인/`publicationAllowed=false`를 새로운 TXT/요약/라이선스 링크만으로 올리지 않습니다. 원본 보존과 공개물의 개인정보 제거는 [SOURCE_POLICY](../docs/SOURCE_POLICY.md)를 따릅니다.
 
-## 폴더 지도
+## C/A/P — 기존 의미 그대로
 
-| 경로 | 용도 |
-| --- | --- |
-| `candidates/` | 기존 후보 기록 원본 |
-| `jev_results/` | 기존 Jev 평가 JSON |
-| `candidate_batches/` | 후보 Markdown에서 만든 검토용 묶음 |
-| `candidate_bundles/` 및 `../01_DISCOVERY/data/candidate_bundles/` | 과거 정규화 결과 |
-| `source-packages/` | 출처 연결 이미지·수집 기록 |
-| `_raw_batches/` | 예전 탐색 원본과 감사 자료 |
-| `_system/` | 작업 큐·진행 상태·자료 인벤토리 |
-| `runtime/program_inputs/` | 현재 프로그램용 로컬 후보 묶음 |
-| `runtime/source_pipeline/` | 원문 수집과 이미지 제작의 로컬 결과 |
+- `C0`: 제목/인덱스 lead. 정확한 개별 URL/provenance가 부족함.
+- `C1`: 정확한 공개 원문 URL/provenance와 필요한 관측을 확인함.
+- `C2`: production 후보로 선정. rights/privacy/human gate는 별도 유지.
+- `A0`: 실제 source-backed 사용자용 asset 미생성.
+- `A1`: 실제 source screenshot/image 기반 사용자용 결과물 생성 확인.
+- `P0`: 미게시.
+- `P1`: 04_REVIEW_PUBLISH가 실제 게시 성공을 확인한 경우만.
 
+Queue·예약·dry-run·provider-ready·API 호출 의도는 P1이 아닙니다. 과거 lead/ASSETS_PENDING/평가/미승인 demo를 현재 완료로 소급 승격하지 않습니다.
+
+## 형식 분류 — 기존 세 가지
+
+- `글`: 텍스트 중심이며 콘텐츠 이해에 필요한 원문 이미지가 없음.
+- `이미지`: 본문과 함께 이미지/사진/뉴스 캡처 등이 있음. 본문과 이미지 근거를 함께 기록.
+- `이미지 포스팅`: 이미지/카드/슬라이드/스크린샷 자체가 본문의 중심. 원래 순서의 전체 확보/판독 여부 기록.
+
+애매하면 실제 원문과 이미지 역할을 확인합니다. 추출 marker 0을 무사진 확정으로 쓰지 않습니다. CAROUSEL_SOURCE/NEWS_CARD_POST/SCREENSHOT_POST 같은 새 enum을 만들지 않습니다. 탐색 주제 코드/라벨은 실제 [themes](../app/features/themes/README.md)와 일치시키며 위 세 가지 자료 형식 enum과 구분합니다.
+
+## 자료의 권위와 이력
+
+원제·정확 URL·관측 시각/cache·수치는 개별 실제 관측값을 그대로 보존하고 다른 시점·재게시처 수치를 합치지 않습니다. 기존 요약/댓글 메모/Jev 평가는 원문 인용이나 현재 판정이 아닙니다. 내용·태그·선별은 [Discovery](../01_DISCOVERY/README.md), 제목은 [제목 가이드](../01_DISCOVERY/TITLE_STYLE_GUIDE.md), 승인/같은 버전은 [HANDOFF](../docs/HANDOFF_CONTRACTS.md)를 따릅니다.
+
+원 MD 형식·분리 content/comments/manifest 생성 명령·폴더 지도는 [6d5016d1 데이터 계약](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/data/README.md)에 그대로 보존합니다. 이 문서 정리 작업은 그 normalizer/import를 실행하거나 원자료·코드·현재 판정을 바꾸는 권한이 아닙니다. 실제 실행/현재 완료 집계는 [사용 안내](../프로젝트_사용안내.md)와 [인수인계](../00_START_HERE/NEXT_RUN_HANDOFF.md)에서 확인합니다.
