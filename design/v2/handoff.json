@@ -1,0 +1,29 @@
+{
+  "status": "design_v2_review_ready",
+  "scope": "mockup only; backend paused",
+  "html": "design/upload-desktop-v2.html",
+  "sizeBytes": 53874,
+  "library_file_id": "libfile_c6e51d97d94c8191b9468116ac2bcefb",
+  "library_version": 0,
+  "library_metadata_helper": "unavailable_not_run",
+  "native_metadata_applied": false,
+  "images": "generated design proposals, not HTML screenshots",
+  "verification": {
+    "perPostIsolation": true,
+    "overridePreserved": true,
+    "inheritedUpdated": true,
+    "perPostSelection": true,
+    "oneImageSupported": true,
+    "queueStages": true,
+    "partialHistory": true,
+    "dummyURLs": true
+  },
+  "inline_script_syntax": "passed",
+  "actual_browser_render": "not verified: file navigation policy refused; no bypass",
+  "preserved": [
+    "v1 artifacts",
+    "upload-module offline work",
+    "production/cover/review files"
+  ],
+  "external_social_requests": 0
+}
