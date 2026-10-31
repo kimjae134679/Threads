@@ -2,11 +2,15 @@ name: upload-studio-browser
 on:
   pull_request:
     paths:
-      - 'upload-studio/**'
-      - 'test/upload-studio.test.mjs'
+      - '99_작업영역/소스/upload-studio/**'
+      - '99_작업영역/소스/test/upload-studio.test.mjs'
       - '.github/workflows/upload-studio-browser.yml'
 permissions:
   contents: read
+defaults:
+  run:
+    working-directory: 99_작업영역/소스
+
 jobs:
   browser:
     runs-on: ubuntu-latest
@@ -31,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: upload-studio-actual-browser
-          path: upload-studio/evidence/*.png
+          path: 99_작업영역/소스/upload-studio/evidence/*.png
           if-no-files-found: ignore
       - name: Package isolated offline program
         run: zip -r upload-studio-portable.zip upload-studio -x 'upload-studio/evidence/*' 'upload-studio/.local/*'
@@ -39,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: upload-studio-offline-program
-          path: upload-studio-portable.zip
+          path: 99_작업영역/소스/upload-studio-portable.zip

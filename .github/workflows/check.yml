@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    working-directory: 99_작업영역/소스
+
 jobs:
   syntax:
     runs-on: ubuntu-latest

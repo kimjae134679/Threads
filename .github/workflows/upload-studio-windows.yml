@@ -2,11 +2,15 @@ name: Upload Studio Windows lock recovery
 on:
   pull_request:
     paths:
-      - 'upload-studio/**'
+      - '99_작업영역/소스/upload-studio/**'
       - '.github/workflows/upload-studio-windows.yml'
   workflow_dispatch:
 permissions:
   contents: read
+defaults:
+  run:
+    working-directory: 99_작업영역/소스
+
 jobs:
   windows-state-lock:
     runs-on: windows-latest

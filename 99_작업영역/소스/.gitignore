@@ -1,0 +1,22 @@
+node_modules/
+.env
+.env.*
+!.env.example
+config/buffer.local.json
+data/runtime/
+.DS_Store
+Thumbs.db
+desktop/dist/
+
+# Private originals, large assets and live judgments remain inside this project,
+# but are never public Git content. Migration copies; it does not delete sources.
+/local-private/
+/desktop/production-editor/unified-material-txt.js
+/upload-studio/.local/
+
+# Local Chromium capture profile (GitHub Desktop worktree hygiene)
+tmp_capture/
+
+_통합소통/보낼자료/
+_통합소통/확인기록/
+_통합소통/.communication-imports.json

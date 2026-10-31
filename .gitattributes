@@ -2,21 +2,21 @@
 * text=auto
 
 # Installed source authority: preserve original bytes in Git history.
-desktop/production/** -text whitespace=cr-at-eol
-desktop/production-editor/** -text whitespace=cr-at-eol
-desktop/pc-review/** -text whitespace=cr-at-eol
-desktop/installed-source-provenance.json -text whitespace=cr-at-eol
-desktop/production/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof
+99_작업영역/소스/desktop/production/** -text whitespace=cr-at-eol
+99_작업영역/소스/desktop/production-editor/** -text whitespace=cr-at-eol
+99_작업영역/소스/desktop/pc-review/** -text whitespace=cr-at-eol
+99_작업영역/소스/desktop/installed-source-provenance.json -text whitespace=cr-at-eol
+99_작업영역/소스/desktop/production/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof
 
 # Active promoted source and canonical TXT keep original CRLF/metadata binding bytes.
-desktop/*.cjs -text whitespace=cr-at-eol
-app/source-*.js -text whitespace=cr-at-eol
-app/source-*.html -text whitespace=cr-at-eol
-app/source-*.css -text whitespace=cr-at-eol
-app/universal-production-model.js -text whitespace=cr-at-eol
-app/unified-material-txt.js -text whitespace=cr-at-eol
-mobile/android-review/** -text whitespace=cr-at-eol
+99_작업영역/소스/desktop/*.cjs -text whitespace=cr-at-eol
+99_작업영역/소스/app/source-*.js -text whitespace=cr-at-eol
+99_작업영역/소스/app/source-*.html -text whitespace=cr-at-eol
+99_작업영역/소스/app/source-*.css -text whitespace=cr-at-eol
+99_작업영역/소스/app/universal-production-model.js -text whitespace=cr-at-eol
+99_작업영역/소스/app/unified-material-txt.js -text whitespace=cr-at-eol
+99_작업영역/소스/mobile/android-review/** -text whitespace=cr-at-eol
 # Lossless protocol headers retain the delimiter space when a source URL is unknown.
-data/candidates/**/*.txt -text whitespace=cr-at-eol,-blank-at-eol
-desktop/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof
-legacy-source/operations/** -text whitespace=cr-at-eol
+99_작업영역/소스/data/candidates/**/*.txt -text whitespace=cr-at-eol,-blank-at-eol
+99_작업영역/소스/desktop/universal-reproduction.cjs whitespace=cr-at-eol,-blank-at-eof
+99_작업영역/소스/legacy-source/operations/** -text whitespace=cr-at-eol
