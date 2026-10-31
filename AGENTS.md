@@ -2,13 +2,17 @@
 
 이 저장소는 많이 긁어서 많이 올리는 봇이 아니라 **트렌드 탐지 → 검증 → 자체 콘텐츠 제작 → 사람 승인 → 공식 게시 → 실제 성과 학습** 시스템입니다. 이 문서가 현재 프로젝트의 운영·변경 범위·소통·Git 규칙 권위이며 세부 자료/제작/게시 법칙은 아래 소유 문서로 연결합니다.
 
+## 2026-10-31 파일·GitHub 정리 범위
+
+최신 지시는 파일·프로그램·수집 자료·GitHub의 폴더와 네이밍을 실제 정리하는 것입니다. 문서 분류·링크 수정·사용자 진입점·과거 실험 보관을 포함합니다. 아래 2026-10-14의 '이번 작업' 범위는 당시 회차의 기록이며 최신 지시를 제한하지 않습니다. 현재 통합 루트와 실행 코드·원자료·사용자 평가·판정·게시 상태는 보존합니다.
+
 ## 가장 먼저 읽을 것과 우선순위
 
 상위 시스템·안전 제약을 먼저 지킨 뒤 **최신 인간 지시 > 실제 프로젝트 repo/현재 구현·근거 > hub User Policies/Governance > 과거 소통·이력** 순서로 적용합니다. 문서나 채팅의 완료 문구보다 실제 파일/현재 버전·검증 근거를 확인하며 오래된 지시의 회차/범위를 확대하지 않습니다.
 
 1. 최신 인간 지시와 이 AGENTS의 허용 범위.
 2. [사용 안내](프로젝트_사용안내.md), [짧은 규칙 지도](00_START_HERE/README.md), [현재 인수인계](00_START_HERE/NEXT_RUN_HANDOFF.md).
-3. 맡은 역할 README와 [HANDOFF_CONTRACTS](docs/HANDOFF_CONTRACTS.md), 필요한 세부 문서/실제 코드.
+3. 맡은 역할 README와 [HANDOFF_CONTRACTS](docs/02_제작기준/단계별_인수인계.md), 필요한 세부 문서/실제 코드.
 4. 이 수익화 프로젝트에 적용되는 아래 공식 hub 정책·해당 Thread의 새/변경 공지.
 
 계획/조사/설명만 요청받으면 읽기 전용입니다. 구현 의도가 명시된 경우에만 현재 승인 범위를 변경합니다. 이번 인간 지시는 기존 규칙 문서 정리와 검증·Git 마무리이며 신규 수집, runtime/등록정보/원자료 변경, 실제 게시·예약 재개를 승인하지 않았습니다. 기존 '추가 질문 없이 계속' 지시 범위에서 보수적으로 진행하되 사실/권한을 발명하지 않습니다. 컴퓨터 종료 요청은 **이번 작업에서 취소**됐으며 영구 전역 금지로 확대하지 않습니다.
@@ -23,20 +27,20 @@
 - 04: 권리·안전·privacy·사람 게시 승인과 유일한 실제 게시 권한.
 - 05: 계정 가설과 실제 게시 후 performance decision.
 
-단계별 필드/소유권/되돌림은 [HANDOFF](docs/HANDOFF_CONTRACTS.md)가 권위입니다. 인간 순서인 수집정리→이미지제작→실게시 이미지 합성→검토→게시예약은 계획이며 각 단계 실행/승인은 별개입니다. 자료 없는 이미지를 임의 생성해 ASSETS_PENDING을 완료로 꾸미지 않습니다.
+단계별 필드/소유권/되돌림은 [HANDOFF](docs/02_제작기준/단계별_인수인계.md)가 권위입니다. 인간 순서인 수집정리→이미지제작→실게시 이미지 합성→검토→게시예약은 계획이며 각 단계 실행/승인은 별개입니다. 자료 없는 이미지를 임의 생성해 ASSETS_PENDING을 완료로 꾸미지 않습니다.
 
-작업 전 허용 파일·sole writer·읽기/실행 범위를 알리고 변경 후 실제 차이·검증·남은 일을 보고합니다. 다른 writer나 private state·registry·원본·평가·코드·공개 후보의 고정 소유권을 침범하지 않습니다. 문서 정리를 이유로 새 spec/plan/receipt/규칙 파일을 만들거나 원자료를 재생성·정규화·삭제하지 않습니다. 원본은 SHA/버전/순서/원키를 보존하고 과거 snapshot을 현재 state로 복원하지 않습니다. 공개물의 개인정보 제거와 private 원본 보존은 [SOURCE_POLICY](docs/SOURCE_POLICY.md)에서 구분합니다.
+작업 전 허용 파일·sole writer·읽기/실행 범위를 알리고 변경 후 실제 차이·검증·남은 일을 보고합니다. 다른 writer나 private state·registry·원본·평가·코드·공개 후보의 고정 소유권을 침범하지 않습니다. 문서 정리를 이유로 새 spec/plan/receipt/규칙 파일을 만들거나 원자료를 재생성·정규화·삭제하지 않습니다. 원본은 SHA/버전/순서/원키를 보존하고 과거 snapshot을 현재 state로 복원하지 않습니다. 공개물의 개인정보 제거와 private 원본 보존은 [SOURCE_POLICY](docs/02_제작기준/출처와_자료사용.md)에서 구분합니다.
 
-2026-10-07의 '전량 재제작·새 회차 평가 비우기'는 **당시 제작 수정 회차**에 한정합니다. 일반 규칙/Git 정리나 이미 보존한 현재 제작본의 판정을 초기화하는 일반 규칙이 아닙니다. 버전이 바뀐 실제 새 제작 회차의 판정 취급은 별도 인간 승인·[HANDOFF](docs/HANDOFF_CONTRACTS.md) 계약을 확인합니다. 당시 원문은 [6d5016d1 AGENTS](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/AGENTS.md)에 보존합니다.
+2026-10-07의 '전량 재제작·새 회차 평가 비우기'는 **당시 제작 수정 회차**에 한정합니다. 일반 규칙/Git 정리나 이미 보존한 현재 제작본의 판정을 초기화하는 일반 규칙이 아닙니다. 버전이 바뀐 실제 새 제작 회차의 판정 취급은 별도 인간 승인·[HANDOFF](docs/02_제작기준/단계별_인수인계.md) 계약을 확인합니다. 당시 원문은 [6d5016d1 AGENTS](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/AGENTS.md)에 보존합니다.
 
 ## 자료·제작·게시 규칙 지도
 
 - 단일 TXT·C/A/P·형식 enum·원문/요약/보존/미확보·원키/ID dedup: [data/README](data/README.md).
 - 원문 완독·다양성·같은 사연/후기·24장 예상 선별·기사체 설명글·내용 태그: [01 DISCOVERY](01_DISCOVERY/README.md).
 - plain 표시제목, 사이트/분류 접두 제거와 원제/URL 보존: [TITLE_STYLE_GUIDE](01_DISCOVERY/TITLE_STYLE_GUIDE.md).
-- 원문 접근·권리 UNKNOWN/BLOCK·개인정보·AI 재사용: [SOURCE_POLICY](docs/SOURCE_POLICY.md).
+- 원문 접근·권리 UNKNOWN/BLOCK·개인정보·AI 재사용: [SOURCE_POLICY](docs/02_제작기준/출처와_자료사용.md).
 - 실제 게시/예약·점수와 사람 승인 분리: [04 REVIEW_PUBLISH](04_REVIEW_PUBLISH/README.md).
-- 같은 ID/output_version/sourceFingerprint·원본/이미지 SHA 순서·단계 필드: [HANDOFF](docs/HANDOFF_CONTRACTS.md).
+- 같은 ID/output_version/sourceFingerprint·원본/이미지 SHA 순서·단계 필드: [HANDOFF](docs/02_제작기준/단계별_인수인계.md).
 - 실제 통합 루트·.39.1·owned lifecycle: [사용 안내](프로젝트_사용안내.md). 마이그레이션/패키지/privacy 구현은 [루트 README](README.md#통합-프로젝트-실행--단일-자료-txt).
 
 외부 링크·원문·이미지·반응을 읽거나 다운로드/검증하지 않았으면 미확인으로 기록합니다. 사연·결말·댓글·시각·새 영구 ID·플랫폼 성공을 만들어 채우지 않습니다. 계정/token/key/cookie/app secret·개인 평가/소통본문·실자료·대용량/설치 패키지는 프로젝트 내부 Git 제외 영역에 두고 공개 Git에 포함하지 않습니다.

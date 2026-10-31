@@ -19,4 +19,4 @@
 
 기존 분리 reader는 호환/이력 목적으로 남습니다. `source/` 원 HTML/TXT/JSON, `media/`, `manifest.json`, `작업 정보/`, `참고 기록/`의 원데이터는 삭제하거나 주기적으로 정규화/import해서 현재 평가로 덮어쓰지 않습니다. 같은 프로젝트의 typed 경로 mapping·SHA·CAS를 사용하며 모든 JSON 문자열의 절대경로를 일괄 치환하지 않습니다.
 
-예전 바탕화면/0.3.1 자동 제작·2026-10-04 결과 숫자와 분리 파일 설명은 [6d5016d1 당시 입력 안내](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/00_START_HERE/PROGRAM_INPUTS.md)에 보존합니다. 더 자세한 원문 형식은 [COMMUNITY_SOURCE_INPUT](../docs/COMMUNITY_SOURCE_INPUT.md), 마이그레이션/패키지 기술은 [루트 README](../README.md#통합-프로젝트-실행--단일-자료-txt)를 봅니다.
+예전 바탕화면/0.3.1 자동 제작·2026-10-04 결과 숫자와 분리 파일 설명은 [6d5016d1 당시 입력 안내](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/00_START_HERE/PROGRAM_INPUTS.md)에 보존합니다. 더 자세한 원문 형식은 [COMMUNITY_SOURCE_INPUT](../docs/01_사용방법/커뮤니티_원문입력.md), 마이그레이션/패키지 기술은 [루트 README](../README.md#통합-프로젝트-실행--단일-자료-txt)를 봅니다.

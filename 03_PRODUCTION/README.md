@@ -4,7 +4,7 @@
 
 02에서 승인된 Content Brief를 각 플랫폼에 맞는 **실제 콘텐츠 초안/제작 패키지**로 바꾸는 역할이다.
 
-실제 제작 형식은 [`FORMAT_PLAYBOOK.md`](FORMAT_PLAYBOOK.md)를 우선 참고한다. 2026 벤치마크 근거는 [`../docs/BENCHMARK_2026-09.md`](../docs/BENCHMARK_2026-09.md)에 있다.
+실제 제작 형식은 [`FORMAT_PLAYBOOK.md`](FORMAT_PLAYBOOK.md)를 우선 참고한다. 2026 벤치마크 근거는 [`../docs/BENCHMARK_2026-09.md`](../docs/03_참고조사/2026-09_사례비교.md)에 있다.
 
 ## 입력
 
@@ -54,7 +54,7 @@ CTA
 
 `A10 Unknown rights` 자산은 앱에서도 실제 게시가 차단되며, 권리를 확인한 뒤 올바른 자산 분류와 Safety Gate 재검토가 필요하다.
 
-선별한 원문과 정확한 이미지 위치/댓글 근거를 받은 뒤 제작합니다. `docs/SOURCE_BUNDLE_GUIDE.md`의 원문 ZIP을 입력으로 사용하며, 실제 본문 글·이미지 없는 단색 표지는 만들지 않습니다. 입력 ZIP의 선별 위치와 원본 파일 해시를 결과 ZIP에도 보존합니다.
+선별한 원문과 정확한 이미지 위치/댓글 근거를 받은 뒤 제작합니다. `docs/01_사용방법/원문묶음_입력.md`의 원문 ZIP을 입력으로 사용하며, 실제 본문 글·이미지 없는 단색 표지는 만들지 않습니다. 입력 ZIP의 선별 위치와 원본 파일 해시를 결과 ZIP에도 보존합니다.
 
 ## 출력 — Draft Package
 

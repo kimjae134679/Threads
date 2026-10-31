@@ -12,7 +12,7 @@
 
 새 계정 등록 양식: [`ACCOUNT_REGISTRY_TEMPLATE.md`](ACCOUNT_REGISTRY_TEMPLATE.md)
 
-벤치마크 근거: [`../docs/BENCHMARK_2026-09.md`](../docs/BENCHMARK_2026-09.md)
+벤치마크 근거: [`../docs/BENCHMARK_2026-09.md`](../docs/03_참고조사/2026-09_사례비교.md)
 
 ## 입력
 

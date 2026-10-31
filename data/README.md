@@ -27,7 +27,7 @@
 - `preserved`: 원자료·HTML/ZIP의 읽기용 본문 또는 선별/참고 기록. 원문 검증/OCR/권리 승격이 아닙니다.
 - `unavailable`: 원문 미확보. 없는 내용을 채우거나 다른 버전 원문을 붙이지 않습니다.
 
-미열람 URL·사진 href·다운로드 실패·HTML 선택 미확인·권리 unknown은 실제 원문/파일 확보 수와 분리합니다. 이미지가 본문인 자료는 전체 픽셀/순서 판독이 필요하며 독립 텍스트와 부수 이미지 미열람은 구분합니다. 권리 미확인/`publicationAllowed=false`를 새로운 TXT/요약/라이선스 링크만으로 올리지 않습니다. 원본 보존과 공개물의 개인정보 제거는 [SOURCE_POLICY](../docs/SOURCE_POLICY.md)를 따릅니다.
+미열람 URL·사진 href·다운로드 실패·HTML 선택 미확인·권리 unknown은 실제 원문/파일 확보 수와 분리합니다. 이미지가 본문인 자료는 전체 픽셀/순서 판독이 필요하며 독립 텍스트와 부수 이미지 미열람은 구분합니다. 권리 미확인/`publicationAllowed=false`를 새로운 TXT/요약/라이선스 링크만으로 올리지 않습니다. 원본 보존과 공개물의 개인정보 제거는 [SOURCE_POLICY](../docs/02_제작기준/출처와_자료사용.md)를 따릅니다.
 
 ## C/A/P — 기존 의미 그대로
 
@@ -51,6 +51,6 @@ Queue·예약·dry-run·provider-ready·API 호출 의도는 P1이 아닙니다.
 
 ## 자료의 권위와 이력
 
-원제·정확 URL·관측 시각/cache·수치는 개별 실제 관측값을 그대로 보존하고 다른 시점·재게시처 수치를 합치지 않습니다. 기존 요약/댓글 메모/Jev 평가는 원문 인용이나 현재 판정이 아닙니다. 내용·태그·선별은 [Discovery](../01_DISCOVERY/README.md), 제목은 [제목 가이드](../01_DISCOVERY/TITLE_STYLE_GUIDE.md), 승인/같은 버전은 [HANDOFF](../docs/HANDOFF_CONTRACTS.md)를 따릅니다.
+원제·정확 URL·관측 시각/cache·수치는 개별 실제 관측값을 그대로 보존하고 다른 시점·재게시처 수치를 합치지 않습니다. 기존 요약/댓글 메모/Jev 평가는 원문 인용이나 현재 판정이 아닙니다. 내용·태그·선별은 [Discovery](../01_DISCOVERY/README.md), 제목은 [제목 가이드](../01_DISCOVERY/TITLE_STYLE_GUIDE.md), 승인/같은 버전은 [HANDOFF](../docs/02_제작기준/단계별_인수인계.md)를 따릅니다.
 
 원 MD 형식·분리 content/comments/manifest 생성 명령·폴더 지도는 [6d5016d1 데이터 계약](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/data/README.md)에 그대로 보존합니다. 이 문서 정리 작업은 그 normalizer/import를 실행하거나 원자료·코드·현재 판정을 바꾸는 권한이 아닙니다. 실제 실행/현재 완료 집계는 [사용 안내](../프로젝트_사용안내.md)와 [인수인계](../00_START_HERE/NEXT_RUN_HANDOFF.md)에서 확인합니다.

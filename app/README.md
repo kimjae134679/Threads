@@ -159,7 +159,7 @@ Draft 사람 승인
 
 승인 후 문안이나 검토 상태가 바뀌면 게시 승인은 무효화됩니다.
 
-상세: [`../docs/THREADS_API_SETUP.md`](../docs/THREADS_API_SETUP.md)
+상세: [`../docs/THREADS_API_SETUP.md`](../docs/01_사용방법/Threads_API_설정.md)
 
 ## NAVER 한국 자료 보강
 
@@ -253,7 +253,7 @@ performance_index = 조회수 백분위 * 0.55 + 참여율 백분위 * 0.45
 
 클릭/전환/실수익은 실제 값이 있을 때 사람이 입력합니다. 자동 판정은 수동 override 가능합니다.
 
-상세: [`../docs/EXPERIMENT_LAB.md`](../docs/EXPERIMENT_LAB.md)
+상세: [`../docs/EXPERIMENT_LAB.md`](../docs/01_사용방법/성과실험.md)
 
 ## 저장 데이터
 
@@ -277,7 +277,7 @@ threads_trend_inbox_v1
 6. Reels/Shorts/Blog 등 다른 플랫폼 발행/성과 adapter
 7. 계정별 DB/동기화
 
-소스 사용 기준은 [`../docs/SOURCE_POLICY.md`](../docs/SOURCE_POLICY.md)를 우선합니다.
+소스 사용 기준은 [`../docs/SOURCE_POLICY.md`](../docs/02_제작기준/출처와_자료사용.md)를 우선합니다.
 
 ## 원문 기반 인스타 표지 제작
 
@@ -300,4 +300,4 @@ threads_trend_inbox_v1
 
 ## 원문 컷 편집기
 
-기존 후보의 원문 입력 후 **컷 편집기 열기**를 누르거나 `/app/source-cut-editor.html`을 엽니다. 표지와 본문 범위를 직접 지정하고 **여기서 페이지 나누기 → 원문 클릭**으로 페이지 경계를 추가합니다. 긴 원문은 휠로 스크롤하며 분할선은 원본 위치에 고정됩니다. 제목 테두리 기본 8px, 단어별 색상 강조를 지원합니다. 원본 포함 편집 저장과 PNG ZIP 출력을 사용할 수 있습니다. Canva 연결은 보류합니다. [자세한 사용법](../docs/SOURCE_CUT_EDITOR.md).
+기존 후보의 원문 입력 후 **컷 편집기 열기**를 누르거나 `/app/source-cut-editor.html`을 엽니다. 표지와 본문 범위를 직접 지정하고 **여기서 페이지 나누기 → 원문 클릭**으로 페이지 경계를 추가합니다. 긴 원문은 휠로 스크롤하며 분할선은 원본 위치에 고정됩니다. 제목 테두리 기본 8px, 단어별 색상 강조를 지원합니다. 원본 포함 편집 저장과 PNG ZIP 출력을 사용할 수 있습니다. Canva 연결은 보류합니다. [자세한 사용법](../docs/01_사용방법/원문_컷편집기.md).

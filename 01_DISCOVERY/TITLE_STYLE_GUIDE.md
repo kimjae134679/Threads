@@ -9,7 +9,7 @@
 3. raw 원문 제목·정확 URL은 codec metadata에 개별 **exact observed 값 그대로** 남긴다. 맞춤법·욕설·영어·시점·수치·본문 확인/provenance를 표시 정리를 이유로 바꾸지 않는다.
 4. 같은 글/버전의 표지·목록·업로더와 게시문안 첫 줄은 같은 clean 표시제목을 사용한다. 기존 filename 원키·ID를 제목 변경으로 바꾸거나 새 사연 ID로 만들지 않는다. 실제 `app/source-page-plan.js` titleInfo/제목 consumer 계약과 대조한다.
 
-저장 형식은 [data/README](../data/README.md), caption/태그/길이 선별은 [Discovery](README.md), 버전/단계는 [HANDOFF](../docs/HANDOFF_CONTRACTS.md)의 권위다. 원제를 확보하지 않았으면 미확인으로 기록한다.
+저장 형식은 [data/README](../data/README.md), caption/태그/길이 선별은 [Discovery](README.md), 버전/단계는 [HANDOFF](../docs/02_제작기준/단계별_인수인계.md)의 권위다. 원제를 확보하지 않았으면 미확인으로 기록한다.
 
 ## 레퍼런스에서 가져온 제목 감각
 

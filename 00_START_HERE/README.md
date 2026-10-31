@@ -19,8 +19,8 @@
 | 입력 종류·현재/과거 자료 경계 | [PROGRAM_INPUTS.md](PROGRAM_INPUTS.md) |
 | 원문 완독·다양성·24장 예상 선별·기사체 문안·태그 | [01 DISCOVERY](../01_DISCOVERY/README.md) |
 | plain 표시제목·원제/URL 보존 | [제목 가이드](../01_DISCOVERY/TITLE_STYLE_GUIDE.md) |
-| 단계 소유권·같은 글/버전·인수인계·되돌림 | [HANDOFF_CONTRACTS](../docs/HANDOFF_CONTRACTS.md) |
-| 권리·출처·접근·원본과 공개물 개인정보 | [SOURCE_POLICY](../docs/SOURCE_POLICY.md) |
+| 단계 소유권·같은 글/버전·인수인계·되돌림 | [HANDOFF_CONTRACTS](../docs/02_제작기준/단계별_인수인계.md) |
+| 권리·출처·접근·원본과 공개물 개인정보 | [SOURCE_POLICY](../docs/02_제작기준/출처와_자료사용.md) |
 | 실제 게시·예약·사람 승인 gate | [04 REVIEW & PUBLISH](../04_REVIEW_PUBLISH/README.md) |
 | 다계정 가설·실제 성과 | [AGENTS 계정 원칙](../AGENTS.md#다계정-운영-규칙), [05 역할](../05_EXPERIMENTS_ACCOUNTS/README.md) |
 
