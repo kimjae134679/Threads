@@ -8,3 +8,18 @@
 **/local-private/
 **/upload-studio/.local/
 **/*.lnk
+
+# Organized user files: originals, judgments and third-party images stay private
+/01_프로그램/**/프로그램본체/
+/02_자료/01_현재제작본/
+/02_자료/02_원문보관/
+/02_자료/04_내평가기록/
+/02_자료/05_수동문안/
+/02_자료/00_자료찾기.html
+/03_참고자료/01_디자인레퍼런스/
+
+# One article folder per exact source URL; publish only already-public candidate memos
+/02_자료/02_수집자료/**
+!/02_자료/02_수집자료/**/
+!/02_자료/02_수집자료/**/공개_소재메모*.txt
+/02_자료/03_내평가기록/
