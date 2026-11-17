@@ -3,7 +3,7 @@ import {finalReviewStatus} from './final-review.mjs';
 export {setFinalReview,finalReviewStatus,approvedReviewBundle} from './final-review.mjs';
 import {cleanCaptionFirstLine,cleanDisplayTitle} from './title-normalization.mjs';
 import {normalizeCommonTags,normalizeTopicTags,normalizeThreadsTopic,instagramTaggedCaption} from './tags.mjs';
-export const PLATFORM_LIMITS = Object.freeze({instagram:{text:2200,images:10},threads:{text:500,images:20}});
+export const PLATFORM_LIMITS = Object.freeze({instagram:{text:2200,images:20},threads:{text:500,images:20}});
 const clone=x=>JSON.parse(JSON.stringify(x));
 const fail=(code)=>{throw Object.assign(new Error(code),{code,status:code==="revision_conflict"?409:400});};
 const str=(x,max=100000)=>{if(typeof x!=="string"||x.length>max)fail("invalid_text");return x;};

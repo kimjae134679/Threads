@@ -9,7 +9,7 @@ async function noLinks(file){const full=path.resolve(file),parsed=path.parse(ful
 async function sourceBytes(file){await noLinks(file);const stat=await fs.lstat(file);if(!stat.isFile()||stat.size>5*1024*1024)fail('native_pack_source_invalid');return fs.readFile(file);}
 async function afterPack(context){
  const source=path.resolve(__dirname),project=path.resolve(context.packager.projectDir);if(source!==project||context.electronPlatformName!=='win32')fail('native_pack_project_invalid');
- const output=inside(path.join(source,'dist'),path.resolve(context.appOutDir)),resources=path.join(output,'resources'),archive=path.join(resources,'app.asar');await noLinks(archive);
+ const requested=path.resolve(context.appOutDir),roots=[path.join(source,'dist'),path.resolve(source,'../local-private/program-builds')],outputRoot=roots.find(root=>{const rel=path.relative(root,requested);return rel!==''&&rel!=='..'&&!rel.startsWith('..'+path.sep)&&!path.isAbsolute(rel);});if(!outputRoot)fail('native_pack_path_escape');const output=inside(outputRoot,requested),resources=path.join(output,'resources'),archive=path.join(resources,'app.asar');await noLinks(archive);
  const asar=require('@electron/asar');asar.uncache(archive);const names=new Set(asar.listPackage(archive).map(name=>name.replaceAll('\\','/').replace(/^\//,'')));
  if([...names].some(name=>/^(?:production|production-editor|pc-review|local-private|data)(?:\/|$)/.test(name)||name==='after-pack.cjs'))fail('native_pack_inert_source');
  const active=(await fs.readdir(source,{withFileTypes:true})).filter(entry=>entry.isFile()&&entry.name.endsWith('.cjs')&&entry.name!=='after-pack.cjs').map(entry=>entry.name),snapshots=new Map();

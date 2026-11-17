@@ -43,7 +43,7 @@ test('same-app post selection saves caption and quality without deadlocking a he
  const api=vm.runInNewContext(extract('postSelectionSettled')+';'+extract('navigationSettled')+';({postSelectionSettled,navigationSettled})',context);
  await api.postSelectionSettled();assert.deepEqual(calls,['caption','quality','visit']);assert.equal(context.verdictPending.size,1,'selection never consumes or approves a pending verdict');
  assert.equal(await Promise.race([api.navigationSettled().then(()=>true),new Promise(resolve=>setTimeout(()=>resolve(false),10))]),false,'unmount/navigation still waits for the held write');
- assert.match(code,/button\.onclick=async\(\)=>\{try\{await postSelectionSettled\(\);selected=/);
+ assert.match(code,/button\.onclick=async\(\)=>\{try\{await postSelectionSettled\(\);clearMaterialContext\(\);selected=/);
  context.settled=async()=>{throw Error('caption_failed');};await assert.rejects(api.postSelectionSettled(),/caption_failed/);
  context.settled=async()=>{};context.qualityDirty=true;context.saveQuality=async()=>{throw Error('quality_failed');};await assert.rejects(api.postSelectionSettled(),/quality_failed/);
 });

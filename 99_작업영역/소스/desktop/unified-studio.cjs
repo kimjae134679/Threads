@@ -14,7 +14,7 @@ async function claimStudioOwner({projectRoot,pid=process.pid,executable=process.
  return{file,release:async()=>{if(await read()===bytes)await fs.unlink(file);}};
 }
 function nativeRoute(args=process.argv){const at=args.indexOf('--native-route'),inline=args.find(a=>a.startsWith('--native-route=')),route=at>=0?args[at+1]:inline?.slice('--native-route='.length)||'/';
- if(!['/','/materials/','/viewer/','/?review=all','/?review=hold','/?review=discard'].includes(route))throw Error('native_route_invalid');return route;
+ if(!['/','/materials/','/viewer/','/?review=all','/?review=hold','/?review=discard','/?stage=production','/?stage=review','/?stage=prepare'].includes(route))throw Error('native_route_invalid');return route;
 }
 async function navigateStudio(window,origin,route){nativeRoute(['--native-route',route]);if(window.isDestroyed()||!allowedStudioUrl(window.webContents.getURL(),origin))throw Error('native_navigation_origin_invalid');
  return window.webContents.executeJavaScript(`(async()=>{const route=${JSON.stringify(route)};if(location.pathname==='/'){if(!window.ThreadsStudioNavigation)throw Error('native_navigation_not_ready');return window.ThreadsStudioNavigation.open(route);}if(!['/materials/','/viewer/'].includes(location.pathname)&&!location.pathname.startsWith('/viewer/'))throw Error('native_navigation_origin_invalid');location.assign(route);return true;})()`);
@@ -48,34 +48,36 @@ function clipboardWriteAllowed(window,wc,permission,origin,details,requestingOri
  if(permission!=='clipboard-sanitized-write'||!window||window.isDestroyed()||wc!==window.webContents||details?.isMainFrame!==true)return false;
  try{const url=wc.getURL();return details.requestingUrl===url&&wc.mainFrame?.url===url&&allowedStudioUrl(url,origin)&&(!requestingOrigin||allowedStudioUrl(requestingOrigin,origin));}catch{return false;}
 }
-async function openUnifiedStudio({app,BrowserWindow,session,args=process.argv,loadRuntime,claimOwner=claimStudioOwner}={}){
+async function openUnifiedStudio({app,BrowserWindow,WebContentsView,ipcMain,session,dialog,args=process.argv,loadRuntime,claimOwner=claimStudioOwner}={}){
  const projectRoot=projectArgument(args);if(!projectRoot)throw Error('native_project_root_required');
  process.env.THREADS_PROJECT_ROOT=projectRoot;
  const load=loadRuntime||(()=>import(pathToFileURL(path.join(app.isPackaged?path.join(process.resourcesPath,'unified-runtime'):path.join(__dirname,'..'),'upload-studio/server.mjs')).href));
  const {createStudioServer,studioLaunchConfig}=await load(),normalized=args.filter(a=>!a.startsWith('--project-root='));
  if(!normalized.includes('--project-root'))normalized.push('--project-root',projectRoot);
  const config=studioLaunchConfig(normalized);if(config.projectRoot!==projectRoot||config.preserveStartupState!==true||config.seedTags!==false)throw Error('native_unified_mode_required');
- const route=nativeRoute(args),owned=await createStudioServer({...config,nativeHosted:true});let window=null,closed=null,claim=null;
- const close=()=>closed||(closed=Promise.resolve().then(async()=>{owned.setNativeReady?.(false);try{await owned.close();}finally{await claim?.release();}}));
+ const route=nativeRoute(args),owned=await createStudioServer({...config,nativeHosted:true});let window=null,closed=null,claim=null,tools=null;
+ const close=()=>closed||Promise.resolve().then(async()=>{await tools?.close();return closed||(closed=Promise.resolve().then(async()=>{owned.setNativeReady?.(false);try{await owned.close();}finally{await claim?.release();}}));});
  try{
   if(!allowedStudioUrl(owned.url,owned.url)||new URL(owned.url).pathname!=='/')throw Error('native_server_origin_invalid');
-  claim=await claimOwner({projectRoot});
+  if(!config.readOnlyInspection)claim=await claimOwner({projectRoot});
   const ses=session.fromPartition('persist:threads-unified-offline-'+createHash('sha256').update(projectRoot).digest('hex').slice(0,16),{cache:false});
   ses.setPermissionRequestHandler((wc,permission,callback,details)=>callback(clipboardWriteAllowed(window,wc,permission,owned.url,details)));
   ses.setPermissionCheckHandler((wc,permission,requestingOrigin,details)=>clipboardWriteAllowed(window,wc,permission,owned.url,details,requestingOrigin));
   ses.webRequest.onBeforeRequest((details,callback)=>callback({cancel:!allowedStudioUrl(details.url,owned.url,{resource:true})}));
   ses.on('will-download',(_event,item)=>item.setSaveDialogOptions({title:'통합 자료 저장',defaultPath:path.join(projectRoot,'local-private',path.basename(item.getFilename()))}));
-  window=new BrowserWindow({width:1450,height:1000,minWidth:780,minHeight:650,title:'Threads · 평가와 게시 준비',autoHideMenuBar:true,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,allowRunningInsecureContent:false,session:ses}});
+  window=new BrowserWindow({width:1450,height:1000,minWidth:780,minHeight:650,title:'Threads · 평가와 게시 준비',autoHideMenuBar:true,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,allowRunningInsecureContent:false,session:ses,preload:path.join(__dirname,'studio-preload.cjs')}});
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));
   window.webContents.on('will-navigate',(event,url)=>{if(!allowedStudioUrl(url,owned.url))event.preventDefault();});
   window.webContents.on('will-redirect',(event,url)=>{if(!allowedStudioUrl(url,owned.url))event.preventDefault();});
+  if(WebContentsView&&ipcMain){const {createStudioTools}=require('./studio-tools.cjs'),{createNativeToolAdapter}=require('./studio-native.cjs');tools=await createStudioTools({window,studio:createNativeToolAdapter({owned,projectRoot,readOnly:config.readOnlyInspection===true}),app,WebContentsView,session,ipcMain,editorRoot:require('./editor-assets.cjs').editorRoot()});}
+  let closeReady=false,closeChecking=false;window.on('close',event=>{if(closeReady||!tools)return;event.preventDefault();if(closeChecking)return;closeChecking=true;Promise.resolve().then(async()=>{await tools.settle();if(new URL(window.webContents.getURL()).pathname==='/'&&await window.webContents.executeJavaScript('window.ThreadsStudioNavigation?.settle?.()')!==true)throw Error('studio_shell_save_incomplete');closeReady=true;window.close();}).catch(error=>dialog?.showMessageBox(window,{type:'error',message:'저장 후 닫아 주세요.',detail:error.message,buttons:['확인']})).finally(()=>{closeChecking=false;});});
   window.once('closed',()=>close().catch(()=>{}));
-  const quitting=event=>{if(!closed||closed instanceof Promise&&!quitting.complete){event.preventDefault();close().then(()=>{quitting.complete=true;app.quit();}).catch(()=>{quitting.complete=true;app.quit();});}};
+  const quitting=event=>{if(!closed||closed instanceof Promise&&!quitting.complete){event.preventDefault();close().then(()=>{quitting.complete=true;app.quit();}).catch(error=>dialog?.showMessageBox(window,{type:'error',message:'저장 후 종료해 주세요.',detail:error.message,buttons:['확인']}));}};
   app.on('will-quit',quitting);
   await window.loadURL(new URL(route,owned.url).href);
   const ready=await window.webContents.executeJavaScript(`new Promise((resolve,reject)=>{let attempts=0;const check=()=>{if(location.pathname!=='/'||window.ThreadsStudioNavigation?.ready===true)return resolve(true);if(++attempts>=100)return reject(Error('native_ui_not_ready'));setTimeout(check,50);};check();})`);
   if(ready!==true)throw Error('native_ui_not_ready');owned.setNativeReady?.(true);
-  return{window,url:owned.url,close,navigate:route=>navigateStudio(window,owned.url,route),focus:()=>{if(!window.isDestroyed()){if(window.isMinimized?.())window.restore();window.show();window.focus();}}};
+  return{window,url:owned.url,close,navigate:async route=>{await tools?.leave();return navigateStudio(window,owned.url,route);},focus:()=>{if(!window.isDestroyed()){if(window.isMinimized?.())window.restore();window.show();window.focus();}}};
  }catch(error){await close();if(window&&!window.isDestroyed())window.destroy();throw error;}
 }
 module.exports={projectArgument,allowedStudioUrl,openUnifiedStudio,claimStudioOwner,nativeRoute,navigateStudio,studioInstanceData,dispatchStudioInstance};

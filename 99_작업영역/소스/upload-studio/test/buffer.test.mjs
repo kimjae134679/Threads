@@ -38,9 +38,9 @@ test('Only stable verified public URLs enter request payload',()=>{
  }
  const p=previewBufferPost(fixture().posts[0],{...options,media:{}});assert.equal(p.input.assets.length,0);assert.ok(p.blockers.includes('public_media_required'));
 });
-test('Instagram carousel above 10 is held without truncating original images',()=>{
- const s=fixture();s.posts[0].images=Array.from({length:11},(_,i)=>({asset_id:'a'.repeat(64),order:i+1,mime:'image/jpeg'}));
- assert.ok(previewBufferPost(s.posts[0],options).blockers.includes('instagram_image_limit'));assert.equal(s.posts[0].images.length,11);
+test('Instagram carousel above twenty is held without truncating original images',()=>{
+ const s=fixture();s.posts[0].images=Array.from({length:21},(_,i)=>({asset_id:'a'.repeat(64),order:i+1,mime:'image/jpeg'}));
+ assert.ok(previewBufferPost(s.posts[0],options).blockers.includes('instagram_image_limit'));assert.equal(s.posts[0].images.length,21);
 });
 test('Refill counts remote queue and pending reservations and rejects incomplete or stale snapshots',()=>{
  const a=approved(fixture()),r=reserveBufferPlan(a.s,a.plan,snap,a.s.revision,now);

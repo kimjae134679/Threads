@@ -1,5 +1,5 @@
 (function(){
-  'use strict';
+  'use strict';if(window.ThreadsStudioTool)return;
   const $=id=>document.getElementById(id),api=window.ThreadsCutDesktop;
   const labels={waiting:'이미지 제작 대기',published:'게시 완료 기록 있음',generated:'이번에 제작',already_done:'이미 제작됨',needs_source:'원문 부족',needs_access:'접근·제공 권한 필요',
     needs_exact_url:'정확한 주소 필요',needs_media:'본문 이미지 누락',needs_selection:'원문 선별 필요',

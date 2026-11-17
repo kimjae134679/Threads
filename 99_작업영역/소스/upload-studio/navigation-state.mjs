@@ -15,3 +15,9 @@ export async function prepareNavigation({getPost,save,refresh,view={},allowEmpty
  const post=getPost(),original=!post&&allowEmpty?null:captureOrigin(post,view);await save();await refresh();
  if(original?!matchingOrigin(original,getPost()):!!getPost())throw Object.assign(Error('navigation_version_changed'),{code:'navigation_version_changed'});return original;
 }
+
+export function materialReviewContext(detail,posts,expectedFingerprint){
+ if(!detail||typeof detail.key!=='string'||typeof expectedFingerprint!=='string'||detail.fingerprint!==expectedFingerprint)throw Object.assign(Error('material_selection_changed'),{code:'material_selection_changed'});
+ const context={key:detail.key,fingerprint:detail.fingerprint,postId:detail.postId,outputVersion:detail.outputVersion??null,title:detail.title,scope:detail.scope},post=(posts||[]).find(p=>p.post_id===detail.postId&&p.output_version===detail.outputVersion);
+ return{...context,kind:post&&Array.isArray(detail.images)&&JSON.stringify(images(post))===JSON.stringify(detail.images.map(i=>i.sha256||i.asset_id))?'current':'unproduced'};
+}

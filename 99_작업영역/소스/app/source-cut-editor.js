@@ -174,13 +174,7 @@
       changed();
     }
     modes.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.mode === mode)));
-    $('modeHelp').textContent = {
-      pan: '원문 이동: 휠로 스크롤하거나 드래그하세요. 다른 원문은 위 목록에서 선택합니다.',
-      cover: fresh ? '드래그해서 새 표지 범위를 그리세요. 이후에는 안쪽을 끌어 이동하고 모서리로 크기를 조절합니다.' : '안쪽은 이동, 모서리는 크기 조절입니다. 새 범위는 ‘표지 범위’를 다시 눌러 그리세요.',
-      body: fresh ? '드래그해서 본문 범위를 그리세요. 화면 아래쪽으로 끌면 원문이 자동으로 스크롤됩니다.' : '분할선은 위아래로 끌 수 있습니다. 본문 범위를 새로 그리려면 ‘본문 범위’를 다시 누르세요.',
-      comment: '댓글이 시작되는 첫 줄을 클릭하세요. 그 지점 이후 캡처는 댓글 영역으로 분리됩니다.',
-      cut: '본문에서 나눌 위치를 클릭하세요. 선 위까지 한 장, 아래부터 다음 장입니다. Esc를 누르면 취소합니다.',
-    }[mode];
+    $('modeHelp').textContent = {pan:'',cover:'표지 범위',body:'본문 범위',comment:'댓글 시작점',cut:'분할선'}[mode];
     $('coordinates').hidden = mode === 'pan' || mode === 'cut' || mode === 'comment';
     canvas.style.cursor = mode === 'pan' ? 'grab' : 'crosshair'; draw();
   }
@@ -306,7 +300,7 @@
   async function decode(dataUrl) {
     return new Promise((resolve, reject) => { const image = new Image(); image.onload = () => resolve(image); image.onerror = () => reject(new Error('이미지를 읽지 못했습니다.')); image.src = dataUrl; });
   }
-  async function acquire(files, metadata = null, replace = false) {
+  async function acquire(files, metadata = null, replace = false, recordPrevious = true) {
     if (busy) return false; setBusy(true);
     try {
       const target = replace ? M.newProject() : project, targetImages = replace ? [] : images;
@@ -332,7 +326,7 @@
       }
       target.complete = false;
       if (replace) {
-        if (project.assets.length) await flushAudit('before-open');
+        if (recordPrevious && project.assets.length) await flushAudit('before-open');
         project = target; images = targetImages; selected = 0;
         historyBefore = null; historyProject = ''; savedOriginals = new Set();
       }
@@ -404,7 +398,7 @@
   $('recordReason').addEventListener('click', () => { dirty = true; flushAudit('reason'); });
   $('referenceApproved').addEventListener('change', () => { project.referenceApproved = $('referenceApproved').checked; dirty = true; flushAudit('reference-selection'); });
   $('saveHistory').addEventListener('click', async () => { await flushAudit('save-log'); download(new Blob([JSON.stringify({ ...M.reference(project), events: project.editLog }, null, 2)], {type:'application/json'}), 'source-cut-edit-log.json'); });
-  $('openReferences').disabled = !window.ThreadsCutDesktop;
+  $('openReferences').disabled = !window.ThreadsCutDesktop?.openReferences;
   $('openReferences').addEventListener('click', () => window.ThreadsCutDesktop?.openReferences().catch(error => message(error.message)));
   function refreshFontControls() {
     $('fontId').value = project.appearance.fontId;
@@ -467,8 +461,8 @@
   const desktop = window.ThreadsCutDesktop;
 
   if ($('captureUrlButton')) {
-    $('captureUrlButton').disabled = !desktop;
-    if (desktop) {
+    $('captureUrlButton').disabled = !desktop?.capture;
+    if (desktop?.capture) {
       $('captureHelp').textContent = '공개 페이지를 아래까지 불러와 캡처합니다. 아주 긴 글은 여러 원문 이미지로 이어서 열립니다. 로그인 화면이나 무한 스크롤은 직접 캡처를 사용하세요.';
       desktop.onProgress(({ percent, message: text }) => { $('captureProgress').value = percent; message(text); });
       $('cancelCapture').addEventListener('click', () => desktop.cancel().catch((error) => message(error.message)));
@@ -831,6 +825,18 @@
   window.ThreadsSourceCutEditor = Object.freeze({ openProject: async (value) => {
     if (busy) throw new Error('파일 처리 중입니다. 잠시 후 다시 시도하세요.');
     setBusy(true); try { await openProject(value); } finally { setBusy(false); }
-  }, getProject: () => clone(project), flushHistory: async () => { if (await flushAudit('close') === false) throw new Error('PC 기록 저장에 실패했습니다. 편집 저장 후 다시 닫아주세요.'); } });
+  },  canLeave: () => !busy && !dirty,
+  openWorkspaceImages: async (files,metadata) => {
+    if(busy||dirty)throw Error('현재 편집을 저장한 뒤 다른 자료를 여세요.');
+    if(await acquire(files,metadata,true,false)!==true)throw Error('선택한 이미지 자료를 열지 못했습니다.');
+    dirty=false;
+  },
+  saveWorkspace: async () => {
+    if(busy||!images.length||!window.ThreadsStudioTool)throw Error('저장할 선택 이미지가 없습니다.');
+    if(await flushAudit('workspace-save')===false)throw Error('편집 기록 저장에 실패했습니다.');
+    const saved=await window.ThreadsStudioTool.saveProject(clone(project));
+    dirty=false;message('같은 글·버전의 편집을 PC에 저장했습니다.');return saved;
+  },
+getProject: () => clone(project), flushHistory: async () => { if (await flushAudit('close') === false) throw new Error('PC 기록 저장에 실패했습니다. 편집 저장 후 다시 닫아주세요.'); } });
   syncCommunityUi(); goStep(project.assets.length ? 2 : 1); setMode('pan'); layout();
 })();

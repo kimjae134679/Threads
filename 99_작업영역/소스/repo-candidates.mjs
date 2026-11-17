@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import {createHash} from 'node:crypto';
 import "./app/unified-material-txt.js";
 import {cleanDisplayTitle} from './upload-studio/title-normalization.mjs';
 const MaterialTxt=globalThis.ThreadsUnifiedMaterialTxt;
@@ -84,6 +85,16 @@ function dateFromPrefix(prefix) {
   return `20${String(yy).padStart(2, "0")}-${mm}-${dd}T00:00:00+09:00`;
 }
 
+function candidateOriginal(snapshot) {
+  const candidate=snapshot?.records?.candidate,original=candidate?.originalMarkdown;
+  if(typeof original!=='string')throw Error('repo_candidate_original_missing');
+  if(Object.hasOwn(candidate,'originalSha256')&&(typeof candidate.originalSha256!=='string'||!/^[a-f0-9]{64}$/i.test(candidate.originalSha256)||createHash('sha256').update(original).digest('hex')!==candidate.originalSha256.toLowerCase()))throw Error('repo_candidate_original_sha_mismatch');
+  return original;
+}
+// Git text checkout can mix LF and CRLF. Compare only those newline encodings;
+// every other byte-equivalent character, BOM and newline position stays exact.
+const sameOriginalText=(left,right)=>left===right||left.replace(/\r\n/g,'\n')===right.replace(/\r\n/g,'\n');
+
 export async function loadRepoCandidates(rootDir, options = {}) {
   const candidatesDir = path.join(rootDir, options.candidatesDir || "data/candidates");
   const names=[];
@@ -104,7 +115,7 @@ export async function loadRepoCandidates(rootDir, options = {}) {
   for(const name of names){
     if(name.endsWith('.md')&&names.includes(name.replace(/\.md$/,'.txt'))){
       const data=MaterialTxt.parse(await fs.readFile(path.join(candidatesDir,name.replace(/\.md$/,'.txt'))));
-      if(data?.records.candidate?.originalMarkdown!==await fs.readFile(path.join(candidatesDir,name),'utf8'))throw Error('repo_candidate_original_conflict');
+      if(!sameOriginalText(candidateOriginal(data),await fs.readFile(path.join(candidatesDir,name),'utf8')))throw Error('repo_candidate_original_conflict');
     }else selected.push(name);
   }
   const items = [];
@@ -116,15 +127,18 @@ export async function loadRepoCandidates(rootDir, options = {}) {
     if(typeof filename!=='string'||path.basename(filename)!==filename||!(FILE_RE.test(filename)||LEGACY_RE.test(filename)))throw Error('repo_candidate_original_key_invalid');
     const match = filename.match(FILE_RE);
     const repoPath = path.posix.join((options.candidatesDir||'data/candidates').replaceAll('\\','/'),relativeName);
-    const text=unified?unified.records.candidate.originalMarkdown:bytes.toString('utf8');
+    const text=unified?candidateOriginal(unified):bytes.toString('utf8');
     if(typeof text!=='string')throw Error('repo_candidate_original_missing');
     const stage=/^(?:-\s*)?stage\s*:\s*([^\r\n]+)/im.exec(text)?.[1]||'';
     const dateCode=match?.[1]||(/^\d{6}_/.test(filename)?filename.slice(0,6):/^\d{8}_/.test(filename)?filename.slice(2,8):filename.slice(2,10).replaceAll('-',''));
     const candidateStage=match?.[2]||/C[012]/.exec(stage)?.[0]||'C0';
     const assetStage=match?.[3]||/A[01]/.exec(stage)?.[0]||(/^-(?:\s*)A1\s*:\s*true\s*$/im.test(text)?'A1':'A0');
     const publishStage=match?.[4]||/P[01]/.exec(stage)?.[0]||(/^-(?:\s*)P1\s*:\s*true\s*$/im.test(text)?'P1':'P0');
-    const originalTitle=text.replace(/^\ufeff/,'').match(/^#\s+(.+)$/m)?.[1]?.trim()||(match?.[5]||filename.replace(/\.md$/,"")).replace(/_/g," ");
-    const title=cleanDisplayTitle(unified?.human.title||originalTitle);
+    const headingTitle=text.replace(/^\ufeff/,'').match(/^#\s+(.+)$/m)?.[1]?.trim()||(match?.[5]||filename.replace(/\.md$/,"")).replace(/_/g," ");
+    const explicitOriginal=section(text,'원문 제목|원문제목|원제').split(/\r?\n/)[0]?.trim()||'',metaOriginal=unified?.records.candidate?.originalTitle;
+    if(metaOriginal!==undefined&&typeof metaOriginal!=='string')throw Error('repo_candidate_original_title_invalid');
+    const metadataTitle=metaOriginal?.trim()||'',originalTitle=explicitOriginal&&metadataTitle===headingTitle?explicitOriginal:metadataTitle||explicitOriginal||headingTitle;
+    const title=cleanDisplayTitle(unified?.human.title||headingTitle);
     const exactLinkSection = section(text, "정확한 링크");
     const observedUrl = firstUrl(exactLinkSection)||/^(?:-\s*)?(?:sourceUrl|source_url|exactPublicUrl|publicUrl|url)\s*:\s*(https?:\/\/\S+)/im.exec(text)?.[1]||'';
     const exactUrl = candidateStage === "C0" ? "" : observedUrl;

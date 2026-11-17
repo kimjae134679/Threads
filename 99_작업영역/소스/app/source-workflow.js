@@ -1,5 +1,5 @@
 (function () {
-  'use strict';
+  'use strict';if(window.ThreadsStudioTool)return;
   const $ = id => document.getElementById(id);
   if (location.protocol === 'cut-editor:') {
     $('autoTitle').closest('section').hidden = true;

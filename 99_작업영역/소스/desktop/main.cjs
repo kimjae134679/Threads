@@ -4,7 +4,7 @@ if(process.argv.some(a=>a.startsWith('--cover-reproduction-request='))){
 }else if(process.argv.some(a=>a.startsWith('--image-production-request='))){
  require('./image-production-run.cjs');
 }else{
-const { app, BrowserWindow, dialog, ipcMain, protocol, session, shell } = require('electron');
+const { app, BrowserWindow, WebContentsView, dialog, ipcMain, protocol, session, shell } = require('electron');
 const {projectArgument,openUnifiedStudio,nativeRoute,studioInstanceData,dispatchStudioInstance}=require('./unified-studio.cjs');
 const unifiedProject=projectArgument();if(unifiedProject)process.env.THREADS_PROJECT_ROOT=unifiedProject;
 const {editorRoot}=require('./editor-assets.cjs');
@@ -24,7 +24,8 @@ if(pcReviewRun){app.disableHardwareAcceleration();app.setPath('userData',path.jo
 const reviewAudit=process.argv.find(a=>a.startsWith('--review-audit='));
 const reviewOnly=!pcReviewRun&&(process.argv.includes('--review-only')||!!reviewAudit||!process.argv.includes('--editor')&&!process.argv.includes('--background-worker'));
 if(reviewAudit&&!process.argv.includes('--review-ui-stress'))app.disableHardwareAcceleration();
-if(reviewOnly)app.setPath('userData',reviewAudit?path.join(reviewAudit.slice('--review-audit='.length),'private-profile'):process.env.THREADS_PROJECT_ROOT?path.join(process.env.THREADS_PROJECT_ROOT,'local-private/profiles/review'):path.join(app.getPath('appData'),'ThreadsReview',app.getVersion()));
+if(process.argv.includes('--readonly-inspection'))app.setPath('userData',path.join(app.getPath('temp'),'ThreadsStudioInspection-'+process.pid));
+else if(reviewOnly)app.setPath('userData',reviewAudit?path.join(reviewAudit.slice('--review-audit='.length),'private-profile'):process.env.THREADS_PROJECT_ROOT?path.join(process.env.THREADS_PROJECT_ROOT,'local-private/profiles/review'):path.join(app.getPath('appData'),'ThreadsReview',app.getVersion()));
 else if(process.env.THREADS_PROJECT_ROOT)app.setPath('userData',path.join(process.env.THREADS_PROJECT_ROOT,'local-private/profiles/editor'));
 let editor, bundleWindow, postReview, unifiedStudio, activeCapture = null;
 const editorUrl = 'cut-editor://app/source-cut-editor.html';
@@ -38,7 +39,7 @@ function denyPermissions(ses) {
   ses.setPermissionCheckHandler(() => false);
 }
 async function start() {
-  if(unifiedProject&&reviewOnly&&!reviewAudit){unifiedStudio=await openUnifiedStudio({app,BrowserWindow,session});return;}
+  if(unifiedProject&&reviewOnly&&!reviewAudit){unifiedStudio=await openUnifiedStudio({app,BrowserWindow,WebContentsView,ipcMain,session,dialog});return;}
   const root = editorRoot();
   const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff': 'font/woff' };
   const allowed = new Set(['source-cut-post-review.html','source-cut-post-review.css','source-cut-post-review.js','source-cut-editor.html', 'source-cut-editor.css', 'source-cut-editor.js', 'source-cut-automation.js', 'source-cut-automation.css', 'source-community-template.js', 'source-cut-model.js', 'source-cut-composition.js', 'source-cut-history.js', 'source-cut-zip.js', 'source-batch.html', 'source-batch.css', 'source-batch.js', 'source-batch-core.js', 'source-batch-image-analysis.js', 'source-page-plan.js', 'universal-production-model.js', 'source-curation.js', 'source-bundle-zip.js', 'source-workflow.js', 'viral-model.js', 'fonts/CarouselSansKR-Regular.woff', 'fonts/CarouselSansKR-Black.woff', 'fonts/CutGothic-ExtraBold.woff']);
