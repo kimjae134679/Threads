@@ -95,7 +95,7 @@ export function syncProductionBundle(state,bundle){
 }
 export function editPost(state,postId,patch,expectedRevision) {
   rejectSecrets(patch);const s=clone(state),p=postAt(s,postId);if(p.revision!==expectedRevision)fail("revision_conflict");
-  if(Object.keys(patch).some(k=>!["caption","platform_captions","tags","images","targets","timing","source","safety","review","topic_tags","threads_topic_tag","media_format","reel_video","reel_playback_reviewed","music","review_note","review_note_updated_at"].includes(k)))fail("unknown_edit_field");
+  if(Object.keys(patch).some(k=>!["caption","platform_captions","tags","images","targets","timing","source","safety","review","topic_tags","threads_topic_tag","common_tags","media_format","reel_video","reel_playback_reviewed","music","review_note","review_note_updated_at"].includes(k)))fail("unknown_edit_field");
   if(has(patch,'review_note_updated_at')&&!has(patch,'review_note'))fail('review_note_required');
   let noteChanged=false;
   if(has(patch,'review_note')){const note=str(patch.review_note,10000),at=has(patch,'review_note_updated_at')?normalizeReviewNoteTime(patch.review_note_updated_at):(p.review_note_updated_at||null);noteChanged=note!==reviewNote(p)||at!==(p.review_note_updated_at||null);p.review_note=note;p.review_note_updated_at=at;}
@@ -105,6 +105,7 @@ export function editPost(state,postId,patch,expectedRevision) {
   if(has(patch,'caption')){const text=cleanCaptionFirstLine(str(patch.caption));p.caption=text;for(const k of ['instagram','threads']){p.platform_captions[k]=text;p.platform_caption_edited[k]=true;}}
   if(has(patch,'platform_captions')){if(!patch.platform_captions||Object.keys(patch.platform_captions).some(k=>!has(PLATFORM_LIMITS,k)))fail('invalid_platform_caption');for(const[k,text]of Object.entries(patch.platform_captions)){p.platform_captions[k]=cleanCaptionFirstLine(str(text));p.platform_caption_edited[k]=true;}p.caption=p.platform_captions.instagram;}
   if(has(patch,'tags'))p.tags=str(patch.tags,10000);
+  if(has(patch,'common_tags'))p.common_tags=normalizeCommonTags(patch.common_tags);
   if(has(patch,'topic_tags')){p.topic_tags=normalizeTopicTags(patch.topic_tags);p.topic_tags_edited=true;}
   if(has(patch,'threads_topic_tag')){p.threads_topic_tag=normalizeThreadsTopic(patch.threads_topic_tag);p.topic_tags_edited=true;}
   if(has(patch,'media_format')){if(!['images','reel'].includes(patch.media_format))fail('invalid_media_format');p.media_format=patch.media_format;}
@@ -119,7 +120,7 @@ export function editPost(state,postId,patch,expectedRevision) {
   if(has(patch,"safety"))p.safety=normalizeSafety(patch.safety);
   if(has(patch,"review"))p.review=normalizeReview(patch.review);
   if(contentBasis(p)===contentBasis(postAt(state,postId))){if(noteChanged){p.revision++;s.revision++;return s;}if(JSON.stringify(p.platform_caption_edited)!==JSON.stringify(postAt(state,postId).platform_caption_edited)||oldTopicEdited!==(p.topic_tags_edited===true))s.revision++;return s;}
-  if(["caption","platform_captions","tags","topic_tags","threads_topic_tag","images","media_format","reel_video","reel_playback_reviewed","music"].some(k=>has(patch,k)))p.review=null;
+  if(["caption","platform_captions","tags","common_tags","topic_tags","threads_topic_tag","images","media_format","reel_video","reel_playback_reviewed","music"].some(k=>has(patch,k)))p.review=null;
   p.revision++;p.final_review=null;p.approval=null;p.publication_approval=null;invalidate(s,postId);s.revision++;return s;
 }
 export function readiness(post) {
