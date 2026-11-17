@@ -5,7 +5,7 @@
   <title>원문 컷 에디터</title>
   <link rel="stylesheet" href="./source-cut-editor.css">
   <link rel="stylesheet" href="./source-cut-automation.css">
-</head>
+<link rel="stylesheet" href="./source-workspace.css"></head>
 <body>
 <main id="source-cut-editor">
   <header class="topbar">
@@ -128,7 +128,7 @@
             <label>확대<select id="zoom"><option value="1">화면 맞춤</option><option value="1.5">150%</option><option value="2">200%</option></select></label>
           </div>
         </div>
-        <p class="guide" id="modeHelp">원문 안에서 휠로 스크롤하거나 드래그해 이동하세요.</p>
+        <p class="guide" id="modeHelp"></p>
         <div class="canvas-stage panel">
           <div id="viewport" tabindex="0" aria-label="긴 원문 편집 영역"><div id="spacer"><canvas id="sourceCanvas" role="img" aria-label="원문과 선택 범위"></canvas></div></div>
           <div class="canvas-footer">
@@ -253,5 +253,5 @@
 <script src="./source-cut-zip.js"></script>
 <script src="./source-cut-editor.js"></script>
 <script src="./source-cut-automation.js"></script>
-</body>
+<script src="./source-workspace.js"></script></body>
 </html>

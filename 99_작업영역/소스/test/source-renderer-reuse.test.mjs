@@ -119,3 +119,22 @@ presetData={automatic:{fontId:'sans',titleWeight:900,manualTitleLayout:false}};
 getElement('batchPreset').value='automatic';getElement('applyBatchPreset').events.click();
 for(const id of ['coverSize','coverTop','coverLeft'])assert.equal(getElement(id).disabled,true);
 console.log('source renderer asset reuse, cache bounds, review gate, and manual controls passed');
+
+// Retained native views can receive onload while Image.decode remains suspended.
+// Use the same data-URL/onload path as the cut editor; legacy asset reuse stays intact.
+let nativeReads=0,nativeLoads=0;const legacyURL=sandbox.URL;
+sandbox.window.ThreadsStudioTool={};
+sandbox.URL={createObjectURL(){throw Error('native must not create a blob URL');},revokeObjectURL(){throw Error('native data URL cannot be revoked as a blob');}};
+sandbox.FileReader=class{readAsDataURL(blob){nativeReads++;assert.equal(blob.type,'image/png');blob.arrayBuffer().then(bytes=>{assert.deepEqual([...new Uint8Array(bytes)],[1,2,3]);this.result='data:image/png;base64,AQID';this.onload();});}};
+sandbox.Image=class{constructor(){this.naturalWidth=100;this.naturalHeight=100;}set src(value){if(!value){counts.released++;return;}assert.equal(value,'data:image/png;base64,AQID');nativeLoads++;queueMicrotask(()=>this.onload());}decode(){throw Error('inactive native view must not wait for decode');}};
+const nativeFile=createFile('native-onload'),nativePlan=await api.planBundle(nativeFile);await api.renderBundle(nativeFile,{productionPlan:nativePlan});assert.equal(nativeReads,1);assert.equal(nativeLoads,1);
+
+const nativeImageOK=sandbox.Image,nativeReaderOK=sandbox.FileReader;
+sandbox.Image=class{constructor(){this.naturalWidth=100;this.naturalHeight=100;}set src(value){if(value)queueMicrotask(()=>this.onerror());}};
+await assert.rejects(api.planBundle(createFile('native-image-error')),/원본 이미지를 읽지 못했습니다/);
+sandbox.Image=class{constructor(){this.naturalWidth=10000;this.naturalHeight=10000;}set src(value){if(value)queueMicrotask(()=>this.onload());}};
+await assert.rejects(api.planBundle(createFile('native-pixel-limit')),/원본 이미지가 너무 큽니다/);
+sandbox.Image=nativeImageOK;sandbox.FileReader=class{readAsDataURL(){queueMicrotask(()=>this.onerror());}};
+await assert.rejects(api.planBundle(createFile('native-reader-error')),/원본 이미지를 읽지 못했습니다/);sandbox.FileReader=nativeReaderOK;
+delete sandbox.window.ThreadsStudioTool;sandbox.URL=legacyURL;sandbox.Image=TestImage;
+console.log('native data image onload retains exact bytes, cached decoding and legacy isolation passed');

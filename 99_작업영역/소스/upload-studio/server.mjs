@@ -24,6 +24,8 @@ import {QualityService} from './quality-service.mjs';
 import {configuredResolver} from '../desktop/project-paths.cjs';
 import {ReadOnlyViewer} from './read-only-viewer.mjs';
 import {MaterialCatalog} from './material-catalog.mjs';
+import {StudioProduction} from './studio-production.mjs';
+import {resolveWorkspaceSources,readWorkspaceResearch} from './workspace-sources.mjs';
 import {materialZip} from './material-zip.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
 import {historyFor,undoPost,redoPost,restorePostSnapshot} from './history.mjs';
@@ -59,14 +61,16 @@ export async function readTitleEditApproval(root){
   }catch{fail('title_edit_approval_invalid');}
   finally{if(handle)await handle.close();}
 }
-export async function createStudioServer({projectRoot=null,nativeHosted=false,root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,preserveStartupState=!!process.env.THREADS_PROJECT_ROOT,projectManifest=path.resolve(materialRoot,'..','project.control.json')}={}) {
+export async function createStudioServer({projectRoot=null,nativeHosted=false,readOnlyInspection=false,root=path.join(here,'.local'),port=4387,materialRoot=DEFAULT_MATERIAL_ROOT,seedTags=true,preserveStartupState=!!process.env.THREADS_PROJECT_ROOT,projectManifest=path.resolve(materialRoot,'..','project.control.json')}={}) {
+  if(typeof readOnlyInspection!=='boolean')throw Error('invalid_inspection_mode');if(readOnlyInspection){preserveStartupState=true;seedTags=false;}
+  const workspaceSources=await resolveWorkspaceSources({projectRoot,projectManifest,defaultRepositoryRoot:projectRoot||process.env.THREADS_PROJECT_ROOT||null});
   let nativeUIReady=false;const projectIdentity=projectRoot?createHash('sha256').update(process.platform==='win32'?path.resolve(projectRoot).toLowerCase():path.resolve(projectRoot)).digest('hex'):null;
   let lastDelivery={records:[],warnings:[]};
   const send=(res,status,value)=>{if(value?.state)value={...value,finalReview:{...(value.finalReview||{}),deliveryResults:deliveryResultsProjection(value.state,lastDelivery.records).filter(row=>Object.values(row.platforms||{}).some(platform=>platform.recordedAt!=null||platform.status==='error')),deliveryWarnings:lastDelivery.warnings}};return sendJson(res,status,value);};
   const assets=new LocalAssets(root),handoff=new ReviewHandoff(root,assets);
   const viewer=new ReadOnlyViewer(projectManifest,()=>store.read());
   const quality=new QualityService({viewer,readState:()=>store.read(),materialRoot});
-  const materials=new MaterialCatalog({root,materialRoot,readState:()=>store.read(),currentSourceBinding:async(id,outputVersion)=>{let b;try{b=await quality.binding(id,outputVersion);}catch(e){if(e.code==='viewer_unavailable')return null;throw e;}if(!b||!b.sourceZipPreserved)return null;const source=await viewer.read('/viewer/'+id+'/source-bundle.zip');return{post:b.post,row:b.row,root:b.root,sourceZipPreserved:true,bytes:source.bytes,sourceFile:path.resolve(b.root,'outputs',b.row.outputFolder,'source-bundle.zip')};}});let materialExportBusy=false;
+  const materials=new MaterialCatalog({root,materialRoot,repositoryRoot:workspaceSources.candidateRepositoryRoot,readState:()=>store.read(),currentSourceBinding:async(id,outputVersion)=>{let b;try{b=await quality.binding(id,outputVersion);}catch(e){if(e.code==='viewer_unavailable')return null;throw e;}if(!b||!b.sourceZipPreserved)return null;const source=await viewer.read('/viewer/'+id+'/source-bundle.zip');return{post:b.post,row:b.row,root:b.root,sourceZipPreserved:true,bytes:source.bytes,sourceFile:path.resolve(b.root,'outputs',b.row.outputFolder,'source-bundle.zip')};}});let materialExportBusy=false;
   let handoffStatus={path:null,count:0,state_revision:null,handoff_id:null,pending:true,code:'handoff_pending'};
   let pendingHandoff=null,activeHandoff=null,handoffTask=null,handoffScheduled=null,desiredHandoffKey=null,desiredHandoffRevision=null,closing=false;
   const handoffWaiters=new Map(),clone=value=>JSON.parse(JSON.stringify(value));
@@ -133,13 +137,15 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,ro
     let stateLock=0;try{await fs.lstat(store.lock);stateLock=1;}catch(e){if(e.code!=='ENOENT')throw e;}
     const status={schemaVersion:1,appId:'threads-upload-studio',checkedAt:new Date().toISOString(),processId:process.pid,
       activeJobs:active.size+Number(autoProduction.progress.running)+Number(Boolean(handoffTask||handoffScheduled))+stateLock};
-    await store.write(path.join(root,'controller-runtime-status.json'),status);return status;
+    if(!readOnlyInspection)await store.write(path.join(root,'controller-runtime-status.json'),status);return status;
   });runtimeStatusTail=task.catch(()=>{});return task;}
   const titleEditApproval=await readTitleEditApproval(root);
   if(!preserveStartupState)await store.mutate(s=>{const next=migrateTitleFormat(recoverBufferAttempts(domain.recoverJobs(s)),titleEditApproval).state;if(!seedTags||next.review_tags_initialized)return next;const seeded=seedReviewTags(next);seeded.review_tags_initialized=true;if(seeded.revision===next.revision)seeded.revision++;return seeded;});
   // Recreate the small decision file under the existing state lock without changing any review.
   if(!preserveStartupState)await store.mutate(async state=>{await refreshDecisions(state);requestHandoff(state,true);return state;});
   else await store.read();
+  const studioProduction=projectRoot?new StudioProduction({projectRoot,catalog:materials,readOnly:readOnlyInspection,commit:async(context,post)=>{if(!nativeHosted||readOnlyInspection)fail('read_only_inspection',405);const images=[];for(const image of post.images){const asset=await assets.add({name:image.name,mime:image.mime,base64:image.data.toString('base64')});if(asset.asset_id!==image.sha256)fail('studio_production_changed');images.push({...asset,order:image.order});}await store.mutate(state=>{const current=state.posts.find(p=>p.post_id===context.postId);if(context.post?JSON.stringify(current)!==JSON.stringify(context.post):current)fail('studio_source_changed',409);return domain.importBundle(state,{bundle_id:'studio:'+post.output_version,posts:[{...post,images}]});});return{postId:post.post_id,outputVersion:post.output_version,reviewUrl:'/?post='+encodeURIComponent(post.post_id)+'&version='+encodeURIComponent(post.output_version),publicationAllowed:false};}}):null;
+  if(studioProduction)materials.generatedSourceBinding=post=>studioProduction.currentSource(post);
   const server=http.createServer(async(req,res)=>{
     try {
       const actualPort=server.address().port,hosts=['127.0.0.1:'+actualPort,'localhost:'+actualPort];
@@ -147,6 +153,11 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,ro
       if(req.headers.origin&&!['http://127.0.0.1:'+actualPort,'http://localhost:'+actualPort].includes(req.headers.origin))fail('foreign_origin',403);
       res.setHeader('content-security-policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'");
       const url=new URL(req.url,'http://127.0.0.1:'+actualPort),route=url.pathname;
+      if(readOnlyInspection&&req.method!=='GET')fail('read_only_inspection',405);
+      if(req.method==='GET'&&route==='/api/workspace/status')return send(res,200,{publicSourcesConfigured:workspaceSources.configured,readOnlyInspection,externalCalls:0});
+      if(req.method==='GET'&&route==='/api/workspace/research')return send(res,200,await readWorkspaceResearch(workspaceSources));
+      if(req.method==='GET'&&route==='/api/workspace/selection')return send(res,200,await materials.toolSelection(url.searchParams.get('post'),url.searchParams.get('version')));
+      if(readOnlyInspection&&req.method==='GET'&&route.startsWith('/api/quality/'))return send(res,200,{connected:false,reason:'read_only_inspection',readOnly:true,historical:[],historicalProgress:[],publicationAuthorized:false});
       if(req.method==='GET'&&/^\/oauth\/callback\/(instagram|threads)$/.test(route)){if(!callbackBroker.live_authorized)fail('oauth_permission_required',405);fail('oauth_exchange_not_configured',405);}
       if(route==='/api/publish'||route==='/api/schedule'||route==='/api/connect')fail('live_operation_disabled',405);
       if(req.method==='GET'&&route==='/api/history')return send(res,200,historyFor(await store.read(),url.searchParams.get('post_id')));
@@ -178,7 +189,7 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,ro
       if(req.method==='GET'&&route==='/api/buffer/status')return send(res,200,{provider:'buffer',mode:'offline-only',apiConnected:false,externalCalls:0,queueLimitPerChannel:10,credentialConfigured:false});
       if(req.method==='GET'&&route==='/api/health')return send(res,200,{appId:'threads-upload-studio',mode:'offline-only',port:actualPort,accountsConnected:false,externalCalls:0,projectIdentity,pid:process.pid,startup_state_preserved:preserveStartupState,nativeHosted,nativeUIReady});
       if(req.method==='GET'&&route==='/api/schedule-defaults')return send(res,200,{defaults:(await store.read()).schedule_defaults||DEFAULT_SCHEDULE});
-      if(req.method==='GET'&&route==='/api/state'){const state=await store.read();lastDelivery=await readDeliveryResults(root);return send(res,200,{state,mode:'offline-only',accountsConnected:false,startup_state_preserved:preserveStartupState});}
+      if(req.method==='GET'&&route==='/api/state'){const state=await store.read();lastDelivery=await readDeliveryResults(root);return send(res,200,{state,mode:'offline-only',accountsConnected:false,startup_state_preserved:preserveStartupState,read_only_inspection:readOnlyInspection});}
       if(req.method==='GET'&&route==='/api/export')return send(res,200,{bundle_id:'upload-studio-local-export',posts:(await store.read()).posts.map(p=>({post_id:p.post_id,output_version:p.output_version,source:p.source,production_feedback:p.production_feedback,review_note:domain.reviewNote(p),review_note_updated_at:p.review_note_updated_at||null,threads_title_only:p.threads_title_only,caption:p.caption,platform_captions:p.platform_captions,platform_caption_edited:p.platform_caption_edited,publication_title:p.publication_title,production_caption_version:p.production_caption_version,production_caption_status:p.production_caption_status,tags:p.tags,topic_tags:p.topic_tags,topic_tags_edited:p.topic_tags_edited,threads_topic_tag:p.threads_topic_tag,common_tags:p.common_tags,media_format:p.media_format,reel_video:p.reel_video,music:p.music,images:p.images,local_settings:{targets:p.targets,timing:p.timing}}))});
       if(req.method==='GET'&&/^\/assets\/[a-f0-9]{64}$/.test(route)){const {asset,bytes}=await assets.read(route.split('/').at(-1));res.writeHead(200,{'content-type':asset.mime,'content-length':bytes.length,'cache-control':'no-store','x-content-type-options':'nosniff'});return res.end(bytes);}
       if(req.method==='POST'&&route.startsWith('/api/')){
@@ -232,7 +243,7 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,ro
   const url='http://127.0.0.1:'+server.address().port;
   if(!preserveStartupState)await autoProduction.start();
   await observeRuntime();runtimeStatusTimer=setInterval(()=>observeRuntime().catch(()=>{}),2000);runtimeStatusTimer.unref();
-  return {server,url,setNativeReady:value=>{nativeUIReady=nativeHosted&&value===true;},close:async()=>{clearInterval(runtimeStatusTimer);await runtimeStatusTail;await autoProduction.stop();closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
+  return {server,url,readOnlyInspection,resolveToolSource:selection=>materials.toolContext(selection),loadToolSelection:context=>studioProduction?.loadSelection(context)||null,saveToolSelection:(context,plan)=>{if(!nativeHosted||!studioProduction)fail("studio_production_unavailable",405);return studioProduction.saveSelection(context,plan);},saveToolProduction:(context,result)=>{if(!nativeHosted||!studioProduction)fail('native_request_required',403);return studioProduction.save(context,result);},handoffToolSource:(context,version)=>{if(!nativeHosted||!studioProduction)fail('native_request_required',403);return studioProduction.handoff(context,version);},saveToolProject:(context,project)=>{if(!nativeHosted||!studioProduction)fail('native_request_required',403);return studioProduction.saveProject(context,project);},setNativeReady:value=>{nativeUIReady=nativeHosted&&value===true;},close:async()=>{clearInterval(runtimeStatusTimer);await runtimeStatusTail;await autoProduction.stop();closing=true;pendingHandoff=null;if(handoffScheduled){clearImmediate(handoffScheduled);handoffScheduled=null;}for(const key of handoffWaiters.keys())settleHandoff(key,handoffError('server_closing',503));for(const c of active.values())c.abort();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));await handoffTask;}};
 }
 export function studioLaunchConfig(args=process.argv.slice(2)){
   const value=flag=>args.includes(flag)?args[args.indexOf(flag)+1]:undefined;
@@ -243,10 +254,10 @@ export function studioLaunchConfig(args=process.argv.slice(2)){
     if(args.includes('--root')||args.includes('--material-root')||args.includes('--project-manifest'))throw Error('unified_launch_override');
     const projectRoot=path.resolve(project),resolve=configuredResolver(projectRoot),root=resolve(path.join(projectRoot,'local-private/operating-studio')),materialRoot=resolve(path.join(projectRoot,'local-private/project/자료')),projectManifest=resolve(path.join(projectRoot,'local-private/project/project.control.json'));
     try{if(!fsSync.statSync(resolve(path.join(root,'state.json'))).isFile()||!fsSync.statSync(projectManifest).isFile()||!fsSync.statSync(materialRoot).isDirectory())throw Error('missing');}catch{throw Error('unified_runtime_missing');}
-    return{projectRoot,port,root,materialRoot,projectManifest,preserveStartupState:true,seedTags:false};
+    return{projectRoot,port,root,materialRoot,projectManifest,preserveStartupState:true,seedTags:false,...(args.includes('--readonly-inspection')?{readOnlyInspection:true}:{})};
   }
   const materialRoot=value('--material-root')||DEFAULT_MATERIAL_ROOT;
-  return{port,materialRoot,...(value('--root')?{root:path.resolve(value('--root'))}:{}),...(value('--project-manifest')?{projectManifest:path.resolve(value('--project-manifest'))}:{})};
+  return{port,materialRoot,...(args.includes('--readonly-inspection')?{readOnlyInspection:true}:{}),...(value('--root')?{root:path.resolve(value('--root'))}:{}),...(value('--project-manifest')?{projectManifest:path.resolve(value('--project-manifest'))}:{})};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const config=studioLaunchConfig();if(config.projectRoot)process.env.THREADS_PROJECT_ROOT=config.projectRoot;

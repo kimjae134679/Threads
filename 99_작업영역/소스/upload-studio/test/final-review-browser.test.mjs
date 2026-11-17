@@ -9,7 +9,7 @@ import {deliveryFingerprint} from '../delivery-results.mjs';
 import {platformCaption,finalCaption} from '../domain.mjs';
 const root=await fs.mkdtemp(path.join(os.tmpdir(),'upload-studio-browser-'));
 const studioRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const out=path.join(studioRoot,'evidence');await fs.mkdir(out,{recursive:true});
+const out=process.env.STUDIO_QA_OUTPUT_DIR?path.resolve(process.env.STUDIO_QA_OUTPUT_DIR):path.resolve(studioRoot,'../local-private/qa/final-review-browser');await fs.mkdir(out,{recursive:true});
 let chrome,app,socket;const calls=new Map(),events=new Map();let serial=0,external=0,holdSync=false,heldSync=null,finalReviewRequests=0,failVerdictOnce=false,holdAsset=null,holdVerdict=false,handoffRequests=0;const finalReviewResponses=[],heldAssets=[],heldVerdicts=[];let holdMaterialKey=null;const heldMaterials=[];
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(fn){for(let i=0;i<300;i++){const x=await fn();if(x)return x;await wait(100);}throw Error('browser_condition_timeout');}
@@ -277,7 +277,7 @@ try {
   assert.equal(await evaluate('document.querySelector("#all-materials").getAttribute("href")'),'/materials/');
   await send('Page.navigate',{url:app.url+'/materials/?post='+encodeURIComponent(second)});
   await until(()=>evaluate('document.querySelector("#detail")?.dataset.key==='+JSON.stringify(materialSecond.key)+' && document.querySelector("#detail").getAttribute("aria-busy")==="false"'));
-  assert.equal(await evaluate('document.querySelector("#text-body").value'),platformCaption(materialPost,'instagram'));
+  assert.equal(await evaluate('document.querySelectorAll("[data-text]").length'),0);assert.equal(await evaluate('!!document.querySelector("#single-text")'),true);const materialDetail=(await api('/api/materials/'+materialSecond.key));assert.equal(materialDetail.texts.instagram.body,platformCaption(materialPost,'instagram'));
   assert.equal(await evaluate('document.querySelector("#text-fullText").value'),finalCaption(materialPost,'instagram'));
   assert.equal(await evaluate('document.querySelectorAll(".image-grid figure").length'),materialPost.images.length);
   assert.ok((await evaluate('document.querySelector("#package").getAttribute("href")')).includes('&scope=current'));
@@ -286,7 +286,7 @@ try {
   holdMaterialKey=materialFirst.key;await click('[data-key="'+materialFirst.key+'"]');await until(()=>heldMaterials.length===1);
   await click('[data-key="'+materialSecond.key+'"]');await until(()=>evaluate('document.querySelector("#detail").dataset.key==='+JSON.stringify(materialSecond.key)+' && document.querySelector("#detail").getAttribute("aria-busy")==="false"'));
   holdMaterialKey=null;for(const requestId of heldMaterials.splice(0))await send('Fetch.continueRequest',{requestId}).catch(()=>{});
-  await wait(150);assert.equal(await evaluate('document.querySelector("#text-body").value'),platformCaption(materialPost,'instagram'),'late catalog response cannot mix another post text or images');
+  await wait(150);assert.equal(await evaluate('document.querySelector("#text-fullText").value'),finalCaption(materialPost,'instagram'),'late catalog response cannot mix another post text or images');
   await shot('materials-layout.png');
 
   console.log('FINAL_REVIEW_BROWSER_PASS native image move/exclude/undo, no vault deletion, ordered layout, filters, memo/hold restore, clickable dots/local hearts, delayed verdict feedback and dedup/navigation, verified delivery partial/scheduled/sending/posted/current-basis projection, no-blank-frame switching, flushed verdicts and competing edit intent rejection. External requests: 0.');

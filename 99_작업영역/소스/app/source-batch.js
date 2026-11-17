@@ -325,10 +325,11 @@
     renderReview({plan,source,all});
   }
   async function loadImage(media) {
-    const url=URL.createObjectURL(new Blob([media.data],{type:media.type}));
-    try {const img=new Image();img.src=url;await img.decode();if(img.naturalWidth*img.naturalHeight>80000000)
+    const blob=new Blob([media.data],{type:media.type}),native=!!window.ThreadsStudioTool;
+    const url=native?await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('원본 이미지를 읽지 못했습니다: '+media.name));reader.readAsDataURL(blob);}):URL.createObjectURL(blob);
+    try {const img=new Image();if(native)await new Promise((resolve,reject)=>{img.onload=()=>resolve();img.onerror=()=>reject(new Error('원본 이미지를 읽지 못했습니다: '+media.name));img.src=url;});else{img.src=url;await img.decode();}if(img.naturalWidth*img.naturalHeight>80000000)
       throw new Error('원본 이미지가 너무 큽니다: '+media.name);return img;
-    } finally {URL.revokeObjectURL(url);}
+    } finally {if(!native)URL.revokeObjectURL(url);}
   }
   function wrap(ctx,text,width) {
     const result=[];
@@ -570,5 +571,24 @@
     $(id).addEventListener('change',async e=>{
       const file=e.target.files[0];if(file)await makeImages(file,preview);e.target.value='';
     });
-  window.ThreadsSourceBatch=Object.freeze({prepare,loadSavedFolder,sourceZip,planBundle,renderBundle,review:renderReview});
+  async function openWorkspaceInput(input) {
+    const prefix='candidate/',raw=input.sourceData?Uint8Array.from(atob(input.sourceData),c=>c.charCodeAt(0)):input.sourceText,source=new File([raw],input.sourceName,{type:input.sourceMime||'text/plain;charset=utf-8'}),all=[source];
+    Object.defineProperty(source,'webkitRelativePath',{value:prefix+input.sourceName});
+    if(input.intakeText){const file=new File([input.intakeText],'intake-manifest.json',{type:'application/json'});Object.defineProperty(file,'webkitRelativePath',{value:prefix+file.name});all.push(file);}
+    for(const asset of input.files||[]){const file=new File([Uint8Array.from(atob(asset.data),c=>c.charCodeAt(0))],asset.name,{type:asset.type});Object.defineProperty(file,'webkitRelativePath',{value:prefix+(input.imageDirectory||'media')+'/'+file.name});all.push(file);}
+    const item=input.inputKind==='saved-media'?await loadSavedFolder(all):await prepare(source,all);if(input.inputKind!=='saved-media')renderReview(item);
+    item.plan.sourceUrl=item.plan.sourceUrl||input.sourceUrl||null;
+    item.plan.sourceCheckedAt=input.sourceCheckedAt||null;item.plan.sourcePublishedAt=input.sourcePublishedAt||null;item.plan.collectedAt=input.collectedAt||null;
+    return true;
+  }
+  async function renderWorkspaceSelection() {
+    if(!chosen)throw Error('선택한 원문이 없습니다.');
+    const {bundle,plan}=await sourceZip(chosen),file=new File([bundle],'source-bundle.zip'),productionPlan=await planBundle(file,{preview:false}),result=await renderBundle(file,{preview:false,watermark:false,productionPlan});
+    const encode=bytes=>{let raw='';for(let i=0;i<bytes.length;i+=16384)raw+=String.fromCharCode(...bytes.subarray(i,i+16384));return btoa(raw);};
+    return {title:result.title,productionPlan,sourcePlan:plan,sourceZip:encode(new Uint8Array(await bundle.arrayBuffer())),zip:encode(new Uint8Array(await result.zip.arrayBuffer())),images:result.images.map(image=>({name:image.name,data:encode(image.data)}))};
+  }
+  function snapshotWorkspaceSelection(){if(!chosen)throw Error("선택한 원문이 없습니다.");return JSON.parse(JSON.stringify(readReview()));}
+  function applyWorkspaceSelection(plan){if(!chosen||plan.input?.sha256!==chosen.plan.input?.sha256)throw Error("원문 선별 기록이 현재 원본과 다릅니다.");chosen.plan=JSON.parse(JSON.stringify(plan));renderReview(chosen);return true;}
+  window.ThreadsSourceBatch=Object.freeze({snapshotWorkspaceSelection,applyWorkspaceSelection,prepare,loadSavedFolder,sourceZip,planBundle,renderBundle,review:renderReview,openWorkspaceInput,openWorkspaceArchive:reopenBundle,renderWorkspaceSelection});
+
 })();
