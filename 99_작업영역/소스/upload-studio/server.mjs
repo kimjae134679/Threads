@@ -25,6 +25,7 @@ import {configuredResolver} from '../desktop/project-paths.cjs';
 import {ReadOnlyViewer} from './read-only-viewer.mjs';
 import {MaterialCatalog} from './material-catalog.mjs';
 import {StudioProduction} from './studio-production.mjs';
+import {WritingDrafts} from './writing-drafts.mjs';
 import {resolveWorkspaceSources,readWorkspaceResearch} from './workspace-sources.mjs';
 import {materialZip} from './material-zip.mjs';
 import {DEFAULT_SCHEDULE,previewQueueSchedule,applyQueueSchedule} from './queue-schedule.mjs';
@@ -146,6 +147,7 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,re
   else await store.read();
   const studioProduction=projectRoot?new StudioProduction({projectRoot,catalog:materials,readOnly:readOnlyInspection,commit:async(context,post)=>{if(!nativeHosted||readOnlyInspection)fail('read_only_inspection',405);const images=[];for(const image of post.images){const asset=await assets.add({name:image.name,mime:image.mime,base64:image.data.toString('base64')});if(asset.asset_id!==image.sha256)fail('studio_production_changed');images.push({...asset,order:image.order});}await store.mutate(state=>{const current=state.posts.find(p=>p.post_id===context.postId);if(context.post?JSON.stringify(current)!==JSON.stringify(context.post):current)fail('studio_source_changed',409);return domain.importBundle(state,{bundle_id:'studio:'+post.output_version,posts:[{...post,images}]});});return{postId:post.post_id,outputVersion:post.output_version,reviewUrl:'/?post='+encodeURIComponent(post.post_id)+'&version='+encodeURIComponent(post.output_version),publicationAllowed:false};}}):null;
   if(studioProduction)materials.generatedSourceBinding=post=>studioProduction.currentSource(post);
+  const writingDrafts=new WritingDrafts({root,catalog:materials,readState:()=>store.read(),readOnly:readOnlyInspection});
   const server=http.createServer(async(req,res)=>{
     try {
       const actualPort=server.address().port,hosts=['127.0.0.1:'+actualPort,'localhost:'+actualPort];
@@ -154,6 +156,8 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,re
       res.setHeader('content-security-policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'");
       const url=new URL(req.url,'http://127.0.0.1:'+actualPort),route=url.pathname;
       if(readOnlyInspection&&req.method!=='GET')fail('read_only_inspection',405);
+      const writingRoute=route.match(/^\/api\/writing-drafts\/([^/]+)$/);
+      if(req.method==='GET'&&writingRoute)return send(res,200,{draft:await writingDrafts.load(decodeURIComponent(writingRoute[1])),publicationAuthorized:false,externalCalls:0});
       if(req.method==='GET'&&route==='/api/workspace/status')return send(res,200,{publicSourcesConfigured:workspaceSources.configured,readOnlyInspection,externalCalls:0});
       if(req.method==='GET'&&route==='/api/workspace/research')return send(res,200,await readWorkspaceResearch(workspaceSources));
       if(req.method==='GET'&&route==='/api/workspace/selection')return send(res,200,await materials.toolSelection(url.searchParams.get('post'),url.searchParams.get('version')));
@@ -195,6 +199,8 @@ export async function createStudioServer({projectRoot=null,nativeHosted=false,re
       if(req.method==='POST'&&route.startsWith('/api/')){
         if(req.headers['x-studio-local']!=='1'||!String(req.headers['content-type']).startsWith('application/json'))fail('local_request_required',403);
         const body=await readBody(req);domain.rejectSecrets(body);let state;
+        if(route==='/api/writing-drafts/save'){if(Object.keys(body).some(k=>!['postId','patch','expectedPost','expectedMaterial','expectedLatest'].includes(k)))fail('writing_draft_request_invalid');return send(res,200,{draft:await writingDrafts.save(body),publicationAuthorized:false,externalCalls:0});}
+        if(route==='/api/writing-drafts/apply'){if(Object.keys(body).some(k=>!['post_id','sha256','expected_revision'].includes(k)))fail('writing_draft_request_invalid');const saved=await store.mutate(s=>writingDrafts.apply(body.post_id,body.sha256,body.expected_revision,s));return send(res,200,{state:saved,publicationAuthorized:false,externalCalls:0});}
         if(route==='/api/quality/save')return send(res,200,{quality:await quality.save(body),externalCalls:0,publicationAuthorized:false});
         if(route==='/api/quality/visit')return send(res,200,{progress:await quality.visit(body),externalCalls:0,publicationAuthorized:false});
         if(route==='/api/buffer/preview'){const saved=await store.read(),post=saved.posts.find(p=>p.post_id===body.post_id);if(!post)fail('post_not_found');if(body.expected_revision!==post.revision)fail('revision_conflict',409);return send(res,200,previewBufferPost(post,body.options||{}));}

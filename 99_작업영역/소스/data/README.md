@@ -2,9 +2,11 @@
 
 ## 현재 파일
 
-사람/프로그램이 읽는 canonical은 `data/candidates/`의 **후보 한 건당 단일 TXT**입니다. 변환 범위 **4,519 = 공개 후보 2,350 + private 프로그램 입력 2,168 + 수동 문안 1**과 입력 종류는 [PROGRAM_INPUTS](../00_START_HERE/PROGRAM_INPUTS.md)를 참조합니다. private 약 83.46GB는 `local-private/` 등 Git 제외 영역에 보존하며 공개 파일에 실제 비밀·평가·계정/provider·개인·대용량 자료를 싣지 않습니다.
+사람/프로그램이 읽는 canonical은 `data/candidates/`의 **후보 한 건당 단일 TXT**입니다. 현재 공개 후보는 **2,361 = 당시 변환 baseline 2,350 + 신규 11**이며 전문 확보·제작 승인 수가 아닙니다. 신규 11은 summary·권리 미확인 상태로 사진 URL 3개만 기록했고 파일 확보/픽셀 확인은 아닙니다. 당시 변환 범위 **4,519 = 공개 후보 2,350 + private 프로그램 입력 2,168 + 수동 문안 1**과 입력 종류는 [PROGRAM_INPUTS](../00_START_HERE/PROGRAM_INPUTS.md)를 참조합니다. private 약 83.46GB는 D 운영루트의 `local-private/` 등 Git 제외 영역에 보존·연결하며(C로 전량 이사한 것이 아님) 공개 파일에 실제 비밀·평가·계정/provider·개인·대용량 자료를 싣지 않습니다.
 
-기존 `YYMMDD_C{0|1|2}_A{0|1}_P{0|1}_제목.md`는 원기록/역사 형식입니다. TXT 전환도 원 파일 키·ID·alias·원 MD SHA/기록을 보존합니다. 같은 키/ID의 TXT·MD를 별개의 새 후보로 처리하거나 연구원의 임시 순번을 영구 ID로 만들지 않습니다. 활성 수집 780건은 보존 ledger 범위이며 후보 총 2,350개와 다릅니다. `_raw_batches/`·제외/과거 snapshot을 활성화하지 않습니다.
+기존 `YYMMDD_C{0|1|2}_A{0|1}_P{0|1}_제목.md`는 원기록/역사 형식입니다. TXT 전환도 원 파일 키·ID·alias·원 MD SHA/기록을 보존합니다. 같은 키/ID의 TXT·MD를 별개의 새 후보로 처리하거나 연구원의 임시 순번을 영구 ID로 만들지 않습니다. 당시 활성 수집 780건은 보존 ledger 범위이며 당시 변환 baseline 2,350 및 현재 후보 총 2,361개와 다릅니다. `_raw_batches/`·제외/과거 snapshot을 활성화하지 않습니다.
+
+기존 글의 수정 원고는 private writing-drafts의 같은 unified-material TXT로 분리합니다. 원래 글·원문·이미지·평가를 보존하고 기존 caption 편집 patch만 별도 초안으로 둡니다. 이를 새 후보·새 원문 확보·현재 평가 적용으로 중복 집계하지 않습니다. 필드와 재열람/명시 적용 경계는 [PROGRAM_INPUTS](../00_START_HERE/PROGRAM_INPUTS.md#글별-수정초안--현재-저장본과-분리)를 따릅니다.
 
 ## 한 TXT의 실제 codec 계약
 
@@ -53,4 +55,4 @@ Queue·예약·dry-run·provider-ready·API 호출 의도는 P1이 아닙니다.
 
 원제·정확 URL·관측 시각/cache·수치는 개별 실제 관측값을 그대로 보존하고 다른 시점·재게시처 수치를 합치지 않습니다. 기존 요약/댓글 메모/Jev 평가는 원문 인용이나 현재 판정이 아닙니다. 내용·태그·선별은 [Discovery](../01_DISCOVERY/README.md), 제목은 [제목 가이드](../01_DISCOVERY/TITLE_STYLE_GUIDE.md), 승인/같은 버전은 [HANDOFF](../docs/02_제작기준/단계별_인수인계.md)를 따릅니다.
 
-원 MD 형식·분리 content/comments/manifest 생성 명령·폴더 지도는 [6d5016d1 데이터 계약](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/data/README.md)에 그대로 보존합니다. 이 문서 정리 작업은 그 normalizer/import를 실행하거나 원자료·코드·현재 판정을 바꾸는 권한이 아닙니다. 실제 실행/현재 완료 집계는 [사용 안내](../프로젝트_사용안내.md)와 [인수인계](../00_START_HERE/NEXT_RUN_HANDOFF.md)에서 확인합니다.
+원 MD 형식·분리 content/comments/manifest 생성 명령·폴더 지도는 [6d5016d1 데이터 계약](https://github.com/kimjae134679/Threads/blob/6d5016d1ab3f9df2cd77efd18fbfce6aaddfd9f2/data/README.md)에 그대로 보존합니다. 문서 정리 자체는 normalizer/import 실행이나 원자료·현재 판정 변경 권한이 아닙니다. 최신 인간의 실제 제작·내보내기 준비 승인도 원문·이미지·권리·버전 gate를 생략하거나 게시·예약/권리 승인 대행을 허용하지 않습니다. 현재 revision 169·개인 평가·원본 패킷을 보호하고 준비 작업물 완료 수를 미리 채우지 않습니다. 실제 실행/현재 완료 집계는 [사용 안내](../프로젝트_사용안내.md)와 [인수인계](../00_START_HERE/NEXT_RUN_HANDOFF.md)에서 확인합니다.

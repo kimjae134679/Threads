@@ -48,15 +48,70 @@ function clipboardWriteAllowed(window,wc,permission,origin,details,requestingOri
  if(permission!=='clipboard-sanitized-write'||!window||window.isDestroyed()||wc!==window.webContents||details?.isMainFrame!==true)return false;
  try{const url=wc.getURL();return details.requestingUrl===url&&wc.mainFrame?.url===url&&allowedStudioUrl(url,origin)&&(!requestingOrigin||allowedStudioUrl(requestingOrigin,origin));}catch{return false;}
 }
-async function openUnifiedStudio({app,BrowserWindow,WebContentsView,ipcMain,session,dialog,args=process.argv,loadRuntime,claimOwner=claimStudioOwner}={}){
+const {isIP,BlockList}=require('node:net'),{Resolver}=require('node:dns/promises');
+const EXTERNAL_CHANNEL='studio:external:open',externalBlocked=new BlockList();
+for(const [ip,prefix]of [['0.0.0.0',8],['10.0.0.0',8],['100.64.0.0',10],['127.0.0.0',8],['169.254.0.0',16],['172.16.0.0',12],['192.0.0.0',24],['192.0.2.0',24],['192.88.99.0',24],['192.168.0.0',16],['198.18.0.0',15],['198.51.100.0',24],['203.0.113.0',24],['224.0.0.0',4],['240.0.0.0',4]])externalBlocked.addSubnet(ip,prefix,'ipv4');
+for(const [ip,prefix]of [['2001::',23],['2001:db8::',32],['2002::',16],['3fff::',20]])externalBlocked.addSubnet(ip,prefix,'ipv6');
+const externalFail=code=>{throw Error(code);};
+function externalHttpsUrl(value){
+ if(typeof value!=='string'||value.length>2048||/[\u0000-\u0020\u007f\\]|%(?:0[0-9a-f]|1[0-9a-f]|20|7f)/i.test(value))externalFail('external_url_invalid');
+ let u;try{u=new URL(value);}catch{externalFail('external_url_invalid');}
+ const host=u.hostname.toLowerCase();
+ if(u.href.length>2048||u.protocol!=='https:'||u.username||u.password||host.endsWith('.')||isIP(host)||host.includes(':')||!host.includes('.')||host.length>253||!host.split('.').every(label=>/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(label))||/(?:^|\.)(?:localhost|local|internal|intranet|home|lan|corp|test|invalid|example|onion|arpa)$/.test(host))externalFail('external_url_invalid');
+ return u.href;
+}
+function publicExternalAddress(address){
+ const family=isIP(address);
+ if(family===4)return !externalBlocked.check(address,'ipv4');
+ return family===6&&/^[23][0-9a-f]{3}:/i.test(address)&&!externalBlocked.check(address,'ipv6');
+}
+async function resolveExternalHost(host,{signal}={}){
+ const resolver=new Resolver(),cancel=()=>resolver.cancel();signal?.addEventListener('abort',cancel,{once:true});
+ try{
+  if(signal?.aborted)externalFail('external_dns_cancelled');
+  const results=await Promise.allSettled([resolver.resolve4(host),resolver.resolve6(host)]);
+  if(signal?.aborted)externalFail('external_dns_cancelled');
+  if(results.some(r=>r.status==='rejected'&&!['ENODATA','ENOTFOUND'].includes(r.reason?.code)))externalFail('external_dns_failed');
+  return results.flatMap(r=>r.status==='fulfilled'?r.value:[]);
+ }finally{signal?.removeEventListener('abort',cancel);resolver.cancel();}
+}
+function createStudioExternalLinks({window,origin,ipcMain,resolveHost=resolveExternalHost,openExternal=url=>require('electron').shell.openExternal(url),timeoutMs=2000}={}){
+ let closed=false,pending=null;
+ const trusted=(event,snapshot)=>{
+  if(closed||window.isDestroyed()||window.webContents.isDestroyed?.()||event?.sender!==window.webContents||event?.senderFrame!==window.webContents.mainFrame)externalFail('external_sender_invalid');
+  const frame=event.senderFrame,current=window.webContents.getURL();
+  let u;try{u=new URL(current);}catch{externalFail('external_sender_invalid');}
+  if(frame.url!==current||!allowedStudioUrl(current,origin)||u.pathname!=='/materials/'||snapshot&&(snapshot.frame!==frame||snapshot.url!==current))externalFail('external_sender_invalid');
+  return{frame,url:current};
+ };
+ const handler=async(event,value)=>{
+  const snapshot=trusted(event),url=externalHttpsUrl(value);
+  if(pending)externalFail('external_request_pending');
+  const controller=new AbortController();pending=controller;let timer;
+  try{
+   if(await snapshot.frame.executeJavaScript('navigator.userActivation?.isActive === true')!==true)externalFail('external_activation_required');
+   trusted(event,snapshot);
+   if(controller.signal.aborted)externalFail('external_sender_invalid');
+   const deadline=new Promise((_,reject)=>{timer=setTimeout(()=>{reject(Error('external_dns_timeout'));controller.abort();},timeoutMs);controller.signal.addEventListener('abort',()=>reject(Error('external_request_cancelled')),{once:true});});
+   const addresses=await Promise.race([Promise.resolve().then(()=>resolveHost(new URL(url).hostname,{signal:controller.signal})),deadline]);
+   if(!Array.isArray(addresses)||!addresses.length||!addresses.every(publicExternalAddress))externalFail('external_dns_not_public');
+   trusted(event,snapshot);
+   if(controller.signal.aborted)externalFail('external_sender_invalid');
+   await openExternal(url);return true;
+  }finally{clearTimeout(timer);controller.abort();if(pending===controller)pending=null;}
+ };
+ ipcMain.handle(EXTERNAL_CHANNEL,handler);
+ return{close(){if(closed)return;closed=true;pending?.abort();ipcMain.removeHandler(EXTERNAL_CHANNEL);}};
+}
+async function openUnifiedStudio({app,BrowserWindow,WebContentsView,ipcMain,session,dialog,args=process.argv,loadRuntime,claimOwner=claimStudioOwner,externalLinkOptions}={}){
  const projectRoot=projectArgument(args);if(!projectRoot)throw Error('native_project_root_required');
  process.env.THREADS_PROJECT_ROOT=projectRoot;
  const load=loadRuntime||(()=>import(pathToFileURL(path.join(app.isPackaged?path.join(process.resourcesPath,'unified-runtime'):path.join(__dirname,'..'),'upload-studio/server.mjs')).href));
  const {createStudioServer,studioLaunchConfig}=await load(),normalized=args.filter(a=>!a.startsWith('--project-root='));
  if(!normalized.includes('--project-root'))normalized.push('--project-root',projectRoot);
  const config=studioLaunchConfig(normalized);if(config.projectRoot!==projectRoot||config.preserveStartupState!==true||config.seedTags!==false)throw Error('native_unified_mode_required');
- const route=nativeRoute(args),owned=await createStudioServer({...config,nativeHosted:true});let window=null,closed=null,claim=null,tools=null;
- const close=()=>closed||Promise.resolve().then(async()=>{await tools?.close();return closed||(closed=Promise.resolve().then(async()=>{owned.setNativeReady?.(false);try{await owned.close();}finally{await claim?.release();}}));});
+ const route=nativeRoute(args),owned=await createStudioServer({...config,nativeHosted:true});let window=null,closed=null,claim=null,tools=null,externalLinks=null;
+ const close=()=>closed||Promise.resolve().then(async()=>{await tools?.close();externalLinks?.close();return closed||(closed=Promise.resolve().then(async()=>{owned.setNativeReady?.(false);try{await owned.close();}finally{await claim?.release();}}));});
  try{
   if(!allowedStudioUrl(owned.url,owned.url)||new URL(owned.url).pathname!=='/')throw Error('native_server_origin_invalid');
   if(!config.readOnlyInspection)claim=await claimOwner({projectRoot});
@@ -66,6 +121,7 @@ async function openUnifiedStudio({app,BrowserWindow,WebContentsView,ipcMain,sess
   ses.webRequest.onBeforeRequest((details,callback)=>callback({cancel:!allowedStudioUrl(details.url,owned.url,{resource:true})}));
   ses.on('will-download',(_event,item)=>item.setSaveDialogOptions({title:'통합 자료 저장',defaultPath:path.join(projectRoot,'local-private',path.basename(item.getFilename()))}));
   window=new BrowserWindow({width:1450,height:1000,minWidth:780,minHeight:650,title:'Threads · 평가와 게시 준비',autoHideMenuBar:true,webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true,allowRunningInsecureContent:false,session:ses,preload:path.join(__dirname,'studio-preload.cjs')}});
+  if(ipcMain)externalLinks=createStudioExternalLinks({window,origin:owned.url,ipcMain,...externalLinkOptions});
   window.webContents.setWindowOpenHandler(()=>({action:'deny'}));
   window.webContents.on('will-navigate',(event,url)=>{if(!allowedStudioUrl(url,owned.url))event.preventDefault();});
   window.webContents.on('will-redirect',(event,url)=>{if(!allowedStudioUrl(url,owned.url))event.preventDefault();});
@@ -80,4 +136,4 @@ async function openUnifiedStudio({app,BrowserWindow,WebContentsView,ipcMain,sess
   return{window,url:owned.url,close,navigate:async route=>{await tools?.leave();return navigateStudio(window,owned.url,route);},focus:()=>{if(!window.isDestroyed()){if(window.isMinimized?.())window.restore();window.show();window.focus();}}};
  }catch(error){await close();if(window&&!window.isDestroyed())window.destroy();throw error;}
 }
-module.exports={projectArgument,allowedStudioUrl,openUnifiedStudio,claimStudioOwner,nativeRoute,navigateStudio,studioInstanceData,dispatchStudioInstance};
+module.exports={externalHttpsUrl,publicExternalAddress,resolveExternalHost,createStudioExternalLinks,projectArgument,allowedStudioUrl,openUnifiedStudio,claimStudioOwner,nativeRoute,navigateStudio,studioInstanceData,dispatchStudioInstance};
